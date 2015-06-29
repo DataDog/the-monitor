@@ -24,7 +24,7 @@ work of [Brendan Gregg](http://dtdg.co/use-method), [Rob
 Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron
 Schwartz](http://dtdg.co/metrics-attention).
 
-When to alert someone (or no one) {#when-to-alert}
+When to alert someone (or no one) 
 ---------------------------------
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_chart.png)
@@ -36,7 +36,7 @@ alerts across as many of your systems as possible allows you to respond
 quickly to issues and provide better service, and it also saves time by
 freeing you from continual manual inspection of metrics.
 
-### Levels of alerting urgency {#levels-of-urgency}
+### Levels of alerting urgency 
 
 Not all alerts carry the same degree of urgency. Some require immediate
 human intervention, some require eventual human intervention, and some
@@ -44,7 +44,7 @@ point to areas where attention may be needed in the future. All alerts
 should, at a minimum, be logged to a central location for easy
 correlation with other metrics and events.
 
-#### Alerts as records (low severity) {#low}
+#### Alerts as records (low severity) 
 
 Many alerts will not be associated with a service problem, so a human
 may never even need to be aware of them. For instance, when a data store
@@ -58,7 +58,7 @@ on their own. But should a significant issue develop—say, if the service
 starts returning a large number of timeouts—that alert-based data will
 provide invaluable context for your investigation.
 
-#### Alerts as notifications (moderate severity) {#medium}
+#### Alerts as notifications (moderate severity) 
 
 The next tier of alerting urgency is for issues that do require
 intervention, but not right away. Perhaps the data store is running low
@@ -68,7 +68,7 @@ is a perfect way to deliver these alerts—both message types are highly
 visible, but they won’t wake anyone in the middle of the night or
 disrupt an engineer’s flow.
 
-#### Alerts as pages (high severity) {#high}
+#### Alerts as pages (high severity) 
 
 The most urgent alerts should receive special treatment and be escalated
 to a page (as in “[pager](https://en.wikipedia.org/wiki/Pager)”) to
@@ -80,7 +80,7 @@ attention, whatever the hour.
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_1.png)
 
-### When to let a sleeping engineer lie {#how-to-prioritize-your-alerts}
+### When to let a sleeping engineer lie 
 
 Whenever you consider setting an alert, ask yourself three questions to
 determine the alert’s level of urgency and how it should be handled:
@@ -159,7 +159,7 @@ alert definitions.
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_3.png)
 
-#### Exception to the rule: Early warning signs {#early-warning-signs}
+#### Exception to the rule: Early warning signs 
 
 It is sometimes necessary to call human attention to a small handful of
 metrics even when the system is performing adequately. Early warning
@@ -175,7 +175,7 @@ yet, you can anticipate some situations when disk space will run low and
 build automated remediation based on the data you can afford to erase,
 such as logs or data that exists somewhere else.
 
-Conclusion: Get serious about symptoms {#alert-data-points}
+Conclusion: Get serious about symptoms 
 --------------------------------------
 
 -   Send a page only when symptoms of urgent problems in your system’s
