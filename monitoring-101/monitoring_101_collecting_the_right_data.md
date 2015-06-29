@@ -158,7 +158,7 @@ is feasible.
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_3.png)
 
-### What good data looks like {#data-point-characteristics}
+### What good data looks like
 
 The data you collect should have four characteristics:
 
@@ -193,7 +193,7 @@ The data you collect should have four characteristics:
     makes it much easier to know what “normal” is, especially if your
     metrics have monthly, seasonal, or annual variations.
 
-### Data for alerts and diagnostics {#alert-data-points}
+### Data for alerts and diagnostics 
 
 The table below maps the different data types described in this article
 to different levels of alerting urgency outlined in a companion post. In
