@@ -70,22 +70,22 @@ of systems: a web server and a data store.
 **Example work metrics: Web server (**at time 2015-04-24 08:13:01
 UTC**)**
 
-  **Subtype**   **Description**                                               **Value**
-  ------------- ------------------------------------------------------------- -----------
-  throughput    requests per second                                           312
-  success       percentage of responses that are 2xx since last measurement   99.1
-  error         percentage of responses that are 5xx since last measurement   0.1
-  latency       90th percentile response time in seconds                      0.4
+| **Subtype** | **Description**                                              | **Value** |
+|-------------|--------------------------------------------------------------|-----------|
+| throughput  |  requests per second                                         | 312       |
+| success     |  percentage of responses that are 2xx since last measurement | 99.1      |
+| error       |  percentage of responses that are 5xx since last measurement | 0.1       |
+| latency     |  90th percentile response time in seconds                    | 0.4       |
 
 **Example work metrics: Data store (at time 2015-04-24 08:13:01 UTC)**
 
-  **Subtype**   **Description**                                                      **Value**
-  ------------- -------------------------------------------------------------------- -----------
-  throughput    queries per second                                                   949
-  success       percentage of queries successfully executed since last measurement   100
-  error         percentage of queries yielding exceptions since last measurement     0
-  error         percentage of queries returning stale data since last measurement    4.2
-  latency       90th percentile query time in seconds                                0.02
+| **Subtype** | **Description**                                                    | **Value** |
+|-------------|--------------------------------------------------------------------|-----------|
+| throughput  | queries per second                                                 | 949       |
+| success     | percentage of queries successfully executed since last measurement | 100       |
+| error       | percentage of queries yielding exceptions since last measurement   | 0         |
+| error       | percentage of queries returning stale data since last measurement  | 4.2       |
+| latency     | 90th percentile query time in seconds                              | 0.02      |
 
 #### Resource metrics
 
@@ -113,12 +113,12 @@ that cover four key areas:
 
 Here are example metrics for a handful of common resource types:
 
-  **Resource**   **Utilization**                                         **Saturation**         **Errors**                                     **Availability**
-  -------------- ------------------------------------------------------- ---------------------- ---------------------------------------------- ------------------------------
-  Disk IO        % time that device was busy                             wait queue length      \# device errors                               % time writable
-  Memory         % of total memory capacity in use                       swap usage             N/A (not usually observable)                   N/A
-  Microservice   average % time each request-servicing thread was busy   \# enqueued requests   \# internal errors such as caught exceptions   % time service is reachable
-  Database       average % time each connection was busy                 \# enqueued queries    \# internal errors, e.g. replication errors    % time database is reachable
+| **Resource** | **Utilization**                                       | **Saturation**       | **Errors**                                   | **Availability**             |   
+|--------------|-------------------------------------------------------|----------------------|----------------------------------------------|------------------------------|
+| Disk IO      | % time that device was busy                           | wait queue length    | \# device errors                             | % time writable              |   
+| Memory       | % of total memory capacity in use                     | swap usage           | N/A (not usually observable)                 | N/A                          |       
+| Microservice | average % time each request-servicing thread was busy | \# enqueued requests | \# internal errors such as caught exceptions | % time service is reachable  |   
+| Database     | average % time each connection was busy               | \# enqueued queries  | \# internal errors, e.g. replication errors  | % time database is reachable |   
 
 ### Other metrics
 
@@ -143,11 +143,11 @@ on its own, unlike a single metric data point, which is generally only
 meaningful in context. Events capture *what happened*, at a point in
 *time*, with optional *additional information*. For example:
 
-  **What happened**                       **Time**                  **Additional information**
-  --------------------------------------- ------------------------- ----------------------------
-  Hotfix f464bfe released to production   2015–05–15 04:13:25 UTC   Time elapsed: 1.2 seconds
-  Pull request 1630 merged                2015–05–19 14:22:20 UTC   Commits: ea720d6
-  Nightly data rollup failed              2015–05–27 00:03:18 UTC   Link to logs of failed job
+| **What happened**                     | **Time**                | **Additional information** |
+|---------------------------------------|-------------------------|----------------------------|
+| Hotfix f464bfe released to production | 2015–05–15 04:13:25 UTC | Time elapsed: 1.2 seconds  |
+| Pull request 1630 merged              | 2015–05–19 14:22:20 UTC | Commits: ea720d6           |
+| Nightly data rollup failed            | 2015–05–27 00:03:18 UTC | Link to logs of failed job |
 
 Events are sometimes used used to generate alerts—someone should be
 notified of events such as the third example in the table above, which
@@ -206,17 +206,17 @@ alert that interrupts a recipient’s work, sleep, or personal time,
 whatever the hour. Note that depending on severity, a notification may
 be more appropriate than a page, or vice versa:
 
-  **Data**                        **Alert**      **Trigger**
-  ------------------------------- -------------- -------------------------------------------------------------------------------------
-  Work metric: Throughput         Page           value is much higher or lower than usual, or there is an anomalous rate of change
-  Work metric: Success            Page           the percentage of work that is successfully processed drops below a threshold
-  Work metric: Errors             Page           the error rate exceeds a threshold
-  Work metric: Performance        Page           work takes too long to complete (e.g., performance violates internal SLA)
-  Resource metric: Utilization    Notification   approaching critical resource limit (e.g., free disk space drops below a threshold)
-  Resource metric: Saturation     Record         number of waiting processes exceeds a threshold
-  Resource metric: Errors         Record         number of errors during a fixed period exceeds a threshold
-  Resource metric: Availability   Record         the resource is unavailable for a percentage of time that exceeds a threshold
-  Event: Work-related             Page           critical work that should have been completed is reported as incomplete or failed
+| **Data**                      | **Alert**    | **Trigger**                                                                         |
+|-------------------------------|--------------|-------------------------------------------------------------------------------------|
+| Work metric: Throughput       | Page         | value is much higher or lower than usual, or there is an anomalous rate of change   |  
+| Work metric: Success          | Page         | the percentage of work that is successfully processed drops below a threshold       |  
+| Work metric: Errors           | Page         | the error rate exceeds a threshold                                                  |  
+| Work metric: Performance      | Page         | work takes too long to complete (e.g., performance violates internal SLA)           |  
+| Resource metric: Utilization  | Notification | approaching critical resource limit (e.g., free disk space drops below a threshold) |  
+| Resource metric: Saturation   | Record       | number of waiting processes exceeds a threshold                                     |  
+| Resource metric: Errors       | Record       | number of errors during a fixed period exceeds a threshold                          |  
+| Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |      
+| Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |  
 
 Conclusion: Collect ’em all
 ---------------------------
