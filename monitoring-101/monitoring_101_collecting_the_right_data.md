@@ -67,8 +67,7 @@ helpful to break them down into four subtypes:
 Below are example work metrics of all four subtypes for two common kinds
 of systems: a web server and a data store.
 
-**Example work metrics: Web server (**at time 2015-04-24 08:13:01
-UTC**)**
+**Example work metrics: Web server (at time 2015-04-24 08:13:01 UTC)**
 
 | **Subtype** | **Description**                                              | **Value** |
 |-------------|--------------------------------------------------------------|-----------|
