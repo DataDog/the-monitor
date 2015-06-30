@@ -88,7 +88,7 @@ determine the alert’s level of urgency and how it should be handled:
 1.  **Is this issue real?** It may seem obvious, but if the issue is not
     real, it usually should not generate an alert. The examples below
     can trigger alerts but probably are not symptomatic of real
-    problems; alerting—or, worse, paging—on occurrences such as these
+    problems. Alerting—or, worse, paging—on occurrences such as these
     contributes to alert fatigue and can cause more serious issues to be
     ignored:
     -   Metrics in a test environment are out of bounds
