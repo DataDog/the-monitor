@@ -195,7 +195,7 @@ The data you collect should have four characteristics:
 ### Data for alerts and diagnostics 
 
 The table below maps the different data types described in this article
-to different levels of alerting urgency outlined in a companion post. In
+to different levels of alerting urgency outlined [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/). In
 short, a *record* is a low-urgency alert that does not notify anyone
 automatically but is recorded in a monitoring system in case it becomes
 useful for later analysis or investigation. A *notification* is a
