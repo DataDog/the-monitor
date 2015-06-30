@@ -136,8 +136,8 @@ different *causes*. For example: if your website has been responding
 very slowly for the last three minutes, that is a symptom. Possible
 causes include high database latency, failed application servers,
 Memcached being down, high load, and so on. Whenever possible, build
-your pages around symptoms rather than causes. See our companion article
-on data collection for a metric framework that helps to separate
+your pages around symptoms rather than causes. See our [companion article
+on data collection](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/) for a metric framework that helps to separate
 symptoms from causes.
 
 Paging on symptoms surfaces real, oftentimes user-facing problems,
