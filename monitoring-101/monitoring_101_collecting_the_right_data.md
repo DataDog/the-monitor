@@ -1,7 +1,7 @@
 Monitoring 101: Collecting the right data
 ====================================================
 
-*This post is part of an introductory series on effective
+*This post is part of a series on effective
 monitoring. Be sure to check out the rest of the series: [Alerting on what matters](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/) and Investigating performance issues
 (coming soon).*
 
