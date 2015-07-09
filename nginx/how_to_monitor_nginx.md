@@ -167,7 +167,7 @@ Sampling your request data (**requests** in open-source, or **total** in Plus) w
 
 #### Collecting activity metrics
 
-Open-source NGINX exposes these basic server metrics on a simple status page. Because the status information is displayed in a standardized form, virtually any graphing or monitoring tool can be configured to parse the relevant data for analysis, visualization, or alerting. NGINX Plus provides a JSON feed with much richer data. Read the companion post on [NGINX metrics collection](/blog/how-to-collect-nginx-metrics/%20‎) for instructions on enabling metrics collection.
+Open-source NGINX exposes these basic server metrics on a simple status page. Because the status information is displayed in a standardized form, virtually any graphing or monitoring tool can be configured to parse the relevant data for analysis, visualization, or alerting. NGINX Plus provides a JSON feed with much richer data. Read the companion post on [NGINX metrics collection](/blog/how-to-collect-nginx-metrics/) for instructions on enabling metrics collection.
 
 ### Error metrics
 
@@ -207,7 +207,7 @@ The request time metric logged by NGINX records the processing time for each req
 
 #### Collecting processing time metrics
 
-NGINX and NGINX Plus users can capture data on processing time by adding the `$request_time` variable to the access log format. More details on configuring logs for monitoring are available in our companion post on [NGINX metrics collection](/blog/how-to-collect-nginx-metrics/%20‎).
+NGINX and NGINX Plus users can capture data on processing time by adding the `$request_time` variable to the access log format. More details on configuring logs for monitoring are available in our companion post on [NGINX metrics collection](/blog/how-to-collect-nginx-metrics/).
 
 ### Reverse proxy metrics
 
@@ -235,7 +235,7 @@ For another view of the health of your web servers, NGINX also makes it simple t
 
 #### **Collecting upstream metrics**
 
-NGINX Plus upstream metrics are exposed on the internal NGINX Plus monitoring dashboard, and are also available via a JSON interface that can serve up metrics into virtually any external monitoring platform. See examples in our companion post on [collecting NGINX metrics](/blog/how-to-collect-nginx-metrics/%20‎).
+NGINX Plus upstream metrics are exposed on the internal NGINX Plus monitoring dashboard, and are also available via a JSON interface that can serve up metrics into virtually any external monitoring platform. See examples in our companion post on [collecting NGINX metrics](/blog/how-to-collect-nginx-metrics/).
 
 ## Conclusion
 
@@ -246,9 +246,9 @@ In this post we’ve touched on some of the most useful metrics you can monitor 
 -   [Server error rate](#server-error-rate)
 -   [Request processing time](#request-processing-time)
 
-Eventually you will recognize additional, more specialized metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on the tools you have and the metrics available to you. See the companion post for [step-by-step instructions on metric collection](/blog/how-to-collect-nginx-metrics/%20‎), whether you use NGINX or NGINX Plus.
+Eventually you will recognize additional, more specialized metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on the tools you have and the metrics available to you. See the companion post for [step-by-step instructions on metric collection](/blog/how-to-collect-nginx-metrics/), whether you use NGINX or NGINX Plus.
 
-At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX with Datadog [in this post](/blog/how-to-monitor-nginx-with-datadog/%20‎), and get started right away with [a free trial of Datadog](https://app.datadoghq.com/signup).
+At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX with Datadog [in this post](/blog/how-to-monitor-nginx-with-datadog/), and get started right away with [a free trial of Datadog](https://app.datadoghq.com/signup).
 
 ## Acknowledgments
 

@@ -75,7 +75,7 @@ Finally, switch on the NGINX integration inside your Datadog account. It’s as 
 
 Once the Agent begins reporting NGINX metrics, you will see [an NGINX dashboard](https://app.datadoghq.com/dash/integration/nginx) among your list of available dashboards in Datadog.
 
-The basic NGINX dashboard displays a handful of graphs encapsulating most of the key metrics highlighted [in our introduction to NGINX monitoring](/blog/how-to-monitor-nginx). (Some metrics, notably request processing time, require log analysis and are not available in Datadog.)
+The basic NGINX dashboard displays a handful of graphs encapsulating most of the key metrics highlighted [in our introduction to NGINX monitoring](/blog/how-to-monitor-nginx/). (Some metrics, notably request processing time, require log analysis and are not available in Datadog.)
 
 You can easily create a comprehensive dashboard for monitoring your entire web stack by adding additional graphs with important metrics from outside NGINX. For example, you might want to monitor host-level metrics on your NGINX hosts, such as system load. To start building a custom dashboard, simply clone the default NGINX dashboard by clicking on the gear near the upper right of the dashboard and selecting “Clone Dash”.
 
