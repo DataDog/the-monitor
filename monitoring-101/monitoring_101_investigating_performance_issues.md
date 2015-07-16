@@ -1,6 +1,6 @@
 # Monitoring 101: Investigating performance issues
 
-*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/) and [Alerting on what matters](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/).*
+*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/blog/monitoring-101-collecting-data/) and [Alerting on what matters](/blog/monitoring-101-alerting/).*
 
 The responsibilities of a monitoring system do not end with symptom detection. Once your monitoring system has notified you of a real symptom that requires attention, its next job is to help you diagnose the root cause. Often this is the least structured aspect of monitoring, driven largely by hunches and guess-and-check. This post describes a more directed approach that can help you to find and correct root causes more efficiently.
 

@@ -2,8 +2,7 @@ Monitoring 101: Collecting the right data
 ====================================================
 
 *This post is part of a series on effective
-monitoring. Be sure to check out the rest of the series: [Alerting on what matters](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/) and Investigating performance issues
-(coming soon).*
+monitoring. Be sure to check out the rest of the series: [Alerting on what matters](/blog/monitoring-101-alerting/) and [Investigating performance issues](/blog/monitoring-101-investigation/).*
 
 Monitoring data comes in a variety of forms—some systems pour out data
 continuously and others only produce data when rare events occur. Some

@@ -2,8 +2,7 @@ Monitoring 101: Alerting on what matters
 ===================================================
 
 *This post is part of a series on effective monitoring. Be
-sure to check out the rest of the series: [Collecting the right data](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/)
-and Investigating performance issues (coming soon).*
+sure to check out the rest of the series: [Collecting the right data](/blog/monitoring-101-collecting-data/) and [Investigating performance issues](/blog/monitoring-101-investigation/).*
 
 Automated alerts are essential to monitoring. They allow you to spot
 problems anywhere in your infrastructure, so that you can rapidly
