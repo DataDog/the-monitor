@@ -1,43 +1,63 @@
 Monitoring 101: Collecting the right data
 ====================================================
 
-*This post is part of a series on effective
-monitoring. Be sure to check out the rest of the series: [Alerting on what matters](/blog/monitoring-101-alerting/) and [Investigating performance issues](/blog/monitoring-101-investigation/).*
+> *This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Alerting on what matters](/blog/monitoring-101-alerting/) and [Investigating performance issues](/blog/monitoring-101-investigation/).*
 
-Monitoring data comes in a variety of forms—some systems pour out data
+*このポストは、「効果的な監視: Monitoring 101」シリーズの一部です。このポスト内容に続いて、[Alerting on what matters](/blog/monitoring-101-alerting/) と [Investigating performance issues](/blog/monitoring-101-investigation/) も、合わせて目を通すことをお勧めします。*
+
+> Monitoring data comes in a variety of forms — some systems pour out data
 continuously and others only produce data when rare events occur. Some
 data is most useful for *identifying* problems; some is primarily
 valuable for *investigating* problems. This post covers which data to
 collect, and how to classify that data so that you can:
 
-1.  Receive meaningful, automated alerts for potential problems
-2.  Quickly investigate and get to the bottom of performance issues
+> 1.  Receive meaningful, automated alerts for potential problems
+> 2.  Quickly investigate and get to the bottom of performance issues
 
-Whatever form your monitoring data takes, the unifying theme is this:
+> Whatever form your monitoring data takes, the unifying theme is this:
 
-> Collecting data is cheap, but not having it when you need it can be
-> expensive, so you should instrument everything, and collect all the
+>> Collecting data is cheap, but not having it when you need it can be
+>> expensive, so you should instrument everything, and collect all the
 > useful data you reasonably can.
 
-This series of articles comes out of our experience monitoring
+> This series of articles comes out of our experience monitoring
 large-scale infrastructure for [our
 customers](https://www.datadoghq.com/customers/). It also draws on the
 work of [Brendan Gregg](http://dtdg.co/use-method), [Rob
 Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron
 Schwartz](http://dtdg.co/metrics-attention).
 
+監視データは色々なところから送られていきます。あるシステムは、監視データを連続して送信し続けます。別の監視システムでは、特定のイベントが発生したときのみデータを送信します。あるデータは、問題を特定するのに非常に役に立ちます。又あるデータは、問題の調査過程で意味を持つものもあります。このポストでは、次の項目を実現するために、どのデータを収集し、分類するかを説明していきます。
+
+1. 自動検知により、潜在的な問題に関し効果的なアラートを受信する。
+2. 迅速に調査を進行し、パフォーマンスに関する問題の原因に到達する。
+
+監視データがどのような形態になっていようと、今回のポストのテーマは以下になります:
+
+> データの収集は、ローコストで実現できます。しかし、必要なデータを持っていない状況での損失は非常に大きい(高価)です。従って全てをうまく調整し、合理的と判断できる範囲で、全ての価値のあるデータを収集する。
+
+このシリーズの内容は、Datadogの[お客様](https://www.datadoghq.com/customers/)の大規模インフラを監視してきた経験を基にし、次に紹介するような人たちのブログ記事　[Brendan Gregg](http://dtdg.co/use-method)、 [Rob
+Ewaschuk](http://dtdg.co/philosophy-alerting)、 [Baron
+Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています。
+
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_1.png)
 
 ### Metrics
 
-Metrics capture a value pertaining to your systems *at a specific point
-in time—*for example, the number of users currently logged in to a web
+> Metrics capture a value pertaining to your systems *at a specific point
+in time* — for example, the number of users currently logged in to a web
 application. Therefore, metrics are usually collected once per second,
 one per minute, or at another regular interval to monitor a system over
 time. There are two important categories of metrics in our framework:
 work metrics and resource metrics. For each system that is part of your
 software infrastructure, consider which work metrics and resource
 metrics are reasonably available, and collect them all.
+
+メトリクスは、*ある時点の* そのシステムが持っている価値を数値化します。(例えば、webのアプリケーションに現在ログインしているユーザー数)　従って、
+
+
+
+
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
 
@@ -111,12 +131,12 @@ that cover four key areas:
 
 Here are example metrics for a handful of common resource types:
 
-| **Resource** | **Utilization**                                       | **Saturation**       | **Errors**                                   | **Availability**             |   
+| **Resource** | **Utilization**                                       | **Saturation**       | **Errors**                                   | **Availability**             |
 |--------------|-------------------------------------------------------|----------------------|----------------------------------------------|------------------------------|
-| Disk IO      | % time that device was busy                           | wait queue length    | \# device errors                             | % time writable              |   
-| Memory       | % of total memory capacity in use                     | swap usage           | N/A (not usually observable)                 | N/A                          |       
-| Microservice | average % time each request-servicing thread was busy | \# enqueued requests | \# internal errors such as caught exceptions | % time service is reachable  |   
-| Database     | average % time each connection was busy               | \# enqueued queries  | \# internal errors, e.g. replication errors  | % time database is reachable |   
+| Disk IO      | % time that device was busy                           | wait queue length    | \# device errors                             | % time writable              |
+| Memory       | % of total memory capacity in use                     | swap usage           | N/A (not usually observable)                 | N/A                          |
+| Microservice | average % time each request-servicing thread was busy | \# enqueued requests | \# internal errors such as caught exceptions | % time service is reachable  |
+| Database     | average % time each connection was busy               | \# enqueued queries  | \# internal errors, e.g. replication errors  | % time database is reachable |
 
 ### Other metrics
 
@@ -191,7 +211,7 @@ The data you collect should have four characteristics:
     makes it much easier to know what “normal” is, especially if your
     metrics have monthly, seasonal, or annual variations.
 
-### Data for alerts and diagnostics 
+### Data for alerts and diagnostics
 
 The table below maps the different data types described in this article
 to different levels of alerting urgency outlined [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/). In
@@ -213,7 +233,7 @@ be more appropriate than a page, or vice versa:
 | Resource metric: Utilization  | Notification | approaching critical resource limit (e.g., free disk space drops below a threshold) |  
 | Resource metric: Saturation   | Record       | number of waiting processes exceeds a threshold                                     |  
 | Resource metric: Errors       | Record       | number of errors during a fixed period exceeds a threshold                          |  
-| Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |      
+| Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |
 | Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |  
 
 Conclusion: Collect ’em all
