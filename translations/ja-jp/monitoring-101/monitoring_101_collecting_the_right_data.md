@@ -53,11 +53,7 @@ work metrics and resource metrics. For each system that is part of your
 software infrastructure, consider which work metrics and resource
 metrics are reasonably available, and collect them all.
 
-メトリクスは、*ある時点の* そのシステムが持っている価値を数値化します。(例えば、webのアプリケーションに現在ログインしているユーザー数)　従って、
-
-
-
-
+メトリクスは、そのシステムが *ある時点で* 持っている価値を数値化します。(例えば、webのアプリケーションに現在ログインしているユーザー数)　従って、メトリックは、通常1秒に1回や1分間に1回、又は他の定期的な間隔で収集されます。私たちのメトリクスの捉え方には、2つの重要なカテゴリーがあります。それらは、**work metrics** と **resource metorics** です。あなたのソフトウェアインフラを構成している各システムで、どのような **work metrics** と **resource metorics** が無理をしない範囲で収集を検討し、全てを収集するようにします。
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
 
@@ -67,24 +63,35 @@ Work metrics indicate the top-level health of your system by measuring
 its useful output. When considering your work metrics, it’s often
 helpful to break them down into four subtypes:
 
--   **throughput** is the amount of work the system is doing per
+Work metricsは、
+Work metoricsを検討する際は、メトリクスを次の4つのサブタイプに分類すると検討をしやすいです。
+
+> -   **throughput** is the amount of work the system is doing per
     unit time. Throughput is usually recorded as an absolute number.
--   **success** metrics represent the percentage of work that was
+> -   **success** metrics represent the percentage of work that was
     executed successfully.
--   **error** metrics capture the number of erroneous results, usually
+> -   **error** metrics capture the number of erroneous results, usually
     expressed as a rate of errors per unit time or normalized by the
     throughput to yield errors per unit of work. Error metrics are often
     captured separately from success metrics when there are several
     potential sources of error, some of which are more serious or
     actionable than others.
--   **performance** metrics quantify how efficiently a component is
+> -   **performance** metrics quantify how efficiently a component is
     doing its work. The most common performance metric is latency, which
     represents the time required to complete a unit of work. Latency can
     be expressed as an average or as a percentile, such as “99% of
     requests returned within 0.1s”.
 
-Below are example work metrics of all four subtypes for two common kinds
+-   **throughput**
+-   **success**
+-   **error**
+-   **performance**
+
+
+> Below are example work metrics of all four subtypes for two common kinds
 of systems: a web server and a data store.
+
+以下は、webサーバとデータストーレジという一般的なシステム部品についてwork metricsの4サブタイプを検討した例です。
 
 **Example work metrics: Web server (at time 2015-04-24 08:13:01 UTC)**
 
