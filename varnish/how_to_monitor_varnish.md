@@ -177,3 +177,7 @@ Of course, what you monitor will depend on the tools you have and the metrics av
 ## Acknowledgments
 
 Many thanks to the [Fastly](https://www.fastly.com/) and [Varnish Software](https://www.varnish-software.com/) teams for reviewing this article prior to publication and providing important feedback and clarifications.
+
+------------------------------------------------------------------------
+
+*Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/varnish/how_to_monitor_varnish.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues).*

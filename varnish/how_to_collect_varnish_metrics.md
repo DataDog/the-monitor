@@ -88,3 +88,7 @@ You can display a subset of `varnishlog`’s information via three specialized t
 Which metrics you monitor will depend on your use case, the tools available to you, and whether the insight provided by a given metric justifies the overhead of monitoring it.
 
 At Datadog, we have built an integration with Varnish so that you can begin collecting and monitoring its metrics with a minimum of setup. Learn how Datadog can help you to monitor Varnish in the [next and final part of this series of articles](https://www.datadoghq.com/blog/monitor-varnish-using-datadog/).
+
+------------------------------------------------------------------------
+
+*Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/varnish/how_to_collect_varnish_metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues).*

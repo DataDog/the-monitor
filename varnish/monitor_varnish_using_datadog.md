@@ -112,3 +112,7 @@ In this post we’ve walked you through integrating Varnish with Datadog to visu
 If you’ve followed along using your own Datadog account, you should now have improved visibility into what’s happening in your web environment, as well as the ability to create automated alerts tailored to your infrastructure, your usage patterns, and the metrics that are most valuable to your organization.
 
 If you don’t yet have a Datadog account, you can sign up for a [free trial](http://app.datadoghq.com/signup) and start monitoring your infrastructure, your applications, and your services today.
+
+------------------------------------------------------------------------
+
+*Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/varnish/monitor_varnish_using_datadog.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues).*
