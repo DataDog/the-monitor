@@ -63,8 +63,8 @@ Work metrics indicate the top-level health of your system by measuring
 its useful output. When considering your work metrics, it’s often
 helpful to break them down into four subtypes:
 
-Work metricsは、
-Work metoricsを検討する際は、メトリクスを次の4つのサブタイプに分類すると検討をしやすいです。
+Work metricsは、運用しているシステム上で動作しているサービスのパフーマンスを表しています。
+Work metoricsを検討する際は、メトリクスを次の4つのサブタイプに分類すると検討がしやすくなります:
 
 > -   **throughput** is the amount of work the system is doing per
     unit time. Throughput is usually recorded as an absolute number.
@@ -82,91 +82,150 @@ Work metoricsを検討する際は、メトリクスを次の4つのサブタイ
     be expressed as an average or as a percentile, such as “99% of
     requests returned within 0.1s”.
 
--   **throughput**
--   **success**
--   **error**
--   **performance**
-
+- **throughput** は、システムが一定時間内に処理している仕事量になります。一般的にthuroughputは、絶対値として記録されています。
+- **success** メトリクスは、正しく実行された仕事の割合(パーセンテージ）を表します。
+- **error** メトリックは、誤った結果の数を表します。通常は、単位時間当たりのエラー発生率として表現されるか、throughputを使って正規化しエラー数/仕事量で表現します。エラーの発生源の幾つかは、深刻であったり、アクションが起こしやすかったりすます。従って、エラーの発生源が複数る場合、errorメトリクスはsuccessメトリクスとは別に収集されることが多いです。
+- **performance** メトリクスは、コンポーネントがどれくらい効率的に動作しているかを定量化しています。最も一般的なperformaceメトリックは、一単位の仕事を終了する必要な時間であるレイテンシです。レイテンシは、次の様に平均値やパーセンテージで表現することができます。"99%のリクエストは0.1秒以内に応答した。"
 
 > Below are example work metrics of all four subtypes for two common kinds
 of systems: a web server and a data store.
 
 以下は、webサーバとデータストーレジという一般的なシステム部品についてwork metricsの4サブタイプを検討した例です。
 
-**Example work metrics: Web server (at time 2015-04-24 08:13:01 UTC)**
+> **Example work metrics: Web server (at time 2015-04-24 08:13:01 UTC)**
 
-| **Subtype** | **Description**                                              | **Value** |
+> | **Subtype** | **Description**                                              | **Value** |
+> |-------------|--------------------------------------------------------------|-----------|
+> | throughput  |  requests per second                                         | 312       |
+> | success     |  percentage of responses that are 2xx since last measurement | 99.1      |
+> | error       |  percentage of responses that are 5xx since last measurement | 0.1       |
+> | latency     |  90th percentile response time in seconds                    | 0.4       |
+
+**[例] work metrics: Web server (at time 2015-04-24 08:13:01 UTC)**
+
+| **サブタイプ** | **説明**                                             　　　 | **値** |
 |-------------|--------------------------------------------------------------|-----------|
-| throughput  |  requests per second                                         | 312       |
-| success     |  percentage of responses that are 2xx since last measurement | 99.1      |
-| error       |  percentage of responses that are 5xx since last measurement | 0.1       |
-| latency     |  90th percentile response time in seconds                    | 0.4       |
+| throughput  |  リクエスト数 / 秒                         　　                 | 312       |
+| success     |  前回の計測時からの、結果コード2xxのレスポンスのパーセンテージ　　　　　　| 99.1      |
+| error       |  前回の計測時からの、結果コード5xxのレスポンスのパーセンテージ　        | 0.1       |
+| latency     |  レスポンス時間で90パーセンタイルに位置する時間　                   | 0.4       |
 
-**Example work metrics: Data store (at time 2015-04-24 08:13:01 UTC)**
+> **Example work metrics: Data store (at time 2015-04-24 08:13:01 UTC)**
 
-| **Subtype** | **Description**                                                    | **Value** |
-|-------------|--------------------------------------------------------------------|-----------|
-| throughput  | queries per second                                                 | 949       |
-| success     | percentage of queries successfully executed since last measurement | 100       |
-| error       | percentage of queries yielding exceptions since last measurement   | 0         |
-| error       | percentage of queries returning stale data since last measurement  | 4.2       |
-| latency     | 90th percentile query time in seconds                              | 0.02      |
+> | **Subtype** | **Description**                                                    | **Value** |
+> |-------------|--------------------------------------------------------------------|-----------|
+> | throughput  | queries per second                                                 | 949       |
+> | success     | percentage of queries successfully executed since last measurement | 100       |
+> | error       | percentage of queries yielding exceptions since last measurement   | 0         |
+> | error       | percentage of queries returning stale data since last measurement  | 4.2       |
+> | latency     | 90th percentile query time in seconds                              | 0.02      |
+
+**[例] work metrics: Data store (at time 2015-04-24 08:13:01 UTC)**
+
+| **サブタイプ** | **説明**                                                    | **値** |
+|-------------|--------------------------------------------------------------|-----------|
+| throughput  | リクエスト数 / 秒                                           　  | 949       |
+| success     | 前回の計測時からの、成功したクエリーコールのパーセンテージ　　　　　　　 | 100       |
+| error       | 前回の計測時からの、エクセプションを返したクエリーのパーセンテージ　　 | 0         |
+| error       | 前回の計測時からの、古いデータを返したクエリーのパーセンテージ　  　　　| 4.2       |
+| latency     | クエリー時間で90パーセンタイルに位置する時間                        | 0.02      |
+
 
 #### Resource metrics
 
-Most components of your software infrastructure serve as a resource to
-other systems. Some resources are low-level—for instance, a server’s
-resources include such physical components as CPU, memory, disks, and
-network interfaces. But a higher-level component, such as a database or
-a geolocation microservice, can also be considered a resource if another
-system requires that component to produce work.
+> Most components of your software infrastructure serve as a resource to
+> other systems. Some resources are low-level—for instance, a server’s
+> resources include such physical components as CPU, memory, disks, and
+> network interfaces. But a higher-level component, such as a database or
+> a geolocation microservice, can also be considered
+> a resource if another system requires that component to produce work.
 
-Resource metrics are especially valuable for investigation and diagnosis
-of problems. For each resource in your system, try to collect metrics
-that cover four key areas:
+ソフトウェアインフラの構成部品のほとんどは、他のシステムのリソースとして機能しています。リソースの一部は、低レベルコンポーネントです。インスタンスの基礎の部分にあたる物理コンポーネントのリソースとしてCPU、メモリ、ディスク、ネットワークインターフェイスなどが該当します。その反対に、高レベルコンポーネントがリソースとして考えられることもあります。データベースや、ジオローケーションのマイクロサービスの結果の結果を基に、運用しているシステムが結果を計算しているなら、高レベルのリソースに該当します。
 
-1.  **utilization** is the percentage of time that the resource is busy,
-    or the percentage of the resource’s capacity that is in use.
-2.  **saturation** is a measure of the amount of requested work that the
-    resource cannot yet service, often queued.
-3.  **errors** represent internal errors that may not be observable in
-    the work the resource produces.
-4.  **availability** represents the percentage of time that the resource
-    responded to requests. This metric is only well-defined for
-    resources that can be actively and regularly checked
-    for availability.
+> Resource metrics are especially valuable for investigation and diagnosis
+> of problems. For each resource in your system, try to collect metrics
+> that cover four key areas:
 
-Here are example metrics for a handful of common resource types:
+リソースメトリクスは、問題の調査や診断に特に価値があります。システム内の各リソースについて、次の４つの主要分野をカバーできるようにメトリクスを収集できる様にします:
 
-| **Resource** | **Utilization**                                       | **Saturation**       | **Errors**                                   | **Availability**             |
+> 1.  **utilization** is the percentage of time that the resource is busy,
+>      or the percentage of the resource’s capacity that is in use.
+> 2.  **saturation** is a measure of the amount of requested work that the
+>     resource cannot yet service, often queued.
+> 3.  **errors** represent internal errors that may not be observable in
+>     the work that the resource produces.
+> 4.  **availability** represents the percentage of time that the resource
+>    responded to requests. This metric is only well-defined for
+>    resources that can be actively and regularly checked
+>    for availability.
+
+1. **utilization** は、リソースがビジーな時間のパーセンテージ、または、使用中のリソースの容量のパーセンテージです。
+2. **saturation** は、キュー待ちの状態など、処理を待っているリクエスト仕事の量を表します。
+3. **errors** は、リソースが生成する仕事で観察不能かもしれない内部エラーを表します。
+4. **availability** は、リソースがリクエストに応答した時間のパーセンテージを表します。このメトリクスは、リソースのavailabilityについて積極的かつ定期的にチェックを実施していいる場合についてのみ明確に定義できます。
+
+> Here are example metrics for a handful of common resource types:
+
+以下は、一般的なリソース·タイプのメトリクスの例です:
+
+> | **Resource** | **Utilization**                                       | **Saturation**       | **Errors**                                   | **Availability**             |
+> |--------------|-------------------------------------------------------|----------------------|----------------------------------------------|------------------------------|
+> | Disk IO      | % time that device was busy                           | wait queue length    | \# device errors                             | % time writable              |
+> | Memory       | % of total memory capacity in use                     | swap usage           | N/A (not usually observable)                 | N/A                          |
+> | Microservice | average % time each request-servicing thread was busy | \# enqueued requests | \# internal errors such as caught exceptions | % time service is reachable  |
+> | Database     | average % time each connection was busy               | \# enqueued queries  | \# internal errors, e.g. replication errors  | % time database is reachable |
+
+
+| **リソース** | **Utilization**                                       | **Saturation**       | **Errors**                                   | **Availability**             |
 |--------------|-------------------------------------------------------|----------------------|----------------------------------------------|------------------------------|
-| Disk IO      | % time that device was busy                           | wait queue length    | \# device errors                             | % time writable              |
+| Disk IO      | % time that device was busy                           | キュー待ちリストの長さ    | \# device errors                             | % time writable              |
 | Memory       | % of total memory capacity in use                     | swap usage           | N/A (not usually observable)                 | N/A                          |
 | Microservice | average % time each request-servicing thread was busy | \# enqueued requests | \# internal errors such as caught exceptions | % time service is reachable  |
 | Database     | average % time each connection was busy               | \# enqueued queries  | \# internal errors, e.g. replication errors  | % time database is reachable |
 
+
 ### Other metrics
 
-There are a few other types of metrics that are neither work nor
-resource metrics, but that nonetheless may come in handy in diagnosing
-causes of problems. Common examples include counts of cache hits or
-database locks. When in doubt, capture the data.
+> There are a few other types of metrics that are neither work nor
+> resource metrics, but that nonetheless may come in handy in diagnosing
+> causes of problems. Common examples include counts of cache hits or
+> database locks. When in doubt, capture the data.
+
+workメトリクスにもリソースメトリクスにも属さない別のタイプのメトリクスがあります。
+これらの別のタイプのメトリクスは、問題の原因を診断する際に非常に重宝することがあります。
+キャッシュヒット数またはデータベース·ロック数などが、代表的な例です。
+何か疑問に思うことがあるときは、このタイプのデータを取っておくと良いでしょう。
 
 ### Events
 
-In addition to metrics, which are collected more or less continuously,
-some monitoring systems can also capture events: discrete, infrequent
-occurrences that can provide crucial context for understanding what
-changed in your system’s behavior. Some examples:
+> In addition to metrics, which are collected more or less continuously,
+> some monitoring systems can also capture events: discrete, infrequent
+> occurrences that can provide crucial context for understanding what
+> changed in your system’s behavior.
 
--   Changes: Internal code releases, builds, and build failures
--   Alerts: Internally generated alerts or third-party notifications
--   Scaling events: Adding or subtracting hosts
+> Some examples:
 
-An event usually carries enough information that it can be interpreted
-on its own, unlike a single metric data point, which is generally only
-meaningful in context. Events capture *what happened*, at a point in
-*time*, with optional *additional information*. For example:
+メトリクスに加え、監視システムはイベント情報を収取していることがあるでしょう。
+イベント情報は、メトリクスよりは非連続的に収集されていることが多いでしょう。
+イベント情報は、システムの振る舞いの変化の原因を理解するための、個別のめったに起こらない重要なコンテキスト情報を提供します。
+
+以下が例です:
+
+> - Changes: Internal code releases, builds, and build failures
+> - Alerts: Internally generated alerts or third-party notifications
+> - Scaling events: Adding or subtracting hosts
+
+- **Changes** : 内部で実施したコードリリース、ビルドの実施およびビルドの失敗
+- **Alerts** : 内部で派生または生成したアラートや第三者から受け取った通知
+- **Scaling events** : ホストの追加や削除
+
+> An event usually carries enough information that it can be interpreted
+> on its own, unlike a single metric data point, which is generally only
+> meaningful in context. Events capture *what happened*, at a point in
+> *time*, with optional *additional information*. For example:
+
+イベントは、通常、それが一般的文脈でのみ意味があり、単一のメトリック·データ·ポイントとは異なり、独自に解釈することができるように十分な情報を運びます。イベントは、オプションの追加情報で、ある時点で、何が起こったのかキャプチャします。例えば：
+
 
 | **What happened**                     | **Time**                | **Additional information** |
 |---------------------------------------|-------------------------|----------------------------|
@@ -174,18 +233,59 @@ meaningful in context. Events capture *what happened*, at a point in
 | Pull request 1630 merged              | 2015–05–19 14:22:20 UTC | Commits: ea720d6           |
 | Nightly data rollup failed            | 2015–05–27 00:03:18 UTC | Link to logs of failed job |
 
-Events are sometimes used used to generate alerts—someone should be
-notified of events such as the third example in the table above, which
-indicates that critical work has failed. But more often they are used to
-investigate issues and correlate across systems. In general, think of
-events like metrics—they are valuable data to be collected wherever it
-is feasible.
+> Events are sometimes used used to generate alerts—someone should be
+> notified of events such as the third example in the table above, which
+> indicates that critical work has failed. But more often they are used to
+> investigate issues and correlate across systems. In general, think of
+> events like metrics—they are valuable data to be collected wherever it
+> is feasible.
+
+イベントが時々発生するために使用使用されたアラートを、誰かがあるべきです
+このような、上記の表の第三の例のようにイベントを通知します
+重要な作業が失敗したことを示します。しかし、より多くの場合、彼らがために使用されています
+問題を調査し、システム間で相関します。一般的に、考えます
+のようなイベントのメトリックは、彼らがどこにそれを収集することができるための貴重なデータであり、
+可能です。
+
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_3.png)
 
 ### What good data looks like
 
+> The data you collect should have four characteristics:
+
 The data you collect should have four characteristics:
+
+> -   **Well-understood.** You should be able to quickly determine how
+>    each metric or event was captured and what it represents. During an
+>    outage you won’t want to spend time figuring out what your
+>    data means. Keep your metrics and events as simple as possible, use
+>    standard concepts described above, and name them clearly.
+>-   **Granular.** If you collect metrics too infrequently or average
+>    values over long windows of time, you may lose important information
+>    about system behavior. For example, periods of 100% resource
+>    utilization will be obscured if they are averaged with periods of
+>    lower utilization. Collect metrics for each system at a frequency
+>    that will not conceal problems, without collecting so often that
+>    monitoring becomes perceptibly taxing on the system (the [observer
+>    effect](https://en.wikipedia.org/wiki/Observer_effect_(information_technology)))
+>    or creates noise in your monitoring data by sampling time intervals
+>    that are too short to contain meaningful data.
+>-   **Tagged by scope.** Each of your hosts operates simultaneously in
+>    multiple scopes, and you may want to check on the aggregate health
+>    of any of these scopes, or their combinations. For example: how is
+>    production doing in aggregate? How about production in the Northeast
+>    U.S.? How about a particular software/hardware combination? It is
+>    important to retain the multiple scopes associated with your data so
+>    that you can alert on problems from any scope, and quickly
+>    investigate outages without being limited by a fixed hierarchy
+>    of hosts.
+>-   **Long-lived.** If you discard data too soon, or if after a period
+>    of time your monitoring system aggregates your metrics to reduce
+>    storage costs, then you lose important information about what
+>    happened in the past. Retaining your raw data for a year or more
+>    makes it much easier to know what “normal” is, especially if your
+>    metrics have monthly, seasonal, or annual variations.
 
 -   **Well-understood.** You should be able to quickly determine how
     each metric or event was captured and what it represents. During an
@@ -218,18 +318,21 @@ The data you collect should have four characteristics:
     makes it much easier to know what “normal” is, especially if your
     metrics have monthly, seasonal, or annual variations.
 
+
 ### Data for alerts and diagnostics
 
-The table below maps the different data types described in this article
-to different levels of alerting urgency outlined [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/). In
-short, a *record* is a low-urgency alert that does not notify anyone
-automatically but is recorded in a monitoring system in case it becomes
-useful for later analysis or investigation. A *notification* is a
-moderate-urgency alert that notifies someone who can fix the problem in
-a non-interrupting way such as email or chat. A *page* is an urgent
-alert that interrupts a recipient’s work, sleep, or personal time,
-whatever the hour. Note that depending on severity, a notification may
-be more appropriate than a page, or vice versa:
+> The table below maps the different data types described in this article
+> to different levels of alerting urgency outlined [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/). In
+> short, a *record* is a low-urgency alert that does not notify anyone
+> automatically but is recorded in a monitoring system in case it becomes
+> useful for later analysis or investigation. A *notification* is a
+> moderate-urgency alert that notifies someone who can fix the problem in
+> a non-interrupting way such as email or chat. A *page* is an urgent
+> alert that interrupts a recipient’s work, sleep, or personal time,
+> whatever the hour. Note that depending on severity, a notification may
+> be more appropriate than a page, or vice versa:
+
+以下の表は、コンパニオンの記事で概説した緊急性を警告する別のレベルにこの資料に記載されているさまざまなデータ型をマップします。要するに、記録は自動的に誰にも通知されませんが、それは後の分析または調査のために有用となる場合には、監視システムに記録されている低緊急アラートです。通知は、電子メールやチャットなどの非中断の方法で問題を修正することができ、誰かに通知する中程度の緊急アラートです。ページには、受信者の仕事、睡眠、または個人的な時間、どのような時間を中断し、緊急アラートです。重症度によっては、通知がページ、あるいはその逆よりも適切であるかもしれないことに注意してください。
 
 | **Data**                      | **Alert**    | **Trigger**                                                                         |
 |-------------------------------|--------------|-------------------------------------------------------------------------------------|
@@ -243,8 +346,18 @@ be more appropriate than a page, or vice versa:
 | Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |
 | Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |  
 
-Conclusion: Collect ’em all
----------------------------
+## Conclusion: Collect ’em all
+
+> -   Instrument everything and collect as many work metrics, resource
+>     metrics, and events as you reasonably can.
+> -   Collect metrics with sufficient granularity to make important spikes
+>     and dips visible. The specific granularity depends on the system you
+>     are measuring, the cost of measuring and a typical duration between
+>     changes in metrics—seconds for memory or CPU metrics, minutes for
+>     energy consumption, and so on.
+> -   To maximize the value of your data, tag metrics and events with
+>     several scopes, and retain them at full granularity for at least
+>     a year.
 
 -   Instrument everything and collect as many work metrics, resource
     metrics, and events as you reasonably can.
@@ -257,8 +370,10 @@ Conclusion: Collect ’em all
     several scopes, and retain them at full granularity for at least
     a year.
 
-We would like to hear about your experiences as you apply this framework
-to your own monitoring practice. If it is working well, please [let us
-know on Twitter](https://twitter.com/datadoghq)! Questions, corrections,
-additions, complaints, etc? Please [let us know on
-GitHub](https://github.com/DataDog/the-monitor).
+> We would like to hear about your experiences as you apply this framework
+> to your own monitoring practice. If it is working well, please [let us
+> know on Twitter](https://twitter.com/datadoghq)! Questions, corrections,
+> additions, complaints, etc? Please [let us know on
+> GitHub](https://github.com/DataDog/the-monitor).
+
+私たちは、あなたがあなた自身の監視実際にこのフレームワークを適用するように、あなたの経験について聞きたいです。それがうまく機能している場合は、私たちがTwitterで知らせてください！ご質問、訂正、追加、苦情など？私たちは、GitHubの上お知らせください。
