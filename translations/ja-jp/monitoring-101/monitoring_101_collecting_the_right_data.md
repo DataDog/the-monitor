@@ -21,11 +21,11 @@ collect, and how to classify that data so that you can:
 > useful data you reasonably can.
 
 > This series of articles comes out of our experience monitoring
-large-scale infrastructure for [our
-customers](https://www.datadoghq.com/customers/). It also draws on the
-work of [Brendan Gregg](http://dtdg.co/use-method), [Rob
-Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron
-Schwartz](http://dtdg.co/metrics-attention).
+> large-scale infrastructure for [our
+> customers](https://www.datadoghq.com/customers/). It also draws on the
+> work of [Brendan Gregg](http://dtdg.co/use-method), [Rob
+> Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron
+> Schwartz](http://dtdg.co/metrics-attention).
 
 監視データは色々なところから送られていきます。あるシステムは、監視データを連続して送信し続けます。別の監視システムでは、特定のイベントが発生したときのみデータを送信します。あるデータは、問題を特定するのに非常に役に立ちます。又あるデータは、問題の調査過程で意味を持つものもあります。このポストでは、次の項目を実現するために、どのデータを収集し、分類するかを説明していきます。
 
@@ -45,13 +45,13 @@ Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています
 ### Metrics
 
 > Metrics capture a value pertaining to your systems *at a specific point
-in time* — for example, the number of users currently logged in to a web
-application. Therefore, metrics are usually collected once per second,
-one per minute, or at another regular interval to monitor a system over
-time. There are two important categories of metrics in our framework:
-work metrics and resource metrics. For each system that is part of your
-software infrastructure, consider which work metrics and resource
-metrics are reasonably available, and collect them all.
+> in time* — for example, the number of users currently logged in to a web
+> application. Therefore, metrics are usually collected once per second,
+> one per minute, or at another regular interval to monitor a system over
+> time. There are two important categories of metrics in our framework:
+> work metrics and resource metrics. For each system that is part of your
+> software infrastructure, consider which work metrics and resource
+> metrics are reasonably available, and collect them all.
 
 メトリクスは、そのシステムが *ある時点で* 持っている価値を数値化します。(例えば、webのアプリケーションに現在ログインしているユーザー数)　従って、メトリックは、通常1秒に1回や1分間に1回、又は他の定期的な間隔で収集されます。私たちのメトリクスの捉え方には、2つの重要なカテゴリーがあります。それらは、**work metrics** と **resource metorics** です。あなたのソフトウェアインフラを構成している各システムで、どのような **work metrics** と **resource metorics** が無理をしない範囲で収集を検討し、全てを収集するようにします。
 
@@ -88,7 +88,7 @@ Work metoricsを検討する際は、メトリクスを次の4つのサブタイ
 - **performance** メトリクスは、コンポーネントがどれくらい効率的に動作しているかを定量化しています。最も一般的なperformaceメトリックは、一単位の仕事を終了する必要な時間であるレイテンシです。レイテンシは、次の様に平均値やパーセンテージで表現することができます。"99%のリクエストは0.1秒以内に応答した。"
 
 > Below are example work metrics of all four subtypes for two common kinds
-of systems: a web server and a data store.
+> of systems: a web server and a data store.
 
 以下は、webサーバとデータストーレジという一般的なシステム部品についてwork metricsの4サブタイプを検討した例です。
 
@@ -223,29 +223,30 @@ workメトリクスにもリソースメトリクスにも属さない別のタ�
 > meaningful in context. Events capture *what happened*, at a point in
 > *time*, with optional *additional information*. For example:
 
-イベントは、通常、それが一般的文脈でのみ意味があり、単一のメトリック·データ·ポイントとは異なり、独自に解釈することができるように十分な情報を運びます。イベントは、オプションの追加情報で、ある時点で、何が起こったのかキャプチャします。例えば：
+文脈的に把握するメトリクスのデータポイントと異なり、イベント情報は、通常独自に解釈するのに十分な情報を内包しています。イベント情報は、*どの時点* で *何が起きた* のかを、*付随情報*　と共に記録しています。
 
+例えば:
 
-| **What happened**                     | **Time**                | **Additional information** |
+> | **What happened**                     | **Time**                | **Additional information** |
+> |---------------------------------------|-------------------------|----------------------------|
+> | Hotfix f464bfe released to production | 2015–05–15 04:13:25 UTC | Time elapsed: 1.2 seconds  |
+> | Pull request 1630 merged              | 2015–05–19 14:22:20 UTC | Commits: ea720d6           |
+> | Nightly data rollup failed            | 2015–05–27 00:03:18 UTC | Link to logs of failed job |
+
+| **何が起きたのか**                     | **時間**                | **付随情報** |
 |---------------------------------------|-------------------------|----------------------------|
 | Hotfix f464bfe released to production | 2015–05–15 04:13:25 UTC | Time elapsed: 1.2 seconds  |
 | Pull request 1630 merged              | 2015–05–19 14:22:20 UTC | Commits: ea720d6           |
 | Nightly data rollup failed            | 2015–05–27 00:03:18 UTC | Link to logs of failed job |
 
-> Events are sometimes used used to generate alerts—someone should be
+> Events are sometimes used to generate alerts—someone should be
 > notified of events such as the third example in the table above, which
 > indicates that critical work has failed. But more often they are used to
 > investigate issues and correlate across systems. In general, think of
 > events like metrics—they are valuable data to be collected wherever it
 > is feasible.
 
-イベントが時々発生するために使用使用されたアラートを、誰かがあるべきです
-このような、上記の表の第三の例のようにイベントを通知します
-重要な作業が失敗したことを示します。しかし、より多くの場合、彼らがために使用されています
-問題を調査し、システム間で相関します。一般的に、考えます
-のようなイベントのメトリックは、彼らがどこにそれを収集することができるための貴重なデータであり、
-可能です。
-
+折につけイベント情報は、アラートを発生させるために使われることがあります。上の表の第三の例のように危機的な状況を起こし得ない作業の失敗イベントに関しては、誰かが通知を受けている必要があります。しかし多くのケースでは、障害の原因調査やシステムの他の情報と相互に関連ずけシステムの状態を理解するのに利用します。一般的に、イベント情報もメトリクスと同じように、収集可能な範囲で集めておくべき価値のあるデータと考えておくとよいでしょう。
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_3.png)
 
@@ -253,7 +254,7 @@ workメトリクスにもリソースメトリクスにも属さない別のタ�
 
 > The data you collect should have four characteristics:
 
-The data you collect should have four characteristics:
+収集するデータは、次のような四つ性格を持っている必要があります:
 
 > -   **Well-understood.** You should be able to quickly determine how
 >    each metric or event was captured and what it represents. During an
@@ -286,37 +287,23 @@ The data you collect should have four characteristics:
 >    makes it much easier to know what “normal” is, especially if your
 >    metrics have monthly, seasonal, or annual variations.
 
--   **Well-understood.** You should be able to quickly determine how
-    each metric or event was captured and what it represents. During an
-    outage you won’t want to spend time figuring out what your
-    data means. Keep your metrics and events as simple as possible, use
-    standard concepts described above, and name them clearly.
--   **Granular.** If you collect metrics too infrequently or average
-    values over long windows of time, you may lose important information
-    about system behavior. For example, periods of 100% resource
-    utilization will be obscured if they are averaged with periods of
-    lower utilization. Collect metrics for each system at a frequency
-    that will not conceal problems, without collecting so often that
-    monitoring becomes perceptibly taxing on the system (the [observer
-    effect](https://en.wikipedia.org/wiki/Observer_effect_(information_technology)))
-    or creates noise in your monitoring data by sampling time intervals
-    that are too short to contain meaningful data.
--   **Tagged by scope.** Each of your hosts operates simultaneously in
-    multiple scopes, and you may want to check on the aggregate health
-    of any of these scopes, or their combinations. For example: how is
-    production doing in aggregate? How about production in the Northeast
-    U.S.? How about a particular software/hardware combination? It is
-    important to retain the multiple scopes associated with your data so
-    that you can alert on problems from any scope, and quickly
-    investigate outages without being limited by a fixed hierarchy
-    of hosts.
--   **Long-lived.** If you discard data too soon, or if after a period
-    of time your monitoring system aggregates your metrics to reduce
-    storage costs, then you lose important information about what
-    happened in the past. Retaining your raw data for a year or more
-    makes it much easier to know what “normal” is, especially if your
-    metrics have monthly, seasonal, or annual variations.
+- **Well-understood(よく理解されている)**　メトリクスを取集している者が、各イベントやイベントが、何を表現し、どのように記録されているかを瞬時に見極めることができる必要があります。障害が発生している状態では、それぞれのデータがどのような意味を持っているかを考え出すのに費やす時間はありません。上で紹介したコンセプトに基づき、収集しているメトリクスとイベントを、できる限り簡単にし、分かりやすい名前をつけるようにします。
+- **Granular(細かい情報収集間隔)**
 
+If you collect metrics too infrequently or average
+values over long windows of time, you may lose important information
+about system behavior. For example, periods of 100% resource
+utilization will be obscured if they are averaged with periods of
+lower utilization. Collect metrics for each system at a frequency
+that will not conceal problems, without collecting so often that
+monitoring becomes perceptibly taxing on the system (the [observer
+effect](https://en.wikipedia.org/wiki/Observer_effect_(information_technology)))
+or creates noise in your monitoring data by sampling time intervals
+that are too short to contain meaningful data.
+
+あなたが時間の長い窓の上にあまりにもまれにメトリックまたは平均値を収集する場合は、システムの動作に関する重要な情報が失われることがあります。それらは低い利用期間で平均化されている場合、例えば、100％のリソース使用率の期間が隠されます。そう頻繁にその監視が知覚システム（観察者効果）に課税）、または意味のある含むには短すぎる時間間隔をサンプリングして、あなたの監視データのノイズを作成してしまう収集せず、問題を隠しません周波数における各システムのメトリックを収集しますデータ。
+- **Tagged by scope(スコープに基づいたタグ付け)** 範囲によってタグ付けされています。あなたのホストのそれぞれが複数のスコープで同時に動作し、あなたが集計これらのスコープのいずれかの状態、またはそれらの組み合わせを確認することができます。例：どのように生産が集約にしているのですか？どのように北東米国での生産はどうですか？どのように特定のソフトウェア/ハードウェアの組み合わせは？あなたは、任意の範囲から問題に警告し、かつ迅速にホストの固定階層に制限されることなく停止を調べることができるように、それはあなたのデータに関連する複数のスコープを保持することが重要です。
+- **Long-lived(長い保存期間)** 長寿命。あなたもすぐにデータを破棄した場合、またはお使いの監視システムは、ストレージコストを削減するためにあなたのメトリックを集計し、一定期間後に、あなたは過去に何が起こったかについての重要な情報が失われた場合。年以上のためにあなたの生のデータを保持することは、はるかに簡単にあなたのメトリックは、毎月、季節、または年間のバリエーションを持っている場合は特に、である「通常の」何を知ることができます。
 
 ### Data for alerts and diagnostics
 
@@ -358,16 +345,9 @@ The data you collect should have four characteristics:
 >     several scopes, and retain them at full granularity for at least
 >     a year.
 
--   Instrument everything and collect as many work metrics, resource
-    metrics, and events as you reasonably can.
--   Collect metrics with sufficient granularity to make important spikes
-    and dips visible. The specific granularity depends on the system you
-    are measuring, the cost of measuring and a typical duration between
-    changes in metrics—seconds for memory or CPU metrics, minutes for
-    energy consumption, and so on.
--   To maximize the value of your data, tag metrics and events with
-    several scopes, and retain them at full granularity for at least
-    a year.
+- 機器のすべてとのような多くの作業メトリック、リソース測定基準、イベント、あなたが合理的にできる限りを収集します。
+- 十分な粒度でメトリックを収集するには、重要なスパイクを行い、可視ディップします。特定の粒度は、あなたが測定しているシステムに依存し、測定のコストおよびメモリやCPUメトリクス、というようにエネルギー消費のための分、のメトリック秒の変化との間の典型的な期間。
+- いくつかのスコープを使用して、データ、タグ·メトリックとイベントの価値を最大化し、少なくとも1年間は完全な粒度でそれらを保持します。
 
 > We would like to hear about your experiences as you apply this framework
 > to your own monitoring practice. If it is working well, please [let us
