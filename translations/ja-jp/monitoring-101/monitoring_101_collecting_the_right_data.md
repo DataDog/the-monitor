@@ -83,8 +83,11 @@ Work metoricsを検討する際は、メトリクスを次の4つのサブタイ
     requests returned within 0.1s”.
 
 -   **throughput**
+
 -   **success**
+
 -   **error**
+
 -   **performance**
 
 
