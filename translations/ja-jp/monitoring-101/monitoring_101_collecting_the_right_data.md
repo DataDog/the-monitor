@@ -287,6 +287,7 @@ workメトリクスにもリソースメトリクスにも属さない別のタ�
 >    makes it much easier to know what “normal” is, especially if your
 >    metrics have monthly, seasonal, or annual variations.
 
+
 - **Well-understood(よく理解されている)**　メトリクスを取集している者が、各イベントやイベントが、何を表現し、どのように記録されているかを瞬時に見極めることができる必要があります。障害が発生している状態では、それぞれのデータがどのような意味を持っているかを考え出すのに費やす時間はありません。上で紹介したコンセプトに基づき、収集しているメトリクスとイベントを、できる限り簡単にし、分かりやすい名前をつけるようにします。
 - **Granular(細かい情報収集間隔)**
 
