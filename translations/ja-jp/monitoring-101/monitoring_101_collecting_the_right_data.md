@@ -287,24 +287,11 @@ workメトリクスにもリソースメトリクスにも属さない別のタ�
 >    makes it much easier to know what “normal” is, especially if your
 >    metrics have monthly, seasonal, or annual variations.
 
-
 - **Well-understood(よく理解されている)**　メトリクスを取集している者が、各イベントやイベントが、何を表現し、どのように記録されているかを瞬時に見極めることができる必要があります。障害が発生している状態では、それぞれのデータがどのような意味を持っているかを考え出すのに費やす時間はありません。上で紹介したコンセプトに基づき、収集しているメトリクスとイベントを、できる限り簡単にし、分かりやすい名前をつけるようにします。
-- **Granular(細かい情報収集間隔)**
-
-If you collect metrics too infrequently or average
-values over long windows of time, you may lose important information
-about system behavior. For example, periods of 100% resource
-utilization will be obscured if they are averaged with periods of
-lower utilization. Collect metrics for each system at a frequency
-that will not conceal problems, without collecting so often that
-monitoring becomes perceptibly taxing on the system (the [observer
-effect](https://en.wikipedia.org/wiki/Observer_effect_(information_technology)))
-or creates noise in your monitoring data by sampling time intervals
-that are too short to contain meaningful data.
-
-あなたが時間の長い窓の上にあまりにもまれにメトリックまたは平均値を収集する場合は、システムの動作に関する重要な情報が失われることがあります。それらは低い利用期間で平均化されている場合、例えば、100％のリソース使用率の期間が隠されます。そう頻繁にその監視が知覚システム（観察者効果）に課税）、または意味のある含むには短すぎる時間間隔をサンプリングして、あなたの監視データのノイズを作成してしまう収集せず、問題を隠しません周波数における各システムのメトリックを収集しますデータ。
-- **Tagged by scope(スコープに基づいたタグ付け)** 範囲によってタグ付けされています。あなたのホストのそれぞれが複数のスコープで同時に動作し、あなたが集計これらのスコープのいずれかの状態、またはそれらの組み合わせを確認することができます。例：どのように生産が集約にしているのですか？どのように北東米国での生産はどうですか？どのように特定のソフトウェア/ハードウェアの組み合わせは？あなたは、任意の範囲から問題に警告し、かつ迅速にホストの固定階層に制限されることなく停止を調べることができるように、それはあなたのデータに関連する複数のスコープを保持することが重要です。
-- **Long-lived(長い保存期間)** 長寿命。あなたもすぐにデータを破棄した場合、またはお使いの監視システムは、ストレージコストを削減するためにあなたのメトリックを集計し、一定期間後に、あなたは過去に何が起こったかについての重要な情報が失われた場合。年以上のためにあなたの生のデータを保持することは、はるかに簡単にあなたのメトリックは、毎月、季節、または年間のバリエーションを持っている場合は特に、である「通常の」何を知ることができます。
+- **Granular(適切な情報収集間隔)** 開きすぎた間隔でメトリクスを収集していたり、または長時間に渡る変化の平均値を収集していたりする場合は、システムの挙動に関する重要な情報を取り損ねているかもしません。例えば、リソース使用率の低い期間と一緒に平均化されてると、リソースが100%利用されている期間は、はっきりわからない状態になってしまいます。メトリクスの収集は、システムが抱えている問題を見逃さない周期で実行する必要があります。しかしこの周期は、監視負荷の影響をシステムに与えない範囲(the [observer
+effect](https://en.wikipedia.org/wiki/Observer_effect_(information_technology)))で、かつ周期が短くすることによりノイズが増加し、データの本来の意味を損なってしまうことのないようにする必要があります。
+- **Tagged by scope(スコープに基づいたタグ付け)** 各ホストは、異なったスコープを持ちつつ並行して動作しています。そして、どれかのスコープまたは複数のスコープのコンビネーションを基にホストを集約して健康状態を把握したいものです。例えば、ホスト全部で考えた場合、プロダクション環境はどのような状態にあるのか？米国東海岸で考えた場合、どのような状態にあるのか？特定のソフトウェア/ハードウェアの組み合わせはどうなのか？異なる切り口のスコープに基づいた障害にアラートを発生させ、固定階層化されたホスト構造に制限されることなく、供給停止(障害)状態の迅速な対処作業ができる様にするためにも、収集しているデータと複数のスコープの関連性を保つことは、重要です。
+- **Long-lived(長い保存期間)** あまりにも早期にデータを破棄したり、メトリクスの保存コストを削減するために一定期期間経過後にデータポイントを集約する加工をしたりすると、過去の経過として収集して重要な情報を失うことになります。特に、年やシーズンや月でメトリクスが変動する場合では、1年以上の生データを保存しておくことにより、正常範囲を把握することが容易になります。
 
 ### Data for alerts and diagnostics
 
@@ -319,9 +306,24 @@ that are too short to contain meaningful data.
 > whatever the hour. Note that depending on severity, a notification may
 > be more appropriate than a page, or vice versa:
 
-以下の表は、コンパニオンの記事で概説した緊急性を警告する別のレベルにこの資料に記載されているさまざまなデータ型をマップします。要するに、記録は自動的に誰にも通知されませんが、それは後の分析または調査のために有用となる場合には、監視システムに記録されている低緊急アラートです。通知は、電子メールやチャットなどの非中断の方法で問題を修正することができ、誰かに通知する中程度の緊急アラートです。ページには、受信者の仕事、睡眠、または個人的な時間、どのような時間を中断し、緊急アラートです。重症度によっては、通知がページ、あるいはその逆よりも適切であるかもしれないことに注意してください。
+以下の表では、この記事で紹介た各タイプのメトリクスデータとアラートの方法と緊急度合いにマッピングしています。[[関連記事]](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/)
+*record* は、緊急性の低いアラートです。*record* の場合、誰かに自動的に通知されることはないですが、後の解析や障害調査の時のために監視システムに記録されていきます。
+*notification* は、緊急性が中程度のアラートです。*notification* の場合、メールやチャットのような強制的中断を要求しないような方法を使い、問題を解決することができる人材に通知します。
+*page* は、電話やポケベルなどの連絡で、緊急性の高いアラートです。*page* は、通知を受ける人の仕事、睡眠、プイラベートなど時間に関係なく、どのような時間にも割り込んできます。ここで注意しなくてはならないことは、問題の重要度によっては *page* ではなく *notification* を採用する方が的せな場合があるかもしれないということです。(あるいは、その逆もあります。)
 
-| **Data**                      | **Alert**    | **Trigger**                                                                         |
+> | **Data**                      | **Alert**    | **Trigger**                                                                         |
+> |-------------------------------|--------------|-------------------------------------------------------------------------------------|
+> | Work metric: Throughput       | Page         | value is much higher or lower than usual, or there is an anomalous rate of change   |  
+> | Work metric: Success          | Page         | the percentage of work that is successfully processed drops below a threshold       |  
+> | Work metric: Errors           | Page         | the error rate exceeds a threshold                                                  |  
+> | Work metric: Performance      | Page         | work takes too long to complete (e.g., performance violates internal SLA)           |  
+> | Resource metric: Utilization  | Notification | approaching critical resource limit (e.g., free disk space drops below a threshold) |  
+> | Resource metric: Saturation   | Record       | number of waiting processes exceeds a threshold                                     |  
+> | Resource metric: Errors       | Record       | number of errors during a fixed period exceeds a threshold                          |  
+> | Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |
+> | Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |  
+
+| **データ**                      | **アラート方法**    | **切っ掛け**                                                                         |
 |-------------------------------|--------------|-------------------------------------------------------------------------------------|
 | Work metric: Throughput       | Page         | value is much higher or lower than usual, or there is an anomalous rate of change   |  
 | Work metric: Success          | Page         | the percentage of work that is successfully processed drops below a threshold       |  
@@ -331,7 +333,7 @@ that are too short to contain meaningful data.
 | Resource metric: Saturation   | Record       | number of waiting processes exceeds a threshold                                     |  
 | Resource metric: Errors       | Record       | number of errors during a fixed period exceeds a threshold                          |  
 | Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |
-| Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |  
+| Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |
 
 ## Conclusion: Collect ’em all
 
@@ -346,9 +348,10 @@ that are too short to contain meaningful data.
 >     several scopes, and retain them at full granularity for at least
 >     a year.
 
-- 機器のすべてとのような多くの作業メトリック、リソース測定基準、イベント、あなたが合理的にできる限りを収集します。
-- 十分な粒度でメトリックを収集するには、重要なスパイクを行い、可視ディップします。特定の粒度は、あなたが測定しているシステムに依存し、測定のコストおよびメモリやCPUメトリクス、というようにエネルギー消費のための分、のメトリック秒の変化との間の典型的な期間。
-- いくつかのスコープを使用して、データ、タグ·メトリックとイベントの価値を最大化し、少なくとも1年間は完全な粒度でそれらを保持します。
+
+- 各種の手段を施して、合理的にできる限り収集できる全てのworkingメトリクス、resourceメトリクス、イベントを収集する。
+- 気ずく必要があるスパイク(急上昇)やディップ(急降下)が可視化できる程度の十分な粒度でメトリックを収集する。メトリクス収集の粒度は、計測している対象に依存し、計測のコストとメトリクスが変化している時間に関わってきます。例えば、CPUやメモリーなら１秒間隔、エネルキー消費量なら１分間隔というようになります。
+- データを最小限に抑えるために、メトリクスとイベントには、複数のスコープに基づいてタグ付けをしておきます。そして、最低でも１年間は、オリジナルの粒度で保存しておきます。
 
 > We would like to hear about your experiences as you apply this framework
 > to your own monitoring practice. If it is working well, please [let us
@@ -356,4 +359,5 @@ that are too short to contain meaningful data.
 > additions, complaints, etc? Please [let us know on
 > GitHub](https://github.com/DataDog/the-monitor).
 
-私たちは、あなたがあなた自身の監視実際にこのフレームワークを適用するように、あなたの経験について聞きたいです。それがうまく機能している場合は、私たちがTwitterで知らせてください！ご質問、訂正、追加、苦情など？私たちは、GitHubの上お知らせください。
+独自に実践していた監視体制にこのフレームワークで学んだことを取り入れ、新たな監視体制に取り組んだ体験を是非お聞かせください。
+フレームワークを取り入れることによって監視が改善された場合は、Twitterで[@datadoghq](https://twitter.com/datadoghq)付きでつぶやいていただけると幸いです。また、質問、修正、追加、苦情、その他がある場合は、[Github](https://github.com/DataDog/the-monitor)のissueにて連絡してみてください。
