@@ -36,7 +36,7 @@ collect, and how to classify that data so that you can:
 
 > データの収集は、ローコストで実現できます。しかし、必要なデータを持っていない状況での損失は非常に大きい(高価)です。従って全てをうまく調整し、合理的と判断できる範囲で、全ての価値のあるデータを収集する。
 
-このシリーズの内容は、Datadogの[お客様](https://www.datadoghq.com/customers/)の大規模インフラを監視してきた経験を基にし、次に紹介するような人たちのブログ記事　[Brendan Gregg](http://dtdg.co/use-method)、 [Rob
+このシリーズの内容は、Datadogが[お客様](https://www.datadoghq.com/customers/)の大規模インフラを監視してきた経験を基にし、次に紹介するような人たちのブログ記事　[Brendan Gregg](http://dtdg.co/use-method)、 [Rob
 Ewaschuk](http://dtdg.co/philosophy-alerting)、 [Baron
 Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています。
 
