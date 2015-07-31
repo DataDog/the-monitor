@@ -63,17 +63,7 @@ point to areas where attention may be needed in the future. All alerts
 should, at a minimum, be logged to a central location for easy
 correlation with other metrics and events.
 
-Not all alerts carry the same degree of urgency. Some require immediate
-human intervention, some require eventual human intervention, and some
-point to areas where attention may be needed in the future. All alerts
-should, at a minimum, be logged to a central location for easy
-correlation with other metrics and events.
-
-いないすべてのアラートは、緊急の同程度を運びます。一部は即時必要
-人間の介入、いくつかの最終的な人間の介入を必要とし、いくつかの
-注意が将来的に必要となる可能性がある領域をポイントします。すべてのアラート
-、最低でも、簡単にするための中央の場所に記録されるべきです
-他のメトリックとイベントとの相関。
+全てのアラートが同じ緊急度合を求めてはいません。一部のものは即時の人間による介入を必要し、いくつかもものは結果として人間による介入を必要とし、そしていくつかは将来的に気を気張って対応しなくてはならない領域を指摘しています。全てのアラートは、必要最低限で、どこか一箇所の所に記録され、他のメトリクスやイベントと連携できるようになっているべきです。
 
 #### Alerts as records (low severity)
 
@@ -90,17 +80,25 @@ starts returning a large number of timeouts—that alert-based data will
 provide invaluable context for your investigation.
 
 
-Many alerts will not be associated with a service problem, so a human
-may never even need to be aware of them. For instance, when a data store
-that supports a user-facing service starts serving queries much slower
-than usual, but not slow enough to make an appreciable difference in the
-overall service’s response time, that should generate a low-urgency
-alert that is recorded in your monitoring system for future reference or
-investigation but does not interrupt anyone’s work. After all, transient
-issues that could be to blame, such as network congestion, often go away
-on their own. But should a significant issue develop—say, if the service
-starts returning a large number of timeouts—that alert-based data will
-provide invaluable context for your investigation.
+Many alerts will not be associated with a service problem,
+so a human　may never even need to be aware of them.
+
+For instance, when a data store that supports a user-facing service starts serving queries much slower than usual,
+
+but not slow enough to make an appreciable difference in the
+overall service’s response time,
+
+that should generate a low-urgency alert that is recorded in your monitoring system for future reference or investigation but does not interrupt anyone’s work.
+
+After all, transient issues that could be to blame, such as network congestion, often go away
+on their own.
+
+But should a significant issue develop—say, if the service starts returning a large number of timeouts—that alert-based data will provide invaluable context for your investigation.
+
+多くのアラートは、サービスに障害に紐付いています。
+
+
+例えば、データストーレジが
 
 多くのアラートは、サービスの問題に関連するので、人間がされることはありません
 でもそれらを意識する必要がないかもしれません。たとえば、ときに、データストア
