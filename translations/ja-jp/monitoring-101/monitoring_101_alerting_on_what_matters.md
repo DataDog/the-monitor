@@ -28,7 +28,7 @@ scale of the systems involved. In short:
 
 要するに：
 1. 自由にアラートを設定するも、**page** に関しては正当性を十分に検討する!
-2. 原因ではなく、症状を基に **page** をする。
+2. 原因ではなく、兆候を基に **page** をする。
 
 > This series of articles comes out of our experience monitoring
 large-scale infrastructure for [our
@@ -91,21 +91,7 @@ is a perfect way to deliver these alerts—both message types are highly
 visible, but they won’t wake anyone in the middle of the night or
 disrupt an engineer’s flow.
 
-The next tier of alerting urgency is for issues that do require
-intervention, but not right away. Perhaps the data store is running low
-on disk space and should be scaled out in the next several days. Sending
-an email and/or posting a notification in the service owner’s chat room
-is a perfect way to deliver these alerts—both message types are highly
-visible, but they won’t wake anyone in the middle of the night or
-disrupt an engineer’s flow.
-
-緊急性を警告する次の層は必要ない問題のためであります
-介入ではなく、すぐに。おそらく、データ·ストアは、不足しています
-ディスク容量にし、次の数日間にスケールアウトする必要があります。送信
-電子メールおよび/またはサービス所有者のチャットルームでの通知を掲示
-これらの配信に最適な方法であるアラートは、両方のメッセージタイプは非常にあります
-目に見える、彼らは夜中に誰も目を覚ますしませんが、または
-エンジニアの流れを破壊します。
+アラートの次の緊急度レベルは、人間の介入は必要だが、今すぐにその対応が必要ない障害に対するものです。例えばデータストレージが使っているディスクの残量が不足ぎみで、数日以内には追加しなければない場合です。メールを送信するか、サービスオーナーのチャットルームに通知をポストするのは、この種のアラートの最善の届け方です。この2つのメッセージタイプは、視認性は高いのですが、深夜に誰かを叩き起こすことはありませんし、エンジニアの思考を妨げることもありません。
 
 #### Alerts as pages (high severity)
 
@@ -117,34 +103,21 @@ as aggressive as your strictest customer-facing SLA. Any instance of
 response times exceeding your internal SLA would warrant immediate
 attention, whatever the hour.
 
-The most urgent alerts should receive special treatment and be escalated
-to a page (as in “[pager](https://en.wikipedia.org/wiki/Pager)”) to
-urgently request human attention. Response times for your web
-application, for instance, should have an internal SLA that is at least
-as aggressive as your strictest customer-facing SLA. Any instance of
-response times exceeding your internal SLA would warrant immediate
-attention, whatever the hour.
-
-最も緊急アラートは、特別な治療を受けるべきであり、エスカレートします
-（のように"[ページャ]（https://en.wikipedia.org/wiki/Pager）」）のページへへ
-早急に人間の注意を要求します。あなたのWebのための応答時間
-アプリケーション、例えば、少なくともある内部SLAを持つ必要があります
-あなたの最も厳しい顧客向けSLAのように積極的。の任意のインスタンス
-応答時間内部SLAが即時保証だろう超えます
-注意、どんな時間。
-
+最高の緊急性を要するアラートには、特別な扱いが必要で、人間の注目を直ちに引くために[ページ(電話連絡やポケベル連絡の方法)](https://en.wikipedia.org/wiki/Pager)にエスカレーションされる必要があります。例えば、Webアプリケーションのレスポンス時間には、最低でも最も厳しい顧客を念頭に置いたSLA設定するべきです。そして、この内部SLAの基準を超えるようなWebアプリケーションのレスポンス時間には、どのような期間であっても、迅速な対応が必要です。
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_1.png)
 
 ### When to let a sleeping engineer lie
 
-Whenever you consider setting an alert, ask yourself three questions to
+> Whenever you consider setting an alert, ask yourself three questions to
 determine the alert’s level of urgency and how it should be handled:
 
-1.  **Is this issue real?** It may seem obvious, but if the issue is not
+アラートの設定を検討する際には、アラートの緊急性とそれがどのように処理されるべきかを決めるために、次の3つの項目を自分自身に問うてみるとよいでしょう。
+
+> 1.  **Is this issue real?** It may seem obvious, but if the issue is not
     real, it usually should not generate an alert. The examples below
     can trigger alerts but probably are not symptomatic of real
-    problems. Alerting—or, worse, paging—on occurrences such as these
+    problems.  Alerting—or, worse, paging—on occurrences such as these
     contributes to alert fatigue and can cause more serious issues to be
     ignored:
     -   Metrics in a test environment are out of bounds
@@ -154,10 +127,10 @@ determine the alert’s level of urgency and how it should be handled:
     -   Planned upgrades are causing large numbers of machines to report
         as offline
 
-    If the issue is indeed **real**, it should generate an alert. Even
+>    If the issue is indeed **real**, it should generate an alert. Even
     if the alert is not linked to a notification, it should be recorded
     within your monitoring system for later analysis and correlation.
-2.  **Does this issue require attention?** If you can reasonably
+> 2.  **Does this issue require attention?** If you can reasonably
     automate a response to an issue, you should consider doing so. There
     is a very real cost to calling someone away from work, sleep, or
     personal time. If the issue is **real *and* it requires attention**,
@@ -165,7 +138,7 @@ determine the alert’s level of urgency and how it should be handled:
     investigate and fix the problem. At minimum, the notification should
     be sent via email, chat or a ticketing system so that the recipients
     can prioritize their response.
-3.  **Is this issue urgent?** Not all issues are emergencies. For
+> 3.  **Is this issue urgent?** Not all issues are emergencies. For
     example, perhaps a moderately higher than normal percentage of
     system responses have been very slow, or perhaps a slightly elevated
     share of queries are returning stale data. Both issues may need to
@@ -174,11 +147,39 @@ determine the alert’s level of urgency and how it should be handled:
     should take a look immediately. If the symptom is **real *and* it
     requires attention *and* it is urgent**, it should generate a page.
 
+1. **この障害は現実? (Is this issue real?)** 明白に聞こえるかもしれませんが、
+    障害が現実に発生していない場合には、一般的にはアラートを発生させるべきではありません。
+    以下の例では、アラートを発生させることはできますが、おそらく実際の実際の障害の
+    兆候ではないでしょう。このようなケースで、アラートをしたり、最悪のケースでページすることは、
+    アラートに慣れてしまう原因にな、より深刻な無視という問題を引き起こします。
+  - テスト環境のメトリクスが規定値を超えた場合。
+  - ある1台のサーバーは非常にゆっくりと処理をしてるが、それ以外は高速に処理ができている
+    クラスターに含まれている場合。他のサーバーにフェールオーバーしている場合や再起動を繰り返している場合。
+  - 計画的な更新により、大量のサーバーが停止の通知をしてきた場合。
+
+これらの障害が **事実** なら、アラートを発生させる必要はあるでしょう。アラートが通知にリンクされていないとしても、
+これらは後の分析と連携のために監視システム内に記録しておくべです。
+2. **この障害には誰かの介入が必要? (Does this issue require attention?)**
+    合理的に可能であれば、障害に対する対応を自動化することもできます。そして、
+    実際は自動化することを検討するべきでしょう。誰かを仕事や睡眠やプライベート時間
+    から呼び出すことは、現実のコストを要する行為です。もしも、起きている障害が
+    **現実の障害で、人間の介入が必要** なら、障害を調査し修正を施せる人材に対し、
+    アラートを発生させ、通知する必要があるでしょう。その通知は、受信する人が
+    優先順位を決められるように、最低でもメール、チャット、チケットシステムにより
+    送信される必要があるでしょう。
+3. **この障害は、緊急性を要するか? (Is this issue urgent?)**
+    全ての障害は、緊急事態ではありません。例えば、通常よりも控えめに高い割合のシステムレスポンスが、
+    非常に時間を要していたり、古いデータで応答しているクエリが普段よりわずかに増加していたり
+    している状態が緊急度の低い障害です。このいずれの問題も対処する必要はありますが、
+    午前4:00ではありません。その逆に、全体の要となるシステムが容認範囲の処理ができなくなった場合は、
+    エンジニアは、即座にエンジニアが対応する必要があるでしょう。**現実の障害で、人間の介入が必要、緊急性を要する**
+    なら、ページするべきです。
+
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_2.png)
 
 ### Page on symptoms
 
-Pages deserve special mention: they are extremely effective for
+> Pages deserve special mention: they are extremely effective for
 delivering information, but they can be quite disruptive if overused, or
 if they are linked to poorly designed alerts. In general, a page is the
 most appropriate kind of alert when the system you are responsible for
@@ -186,7 +187,15 @@ stops doing useful work with acceptable throughput, latency, or error
 rates. Those are the sort of problems that you want to know about
 immediately.
 
-The fact that your system stopped doing useful work is a *symptom*—that
+ページは、特別な言及に値する：彼らはのために非常に効果的です
+情報を提供するが、過剰に使用場合は、それらは非常に破壊的であり得るか、または
+それらは設計が不十分なアラートにリンクされている場合。一般的には、ページです
+システムはあなたが担当しているアラートの最も適切な種類
+許容可能なスループット、遅延、またはエラーで有用な仕事をして停止します
+料金。それらはあなたが知りたい問題の一種であります
+すぐに。
+
+> The fact that your system stopped doing useful work is a *symptom*—that
 is, it is a manifestation of an issue that may have any number of
 different *causes*. For example: if your website has been responding
 very slowly for the last three minutes, that is a symptom. Possible
@@ -196,7 +205,17 @@ your pages around symptoms rather than causes. See our [companion article
 on data collection](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/) for a metric framework that helps to separate
 symptoms from causes.
 
-Paging on symptoms surfaces real, oftentimes user-facing problems,
+お使いのシステムが有用な作業をやって停止しているという事実は、* - つまり*症状であります
+それは、任意の数を有することができ、問題の症状であります
+異なる*原因は*。例えば：あなたのウェブサイトがされていれば、応答
+非常にゆっくりと最後の3分間、それは症状があります。可能
+原因は高いデータベースの待ち時間を含む、アプリケーション·サーバーは、失敗しました
+というようにダウンしている、高負荷をmemcachedを、と。可能な限り、ビルド
+症状ではなく、原因の周りのあなたのページ。私たちの[関連記事を参照してください。
+分離するのに役立ちますメトリックフレームワークのためのデータ収集]（https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/）上
+原因から症状。
+
+> Paging on symptoms surfaces real, oftentimes user-facing problems,
 rather than hypothetical or internal problems. Contrast paging on a
 symptom, such as slow website responses, with paging on potential causes
 of the symptom, such as high load on your web servers. Your users will
@@ -205,24 +224,44 @@ quickly, and your engineers will resent being bothered for something
 that is only internally noticeable and that may revert to normal levels
 without intervention.
 
+症状のページングは、実際の、しばしばユーザー向けの問題を表面
+むしろ仮説的または内部的な問題よりも。上のページングを対比
+このような潜在的な原因のページングと遅いWebサイトの応答、などの症状、
+あなたのWebサーバー上の症状、などの高負荷の。ユーザーます
+ウェブサイトがまだ応答しているかどうかを知り、または、サーバの負荷を気にしません
+すぐに、あなたのエンジニアが何かのために煩わされる再送信されます
+それは内部でのみ顕著であり、それは通常のレベルに戻ることがあり
+介入なし。
+
 #### Durable alert definitions
 
-Another good reason to page on symptoms is that symptom-triggered alerts
+> Another good reason to page on symptoms is that symptom-triggered alerts
 tend to be durable. This means that regardless of how underlying system
 architectures may change, if the system stops doing work as well as it
 should, you will get an appropriate page even without updating your
 alert definitions.
 
+症状のページへもう一つの良い理由は、症状を引き起こさアラートです
+耐久性である傾向があります。このことは関係なく、どのように基盤となるシステムの意味します
+システムはそれだけでなく、仕事をして停止した場合のアーキテクチャは、変更される可能性があり
+、あなたも更新せずに、適切なページを取得しますする必要がありますあなたの
+アラート定義。
+
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_3.png)
 
 #### Exception to the rule: Early warning signs
 
-It is sometimes necessary to call human attention to a small handful of
+> It is sometimes necessary to call human attention to a small handful of
 metrics even when the system is performing adequately. Early warning
 metrics reflect an unacceptably high probability that serious symptoms
 will soon develop and require immediate intervention.
 
-Disk space is a classic example. Unlike running out of free memory or
+それは小さな一握りの人間の注意を喚起することが必要な場合があります
+メトリックは、システムが適切に実行されても。早期警戒
+メトリックは、許容できないほど高い確率にその重篤な症状を反映します
+すぐに開発し、即時介入が必要になります。
+
+> Disk space is a classic example. Unlike running out of free memory or
 CPU, when you run out of disk space, the system will not likely recover,
 and you probably will have only a few seconds before your system hard
 stops. Of course, if you can notify someone with plenty of lead time,
@@ -231,17 +270,32 @@ yet, you can anticipate some situations when disk space will run low and
 build automated remediation based on the data you can afford to erase,
 such as logs or data that exists somewhere else.
 
+ディスク容量は、典型的な例です。空きメモリが不足しているとは異なり、または
+CPUは、ディスク領域が不足したときに、システムはおそらく、回復されません
+あなたはおそらく、ハード、システムの前にわずか数秒を持っています
+停止します。もちろん、あなたがリードタイムをたっぷり使って、誰かに通知することができた場合、
+その後、夜中に誰も目を覚ますする必要はありません。良いです
+ディスク容量が低いを実行するときに、まだ、あなたはいくつかの状況を予測することができ、
+、あなたは消去する余裕があるデータに基づいて自動修復を構築
+このようなログや他の場所に存在するデータとして。
+
 ## Conclusion: Get serious about symptoms
 
--   Send a page only when symptoms of urgent problems in your system’s
+> -   Send a page only when symptoms of urgent problems in your system’s
     work are detected, or if a critical and finite resource limit is
     about to be reached.
--   Set up your monitoring system to record alerts whenever it detects
+> -   Set up your monitoring system to record alerts whenever it detects
     real issues in your infrastructure, even if those issues have not
     yet affected overall performance.
 
-We would like to hear about your experiences as you apply this framework
+- 緊急の問題の症状のみでページを送信するシステムのクリティカルと有限リソースの制限がある場合、作業が検出、またはされています約に到達します。
+- それはこれらの問題は、まだ全体のパフォーマンスに影響を与えていない場合でも、インフラストラクチャ内の実際の問題を検出すると警告を記録するために、あなたの監視システムをセットアップします。
+
+> We would like to hear about your experiences as you apply this framework
 to your own monitoring practice. If it is working well, please [let us
 know on Twitter](https://twitter.com/datadoghq)! Questions, corrections,
 additions, complaints, etc? Please [let us know on
 GitHub](https://github.com/DataDog/the-monitor).
+
+独自に実践していた監視体制にこのフレームワークで学んだことを取り入れ、新たな監視体制に取り組んだ体験を是非お聞かせください。
+フレームワークを取り入れることによって監視が改善された場合は、Twitterで[@datadoghq](https://twitter.com/datadoghq)付きでつぶやいていただけると幸いです。また、質問、修正、追加、苦情、その他がある場合は、[Github](https://github.com/DataDog/the-monitor)のissueにて連絡してみてください。
