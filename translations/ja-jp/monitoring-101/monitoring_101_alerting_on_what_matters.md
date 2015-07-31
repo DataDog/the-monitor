@@ -79,38 +79,7 @@ on their own. But should a significant issue develop—say, if the service
 starts returning a large number of timeouts—that alert-based data will
 provide invaluable context for your investigation.
 
-
-Many alerts will not be associated with a service problem,
-so a human　may never even need to be aware of them.
-
-For instance, when a data store that supports a user-facing service starts serving queries much slower than usual,
-
-but not slow enough to make an appreciable difference in the
-overall service’s response time,
-
-that should generate a low-urgency alert that is recorded in your monitoring system for future reference or investigation but does not interrupt anyone’s work.
-
-After all, transient issues that could be to blame, such as network congestion, often go away
-on their own.
-
-But should a significant issue develop—say, if the service starts returning a large number of timeouts—that alert-based data will provide invaluable context for your investigation.
-
-多くのアラートは、サービスに障害に紐付いています。
-
-例えば、ユーザーと対面しているサービスをサポートしているデータストーレジのクエリー処理が、普段よ時間を要するように場合に、
-
-多くのアラートは、サービスの問題に関連するので、人間がされることはありません
-でもそれらを意識する必要がないかもしれません。たとえば、ときに、データストア
-それは、ユーザ側のサービスが提供するクエリはるかに遅いを開始サポート
-通常よりますが、中にかなりの違いを確認するのに十分遅くありません
-全体的なサービスの応答時間は、それが低緊急度を生成する必要があります
-それが今後の参考のためにお使いの監視システムに記録されている警告や
-調査が、誰の仕事が中断されることはありません。結局のところ、過渡
-このようなネットワークの輻輳などのせいにすることができた問題は、多くの場合、離れて行きます
-自分で。しかし、重要な問題は、サービスがあれば開発、言う必要があります
-そのタイムアウト·アラート·ベースのデータが多数をします返す開始
-あなたの調査のための非常に貴重なコンテキストを提供します。
-
+例えば、ユーザーと対面しているサービスを支えているデータストーレジのクエリー処理が普段よ時間を要している場合であっても、全体サービスのレスポンス時間としては顕著な差が出るほどではない場合、アラートは、低い緊急度として処理するべきで、誰かの仕事を中断させる程のものではありません。更にこれらのアラートは、今後の参考や調査資料として、監視システムに記録しておきます。結局のところ、ネットワークの高負荷のように一過性の問題は、自然に解消さ入れることが多いです。逆に、システムに膨大な量のタイムアウトが発生し始めるなど、重大な問題が発生した場合は、誰かの仕事を中断してでも警告するべきです。そしてベースデータは、調査のための非常に貴重なコンテキストを提供することになるでしょう。
 
 #### Alerts as notifications (moderate severity)
 
