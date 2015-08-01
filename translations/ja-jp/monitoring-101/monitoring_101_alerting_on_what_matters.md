@@ -67,15 +67,19 @@ When to alert someone (or no one)
 > 	-	Metrics in a test environment are out of bounds
 > 	-	A single server is doing its work very slowly, but it is part of a cluster with fast-failover to other machines, and it reboots periodically anyway
 > 	-	Planned upgrades are causing large numbers of machines to report as offline
->
-> If the issue is indeed **real**, it should generate an alert. Even if the alert is not linked to a notification, it should be recorded within your monitoring system for later analysis and correlation. 2. **Does this issue require attention?** If you can reasonably automate a response to an issue, you should consider doing so. There is a very real cost to calling someone away from work, sleep, or personal time. If the issue is **real *and* it requires attention**, it should generate an alert that notifies someone who can investigate and fix the problem. At minimum, the notification should be sent via email, chat or a ticketing system so that the recipients can prioritize their response. 3. **Is this issue urgent?** Not all issues are emergencies. For example, perhaps a moderately higher than normal percentage of system responses have been very slow, or perhaps a slightly elevated share of queries are returning stale data. Both issues may need to be addressed soon, but not at 4:00 A.M. If, on the other hand, a key system stops doing its work at an acceptable rate, an engineer should take a look immediately. If the symptom is **real *and* it requires attention *and* it is urgent**, it should generate a page.
+
+> 	If the issue is indeed **real**, it should generate an alert. Even if the alert is not linked to a notification, it should be recorded within your monitoring system for later analysis and correlation.
+> 2. **Does this issue require attention?** If you can reasonably automate a response to an issue, you should consider doing so. There is a very real cost to calling someone away from work, sleep, or personal time. If the issue is **real *and* it requires attention**, it should generate an alert that notifies someone who can investigate and fix the problem. At minimum, the notification should be sent via email, chat or a ticketing system so that the recipients can prioritize their response.
+> 3. **Is this issue urgent?** Not all issues are emergencies. For example, perhaps a moderately higher than normal percentage of system responses have been very slow, or perhaps a slightly elevated share of queries are returning stale data. Both issues may need to be addressed soon, but not at 4:00 A.M. If, on the other hand, a key system stops doing its work at an acceptable rate, an engineer should take a look immediately. If the symptom is **real *and* it requires attention *and* it is urgent**, it should generate a page.
 
 1.	**この障害は現実? (Is this issue real?)** 明白に聞こえるかもしれませんが、 障害が現実に発生していない場合には、一般的にはアラートを発生させるべきではありません。 以下の例では、アラートを発生させることはできますが、おそらく実際の実際の障害の 兆候ではないでしょう。このようなケースで、アラートをしたり、最悪のケースでページすることは、 アラートに慣れてしまう原因にな、より深刻な無視という問題を引き起こします。
 	-	テスト環境のメトリクスが規定値を超えた場合。
 	-	ある1台のサーバーは非常にゆっくりと処理をしてるが、それ以外は高速に処理ができている クラスターに含まれている場合。他のサーバーにフェールオーバーしている場合や再起動を繰り返している場合。
 	-	計画的な更新により、大量のサーバーが停止の通知をしてきた場合。
 
-これらの障害が **事実** なら、アラートを発生させる必要はあるでしょう。アラートが通知にリンクされていないとしても、 これらは後の分析と連携のために監視システム内に記録しておくべです。 2. **この障害には誰かの介入が必要? (Does this issue require attention?)** 合理的に可能であれば、障害に対する対応を自動化することもできます。そして、 実際は自動化することを検討するべきでしょう。誰かを仕事や睡眠やプライベート時間 から呼び出すことは、現実のコストを要する行為です。もしも、起きている障害が **現実の障害で、人間の介入が必要** なら、障害を調査し修正を施せる人材に対し、 アラートを発生させ、通知する必要があるでしょう。その通知は、受信する人が 優先順位を決められるように、最低でもメール、チャット、チケットシステムにより 送信される必要があるでしょう。 3. **この障害は、緊急性を要するか? (Is this issue urgent?)** 全ての障害は、緊急事態ではありません。例えば、通常よりも控えめに高い割合のシステムレスポンスが、 非常に時間を要していたり、古いデータで応答しているクエリが普段よりわずかに増加していたり している状態が緊急度の低い障害です。このいずれの問題も対処する必要はありますが、 午前4:00ではありません。その逆に、全体の要となるシステムが容認範囲の処理ができなくなった場合は、 エンジニアは、即座にエンジニアが対応する必要があるでしょう。**現実の障害で、人間の介入が必要、緊急性を要する** なら、ページするべきです。
+	これらの障害が **事実** なら、アラートを発生させる必要はあるでしょう。アラートが通知にリンクされていないとしても、 これらは後の分析と連携のために監視システム内に記録しておくべです。
+2. **この障害には誰かの介入が必要? (Does this issue require attention?)** 合理的に可能であれば、障害に対する対応を自動化することもできます。そして、 実際は自動化することを検討するべきでしょう。誰かを仕事や睡眠やプライベート時間 から呼び出すことは、現実のコストを要する行為です。もしも、起きている障害が **現実の障害で、人間の介入が必要** なら、障害を調査し修正を施せる人材に対し、 アラートを発生させ、通知する必要があるでしょう。その通知は、受信する人が 優先順位を決められるように、最低でもメール、チャット、チケットシステムにより 送信される必要があるでしょう。
+3. **この障害は、緊急性を要するか? (Is this issue urgent?)** 全ての障害は、緊急事態ではありません。例えば、通常よりも控えめに高い割合のシステムレスポンスが、 非常に時間を要していたり、古いデータで応答しているクエリが普段よりわずかに増加していたり している状態が緊急度の低い障害です。このいずれの問題も対処する必要はありますが、 午前4:00ではありません。その逆に、全体の要となるシステムが容認範囲の処理ができなくなった場合は、 エンジニアは、即座にエンジニアが対応する必要があるでしょう。**現実の障害で、人間の介入が必要、緊急性を要する** なら、ページするべきです。
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_2.png)
 
@@ -83,21 +87,22 @@ When to alert someone (or no one)
 
 > Pages deserve special mention: they are extremely effective for delivering information, but they can be quite disruptive if overused, or if they are linked to poorly designed alerts. In general, a page is the most appropriate kind of alert when the system you are responsible for stops doing useful work with acceptable throughput, latency, or error rates. Those are the sort of problems that you want to know about immediately.
 
-ページは、特別な言及に値する：彼らはのために非常に効果的です 情報を提供するが、過剰に使用場合は、それらは非常に破壊的であり得るか、または それらは設計が不十分なアラートにリンクされている場合。一般的には、ページです システムはあなたが担当しているアラートの最も適切な種類 許容可能なスループット、遅延、またはエラーで有用な仕事をして停止します 料金。それらはあなたが知りたい問題の一種であります すぐに。
+ページは、次に示すように特に重要です: ページは、情報を配信するのには非常に効果的です。しかし、使いすぎたり、正しく検討されていないアラートに紐ずいていたりすると、非常に破壊的です。一般的にページは、あなたが担当しているシステムが容認範囲内のスループット、レイテンシ、エラー率の **有益な仕事** をしなくなった時に適切なアラートです。これらは、直ちに知りたい障害の一種のはずです。
 
 > The fact that your system stopped doing useful work is a *symptom*—that is, it is a manifestation of an issue that may have any number of different *causes*. For example: if your website has been responding very slowly for the last three minutes, that is a symptom. Possible causes include high database latency, failed application servers, Memcached being down, high load, and so on. Whenever possible, build your pages around symptoms rather than causes. See our [companion article on data collection](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/) for a metric framework that helps to separate symptoms from causes.
 
-お使いのシステムが有用な作業をやって停止しているという事実は、* - つまり*症状であります それは、任意の数を有することができ、問題の症状であります 異なる*原因は*。例えば：あなたのウェブサイトがされていれば、応答 非常にゆっくりと最後の3分間、それは症状があります。可能 原因は高いデータベースの待ち時間を含む、アプリケーション·サーバーは、失敗しました というようにダウンしている、高負荷をmemcachedを、と。可能な限り、ビルド 症状ではなく、原因の周りのあなたのページ。私たちの[関連記事を参照してください。 分離するのに役立ちますメトリックフレームワークのためのデータ収集]（https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/）上 原因から症状。
+事実として、システムが **有益な仕事** をしなくなるのは、 **symptom** (徴候)です。それらの徴候は、複数の異なる原因を持っている可能性のある障害が発生する兆しです。例えば、直近3分のwebサイトのレスポンスが非常に遅い場合は、**symptom**(徴候)です。原因の可能性としては、データベースの問い合わせ時間が長くなっていたり、アプリケーションサーバーが停止しているたり、Memcachedが停止していたり、高負荷が考えられるでしょう。従って、可能な限り、**casuse**(原因)ではなく、**symptom**(徴候)に基づいてページを設定しましょう。詳しくは、**symptom**(徴候)
+ と **casuse**(原因)の切り分けをするためのフレームワークに関するポスト [[companion article on data collection]](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/) を参照してください。
 
 > Paging on symptoms surfaces real, oftentimes user-facing problems, rather than hypothetical or internal problems. Contrast paging on a symptom, such as slow website responses, with paging on potential causes of the symptom, such as high load on your web servers. Your users will not know or care about server load if the website is still responding quickly, and your engineers will resent being bothered for something that is only internally noticeable and that may revert to normal levels without intervention.
 
-症状のページングは、実際の、しばしばユーザー向けの問題を表面 むしろ仮説的または内部的な問題よりも。上のページングを対比 このような潜在的な原因のページングと遅いWebサイトの応答、などの症状、 あなたのWebサーバー上の症状、などの高負荷の。ユーザーます ウェブサイトがまだ応答しているかどうかを知り、または、サーバの負荷を気にしません すぐに、あなたのエンジニアが何かのために煩わされる再送信されます それは内部でのみ顕著であり、それは通常のレベルに戻ることがあり 介入なし。
+徴候に基づいてページすることは、仮説的または内部的な問題よりも、ユーザーに直面している実障害を表面化させます。「Webサイトの応答が遅い」という **symptom**(徴候)に基づいたページと、「Webサーバーが高負荷になった」という **cause**(原因)の可能性に基づいたページという対比では、Webサイトが素早く応答していれば、サーバーが高負荷状態にあることなど、ユーザーは気もつかないし、気にもかけていません。そしてエンジニアは、内部的にしか分からない、放置しておけば元に戻ってしまうような *こと* に憤慨することはないでしょう。
 
 #### Durable alert definitions
 
 > Another good reason to page on symptoms is that symptom-triggered alerts tend to be durable. This means that regardless of how underlying system architectures may change, if the system stops doing work as well as it should, you will get an appropriate page even without updating your alert definitions.
 
-症状のページへもう一つの良い理由は、症状を引き起こさアラートです 耐久性である傾向があります。このことは関係なく、どのように基盤となるシステムの意味します システムはそれだけでなく、仕事をして停止した場合のアーキテクチャは、変更される可能性があり 、あなたも更新せずに、適切なページを取得しますする必要がありますあなたの アラート定義。
+徴候の基づいてペースするもう一つの良い理由は、徴候に基づいたアラートは、長持ちする傾向があります。基盤システムが変化が有ろうが無かろうが、もしもシステムが **期待している仕事** をしなくなったら、アラート設定を更新していなくても適切なページを受けることができます。
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_3.png)
 
@@ -105,20 +110,19 @@ When to alert someone (or no one)
 
 > It is sometimes necessary to call human attention to a small handful of metrics even when the system is performing adequately. Early warning metrics reflect an unacceptably high probability that serious symptoms will soon develop and require immediate intervention.
 
-それは小さな一握りの人間の注意を喚起することが必要な場合があります メトリックは、システムが適切に実行されても。早期警戒 メトリックは、許容できないほど高い確率にその重篤な症状を反映します すぐに開発し、即時介入が必要になります。
+システムが適切に機能していても、時には、幾つかのメトリクスに対し人間の注意を喚起することが必要な場合があります。早期警戒目的のメトリクスは、容認できない重篤な状態への徴候が、まっもなく発生する前兆で、人間の迅速な介入を必要とするからです。
 
 > Disk space is a classic example. Unlike running out of free memory or CPU, when you run out of disk space, the system will not likely recover, and you probably will have only a few seconds before your system hard stops. Of course, if you can notify someone with plenty of lead time, then there is no need to wake anyone in the middle of the night. Better yet, you can anticipate some situations when disk space will run low and build automated remediation based on the data you can afford to erase, such as logs or data that exists somewhere else.
 
-ディスク容量は、典型的な例です。空きメモリが不足しているとは異なり、または CPUは、ディスク領域が不足したときに、システムはおそらく、回復されません あなたはおそらく、ハード、システムの前にわずか数秒を持っています 停止します。もちろん、あなたがリードタイムをたっぷり使って、誰かに通知することができた場合、 その後、夜中に誰も目を覚ますする必要はありません。良いです ディスク容量が低いを実行するときに、まだ、あなたはいくつかの状況を予測することができ、 、あなたは消去する余裕があるデータに基づいて自動修復を構築 このようなログや他の場所に存在するデータとして。
+ディスクの空き容量は、典型的な例です。空きメモリーやCPUとは異なり、ディスクの空き容量が無くなると、システムはその状態から自動で復帰してくることは期待できません。そしてシステムが停止するまでに数秒しかないでしょう。もちろん、長いリードタイムをとって誰かに通知することもできるでしょう。そうすれば、誰も夜中に叩き起こす必要はないでしょう。もっと良い方法は、ディスクの空き容量が少なくなった時のことを予想し、ログや既に退避済みのデータなど失っても良いデータを自動で削除するという回避策を講じておくことです。
 
-Conclusion: Get serious about symptoms
---------------------------------------
+## Conclusion: Get serious about symptoms
 
 > -	Send a page only when symptoms of urgent problems in your system’s work are detected, or if a critical and finite resource limit is about to be reached.
 > -	Set up your monitoring system to record alerts whenever it detects real issues in your infrastructure, even if those issues have not yet affected overall performance.
 
--	緊急の問題の症状のみでページを送信するシステムのクリティカルと有限リソースの制限がある場合、作業が検出、またはされています約に到達します。
--	それはこれらの問題は、まだ全体のパフォーマンスに影響を与えていない場合でも、インフラストラクチャ内の実際の問題を検出すると警告を記録するために、あなたの監視システムをセットアップします。
+- システム内に緊急性の高い問題の徴候が検知された時、又は、重大な危機を発生させる要素を持った有限なリソースの限界が近い場合にページを送信します。
+- まだ全体のパフォーマンスに影響を与えていない場合でも、インフラ内で考慮するべき問題をアラートが検知した際は、そのアラートを記録するように監視システムを設定しておきます。
 
 > We would like to hear about your experiences as you apply this framework to your own monitoring practice. If it is working well, please [let us know on Twitter](https://twitter.com/datadoghq)! Questions, corrections, additions, complaints, etc? Please [let us know on GitHub](https://github.com/DataDog/the-monitor).
 
