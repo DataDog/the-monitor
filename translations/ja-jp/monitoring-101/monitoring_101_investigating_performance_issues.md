@@ -2,21 +2,37 @@
 
 *This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/blog/monitoring-101-collecting-data/) and [Alerting on what matters](/blog/monitoring-101-alerting/).*
 
-The responsibilities of a monitoring system do not end with symptom detection. Once your monitoring system has notified you of a real symptom that requires attention, its next job is to help you diagnose the root cause. Often this is the least structured aspect of monitoring, driven largely by hunches and guess-and-check. This post describes a more directed approach that can help you to find and correct root causes more efficiently.
+> The responsibilities of a monitoring system do not end with symptom detection. Once your monitoring system has notified you of a real symptom that requires attention, its next job is to help you diagnose the root cause. Often this is the least structured aspect of monitoring, driven largely by hunches and guess-and-check. This post describes a more directed approach that can help you to find and correct root causes more efficiently.
 
-This series of articles comes out of our experience monitoring large-scale infrastructure for [our customers](https://www.datadoghq.com/customers/). It also draws on the work of [Brendan Gregg](http://dtdg.co/use-method), [Rob Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron Schwartz](http://dtdg.co/metrics-attention).
+監視システムの責任は兆候の検出するところでは終わりにはなりません。使っている監視システムが、対処を必要とするような具体的な兆候についてあなたに通知したなら、その監視システムの次にしなくてはならないのは、兆候を起こしている原因の診断をするあなたを助けることです。多くの場合、この診断という側面は、ほとんど整理がされておらず、経験や直感に頼ることが多い領域です。この記事では、根本原因にたどり着き、修正するための論理的なアプローチについて解説をします。
+
+> This series of articles comes out of our experience monitoring large-scale infrastructure for [our customers](https://www.datadoghq.com/customers/). It also draws on the work of [Brendan Gregg](http://dtdg.co/use-method), [Rob Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron Schwartz](http://dtdg.co/metrics-attention).
+
+このシリーズの内容は、Datadogが[お客様](https://www.datadoghq.com/customers/)の大規模インフラを監視してきた経験を基にし、次に紹介するような人たちのブログ記事　[Brendan Gregg](http://dtdg.co/use-method)、 [Rob
+Ewaschuk](http://dtdg.co/philosophy-alerting)、 [Baron
+Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています。
 
 ## A word about data
 
 ![metric types](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
 
-There are three main types of monitoring data that can help you investigate the root causes of problems in your infrastructure. Data types and best practices for their collection are discussed in-depth [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/), but in short:
+> There are three main types of monitoring data that can help you investigate the root causes of problems in your infrastructure. Data types and best practices for their collection are discussed in-depth [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/), but in short:
 
--   **Work metrics** indicate the top-level health of your system by measuring its useful output
--   **Resource metrics** quantify the utilization, saturation, errors, or availability of a resource that your system depends on
--   **Events** describe discrete, infrequent occurrences in your system such as code changes, internal alerts, and scaling events
+> -   **Work metrics** indicate the top-level health of your system by measuring its useful output
+> -   **Resource metrics** quantify the utilization, saturation, errors, or availability of a resource that your system depends on
+> -   **Events** describe discrete, infrequent occurrences in your system such as code changes, internal alerts, and scaling events
 
-By and large, work metrics will surface the most serious symptoms and should therefore generate [the most serious alerts](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/#page-on-symptoms). But the other metric types are invaluable for investigating the *causes* of those symptoms.
+インフラ内の問題の根本原因を調査する際に、参考のできる監視データには主に3つの主要タイプがあります。それらのデータタイプとそれらの収集するためのベストプラクティスの詳細については、[関連記事](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/)を参照してください。
+
+簡単なまとめ:
+
+- **Work metrics**　運用しているシステム上で動作しているサービスのパフーマンスを表しています。
+- **Resource metrics** 運用しているシステムが依存するリソースの使用率、飽和レベル、エラー、または可用性など。
+- **Events** コードの変更、内部アラート、台数変化に関するイベントなど、システム内で発生する非連続的で不定期な出来事
+
+> By and large, work metrics will surface the most serious symptoms and should therefore generate [the most serious alerts](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/#page-on-symptoms). But the other metric types are invaluable for investigating the *causes* of those symptoms.
+
+大方の場合、**work metrics** は、重大な問題の兆候を表面化させます。従って、**work metrics** は、[最も重大な障害用のアラート](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/#page-on-symptoms)を発生させる必要があります。
 
 ## It’s resources all the way down
 
