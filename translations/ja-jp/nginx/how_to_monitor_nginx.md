@@ -1,16 +1,26 @@
 # How to monitor NGINX
 
-*This post is part 1 of a 3-part series on NGINX monitoring. [Part 2](/blog/how-to-collect-nginx-metrics/) is about collecting NGINX metrics, and [Part 3](/blog/how-to-monitor-nginx-with-datadog/) details how to monitor NGINX with Datadog.*
+> *This post is part 1 of a 3-part series on NGINX monitoring. [Part 2](/blog/how-to-collect-nginx-metrics/) is about collecting NGINX metrics, and [Part 3](/blog/how-to-monitor-nginx-with-datadog/) details how to monitor NGINX with Datadog.*
+
+*このポストは、"NGINXの監視"3回シリーズのPart1です。 Part 2は、[「NGINXのメトリクスの収集」](/blog/how-to-collect-nginx-metrics/)で、Part 3は、[「Datadogを使ったNGINXの監視」](/blog/how-to-monitor-nginx-with-datadog/)になります。*
 
 ## What is NGINX?
 
-[NGINX](http://nginx.org/en/) (pronounced “engine X”) is a popular HTTP server and reverse proxy server. As an HTTP server, NGINX serves static content very efficiently and reliably, using relatively little memory. As a [reverse proxy](http://nginx.com/resources/glossary/reverse-proxy-server/), it can be used as a single, controlled point of access for multiple back-end servers or for additional applications such as caching and load balancing. NGINX is available as a free, open-source product or in a more full-featured, commercially distributed version called NGINX Plus.
+> [NGINX](http://nginx.org/en/) (pronounced “engine X”) is a popular HTTP server and reverse proxy server. As an HTTP server, NGINX serves static content very efficiently and reliably, using relatively little memory. As a [reverse proxy](http://nginx.com/resources/glossary/reverse-proxy-server/), it can be used as a single, controlled point of access for multiple back-end servers or for additional applications such as caching and load balancing. NGINX is available as a free, open-source product or in a more full-featured, commercially distributed version called NGINX Plus.
 
-NGINX can also be used as a mail proxy and a generic TCP proxy, but this article does not directly address NGINX monitoring for these use cases.
+> NGINX can also be used as a mail proxy and a generic TCP proxy, but this article does not directly address NGINX monitoring for these use cases.
+
+nginxの（発音は「エンジンX」）は、人気のHTTPサーバーとリバースプロキシサーバーです。 HTTPサーバとして、nginxのは、比較的少ないメモリを使用して、非常に効率的かつ確実に静的なコンテンツを提供しています。リバースプロキシとしては、複数のバックエンドサーバのアクセスの単一の制御ポイントとして、またはそのようなキャッシュやロードバランシングなどの追加の用途に使用することができます。 nginxのは、フリー、オープンソース製品として、またはnginxのプラスと呼ばれる、より完全な機能を備えた、商業的に分散バージョンで利用可能です。
+
+nginxのは、また、メールプロキシおよび汎用TCPプロキシとして使用することができますが、この記事では、直接これらのユースケースのためのnginxの監視に対応していません。
+
+
 
 ## Key NGINX metrics
 
-By monitoring NGINX you can catch two categories of issues: resource issues within NGINX itself, and also problems developing elsewhere in your web infrastructure. Some of the metrics most NGINX users will benefit from monitoring include **requests per second**, which provides a high-level view of combined end-user activity; **server error rate**, which indicates how often your servers are failing to process seemingly valid requests; and **request processing time**, which describes how long your servers are taking to process client requests (and which can point to slowdowns or other problems in your environment).
+> By monitoring NGINX you can catch two categories of issues: resource issues within NGINX itself, and also problems developing elsewhere in your web infrastructure. Some of the metrics most NGINX users will benefit from monitoring include **requests per second**, which provides a high-level view of combined end-user activity; **server error rate**, which indicates how often your servers are failing to process seemingly valid requests; and **request processing time**, which describes how long your servers are taking to process client requests (and which can point to slowdowns or other problems in your environment).
+
+あなたのWebインフラストラクチャの他の場所で開発し、リソースの問題nginxの自体の内部、および問題：nginxのを監視することにより、次の2つの問題のカテゴリをキャッチすることができます。ほとんどのnginxのユーザーは監視の恩恵を受けるメトリックの一部が組み合わされ、エンドユーザーのアクティビティの高レベルのビューを提供する第二のあたりの要求が含まれます。あなたのサーバーは、一見正当な要求を処理するために失敗している頻度を示すためにサーバ·エラー·レート、;あなたのサーバーがクライアントの要求を処理するために取っている（とどれがスローダウンしたり、環境内の他の問題を指すことができます）どのくらいの説明リクエスト処理時間、。
 
 More generally, there are at least three key categories of metrics to watch:
 
