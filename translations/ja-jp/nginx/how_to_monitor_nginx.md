@@ -33,16 +33,20 @@ NGINXを監視することで、2つのカテゴリーの障害を検出する�
 
 > Below we'll break down a few of the most important NGINX metrics in each category, as well as metrics for a fairly common use case that deserves special mention: using NGINX Plus for reverse proxying. We will also describe how you can monitor all of these metrics with your graphing or monitoring tools of choice.
 
-リバースプロキシのためにnginxのPlusを使用して：私たちは、特別な言及に値するかなり一般的なユースケースのために各カテゴリーの中で最も重要なのnginxメトリックの数だけでなく、メトリックを打破します下に。我々はまた、あなたが選択のあなたのグラフや監視ツールでこれらの測定基準のすべてを監視することができる方法を説明します。
+以下では、「NGINX Plusのリーバースプロキシー」というかなり一般的なユースケースを題材とすると同時に、NGINXの特に重要なメトリクスの幾つかを、先に紹介した各カテゴリーに分類していきます。その上で、それらのメトリクスを、あなたが選択したグラフツールや監視ツールで、どのように監視できるかを説明してきます。
 
 > This article references metric terminology [introduced in our Monitoring 101 series](/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
-この記事の参照メトリック用語は、メトリック収集と警告するためのフレームワークを提供し、当社のモニタリング101シリーズで導入されました。
+このポストでは、メトリクスの収集方法やアラートの設定方法に関する基礎的な知識のポストである[introduced in our Monitoring 101 series](/blog/monitoring-101-collecting-data/)で紹介したメトリック用語を使っています。
 
 ### Basic activity metrics
-Whatever your NGINX use case, you will no doubt want to monitor how many client requests your servers are receiving and how those requests are being processed.
+> Whatever your NGINX use case, you will no doubt want to monitor how many client requests your servers are receiving and how those requests are being processed.
 
-NGINX Plus can report basic activity metrics exactly like open-source NGINX, but it also provides a secondary module that reports metrics slightly differently. We discuss open-source NGINX first, then the additional reporting capabilities provided by NGINX Plus.
+> NGINX Plus can report basic activity metrics exactly like open-source NGINX, but it also provides a secondary module that reports metrics slightly differently. We discuss open-source NGINX first, then the additional reporting capabilities provided by NGINX Plus.
+
+どのような利用目的でNGINXを使っていても、どれくらいのクライアントリクエストをサーバーが受信し、またそれらのリクエストがどのように処理されているかを監視したいものです。
+
+NGINX Plusでも、オープンソース版のNGINXと全く同じように基本的なメトリクスをレポートすることができますが、更に追加モジュールを使い幾分か異なるメトリクスも収集することができます。このポストでは、まずオープンソース版のNGINXについて解説し、次にNGINX Plusの追加レポーティング機能について解説します。
 
 #### NGINX
 The diagram below shows the lifecycle of a client connection and how the open-source version of NGINX collects metrics during a connection.
