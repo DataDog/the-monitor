@@ -195,17 +195,23 @@ active (includes “waiting” states) | active (excludes “idle” states)
 requests                           | total
 
 #### **Metric to alert on: Dropped connections**
-The number of connections that have been dropped is equal to the difference between accepts and handled (NGINX) or is exposed directly as a standard metric (NGINX Plus). Under normal circumstances, dropped connections should be zero. If your rate of dropped connections per unit time starts to rise, look for possible resource saturation.
+> The number of connections that have been dropped is equal to the difference between accepts and handled (NGINX) or is exposed directly as a standard metric (NGINX Plus). Under normal circumstances, dropped connections should be zero. If your rate of dropped connections per unit time starts to rise, look for possible resource saturation.
+
+コネクションとして処理ぜずに落としている数は、オプーンソース版NIGINXでは、**accept**から**handled**を引き算した数値で、NGINX Plusでは**dropped**という基本メトリクスで直接提供されています。通常の状況下では、これらの"dropped connection"の数値はゼロのはずです。単位時間あたりの"dropped connection"のレートが増加している場合は、リソースの飽和を疑う必要があります。
 
 [![Dropped connections][image-3]][14]
 
 #### **Metric to alert on: Requests per second**
-Sampling your request data (**requests** in open-source, or **total** in Plus) with a fixed time interval provides you with the number of requests you're receiving per unit of time--often minutes or seconds. Monitoring this metric can alert you to spikes in incoming web traffic, whether legitimate or nefarious, or sudden drops, which are usually indicative of problems. A drastic change in requests per second can alert you to problems brewing somewhere in your environment, even if it cannot tell you exactly where those problems lie. Note that all requests are counted the same, regardless of their URLs.
+> Sampling your request data (**requests** in open-source, or **total** in Plus) with a fixed time interval provides you with the number of requests you're receiving per unit of time--often minutes or seconds. Monitoring this metric can alert you to spikes in incoming web traffic, whether legitimate or nefarious, or sudden drops, which are usually indicative of problems. A drastic change in requests per second can alert you to problems brewing somewhere in your environment, even if it cannot tell you exactly where those problems lie. Note that all requests are counted the same, regardless of their URLs.
+
+秒や分という一定時間でのリクエスト(オープンソース版では、**requests**。NGINX Plusでは、**total**。)の値の収集は、システムが単位時間当たりに受信しているリクエスト数を提供してくれます。このメトリクスを監視することで、Webトラフィックの急上昇を検知しアラートを受けることができます。(合理的なトラフィックの増加か、悪意によるものかにかかわらず。)　また、単位時間当たりリクエストの突然の減少は、障害派生の暗示でもあるでしょう。秒間リクエストの急激な変化は、たとえそれ自身で問題箇所を明確に特定できないとしても、あなたの環境のどこかで問題が発生し始めていることを警告してくれるでしょう。(ここで、注意が必要なのは、URLの内容にかかわらず、全てのリクエストが同等にカウントされていることです。)
 
 [![Requests per second][image-4]][15]
 
 #### Collecting activity metrics
-Open-source NGINX exposes these basic server metrics on a simple status page. Because the status information is displayed in a standardized form, virtually any graphing or monitoring tool can be configured to parse the relevant data for analysis, visualization, or alerting. NGINX Plus provides a JSON feed with much richer data. Read the companion post on [NGINX metrics collection][16] for instructions on enabling metrics collection.
+> Open-source NGINX exposes these basic server metrics on a simple status page. Because the status information is displayed in a standardized form, virtually any graphing or monitoring tool can be configured to parse the relevant data for analysis, visualization, or alerting. NGINX Plus provides a JSON feed with much richer data. Read the companion post on [NGINX metrics collection][16] for instructions on enabling metrics collection.
+
+オープンソース版のNGINXは、基本的メトリクスをシンプルなステータスページに公開しています。ステータスページは、標準化されたフォームに基づいて公開されているので、実質的に全ての監視ツールやグラフ化ツールは、状況の解析や可視化やアラートのためのにこのページをパースすることができるようになっています。NGINX Plusでは、より豊富なデータを含んだJSON形式のfeedを提供しています。メトリクスの収集を有効にする方法に関しては、このシリーズに含まれている[「NGINX metrics collection」][16]を参考にしてください。
 
 ### Error metrics
 
