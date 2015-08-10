@@ -222,18 +222,20 @@ requests                           | total
 
 > NGINX error metrics tell you how often your servers are returning errors instead of producing useful work. Client errors are represented by 4xx status codes, server errors with 5xx status codes.
 
-サーバーがエラーを返す代わりに、有用な作業を生産している頻度をnginxのエラー測定基準はあなたを教えてください。クライアントエラーが5xxのステータスコードと4xxのステータスコードは、サーバーエラーで表されます。
-
+NGINXのエラーに関するメトリクスは、サーバーが、有用な仕事の結果を送信せずに、エラーコードをどれ位の頻度で送信しているかを教えてくれます。クライアントサイドのエラーは4xx系のステータスコードで、サーバーサイドのエラーは5xx系のステータスコードで表されます。
 
 #### **Metric to alert on: Server error rate**
 > Your server error rate is equal to the number of 5xx errors divided by the total number of [status codes][18] (1xx, 2xx, 3xx, 4xx, 5xx), per unit of time (often one to five minutes). If your error rate starts to climb over time, investigation may be in order. If it spikes suddenly, urgent action may be required, as clients are likely to report errors to the end user.
 
-サーバーのエラー率は、時間（多くの場合、1〜5分）の単位当たり、[ステータスコード]の合計数で割った5xxエラー[18]（1XX、2xxの、3XX、4xxの、5xxの）の数に等しいです。あなたのエラー率が経時的に上昇し開始された場合、調査は順序であってもよいです。それが突然急上昇した場合、クライアントがエンド·ユーザーにエラーを報告する可能性があるとして、緊急に行動を必要とすることができます。
-
+あなたのサーバーのエラー率は、単位時間(多くの場合、1分~5分)当たりの5xx系のエラーの数を[status codes][18](1xx, 2xx, 3xx, 4xx, 5xx)の合計で割った数値になります。もしも、このエラー率が時間とともに上昇しているようなら、調査が必要かもしれません。もしも突然上昇するようなら、エンドユーザーのwebクライアントは、エラーを表示しているので、緊急対応が必要です。
 
 [![Server error rate][image-5]][19]
 
 > A note on client errors: while it is tempting to monitor 4xx, there is limited information you can derive from that metric since it measures client behavior without offering any insight into particular URLs. In other words, a change in 4xx could be noise, e.g. web scanners blindly looking for vulnerabilities.
+
+
+クライアントエラーに関する注意: 
+
 
 クライアントのエラーに関する注記：それは4xxのを監視するために魅力的であるが、それは特定のURLに任意の洞察力を提供することなく、クライアントの動作を測定するので、あなたがそのメトリックから導出することができる限られた情報があります。つまり、4xxの変化は、ノイズである可能性があり、例えばウェブスキャナは盲目的な脆弱性を探しています。
 
