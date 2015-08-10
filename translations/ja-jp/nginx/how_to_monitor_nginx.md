@@ -121,11 +121,15 @@ NGINXがコネクションを正常に処理すると、コネクションは、
 多くの場合、コネクションは、一度に1つのリクエストしかサポートしません。このような場合、Activeコネクションは、 WatingコネクションとReadingコネクションとWritingコネクションの合計になります。しかし、新しいSPDYやHTTP/2のプロトコルでは、複数の同時に発生するリクエスト/レスポンスを多重的に一つのコネクション上で通信することを可能にしています。従って、Activeの値は、WaitingとReadingとWritingの合計値より少なくなります。(このポストを執筆している時点は、NGINXは、HTTP/2はサポートしていませんが、2015年内にはサポート予定になっています。)
 
 #### NGINX Plus
-As mentioned above, all of open-source NGINX's metrics are available within NGINX Plus, but Plus can also report additional metrics. The section covers the metrics that are only available from NGINX Plus.
+> As mentioned above, all of open-source NGINX's metrics are available within NGINX Plus, but Plus can also report additional metrics. The section covers the metrics that are only available from NGINX Plus.
+
+既に記したように、オープンソース版のNGINXで収集可能なメトリクスは、NGINX Plusでも収集できます。更にPlusには、追加のメトリクスも準備されています。このセクションは、NGINX Plusでのみ有効なメトリクスについて解説していきます。
 
 ![connection, request states][image-2]
 
-Accepted, dropped, and total are ever-increasing counters. Active, idle, and current track the current number of connections or requests in each of those states, so they grow and shrink with request volume.
+> Accepted, dropped, and total are ever-increasing counters. Active, idle, and current track the current number of connections or requests in each of those states, so they grow and shrink with request volume.
+
+図の中の、Accepted、Dropped、Totalの数値は、積算値として増え続けます。Active、Idle、Currentは、現在のコネクション数やそのステートのリクエスト数を示し、増えたり減ったりします。
 
 <table><colgroup> <col style="text-align: left;" /> <col style="text-align: left;" /> <col style="text-align: left;" /> </colgroup>
 <thead>
@@ -167,16 +171,22 @@ Accepted, dropped, and total are ever-increasing counters. Active, idle, and cur
 </tbody>
 </table>
 
-The **accepted** counter is incremented when an NGINX Plus worker picks up a request for a connection from the OS. If the worker fails to get a connection for the request (by establishing a new connection or reusing an open one), then the connection is dropped and **dropped** is incremented. Ordinarily connections are dropped because a resource limit, such as NGINX Plus's [worker\_connections][12] limit, has been reached.
+> The **accepted** counter is incremented when an NGINX Plus worker picks up a request for a connection from the OS. If the worker fails to get a connection for the request (by establishing a new connection or reusing an open one), then the connection is dropped and **dropped** is incremented. Ordinarily connections are dropped because a resource limit, such as NGINX Plus's [worker\_connections][12] limit, has been reached.
 
-**Active** and **idle** are the same as "active" and "waiting" states in open-source NGINX as described [above][13], with one key exception: in open-source NGINX, "waiting" falls under the "active" umbrella, whereas in NGINX Plus "idle" connections are excluded from the "active" count. **Current** is the same as the combined "reading + writing" states in open-source NGINX.
+**accepted**カウンターは、NGINX PlusワーカーがOSからのコネクションリクエストを受ける度に増加していきます。もしも、NGINX Plusワーカーが、リクエストのあったコネクションを、新しく生成するか既存のものを再利用するかし、確保することに失敗すると、ワーカーはコネクションの確保を断念し、**dropped**の値を増加させます。通常、NGINX Plusワーカーは、[worker\_connections][12]制限などのリソースの制限に達した場合に、コネクションを断念します。
 
-**Total** is a cumulative count of client requests. Note that a single client connection can involve multiple requests, so this number may be significantly larger than the cumulative number of connections. In fact, (total / accepted) yields the average number of requests per connection.
+> **Active** and **idle** are the same as "active" and "waiting" states in open-source NGINX as described [above][13], with one key exception: in open-source NGINX, "waiting" falls under the "active" umbrella, whereas in NGINX Plus "idle" connections are excluded from the "active" count. **Current** is the same as the combined "reading + writing" states in open-source NGINX.
+
+**Active**と**Idle**は、[オープンソース版のNIGINXで解説した][13]"active"と"waiting"のステートと重要な一つの例外を除いて同じです。オープンソース版のNGINXの場合、"waiting" は、"Active"の配下にありました。NGINX Plusの場合、"idle"は、"Active"の積算から除外されています。そして、**Current**は、"reading"ステータスと"writing"ステータスを合算した値となります。
+
+> **Total** is a cumulative count of client requests. Note that a single client connection can involve multiple requests, so this number may be significantly larger than the cumulative number of connections. In fact, (total / accepted) yields the average number of requests per connection.
+
+**Total** は、クライアントリクエストの累積値です。注意するべきことは、単一のクライアントコネクションが、複数のリクエストを関連しているということです。従って、この数値は、コネクションの累積値よりも著しく大きいということです。実際には、totalをacceptedで除算した値は、コネクションあたりのリクエストの平均値になります。
 
 #### Metric differences between Open-Source and Plus
 
 NGINX (open-source)                | NGINX Plus
-\---------------------------------- | -------------------------------
+|---------------------------------- | -------------------------------
 accepts                            | accepted
 dropped must be calculated         | dropped is reported directly
 reading + writing                  | current
@@ -200,7 +210,7 @@ Open-source NGINX exposes these basic server metrics on a simple status page. Be
 ### Error metrics
 
 **Name**  | **Description**        | **[Metric type][17]** | **Availability**
-\--------- | ---------------------- | -------------------------------------------------------- | ----------------------
+|--------- | ---------------------- | -------------------------------------------------------- | ----------------------
 4xx codes | Count of client errors | Work: Errors                                             | NGINX logs, NGINX Plus
 5xx codes | Count of server errors | Work: Errors                                             | NGINX logs, NGINX Plus
 
@@ -223,7 +233,7 @@ Read the companion post on NGINX metrics collection for detailed instructions on
 ### Performance metrics
 
 **Name**     | **Description**                          | **[Metric type][20]** | **Availability**
-\------------ | ---------------------------------------- | -------------------------------------------------------- | ----------------
+|------------ | ---------------------------------------- | -------------------------------------------------------- | ----------------
 request time | Time to process each request, in seconds | Work: Performance                                        | NGINX logs
 
 #### **Metric to alert on: Request processing time**
@@ -235,7 +245,7 @@ NGINX and NGINX Plus users can capture data on processing time by adding the `$r
 ### Reverse proxy metrics
 
 **Name**                              | **Description**                     | **[Metric type][22]** | **Availability**
-\------------------------------------- | ----------------------------------- | -------------------------------------------------------- | ----------------
+|------------------------------------- | ----------------------------------- | -------------------------------------------------------- | ----------------
 Active connections by upstream server | Currently active client connections | Resource: Utilization                                    | NGINX Plus
 5xx codes by upstream server          | Server errors                       | Work: Errors                                             | NGINX Plus
 Available servers per upstream group  | Servers passing health checks       | Resource: Availability                                   | NGINX Plus
