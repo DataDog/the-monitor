@@ -1,7 +1,7 @@
 # How to monitor NGINX
 > *This post is part 1 of a 3-part series on NGINX monitoring. [Part 2][1] is about collecting NGINX metrics, and [Part 3][2] details how to monitor NGINX with Datadog.*
 
-*このポストは、"NGINXの監視"3回シリーズのPart1です。 Part 2は、[「NGINXのメトリクスの収集」][3]で、Part 3は、[「Datadogを使ったNGINXの監視」][4]になります。*
+*このポストは、"NGINXの監視"3回シリーズのPart 1です。 Part 2は、[「NGINXのメトリクスの収集」][3]で、Part 3は、[「Datadogを使ったNGINXの監視」][4]になります。*
 
 ## What is NGINX?
 > [NGINX][5] (pronounced "engine X") is a popular HTTP server and reverse proxy server. As an HTTP server, NGINX serves static content very efficiently and reliably, using relatively little memory. As a [reverse proxy][6], it can be used as a single, controlled point of access for multiple back-end servers or for additional applications such as caching and load balancing. NGINX is available as a free, open-source product or in a more full-featured, commercially distributed version called NGINX Plus.
@@ -112,7 +112,7 @@ NGINXがコネクションを正常に処理すると、コネクションは、
 > - **Reading:** When a request is received, the connection moves out of the waiting state, and the request itself is counted as Reading. In this state NGINX is reading a client request header. Request headers are lightweight, so this is usually a fast operation.
 > - **Writing:** After the request is read, it is counted as Writing, and remains in that state until a response is returned to the client. That means that the request is Writing while NGINX is waiting for results from upstream systems (systems "behind" NGINX), and while NGINX is operating on the response. Requests will often spend the majority of their time in the Writing state.
 
-- **Waiting:** 現時点で処理中のリクエストがない場合は、**Active**状態のコネクションは、Waitingというサブステートに成っていることがあります。新しいコネクションをは、**Waiting**状態をバイパスし直接**Reading**状態になります。この直接移行の最も一般的なケースは、"accept filter"や"deferred accept"を使用している時です。このような場合、十分なデータが揃ってレスポンスの処理を始めるまで、処理をしていることの通知をNGINXは受け取っていません。コネクションは、keep-aliveの設定がされている場合も、レスポンスを返信した後に**Waiting**状態になります。 
+- **Waiting:** 現時点で処理中のリクエストがない場合は、**Active**状態のコネクションは、Waitingというサブステートに成っていることがあります。新しいコネクションをは、**Waiting**状態をバイパスし直接**Reading**状態になります。この直接移行の最も一般的なケースは、"accept filter"や"deferred accept"を使用している時です。このような場合、十分なデータが揃ってレスポンスの処理を始めるまで、処理をしていることの通知をNGINXは受け取っていません。コネクションは、keep-aliveの設定がされている場合も、レスポンスを返信した後に**Waiting**状態になります。
 - **Reading:** リクエストを受信した時、コネクションは**Waiting**状態から抜け出します。そして、そのリクエストは、**Reading**にカウントされます。この状態では、NGINXは、クライアントからのリクエストヘッダーを解析しています。リクエストヘッダーは、非常の情報量はそれほど多くないので、一般的にこの処理にかかる時間は非常に短いです。
 - **Writing:** リクエストが**Reading**状態か抜け出すと、**Writing**としてカウントされます。そして、クライアントにレスポンスが返信されるまで、このステートに止まります。つまり、NGINXがバックエンドシステムからの結果を待っている間と実際にレスポンスを返信している間は、**Writing**状態になっています。リクエストは、その大半の時間を**Writing**状態で過ごすことになります。
 
@@ -238,7 +238,7 @@ NGINXのエラーに関するメトリクスは、サーバーが、有用な仕
 
 #### Collecting error metrics
 > Although open-source NGINX does not make error rates immediately available for monitoring, there are at least two ways to capture that information:
-> 
+>
 > 1. Use the expanded status module available with commercially supported NGINX Plus
 > 2. Configure NGINX's log module to write response codes in access logs
 
@@ -331,7 +331,7 @@ Datadogでは、NGINXとNGINX Plus用の両方に向けてIntegrationを提供�
 
 このポストを公開するに当たり、記事を事前にレビューし、重要なフィードバックと細部にわたる解説を提供してくれたNGINXチームに感謝します。
 
----- 
+----
 
 _Source Markdown for this post is available [on GitHub][33]. Questions, corrections, additions, etc.? Please [let us know][34]._
 
