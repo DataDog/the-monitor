@@ -8,7 +8,7 @@
 
 > How you go about capturing metrics depends on which version of NGINX you are using, as well as which metrics you wish to access. (See [the companion article](/blog/how-to-monitor-nginx/) for an in-depth exploration of NGINX metrics.) Free, open-source NGINX and the commercial product NGINX Plus both have status modules that report metrics, and NGINX can also be configured to report certain metrics in its logs:
 
-あなたはメトリックをキャプチャについては移動する方法は、使用しているのnginxのバージョンに依存するだけでなくどのようなあなたがアクセスしたいメトリックス。 （nginxのメトリックの詳細な探査のための関連記事を参照してください。）フリー、オープンソースのnginxの市販品nginxのプラスの両方のメトリックを報告し、nginxのは、そのログに特定のメトリックを報告するように構成することができ、ステータス·モジュールを持っています：
+NGINXからメトリクスを集める方法は、採用しているNGINXのバージョンに依存すると共に、収集したいメトリクスに依存しています。(NGINXのメトリクスについて詳しく知りたい場合は、このシリーズのPart 1 [「NGINXの監視方法」](/blog/how-to-monitor-nginx/)を参照してください。) オープンソース版のNGINXと商用版のNGINX Plusには、基本メトリクスをリポーティングするためにステータスモジューが実装されています。更にNGINXは、特定のメトリクスをログへ出力できるようにする設定も装備されています。:
 
 <table><colgroup> <col style="text-align: left;" /> <col style="text-align: center;" /> <col style="text-align: center;" /> <col style="text-align: center;" /> </colgroup>
 <thead>
@@ -78,7 +78,7 @@
 
 > Open-source NGINX exposes several basic metrics about server activity on a simple status page, provided that you have the HTTP [stub status module](http://nginx.org/en/docs/http/ngx_http_stub_status_module.html) enabled. To check if the module is already enabled, run:
 
-オープンソースのnginxのは、HTTPスタブ状態モジュールが有効になっていることを条件とする、単純なステータスページ上のサーバの活動状況に関するいくつかの基本的な測定基準を公開しています。モジュールが既に有効になっているかどうかを確認するには、実行します。
+オープンソース版のNGINXでは、HTTP [stub status module](http://nginx.org/en/docs/http/ngx_http_stub_status_module.html)を有効にすることにより、サーバーの稼働状況に関する複数の基本メトリクスを、ステータスページで閲覧することができるようになります。このモジュールが有効になっているか確認するためには、次のコマンドを実行します:
 
 ```
 nginx -V 2>&1 | grep -o with-http_stub_status_module
@@ -86,11 +86,11 @@ nginx -V 2>&1 | grep -o with-http_stub_status_module
 
 > The status module is enabled if you see `with-http_stub_status_module` as output in the terminal.
 
-あなたは端末内の出力としてで-http_stub_status_module``表示された場合、ステータスモジュールが有効になっています。
+ターミナル出力に`with-http_stub_status_module` が表示されて場合は、ステータスモジュールが有効になっています。
 
 > If that command returns no output, you will need to enable the status module. You can use the `--with-http_stub_status_module` configuration parameter when [building NGINX from source](http://wiki.nginx.org/InstallOptions):
 
-そのコマンドが出力を返さない場合は、ステータス·モジュールを有効にする必要があります。ソースからのnginxのを構築するときには、--with-http_stub_status_module設定パラメータを使用することができます。
+コマンの実行結果として何も表示されない場合は、ステータス·モジュールを有効にする必要があります。[ソースからNGINXをコンパイル ](http://wiki.nginx.org/InstallOptions)する際に、`--with-http_stub_status_module`をパラメーターに追記する必要があります:
 
 ```
 ./configure \
@@ -102,7 +102,7 @@ sudo make install
 
 > After verifying the module is enabled or enabling it yourself, you will also need to modify your NGINX configuration to set up a locally accessible URL (e.g., `/nginx_status`) for the status page:
 
-モジュールが有効になっているかを確認するか、それを自分で有効にした後、あなたはまた、ローカルにアクセスURLを設定するには、あなたのnginxの設定を変更する必要があります（例えば、`/ nginx_status`）ステータスページのための：
+先のコマンドでモジュールが有効になっていることを確認できたか、オプションを追記してソールからコンパイルしなおすことができたなら、NGINXの設定ファイルを変更し、ローカルサーバーのステータスページにアクセスするためのURL(例:`/nginx_status`)を設定します:
 
 ```
 server {
@@ -118,7 +118,7 @@ server {
 
 > Note: The `server` blocks of the NGINX config are usually found not in the master configuration file (e.g., `/etc/nginx/nginx.conf`) but in supplemental configuration files that are referenced by the master config. To find the relevant configuration files, first locate the master config by running:
 
-注：nginxの設定ファイルの`server`ブロックは、通常、マスター設定ファイルではないことが分かっている（例えば、`の/ etc/ nginxの/ nginx.conf`）が、マスターの設定によって参照される補助的な設定ファイルで。関連する構成ファイルを検索するには、最初に実行することにより、マスタの設定を探します。
+注: 通常、NGINXの`server`設定をするブロックは、マスター設定ファイル (例:`/etc/nginx/nginx.conf`)内には記述されていません。マスター設定ファイル内で参照設定されている補助的な設定ファイルに記述されています。関連する構成ファイルを検索するには、まず次のコマンドを実行し、マスター設定ファイルを場所を確認します。
 
 ```
 nginx -t
@@ -126,7 +126,7 @@ nginx -t
 
 > Open the master configuration file listed, and look for lines beginning with `include` near the end of the `http` block, such as:
 
-記載されているマスター設定ファイルを開き、のような`http`ブロックの終わり近くinclude``で始まる行を探します。
+マスター設定ファイルを表示し、ファイル内の`http`ブロックの末尾で、次の例ように`include`から始まる行を探します:
 
 ```
 include /etc/nginx/conf.d/*.conf;
@@ -134,7 +134,11 @@ include /etc/nginx/conf.d/*.conf;
 
 > In one of the referenced config files you should find the main `server` block, which you can modify as above to configure NGINX metrics reporting. After changing any configurations, reload the configs by executing:
 
-参照設定ファイルのいずれかで、あなたが報告nginxのメトリックを設定するには、上記のように変更することができますメインの `server`ブロックを、見つける必要があります。いずれかの構成を変更した後、実行してコンフィグをリロードします。
+
+
+参照設定ファイルのいずれかで、あなたが報告nginxのメトリックを設定するには、上記のように変更することができますメインの `server`ブロックを、見つける必要があります。
+
+参照してるどれかの設定ファイル内で、`server`ブロックを見つけることができるはずです。この`server`ブロックを上に紹介したように変更することで、NGINXがメトリクスをリポーティングするように設定できます。NGINXの設定を変更した場合は、次のコマンドを実行し、設定を読み込ませます:
 
 ```
 nginx -s reload
@@ -142,7 +146,7 @@ nginx -s reload
 
 > Now you can view the status page to see your metrics:
 
-今すぐあなたのメトリックを表示するには、ステータスページを表示することができます。
+このまでの作業が完了したら、ステータスページにアクセスし、メトリクスを閲覧することができます。
 
 ```
 Active connections: 24
@@ -153,15 +157,17 @@ Reading: 0 Writing: 18 Waiting : 6
 
 > Note that if you are trying to access the status page from a remote machine, you will need to whitelist the remote machine’s IP address in your status configuration, just as 127.0.0.1 is whitelisted in the configuration snippet above.
 
-あなたがリモートマシンからステータスページにアクセスしようとしている場合は、127.0.0.1は、上記の設定ファイルの抜粋でホワイトリストされているだけのように、自分のステータスの設定でリモートマシンのIPアドレスをホワイトリストに登録する必要があることに注意してください。
+リモートマシンからステータスページにアクセスしようとしている場合、先の`server`ブロック例の`allow`部分にリモートマシンのIPアドレスを追記する必要があります。(上記の紹介例は、127.0.0.1のみかホワイトリストとして記述されています。)
 
 > The NGINX status page is an easy way to get a quick snapshot of your metrics, but for continuous monitoring you will need to automatically record that data at regular intervals. Parsers for the NGINX status page already exist for monitoring tools such as [Nagios](https://exchange.nagios.org/directory/Plugins/Web-Servers/nginx) and [Datadog](http://docs.datadoghq.com/integrations/nginx/), as well as for the statistics collection daemon [collectD](https://collectd.org/wiki/index.php/Plugin:nginx).
 
-nginxのステータスページには、あなたのメトリックの簡単なスナップショットを取得する簡単な方法ですが、継続的な監視のためにあなたは、一定間隔で自動的にそのデータを記録する必要があります。 nginxのステータスページのパーサーは、既に統計情報収集デーモンcollectDのためだけでなく、そのようなNagiosのとDatadogなどの監視ツールのために存在します。
+NGINXのステータスページは、メトリクスの現状を把握するための簡単な方法です。しかし、継続的な監視のためには、データを一定時間ごとに自動で記録していく必要があります。NGINXのステータスページを読み取るパーサーは、[Nagios](https://exchange.nagios.org/directory/Plugins/Web-Servers/nginx) や [Datadog](http://docs.datadoghq.com/integrations/nginx/)や[collectD](https://collectd.org/wiki/index.php/Plugin:nginx)(統計データーを収集するためのデーモンソフト)のようなモニタリングツール向けに既に存在しています。
 
 ### Metrics collection: NGINX Plus
 
 > The commercial NGINX Plus provides [many more metrics](http://nginx.org/en/docs/http/ngx_http_status_module.html#data) through its ngx\_http\_status\_module than are available in open-source NGINX. Among the additional metrics exposed by NGINX Plus are bytes streamed, as well as information about upstream systems and caches. NGINX Plus also reports counts of all HTTP status code types (1xx, 2xx, 3xx, 4xx, 5xx). A sample NGINX Plus status board is available [here](http://demo.nginx.com/status.html).
+
+
 
 商業nginxのプラスは、オープンソースのnginxで利用可能であるよりも、そのngx_http_status_moduleを通じ、より多くのメトリックを提供します。 nginxのプラスによって公開された、他の指標の中でストリーミングさバイトだけでなく、上流のシステムおよびキャッシュに関する情報があります。 nginxのプラスは、すべてのHTTPステータスコードの種類（1XX、2xxの、3XX、4xxの、5xxの）のカウントを報告します。サンプルnginxのプラスの状態ボードは、ここから入手できます。
 
