@@ -167,13 +167,14 @@ NGINXのステータスページは、メトリクスの現状を把握するた
 
 > The commercial NGINX Plus provides [many more metrics](http://nginx.org/en/docs/http/ngx_http_status_module.html#data) through its ngx\_http\_status\_module than are available in open-source NGINX. Among the additional metrics exposed by NGINX Plus are bytes streamed, as well as information about upstream systems and caches. NGINX Plus also reports counts of all HTTP status code types (1xx, 2xx, 3xx, 4xx, 5xx). A sample NGINX Plus status board is available [here](http://demo.nginx.com/status.html).
 
-
-
-商業nginxのプラスは、オープンソースのnginxで利用可能であるよりも、そのngx_http_status_moduleを通じ、より多くのメトリックを提供します。 nginxのプラスによって公開された、他の指標の中でストリーミングさバイトだけでなく、上流のシステムおよびキャッシュに関する情報があります。 nginxのプラスは、すべてのHTTPステータスコードの種類（1XX、2xxの、3XX、4xxの、5xxの）のカウントを報告します。サンプルnginxのプラスの状態ボードは、ここから入手できます。
+商用版のNGINX Plusは、ngx\_http\_status\_moduleを介し、オープンソース版のNGINXよりも[多くのメトリクス](http://nginx.org/en/docs/http/ngx_http_status_module.html#data) を提供しています。NGINX Plus上で追加提供されているメトリクスには、送信したバイト数、Upstreamシステムやキャシュの情報などが有ります。更に、NGINX Plusは、HTTPのステータスコードタイプ(1xx, 2xx, 3xx, 4xx, 5xx)の集計値もリポーティングしています。NGINX Plusのステータスボードのサンプルは[ここから](http://demo.nginx.com/status.html)見ることができます。
 
 [![NGINX Plus status board](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/status_plus-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/status_plus-2.png)
 
 > *Note: the “Active” connections on the NGINX Plus status dashboard are defined slightly differently than the Active state connections in the metrics collected via the open-source NGINX stub status module. In NGINX Plus metrics, Active connections do not include connections in the Waiting state (aka Idle connections).*
+
+
+
 
 *注：nginxのプラスステータスダッシュボード上の「アクティブ」の接続は、オープンソースのnginxのスタブ·ステータス·モジュールを介して収集されたメトリックでアクティブ状態の接続よりもわずかに異なって定義されています。 nginxのプラスメトリックでは、アクティブな接続が待機状態（別名アイドル接続）内の接続が含まれていません。*
 
