@@ -134,10 +134,6 @@ include /etc/nginx/conf.d/*.conf;
 
 > In one of the referenced config files you should find the main `server` block, which you can modify as above to configure NGINX metrics reporting. After changing any configurations, reload the configs by executing:
 
-
-
-参照設定ファイルのいずれかで、あなたが報告nginxのメトリックを設定するには、上記のように変更することができますメインの `server`ブロックを、見つける必要があります。
-
 参照してるどれかの設定ファイル内で、`server`ブロックを見つけることができるはずです。この`server`ブロックを上に紹介したように変更することで、NGINXがメトリクスをリポーティングするように設定できます。NGINXの設定を変更した場合は、次のコマンドを実行し、設定を読み込ませます:
 
 ```
@@ -173,14 +169,11 @@ NGINXのステータスページは、メトリクスの現状を把握するた
 
 > *Note: the “Active” connections on the NGINX Plus status dashboard are defined slightly differently than the Active state connections in the metrics collected via the open-source NGINX stub status module. In NGINX Plus metrics, Active connections do not include connections in the Waiting state (aka Idle connections).*
 
+*注: NGINX Plusのステータスダッシュボード上の"Active"コネクション数と、オープンソース版のNGINXの”stub status module”を介して収集した"Active"コネクション数とは、微妙に異なった定義がされています。NGINX Plus メトリクスでは、"Active"コネクションには、"Waiting"ステータス(NGINX Plusでは、"Idle"ステータス)のコネクションは含まれていません。*
 
+> NGINX Plus also reports [metrics in JSON format](http://demo.nginx.com/status) for easy integration with other monitoring systems. With NGINX Plus, you can see the metrics and health status [for a given upstream grouping of servers](http://demo.nginx.com/status/upstreams/demoupstreams), or drill down to get a count of just the response codes [from a single server](http://demo.nginx.com/status/upstreams/demoupstreams/0/responses) in that upstream:
 
-
-*注：nginxのプラスステータスダッシュボード上の「アクティブ」の接続は、オープンソースのnginxのスタブ·ステータス·モジュールを介して収集されたメトリックでアクティブ状態の接続よりもわずかに異なって定義されています。 nginxのプラスメトリックでは、アクティブな接続が待機状態（別名アイドル接続）内の接続が含まれていません。*
-
-NGINX Plus also reports [metrics in JSON format](http://demo.nginx.com/status) for easy integration with other monitoring systems. With NGINX Plus, you can see the metrics and health status [for a given upstream grouping of servers](http://demo.nginx.com/status/upstreams/demoupstreams), or drill down to get a count of just the response codes [from a single server](http://demo.nginx.com/status/upstreams/demoupstreams/0/responses) in that upstream:
-
-nginxのプラスはまた、他の監視システムとの容易な統合のためのJSON形式のメトリックを報告します。 nginxのプラスを使用すると、サーバーの指定された上流のグループ化のためのメトリックと健康状態を参照するか、その上流にある単一のサーバーからわずか応答コードの数を取得するためにドリルダウンすることができます。
+更にNGINX Plusでは、他の監視システムと連携しやすいように、[JSON形式でメトリクス](http://demo.nginx.com/status) をレポーティングできるようになっています。NGINX Plusを使用すると、[特定のUpstreamサーバーグループ](http://demo.nginx.com/status/upstreams/demoupstreams)のメトリクスや健全性を把握することができます。また、upstreamに属している[単一サーバー](http://demo.nginx.com/status/upstreams/demoupstreams/0/responses)にドリルインし、レスポンスコードの数を取得することもできます。
 
 ```
 {"1xx":0,"2xx":3483032,"3xx":0,"4xx":23,"5xx":0,"total":3483055}
@@ -188,7 +181,8 @@ nginxのプラスはまた、他の監視システムとの容易な統合のた
 
 > To enable the NGINX Plus metrics dashboard, you can add a status `server` block inside the `http` block of your NGINX configuration. ([See the section above](#open-source) on collecting metrics from open-source NGINX for instructions on locating the relevant config files.) For example, to set up a status dashboard at `http://your.ip.address:8080/status.html` and a JSON interface at `http://your.ip.address:8080/status`, you would add the following server block:
 
-nginxのプラスメトリックのダッシュボードを有効にするには、nginxの設定の`http`ブロック内のステータス` server`ブロックを追加することができます。 （該当する設定ファイルの位置を特定する手順については、オープンソースのnginxのからのメトリックの収集に（＃オープンソース）[セクションの上を参照してください]）。たとえば、`HTTPのステータスダッシュボード設定するには：//your.ipを。アドレス：8080/ status.html`て、http`でJSONインタフェース：//your.ip.address：8080/ status`、あなたは次のサーバーのブロックを追加します。
+NGINX Plusのメトリクスダッシュボードを有効にすには、NGINXの設定ファイルの`http`ブロック内の`server`ブロックに設定情報を追記します。（該当する設定ファイルを特定する手順については、[「collecting metrics from open-source NGINX」](#open-source)のセクションを参照してください）
+例えば、`http://your.ip.address:8080/status.html` にステータスダッシュボードを設定し、`http://your.ip.address:8080/status`にJSONインターフェースを設定するには、次のような`server`ブロックを追記ます。
 
 ```
 server {
@@ -206,7 +200,7 @@ server {
 
 > The status pages should be live once you reload your NGINX configuration:
 
-あなたはnginxの設定を再ロードしたら、ステータスページには、ライブのようになります。
+以下のコマンドでNGINXの設定を再度読み込めば、ステータスページは閲覧可能になります:
 
 ```
 nginx -s reload
@@ -214,13 +208,13 @@ nginx -s reload
 
 > The official NGINX Plus docs have [more details](http://nginx.org/en/docs/http/ngx_http_status_module.html#example) on how to configure the expanded status module.
 
-公式nginxのプラスのドキュメントは、展開状態のモジュールを設定する方法の詳細を持っています。
+NGINX Plusの公式ドキュメントには、拡張ステータスモジューの[設定に関し更に詳しい](http://nginx.org/en/docs/http/ngx_http_status_module.html#example) 記述があります。
 
 ### Metrics collection: NGINX logs
 
 > NGINX’s [log module](http://nginx.org/en/docs/http/ngx_http_log_module.html) writes configurable access logs to a destination of your choosing. You can customize the format of your logs and the data they contain by [adding or subtracting variables](http://nginx.org/en/docs/http/ngx_http_log_module.html#log_format). The simplest way to capture detailed logs is to add the following line in the `server` block of your config file (see [the section](#open-source) on collecting metrics from open-source NGINX for instructions on locating your config files):
 
-nginxののログモジュールは、あなたが選んだの宛先に設定可能なアクセスログを書き込みます。あなたが追加したり、変数を減算することによって、彼らが含まれているあなたのログの形式とデータをカスタマイズすることができます。詳細ログをキャプチャする最も簡単な方法は、（あなたの設定ファイルを見つけるための手順については、オープンソースのnginxからメトリックの収集のセクションを参照してください）設定ファイルのサーバブロックに次の行を追加することです。
+NGINXの[log module](http://nginx.org/en/docs/http/ngx_http_log_module.html)は、任意の保存先に対してアクセスログをかき出してくれます。出力するログのフォーマットとそれに含まれるデーターは、設定ファイルの[変数を追加したり削除する]http://nginx.org/en/docs/http/ngx_http_log_module.html#log_format)ことでカスタマイズすることができます。詳細なログを記録する最も簡単な方法は、設定ファイルに、次に紹介する行を`server`ブロック内に追記することです。（該当する設定ファイルを特定する手順については、[「collecting metrics from open-source NGINX」](#open-source)のセクションを参照してください）
 
 ```
 access_log logs/host.access.log combined;
@@ -228,7 +222,7 @@ access_log logs/host.access.log combined;
 
 > After changing any NGINX configurations, reload the configs by executing:
 
-任意のnginxの設定を変更した後、実行してコンフィグをリロードします。
+NGINXの設定を変更した場合は、次のコマンドを実行し、設定を読み込ませます:
 
 ```
 nginx -s reload
@@ -236,7 +230,7 @@ nginx -s reload
 
 > The “combined” log format, included by default, captures [a number of key data points](http://nginx.org/en/docs/http/ngx_http_log_module.html#log_format), such as the actual HTTP request and the corresponding response code. In the example logs below, NGINX logged a 200 (success) status code for a request for /index.html and a 404 (not found) error for the nonexistent /fail.
 
-デフォルトで含まれている「組み合わせ」ログ形式は、このような実際のHTTP要求とそれに対応するレスポンスコードなどの重要なデータポイントの数を取得します。以下の例では、ログに、nginxのは/index.htmlがの要求と、存在しないため404（見つかりません）エラーの200（成功）ステータスコードをログに記録/失敗します。
+デフォルトで設定されている“combined”のログ形式は、実際のHTTPリクエストと、そのリクエストの処理結果のレスポンスコードなどの[重要なデーター](http://nginx.org/en/docs/http/ngx_http_log_module.html#log_format)を記録します。以下に示すログの例では、NGINXは、`/index.html`のURLに対し200 (success)のステータスをログ出力し、存在していない`/fail`のURLに対し404 (not found)のエラーをログ出力します。
 
 ```
 127.0.0.1 - - [19/Feb/2015:12:10:46 -0500] "GET /index.html HTTP/1.1" 200 612 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari 537.36"
@@ -246,7 +240,7 @@ nginx -s reload
 
 > You can log request processing time as well by adding a new log format to the `http` block of your NGINX config file:
 
-あなたはnginxの設定ファイルの`http`ブロックに新しいログ形式を追加することで、同様の要求処理時間を記録することができます。
+NGINXの設定ファイルの`http`ブロックに新しいログフォーマットを追記することで、`request processing time`をログ出力することができます:
 
 ```
 log_format nginx '$remote_addr - $remote_user [$time_local] '
@@ -256,7 +250,7 @@ log_format nginx '$remote_addr - $remote_user [$time_local] '
 
 > And by adding or modifying the access\_log line in the `server` block of your config file:
 
-そして、追加したり、設定ファイルの`server`ブロックの_logライン アクセスを変更することによって：
+その上で、設定ファイルの`server`ブロックのaccess\_logの部分を以下に紹介する行で着替えたり、追記したりします:
 
 ```
 access_log logs/host.access.log nginx;
@@ -264,7 +258,7 @@ access_log logs/host.access.log nginx;
 
 > After reloading the updated configs (by running `nginx -s reload`), your access logs will include response times, as seen below. The units are seconds, with millisecond resolution. In this instance, the server received a request for /big.pdf, returning a 206 (success) status code after sending 33973115 bytes. Processing the request took 0.202 seconds (202 milliseconds):
 
-下図のように更新されたコンフィグを再読み込みした後（実行して、`nginxの-s reload`）は、お使いのアクセスログは、応答時間が含まれます。単位はミリ秒の分解能で、秒です。この例では、サーバは33973115バイト送信した後、206（成功）ステータスコードを返し、/big.pdfための要求を受信しました。処理要求は、0.202秒（202ミリ秒）を取りました：
+`nginxの-s reload`を実行し更新した設定ファイルを再度読み込むと、以下に示したように、アクセスログには"response times"を含んだログが出力されるようになります。単位は秒で、分解能はミリ秒です。この例では、サーバーは`/big.pdf`を送信するリクエストを受信しました。その結果、33973115 bytesを送信し、206 (success)コードを送信しました。このリクエストを処理するのに0.202秒(202ミリ秒)の時間がかかりました:
 
 ```
 127.0.0.1 - - [19/Feb/2015:15:50:36 -0500] "GET /big.pdf HTTP/1.1" 206 33973115 0.202 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36"
@@ -272,20 +266,20 @@ access_log logs/host.access.log nginx;
 
 > You can use a variety of tools and services to parse and analyze NGINX logs. For instance, [rsyslog](http://www.rsyslog.com/) can monitor your logs and pass them to any number of log-analytics services; you can use a free, open-source tool such as [logstash](https://www.elastic.co/products/logstash) to collect and analyze logs; or you can use a unified logging layer such as [Fluentd](http://www.fluentd.org/) to collect and parse your NGINX logs.
 
-あなたはnginxのログを解析し、解析するためのツールとさまざまなサービスを使用することができます。例えば、rsyslogのは、あなたのログを監視することができ、ログ分析サービスの任意の数に渡します。あなたが収集してログを分析するためにこのようなlogstashとして無料、オープンソースのツールを使用することができます。またはあなたが収集してnginxのログを解析するために、このようなFluentdとして統合ログ層を使用することができます。
+NGINXのログをパースして解析するには、さまざまなツールやサービスを利用することができます。例えば、[rsyslog](http://www.rsyslog.com/) は、ログを監視し、各種のログ解析サービスに転送することができます。また、無料でオープンソースのツールの[logstash](https://www.elastic.co/products/logstash)でログを収取し解析することもできます。更に、[Fluentd](http://www.fluentd.org/)のような統合的ログハンドリングツールを使いNGINXのログを収集しパースすることもできます。
 
 ## Conclusion
 
 > Which NGINX metrics you monitor will depend on the tools available to you, and whether the insight provided by a given metric justifies the overhead of monitoring that metric. For instance, is measuring error rates important enough to your organization to justify investing in NGINX Plus or implementing a system to capture and analyze logs?
 
-これはnginxのメトリックはあなたに利用可能なツールに依存し監視し、指定されたメトリックが提供する洞察力かどうか、そのメトリックを監視するオーバーヘッドを正当化します。たとえば、組織のnginxプラスに投資やキャプチャし、ログを分析するシステムを実装正当化するのに十分な重要な誤り率を測定していますか？
+どのNGINXメトリクスを監視するかは、利用可能なツールに依存します。それぞれのメトリクスが提供する見識の価値がそのメトリクスを監視するためにかかる負担を正当化するための後押しをしてくれるでしょう。例えば、NGINX Plusに投資したり、ログを取り込んで解析するシステムを構築するほどエラーの発生率はあなたの組織にとって重要なのでしょうか？
 
 > At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX with Datadog [in this post](/blog/how-to-monitor-nginx-with-datadog/), and get started right away with [a free trial of Datadog](https://app.datadoghq.com/signup).
 
-セットアップを最小限に抑えて、すべてのWebサーバーからメトリックを収集し、監視を開始することができるようにDatadogで、我々はnginxのとnginxのプラスの両方との統合を構築しています。この記事でDatadogでnginxのを監視するために、そしてすぐDatadogの無料トライアルを始める方法については、こちらをご覧ください。
+Datadogでは、NGINXとNGINX Plus用の両方に向けてIntegrationを提供しています。これらのIntegrationを採用することで、最小限の設定で全てのwebのメトリクスを収集し監視できるようになります。このシリーズに含まれる[「How to monitor NGINX with Datadog」][31]では、Datadogを使ったNGINXの監視方法を解説しています。このポストを参考に、Datadogの[無料トライアルアカウント][32]に登録し、NGINXの監視を是非始めてみてください。
 
 ------------------------------------------------------------------------
 
 > *Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/nginx/how_to_collect_nginx_metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues).*
 
-*この記事のソース·値引きはGitHubの上で利用可能です。ご質問、訂正、追加、など？私たちに知らせてください。*
+*このポストのMarkdownソースは、[GitHub](https://github.com/DataDog/the-monitor/blob/master/nginx/how_to_collect_nginx_metrics.md)で閲覧することができます。質問、訂正、追加、などがありましたら、[GitHubのissueページ](https://github.com/DataDog/the-monitor/issues)を使って連絡を頂けると幸いです。*
