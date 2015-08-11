@@ -234,23 +234,22 @@ NGINXのエラーに関するメトリクスは、サーバーが、有用な仕
 > A note on client errors: while it is tempting to monitor 4xx, there is limited information you can derive from that metric since it measures client behavior without offering any insight into particular URLs. In other words, a change in 4xx could be noise, e.g. web scanners blindly looking for vulnerabilities.
 
 
-クライアントエラーに関する注意: 
-
-
-クライアントのエラーに関する注記：それは4xxのを監視するために魅力的であるが、それは特定のURLに任意の洞察力を提供することなく、クライアントの動作を測定するので、あなたがそのメトリックから導出することができる限られた情報があります。つまり、4xxの変化は、ノイズである可能性があり、例えばウェブスキャナは盲目的な脆弱性を探しています。
+クライアントエラーに関する注意: クライアントエラーを把握するために4xx系を監視したくなりますが、このメトリクスからは、限られた情報しか収集することができません。なぜならば、特定のURLに対してどんなリクエストをしているのかの洞察を把握せずに、クライアントの動作具合を測定する状態だからです。つまり、4xx系で起きた変化は、ノイズである可能性もあるということです。例えば、webスキャナーによる総当たり的な脆弱性検査を実施しているケースです。
 
 #### Collecting error metrics
 > Although open-source NGINX does not make error rates immediately available for monitoring, there are at least two ways to capture that information:
-1. Use the expanded status module available with commercially supported NGINX Plus
-2. Configure NGINX's log module to write response codes in access logs
+> 
+> 1. Use the expanded status module available with commercially supported NGINX Plus
+> 2. Configure NGINX's log module to write response codes in access logs
 
-オープンソースのnginxのは、監視のためのエラー率がすぐに利用できるようにしていませんが、その情報をキャプチャするには、少なくとも2つの方法があります。
-1.商業的にサポートされているnginxのプラスで利用可能な、拡張状態モジュールを使用します
-2. [設定nginxののログモジュールは、アクセスログの応答コードを書くために
+オープンソース版NGINXは、監視に直ちに使えるようなエラー率を公開していません。以下に紹介した方法でその方法をキャプチャすることができます。
+
+1. エラー率を収集するための拡張状態モジュールを持っている、商用版のNGINX Plusを利用する。
+2. NGINXのログモジュールを設定し、アクセスログにレスポンスコードも書き出すようにする。
 
 > Read the companion post on NGINX metrics collection for detailed instructions on both approaches.
 
-両方のアプローチに関する詳細な手順については、nginxのメトリック収集のコンパニオンの記事をお読みください。
+両方のアプローチの詳しい手順については、このシリーズに含まれる[「NGINX metrics collection」][21]の記事を参照してください。
 
 ### Performance metrics
 
@@ -261,12 +260,12 @@ request time | Time to process each request, in seconds | Work: Performance     
 #### **Metric to alert on: Request processing time**
 > The request time metric logged by NGINX records the processing time for each request, from the reading of the first client bytes to fulfilling the request. Long response times can point to problems upstream.
 
-nginxのによって記録された要求時間メトリックは、最初のクライアントバイトの読み取りからの要求を満たすには、各リクエストの処理時間を記録します。長い応答時間は、上流の問題を指すことができます。
+NGINXによってログ出力された"request time"メトリクスは、クライアントからの最初のバイトの読み取りから、リクエストの対応が終わるまでの応答時間を記録しています。このメトリクス("request time"==応答時間)が、長くなっている場合は、バクエンドで処理をしているサーバーに問題が発生している可能性を示唆しています。
 
 #### Collecting processing time metrics
 > NGINX and NGINX Plus users can capture data on processing time by adding the `$request_time` variable to the access log format. More details on configuring logs for monitoring are available in our companion post on [NGINX metrics collection][21].
 
-nginxのとnginxのプラスユーザーがアクセスログ形式に`$のrequest_time`変数を追加することで、処理時間にデータを取り込むことができます。監視のログを構成する方法の詳細は[nginxのメトリックの収集] [21]の上の私たちの仲間の記事でご利用いただけます。
+NGINXとNGINX Plusの両ユーザーは、`$request_time`の値をログ出力フォーマットに追加することで、処理時間を収集することができます。 ログの設定の詳しい手順については、このシリーズに含まれる[「NGINX metrics collection」][21]の記事を参照してください。
 
 ### Reverse proxy metrics
 
@@ -277,55 +276,60 @@ Active connections by upstream server | Currently active client connections | Re
 
 > One of the most common ways to use NGINX is as a [reverse proxy][23]. The commercially supported NGINX Plus exposes a large number of metrics about backend (or "upstream") servers, which are relevant to a reverse proxy setup. This section highlights a few of the key upstream metrics that are available to users of NGINX Plus.
 
-nginxのを使用するのが最も一般的な方法の1つは、[リバースプロキシ]の通りである[23]。商業的にサポートされているnginxのプラスは、リバースプロキシの設定に関連するバックエンド（または「上流」）サーバーに関するメトリックを多数公開しています。このセクションでは、nginxのプラスのユーザーに利用可能であるキー上流メトリックのいくつか強調しています。
+NGINXの最も代表的な使い道は、[リバースプロキシ][23]です。そして、商用版のNGINX Plusは、リバースプロキシとして使った場合に非常に価値のある、バックエンドサーバーに関するメトリクスが提供しています。このセクションでは、NGINX plusのユーザーに提供されているバックエンドサーバーに関する主要メトリクスの幾つかを取り上げていきます。(以降、バックエンドサーバーに関するメトリクスすは、"upstreamメトリクス"と呼びます。)
 
 > NGINX Plus segments its upstream metrics first by group, and then by individual server. So if, for example, your reverse proxy is distributing requests to five upstream web servers, you can see at a glance whether any of those individual servers is overburdened, and also whether you have enough healthy servers in the upstream group to ensure good response times.
 
-nginxのプラスセグメントその上流最初のグループによってメトリック、および個々のサーバによる。例えば、リバースプロキシは、5つの上流のWebサーバに要求を配布している、のであれば、あなたはそれらの個々のサーバーのいずれかを使用すると、良好な応答時間を保証するために、上流のグループに十分な健全なサーバーを持っているにもかどうか過度の負担とされているかどうかを一目で見ることができます。
+NGINX Plusは、"upstreamメトリクス"を、まずグループによって分類し、その後個々のサーバーに分類していきます。従って例えば、リバースプロキシーが5台のwebサーバーにリクエストを配分している場合、どれかのwebサーバーに過剰な負荷がかかっていないかを一目で確認することができます。(配分比が意図していない状況になっていないかを確認できます。)更に、満足できるレスポンス時間を確保できているかを確認するために、"upstream"グループ内に正しく動作しているサーバーが十分確保できているかを確認することができます。
 
 #### **Activity metrics**
 > The number of **active connections per upstream server** can help you verify that your reverse proxy is properly distributing work across your server group. If you are using NGINX as a load balancer, significant deviations in the number of connections handled by any one server can indicate that the server is struggling to process requests in a timely manner or that the load-balancing method (e.g., [round-robin or IP hashing][24]) you have configured is not optimal for your traffic patterns.
 
-アップストリームサーバーあたり**アクティブな接続の数は**あなたがリバースプロキシが正しく、サーバーグループ全体で作業を分散していることを確認することができます。あなたがロードバランサとしてnginxのを使用している場合は、いずれかのサーバーで処理された接続の数が大幅に逸脱が、サーバーが負荷分散方式適時にまたはその要求（例えば、[ラウンドロビンを処理するために苦労していることを示すことができ、またはIPハッシュ] [24]）が設定したが、あなたのトラフィックパターンには最適ではありません..
+**upsteamサーバー単位でのactive connection**数は、リバースプロキシーがグループに所属する各サーバーに意図した通りに負荷を分散できているかの証明になります。もしも、NGINXをロードバランサーとして使用している場合で、各upstreamサーバーで処理されている"connection"数に大きな差がある場合は、"connection"数の少ないサーバーは適切な時間内にリクエストを処理することが難しい状態になっているか、現在採用している負荷分散方式(例:[round-robin or IP hashing][24])は処理しようとしているトラフィックのパターンに適合していなことが分かります。
 
 #### Error metrics
 > Recall from the error metric section above that 5xx (server error) codes are a valuable metric to monitor, particularly as a share of total response codes. NGINX Plus allows you to easily extract the number of **5xx codes per upstream server**, as well as the total number of responses, to determine that particular server's error rate.
 
-その5xxの（サーバーエラー）コード上記のエラーメトリックセクションから思い出しては、特に、全応答コードの共有として、監視するメトリック価値があります。 nginxのプラスは、あなたが簡単に、特定のサーバーのエラー率を決定するために、アップストリームサーバー**あたり**5xxのコードの数、ならびに応答の合計数を抽出することができます。
+
+既にエラーセクションでも紹介したように、5xx系(サーバー側エラー)コードは、監視対象としては非常に重要なメトリクスです。特に、レスポンスコード全体に占める5xx系コードの割合は、重要なメトリクスです。NGINX Plusでは、特定のサーバーのエラー発生率を判定するために、**upstream server毎の5xx系コード**の数やレスポンスの総数を簡単に収集することもできます。
 
 #### **Availability metrics**
 > For another view of the health of your web servers, NGINX also makes it simple to monitor the health of your upstream groups via the total number of **servers currently available within each group**. In a large reverse proxy setup, you may not care very much about the current state of any one server, just as long as your pool of available servers is capable of handling the load. But monitoring the total number of servers that are up within each upstream group can provide a very high-level view of the aggregate health of your web servers.
 
-あなたのWebサーバーの状態の別の図では、nginxのも、それは単純な**各グループ内で現在利用可能**サーバーの総数を介してアップストリームグループの状態を監視することができます。大きなリバースプロキシ設定では、あなただけの限り使用可能なサーバーのあなたのプールは、負荷を処理することが可能であるように、いずれかのサーバーの現在の状態についてはあまり気にしないことがあります。しかし、各アップストリームグループ内で稼働しているサーバーの合計数を監視することは、あなたのWebサーバの集合体の健康の非常に高いレベルのビューを提供することができます。
+Webサーバーの状態を判断する別の方法として、NGINXには、各Upstreamグループの動作状態を**各グループ内で、現在リクエストの配給が可能なサーバー**の総数を使って監視できようにしています。リーバスプロキシーを使った大規模な環境では、リクエスト処理をする個々のサーバーの集合体が全体負荷を処理状態にあれば、単体サーバーの現状にはあまり関心がないはずです。しかし、各Upstreamのグループ内で稼働しているサーバーの合計数を監視することは、単体webサーバーを集合体としての集約し、全体的な視点でweb層の状態を提供していくれます。
 
 #### **Collecting upstream metrics**
 > NGINX Plus upstream metrics are exposed on the internal NGINX Plus monitoring dashboard, and are also available via a JSON interface that can serve up metrics into virtually any external monitoring platform. See examples in our companion post on [collecting NGINX metrics][25].
 
-nginxのプラス上流のメトリックは、内部nginxのプラスモニタリングダッシュボード上に露出し、また実質的に任意の外部監視プラットフォームにメトリックをアップ役立つことができるJSONインタフェースを介して利用できます。 [nginxのメトリックの収集]の上の私たちの仲間の後の例を参照してください[25]。
-
+NGINX PlusのUpstreamメトリクスは、NGINX Plus内の監視ダッシュボードで提供されています。また、このメトリクスは、JSONインターフェースを介して外部の監視プラットフォームからも利用できるようになっています。詳細に関しては、[collecting NGINX metrics][25]の記事を参照してください。
 
 ## Conclusion
 > In this post we've touched on some of the most useful metrics you can monitor to keep tabs on your NGINX servers. If you are just getting started with NGINX, monitoring most or all of the metrics in the list below will provide good visibility into the health and activity levels of your web infrastructure:
+
 > - [Dropped connections][26]
 > - [Requests per second][27]
 > - [Server error rate][28]
 > - [Request processing time][29]
 
-この記事では、私たちはあなたのnginxのサーバー上のタブを保つために監視することができる最も有用な測定基準の一部に触れてきました。あなただけのリストにメトリックの大部分またはすべてを監視し、nginxの使用を開始している場合は、以下のウェブインフラの健康と活動のレベルに良好な視認性を提供します：プラットフォームをnitoring。 [nginxのメトリックの収集]の上の私たちの仲間の後の例を参照してください[25]。
+このポストでは、NIGINXサーバーの状況を把握しておくために監視しておくべき有用なメトリクスの一部について紹介してきました。NGINXを使い始めている場合、以下のリストにあるメトリクスの大部分または全部を監視することで、Web層の健全性や稼働状態を把握する手助けをしてくれるはずです。
 
+- [Dropped connections][26]
+- [Requests per second][27]
+- [Server error rate][28]
+- [Request processing time][29]
 
 > Eventually you will recognize additional, more specialized metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on the tools you have and the metrics available to you. See the companion post for [step-by-step instructions on metric collection][30], whether you use NGINX or NGINX Plus.
 
-最終的にあなたがあなた自身のインフラストラクチャと使用事例に特に関連する付加的な、より専門的なメトリックを認識します。もちろん、あなたが持っているツールと、使用可能なメトリックに依存する監視もの。あなたはnginxのかnginxのプラスを使用するかどうか、[メトリック収集に関するステップバイステップの説明] [30]のためのコンパニオンの記事を参照してください。
+最終的には、あなたのインフラやユースケースに特に関連性のある、より専門的なメトリクスも存在することに気がつくでしょう。もちろん、何を監視するかは、持っているツールと監視可能なメトリクスの種類に依存しています。監視可能なメトリクスの違いを把握し、NGINXを採用するか、NGINX Plusを採用するかを検討するには、このシリーズに含まれる[step-by-step instructions on metric collection][30]を参考にしてください。
 
 > At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX with Datadog [in this post][31], and get started right away with [a free trial of Datadog][32].
 
-セットアップを最小限に抑えて、すべてのWebサーバーからメトリックを収集し、監視を開始することができるようにDatadogで、我々はnginxのとnginxのプラスの両方との統合を構築しています。 [この記事で] Datadog[31]とのnginxのを監視するために、とすぐに[Datadogの無料トライアル] [32]を使い始める方法については、こちらをご覧ください。
+Datadogでは、NGINXとNGINX Plus用の両方に向けてIntegrationを提供しています。これらのIntegrationを採用することで、最小限の設定で全てのwebのメトリクスを収集し監視できるようになります。このシリーズに含まれる[「How to monitor NGINX with Datadog」][31]では、Datadogを使ったNGINXの監視方法を解説しています。このポストを参考に、Datadogの[無料トライアルアカウント][32]に登録し、NGINXの監視を是非始めてみてください。
 
 ## Acknowledgments
 > Many thanks to the NGINX team for reviewing this article prior to publication and providing important feedback and clarifications.
 
-公開前にこの記事を見直し、重要なフィードバックと明確化を提供するためのnginxのチームに感謝します。
+このポストを公開するに当たり、記事を事前にレビューし、重要なフィードバックと細部にわたる解説を提供してくれたNGINXチームに感謝します。
 
 ---- 
 
