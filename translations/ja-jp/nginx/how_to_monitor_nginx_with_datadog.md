@@ -128,13 +128,13 @@ NGINXが依存する外部の重要なメトリクスを元にしたグラフを
 
 > Once Datadog is capturing and visualizing your metrics, you will likely want to set up some monitors to automatically keep tabs on your metrics—and to alert you when there are problems. Below we’ll walk through a representative example: a metric monitor that alerts on sudden drops in NGINX throughput.
 
-Datadogをキャプチャし、あなたの評価指標を可視化されたら、自動的にあなたのメトリックとに問題があると警告を発するように、タブを保つためにいくつかのモニターを設定する可能性が高いでしょう。 nginxのスループットの急激な降下に警告メトリック·モニター：私たちは、代表的な例を歩きます下に。
+Datadogで、NGINXのメトリクスを記録し、可視化できるようになったら、それらのメトリクスに”Monitors”(監視アラート)を設定し、自動で見張り、問題が発生した際には、アラートを通知受けられるようにしたいでしょう。以下に代表的な事例として、NGINXのスループットの急激な降下が発生した際にアラートを発生させる”Monitor”の設定手順を解説することにします。
 
 ### Monitor your NGINX throughput
 
 > Datadog metric alerts can be threshold-based (alert when the metric exceeds a set value) or change-based (alert when the metric changes by a certain amount). In this case we’ll take the latter approach, alerting when our incoming requests per second drop precipitously. Such drops are often indicative of problems.
 
-Datadogメトリック·アラートが（メトリックが設定値を超えた場合、警告）しきい値ベースにすることかできます変更ベース（アラート時に一定量測定基準の変更）。このケースでは、ときに、第2のドロップあたりの私たちの着信要求急激に警告する、後者のアプローチを取りますよ。このような液滴は、多くの場合、問題を示すものです。
+Datadogが提供するメトリクスアラート(メトリクスの数値を元に判定するアラート）には、閾値ベース(メトリクスが閾値を超えた場合に警告)と変化ベース(一定の量でメトリクスが変化した場合に警告)が有ります。今回のケースでは変化ベースのアプローチを取り、1秒あたりの着信リクエストが突然落ち込んだ際にアラートを発生するようにします。このようなリクエスト数の落ち込みは、多くの場合において障害の予兆を示すものです。
 
 > 1.  **Create a new metric monitor.** Select “New Monitor” from the “Monitors” dropdown in Datadog. Select “Metric” as the monitor type.
      [![NGINX metric monitor](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_1.png)
@@ -146,26 +146,25 @@ Datadogメトリック·アラートが（メトリックが設定値を超え�
      [![NGINX metric notification](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_4v3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_4v3.png)
 > 5.  **Save the integration monitor.** Click the “Save” button at the bottom of the page. You’re now monitoring a key NGINX [work metric](/blog/monitoring-101-collecting-data/#metrics), and your on-call engineer will be paged anytime it drops rapidly.
 
-1. 新しいメトリック·モニターを作成します。 Datadogで「モニタ」ドロップダウンから「新規モニター」を選択します。モニターの種類として「メトリック」を選択します。 nginxのメトリック·モニター
-2. あなたのメトリック·モニターを定義します。私たちが知りたいときに、特定の量によって、第2のドロップあたりの当社の総nginxの要求。だから我々は我々のインフラストラクチャ全体nginx.net.request_per_sの合計になるように、目的のメトリックを定義します。 nginxのメトリック
-3. メトリック·アラート条件を設定します。私たちは変化のではなく、一定の閾値に警告するようにしたいので、私たちは「変更の警告」を選択します。我々は、要求量が30％以上低下するたびに私たちに警告するようにモニターを設定します。ここでは、10分前に、メトリックの値と比較して、その間隔全体の平均変化に、メトリックの "今"の値とアラートを表現するために、データの1分のウィンドウを使用します。 nginxのメトリック変更の警告
-4. 通知をカスタマイズします。私たちのnginxの要求量が低下した場合、我々は我々のチームに通知します。このケースでは、OPSチームのチャットルームとページ呼び出しのエンジニアで通知を掲載します。 「何が起こっているかと言う "で、我々はモニターに名前を付け、調査のための最初の一歩を提案する通知を同行するショートメッセージを追加します。私たちは、OPSのために使用して、ルートにPagerDutyにアラートを@pagerduty使用スラックチャネルを@mention。 nginxのメトリック通知
-5. 統合モニタを保存します。ページの下部にある「保存」ボタンをクリックします。これで、キーnginxの作業メトリックを監視している、とあなたのオンコールエンジニアは、それが急速に低下いつでもページングされます。
-
+1. **新しいメトリックス·モニターを作成します。** Datadogのダッシュボード上の“Monitors”タブのドロップダウンメニューから“New Monitor”を選択します。次に"Monitor"のタイプとして“Metric”を選択します。
+2. **メトリックス·モニターを定義します。** NGINXが処理する1秒あたりのリクエスト総数が一定量落ち込んだ際に、通知を受けたいとします。そのような場合、`nginx.net.request_per_s`のメトリクスをインフラ全体に渡り合算(sum)する設定をしておきます。
+3. **メトリックス·アラートの条件を設定します。** 一定の閾値ではなく、変化に基づいてアラートを発生させたいので、“Change Alert”を選択します。次に、リクエスト量が30%以上の変化で落ち込んだ時にアラートを発生させるように設定します。ここでは、１分間分のデーターの平均値を現在のメトリクスの値とし、10分前に計測したメトリクスの値と比較し、その期間内のメトリクスの落ち込みが30％以上ある場合にアラートを発生させます。
+4. **通知をカスタマイズします。** NGINXのリクエスト数が落ち込んだ際には、チームに通知することにします。このケースでは、運用チームのチャットルームと待機しているエンジニアに通知を送ることにします。 “Say what’s happening”のセクションで、"Monitor"のタイトルを設定し、調査を開始するために手がかりになる情報をメッセージに追記しておきます。ここでは、"@slack-ops"を使い運用チームのSlackチャネルにメンションを送信し、"@pagerduty"を使って[PagerDuty](/blog/pagerduty/)にページ要請をしています。
+5. **統合モニタを保存します。** ページの下部にある"Save"ボタンをクリックし、ここまでの内容を保存します。ここまでの作業で、NGINXの主要[ワークメトリクス]((/blog/monitoring-101-collecting-data/#metrics))の監視設定は完了し、待機中のエンジニアは、リクエスト数が急激に落ち込んだ際にはページを受けるようになります。
 
 ## Conclusion
 
 > In this post we’ve walked you through integrating NGINX with Datadog to visualize your key metrics and notify your team when your web infrastructure shows signs of trouble.
 
-この記事では、あなたの主要な指標を可視化し、Webインフラストラクチャがトラブルの兆候を示しているときにあなたのチームに通知するDatadogとnginxのを統合する手順を歩いてきました。
+このポストでは、NGINXをDatadogと連携し、重要なメトリクスを可視化し、Webインフラが問題の兆候を示した時にチームに通知する方法を解説してきました。
 
 > If you’ve followed along using your own Datadog account, you should now have greatly improved visibility into what’s happening in your web environment, as well as the ability to create automated monitors tailored to your environment, your usage patterns, and the metrics that are most valuable to your organization.
 
-あなたがあなた自身のDatadogアカウントを使用してに沿って続いてきた場合は、ここで大幅に改善されたウェブ環境で何が起こっているかを可視化、ならびに自動化されたユーザーの環境に合わせたモニター、あなたの使用パターン、およびあるメトリックを作成する能力を持っている必要があります組織にとって最も価値のあります。
+Datadogのアカウントを使い、ここまで作業を進めてきたあなたは、大幅に改善された視認性をもつWeb環境を手に入れることができたでしょう。それと共に、あなたの環境、使用パターン、組織的に最も価値のあるメトリクスに合わせた"Monitors"(アラート)を設定する方法をも手に入れたでしょう。。
 
 > If you don’t yet have a Datadog account, you can sign up for [a free trial](https://app.datadoghq.com/signup) and start monitoring your infrastructure, your applications, and your services today.
 
-あなたはまだDatadogアカウントをお持ちでない場合は、無料試用版にサインアップすると、インフラストラクチャ、アプリケーション、およびサービスの今日の監視を開始することができます。
+もしもまだDatadogアカウントを持っていない場合は、無料トライアルに登録することで、今日からすぐにインフラ、アプリケーション、サービスの監視を開始することができます。
 
 ------------------------------------------------------------------------
 
