@@ -8,11 +8,13 @@
 
 > Varnish Cache is a web application accelerator designed specifically for content-rich, dynamic websites and heavily-used APIs. The strategy it uses for acceleration is known as a “caching HTTP reverse proxying”. Let’s unpack these terms.
 
-ニスキャッシュは、コンテンツが豊富な、動的なWebサイトや使用頻度の高いAPIのために特別に設計されたWebアプリケーションアクセラレータです。加速のため、使用する戦略は、「キャッシングHTTPリバースプロキシ」として知られています。のは、解凍してみましょう
+Varnishキャッシュは、コンテンツが豊富で、APIの使用頻度の高い、動的なWebサイトのために特別に設計されたWebアプリケーションアクセラレータです。Varnishがコンテンツ配信の高速化のために使用する戦略は、“caching HTTP reverse proxying”として知られています。では、それらの用語を見ていきましょう。
 
 > As a reverse proxy, Varnish is server-side, as opposed as a client-side forward proxy. It acts as an invisible conduit between a client and a backend, intermediating all communications between the two. As a cache, it stores often-used assets (such as files, images, css) for faster retrieval and response without hitting the backend. Unlike other caching reverse proxies, which may support FTP, SMTP, or other network protocols, Varnish is exclusively focused on HTTP. As a caching HTTP proxy, Varnish also differs from browser-based HTTP proxies in that it can cache reusable assets between different clients, and cached objects can be invalidated everywhere simultaneously.
 
-クライアント側のフォワードプロキシとしては対照的に、リバースプロキシとして、ワニスは、サーバー側です。これは、2つの間のすべての通信を仲介、クライアントとバックエンドの間の目に見えないの導管として機能します。キャッシュのように、バックエンドを押すことなく高速に検索し、応答のために（例えば、ファイル、画像、CSSなど）頻繁に使用される資産を格納します。 FTP、SMTP、または他のネットワークプロトコルをサポートすることができる他のキャッシュリバースプロキシとは異なり、ワニスは、専らHTTPに焦点を当てています。キャッシングHTTPプロキシとして、ニスはまた、異なるクライアント間で再利用可能な資産をキャッシュすることができ、キャッシュされたオブジェクトはどこにでも同時に無効にすることができるという点で、ブラウザベースのHTTPプロキシとは異なります。
+Varnishは、クライアント側のフォワードプロキシとは対照的に、リバースプロキシとしてサーバー側に存在します。そしてVarnishは、クライアントとバックエンドの間のすべての通信を仲介し、目に見えない運び屋として機能します。キャッシュのように、頻繁に使用されるコンテンツ(files、images、cssなど)を、　　　　　　　　保持しておきます。
+
+キャッシュのように、バックエンドを押すことなく高速に検索し、応答のために（例えば、ファイル、画像、CSSなど）頻繁に使用される資産を格納します。 FTP、SMTP、または他のネットワークプロトコルをサポートすることができる他のキャッシュリバースプロキシとは異なり、ワニスは、専らHTTPに焦点を当てています。キャッシングHTTPプロキシとして、ニスはまた、異なるクライアント間で再利用可能な資産をキャッシュすることができ、キャッシュされたオブジェクトはどこにでも同時に無効にすることができるという点で、ブラウザベースのHTTPプロキシとは異なります。
 
 [![Varnish client backend](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-01.png)
 
