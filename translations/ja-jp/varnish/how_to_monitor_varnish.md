@@ -8,48 +8,52 @@
 
 > Varnish Cache is a web application accelerator designed specifically for content-rich, dynamic websites and heavily-used APIs. The strategy it uses for acceleration is known as a “caching HTTP reverse proxying”. Let’s unpack these terms.
 
-Varnishキャッシュは、コンテンツが豊富で、APIの使用頻度の高い、動的なWebサイトのために特別に設計されたWebアプリケーションアクセラレータです。Varnishがコンテンツ配信の高速化のために使用する戦略は、“caching HTTP reverse proxying”として知られています。では、それらの用語を見ていきましょう。
+Varnishキャッシュは、コンテンツが豊富で、APIの使用頻度の高い、動的なWebサイトのために特別に設計されたWebアプリケーションアクセラレータです。Varnishがコンテンツを高速配信のために使用する戦略は、“caching HTTP reverse proxying”として広く知られています。では、この戦略の意味を詳しく見ていきましょう。
 
 > As a reverse proxy, Varnish is server-side, as opposed as a client-side forward proxy. It acts as an invisible conduit between a client and a backend, intermediating all communications between the two. As a cache, it stores often-used assets (such as files, images, css) for faster retrieval and response without hitting the backend. Unlike other caching reverse proxies, which may support FTP, SMTP, or other network protocols, Varnish is exclusively focused on HTTP. As a caching HTTP proxy, Varnish also differs from browser-based HTTP proxies in that it can cache reusable assets between different clients, and cached objects can be invalidated everywhere simultaneously.
 
-Varnishは、クライアント側のフォワードプロキシとは対照的に、リバースプロキシとしてサーバー側に存在します。そしてVarnishは、クライアントとバックエンドの間のすべての通信を仲介し、目に見えない運び屋として機能します。キャッシュのように、頻繁に使用されるコンテンツ(files、images、cssなど)を、　　　　　　　　保持しておきます。
-
-キャッシュのように、バックエンドを押すことなく高速に検索し、応答のために（例えば、ファイル、画像、CSSなど）頻繁に使用される資産を格納します。 FTP、SMTP、または他のネットワークプロトコルをサポートすることができる他のキャッシュリバースプロキシとは異なり、ワニスは、専らHTTPに焦点を当てています。キャッシングHTTPプロキシとして、ニスはまた、異なるクライアント間で再利用可能な資産をキャッシュすることができ、キャッシュされたオブジェクトはどこにでも同時に無効にすることができるという点で、ブラウザベースのHTTPプロキシとは異なります。
+Varnishは、クライアント側に存在するフォワードプロキシとは対照的に、リバースプロキシとしてサーバー側に存在します。Varnishは、クライアントとバックエンドの間のすべての通信の間に入り、目に見えない仲介者として機能します。Varnishは、キャッシュのように頻繁に使用されるコンテンツ(files、images、cssなど)を保持し、高速な検索やバックエンドにアクセスせずにリクエストに応答をできるようなっています。Varnishは、他のFTP、SMTP、その他のプロトコルに対応しているキャッシュ用リバースプロキーとは異なり、HTTPプロトコルのみにフォーカスしています。キャッシュ用HTTPプロキシーとしても、Varnishは、ブラウザベースのHTTPプロキシと異なります。Varnishは、異なるクライアント間においても再利用できるコンテンツをキャッシュしておくことができ、またキャッシュされたオブジェクトは、どこにでも同時に無効にすることができます。
 
 [![Varnish client backend](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-01.png)
 
 > Varnish is a mature technology, and is in use at many high-traffic websites such as The New York Times, Wikipedia, Tumblr, Twitter, Vimeo, and Facebook.
 
-ワニスは、成熟した技術であり、そのようなニューヨーク·タイムズ、ウィキペディア、Tumblrの、ツイッター、Vimeoの、とFacebookのような多くの高トラフィックのウェブサイトで使用されています。
+Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr、Twitter、Vimeo、Facebookのような高いトラフィック量をこなしているWebサイトで多く使われています。
 
 ## Key Varnish metrics
 
 > When running well, Varnish Cache can speed up information delivery by a factor of several hundred. However, if Varnish is not tuned and working properly, it can slow down or even halt responses from your website. The best way to ensure the proper operation and performance of Varnish is by monitoring its key performance metrics in the following areas:
 
-よく実行する場合、ワニスキャッシュが数百倍の情報配信を高速化することができます。ワニスをチューニングし、正常に動作していない場合は、それが遅くなることができ、さらにはあなたのウェブサイトからの応答を停止します。正常な動作とワニスの性能を確保するための最良の方法は、以下の分野でのキー·パフォーマンス·メトリックを監視することにより、次のとおりです。
+> -   **Client metrics:** client connections and requests
+> -   **Cache performance:** cache hits, evictions
+> -   **Thread metrics**: thread creation, failures, queues
+> -   **Backend metrics:** success, failure, and health of backend connections
 
--   **Client metrics:** client connections and requests
--   **Cache performance:** cache hits, evictions
--   **Thread metrics**: thread creation, failures, queues
--   **Backend metrics:** success, failure, and health of backend connections
+適切に設定できた場合、Varnishキャッシュは、コンテンツ配信を数百倍に高速化することができます。しかし、Varnishがチューニングされ、適切に動作していないと、コンテンツ配信は遅くなり、Webサイトからのレスポンスを中断してしまうこともあります。varnishの正常な動作とパフォーマスン確保するためには、次のような主要パフォーマスンメトリクスを監視しておくとが重要になります。
+
+- **Client metrics:** クライアントのコネクションとリクエスト
+- **Cache performance:** キャッシュヒット、退避
+- **Thread metrics**: スレッドの作成、失敗、キュー待ち
+- **Backend metrics:** 成功、失敗とバックエンドコネクションの健全性
 
 [![Key Varnish metrics dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-02.png)
 
 > This article references metric terminology [introduced in our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
-この記事の参照メトリック用語は、メトリック収集と警告するためのフレームワークを提供し、当社のモニタリング101シリーズで導入されました。
+このポストでは、メトリクスの収集方法やアラートの設定方法に関する基礎的な知識のポストである[introduced in our Monitoring 101 series][10]で紹介したメトリック用語を使っています。
 
 > **NOTE:** All the metrics discussed here can be [collected from the varnishstat command line](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/), and use the metric names from the latest version, Varnish 4.0.
 
-注：ここで説明するすべてのメトリックがvarnishstatコマンドラインから回収し、最新バージョン、ニス4.0からメトリック名を使用することができます。
+**注意:** ここで解説するすべてのメトリクスは、[varnishstatコマンドで収集する](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/)ことができます。また、各メトリクスの名前は、最新バージョンのVarnish4.0のものを採用しています。
 
 ### Client metrics
 
 [![Varnish client metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-03.png)
 ](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-03.png)
+
 > Client metrics measure volume and success of client connections and requests. Below we discuss some of the most important.
 
-クライアントのメトリックは、ボリュームとクライアントの接続と要求の成功を測定します。我々の下には、最も重要なのいくつかを議論します。
+クライアントメトリックは、クライアントとの間のコネクションとリクエストの全体数と成功数を測定しています。以下に、最も重要な幾つかのメトリクスを紹介していきます。
 
 | **Name**          | **Description**                                                                                                     | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
 |-------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
@@ -63,13 +67,13 @@ Varnishは、クライアント側のフォワードプロキシとは対照的�
 
 **Metrics to alert on:**
 
-> -   **`client_req`**: Regularly sampling the number of requests per second  allows you to calculate the number of requests you’re receiving per unit of time—typically minutes or seconds. Monitoring this metric can alert you to spikes in incoming web traffic, whether legitimate or nefarious, or sudden drops, which are usually indicative of problems. A drastic change in requests per second can alert you to problems brewing somewhere in your environment, even if it cannot immediately identify the cause of those problems. Note that all requests are counted the same, regardless of their URLs.
+> - **`client_req`**: Regularly sampling the number of requests per second  allows you to calculate the number of requests you’re receiving per unit of time—typically minutes or seconds. Monitoring this metric can alert you to spikes in incoming web traffic, whether legitimate or nefarious, or sudden drops, which are usually indicative of problems. A drastic change in requests per second can alert you to problems brewing somewhere in your environment, even if it cannot immediately identify the cause of those problems. Note that all requests are counted the same, regardless of their URLs.
 
 - **`client_req`**：定期的に1秒あたりの要求数をサンプリングは、あなたが時間、典型的には分または秒の単位当たり受信している要求の数を計算することができます。このメトリックを監視すると、あなたが着信Webトラフィックの急増に警告することができ、通常は問題を示すものである合法的なあるいは極悪な、あるいは突然の滴、か。それはすぐにこれらの問題の原因を特定できない場合でも、秒あたりの要求の急激な変化は、ご使用の環境のどこかで醸造問題を警告することができます。すべての要求にかかわらず、そのURLの、同じようにカウントされることに注意してください。
 
 <!-- -->
 
-> -   **`sess_dropped`**: Once Varnish is out of worker threads, it will queue up requests. [`sess_queued`](#thread-metrics) counts how many times this has happened. Once the queue is full, Varnish starts dropping connections without answering requests, and increments `sess_dropped`. If this metric is not equal to zero, then either Varnish is overloaded, or the thread pool is too small in which case you should try gradually increasing [`thread_pool_max`](https://www.varnish-software.com/static/book/Tuning.html#threading-parameters) and see if it fixes the issue without causing higher latency or other problems.
+> - **`sess_dropped`**: Once Varnish is out of worker threads, it will queue up requests. [`sess_queued`](#thread-metrics) counts how many times this has happened. Once the queue is full, Varnish starts dropping connections without answering requests, and increments `sess_dropped`. If this metric is not equal to zero, then either Varnish is overloaded, or the thread pool is too small in which case you should try gradually increasing [`thread_pool_max`](https://www.varnish-software.com/static/book/Tuning.html#threading-parameters) and see if it fixes the issue without causing higher latency or other problems.
 
 - sess_dropped：ニスはワーカースレッドの外にあると、それが要求をキューに入れます。 sess_queuedはこれが起こった回数をカウントします。キューがいっぱいになると、ニスは答え要求せずに接続を切断開始し、増分はsess_dropped。このメトリックがゼロに等しくない場合には、いずれかのニスが過負荷になっているか、スレッドプールは、その場合にはあなたがthread_pool_max徐々に増やしてみてください、それがより高い遅延や他の問題を引き起こすことなく、問題を修正した場合に表示されるはずですが小さすぎます。
 
@@ -154,8 +158,8 @@ Varnishは、クライアント側のフォワードプロキシとは対照的�
 
 **These metrics should always be equal to 0:**
 
--   **`threads_failed`**: otherwise you have likely exceeded your server limits, or attempted to create threads too rapidly. The latter case usually occurs right after Varnish is started, and can be corrected by increasing the `thread_pool_add_delay` value.
--   **`threads_limited`**: otherwise you should consider increasing the value of `thread_pool_max`.
+- **`threads_failed`**: otherwise you have likely exceeded your server limits, or attempted to create threads too rapidly. The latter case usually occurs right after Varnish is started, and can be corrected by increasing the `thread_pool_add_delay` value.
+- **`threads_limited`**: otherwise you should consider increasing the value of `thread_pool_max`.
 
 ### Backend metrics
 
@@ -190,12 +194,12 @@ backend_busy`がインクリメントされる`デフォルトで、それは、
 
 **Metrics to alert on:**
 
--   **`backend_fail`** (backend connection failures) should be 0 or very close to 0. Backend connection failures can have several root causes:
-    -   Initial (TCP) connection timeout: usually results from network issues, but could also be due to an overloaded or unresponsive backend
-    -   Time to first byte: when a request is sent to the backend and it does not start responding within a certain amount of time
-    -   Time in between bytes: when the backend started streaming a response but stopped sending data without closing the connection
+- **`backend_fail`** (backend connection failures) should be 0 or very close to 0. Backend connection failures can have several root causes:
+    - Initial (TCP) connection timeout: usually results from network issues, but could also be due to an overloaded or unresponsive backend
+    - Time to first byte: when a request is sent to the backend and it does not start responding within a certain amount of time
+    - Time in between bytes: when the backend started streaming a response but stopped sending data without closing the connection
 
--   **`backend_unhealthy`**: Varnish [periodically pings](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html#health-checks) the backend to make sure it is still up and responsive. If it doesn’t receive a 200 response quickly enough, the backend is marked as unhealthy and every new request to it increments this counter until the backend recovers and sends a timely 200 response.
+- **`backend_unhealthy`**: Varnish [periodically pings](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html#health-checks) the backend to make sure it is still up and responsive. If it doesn’t receive a 200 response quickly enough, the backend is marked as unhealthy and every new request to it increments this counter until the backend recovers and sends a timely 200 response.
 
 [![Varnish metrics backend connections](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-09.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-09.png)
 
@@ -213,12 +217,12 @@ backend_busy`がインクリメントされる`デフォルトで、それは、
 
 この記事では、私たちはあなたのワニスキャッシュのタブを保つために監視する必要があり、最も重要な測定基準を検討してきました。あなただけのワニスを初めてしている場合は、以下に示す評価指標を監視することは、あなたのキャッシュの健康とパフォーマンスに大きな洞察力を与えるだろう。最も重要なこと、それはあなたがチューニングが大きな利益を提供することができる領域を特定するのに役立ちます。
 
--   [Requests per second](#client-metrics)
--   [Dropped client connections](#client-metrics)
--   [Cache hit rate](#hit-rate)
--   [LRU Nuked objects](#cached-objects)
--   [Some worker thread related metrics](#thread-metrics)
--   [Backend connection failures or unhealthy backend](#backend-metrics)
+- [Requests per second](#client-metrics)
+- [Dropped client connections](#client-metrics)
+- [Cache hit rate](#hit-rate)
+- [LRU Nuked objects](#cached-objects)
+- [Some worker thread related metrics](#thread-metrics)
+- [Backend connection failures or unhealthy backend](#backend-metrics)
 
 > Eventually you will recognize additional, more specialized metrics that are particularly relevant to your own environment and use cases.
 
