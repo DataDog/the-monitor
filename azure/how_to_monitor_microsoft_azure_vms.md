@@ -75,7 +75,7 @@ Azure’s default metric set provides data on network traffic in and out of a VM
 | Bytes transmitted     | Bytes sent, per second           | Resource: Utilization                                    | Linux VMs        |
 | Bytes received        | Bytes received, per second       | Resource: Utilization                                    | Linux VMs        |
 | TCP segments sent     | Segments sent, per second        | Resource: Utilization                                    | Windows VMs      |
-| TCP segments received | Data written to disk, per second | Resource: Utilization                                    | Windows VMs      |
+| TCP segments received | Segments received, per second    | Resource: Utilization                                    | Windows VMs      |
 
 #### Metric to alert on: Bytes/TCP segments sent
 
