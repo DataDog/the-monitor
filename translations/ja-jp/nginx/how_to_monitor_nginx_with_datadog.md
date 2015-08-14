@@ -6,7 +6,7 @@
 
 > If you’ve already read [our post on monitoring NGINX](/blog/how-to-monitor-nginx/), you know how much information you can gain about your web environment from just a handful of metrics. And you’ve also seen just how easy it is to start collecting metrics from NGINX on ad hoc basis. But to implement comprehensive, ongoing NGINX monitoring, you will need a robust monitoring system to store and visualize your metrics, and to alert you when anomalies happen. In this post, we’ll show you how to set up NGINX monitoring in Datadog so that you can view your metrics on customizable dashboards like this:
 
-このシリースのPart 1でポストした[「NGINXの監視方法」](/blog/how-to-monitor-nginx/)を既に読んでいれば、一握りのメトリクスからあなたのWEB環境についてどれくらいの情報が獲得できるか理解できていることでしょう。そして、場当たり的な閲覧のために、NGINXのメトリクスを収集することがどれほど簡単にできるも理解できているでしょう。しかし、総合的かつ継続的な監視を実現するためには、収集したメトリクスを保持し、可視化し、異常が発生した際にアラートを通知してくれる強固な監視システムが必要になります。このポストでは、Datadogの下記のようなカスタマイズ可能なダッシュボード上でメトリクスが閲覧できるよう、NGINXの監視に必要な設定手順を解説していきます:
+このシリースのPart 1でポストした[「NGINXの監視方法」](/blog/how-to-monitor-nginx/)を既に読んでいれば、一握りのメトリクスからあなたのWEB環境についてどれくらいの情報が獲得できるか理解できていることでしょう。そして、場当たり的な閲覧のために、NGINXのメトリクスを収集することがどれほど簡単にできるのも理解できているでしょう。しかし、総合的かつ継続的な監視を実現するためには、収集したメトリクスを保持し、可視化し、異常が発生した際にアラートを通知してくれる強固な監視システムが必要になります。このポストでは、Datadogの下記のようなカスタマイズ可能なダッシュボード上でメトリクスが閲覧できるように、NGINXの監視に必要な設定手順を解説します:
 
 [![NGINX dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_board_5.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_board_5.png)
 
@@ -15,9 +15,9 @@
 > -   Monitor NGINX metrics on Datadog dashboards, alongside all your other systems
 > -   Set up automated alerts to notify you when a key metric changes dramatically
 
-Datadogを使用すると、個々のホスト、個々のサービス、個々のプロセス、個々のメトリクス、または、それら全ての組み合わせに対しグラフとアラートを設定することができます。例えば、全てのNGINXのホストを監視したり、特定のアベーラビリティーゾーンに属すホストを監視したり、また、特定のタグが付与されている全てのNIGINXホストの特定のメトリクスを監視することもできます。
+Datadogを使用すると、個々のホスト、個々のサービス、個々のプロセス、個々のメトリクス、または、それら全ての組み合わせに対しグラフとアラートを設定することが出来ます。例えば、全てのNGINXのホストを監視したり、特定のアベーラビリティーゾーンに属すホストを監視したり、また、特定のタグが付与されている全てのNIGINXホストの特定のメトリクスを監視することもできます。
 
-このポストでは、以下を実現する方法を紹介していきます:
+このポストでは、以下を実現する方法を紹介します:
 
 - Datadogのダッシュボード上で、システム内の他のメトリクスと並んでNGINXのメトリクスを表示し、監視する設定
 - 重要なメトリクスが劇的に変化した際に、自動でアラートを発生させるめの設定
@@ -26,7 +26,7 @@ Datadogを使用すると、個々のホスト、個々のサービス、個々�
 
 > To collect metrics from NGINX, you first need to ensure that NGINX has an enabled status module and a URL for reporting its status metrics. Step-by-step instructions [for configuring open-source NGINX](/blog/how-to-collect-nginx-metrics/#open-source) and [NGINX Plus](/blog/how-to-collect-nginx-metrics/#plus) are available in our companion post on metric collection.
 
-NGINXからメトリクスを収集するには、まず最初にNIGINXのステータスモジュールを有効にし、ステータスメトリクスを開示するためのURLが有効になっているか確認する必要があります。[オープンソース版NGINX](/blog/how-to-collect-nginx-metrics/#open-source)と[NIGINX Plus](/blog/how-to-collect-nginx-metrics/#plus) 向けのモジュール有効化手順書は、このシリーズのPart 2 [「NGINXのメトリクスの収集」](/blog/how-to-collect-nginx-metrics/)で、詳しく解説しています。
+NGINXからメトリクスを収集するには、まず最初にNIGINXのステータスモジュールを有効にし、ステータスメトリクスを開示するためのURLが有効になっているのか確認する必要があります。[オープンソース版NGINX](/blog/how-to-collect-nginx-metrics/#open-source)と[NIGINX Plus](/blog/how-to-collect-nginx-metrics/#plus) 向けのモジュール有効化手順書は、このシリーズのPart 2 [「NGINXのメトリクスの収集」](/blog/how-to-collect-nginx-metrics/)で、詳しく解説しています。
 
 ## Integrating Datadog and NGINX
 
@@ -34,11 +34,11 @@ NGINXからメトリクスを収集するには、まず最初にNIGINXのステ
 
 > The Datadog Agent is [the open-source software](https://github.com/DataDog/dd-agent) that collects and reports metrics from your hosts so that you can view and monitor them in Datadog. Installing the agent usually takes [just a single command](https://app.datadoghq.com/account/settings#agent).
 
-Datadog Agentは、ホストからメトリクスを収集し、Datadog上で閲覧/監視できるようにそれらのメトリクスを送信するための[オープンソースソフトウェア](https://github.com/DataDog/dd-agent)です。通常、Datadog Agentのインストールは、[一行のコマンド](https://app.datadoghq.com/account/settings#agent)を実行するだけです。
+Datadog Agentは、ホストからメトリクスを収集し、Datadog上で閲覧、監視できるようにそれらのメトリクスを送信するための[オープンソースソフトウェア](https://github.com/DataDog/dd-agent)です。通常、Datadog Agentのインストールは、[一行のコマンド](https://app.datadoghq.com/account/settings#agent)を実行するだけです。
 
 > As soon as your Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-Datadog Agentのインストールが稼働し始めると、Datadogのあなたのアカウント上にホスト名が表示され、メトリクスのレポーティングを受けていることが確認できるはずです。
+Datadog Agentのインストールが稼働し始めると、Datadogのあなたのアカウント上にホスト名が表示され、メトリクスのレポーティングを受けていることが確認できます。
 
 [![Datadog infrastructure list](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)
 
@@ -70,7 +70,7 @@ NGINXのステータスページのURLとタグの編集が終わったら、`co
 
 > You must restart the Agent to load your new configuration file. The restart command varies somewhat by platform—see the specific commands for your platform [here](http://docs.datadoghq.com/guides/basic_agent_usage/).
 
-新しい設定ファイルを読み込むために、Datadog Agentを再起動します。Datadog Agentの再起動コマンドは、使っているOSより多少異なります。各OSの再起動コマンドに関しては、[「Getting Started with the Agent」](Getting Started with the Agent)ページを参照してください。
+新しい設定ファイルを読み込むために、Datadog Agentを再起動します。Datadog Agentの再起動コマンドは、使っているOSにより多少異なります。各OSの再起動コマンドに関しては、[「Getting Started with the Agent」](Getting Started with the Agent)ページを参照してください。
 
 ### Verify the configuration settings
 
@@ -128,7 +128,7 @@ NGINXが依存する外部の重要なメトリクスを元にしたグラフを
 
 > Once Datadog is capturing and visualizing your metrics, you will likely want to set up some monitors to automatically keep tabs on your metrics—and to alert you when there are problems. Below we’ll walk through a representative example: a metric monitor that alerts on sudden drops in NGINX throughput.
 
-Datadogで、NGINXのメトリクスを記録し、可視化できるようになったら、それらのメトリクスに”Monitors”(監視アラート)を設定し、自動で見張り、問題が発生した際には、アラートを通知受けられるようにしたいでしょう。以下に代表的な事例として、NGINXのスループットの急激な降下が発生した際にアラートを発生させる”Monitor”の設定手順を解説することにします。
+Datadogで、NGINXのメトリクスを記録し、可視化できるようになったら、それらのメトリクスに”Monitors”(監視アラート)を設定し、自動で見張り、問題が発生した際には、アラート通知受けられるようにしたいでしょう。以下に代表的な事例として、NGINXのスループットの急激な降下が発生した際にアラートを発生させる”Monitor”の設定手順を解説します。
 
 ### Monitor your NGINX throughput
 
@@ -146,10 +146,10 @@ Datadogが提供するメトリクスアラート(メトリクスの数値を元
      [![NGINX metric notification](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_4v3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_4v3.png)
 > 5.  **Save the integration monitor.** Click the “Save” button at the bottom of the page. You’re now monitoring a key NGINX [work metric](/blog/monitoring-101-collecting-data/#metrics), and your on-call engineer will be paged anytime it drops rapidly.
 
-1. **新しいメトリックス·モニターを作成します。** Datadogのダッシュボード上の“Monitors”タブのドロップダウンメニューから“New Monitor”を選択します。次に"Monitor"のタイプとして“Metric”を選択します。
-2. **メトリックス·モニターを定義します。** NGINXが処理する1秒あたりのリクエスト総数が一定量落ち込んだ際に、通知を受けたいとします。そのような場合、`nginx.net.request_per_s`のメトリクスをインフラ全体に渡り合算(sum)する設定をしておきます。
-3. **メトリックス·アラートの条件を設定します。** 一定の閾値ではなく、変化に基づいてアラートを発生させたいので、“Change Alert”を選択します。次に、リクエスト量が30%以上の変化で落ち込んだ時にアラートを発生させるように設定します。ここでは、１分間分のデーターの平均値を現在のメトリクスの値とし、10分前に計測したメトリクスの値と比較し、その期間内のメトリクスの落ち込みが30％以上ある場合にアラートを発生させます。
-4. **通知をカスタマイズします。** NGINXのリクエスト数が落ち込んだ際には、チームに通知することにします。このケースでは、運用チームのチャットルームと待機しているエンジニアに通知を送ることにします。 “Say what’s happening”のセクションで、"Monitor"のタイトルを設定し、調査を開始するために手がかりになる情報をメッセージに追記しておきます。ここでは、"@slack-ops"を使い運用チームのSlackチャネルにメンションを送信し、"@pagerduty"を使って[PagerDuty](/blog/pagerduty/)にページ要請をしています。
+1. **新しいメトリックスモニタを作成します。** Datadogのダッシュボード上の“Monitors”タブのドロップダウンメニューから“New Monitor”を選択します。次に"Monitor"のタイプとして“Metric”を選択します。
+2. **メトリックスモニタを定義します。** NGINXが処理する1秒あたりのリクエスト総数が一定量落ち込んだ際に、通知を受けたいとします。まず`nginx.net.request_per_s`のメトリクスをインフラ全体に渡り合算(sum)する設定をしておきます。
+3. **メトリックスアラートの条件を設定します。** 一定の閾値ではなく、変化に基づいてアラートを発生させたいので、“Change Alert”を選択します。次に、リクエスト量が30%以上の変化で落ち込んだ時にアラートを発生させるように設定します。ここでは、１分間のデータの平均値を現在のメトリクスの値とし、10分前に計測したメトリクスの値と比較し、その期間内のメトリクスの落ち込みが30％以上ある場合にアラートを発生させます。
+4. **通知をカスタマイズします。** NGINXのリクエスト数が落ち込んだ際には、チームに通知することにします。このケースでは、運用チームのチャットルームと待機しているエンジニアに通知を送ることにします。 “Say what’s happening”のセクションで、"Monitor"のタイトルを設定し、調査を開始するための手がかりになる情報をメッセージに追記します。ここでは、"@slack-ops"を使い運用チームのSlackチャネルにメンションを送信し、"@pagerduty"を使って[PagerDuty](/blog/pagerduty/)にページ要請をしています。
 5. **統合モニタを保存します。** ページの下部にある"Save"ボタンをクリックし、ここまでの内容を保存します。ここまでの作業で、NGINXの主要[ワークメトリクス]((/blog/monitoring-101-collecting-data/#metrics))の監視設定は完了し、待機中のエンジニアは、リクエスト数が急激に落ち込んだ際にはページを受けるようになります。
 
 ## Conclusion
