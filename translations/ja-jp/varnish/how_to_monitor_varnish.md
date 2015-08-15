@@ -63,24 +63,25 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 > Once a connection is established, the client can use that connection to make several requests to access resources such as images, files, CSS, or Javascript. Varnish can service the requests itself if the requested assets are already cached, or can fetch the resources from the backend.
 
-接続が確立されると、クライアントは、画像、ファイル、CSS、またはJavaScriptなどのリソースにアクセスするための複数の要求をするためにその接続を使用することができます。ワニスは、要求された資産が既にキャッシュされている場合は要求自体をサービスすることができる、またはバックエンドからリソースを取得することができます。
+コネクションが確立されると、クライアントは、画像、ファイル、CSS、JavaScriptなどのリソースにアクセスするためにコネクションを使って、複数のリクエストを送信します。Varnishは、リクエストを受けたコンテンツを既にキャッシュに持っている、そのリクエストに自分自身で応答します。持っていない場合は、バックエンドから所得し、応答します。
 
 **Metrics to alert on:**
 
 > - **`client_req`**: Regularly sampling the number of requests per second  allows you to calculate the number of requests you’re receiving per unit of time—typically minutes or seconds. Monitoring this metric can alert you to spikes in incoming web traffic, whether legitimate or nefarious, or sudden drops, which are usually indicative of problems. A drastic change in requests per second can alert you to problems brewing somewhere in your environment, even if it cannot immediately identify the cause of those problems. Note that all requests are counted the same, regardless of their URLs.
 
-- **`client_req`**：定期的に1秒あたりの要求数をサンプリングは、あなたが時間、典型的には分または秒の単位当たり受信している要求の数を計算することができます。このメトリックを監視すると、あなたが着信Webトラフィックの急増に警告することができ、通常は問題を示すものである合法的なあるいは極悪な、あるいは突然の滴、か。それはすぐにこれらの問題の原因を特定できない場合でも、秒あたりの要求の急激な変化は、ご使用の環境のどこかで醸造問題を警告することができます。すべての要求にかかわらず、そのURLの、同じようにカウントされることに注意してください。
+- **`client_req`**: 1秒毎のリクエスト数を欠かすことなく計測することにより、一定時間(例:分、秒)に受信しているリクエストの計算を可能にします。このメトリクスを監視することで、システムに入ってくるwebトラフィックの急増(合法、非合法を含め)や、障害の予兆であるトラフィックの急激な低下を検知しアラートを発生させることができます。秒単位のリクエスト数の急激な変化は、それ自体では、問題の原因をすぐに特定できない場合でも、あなたの環境下で発生しつつある問題を警告してくれています。ここで注意すべきは、リクエストされているURLの内容に関わらず、全てのリクエストは、同等にカウントされているということです。
 
 <!-- -->
 
 > - **`sess_dropped`**: Once Varnish is out of worker threads, it will queue up requests. [`sess_queued`](#thread-metrics) counts how many times this has happened. Once the queue is full, Varnish starts dropping connections without answering requests, and increments `sess_dropped`. If this metric is not equal to zero, then either Varnish is overloaded, or the thread pool is too small in which case you should try gradually increasing [`thread_pool_max`](https://www.varnish-software.com/static/book/Tuning.html#threading-parameters) and see if it fixes the issue without causing higher latency or other problems.
 
-- sess_dropped：ニスはワーカースレッドの外にあると、それが要求をキューに入れます。 sess_queuedはこれが起こった回数をカウントします。キューがいっぱいになると、ニスは答え要求せずに接続を切断開始し、増分はsess_dropped。このメトリックがゼロに等しくない場合には、いずれかのニスが過負荷になっているか、スレッドプールは、その場合にはあなたがthread_pool_max徐々に増やしてみてください、それがより高い遅延や他の問題を引き起こすことなく、問題を修正した場合に表示されるはずですが小さすぎます。
+- **`sess_dropped`**: Varnishのワーカースレッドの残りが無くなると、リクエストをキューに入れ始めます。[`sess_queued`](#thread-metrics)は、このリクエストのキューへの追加の発生回数をカウントしています。キューが一杯になると、Varnishは、リクエストに応答するのをやめ、コネクションを切断し始め、`sess_dropped`の値を増やしていきます。この`sess_dropped`がゼロでない場合は、Varnishに過負荷になっているか、スレッドプールの設定値が小さすぎます。このようなケースは、[`thread_pool_max`](https://www.varnish-software.com/static/book/Tuning.html#threading-parameters)を徐々に増やしていき、更に長い遅延や他の問題を引き起すことなく、問題が修正されるかを確認してください。
 
 > <span class="s1">Note that, for historical reasons, there is a `sess_drop` metric present in Varnish which is not the same as `sess_dropped`, discussed above. In new versions of Varnish, `sess_drop` is never incremented so it does not need to be monitored.</span>
 
-<span class="s1">歴史的な理由のために、上述した、sess_droppedと同じではありませんワニス中sess_dropメトリック存在があり、それに注意してください。それを監視する必要がないので、ワニスの新バージョンでは、sess_dropはインクリメントされることはありません。</span>
-
+<span class="s1">
+Varnishには、歴史的な理由で`sess_drop`というメトリクスが存在します。このメトリクスは、上記で紹介した`sess_dropped`とは異なります。また、新しいバージョンのVarnishでは、`sess_drop`は、増加ることはありません。従って、監視する必要はありません。
+</span>
 
 [![Varnish client requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-04.jpg)
 ](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-04.jpg)
@@ -89,13 +90,13 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 > Varnish is a cache, so by measuring cache performance you can see instantly how well Varnish is doing its work.
 
-ワニスは、その仕事をしているどれだけあなたが瞬時に見ることができますキャッシュのパフォーマンスを測定することによってのでワニスは、キャッシュです。
+Varnishはキャッシュです。従って、キャッシュのパフォーマンスを計測することでVarnishが適切に機能しているかを把握することができます。
 
 #### Hit rate
 
 > The diagram below illustrates how Varnish routes requests, and when each of its cache hit metrics is incremented.
 
-以下の図は、どのようにニスルート要求を示しており、そのキャッシュヒットの各メトリックがインクリメントされたとき。
+以下の図は、Varnishがどのようにしてリクエストの経路を定めるかを示しています。又その際に、どのキャッシュヒットメトリクスの値を増やすかを示しています。
 
  [![Varnish routes requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-05.png)
 
@@ -108,17 +109,17 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 > When Varnish gets a response from the backend that indicates that a response may not be cached, it records that fact. Subsequent requests for the same object go directly to “pass”, increment `cache_hitpass`, and are not counted as cache misses.
 
-ワニスは、応答がキャッシュされない可能性があることを示し、バックエンドからの応答を取得すると、その旨を記録します。同じオブジェクトに対するその後の要求は、インクリメント`cache_hitpass`"を渡す」に直接移動し、キャッシュミスとしてカウントされません。
+Varnishは、レスポンスがキャッシュされない可能性があることを示す応答をバックエンドから受けた場合、その旨を学習しておきます。その後、同じオブジェクトに対するのリクエストは、直ちに`pass`に移行し、`cache_hitpass`の値にカウントされ、`cashe_miss`にはカウントされないようになっています。
 
 **Metric to alert on:**
 
 > The **cache hit rate** is the ratio of cache hits to total cache lookups: `cache_hit / (cache_hit + cache_miss)`. This derived metric provides visibility into the effectiveness of the cache. The higher the ratio, the better. If the hit rate is consistently high, above 0.7 (70 percent) for instance, then the majority of requests are successfully expedited through caching. If the cache is not answering a sufficient percentage of the read requests, consider increasing its memory, which can be a low-overhead tactic for improving read latency.
 
-`cache_hit/（cache_hit+ CACHE_MISS）`：**キャッシュヒット率が** キャッシュの比率は総キャッシュ検索にヒットです。この派生メトリックは、キャッシュの有効性の可視化を実現します。より良い、比率が高いです。ヒット率は、例えば0.7（70％）以上、一貫して高い場合は、要求の後、大部分は正常にキャッシュを介して迅速されています。キャッシュが読み取り要求の十分な割合を回答されていない場合は、リードレイテンシを改善するための低オーバーヘッドの戦術ことができ、そのメモリを増やすことを検討してください。
+**キャッシュヒット率** は、キャッシュ内にコンテンツが見つかった数とキャッシュの検索総数の比率です: `cache_hit / (cache_hit + cache_miss)`。この計算によって求められたメトリクスは、キャッシュの有効性に関し、多くお情報を与えてくれます。この比率は、高ければ、高いほど良いです。例えば0.7(70%)のように高いヒット率に安定している場合は、大部分のリクエストが意図したとおりキャッシュを介して迅速に処理されていることになります。もしも、読み込みリクエストの十分な割合に対し、キャッシュが使われていないようなら、キャッシュに割り当てるメモリーの量を増やすことを検討してください。メモリーの追加割り当ては、少ない負担で読み込み遅延を改善する方法です。
 
 > If after increasing the amount of memory available to your cache, your hit rate is still too low, you might also want to look at which objects are not being cached and why. For this you’ll need to use [Varnishlog](https://www.varnish-cache.org/docs/3.0/reference/varnishlog.html) and then optimize your VCL (Varnish Configuration Language) [tuning to improve the hit/miss ratio](https://www.varnish-cache.org/docs/4.0/users-guide/increasing-your-hitrate.html).
 
-あなたのキャッシュに使用可能なメモリの量を増やした後、あなたのヒット率は依然として低すぎる場合は、オブジェクトがキャッシュされ、なぜされていないされているを見てみたいことがあります。このためには、ヒット/ミス率を向上させるためにあなたのVCL（ワニス設定言語）のチューニングを最適化し、その後Varnishlogを使用してする必要があります。
+キャッシュが使用することができるメモリの量を増やした後でも、キャッシュヒット率が依然低すぎる場合は、キャッシュされていないオブジェクトを見つけ出し、キャッシュされていない理由を検討します。[Varnishlog](https://www.varnish-cache.org/docs/3.0/reference/varnishlog.html)の中身を検討した後、VCL (Varnish Configuration Language)の内容を最適化し、[hit/miss率が改善するようにチューニング](https://www.varnish-cache.org/docs/4.0/users-guide/increasing-your-hitrate.html)します。
 
 [![Varnish cache hit rate](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)
 
@@ -133,7 +134,7 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 > The LRU (Least Recently Used) Nuked Objects counter, `n_lru_nuked`, should be closely watched. If the eviction rate is increasing, that means your cache is evicting objects faster and faster due to a lack of space. In this case you may want to consider increasing the cache size.
 
-（最低使用）LRU被爆オブジェクトカウンタは、`n_lru_nuked`、注目すべきです。立ち退き率が増加している場合、それはあなたのキャッシュが速く、スペースの不足にオブジェクトを立ち退かされることを意味します。このケースでは、キャッシュサイズを増やすことを検討することをお勧めします。
+LRU (Least Recently Used) Nuked Objects(`n_lru_nuked`)のカウンター値には、注目しておくべきです。オブジェクトの退避率が増加してきている場合、キャッシュを保持しておくスペースが不足しているために、オブジェクトを次々と退避させていることになります。このような場合は、キャッシュサイズを増やすことを検討することをお勧めします。
 
 ### Thread-related metrics
 
@@ -141,7 +142,7 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 > Metrics related to worker threads tell you if your thread pools are healthy and functioning well.
 
-あなたのスレッドプールは、健康でうまく機能している場合ワーカースレッドに関連するメトリックはあなたを教えてください。
+ワーカースレッドに関するメトリクスは、スレッドプールが順調に機能しているかを教えてくれます。
 
 | **Name**               | **Description**                                                                                                  | **[Metric type](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)** |
 |------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
@@ -154,12 +155,16 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 > Keep an eye on the metric `thread_queue_len` which should not be too high. If it’s not equal to zero, that means Varnish is saturated and responses are slowed.
 
-高すぎてはならないthread_queue_len``メトリックに目が離せない。それがゼロに等しくない場合は、それは、ワニスが飽和し、応答が遅くなることを意味しています。
+`thread_queue_len`の値が高くなりすぎないように注目しておきます。この値がゼロ以外の場合は、Varnishは、飽和状態に至ってい、レスポンスへの応答が遅くなっていることを意味します。
 
-**These metrics should always be equal to 0:**
+> **These metrics should always be equal to 0:**
+> - **`threads_failed`**: otherwise you have likely exceeded your server limits, or attempted to create threads too rapidly. The latter case usually occurs right after Varnish is started, and can be corrected by increasing the `thread_pool_add_delay` value.
+> - **`threads_limited`**: otherwise you should consider increasing the value of `thread_pool_max`.
 
-- **`threads_failed`**: otherwise you have likely exceeded your server limits, or attempted to create threads too rapidly. The latter case usually occurs right after Varnish is started, and can be corrected by increasing the `thread_pool_add_delay` value.
-- **`threads_limited`**: otherwise you should consider increasing the value of `thread_pool_max`.
+**これらのメトリクスは常にゼロである必要があります:**
+
+- **`threads_failed`**: ゼロでない場合は、サーバーの限界を超えているか、あまりにも急速にスレッドを作りすぎています。後者のケースは、Varnishの起動直後に発生し、`thread_pool_add_delay`を調整することで調整できます。
+- **`threads_limited`**: ゼロでない場合は、`thread_pool_max`の値を増やすことを検討してください。
 
 ### Backend metrics
 
@@ -167,7 +172,7 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 > Keeping an eye on the state of your connections with backend web servers is also crucial to understand how well Varnish is able to do its work.
 
-バックエンドWebサーバを使用して接続の状態に目を保つことはニスがその作業を行うことができる方法をよく理解しておくことも重要です。
+Varnishが適切に機能できる状態になっているかを把握するには、バックエンドにあるWebサーバとのコネクションの状態に注目しておくことも、重要なことです。
 
 | **Name**               | **Description**                                                                                                                     | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
@@ -182,24 +187,29 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 > If your backend has [keep-alive set](https://www.varnish-software.com/blog/understanding-timeouts-varnish-cache), Varnish will use a pool of connections. You can get some insight into the effectiveness of the connection pool by looking at `backend_recycle` and `backend_reuse`.
 
-バックエンドは、キープアライブが設定されている場合、ワニスは、接続プールを使用します。あなたはbackend_recycleとbackend_reuseを見て、接続プールの有効性についての洞察を得ることができます。
+バックエンドに対するコネクションに[keep-alive set](https://www.varnish-software.com/blog/understanding-timeouts-varnish-cache)が設定されている場合、Varnishは、プール内のコネクションを再利用しようとします。コネクションのプールの有効性を把握するためには、`backend_recycle`と`backend_reuse`を監視します。
 
 > By default when `backend_busy` is incremented, that means the client receives a 5xx error response. However by using VCL, you can configure Varnish to recover from a busy backend by using a different backend, or by serving an outdated or synthetic response.
 
-backend_busy`がインクリメントされる`デフォルトで、それは、クライアントが5xxのエラー応答を受信します。しかし、VCLを使用することにより、あなたは、別のバックエンドを使用するか、古くなった、または合成反応を提供することで忙しいバックエンドから回復するためにニスを設定することができます。
+デフォルトの設定では、`backend_busy`に処理結果の値が加算された時は、クライアントは、5xx系のエラーを示すレスポンスを受信しています。しかし、VCLを編集することにより、Varnishに、別のバックエンドを使ったり、古いデーターを使ったり、人工的なレスポンスを使ってリカバーするように設定することができます。
 
 > Backend requests, `backend_req`, should be monitored to detect network or cache performance issues.
 
-クエンド要求、`backend_req`は、ネットワークまたはキャッシュパフォーマンスの問題を検出するために監視する必要があります。
+バックエンドへのリクエスト数である`backend_req`の値は、ネットワーク、又はキャッシュパのフォーマンス障害を検出するために監視する必要があります。
 
 **Metrics to alert on:**
 
-- **`backend_fail`** (backend connection failures) should be 0 or very close to 0. Backend connection failures can have several root causes:
+> - **`backend_fail`** (backend connection failures) should be 0 or very close to 0. Backend connection failures can have several root causes:
     - Initial (TCP) connection timeout: usually results from network issues, but could also be due to an overloaded or unresponsive backend
     - Time to first byte: when a request is sent to the backend and it does not start responding within a certain amount of time
     - Time in between bytes: when the backend started streaming a response but stopped sending data without closing the connection
+> - **`backend_unhealthy`**: Varnish [periodically pings](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html#health-checks) the backend to make sure it is still up and responsive. If it doesn’t receive a 200 response quickly enough, the backend is marked as unhealthy and every new request to it increments this counter until the backend recovers and sends a timely 200 response.
 
-- **`backend_unhealthy`**: Varnish [periodically pings](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html#health-checks) the backend to make sure it is still up and responsive. If it doesn’t receive a 200 response quickly enough, the backend is marked as unhealthy and every new request to it increments this counter until the backend recovers and sends a timely 200 response.
+- **`backend_fail`** (backend connection failures)は、ゼロ又は、ゼロに限りなく近い値である必要があります。Backend connection failuresは、様々な原因が考えられます:
+  - Initial (TCP) connection timeout: 通常は、ネットワークの障害に起因します。過剰な負荷やバックエンドの応答が無いことが原因である場合もあります。
+  - Time to first byte: リクエストは、バックエンドに送信されているが、バックエンドが一定の時間内に応答を開始しないとき。
+  - Time in between bytes: バックエンドが、応答のための送信を開始したが、コネクションを閉じずにデーターの送信を停止したとき。
+- **`backend_unhealthy`**: Varnishは、バックエンドが動作し、応答可能な状態になっているかを確認するために、[定期的にping](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html#health-checks)を送信します。Varnishは、バックエンドから一定時間内に200系のレスポンスを受信しなかった場合、そのバックエンドは、異常と判断します。そして、そのバックエンドが一定時間内に200系レスポンスで嘔吐できるように回復するまで、新しいリクエストがある度に`backend_unhealthy`の値を増やしていきます。
 
 [![Varnish metrics backend connections](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-09.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-09.png)
 
@@ -209,13 +219,13 @@ backend_busy`がインクリメントされる`デフォルトで、それは、
 
 > If you are using [Edge Side Includes](http://en.wikipedia.org/wiki/Edge_Side_Includes), `esi_errors` and `esi_warnings` will give you insight into the validity of your ESI syntax. If these metrics are increasing, you should inspect what is being returned by your backend and fix the errors you find.
 
-あなたは縁側を使用しているが含まれている場合は、esi_errorsとesi_warningsはあなたのESI構文の妥当性についての理解を深めることができます。します。これらの指標が増加している場合は、バックエンドによって返されているもの検査し、あなたが見つけるのエラーを修正する必要があります。
+[Edge Side Includes](http://en.wikipedia.org/wiki/Edge_Side_Includes)を使っている場合は、`esi_errors`と`esi_warnings`の値は、ESI構文の妥当性について教えてくれるでしょう。もしもそれらのメトリクスが増加しているようなら、バックエンドから応答を受けている内容を検査し、その中のエラーを修正する必要があります。
 
 ## Conclusion
 
 > In this post we’ve explored the most important metrics you should monitor to keep tabs on your Varnish cache. If you are just getting started with Varnish, monitoring the metrics listed below will give you great insight into your cache’s health and performance. Most importantly it will help you identify areas where tuning could provide significant benefits.
 
-この記事では、私たちはあなたのワニスキャッシュのタブを保つために監視する必要があり、最も重要な測定基準を検討してきました。あなただけのワニスを初めてしている場合は、以下に示す評価指標を監視することは、あなたのキャッシュの健康とパフォーマンスに大きな洞察力を与えるだろう。最も重要なこと、それはあなたがチューニングが大きな利益を提供することができる領域を特定するのに役立ちます。
+このポストでは、Varnishキャッシュの状況を把握しておくために監視しておくべき最も有用なメトリクスについて紹介してきました。Varnishを使い始めている場合、以下のリストにあるメトリクスを監視することで、Web層の健全性や稼働状態を把握する手助けをしてくれるはずです。更にありがたいことに、Varnishのチューニングが大きなメリットになる領域を探し出す手助けをしてくれるはずです。
 
 - [Requests per second](#client-metrics)
 - [Dropped client connections](#client-metrics)
@@ -226,24 +236,25 @@ backend_busy`がインクリメントされる`デフォルトで、それは、
 
 > Eventually you will recognize additional, more specialized metrics that are particularly relevant to your own environment and use cases.
 
-最終的にあなた自身の環境や使用の場合に特に関連する付加的な、より専門的なメトリックを認識します。
+最終的には、あなたのインフラやユースケースに特に関連性のある、より専門的なメトリクスも存在することに気がつくでしょう。
 
 > Of course, what you monitor will depend on the tools you have and the metrics available.
 
-もちろん、あなたが利用可能なあなたが持っているツールと指標に依存する監視もの。
+もちろん、何を監視するかは、持っているツールと監視可能なメトリクスの種類に依存しています。
 
 > [Part 2 of this post](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/) provides step-by-step instructions for collecting these metrics from Varnish.
 
-この記事の第2部では、ワニスからこれらのメトリックを収集するためのステップバイステップの手順を説明します。
+このシリーズのPart2[「How to collect Varnish metrics」](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/)では、Varnishから、メトリクスを収集するための詳細な手順を解説します。
 
 ## Acknowledgments
 
 > Many thanks to the [Fastly](https://www.fastly.com/) and [Varnish Software](https://www.varnish-software.com/) teams for reviewing this article prior to publication and providing important feedback and clarifications.
 
-[しっかり]（https://www.fastly.com/）と[ワニスソフトウェア]に感謝公開前にこの記事を見直し、重要なフィードバックを提供するため（https://www.varnish-software.com/）チームと説明。
+このポストを公開するに当たり、記事を事前にレビューし、重要なフィードバックと細部にわたる解説を提供してくれた[Fastly](https://www.fastly.com/) と[Varnish Software](https://www.varnish-software.com/) チームに感謝します。
+
 
 ------------------------------------------------------------------------
 
 *Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/varnish/how_to_monitor_varnish.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues).*
 
-この記事のソース·値引きはGitHubの上で利用可能です。ご質問、訂正、追加、など？私たちに知らせてください。
+*このポストのMarkdownソースは、[GitHub](https://github.com/DataDog/the-monitor/blob/master/nginx/how_to_collect_nginx_metrics.md)で閲覧することができます。質問、訂正、追加、などがありましたら、[GitHubのissueページ](https://github.com/DataDog/the-monitor/issues)を使って連絡を頂けると幸いです。*
