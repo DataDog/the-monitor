@@ -272,7 +272,7 @@ NGINXのログをパースして解析するには、さまざまなツールや
 
 > Which NGINX metrics you monitor will depend on the tools available to you, and whether the insight provided by a given metric justifies the overhead of monitoring that metric. For instance, is measuring error rates important enough to your organization to justify investing in NGINX Plus or implementing a system to capture and analyze logs?
 
-どのNGINXメトリクスを監視するかは、利用可能なツールに依存します。それぞれのメトリクスが提供する見識の価値がそのメトリクスを監視するためにかかる負担を正当化するための後押しをしてくれるでしょう。例えば、NGINX Plusに投資したり、ログを取り込んで解析するシステムを構築するほどエラーの発生率はあなたの組織にとって重要なのでしょうか？
+どのNGINXメトリクスを監視するかは、利用可能なツールに依存します。又、それぞれのメトリクスが提供する見識の価値こそがそのメトリクスを監視するためにかかる労力を正当化してくれるでしょう。例えば、NGINX Plusに投資したり、ログを取り込んで解析するシステムを構築するほどエラーの発生率はあなたの組織にとって重要なのでしょうか？
 
 > At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX with Datadog [in this post](/blog/how-to-monitor-nginx-with-datadog/), and get started right away with [a free trial of Datadog](https://app.datadoghq.com/signup).
 
