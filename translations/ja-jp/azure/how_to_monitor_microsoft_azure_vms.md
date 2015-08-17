@@ -2,29 +2,35 @@
 
 > *This post is part 1 of a 3-part series on monitoring Azure virtual machines. [Part 2](/blog/how-to-collect-azure-metrics) is about collecting Azure VM metrics, and [Part 3](/blog/monitor-azure-vms-using-datadog) details how to monitor Azure VMs with Datadog.*
 
-*このポストは、"Varnishの監視"3回シリーズのPart 1です。 Part 2は、[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)で、Part 3は、[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
+*このポストは、"Azureの監視"3回シリーズのPart 1です。 Part 2は、[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)で、Part 3は、[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
 
 ## What is Azure?
 
 > Microsoft Azure is a cloud provider offering a variety of compute, storage, and application services. Azure services include platform-as-a-service (PaaS), akin to Google App Engine or Heroku, and infrastructure-as-a-service (IaaS). In the most recent Gartner “Magic Quadrant” rating of cloud IaaS providers, Azure was one of only two vendors (along with Amazon Web Services) to place in the “Leaders” category.
 
+マイクロソフト Azureは、さまざまな計算用インスタンス、ストレージ、およびアプリケーションサービスを提供しているクラウドプロバイダーです。Azureのサービスには、Google App EngineやHerokuに代表されるようなPaaS(プラットホーム・アズ・サービス)と、IaaS(インフラストラクチャー・アズ・サービス)があります。Azureは、ガートナー社が公開しているIaaSプロバイダーの“Magic Quadrant”の直近の指標で、Amazon Web Serviceと並んで、"リーダー"カテゴリーに
+ランク付けされました。
+
 > In this article, we focus on IaaS. In an IaaS deployment, Azure’s basic unit of compute resources is the virtual machine. Azure users can spin up general-purpose Windows or Linux (Ubuntu) VMs, as well as machine images for applications such as SQL Server or Oracle.
 
-マイクロソフトAzureでは、コンピューティング、ストレージ、およびアプリケーションの様々なサービスを提供し、クラウド·プロバイダーです。 Azureのサービスは、プラットフォームサービスとしてのGoogleのApp EngineまたはHerokuの、およびIaaS（サービスとしてのインフラストラクチャ）に似（のPaaS）を含みます。クラウドのIaaSプロバイダーの最新のガートナー「マジック·クアドラント」の評価では、Azureが「リーダー」カテゴリに配置する（Amazon Webサービスと一緒に）2つだけのベンダーの1社でした。
-
-この記事では、IaaSのに焦点を当てています。 IaaSの展開では、コンピューティングリソースのアズールの基本単位は仮想マシンです。 Azureのユーザーは、SQL ServerやOracleなどのアプリケーションのための汎用WindowsまたはLinux（Ubuntuの）仮想マシンだけでなく、マシンのイメージをスピンアップすることができます。
+このポストでは、AzureのIaaSにフォーカスし解説していきます。AzureのIaaSサービスでは、計算リソースの基本は、仮想マシンです。Azureのユーザーは、汎用目的のWindowsが動作している仮想マシンや、Linux(Ubuntu)が動作している仮想マシンを起動したり、SQL ServerやOracleなどのアプリケーションがインストールされた仮想マシンイメージも起動することができます。
 
 ## Key Azure metrics
 
 > Whether you run Linux or Windows on Azure, you will want to monitor certain basic VM-level metrics to make sure that your servers and services are healthy. Four of the most generally relevant metric types are **CPU usage**, **disk I/O**, **memory utilization** and **network traffic**. Below we’ll briefly explore each of those metrics and explain how they can be accessed in Azure.
 
+Azureの上でLinuxを実行するか又はWindowsを実行するかに関わらず、サーバーやサービスを適切に運用するために、仮想マシンレベルでの基本メトリクスを監視することになるでしょう。この目的で監視対象として最も価値のある４つのメトリクスは、**CPU usage**、 **disk I/O**、**memory utilization**、**network traffic** です。下記では、これらの各メトリクスを手短に紹介し、Azure上でどのようにアクセスするかを解説していきます。
+
 > This article references metric terminology [introduced in our Monitoring 101 series](/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
+
+このポストでは、メトリクスの収集方法やアラートの設定方法に関する基礎的な知識のポストである[introduced in our Monitoring 101 series][10]で紹介したメトリック用語を使っています。
 
 > Azure users can monitor the following metrics using [the Azure web portal](https://portal.azure.com/) or can access the raw data directly via the Azure diagnostics extension. Details on how to collect these metrics are available in [the companion post](/blog/how-to-collect-azure-metrics) on Azure metrics collection.
 
-あなたはAzureの上でLinuxまたはWindowsを実行するかどうかは、あなたのサーバーおよびサービスが健康であることを確認するために、一定の基本的なVMレベルのメトリックを監視することになるでしょう。最も一般的に関連する評価指標タイプのうち4つは、CPU使用率、ディスクI / O、メモリ使用率、ネットワークトラフィックです。以下に、私たちは簡単に、これらのメトリックのそれぞれを探検し、彼らはアズールでアクセスする方法を説明します。
 
-この記事の参照メトリック用語は、メトリック収集と警告するためのフレームワークを提供し、当社のモニタリング101シリーズで導入されました。
+
+
+
 
 Azureのユーザーは、AzureのWebポータルを使用して、次のメトリックを監視することができ、またはAzureの診断拡張を介して直接生のデータにアクセスすることができます。これらのメトリックを収集する方法の詳細は、Azureのメトリック収集のコンパニオンの記事でご利用いただけます。
 
