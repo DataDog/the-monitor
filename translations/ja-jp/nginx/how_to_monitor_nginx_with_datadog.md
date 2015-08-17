@@ -38,19 +38,19 @@ Datadog Agentは、ホストからメトリクスを収集し、Datadog上で閲
 
 > As soon as your Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-Datadog Agentのインストールが稼働し始めると、Datadogのあなたのアカウント上にホスト名が表示され、メトリクスのレポーティングを受けていることが確認できるはずです。
+Datadog Agentのインストールが終了し、稼働し始めめると、[Datadogアカウントのインフラリスト](https://app.datadoghq.com/infrastructure)にホスト名が表示され、メトリクスを受信していることが確認できるはずです。
 
-[![Datadog infrastructure list](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)
+![Datadog infrastructure list](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)]
 
 ### Configure the Agent
 
 > Next you’ll need to create a simple NGINX configuration file for the Agent. The location of the Agent’s configuration directory for your OS can be found [here](http://docs.datadoghq.com/guides/basic_agent_usage/).
 
-次は、Datadog Agentの設定に必要なNGINX設定ファイルを生成する必要があります。Datadog Agentの設定ファイルの、OS毎の設置ディレクトリーは、[「Getting Started with the Agent」](Getting Started with the Agent)ページで確認することができます。
+次は、Datadog Agentの設定に必要なNGINX設定ファイルを生成する必要があります。Datadog Agentの設定ファイルの、OS毎の設置ディレクトリーは、[「Getting Started with the Agent」](http://docs.datadoghq.com/guides/basic_agent_usage/)ページで確認することができます。
 
 > Inside that directory, at `conf.d/nginx.yaml.example`, you will find [a sample NGINX config file](https://github.com/DataDog/dd-agent/blob/master/conf.d/nginx.yaml.example) that you can edit to provide the status URL and optional tags for each of your NGINX instances:
 
-Datadog Agentの設定ファイルのあるディレクトリーの中には、`conf.d/nginx.yaml.example`という[NGINXのメトリクスを収集するための設定サンプル](https://github.com/DataDog/dd-agent/blob/master/conf.d/nginx.yaml.example)のファイルが保存されています。このファイルを編集し、　NGINXのステータスページのURLと、Datadog上でNGINXホストを検索したり集計するのに使うタグを設定していきます。
+Datadog Agentの設定ファイルのあるディレクトリーの中には、`conf.d/nginx.yaml.example`という[NGINXのメトリクスを収集するための設定サンプル](https://github.com/DataDog/dd-agent/blob/master/conf.d/nginx.yaml.example)のファイルが保存されています。このファイルを編集し、NGINXのステータスページのURLと、Datadog上でNGINXホストを検索したり集計するのに使うタグを設定していきます:
 
 ```
 init_config:

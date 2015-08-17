@@ -2,14 +2,13 @@
 
 > *This post is part 3 of a 3-part series on Varnish monitoring. [Part 1](https://www.datadoghq.com/blog/how-to-monitor-varnish/) explores the key metrics available in Varnish, and [Part 2](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/) is about collecting those metrics on an ad-hoc basis.*
 
-*このポストは、"Varnishの監視"3回シリーズのPart 2です。 Part 1は、[「Varnishの監視方法」」](https://www.datadoghq.com/blog/how-to-monitor-varnish/)で、Part 3は、[「Datadogを使ったVarnishの監視」](https://www.datadoghq.com/blog/monitor-varnish-using-datadog/)になります。*
+*このポストは、"Varnishの監視"3回シリーズのPart 2です。 Part 1は、[「Varnishの監視方法」」](https://www.datadoghq.com/blog/how-to-monitor-varnish/)で、Part 2は、Part 2は、[「Varnishのメトリクスの収集」](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/)になります。*
 
 > In order to implement ongoing, meaningful monitoring, you will need a dedicated system that allows you to store all relevant Varnish metrics, visualize them, and correlate them with the rest of your infrastructure. You also need to be alerted when anomalies occur. In this post, we’ll show you how to start monitoring Varnish with Datadog.
 
-現在進行中の、意味のある監視を実現するために、あなたは、すべての関連するワニスメトリックを保存、それらを視覚化し、インフラストラクチャの残りの部分とそれらを相互に関連付けることができ、専用のシステムが必要になります。異常が発生したときにも、警告する必要があります。この記事では、我々はDatadogとワニスの監視を開始する方法を紹介します。
+発展的で価値がある監視を実現するためには、Varnishに関連する全てのメトリクスを保持し、可視化し、インフラの他のメトリクスと連携して分析できる専用システムが必要になります。更に、異常が発生した際には、アラートの発生も必要です。このポストでは、Datadogを使ってvarnishの監視を始める方法を紹介します。
 
- [
- ![Varnish cache Datadog dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-01.png)
+![Varnish cache Datadog dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-01.png)
 
 ## Integrating Datadog and Varnish
 
@@ -17,7 +16,8 @@
 
 > Before you begin, run this command to verify that Varnish is running properly:
 
-作業を開始する前に、ワニスが正常に動作していることを確認するには、次のコマンドを実行します:
+作業を始める前に次のコマンドを実行し、
+Varnishが正常に動作していることを確認します:
 
 ```
 varnishstat -1  && echo -e "VarnishStat - OK" || \ || echo -e "VarnishStat - ERROR"
@@ -25,27 +25,34 @@ varnishstat -1  && echo -e "VarnishStat - OK" || \ || echo -e "VarnishStat - ERR
 
 > Make sure the output displays “Varnishstat – OK”:
 
-必ず出力が表示され、「Varnishstat - OK」を行います。
+”Varnishstat - OK”が、表示されていることを確認します:
 
-[![Varnish running check](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-02.png)
+![Varnish running check](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-02.png)
 
 ### Install the Datadog Agent
 
 > The Datadog Agent is [open-source software](https://github.com/DataDog/dd-agent) that collects and reports metrics from your different hosts so you can view, monitor and correlate them on the Datadog platform. Installing the Agent usually requires just a single command. Installation instructions for different systems are available [here](https://app.datadoghq.com/account/settings#agent).
 
-Datadogエージェントを使用すると、表示、監視およびDatadogプラットフォーム上でそれらを関連付けることができますので、あなたの別のホストから収集し、レポートメトリックオープンソースソフトウェアです。エージェントをインストールすると、通常は単一のコマンドが必要です。異なるシステムのインストール手順は、ここから入手できます。
+Datadog Agentは、ホストからメトリクスを収集し、Datadog上で閲覧/監視できるようにそれらのメトリクスを送信するための[オープンソースソフトウェア](https://github.com/DataDog/dd-agent)です。通常、Datadog Agentのインストールは、[一行のコマンド](https://app.datadoghq.com/account/settings#agent)を実行するだけです。
 
 > As soon as the Datadog Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-とすぐDatadogエージェントが稼働しているとして、あなたは、あなたのホストがDatadogアカウントのメトリックを報告するはずです。
+Datadog Agentのインストールが終了し、稼働し始めめると、[Datadogアカウントのインフラリスト](https://app.datadoghq.com/infrastructure)にホスト名が表示され、メトリクスを受信していることが確認できるはずです。
 
-[![Varnish host reporting to Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-03bis.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-03bis.png)
+![Varnish host reporting to Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-03bis.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-03bis.png)
 
 ### Configure the Agent
 
-> Next you will need to create a Varnish configuration file for the Agent. You can find the location of the Agent configuration directory for your OS [here](http://docs.datadoghq.com/guides/basic_agent_usage/). In that directory you will find [a sample Varnish config file](https://github.com/DataDog/dd-agent/blob/master/conf.d/varnish.yaml.example) called `varnish.yaml.example`. Copy this file to `varnish.yaml`, then edit it to include the path to the varnishstat binary, and an optional list of tags that will be applied to every collected metric:
+> Next you will need to create a Varnish configuration file for the Agent. You can find the location of the Agent configuration directory for your OS [here](http://docs.datadoghq.com/guides/basic_agent_usage/).
 
-次は、エージェントのワニスの設定ファイルを作成する必要があります。あなたがここにお使いのOS用のエージェントの設定ディレクトリの場所を見つけることができます。そのディレクトリではvarnish.yaml.exampleというサンプルニス設定ファイルを検索します。その後varnishstatバイナリへのパス、およびメトリック収集ごとに適用されるタグのオプションのリストを含むようにそれを編集、varnish.yamlするには、このファイルをコピーします。
+次は、Datadog Agentの設定に必要なVarnish設定ファイルを生成する必要があります。Datadog Agentの設定ファイルの、OS毎の設置ディレクトリーは、[「Getting Started with the Agent」](http://docs.datadoghq.com/guides/basic_agent_usage/)ページで確認することができます。
+
+In that directory you will find [a sample Varnish config file](https://github.com/DataDog/dd-agent/blob/master/conf.d/varnish.yaml.example) called `varnish.yaml.example`. Copy this file to `varnish.yaml`, then edit it to include the path to the varnishstat binary, and an optional list of tags that will be applied to every collected metric:
+
+Datadog Agentの設定ファイルのあるディレクトリーの中には、`conf.d/nginx.yaml.example`という[Varnishのメトリクスを収集するための設定サンプル](https://github.com/DataDog/dd-agent/blob/master/conf.d/varnish.yaml.example)のファイルが保存されています。このファイルを編集し、
+
+
+NGINXのステータスページのURLと、Datadog上でNGINXホストを検索したり集計するのに使うタグを設定していきます。
 
 ```
 init_config:
@@ -155,7 +162,7 @@ sess_droppedメトリックカウントのクライアント接続ワニスを�
 
 4. あなたのチームに通知するための通知をカスタマイズします。このケースでは、OPSチームのチャットルームとページ呼び出しのエンジニアで通知を掲載します。 「何が起こっているかを言う」セクションでは、モニターに名前を付け、調査のための最初の一歩を提案する通知を同行するショートメッセージを追加します。私たちは、OPSのために使用し、ルートアラートへの@pagerduty使用スラックチャネルを@mention
 
-5. PagerDuty.Monitor SESの \_dropped
+5. PagerDuty.Monitor SESの  \_dropped
 統合モニタを保存します。ページの下部にある「保存」ボタンをクリックします。いつでもニスがクライアント接続をドロップするようになりましキーワニス作業メトリックを監視している、とあなたのオンコールエンジニアは、ページングされます。
 
 ## Conclusion
