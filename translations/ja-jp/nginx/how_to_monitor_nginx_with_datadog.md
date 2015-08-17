@@ -50,7 +50,7 @@ Datadog Agentのインストールが終了し、稼働し始めめると、[Dat
 
 > Inside that directory, at `conf.d/nginx.yaml.example`, you will find [a sample NGINX config file](https://github.com/DataDog/dd-agent/blob/master/conf.d/nginx.yaml.example) that you can edit to provide the status URL and optional tags for each of your NGINX instances:
 
-Datadog Agentの設定ファイルのあるディレクトリーの中には、`conf.d/nginx.yaml.example`という[NGINXのメトリクスを収集するための設定サンプル](https://github.com/DataDog/dd-agent/blob/master/conf.d/nginx.yaml.example)のファイルが保存されています。このファイルを編集し、NGINXのステータスページのURLと、Datadog上でNGINXホストを検索したり集計するのに使うタグを設定していきます:
+Datadog Agentの設定ファイルのあるディレクトリーの中には、`conf.d/nginx.yaml.example`という[NGINXのメトリクスを収集するための設定サンプル](https://github.com/DataDog/dd-agent/blob/master/conf.d/nginx.yaml.example)のファイルが保存されています。このファイルを編集し、NGINXのステータスページのURLと、Datadog上でNGINXホストを検索したり集計するために使うタグを設定していきます:
 
 ```
 init_config:
@@ -70,17 +70,17 @@ NGINXのステータスページのURLとタグの編集が終わったら、`co
 
 > You must restart the Agent to load your new configuration file. The restart command varies somewhat by platform—see the specific commands for your platform [here](http://docs.datadoghq.com/guides/basic_agent_usage/).
 
-新しい設定ファイルを読み込むために、Datadog Agentを再起動します。Datadog Agentの再起動コマンドは、使っているOSより多少異なります。各OSの再起動コマンドに関しては、[「Getting Started with the Agent」](Getting Started with the Agent)ページを参照してください。
+新しい設定ファイルを読み込むために、Datadog Agentを再起動します。Datadog Agentの再起動コマンドは、使っているOSより多少異なります。各OSの再起動コマンドに関しては、[「Getting Started with the Agent」](http://docs.datadoghq.com/guides/basic_agent_usage/)ページを参照してください。
 
 ### Verify the configuration settings
 
 > To check that Datadog and NGINX are properly integrated, run the Datadog `info` command. The command for each platform is available [here](http://docs.datadoghq.com/guides/basic_agent_usage/).
 
-Datadog AgentとNGINXの監視機能が適切に連携できているかを確認するには、Datadog Agentに内包されている`info`を実行します。各OSの`info`コマンドに関しては、[「Getting Started with the Agent」](Getting Started with the Agent)ページを参照してください。
+Datadog AgentとNGINXの監視機能が適切に連携できているかを確認するには、Datadog Agentに内包されている`info`を実行します。各OSの`info`コマンドに関しては、[「Getting Started with the Agent」](http://docs.datadoghq.com/guides/basic_agent_usage/)ページを参照してください。
 
 > If the configuration is correct, you will see a section like this in the output:
 
-設定が正しく終了している場合は、`info`コマンドの出力内に以下のようなセクションが表示されます。
+設定が正しく終了している場合は、`info`コマンドの出力内に以下のようなセクションが表示されます:
 
 ```
 Checks
@@ -114,7 +114,7 @@ NGINXの基本ダッシュボードには、Part 1の[「NGINXの監視方法」
 
 > You can easily create a comprehensive dashboard for monitoring your entire web stack by adding additional graphs with important metrics from outside NGINX. For example, you might want to monitor host-level metrics on your NGINX hosts, such as system load. To start building a custom dashboard, simply clone the default NGINX dashboard by clicking on the gear near the upper right of the dashboard and selecting “Clone Dash”.
 
-NGINXが依存する外部の重要なメトリクスを元にしたグラフをダッシュボードに追加することで、Web層を監視するために包括的なダッシュボードも簡単に作成することができます。例えば、CPU負荷などのNGINXホストのホストレベルでのメトリクスも同時に監視したいと思うこともあるでしょう。カスタムダッシュボードを作り始めるには、NGINXの基本ダッシュボードの右上付近の歯車をクリックした後、“Clone Dash”をクリックし、基本ダッシュボードのコピーを作成します。
+ダッシュボードに、NGINXが依存する重要なシステム外メトリクスを元にしたグラフを追加することで、Web層を監視するための包括的なダッシュボードも簡単に作成することができます。例えば、CPU負荷などのNGINXホストのホストレベルでのメトリクスも同時に監視したいと思うこともあるでしょう。カスタムダッシュボードを作り始めるには、NGINXの基本ダッシュボードの右上付近の歯車をクリックした後、“Clone Dash”をクリックし、基本ダッシュボードのコピーを作成します。
 
 [![Clone dash](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/clone_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/clone_2.png)
 
@@ -128,7 +128,7 @@ NGINXが依存する外部の重要なメトリクスを元にしたグラフを
 
 > Once Datadog is capturing and visualizing your metrics, you will likely want to set up some monitors to automatically keep tabs on your metrics—and to alert you when there are problems. Below we’ll walk through a representative example: a metric monitor that alerts on sudden drops in NGINX throughput.
 
-Datadogで、NGINXのメトリクスを記録し、可視化できるようになったら、それらのメトリクスに”Monitors”(監視アラート)を設定し、自動で見張り、問題が発生した際には、アラートを通知受けられるようにしたいでしょう。以下に代表的な事例として、NGINXのスループットの急激な降下が発生した際にアラートを発生させる”Monitor”の設定手順を解説することにします。
+Datadogで、NGINXのメトリクスを記録し、可視化できるようになったら、それらのメトリクスに”Monitors”(監視アラート)を設定し、自動で見張り、問題が発生した際には、アラート通知を受けられるようにしたいでしょう。以下に代表的な事例として、NGINXのスループットが急激に降下した際にアラートを発生させる”Monitor”の設定手順を解説することにします。
 
 ### Monitor your NGINX throughput
 
@@ -149,7 +149,7 @@ Datadogが提供するメトリクスアラート(メトリクスの数値を元
 1. **新しいメトリックス·モニターを作成します。** Datadogのダッシュボード上の“Monitors”タブのドロップダウンメニューから“New Monitor”を選択します。次に"Monitor"のタイプとして“Metric”を選択します。
 2. **メトリックス·モニターを定義します。** NGINXが処理する1秒あたりのリクエスト総数が一定量落ち込んだ際に、通知を受けたいとします。そのような場合、`nginx.net.request_per_s`のメトリクスをインフラ全体に渡り合算(sum)する設定をしておきます。
 3. **メトリックス·アラートの条件を設定します。** 一定の閾値ではなく、変化に基づいてアラートを発生させたいので、“Change Alert”を選択します。次に、リクエスト量が30%以上の変化で落ち込んだ時にアラートを発生させるように設定します。ここでは、１分間分のデーターの平均値を現在のメトリクスの値とし、10分前に計測したメトリクスの値と比較し、その期間内のメトリクスの落ち込みが30％以上ある場合にアラートを発生させます。
-4. **通知をカスタマイズします。** NGINXのリクエスト数が落ち込んだ際には、チームに通知することにします。このケースでは、運用チームのチャットルームと待機しているエンジニアに通知を送ることにします。 “Say what’s happening”のセクションで、"Monitor"のタイトルを設定し、調査を開始するために手がかりになる情報をメッセージに追記しておきます。ここでは、"@slack-ops"を使い運用チームのSlackチャネルにメンションを送信し、"@pagerduty"を使って[PagerDuty](/blog/pagerduty/)にページ要請をしています。
+4. **通知をカスタマイズします。** NGINXのリクエスト数が落ち込んだ際には、チームに通知することにします。このケースでは、運用チームのチャットルームと待機しているエンジニアに通知を送ることにします。 “Say what’s happening”のセクションで、"Monitor"のタイトルを設定し、調査を開始するために手がかりになる情報をメッセージに追記しておきます。ここでは、"@slack-ops"を使い運用チームの[Slack](https://www.datadoghq.com/blog/collaborate-share-track-performance-slack-datadog/)チャネルにメンションを送信し、"@pagerduty"を使って[PagerDuty](/blog/pagerduty/)にページ要請をしています。
 5. **統合モニタを保存します。** ページの下部にある"Save"ボタンをクリックし、ここまでの内容を保存します。ここまでの作業で、NGINXの主要[ワークメトリクス]((/blog/monitoring-101-collecting-data/#metrics))の監視設定は完了し、待機中のエンジニアは、リクエスト数が急激に落ち込んだ際にはページを受けるようになります。
 
 ## Conclusion
@@ -160,11 +160,11 @@ Datadogが提供するメトリクスアラート(メトリクスの数値を元
 
 > If you’ve followed along using your own Datadog account, you should now have greatly improved visibility into what’s happening in your web environment, as well as the ability to create automated monitors tailored to your environment, your usage patterns, and the metrics that are most valuable to your organization.
 
-Datadogのアカウントを使い、ここまで作業を進めてきたあなたは、大幅に改善された視認性をもつWeb環境を手に入れることができたでしょう。それと共に、あなたの環境、使用パターン、組織的に最も価値のあるメトリクスに合わせた"Monitors"(アラート)を設定する方法をも手に入れたでしょう。。
+Datadogのアカウントを使い、ここまで作業を進めてきたあなたは、Web層で何が起きているかを素早く把握できる監視を手に入れることができたでしょう。それと共に、あなたの環境、使用パターン、組織的に最も価値のあるメトリクスに合わせた"Monitors"(アラート)を設定する方法をも手に入れたでしょう。。
 
 > If you don’t yet have a Datadog account, you can sign up for [a free trial](https://app.datadoghq.com/signup) and start monitoring your infrastructure, your applications, and your services today.
 
-もしもまだDatadogアカウントを持っていない場合は、無料トライアルに登録することで、今日からすぐにインフラ、アプリケーション、サービスの監視を開始することができます。
+もしもまだDatadogアカウントを持っていない場合は、[無料トライアル](https://app.datadoghq.com/signup) に登録することで、今日からすぐにインフラ、アプリケーション、サービスの監視を開始することができます。
 
 ------------------------------------------------------------------------
 
