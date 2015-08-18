@@ -57,23 +57,25 @@ Azureの"Diagnostics extension"は、Azure web portalより新しい仮想マシ
 
 > Because Azure metrics are written to storage tables, you can access the raw data from Azure if you want to use external tools to graph or analyze your metrics. This post focuses on accessing metrics via Microsoft’s Visual Studio IDE, but you can also copy metric data tables to local storage using the [AzCopy utility](https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/) for Windows, or you can access metric data programmatically [using the .NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights). Note that the [Azure command-line interface](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-command-line-tools/), which is available for Mac, Linux, and Windows, will allow you to view the list of tables in your storage accounts (via the `azure storage table list` command) but not the actual contents of those tables.
 
-Azureのメトリックを記憶表に書かれているので、あなたがグラフやあなたのメトリックを分析するために外部ツールを使用したい場合は、Azureのからの生データにアクセスすることができます。この投稿は、MicrosoftのVisual StudioのIDEを介してメトリックにアクセスするに焦点を当てていますが、WindowsのAzCopyユーティリティを使用して、ローカルストレージにメトリックデータテーブルをコピーすることができ、または、プログラムで.NET SDKを使用して、メトリックデータにアクセスすることができます。マック、Linux、およびWindowsで利用可能ですAzureのコマンドラインインターフェイスは、あなたが（Azureストレージテーブルlistコマンドを介して）、ストレージアカウント内のテーブルのリストを表示できるようになりますので注意してくださいが、それらのテーブルのない実際の内容。
+Azureのメトリクスは、ストレージ内のテーブルへ出力されているため、外部のツールでメトリクスをグラフ化したり分析したい場合は、生のデーターにアクセスすることができるようになっています。このポストでは、MicrosoftのVisual Studio IDEを介してメトリクスにアクセスするに方法を紹介します。この方法以外に、Windows用の[AzCopy utility](https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/)を使用し、ローカルストレージにメトリックデータテーブルをコピーすることができるほか、[.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights)を使用し、プログラム的にメトリクスデーターにアクセスすることもできます。
+
+注意: Mac、Linx、Windowsで使用することができる[Azure command-line interface](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-command-line-tools/)は、Azureストレージアカウントに保存されているテーブルのリストを、`azure storage table list`コマンドを使って表示することはできますが、それらのテーブル内の実際のコンテンツを表示することはできません。
 
 ### Connecting to Azure in Visual Studio Cloud Explorer
 
 > Starting with Visual Studio 2015 and Azure SDK 2.7, you can now use Visual Studio’s [Cloud Explorer](https://msdn.microsoft.com/en-us/library/azure/mt185741.aspx) to view and manage your Azure resources. (Similar functionality is available using [Server Explorer](https://msdn.microsoft.com/en-us/library/azure/ff683677.aspx#BK_ViewResources) in older versions of Visual Studio, but not all Azure resources may be accessible.)
 
-Visual Studioの2015年のAzure SDK2.7以降では、今、あなたのAzureのリソースを表示および管理するために、Visual StudioのクラウドExplorerを使用することができます。 （同様の機能は、Visual Studioの旧バージョンでサーバーエクスプローラを使用して利用可能ですが、すべてではないのAzureのリソースにアクセスできる可能性はあります。）
-
+Visual Studio 2015とAzure SDK2.7を組み合わせることで、Visual Studioの[Cloud Explorer](https://msdn.microsoft.com/en-us/library/azure/mt185741.aspx)を使いAzureのリソースを閲覧し、管理することができるよになります。(Visual Studioの旧バージョンでは、[Server Explorer](https://msdn.microsoft.com/en-us/library/azure/ff683677.aspx#BK_ViewResources)を使って同様の機能が提供されていますが、Azureのリソースの全てにアクセスできるわけではありません。)
 > To view the Cloud Explorer interface in Visual Studio 2015, go to View &gt; Other Windows &gt; Cloud Explorer.
 
-Visual Studioの2015年のクラウドエクスプローラインターフェイスを表示するには、>他のWindows>クラウドエクスプローラを表示するために行きます。
+
+Visual Studio 2015のCloud Explorerインターフェースを表示するには、View &gt; Other Windows &gt; Cloud Explorer とメニューを選択していきます。
 
 [![Cloud Explorer](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-cloud-explorer.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-cloud-explorer.png)
 
 > Connect to your Azure account with Cloud Explorer by clicking on the gear and entering your account credentials.
 
-ギアをクリックして、アカウントの資格情報を入力することで、クラウドエクスプローラを使用してAzureのアカウントに接続します。
+歯車のマークをクリックし、Azureアカウント情報を入力することで、Cloud ExplorerにAzureへのアクセス権を付与します。
 
 ![Add Azure account to Visual Studio](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-add-account.png)
 
@@ -81,11 +83,11 @@ Visual Studioの2015年のクラウドエクスプローラインターフェイ
 
 > Once you have signed in to your Azure subscription, you will find your metric storage listed under “Storage Accounts” or “Storage Accounts (Classic),” depending on whether the storage account was launched on Azure’s Resource Manager stack or on the Classic Stack.
 
-あなたはAzureのサブスクリプションにサインインしたら、ストレージアカウントがアズールのリソースマネージャスタックまたはクラシックスタック上で起動されたかどうかに応じて"、ストレージアカウント（クラシック）「あなたのメトリック記憶は「ストレージアカウント」または下にリストされているでしょう。
+その後、Azureのアカウントにサイン・インすることができたならば、"Storage Accounts"か"Storage Accounts (Classic)"という項目の配下にメトリクスの保存先を確認することができます。"Storage Accounts"か"Storage Accounts (Classic)"かは、"AzureのResource Manager"スタックか"Classic"スタックでストレージのアカウントが起動されたかにより異なります。
 
 > Metrics are stored in tables, the names of which usually start with “WADMetrics.” Open up a metric table in one of your metric storage accounts, and you will see your VM metrics. Each table contains 10 days worth of data to prevent any one table from growing too large; the date is appended to the end of the table name.
 
-メトリックは、テーブルに格納されている、の名前は通常、「。WADMetrics"で始まるあなたのメトリック記憶アカウントのいずれかにメトリック表を開き、あなたのVMのメトリクスが表示されます。各テーブルには大きくなりすぎるからいずれかのテーブルを防ぐために、データの10日間分が含まれています。日付は、テーブル名の最後に追加されます。
+メトリクスは、テーブルに格納され、“WADMetrics.”始まる名前が付与されます。"metric storage account"内のテーブルを表示すると、仮想マシンに関するメトリクスが表示されます。テーブルが巨大化するのを防ぐために、各テーブルには10日分のデーターが保存されるようになっています。そして、新しい日付のデーターは、テーブルの末尾に追加されていきます。
 
 ![Azure metrics in storage](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-wad-metrics2.png)
 
@@ -93,13 +95,13 @@ Visual Studioの2015年のクラウドエクスプローラインターフェイ
 
 > The name of your VM can be found at the end of each row’s partition key, which is helpful for filtering metrics when multiple VMs share the same metric storage account. The metric type can be found in the CounterName column.
 
-あなたのVMの名前が複数のVMが同じメトリックストレージアカウントを共有する場合、フィルタリングメトリクスのために有用であるそれぞれの行のパーティションキーの終わりにあります。メトリックタイプは、CounterName欄に記載されています。
+仮想マシンの名前は、各行の、`partition key`の欄の末尾の部分で確認することができます。`partition key`の列の末尾に仮想マシン名を持っていることは、複数の仮想マシンで"metric storage account"を共有している場合に、メトリクスを抽出する際に非常に便利です。(尚、メトリクスのタイプは、CounterName欄に記載されています。)
 
 [![Metrics in tables](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-metric-table.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-metric-table.png)
 
 > To export your data for use in Excel or another analytics tool, click the “Export to CSV File” button on the toolbar just above your table.
 
-Excelで使用するか、別の解析ツールのためにデータをエクスポートするには、ちょうどあなたのテーブルの上にあるツールバーのボタンを「CSVファイルにエクスポートファイル」をクリックします。
+Excelや他の解析ツールで使用するために、データーをエクスポートするには、テーブルの上にあるツールバー内にある“Export to CSV File”ボタンをクリックします。
 
 ![Export metrics to CSV](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-export-to-csv.png)
 
@@ -107,11 +109,11 @@ Excelで使用するか、別の解析ツールのためにデータをエクス
 
 > In this post we have demonstrated how to use Azure’s built-in monitoring functionality to graph VM metrics and generate alerts when those metrics go out of bounds. We have also walked through the process of exporting raw metric data from Azure for custom analysis.
 
-この記事では、これらのメトリックが範囲外に行くときにアラートをVMメトリックをグラフ化して生成するために、アズールの組み込みの監視機能を使用する方法を実証しました。また、カスタムの分析のためのAzureからの生メトリックデータをエクスポートするプロセスを歩いてきました。
+このポストでは、Azure上に作り込まれている監視機能を使って、仮想マシンのメトリクスをグラフ化し、メトリクスが閾値を超えた際にアラートを通知するようにしました。更に、独自の分析をするために、Azureから生のメトリクスデーターをエクスポートする方法も紹介しました。
 
 > At Datadog, we have integrated directly with Azure so that you can begin collecting and monitoring VM metrics with a minimum of setup. Learn how Datadog can help you to monitor Azure in the [next and final post](/blog/monitor-azure-vms-using-datadog/) of this series.
 
-あなたが収集して、セットアップを最小限に抑えてVMのメトリクスの監視を開始することができるようにDatadogで、我々はアズールと直接統合しています。 Datadogは、あなたがこのシリーズの次と最終後にAzureのを監視するのを助けることができる方法を学びます。
+Datadogでは、仮想マシンのメトリクスを最低限の労力で収集し、監視ができるように、Azureと直で連携できるようにしました。シリーズに含まれる次のポスト、[「Datadogを使ったAzureの監視」](https://www.datadoghq.com/blog/monitor-varnish-using-datadog/)では、Datadogを使ったAzureの監視方法を学ぶことができます。
 
 ------------------------------------------------------------------------
 
