@@ -19,26 +19,21 @@
 
 > Whether you run Linux or Windows on Azure, you will want to monitor certain basic VM-level metrics to make sure that your servers and services are healthy. Four of the most generally relevant metric types are **CPU usage**, **disk I/O**, **memory utilization** and **network traffic**. Below we’ll briefly explore each of those metrics and explain how they can be accessed in Azure.
 
-Azureの上でLinuxを実行するか又はWindowsを実行するかに関わらず、サーバーやサービスを適切に運用するために、仮想マシンレベルでの基本メトリクスを監視することになるでしょう。この目的で監視対象として最も価値のある４つのメトリクスは、**CPU usage**、 **disk I/O**、**memory utilization**、**network traffic** です。下記では、これらの各メトリクスを手短に紹介し、Azure上でどのようにアクセスするかを解説していきます。
+Azureの上でLinux又はWindowsを実行した場合、サーバーやサービスを適切に運用を確保するために、仮想マシンレベルで基本メトリクスを監視したいはずです。その際、最も関連性のあるは、**CPU usage**、 **disk I/O**、**memory utilization**、**network traffic** の４つのメトリクスになります。下記では、これらの各メトリクスを手短に紹介し、Azure上でどのようにアクセスすることができるかを解説していきます。
 
 > This article references metric terminology [introduced in our Monitoring 101 series](/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
-このポストでは、メトリクスの収集方法やアラートの設定方法に関する基礎的な知識のポストである[introduced in our Monitoring 101 series][10]で紹介したメトリック用語を使っています。
+このポストでは、「メトリクスの収集方法やアラートの設定方法に関する基礎的な知識」のポストである[introduced in our Monitoring 101 series][10]で紹介したメトリック用語を使っています。
 
 > Azure users can monitor the following metrics using [the Azure web portal](https://portal.azure.com/) or can access the raw data directly via the Azure diagnostics extension. Details on how to collect these metrics are available in [the companion post](/blog/how-to-collect-azure-metrics) on Azure metrics collection.
 
-
-
-
-
-
-Azureのユーザーは、AzureのWebポータルを使用して、次のメトリックを監視することができ、またはAzureの診断拡張を介して直接生のデータにアクセスすることができます。これらのメトリックを収集する方法の詳細は、Azureのメトリック収集のコンパニオンの記事でご利用いただけます。
+Azureのユーザーは、以下に紹介するメトリックを[AzureのWebポータル](https://portal.azure.com/)上から監視することがでます。更に、”Azure diagnostics extension”を介し、直接生のデータにアクセスすることもできます。Azureからメトリクスを収取する詳しい手順に関しては、このシリーズのPart2[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)を解説を参照してください。
 
 ### CPU metrics
 
 > CPU usage is one of the most commonly monitored host-level metrics. Whenever an application’s performance starts to slide, one of the first metrics an operations engineer will usually check is the CPU usage on the machines running that application.
 
-CPUの使用率は、最も一般的に監視ホストレベルのメトリックの1つです。アプリケーションのパフォーマンスは、オペレーションエンジニアは通常、チェックする最初のメトリックの1つにスライドを開始するたびにそのアプリケーションを実行しているマシンのCPU使用率です。
+CPUの使用率は、最も一般的に監視対象となるホストレベルのメトリックの一つです。アプリケーションの性能が低下し始めた際、オペレーションエンジニアが最初にチェックするメトリクスの一つが、通常そのアプリケーションを実行しているマシンのCPU使用率になります。
 
 | **Name**            | **Description**                       | **[Metric type](/blog/monitoring-101-collecting-data/)** |
 |---|----|-----|
@@ -48,13 +43,13 @@ CPUの使用率は、最も一般的に監視ホストレベルのメトリッ�
 
 > CPU metrics allow you to determine not only how utilized your processors are (via **CPU percentage**) but also how much of that utilization is accounted for by user applications. The **CPU user time** metric tells you how much time the processor spent in the restricted “user” mode, in which applications run, as opposed to the privileged kernel mode, in which the processor has direct access to the system’s hardware. The **CPU privileged time** metric captures the latter portion of CPU activity.
 
-CPUメトリックを使用すると、ユーザーアプリケーションによって占められ、どのように利用の多くも、（CPUの割合を介して）であるだけでなく、どのように利用し、あなたのプロセッサを決定するができるようになります。 CPUのユーザー時間メトリックは、プロセッサがシステムのハードウェアに直接アクセスを有する、特権カーネルモードとは対照的に、プロセッサは、アプリケーションが実行される制限された「ユーザ」モードで過ごしたどのくらいの時間がわかります。 CPUの特権時間メトリックは、CPUの活動の後半部分をキャプチャします。
+CPUメトリクスを監視することによりプロセッサーの利用状況を(**CPU percentage** を介し)把握できるだけはなく、各ユーザーのアプリケーションがどの程度CPUを占有しているかを把握することができるようになります。**CPU user time** メトリクスからは、CPUが"restricted 'user' mode"で、アプリケーションを実行している時間を知ることができます。その反対に、**CPU privileged time** メトリクスからは、CPUが"privileged kernel mode"で、システムのハードウェアに直接アクセスしている時間を知ることができます。
 
 #### Metric to alert on: CPU percentage
 
 > Although a system in good health can run with consistently high CPU utilization, you will want to be notified if your hosts’ CPUs are nearing saturation.
 
-ディスクIの監視/ Oは、あなたのアプリケーションは、ハードウェアに影響を与え、そしてその逆の方法を理解するために重要です。ここでは説明VMレベルのメトリックを超えた追加の可視性のために、また、あなたのストレージが絞らやパフォーマンスに影響を与える可能性があり可用性の問題を持っているされているかどうかを判断するためにAzureストレージアカウントからのメトリックを収集することができます。
+システムが良好な状態にあってもCPUの使用率が常に高い場合、ホストの個々のCPUが飽和状態に近づいた際には、通知されるようにしたいものです。
 
 [![Azure CPU heat map](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-1-cpu.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-1-cpu.png)
 
@@ -62,7 +57,7 @@ CPUメトリックを使用すると、ユーザーアプリケーションに�
 
 > Monitoring disk I/O is critical for understanding how your applications are impacting your hardware, and vice versa. For additional visibility beyond the VM-level metrics covered here, you can also collect metrics from your Azure storage accounts to determine if your storage is being throttled or has availability issues that could impact performance.
 
-ディスクIの監視/ Oは、あなたのアプリケーションは、ハードウェアに影響を与え、そしてその逆の方法を理解するために重要です。ここでは説明VMレベルのメトリックを超えた追加の可視性のために、また、あなたのストレージが絞らやパフォーマンスに影響を与える可能性があり可用性の問題を持っているされているかどうかを判断するためにAzureストレージアカウントからのメトリックを収集することができます。
+ディスクI/Oの監視は、アプリケーションがハードウェアに及ぼしている影響を理解するのには非常に役に立ちます。仮想マシンレベルとして紹介したメトリクスの情報に加えAzureアカウントのスレージメトリクスを収集することで、そのストレージが制限を受けているか、又パフォーマンスの影響を与える可能性のある可用性の問題を抱えているかを、把握できるようになります。
 
 | **Name**   | **Description**                  | **[Metric type](/blog/monitoring-101-collecting-data/)** |
 |---|----|-----|
@@ -73,21 +68,21 @@ CPUメトリックを使用すると、ユーザーアプリケーションに�
 
 Monitoring the amount of data read from disk can help you understand your application’s dependence on disk. If the application is reading from disk more often than expected, you may want to add a caching layer or switch to faster disks to relieve any bottlenecks.
 
-ディスクから読み取られるデータの量を監視することで、ディスク上のアプリケーションの依存性を理解するのに役立ちます。アプリケーションはより頻繁に予想よりもディスクから読んでいる場合は、キャッシング層を追加したり、任意のボトルネックを軽減するために高速なディスクに切り替えたいことがあります。
+ディスクからの読み込まれるデーターの量を監視することは、アプリケーションのディスクへの依存度を知るのに役立ちます。もしもアプリケーションが予想していたよりも頻繁にディスクの読み込みをしている場合は、ボトルネック(遅延)の可能性を解消するために、キャッシング層を追加したり、高速なディスクを選択するとになります。
 
 #### Metric to alert on: Disk write
 
 > Monitoring the amount of data written to disk can help you identify bottlenecks caused by I/O. If you are running a write-heavy application, you may wish to upgrade[the size of your VM](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/) to increase the maximum number of IOPS (input/output operations per second).
 
-ディスクに書き込まれるデータの量を監視することで、I / Oに起因するボトルネックを特定するのに役立ちます。あなたはライト重いアプリケーションを実行している場合は、IOPSの最大数（秒あたりの入力/出力操作）を増加させるためにあなたのVMのサイズをupgradetheすることもできます。
+ディスクへ書き込むデーターの量を監視することは、ディスクI/Oに起因するボトルネック(遅延)を発見するのに役立ちます。ディスクへの書き込みの多いアプリケーションを実行している場合、IOPSの上限値を増やすために[仮想マシンのサイズ](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/)をアップグレードする必要があるかもしれません。
 
- [![Azure disk write speed](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-disk-write-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-disk-write-2.png)
+[![Azure disk write speed](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-disk-write-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-disk-write-2.png)
 
 ### Memory metrics
 
 > Monitoring memory usage can help identify low-memory conditions and performance bottlenecks.
 
-メモリ使用量を監視することは、低メモリ条件とパフォーマンスのボトルネックを特定するのに役立ちます。
+メモリの使用量を監視することは、メモリの残量が少なくなった場合のパフォーマンスボトルネックを発見するのに役立ちます。
 
 | **Name**         | **Description**                                               | **[Metric type](/blog/monitoring-101-collecting-data/)** |
 |---|----|-----|
@@ -98,7 +93,8 @@ Monitoring the amount of data read from disk can help you understand your applic
 
 > Paging events occur when a program requests a [page](https://en.wikipedia.org/wiki/Page_(computer_memory)) that is not available in memory and must be retrieved from disk, or when a page is written to disk to free up working memory. Excessive paging can introduce slowdowns in an application. A low level of paging can occur even when the VM is underutilized—for instance, when the virtual memory manager automatically trims a process’s [working set](https://msdn.microsoft.com/en-us/library/windows/desktop/cc441804(v=vs.85).aspx) to maintain free memory. But a sudden spike in paging can indicate that the VM needs more memory to operate efficiently.
 
-プログラムがメモリで使用できず、ページがワーキングメモリ解放するためにディスクに書き込まれるときにディスクから取得するか、しなければならないページ）を要求したときページングイベントが発生します。過度のページングはアプリケーションで速度低下を導入することができます。ページングの低レベルは、VMが十分に活用-のためにされている場合でも空きメモリを維持するために、仮想メモリマネージャが自動的にプロセスの作業set.aspxをトリミングインスタンス）が発生することがあります。しかし、ページングの突然のスパイクは、VMが効率的に動作するために多くのメモリを必要としていることを示すことができます。
+プログラムがメモリー内にページを確保できずにディスクからその領域を確保しくる場合、利用可能なメモリー領域を確保するためにディスクにページを退避する場合に、ページングイベントが発生します。過度に発生するページングは、アプリケーションの実行速度を低下の原因になります。仮想マシンの負荷が低くても、多少のページングは発生しています。例えば、”virtual memory manager”(仮想メモリーのマネージャー)
+が、[プロセスが使っているメモリー](https://msdn.microsoft.com/en-us/library/windows/desktop/cc441804(v=vs.85).aspx)を整理し、空きメモリーのスペースを確保する場合です。しかし、突然のページング量の増加は、その仮想マシンが効率的に動作するためにメモリーを追加する必要があることを教えてくれています。
 
  [![Azure memory paging](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-memory-pages.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-memory-pages.png)
 
@@ -106,7 +102,7 @@ Monitoring the amount of data read from disk can help you understand your applic
 
 > Azure’s default metric set provides data on network traffic in and out of a VM. Depending on your OS, the network metrics may be available in bytes per second or via the number of TCP segments sent and received. Because TCP segments are limited in size to 536 bytes each, the number of segments sent and received provides a reasonable proxy for the overall volume of network traffic.
 
-紺碧のデフォルトメトリックセットは内とVMのうち、ネットワークトラフィック上のデータを提供します。お使いのOSに応じて、ネットワークのメトリックは、毎秒または送信され、受信したTCPセグメントの数を介して、バイト単位で利用可能です。 TCPセグメントは、536バイトごとにサイズが制限されているので、送信および受信されたセグメントの数は、ネットワークトラフィックの全体的なボリュームのための合理的なプロキシを提供します。
+Azurreが提供するデフォルトのメトリクスセットには、仮想環境が使用しているネットワークの通信量データーも提供されています。Azureのネットワークメトリクスでは、使っているOS応じ、送受信しているデーターの"バイト/秒"や"TCPのセグメント数"で、通信量が提供されます。TCPのセグメン数は、536バイト毎に計算されるので、送受信したセグメントの数値はネットワークの全体的な通信量を監視するためのメトリクスとして使うことができます。
 
 | **Name**              | **Description**                  | **[Metric type](/blog/monitoring-101-collecting-data/)** | **Availability** |
 |---|----|-----|-----|
@@ -119,13 +115,13 @@ Monitoring the amount of data read from disk can help you understand your applic
 
 > You may wish to generate [a low-urgency alert](/blog/monitoring-101-alerting/#low) when your network traffic nears saturation. Such an alert may not notify anyone directly but will record the event in your monitoring system in case it becomes useful for investigating a performance issue.
 
-あなたは、ネットワークトラフィックが飽和に近づくと低緊急アラートを生成することもできます。このような警告は直接誰にも通知しない場合がありますが、それはパフォーマンスの問題を調査するために有用となる場合にはお使いの監視システムにイベントを記録します。
+ネットワークの通信量が飽和状態になりかけている時、[通信速度が低下している旨の緊急アラート(a low-urgency alert)](/blog/monitoring-101-alerting/#low)を発生させておきたいはずです。 この種のアラートは誰にも通知しません。しかし、パフォーマンスの問題した際の有用な情報として監視システム内にイベントの記録しておきます。
 
 #### Metric to alert on: Bytes/TCP segments received
 
 > If your network traffic suddenly plummets, your application or network may be overloaded.
 
-ネットワークトラフィックが突然急落した場合、アプリケーションやネットワークが過負荷にすることができます。
+ネットワークの通信量が、突然急降下(垂直に落ちる)した場合、アプリケーションかネットワークが過負荷状態にあることを示しています。
 
  [![Azure network out](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-network-out.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-network-out.png)
 
@@ -133,7 +129,7 @@ Monitoring the amount of data read from disk can help you understand your applic
 
 > In this post we’ve explored several general-purpose metrics you should monitor to keep tabs on your Azure virtual machines. Monitoring the metric set listed below will give you a high-level view of your VMs’ health and performance:
 
-この記事では、我々はあなたがあなたのAzureの仮想マシンのタブを保つために監視する必要があり、いくつかの汎用的なメトリックを調査してきました。以下に記載されているメトリックのセットを監視するあなたのVMの健康とパフォーマンスの高レベルのビューを提供します：
+このポストでは、Azureの仮想マシンの状況を把握しておくために監視しておくべき最も有用なメトリクスについて紹介してきました。以下のリストにあるメトリクスを監視することで、Azure上で起動している仮想マシンの健全性と稼働状態を把握できるようになるはずです:
 
 -   [CPU percentage](#cpu-percentage)
 -   [Disk read/write](#disk-read)
@@ -142,13 +138,13 @@ Monitoring the amount of data read from disk can help you understand your applic
 
 > Over time you will recognize additional, specialized metrics that are relevant to your applications. [Part 2 of this series](/blog/how-to-collect-azure-metrics/) provides step-by-step instructions for collecting any metric you may need from Azure.
 
-時間が経つにつれて、あなたのアプリケーションに関連する追加的な、特殊なメトリックを認識します。このシリーズの第2回では、あなたはアズールから必要になることがあり、任意のメトリックを収集するためのステップバイステップの手順を説明します。
+時間が経つにつれて、アプリケーションに関連する専門的なメトリクスが他にも存在していることに気づくでしょう。このシリーズのPart2 [「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics/)では、Azureの仮想マシンからメトリクスを収集するために必要な手順を解説していくことにします。
 
 ## Acknowledgments
 
 > Many thanks to reviewers from Microsoft for providing important additions and clarifications prior to publication.
 
-出版の前に重要な追加と説明を提供するために、Microsoftからのレビューに感謝します。
+このポストを公開するに当たり、記事を事前にレビューし、重要なフィードバックと細部にわたる解説を提供してくれたMicrosoftのレビューワーの皆さんに感謝します。
 
 ------------------------------------------------------------------------
 

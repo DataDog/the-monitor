@@ -244,7 +244,7 @@ Varnishが適切に機能できる状態になっているかを把握するに�
 
 > [Part 2 of this post](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/) provides step-by-step instructions for collecting these metrics from Varnish.
 
-このシリーズのPart2[「How to collect Varnish metrics」](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/)では、Varnishから、メトリクスを収集するための詳細な手順を解説します。
+このシリーズのPart2[「How to collect Varnish metrics」](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/)では、Varnishから、メトリクスを収集するために必要な手順を解説していくことにます。
 
 ## Acknowledgments
 
