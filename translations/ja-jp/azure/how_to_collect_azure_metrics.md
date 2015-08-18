@@ -2,15 +2,24 @@
 
 > *This post is part 2 of a 3-part series on monitoring Azure virtual machines. [Part 1](/blog/how-to-monitor-microsoft-azure-vms) explores the key metrics available in Azure, and [Part 3](/blog/monitor-azure-vms-using-datadog) details how to monitor Azure with Datadog.*
 
-*このポストは、"Varnishの監視"3回シリーズのPart 1です。 Part 2は、[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)で、Part 3は、[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
+*このポストは、"Varnishの監視"3回シリーズのPart 2です。 Part 1は、[「Azureの監視方法」](/blog/how-to-monitor-microsoft-azure-vms)で、Part 3は、[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
 
 > How you go about capturing and monitoring Azure metrics depends on your use case and the scale of your infrastructure. There are several ways to access metrics from Azure VMs: you can graph and monitor metrics using the Azure web portal, you can access the raw metric data via Azure storage, or you can use a monitoring service that integrates directly with Azure to gather metrics from your VMs. This post addresses the first two options (using the Azure web portal and accessing raw data); a companion post describes how to monitor your VMs by integrating Azure with Datadog.
 
-どのようにキャプチャし、Azureのメトリックを監視するについて行くには、ユースケースと、インフラストラクチャの規模に依存します。 Azureの仮想マシンからメトリックにアクセスするには、いくつかの方法があります：あなたがグラフ化できるとAzureのWebポータルを使用してモニター·メトリックは、あなたがAzureストレージを介して生メトリックデータにアクセスすることができる、またはあなたからメトリックを収集するためにアズールと直接統合監視サービスを使用することができますあなたのVM。この投稿は、最初の2つのオプション（アズールWebポータルを使用して、生データへのアクセスを）アドレス。コンパニオンポストはDatadogでアズールを統合することにより、あなたのVMを監視する方法について説明します。
+Azureのメトリクスをどのように収集して監視するかは、あなたのユースケースとインフラの規模に依存します。Azureの仮想マシンからメトリクスにアクセスする方法には、幾つかの方法があります:
+
+1. Azure web portalを使ったグラフの生成と監視
+2. Azureのストーレージに存在するメトリクスデーター自体を使用して監視
+3. Azureと直接連携できる外部監視サービスを利用し、仮想マシンからメトリクスを収集して監視
+
+このポストでは、最初に二つのオプション("Azure web portal"と"生データー")を使った監視方法について解説します。更に、このシリーズのPart3では、第三のオプション[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)について解説していきます。
 
 ## Viewing metrics in the Azure web portal
 
 > The [Azure web portal](https://portal.azure.com/) has built-in monitoring functionality for viewing and alerting on performance metrics. You can graph any of the metrics available in Azure and set simple alert rules to send email notifications when metrics exceed minimum or maximum thresholds.
+
+
+
 
 AzureのWebポータルに組み込まれた監視機能の表示およびパフォーマンス·メトリックに警告します。あなたはアズールで使用可能なメトリックのいずれかをグラフ化し、メトリックが最小または最大のしきい値を超えた場合に電子メール通知を送信するために、単純なアラートルールを設定することができま
 
@@ -18,9 +27,9 @@ AzureのWebポータルに組み込まれた監視機能の表示およびパフ
 
 > Azure’s Diagnostics extension can be enabled when you create a new virtual machine via the Azure web portal. But even if you disabled Diagnostics when creating a VM, you can turn it on later from the “Settings” menu in the VM view. You can select which metrics you wish to collect (Basic metrics, Network and web metrics, .NET metrics, etc.) in the Diagnostics tile as well. You will have to link the VM to an Azure storage account to store your Diagnostics data.
 
-> Note that portal users can create VMs using two different deployment models (“Classic” and “Resource Manager”). At present, some monitoring functionality is only available via the Classic deployment model.
-
 あなたはAzureのWebポータルを介して、新しい仮想マシンを作成するときのAzureの診断拡張が有効にすることができます。 VMを作成するときでさえ、あなた無効診断場合は、VMビューで「設定」メニューから、後でそれをオンにすることができます。あなたは同様に診断タイルに（基本メトリクス、ネットワークとウェブメトリクス、.NETメトリックなど）を収集したいメトリックを選択することができます。あなたは、あなたの診断データを格納するためのAzureストレージアカウントにVMをリンクする必要があります。
+
+> Note that portal users can create VMs using two different deployment models (“Classic” and “Resource Manager”). At present, some monitoring functionality is only available via the Classic deployment model.
 
 ポータルユーザが仮想マシンは、2つの異なる展開モデル（「クラシック」と「リソース·マネージャ」）を使用して作成できることに注意してください。現時点では、いくつかの監視機能は、クラシック展開モデルを介してのみ使用可能です。
 
@@ -72,9 +81,9 @@ Visual Studioの2015年のクラウドエクスプローラインターフェイ
 
 > Once you have signed in to your Azure subscription, you will find your metric storage listed under “Storage Accounts” or “Storage Accounts (Classic),” depending on whether the storage account was launched on Azure’s Resource Manager stack or on the Classic Stack.
 
-> Metrics are stored in tables, the names of which usually start with “WADMetrics.” Open up a metric table in one of your metric storage accounts, and you will see your VM metrics. Each table contains 10 days worth of data to prevent any one table from growing too large; the date is appended to the end of the table name.
-
 あなたはAzureのサブスクリプションにサインインしたら、ストレージアカウントがアズールのリソースマネージャスタックまたはクラシックスタック上で起動されたかどうかに応じて"、ストレージアカウント（クラシック）「あなたのメトリック記憶は「ストレージアカウント」または下にリストされているでしょう。
+
+> Metrics are stored in tables, the names of which usually start with “WADMetrics.” Open up a metric table in one of your metric storage accounts, and you will see your VM metrics. Each table contains 10 days worth of data to prevent any one table from growing too large; the date is appended to the end of the table name.
 
 メトリックは、テーブルに格納されている、の名前は通常、「。WADMetrics"で始まるあなたのメトリック記憶アカウントのいずれかにメトリック表を開き、あなたのVMのメトリクスが表示されます。各テーブルには大きくなりすぎるからいずれかのテーブルを防ぐために、データの10日間分が含まれています。日付は、テーブル名の最後に追加されます。
 
@@ -98,9 +107,9 @@ Excelで使用するか、別の解析ツールのためにデータをエクス
 
 > In this post we have demonstrated how to use Azure’s built-in monitoring functionality to graph VM metrics and generate alerts when those metrics go out of bounds. We have also walked through the process of exporting raw metric data from Azure for custom analysis.
 
-> At Datadog, we have integrated directly with Azure so that you can begin collecting and monitoring VM metrics with a minimum of setup. Learn how Datadog can help you to monitor Azure in the [next and final post](/blog/monitor-azure-vms-using-datadog/) of this series.
-
 この記事では、これらのメトリックが範囲外に行くときにアラートをVMメトリックをグラフ化して生成するために、アズールの組み込みの監視機能を使用する方法を実証しました。また、カスタムの分析のためのAzureからの生メトリックデータをエクスポートするプロセスを歩いてきました。
+
+> At Datadog, we have integrated directly with Azure so that you can begin collecting and monitoring VM metrics with a minimum of setup. Learn how Datadog can help you to monitor Azure in the [next and final post](/blog/monitor-azure-vms-using-datadog/) of this series.
 
 あなたが収集して、セットアップを最小限に抑えてVMのメトリクスの監視を開始することができるようにDatadogで、我々はアズールと直接統合しています。 Datadogは、あなたがこのシリーズの次と最終後にAzureのを監視するのを助けることができる方法を学びます。
 
