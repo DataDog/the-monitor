@@ -18,38 +18,38 @@ Azureのメトリクスをどのように収集して監視するかは、あな
 
 > The [Azure web portal](https://portal.azure.com/) has built-in monitoring functionality for viewing and alerting on performance metrics. You can graph any of the metrics available in Azure and set simple alert rules to send email notifications when metrics exceed minimum or maximum thresholds.
 
-
-
-
-AzureのWebポータルに組み込まれた監視機能の表示およびパフォーマンス·メトリックに警告します。あなたはアズールで使用可能なメトリックのいずれかをグラフ化し、メトリックが最小または最大のしきい値を超えた場合に電子メール通知を送信するために、単純なアラートルールを設定することができま
+[Azure web portal](https://portal.azure.com/)には、パフォーマンスメトリクス向けに、閲覧とアラート機能を持った監視システムがあらかじめ用意されています。Azureで提供されている全てのメトリクスはグラフとして表示することができ、又、簡単なアラートのルールを設定することで、閾値(最大値や最小値)を超えた際に通知を送信することができます。
 
 ### Enabling Azure VM monitoring
 
 > Azure’s Diagnostics extension can be enabled when you create a new virtual machine via the Azure web portal. But even if you disabled Diagnostics when creating a VM, you can turn it on later from the “Settings” menu in the VM view. You can select which metrics you wish to collect (Basic metrics, Network and web metrics, .NET metrics, etc.) in the Diagnostics tile as well. You will have to link the VM to an Azure storage account to store your Diagnostics data.
 
-あなたはAzureのWebポータルを介して、新しい仮想マシンを作成するときのAzureの診断拡張が有効にすることができます。 VMを作成するときでさえ、あなた無効診断場合は、VMビューで「設定」メニューから、後でそれをオンにすることができます。あなたは同様に診断タイルに（基本メトリクス、ネットワークとウェブメトリクス、.NETメトリックなど）を収集したいメトリックを選択することができます。あなたは、あなたの診断データを格納するためのAzureストレージアカウントにVMをリンクする必要があります。
+Azureの"Diagnostics extension"は、Azure web portalより新しい仮想マシンを作成した時に有効にすることができます。更に、仮想マシンを作成する際に、"Diagnostics extension"を有効にしていなくても、後からVMビューの“Settings”メニューより有効にすることができます。Diagnosticsのタイルからは、収集したいメトリクス（基本メトリクス、ネットワークとWebのメトリクス、.NETメトリクスなど）を選択することもできます。Diagnosticsのデーターを保存するには、仮想マシンにAzureストレージのアカウントをリンクする必要があります。
 
 > Note that portal users can create VMs using two different deployment models (“Classic” and “Resource Manager”). At present, some monitoring functionality is only available via the Classic deployment model.
 
-ポータルユーザが仮想マシンは、2つの異なる展開モデル（「クラシック」と「リソース·マネージャ」）を使用して作成できることに注意してください。現時点では、いくつかの監視機能は、クラシック展開モデルを介してのみ使用可能です。
+注意: Azure portalのユーザは、2つの異なる"deployment model"(“Classic”と“Resource Manager”)で、仮想マシンを作成することができます。現時点で、いくつかの監視機能は"Classic deployment model"でのみ利用可能です。
 
 [![Enable Azure diagnostics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-enable-diagnostics-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-enable-diagnostics-2.png)
 
 > Once monitoring is enabled, you will see several default metric graphs when you click on your VM in the Azure portal.
 
-監視を有効にすると、あなたがAzureのポータルにあなたのVMをクリックしたときに、あなたは、いくつかのデフォルトのメトリックのグラフが表示されます。
+監視が有効になると、Azure portal上で仮想マシンをクリックすることにより、デフォルトメトリクスに関するグラフを閲覧することができるようになります。
 
 ![Default graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-default-graphs.png)
 
 > Clicking on any monitoring graph opens a larger view, along with two important settings options: “Edit chart,” which allows you to select the metrics and the timeframe displayed on that graph, and “Add alert,” which opens the Azure alerting tile.
 
-Azureの警告タイルを開く」警告を追加、「あなたはメトリックとそのグラフ上に表示された時間枠を選択することを可能にする「編集·チャート」、および：任意の監視グラフをクリックすると、二つの重要な設定オプションと一緒に、より大きなビューが開きます。
+監視グラフをクリックすると、拡大されたグラフと共に二つの重要な設定オプションが表示されます:
+
+- **Edit chart**: グラフに表示されるメトリクスの選択と時間軸設定を可能にします。
+- **Add alert**: Azure上でアラートを設定をするためのタイルを表示します。
 
 ![Metric graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-bigger-graph.png)
 
 > In the alerting tile you can set alerts on Azure VM metrics. Azure alerts can be set against any upper or lower threshold and will alert whenever the selected metric exceeds (or falls below) that threshold for a set amount of time. In the example below, we have set an alert that will notify us by email whenever the CPU usage on the given virtual machine exceeds 90 percent over a 10-minute interval.
 
-警告タイルでは、AzureのVMのメトリクスにアラートを設定することができます。 Azureのアラートは、任意の上限または下限のしきい値に対して設定することができ、選択されたメトリックは、設定した時間のためにそのしきい値を超える（または下回る）たびに警告が表示されます。以下の例では、特定の仮想マシンのCPU使用率が10分間隔で90パーセントを超えた場合、電子メールで私たちに通知するアラートを設定しています。
+アラート設定のタイルでは、Azureの仮想マシンのメトリクスに対してアラートを設定することができます。Azureのアラートは、上限または下限の閾値に対して設定することができます。そして、閾値を設定されたメトリクスが、指定した時間以上の間、閾値を超えた場合(又は、下回った場合)に、アラートを発生させることができます。以下の例では、ある仮想マシンのCPU使用率が10分間に渡って90%を超えた場合、メールで通知するアラートを設定しています。
 
 [![Create alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-alert-rule.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-alert-rule.png)
 
