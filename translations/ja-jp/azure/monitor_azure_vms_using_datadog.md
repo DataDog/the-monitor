@@ -137,7 +137,7 @@ Datadogを使ってAzureを監視することで、仮想マシンやアプリ�
 
 > If you don’t yet have a Datadog account, you can sign up for a [free trial](https://app.datadoghq.com/signup) and start monitoring your cloud infrastructure, your applications, and your services today.
 
-まだDatadogのアカウントを持っていないなら、無料トライアルに登録すれば、今日から直ぐに、クラウドインフラ、アプリケーション、およびサービスの監視を開始することができます。
+まだDatadogのアカウントを持っていないなら、無料トライアルに登録すれば、**今日から直ぐに**、クラウドインフラ、アプリケーション、およびサービスの監視を開始することができます。
 
 ------------------------------------------------------------------------
 
