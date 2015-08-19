@@ -2,21 +2,21 @@
 
 > *This post is part 3 of a 3-part series on monitoring Azure virtual machines. [Part 1](/blog/how-to-monitor-microsoft-azure-vms) explores the key metrics available in Azure, and [Part 2](/blog/how-to-collect-azure-metrics) is about collecting Azure VM metrics.*
 
-*このポストは、"Varnishの監視"3回シリーズのPart 1です。 Part 2は、[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)で、Part 3は、[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
+*このポストは、"Varnishの監視"3回シリーズのPart 3です。 Part 1は、[「Azureの監視方法」](/blog/how-to-monitor-microsoft-azure-vms)で、Part 2は、[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)になります。*
 
 > If you’ve already read [our post](/blog/how-to-collect-azure-metrics) on collecting Azure VM metrics, you’ve seen that you can view and alert on metrics from individual VMs using the Azure web portal. For a more dynamic, comprehensive view of your infrastructure, you can connect Azure to Datadog.
 
-すでにAzureのVMのメトリクスを収集する上で私たちの記事を読んでいれば、あなたはAzureのWebポータルを使用して、個々のVMからの測定基準に表示して警告することができることを見てきました。インフラストラクチャをより動的に、包括的なビューでは、DatadogにAzureのを接続することができます。
+今回のシリーズのPart2 [「Azureの仮想マシンメトリクスの収集」](/blog/how-to-collect-azure-metrics)を読んでいれば、Azure web portalを使って各仮想マシンのメトリクスを、閲覧し、アラートを発生させることがきることを知っているはずです。今回のポストでは、あなたのインフラを、更に多面的、且つ広範囲にわたって把握をするためのAzureとDatadogの連携について解説することにします。
 
 ## Why Datadog?
 
-By integrating Datadog and Azure, you can collect and view metrics from across your infrastructure, correlate VM metrics with application-level metrics, and slice and dice your metrics using any combination of properties and custom tags. You can use the Datadog Agent to collect more metrics—and at higher resolution—than are available in the Azure portal. And with more than 100 supported integrations, you can route automated alerts to your team using third-party collaboration tools such as PagerDuty and Slack.
+> By integrating Datadog and Azure, you can collect and view metrics from across your infrastructure, correlate VM metrics with application-level metrics, and slice and dice your metrics using any combination of properties and custom tags. You can use the Datadog Agent to collect more metrics—and at higher resolution—than are available in the Azure portal. And with more than 100 supported integrations, you can route automated alerts to your team using third-party collaboration tools such as PagerDuty and Slack.
 
-Datadogとアズールを統合することで、あなたが収集することができ、あなたのインフラストラクチャ全体から見るメトリック、アプリケーションレベルのメトリック、およびスライスを使用して、VMのメトリクスを関連付け、プロパティとカスタムタグの任意の組み合わせを使用してメトリックをサイコロ。あなたは、複数のメトリック·アンドでのより高い解像度よりもAzureのポータルで利用可能なを収集するためにDatadogエージェントを使用することができます。 100以上のサポートの統合で、あなたはPagerDutyとスラックなどのサードパーティのコラボレーションツールを使用して、あなたのチームにアラートをルート自動化することができます。
+DatadogとAzureを連携することで、インフラ全体のメトリクスを収集し閲覧することができるようになります。更に、アプリケーションレベルのメトリクスを仮想マシンのメトリクスと関連付け、タグやプロパティーに基づいてメトリクスを分類して状況を把握することができるようになります。Datadog Agentを使うことによりAzure portalが提供している細かい粒度のメトリクスも収集できるようになります。Datadogが公式に提供するIntegration(100種を超えている)を使うことで、サードパーティのコラボレーションツールを使用して自動的に検知したアラートをチームに届けることができるようになります。
 
-In this post we’ll show you how to get started.
+> In this post we’ll show you how to get started.
 
-開始する方法この記事で私たちはあなたを紹介します。
+このポストでは、これらの機能を実現していくために、Datadogをどのように設定していけばよいかを解説していきます。
 
 ## How to integrate Datadog and Azure
 

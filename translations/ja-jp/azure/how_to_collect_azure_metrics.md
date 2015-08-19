@@ -2,7 +2,7 @@
 
 > *This post is part 2 of a 3-part series on monitoring Azure virtual machines. [Part 1](/blog/how-to-monitor-microsoft-azure-vms) explores the key metrics available in Azure, and [Part 3](/blog/monitor-azure-vms-using-datadog) details how to monitor Azure with Datadog.*
 
-*このポストは、"Varnishの監視"3回シリーズのPart 2です。 Part 1は、[「Azureの監視方法」](/blog/how-to-monitor-microsoft-azure-vms)で、Part 3は、[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
+*このポストは、"Varnishの監視"3回シリーズのPart 2です。 Part 1は、[「Azureの監視方法」](/blog/how-to-monitor-microsoft-azure-vms)で、Part 3は、[「Datadogを使ったAzuzre仮想マシンの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
 
 > How you go about capturing and monitoring Azure metrics depends on your use case and the scale of your infrastructure. There are several ways to access metrics from Azure VMs: you can graph and monitor metrics using the Azure web portal, you can access the raw metric data via Azure storage, or you can use a monitoring service that integrates directly with Azure to gather metrics from your VMs. This post addresses the first two options (using the Azure web portal and accessing raw data); a companion post describes how to monitor your VMs by integrating Azure with Datadog.
 
@@ -12,7 +12,7 @@ Azureのメトリクスをどのように収集して監視するかは、あな
 2. Azureのストーレージに存在するメトリクスデーター自体を使用して監視
 3. Azureと直接連携できる外部監視サービスを利用し、仮想マシンからメトリクスを収集して監視
 
-このポストでは、最初に二つのオプション("Azure web portal"と"生データー")を使った監視方法について解説します。更に、このシリーズのPart3では、第三のオプション[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)について解説していきます。
+このポストでは、最初に二つのオプション("Azure web portal"と"生データー")を使った監視方法について解説します。更に、このシリーズのPart3では、第三のオプション[「Datadogを使ったAzuzre仮想マシンの監視」](/blog/monitor-azure-vms-using-datadog)について解説していきます。
 
 ## Viewing metrics in the Azure web portal
 
@@ -113,7 +113,7 @@ Excelや他の解析ツールで使用するために、データーをエクス
 
 > At Datadog, we have integrated directly with Azure so that you can begin collecting and monitoring VM metrics with a minimum of setup. Learn how Datadog can help you to monitor Azure in the [next and final post](/blog/monitor-azure-vms-using-datadog/) of this series.
 
-Datadogでは、仮想マシンのメトリクスを最低限の労力で収集し、監視ができるように、Azureと直で連携できるようにしました。シリーズに含まれる次のポスト、[「Datadogを使ったAzureの監視」](https://www.datadoghq.com/blog/monitor-varnish-using-datadog/)では、Datadogを使ったAzureの監視方法を学ぶことができます。
+Datadogでは、仮想マシンのメトリクスを最低限の労力で収集し、監視ができるように、Azureと直で連携できるようにしました。シリーズに含まれる次のポスト、[「Datadogを使ったAzure仮想マシンの監視」](https://www.datadoghq.com/blog/monitor-varnish-using-datadog/)では、Datadogを使ったAzureの監視方法を学ぶことができます。
 
 ------------------------------------------------------------------------
 

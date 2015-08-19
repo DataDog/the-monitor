@@ -2,7 +2,7 @@
 
 > *This post is part 1 of a 3-part series on monitoring Azure virtual machines. [Part 2](/blog/how-to-collect-azure-metrics) is about collecting Azure VM metrics, and [Part 3](/blog/monitor-azure-vms-using-datadog) details how to monitor Azure VMs with Datadog.*
 
-*このポストは、"Azureの監視"3回シリーズのPart 1です。 Part 2は、[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)で、Part 3は、[「Datadogを使ったAzuzreの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
+*このポストは、"Azureの監視"3回シリーズのPart 1です。 Part 2は、[「Azureの仮想マシンメトリクスの収集」](/blog/how-to-collect-azure-metrics)で、Part 3は、[「Datadogを使ったAzuzre仮想マシンの監視」](/blog/monitor-azure-vms-using-datadog)になります。*
 
 ## What is Azure?
 
@@ -27,7 +27,7 @@ Azureの上でLinux又はWindowsを実行した場合、サーバーやサービ
 
 > Azure users can monitor the following metrics using [the Azure web portal](https://portal.azure.com/) or can access the raw data directly via the Azure diagnostics extension. Details on how to collect these metrics are available in [the companion post](/blog/how-to-collect-azure-metrics) on Azure metrics collection.
 
-Azureのユーザーは、以下に紹介するメトリックを[AzureのWebポータル](https://portal.azure.com/)上から監視することがでます。更に、”Azure diagnostics extension”を介し、直接生のデータにアクセスすることもできます。Azureからメトリクスを収取する詳しい手順に関しては、このシリーズのPart2[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)を解説を参照してください。
+Azureのユーザーは、以下に紹介するメトリックを[AzureのWebポータル](https://portal.azure.com/)上から監視することがでます。更に、”Azure diagnostics extension”を介し、直接生のデータにアクセスすることもできます。Azureからメトリクスを収取する詳しい手順に関しては、このシリーズのPart2[「Azureの仮想マシンメトリクスの収集」](/blog/how-to-collect-azure-metrics)を解説を参照してください。
 
 ### CPU metrics
 
@@ -138,7 +138,7 @@ Azurreが提供するデフォルトのメトリクスセットには、仮想�
 
 > Over time you will recognize additional, specialized metrics that are relevant to your applications. [Part 2 of this series](/blog/how-to-collect-azure-metrics/) provides step-by-step instructions for collecting any metric you may need from Azure.
 
-時間が経つにつれて、アプリケーションに関連する専門的なメトリクスが他にも存在していることに気づくでしょう。このシリーズのPart2 [「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics/)では、Azureの仮想マシンからメトリクスを収集するために必要な手順を解説していくことにします。
+時間が経つにつれて、アプリケーションに関連する専門的なメトリクスが他にも存在していることに気づくでしょう。このシリーズのPart2 [「Azureの仮想マシンメトリクスの収集」](/blog/how-to-collect-azure-metrics/)では、Azureの仮想マシンからメトリクスを収集するために必要な手順を解説していくことにします。
 
 ## Acknowledgments
 
