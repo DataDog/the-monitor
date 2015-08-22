@@ -33,11 +33,11 @@ varnishstat -1  && echo -e "VarnishStat - OK" || \ || echo -e "VarnishStat - ERR
 
 > The Datadog Agent is [open-source software](https://github.com/DataDog/dd-agent) that collects and reports metrics from your different hosts so you can view, monitor and correlate them on the Datadog platform. Installing the Agent usually requires just a single command. Installation instructions for different systems are available [here](https://app.datadoghq.com/account/settings#agent).
 
-Datadog Agentは、ホストからメトリクスを収集し、Datadog上で閲覧/監視できるようにそれらのメトリクスを送信するための[オープンソースソフトウェア](https://github.com/DataDog/dd-agent)です。通常、Datadog Agentのインストールは、[一行のコマンド](https://app.datadoghq.com/account/settings#agent)を実行するだけです。
+Datadog Agentは、ホストからメトリクスを収集し、Datadog上で閲覧、監視出来るようにそれらのメトリクスを送信するための[オープンソースソフトウェア](https://github.com/DataDog/dd-agent)です。通常、Datadog Agentのインストールは、[一行のコマンド](https://app.datadoghq.com/account/settings#agent)を実行するだけです。
 
 > As soon as the Datadog Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-Datadog Agentのインストールが終了し、稼働し始めめると、[Datadogアカウントのインフラリスト](https://app.datadoghq.com/infrastructure)にホスト名が表示され、メトリクスを受信していることが確認できるはずです。
+Datadog Agentのインストールが終了し、稼働し始めると、[Datadogアカウントのインフラリスト](https://app.datadoghq.com/infrastructure)にホスト名が表示され、メトリクスを受信していることが確認できます。
 
 ![Varnish host reporting to Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-03bis.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-03bis.png)
 
@@ -45,11 +45,11 @@ Datadog Agentのインストールが終了し、稼働し始めめると、[Dat
 
 > Next you will need to create a Varnish configuration file for the Agent. You can find the location of the Agent configuration directory for your OS [here](http://docs.datadoghq.com/guides/basic_agent_usage/).
 
-次は、Datadog Agentの設定に必要なVarnish設定ファイルを生成する必要があります。Datadog Agentの設定ファイルの、OS毎の設置ディレクトリーは、[「Getting Started with the Agent」](http://docs.datadoghq.com/guides/basic_agent_usage/)ページで確認することができます。
+次は、Datadog Agentの設定に必要なVarnish設定ファイルを生成する必要があります。Datadog Agentの設定ファイルの、OS毎の設置ディレクトリは、[「Getting Started with the Agent」](http://docs.datadoghq.com/guides/basic_agent_usage/)ページで確認することができます。
 
 In that directory you will find [a sample Varnish config file](https://github.com/DataDog/dd-agent/blob/master/conf.d/varnish.yaml.example) called `varnish.yaml.example`. Copy this file to `varnish.yaml`, then edit it to include the path to the varnishstat binary, and an optional list of tags that will be applied to every collected metric:
 
-Datadog Agentの設定ファイルのあるディレクトリーの中には、`conf.d/nginx.yaml.example`という[Varnishのメトリクスを収集するための設定サンプル](https://github.com/DataDog/dd-agent/blob/master/conf.d/varnish.yaml.example)のファイルが保存されています。このファイルを編集し、varnishstatバイナリーへのパスを追加し、Datadog上でVarnishホストを検索したり集計するために使うタグを設定していきます:
+Datadog Agentの設定ファイルのあるディレクトリの中には、`conf.d/nginx.yaml.example`という[Varnishのメトリクスを収集するための設定サンプル](https://github.com/DataDog/dd-agent/blob/master/conf.d/varnish.yaml.example)のファイルが保存されています。このファイルを編集し、varnishstatバイナリへのパスを追加し、Datadog上でVarnishホストを検索したり集計するために使うタグを設定していきます:
 
 ```
 init_config:
@@ -75,7 +75,7 @@ instances:
 
 > To check that Datadog and Varnish are properly integrated, execute the Datadog `info` command. The command for each platform is available [here](http://docs.datadoghq.com/guides/basic_agent_usage/).
 
-Datadog AgentとVirnishの監視機能が適切に連携できているかを確認するには、Datadog Agentに内包されている`info`を実行します。各OSの`info`コマンドに関しては、[「Getting Started with the Agent」](http://docs.datadoghq.com/guides/basic_agent_usage/)ページを参照してください。
+Datadog AgentとVirnishの監視機能が適切に連携できているかを確認するには、Datadog Agentに内包されている`info`を実行します。各OSの`info`コマンドに関しては、[「Getting Started with the Agent」](http://docs.datadoghq.com/guides/basic_agent_usage/)ページを参照して下さい。
 
 > If the configuration is correct, you will see a section like this in the `info` output:
 
@@ -116,7 +116,7 @@ Virnishの基本ダッシュボードには、Part 1の[「Virnishの監視方�
 > You can easily create a more comprehensive dashboard to monitor your entire web stack by adding additional graphs and metrics from outside systems. For example, you might want to graph Varnish metrics alongside metrics from your Apache web servers, or alongside host-level metrics such as network traffic. To start building a custom dashboard, clone the default Varnish dashboard by clicking on the gear on the upper right of the dashboard and selecting “Clone Dash”.
 
 
-ダッシュボードに、Virnishが依存する重要なシステム外メトリクスを元にしたグラフを追加することで、Web層を監視するための包括的なダッシュボードも簡単に作成することができます。例えば、ネットワークなどのホストレベルのメトリクスやApache webサーバーのメトリクスと、Virnishサーバーのメトリクスを並べて状況を把握してみたいこともあるでしょう。カスタムダッシュボードを作り始めるには、Virnishの基本ダッシュボードの右上付近の歯車をクリックした後、“Clone Dash”をクリックし、基本ダッシュボードのコピーを作成します。
+ダッシュボードに、Virnishが依存する重要なシステム外メトリクスを元にしたグラフを追加することで、Web層を監視するための包括的なダッシュボードも簡単に作成することが出来ます。例えば、ネットワークなどのホストレベルのメトリクスやApache webサーバのメトリクスと、Virnishサーバのメトリクスを並べて状況を把握してみたいこともあるでしょう。カスタムダッシュボードを作り始めるには、Virnishの基本ダッシュボードの右上付近の歯車をクリックした後、“Clone Dash”をクリックし、基本ダッシュボードのコピーを作成します。
 
 [![Clone Varnish dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-06.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-06.png)
 
@@ -128,7 +128,7 @@ Datadogで、Virnishのメトリクスを記録し、可視化できるように
 
 > Datadog can monitor individual hosts, containers, services, processes—or virtually any combination thereof. For instance, you can monitor all of your Varnish hosts, or all hosts in a certain availability zone, or a single key metric being reported by all hosts corresponding to a specific tag.
 
-Datadogは個々のホスト、コンテナ、サービス、プロセスを、またはモニターその実質的に任意の組み合わせができます。たとえば、特定のアベイラビリティゾーンであなたのワニスのホスト、またはすべてのホストのすべてを監視することができ、または単一の主要な指標は、特定のタグに対応するすべてのホストによって報告されています。
+Datadogは個々のホスト、コンテナ、サービス、プロセスを、またはモニタその実質的に任意の組み合わせが出来ます。たとえば、特定のアベイラビリティゾーンであなたのVarnishのホスト、またはすべてのホストを監視することが出来、または単一の主要な指標は、特定のタグに対応するすべてのホストによって報告されています。
 
 > Below we’ll walk through a representative example: an alert on Varnish’s dropped connections.
 
@@ -138,11 +138,11 @@ Datadogは個々のホスト、コンテナ、サービス、プロセスを、�
 
 > Datadog alerts can be threshold-based (alert when the metric exceeds a set value) or change-based (alert when the metric changes by a certain amount). In this case, we’ll take the first approach since we want to be alerted whenever the metric’s value is nonzero.
 
-Datadogが提供するメトリクスアラート(メトリクスの数値を元に判定するアラート）には、閾値ベース(メトリクスが閾値を超えた場合に警告)と変化ベース(一定の量でメトリクスが変化した場合に警告)が有ります。今回のケースでは、メトリクスの値がゼロでない場合にアラートを発生させて欲しいので、閾値ベースのを採用します。
+Datadogが提供するメトリクスアラート(メトリクスの数値を元に判定するアラート）には、閾値ベース(メトリクスが閾値を超えた場合に警告)と変化ベース(一定の量でメトリクスが変化した場合に警告)が有ります。今回のケースでは、メトリクスの値がゼロでない場合にアラートを発生させて欲しいので、閾値ベースのアラートを採用します。
 
 > The `sess_dropped` metric counts client connections Varnish had to drop. There are several possible causes for dropped connections detailed in [part 1](https://www.datadoghq.com/blog/how-to-monitor-varnish/), but regardless this metric should always be equal to 0.
 
-`sess_dropped`のメトリクスは、Varnishが処理しなかったクライアントコネクションを数えたものです。「」で説明したように、コネクションの処理をしなかったのには幾つかの原因があります。原因はなんであれ、このメトリクスは、0である必要があります。
+`sess_dropped`のメトリクスは、Varnishが処理しなかったクライアントコネクションを数えたものです。「part 1」で説明したように、コネクションの処理をしなかったのには幾つかの原因があります。原因はなんであれ、このメトリクスは、0である必要があります。
 
 > 1.  **Create a new metric monitor**. Select “New Monitor” from the “Monitors” dropdown in Datadog. Select “Metric” as monitor type.[![Create Datadog alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-07.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-07.png)
 > 2.  **Define your metric monitor**. We want to know when the number of dropped client connections per second exceeds a certain value. So we define the metric of interest to be the sum of `varnish.sess_dropped`.[![Monitor sess\_dropped](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-08.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-08.png)
@@ -150,15 +150,15 @@ Datadogが提供するメトリクスアラート(メトリクスの数値を元
 > 4.  **Customize the notification** to notify your team. In this case we will post a notification in the ops team’s chat room and page the engineer on call. In the “Say what’s happening” section we name the monitor and add a short message that will accompany the notification to suggest a first step for investigation. We @mention the [Slack](https://www.datadoghq.com/blog/collaborate-share-track-performance-slack-datadog/) channel that we use for ops and use @pagerduty to route the alert to [PagerDuty](https://www.datadoghq.com/blog/pagerduty/).[![Monitor sess\_dropped](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-10.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-10.png)
 > 5.  **Save the integration monitor**. Click the “Save” button at the bottom of the page. You’re now monitoring a [key Varnish work metric](https://www.datadoghq.com/blog/how-to-monitor-varnish/), and your on-call engineer will be paged anytime Varnish drops client connections.
 
-1. **新しいメトリックス·モニターを作成します。** Datadogのダッシュボード上の“Monitors”タブのドロップダウンメニューから“New Monitor”を選択します。次に"Monitor"のタイプとして“Metric”を選択します。
+1. **新しいメトリクスモニタを作成します。** Datadogのダッシュボード上の“Monitors”タブのドロップダウンメニューから“New Monitor”を選択します。次に"Monitor"のタイプとして“Metric”を選択します。
 
-2. **メトリックス·モニターを定義します。** 1秒あたりの"dropped client connections"値が一定の数値を超えた場合、アラートを受けるようにします。そのような場合、`varnish.sess_dropped`のメトリクスをインフラ全体に渡り合算(sum)する設定をしておきます。
+2. **メトリクスモニタを定義します。** 1秒あたりの"dropped client connections"値が一定の数値を超えた場合、アラートを受けるようにします。そのような場合、`varnish.sess_dropped`のメトリクスをインフラ全体に渡り合算(sum)する設定をしておきます。
 
-3. **メトリックス·アラートの条件を設定します。** 変化ではなく、一定の閾値に基づいてアラートを発生させたいので、“Threshold  Alert”を選択します。Varnishが、クライアントコネクションを処理しなくなったら、アラートを報告する"Monitor"(アラート)を設定することにします。`varnish.sess_dropped`の値が、直近1分間に一度でもゼロ以外の数値になった場合、アラートすることにします。この閾値を設定する際に、組織として次の項目を是非検討してみてください。閾値を「ゼロ」のままにしておくか、それともエンジニアに対するページという観点から「ゼロより幾分か大きい値を設定する」かです。
+3. **メトリクスアラートの条件を設定します。** 変化ではなく、一定の閾値に基づいてアラートを発生させたいので、“Threshold  Alert”を選択します。Varnishが、クライアントコネクションを処理しなくなったら、アラートを報告する"Monitor"(アラート)を設定することにします。`varnish.sess_dropped`の値が、直近1分間に一度でもゼロ以外の数値になった場合、アラートすることにします。この閾値を設定する際に、組織として次の項目を是非検討してください。閾値を「ゼロ」のままにしておくか、それともエンジニアに対するページという観点から「ゼロより幾分か大きい値を設定する」かです。
 
 4. **通知をカスタマイズします。** チームに通知する内容を設定していくことにします。このケースでは、運用チームのチャットルームと待機しているエンジニアに通知を送ることにします。 “Say what’s happening”のセクションで、"Monitor"のタイトルを設定し、調査を開始するために手がかりになる情報をメッセージに追記しておきます。ここでは、"@slack-ops"を使い運用チームの[Slack](https://www.datadoghq.com/blog/collaborate-share-track-performance-slack-datadog/)チャネルにメンションを送信し、"@pagerduty"を使って[PagerDuty](/blog/pagerduty/)にページ要請をしています。
 
-5. **統合モニタを保存します。** ページの下部にある"Save"ボタンをクリックし、ここまでの内容を保存します。ここまでの作業で、Virnishの主要[ワークメトリクス]((/blog/monitoring-101-collecting-data/#metrics))の監視設定は完了し、待機中のエンジニアは、Virnishで"dropped client connections"が発生し始めた際には、ページを受けるようになります。
+5. **統合モニタを保存します。** ページの下部にある"Save"ボタンをクリックし、ここまでの内容を保存します。ここまでの作業で、Virnishの主要[ワークメトリクス]((/blog/monitoring-101-collecting-data/#metrics))の監視設定は完了し、待機中のエンジニアは、Virnishで"dropped client connections"が発生した際には、ページを受けるようになります。
 
 ## Conclusion
 
