@@ -2,7 +2,7 @@
 
 > *This post is part 3 of a 3-part series on monitoring Azure virtual machines. [Part 1](/blog/how-to-monitor-microsoft-azure-vms) explores the key metrics available in Azure, and [Part 2](/blog/how-to-collect-azure-metrics) is about collecting Azure VM metrics.*
 
-*このポストは、"Varnishの監視"3回シリーズのPart 3です。 Part 1は、[「Azureの監視方法」](/blog/how-to-monitor-microsoft-azure-vms)で、Part 2は、[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)になります。*
+*このポストは、"Azureの監視"3回シリーズのPart 3です。 Part 1は、[「Azureの監視方法」](/blog/how-to-monitor-microsoft-azure-vms)で、Part 2は、[「Azureのメトリクスの収集」](/blog/how-to-collect-azure-metrics)になります。*
 
 > If you’ve already read [our post](/blog/how-to-collect-azure-metrics) on collecting Azure VM metrics, you’ve seen that you can view and alert on metrics from individual VMs using the Azure web portal. For a more dynamic, comprehensive view of your infrastructure, you can connect Azure to Datadog.
 
@@ -12,7 +12,7 @@
 
 > By integrating Datadog and Azure, you can collect and view metrics from across your infrastructure, correlate VM metrics with application-level metrics, and slice and dice your metrics using any combination of properties and custom tags. You can use the Datadog Agent to collect more metrics—and at higher resolution—than are available in the Azure portal. And with more than 100 supported integrations, you can route automated alerts to your team using third-party collaboration tools such as PagerDuty and Slack.
 
-DatadogとAzureを連携することで、インフラ全体のメトリクスを収集し閲覧することができるようになります。更に、アプリケーションレベルのメトリクスを仮想マシンのメトリクスと関連付け、タグやプロパティーに基づいてメトリクスを分類して状況を把握することができるようになります。Datadog Agentを使うことによりAzure portalが提供している細かい粒度のメトリクスも収集できるようになります。Datadogが公式に提供するIntegration(100種を超えている)を使うことで、サードパーティのコラボレーションツールを使用して自動的に検知したアラートをチームに届けることができるようになります。
+DatadogとAzureを連携することで、インフラ全体のメトリクスを収集し閲覧することができるようになります。更に、アプリケーションレベルのメトリクスを仮想マシンのメトリクスと関連付け、タグやプロパティーに基づいてメトリクスを分類して状況を把握することが出来るようになります。Datadog Agentを使うことによりAzure portalが提供している細かい粒度のメトリクスも収集出来るようになります。Datadogが公式に提供するIntegration(100種を超えている)を使うことで、サードパーティのコラボレーションツールを使用して自動的に検知したアラートをチームに届けることが出来るようになります。
 
 > In this post we’ll show you how to get started.
 
@@ -29,7 +29,7 @@ DatadogとAzureを連携することで、インフラ全体のメトリクス�
 > 1.  Enable Datadog to collect metrics via the Azure API
 > 2.  Install the Datadog Agent using the Azure web portal
 
-他の一般的なホストと同じように、Azureの仮想マシン( [Windows](https://app.datadoghq.com/account/settings#agent/windows) 又は [Linux](https://app.datadoghq.com/account/settings#agent/ubuntu)のどちらでも)にも、コマンドラインを使うか、Chefなどの自動デプロイツールを使ってDatadog Agentをインストールすることができます。それ以外にもAzureのユーザーは、AzureとDatadogの両方のwebインターフェースを使って、Datadogとの連携をすることもできます。ブラウザからIntegrationを設定するには、以下の2つの方法があります:
+他の一般的なホストと同じように、Azureの仮想マシン( [Windows](https://app.datadoghq.com/account/settings#agent/windows) 又は [Linux](https://app.datadoghq.com/account/settings#agent/ubuntu)のどちらでも)にも、コマンドラインを使うか、Chefなどの自動デプロイツールを使ってDatadog Agentをインストールすることができます。それ以外にもAzureのユーザーは、AzureとDatadogの両方のwebインターフェースを使って、Datadogとの連携をすることも出来ます。ブラウザからIntegrationを設定するには、以下の2つの方法があります:
 
 1. AzureのAPIを使用してメトリクスを収集するようにDatadogを設定する方法
 2. Azure Web Portalを使用してDatadog Agentをインストールるする方法
@@ -42,7 +42,7 @@ DatadogとAzureを連携することで、インフラ全体のメトリクス�
 
 > The easiest way to start gathering metrics from Azure is to connect Datadog to Azure’s read-only monitoring API. You won’t need to install anything, and you’ll start seeing basic metrics from all your VMs right away.
 
-最も簡単にAzureからメトリクスを収取する方法は、Azureが提供する読み込み専用の監視APIにDatadogを接続することです。このアプローチでは、何もインストールする必要はなく、仮想マシンの基本的なメトリクスを直ちに閲覧できるようになります。
+最も簡単にAzureからメトリクスを収集する方法は、Azureが提供する読み込み専用の監視APIにDatadogを接続することです。このアプローチでは、何もインストールする必要はなく、仮想マシンの基本的なメトリクスを直ちに閲覧できるようになります。
 
 > To authorize Datadog to collect metrics from your Azure VMs, simply click [this link](https://app.datadoghq.com/azure/landing) and follow the directions on the configuration pane under the heading “To start monitoring all your Azure Virtual Machines”.
 
@@ -62,7 +62,7 @@ AzureとDatadogの連携が完了すると、インストールが完了して�
 
 > Once you are capturing Azure metrics in Datadog, you can build on the default screenboard by adding additional Azure VM metrics or even graphs and metrics from outside systems. To start building a custom screenboard, clone the default Azure dashboard by clicking on the gear on the upper right of the dashboard and selecting “Clone Dash”. You can also add VM metrics to any custom timeboard, which is an interactive Datadog dashboard displaying the evolution of multiple metrics across any timeframe.
 
-AzureのメトリクスをDatadog上で表示できるようなったら、そのデフォルトのScreenBoardに、Azure上の他の仮想マシンのメトリクスや、外部のシステムで発生しているイベントやメトリクスを追加し、カスタムダッシュボードをつくることが出来ます。カスタムScreenBoardを作り始めるには、ダッシュボードの右上の歯車をクリックし、“Clone Dash”を選択してAzureのデフォリトダッシュボードのクローンを作成します。又、Azureの仮想マシンメトリクスをTimeBoardに追加してカスタムダッシュボードを作成することもできます。(TimeBoard: Datadogが提供する対話的ダッシュボード。任意の時間軸が選択でき、複数のメトリクスが自動的に更新され、指定したイベントの発生状態がグラフに合成常時されるダッシュボード。)
+AzureのメトリクスをDatadog上で表示できるようなったら、そのデフォルトのScreenBoardに、Azure上の他の仮想マシンのメトリクスや、外部のシステムで発生しているイベントやメトリクスを追加し、カスタムダッシュボードをつくることが出来ます。カスタムScreenBoardを作り始めるには、ダッシュボードの右上の歯車をクリックし、“Clone Dash”を選択してAzureのデフォルトダッシュボードのクローンを作成します。又、Azureの仮想マシンメトリクスをTimeBoardに追加してカスタムダッシュボードを作成することもできます。(TimeBoard: Datadogが提供する対話的ダッシュボード。任意の時間軸が選択でき、複数のメトリクスが自動的に更新され、指定したイベントの発生状態がグラフに合成常時されるダッシュボード。)
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-clone-3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-clone-3.png)
 
@@ -70,11 +70,11 @@ AzureのメトリクスをDatadog上で表示できるようなったら、そ�
 
 > Installing the Datadog Agent lets you monitor additional server-level metrics from the host, as well as real-time metrics from the applications running on the VM. Agent metrics are collected at higher resolution than per-minute Azure portal metrics.
 
-Datadog Agentをインストールすると、サーバーレベルメトリクスが追加で監視できるようになるだけでなく、仮想マシン上で動作しているアプリケーションのメトリクスをリアルタイムで監視できるようになります。更に、Datatadog Agentが収取するメトリクスは、Azure portalが提供している1分毎のメトリクスよりも高い解像度で収集されます。
+Datadog Agentをインストールすると、サーバレベルメトリクスが追加で監視できるようになるだけでなく、仮想マシン上で動作しているアプリケーションのメトリクスをリアルタイムで監視できるようになります。更に、Datatadog Agentが収集するメトリクスは、Azure portalが提供している1分毎のメトリクスよりも高い解像度で収集されます。
 
 > Azure users can install the Datadog Agent as an Azure extension in seconds. (Note: At present, Azure extensions are only available for VMs launched running on the “Classic” service management stack.)
 
-Azureのユーザーは、Datadog AgentをAzure extentionとして短時間でインストールすることができます。(注: 現時点では、Azure extentionは、“Classic” service managementスタックで起動した仮想マシンについてのみ利用可能です。)
+Azureのユーザは、Datadog AgentをAzure extentionとして短時間でインストールすることができます。(注: 現時点では、Azure extentionは、“Classic” service managementスタックで起動した仮想マシンについてのみ利用可能です。)
 
 ### Install the Agent from the Azure portal
 
@@ -98,7 +98,7 @@ Azureのユーザーは、Datadog AgentをAzure extentionとして短時間で�
 
 > At this point you will need to provide your Datadog API key to connect the Agent to your Datadog account. You can find your API key via [this link](https://app.datadoghq.com/azure/landing/).
 
-この時点で、Datadog AgentがあなたのDatadgoアカウントのメトリクスを送信できるように、Datadog API キーの情報を設定します。Datadog API キーの情報は、ダッシュボードの`Integration`タブをクリックし、[`APIs`](https://app.datadoghq.com/azure/landing/)を選択すると表示されます。
+この時点で、Datadog AgentがあなたのDatadogアカウントのメトリクスを送信できるように、Datadog API キーの情報を設定します。Datadog API キーの情報は、ダッシュボードの`Integration`タブをクリックし、[`APIs`](https://app.datadoghq.com/azure/landing/)を選択すると表示されます。
 
 ### Viewing your Azure VMs and metrics
 
@@ -120,7 +120,7 @@ Datadog Agentをインストールることで、上記で紹介したAzureの�
 
 > The Agent can also collect application metrics so that you can correlate your application’s performance with the host-level metrics from your compute layer. The Agent monitors services running in an Azure VM, such as IIS and SQL Server, as well as non-Windows integrations such as MySQL, NGINX, and Cassandra.
 
-Datadog Agentは、アプリケーションのメトリクスを収集できるようになっています。そうすることで、計算用インスタンス達のホストレベルでのメトリクスと実行されているアプリケーションにパフォーマンス関するメトリクスを関連付けて分析できるようになるからです。Datadog Agentは、Azureの仮想マシンで動作しているIIS、SQLサーバーなどのサービスに加え、MySQL、 NGINX、CassandraなどのWindowsではないサービスも監視することができます。
+Datadog Agentは、アプリケーションのメトリクスを収集できるようになっています。そうすることで、計算用インスタンス達のホストレベルでのメトリクスと実行されているアプリケーションにパフォーマンスに関するメトリクスを関連付けて分析できるようになるからです。Datadog Agentは、Azureの仮想マシンで動作しているIIS、SQLサーバーなどのサービスに加え、MySQL、 NGINX、CassandraなどのWindowsではないサービスも監視することができます。
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-wmi.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-wmi.png)
 
