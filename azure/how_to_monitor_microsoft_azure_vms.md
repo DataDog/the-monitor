@@ -21,7 +21,7 @@ Azure users can monitor the following metrics using [the Azure web portal](https
 CPU usage is one of the most commonly monitored host-level metrics. Whenever an application’s performance starts to slide, one of the first metrics an operations engineer will usually check is the CPU usage on the machines running that application.
 
 | **Name**            | **Description**                       | **[Metric type](/blog/monitoring-101-collecting-data/)** |
-|---|----|-----|
+|---------------------|---------------------------------------|----------------------------------------------------------|
 | CPU percentage      | Percentage of time CPU utilized       | Resource: Utilization                                    |
 | CPU user time       | Percentage of time CPU in user mode   | Resource: Utilization                                    |
 | CPU privileged time | Percentage of time CPU in kernel mode | Resource: Utilization                                    |
@@ -39,7 +39,7 @@ Although a system in good health can run with consistently high CPU utilization,
 Monitoring disk I/O is critical for understanding how your applications are impacting your hardware, and vice versa. For additional visibility beyond the VM-level metrics covered here, you can also collect metrics from your Azure storage accounts to determine if your storage is being throttled or has availability issues that could impact performance.
 
 | **Name**   | **Description**                  | **[Metric type](/blog/monitoring-101-collecting-data/)** |
-|---|----|-----|
+|------------|----------------------------------|----------------------------------------------------------|
 | Disk read  | Data read from disk, per second  | Resource: Utilization                                    |
 | Disk write | Data written to disk, per second | Resource: Utilization                                    |
 
@@ -57,7 +57,7 @@ Monitoring the amount of data written to disk can help you identify bottlenecks 
 Monitoring memory usage can help identify low-memory conditions and performance bottlenecks.
 
 | **Name**         | **Description**                                               | **[Metric type](/blog/monitoring-101-collecting-data/)** |
-|---|----|-----|
+|------------------|---------------------------------------------------------------|----------------------------------------------------------|
 | Memory available | Free memory, in bytes/MB/GB                                   | Resource: Utilization                                    |
 | Memory pages     | Number of pages written to or retrieved from disk, per second | Resource: Saturation                                     |
 
@@ -71,11 +71,11 @@ Paging events occur when a program requests a [page](https://en.wikipedia.org/wi
 Azure’s default metric set provides data on network traffic in and out of a VM. Depending on your OS, the network metrics may be available in bytes per second or via the number of TCP segments sent and received. Because TCP segments are limited in size to 536 bytes each, the number of segments sent and received provides a reasonable proxy for the overall volume of network traffic.
 
 | **Name**              | **Description**                  | **[Metric type](/blog/monitoring-101-collecting-data/)** | **Availability** |
-|---|----|-----|-----|
+|-----------------------|----------------------------------|----------------------------------------------------------|------------------|
 | Bytes transmitted     | Bytes sent, per second           | Resource: Utilization                                    | Linux VMs        |
 | Bytes received        | Bytes received, per second       | Resource: Utilization                                    | Linux VMs        |
 | TCP segments sent     | Segments sent, per second        | Resource: Utilization                                    | Windows VMs      |
-| TCP segments received | Data written to disk, per second | Resource: Utilization                                    | Windows VMs      |
+| TCP segments received | Segments received, per second    | Resource: Utilization                                    | Windows VMs      |
 
 #### Metric to alert on: Bytes/TCP segments sent
 
