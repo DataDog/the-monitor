@@ -34,7 +34,7 @@ Along with low error rates, good performance is one of the best top-level indica
 
 | **Name**                     | **Description**                                           | **[Metric Type](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)** |
 |------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------|
-| latency                      | Average time for the Redis server to respond to a request | Work: Latency                                                                     |
+| latency                      | Average time for the Redis server to respond to a request | Work: Performance                                                                     |
 | instantaneous\_ops\_per\_sec | Total number of commands processed per second             | Work: Throughput                                                                  |
 | hit rate (calculated)        | keyspace\_hits / (keyspace\_hits + keyspace\_misses)      | Work: Success                                                                     |
 
