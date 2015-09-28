@@ -4,21 +4,38 @@
 
 ## What is Redis?
 
-Redis is a popular in-memory key/value data store. Known for its performance and simple onboarding, Redis has found uses across industries and use cases, including as a:
+> Redis is a popular in-memory key/value data store. Known for its performance and simple onboarding, Redis has found uses across industries and use cases, including as a:
 
--   **Database:** as an alternative to a traditional disk-based database, Redis trades durability for speed, though asynchronous disk persistence is available. Redis offers a rich set of data primitives and an unusually extensive list of commands.
--   **Message queue:** Redis’s blocking list commands and low latency make it a good backend for a message broker service.
--   **Memory cache:** Configurable key eviction policies, including the popular Least Recently Used policy, make Redis a great choice as a cache server. Unlike a traditional cache, Redis also allows persistence to disk to improve reliability.
+Redisは、メモリー上で動作するキーバリュー型のデータストアです。そして、高いパフォーマンスと簡単に導入できることで知られています。Redisは、次のようなユースケースで使われていることが多いです:
 
-Redis is available as a free, open-source product. Commercial support is available, as is fully managed Redis-as-a-service.
+> - **Database:** as an alternative to a traditional disk-based database, Redis trades durability for speed, though asynchronous disk persistence is available. Redis offers a rich set of data primitives and an unusually extensive list of commands.
+> - **Message queue:** Redis’s blocking list commands and low latency make it a good backend for a message broker service.
+> - **Memory cache:** Configurable key eviction policies, including the popular Least Recently Used policy, make Redis a great choice as a cache server. Unlike a traditional cache, Redis also allows persistence to disk to improve reliability.
 
-Redis is employed by many high-traffic websites and applications such as Twitter, GitHub, Docker, Pinterest, Datadog, and Stack Overflow.
+- **Database:** 従来のディスクベースのデータベースの代用として、採用されます。Redisは、非同期でのディスクへの永続保存が可能ですが、高いスピードを確保するために耐久性を一部犠牲にして動作します。Redisは、多くの基本データを提供し、それらを操作するための膨大な規模のコマンドリストを持っています。
+- **Message queue:** Redisに実装されているブロックリスト・コマンドと短いレイテンシは、メッセージを仲介するサービスに最適なバックエンドになります。
+- **Memory cache:** Redisには、設定可能なキーイベクションのポリシーやリーストリーセントのポリシーが存在するので、キャッシュサーバーしても素晴らしい選択です。伝統的なキャッシュとは異なり、Redisは、ディスクに対しキャッシュ情報を保存することができるので、信頼せも高いです。
+
+> Redis is available as a free, open-source product. Commercial support is available, as is fully managed Redis-as-a-service.
+
+Redisは、オープンソースとして無償で提供されている他、完全に管理されたRedis-as-a-serviceとして商業的に提供されています。
+
+> Redis is employed by many high-traffic websites and applications such as Twitter, GitHub, Docker, Pinterest, Datadog, and Stack Overflow.
+
+Redisは、Twitter、GitHub、Docker、 Ponterest、 Datadog、 Stack Overflowなど、高いトラフィックを処理しているWebサイトで採用されています。
 
 ## Key Redis Metrics
 
-Monitoring Redis can help catch problems in two areas: resource issues with Redis itself, and problems arising elsewhere in your supporting infrastructure.
+> Monitoring Redis can help catch problems in two areas: resource issues with Redis itself, and problems arising elsewhere in your supporting infrastructure.
 
-In this article we go though the most important Redis metrics in each of the following categories:
+Redisを監視することにより、次の二つの分野の問題を検知することができます:
+
+  - Redisが消費しているリソースの問題
+  - Redisを実行しているインフラの別の部分で起きている問題
+
+> In this article we go though the most important Redis metrics in each of the following categories:
+
+このポストでは、次に示したカテゴリー基づき、Redisの最重要メトリクスについて解説していきます:
 
 -   [Performance metrics](#performance-metrics)
 -   [Memory metrics](#memory-metrics)
@@ -250,4 +267,3 @@ In this post we’ve mentioned some of the most useful metrics you can monitor t
 -   [Rejected clients](#error-metrics)
 
 Eventually you will recognize additional metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on the tools you have and the metrics available to you. See the [companion post](https://www.datadoghq.com/blog/how-to-collect-redis-metrics) for step-by-step instructions on collecting Redis metrics.
-

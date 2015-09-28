@@ -4,17 +4,29 @@
 
 ## What is DynamoDB?
 
-Amazon DynamoDB is a fully managed [NoSQL](https://en.wikipedia.org/wiki/NoSQL) database cloud service, part of the AWS portfolio. Fast and easily scalable, it is meant to serve applications which require very low latency, even when dealing with large amounts of data. It supports both document and key-value store models, and has properties of both a database and a distributed hash table.
+> Amazon DynamoDB is a fully managed [NoSQL](https://en.wikipedia.org/wiki/NoSQL) database cloud service, part of the AWS portfolio. Fast and easily scalable, it is meant to serve applications which require very low latency, even when dealing with large amounts of data. It supports both document and key-value store models, and has properties of both a database and a distributed hash table.
 
-Each table of data created in DynamoDB is synchronously replicated across three availability zones (AZs) to ensure high availability and data durability.
+Amazon DyanamoDBは、AWSのサービスポトフォリオに属すクラウドサービスの一つで、完全に管理されたの[NoSQL](https://en.wikipedia.org/wiki/NoSQL)データベースのクラウドサービスです。高速な処理かつ容易にスケールできるため、大量のデーターを扱いながらも、データベースからの非常に短い遅延での応答が必要なアプリケーションへの用途に適しています。Amazon DyanamoDBは、ドキュメント型とキーバリュー型のストアモデルの両方をサポートし、データベースと分散ハッシュテーブルの両方の性質を持っています。
 
-With a flexible data model, high performance, reliability, and a simple but powerful API, DynamoDB is widely used by websites, mobile apps, games, and IoT devices. It is also used internally at Amazon to power many of its services, including S3.
+> Each table of data created in DynamoDB is synchronously replicated across three availability zones (AZs) to ensure high availability and data durability.
 
-Amazon’s [original paper](http://www.allthingsdistributed.com/2007/10/amazons_dynamo.html) on DynamoDB inspired the creation of several other datastores including Cassandra, Aerospike, Voldemort and Riak.
+Amazon DynamoDB上で作成した各テーブルは、3つのアベイラビリティゾーン(AZs)に同期的に複製され、高可用性とデータ耐久性を確保しています。
+
+> With a flexible data model, high performance, reliability, and a simple but powerful API, DynamoDB is widely used by websites, mobile apps, games, and IoT devices. It is also used internally at Amazon to power many of its services, including S3.
+
+
+
+柔軟なデータモデル、高い性能、高い信頼性、シンプルかつ強力なAPIを備えることでAmazon DynamoDBは、Webサイト、携帯アプリ、ゲーム、IoTデバイスなどのバックエンドとして広く採用されています。また、S3など、Amazon内部でも使用され、多くのサービスを支えています。
+
+> Amazon’s [original paper](http://www.allthingsdistributed.com/2007/10/amazons_dynamo.html) on DynamoDB inspired the creation of several other datastores including Cassandra, Aerospike, Voldemort and Riak.
+
+Amazon DynamoDBについて書かれたAmazonの論文は、Cassandra, Aerospike, Voldemort, Riakを含む他の多くのデータストアの誕生に影響を与えました。
 
 ## Key DynamoDB metrics
 
-In order to correctly provision DynamoDB, and to keep your applications running smoothly, it is important to understand and track key performance metrics in the following areas:
+> In order to correctly provision DynamoDB, and to keep your applications running smoothly, it is important to understand and track key performance metrics in the following areas:
+
+Amazon DynamoDBを正しくプロビジョニングし、そしてアプリケーションをスムーズに稼働し続けるために、以下の分野のキーパフォーマンスメトリクスを理解し、把握しておくことが重要です。
 
 -   **[Requests and throttling](#requests-throttling)**
 -   **[Errors](#errors)**
