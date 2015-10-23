@@ -489,15 +489,6 @@ Redis’s many tools offer a wealth of data on its performance. For spot-checkin
 
 With so many metrics exposed, getting the information you want all in one place can be a challenge. Luckily, Datadog can help take the pain out of the process. At Datadog, we have built an integration with Redis so you can begin collecting and monitoring its metrics with a minimum of setup. Learn how Datadog can help you to monitor Redis in the [next and final part](https://www.datadoghq.com/blog/monitor-redis-using-datadog) of this series of articles.
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
 
 この投稿は、Redisのモニタリングの3回シリーズの第2部です。パート1はDatadogあなたはRedisのを監視することができますどのようにキーRedisの中で使用可能なメトリック、およびパート3の詳細を探ります。
 あなたが必要とRedisのメトリックを取得
@@ -740,4 +731,3 @@ $ ./redis-cli --intrinsic-待ち時間が<秒は、ベンチマークを実行�
 Redisのの多くのツールは、その性能上のデータの富を提供しています。サーバーの健康や重要な待ち時間の原因を調べてをスポットチェックするために、Redisのの内蔵ツールは、ジョブのための十分以上です。
 非常に多くのメトリックが露出すると、一箇所ですべての必要な情報を得ることは挑戦することができます。幸いなことに、Datadogは、プロセスのうち、痛みを取ることができます。セットアップを最小限に抑えて、そのメトリックの収集と監視を開始できるようDatadogで、我々はRedisのとの統合を構築しています。 Datadogはこの一連の記事の次のと最後の部分でRedisのを監視するのを助けることができる方法を学びます。
 この記事のソース値下げはGitHubの上で利用可能です。ご質問、訂正、追加、など？私たちに知らせてください。
->>>>>>> master
