@@ -14,8 +14,6 @@ Amazon DynamoDB上で作成した各テーブルは、3つのアベイラビリ�
 
 > With a flexible data model, high performance, reliability, and a simple but powerful API, DynamoDB is widely used by websites, mobile apps, games, and IoT devices. It is also used internally at Amazon to power many of its services, including S3.
 
-
-
 柔軟なデータモデル、高い性能、高い信頼性、シンプルかつ強力なAPIを備えることでAmazon DynamoDBは、Webサイト、携帯アプリ、ゲーム、IoTデバイスなどのバックエンドとして広く採用されています。また、S3など、Amazon内部でも使用され、多くのサービスを支えています。
 
 > Amazon’s [original paper](http://www.allthingsdistributed.com/2007/10/amazons_dynamo.html) on DynamoDB inspired the creation of several other datastores including Cassandra, Aerospike, Voldemort and Riak.
