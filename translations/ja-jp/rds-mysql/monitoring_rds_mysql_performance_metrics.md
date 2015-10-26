@@ -23,19 +23,19 @@ Amazon Relational Database Service (Amazon RDS)は、AWSの上で動作してい
 
 > Users of MySQL on RDS have access to hundreds of metrics, but it's not always easy to tell what you should focus on. In this article we'll highlight key metrics in each of the above areas that together give you a detailed view of your database's performance.
 
-上のMySQLのユーザは、RDSメトリックの数百へのアクセスを持って、それはあなたが焦点を当てるべきかを伝えることは必ずしも容易ではありません。この記事では、一緒にあなたのデータベースのパフォーマンスの詳細を与える上記の各分野における主要な指標を強調表示します。
+RDSでMySQLを選択した場合、ユーザは数百のメトリクスにアクセスすることができるようになります。しかし、どのメトリクスにフォーカスすれば良いかを判断するのは容易なことではありません。このポストでは、データベースのパフォーマンスの現状を伝えてくれる、先に示した各分野の重要メトリクスについて解説していくことにします。
 
 > RDS metrics (as opposed to MySQL metrics) are available through Amazon CloudWatch, and are available regardless of which database engine you use. MySQL metrics, on the other hand, must be accessed from the database instance itself. [Part 2 of this series][part-2] explains how to collect both types of metrics.
 
-RDSメトリックは（MySQLのメトリクスとは対照的に）はAmazon CloudWatchのを介して利用可能であり、関係なく、あなたが使用しているデータベースエンジンの利用可能です。 MySQLのメトリックは、他の一方で、データベースインスタンス自体からアクセスする必要があります。 【このシリーズのパート2] [パート2]はメトリクスの両方のタイプを収集する方法について説明します。
+使用しているデーターベースエンジンを問わず、RDSのメトリクスは、Amazon CloudWatchを介して収集することができます。それとは反対に、MySQLのメトリクスは、動作しているインスタンスに直接アクセスして収集する必要があります。[シリーズ Part2][part-2]では、これら両方のメトリクスの収集方法を解説することにします。
 
 > Most of the performance metrics outlined here also apply to Aurora and MariaDB on RDS, but there are some key differences between the database engines. For instance, Aurora has auto-scaling storage and therefore does not expose a metric tracking free storage space. And the version of MariaDB (10.0.17) available on RDS at the time of this writing is not fully compatible with the MySQL Workbench tool or the sys schema, both of which are detailed in [Part 2][part-2] of this series.
 
-ここで概説するパフォーマンスメトリックのほとんどは、RDSにオーロラとMariaDBに適用されますが、データベースエンジンとの間にいくつかの重要な違いがあります。例えば、オーロラは、メトリック追跡空き容量を公開しません、したがって、自動スケーリング記憶域があります。そして、これを書いている時点で、RDSのMariaDB（10.0.17）利用可能なバージョンはに詳述されているどちらもMySQLのワークベンチツールまたはSYSスキーマ、と完全に互換性がありません[パート2] [パート2]このシリーズ。
+ここで概説するRDSのパフォーマンスメトリックのほとんどは、Amazon Aurora, MariaDB, RDSにも適用することができます。しかし、各データーベースエンジンの特徴に基づく差異には注意を払い必要があります。例えばAmazon Auroraは、ストレージが自動でスケールアウトできるので、空きスペースに関するメトリクスは提供されています。そして現在、RDS上で提供されているMariaDB(10.0.17)は、このシリーズの[Part2][part-2]で紹介しているMySQL Workbench toolやsys schemaには、互換性がない部分があります。
 
 > This article references metric terminology introduced in [our Monitoring 101 series][metric-101], which provides a framework for metric collection and alerting.
 
-メトリック収集とアラートのためのフレームワークを提供し、[私たちのモニタリング101シリーズ][メトリック-101]で導入されたこの記事の参照メトリック用語。
+このポストでは、「メトリクスの収集方法やアラートの設定方法に関する基礎的な知識」のポストである[introduced in our Monitoring 101 series][metric-101]で紹介したメトリクス用語を使っています。
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds-dash-load.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds-dash-load.png"></a>
 
@@ -50,21 +50,23 @@ RDSメトリックは（MySQLのメトリクスとは対照的に）はAmazon Cl
 
 > Your primary concern in monitoring any system is making sure that its [work is being done][collecting-data] effectively. A database's work is running queries, so the first priority in any monitoring strategy should be making sure that queries are being executed.
 
-任意のシステムの監視にあなたの主な関心事は、作っていることを確認、その[作業が行われている]こと[収集データ]効果的。データベースの作業は、クエリを実行しているので、任意の監視戦略における最優先事項は、クエリが実行されていることを確認するべきです。
+システムを監視する上で最も関心のあることは、効率的にワークが処理されているかということです。データーベースのワークはクエリを実行しています。従って、監視戦略上の最優先事項は、クエリが確実に実行されてることを確認することです。
 
 > The MySQL server status variable `Questions` is incremented for all statements sent by client applications. The similar metric `Queries` is a more all-encompassing count that includes statements executed as part of [stored programs][stored], as well as commands such as `PREPARE` and `DEALLOCATE PREPARE`, which are run as part of server-side [prepared statements][prepared]. For most RDS deployments, the client-centric view makes `Questions` the more valuable metric.
 
-MySQLサーバの状態変数`Questions`は、クライアントアプリケーションから送信されたすべての文に増加します。同様のメトリックは、`Queries`は、サーバーの一部として実行されPREPARE`と` DEALLOCATE PREPARE`、`として[格納されているプログラム]の一部として実行されたステートメント[保存された]と同様に、コマンドが含まれ、よりすべてを包括カウントです[準備文]を - 側[作成]。ほとんどのRDS展開では、クライアント中心のビューは`Questions`より価値のあるメトリックになります。
+MySQLサーバのステータスを表す変数`Questions`は、クライアントアプリケーションから送信されたすべてのステートメントによって、増加します。また類似メトリクスの`Queries`は、サーバ側に[準備されているステートメント][prepared]として実行される`PREPARE`や`DEALLOCATE PREPARE`のコマンドのように、広い項目をカウントした値になっています。RDSを使用しているほとんどのケースでは、クライアント中心の視点である`Questions`の方が価値のあるメトリクスと考えられています。
 
 > You can also monitor the breakdown of read and write commands to better understand your database's read/write balance and identify potential bottlenecks. Those metrics can be computed by summing native MySQL metrics. Reads increment one of two status variables, depending on whether or not the read is served from the query cache:
 
-あなたはまた、より良いあなたのデータベースの読み取り/書き込みのバランスを理解し、潜在的なボトルネックを特定するための読み取りおよび書き込みコマンドの内訳を監視することができます。これらのメトリックは、ネイティブのMySQLメトリックを合計することによって計算することができます。読み取りは、クエリキャッシュから提供されているかどうかに応じて、2つの状態変数の増分1を読み込みます：
+また、ボトルックが発生している可能性を発見とデーターベースのRead/writeのバランスを把握するために、ReadコマンドとWriteコマンドの内訳を監視することができます。それらのメトリクスは、MySQLが基本的に提供しているメトリクスを集計することで算出することができます。
+
+Readは、クエリキャッシュから応答を受けているかどうかに応じて、次の二つの内のどちらか一つのステータス変数を進めます:
 
     Reads = `Com_select` + `Qcache_hits`
 
 > Writes increment one of three status variables, depending on the command:
 
-コマンドに応じて、3つのステータス変数の増分1を書き込みます：
+Writeは、コマンドに応じて、つの三の内どれかのステータス変数を進めます:
 
     Writes = `Com_insert` + `Com_update` + `Com_delete`
 
@@ -72,7 +74,7 @@ MySQLサーバの状態変数`Questions`は、クライアントアプリケー�
 
 > The current rate of queries will naturally rise and fall, and as such is not always an actionable metric based on fixed thresholds alone. But it is worthwhile to alert on sudden changes in query volume—drastic drops in throughput, especially, can indicate a serious problem.
 
-クエリの現在のレートは、自然に立ち上がりおよび立ち下がり、そのように常に単独の固定しきい値に基づいて実用的なメトリックではないでしょう。しかし、それはスループットのクエリボリューム抜本的な滴の急激な変化に警告することは価値がある、特に、深刻な問題を示すことができます。
+現時点でのクエリレートの値は、上昇したり下降したりすます。そして、固定した閾値のみに基づいてアクションを起こせるようなメトリクスではないでしょう。しかしながらクエリの量の突然の変化やスループットの大幅な低下のように重大な問題の兆候を元にアラートを発生させることは有意義なことです。
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/questions_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/questions_2.png"></a>
 
@@ -86,6 +88,11 @@ MySQLサーバの状態変数`Questions`は、クライアントアプリケー�
 _*The count of query errors is not exposed directly as a MySQL metric, but can be gathered by a MySQL query._
 
 > Amazon's CloudWatch exposes `ReadLatency` and `WriteLatency` metrics for RDS (discussed [below](#resource-utilization)), but those metrics only capture latency at the disk I/O level. For a more holistic view of query performance, you can dive into native MySQL metrics for query latency. MySQL features a `Slow_queries` metric, which increments every time a query's execution time exceeds the number of seconds specified by the `long_query_time` parameter. `long_query_time` is set to 10 seconds by default but can be modified in the AWS Console. To modify  `long_query_time` (or any other MySQL parameter), simply log in to the Console, navigate to the RDS Dashboard, and select the parameter group that your RDS instance belongs to. You can then filter to find the parameter you want to edit.
+
+
+
+
+
 
 AmazonのCloudWatchのはReadLatency`とRDSの`WriteLatency`メトリックは（[以下]（＃リソース使用率）で議論）`公開されますが、ディスクI/ Oレベルでこれらのメトリックのみキャプチャー待ち時間。クエリのパフォーマンスをより総合的な観点では、クエリの待機時間のネイティブMySQLのメトリックに飛び込むことができます。 MySQLは、クエリの実行時間が`long_query_time`パラメータで指定した秒数を超えるたびに増加し` Slow_queries`メトリックを備えています。 `long_query_time`は、デフォルトでは10秒に設定されていますが、AWSコンソールで変更することができます。 `long_query_time`（または任意の他のMySQLのパラメータ）を変更するには、単に、コンソールにログインし、RDSのダッシュボードに移動し、あなたのRDSインスタンスが属するパラメーターグループを選択します。あなたは、あなたが編集したいパラメータを見つけるためにフィルタリングすることができます。
 
