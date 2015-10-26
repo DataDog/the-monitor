@@ -170,3 +170,94 @@ In [Part 3](https://www.datadoghq.com/blog/how-medium-monitors-dynamodb-performa
 In this post we have walked through how to use CloudWatch to collect and visualize DynamoDB metrics, and how to generate alerts when these metrics go out of bounds.
 
 As discussed in [Part 1](https://www.datadoghq.com/blog/top-dynamodb-performance-metrics), DynamoDB can’t see, or doesn’t report on all the events that you likely want to monitor, including true latency and error rates. In the [next and final part on this series](https://www.datadoghq.com/blog/how-medium-monitors-dynamodb-performance) we take you behind the scenes with Medium’s engineering team to learn about the issues they’ve encountered, and how they’ve solved them with a mix of tools which includes CloudWatch, ELK, and Datadog.
+
+
+
+この投稿は、監視DynamoDBの上の3回シリーズの第2部です。第1部では、その主要なパフォーマンスメトリックを探り、そして第3部はミディアムDynamoDBのを監視するために使用する戦略を説明します。
+記事のこのセクションでは、CloudWatchのを経由して、AWSからのみ利用可能ですネイティブDynamoDBのメトリックを収集についてです。他の非ネイティブメトリックの場合、パート3を参照してください。
+CloudWatchのメトリックは、次の3つの方法でアクセスできます。
+AWS Management ConsoleおよびWebインターフェイスを使用します
+コマンドラインインターフェイス（CLI）を使用して
+CloudWatchのAPIを統合監視ツールを使用して
+AWS管理コンソールを使用して
+オンライン管理コンソールを使用すると、CloudWatchのでDynamoDBのを監視するための最も簡単な方法です。それはあなたが簡単な自動化されたアラートを設定し、個々のメトリックの最近の変化を視覚的に把握することができます。
+グラフ
+あなたのAWSアカウントにサインインしたら、あなたは別のAWS技術に関連するメトリックが表示されますCloudWatchのコンソールを開くことができます。
+CloudWatchのコンソール
+DynamoDBのの「表メトリック」をクリックすると、それぞれで使用可能なメトリックを使用してテーブルの一覧が表示されます。
+CloudWatchの中DynamoDBのメトリック
+ちょうどあなたが視覚化するメトリックの横にあるチェックボックスを選択して、彼らは、コンソールの下部にグラフに表示されます。
+CloudWatchの中DynamoDBのメトリックグラフ
+アラート
+CloudWatchの管理コンソールを使用すると、特定のメトリックしきい値を超えた場合にトリガし、アラートを作成することができます。
+グラフの右側にアラームの作成をクリックすると、アラートを設定し、電子メールアドレスのリストを通知するように設定することができるようになります：
+DynamoDBのCloudWatchのアラート
+コマンドラインインタフェースの使用
+また、コマンドラインを使用して、特定のテーブルに関連するメトリックを取得することができます。これを行うには、次の手順に従って、AWSコマンドラインインタフェースをインストールする必要があります。その後、別のフィルタを使用して、あなたが望む任意のCloudWatchのメトリックを照会することができるようになります。
+あなたがまたはブラウザを使用したくないことができない場合、コマンドラインクエリは、スポットチェックやアドホック調査のために有用であり得ます。
+あなたが指定した期間に絞らPutItem要求に関連するメトリックを取得したい場合たとえば、次のコマンドを実行します。
+1
+2
+3
+4
+5
+6
+7
+ 
+AWS CloudWatchのGETメトリック統計
+--namespace AWS / DynamoDBの--metric名ThrottledRequests
+--dimensions名=テーブル名、値= YourTable名前=操作、値= Put​​Item
+--start-時間2015-08-02T00：00：00Z --end-時間2015-08-04T00：00：00Z
+--period 300 --statistics =合計
+ 
+ここでは、上記のようには、「get-メトリック統計」をクエリから表示されますJSON出力フォーマットの例を示します。
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+ 
+{
+    「データポイント」：[
+        {
+            「タイムスタンプ」： "2015-08-02T11：18：00Z」、
+            "平均"：44.79、
+            "単位"： "カウント"
+        }、
+        {
+            「タイムスタンプ」： "2015-08-02T20：18：00Z」、
+            "平均"：47.92、
+            "単位"： "カウント"
+        }、
+        {
+            「タイムスタンプ」： "2015-08-02T19：18：00Z」、
+            "平均"：50.85、
+            "単位"： "カウント"
+        }、
+    ]、
+    「ラベル」：「ThrottledRequests」
+}
+ 
+統合
+CloudWatchのメトリックを収集するための第三の方法は、拡張された監視機能を提供することができ、独自の監視ツールを介して行われます。たとえば、あなたが（カスタムインフラストラクチャやアプリケーションを含む）他の部分と、インフラストラクチャの一部からメトリックを相互に関連付けることをしたい、またはあなたが動的にスライスする場合、集約、および任意の属性にあなたのメトリックをフィルタリングするか、特定の警告メカニズムを必要とします、あなたはおそらく、専用の監視ツールやプラットフォームを使用しています。 CloudWatchのは、APIを介してこれらのプラットフォームに統合することができ、多くの場合、統合は、単に作業を開始するために有効にする必要があります。
+第3部では、指標の収集のこのタイプの実際の例をカバー：ミディアムのエンジニアリングチームはDatadogとの統合を使用してDynamoDBのを監視します。
+まとめ
+この記事では、DynamoDBのメトリックを収集し、視覚化するCloudWatchの使用方法を歩いていると、これらの指標が範囲外に行くとどのようにアラートを生成します。
+第1部で述べたように、DynamoDBのは見ることができない、または真の待ち時間とエラーレートを含む、あなたが可能性が監視するすべてのイベント、に報告しません。このシリーズの次のと最後の部分で我々は、彼らが遭遇した問題について学ぶ中のエンジニアリングチームとの舞台裏あなたを取る、と彼らはCloudWatchの、ELK、およびDatadogを含んツールの組み合わせでそれらを解決しましたか。
