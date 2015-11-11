@@ -185,7 +185,7 @@ With these guidelines in place, you should be ready for a painless containerized
 
 *Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues].*
 
-[markdown]: https://github.com/DataDog/the-monitor/blob/master/docker/the_docker_monitoring_problem.md
+[markdown]: https://github.com/DataDog/the-monitor/blob/master/docker/1_the_docker_monitoring_problem.md
 [issues]: https://github.com/datadog/the-monitor/issues
 [part-2]: https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/
 [part-3]: https://www.datadoghq.com/blog/how-to-collect-docker-metrics
