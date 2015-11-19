@@ -211,7 +211,7 @@ Aurora's database engine exposes a variety of other metrics on connection errors
 
 Aurora supports the creation of up to 15 read replicas from the master instance. These replicas are assigned a separate endpoint, so you can point client applications to read from a replica rather than from the source instance. You can also monitor the replica's connections, throughput, and query performance, just as you would for an ordinary RDS instance.
 
-The lag time for any read replica is captured by the CloudWatch metric `Aurora Replica Lag`. This metric is usually not actionable, although if the lag is consistently very long, you should investigate your settings and resource usage.
+The lag time for any read replica is captured by the CloudWatch metric `AuroraReplicaLag`. This metric is usually not actionable, although if the lag is consistently very long, you should investigate your settings and resource usage.
 
 Note that this is a significantly different metric than the generic RDS metric `ReplicaLag`, which applies to other database engines. Because Aurora instances all read from the same virtual storage volume, the `AuroraReplicaLag` tracks the lag in page cache updates from primary to replica rather than the lag in applying all write operations from the primary instance to the replica.
 
