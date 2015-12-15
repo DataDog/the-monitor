@@ -1,4 +1,4 @@
-*This post is part 2 in a 4-part series about monitoring Docker. [Part 1][part-1] discusses the novel challenge of monitoring containers instead of hosts, [part 3][part-3] covers the nuts and bolts of collecting Docker metrics, and part 4 (coming soon) describes how the largest TV and radio outlet in the U.S. monitors Docker. This article describes in detail the resource metrics that are available from Docker.*
+*This post is part 2 in a 4-part series about monitoring Docker. [Part 1][part-1] discusses the novel challenge of monitoring containers instead of hosts, [part 3][part-3] covers the nuts and bolts of collecting Docker metrics, and [part 4][part-4] describes how the largest TV and radio outlet in the U.S. monitors Docker. This article describes in detail the resource metrics that are available from Docker.*
 
 ## Docker is like a host
 As discussed in [part 1][part-1] of this series, Docker can rightly be classified as a type of mini-host. Just like a regular host, it runs work on behalf of resident software, and that work uses CPU, memory, I/O, and network resources. However, Docker containers run inside cgroups which don't report the exact same metrics you might expect from a host. This article will discuss the resource metrics that *are* available. The [next article][part-3] in this series covers three different ways to collect Docker metrics.
@@ -101,7 +101,7 @@ The commands used to collect resource metrics from Docker are different from the
 [issues]: https://github.com/datadog/the-monitor/issues
 [part-1]: https://www.datadoghq.com/blog/the-docker-monitoring-problem/
 [part-3]: https://www.datadoghq.com/blog/how-to-collect-docker-metrics
-[part-4]: https://www.datadoghq.com/blog/
+[part-4]: https://www.datadoghq.com/blog/iheartradio-monitors-docker/
 [part-3-pseudo-files-cpu]: https://www.datadoghq.com/blog/how-to-collect-docker-metrics/#pseudo-files-cpu
 [part-3-pseudo-files-memory]: https://www.datadoghq.com/blog/how-to-collect-docker-metrics/#pseudo-files-memory
 [part-3-pseudo-files-io]: https://www.datadoghq.com/blog/how-to-collect-docker-metrics/#pseudo-files-io

@@ -1,4 +1,4 @@
-*This post is part 1 in a 4-part series about monitoring Docker. [Part 2][part-2] explores metrics that are available from Docker, [part 3][part-3] covers the nuts and bolts of collecting those Docker metrics, and part 4 (coming soon) describes how the largest TV and radio outlet in the U.S. monitors Docker. This article dives into some of the new challenges Docker creates for infrastructure monitoring.*
+*This post is part 1 in a 4-part series about monitoring Docker. [Part 2][part-2] explores metrics that are available from Docker, [part 3][part-3] covers the nuts and bolts of collecting those Docker metrics, and [part 4][part-4] describes how the largest TV and radio outlet in the U.S. monitors Docker. This article dives into some of the new challenges Docker creates for infrastructure monitoring.*
 
 You have probably heard of Docker—it is a young container technology with a ton of momentum. But if you haven’t, you can think of containers as easily-configured, lightweight VMs that start up fast, often in under one second. Containers are ideal for microservice architectures and for environments that scale rapidly or release often. 
 
@@ -189,3 +189,4 @@ With these guidelines in place, you should be ready for a painless containerized
 [issues]: https://github.com/datadog/the-monitor/issues
 [part-2]: https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/
 [part-3]: https://www.datadoghq.com/blog/how-to-collect-docker-metrics
+[part-4]: https://www.datadoghq.com/blog/iheartradio-monitors-docker/

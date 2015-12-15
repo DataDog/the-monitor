@@ -1,4 +1,4 @@
-*This post is part 3 in a 4-part series about monitoring Docker. [Part 1][part-1] discusses the novel challenge of monitoring containers instead of hosts, [part 2][part-2] explores metrics that are available from Docker, and part 4 (coming soon) describes how the largest TV and radio outlet in the U.S. monitors Docker. This article covers the nuts and bolts of collecting Docker metrics.*
+*This post is part 3 in a 4-part series about monitoring Docker. [Part 1][part-1] discusses the novel challenge of monitoring containers instead of hosts, [part 2][part-2] explores metrics that are available from Docker, and [part 4][part-4] describes how the largest TV and radio outlet in the U.S. monitors Docker. This article covers the nuts and bolts of collecting Docker metrics.*
 
 Docker exposes metrics via three mechanisms: pseudo-files in sysfs, the stats command, and API. Metrics coverage across these three mechanisms is uneven, as seen below:
 
@@ -334,4 +334,4 @@ If you're using Docker in production, you probably can't afford to rely on manua
 [cpu-quota-constraint]: https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/#throttling
 [v1.9.0]: https://github.com/docker/docker/releases/tag/v1.9.0
 [other-sockets]: https://docs.docker.com/engine/userguide/basics/#bind-docker-to-another-host-port-or-a-unix-socket
-[part-4]: https://www.datadoghq.com/blog/
+[part-4]: https://www.datadoghq.com/blog/iheartradio-monitors-docker/
