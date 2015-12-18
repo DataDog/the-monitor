@@ -11,7 +11,7 @@ Datadog allows you to build graphs and alerts around individual hosts, services,
 -   Monitor NGINX metrics on Datadog dashboards, alongside all your other systems
 -   Set up automated alerts to notify you when a key metric changes dramatically
 
-## Configuring NGINX
+<h2 class="anchor" id="configuring-nginx">Configuring NGINX</h2>
 
 To collect metrics from NGINX, you first need to ensure that NGINX has an enabled status module and a URL for reporting its status metrics. Step-by-step instructions [for configuring open-source NGINX](/blog/how-to-collect-nginx-metrics/#open-source) and [NGINX Plus](/blog/how-to-collect-nginx-metrics/#plus) are available in our companion post on metric collection.
 
