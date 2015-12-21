@@ -73,7 +73,7 @@ of systems: a web server and a data store.
 | throughput  |  requests per second                                         | 312       |
 | success     |  percentage of responses that are 2xx since last measurement | 99.1      |
 | error       |  percentage of responses that are 5xx since last measurement | 0.1       |
-| latency     |  90th percentile response time in seconds                    | 0.4       |
+| performance |  90th percentile response time in seconds                    | 0.4       |
 
 **Example work metrics: Data store (at time 2015-04-24 08:13:01 UTC)**
 
@@ -83,7 +83,7 @@ of systems: a web server and a data store.
 | success     | percentage of queries successfully executed since last measurement | 100       |
 | error       | percentage of queries yielding exceptions since last measurement   | 0         |
 | error       | percentage of queries returning stale data since last measurement  | 4.2       |
-| latency     | 90th percentile query time in seconds                              | 0.02      |
+| performance | 90th percentile query time in seconds                              | 0.02      |
 
 #### Resource metrics
 
