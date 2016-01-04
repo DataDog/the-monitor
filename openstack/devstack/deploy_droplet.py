@@ -19,7 +19,7 @@ def main(args):
     os.system("sleep 8")
     t = os.popen("tugboat droplets | grep " + args)
     t = t.read()
-    IP = t[t.find('ip') + 4 : t.find(',')]
+    IP = t[t.find('ip') + 4 : t.find(',')] # Flake8 complains, but the space is for clarity
     print "IP: " + IP
 
     command_to_run = "ssh root@" + IP + " 'bash -s' < stack_setup.sh"
