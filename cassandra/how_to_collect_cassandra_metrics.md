@@ -135,20 +135,20 @@ Out of the box, `org.apache.cassandra.metrics` (based on the [Metrics](https://g
 
 | **Metric** | **JMX path** |
 |:----------:|:-------------|
-| Throughput <br>(writes\|reads) | `org.apache.cassandra.metrics:`<br>`type=ClientRequest,scope=(Write|Read),name=Latency`<br>`Attribute: OneMinuteRate` |
-| Latency <br>(writes\|reads)\* | `org.apache.cassandra.metrics:`<br>`type=ClientRequest,scope=(Write|Read),name=TotalLatency`<br>`Attribute: Count` <br><br>`org.apache.cassandra.metrics:`<br>`type=ClientRequest,scope=(Write|Read),name=Latency`<br>`Attribute: Count`|
+| Throughput <br>(writes&#124;reads) | `org.apache.cassandra.metrics:`<br><code>type=ClientRequest,scope=(Write&#124;Read),name=Latency</code><br>`Attribute: OneMinuteRate` |
+| Latency <br>(writes&#124;reads)\* | `org.apache.cassandra.metrics:`<br><code>type=ClientRequest,scope=(Write&#124;Read),name=TotalLatency</code><br>`Attribute: Count` <br><br>`org.apache.cassandra.metrics:`<br><code>type=ClientRequest,scope=(Write&#124;Read),name=Latency</code><br>`Attribute: Count`|
 | Key cache hit rate\* | `org.apache.cassandra.metrics:`<br>`type=Cache,scope=KeyCache,name=Hits`<br>`Attribute: Count`<br><br>`org.apache.cassandra.metrics:`<br>`type=Cache,scope=KeyCache,name=Requests`<br>`Attribute: Count` |
 | Load | `org.apache.cassandra.metrics:`<br>`type=Storage,name=Load`<br>`Attribute: Count` |
 | Total disk space used | `org.apache.cassandra.metrics:`<br>`type=ColumnFamily,keyspace=(KeyspaceName),scope=(ColumnFamilyName),name=TotalDiskSpaceUsed`<br>`Attribute: Count` |
 | Completed compaction tasks | `org.apache.cassandra.metrics:`<br>`type=Compaction,name=CompletedTasks`<br>`Attribute: Value` |
 | Pending compaction tasks | `org.apache.cassandra.metrics:`<br>`type=Compaction,name=PendingTasks`<br>`Attribute: Value` |
-| ParNew garbage collections (count\|time) | `java.lang:`<br>`type=GarbageCollector,name=ParNew`<br>`Attribute: (CollectionCount|CollectionTime)` |
-| CMS garbage collections (count\|time) | `java.lang:`<br>`type=GarbageCollector,name=ConcurrentMarkSweep`<br>`Attribute: (CollectionCount|CollectionTime)` |
+| ParNew garbage collections (count&#124;time) | `java.lang:`<br>`type=GarbageCollector,name=ParNew`<br><code>Attribute: (CollectionCount&#124;CollectionTime)</code> |
+| CMS garbage collections (count&#124;time) | `java.lang:`<br>`type=GarbageCollector,name=ConcurrentMarkSweep`<br><code>Attribute: (CollectionCount&#124;CollectionTime)</code> |
 | Exceptions | `org.apache.cassandra.metrics:`<br>`type=Storage,name=Exceptions`<br>`Attribute: Count` |
-| Timeout exceptions <br>(writes\|reads) | `org.apache.cassandra.metrics:`<br>`type=ClientRequest,scope=(Write|Read),name=Timeouts`<br>`Attribute: Count` |
-| Unavailable exceptions <br>(writes\|reads) | `org.apache.cassandra.metrics:`<br>`type=ClientRequest,scope=(Write|Read),name=Unavailables`<br>`Attribute: Count` |
-| Pending tasks (per stage)\*\* | `org.apache.cassandra.metrics:`<br>`type=ThreadPools,path=request,scope=(CounterMutationStage|MutationStage|ReadRepairStage|ReadStage|RequestResponseStage), name=PendingTasks`<br>`Attribute: Value` |
-| Currently blocked tasks\*\* | `org.apache.cassandra.metrics:`<br>`type=ThreadPools,path=request,scope=(CounterMutationStage|MutationStage|ReadRepairStage|ReadStage|RequestResponseStage), name=CurrentlyBlockedTasks`<br>`Attribute name: Count` |
+| Timeout exceptions <br>(writes&#124;reads) | `org.apache.cassandra.metrics:`<br><code>type=ClientRequest,scope=(Write&#124;Read),name=Timeouts</code><br>`Attribute: Count` |
+| Unavailable exceptions <br>(writes&#124;reads) | `org.apache.cassandra.metrics:`<br><code>type=ClientRequest,scope=(Write&#124;Read),name=Unavailables</code><br>`Attribute: Count` |
+| Pending tasks (per stage)\*\* | `org.apache.cassandra.metrics:`<br><code>type=ThreadPools,path=request,scope=(CounterMutationStage&#124;MutationStage&#124;ReadRepairStage&#124;ReadStage&#124;RequestResponseStage), name=PendingTasks</code><br>`Attribute: Value` |
+| Currently blocked tasks\*\* | `org.apache.cassandra.metrics:`<br><code>type=ThreadPools,path=request,scope=(CounterMutationStage&#124;MutationStage&#124;ReadRepairStage&#124;ReadStage&#124;RequestResponseStage), name=CurrentlyBlockedTasks</code><br>`Attribute name: Count` |
 
 \* The metrics needed to monitor recent latency and key cache hit rate are available in JConsole, but must be calculated from two separate metrics. For read latency, to give an example, the relevant metrics are ReadTotalLatency (cumulative read latency total, in microseconds) and the “Count” attribute of ReadLatency (the number of read events). For two readings at times 0 and 1, the recent read latency would be calculated from the deltas of those two metrics:
 
