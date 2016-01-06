@@ -1,9 +1,9 @@
 #!/bin/bash
-if [ `whoami`  != 'root' ]; then echo "Run as root"; exit; fi
+if [[ $(whoami)  != 'root' ]]; then echo "Run as root"; exit; fi
 apt-get update && apt-get install git -y
-cd /usr/local/src
+cd /usr/local/src || echo "/usr/local/src does not exist"
 git clone -b stable/kilo https://github.com/openstack-dev/devstack.git
-cd devstack
+cd devstack || exit
 ./tools/create-stack-user.sh
 echo "[[local|localrc]]
 disable_service n-net
