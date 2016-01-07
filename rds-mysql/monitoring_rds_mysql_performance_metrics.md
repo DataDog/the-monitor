@@ -135,7 +135,7 @@ last_insert_id: 0
 
 As Baron Schwartz, co-author of *[High Performance MySQL][mysql-book],* often notes, a database needs four fundamental resources: CPU, memory, disk, and network. Any of these can become a performance bottleneck—for a look at how difference RDS instance types can be constrained by their available resources, check out [this 2013 talk][bottlenecks] by Amazon's Grant McAlister. 
 
-Whenever your database instance experiences performance problems, you should check metrics pertaining to the four fundamental resources to look for bottlenecks. Though you cannot access the full suite of system-level metrics that are available for EC2, CloudWatch does make available metrics on all four of these resources. For the most part, these metrics are most useful for [investigating (rather than detecting)][investigation] performance issues.
+Whenever your database instance experiences performance problems, you should check metrics pertaining to the four fundamental resources to look for bottlenecks. As of December 2015, RDS users have access to [enhanced monitoring][enhanced] functionality that exposes detailed system-level metrics for RDS instances, although those metrics are ingested into logs and require additional work for visualization and alerting. Even out of the box, however, CloudWatch does make available basic metrics, detailed below, on all four fundamental resources. For the most part, these metrics are most useful for [investigating (rather than detecting)][investigation] performance issues.
 
 <h4 class="anchor" id="disk-i/o-metrics">Disk I/O metrics</h4>
 
@@ -284,3 +284,4 @@ Many thanks to Baron Schwartz of [VividCortex][vivid] and to [Ronald Bradford][b
 [collecting-data]: https://www.datadoghq.com/blog/monitoring-101-collecting-data/#work-metrics
 [vivid]: https://www.vividcortex.com/
 [bradford]: http://ronaldbradford.com/
+[enhanced]: https://aws.amazon.com/blogs/aws/new-enhanced-monitoring-for-amazon-rds-mysql-5-6-mariadb-and-aurora/
