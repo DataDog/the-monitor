@@ -4,7 +4,7 @@ As covered in [Part 1][part-1] of this series, [Aurora][aurora] users can access
 
 ## Collecting RDS metrics
 
-RDS metrics can be accessed from CloudWatch in three different ways:
+Standard RDS metrics can be accessed from CloudWatch in three main ways:
 
 -   [Using the AWS Management Console and its web interface](#using-the-aws-console)
 -   [Using the command line interface](#using-the-command-line-interface)
@@ -78,7 +78,7 @@ CloudWatch offers several high-level metrics for any database engine, but to get
 
 <h3 class="anchor" id="querying-server-status-variables">Querying server status variables</h3>
 <h4 class="anchor" id="connecting-to-your-rds-instance">Connecting to your RDS instance</h4>
-As with all RDS instances, you cannot directly access the machines running Aurora. So you cannot run `mysql` commands locally or check CPU utilization from the machine itself, as you could if you manually installed MySQL or MariaDB on a standalone EC2 instance. That said, you _can_ connect to Aurora remotely using standard tools, provided that the security group for your Aurora instance permits connections from the device or EC2 instance you are using to initiate the connection.
+As with all RDS instances, you cannot directly access the machines running Aurora. So you cannot run `mysql` commands locally or pull CPU utilization metrics directly from the machine itself, as you could if you manually installed MySQL or MariaDB on a standalone EC2 instance. That said, you _can_ connect to Aurora remotely using standard tools, provided that the security group for your Aurora instance permits connections from the device or EC2 instance you are using to initiate the connection.
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"></a>
 
@@ -212,7 +212,7 @@ The fourth way to access Aurora's database engine metrics is to use a full-featu
 
 ## Conclusion
 
-In this post we have walked through how to use CloudWatch to collect and visualize Aurora metrics, and how to generate alerts when these metrics go out of bounds. We've also shown you how to collect more detailed metrics from the database engine itself using MySQL-compatible tools, whether on an ad hoc or continuous basis.
+In this post we have walked through how to use CloudWatch to collect and visualize standard Aurora metrics, and how to generate alerts when these metrics go out of bounds. We've also shown you how to collect more detailed metrics from the database engine itself using MySQL-compatible tools, whether on an ad hoc or continuous basis.
 
 In [the next and final part][part-3] of this series, we'll show you how you can set up Datadog to collect, visualize, and set alerts on metrics from both RDS and Aurora's database engine.
 

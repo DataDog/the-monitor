@@ -18,7 +18,7 @@ To keep your applications running smoothly, it is important to understand and tr
 
 RDS exposes dozens of high-level metrics, and Aurora users can access literally hundreds more from the MySQL-compatible database engine. With so many metrics available, it's not always easy to tell what you should focus on. In this article we'll highlight key metrics in each of the above areas that together give you a detailed view of your database's performance.
 
-RDS metrics (as opposed to storage engine metrics) are available through Amazon CloudWatch, and many are available regardless of which database engine you use. Engine metrics, on the other hand, can be accessed from the database instance itself. [Part 2 of this series][part-2] explains how to collect both types of metrics. CloudWatch Aurora metrics are available at one-minute intervals; database engine metrics can be collected at even higher resolution.
+RDS metrics (as opposed to storage engine metrics) are available through Amazon CloudWatch, and many are available regardless of which database engine you use. Engine metrics, on the other hand, can be accessed from the database instance itself. [Part 2 of this series][part-2] explains how to collect both types of metrics. Standard CloudWatch Aurora metrics are available at one-minute intervals; database engine metrics can be collected at even higher resolution.
 
 This article references metric terminology introduced in [our Monitoring 101 series][metric-101], which provides a framework for metric collection and alerting.
 
@@ -132,7 +132,7 @@ last_insert_id: 0
 
 As Baron Schwartz, co-author of *[High Performance MySQL][mysql-book],* often notes, a database needs four fundamental resources: CPU, memory, disk, and network. Any of these can become a performance bottleneck—for a look at how difference RDS instance types can be constrained by their available resources, check out [this 2013 talk][bottlenecks] by Amazon's Grant McAlister.
 
-Whenever your database instance experiences performance problems, you should check metrics pertaining to the four fundamental resources to look for bottlenecks. Though you cannot access the full suite of system-level metrics that are available for EC2, CloudWatch does make available metrics on all four of these resources. For the most part, these metrics are most useful for [investigating (rather than detecting)][investigation] performance issues.
+Whenever your database instance experiences performance problems, you should check metrics pertaining to the four fundamental resources to look for bottlenecks. As of December 2015, RDS users have access to [enhanced monitoring][enhanced] functionality that exposes detailed system-level metrics for RDS instances, although those metrics are ingested into logs and require additional work for visualization and alerting. Even out of the box, however, CloudWatch does make available basic metrics, detailed below, on all four fundamental resources. For the most part, these metrics are most useful for [investigating (rather than detecting)][investigation] performance issues.
 
 <h4 class="anchor" id="disk-i/o-metrics">Disk I/O metrics</h4>
 
@@ -256,3 +256,4 @@ In this post we have explored the most important metrics you should monitor to k
 [collecting-data]: https://www.datadoghq.com/blog/monitoring-101-collecting-data/#work-metrics
 [mysql-rds]: https://www.datadoghq.com/blog/monitoring-rds-mysql-performance-metrics/
 [aurora-metrics]: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Monitoring.html
+[enhanced]: https://aws.amazon.com/blogs/aws/new-enhanced-monitoring-for-amazon-rds-mysql-5-6-mariadb-and-aurora/
