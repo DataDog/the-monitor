@@ -1,4 +1,4 @@
-# Protected: How to collect NGINX metrics
+# How to collect NGINX metrics
 
 *This post is part 2 of a 3-part series on NGINX monitoring. [Part 1](/blog/how-to-monitor-nginx/) explores the key metrics available in NGINX, and [Part 3](/blog/how-to-monitor-nginx-with-datadog/) details how to monitor NGINX with Datadog.*
 
