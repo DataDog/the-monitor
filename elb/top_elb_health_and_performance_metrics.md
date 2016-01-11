@@ -10,9 +10,9 @@ ELB continuously checks for unhealthy EC2 instances. If any are detected, ELB im
 
 [![ELB dashboard - Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-01.png)
 
-## Key ELB metrics
+## Key ELB performance metrics
 
-As the first gateway between your users and your application, load balancers are a critical piece of any scalable infrastructure. If it is not working properly, your users can experience much slower application response times or even outright errors, which can lead to lost transactions for example. That’s why ELB needs to be continuously monitored and its key metrics well understood to ensure that the load balancer itself and the EC2 instances behind it remain healthy. There are two broad categories of ELB metrics to monitor:
+As the first gateway between your users and your application, load balancers are a critical piece of any scalable infrastructure. If it is not working properly, your users can experience much slower application response times or even outright errors, which can lead to lost transactions for example. That’s why ELB performance needs to be continuously monitored and its key metrics well understood to ensure that the load balancer itself and the EC2 instances behind it remain healthy. There are two broad categories of ELB performance metrics to monitor:
 
 -   [Load balancer metrics](#elb-metrics)
 -   [Backend-related metrics](#backend-metrics)
@@ -114,7 +114,7 @@ CloudWatch also provides metrics about the status and performance of your backen
 
 #### Metric to watch:
 
-**BackendConnectionErrors**: Connection errors between ELB and your servers occur when ELB attempts to connect to a backend, but cannot successfully do so. This type of error is usually due to network issues or backend instances that are not running properly. If you are already alerting on ELB errors and latency, you may not want to be alerted about connection errors that are not directly impacting users.
+**BackendConnectionErrors**: Connection errors between ELB and your servers occur when ELB attempts to connect to a backend, but cannot successfully do so. This type of error is usually due to network issues or backend instances that are not running properly. If you are already alerting on ELB performance errors and latency, you may not want to be alerted about connection errors that are not directly impacting users.
 
 NOTE: If a connection with the backend fails, ELB will retry it, so this count can be higher than the request rate.
 
@@ -132,7 +132,7 @@ You might want to consider enabling keep-alive in your EC2 backend instances set
 
 ### Hosts metrics for a full picture
 
-Backend instances’ health and load balancers’ performance are directly related. For example, high CPU utilization on your backend instances can lead to queued requests. These queues can eventually exceed their maximum length and start dropping requests. So keeping an eye on your backend hosts’ resources is a very good idea. For these reasons, a complete picture of ELB’s performance and health includes EC2 metrics. We will detail in [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) how correlating ELB metrics with EC2 metrics will help you gain better insights.
+Backend instances’ health and load balancers’ performance are directly related. For example, high CPU utilization on your backend instances can lead to queued requests. These queues can eventually exceed their maximum length and start dropping requests. So keeping an eye on your backend hosts’ resources is a very good idea. For these reasons, a complete picture of ELB performance and health includes EC2 metrics. We will detail in [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) how correlating ELB metrics with EC2 metrics will help you gain better insights.
 
 ## Conclusion
 
