@@ -4,6 +4,7 @@ apt-get update && apt-get install git -y
 cd /usr/local/src || echo "/usr/local/src does not exist"
 git clone -b stable/kilo https://github.com/openstack-dev/devstack.git
 cd devstack || exit
+sed -i 's/HOST_IP=${HOST_IP:-}/HOST_IP=`dig +short myip.opendns.com @resolver1.opendns.com`/g' stackrc
 ./tools/create-stack-user.sh
 echo "[[local|localrc]]
 disable_service n-net
@@ -12,9 +13,10 @@ enable_service q-agt
 enable_service q-dhcp
 enable_service q-l3
 enable_service q-meta
+enable_service n-cauth
 
-# Optional, to enable tempest configuration as part of devstack
-enable_service tempest
+# We don't need no stinkin' Tempest
+disable_service tempest
 
 # Enable the ceilometer services
 enable_service ceilometer-acompute,ceilometer-acentral,ceilometer-collector,ceilometer-api
@@ -34,7 +36,7 @@ RABBIT_PASSWORD=devstack
 SERVICE_PASSWORD=devstack
 SERVICE_TOKEN=a682f596-76f3-11e3-b3b2-e716f9080d50
 
+HOST_IP=`dig +short myip.opendns.com @resolver1.opendns.com`
 " >> local.conf
-sed -i 's,git://git.openstack.org,https://github.com,g' stackrc
-sed -i 's/install_infra/pip_install testrepository\ninstall_infra/g' stack.sh
+
 chown -R stack:stack .
