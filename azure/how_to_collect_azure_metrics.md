@@ -4,7 +4,7 @@
 
 How you go about capturing and monitoring Azure metrics depends on your use case and the scale of your infrastructure. There are several ways to access metrics from Azure VMs: you can graph and monitor metrics using the Azure web portal, you can access the raw metric data via Azure storage, or you can use a monitoring service that integrates directly with Azure to gather metrics from your VMs. This post addresses the first two options (using the Azure web portal and accessing raw data); [a companion post](/blog/monitor-azure-vms-using-datadog/) describes how to monitor your VMs by integrating Azure with Datadog.
 
-## Viewing metrics in the Azure web portal
+## Viewing Azure metrics in the web portal
 
 The [Azure web portal](https://portal.azure.com/) has built-in monitoring functionality for viewing and alerting on performance metrics. You can graph any of the metrics available in Azure and set simple alert rules to send email notifications when metrics exceed minimum or maximum thresholds.
 
@@ -46,7 +46,7 @@ To view the Cloud Explorer interface in Visual Studio 2015, go to View &gt; Othe
 
 ![Add Azure account to Visual Studio](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-add-account.png)
 
-### View stored metrics
+### View stored Azure metrics
 
 Once you have signed in to your Azure subscription, you will find your metric storage listed under “Storage Accounts” or “Storage Accounts (Classic),” depending on whether the storage account was launched on Azure’s Resource Manager stack or on the Classic Stack.
 
