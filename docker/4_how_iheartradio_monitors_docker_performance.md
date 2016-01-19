@@ -1,4 +1,4 @@
-*This post is the last of a 4-part series on monitoring Docker. [Part 1][part-1] discusses the novel challenge of monitoring containers instead of hosts, [part 2][part-2] explores metrics that are available from Docker, and how they differ from traditional host metrics, and [part 3][part-3] covers the nuts and bolts of collecting Docker metrics.*
+*This post is the last of a 4-part series on monitoring Docker performance. [Part 1][part-1] discusses the novel challenge of monitoring containers instead of hosts, [part 2][part-2] explores metrics that are available from Docker, and how they differ from traditional host metrics, and [part 3][part-3] covers the nuts and bolts of collecting Docker performance metrics.*
 
 iHeartRadio, iHeartMedia's streaming music and digital radio platform, provides personalized artist stations, thousands of live broadcast radio stations from across the country, and on-demand podcasts available anywhere in the U.S. With more than 75 million registered users and 700 million downloads, iHeartRadio is available on dozens of devices and platforms: web, mobile, tablets, automotive partners, smart TVs, gaming devices, and more.    
 
@@ -9,7 +9,7 @@ iHeartRadio determined that a single, monolithic application to support all thei
 
 They needed a simple way for small groups of engineers to build very specific applications without rebuilding standard infrastructure services: load balancer, HTTP server, logging, database, monitoring, etc. So they put standard infrastructural services such as HAProxy, MongoDB, and Elasticsearch on traditional hosts, and made them available as a service to internal applications. They also needed each application to be siloed: there should be no dependency conflicts, and each application should have guaranteed minimum resources (CPU, memory, I/O, network) available to it. So when Docker emerged as a platform that could control dependencies and resource usage, they quickly got onboard.
 
-iHeartRadio has been quite happy with Docker—for them it "works as advertised". Docker is also rapidly improving; while it doesn't yet support log collection as well as iHeartRadio would like, Docker did add support for multi-host networking in November, which was high on iHeartRadio's wish list.
+iHeartRadio has been quite happy with Docker—for them it "works as advertised". Docker performance is also rapidly improving; while it doesn't yet support log collection as well as iHeartRadio would like, Docker did add support for multi-host networking in November, which was high on iHeartRadio's wish list.
 
 ![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p4_divider_1.png)
 ## One key shortcoming
@@ -27,7 +27,7 @@ One of the reasons iHeartRadio uses Datadog is that Datadog breaks down network 
 
 Additionally, iHeartRadio uses Datadog to monitor its non-Docker services such as HAProxy, MongoDB, and Elasticsearch, which allows their engineers to correlate Docker performance metrics with health and performance throughout their infrastructure.
 
-[![Hero image, Docker monitoring dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/iheartmedia-screenshot.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/iheartmedia-screenshot.png)
+[![Hero image, Docker performance monitoring dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/iheartmedia-screenshot.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/iheartmedia-screenshot.png)
 <center>*A Datadog dashboard that iHeartRadio uses to monitor Docker performance*</center>
 
 ## Alerting and investigation
