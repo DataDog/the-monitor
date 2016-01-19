@@ -1,4 +1,4 @@
-*This post is part 1 of a 3-part series about monitoring Apache Cassandra. [Part 2](https://www.datadoghq.com/blog/how-to-collect-cassandra-metrics/) is about collecting metrics from Cassandra, and [Part 3](https://www.datadoghq.com/blog/monitoring-cassandra-with-datadog/) details how to monitor Cassandra with Datadog.*
+*This post is part 1 of a 3-part series about monitoring Apache Cassandra performance. [Part 2](https://www.datadoghq.com/blog/how-to-collect-cassandra-metrics/) is about collecting metrics from Cassandra, and [Part 3](https://www.datadoghq.com/blog/monitoring-cassandra-with-datadog/) details how to monitor Cassandra with Datadog.*
 
 ## What is Cassandra?
 
@@ -9,10 +9,10 @@
 -   Excels at writes at volume
 -   Naturally accommodates data in sequence (e.g., time-series data)
 
-## Key Cassandra metrics
+## Key Apache Cassandra performance metrics
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/cass_dash.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/cass_dash.png)
- By monitoring Cassandra you can identify slowdowns, hiccups, or pressing resource limitations—and take swift action to correct them. Some of the key areas where you will want to capture and analyze metrics are:
+ By monitoring Apache Cassandra performance you can identify slowdowns, hiccups, or pressing resource limitations—and take swift action to correct them. Some of the key areas where you will want to capture and analyze metrics are:
 
 -   Throughput, especially [read and write requests](#throughput)
 -   Latency, especially [read and write latency](#latency)
