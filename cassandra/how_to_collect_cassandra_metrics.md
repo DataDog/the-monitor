@@ -168,7 +168,7 @@ The configuration steps depend greatly on the particular monitoring tools you ch
 
 In this post we have covered a few of the ways to access Cassandra metrics using simple, lightweight tools. For production-ready monitoring, you will likely want a more powerful monitoring system that ingests Cassandra metrics as well as key metrics from all the other technologies in your stack.
 
-At Datadog, we have developed a Cassandra integration so that you can start collecting, graphing, and alerting on metrics from your cluster with a minimum of overhead. For more details, check out our guide to [monitoring Cassandra with Datadog](https://www.datadoghq.com/blog/monitoring-cassandra-with-datadog/), or get started right away with a [free trial](https://app.datadoghq.com/signup).
+At Datadog, we have developed a Cassandra integration so that you can start collecting, graphing, and alerting on metrics from your cluster with a minimum of overhead. For more details, check out our guide to [monitoring Cassandra metrics with Datadog](https://www.datadoghq.com/blog/monitoring-cassandra-with-datadog/), or get started right away with a [free trial](https://app.datadoghq.com/signup).
 
 ------------------------------------------------------------------------
 
