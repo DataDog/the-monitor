@@ -35,8 +35,7 @@ def main(args):
     command_to_run = "ssh root@" + IP + " 'bash -s' < stack_setup.sh"
     print "Run the following (in order): \n" + command_to_run
     print "ssh root@" + IP
-    print "cd /usr/local/src/devstack"
-    print "sudo -u stack ./stack.sh"
+    print "sudo -iu stack /usr/local/src/devstack/stack.sh"
 
 if __name__ == "__main__":
     try:
