@@ -25,6 +25,8 @@ Correlating frontend metrics with backend metrics gives you a more comprehensive
 
 Read more about collecting HAProxy metrics in [part two](http://www.datadoghq.com/blog/how-to-collect-haproxy-metrics) of this series. This article references metric terminology [introduced in our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
+<div class="anchor" id="Frontend" />
+
 ### Frontend metrics
 
 [![HAProxy frontend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_2.png) Frontend metrics provide information about the client’s interaction with the load balancer itself.
@@ -69,6 +71,8 @@ The difference in the **4xx** responses is explained by the [tendency of some br
 
 #### Metrics to alert on:
 
+<div class="anchor" id="Utilization" />
+
 **session usage (computed)**: For every HAProxy session, two connections are consumed—one for the client to HAProxy, and the other for HAProxy to your backend. Ultimately, the maximum number of connections HAProxy can handle is limited by your configuration and platform (there are [only so many file descriptors](https://docs.oracle.com/cd/E23389_01/doc.11116/e21036/perf002.htm) available). 
 
 Alerting on this metric is essential to ensure your server has sufficient capacity to handle all concurrent sessions. Unlike requests, upon reaching the session limit HAProxy will deny additional clients until resource consumption drops. Furthermore, if you find your session usage percentage to be hovering above 80%, it could be time to either [modify HAProxy’s configuration](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#3.2-maxconn) to allow more sessions, or migrate your HAProxy server to a bigger box. 
@@ -76,6 +80,8 @@ Alerting on this metric is essential to ensure your server has sufficient capaci
 Remember that sessions and connections are related—consistently high traffic volumes might necessitate an increase in the number of maximum connections HAProxy allows or even require you to add an additional HAProxy instance. Upon reaching its connection limit, HAProxy will continue to accept and queue connections unless or until the backend server handling the requests fails. 
 
 This metric is not emitted by HAProxy explicitly and must be calculated by dividing the current number of sessions (`scur`) by the session limit (`slim`) and multiplying the result by 100. Keep in mind that if HAProxy’s `keep-alive` functionality is enabled (as it is by default), your number of sessions includes sessions not yet closed due to inactivity. 
+
+<div class="anchor" id="Denials" />
 
 **dreq**: HAProxy provides sophisticated information containment controls out of the box with ACLs. Properly configured ACLs can prevent HAProxy from serving requests that contain sensitive material. Similarly to a web application firewall, you can use ACLs to block database requests from non-local connections, for example, but ACLs are highly configurable—you can even deny requests or responses that [match a regex](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#7.1.4). 
 
@@ -90,6 +96,8 @@ Correlating the two can help you discern the root cause of an increase in **4xx*
 *   request was [tarpitted](https://en.wikipedia.org/wiki/Tarpit_(networking))/subject to ACL
 
 Under normal conditions, it is acceptable to (infrequently) receive invalid requests from clients. However, a significant increase in the number of invalid requests received could be a sign of larger, looming issues. For example, an abnormal number of terminations or timeouts by numerous clients could mean that your application is experiencing excessive latency, causing clients to manually close their connections.
+
+<div class="anchor" id="Backend" />
 
 ### Backend metrics
 
@@ -117,6 +125,8 @@ Under normal conditions, it is acceptable to (infrequently) receive invalid requ
 
 #### Metrics to alert on:
 
+<div class="anchor" id="Queue" />
+
 **qcur**: If your backend is bombarded with connections to the point you have reached your global `maxconn` limit, HAProxy will [seamlessly queue new connections](https://stackoverflow.com/questions/8750518/difference-between-global-maxconn-and-server-maxconn-haproxy) in your system kernel’s socket queue until a backend server becomes available. The `qcur` metric tracks the current number of connections awaiting assignment to a backend server. If you have enabled cookies and the listed server is unavailable, connections will be queued until the queue timeout is reached. However, if you have set the `option redispatch` directive in your global HAProxy configuration, HAProxy can break the session’s persistence and forward the request to any available backend. 
 
 Keeping connections out of the queue is ideal, resulting in less latency and a better user experience. You should alert if the size of your queue exceeds a threshold you are comfortable with. If you find that connections are consistently enqueueing, configuration changes may be in order, such as [increasing](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#3.2-maxconn) your global `maxconn` limit or changing the connection limits on your individual backend servers. ![Backend queue](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/queue.png)
@@ -127,9 +137,13 @@ Keeping connections out of the queue is ideal, resulting in less latency and a b
 
 [![Backend response time](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/response-time.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/response-time.png) 
 
+<div class="anchor" id="Latency" />
+
 **rtime**: Tracking average response times is an effective way to measure the latency of your load-balancing setup. Generally speaking, response times in excess of 500 ms will lead to degradation of application performance and customer experience. Monitoring the average response time can give you the upper hand to respond to latency issues before your customers are substantially impacted. _Keep in mind_ that this metric will be [zero if you are not using HTTP](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#9.1) (see #60). 
 
 **eresp**: The backend error response rate represents the number of response errors generated by your backends. This includes errors caused by data transfers aborted by the servers as well as write errors on the client socket and failures due to ACLs. Combined with other error metrics, the backend error response rate helps diagnose the root cause of response errors. For example, an increase in both the backend error response rate and denied responses could indicate that clients are repeatedly attempting to access ACL-ed resources.
+
+<div class="anchor" id="Health" />
 
 ### Health metrics
 

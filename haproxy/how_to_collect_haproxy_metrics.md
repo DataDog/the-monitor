@@ -3,7 +3,7 @@ _This post is part 2 of a 3-part series on HAProxy monitoring. [Part 1](http://w
 
 ## Collecting the metrics you need
 
-Now that you know the [key HAProxy metrics to monitor](http://www.datadoghq.com/monitoring-haproxy-performance-metrics), it’s time to collect them! You can either use HAProxy’s built-in tools or a third-party tool. HAProxy gives you two means by which you can monitor its performance: via a status page, or via sockets. Both of the methods below give you an immediate and detailed view into the performance of your load balancer. The main difference between the two is that the status page is static and read-only, whereas the socket interface allows you to modify HAProxy’s configuration on the fly.
+Now that you know the [key HAProxy metrics to monitor](http://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics), it’s time to collect them! You can either use HAProxy’s built-in tools or a third-party tool. HAProxy gives you two means by which you can monitor its performance: via a status page, or via sockets. Both of the methods below give you an immediate and detailed view into the performance of your load balancer. The main difference between the two is that the status page is static and read-only, whereas the socket interface allows you to modify HAProxy’s configuration on the fly.
 
 ### Stats page
 
@@ -100,7 +100,7 @@ Once you’ve enabled the socket interface, getting the metrics is a simple one-
 
 _As you can see, if you want to access your metrics in a human-readable format, the stats page is the way to go._ 
 
-The output metrics are grouped by server. In the snippet above you can see four devices: _http-in_, a frontend; the backend _appname_; and the backend servers associated with _appname_, _lamp1_ and _lamp2_. The metric names are abbreviated and some, if you have already read [Part 1](http://www.datadoghq.com/monitoring-haproxy-performance-metrics), should look familiar: `qcur` is the current queue size, `bin` is the number of bytes in, etc. You can find a full list of HAProxy metrics [in the documentation](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#9.1).
+The output metrics are grouped by server. In the snippet above you can see four devices: _http-in_, a frontend; the backend _appname_; and the backend servers associated with _appname_, _lamp1_ and _lamp2_. The metric names are abbreviated and some, if you have already read [Part 1](http://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics), should look familiar: `qcur` is the current queue size, `bin` is the number of bytes in, etc. You can find a full list of HAProxy metrics [in the documentation](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#9.1).
 
 ### Third party tools
 
