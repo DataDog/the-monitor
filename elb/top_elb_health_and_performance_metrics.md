@@ -19,6 +19,8 @@ As the first gateway between your users and your application, load balancers are
 
 This article references metric terminology introduced in [our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
+<div class="anchor" id="elb-metrics" />
+
 ### Load balancer metrics
 
 ![Load balancer metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-02.png)
@@ -38,9 +40,17 @@ The first category of metrics to consider comes from the load balancer itself, a
 
 #### Metrics to alert on:
 
+<div class="anchor" id="RequestCount" />
+
 -   **RequestCount:** This metric measures the amount of traffic your load balancer is handling. Keeping an eye on peaks and drops allows you to alert on drastic changes which might indicate a problem with AWS or upstream issues like DNS. If you are **not** using [Auto Scaling](https://aws.amazon.com/autoscaling/), then knowing when your request count changes significantly can also help you know when to adjust the number of instances backing your load balancer.
+
+<div class="anchor" id="SurgeQueueLength" />
+
 -   **SurgeQueueLength**: When your backend instances are fully loaded and can’t process any more requests, incoming requests are queued, which can increase latency ([see below](#backend-metrics)) leading to slow user navigation or timeout errors. That’s why this metric should remain as low as possible, ideally at zero. Backend instances may refuse new requests for many reasons, but it’s often due to too many open connections. In that case you should consider tuning your backend or adding more backend capacity. The “max” statistic is the most relevant view of this metric so that peaks of queued requests are visible. Crucially, make sure the queue length always remains substantially smaller than the maximum queue capacity, currently capped to 1,024 requests, so you can avoid dropped requests.
 -   **SpilloverCount**: When the **SurgeQueueLength** reaches the maximum of 1,024 queued requests, new requests are dropped, the user receives a 503 error, and the spillover count metric is incremented. In a healthy system, this metric is always equal to zero.
+
+<div class="anchor" id="HTTPCode_ELB_5XX" />
+
 -   **HTTPCode\_ELB\_5XX**: This metric counts the number of requests that could not be properly handled. It can have different root causes:
     -   If the error code is [502 (Bad Gateway)](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/ts-elb-error-message.html#ts-elb-errorcodes-http502), the backend instance returned a response, but the load balancer couldn’t parse it because the load balancer was not working properly or the response was malformed.
     -   If it’s [503 (Service Unavailable)](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/ts-elb-error-message.html#ts-elb-errorcodes-http503), the error comes from your backend instances or the load balancer, which may not have had enough capacity to handle the request. Make sure your instances are healthy and registered with your load balancer.
@@ -51,6 +61,8 @@ The first category of metrics to consider comes from the load balancer itself, a
 #### Note about HTTPCode\_ELB\_4XX:
 
 There is usually not much you can do about 4xx errors, since this metric basically measures the number of erroneous requests sent to ELB (which returns a 4xx code). If you want to investigate, you can check in the ELB access logs (see [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics)) to determine [which code has been returned](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/ts-elb-error-message.html#ts-elb-errorcodes-http400).
+
+<div class="anchor" id="backend-metrics" />
 
 ### Backend-related metrics
 
@@ -123,6 +135,8 @@ NOTE: If a connection with the backend fails, ELB will retry it, so this count c
 #### About backend response codes
 
 You might want to monitor the HTTP codes returned by your backend for a high-level view of your servers. But for more granularity and better insight about your servers, you should monitor them directly or by collecting native metrics from your instances (see [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog)), or also analyze their logs (see [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics)).
+
+<div class="anchor" id="timeouts" />
 
 #### About timeouts
 
