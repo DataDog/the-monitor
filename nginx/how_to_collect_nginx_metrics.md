@@ -1,10 +1,10 @@
 # How to collect NGINX metrics
 
-*This post is part 2 of a 3-part series on NGINX monitoring. [Part 1](/blog/how-to-monitor-nginx/) explores the key metrics available in NGINX, and [Part 3](/blog/how-to-monitor-nginx-with-datadog/) details how to monitor NGINX with Datadog.*
+*This post is part 2 of a 3-part series on NGINX monitoring. [Part 1](http://www.datadoghq.com/blog/how-to-monitor-nginx/) explores the key metrics available in NGINX, and [Part 3](http://www.datadoghq.com/blog/how-to-monitor-nginx-with-datadog/) details how to monitor NGINX with Datadog.*
 
 ## How to get the NGINX metrics you need
 
-How you go about capturing metrics depends on which version of NGINX you are using, as well as which metrics you wish to access. (See [the companion article](/blog/how-to-monitor-nginx/) for an in-depth exploration of NGINX metrics.) Free, open-source NGINX and the commercial product NGINX Plus both have status modules that report metrics, and NGINX can also be configured to report certain metrics in its logs:
+How you go about capturing metrics depends on which version of NGINX you are using, as well as which metrics you wish to access. (See [the companion article](http://www.datadoghq.com/blog/how-to-monitor-nginx/) for an in-depth exploration of NGINX metrics.) Free, open-source NGINX and the commercial product NGINX Plus both have status modules that report metrics, and NGINX can also be configured to report certain metrics in its logs:
 
 <table><colgroup> <col style="text-align: left;" /> <col style="text-align: center;" /> <col style="text-align: center;" /> <col style="text-align: center;" /> </colgroup>
 <thead>
@@ -69,6 +69,8 @@ How you go about capturing metrics depends on which version of NGINX you are usi
 </tr>
 </tbody>
 </table>
+
+<div class="anchor" id="open-source" />
 
 ### Metrics collection: NGINX (open-source)
 
@@ -221,7 +223,7 @@ You can use a variety of tools and services to parse and analyze NGINX logs. For
 
 Which NGINX metrics you monitor will depend on the tools available to you, and whether the insight provided by a given metric justifies the overhead of monitoring that metric. For instance, is measuring error rates important enough to your organization to justify investing in NGINX Plus or implementing a system to capture and analyze logs?
 
-At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX metrics with Datadog [in this post](/blog/how-to-monitor-nginx-with-datadog/), and get started right away with [a free trial of Datadog](https://app.datadoghq.com/signup).
+At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX metrics with Datadog [in this post](http://www.datadoghq.com/blog/how-to-monitor-nginx-with-datadog/), and get started right away with [a free trial of Datadog](https://app.datadoghq.com/signup).
 
 ------------------------------------------------------------------------
 

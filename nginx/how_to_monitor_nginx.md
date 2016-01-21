@@ -14,13 +14,15 @@ By monitoring NGINX you can catch two categories of issues: resource issues with
 
 More generally, there are at least three key categories of metrics to watch:
 
--   Basic activity metrics
--   Error metrics
--   Performance metrics
+-   [Basic activity metrics](#basic-metrics)
+-   [Error metrics](#error-metrics)
+-   [Performance metrics](#performance-metrics)
 
 Below we’ll break down a few of the most important NGINX metrics in each category, as well as metrics for a fairly common use case that deserves special mention: using NGINX Plus for reverse proxying. We will also describe how you can monitor all of these metrics with your graphing or monitoring tools of choice.
 
 This article references metric terminology [introduced in our Monitoring 101 series](/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
+
+<div class="anchor" id="basic-metrics" />
 
 ### Basic activity metrics
 
@@ -79,6 +81,9 @@ Accepts, handled, and requests are ever-increasing counters. Active, waiting, re
 The **accepts** counter is incremented when an NGINX worker picks up a request for a connection from the OS, whereas **handled** is incremented when the worker actually gets a connection for the request (by establishing a new connection or reusing an open one). These two counts are usually the same—any divergence indicates that connections are being **dropped**, often because a resource limit, such as NGINX’s [worker\_connections](http://nginx.org/en/docs/ngx_core_module.html#worker_connections) limit, has been reached.
 
 Once NGINX successfully handles a connection, the connection moves to an **active** state, where it remains as client requests are processed:
+
+<div class="anchor" id="active-state" />
+
 
 ##### Active state
 
@@ -153,11 +158,16 @@ The **accepted** counter is incremented when an NGINX Plus worker picks up a req
 | active (includes “waiting” states) | active (excludes “idle” states) |
 | requests                           | total                           |
 
+<div class="anchor" id="dropped-connections" />
+
 #### **Metric to alert on: Dropped connections**
 
 The number of connections that have been dropped is equal to the difference between accepts and handled (NGINX) or is exposed directly as a standard metric (NGINX Plus). Under normal circumstances, dropped connections should be zero. If your rate of dropped connections per unit time starts to rise, look for possible resource saturation.
 
 [![Dropped connections](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/dropped_connections.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/dropped_connections.png)
+
+<div class="anchor" id="requests-per-second" />
+
 
 #### **Metric to alert on: Requests per second**
 
@@ -169,6 +179,8 @@ Sampling your request data (**requests** in open-source, or **total** in Plus) w
 
 Open-source NGINX exposes these basic server metrics on a simple status page. Because the status information is displayed in a standardized form, virtually any graphing or monitoring tool can be configured to parse the relevant data for analysis, visualization, or alerting. NGINX Plus provides a JSON feed with much richer data. Read the companion post on [NGINX metrics collection](/blog/how-to-collect-nginx-metrics/) for instructions on enabling metrics collection.
 
+<div class="anchor" id="error-metrics" />
+
 ### Error metrics
 
 | **Name**  | **Description**        | **[Metric type](/blog/monitoring-101-collecting-data/)** | **Availability**       |
@@ -177,6 +189,8 @@ Open-source NGINX exposes these basic server metrics on a simple status page. Be
 | 5xx codes | Count of server errors | Work: Errors                                             | NGINX logs, NGINX Plus |
 
 NGINX error metrics tell you how often your servers are returning errors instead of producing useful work. Client errors are represented by 4xx status codes, server errors with 5xx status codes.
+
+<div class="anchor" id="server-error-rate" />
 
 #### **Metric to alert on: Server error rate**
 
@@ -195,11 +209,16 @@ Although open-source NGINX does not make error rates immediately available for m
 
 Read the companion post on NGINX metrics collection for detailed instructions on both approaches.
 
+<div class="anchor" id="performance-metrics" />
+
 ### Performance metrics
 
 | **Name**     | **Description**                          | **[Metric type](/blog/monitoring-101-collecting-data/)** | **Availability** |
 |--------------|------------------------------------------|----------------------------------------------------------|------------------|
 | request time | Time to process each request, in seconds | Work: Performance                                        | NGINX logs       |
+
+<div class="anchor" id="request-processing-time" />
+
 
 #### **Metric to alert on: Request processing time**
 
