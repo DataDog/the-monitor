@@ -28,6 +28,8 @@ CPU usage is one of the most commonly monitored host-level metrics. Whenever an 
 
 CPU metrics allow you to determine not only how utilized your processors are (via **CPU percentage**) but also how much of that utilization is accounted for by user applications. The **CPU user time** metric tells you how much time the processor spent in the restricted “user” mode, in which applications run, as opposed to the privileged kernel mode, in which the processor has direct access to the system’s hardware. The **CPU privileged time** metric captures the latter portion of CPU activity.
 
+<div class="anchor" id="cpu-percentage" />
+
 #### Metric to alert on: CPU percentage
 
 Although a system in good health can run with consistently high CPU utilization, you will want to be notified if your hosts’ CPUs are nearing saturation.
@@ -42,6 +44,8 @@ Monitoring disk I/O is critical for understanding how your applications are impa
 |------------|----------------------------------|----------------------------------------------------------|
 | Disk read  | Data read from disk, per second  | Resource: Utilization                                    |
 | Disk write | Data written to disk, per second | Resource: Utilization                                    |
+
+<div class="anchor" id="disk-read" />
 
 #### Metric to alert on: Disk read
 
@@ -61,6 +65,8 @@ Monitoring memory usage can help identify low-memory conditions and performance 
 | Memory available | Free memory, in bytes/MB/GB                                   | Resource: Utilization                                    |
 | Memory pages     | Number of pages written to or retrieved from disk, per second | Resource: Saturation                                     |
 
+<div class="anchor" id="memory-pages" />
+
 #### Metric to alert on: Memory pages
 
 Paging events occur when a program requests a [page](https://en.wikipedia.org/wiki/Page_(computer_memory)) that is not available in memory and must be retrieved from disk, or when a page is written to disk to free up working memory. Excessive paging can introduce slowdowns in an application. A low level of paging can occur even when the VM is underutilized—for instance, when the virtual memory manager automatically trims a process’s [working set](https://msdn.microsoft.com/en-us/library/windows/desktop/cc441804(v=vs.85).aspx) to maintain free memory. But a sudden spike in paging can indicate that the VM needs more memory to operate efficiently.
@@ -76,6 +82,8 @@ Azure’s default metric set provides data on network traffic in and out of a VM
 | Bytes received        | Bytes received, per second       | Resource: Utilization                                    | Linux VMs        |
 | TCP segments sent     | Segments sent, per second        | Resource: Utilization                                    | Windows VMs      |
 | TCP segments received | Segments received, per second    | Resource: Utilization                                    | Windows VMs      |
+
+<div class="anchor" id="network-sent" />
 
 #### Metric to alert on: Bytes/TCP segments sent
 
