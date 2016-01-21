@@ -29,6 +29,8 @@ This article references metric terminology [introduced in our Monitoring 101 ser
 
 **NOTE:** All the metrics discussed here can be [collected from the varnishstat command line](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/), and use the metric names from the latest version, Varnish 4.0.
 
+<div class="anchor" id="client-metrics"></div>
+
 ### Client metrics
 
 [![Varnish client metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-03.png)
@@ -62,6 +64,8 @@ Once a connection is established, the client can use that connection to make sev
 
 Varnish is a cache, so by measuring cache performance you can see instantly how well Varnish is doing its work.
 
+<div class="anchor" id="hit-rate"></div>
+
 #### Hit rate
 
 The diagram below illustrates how Varnish routes requests, and when each of its cache hit metrics is incremented.
@@ -84,6 +88,8 @@ If after increasing the amount of memory available to your cache, your hit rate
 
 [![Varnish cache hit rate](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)
 
+<div class="anchor" id="cached-objects"></div>
+
 #### Cached objects
 
 | **Name**          | **Description**                                                                                                                           | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
@@ -94,6 +100,8 @@ If after increasing the amount of memory available to your cache, your hit rate
 **Metric to alert on:**
 
 The LRU (Least Recently Used) Nuked Objects counter, `n_lru_nuked`, should be closely watched. If the eviction rate is increasing, that means your cache is evicting objects faster and faster due to a lack of space. In this case you may want to consider increasing the cache size.
+
+<div class="anchor" id="thread-metrics"></div>
 
 ### Thread-related metrics
 
@@ -116,6 +124,8 @@ Keep an eye on the metric `thread_queue_len` which should not be too high. If it
 
 -   **`threads_failed`**: otherwise you have likely exceeded your server limits, or attempted to create threads too rapidly. The latter case usually occurs right after Varnish is started, and can be corrected by increasing the `thread_pool_add_delay` value.
 -   **`threads_limited`**: otherwise you should consider increasing the value of `thread_pool_max`.
+
+<div class="anchor" id="backend-metrics"></div>
 
 ### Backend metrics
 
