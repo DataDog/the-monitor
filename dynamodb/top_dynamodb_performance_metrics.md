@@ -32,6 +32,8 @@ Most DynamoDB API clients [automatically implement retries](http://docs.aws.amaz
 
 All the metrics discussed in this first post can be collected from DynamoDB via AWS CloudWatch, as detailed in the [second post](https://www.datadoghq.com/blog/how-to-collect-dynamodb-metrics) of this series. But since DynamoDB is not aware of retries, metrics do not capture the full lifetime of a request. This means, for example, that  `SuccessfulRequestLatency` only measures the latency of a successful query attempt and doesn’t add latency for retried failures. This can add complexity to your database performance analysis, but other good monitoring strategies exist, such as those employed by Medium, as described in [Part 3](https://www.datadoghq.com/blog/how-medium-monitors-dynamodb-performance).
 
+<div class="anchor" id="requests-throttling" />
+
 ### Requests and throttling
 
 #### Terminology:
@@ -96,6 +98,8 @@ As you can see on these graphs, consumed capacity can briefly spike above 100%. 
 
 If your application needs to catch throttled read/write requests, look for error code `ProvisionedThroughputExceededException`, not `ThrottlingException`. The `ThrottlingException` error code is reserved for [DDL](https://en.wikipedia.org/wiki/Data_definition_language) requests (i.e CreateTable, UpdateTable, DeleteTable).
 
+<div class="anchor" id="errors" />
+
 ### Errors
 
 
@@ -114,7 +118,7 @@ If your application needs to catch throttled read/write requests, look for error
 [![System Errors graph](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-07.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-07.png)
 
  
-
+<div class="anchor" id="gsi" />
 ### Global Secondary Index creation
 
 #### What is a Global Secondary Index?
