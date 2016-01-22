@@ -185,8 +185,8 @@ Open-source NGINX exposes these basic server metrics on a simple status page. Be
 
 | **Name**  | **Description**        | **[Metric type](/blog/monitoring-101-collecting-data/)** | **Availability**       |
 |-----------|------------------------|----------------------------------------------------------|------------------------|
-| 4xx codes | Count of client errors | Work: Errors                                             | NGINX logs, NGINX Plus |
-| 5xx codes | Count of server errors | Work: Errors                                             | NGINX logs, NGINX Plus |
+| 4xx codes | Count of client errors such as "403 Forbidden" or "404 Not Found" | Work: Errors                                             | NGINX logs, NGINX Plus |
+| 5xx codes | Count of server errors such as "500 Internal Server Error" or "502 Bad Gateway" | Work: Errors                                             | NGINX logs, NGINX Plus |
 
 NGINX error metrics tell you how often your servers are returning errors instead of producing useful work. Client errors are represented by 4xx status codes, server errors with 5xx status codes.
 
@@ -194,7 +194,7 @@ NGINX error metrics tell you how often your servers are returning errors instead
 
 #### **Metric to alert on: Server error rate**
 
-Your server error rate is equal to the number of 5xx errors divided by the total number of [status codes](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) (1xx, 2xx, 3xx, 4xx, 5xx), per unit of time (often one to five minutes). If your error rate starts to climb over time, investigation may be in order. If it spikes suddenly, urgent action may be required, as clients are likely to report errors to the end user.
+Your server error rate is equal to the number of 5xx errors, such as "502 Bad Gateway", divided by the total number of [status codes](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) (1xx, 2xx, 3xx, 4xx, 5xx), per unit of time (often one to five minutes). If your error rate starts to climb over time, investigation may be in order. If it spikes suddenly, urgent action may be required, as clients are likely to report errors to the end user.
 
 [![Server error rate](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/5xx_rate.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/5xx_rate.png)
 
@@ -246,7 +246,7 @@ The number of **active connections per upstream server** can help you verify tha
 
 #### Error metrics
 
-Recall from the error metric section above that 5xx (server error) codes are a valuable metric to monitor, particularly as a share of total response codes. NGINX Plus allows you to easily extract the number of **5xx codes per upstream server**, as well as the total number of responses, to determine that particular server’s error rate.
+Recall from the error metric section above that 5xx (server error) codes, such as "502 Bad Gateway" or "503 Service Temporarily Unavailable", are a valuable metric to monitor, particularly as a share of total response codes. NGINX Plus allows you to easily extract the number of **5xx codes per upstream server**, as well as the total number of responses, to determine that particular server’s error rate.
 
 #### **Availability metrics**
 
