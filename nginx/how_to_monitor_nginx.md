@@ -14,7 +14,7 @@ By monitoring NGINX you can catch two categories of issues: resource issues with
 
 More generally, there are at least three key categories of metrics to watch:
 
--   [Basic activity metrics](#basic-metrics)
+-   [Basic activity metrics](#basic-activity-metrics)
 -   [Error metrics](#error-metrics)
 -   [Performance metrics](#performance-metrics)
 
@@ -22,7 +22,7 @@ Below we’ll break down a few of the most important NGINX metrics in each categ
 
 This article references metric terminology [introduced in our Monitoring 101 series](/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
-<div class="anchor" id="basic-metrics" />
+<div class="anchor" id="basic-activity-metrics" />
 
 ### Basic activity metrics
 
