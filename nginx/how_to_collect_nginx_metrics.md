@@ -145,7 +145,7 @@ The commercial NGINX Plus provides [many more metrics](http://nginx.org/en/docs/
 
 *Note: the “Active” connections on the NGINX Plus status dashboard are defined slightly differently than the Active state connections in the metrics collected via the open-source NGINX stub status module. In NGINX Plus metrics, Active connections do not include connections in the Waiting state (aka Idle connections).*
 
-NGINX Plus also reports [metrics in JSON format](http://demo.nginx.com/status) for easy integration with other monitoring systems. With NGINX Plus, you can see the metrics and health status [for a given upstream grouping of servers](http://demo.nginx.com/status/upstreams/demoupstreams), or drill down to get a count of just the response codes [from a single server](http://demo.nginx.com/status/upstreams/demoupstreams/0/responses) in that upstream:
+NGINX Plus also reports [metrics in JSON format](http://demo.nginx.com/status) for easy integration with other monitoring systems. With NGINX Plus, you can see the metrics and health status for a given upstream grouping of servers, or drill down to get a count of just the response codes from a single server in that upstream:
 
 ```
 {"1xx":0,"2xx":3483032,"3xx":0,"4xx":23,"5xx":0,"total":3483055}
