@@ -137,6 +137,8 @@ Note that if you are trying to access the status page from a remote machine, you
 
 The NGINX status page is an easy way to get a quick snapshot of your metrics, but for continuous monitoring you will need to automatically record that data at regular intervals. Parsers for the NGINX status page already exist for monitoring tools such as [Nagios](https://exchange.nagios.org/directory/Plugins/Web-Servers/nginx) and [Datadog](http://docs.datadoghq.com/integrations/nginx/), as well as for the statistics collection daemon [collectD](https://collectd.org/wiki/index.php/Plugin:nginx).
 
+<div class="anchor" id="plus" />
+
 ### Metrics collection: NGINX Plus
 
 The commercial NGINX Plus provides [many more metrics](http://nginx.org/en/docs/http/ngx_http_status_module.html#data) through its ngx\_http\_status\_module than are available in open-source NGINX. Among the additional metrics exposed by NGINX Plus are bytes streamed, as well as information about upstream systems and caches. NGINX Plus also reports counts of all HTTP status code types (1xx, 2xx, 3xx, 4xx, 5xx). A sample NGINX Plus status board is available [here](http://demo.nginx.com/status.html).
@@ -174,6 +176,8 @@ nginx -s reload
 ```
 
 The official NGINX Plus docs have [more details](http://nginx.org/en/docs/http/ngx_http_status_module.html#example) on how to configure the expanded status module.
+
+<div class="anchor" id="logs" />
 
 ### Metrics collection: NGINX logs
 
