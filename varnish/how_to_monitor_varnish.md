@@ -42,7 +42,7 @@ This article references metric terminology [introduced in our Monitoring 101 ser
 | **Name**          | **Description**                                                                                                     | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
 |-------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
 | **sess\_conn**    | Cumulative number of accepted client connections by Varnish Cache                                                   | Resource: Utilization                                                             |
-| **client\_req**   | Cumulative number of received client requests. Increments after a request is received, but before Varnish responds. | Work: Throughput                                                                  |
+| **client\_req**   | Cumulative number of received client requests. Increments after a request is received, but before Varnish responds | Work: Throughput                                                                  |
 | **sess\_dropped** | Number of connections dropped due to a full queue                                                                   | Work: Error (due to resource saturation)                                          |
 
 Once a connection is established, the client can use that connection to make several requests to access resources such as images, files, CSS, or Javascript. Varnish can service the requests itself if the requested assets are already cached, or can fetch the resources from the backend.
@@ -74,7 +74,7 @@ The diagram below illustrates how Varnish routes requests, and when each of its 
 
 | **Name**           | **Description**                                                                                                        | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
 |--------------------|------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| **cache\_hit**     | Cumulative number of times a file was served from Varnish’s cache.                                                     | Other                                                                             |
+| **cache\_hit**     | Cumulative number of times a file was served from Varnish’s cache                                                     | Other                                                                             |
 | **cache\_miss**    | Cumulative number of times a file was requested but was not in the cache, and was therefore requested from the backend | Other                                                                             |
 | **cache\_hitpass** | Cumulative number of hits for a “pass” file                                                                            | Other                                                                             |
 
