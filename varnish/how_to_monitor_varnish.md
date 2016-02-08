@@ -111,7 +111,7 @@ Metrics related to worker threads tell you if your thread pools are healthy and 
 
 | **Name**               | **Description**                                                                                                  | **[Metric type](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)** |
 |------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| **threads**            | Number of threads currently being used                                                                           | Resource: Utilization                                                             |
+| **threads**            | Number of threads in all pools                                                                                   | Resource: Utilization                                                             |
 | **threads\_created**   | Number of times a thread has been created                                                                        | Resource: Utilization                                                             |
 | **threads\_failed**    | Number of times that Varnish unsuccessfully tried to create a thread                                             | Resource: Error                                                                   |
 | **threads\_limited**   | Number of times Varnish wanted to create a thread but varnishd maxed out its configured capacity for new threads | Resource: Error                                                                   |
