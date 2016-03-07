@@ -97,4 +97,4 @@ If you don’t yet have a Datadog account, you can sign up for a [free trial][tr
 [nginx]: https://www.datadoghq.com/blog/how-to-monitor-nginx/
 [redis]: https://www.datadoghq.com/blog/how-to-monitor-redis-performance-metrics/
 [elb]: https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics/
-[p_s]: https://www.datadoghq.com/blog/how-to-collect-rds-mysql-metrics#querying-the-performance-schema-and-sys-schema
+[p_s]: https://www.datadoghq.com/blog/how-to-collect-aurora-metrics/#querying-the-performance-schema-and-sys-schema
