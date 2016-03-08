@@ -9,7 +9,7 @@ If you’ve already read [our post][part-2] on collecting metrics from [Amazon A
 
 <h2 class="anchor" id="connect-datadog-to-cloudwatch">Connect Datadog to CloudWatch</h2>
 
-To start monitoring metrics from Amazon's Relational Database Service (RDS), you just to configure our [CloudWatch integration][aws-integration]. Create a new user via [the IAM console][iam] in AWS and grant that user (or group of users) read-only permissions to these three services, at a minimum:
+To start monitoring metrics from Amazon's Relational Database Service (RDS), you just need to configure our [CloudWatch integration][aws-integration]. Create a new user via [the IAM console][iam] in AWS and grant that user (or group of users) read-only permissions to these three services, at a minimum:
 
 1. EC2
 1. CloudWatch
