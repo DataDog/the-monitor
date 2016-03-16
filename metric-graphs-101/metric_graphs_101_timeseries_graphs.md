@@ -130,8 +130,8 @@ Area graphs are similar to line graphs, except the metric values are represented
 </tr>
 <tr>
 <td>Metrics that <strong>can't be added</strong> sensibly</td>
-<td>System load across multiple servers<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/sys2_load_bad.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/sys2_load_bad.png" alt="Stacked system load graph" /></a></td>
-<td>Line graphs, or heat maps for large numbers of hosts<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/sys2_load_good.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/sys2_load_good.png" alt="System load line graph" /></a></td>
+<td>System load across multiple servers<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/sys4_load_bad.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/sys4_load_bad.png" alt="Stacked system load graph" /></a></td>
+<td>Line graphs, or heat maps for large numbers of hosts<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/sys4_load_good.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/sys4_load_good.png" alt="System load line graph" /></a></td>
 </tr>
 </tbody>
 </table>
