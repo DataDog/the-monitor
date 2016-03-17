@@ -114,25 +114,25 @@ last_insert_id: 0
 <h3 class="anchor" id="resource-utilization">Resource utilization</h3>
 
 #### Disk I/O metrics
-| **Name** | **Description** | [**Metric&nbsp;type**][metric-101] | **Availability** |
+| **Description** | **CloudWatch name** | **Enhanced monitoring name** | [**Metric&nbsp;type**][metric-101] |
 |:--------:|:---------------:|:---------------:|:------------:|
-| ReadIOPS | Read I/O operations per second | Resource: Utilization | CloudWatch |
-| WriteIOPS | Write I/O operations per second | Resource: Utilization | CloudWatch |
-| DiskQueueDepth | I/O operations waiting for disk access | Resource: Saturation | CloudWatch |
-| ReadLatency | Milliseconds per read I/O operation | Resource: Other | CloudWatch |
-| WriteLatency | Milliseconds per write I/O operation | Resource: Other | CloudWatch |
+| Read I/O operations per second | ReadIOPS | diskIO.readIOsPS | Resource: Utilization | 
+| Write I/O operations per second | WriteIOPS | diskIO.writeIOsPS | Resource: Utilization | 
+| I/O operations waiting for disk access | DiskQueueDepth | diskIO.diskQueueDepth | Resource: Saturation | 
+| Milliseconds per read I/O operation | ReadLatency | diskIO.readLatency | Resource: Other | 
+| Milliseconds per write I/O operation | WriteLatency | diskIO.writeLatency | Resource: Other | 
 
 #### CPU, memory, and network metrics
-| **Name** | **Description** | [**Metric&nbsp;type**][metric-101] | **Availability** |
+| **Description** | **CloudWatch name** | **Enhanced monitoring name** | [**Metric&nbsp;type**][metric-101] |
 |:--------:|:---------------:|:---------------:|:------------:|
-| CPUUtilization | Percent CPU utilized | Resource: Utilization | CloudWatch |
-| FreeableMemory | Available RAM in gigabytes | Resource: Utilization | CloudWatch |
-| NetworkReceive<br>Throughput | Client network traffic to the Aurora instance, in megabytes per second | Resource: Utilization | CloudWatch |
-| NetworkTransmit<br>Throughput | Client network traffic from the Aurora instance, in megabytes per second | Resource: Utilization | CloudWatch |
+| Percent CPU utilized | CPUUtilization | cpuUtilization.total | Resource: Utilization |
+| Available RAM in gigabytes | FreeableMemory | memory.free | Resource: Utilization | 
+| Network traffic to the Aurora instance | NetworkReceive<br>Throughput (MB/s) | network.rx (packets) | Resource: Utilization | 
+| Network traffic from the Aurora instance | NetworkTransmit<br>Throughput (MB/s) | network.tx (packets) | Resource: Utilization | 
 
 As Baron Schwartz, co-author of *[High Performance MySQL][mysql-book],* often notes, a database needs four fundamental resources: CPU, memory, disk, and network. Any of these can become a performance bottleneck—for a look at how difference RDS instance types can be constrained by their available resources, check out [this 2013 talk][bottlenecks] by Amazon's Grant McAlister.
 
-Whenever your database instance experiences performance problems, you should check metrics pertaining to the four fundamental resources to look for bottlenecks. As of December 2015, RDS users have access to [enhanced monitoring][enhanced] functionality that exposes detailed system-level metrics for RDS instances, although those metrics are ingested into logs and require additional work for visualization and alerting. Even out of the box, however, CloudWatch does make available basic metrics, detailed below, on all four fundamental resources. For the most part, these metrics are most useful for [investigating (rather than detecting)][investigation] performance issues.
+Whenever your database instance experiences performance problems, you should check metrics pertaining to the four fundamental resources to look for bottlenecks. As of December 2015, RDS users have access to [enhanced monitoring][enhanced] functionality that exposes detailed system-level metrics for RDS instances. These enhanced metrics can be reported at frequencies as high as once per second. Even out of the box, however, CloudWatch does make available basic metrics, detailed below, on all four fundamental resources. For the most part, these metrics are most useful for [investigating (rather than detecting)][investigation] performance issues.
 
 <h4 class="anchor" id="disk-i/o-metrics">Disk I/O metrics</h4>
 
