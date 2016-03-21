@@ -1,7 +1,7 @@
-# OpenStack monitoring with Datadog
+# Monitor Openstack with Datadog
 _This post is the final part of a 3-part series on OpenStack Nova monitoring. [Part 1] explores the key metrics available from Nova, and [part 2][Part 2] is about collecting those metrics on an ad hoc basis._
 
-_In this last post of the OpenStack series, we show you how to set up Datadog monitoring for OpenStack._
+_In this last post of the OpenStack series, we show you how to monitor Openstack with Datadog._
 
 To get the most out of your OpenStack monitoring, you need a way to correlate what’s happening in OpenStack with what’s happening in the rest of your infrastructure. OpenStack deployments often rely on additional software packages not included in the OpenStack codebase itself, including [MySQL][mysql], [RabbitMQ], [Memcached], [HAProxy][haproxy], and Pacemaker. A comprehensive monitoring implementation includes all the layers of your deployment, not just the metrics emitted by OpenStack itself.  
 
@@ -168,7 +168,7 @@ Once the Agent begins reporting OpenStack metrics, you will see an [OpenStack da
 
 The default OpenStack dashboard displays the key metrics to watch highlighted in our [introduction to Nova monitoring][Part 1].
 
-You can easily create a tailored dashboard to monitor your entire stack by adding additional graphs and metrics from your other systems. For example, you might want to graph Nova metrics alongside metrics from your [Redis databases][redis], or alongside host-level metrics such as network traffic. To start building a custom dashboard, clone the default OpenStack dashboard by clicking on the gear in the upper right of the dashboard and selecting **Clone Dash**.
+You can easily create a tailored dashboard to monitor OpenStack as well as your entire stack by adding additional graphs and metrics from your other systems. For example, you might want to graph Nova metrics alongside metrics from your [Redis databases][redis], or alongside host-level metrics such as network traffic. To start building a custom dashboard, clone the default OpenStack dashboard by clicking on the gear in the upper right of the dashboard and selecting **Clone Dash**.
 
 [![Clone OpenStack default dash][clone-dash]][clone-dash]
 
