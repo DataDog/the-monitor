@@ -186,7 +186,7 @@ Though Nova emits notifications on about [80 events][paste-events], the followin
 For most events, correlating the `start` and `end` notifications and their associated timestamps will give you the execution time for hypervisor operations. Some operations, like resizing an instance, perform preparation and sanity checks before and after the action, so you will need to take these events into account as well to get an accurate sense of performance.
 
 ## Conclusion
-In this post we’ve outlined some of the most useful metrics and notifications you can monitor to keep tabs on your Nova computing cluster. If you’re just getting starte with OpenStack, monitoring the metrics and events listed below will provide good visibility into the health and performance of your deployment:  
+In this post we’ve outlined some of the most useful metrics and notifications you can monitor to keep tabs on your Nova computing cluster. If you’re just getting started with OpenStack, monitoring the metrics and events listed below will provide good visibility into the health and performance of your deployment:  
 
 - [hypervisor\_load](#hypervisor_load)  
 - [running\_vms](#running_vms)  
