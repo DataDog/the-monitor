@@ -11,9 +11,9 @@ Like other load balancers or proxies, HAProxy is very flexible and largely proto
 
 [![Overview](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_1.png)
 
-## Key HAProxy metrics
+## Key HAProxy performance metrics
 
-A properly functioning HAProxy setup can [handle](http://loadbalancer.org/blog/load-balancer-performance-benchmarking-haproxy-on-ec2-quick-and-dirty-style) a [significant amount of traffic](http://www.goperf.com/haproxy-experimental-evaluation-of-the-performance/). However, because it is the first point of contact, poor load balancer performance will increase latency across your entire stack. The best way to ensure proper operation and performance of HAProxy is by [monitoring its key metrics](https://www.datadoghq.com/blog/haproxy-monitoring/) in three broad areas:
+A properly functioning HAProxy setup can [handle](http://loadbalancer.org/blog/load-balancer-performance-benchmarking-haproxy-on-ec2-quick-and-dirty-style) a [significant amount of traffic](http://www.goperf.com/haproxy-experimental-evaluation-of-the-performance/). However, because it is the first point of contact, poor load balancer performance will increase latency across your entire stack. The best way to ensure proper HAProxy performance and operation is by [monitoring its key metrics](https://www.datadoghq.com/blog/haproxy-monitoring/) in three broad areas:
 
 *   [**Frontend metrics**](#Frontend) such as client connections and requests
 *   [**Backend metrics**](#Backend) such as availability and health of backend servers
@@ -23,7 +23,7 @@ Correlating frontend metrics with backend metrics gives you a more comprehensive
 
 [![Frontend and backend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/default-screen2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/default-screen2.png) 
 
-Read more about collecting HAProxy metrics in [part two](http://www.datadoghq.com/blog/how-to-collect-haproxy-metrics) of this series. This article references metric terminology [introduced in our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
+Read more about collecting HAProxy performance metrics in [part two](http://www.datadoghq.com/blog/how-to-collect-haproxy-metrics) of this series. This article references metric terminology [introduced in our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
 <div class="anchor" id="Frontend" />
 
@@ -162,4 +162,4 @@ In this post we’ve covered some of the most important metrics you can monitor 
 *   [Denials](#Denials)
 *   [Queue length and queue time](#Queue)
 
-Eventually you will recognize additional metrics that are particularly relevant to your own infrastructure and use cases. In the [next post](http://www.datadoghq.com/blog/how-to-collect-haproxy-metrics) of this series, we provide step-by-step instructions on collecting HAProxy metrics.
+Eventually you will recognize additional metrics that are particularly relevant to your own infrastructure and use cases. In the [next post](http://www.datadoghq.com/blog/how-to-collect-haproxy-metrics) of this series, we provide step-by-step instructions on collecting HAProxy performance metrics.
