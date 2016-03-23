@@ -14,7 +14,7 @@ Redis is available as a free, open-source product. Commercial support is availab
 
 Redis is employed by many high-traffic websites and applications such as Twitter, GitHub, Docker, Pinterest, Datadog, and Stack Overflow.
 
-## Key Redis Metrics
+## Key Redis performance metrics
 
 Monitoring Redis can help catch problems in two areas: resource issues with Redis itself, and problems arising elsewhere in your supporting infrastructure.
 
@@ -263,5 +263,5 @@ In this post we’ve mentioned some of the most useful metrics you can monitor t
 -   [Evictions](#memory-metrics)
 -   [Rejected clients](#error-metrics)
 
-Eventually you will recognize additional metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on the tools you have and the metrics available to you. See the [companion post](https://www.datadoghq.com/blog/how-to-collect-redis-metrics) for step-by-step instructions on collecting Redis metrics.
+Eventually you will recognize additional metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on the tools you have and the metrics available to you. See the [companion post](https://www.datadoghq.com/blog/how-to-collect-redis-metrics) for step-by-step instructions on collecting Redis performance metrics.
 
