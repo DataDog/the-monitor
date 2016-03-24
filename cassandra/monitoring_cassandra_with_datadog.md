@@ -77,13 +77,13 @@ By taking the diffs of each metric at every sampling interval and dividing them,
 
 Once Datadog is capturing and visualizing your metrics, you will likely want to set up some monitors to keep watch over your metrics—and to [alert](https://www.datadoghq.com/alerts/) you when there are problems.
 
-Datadog allows you to monitor individual hosts, services, processes, and metrics—or virtually any combination thereof. For instance, you can monitor all of your hosts in a certain availability zone, or you can monitor a single key metric being reported by each of your Cassandra hosts. For instance, you can set a change alert to notify you if your request throughput drops by a certain percentage in a short time, which can be a high-level indicator of problems in your systems.
+Datadog allows you to monitor individual hosts, services, processes, and metrics—or virtually any combination thereof. For instance, you can monitor all of your hosts in a certain availability zone, or you can monitor a single key metric being reported by each of your Cassandra hosts. As an example, you can set a change alert to notify you if your request throughput drops by a certain percentage in a short time, which can be a high-level indicator of problems in your systems.
 
 ## Conclusion
 
 In this post we’ve walked you through integrating Cassandra with Datadog to visualize your key metrics and notify your team whenever Cassandra shows signs of trouble.
 
-If you’ve followed along using your own Datadog account, you should now have unparalleled visibility into what’s happening in your Cassandra infrastructure, as well as the ability to create automated monitors tailored to your environment, your usage patterns, and the metrics that are most valuable to your organization.
+If you’ve followed along using your own Datadog account, you should now have unparalleled visibility into what’s happening in your Cassandra infrastructure, as well as the ability to create automated alerts tailored to your environment, your usage patterns, and the metrics that are most valuable to your organization.
 
 If you don’t yet have a Datadog account, you can sign up for [a free 14-day trial](https://app.datadoghq.com/signup) and start monitoring Cassandra alongside the rest of your infrastructure, your applications, and your services today.
 
