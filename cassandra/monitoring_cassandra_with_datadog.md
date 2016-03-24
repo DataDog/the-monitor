@@ -14,7 +14,7 @@ Install instructions for a variety of platforms are available [here](https://app
 
 As soon as your Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)
+[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/infra_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/infra_2.png)
 
 ### Configure the Agent
 
