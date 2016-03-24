@@ -75,7 +75,7 @@ By taking the diffs of each metric at every sampling interval and dividing them,
 
 ## Monitoring Cassandra
 
-Once Datadog is capturing and visualizing your metrics, you will likely want to set up some monitors to keep watch over your metrics—and to [alert](https://www.datadoghq.com/alerts/) you when there are problems.
+Once Datadog is capturing and visualizing your metrics, you will likely want to set up some monitors to keep watch over your metrics—and to [alert](https://www.datadoghq.com/blog/monitoring-101-alerting/) you when there are problems.
 
 Datadog allows you to monitor individual hosts, services, processes, and metrics—or virtually any combination thereof. For instance, you can monitor all of your hosts in a certain availability zone, or you can monitor a single key metric being reported by each of your Cassandra hosts. As an example, you can set a change alert to notify you if your request throughput drops by a certain percentage in a short time, which can be a high-level indicator of problems in your systems.
 
