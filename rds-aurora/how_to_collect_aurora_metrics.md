@@ -1,8 +1,6 @@
-# How to collect RDS MySQL metrics
+*This post is part 2 of a 3-part series on monitoring Amazon Aurora. [Part 1][part-1] explores key Aurora performance metrics, and [Part 3][part-3] describes how you can use Datadog to get a full view of your Aurora cluster.*
 
-*This post is part 2 of a 3-part series on monitoring MySQL on Amazon RDS. [Part 1][part-1] explores the key performance metrics of RDS and MySQL, and [Part 3][part-3] describes how you can use Datadog to get a full view of your MySQL instance.*
-
-As covered in [Part 1][part-1] of this series, MySQL on RDS users can access RDS metrics via Amazon CloudWatch and native MySQL metrics from the database instance itself. Each metric type gives you different insights into MySQL performance; ideally both RDS and MySQL metrics should be collected for a comprehensive view. This post will explain how to collect both metric types.
+As covered in [Part 1][part-1] of this series, [Aurora][aurora] users can access metrics from the Relational Database Service (RDS) via Amazon CloudWatch and many additional metrics from the MySQL-compatible database engine itself. Each metric type gives you different insights into Aurora performance; ideally both RDS and engine metrics should be collected for a comprehensive view. This post will explain how to collect both metric types.
 
 ## Collecting RDS metrics
 
@@ -22,43 +20,43 @@ Once you are signed in to your AWS account, you can open the [CloudWatch console
 
 By selecting RDS from the list of services and clicking on "Per-Database Metrics," you will see your database instances, along with the available metrics for each:
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-list-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-list-2.png"></a> 
-
+<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"></a>
 Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-graph.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-graph.png"></a> 
-
+<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/dml-latency.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/dml-latency.png"></a>
 #### Alerts
 
 With the CloudWatch console you can also create alerts that trigger when a metric threshold is crossed.
 
 To set up an alert, click on the "Create Alarm" button at the right of your graph and configure the alarm to notify a list of email addresses:
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-alarm.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-alarm.png"></a> 
+<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/cloudwatch-alarm.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/cloudwatch-alarm.png"></a>
 
 <h3 class="anchor" id="using-the-command-line-interface">Using the command line interface</h3>
 
-You can also retrieve metrics related to your database instance using the command line. Command line queries can be useful for spot checks and ad hoc investigations. To do so, you will need to [install and configure the CloudWatch command line interface][aws-cli]. You will then be able to query for any CloudWatch metrics you want, using different filters.
+You can also retrieve metrics related to your database instance using the command line. Command line queries can be useful for spot checks and ad hoc investigations. To do so, you will need to [install and configure the CloudWatch command line interface][aws-cli]. You will then be able to query for any CloudWatch metrics you want, using different parameters.
 
-For example, if you want to check the `CPUUtilization` metric across a five-minute window on your MySQL instance, you can run:
+For example, if you want to check the `SelectLatency` metric across a one-hour window on your Aurora instance, you can run:
 
 <pre class="lang:sh">
-mon-get-stats CPUUtilization 
-    --namespace="AWS/RDS" 
-    --dimensions="DBInstanceIdentifier=instance-name" 
-    --statistics Maximum 
-    --start-time 2015-09-29T00:00:00 
-    --end-time 2015-09-29T00:05:00
+mon-get-stats SelectLatency
+    --namespace="AWS/RDS"
+    --dimensions="DBInstanceIdentifier=instance-name"
+    --statistics Maximum
+    --start-time 2015-11-18T17:00:00
+    --end-time 2015-11-18T18:00:00
 </pre>
 
-Here is an example of the output returned from a `mon-get-stats` query like the one above:
+The `mon-get-stats` query will return output like this—one data point per line:
 
 <pre class="lang:sh">
-2015-09-29 00:00:00  33.09  Percent
-2015-09-29 00:01:00  32.17  Percent
-2015-09-29 00:02:00  34.67  Percent
-2015-09-29 00:03:00  32.33  Percent
-2015-09-29 00:04:00  31.45  Percent
+2015-11-18 17:00:00  0.41718811881188117  Milliseconds
+2015-11-18 17:01:00  0.42630927835051546  Milliseconds
+2015-11-18 17:02:00  0.4364315789473684   Milliseconds
+2015-11-18 17:03:00  0.42962886597938144  Milliseconds
+2015-11-18 17:04:00  0.44160000000000005  Milliseconds
+2015-11-18 17:05:00  0.4355894736842105   Milliseconds
+...
 </pre>
 
 Full usage details for the `mon-get-stats` command are available [in the AWS documentation][mon-get-stats].
@@ -67,45 +65,45 @@ Full usage details for the `mon-get-stats` command are available [in the AWS doc
 
 The third way to collect CloudWatch metrics is via your own monitoring tools, which can offer extended monitoring functionality. For instance, if you want to correlate metrics from your database with other parts of your infrastructure (including the applications that depend on that database), or you want to dynamically slice, aggregate, and filter your metrics on any attribute, or you need dynamic alerting mechanisms, you probably need a dedicated monitoring system. Monitoring tools that seamlessly integrate with the CloudWatch API can, with a single setup process, collect metrics from across your AWS infrastructure.
 
-In [Part 3][part-3] of this series, we walk through how you can easily collect, visualize, and alert on any RDS metric using Datadog.
+In [Part 3][part-3] of this series, we walk through how you can easily collect, visualize, and alert on any Aurora RDS metric using Datadog.
 
-## Collecting native MySQL metrics
+## Collecting database engine metrics
 
-CloudWatch offers several high-level metrics for any database engine, but to get a deeper look at MySQL performance you will need [metrics from the database instance itself][part-1]. Here we will focus on four methods for metric collection:
+CloudWatch offers several high-level metrics for any database engine, but to get a deeper look at Aurora performance you will often need [metrics from the database instance itself][part-1]. Here we will focus on four methods for metric collection:
 
 -   [Querying server status variables](#querying-server-status-variables)
 -   [Querying the performance schema and sys schema](#querying-the-performance-schema-and-sys-schema)
 -   [Using the MySQL Workbench GUI](#using-the-mysql-workbench-gui)
--   [Using a MySQL monitoring tool](#using-a-mysql-monitoring-tool)
+-   [Using a MySQL-compatible monitoring tool](#using-a-mysql-monitoring-tool)
 
 <h3 class="anchor" id="querying-server-status-variables">Querying server status variables</h3>
 <h4 class="anchor" id="connecting-to-your-rds-instance">Connecting to your RDS instance</h4>
-With RDS you cannot directly access the machines running MySQL. So you cannot run `mysql` commands locally or check CPU utilization from the machine itself, as you could if you installed MySQL yourself on a standalone EC2 instance. That said, you _can_ connect to your MySQL instance remotely using standard tools, provided that the security group for your MySQL instance permits connections from the device or EC2 instance you are using to initiate the connection.
+As with all RDS instances, you cannot directly access the machines running Aurora. So you cannot run `mysql` commands locally or check CPU utilization from the machine itself, as you could if you manually installed MySQL or MariaDB on a standalone EC2 instance. That said, you _can_ connect to Aurora remotely using standard tools, provided that the security group for your Aurora instance permits connections from the device or EC2 instance you are using to initiate the connection.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_to_rds.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_to_rds.png"></a> 
+<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"></a>
 
-For example, if your RDS MySQL instance accepts traffic only from inside its security group, you can launch an EC2 instance in that security group, and then apply a second security group rule to the EC2 instance to accept inbound SSH traffic (*see diagram above*). Then you can SSH to the EC2 instance, from which you can connect to MySQL using the mysql command line tool:
+For example, if Aurora accepts traffic only from inside its security group, you can launch an EC2 instance in that security group, and then apply a second security group rule to the EC2 instance to accept inbound SSH traffic (*see diagram above*). Then you can SSH to the EC2 instance, from which you can connect to Aurora using the standard mysql command line tool:
 
 <pre class="lang:sh">
 mysql -h instance-name.xxxxxx.us-east-1.rds.amazonaws.com -P 3306 -u yourusername -p
 </pre>
 
-The instance endpoint (ending in `rds.amazonaws.com`) can be found in the list of instances on the [RDS console][rds-console]. 
+The instance endpoint (ending in `rds.amazonaws.com`) can be found in the list of instances on the [RDS console][rds-console].
 
-Once you connect to your database instance, you can query any of the hundreds of available MySQL metrics, known as [server status variables][ssv]. To check metrics on connection errors, for instance:
+Once you connect to your database instance, you can query any of the hundreds of metrics available from the MySQL-compatible database engine, known as [server status variables][ssv]. To check metrics on connection errors, for instance:
 
 <pre class="lang:mysql">
-mysql> SHOW GLOBAL STATUS LIKE '%Connection_errors%'; 
+mysql> SHOW GLOBAL STATUS LIKE '%Connection_errors%';
 </pre>
 
 <h3 class="anchor" id="querying-the-performance-schema-and-sys-schema">Querying the performance schema and sys schema</h3>
-Server status variables by and large capture high-level server activity. To collect metrics at the query level, such as query latency and query errors, you can use the MySQL [performance schema][performance-schema], which captures detailed statistics on server events.
+Server status variables by and large capture high-level server activity. To collect metrics at the query level—for instance, to link latency or error metrics to individual queries—you can use the [performance schema][performance-schema], which captures detailed statistics on server events.
 
 #### Enabling the performance schema
 
-To enable the performance schema, you must set the `performance_schema` parameter to 1 in the database instance's parameter group using [the AWS console][rds-console]. This change requires an instance reboot. 
+To enable the performance schema, you must set the `performance_schema` parameter to 1 in the database instance's parameter group using [the AWS console][rds-console]. This change requires an instance reboot.
 
-Once it is enabled, the performance schema will collect metrics on all the statements executed by the server. Many of those metrics are summarized in the `events_statements_summary_by_digest` table, available in MySQL 5.6 and later. The digest normalizes all the statements, ignoring data values and standardizing whitespace, so that the following two queries [would be considered the same][digest]:
+Once it is enabled, the performance schema will collect metrics on all the statements executed by the server. Many of those metrics are summarized in the `events_statements_summary_by_digest` table. The digest normalizes all the statements, ignoring data values and standardizing whitespace, so that the following two queries [would be considered the same][digest]:
 
 <pre class="lang:mysql">
 SELECT * FROM orders WHERE customer_id=10 AND quantity>20
@@ -118,7 +116,7 @@ The performance schema captures information about latency, errors, and query vol
 *************************** 1. row ***************************
                 SCHEMA_NAME: employees
                      DIGEST: 5f56800663c86bf3c24239c1fc1edfcb
-                DIGEST_TEXT: SELECT * FROM `employees` . `salaries` 
+                DIGEST_TEXT: SELECT * FROM `employees` . `salaries`
                  COUNT_STAR: 2
              SUM_TIMER_WAIT: 4841460833000
              MIN_TIMER_WAIT: 1972509586000
@@ -148,16 +146,16 @@ SUM_CREATED_TMP_DISK_TABLES: 0
 </pre>
 
 <h4 class="anchor" id="using-the-sys-schema">Using the sys schema</h4>
-Though the performance schema can be queried directly, it is usually easier to extract meaningful views of the data using the [sys schema][sys-schema], which provides a number of useful tables, functions, and procedures for parsing your data. 
+Though the performance schema can be queried directly, it is usually easier to extract meaningful views of the data using the [sys schema][sys-schema], which provides a number of useful tables, functions, and procedures for parsing your data.
 
-To install the sys schema, first clone the [mysql-sys][sys-schema] GitHub repo to the machine that you use to connect to your MySQL instance (e.g., an EC2 instance in the same security group) and position yourself within the newly created directory:
+To install the sys schema, first clone the [mysql-sys][sys-schema] GitHub repo to the machine that you use to connect to your Aurora instance (e.g., an EC2 instance in the same security group) and position yourself within the newly created directory:
 
 <pre class="lang:sh">
 git clone https://github.com/MarkLeith/mysql-sys.git
 cd mysql-sys
 </pre>
 
-Then, run a shell script within the mysql-sys repo that creates an RDS-compatible file for the sys schema. For MySQL version 5.6, the command and output looks like: 
+Then, run a shell script within the mysql-sys repo that creates an Aurora-compatible file for the sys schema. As of this writing Aurora is only compatible with MySQL version 5.6, so you must use the version parameter `-v 56`. The command and output looks like:
 
 <pre class="lang:sh">
 $ ./generate_sql_file.sh -v 56 -b -u CURRENT_USER
@@ -166,7 +164,7 @@ Object Definer: CURRENT_USER
 sql_log_bin: disabled
 </pre>
 
-Finally, you must load the newly created file into MySQL, using the filename returned in the step above:
+Finally, you must load the newly created file into Aurora with the mysql command line tool, using the filename returned in the step above:
 
 <pre class="lang:sh">
 mysql -h instance-name.xxxxxx.us-east-1.rds.amazonaws.com -P 3306 -u yourusername -p < gen/sys_1.5.0_56_inline.sql
@@ -198,39 +196,35 @@ mysql> select * from sys.user_summary_by_statement_type;
 </pre>
 
 <h3 class="anchor" id="using-the-mysql-workbench-gui">Using the MySQL Workbench GUI</h3>
-[MySQL Workbench][workbench] is a free application with a GUI for managing and monitoring a MySQL instance. MySQL Workbench provides a high-level performance dashboard, as well as an easy-to-use interface for browsing performance metrics (using the views provided by the [sys schema](#using-the-sys-schema)).
+[MySQL Workbench][workbench] is a free application with a GUI for managing and monitoring MySQL or a compatible database such as Aurora. MySQL Workbench provides a high-level performance dashboard, as well as an easy-to-use interface for browsing performance metrics (using the views provided by the [sys schema](#using-the-sys-schema)).
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/workbench-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/workbench-2.png"></a> 
+<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/workbench-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/workbench-2.png"></a>
 
-If you have [configured an EC2](#connecting-to-your-rds-instance) instance to communicate with MySQL running on RDS, you can connect MySQL Workbench to your MySQL on RDS via SSH tunneling:
+If you have [configured an EC2](#connecting-to-your-rds-instance) instance to communicate with Aurora, you can connect MySQL Workbench to your Aurora instance via SSH tunneling:
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_tunneling-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_tunneling-2.png"></a> 
-
+<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/ssh-tunnel.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/ssh-tunnel.png"></a>
 You can then view recent metrics on the performance dashboard or click through the statistics available from the sys schema:
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/95th_percentile-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/95th_percentile-2.png"></a> 
+<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/95th_percentile-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/95th_percentile-2.png"></a>
 
-<h3 class="anchor" id="using-a-mysql-monitoring-tool">Using a MySQL monitoring tool</h3>
-The fourth way to access MySQL's native metrics is to use a full-featured monitoring tool that integrates with MySQL. Such tools allow you to not only glimpse a real-time snapshot of your metrics but to visualize and analyze your metrics' evolution over time, and to set alerts to be notified when key metrics go out of bounds. Comprehensive monitoring tools also allow you to correlate your metrics across systems, so you can quickly determine if errors from your application can be traced back to MySQL, or if increased MySQL latency is caused by system-level resource contention. [Part 3][part-3] of this series demonstrates how you can set up comprehensive monitoring of MySQL on RDS with Datadog.
+<h3 class="anchor" id="using-a-mysql-monitoring-tool">Using a MySQL-compatible monitoring tool</h3>
+The fourth way to access Aurora's database engine metrics is to use a full-featured monitoring tool that integrates with MySQL. Such tools allow you to not only glimpse a real-time snapshot of your metrics but to visualize and analyze your metrics' evolution over time, and to set alerts to be notified when key metrics go out of bounds. Comprehensive monitoring tools also allow you to correlate your metrics across systems, so you can quickly determine if errors from your application can be traced back to Aurora, or if increased query latency is caused by system-level resource contention. [Part 3][part-3] of this series demonstrates how you can set up comprehensive Aurora monitoring with Datadog.
 
 ## Conclusion
 
-In this post we have walked through how to use CloudWatch to collect and visualize RDS metrics, and how to generate alerts when these metrics go out of bounds. We've also shown you how to collect more detailed metrics from MySQL itself, whether on an ad hoc or continuous basis.
+In this post we have walked through how to use CloudWatch to collect and visualize Aurora metrics, and how to generate alerts when these metrics go out of bounds. We've also shown you how to collect more detailed metrics from the database engine itself using MySQL-compatible tools, whether on an ad hoc or continuous basis.
 
-In [the next and final part][part-3] of this series, we'll show you how you can set up Datadog to collect, visualize, and set alerts on metrics from both RDS and MySQL.
-
-## Acknowledgments
-
-We are grateful to have had input on this series from Baron Schwartz, whose company [VividCortex][vivid] provides a query-centric view of database performance. 
+In [the next and final part][part-3] of this series, we'll show you how you can set up Datadog to collect, visualize, and set alerts on metrics from both RDS and Aurora's database engine.
 
 - - -
 
 *Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues].*
 
-[markdown]: https://github.com/DataDog/the-monitor/blob/master/rds-mysql/how_to_collect_rds_mysql_metrics.md
+[aurora]: https://aws.amazon.com/rds/aurora/
+[markdown]: https://github.com/DataDog/the-monitor/blob/master/rds-aurora/how_to_collect_aurora_metrics.md
 [issues]: https://github.com/DataDog/the-monitor/issues
-[part-1]: https://www.datadoghq.com/blog/monitoring-rds-mysql-performance-metrics
-[part-3]: https://www.datadoghq.com/blog/monitor-rds-mysql-using-datadog
+[part-1]: https://www.datadoghq.com/blog/monitoring-amazon-aurora-performance-metrics
+[part-3]: https://www.datadoghq.com/blog/monitor-aurora-using-datadog
 [aws-console]: https://console.aws.amazon.com/cloudwatch/home
 [rds-console]: https://console.aws.amazon.com/rds/
 [aws-cli]: https://aws.amazon.com/developertools/2534
@@ -240,4 +234,3 @@ We are grateful to have had input on this series from Baron Schwartz, whose comp
 [digest]: https://dev.mysql.com/doc/refman/5.6/en/performance-schema-statement-digests.html
 [sys-schema]: https://github.com/MarkLeith/mysql-sys/
 [workbench]: http://dev.mysql.com/downloads/workbench/
-[vivid]: https://www.vividcortex.com/

@@ -151,7 +151,7 @@ where `policy`; is one of the following:
 
 NOTE: For performance reasons, Redis does not actually sample from the entire keyspace, when using an LRU or TTL policy. Redis first samples a random subset of the keyspace, and applies the eviction strategy on the sample. Generally, newer (&gt;=3) versions of Redis employ and LRU sampling strategy that is a closer approximation of true LRU.
 
-#### Metric to watch: blocked\_clients
+<h4 id="blocked-clients" class="anchor">Metric to watch: blocked_clients</h4>
 
 Redis offers a number of blocking commands which operate on lists. BLPOP, BRPOP, and BRPOPLPUSH are blocking variants of the commands LPOP, RPOP, and RPOPLPUSH, respectively. When the source list is non-empty, the commands perform as expected. However, when the source list is empty, the blocking commands will wait until the source is filled, or a timeout is reached.
 
