@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Monitoring 101: Collecting the right data &mdash; the monitor 0.1 ドキュメント</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="the monitor 0.1 ドキュメント" href="../index.html" />
+    <link rel="up" title="基本編" href="index.html" />
+    <link rel="next" title="Monitoring 101: Investigating performance issues" href="monitoring_101_investigating_performance_issues..html" />
+    <link rel="prev" title="Monitoring 101: Alerting on what matters" href="monitoring_101_alerting_on_what_matters..html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="monitoring-101-collecting-the-right-data">
+<span id="monitoring-101-collecting-the-right-data"></span><h1>Monitoring 101: Collecting the right data<a class="headerlink" href="#monitoring-101-collecting-the-right-data" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><em>This post is part of a series on effective
+monitoring. Be sure to check out the rest of the series: <a class="reference external" href="/blog/monitoring-101-alerting/">Alerting on what matters</a> and <a class="reference external" href="/blog/monitoring-101-investigation/">Investigating performance issues</a>.</em></p>
+<p>Monitoring data comes in a variety of forms—some systems pour out data
+continuously and others only produce data when rare events occur. Some
+data is most useful for <em>identifying</em> problems; some is primarily
+valuable for <em>investigating</em> problems. This post covers which data to
+collect, and how to classify that data so that you can:</p>
+<ol class="simple">
+<li>Receive meaningful, automated alerts for potential problems</li>
+<li>Quickly investigate and get to the bottom of performance issues</li>
+</ol>
+<p>Whatever form your monitoring data takes, the unifying theme is this:</p>
+<blockquote>
+<div>Collecting data is cheap, but not having it when you need it can be
+expensive, so you should instrument everything, and collect all the
+useful data you reasonably can.</div></blockquote>
+<p>This series of articles comes out of our experience monitoring
+large-scale infrastructure for <a class="reference external" href="https://www.datadoghq.com/customers/">our
+customers</a>. It also draws on the
+work of <a class="reference external" href="http://dtdg.co/use-method">Brendan Gregg</a>, <a class="reference external" href="http://dtdg.co/philosophy-alerting">Rob
+Ewaschuk</a>, and <a class="reference external" href="http://dtdg.co/metrics-attention">Baron
+Schwartz</a>.</p>
+<p><img alt="" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_1.png" /></p>
+<div class="section" id="metrics">
+<span id="metrics"></span><h2>Metrics<a class="headerlink" href="#metrics" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Metrics capture a value pertaining to your systems <em>at a specific point
+in time—</em>for example, the number of users currently logged in to a web
+application. Therefore, metrics are usually collected once per second,
+one per minute, or at another regular interval to monitor a system over
+time. There are two important categories of metrics in our framework:
+work metrics and resource metrics. For each system that is part of your
+software infrastructure, consider which work metrics and resource
+metrics are reasonably available, and collect them all.</p>
+<p><img alt="" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png" /></p>
+<div class="section" id="work-metrics">
+<span id="work-metrics"></span><h3>Work metrics<a class="headerlink" href="#work-metrics" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Work metrics indicate the top-level health of your system by measuring
+its useful output. When considering your work metrics, it’s often
+helpful to break them down into four subtypes:</p>
+<ul class="simple">
+<li><strong>throughput</strong> is the amount of work the system is doing per
+unit time. Throughput is usually recorded as an absolute number.</li>
+<li><strong>success</strong> metrics represent the percentage of work that was
+executed successfully.</li>
+<li><strong>error</strong> metrics capture the number of erroneous results, usually
+expressed as a rate of errors per unit time or normalized by the
+throughput to yield errors per unit of work. Error metrics are often
+captured separately from success metrics when there are several
+potential sources of error, some of which are more serious or
+actionable than others.</li>
+<li><strong>performance</strong> metrics quantify how efficiently a component is
+doing its work. The most common performance metric is latency, which
+represents the time required to complete a unit of work. Latency can
+be expressed as an average or as a percentile, such as “99% of
+requests returned within 0.1s”.</li>
+</ul>
+<p>Below are example work metrics of all four subtypes for two common kinds
+of systems: a web server and a data store.</p>
+<p><strong>Example work metrics: Web server (at time 2015-04-24 08:13:01 UTC)</strong></p>
+<p>| <strong>Subtype</strong> | <strong>Description</strong>                                              | <strong>Value</strong> |
+|&#8212;&#8212;&#8212;&#8212;-|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|&#8212;&#8212;&#8212;&#8211;|
+| throughput  |  requests per second                                         | 312       |
+| success     |  percentage of responses that are 2xx since last measurement | 99.1      |
+| error       |  percentage of responses that are 5xx since last measurement | 0.1       |
+| latency     |  90th percentile response time in seconds                    | 0.4       |</p>
+<p><strong>Example work metrics: Data store (at time 2015-04-24 08:13:01 UTC)</strong></p>
+<p>| <strong>Subtype</strong> | <strong>Description</strong>                                                    | <strong>Value</strong> |
+|&#8212;&#8212;&#8212;&#8212;-|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;|&#8212;&#8212;&#8212;&#8211;|
+| throughput  | queries per second                                                 | 949       |
+| success     | percentage of queries successfully executed since last measurement | 100       |
+| error       | percentage of queries yielding exceptions since last measurement   | 0         |
+| error       | percentage of queries returning stale data since last measurement  | 4.2       |
+| latency     | 90th percentile query time in seconds                              | 0.02      |</p>
+</div>
+<div class="section" id="resource-metrics">
+<span id="resource-metrics"></span><h3>Resource metrics<a class="headerlink" href="#resource-metrics" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Most components of your software infrastructure serve as a resource to
+other systems. Some resources are low-level—for instance, a server’s
+resources include such physical components as CPU, memory, disks, and
+network interfaces. But a higher-level component, such as a database or
+a geolocation microservice, can also be considered a resource if another
+system requires that component to produce work.</p>
+<p>Resource metrics are especially valuable for investigation and diagnosis
+of problems. For each resource in your system, try to collect metrics
+that cover four key areas:</p>
+<ol class="simple">
+<li><strong>utilization</strong> is the percentage of time that the resource is busy,
+or the percentage of the resource’s capacity that is in use.</li>
+<li><strong>saturation</strong> is a measure of the amount of requested work that the
+resource cannot yet service, often queued.</li>
+<li><strong>errors</strong> represent internal errors that may not be observable in
+the work the resource produces.</li>
+<li><strong>availability</strong> represents the percentage of time that the resource
+responded to requests. This metric is only well-defined for
+resources that can be actively and regularly checked
+for availability.</li>
+</ol>
+<p>Here are example metrics for a handful of common resource types:</p>
+<p>| <strong>Resource</strong> | <strong>Utilization</strong>                                       | <strong>Saturation</strong>       | <strong>Errors</strong>                                   | <strong>Availability</strong>             ||&#8212;&#8212;&#8212;&#8212;&#8211;|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;|
+| Disk IO      | % time that device was busy                           | wait queue length    | # device errors                             | % time writable              || Memory       | % of total memory capacity in use                     | swap usage           | N/A (not usually observable)                 | N/A                          || Microservice | average % time each request-servicing thread was busy | # enqueued requests | # internal errors such as caught exceptions | % time service is reachable  || Database     | average % time each connection was busy               | # enqueued queries  | # internal errors, e.g. replication errors  | % time database is reachable |</p>
+</div>
+</div>
+<div class="section" id="other-metrics">
+<span id="other-metrics"></span><h2>Other metrics<a class="headerlink" href="#other-metrics" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>There are a few other types of metrics that are neither work nor
+resource metrics, but that nonetheless may come in handy in diagnosing
+causes of problems. Common examples include counts of cache hits or
+database locks. When in doubt, capture the data.</p>
+</div>
+<div class="section" id="events">
+<span id="events"></span><h2>Events<a class="headerlink" href="#events" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>In addition to metrics, which are collected more or less continuously,
+some monitoring systems can also capture events: discrete, infrequent
+occurrences that can provide crucial context for understanding what
+changed in your system’s behavior. Some examples:</p>
+<ul class="simple">
+<li>Changes: Internal code releases, builds, and build failures</li>
+<li>Alerts: Internally generated alerts or third-party notifications</li>
+<li>Scaling events: Adding or subtracting hosts</li>
+</ul>
+<p>An event usually carries enough information that it can be interpreted
+on its own, unlike a single metric data point, which is generally only
+meaningful in context. Events capture <em>what happened</em>, at a point in
+<em>time</em>, with optional <em>additional information</em>. For example:</p>
+<p>| <strong>What happened</strong>                     | <strong>Time</strong>                | <strong>Additional information</strong> |
+|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-|
+| Hotfix f464bfe released to production | 2015–05–15 04:13:25 UTC | Time elapsed: 1.2 seconds  |
+| Pull request 1630 merged              | 2015–05–19 14:22:20 UTC | Commits: ea720d6           |
+| Nightly data rollup failed            | 2015–05–27 00:03:18 UTC | Link to logs of failed job |</p>
+<p>Events are sometimes used used to generate alerts—someone should be
+notified of events such as the third example in the table above, which
+indicates that critical work has failed. But more often they are used to
+investigate issues and correlate across systems. In general, think of
+events like metrics—they are valuable data to be collected wherever it
+is feasible.</p>
+<p><img alt="" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_3.png" /></p>
+</div>
+<div class="section" id="what-good-data-looks-like">
+<span id="what-good-data-looks-like"></span><h2>What good data looks like<a class="headerlink" href="#what-good-data-looks-like" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The data you collect should have four characteristics:</p>
+<ul class="simple">
+<li><strong>Well-understood.</strong> You should be able to quickly determine how
+each metric or event was captured and what it represents. During an
+outage you won’t want to spend time figuring out what your
+data means. Keep your metrics and events as simple as possible, use
+standard concepts described above, and name them clearly.</li>
+<li><strong>Granular.</strong> If you collect metrics too infrequently or average
+values over long windows of time, you may lose important information
+about system behavior. For example, periods of 100% resource
+utilization will be obscured if they are averaged with periods of
+lower utilization. Collect metrics for each system at a frequency
+that will not conceal problems, without collecting so often that
+monitoring becomes perceptibly taxing on the system (the <a class="reference external" href="https://en.wikipedia.org/wiki/Observer_effect_(information_technology)">observer
+effect</a>)
+or creates noise in your monitoring data by sampling time intervals
+that are too short to contain meaningful data.</li>
+<li><strong>Tagged by scope.</strong> Each of your hosts operates simultaneously in
+multiple scopes, and you may want to check on the aggregate health
+of any of these scopes, or their combinations. For example: how is
+production doing in aggregate? How about production in the Northeast
+U.S.? How about a particular software/hardware combination? It is
+important to retain the multiple scopes associated with your data so
+that you can alert on problems from any scope, and quickly
+investigate outages without being limited by a fixed hierarchy
+of hosts.</li>
+<li><strong>Long-lived.</strong> If you discard data too soon, or if after a period
+of time your monitoring system aggregates your metrics to reduce
+storage costs, then you lose important information about what
+happened in the past. Retaining your raw data for a year or more
+makes it much easier to know what “normal” is, especially if your
+metrics have monthly, seasonal, or annual variations.</li>
+</ul>
+</div>
+<div class="section" id="data-for-alerts-and-diagnostics">
+<span id="data-for-alerts-and-diagnostics"></span><h2>Data for alerts and diagnostics<a class="headerlink" href="#data-for-alerts-and-diagnostics" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The table below maps the different data types described in this article
+to different levels of alerting urgency outlined <a class="reference external" href="https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/">in a companion post</a>. In
+short, a <em>record</em> is a low-urgency alert that does not notify anyone
+automatically but is recorded in a monitoring system in case it becomes
+useful for later analysis or investigation. A <em>notification</em> is a
+moderate-urgency alert that notifies someone who can fix the problem in
+a non-interrupting way such as email or chat. A <em>page</em> is an urgent
+alert that interrupts a recipient’s work, sleep, or personal time,
+whatever the hour. Note that depending on severity, a notification may
+be more appropriate than a page, or vice versa:</p>
+<p>| <strong>Data</strong>                      | <strong>Alert</strong>    | <strong>Trigger</strong>                                                                         |
+|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-|&#8212;&#8212;&#8212;&#8212;&#8211;|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-|
+| Work metric: Throughput       | Page         | value is much higher or lower than usual, or there is an anomalous rate of change   || Work metric: Success          | Page         | the percentage of work that is successfully processed drops below a threshold       || Work metric: Errors           | Page         | the error rate exceeds a threshold                                                  || Work metric: Performance      | Page         | work takes too long to complete (e.g., performance violates internal SLA)           || Resource metric: Utilization  | Notification | approaching critical resource limit (e.g., free disk space drops below a threshold) || Resource metric: Saturation   | Record       | number of waiting processes exceeds a threshold                                     || Resource metric: Errors       | Record       | number of errors during a fixed period exceeds a threshold                          || Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       || Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |</p>
+</div>
+<div class="section" id="conclusion-collect-em-all">
+<span id="conclusion-collect-em-all"></span><h2>Conclusion: Collect ’em all<a class="headerlink" href="#conclusion-collect-em-all" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>Instrument everything and collect as many work metrics, resource
+metrics, and events as you reasonably can.</li>
+<li>Collect metrics with sufficient granularity to make important spikes
+and dips visible. The specific granularity depends on the system you
+are measuring, the cost of measuring and a typical duration between
+changes in metrics—seconds for memory or CPU metrics, minutes for
+energy consumption, and so on.</li>
+<li>To maximize the value of your data, tag metrics and events with
+several scopes, and retain them at full granularity for at least
+a year.</li>
+</ul>
+<p>We would like to hear about your experiences as you apply this framework
+to your own monitoring practice. If it is working well, please <a class="reference external" href="https://twitter.com/datadoghq">let us
+know on Twitter</a>! Questions, corrections,
+additions, complaints, etc? Please <a class="reference external" href="https://github.com/DataDog/the-monitor">let us know on
+GitHub</a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Monitoring 101: Collecting the right data</a><ul>
+<li><a class="reference internal" href="#metrics">Metrics</a><ul>
+<li><a class="reference internal" href="#work-metrics">Work metrics</a></li>
+<li><a class="reference internal" href="#resource-metrics">Resource metrics</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-metrics">Other metrics</a></li>
+<li><a class="reference internal" href="#events">Events</a></li>
+<li><a class="reference internal" href="#what-good-data-looks-like">What good data looks like</a></li>
+<li><a class="reference internal" href="#data-for-alerts-and-diagnostics">Data for alerts and diagnostics</a></li>
+<li><a class="reference internal" href="#conclusion-collect-em-all">Conclusion: Collect ’em all</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">基本編</a><ul>
+      <li>Previous: <a href="monitoring_101_alerting_on_what_matters..html" title="前の章へ">Monitoring 101: Alerting on what matters</a></li>
+      <li>Next: <a href="monitoring_101_investigating_performance_issues..html" title="次の章へ">Monitoring 101: Investigating performance issues</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/monitoring-101/monitoring_101_collecting_the_right_data..txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Datadog.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../_sources/monitoring-101/monitoring_101_collecting_the_right_data..txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
