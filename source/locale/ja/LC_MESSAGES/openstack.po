@@ -1,0 +1,2029 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016, Datadog
+# This file is distributed under the same license as the The monitor
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: The monitor 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-19 15:39+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.3\n"
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "Collecting monitoring data from OpenStack Nova"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:2
+msgid ""
+"This post is Part 2 of a 3-part series on monitoring OpenStack's "
+"computation module, Nova. Part 1 explores the key OpenStack metrics "
+"available, and Part 3 shows you how to monitor OpenStack metrics with "
+"Datadog."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "Digging into Nova"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:5
+msgid ""
+"OpenStack Nova offers a variety of sources from which you can collect "
+"operational data for monitoring. To get the complete picture of your "
+"OpenStack deployment, you will need to combine data collected from "
+"various channels."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:7
+msgid ""
+"In this post, we will show you how to get information from each of the "
+"following categories:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "Collecting OpenStack metrics"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:17
+msgid ""
+"Metrics collection is done at the source, usually by a monitoring agent "
+"running on the node in question. The agent collects chronologically "
+"ordered data points in a timeseries. Collection of timeseries metrics "
+"over extended periods gives you the historical context needed to identify"
+" what changed, how it changed, and potential causes of the change. "
+"Historical baselines are crucial: It is hard to know if something is "
+"broken if you don't know what a healthy system looks like."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:19
+msgid ""
+"Although OpenStack now ships with its own metering module (Ceilometer), "
+"it was not built for monitoring. Ceilometer was created with the intent "
+"of capturing and storing critical billing messages. While some Ceilometer"
+" data may be a useful supplement to your collected metrics, simply "
+"querying Ceilometer is not enough to get useful, actionable information "
+"about your OpenStack deployment."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:21
+msgid ""
+"Nova offers three different means by which you can collect metrics. You "
+"can use:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:27
+msgid ""
+"Arguably the most efficient method to use is the CLI (command line "
+"interface)—it is a one-stop solution to getting all the metrics mentioned"
+" in the first part of this series."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "Collecting Nova metrics from the API or MySQL"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:31
+msgid ""
+"Many of Nova's metrics can be extracted using either the Nova API or an "
+"SQL query. For example, to find the total number of VCPUs for a given "
+"tenant:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:37
+msgid ""
+"The main advantages of querying SQL versus the API are faster execution "
+"times and lower overhead. However, not all metrics are available via SQL,"
+" and future changes to the SQL schema could break queries, whereas API "
+"calls should be more resilient to changes."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:39
+msgid ""
+"Some metrics, like the number of running instances per Compute node, are "
+"only available via API endpoint. Thankfully, the Nova API is well-"
+"documented with more than 100 endpoints available—everything from SSH "
+"keys to virtual machine image metadata is only a request away. In "
+"addition to informational endpoints, the API can also be used to manage "
+"your OpenStack deployment. You can add hosts, update quotas, and more—all"
+" over HTTP."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:41
+msgid ""
+"Before you can use the API, you must acquire an authentication token. You"
+" can use curl or a similar client to get one like so (change "
+"your_password to your admin user password and localhost to your Horizon "
+"host):"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:63
+msgid "The above command should return a token in the response header:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:77
+msgid ""
+"Note the X-Subject-Token field in the output above: this is the "
+"authentication token."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:79
+msgid ""
+"When it comes to retrieving Nova server metrics, you must use the API. "
+"The API endpoint for Nova server metrics is: /v2.1/​<tenant-id>​/servers"
+"/​<server-id>/diagnostics. Using curl and the authentication token "
+"acquired above, the request would look something like:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:85
+msgid "which produces output like below:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "Collecting Nova metrics using Nova's CLI"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:111
+msgid ""
+"If you don't want to get your hands dirty in API calls or SQL, or are "
+"worried about compatibility with future versions, OpenStack provides a "
+"command line client for Nova, aptly dubbed nova. There are a large number"
+" of available commands, ranging from metric-gathering methods to "
+"administrative tools."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:113
+msgid ""
+"The information returned is tenant-dependent, so specify your tenant "
+"name, either as a command line argument (--os-tenant-name <your-tenant-"
+"name>) or as an environment variable (export OS_TENANT_NAME=<your-tenant-"
+"name>). If the command line complains about a missing username or "
+"authentication URL, you can also include them either as additional "
+"command line arguments or environment variables, following the pattern "
+"above."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:115
+msgid ""
+"All but one of the hypervisor metrics from part 1 of this series can be "
+"retrieved with a single command (in this example, the tenant name is "
+"testing):"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:136
+msgid ""
+"The only hypervisor metric not covered by the previous command is "
+"hypervisor_load, which you can view by running uptime on your compute "
+"node."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:138
+msgid ""
+"Getting tenant metrics is just as easy and can be had with the following "
+"command:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:161
+msgid ""
+"Note that the command nova quota-show requires you pass the tenant id and"
+" not the tenant name"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:163
+msgid ""
+"As you can see from the examples above, the Nova CLI is a very powerful "
+"tool to add to your monitoring arsenal. With just a handful of commands, "
+"you can collect all of the metrics mentioned in part 1 of this series. To"
+" make sure you get the most out of this dynamic tool, check out the "
+"documentation for a list of all available commands with explanations."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "Collecting metrics from RabbitMQ"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:169
+msgid ""
+"RabbitMQ provides a convenient command line client rabbitmqctl for "
+"accessing its metrics. As described in part 1 of this series, there are "
+"four RabbitMQ metrics that are of particular interest for OpenStack "
+"monitoring:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "count"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:177
+msgid ""
+"To get a count of the current number of queues, you can run a command "
+"such as rabbitmqctl list_queue name | wc -l which pipes the output of "
+"rabbitmqctl into the UNIX word count program—the optional -l flag forces "
+"wc to return only the line count. Because rabbitmqctl's output includes "
+"two extraneous text lines, to get your total number of active queues, "
+"subtract two from the number returned by the previous command."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "memory"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:180
+msgid ""
+"Extracting the size of queues in memory requires a similar command. "
+"Running rabbitmqctl list_queues name memory | grep compute will show you "
+"the memory size of all Nova-related queues (in bytes), like in the output"
+" below:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "consumer_utilisation"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:190
+msgid ""
+"Are you noticing a pattern with these commands? To get the consumer "
+"utilization rates for all queues, run rabbitmqctl list_queues name "
+"consumer_utilisation, which produces output resembling the following "
+"(recall that a utilization rate of 1.0, or 100 percent, means that the "
+"queue never has to wait for its consumers):"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "consumers"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:204
+msgid ""
+"Last but not least, to get a count of the active consumers for a given "
+"queue, run: rabbitmqctl list_queues name consumers | grep compute."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:206
+msgid "You should see something like this:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:214
+msgid "Remember, few queues should have zero consumers."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "Collecting Notifications"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:218
+msgid ""
+"Notifications are emitted on events such as instance creation, instance "
+"deletion, and resizing operations. Built around an AMQP pipeline "
+"(typically RabbitMQ), Nova is configured to emit notifications on about "
+"80 events. A number of tools have emerged that collect OpenStack events, "
+"but OpenStack's own StackTach leads the pack in terms of feature-"
+"completeness and documentation. StackTach is especially useful because it"
+" needs no updates to handle new events, meaning it can continue to track "
+"events in the face of module upgrades."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:220
+msgid ""
+"If you’re just interested in a quick-and-dirty notification listener you "
+"can build around, check out this gist. Listening in on events requires "
+"the kombu Python package. This script will create a virtual environment "
+"and run the event listener. The OpenStack documentation has additional "
+"resources on crafting your own notification listener."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:222
+msgid ""
+"The truncated snippet below is an example of notification payloads "
+"received after initiating termination of an instance:"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:269
+msgid ""
+"By comparing the timestamps from both events, you can see it took "
+"approximately 2.2 seconds to destroy the instance."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:271
+msgid ""
+"Note that in the snippet above there are two notifications emitted: one "
+"when initiating instance termination and one that signals the successful "
+"completion of a termination operation. This is a common pattern for "
+"events in OpenStack: emit one notification when the operation has begun, "
+"and another upon completion."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:273
+msgid ""
+"When combined with collected metrics, notifications give valuable "
+"perspective and insight into the potential causes for changes in system "
+"behavior. For example, you can measure hypervisor task execution time "
+"with events, and correlate that information with the API response time. "
+"(For the curious: in practice excessive load on the hypervisor does not "
+"appear to affect API response time much.)"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+msgid "Service and API checks"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:278
+msgid ""
+"Service checks and API checks are used to determine if a service is "
+"responsive. API checks generally GET or POST to a specific API endpoint "
+"and verify the response."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:280
+msgid ""
+"There are a number of tests you can perform to check the health of the "
+"Nova API. However, all tests generally boil down to one of two "
+"categories: simple or intrusive."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:282
+msgid ""
+"A simple API check reads (usually static) data from an endpoint and "
+"verifies that the information received is as expected. A simple API check"
+" would be polling the quota information for a project with a GET request "
+"to /v2.1/​<tenant-id>​/limits."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:284
+msgid ""
+"Intrusive checks modify the state of the receiving endpoint. A typical "
+"intrusive check might start by setting a value and optionally following "
+"with a request to read or verify the newly created value. Some kind of "
+"cleanup would then follow to remove the added values."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:286
+msgid ""
+"An intrusive check for the Nova API would be something like creating and "
+"deleting a key pair, with the following set of API calls (checking the "
+"status codes returned):"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+#: ../../source/openstack/host_aggregates.md
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:293
+msgid ""
+"In this article we've discussed a number of ways to check the health of "
+"your Compute cluster."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:295
+msgid ""
+"With so much data available from disparate sources, getting the "
+"information you want all in one place can be a challenge. Luckily, "
+"Datadog can help take the pain out of the process. At Datadog, we have "
+"built an integration with Nova so you can begin collecting and monitoring"
+" its metrics with a minimum of setup."
+msgstr ""
+
+#: ../../source/openstack/collecting_metrics_and_notifications_from_openstack_nova.md:297
+msgid "Follow along to part 3 to learn how Datadog can help you monitor Nova."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "Deploying devstack for testing and development"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "What is DevStack?"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:4
+msgid ""
+"This article will show you how to get a full OpenStack stack running in "
+"just two commands using DevStack. DevStack is not intended to be a "
+"general OpenStack installer, but is a great option for dev/test."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:6
+msgid ""
+"Because it was made for development and testing, DevStack takes most of "
+"the decision making out of the installation process, presenting you with "
+"a default installation environment that Just Works™."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "Motivation"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:9
+msgid ""
+"Although DevStack does make it easier to get an OpenStack environment up "
+"and running, it is not without its pain points. In my case, I needed an "
+"environment that I could remotely deploy and tear down daily, using a "
+"cloud provider to host my installation. After spending a sizable chunk of"
+" time over the course of a few days, I realized I could cut down my "
+"redeployment times considerably with a set of scripts that could "
+"customize my installation."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:11
+msgid ""
+"With some additional tooling, I was able to build a nearly fully "
+"automated solution that has cut deployment times down and ensures a "
+"completely reproducible build by other members of my team."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:14
+msgid ""
+"The DevStack installation target should be based on an Ubuntu or Debian "
+"image. If you are deploying to a cloud environment, we have included "
+"additional instructions for deploying to either DigitalOcean or AWS as "
+"the hosting provider."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:16
+msgid ""
+"Perhaps the fastest way to get a one-off deployment working quickly is to"
+" create a droplet (at least 4GB of RAM recommended) from the DigitalOcean"
+" web interface and follow the vanilla VM setup steps below. The same "
+"steps can be used to host your DevStack deployment on a different "
+"platform."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:18
+msgid "Choose your setup from the following:"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:24
+msgid ""
+"No matter where you host your deployment, it is recommended that you read"
+" through vanilla VM setup so you have an idea of the changes being made "
+"to your system."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "Vanilla VM setup"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:29
+msgid ""
+"The DevStack documentation strongly suggests using a disposable virtual "
+"machine to host the project, as DevStack makes a considerable number of "
+"changes to its host system."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:31
+msgid ""
+"Once you download the stack_setup.sh script described below, getting up "
+"DevStack can be done in two commands:"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "stack_setup.sh"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:39
+msgid ""
+"The stack_setup.sh script prepares the local environment for DevStack "
+"installation. You can download the script with wget: wget "
+"https://raw.githubusercontent.com/DataDog/the-"
+"monitor/master/openstack/devstack/stack_setup.sh"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:41
+msgid ""
+"After downloading the script, don't forget to make it executable with "
+"chmod +x stack_setup.sh"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:43
+msgid ""
+"Before stack_setup.sh can do anything interesting, it performs some "
+"housekeeping: updating apt repositories, and installing git. This step is"
+" especially necessary for DigitalOcean users, as the default Ubuntu "
+"install does not have git and usually has an outdated package list."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:45
+msgid ""
+"Next, the script clones the Kilo release of DevStack into "
+"/usr/local/src/devstack and creates a stack user with the bundled create-"
+"stack-user.sh script from the tools directory. Creating a separate user "
+"to run DevStack is necessary, as the installation scripts will refuse to "
+"run as root."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:47
+msgid ""
+"After creating the new user, the script creates a local.conf file, used "
+"to configure your deployment. It sets up and configures OpenStack "
+"notifications so you can view OpenStack events immediately, using the "
+"popular StackTach tool or a custom listener."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:49
+msgid ""
+"Most importantly, it sets defaults for the admin, database, RabbitMQ, and"
+" Horizon passwords, as well as the service token to bootstrap Keystone. "
+"The DevStack documentation recommends pre-set passwords to simplify the "
+"installation process. If you would like to change the defaults, modify "
+"the password options in the stack_setup.sh script. The default password "
+"is: devstack."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:51
+msgid ""
+"Finally, the script changes ownership of all files in the devstack "
+"directory (and subdirectories) to the stack user."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "stack.sh"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:56
+msgid ""
+"The final step in deploying DevStack is running the stack.sh script as "
+"the stack user. This script handles the actual deployment of DevStack. It"
+" is highly recommended that you carefully read the script contents to "
+"better understand the changes OpenStack will make to your system. No user"
+" interaction should be needed until the script finishes."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "AWS deployment"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:61
+msgid ""
+"Deploying on AWS requires you to manually create an EC2 instance to host "
+"your deployment, as well as open up several ports for OpenStack to use."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:63
+msgid "![Deploy DevStack on AWS - Instance Size choice][instance-size]"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:65
+msgid ""
+"The minimum instance size to host DevStack is m4.large. Although smaller "
+"instance types could host DevStack, over the course of our tests we found"
+" the network performance of smaller instance sizes to be inadequate. We "
+"also used the Ubuntu Server 14.04 LTS (HVM), SSD Volume Type image for "
+"our test deployment."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:67
+msgid ""
+"To ensure access to the outside world, assign a public IP address to your"
+" instance like in the screenshot below: Deploy DevStack on AWS - Assign "
+"Public IP"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:70
+msgid ""
+"Last but not least, you must open up access to a number of ports in order"
+" for DevStack to successfully install. You could just open up your "
+"instance to all internet traffic, but configuring a security group is a "
+"good idea if you'd like to restrict outside access to your deployment."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:72
+msgid ""
+"Create a security group with the following ports open for ingress: 22, "
+"80, 443, 3306, 5000, 5672, 5900 - 5999, 6000 - 6002, 6080 - 6082, 8000, "
+"8003, 8080, 8386, 8773 - 8777, 9191, 9292, 9696, 35357. Refer to the "
+"OpenStack documentation for more information on OpenStack service ports. "
+"![Deploy DevStack on AWS - Configure Port Access][http-port]"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:75
+msgid ""
+"Once launched, open up a terminal on your local machine. Use scp to copy "
+"the stack_setup.sh script to your EC2 instance: scp stack_setup.sh "
+"ubuntu@<your instance IP>:~. The previous command will upload the setup "
+"script to /home/ubuntu/setup_script.sh on your instance."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:77
+msgid "Next, ssh into your instance and run the script as root:"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:83
+msgid ""
+"Once the script executes, you will have a copy of the DevStack project in"
+" /usr/local/src/devstack and a new stack user."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:85
+msgid "Then, you just need to execute stack.sh as the stack user."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:91
+msgid ""
+"The script should take ~20 minutes to execute. When it is finished, "
+"continue on to Success to get started with your new deployment."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "DigitalOcean deployment with Tugboat"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:96
+msgid ""
+"If you have a DigitalOcean droplet running, you can simply run the "
+"vanilla VM setup steps to install OpenStack."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:98
+msgid ""
+"If you want to automate the entire OpenStack setup, including "
+"provisioning machines, you can do that on DigitalOcean using Tugboat. If "
+"you plan on doing a lot of OpenStack testing, chances are you'll break "
+"some things along the way. With Tugboat, you can quickly and easily "
+"deploy and tear down your stack, so you have a fresh deployment to hack "
+"on daily. The next section of this article explains how to use Tugboat to"
+" create and setup a droplet running DevStack."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "Tugboat configuration"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:100
+msgid ""
+"Tugboat is a handy package that allows you to manage your DigitalOcean "
+"account from the command line. We will take advantage of its powerful "
+"features to create an appropriately sized droplet to host our DevStack "
+"deployment."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:102
+msgid ""
+"Tugboat requires Ruby 1.9 or higher. Check for a compatible version with "
+"ruby -v. Once you've upgraded Ruby or verified your version, installation"
+" is a single command: gem install tugboat."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:104
+msgid ""
+"Tugboat needs an authentication token from DigitalOcean—you can grab "
+"yours here. You can only view your token once upon creation, so make sure"
+" you store it somewhere as you will need it in the next step."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:106
+msgid ""
+"With authentication token in hand, run tugboat authorize. You should see "
+"a series of prompts, reproduced below. You need only to enter your access"
+" token and a path to an SSH key; the defaults should suffice for the "
+"rest."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:129
+msgid ""
+"If you see \"Authentication with DigitalOcean was successful!\", you're "
+"good to go."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:131
+msgid ""
+"After authenticating, make sure to set a default SSH key. You can get a "
+"list of your SSH key IDs with tugboat keys."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:137
+msgid ""
+"For example, if you wanted to use the DO-webserver key listed in the "
+"output above, open up tugboat's configuration file at ~/.tugboat and "
+"change the value of ssh_key to 1532126."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "deploy_droplet.py"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:140
+msgid ""
+"deploy_droplet.py is a Python script that creates an appropriately sized "
+"droplet on DigitalOcean to host DevStack. You need only to provide a name"
+" for your droplet, which you can supply either as a command line "
+"parameter or as input at the prompt. You can download the script with the"
+" following command: wget https://raw.githubusercontent.com/DataDog/the-"
+"monitor/master/openstack/devstack/deploy_droplet.py"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:143
+msgid "Once downloaded, make the script executable and then run deploy_droplet.py"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:150
+msgid "which should produce output resembling the following:"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:164
+msgid ""
+"As you can see from the above output, the script creates the droplet, "
+"returns its IP address, and lists a series of commands to execute in "
+"order on the newly created instance. Simply copy-paste the commands to "
+"set up OpenStack. If you'd like more information on the work performed in"
+" each step of the script, jump to vanilla VM setup. Otherwise, skip ahead"
+" to start using your new deployment."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md
+msgid "Success"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:170
+msgid ""
+"Wherever you chose to deploy DevStack, once setup is complete you should "
+"be greeted with output like the following:"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:178
+msgid ""
+"To access statistics about your deployment, including number of instances"
+" and quota usage, navigate to the Horizon address listed in the output."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:180
+msgid ""
+"Deploy DevStack Horizon Dash Screen Log in as the admin user with "
+"password: devstack"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:184
+msgid ""
+"On average, you should expect the following approximate execution times "
+"for the various steps listed in this post:"
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:190
+msgid ""
+"Of course, your actual installation time will vary depending on your "
+"network speed."
+msgstr ""
+
+#: ../../source/openstack/deploying_devstack_for_testing_and_development.md:192
+msgid ""
+"If you've been following along on your own machine, you should now have a"
+" DevStack deployment ready for use. To learn how to monitor an OpenStack "
+"deployment, check out our three-part series."
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md
+msgid "OpenStack: host aggregates, flavors, and availability zones"
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md:3
+msgid ""
+"When discussing OpenStack, correct word choice is essential. OpenStack "
+"uses many familiar terms in unfamiliar ways, which can lead to confusing "
+"conversations."
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md:5
+msgid ""
+"Host aggregates (or simply aggregates), are commonly confused with the "
+"more-familiar term availability zones—however the two are not identical. "
+"Customers using OpenStack as a service never see host aggregates; "
+"administrators use them to group hardware according to various "
+"properties. Most commonly, host aggregates are used to differentiate "
+"between physical host configurations. For example, you can have an "
+"aggregate composed of machines with 2GB of RAM and another aggregate "
+"composed of machines with 64GB of RAM. This highlights the typical use "
+"case of aggregates: defining static hardware profiles."
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md:7
+msgid ""
+"Once an aggregate is created, administrators can then define specific "
+"public flavors from which clients can choose to run their virtual "
+"machines (the same concept as EC2 instance types on AWS). Flavors are "
+"used by customers and clients to choose the type of hardware that will "
+"host their instance."
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md:9
+msgid ""
+"Contrast aggregates with availability zones (AZ) in OpenStack, which are "
+"customer-facing and usually partitioned geographically. To cement the "
+"concept, think of availability zones and flavors as customer-accessible "
+"subsets of host aggregates. ![Host aggregates and availability zones in "
+"OpenStack][agg-and-avail] As you can see, host aggregates can span across"
+" availability zones."
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md
+msgid "Host aggregate or availablity zone?"
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md:14
+msgid ""
+"As an OpenStack end user, you don't really have a choice. Only "
+"administrators can create host aggregates, so you will be using "
+"availability zones and flavors defined by your cloud administrator."
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md:16
+msgid ""
+"OpenStack admins, on the other hand, should carefully consider the subtle"
+" distinction between the two when planning their deployments. Hosts "
+"separated geographically should be segregated with availability zones, "
+"while hosts sharing the same specs should be grouped with host "
+"aggregates."
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md:19
+msgid ""
+"You should now have a better sense of the differences between host "
+"aggregates, flavors, and availability zones. More information on host "
+"aggregates and availability zones is available in the OpenStack "
+"documentation. Additional terms and definitions can be found in the "
+"OpenStack glossary."
+msgstr ""
+
+#: ../../source/openstack/host_aggregates.md:21
+msgid ""
+"Check out our 3-part series about how to monitor and collect OpenStack "
+"Nova performance metrics. Also, be sure to take a look at our piece on "
+"How Lithium monitors OpenStack."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "How Lithium monitors OpenStack"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:3
+msgid ""
+"Lithium was founded in 2001 as an offshoot from gamers.com (a gaming "
+"community) and has since evolved into a leading social software provider "
+"whose Total Community platform helps brands connect, engage and "
+"understand their customers. With more than 400 communities and growing, "
+"Lithium uses OpenStack as a private datacenter, with flexibility to "
+"deploy customized, public-facing communities to major brands across "
+"industries and regions."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:5
+msgid ""
+"In this article we will pull back the curtain to learn Lithium's best "
+"practices and tips for using OpenStack, and how Lithium monitors "
+"OpenStack with the help of Datadog."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Why monitoring OpenStack is critical"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:9
+msgid ""
+"OpenStack is a central component in Lithium's infrastructure, forming the"
+" backbone of their service platform. Lithium leverages OpenStack for both"
+" production and development environments, with OpenStack hosting a large "
+"number of production communities, as well as demo communities for sales "
+"engineers.In addition to community hosting, OpenStack also hosts "
+"infrastructure services, including Kubernetes, Chef servers and BIND "
+"slaves."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:12
+msgid ""
+"With such a far-reaching deployment, failure is not an option. If "
+"OpenStack were not properly monitored and managed, numerous and "
+"noticeable failures can occur: sales engineers wouldn't be able to create"
+" demo environments for prospects, developers wouldn't be able to spawn "
+"test environments, and the communities in production could go down or see"
+" increased response times as computing resources became unavailable."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:14
+msgid ""
+"That's why Lithium's engineers monitor OpenStack around the clock. Using "
+"Datadog, they can correlate all the relevant OpenStack metrics with "
+"metrics from other parts of their infrastructure, all in one place. "
+"Lithium engineers can spot issues at a glance and determine the root "
+"cause of the problem, in addition to setting up advanced alerts on "
+"mission-critical metrics."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:16
+msgid ""
+"![Lithium OpenStack dashboard][lithium-dash] A Datadog dashboard that "
+"Lithium uses to monitor OpenStack"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Key metrics for Lithium"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Number of instances running"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:22
+msgid ""
+"Lithium engineers track the total number of instances running across "
+"their OpenStack deployment to correlate with changes in other metrics. "
+"For example, a large increase in total RAM used makes sense in light of "
+"additional instances being spun up. Tracking the number of instances "
+"running alongside other metrics helps inform decisions for capacity and "
+"tenant quota planning."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Instances per project"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:25
+msgid ""
+"Like the total number of instances running, Lithium tracks the number of "
+"instances used per project to get a better idea of how their private "
+"cloud is being used. A common problem they found was that engineers would"
+" often spin up development environments and forget to shut them down, "
+"which means resources were provisioned but unused. By tracking the number"
+" of instances per project, admins could rein in excessive or unnecessary "
+"usage and free up resources without resorting to installing additional "
+"hardware."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Available memory"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:28
+msgid ""
+"As mentioned in Part 1 of our series on monitoring OpenStack Nova, "
+"visibility into OpenStack's resource consumption is essential to ensuring"
+" smooth operation and preventing user frustration. If available resources"
+" were insufficient, sales engineers would be breathing down the neck of "
+"the techops team, unable to create demo accounts for prospects, and "
+"developers would be stuck without a dev environment."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "VCPU available"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:31
+msgid ""
+"Just like available memory, tracking the number of VCPUs available for "
+"allocation is critical—a lack of available CPUs prevents provisioning of "
+"additional instances."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Metric deltas"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:34
+msgid "![Change in instances used][instance-change-graph]"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:36
+msgid ""
+"Finally, Lithium tracks the changes in metrics' values over time to give "
+"insight into the causes of changes in resource availability and "
+"consumption."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:38
+msgid ""
+"Using Datadog's Change graph feature, engineers have a bird's eye view of"
+" week-to-week changes in resource usage. By analyzing resource deltas, "
+"engineers and decision makers have the data they need to inform hardware "
+"purchasing decisions and perform diligent capacity planning."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Alerting the right people"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:41
+msgid ""
+"Alerting is an essential component of any monitoring strategy—alerts let "
+"engineers react to issues as they occur, before users are affected. With "
+"Datadog alerts, Lithium is able to send notifications via their usual "
+"communication channels (chat, PagerDuty, email, etc.), as well as provide"
+" engineers with suggested fixes or troubleshooting techniques—all without"
+" human intervention."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:43
+msgid ""
+"Lithium generally uses PagerDuty for priority alerts, and HipChat or "
+"email for lower-priority alerts and for alerting specific engineers to a "
+"particular issue. For OpenStack, Lithium alerts on excessive resource "
+"consumption. As mentioned in Part 1 of our OpenStack series, monitoring "
+"resource consumption is a critical part of a comprehensive OpenStack "
+"monitoring strategy."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:45
+msgid "![Lithium alerts][lithium-alert]"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:47
+msgid ""
+"Datadog alerts give Lithium engineers the flexibility to inform the right"
+" people that a problem has occurred, at the right time, across an ever-"
+"growing list of platforms."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Why Datadog?"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:50
+msgid ""
+"Before adopting Datadog, Lithium admins were relying on Horizon "
+"(OpenStack's canonical dashboard) to extract meaningful metrics from "
+"their deployment. This approach was severely limited—engineers could only"
+" access rudimentary statistics about their deployment and lacked the "
+"ability to correlate metrics from OpenStack with metrics from across "
+"their infrastructure."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:52
+msgid ""
+"With Datadog screenboards, they can combine the historical perspective of"
+" graphed timeseries data with alert values to put current operations "
+"metrics in context."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:54
+msgid "![Lithium widgets][lithium-widgets]"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:56
+msgid ""
+"Datadog also makes it easy to collect and monitor RabbitMQ and MySQL "
+"metrics, in addition to general OpenStack metrics, for even deeper "
+"insight into performance issues. For Lithium, having Datadog in place has"
+" allowed engineers to adjust internal workflows, reducing the total "
+"number of elements that need monitoring."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Saving time, money, and reputation"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:59
+msgid ""
+"Adopting Datadog has allowed Lithium to catch problems in OpenStack as "
+"well as applications running on their OpenStack cloud. Now, Lithium "
+"engineers have the tools and information they need to react quickly to "
+"problems and resolve infrastructure issues with minimal customer impact, "
+"saving time, money, and reputation."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:62
+msgid "![Nova default dash][nova-dash] Default Datadog OpenStack dashboard"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:65
+msgid ""
+"If you're already using OpenStack and Datadog, we hope these strategies "
+"will help you gain improved visibility into what's happening in your "
+"deployment. If you don't yet have a Datadog account, you can start "
+"monitoring OpenStack performance today with a free trial."
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md
+msgid "Acknowledgments"
+msgstr ""
+
+#: ../../source/openstack/how_lithium_monitors_openstack.md:69
+msgid ""
+"Thanks to Lithium and especially Mike Tougeron, Lead Cloud Platform "
+"Engineer, for generously sharing their OpenStack expertise and monitoring"
+" strategies for this article."
+msgstr ""
+
+#: ../../source/openstack/index.rst:2
+msgid "Openstack 101"
+msgstr "Openstackを監視する"
+
+#: ../../source/openstack/index.rst:4
+msgid "Contents:"
+msgstr "目次"
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Monitor Openstack with Datadog"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:2
+msgid ""
+"This post is the final part of a 3-part series on OpenStack Nova "
+"monitoring. Part 1 explores the key metrics available from Nova, and part"
+" 2 is about collecting those metrics on an ad hoc basis."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:4
+msgid ""
+"In this last post of the OpenStack series, we show you how to monitor "
+"Openstack with Datadog."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:6
+msgid ""
+"To get the most out of your OpenStack monitoring, you need a way to "
+"correlate what’s happening in OpenStack with what’s happening in the rest"
+" of your infrastructure. OpenStack deployments often rely on additional "
+"software packages not included in the OpenStack codebase itself, "
+"including MySQL, RabbitMQ, Memcached, HAProxy, and Pacemaker. A "
+"comprehensive monitoring implementation includes all the layers of your "
+"deployment, not just the metrics emitted by OpenStack itself."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:8
+msgid ""
+"With Datadog, you can collect OpenStack metrics for visualization, "
+"alerting, full-infrastructure correlation, and more. Datadog will "
+"automatically collect the key metrics discussed in parts one and two of "
+"this series, and make them available in a template dashboard, as seen "
+"below."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:10
+msgid "![OpenStack default dashboard][default-dash]"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:12
+msgid ""
+"If you're not a Datadog customer but want to follow along, you can get a "
+"free trial."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Configuring OpenStack"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:15
+msgid ""
+"Getting the Datadog Agent and OpenStack to talk with each other takes "
+"about five minutes. To start, the Datadog Agent will need its own role "
+"and user. Run the following series of commands, in order, on your "
+"Keystone (identity) server:"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:17
+msgid ""
+"1.openstack role create datadog_monitoring2.openstack user create datadog"
+" --password my_password --project my_project_name3.openstack role add "
+"datadog_monitoring --project my_project_name --user datadog"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:21
+msgid "Be sure to change my_password and my_project before running the commands."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:23
+msgid ""
+"Once you've created the user and role, the next step is to apply the "
+"privileges needed to collect metrics, which entails modifying three "
+"configuration files."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Nova"
+msgstr "Nova"
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:26
+msgid ""
+"First, open Nova's policy file, found at /etc/nova/policy.json. Edit the "
+"following permissions, adding role:datadog_monitoring:"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:46
+msgid ""
+"If permissions are already set to a particular rule or role, you can add "
+"the new role by appending or role:datadog_monitoring, like so: "
+"\"compute_extension:aggregates\": \"rule:admin_api\" becomes "
+"\"compute_extension:aggregates\": \"rule:admin_api or "
+"role:datadog_monitoring\" Save and close the file."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Neutron"
+msgstr "Neutron"
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:51
+msgid ""
+"Neutron is nice and easy, with only one modification needed. Open its "
+"policy.json (usually found in /etc/neutron) and add "
+"role:datadog_monitoring to \"get_network\". Then, save and close the "
+"file."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Keystone"
+msgstr "keystone"
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:54
+msgid ""
+"Last but not least, you need to configure Keystone so the Agent can "
+"access the tenant list. Add role:datadog_monitoring to the following "
+"directives in Keystone's policy.json (usually found in /etc/keystone):"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:61
+msgid "Save and close the file."
+msgstr "保存してファイルを閉じる。"
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:63
+msgid ""
+"You may need to restart your Keystone, Neutron and Nova API services to "
+"ensure the policy changes are applied."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Install the Datadog Agent"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:66
+msgid ""
+"The Datadog Agent is open-source software that collects and reports "
+"metrics from all of your hosts and services so you can view, monitor, and"
+" correlate them on the Datadog platform. Installing the Agent usually "
+"requires just a single command."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:68
+msgid "Installation instructions are platform-dependent and can be found here."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:70
+msgid ""
+"As soon as the Datadog Agent is up and running, you should see your host "
+"begin to report its system metrics in your Datadog account."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:72
+msgid "![Reporting host in Datadog][default-host]"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Configuring the Agent"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:75
+msgid ""
+"With the necessary OpenStack policy changes in place, it is time to "
+"configure the Agent to connect to your Keystone server."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:77
+msgid ""
+"The location of the Agent configuration directory varies by OS, find it "
+"for your platform here. In the configuration directory you will find a "
+"sample OpenStack configuration file named openstack.yaml.example. Copy "
+"this file to openstack.yaml, and open it for editing."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:79
+msgid ""
+"Navigate to the keystone_server_url line. Update the URL with the URL of "
+"your Keystone server, including the port (usually 5000)."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:81
+msgid ""
+"Next, under instances, change project id to the project ID that "
+"corresponds to the project associated with the datadog user. To get the "
+"project ID, navigate to <yourHorizonserver>/identity. See below for an "
+"example:"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:95
+msgid ""
+"Finally, you need to modify the authentication credentials to match the "
+"user and role created earlier. Navigate to the # User credentials section"
+" and make the following changes:"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:110
+msgid "Save and close openstack.yaml."
+msgstr "openstack.yamlを保存し閉じる。"
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Integrating RabbitMQ with Datadog"
+msgstr "RabbitMQのインテグレーションをDatadogに追加する"
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:113
+msgid ""
+"Getting metrics from RabbitMQ requires fewer steps than OpenStack.Start "
+"by running the following command to install the management plugin for "
+"RabbitMQ: rabbitmq-plugins enable rabbitmq_management.This will create a "
+"web UI for RabbitMQ on port 15672, and it will expose an HTTP API, which "
+"the Datadog Agent uses to collect metrics."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:117
+msgid ""
+"Once the plugin is enabled, restart RabbitMQ for the changes to take "
+"effect: service rabbitmq-server restart."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:120
+msgid ""
+"Next, navigate to the Agent configuration directory again. Find the "
+"sample RabbitMQ config file named rabbitmq.yaml.example and copy it to "
+"rabbitmq.yaml. Open it and navigate to the instances: section:"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:128
+msgid ""
+"Update the rabbitmq_user, rabbitmq_pass, and rabbitmq_api_url fields "
+"appropriately, then save and close the file."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:130
+msgid ""
+"After making the appropriate changes to both yaml files, restart the "
+"Agent. The command varies by platform. For Debian/Ubuntu: sudo "
+"/etc/init.d/datadog-agent restart"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Verify the configuration"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:133
+msgid ""
+"With the configuration changes in place, it's time to see if everything "
+"is properly integrated. Execute the Datadog info command. On "
+"Debian/Ubuntu, run sudo /etc/init.d/datadog-agent info"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:135
+msgid "For other platforms, find the specific command here."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:137
+msgid ""
+"If the configuration is correct, you will see a section like the one "
+"below in the info output:"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:149
+msgid ""
+"The snippet above shows six service checks in addition to the collected "
+"metrics. For OpenStack, the service checks report the availability of "
+"your Nova, Neutron, and Keystone APIs as well as checks for individual "
+"hypervisors and networks."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:151
+msgid "You should also see something like the following for RabbitMQ:"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Enable the integration"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:161
+msgid ""
+"Finally, click the OpenStack Install Integration button inside your "
+"Datadog account. The button is located under the Configuration tab in the"
+" OpenStack integration settings."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:163
+msgid ""
+"![Enable the integration][install-integration]Since the Agent "
+"automatically queries RabbitMQ via its API endpoint, you don’t need to "
+"enable the RabbitMQ integration in your Datadog account."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Show me the metrics!"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:167
+msgid ""
+"Once the Agent begins reporting OpenStack metrics, you will see an "
+"OpenStack dashboard among your list of available dashboards in Datadog."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:169
+msgid ""
+"The default OpenStack dashboard displays the key metrics to watch "
+"highlighted in our introduction to Nova monitoring."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:171
+msgid ""
+"You can easily create a tailored dashboard to monitor OpenStack as well "
+"as your entire stack by adding additional graphs and metrics from your "
+"other systems. For example, you might want to graph Nova metrics "
+"alongside metrics from your Redis databases, or alongside host-level "
+"metrics such as network traffic. To start building a custom dashboard, "
+"clone the default OpenStack dashboard by clicking on the gear in the "
+"upper right of the dashboard and selecting Clone Dash."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:173
+msgid "![Clone OpenStack default dash][clone-dash]"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Diagnosing and Alerting"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:176
+msgid ""
+"Systematically collecting monitoring data serves two broad purposes:  "
+"alerting operators in real-time to issues as they develop (alerting), and"
+" helping to identify the root cause of a problem (diagnosing). A full-"
+"featured monitoring solution does both. With Datadog, you get actionable "
+"alerts in real-time, so you can respond to issues as they emerge, plus "
+"the high-resolution metrics and historical perspective that you need to "
+"dive deep into diagnosing the root cause of an issue."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md
+msgid "Alerting on Nova metrics"
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:179
+msgid ""
+"Once Datadog is capturing and visualizing your metrics, you will likely "
+"want to set up some alerts to be automatically notified of potential "
+"issues. You can set up an alert to notify you of API availability issues,"
+" for example."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:181
+msgid ""
+"Datadog can monitor individual hypervisors, instances, containers, "
+"services, and processes—or virtually any combination thereof. For "
+"instance, you can monitor all of your Nova nodes, or all hosts in a "
+"certain availability zone, or a single key metric being reported by all "
+"hosts corresponding to a specific tag."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:184
+msgid ""
+"In this post we’ve walked you through integrating OpenStack Nova and "
+"RabbitMQ with Datadog to visualize your key metrics and notify the right "
+"team whenever your infrastructure shows signs of trouble."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:186
+msgid ""
+"If you’ve followed along using your own Datadog account, you should now "
+"have improved visibility into what’s happening in your environment, as "
+"well as the ability to create automated alerts tailored to your "
+"infrastructure, usage patterns, and the metrics that are most valuable to"
+" your organization."
+msgstr ""
+
+#: ../../source/openstack/openstack_monitoring_with_datadog.md:188
+msgid ""
+"If you don’t yet have a Datadog account, you can sign up for a free trial"
+" and start monitoring OpenStack Nova right away."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "Monitoring OpenStack Nova"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:2
+msgid ""
+"This post is Part 1 of a 3-part series about monitoring OpenStack Nova. "
+"Part 2 is about collecting operational data from Nova, and Part 3 details"
+" how to monitor Nova with Datadog."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "The 30,000-foot view"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:5
+msgid ""
+"OpenStack is an open-source cloud-computing software platform. It is "
+"primarily deployed as infrastructure-as-a-service and can be likened to a"
+" version of Amazon Web Services that can be hosted anywhere. Originally "
+"developed as a joint project between Rackspace and NASA, OpenStack is "
+"about five years old and has a large number of high-profile corporate "
+"supporters, including Google, Hewlett-Packard, Comcast, IBM, and Intel."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:7
+msgid ""
+"OpenStack is an ambitious project with the goal of providing an open, "
+"self-hostable alternative to cloud providers like AWS, Azure, "
+"DigitalOcean, and Joyent. It features a modular architecture with a "
+"current list of 16 services, including meta-services like Ceilometer, "
+"OpenStack's billing/telemetry module."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:9
+msgid ""
+"In this series of posts, we will dive into Nova, the OpenStack Compute "
+"module, and explain its key metrics and other useful data points:"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:17
+msgid "![Openstack Architecture overview][arch-over]"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:19
+msgid "A typical OpenStack deployment, utilizing 7 of the 16 available services"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:21
+msgid ""
+"A note on terminology: The OpenStack project uses the terms project and "
+"tenant interchangeably to refer to a group of users. In this post, we "
+"will use the term tenant for clarity."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "What Nova does"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:24
+msgid ""
+"![Nova diagram][nova] <center>Somewhat confusingly, the Compute module "
+"(Nova) contains a component, also called Compute.</center>"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:27
+msgid ""
+"The core of the OpenStack project lies in the Compute module, known as "
+"Nova. Nova is responsible for the provisioning and management of virtual "
+"machines. It features full support for KVM and QEMU out of the box, with "
+"partial support for other hypervisors including VMWare, Xen, and Hyper-V."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:29
+msgid ""
+"If you're already familiar with Amazon Web Services, Nova is compatible "
+"with EC2 and S3 APIs, easing the migration of applications and decreasing"
+" development times for those already using AWS."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "Key Nova metrics and events"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:33
+msgid ""
+"Nova metrics can be logically grouped into three categories: hypervisor "
+"metrics, tenant metrics and nova server metrics. Hypervisor metrics give "
+"a clear view of the work performed by your hypervisors, nova server "
+"metrics give you a window into your virtual machine instances, and tenant"
+" metrics provide detailed information about user resource usage."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:35
+msgid ""
+"Though OpenStack's modules expose many metrics, correlation of these "
+"built-in metrics with other information sources is essential to really "
+"understand what’s happening inside OpenStack. For example, because "
+"OpenStack uses RabbitMQ under the hood, no monitoring solution would be "
+"complete without integrating RabbitMQ metrics as well."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:37
+msgid ""
+"Combining metrics from various systems in addition to log file data and "
+"OpenStack notifications will really help pull back the curtain so you can"
+" observe what's actually going on in your deployment."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "Hypervisor metrics"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:43
+msgid "![Nova hypervisor metrics collection][hypervisor-metrics]"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:45
+msgid ""
+"The hypervisor initiates and oversees the operation of virtual machines. "
+"Failure of this critical piece of software will cause tenants to "
+"experience issues provisioning and performing other operations on their "
+"virtual machines, so monitoring the hypervisor is crucial."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:47
+msgid ""
+"Though a number of hypervisor metrics are available, the following subset"
+" gives a good idea of what your hypervisors are doing under the hood:"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:49
+msgid ""
+"|Name| Description|Metric Type| |:---:|:---:|:---:| | hypervisor_load | "
+"System load | Resource: Utilization | | current_workload | Count of all "
+"currently active hypervisor tasks | Resource: Utilization | | "
+"hypervisor_up | Count of all active hypervisors | Resource: Availability "
+"| | running_vms | Total number of running virtual machines | Resource: "
+"Utilization | | vcpus_available | Total number of available CPUs | "
+"Resource: Utilization | | free_disk_gb | Free hard drive space in GB | "
+"Resource: Utilization | | free_ram_mb | Amount of memory (in MB) "
+"available| Resource: Utilization|"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:61
+msgid ""
+"hypervisor_load: Hypervisor load represents the system load over the last"
+" minute for a given hypervisor. Extended periods of high hypervisor load "
+"could degrade performance and slow down hypervisor operations. If you "
+"have busy VMs, expect this metric to rise."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:63
+msgid "Hypervisor workload"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:65
+msgid ""
+"current_workload: The current workload metric is a count of all the "
+"currently active hypervisor operations: Build, Snapshot, Migrate, and "
+"Resize. Unless you are using OpenStack’s Shared File Systems service, the"
+" VMs and hypervisor all share the same I/O resources, so an extended "
+"period of high hypervisor workload could lead to I/O bottlenecks, with "
+"your instances competing for disk access. This metric, coupled with "
+"hypervisor load, gives you a direct view of the work your hypervisor is "
+"performing."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:69
+msgid ""
+"running_vms:  OpenStack exposes the number of virtual machines currently "
+"running, which can be aggregated by host. The maximum number of VMs "
+"running at any point in time is bound by available CPU and memory "
+"resources. This metric, along with the current workload and hypervisor "
+"load, should give you all the information you need to ensure a fair "
+"distribution of load across your cluster of compute nodes."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:71
+msgid ""
+"How you monitor the running_vms metric largely depends on your use "
+"case—if you are using OpenStack to run critical infrastructure on a "
+"constant number of nodes, changes in running VMs are similar to physical "
+"hosts going down; you would want to be aware of either event so you can "
+"react accordingly. If on the other hand your infrastructure is more "
+"dynamic, you may not care about the comings and goings of individual "
+"hosts as long as you have enough capacity to keep all your services "
+"running smoothly."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:73
+msgid "Available vCPUs"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:75
+msgid ""
+"vcpus_available: Each hypervisor reports the current number of CPUs "
+"allocated and the maximum number available. Using these two metrics, you "
+"can compute the number of CPUs currently available."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:77
+msgid ""
+"In a production environment with fairly predictable workloads, adding and"
+" removing resources from the computation pool should be an anticipated "
+"event. In that case, you would want to monitor and possibly alert on any "
+"changes to your number of available VCPUs. In other cases, such as using "
+"OpenStack as a development environment, tracking this metric is less "
+"important."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:79
+msgid ""
+"Setups with a diminishing number of available CPU resources could benefit"
+" from the provisioning of additional Compute hosts. A general awareness "
+"of available resources can let you scale your deployment before an "
+"increase in demand makes it a necessity. If you are constantly bumping "
+"into the resource ceiling, it's time for more machines."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:83
+msgid ""
+"free_disk_gb: This metric reports the amount of disk space (in gigabytes)"
+" currently available for allocation, aggregated by physical host. "
+"Maintaining ample disk space is critical, because the hypervisor will be "
+"unable to spawn new virtual machines if there isn’t enough available "
+"space."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:85
+msgid ""
+"By tracking your free_disk_gb, you can migrate overly large instances to "
+"other physical hosts, should space become scarce. You will definitely "
+"want to be alerted to diminishing disk space so you can take action and "
+"prevent hypervisor errors due to insufficient resources."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:89
+msgid ""
+"free_ram_mb: Memory, like disk space, is an important resource. Without "
+"sufficient memory, the hypervisor will be unable to spawn new instances "
+"or resize instances to larger flavors. Ensuring adequate memory is "
+"essential—insufficient memory will result in hypervisor errors and "
+"confused users."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:91
+msgid ""
+"Like free_disk_gb, you will want to be alerted to diminishing memory so "
+"you can take appropriate action, whether that means migrating instances "
+"or provisioning additional compute nodes."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "Nova server metrics"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:96
+msgid ""
+"Computing nodes generally constitute the majority of nodes in an "
+"OpenStack deployment. The Nova server metrics group provides information "
+"on individual instances operating on computation nodes. Monitoring "
+"individual Nova servers helps you to ensure that load is being "
+"distributed evenly and to avoid the noisy neighbor problem. However, to "
+"gain the most visibility into your instances, including the full suite of"
+" OS and system metrics, installing a monitoring agent is essential."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:98
+msgid ""
+"|Name| Description|Metric Type| |:---:|:---:|:---:| | hdd_read_req | "
+"Number of read requests per second | Work: Throughput |"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:102
+msgid ""
+"hdd_read_req: In a virtual environment, RAM size is often a limiting "
+"constraint on running processes. Monitoring the number of hard drive "
+"requests per second can give you an idea of work being performed within "
+"virtual machines on your Nova node. Spikes in this metric indicate that a"
+" virtual machine may have low RAM, causing it to thrash the disk with "
+"constant memory paging. At the very least, awareness of high read rates "
+"can inform troubleshooting when diagnosing performance issues within your"
+" Nova cluster."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "Tenant metrics"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:108
+msgid ""
+"Tenant metrics are primarily focused on resource usage. Remember, tenants"
+" are just groups of users. In OpenStack, each tenant is allotted a "
+"specific amount of resources, subject to a quota. Monitoring these "
+"metrics allows you to fully exploit the available resources and can help "
+"inform requests for quota increases should the need arise."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:110
+msgid ""
+"|Name| Description|Metric Type| |:---:|:---:|:---:| | total_cores_used | "
+"Total cores currently in use by tenant | Resource: Utilization | | "
+"max_total_cores | Maximum number of cores allocated to tenant | Resource:"
+" Utilization | | total_instances_used | Total number of instances owned "
+"by tenant | Resource: Utilization | | max_total_instances | Maximum "
+"number of instances allocated to tenant | Resource: Utilization |"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:117
+msgid ""
+"total_cores_used and max_total_cores:  Each tenant has a maximum number "
+"of resources allocated, set by a quota. Tracking your per-tenant core "
+"usage means you won't unwittingly bump against that quota-imposed "
+"ceiling. Graphing this metric alongside the max_total_cores metric will "
+"give you an immediate view into your resource consumption over time and "
+"help you determine if additional resources are required by your tenant."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:119
+msgid ""
+"total_instances_used and max_total_instances: Similar to physical "
+"resources, the number of instances per tenant is also capped by a quota. "
+"Each VM you spin up consumes another instance, and each instance size "
+"uses a different number of resources. When setting quotas for internal "
+"use, you should keep in mind the projected number of instances you plan "
+"to run, as well as the anticipated sizes of those instances."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "RabbitMQ metrics"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:125
+msgid "![Message pipeline][amqp-diag]"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:127
+msgid ""
+"What's RabbitMQ got to do with OpenStack Nova? RabbitMQ is one of several"
+" options for OpenStack's message-passing pipeline and is used by default."
+" Nova components use RabbitMQ for both remote procedure calls (RPCs) and "
+"for internal communication."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:129
+msgid ""
+"RabbitMQ serves both as a synchronous and asynchronous communications "
+"channel, and failure of this component will disrupt operations across "
+"your deployment. Monitoring RabbitMQ is essential if you want the full "
+"picture of your OpenStack environment."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:131
+msgid ""
+"At the very least, you will want to keep an eye on the following RabbitMQ"
+" metrics:"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:133
+msgid ""
+"|Name| Description|Metric Type| |:---:|:---:|:---:| |consumer_utilisation"
+" | The proportion of time a queue’s consumers can take new messages | "
+"Resource: Utilization | |memory | Current size of queue in bytes | "
+"Resource: Utilization | |count | Number of active queues (computed)| "
+"Resource: Utilization | |consumers | Number of consumers per queue| "
+"Resource: Utilization |"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:140
+msgid "Queue consumer utilization"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:144
+msgid ""
+"consumer_utilisation: Introduced in RabbitMQ 3.3, this metric (the "
+"spelling of which follows the rules of British English) reports on the "
+"utilization of each queue, represented as a percentage. Ideally, this "
+"metric will be 100 percent for each queue, meaning consumers get messages"
+" as quickly as they are published."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:146
+msgid ""
+"A couple of factors can contribute to degraded consumer utilization: "
+"network congestion and prefetching. A slow network translates to an "
+"inhibited ability for consumers to get new messages from publishers. "
+"Prefetching is the number of messages a consumer can receive while "
+"processing the current message. A low prefetch setting could keep "
+"consumers from taking in new messages while processing older ones. If you"
+" are seeing low consumer utilization for extended periods of time, and "
+"your prefetch settings are reasonably high, the problem most likely lies "
+"in the network."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:148
+msgid "Memory by queue"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:152
+msgid ""
+"memory:  Like most in-memory message queues, RabbitMQ will begin swapping"
+" to disk under memory pressure. In addition to increased latency caused "
+"by disk paging, RabbitMQ will preemptively throttle message producers "
+"when memory consumption reaches a predefined threshold (40 percent of "
+"system RAM by default). Although not often an issue, a significant spike "
+"in queue memory could point to a large backlog of unreceived (\"ready\") "
+"messages, or worse. A protracted period of excessive memory consumption "
+"could cause performance issues as well."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:154
+msgid ""
+"count:  Queue count represents the current number of RabbitMQ queues. You"
+" can compute this metric by counting the number of queues listed by "
+"RabbitMQ. A count of zero queues means there is a serious error in your "
+"RabbitMQ deployment, necessitating further investigation. Setting up an "
+"alert on this metric is a great idea—zero queues means zero messages "
+"being passed."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:156
+msgid "Consumers by queue"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:160
+msgid ""
+"consumers: Similar to the queue count metric, your number of consumers "
+"should usually be non-zero for a given queue. Zero consumers means that "
+"producers are sending out messages into the void. Depending on your "
+"RabbitMQ configuration, those messages could be lost forever."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:162
+msgid ""
+"Generally speaking, there are only a handful of queues that may have zero"
+" consumers under normal circumstances: aliveness-test, "
+"notifications.info, and notifications.error."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:164
+msgid ""
+"Aliveness-test is a queue for monitoring tools to use. A producer "
+"typically creates and consumes a message in this queue to ensure RabbitMQ"
+" is operating correctly. Notifications.error and notifications.info are "
+"notifications with an associated log level priority. Notifications.error "
+"is the error notification message queue, and notifications.info is the "
+"queue for informational messages."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:166
+msgid ""
+"Additionally, if you have an OpenStack monitoring tool such as Stacktach "
+"in place, you may see a number of consumer-less queues beginning with "
+"monitor if your monitoring tool is not actively consuming messages from "
+"those queues."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:168
+msgid ""
+"Read more about collecting emitted notifications in part two of this "
+"series. Beyond the above queues listed, if your consumer count drops to "
+"zero for an extended period of time, you probably want to be alerted."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md
+msgid "Notifications"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:174
+msgid ""
+"Nova reports certain discrete events via notifications. Because the "
+"majority of work performed by Nova is through asynchronous calls, wherein"
+" a user initiates an operation and does not receive a response until the "
+"operation is complete, listening in on emitted events is necessary to see"
+" the full picture at a given point in time. Furthermore, handling "
+"notifications is the only way to get information on the throughput of "
+"work done by the hypervisor."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:177
+msgid ""
+"Though Nova emits notifications on about 80 events, the following table "
+"lists a number of useful notifications to listen for. The name in the "
+"table corresponds to the event_type field included in the notification "
+"payload."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:179
+msgid ""
+"|Name| Description|Metric Type| |:---:|:---:|:---:| | "
+"compute.instance.create.[start/end] | Signals the beginning or end of an "
+"instance creation event | Event: Scaling | | "
+"compute.instance.delete.[start/end] | Signals the beginning or end of an "
+"instance deletion operation | Event: Scaling  | | "
+"compute.instance.resize.prep.start | Signals the beginning of a resize "
+"operation | Event: Scaling | | compute.instance.resize.confirm.end | "
+"Signals the end of a successful resize operation | Event: Scaling  |"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:186
+msgid ""
+"For most events, correlating the start and end notifications and their "
+"associated timestamps will give you the execution time for hypervisor "
+"operations. Some operations, like resizing an instance, perform "
+"preparation and sanity checks before and after the action, so you will "
+"need to take these events into account as well to get an accurate sense "
+"of performance."
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:189
+msgid ""
+"In this post we’ve outlined some of the most useful metrics and "
+"notifications you can monitor to keep tabs on your Nova computing "
+"cluster. If you’re just getting started with OpenStack, monitoring the "
+"metrics and events listed below will provide good visibility into the "
+"health and performance of your deployment:"
+msgstr ""
+
+#: ../../source/openstack/openstack_nova_monitoring.md:199
+msgid ""
+"In the future, you may recognize additional OpenStack metrics that are "
+"particularly relevant to your own infrastructure and use cases. Of "
+"course, what you monitor will depend on both the tools you have and the "
+"OpenStack components you are using. See the companion post for step-by-"
+"step instructions on collecting Nova and RabbitMQ metrics."
+msgstr ""

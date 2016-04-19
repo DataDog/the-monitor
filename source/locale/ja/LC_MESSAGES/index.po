@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: the monitor 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-18 21:09+0900\n"
+"POT-Creation-Date: 2016-04-19 15:03+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.3\n"
 
-#: ../../source/index.rst:7
+#: ../../source/index.rst:2
 msgid "Welcome to the monitor's documentation!"
-msgstr "モニタリング101です。"
+msgstr "Datadog Blogのモニタリング101シリーズ翻訳"
 
-#: ../../source/index.rst:9
+#: ../../source/index.rst:4
 msgid "Contents:"
-msgstr ""
-
-#: ../../source/index.rst:19
-msgid "Indices and tables"
-msgstr ""
-
-#: ../../source/index.rst:21
-msgid ":ref:`genindex`"
-msgstr ""
-
-#: ../../source/index.rst:22
-msgid ":ref:`modindex`"
-msgstr ""
-
-#: ../../source/index.rst:23
-msgid ":ref:`search`"
-msgstr ""
-
+msgstr "目次"

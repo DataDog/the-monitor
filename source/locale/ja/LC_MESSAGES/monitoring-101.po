@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/monitoring-101/index.rst:2
 msgid "monitoring 101"
-msgstr ""
+msgstr "モニタリングの基本"
 
 #: ../../source/monitoring-101/index.rst:4
 msgid "Contents:"
@@ -654,7 +654,3 @@ msgid ""
 "Adhering to a standardized monitoring framework allows you to investigate"
 " problems more systematically:"
 msgstr ""
-
-#~ msgid "基本編"
-#~ msgstr ""
-
