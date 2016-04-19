@@ -1,4 +1,4 @@
-# How to monitor Varnish
+# Top Varnish performance metrics
 
 *This post is part 1 of a 3-part series on Varnish monitoring. [Part 2](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/) is about collecting Varnish metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-varnish-using-datadog/) is for readers who use both Datadog and Varnish.*
 
@@ -29,6 +29,8 @@ This article references metric terminology [introduced in our Monitoring 101 ser
 
 **NOTE:** All the metrics discussed here can be [collected from the varnishstat command line](https://www.datadoghq.com/blog/how-to-collect-varnish-metrics/), and use the metric names from the latest version, Varnish 4.0.
 
+<div class="anchor" id="client-metrics"></div>
+
 ### Client metrics
 
 [![Varnish client metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-03.png)
@@ -40,7 +42,7 @@ This article references metric terminology [introduced in our Monitoring 101 ser
 | **Name**          | **Description**                                                                                                     | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
 |-------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
 | **sess\_conn**    | Cumulative number of accepted client connections by Varnish Cache                                                   | Resource: Utilization                                                             |
-| **client\_req**   | Cumulative number of received client requests. Increments after a request is received, but before Varnish responds. | Work: Throughput                                                                  |
+| **client\_req**   | Cumulative number of received client requests. Increments after a request is received, but before Varnish responds | Work: Throughput                                                                  |
 | **sess\_dropped** | Number of connections dropped due to a full queue                                                                   | Work: Error (due to resource saturation)                                          |
 
 Once a connection is established, the client can use that connection to make several requests to access resources such as images, files, CSS, or Javascript. Varnish can service the requests itself if the requested assets are already cached, or can fetch the resources from the backend.
@@ -62,6 +64,8 @@ Once a connection is established, the client can use that connection to make sev
 
 Varnish is a cache, so by measuring cache performance you can see instantly how well Varnish is doing its work.
 
+<div class="anchor" id="hit-rate"></div>
+
 #### Hit rate
 
 The diagram below illustrates how Varnish routes requests, and when each of its cache hit metrics is incremented.
@@ -70,7 +74,7 @@ The diagram below illustrates how Varnish routes requests, and when each of its 
 
 | **Name**           | **Description**                                                                                                        | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
 |--------------------|------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| **cache\_hit**     | Cumulative number of times a file was served from Varnish’s cache.                                                     | Other                                                                             |
+| **cache\_hit**     | Cumulative number of times a file was served from Varnish’s cache                                                     | Other                                                                             |
 | **cache\_miss**    | Cumulative number of times a file was requested but was not in the cache, and was therefore requested from the backend | Other                                                                             |
 | **cache\_hitpass** | Cumulative number of hits for a “pass” file                                                                            | Other                                                                             |
 
@@ -84,6 +88,8 @@ If after increasing the amount of memory available to your cache, your hit rate
 
 [![Varnish cache hit rate](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)
 
+<div class="anchor" id="cached-objects"></div>
+
 #### Cached objects
 
 | **Name**          | **Description**                                                                                                                           | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
@@ -95,6 +101,8 @@ If after increasing the amount of memory available to your cache, your hit rate
 
 The LRU (Least Recently Used) Nuked Objects counter, `n_lru_nuked`, should be closely watched. If the eviction rate is increasing, that means your cache is evicting objects faster and faster due to a lack of space. In this case you may want to consider increasing the cache size.
 
+<div class="anchor" id="thread-metrics"></div>
+
 ### Thread-related metrics
 
 [![Varnish thread metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-07.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-07.png)
@@ -103,7 +111,7 @@ Metrics related to worker threads tell you if your thread pools are healthy and 
 
 | **Name**               | **Description**                                                                                                  | **[Metric type](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)** |
 |------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| **threads**            | Number of threads currently being used                                                                           | Resource: Utilization                                                             |
+| **threads**            | Number of threads in all pools                                                                                   | Resource: Utilization                                                             |
 | **threads\_created**   | Number of times a thread has been created                                                                        | Resource: Utilization                                                             |
 | **threads\_failed**    | Number of times that Varnish unsuccessfully tried to create a thread                                             | Resource: Error                                                                   |
 | **threads\_limited**   | Number of times Varnish wanted to create a thread but varnishd maxed out its configured capacity for new threads | Resource: Error                                                                   |
@@ -116,6 +124,8 @@ Keep an eye on the metric `thread_queue_len` which should not be too high. If it
 
 -   **`threads_failed`**: otherwise you have likely exceeded your server limits, or attempted to create threads too rapidly. The latter case usually occurs right after Varnish is started, and can be corrected by increasing the `thread_pool_add_delay` value.
 -   **`threads_limited`**: otherwise you should consider increasing the value of `thread_pool_max`.
+
+<div class="anchor" id="backend-metrics"></div>
 
 ### Backend metrics
 

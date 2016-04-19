@@ -1,10 +1,10 @@
 # How to collect Varnish metrics
 
-*This post is part 2 of a 3-part series on Varnish monitoring. [Part 1](https://www.datadoghq.com/blog/how-to-monitor-varnish/) explores the key metrics available in Varnish, and [Part 3](https://www.datadoghq.com/blog/monitor-varnish-using-datadog/) details how Datadog can help you to monitor Varnish.*
+*This post is part 2 of a 3-part series on Varnish monitoring. [Part 1](https://www.datadoghq.com/blog/top-varnish-performance-metrics/) explores the key metrics available in Varnish, and [Part 3](https://www.datadoghq.com/blog/monitor-varnish-using-datadog/) details how Datadog can help you to monitor Varnish.*
 
 ## <span style="line-height: 1.5;">How to get the Varnish metrics you need</span>
 
-Varnish Cache ships with very useful and precise monitoring and logging tools. As explained in [the first post of this series](https://www.datadoghq.com/blog/how-to-monitor-varnish/), for monitoring purposes, the most useful of the available tools is `varnishstat` which gives you a detailed snapshot of Varnish’s current performance. It provides access to in-memory statistics such as cache hits and misses, resource consumption, threads created, and more.
+Varnish Cache ships with very useful and precise monitoring and logging tools. As explained in [the first post of this series](https://www.datadoghq.com/blog/top-varnish-performance-metrics/), for monitoring purposes, the most useful of the available tools is `varnishstat` which gives you a detailed snapshot of Varnish’s current performance. It provides access to in-memory statistics such as cache hits and misses, resource consumption, threads created, and more.
 
 ### varnishstat
 
@@ -72,7 +72,7 @@ The 4 columns represent:
 
 1.  Request ID
 2.  Data type (if the type starts with “Rx” that means Varnish is receiving data, and “Tx” means Varnish is sending data)
-3.  Whether this entry records communication between Varnish and the client: “c”, or backend: “b” (see [Part 1](https://www.datadoghq.com/blog/how-to-monitor-varnish/))
+3.  Whether this entry records communication between Varnish and the client: “c”, or backend: “b” (see [Part 1](https://www.datadoghq.com/blog/top-varnish-performance-metrics/))
 4.  The data, or details about this entry
 
 ### varnishlog’s children

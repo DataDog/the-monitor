@@ -1,9 +1,9 @@
-*This post is part 2 in a 4-part series about monitoring Docker. [Part 1][part-1] discusses the novel challenge of monitoring containers instead of hosts, [part 3][part-3] covers the nuts and bolts of collecting Docker metrics, and [part 4][part-4] describes how the largest TV and radio outlet in the U.S. monitors Docker. This article describes in detail the resource metrics that are available from Docker.*
+*This post is part 2 in a 4-part series about monitoring Docker. [Part 1][part-1] discusses the novel challenge of monitoring containers instead of hosts, [part 3][part-3] covers the nuts and bolts of collecting Docker resource metrics, and [part 4][part-4] describes how the largest TV and radio outlet in the U.S. monitors Docker. This article describes in detail the resource metrics that are available from Docker.*
 
 ## Docker is like a host
-As discussed in [part 1][part-1] of this series, Docker can rightly be classified as a type of mini-host. Just like a regular host, it runs work on behalf of resident software, and that work uses CPU, memory, I/O, and network resources. However, Docker containers run inside cgroups which don't report the exact same metrics you might expect from a host. This article will discuss the resource metrics that *are* available. The [next article][part-3] in this series covers three different ways to collect Docker metrics.
+As discussed in [part 1][part-1] of this series, Docker can rightly be classified as a type of mini-host. Just like a regular host, it runs work on behalf of resident software, and that work uses CPU, memory, I/O, and network resources. However, Docker containers run inside cgroups which don't report the exact same metrics you might expect from a host. This article will discuss the resource metrics that *are* available. The [next article][part-3] in this series covers three different ways to collect Docker resource metrics.
 
-## Key Docker metrics
+## Key Docker resource metrics
 ### CPU
 
 | **Name** | **Description** | **[Metric type][types]** |
@@ -16,7 +16,7 @@ As discussed in [part 1][part-1] of this series, Docker can rightly be classifie
 #### Standard metrics
 Just like a traditional host, Docker containers report **system CPU** and **user CPU** usage. It probably goes without saying that if your container is performing slowly, CPU is one of the first resources you'll want to look at.
 
-As with all Docker metrics, you will typically collect the metrics [differently][part-3] than you would from an ordinary host. Another key difference with containers: unlike a traditional host, Docker does not report nice, idle, iowait, or irq CPU time.
+As with all Docker resource metrics, you will typically collect the metrics [differently][part-3] than you would from an ordinary host. Another key difference with containers: unlike a traditional host, Docker does not report nice, idle, iowait, or irq CPU time.
 
 <h4 class="anchor" id="throttling">Throttling</h4>
 If Docker has plenty of CPU capacity, but you still suspect that it is compute-bound, you may want to check a container-specific metric: CPU throttling.
@@ -89,7 +89,7 @@ As discussed in the next article, network metrics can be collected from [pseudo-
 ## Up next
 Docker can report all the basic resource metrics you'd expect from a traditional host: CPU, memory, I/O, and network. However, some specific metrics you might expect (such as nice, idle, iowait, or irq CPU time) are not available, and others metrics are unique to containers, such as CPU throttling.
 
-The commands used to collect resource metrics from Docker are different from the commands used on a traditional host, so the next article in this series covers the three main approaches to Docker metrics collection. [Read on...][part-3]
+The commands used to collect resource metrics from Docker are different from the commands used on a traditional host, so the next article in this series covers the three main approaches to Docker resource metrics collection. [Read on...][part-3]
 - - -
 
 *Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues].*

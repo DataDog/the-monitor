@@ -14,7 +14,7 @@ Redis is available as a free, open-source product. Commercial support is availab
 
 Redis is employed by many high-traffic websites and applications such as Twitter, GitHub, Docker, Pinterest, Datadog, and Stack Overflow.
 
-## Key Redis Metrics
+## Key Redis performance metrics
 
 Monitoring Redis can help catch problems in two areas: resource issues with Redis itself, and problems arising elsewhere in your supporting infrastructure.
 
@@ -27,6 +27,8 @@ In this article we go though the most important Redis metrics in each of the fol
 -   [Error metrics](#error-metrics)
 
 Note that we use metric terminology [introduced in our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a basic framework for metric collection and alerting.
+
+<div class="anchor" id="performance-metrics"></div>
 
 ### Performance metrics
 
@@ -65,6 +67,8 @@ The `keyspace_misses` metric is discussed in the [Error metrics section](#error-
 
 A low cache hit rate can be caused by a number of factors, including data expiration and insufficient memory allocated to Redis (which could cause key eviction). Low hit rates could cause increases in the latency of your applications, because they have to fetch data from a slower, alternative resource.
 
+<div class="anchor" id="memory-metrics"></div>
+
 ### Memory metrics
 
 | **Name**                  | **Description**                                                                | **[Metric Type](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)** |
@@ -73,6 +77,8 @@ A low cache hit rate can be caused by a number of factors, including data expira
 | mem\_fragmentation\_ratio | Ratio of memory allocated by the operating system to memory requested by Redis | Resource: Saturation                                                              |
 | evicted\_keys             | Number of keys removed due to reaching the maxmemory limit                     | Resource: Saturation                                                              |
 | blocked\_clients          | Number of clients pending on a blocking call  (BLPOP, BRPOP, BRPOPLPUSH)       | Other                                                                             |
+
+<div class="anchor" id="used-memory-metric"></div>
 
 #### Metric to watch: used\_memory
 
@@ -99,6 +105,8 @@ Tracking fragmentation ratio is important for understanding your Redis instance�
 If your server is suffering from a fragmentation ratio above 1.5, restarting your Redis instance will allow will allow the operating system to recover memory previously unusable due to fragmentation. In this case, an [alert as a notification](https://www.datadoghq.com/blog/monitoring-101-alerting/#levels-of-urgency) is probably sufficient.
 
 If, however, your Redis server has a fragmentation ratio below 1, you may want to [alert as a page](https://www.datadoghq.com/blog/pagerduty/) so that you can quickly increase available memory or reduce memory usage.
+
+<div class="anchor" id="evicted-keys-metric"></div>
 
 #### Metric to alert on: evicted\_keys (Cache only)
 
@@ -157,6 +165,8 @@ Redis offers a number of blocking commands which operate on lists. BLPOP, BRPOP,
 
 An increase in the number of blocked clients waiting on data could be a sign of trouble. Latency or other issues could be preventing the source list from being filled. Although a blocked client in itself is not cause for alarm, if you are seeing a consistently nonzero value for this metric you should investigate.
 
+<div class="anchor" id="basic-activity-metrics"></div>
+
 ### Basic activity metrics
 
 | **Name**                       | **Description**                                                 | **[Metric Type](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)** |
@@ -193,6 +203,8 @@ Alternatively, if you are using Redis as a database or queue, volatile keys may 
 
 [![Redis Keys by host](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img5.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img5.png)
 
+<div class="anchor" id="persistence-metrics"></div>
+
 ### Persistence metrics
 
 |                                 |                                                   |                                                                                   |
@@ -210,6 +222,8 @@ Persistence may not be necessary if you are using Redis as a cache or in a use c
 Generally, it is a good idea to keep an eye on the volatility of your data set. Excessively long time intervals between writes to disk could cause data loss in the event of server failure. Any changes made to the data set between the last save time and time of failure are lost.
 
 Monitoring `rdb_changes_since_last_save` gives you more insight into your data volatility. Long time intervals between writes are not a problem if your data set has not changed much in that interval. Tracking both metrics gives you a good idea of how much data you would lose should failure occur at a given point in time.
+
+<div class="anchor" id="error-metrics"></div>
 
 ### Error metrics
 
@@ -249,5 +263,5 @@ In this post we’ve mentioned some of the most useful metrics you can monitor t
 -   [Evictions](#memory-metrics)
 -   [Rejected clients](#error-metrics)
 
-Eventually you will recognize additional metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on the tools you have and the metrics available to you. See the [companion post](https://www.datadoghq.com/blog/how-to-collect-redis-metrics) for step-by-step instructions on collecting Redis metrics.
+Eventually you will recognize additional metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on the tools you have and the metrics available to you. See the [companion post](https://www.datadoghq.com/blog/how-to-collect-redis-metrics) for step-by-step instructions on collecting Redis performance metrics.
 

@@ -2,7 +2,7 @@
 
 *This post is part 3 of a 3-part series on monitoring Azure virtual machines. [Part 1](/blog/how-to-monitor-microsoft-azure-vms) explores the key metrics available in Azure, and [Part 2](/blog/how-to-collect-azure-metrics) is about collecting Azure VM metrics.*
 
-If you’ve already read [our post](/blog/how-to-collect-azure-metrics) on collecting Azure VM metrics, you’ve seen that you can view and alert on metrics from individual VMs using the Azure web portal. For a more dynamic, comprehensive view of your infrastructure, you can connect Azure to Datadog.
+If you’ve already read [our post](/blog/how-to-collect-azure-metrics) on collecting Azure performance metrics, you’ve seen that you can view and alert on metrics from individual VMs using the Azure web portal. For a more dynamic, comprehensive view of your infrastructure, you can connect Azure to Datadog.
 
 ## Why Datadog?
 
@@ -23,7 +23,7 @@ As with all hosts, you can install the Datadog Agent on an Azure VM (whether [Wi
 
 Both options provide basic metrics about your Azure VMs with a minimum of overhead, but the two approaches each provide somewhat different metric sets, and hence can be complementary. In this post we’ll walk you through both options and explain the benefits of each.
 
-## Enable Datadog to collect Azure metrics
+## Enable Datadog to collect Azure performance metrics
 
 The easiest way to start gathering metrics from Azure is to connect Datadog to Azure’s read-only monitoring API. You won’t need to install anything, and you’ll start seeing basic metrics from all your VMs right away.
 
@@ -31,7 +31,7 @@ To authorize Datadog to collect metrics from your Azure VMs, simply click [this 
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-config-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-config-2.png)
 
-### View your Azure metrics
+### View your Azure performance metrics
 
 Once you have successfully integrated Datadog with Azure, you will see [an Azure default screenboard](https://app.datadoghq.com/screen/integration/azure) on your list of [Integration Dashboards](https://app.datadoghq.com/dash/list). The basic Azure dashboard displays all of the key CPU, disk I/O, and network metrics highlighted in Part 1 of this series, “How to monitor Microsoft Azure VMs”.
 

@@ -1,4 +1,4 @@
-*This post is part 1 in a 4-part series about monitoring Docker. [Part 2][part-2] explores metrics that are available from Docker, [part 3][part-3] covers the nuts and bolts of collecting those Docker metrics, and [part 4][part-4] describes how the largest TV and radio outlet in the U.S. monitors Docker. This article dives into some of the new challenges Docker creates for infrastructure monitoring.*
+*This post is part 1 in a 4-part series about Docker monitoring. [Part 2][part-2] explores metrics that are available from Docker, [part 3][part-3] covers the nuts and bolts of collecting those Docker metrics, and [part 4][part-4] describes how the largest TV and radio outlet in the U.S. monitors Docker. This article dives into some of the new challenges Docker creates for infrastructure monitoring.*
 
 You have probably heard of Docker—it is a young container technology with a ton of momentum. But if you haven’t, you can think of containers as easily-configured, lightweight VMs that start up fast, often in under one second. Containers are ideal for microservice architectures and for environments that scale rapidly or release often. 
 
@@ -21,7 +21,7 @@ A significant architectural shift toward containers is underway, and as with any
 
 The significant operational challenge of *monitoring* containers is much less well-understood.
 
-## Monitoring is crucial 
+## Docker monitoring is crucial 
 ![driving in the rain](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/obscured-vision.png)
 Running software in production without monitoring is like driving without visibility: you have no idea if you're about to crash, or how to stay on the road. 
 
@@ -179,7 +179,7 @@ Therefore:
 
 With these guidelines in place, you should be ready for a painless containerized future. 
 
-[Part two][part-2] of this series provides details about the key metrics that are available from Docker.
+[Part two][part-2] of this series provides details about the key metrics that are available via Docker monitoring.
 
 - - -
 
@@ -187,7 +187,7 @@ With these guidelines in place, you should be ready for a painless containerized
 
 <iframe width="100%" height="100" style="border: 0;" src="https://go.pardot.com/l/38172/2015-03-02/h6c2r" scrolling="no" type="text/html" frameborder="0" allowtransparency="true"></iframe>
 
-[markdown]: https://github.com/DataDog/the-monitor/blob/master/docker/the_docker_monitoring_problem.md
+[markdown]: https://github.com/DataDog/the-monitor/blob/master/docker/1_the_docker_monitoring_problem.md
 [issues]: https://github.com/datadog/the-monitor/issues
 [part-2]: https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/
 [part-3]: https://www.datadoghq.com/blog/how-to-collect-docker-metrics
