@@ -1,1 +1,4 @@
 PDF
+.python-version
+build/html
+build/doctrees
