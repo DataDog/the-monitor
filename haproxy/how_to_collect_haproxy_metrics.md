@@ -1,9 +1,9 @@
 #How to collect HAProxy metrics
 _This post is part 2 of a 3-part series on HAProxy monitoring. [Part 1](http://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics) evaluates the key metrics emitted by HAProxy, and [Part 3](http://www.datadoghq.com/blog/monitor-haproxy-with-datadog) details how Datadog can help you monitor HAProxy._
 
-## Collecting the metrics you need
+## Collecting the HAProxy metrics you need
 
-Now that you know the [key HAProxy metrics to monitor](http://www.datadoghq.com/monitoring-haproxy-performance-metrics), it’s time to collect them! You can either use HAProxy’s built-in tools or a third-party tool. HAProxy gives you two means by which you can monitor its performance: via a status page, or via sockets. Both of the methods below give you an immediate and detailed view into the performance of your load balancer. The main difference between the two is that the status page is static and read-only, whereas the socket interface allows you to modify HAProxy’s configuration on the fly.
+Now that you know the [key HAProxy metrics to monitor](http://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics), it’s time to collect them! You can either use HAProxy’s built-in tools or a third-party tool. HAProxy gives you two means by which you can monitor its performance: via a status page, or via sockets. Both of the methods below give you an immediate and detailed view into the performance of your load balancer. The main difference between the two is that the status page is static and read-only, whereas the socket interface allows you to modify HAProxy’s configuration on the fly.
 
 ### Stats page
 
@@ -98,9 +98,9 @@ Once you’ve enabled the socket interface, getting the metrics is a simple one-
     appname,lamp2,0,0,0,0,,0,0,0,,0,,0,0,0,0,DOWN,1,1,0,1,1,133,133,,1,3,2,,0,,2,0,,0,L4TOUT,,2002,0,0,0,0,0,0,0,,,,0,0,,,,,-1,,,0,0,0,0,
     appname,BACKEND,0,0,0,77,200,4641,380562,988533,0,0,,4641,0,0,0,DOWN,0,0,0,,1,133,133,,1,3,0,,0,,1,0,,3292,,,,0,0,0,0,4641,0,,,,,0,0,0,0,0,0,-1,,,0,0,0,0, 
 
-_As you can see, if you want to access your metrics in a human-readable format, the stats page is the way to go._ 
+_As you can see, if you want to access your HAProxy metrics in a human-readable format, the stats page is the way to go._ 
 
-The output metrics are grouped by server. In the snippet above you can see four devices: _http-in_, a frontend; the backend _appname_; and the backend servers associated with _appname_, _lamp1_ and _lamp2_. The metric names are abbreviated and some, if you have already read [Part 1](http://www.datadoghq.com/monitoring-haproxy-performance-metrics), should look familiar: `qcur` is the current queue size, `bin` is the number of bytes in, etc. You can find a full list of HAProxy metrics [in the documentation](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#9.1).
+The output metrics are grouped by server. In the snippet above you can see four devices: _http-in_, a frontend; the backend _appname_; and the backend servers associated with _appname_, _lamp1_ and _lamp2_. The metric names are abbreviated and some, if you have already read [Part 1](http://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics), should look familiar: `qcur` is the current queue size, `bin` is the number of bytes in, etc. You can find a full list of HAProxy metrics [in the documentation](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#9.1).
 
 ### Third party tools
 
@@ -113,6 +113,6 @@ With a tool like HATop, you get human-readable metrics (updated in real time), a
 
 ## Conclusion
 
-HAProxy’s built-in tools provide a wealth of data on its performance and health. For spot checking your HAProxy setup, HAProxy’s tools are more than enough. For monitoring systems in production, however, you will likely need a dedicated monitoring system that can collect and store your metrics at high resolution, and that provides a simple interface for graphing and alerting on your metrics. 
+HAProxy’s built-in tools provide a wealth of data on its performance and health. For spot checking your HAProxy setup, HAProxy’s tools are more than enough. For monitoring systems in production, however, you will likely need a dedicated monitoring system that can collect and store your HAProxy metrics at high resolution, and that provides a simple interface for graphing and alerting on your metrics. 
 
-At Datadog, we have built an integration with HAProxy so you can begin collecting and monitoring its metrics with a minimum of setup. Learn how Datadog can help you to monitor HAProxy in the [next and final part](http://www.datadoghq.com/blog/monitor-haproxy-with-datadog) of this series.
+At Datadog, we have built an integration with HAProxy so you can begin collecting and monitoring its metrics with a minimum of setup. Learn how Datadog can help you to monitor HAProxy metrics in the [next and final part](http://www.datadoghq.com/blog/monitor-haproxy-with-datadog) of this series.

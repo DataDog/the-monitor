@@ -1,14 +1,14 @@
 # How to monitor NGINX with Datadog
 
-*This post is part 3 of a 3-part series on NGINX monitoring. [Part 1](/blog/how-to-monitor-nginx/) explores the key metrics available in NGINX, and [Part 2](/blog/how-to-collect-nginx-metrics/) is about collecting those metrics.*
+*This post is part 3 of a 3-part series on NGINX performance monitoring. [Part 1](/blog/how-to-monitor-nginx/) explores the key metrics available in NGINX, and [Part 2](/blog/how-to-collect-nginx-metrics/) is about collecting those metrics.*
 
-If you’ve already read [our post on monitoring NGINX](/blog/how-to-monitor-nginx/), you know how much information you can gain about your web environment from just a handful of metrics. And you’ve also seen just how easy it is to start collecting metrics from NGINX on ad hoc basis. But to implement comprehensive, ongoing NGINX monitoring, you will need a robust monitoring system to store and visualize your metrics, and to alert you when anomalies happen. In this post, we’ll show you how to set up NGINX monitoring in Datadog so that you can view your metrics on customizable dashboards like this:
+If you’ve already read [our post on monitoring NGINX](/blog/how-to-monitor-nginx/), you know how much information you can gain about your web environment from just a handful of metrics. And you’ve also seen just how easy it is to start collecting metrics from NGINX on ad hoc basis. But to implement comprehensive, ongoing NGINX performance monitoring, you will need a robust monitoring system to store and visualize your metrics, and to alert you when anomalies happen. In this post, we’ll show you how to set up NGINX monitoring in Datadog so that you can view your metrics on customizable dashboards like this:
 
 [![NGINX dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_board_5.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_board_5.png)
 
 Datadog allows you to build graphs and alerts around individual hosts, services, processes, metrics—or virtually any combination thereof. For instance, you can monitor all of your NGINX hosts, or all hosts in a certain availability zone, or you can monitor a single key metric being reported by all hosts with a certain tag. This post will show you how to:
 
--   Monitor NGINX metrics on Datadog dashboards, alongside all your other systems
+-   Monitor NGINX performance metrics on Datadog dashboards, alongside all your other systems
 -   Set up automated alerts to notify you when a key metric changes dramatically
 
 <h2 class="anchor" id="configuring-nginx">Configuring NGINX</h2>
@@ -73,7 +73,7 @@ Finally, switch on the NGINX integration inside your Datadog account. It’s as 
 
 ## Metrics!
 
-Once the Agent begins reporting NGINX metrics, you will see [an NGINX dashboard](https://app.datadoghq.com/dash/integration/nginx) among your list of available dashboards in Datadog.
+Once the Agent begins reporting NGINX performance metrics, you will see [an NGINX dashboard](https://app.datadoghq.com/dash/integration/nginx) among your list of available dashboards in Datadog.
 
 The basic NGINX dashboard displays a handful of graphs encapsulating most of the key metrics highlighted [in our introduction to NGINX monitoring](/blog/how-to-monitor-nginx/). (Some metrics, notably request processing time, require log analysis and are not available in Datadog.)
 
@@ -85,7 +85,7 @@ You can also monitor your NGINX instances at a higher level using Datadog’s [H
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx-host-map-3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx-host-map-3.png)
 
-## Alerting on NGINX metrics
+## Alerting on NGINX performance metrics
 
 Once Datadog is capturing and visualizing your metrics, you will likely want to set up some monitors to automatically keep tabs on your metrics—and to alert you when there are problems. Below we’ll walk through a representative example: a metric monitor that alerts on sudden drops in NGINX throughput.
 

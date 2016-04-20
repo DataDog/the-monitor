@@ -8,13 +8,13 @@ Microsoft Azure is a cloud provider offering a variety of compute, storage, and 
 
 In this article, we focus on IaaS. In an IaaS deployment, Azure’s basic unit of compute resources is the virtual machine. Azure users can spin up general-purpose Windows or Linux (Ubuntu) VMs, as well as machine images for applications such as SQL Server or Oracle.
 
-## Key Azure metrics
+## Key metrics to monitor Azure
 
 Whether you run Linux or Windows on Azure, you will want to monitor certain basic VM-level metrics to make sure that your servers and services are healthy. Four of the most generally relevant metric types are **CPU usage**, **disk I/O**, **memory utilization** and **network traffic**. Below we’ll briefly explore each of those metrics and explain how they can be accessed in Azure.
 
 This article references metric terminology [introduced in our Monitoring 101 series](/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
-Azure users can monitor the following metrics using [the Azure web portal](https://portal.azure.com/) or can access the raw data directly via the Azure diagnostics extension. Details on how to collect these metrics are available in [the companion post](/blog/how-to-collect-azure-metrics) on Azure metrics collection.
+Users can monitor Azure with the following metrics via [the Azure web portal](https://portal.azure.com/) or can access the raw data directly via the Azure diagnostics extension. Details on how to collect these metrics are available in [the companion post](/blog/how-to-collect-azure-metrics) on Azure metrics collection.
 
 ### CPU metrics
 
@@ -27,6 +27,8 @@ CPU usage is one of the most commonly monitored host-level metrics. Whenever an 
 | CPU privileged time | Percentage of time CPU in kernel mode | Resource: Utilization                                    |
 
 CPU metrics allow you to determine not only how utilized your processors are (via **CPU percentage**) but also how much of that utilization is accounted for by user applications. The **CPU user time** metric tells you how much time the processor spent in the restricted “user” mode, in which applications run, as opposed to the privileged kernel mode, in which the processor has direct access to the system’s hardware. The **CPU privileged time** metric captures the latter portion of CPU activity.
+
+<div class="anchor" id="cpu-percentage" />
 
 #### Metric to alert on: CPU percentage
 
@@ -42,6 +44,8 @@ Monitoring disk I/O is critical for understanding how your applications are impa
 |------------|----------------------------------|----------------------------------------------------------|
 | Disk read  | Data read from disk, per second  | Resource: Utilization                                    |
 | Disk write | Data written to disk, per second | Resource: Utilization                                    |
+
+<div class="anchor" id="disk-read" />
 
 #### Metric to alert on: Disk read
 
@@ -61,6 +65,8 @@ Monitoring memory usage can help identify low-memory conditions and performance 
 | Memory available | Free memory, in bytes/MB/GB                                   | Resource: Utilization                                    |
 | Memory pages     | Number of pages written to or retrieved from disk, per second | Resource: Saturation                                     |
 
+<div class="anchor" id="memory-pages" />
+
 #### Metric to alert on: Memory pages
 
 Paging events occur when a program requests a [page](https://en.wikipedia.org/wiki/Page_(computer_memory)) that is not available in memory and must be retrieved from disk, or when a page is written to disk to free up working memory. Excessive paging can introduce slowdowns in an application. A low level of paging can occur even when the VM is underutilized—for instance, when the virtual memory manager automatically trims a process’s [working set](https://msdn.microsoft.com/en-us/library/windows/desktop/cc441804(v=vs.85).aspx) to maintain free memory. But a sudden spike in paging can indicate that the VM needs more memory to operate efficiently.
@@ -76,6 +82,8 @@ Azure’s default metric set provides data on network traffic in and out of a VM
 | Bytes received        | Bytes received, per second       | Resource: Utilization                                    | Linux VMs        |
 | TCP segments sent     | Segments sent, per second        | Resource: Utilization                                    | Windows VMs      |
 | TCP segments received | Segments received, per second    | Resource: Utilization                                    | Windows VMs      |
+
+<div class="anchor" id="network-sent" />
 
 #### Metric to alert on: Bytes/TCP segments sent
 
@@ -95,7 +103,7 @@ In this post we’ve explored several general-purpose metrics you should monitor
 -   [Memory pages](#memory-pages)
 -   [Network traffic sent/received](#network-sent)
 
-Over time you will recognize additional, specialized metrics that are relevant to your applications. [Part 2 of this series](/blog/how-to-collect-azure-metrics/) provides step-by-step instructions for collecting any metric you may need from Azure.
+Over time you will recognize additional, specialized metrics that are relevant to your applications. [Part 2 of this series](/blog/how-to-collect-azure-metrics/) provides step-by-step instructions for collecting any metric you may need to monitor Azure.
 
 ## Acknowledgments
 

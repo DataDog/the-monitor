@@ -176,7 +176,7 @@ The sections are as follows:
 -   `Cluster`: Redis Cluster information
 -   `Keyspace`: Database related statistics
 
-#### Key metrics
+#### Key Redis metrics
 
 In [Part 1](https://www.datadoghq.com/blog/how-to-monitor-redis-performance-metrics) of this series, we mentioned several Redis metrics worth monitoring. Here’s where to find them with the `info` command:
 
@@ -487,5 +487,5 @@ Max latency so far: 50 microseconds.
 
 Redis’s many tools offer a wealth of data on its performance. For spot-checking the health of your server or looking into causes of significant latency, Redis’s built-in tools are more than enough for the job.
 
-With so many metrics exposed, getting the information you want all in one place can be a challenge. Luckily, Datadog can help take the pain out of the process. At Datadog, we have built an integration with Redis so you can begin collecting and monitoring its metrics with a minimum of setup. Learn how Datadog can help you to monitor Redis in the [next and final part](https://www.datadoghq.com/blog/monitor-redis-using-datadog) of this series of articles.
+With so many Redis metrics exposed, getting the information you want all in one place can be a challenge. Luckily, Datadog can help take the pain out of the process. At Datadog, we have built an integration with Redis so you can begin collecting and monitoring its metrics with a minimum of setup. Learn how Datadog can help you to monitor Redis metrics in the [next and final part](https://www.datadoghq.com/blog/monitor-redis-using-datadog) of this series of articles.
 

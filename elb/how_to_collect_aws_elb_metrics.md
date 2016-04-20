@@ -8,6 +8,8 @@ This part of the series is about collecting ELB metrics, which are available fro
 
 We will also explain how [using ELB access logs](#logs) can be useful when investigating on specific request issues.
 
+<div class="anchor" id="console" />
+
 ## Using the AWS Management Console
 
 Using the online management console is the simplest way to monitor your load balancers with CloudWatch. It allows you to set up basic automated alerts and to get a visual picture of recent changes in individual metrics.
@@ -37,6 +39,8 @@ With the CloudWatch Management Console you can also create simple alerts that tr
 Click on the “Create Alarm” button at the right of your graph, and you will be able to set up the alert and configure it to notify a list of email addresses:
 
 [![ELB alerts in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-05.png)
+
+<div class="anchor" id="cli" />
 
 ## Using the AWS Command Line Interface
 
@@ -119,6 +123,8 @@ That command should return a JSON output of this form:
 
 [Here](http://docs.aws.amazon.com/cli/latest/reference/elb/index.html) are all the ELB commands you can run with the CLI.
 
+<div class="anchor" id="tools" />
+
 ## Monitoring tool integrated with CloudWatch
 
 The third way to collect CloudWatch metrics is via your own monitoring tools, which can offer extended monitoring functionality.
@@ -133,6 +139,8 @@ You probably need a dedicated monitoring system if, for example, you want to:
 CloudWatch can be integrated with outside monitoring systems  via API, and in many cases the integration just needs to be enabled to start working.
 
 As explained in [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics), CloudWatch’s ELB-related metrics give you great insight about your load balancers’ health and performance. However, for more precision and granularity on your backend instances’ performance, you should consider monitoring their resources directly. Correlating native metrics from your EC2 instances with ELB metrics will give you a fuller, more precise picture. In [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog), we cover a concrete example of this type of metrics collection and detail how to monitor ELB using Datadog.
+
+<div class="anchor" id="logs" />
 
 ## ELB Access Logs
 
