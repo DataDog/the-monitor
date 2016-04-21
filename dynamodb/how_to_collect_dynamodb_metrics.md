@@ -10,6 +10,8 @@ CloudWatch metrics can be accessed in three different ways:
 -   [Using the command-line interface (CLI)](#cli)
 -   [Using a monitoring tool integrating the CloudWatch API](#integrations)
 
+<div class="anchor" id="console" />
+
 ## Using the AWS Management Console
 
 Using the online management console is the simplest way to monitor DynamoDB with CloudWatch. It allows you to set up simple automated alerts, and get a visual picture of recent changes in individual metrics.
@@ -35,6 +37,8 @@ With the CloudWatch Management Console you can also create alerts which trigger 
 Click on **Create Alarm** at the right of your graph, and you will be able to set up the alert, and configure it to notify a list of email addresses:
 
 [![DynamoDB CloudWatch alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-04b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-04b.png)
+
+<div class="anchor" id="cli" />
 
 ## Using the Command Line Interface
 
@@ -158,6 +162,8 @@ Here is an example of a JSON output format you will see from a “get-metric-sta
 </tr>
 </tbody>
 </table>
+
+<div class="anchor" id="integrations" />
 
 ## Integrations
 

@@ -1,10 +1,10 @@
-# Protected: How to collect NGINX metrics
+# How to collect NGINX metrics
 
-*This post is part 2 of a 3-part series on NGINX monitoring. [Part 1](/blog/how-to-monitor-nginx/) explores the key metrics available in NGINX, and [Part 3](/blog/how-to-monitor-nginx-with-datadog/) details how to monitor NGINX with Datadog.*
+*This post is part 2 of a 3-part series on NGINX monitoring. [Part 1](https://www.datadoghq.com/blog/how-to-monitor-nginx/) explores the key metrics available in NGINX, and [Part 3](https://www.datadoghq.com/blog/how-to-monitor-nginx-with-datadog/) details how to monitor NGINX with Datadog.*
 
 ## How to get the NGINX metrics you need
 
-How you go about capturing metrics depends on which version of NGINX you are using, as well as which metrics you wish to access. (See [the companion article](/blog/how-to-monitor-nginx/) for an in-depth exploration of NGINX metrics.) Free, open-source NGINX and the commercial product NGINX Plus both have status modules that report metrics, and NGINX can also be configured to report certain metrics in its logs:
+How you go about capturing metrics depends on which version of NGINX you are using, as well as which metrics you wish to access. (See [the companion article](https://www.datadoghq.com/blog/how-to-monitor-nginx/) for an in-depth exploration of NGINX metrics.) Free, open-source NGINX and the commercial product NGINX Plus both have status modules that report metrics, and NGINX can also be configured to report certain metrics in its logs:
 
 <table><colgroup> <col style="text-align: left;" /> <col style="text-align: center;" /> <col style="text-align: center;" /> <col style="text-align: center;" /> </colgroup>
 <thead>
@@ -69,6 +69,8 @@ How you go about capturing metrics depends on which version of NGINX you are usi
 </tr>
 </tbody>
 </table>
+
+<div class="anchor" id="open-source" />
 
 ### Metrics collection: NGINX (open-source)
 
@@ -135,6 +137,8 @@ Note that if you are trying to access the status page from a remote machine, you
 
 The NGINX status page is an easy way to get a quick snapshot of your metrics, but for continuous monitoring you will need to automatically record that data at regular intervals. Parsers for the NGINX status page already exist for monitoring tools such as [Nagios](https://exchange.nagios.org/directory/Plugins/Web-Servers/nginx) and [Datadog](http://docs.datadoghq.com/integrations/nginx/), as well as for the statistics collection daemon [collectD](https://collectd.org/wiki/index.php/Plugin:nginx).
 
+<div class="anchor" id="plus" />
+
 ### Metrics collection: NGINX Plus
 
 The commercial NGINX Plus provides [many more metrics](http://nginx.org/en/docs/http/ngx_http_status_module.html#data) through its ngx\_http\_status\_module than are available in open-source NGINX. Among the additional metrics exposed by NGINX Plus are bytes streamed, as well as information about upstream systems and caches. NGINX Plus also reports counts of all HTTP status code types (1xx, 2xx, 3xx, 4xx, 5xx). A sample NGINX Plus status board is available [here](http://demo.nginx.com/status.html).
@@ -143,7 +147,7 @@ The commercial NGINX Plus provides [many more metrics](http://nginx.org/en/docs/
 
 *Note: the “Active” connections on the NGINX Plus status dashboard are defined slightly differently than the Active state connections in the metrics collected via the open-source NGINX stub status module. In NGINX Plus metrics, Active connections do not include connections in the Waiting state (aka Idle connections).*
 
-NGINX Plus also reports [metrics in JSON format](http://demo.nginx.com/status) for easy integration with other monitoring systems. With NGINX Plus, you can see the metrics and health status [for a given upstream grouping of servers](http://demo.nginx.com/status/upstreams/demoupstreams), or drill down to get a count of just the response codes [from a single server](http://demo.nginx.com/status/upstreams/demoupstreams/0/responses) in that upstream:
+NGINX Plus also reports [metrics in JSON format](http://demo.nginx.com/status) for easy integration with other monitoring systems. With NGINX Plus, you can see the metrics and health status for a given upstream grouping of servers, or drill down to get a count of just the response codes from a single server in that upstream:
 
 ```
 {"1xx":0,"2xx":3483032,"3xx":0,"4xx":23,"5xx":0,"total":3483055}
@@ -172,6 +176,8 @@ nginx -s reload
 ```
 
 The official NGINX Plus docs have [more details](http://nginx.org/en/docs/http/ngx_http_status_module.html#example) on how to configure the expanded status module.
+
+<div class="anchor" id="logs" />
 
 ### Metrics collection: NGINX logs
 
@@ -221,7 +227,7 @@ You can use a variety of tools and services to parse and analyze NGINX logs. For
 
 Which NGINX metrics you monitor will depend on the tools available to you, and whether the insight provided by a given metric justifies the overhead of monitoring that metric. For instance, is measuring error rates important enough to your organization to justify investing in NGINX Plus or implementing a system to capture and analyze logs?
 
-At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX with Datadog [in this post](/blog/how-to-monitor-nginx-with-datadog/), and get started right away with [a free trial of Datadog](https://app.datadoghq.com/signup).
+At Datadog, we have built integrations with both NGINX and NGINX Plus so that you can begin collecting and monitoring metrics from all your web servers with a minimum of setup. Learn how to monitor NGINX metrics with Datadog [in this post](https://www.datadoghq.com/blog/how-to-monitor-nginx-with-datadog/), and get started right away with [a free trial of Datadog](https://app.datadoghq.com/signup).
 
 ------------------------------------------------------------------------
 

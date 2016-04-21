@@ -302,7 +302,7 @@ The API is the easiest way to get network metrics for your container. (RX repres
 }
 </pre>
 
-### Selecting specific metrics
+### Selecting specific Docker metrics
 By sending output from the API to grep to throw out non-JSON rows, and then to `jq` for JSON parsing, we can create a stream of selected metrics. Some examples are below.
 
 * **CPU stats** : <pre>$ echo -ne "GET /containers/$CONTAINER_ID/stats HTTP/1.1\r\n\r\n" | nc -U /var/run/docker.sock | grep "^{" | jq '.cpu_stats'</pre>
@@ -319,7 +319,7 @@ Other useful Docker API calls are documented [here](https://docs.docker.com/refe
 # Conclusion
 Between pseudo-files, the stats command, and the API, there are several ways to get native Docker metrics, each with their own usage and completeness characteristics. Since Docker is evolving quickly, the metrics provided by these commands will likely continue to change significantly over the coming years. 
 
-If you're using Docker in production, you probably can't afford to rely on manual metric spot-checks with these built-in tools—they won't provide sufficient visibility into your systems' health and performance. Most likely you'll need a dedicated monitoring service that collects and stores your metrics for display, correlation, and alerting. The next and final part of this article (coming soon) describes how the largest TV and radio outlet in the U.S. monitors Docker.
+If you're using Docker in production, you probably can't afford to rely on manual metric spot-checks with these built-in tools—they won't provide sufficient visibility into your systems' health and performance. Most likely you'll need a dedicated monitoring service that collects and stores your metrics for display, correlation, and alerting. The next and final part of this article (coming soon) describes how the largest TV and radio outlet in the U.S. monitors their Docker metrics.
 - - -
 
 *Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues].*

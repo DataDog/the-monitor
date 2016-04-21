@@ -1,14 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2016, Datadog
+<<<<<<< HEAD
 # This file is distributed under the same license as the the monitor package.
+=======
+# This file is distributed under the same license as the The monitor package.
+>>>>>>> sphinx-po
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: the monitor 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-18 21:28+0900\n"
+=======
+"Project-Id-Version: The monitor 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-19 15:39+0900\n"
+>>>>>>> sphinx-po
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +27,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/monitoring-101/index.rst:2
+<<<<<<< HEAD
 msgid "基本編"
+=======
+msgid "monitoring 101"
+>>>>>>> sphinx-po
 msgstr ""
 
 #: ../../source/monitoring-101/index.rst:4

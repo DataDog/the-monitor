@@ -9,7 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: the monitor 0.1\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2016-04-18 21:28+0900\n"
+=======
+"POT-Creation-Date: 2016-04-19 09:21+0900\n"
+>>>>>>> sphinx-po
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +23,13 @@ msgstr ""
 "Generated-By: Babel 2.3.3\n"
 
 #: ../../source/monitoring-101/index.rst:2
+<<<<<<< HEAD
 msgid "基本編"
 msgstr ""
+=======
+msgid "monitoring 101"
+msgstr "モニタリングの基本"
+>>>>>>> sphinx-po
 
 #: ../../source/monitoring-101/index.rst:4
 msgid "Contents:"
@@ -654,4 +663,7 @@ msgid ""
 "Adhering to a standardized monitoring framework allows you to investigate"
 " problems more systematically:"
 msgstr ""
+<<<<<<< HEAD
 
+=======
+>>>>>>> sphinx-po
