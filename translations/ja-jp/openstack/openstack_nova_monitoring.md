@@ -45,9 +45,7 @@ _一般的なOpenStackの実行環境みでは、16個のサービスの内、7�
 ## What Nova does
 [![Nova diagram][nova]][nova]
 
-<!--
 <center>Somewhat confusingly, the Compute module (Nova) contains a component, also called Compute.</center>
--->
 
 <center>ややこしことに、コンピュートモジュールのNovaは、それ自体にコンピュートという名前コンポーネントを持っています。</center>
 
@@ -74,7 +72,7 @@ OpenStackのモジュールは、多くのメトリクスを公開していま�
 
 > Combining metrics from various systems in addition to log file data and [OpenStack notifications][notifs] will really help pull back the curtain so you can observe what's actually going on in your deployment.
 
-fasdfasdfasdfasdfasfdas  asdfadsfasf
+ログファイルのデータやOpenStackからの通知に各システムから集取したメトリクスを連携することにより、今まで閉じていたカーテンを開いた時のように、運用しているシステムで実際に起きている事象をクリアに把握できるようになるでしょう。
 
 
 <div class="anchor" id="hypervisor-metrics" />
@@ -85,10 +83,12 @@ fasdfasdfasdfasdfasfdas  asdfadsfasf
 
 > The hypervisor initiates and oversees the operation of virtual machines. Failure of this critical piece of software will cause tenants to experience issues provisioning and performing other operations on their virtual machines, so monitoring the hypervisor is crucial.
 
-
+ハイパーバイザが開始し、仮想マシンの動作を統括しています。ソフトウェアのこの重要な部分の故障は、プロビジョニングとその仮想マシン上で他の操作を実行する問題が発生するためにテナントを引き起こすので、ハイパーバイザを監視することが重要であるだろう。
 
 
 > Though a number of hypervisor metrics are available, the following subset gives a good idea of what your hypervisors are doing under the hood:
+
+ハイパーバイザ・メトリクスの数が利用可能であるが、以下のサブセットは、あなたのハイパーバイザーは、フードの下で何をしているかの良いアイデアを与えます：
 
 |**Name**| **Description**|**[Metric Type][monitoring]**|
 |:---:|:---:|:---:|
@@ -102,54 +102,81 @@ fasdfasdfasdfasdfasfdas  asdfadsfasf
 
 <div class="anchor" id="hypervisor_load" />
 
-**hypervisor\_load**: Hypervisor load represents the [system load][load] over the last minute for a given hypervisor. Extended periods of high hypervisor load could degrade performance and slow down hypervisor operations. If you have busy VMs, expect this metric to rise.
+> **hypervisor\_load**: Hypervisor load represents the [system load][load] over the last minute for a given hypervisor. Extended periods of high hypervisor load could degrade performance and slow down hypervisor operations. If you have busy VMs, expect this metric to rise.
+
+ハイパーバイザーの負荷：ハイパーバイザーの負荷が与えられたハイパーバイザーのための最後の分のシステム負荷を表します。高いハイパーバイザーの負荷の拡張期間は、パフォーマンスが低下し、ハイパーバイザーの動作を遅くすることができます。あなたがビジー状態の仮想マシンを持っている場合は、このメトリックが上昇することを期待。
 
 ![Hypervisor workload][hv-work]
 
-**current_workload**: The current workload metric is a count of all the currently active hypervisor operations: [Build, Snapshot, Migrate, and Resize][hypervisor-operations]. Unless you are using [OpenStack’s Shared File Systems service][shared-fs], the VMs and hypervisor all share the same I/O resources, so an extended period of high hypervisor workload could lead to I/O bottlenecks, with your instances [competing for disk access][IO]. This metric, coupled with hypervisor load, gives you a direct view of the work your hypervisor is performing.
+> **current_workload**: The current workload metric is a count of all the currently active hypervisor operations: [Build, Snapshot, Migrate, and Resize][hypervisor-operations]. Unless you are using [OpenStack’s Shared File Systems service][shared-fs], the VMs and hypervisor all share the same I/O resources, so an extended period of high hypervisor workload could lead to I/O bottlenecks, with your instances [competing for disk access][IO]. This metric, coupled with hypervisor load, gives you a direct view of the work your hypervisor is performing.
+
+現在のワークロード：ビルド、スナップショット、移行、およびサイズ変更：現在のワークロードメトリックは、すべての現在アクティブなハイパーバイザ操作の数です。あなたが共有ファイル・システムサービス、仮想マシンとハイパーバイザすべての共有と同じI / Oリソースを、OpenStackの使用していない限り、非常に高いハイパーバイザーのワークロードの延長期間は、あなたのインスタンスはディスクアクセスのために競合すると、I/ Oボトルネックにつながる可能性があります。このメトリックは、ハイパーバイザーの負荷と相まって、あなたのハイパーバイザーを実行している作業の直接的なビューを提供します。
 
 <div class="anchor" id="running_vms" />
 
-**running_vms**:  OpenStack exposes the number of virtual machines currently running, which can be aggregated by host. The maximum number of VMs running at any point in time is bound by available CPU and memory resources. This metric, along with the current workload and hypervisor load, should give you all the information you need to ensure a fair distribution of load across your cluster of compute nodes.  
+> **running_vms**:  OpenStack exposes the number of virtual machines currently running, which can be aggregated by host. The maximum number of VMs running at any point in time is bound by available CPU and memory resources. This metric, along with the current workload and hypervisor load, should give you all the information you need to ensure a fair distribution of load across your cluster of compute nodes.
 
-How you monitor the `running_vms` metric largely depends on your use case—if you are using OpenStack to run critical infrastructure on a constant number of nodes, changes in running VMs are similar to physical hosts going down; you would want to be aware of either event so you can react accordingly. If on the other hand your infrastructure is more dynamic, you may not care about the comings and goings of individual hosts as long as you have enough capacity to keep all your services running smoothly.  
+VMを実行している：OpenStackのは、ホストによって集約することができ、現在実行中の仮想マシンの数を公開しています。いずれかの時点で実行中のVMの最大数は、使用可能なCPUとメモリリソースにより結合されます。このメトリックは、現在のワークロードおよびハイパーバイザーの負荷と一緒に、あなたが計算ノードのクラスタ間の負荷の公正な分配を確保するために必要なすべての情報を与える必要があります。
+
+> How you monitor the `running_vms` metric largely depends on your use case—if you are using OpenStack to run critical infrastructure on a constant number of nodes, changes in running VMs are similar to physical hosts going down; you would want to be aware of either event so you can react accordingly. If on the other hand your infrastructure is more dynamic, you may not care about the comings and goings of individual hosts as long as you have enough capacity to keep all your services running smoothly.
+
+あなたは、メトリックは、主にあなたの使用に依存稼動するVMの監視どのようにケースを-場合は、ノードの一定の数の重要なインフラストラクチャを実行するには、OpenStackのを使用している、VMを実行しているの変化がダウンしている物理ホストに似ています。あなたが応じて反応できるように、どちらかのイベントを認識しているのでしょう。一方でインフラストラクチャをより動的である場合は、限り、あなたはスムーズに実行されているすべてのサービスを維持するのに十分な容量を持っているように歳入および個々のホストの往来を気にしないことがあります。
 
 ![Available vCPUs][avail-vcpu]
 
-**vcpus_available**: Each hypervisor reports the current number of CPUs allocated and the maximum number available. Using these two metrics, you can compute the number of CPUs currently available.
+> **vcpus_available**: Each hypervisor reports the current number of CPUs allocated and the maximum number available. Using these two metrics, you can compute the number of CPUs currently available.
 
-In a production environment with fairly predictable workloads, adding and removing resources from the computation pool should be an anticipated event. In that case, you would want to monitor and possibly alert on any changes to your number of available VCPUs. In other cases, such as using OpenStack as a development environment, tracking this metric is less important.
+> In a production environment with fairly predictable workloads, adding and removing resources from the computation pool should be an anticipated event. In that case, you would want to monitor and possibly alert on any changes to your number of available VCPUs. In other cases, such as using OpenStack as a development environment, tracking this metric is less important.
+> Setups with a diminishing number of available CPU resources could benefit from the provisioning of additional Compute hosts. A general awareness of available resources can let you scale your deployment before an increase in demand makes it a necessity. If you are constantly bumping into the resource ceiling, it's time for more machines.
 
-Setups with a diminishing number of available CPU resources could benefit from the provisioning of additional Compute hosts. A general awareness of available resources can let you scale your deployment before an increase in demand makes it a necessity. If you are constantly bumping into the resource ceiling, it's time for more machines.
+利用可能な仮想CPU：各ハイパーバイザーが割り当てられたCPUの現在の数と最大数が使用可能なレポートします。これらの2つのメトリックを使用して、CPUの数は、現在利用可能な計算することができます。
+かなり予測ワークロードと本番環境では計算プールからリソースを追加したり削除することは予想されるイベントであるべきです。その場合は、あなたが監視し、利用可能なのVCPUの電話番号への変更におそらく警告したいと思います。このような、開発環境としてOpenStackの使用など、他の例では、このメトリックを追跡することはそれほど重要ではありません。
+使用可能なCPUリソースの減少する番号の設定が追加コンピュートホストのプロビジョニングから利益を得ることができます。利用可能なリソースの一般的な認識は、需要の増加が必要になる前に、あなたの展開を拡張させることができます。あなたは常にリソースの天井に衝突している場合、それはより多くのマシンのための時間です。
+
 
 <div class="anchor" id="free_disk_gb" />
 
-**free\_disk\_gb**: This metric reports the amount of disk space (in gigabytes) currently available for allocation, aggregated by physical host. Maintaining ample disk space is critical, because the hypervisor will be unable to spawn new virtual machines if there isn’t enough available space.
+> **free\_disk\_gb**: This metric reports the amount of disk space (in gigabytes) currently available for allocation, aggregated by physical host. Maintaining ample disk space is critical, because the hypervisor will be unable to spawn new virtual machines if there isn’t enough available space.
 
-By tracking your free\_disk\_gb, you can migrate overly large instances to other physical hosts, should space become scarce. You will definitely want to be alerted to diminishing disk space so you can take action and prevent hypervisor errors due to insufficient resources.
+> By tracking your free\_disk\_gb, you can migrate overly large instances to other physical hosts, should space become scarce. You will definitely want to be alerted to diminishing disk space so you can take action and prevent hypervisor errors due to insufficient resources.
+
+free_disk_gb：このメトリックは、物理ホストによって集約配分のために現在利用可能な（ギガバイト）のディスク・スペースの量を、報告します。十分な空き容量がない場合、ハイパーバイザは、新しい仮想マシンを起動することができなくなりますので、十分なディスク容量を維持することは、非常に重要です。
+
+あなたのfree_disk_gbを追跡することによって、あなたはスペースが不足しなければならない、他の物理ホストに過度に大きいインスタンスを移行することができます。あなたが行動を取るし、リソース不足に起因するハイパーバイザーのエラーを防ぐことができますので、あなたは間違いなく減少ディスクスペースに警告されることになるでしょう。
 
 <div class="anchor" id="free_ram_mb" />
 
-**free\_ram\_mb**: Memory, like disk space, is an important resource. Without sufficient memory, the hypervisor will be unable to spawn new instances or resize instances to larger flavors. Ensuring adequate memory is essential—insufficient memory will result in hypervisor errors and confused users.
+> **free\_ram\_mb**: Memory, like disk space, is an important resource. Without sufficient memory, the hypervisor will be unable to spawn new instances or resize instances to larger flavors. Ensuring adequate memory is essential—insufficient memory will result in hypervisor errors and confused users.
 
-Like free\_disk\_gb, you will want to be alerted to diminishing memory so you can take appropriate action, whether that means migrating instances or provisioning additional compute nodes.
+> Like free\_disk\_gb, you will want to be alerted to diminishing memory so you can take appropriate action, whether that means migrating instances or provisioning additional compute nodes.
+
+無料のラムは、MB：メモリ、ディスク容量など、重要な資源です。十分なメモリがないと、ハイパーバイザは、新しいインスタンスを起動またはそれ以上の味にインスタンスのサイズを変更することができません。十分なメモリを確保することは、ハイパーバイザのエラーと混乱のユーザーにつながる不可欠-メモリ不足です。
+
+free_disk_gbと同様に、あなたはそれがインスタンスを移行または追加の計算ノードのプロビジョニングを意味するかどうか、適切な処置をとることができるように減少メモリに警告されることになるでしょう。
+
 
 <div class="anchor" id="nova-server-metrics" />
 
 ### Nova server metrics
-Computing nodes generally constitute the majority of nodes in an OpenStack deployment. The Nova server metrics group provides information on individual instances operating on computation nodes. Monitoring individual Nova servers helps you to ensure that load is being distributed evenly and to avoid the [noisy neighbor problem][neighbor]. However, to gain the most visibility into your instances, including the full suite of OS and system metrics, installing a [monitoring agent][agent] is essential.
+> Computing nodes generally constitute the majority of nodes in an OpenStack deployment. The Nova server metrics group provides information on individual instances operating on computation nodes. Monitoring individual Nova servers helps you to ensure that load is being distributed evenly and to avoid the [noisy neighbor problem][neighbor]. However, to gain the most visibility into your instances, including the full suite of OS and system metrics, installing a [monitoring agent][agent] is essential.
+
+計算ノードは、一般的にOpenStackの展開内のノードの大部分を占めています。ノヴァサーバーのメトリックグループは、計算ノード上で動作する個々のインスタンスに関する情報を提供します。個々のノヴァ・サーバを監視すると、その負荷が均等に分散されていることを確認すると騒々しい隣人の問題を回避するのに役立ちます。しかし、監視エージェントが不可欠ですインストールし、OSおよびシステムメトリックの完全なスイートを含め、あなたのインスタンスに最も可視性を得るために。
 
 |**Name**| **Description**|**[Metric Type][monitoring]**|
 |:---:|:---:|:---:|
 | hdd\_read\_req | Number of read requests per second | Work: Throughput |
 
-**hdd\_read\_req**: In a virtual environment, RAM size is often a limiting constraint on running processes. Monitoring the number of hard drive requests per second can give you an idea of work being performed within virtual machines on your Nova node. Spikes in this metric indicate that a virtual machine may have low RAM, causing it to [thrash the disk][thrashing] with constant memory paging. At the very least, awareness of high read rates can inform troubleshooting when diagnosing performance issues within your Nova cluster.
+> **hdd\_read\_req**: In a virtual environment, RAM size is often a limiting constraint on running processes. Monitoring the number of hard drive requests per second can give you an idea of work being performed within virtual machines on your Nova node. Spikes in this metric indicate that a virtual machine may have low RAM, causing it to [thrash the disk][thrashing] with constant memory paging. At the very least, awareness of high read rates can inform troubleshooting when diagnosing performance issues within your Nova cluster.
+
+hdd_read_req：仮想環境では、RAMサイズは、実行中のプロセスに制限する制約があることが多いです。秒あたりのハードドライブ要求の数を監視すること、あなたの仕事のアイデアを与えることができますが、あなたのノヴァ・ノード上の仮想マシン内で実行されています。このメトリックの急増は、仮想マシンは、それが一定のメモリページングを使用してディスクをスラッシュさせ、低RAMを有することができることを示しています。あなたのノヴァクラスタ内のパフォーマンスの問題を診断する際に非常に少なくとも、高い読み取り率の意識は、トラブルシューティングを知らせることができます。
 
 <div class="anchor" id="tenant-metrics" />
 
 ### Tenant metrics
 
-Tenant metrics are primarily focused on resource usage. _Remember, tenants are just groups of users_. In OpenStack, each tenant is allotted a specific amount of resources, subject to a quota. Monitoring these metrics allows you to fully exploit the available resources and can help inform requests for quota increases should the need arise.
+> Tenant metrics are primarily focused on resource usage. _Remember, tenants are just groups of users_. In OpenStack, each tenant is allotted a specific amount of resources, subject to a quota. Monitoring these metrics allows you to fully exploit the available resources and can help inform requests for quota increases should the need arise.
+
+テナントメトリックは、主にリソースの使用状況に焦点を当てています。テナントは、ユーザーのちょうどグループであることを覚えておいてください。 OpenStackのでは、各テナントは、クォータの対象とリソースの特定の量を、割り当てられています。これらの指標を監視することが、あなたが完全に利用可能なリソースを活用し、必要が生じた場合、クォータの増加の要求を通知することができますことができます。
 
 |**Name**| **Description**|**[Metric Type][monitoring]**|
 |:---:|:---:|:---:|
@@ -158,9 +185,15 @@ Tenant metrics are primarily focused on resource usage. _Remember, tenants are j
 | total\_instances\_used | Total number of instances owned by tenant | Resource: Utilization |
 | max\_total\_instances | Maximum number of instances allocated to tenant | Resource: Utilization |
 
-**total\_cores\_used** and **max\_total\_cores**:  Each tenant has a maximum number of resources allocated, set by a quota. Tracking your per-tenant core usage means you won't unwittingly bump against that quota-imposed ceiling. Graphing this metric alongside the `max_total_cores` metric will give you an immediate view into your resource consumption over time and help you determine if additional resources are required by your tenant.  
+> **total\_cores\_used** and **max\_total\_cores**:  Each tenant has a maximum number of resources allocated, set by a quota. Tracking your per-tenant core usage means you won't unwittingly bump against that quota-imposed ceiling. Graphing this metric alongside the `max_total_cores` metric will give you an immediate view into your resource consumption over time and help you determine if additional resources are required by your tenant.  
 
-**total\_instances\_used** and **max\_total\_instances**: Similar to physical resources, the number of instances per tenant is also capped by a quota. Each VM you spin up consumes another instance, and each instance size uses a different number of resources. When setting quotas for internal use, you should keep in mind the projected number of instances you plan to run, as well as the anticipated sizes of those instances.
+総使用コアとmax_total_cores：各テナントがクォータによって設定された割り当てられたリソースの最大数を、持っています。あなたのあたりのテナントコアの使用状況を追跡することは、知らず知らずのうちにそのクォータに課した天井に衝突しないことを意味します。max_total_coresメトリックと一緒にこのメトリックをグラフ化すると、あなたの時間をかけて、あなたのリソース消費を即座にビューを提供し、追加のリソースがあなたのテナントによって必要とされているかどうかを判断するのに役立ちます。
+
+
+> **total\_instances\_used** and **max\_total\_instances**: Similar to physical resources, the number of instances per tenant is also capped by a quota. Each VM you spin up consumes another instance, and each instance size uses a different number of resources. When setting quotas for internal use, you should keep in mind the projected number of instances you plan to run, as well as the anticipated sizes of those instances.
+
+total_instances_usedとmax_total_instances：物理リソースと同様に、テナントごとのインスタンスの数もクォータによってキャップされています。あなたがスピンアップ各VMは、別のインスタンスを消費し、各インスタンスのサイズは、リソースの別の番号を使用しています。内部使用のためのクォータを設定するときは、心の中であなたが実行する予定のインスタンスの投影数、ならびにそれらのインスタンスの予想されるサイズを維持する必要があります。
+
 
 <div class="anchor" id="rabbitmq-metrics" />
 
@@ -168,11 +201,19 @@ Tenant metrics are primarily focused on resource usage. _Remember, tenants are j
 
 [![Message pipeline][amqp-diag]][amqp-diag]
 
-What's RabbitMQ got to do with OpenStack Nova? RabbitMQ is one of [several options] for OpenStack's message-passing pipeline and is used by default. Nova components use RabbitMQ for both [remote procedure calls][RPC] (RPCs) and for internal communication.
+> What's RabbitMQ got to do with OpenStack Nova? RabbitMQ is one of [several options] for OpenStack's message-passing pipeline and is used by default. Nova components use RabbitMQ for both [remote procedure calls][RPC] (RPCs) and for internal communication.
 
-RabbitMQ serves both as a synchronous and asynchronous communications channel, and failure of this component will disrupt operations across your deployment. Monitoring RabbitMQ is essential if you want the full picture of your OpenStack environment.
+RabbitMQのは、OpenStackの新星で行うようになった何ですか？ RabbitMQのは、OpenStackのメッセージ・パッシング・パイプラインのためのいくつかのオプションの一つであり、デフォルトで使用されます。ノヴァコンポーネントは、リモートプロシージャコール（RPC）と内部通信のための両方のためのRabbitMQを使用します。
 
-At the very least, you will want to keep an eye on the following RabbitMQ metrics:
+
+> RabbitMQ serves both as a synchronous and asynchronous communications channel, and failure of this component will disrupt operations across your deployment. Monitoring RabbitMQ is essential if you want the full picture of your OpenStack environment.
+
+RabbitMQのは、デプロイメント全体での運用を妨害します。このコンポーネントの同期および非同期通信チャネル、および失敗の両方を提供しています。あなたはOpenStackの環境の全体像をしたい場合のRabbitMQを監視することが不可欠です。
+
+
+> At the very least, you will want to keep an eye on the following RabbitMQ metrics:
+
+少なくとも、次のRabbitMQの指標に目を維持したいと思うでしょう。
 
 |**Name**| **Description**|**[Metric Type][monitoring]**|
 |:---:|:---:|:---:|
@@ -185,40 +226,74 @@ At the very least, you will want to keep an eye on the following RabbitMQ metric
 
 <div class="anchor" id="consumer_utilisation" />
 
-**consumer_utilisation**: Introduced in RabbitMQ 3.3, this metric (the spelling of which follows the rules of British English) reports on the utilization of each queue, represented as a percentage. Ideally, this metric will be 100 percent for each queue, meaning consumers get messages as quickly as they are published.
+> **consumer_utilisation**: Introduced in RabbitMQ 3.3, this metric (the spelling of which follows the rules of British English) reports on the utilization of each queue, represented as a percentage. Ideally, this metric will be 100 percent for each queue, meaning consumers get messages as quickly as they are published.
 
-A couple of factors can contribute to degraded consumer utilization: network congestion and [prefetching]. A slow network translates to an inhibited ability for consumers to get new messages from publishers. Prefetching is the number of messages a consumer can receive while processing the current message. A low prefetch setting could keep consumers from taking in new messages while processing older ones. If you are seeing low consumer utilization for extended periods of time, and your prefetch settings are reasonably high, the problem most likely lies in the network.
+消費者の利用：RabbitMQの3.3で導入された、このメトリックは、（スペルがそのうちのイギリス英語のルールに従います）の割合として表される各キューの利用、報告します。理想的には、このメトリックは、消費者ができるだけ早く彼らが公開されているようにメッセージを取得する意味、キューごとに100パーセントになります。
+
+
+> A couple of factors can contribute to degraded consumer utilization: network congestion and [prefetching]. A slow network translates to an inhibited ability for consumers to get new messages from publishers. Prefetching is the number of messages a consumer can receive while processing the current message. A low prefetch setting could keep consumers from taking in new messages while processing older ones. If you are seeing low consumer utilization for extended periods of time, and your prefetch settings are reasonably high, the problem most likely lies in the network.
+
+要因のカップルが劣化し、消費者の利用に貢献することができます。ネットワークの輻輳やプリフェッチを。遅いネットワークは、出版社から新しいメッセージを取得するための消費者のために阻害能力に変換されます。プリフェッチは、現在のメッセージの処理中に消費者が受信できるメッセージの数です。低プリフェッチ設定は、古いものの処理中に新しいメッセージに取ってから消費者を保つことができます。あなたが長期間にわたって低消費者の利用率を見ている、とあなたのプリフェッチの設定が合理的に高い場合、問題は最も可能性の高いネットワークです。
+
 
 ![Memory by queue][queue-mem]
 
 <div class="anchor" id="queue_memory" />
 
-**memory**:  Like most in-memory message queues, RabbitMQ will begin swapping to disk under memory pressure. In addition to increased latency caused by disk paging, RabbitMQ will preemptively throttle message producers when memory consumption reaches a predefined threshold (40 percent of system RAM by default). Although not often an issue, a significant spike in queue memory could point to a large backlog of unreceived ("ready") messages, or worse. A protracted period of excessive memory consumption could cause performance issues as well.
+> **memory**:  Like most in-memory message queues, RabbitMQ will begin swapping to disk under memory pressure. In addition to increased latency caused by disk paging, RabbitMQ will preemptively throttle message producers when memory consumption reaches a predefined threshold (40 percent of system RAM by default). Although not often an issue, a significant spike in queue memory could point to a large backlog of unreceived ("ready") messages, or worse. A protracted period of excessive memory consumption could cause performance issues as well.
 
-**count**:  Queue count represents the current number of RabbitMQ queues. You can compute this metric by counting the number of queues listed by RabbitMQ. A count of zero queues means there is a serious error in your RabbitMQ deployment, necessitating further investigation. Setting up an alert on this metric is a great idea—zero queues means zero messages being passed.  
+メモリは：ほとんどのインメモリメッセージキューと同様に、RabbitMQのは、メモリの圧力の下でディスクへのスワップを開始します。ディスクページングによって引き起こされる待ち時間の増加に加えて、RabbitMQのは、メモリ消費量が所定の閾値（デフォルトでは、システムRAMの40パーセントを）先制スロットルメッセージプロデューサに到達する時期。ていないことが多い問題が、キューメモリの大幅なスパイクが未受信（「準備完了」）メッセージ、または悪化の大きなバックログを指している可能性があります。過度のメモリ消費の長引く期間も同様にパフォーマンスの問題を引き起こす可能性があります。
+
+
+> **count**:  Queue count represents the current number of RabbitMQ queues. You can compute this metric by counting the number of queues listed by RabbitMQ. A count of zero queues means there is a serious error in your RabbitMQ deployment, necessitating further investigation. Setting up an alert on this metric is a great idea—zero queues means zero messages being passed.  
+
+カウント：キューカウントはRabbitMQのキューの現在の数を表します。あなたのRabbitMQによって記載されているキューの数をカウントすることによって、このメトリックを計算することができます。ゼロキューのカウントは、さらなる調査が必要とあなたのRabbitMQ展開に重大な誤りがあることを意味します。このメトリックでアラートを設定すると、素晴らしいアイデアゼロキューがゼロのメッセージが渡されている手段です。
+
 
 ![Consumers by queue][queue-consume]
 
 <div class="anchor" id="queue_consumers" />
 
-**consumers**: Similar to the queue count metric, your number of consumers should usually be non-zero for a given queue. Zero consumers means that producers are sending out messages into the void. Depending on your RabbitMQ configuration, those messages could be lost forever.
+> **consumers**: Similar to the queue count metric, your number of consumers should usually be non-zero for a given queue. Zero consumers means that producers are sending out messages into the void. Depending on your RabbitMQ configuration, those messages could be lost forever.
 
-Generally speaking, there are only a handful of queues that may have zero consumers under normal circumstances: _aliveness-test_, _notifications.info_, and _notifications.error_.
+消費者：キュー・カウント・メトリックと同様に、消費者のあなたの数は、通常、指定されたキューのために非ゼロでなければなりません。ゼロの消費者は生産者がvoidにメッセージを送信していることを意味します。あなたのRabbitMQ構成に応じて、これらのメッセージは永遠に失われる可能性があります。
 
- [_Aliveness-test_ ][aliveness]is a queue for monitoring tools to use. A producer typically creates and consumes a message in this queue to ensure RabbitMQ is operating correctly. _Notifications.error_ and _notifications.info_ are notifications with an associated [log level] priority. _Notifications.error_ is the error notification message queue, and _notifications.info_ is the queue for informational messages.
 
-Additionally, if you have an OpenStack monitoring tool such as [Stacktach][stacktach] in place, you may see a number of consumer-less queues beginning with _monitor_ if your monitoring tool is not actively consuming messages from those queues.
+> Generally speaking, there are only a handful of queues that may have zero consumers under normal circumstances: _aliveness-test_, _notifications.info_, and _notifications.error_.
 
-Read more about collecting emitted notifications in [part two of this series][Part 2]. Beyond the above queues listed, if your consumer count drops to zero for an extended period of time, you probably want to be alerted.  
+稼働状態テスト、notifications.info、およびnotifications.errorを：一般的に言えば、通常の状況下でゼロの消費者を有することができるキューのほんの一握りがあります。
+
+
+>  [_Aliveness-test_ ][aliveness]is a queue for monitoring tools to use. A producer typically creates and consumes a message in this queue to ensure RabbitMQ is operating correctly. _Notifications.error_ and _notifications.info_ are notifications with an associated [log level] priority. _Notifications.error_ is the error notification message queue, and _notifications.info_ is the queue for informational messages.
+
+稼働状態-testが使用するツールを監視するためのキューです。プロデューサーは、一般的に作成し、RabbitMQのが正常に動作していることを確認するために、このキューにメッセージを消費します。 Notifications.errorはと関連するログレベルの優先順位の通知notifications.infoです。 Notifications.errorはエラー通知メッセージキューで、notifications.infoは、情報メッセージのキューです。
+
+
+> Additionally, if you have an OpenStack monitoring tool such as [Stacktach][stacktach] in place, you may see a number of consumer-less queues beginning with _monitor_ if your monitoring tool is not actively consuming messages from those queues.
+
+あなたが代わりにStacktachなどOpenStackの監視ツールを持っている場合はさらに、あなたの監視ツールが積極的にそれらのキューからメッセージを消費していない場合は、モニターで始まる消費者レスキューの数を表示することがあります。
+
+
+> Read more about collecting emitted notifications in [part two of this series][Part 2]. Beyond the above queues listed, if your consumer count drops to zero for an extended period of time, you probably want to be alerted.  
+
+このシリーズのパート2で発行した通知を収集については、こちらをご覧ください。あなたの消費者の数が長期間にわたってゼロに低下した場合に記載されている上記のキューを超えて、あなたはおそらく警告することにしたいです。
+
 
 <div class="anchor" id="notifications" />
 
 ### Notifications
 
-Nova reports certain discrete events via _notifications_. Because the majority of work performed by Nova is through asynchronous calls, wherein a user initiates an operation and does not receive a response until the operation is complete, listening in on emitted events is necessary to see the full picture at a given point in time.
+> Nova reports certain discrete events via _notifications_. Because the majority of work performed by Nova is through asynchronous calls, wherein a user initiates an operation and does not receive a response until the operation is complete, listening in on emitted events is necessary to see the full picture at a given point in time.
 Furthermore, handling notifications is the only way to get information on the throughput of work done by the hypervisor.
 
-Though Nova emits notifications on about [80 events][paste-events], the following table lists a number of useful notifications to listen for. The name in the table corresponds to the `event_type` field included in the notification payload.
+ノヴァは、通知を経由して、特定の個別のイベントをレポートします。ノヴァによって実行される作業の大半は、ユーザーが操作を開始し、操作が完了するまでの応答を受信しないことを特徴と非同期呼び出しを介してであるため、放出されたイベントにでリスニングして任意の時点で全体像を見ることが必要です。
+また、通知を処理する時間のhypervisor.extended期間が行った作業のスループットに関する情報を取得する唯一の方法である、あなたはおそらく警告することにしたいです。
+
+
+> Though Nova emits notifications on about [80 events][paste-events], the following table lists a number of useful notifications to listen for. The name in the table corresponds to the `event_type` field included in the notification payload.
+
+ノヴァは、約80のイベントの通知を発したが、次の表には、をリッスンするために有用な通知の数を示しています。表中の名前は、通知ペイロードに含まれたevent_typeフィールドに対応しています。
+
 
 |**Name**| **Description**|**[Metric Type][monitoring]**|
 |:---:|:---:|:---:|
@@ -227,10 +302,16 @@ Though Nova emits notifications on about [80 events][paste-events], the followin
 | compute.instance.resize.prep.start | Signals the beginning of a resize operation | Event: Scaling |
 | compute.instance.resize.confirm.end | Signals the end of a successful resize operation | Event: Scaling  |
 
-For most events, correlating the `start` and `end` notifications and their associated timestamps will give you the execution time for hypervisor operations. Some operations, like resizing an instance, perform preparation and sanity checks before and after the action, so you will need to take these events into account as well to get an accurate sense of performance.
+> For most events, correlating the `start` and `end` notifications and their associated timestamps will give you the execution time for hypervisor operations. Some operations, like resizing an instance, perform preparation and sanity checks before and after the action, so you will need to take these events into account as well to get an accurate sense of performance.
+
+開始と終了の通知を関連付けるほとんどのイベント、およびそれらに関連するタイムスタンプのためにあなたのハイパーバイザーの操作の実行時間を与えるだろう。あなたは、パフォーマンスの正確な感覚を得るためだけでなく、アカウントにこれらのイベントをする必要があるので、一部の操作は、インスタンスのサイズを変更するように、前とアクションの後準備と正気チェックを実行します。
+
 
 ## Conclusion
-In this post we’ve outlined some of the most useful metrics and notifications you can monitor to keep tabs on your Nova computing cluster. If you’re just getting started with OpenStack, monitoring the metrics and events listed below will provide good visibility into the health and performance of your deployment:  
+> In this post we’ve outlined some of the most useful metrics and notifications you can monitor to keep tabs on your Nova computing cluster. If you’re just getting started with OpenStack, monitoring the metrics and events listed below will provide good visibility into the health and performance of your deployment:  
+
+この記事では、我々はあなたのノヴァ・コンピューティング・クラスタ上のタブを保つために監視することができる最も有用な指標と通知のいくつかを概説しました。あなただけのOpenStackの使用を開始している場合は、メトリックと、以下のイベントを監視することは、健康や配備のパフォーマンスに良好な視認性を提供します：
+
 
 - [hypervisor\_load](#hypervisor_load)  
 - [running\_vms](#running_vms)  
@@ -240,7 +321,10 @@ In this post we’ve outlined some of the most useful metrics and notifications 
 - [queue consumers](#queue_consumers)  
 - [consumer_utilisation](#consumer_utilisation)  
 
-In the future, you may recognize additional OpenStack metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on both the tools you have and the OpenStack components you are using. See the [companion post][Part 2] for step-by-step instructions on collecting Nova and RabbitMQ metrics.
+> In the future, you may recognize additional OpenStack metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on both the tools you have and the OpenStack components you are using. See the [companion post][Part 2] for step-by-step instructions on collecting Nova and RabbitMQ metrics.
+
+将来的には、独自のインフラストラクチャと使用例に特に関連する追加のOpenStackの指標を認識することができます。もちろん、あなたは両方のあなたが持っているツールと、使用しているOpenStackのコンポーネントに依存します監視するもの。ノヴァとRabbitMQのメトリックを収集することにステップバイステップの手順については、コンパニオンの記事を参照してください。
+
 
 <iframe width="100%" height="100" style="border: 0;" src="https://go.pardot.com/l/38172/2015-03-02/h6c2r" scrolling="no" type="text/html" frameborder="0" allowtransparency="true"></iframe>
 
