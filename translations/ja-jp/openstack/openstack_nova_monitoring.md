@@ -2,26 +2,26 @@
 _This post is Part 1 of a 3-part series about monitoring OpenStack Nova. [Part 2] is about collecting operational data from Nova, and [Part 3] details how to monitor Nova with Datadog._
 
 ## The 30,000-foot view
-[OpenStack] is an open-source cloud-computing software platform. It is primarily deployed as [infrastructure-as-a-service] and can be likened to a version of [Amazon Web Services][aws] that can be hosted anywhere. Originally developed as a joint project between Rackspace and NASA, OpenStack is about five years old and has a large number of high-profile corporate supporters, including Google, Hewlett-Packard, Comcast, IBM, and Intel.
+> [OpenStack] is an open-source cloud-computing software platform. It is primarily deployed as [infrastructure-as-a-service] and can be likened to a version of [Amazon Web Services][aws] that can be hosted anywhere. Originally developed as a joint project between Rackspace and NASA, OpenStack is about five years old and has a large number of high-profile corporate supporters, including Google, Hewlett-Packard, Comcast, IBM, and Intel.
 
 [Openstack]は、クラウドコンピューティング環境を構築するためのオープンソースのツールです。このツールは、主として[infrastructure-as-a-service]として展開することができ、様々な場所でホスティングすることができ、[Amazon Web Services][aws]各部品と接続することができます。[Openstack]は、もともとRackspaceのとNASAとの共同プロジェクトとして開発されました。OpenStackは開発が始まって5年のプロジェクトで、Google、ヒューレット・パッカード、コムキャスト、IBM、インテルなど、知名度の高い企業に支援されています。
 
 
-OpenStack is an ambitious project with the goal of providing an open, self-hostable alternative to cloud providers like AWS, Azure, DigitalOcean, and Joyent. It features a modular architecture with a current list of [16 services][openstack-services], including meta-services like _Ceilometer_, OpenStack's billing/telemetry module.
+> OpenStack is an ambitious project with the goal of providing an open, self-hostable alternative to cloud providers like AWS, Azure, DigitalOcean, and Joyent. It features a modular architecture with a current list of [16 services][openstack-services], including meta-services like _Ceilometer_, OpenStack's billing/telemetry module.
 
 Openstackは、AWS、Azure、DigitalOcean、およびJoyentのうようなクラウドプロバイダーを自前の構築するための選択肢としてオープンで公開することを目的にした野心的なプロジェクトです。OpenStackは、モジュラー型アーキテクチャーをとり、_Ceilometer_ のような課金/テレメトリモジュールなどのメタサービスを含め、[16のサービス][openstack-services]を抱えています。
 
 
-In this series of posts, we will dive into Nova, the OpenStack Compute module, and explain its key metrics and other useful data points:  
+> In this series of posts, we will dive into Nova, the OpenStack Compute module, and explain its key metrics and other useful data points:
 
 このシリーズのポストでは、OpnestackのコンピュートモジュールのNovaを題材に、キーメトリクスとその他の重要なデータポイントに付いて介せすしていきます。
 
 
-- [Hypervisor metrics](#hypervisor-metrics) report work performed by hypervisors, for example the number of running VMs, or load on the hypervisor itself.
-- [Nova server metrics](#nova-server-metrics) report some information about servers, such as disk read requests per second.
-- [Tenant metrics](#tenant-metrics) report resources used or available to a group of users, for example total number of cores.
-- [Message queue metrics](#rabbitmq-metrics) reflect the state of the internal message-passing queue, for example its size.
-- [Notifications](#notifications) report discrete events such as when a new compute instance begins to be created.
+> - [Hypervisor metrics](#hypervisor-metrics) report work performed by hypervisors, for example the number of running VMs, or load on the hypervisor itself.
+> - [Nova server metrics](#nova-server-metrics) report some information about servers, such as disk read requests per second.
+> - [Tenant metrics](#tenant-metrics) report resources used or available to a group of users, for example total number of cores.
+> - [Message queue metrics](#rabbitmq-metrics) reflect the state of the internal message-passing queue, for example its size.
+> - [Notifications](#notifications) report discrete events such as when a new compute instance begins to be created.
 
 - [ハイパーバイザー メトリクス](#hypervisor-metrics) ハイパーバイザーの動作状況のレポート。例えば、仮想マシンの実行個数、またはハイパーバイザーの負荷など。
 - [Nova Servers メトリクス](#nova-server-metrics) サーバーの動作状況のリポート。例えば、1秒間のディスクの読み込みリクエスト数
@@ -32,55 +32,63 @@ In this series of posts, we will dive into Nova, the OpenStack Compute module, a
 
 [![Openstack Architecture overview][arch-over]][arch-over]
 
-_A typical OpenStack deployment, utilizing 7 of the 16 available services_
+> _A typical OpenStack deployment, utilizing 7 of the 16 available services_
 
 _一般的なOpenStackの実行環境みでは、16個のサービスの内、7つのサービスを使います。_
 
 
-A note on terminology: The OpenStack project uses the terms **project** and **tenant** [interchangeably](http://docs.openstack.org/openstack-ops/content/projects_users.html) to refer to a group of users. In this post, we will use the term **tenant** for clarity.
+> A note on terminology: The OpenStack project uses the terms **project** and **tenant** [interchangeably](http://docs.openstack.org/openstack-ops/content/projects_users.html) to refer to a group of users. In this post, we will use the term **tenant** for clarity.
 
 用語の解説: OpenStackでは、ユーザーの集合体を **project** か **tenant** かの、[どちらかを使って解説をしています](http://docs.openstack.org/openstack-ops/content/projects_users.html)。このブログの記事では、混乱を防ぐために **tenant** を使うことにします。
 
 
 ## What Nova does
 [![Nova diagram][nova]][nova]
+
+<!--
 <center>Somewhat confusingly, the Compute module (Nova) contains a component, also called Compute.</center>
+-->
 
 <center>ややこしことに、コンピュートモジュールのNovaは、それ自体にコンピュートという名前コンポーネントを持っています。</center>
 
-
-The core of the OpenStack project lies in the Compute module, known as Nova. Nova is responsible for the provisioning and management of virtual machines. It features full support for KVM and QEMU out of the box, with partial support for other hypervisors including [VMWare, Xen, and Hyper-V](https://wiki.openstack.org/wiki/HypervisorSupportMatrix).
+> The core of the OpenStack project lies in the Compute module, known as Nova. Nova is responsible for the provisioning and management of virtual machines. It features full support for KVM and QEMU out of the box, with partial support for other hypervisors including [VMWare, Xen, and Hyper-V](https://wiki.openstack.org/wiki/HypervisorSupportMatrix).
 
 OpenStackのプロジェクトのコアは、Novaとして知られているコンピュートモジュールです。Novaは、仮想マシンのプロビジョニングと管理を担当しています。Novaは、KVMとQEMUをデフォルトでフルサポートし、[VMWare, Xen, Hyper-V](https://wiki.openstack.org/wiki/HypervisorSupportMatrix)のその他のハイパーバイザーの主要機能をサポートしてます。
 
 
-If you're already familiar with Amazon Web Services, Nova is compatible with [EC2 and S3][api-compat] APIs, easing the migration of applications and decreasing development times for those already using AWS.
+> If you're already familiar with Amazon Web Services, Nova is compatible with [EC2 and S3][api-compat] APIs, easing the migration of applications and decreasing development times for those already using AWS.
 
 もしもAmazon Web Servicesについて知識があるなら、Novaは、既にAWSを使っている人たちが開発時間を削減し、アプリケーションの移動が簡単になるように、[EC2とS3][api-compat]とのAPIの互換性があります。
 
 
 ## Key Nova metrics and events
-Nova metrics can be logically grouped into three categories: **hypervisor** metrics, **tenant** metrics and **nova server** metrics. Hypervisor metrics give a clear view of the work performed by your hypervisors, nova server metrics give you a window into your virtual machine instances, and tenant metrics provide detailed information about user resource usage.
+> Nova metrics can be logically grouped into three categories: **hypervisor** metrics, **tenant** metrics and **nova server** metrics. Hypervisor metrics give a clear view of the work performed by your hypervisors, nova server metrics give you a window into your virtual machine instances, and tenant metrics provide detailed information about user resource usage.
 
 Novaメトリックは、論理的に3つのカテゴリに分けられます: **Hypervisor** メトリックス, **Tenant** メトリクス, **Nova server** メトリクス。Hypervisorメトリックはハイパーバイザーによって実行される作業量の明確化し、Nova serverメトリックは仮想マシンインスタンスの窓を空け中をのぞけるようにし、Tenantメトリックはユーザーのリソース使用状況に関する詳細情報を提供します。
 
 
-Though OpenStack's modules expose many metrics, correlation of these built-in metrics with other information sources is essential to really understand what’s happening inside OpenStack. For example, because OpenStack uses RabbitMQ under the hood, no monitoring solution would be complete without integrating RabbitMQ metrics as well.
+> Though OpenStack's modules expose many metrics, correlation of these built-in metrics with other information sources is essential to really understand what’s happening inside OpenStack. For example, because OpenStack uses RabbitMQ under the hood, no monitoring solution would be complete without integrating RabbitMQ metrics as well.
 
 OpenStackのモジュールは、多くのメトリクスを公開していますが、他の情報源を持つこれらの組み込みの指標の相関は本当にOpenStackの内部で何が起こっているかを理解することが不可欠です。 OpenStackのは、ボンネットの下のRabbitMQを使用しているため、例えば、何の監視ソリューションは、同様のRabbitMQの指標を統合することなく完全ではないでしょう。
 
 
-Combining metrics from various systems in addition to log file data and [OpenStack notifications][notifs] will really help pull back the curtain so you can observe what's actually going on in your deployment.
+> Combining metrics from various systems in addition to log file data and [OpenStack notifications][notifs] will really help pull back the curtain so you can observe what's actually going on in your deployment.
+
+fasdfasdfasdfasdfasfdas  asdfadsfasf
+
 
 <div class="anchor" id="hypervisor-metrics" />
 
-### Hypervisor metrics  
+### Hypervisor metrics
 
 [![Nova hypervisor metrics collection][hypervisor-metrics]][hypervisor-metrics]
 
-The hypervisor initiates and oversees the operation of virtual machines. Failure of this critical piece of software will cause tenants to experience issues provisioning and performing other operations on their virtual machines, so monitoring the hypervisor is crucial.
+> The hypervisor initiates and oversees the operation of virtual machines. Failure of this critical piece of software will cause tenants to experience issues provisioning and performing other operations on their virtual machines, so monitoring the hypervisor is crucial.
 
-Though a number of hypervisor metrics are available, the following subset gives a good idea of what your hypervisors are doing under the hood:  
+
+
+
+> Though a number of hypervisor metrics are available, the following subset gives a good idea of what your hypervisors are doing under the hood:
 
 |**Name**| **Description**|**[Metric Type][monitoring]**|
 |:---:|:---:|:---:|
