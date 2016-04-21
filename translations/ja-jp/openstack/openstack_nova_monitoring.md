@@ -240,14 +240,13 @@ RabbitMQは、同期および非同期の通信チャネルを提供しており
 
 <div class="anchor" id="consumer_utilisation" />
 
-> **consumer_utilisation**（コンシューマの活用状況）: Introduced in RabbitMQ 3.3, this metric (the spelling of which follows the rules of British English) reports on the utilization of each queue, represented as a percentage. Ideally, this metric will be 100 percent for each queue, meaning consumers get messages as quickly as they are published.
-
-**consumer_utilisation**:消費者の利用：RabbitMQの3.3で導入された、このメトリックは、（スペルがそのうちのイギリス英語のルールに従います）の割合として表される各キューの利用、報告します。理想的には、このメトリックは、消費者ができるだけ早く彼らが公開されているようにメッセージを取得する意味、キューごとに100パーセントになります。
-
+> **consumer_utilisation**: Introduced in RabbitMQ 3.3, this metric (the spelling of which follows the rules of British English) reports on the utilization of each queue, represented as a percentage. Ideally, this metric will be 100 percent for each queue, meaning consumers get messages as quickly as they are published.
 
 > A couple of factors can contribute to degraded consumer utilization: network congestion and [prefetching]. A slow network translates to an inhibited ability for consumers to get new messages from publishers. Prefetching is the number of messages a consumer can receive while processing the current message. A low prefetch setting could keep consumers from taking in new messages while processing older ones. If you are seeing low consumer utilization for extended periods of time, and your prefetch settings are reasonably high, the problem most likely lies in the network.
 
-要因のカップルが劣化し、消費者の利用に貢献することができます。ネットワークの輻輳やプリフェッチを。遅いネットワークは、出版社から新しいメッセージを取得するための消費者のために阻害能力に変換されます。プリフェッチは、現在のメッセージの処理中に消費者が受信できるメッセージの数です。低プリフェッチ設定は、古いものの処理中に新しいメッセージに取ってから消費者を保つことができます。あなたが長期間にわたって低消費者の利用率を見ている、とあなたのプリフェッチの設定が合理的に高い場合、問題は最も可能性の高いネットワークです。
+**consumer_utilisation**（コンシューマの活用率）:RabbitMQの3.3で導入されたこのメトリックスは、各キューの活用上を％値でリポートします。このメトリックスは、メッセージが生成されると同時にコンシューマが割り当てられると言う意味で、各キュー毎に100%をレポートしているのが理想です。
+
+いくつかの要因が”consumer utilization”の低下の原因になります: ネットワークの輻輳やプリフェッチです。遅いネットワークは、コンシューマーがパブリッシャーからメッセージを受け取る際の抑制要素として機能してします。プリフェッチは、コンシューマーが既存のメッセージを処理している間に受信できる新しいメッセージの数です。プリフェッチの設定値が低い場合、コンシューマーが、古いメッセージを処理している間は、新しいメッセージを取り込むことが抑制されてしまいます。プリフェッチの値を高く設定しているにもかかわらず、長期間に渡り”consumer utilization”の値が低い場合は、ネットワークに問題がある可能性が高いです。
 
 
 ![Memory by queue][queue-mem]
@@ -256,12 +255,12 @@ RabbitMQは、同期および非同期の通信チャネルを提供しており
 
 > **memory**:  Like most in-memory message queues, RabbitMQ will begin swapping to disk under memory pressure. In addition to increased latency caused by disk paging, RabbitMQ will preemptively throttle message producers when memory consumption reaches a predefined threshold (40 percent of system RAM by default). Although not often an issue, a significant spike in queue memory could point to a large backlog of unreceived ("ready") messages, or worse. A protracted period of excessive memory consumption could cause performance issues as well.
 
-**memory**（キューが使っているメモリサイズ）：ほとんどのインメモリメッセージキューと同様に、RabbitMQのは、メモリの圧力の下でディスクへのスワップを開始します。ディスクページングによって引き起こされる待ち時間の増加に加えて、RabbitMQのは、メモリ消費量が所定の閾値（デフォルトでは、システムRAMの40パーセントを）先制スロットルメッセージプロデューサに到達する時期。ていないことが多い問題が、キューメモリの大幅なスパイクが未受信（「準備完了」）メッセージ、または悪化の大きなバックログを指している可能性があります。過度のメモリ消費の長引く期間も同様にパフォーマンスの問題を引き起こす可能性があります。
+**memory**（キューが使っているメモリサイズ）：一般的なインメモリーメッセージキューと同様に、RabbitMQも、空きメモリーの残量によりディスクへのスワップを開始します。ディスクページングによって引き起こされるレイテンシーの増加に加え、RabbitMQは、メモリの消費量が事前に設定した閾値（デフォルトでは、システムRAMの40パーセント）を越えると、先行的にメッセージプロデューサーの処理に制限をかけ始めます。問題になることは希ながら、キューメモリーの急激なスパイクは、 大量の準備済み未受信のメッセージかそれより悪い状態の可能性を示しています。又、長期化した過度のメモリ消費状態は、パフォーマンス問題を引き起こす原因にもなります。
 
 
 > **count**:  Queue count represents the current number of RabbitMQ queues. You can compute this metric by counting the number of queues listed by RabbitMQ. A count of zero queues means there is a serious error in your RabbitMQ deployment, necessitating further investigation. Setting up an alert on this metric is a great idea—zero queues means zero messages being passed.
 
-**count**（アクティブなキュー数）：キューカウントはRabbitMQのキューの現在の数を表します。あなたのRabbitMQによって記載されているキューの数をカウントすることによって、このメトリックを計算することができます。ゼロキューのカウントは、さらなる調査が必要とあなたのRabbitMQ展開に重大な誤りがあることを意味します。このメトリックでアラートを設定すると、素晴らしいアイデアゼロキューがゼロのメッセージが渡されている手段です。
+**count**（アクティブなキュー数）：キューカウントは、現状のRabbitMQのキューの数を表しています。RabbitMQから提供されているキューの数をカウントすることにより、このメトリックスを計算することができます。カウントした値が0の場合、RabbitMQのデプロイに重大な問題があることを意味し、更なる調査が必要なります。このメトリクスに対しアラートを設定しておくことは素晴らしアイディアです。”ゼロキューカウントは、ゼロメッセージが処理されていることを意味しています”。
 
 
 ![Consumers by queue][queue-consume]
