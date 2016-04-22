@@ -4,6 +4,11 @@
 
 In this article we will pull back the curtain to learn Lithium's best practices and tips for using OpenStack, and how Lithium monitors OpenStack with the help of Datadog.
 
+リチウムはgamers.comから分派（ゲームコミュニティ）として2001年に設立され、以来、その合計コミュニティプラットフォームに役立つブランド接続し、従事し、顧客を理解する大手ソーシャル・ソフトウェア・プロバイダーへと進化してきました。 400以上のコミュニティと成長していると、リチウムは業種や地域間の主要なブランドにカスタマイズされた、一般向けのコミュニティを展開する柔軟性を備えた、プライベートデータセンターとしてOpenStackは使用しています。
+
+この記事では、OpenStackのを使用するためのリチウムのベストプラクティスやヒントを学ぶためにカーテンを引き戻す方法、およびリチウムモニターがDatadogの助けを借りて、OpenStackのだろう。
+
+
 ## Why monitoring OpenStack is critical
 
 [OpenStack] is a central component in Lithium's infrastructure, forming the backbone of their service platform. Lithium leverages OpenStack for both production and development environments, with OpenStack hosting a large number of production communities, as well as demo communities for sales engineers.  
@@ -13,6 +18,14 @@ With such a far-reaching deployment, failure is not an option. If OpenStack were
 
 That's why Lithium's engineers monitor OpenStack around the clock. Using [Datadog], they can correlate all the relevant OpenStack metrics with metrics from other parts of their infrastructure, all in one place. Lithium engineers can spot issues at a glance and determine the root cause of the problem, in addition to setting up advanced alerts on mission-critical metrics.
 
+OpenStackのは、彼らのサービスプラットフォームのバックボーンを形成し、リチウムのインフラの中心的なコンポーネントです。リチウムはOpenStackのは、セールスエンジニアのための大規模な生産コミュニティの数だけでなく、デモのコミュニティをホストして、生産と開発環境の両方のためのOpenStackのを活用しています。
+コミュニティホスティングに加えて、OpenStackのもKubernetes、シェフサーバーとBINDスレーブなどのインフラサービスを、ホストします。
+
+このような遠大な展開では、失敗はオプションではありません。開発者は、テスト環境を起動することができない、セールスエンジニアは見通しのためのデモ環境を作成することはできないだろう、と生産のコミュニティがダウンしたりできます。OpenStackのが適切に監視および管理されていなかった場合は、多数および顕著な障害が発生する可能性がありますコンピューティングリソースが使用不能になったとして増加した応答時間を参照してください。
+
+リチウムのエンジニアは時計周りOpenStackの監視理由です。 Datadogを使用して、それらはすべて一箇所に、インフラの他の部分からのメトリックに関連するすべてのOpenStackのメトリックを相関させることができます。リチウムのエンジニアが一目で問題を発見し、ミッションクリティカルな指標に高度なアラートを設定することに加えて、問題の根本原因を特定することができます。
+
+
 [![Lithium OpenStack dashboard][lithium-dash]][lithium-dash]
 _A Datadog dashboard that Lithium uses to monitor OpenStack_
 
@@ -20,15 +33,27 @@ _A Datadog dashboard that Lithium uses to monitor OpenStack_
 
 ### Number of instances running
 Lithium engineers track the total number of instances running across their OpenStack deployment to correlate with changes in other metrics. For example, a large increase in total RAM used makes sense in light of additional instances being spun up. Tracking the number of instances running alongside other metrics helps inform decisions for capacity and [tenant quota][quotas] planning.
+
+リチウムエンジニアは、他の指標の変化と相関することが彼らのOpenStackの展開全体で実行されているインスタンスの総数を追跡します。追加インスタンスの光がスピンアップ中に、例えば、使用される全RAMの大幅な増加は、理にかなっています。他のメトリックと一緒に実行されているインスタンスの数を追跡する能力とテナントのクォータ計画のための意思決定を通知することができます。
+
  
 ### Instances per project
 Like the total number of instances running, Lithium tracks the number of instances used per project to get a better idea of how their private cloud is being used. A common problem they found was that engineers would often spin up development environments and forget to shut them down, which means resources were provisioned but unused. By tracking the number of instances per project, admins could rein in excessive or unnecessary usage and free up resources without resorting to installing additional hardware.
 
+インスタンスの総数が実行して同じように、リチウムは彼らのプライベートクラウドが使用されている方法のより良いアイデアを得るために、プロジェクトごとに使用インスタンスの数を追跡します。彼らが見られる一般的な問題は、エンジニアは、多くの場合、開発環境をスピンアップし、リソースのプロビジョニングが、未使用されたことを意味し、それらをシャットダウンすることを忘れだろうということでした。プロジェクトごとのインスタンス数を追跡することにより、管理者は、必要以上に使用を抑える可能性があり、追加のハードウェアをインストールするに頼ることなく、リソースを解放します。
+
+
 ### Available memory
 As mentioned in [Part 1][part 1] of our [series][part 2] on [monitoring OpenStack Nova][part 3], visibility into OpenStack's resource consumption is essential to ensuring smooth operation and preventing user frustration. If available resources were insufficient, sales engineers would be breathing down the neck of the techops team, unable to create demo accounts for prospects, and developers would be stuck without a dev environment.
 
+OpenStackのリソースの消費にOpenStackの新星、可視性を監視する上で私たちのシリーズのパート1で述べたように円滑な運営を確保し、ユーザーの不満を防止するために不可欠です。利用可能なリソースが不足した場合は、セールスエンジニアは、見通しのためのデモアカウントを作成することができませんでしtechopsチームの首を、下に呼吸されるだろう、と開発者は、dev環境せずに立ち往生することになります。
+
+
 ### VCPU available
 Just like available memory, tracking the number of VCPUs available for allocation is critical—a lack of available CPUs prevents provisioning of additional instances. 
+
+ただ、使用可能なメモリのように、割り当て可能なのVCPUの数を追跡することであるクリティカル利用可能なCPUの欠如は、追加インスタンスのプロビジョニングを防ぐことができます。
+
 
 ### Metric deltas
 [![Change in instances used][instance-change-graph]][instance-change-graph]
@@ -37,26 +62,49 @@ Finally, Lithium tracks the changes in metrics' values over time to give insight
 
 Using Datadog's [Change graph feature][graph-change], engineers have a bird's eye view of week-to-week changes in resource usage. By analyzing resource deltas, engineers and decision makers have the data they need to inform hardware purchasing decisions and perform diligent capacity planning.
 
+最後に、リチウムは、リソースの可用性と消費の変化の原因への洞察を与えるために時間をかけて評価指標」値の変化を追跡します。
+
+Datadog変更グラフ機能を使用して、エンジニアは、リソース使用量の週単位の変更の鳥瞰図を持っています。リソースのデルタを分析することにより、技術者や意思決定者は、彼らは、ハードウェアの購買決定を通知し、勤勉な容量計画を実行するために必要なデータを持っています。
+
+
 ## Alerting the right people
 Alerting is an [essential component][alerting-101] of any monitoring strategy—alerts let engineers react to issues as they occur, before users are affected. With Datadog alerts, Lithium is able to send notifications via their usual communication channels (chat, PagerDuty, email, etc.), as well as provide engineers with suggested fixes or troubleshooting techniques—all without human intervention.
 
 Lithium generally uses [PagerDuty] for priority alerts, and [HipChat] or email for lower-priority alerts and for alerting specific engineers to a particular issue. For OpenStack, Lithium alerts on excessive resource consumption. As mentioned in [Part 1][part 1] of our OpenStack series, monitoring resource consumption is a **critical** part of a comprehensive OpenStack monitoring strategy.
 
+アラートは、戦略・アラートは、彼らが発生すると、ユーザーに影響が及ぶ前に、エンジニアは、問題に反応させ、任意の監視の必須成分です。 Datadogアラートで、リチウムは、すべてのテクニック人間の介入なしに修正案やトラブルシューティングでエンジニアをそれらの通常の通信チャネル（、PagerDuty、電子メールなどをチャット）を介して通知を送信するだけでなく、提供することができます。
+
+リチウムは、一般的に、優先度の警告、優先順位の低いアラートのHipChatまたは電子メールのために、特に問題に具体的な技術者を警告するPagerDutyを使用しています。 OpenStackのために、リチウムは、過剰なリソース消費で警告します。私たちのOpenStackのシリーズのパート1で述べたように、リソースの消費を監視することは、包括的なOpenStackの監視戦略の重要な部分です。
+
+
 [![Lithium alerts][lithium-alert]][lithium-alert]
 
 Datadog alerts give Lithium engineers the flexibility to inform the right people that a problem has occurred, at the right time, across an [ever-growing][integration-list] list of platforms. 
 
+Datadogアラートは、リチウムエンジニアはプラットフォームの増え続けるリストを横切って、適切なタイミングで、何らかの問題が発生している右の人々に知らせるための柔軟性を提供します。
+
+
 ## Why Datadog?
 Before adopting Datadog, Lithium admins were relying on [Horizon][Horizon] (OpenStack's canonical dashboard) to extract meaningful metrics from their deployment. This approach was severely limited—engineers could only access rudimentary statistics about their deployment and lacked the ability to correlate metrics from OpenStack with metrics from across their infrastructure.
 
-With Datadog [screenboards], they can combine the historical perspective of graphed timeseries data with alert values to put current operations metrics in context. 
+With Datadog [screenboards], they can combine the historical perspective of graphed timeseries data with alert values to put current operations metrics in context.
+
+Datadogを採用する前に、リチウム管理者は、その配置から意味のある指標を抽出するためにホライゾン（OpenStackの標準的なダッシュボード）に頼っていました。このアプローチは、限定されたエンジニアが彼らの展開についての初歩的な統計情報のみにアクセスすることができました深刻だったとそのインフラストラクチャー全体からのメトリックとOpenStackのからのメトリックを相関させる能力を欠いていました。
+
+Datadogのscreenboardで、彼らはcontext.sに現在の運用メトリックを置くために、アラート値でグラフ化時系列データの歴史的な視点を組み合わせることができます。
 
 [![Lithium widgets][lithium-widgets]][lithium-widgets]
 
 Datadog also makes it easy to collect and monitor [RabbitMQ] and MySQL metrics, in addition to general OpenStack metrics, for even deeper insight into performance issues. For Lithium, having Datadog in place has allowed engineers to adjust internal workflows, reducing the total number of elements that need monitoring.
 
+Datadogは、パフォーマンス上の問題へのより深い洞察力のために、一般的なOpenStackの指標に加えて、収集し、RabbitMQのとMySQLのメトリックを監視することが容易になります。リチウムについては、代わりにDatadogを有する監視を必要とする要素の総数を減らすこと、エンジニアは、内部のワークフローを調整することができました。
+
+
 ### Saving time, money, and reputation
 Adopting Datadog has allowed Lithium to catch problems in OpenStack as well as applications running on their OpenStack cloud. Now, Lithium engineers have the tools and information they need to react quickly to problems and resolve infrastructure issues with minimal customer impact, saving time, money, and reputation.
+
+採用Datadogは、OpenStackの中の問題だけでなく、そのOpenStackのクラウド上で実行中のアプリケーションをキャッチするためにリチウムを可能にしました。さて、リチウムエンジニアは、時間、お金、と評判の保存、問題に迅速に反応し、最小限の顧客への影響とインフラの問題を解決するために必要なツールや情報を持っています。
+
 
 ## Conclusion
 [![Nova default dash][nova-dash]][nova-dash]
@@ -64,9 +112,14 @@ _Default Datadog OpenStack dashboard_
 
 If you're already using OpenStack and Datadog, we hope these strategies will help you gain improved visibility into what's happening in your deployment. If you don't yet have a Datadog account, you can [start monitoring][part 3] OpenStack performance today with a [free trial].
 
+あなたは既にOpenStackのとDatadogを使用している場合、我々は、これらの戦略は、あなたの展開で何が起こっているかに改善された可視性を得るのを助けることを願っています。あなたはまだDatadogアカウントをお持ちでない場合は、無料試用版で、今日OpenStackのパフォーマンスの監視を開始することができます。
+
 ## Acknowledgments
 
 Thanks to [Lithium] and especially [Mike Tougeron][twit], Lead Cloud Platform Engineer, for generously sharing their OpenStack expertise and monitoring strategies for this article.
+
+リチウム特にマイクTougeronのおかげで、惜しみなくそのOpenStackのノウハウを共有し、この記事のための戦略を監視するために、クラウドプラットフォームエンジニアをリード。
+
 
 <iframe width="100%" height="100" style="border: 0;" src="https://go.pardot.com/l/38172/2015-03-02/h6c2r" scrolling="no" type="text/html" frameborder="0" allowtransparency="true"></iframe>
 
