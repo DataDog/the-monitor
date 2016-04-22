@@ -1,5 +1,8 @@
 # Monitoring OpenStack Nova
-_This post is Part 1 of a 3-part series about monitoring OpenStack Nova. [Part 2] is about collecting operational data from Nova, and [Part 3] details how to monitor Nova with Datadog._
+>_This post is Part 1 of a 3-part series about monitoring OpenStack Nova. [Part 2] is about collecting operational data from Nova, and [Part 3] details how to monitor Nova with Datadog._
+
+このポストは、OpenStack Novaの監視に関する3回シリーズのポストのPart 1です。[Part 2][Part 2]は、”Novaからどのようにして運用データを収集するか”を解説しています。[Part 3]では、”Datadogを使ってNovaをどのように監視するか”を解説しています。
+
 
 ## The 30,000-foot view
 > [OpenStack] is an open-source cloud-computing software platform. It is primarily deployed as [infrastructure-as-a-service] and can be likened to a version of [Amazon Web Services][aws] that can be hosted anywhere. Originally developed as a joint project between Rackspace and NASA, OpenStack is about five years old and has a large number of high-profile corporate supporters, including Google, Hewlett-Packard, Comcast, IBM, and Intel.
@@ -246,7 +249,7 @@ RabbitMQは、同期および非同期の通信チャネルを提供しており
 
 **consumer_utilisation**（コンシューマの活用率）:RabbitMQの3.3で導入されたこのメトリックスは、各キューの活用上を％値でリポートします。このメトリックスは、メッセージが生成されると同時にコンシューマが割り当てられると言う意味で、各キュー毎に100%をレポートしているのが理想です。
 
-いくつかの要因が”consumer utilization”の低下の原因になります: ネットワークの輻輳やプリフェッチです。遅いネットワークは、コンシューマーがパブリッシャーからメッセージを受け取る際の抑制要素として機能してします。プリフェッチは、コンシューマーが既存のメッセージを処理している間に受信できる新しいメッセージの数です。プリフェッチの設定値が低い場合、コンシューマーが、古いメッセージを処理している間は、新しいメッセージを取り込むことが抑制されてしまいます。プリフェッチの値を高く設定しているにもかかわらず、長期間に渡り”consumer utilization”の値が低い場合は、ネットワークに問題がある可能性が高いです。
+”consumer utilization”の低下は、次のような要因で発生します: ネットワークの輻輳やプリフェッチです。遅いネットワークは、コンシューマーがパブリッシャーからメッセージを受け取る際の抑制要素として機能してします。プリフェッチは、コンシューマーが既存のメッセージを処理している間に受信できる新しいメッセージの数です。プリフェッチの設定値が低い場合、コンシューマーが、古いメッセージを処理している間は、新しいメッセージを取り込むことが抑制されてしまいます。プリフェッチの値を高く設定しているにもかかわらず、長期間に渡り”consumer utilization”の値が低い場合は、ネットワークに問題がある可能性が高いです。
 
 
 ![Memory by queue][queue-mem]
@@ -269,27 +272,23 @@ RabbitMQは、同期および非同期の通信チャネルを提供しており
 
 > **consumers**: Similar to the queue count metric, your number of consumers should usually be non-zero for a given queue. Zero consumers means that producers are sending out messages into the void. Depending on your RabbitMQ configuration, those messages could be lost forever.
 
-**consumers**（キュー毎のコンシューマ数）：キュー・カウント・メトリックと同様に、消費者のあなたの数は、通常、指定されたキューのために非ゼロでなければなりません。ゼロの消費者は生産者がvoidにメッセージを送信していることを意味します。あなたのRabbitMQ構成に応じて、これらのメッセージは永遠に失われる可能性があります。
-
-
 > Generally speaking, there are only a handful of queues that may have zero consumers under normal circumstances: _aliveness-test_, _notifications.info_, and _notifications.error_.
-
-稼働状態テスト、notifications.info、およびnotifications.errorを：一般的に言えば、通常の状況下でゼロの消費者を有することができるキューのほんの一握りがあります。
-
 
 >  [_Aliveness-test_ ][aliveness]is a queue for monitoring tools to use. A producer typically creates and consumes a message in this queue to ensure RabbitMQ is operating correctly. _Notifications.error_ and _notifications.info_ are notifications with an associated [log level] priority. _Notifications.error_ is the error notification message queue, and _notifications.info_ is the queue for informational messages.
 
-稼働状態-testが使用するツールを監視するためのキューです。プロデューサーは、一般的に作成し、RabbitMQのが正常に動作していることを確認するために、このキューにメッセージを消費します。 Notifications.errorはと関連するログレベルの優先順位の通知notifications.infoです。 Notifications.errorはエラー通知メッセージキューで、notifications.infoは、情報メッセージのキューです。
-
-
 > Additionally, if you have an OpenStack monitoring tool such as [Stacktach][stacktach] in place, you may see a number of consumer-less queues beginning with _monitor_ if your monitoring tool is not actively consuming messages from those queues.
 
-あなたが代わりにStacktachなどOpenStackの監視ツールを持っている場合はさらに、あなたの監視ツールが積極的にそれらのキューからメッセージを消費していない場合は、モニターで始まる消費者レスキューの数を表示することがあります。
+> Read more about collecting emitted notifications in [part two of this series][Part 2]. Beyond the above queues listed, if your consumer count drops to zero for an extended period of time, you probably want to be alerted. 
 
+**consumers**（キュー毎のコンシューマ数）：キューカウントと同様に、コンシューマーの数は、特定のキューに対して0以上の数値になっているはずです。コンシューマ数が0になっているということは、Producerがメッセージをvoidに送信していることになります。RabbitMQの設定内容によっては、それらのメッセージは、復旧できない可能性があります。
 
-> Read more about collecting emitted notifications in [part two of this series][Part 2]. Beyond the above queues listed, if your consumer count drops to zero for an extended period of time, you probably want to be alerted.  
+実際には、特定の条件下でコンスーマーの数が0になるキューが幾つかあります。例として：_aliveness-test_, _notifications.info_, _notifications.error_
 
-このシリーズのパート2で発行した通知を収集については、こちらをご覧ください。あなたの消費者の数が長期間にわたってゼロに低下した場合に記載されている上記のキューを超えて、あなたはおそらく警告することにしたいです。
+[_Aliveness-test_ ][aliveness]は、監視ツールが使用するためのキューです。RabittMQが正しく動作しているか確認するために、プロデゥーサーは、このキューにメッセージを作成し処理していきます。_notifications.info_と_notifications.error_は、[ログレベル][log level]の通知に関連づけられています。_Notifications.error_はエラー通知のためのメッセージキューで、_notifications.info_は、参考レベル情報の通知のためのメッセージキューです。
+
+更に、OpenStackの監視ツールの[Stacktach][stacktach]を採用し、積極的にキューからメッセージを取り入れて処理していない場合、複数の_monitor_で始まる”consumer-less”キューを目にするになるでしょう。
+
+通知から情報を収拾する方法は、この[シリーズのパート2][Part 2]で紹介しています。上記で紹介したキューに関するリスト以外に、コンスーマーの数が長期に渡り0になった場合にも、アラートを発するように設定しておくと良いでしょう。
 
 
 <div class="anchor" id="notifications" />
@@ -299,13 +298,12 @@ RabbitMQは、同期および非同期の通信チャネルを提供しており
 > Nova reports certain discrete events via _notifications_. Because the majority of work performed by Nova is through asynchronous calls, wherein a user initiates an operation and does not receive a response until the operation is complete, listening in on emitted events is necessary to see the full picture at a given point in time.
 Furthermore, handling notifications is the only way to get information on the throughput of work done by the hypervisor.
 
-ノヴァは、通知を経由して、特定の個別のイベントをレポートします。ノヴァによって実行される作業の大半は、ユーザーが操作を開始し、操作が完了するまでの応答を受信しないことを特徴と非同期呼び出しを介してであるため、放出されたイベントにでリスニングして任意の時点で全体像を見ることが必要です。
-また、通知を処理する時間のhypervisor.extended期間が行った作業のスループットに関する情報を取得する唯一の方法である、あなたはおそらく警告することにしたいです。
+Novaは、_notifications_経由で特定のイベントを通知します。Novaよる操作コールの大半は非同期で実行されているため、ユーザーが開始した操作の結果はその操作が完了するまで受け取ることができません。従って、通知イベントを把握しておくことは、ある時点においての操作コールの状況を把握するために不可欠です。更に、処理結果の通知イベントは、ハイパーバイザーによって管理されている操作のスループットを把握するための唯一の方法でもあります。
 
 
 > Though Nova emits notifications on about [80 events][paste-events], the following table lists a number of useful notifications to listen for. The name in the table corresponds to the `event_type` field included in the notification payload.
 
-ノヴァは、約80のイベントの通知を発したが、次の表には、をリッスンするために有用な通知の数を示しています。表中の名前は、通知ペイロードに含まれたevent_typeフィールドに対応しています。
+Novaからは、[約80のイベント通知][paste-events]が送信されています。次の表には、是非監視しておきたい通知を掲載しています。表中の項目名は、通知のペイロード内の`event_type`項目に対応しています。
 
 
 |**Name**| **Description**|**[Metric Type][monitoring]**|
@@ -317,14 +315,13 @@ Furthermore, handling notifications is the only way to get information on the th
 
 > For most events, correlating the `start` and `end` notifications and their associated timestamps will give you the execution time for hypervisor operations. Some operations, like resizing an instance, perform preparation and sanity checks before and after the action, so you will need to take these events into account as well to get an accurate sense of performance.
 
-開始と終了の通知を関連付けるほとんどのイベント、およびそれらに関連するタイムスタンプのためにあなたのハイパーバイザーの操作の実行時間を与えるだろう。あなたは、パフォーマンスの正確な感覚を得るためだけでなく、アカウントにこれらのイベントをする必要があるので、一部の操作は、インスタンスのサイズを変更するように、前とアクションの後準備と正気チェックを実行します。
+多くのイベントの場合、開始通知と終了通知を関連づけ、それらのタイムスタンプを比較することでハイパーバイザーの実行時間を計測することができます。又、インスタンスのサイズ変更などの事前準備や事前/事後の健全性チェックの操作が発生するオペレーションは、これらの事前＆事後操作の情報も考慮して正確なスループットを検討する必要があるでしょう。
 
 
 ## Conclusion
 > In this post we’ve outlined some of the most useful metrics and notifications you can monitor to keep tabs on your Nova computing cluster. If you’re just getting started with OpenStack, monitoring the metrics and events listed below will provide good visibility into the health and performance of your deployment:  
 
-この記事では、我々はあなたのノヴァ・コンピューティング・クラスタ上のタブを保つために監視することができる最も有用な指標と通知のいくつかを概説しました。あなただけのOpenStackの使用を開始している場合は、メトリックと、以下のイベントを監視することは、健康や配備のパフォーマンスに良好な視認性を提供します：
-
+この記事では、Novaを使ったクラスタを安定して運用するために監視しておくべきメトリクスと通知に関して解説して息ました。もしもあなたがOpenStackを使い始めて間もない状態なら、以下にリスト化したメトリクスと通知は、その環境のパフォーマンスや健全性について多くの情報を提供してくれるはずです:
 
 - [hypervisor\_load](#hypervisor_load)  
 - [running\_vms](#running_vms)  
@@ -336,8 +333,9 @@ Furthermore, handling notifications is the only way to get information on the th
 
 > In the future, you may recognize additional OpenStack metrics that are particularly relevant to your own infrastructure and use cases. Of course, what you monitor will depend on both the tools you have and the OpenStack components you are using. See the [companion post][Part 2] for step-by-step instructions on collecting Nova and RabbitMQ metrics.
 
-将来的には、独自のインフラストラクチャと使用例に特に関連する追加のOpenStackの指標を認識することができます。もちろん、あなたは両方のあなたが持っているツールと、使用しているOpenStackのコンポーネントに依存します監視するもの。ノヴァとRabbitMQのメトリックを収集することにステップバイステップの手順については、コンパニオンの記事を参照してください。
+OpenStackを使い込んでいくと、運用しているインフラやユースケースの密接に関連した監視すべきOpenStackメトリクスに気がつくでしょう。そして勿論、何を監視するかは、使用しているツールと使っているOpenStackのコンポーネットに依存しているでしょう。
 
+この[シリーズの次のポスト][Part 2] になる"NovaとRabittMQのメトリクスの収集に関するステップバイステップの手順"も、是非よんでみてください。
 
 <iframe width="100%" height="100" style="border: 0;" src="https://go.pardot.com/l/38172/2015-03-02/h6c2r" scrolling="no" type="text/html" frameborder="0" allowtransparency="true"></iframe>
 
