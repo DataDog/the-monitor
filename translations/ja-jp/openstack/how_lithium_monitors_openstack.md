@@ -4,9 +4,9 @@
 
 In this article we will pull back the curtain to learn Lithium's best practices and tips for using OpenStack, and how Lithium monitors OpenStack with the help of Datadog.
 
-リチウムはgamers.comから分派（ゲームコミュニティ）として2001年に設立され、以来、その合計コミュニティプラットフォームに役立つブランド接続し、従事し、顧客を理解する大手ソーシャル・ソフトウェア・プロバイダーへと進化してきました。 400以上のコミュニティと成長していると、リチウムは業種や地域間の主要なブランドにカスタマイズされた、一般向けのコミュニティを展開する柔軟性を備えた、プライベートデータセンターとしてOpenStackは使用しています。
+リチウムは、gamers.com（ゲームコミュニティ）からの分派として2001年に設立されました。以来、Lithiumのコミュニティプラットフォームは、ブランドを展開し、顧客と関わり、彼らを理解するための最先端のソーシャル・ソフトウェア・プロバイダーへと進化してきました。[400以上のコミュニティー][communities]を抱え会社が拡大している状況で、Lithiumは、[OpenStack][OpenStack]を、世界中の各業界の主要ブランドに、カスタマイズ性を有した柔軟なコミュニティー運用環境を提供するするためのプライベートデータセンターとして活用しています。400以上のコミュニティと成長していると、リチウムは業種や地域間の主要なブランドにカスタマイズされた、一般向けのコミュニティを展開する柔軟性を備えた、プライベートデータセンターとしてOpenStackは使用しています。
 
-この記事では、OpenStackのを使用するためのリチウムのベストプラクティスやヒントを学ぶためにカーテンを引き戻す方法、およびリチウムモニターがDatadogの助けを借りて、OpenStackのだろう。
+この記事では、[Lithium][Lithium]のOpenStackのを使用するためのベストプラクティスやヒントを解き明かし、LithiumがどのようにDatadogを使ってOpenStackを監視しているかを紹介していきます。
 
 
 ## Why monitoring OpenStack is critical
@@ -18,12 +18,11 @@ With such a far-reaching deployment, failure is not an option. If OpenStack were
 
 That's why Lithium's engineers monitor OpenStack around the clock. Using [Datadog], they can correlate all the relevant OpenStack metrics with metrics from other parts of their infrastructure, all in one place. Lithium engineers can spot issues at a glance and determine the root cause of the problem, in addition to setting up advanced alerts on mission-critical metrics.
 
-OpenStackのは、彼らのサービスプラットフォームのバックボーンを形成し、リチウムのインフラの中心的なコンポーネントです。リチウムはOpenStackのは、セールスエンジニアのための大規模な生産コミュニティの数だけでなく、デモのコミュニティをホストして、生産と開発環境の両方のためのOpenStackのを活用しています。
-コミュニティホスティングに加えて、OpenStackのもKubernetes、シェフサーバーとBINDスレーブなどのインフラサービスを、ホストします。
+[OpenStack][OpenStack]は、Lithiumのサービスプラットフォームのバックボーンで、Lithiumのインフラの最も重要な構成要素です。Lithiumは、本番環境と開発環境の両方にOpenStackを活用しています。大量のメンバーを抱えた本番コミュニティーや、セールスエンジニアのデモのコミュニティもOpenStackで運用しています。コミュニティー運用の環境のホスティング以外に、[Kubernetes][Kubernetes], [Chef][Chef] server, [BIND][BIND] slavesなどのインフラ構成要素を運用するためにOpenStackを使っています。
 
-このような遠大な展開では、失敗はオプションではありません。開発者は、テスト環境を起動することができない、セールスエンジニアは見通しのためのデモ環境を作成することはできないだろう、と生産のコミュニティがダウンしたりできます。OpenStackのが適切に監視および管理されていなかった場合は、多数および顕著な障害が発生する可能性がありますコンピューティングリソースが使用不能になったとして増加した応答時間を参照してください。
+このような、大規模で複雑な環境では、障害を起こすことは許されません。OpenStackが、適切に監視され管理されていないと、顕著な障害が多数発生することになるでしょう。例えば、セールスエンジニアは見込み客のためのデモ環境を作成することはできないし、開発者はテスト環境を起動することができないし、本番環境では、コンピューティングリソースが使えなくなるにつれてレスポンス時間が長くなり、停止を経験することもあるでしょう。
 
-リチウムのエンジニアは時計周りOpenStackの監視理由です。 Datadogを使用して、それらはすべて一箇所に、インフラの他の部分からのメトリックに関連するすべてのOpenStackのメトリックを相関させることができます。リチウムのエンジニアが一目で問題を発見し、ミッションクリティカルな指標に高度なアラートを設定することに加えて、問題の根本原因を特定することができます。
+従って、LithiumのエンジニアはOpenStackを24時間常に監視しています。[Datadog][Datadog]を使うことにより、OpenStackから収集したメトリクスとインフラの他の部分から収集した情報を一カ所に集め、それらの情報を関連づけて活用することができるようになります。Lithiumのエンジニアは、ミッションクリティカルなメトリクスに対し柔軟にアラートを設定できること加え、障害の発生箇所一目で発見し、問題の原因を特定することができるようになります。
 
 
 [![Lithium OpenStack dashboard][lithium-dash]][lithium-dash]
@@ -34,13 +33,13 @@ _A Datadog dashboard that Lithium uses to monitor OpenStack_
 ### Number of instances running
 Lithium engineers track the total number of instances running across their OpenStack deployment to correlate with changes in other metrics. For example, a large increase in total RAM used makes sense in light of additional instances being spun up. Tracking the number of instances running alongside other metrics helps inform decisions for capacity and [tenant quota][quotas] planning.
 
-リチウムエンジニアは、他の指標の変化と相関することが彼らのOpenStackの展開全体で実行されているインスタンスの総数を追跡します。追加インスタンスの光がスピンアップ中に、例えば、使用される全RAMの大幅な増加は、理にかなっています。他のメトリックと一緒に実行されているインスタンスの数を追跡する能力とテナントのクォータ計画のための意思決定を通知することができます。
+Lithiumのエンジニアは、他のメトリクスの変化と連携させるためにOpenStack環境で起動しているインスタンスの総数の情報を収集しています。例えば、RAM使用量の大幅な増加は、追加のインスタンスの起動に照らし合わせて理解することができます。動作しているインスタンス数を他のメトリクスと併せて把握しておくことは、インフラ規模とtenantに割り当てるquotaの計画をする際の判断材料を与えてくれます。
 
- 
+
 ### Instances per project
 Like the total number of instances running, Lithium tracks the number of instances used per project to get a better idea of how their private cloud is being used. A common problem they found was that engineers would often spin up development environments and forget to shut them down, which means resources were provisioned but unused. By tracking the number of instances per project, admins could rein in excessive or unnecessary usage and free up resources without resorting to installing additional hardware.
 
-インスタンスの総数が実行して同じように、リチウムは彼らのプライベートクラウドが使用されている方法のより良いアイデアを得るために、プロジェクトごとに使用インスタンスの数を追跡します。彼らが見られる一般的な問題は、エンジニアは、多くの場合、開発環境をスピンアップし、リソースのプロビジョニングが、未使用されたことを意味し、それらをシャットダウンすることを忘れだろうということでした。プロジェクトごとのインスタンス数を追跡することにより、管理者は、必要以上に使用を抑える可能性があり、追加のハードウェアをインストールするに頼ることなく、リソースを解放します。
+動作しているインスタンスの総数と同じように、Lithiumでは、プライベートクラウドがどのように活用されているかを把握するために、プロジェクト毎のインスタンス数を把握しています。日常的に発生する問題として彼らは、"エンジニアが、開発環境を起動し、停止することを忘れ、使われていない環境にリソースが提供されている"ことを発見しました。プロジェクトごとのインスタンス数を追跡することにより、管理者は、極端なリーソースの利用や必要でないリソースの利用を抑制し、追加のハードウェアをインストールするに頼ることなく、リソースを確保することができるようになります。
 
 
 ### Available memory
