@@ -88,15 +88,16 @@ Before adopting Datadog, Lithium admins were relying on [Horizon][Horizon] (Open
 
 With Datadog [screenboards], they can combine the historical perspective of graphed timeseries data with alert values to put current operations metrics in context.
 
-Datadogを採用する前に、リチウム管理者は、その配置から意味のある指標を抽出するためにホライゾン（OpenStackの標準的なダッシュボード）に頼っていました。このアプローチは、限定されたエンジニアが彼らの展開についての初歩的な統計情報のみにアクセスすることができました深刻だったとそのインフラストラクチャー全体からのメトリックとOpenStackのからのメトリックを相関させる能力を欠いていました。
+Datadogを採用する前は、Lithiumの管理者は、本番環境から意味のあるメトリクスを手取り出すために[Horizon][Horizon] （OpenStackの標準的なダッシュボード）に頼っていました。この方法には、多くの制限がありました。エンジニアは、本番環境の初歩的な統計にしかアクセスできず、OpenStackのメトリクスとインフラ全体から収集しているメトリクスを相関させることもできませんでした。
 
-Datadogのscreenboardで、彼らはcontext.sに現在の運用メトリックを置くために、アラート値でグラフ化時系列データの歴史的な視点を組み合わせることができます。
+Datadogの[screenboards][screenboards]を使うことにより、Lithiumのエンジニアは、グラフ化したメトリクスデータとアラートで設定している値を過去に遡って検証し、現在必要な運用メトリクスを導き出せるようになりました。
+
 
 [![Lithium widgets][lithium-widgets]][lithium-widgets]
 
 Datadog also makes it easy to collect and monitor [RabbitMQ] and MySQL metrics, in addition to general OpenStack metrics, for even deeper insight into performance issues. For Lithium, having Datadog in place has allowed engineers to adjust internal workflows, reducing the total number of elements that need monitoring.
 
-Datadogは、パフォーマンス上の問題へのより深い洞察力のために、一般的なOpenStackの指標に加えて、収集し、RabbitMQのとMySQLのメトリックを監視することが容易になります。リチウムについては、代わりにDatadogを有する監視を必要とする要素の総数を減らすこと、エンジニアは、内部のワークフローを調整することができました。
+又、Datadogは、パフォーマンス問題の更に深い洞察を得るために、OpenStackの一般的なメトリクスに加え、RabbitMQとMySQLのメトリックスを監視することを容易にしました。Lithiumにとって、Datadogを採用することは、内部のワークフローを調整し、監視を必要とする要素を減らすことになりました。
 
 
 ### Saving time, money, and reputation
@@ -111,13 +112,14 @@ _Default Datadog OpenStack dashboard_
 
 If you're already using OpenStack and Datadog, we hope these strategies will help you gain improved visibility into what's happening in your deployment. If you don't yet have a Datadog account, you can [start monitoring][part 3] OpenStack performance today with a [free trial].
 
-あなたは既にOpenStackのとDatadogを使用している場合、我々は、これらの戦略は、あなたの展開で何が起こっているかに改善された可視性を得るのを助けることを願っています。あなたはまだDatadogアカウントをお持ちでない場合は、無料試用版で、今日OpenStackのパフォーマンスの監視を開始することができます。
+もしも既にOpenStackとDatadogを使っているなら、ここで紹介している考え方が、本番環境で起きている症状を把握する手助けになるでしょう。もしも、Datadogのアカウントをまだ持っていないなら、[トライアルアカウント][free trial]に登録すれば、[Datadogで、直ちにOpenStackのパフォーマンスの監視][[part 3]]を始められるでしょう。
+
 
 ## Acknowledgments
 
 Thanks to [Lithium] and especially [Mike Tougeron][twit], Lead Cloud Platform Engineer, for generously sharing their OpenStack expertise and monitoring strategies for this article.
 
-リチウム特にマイクTougeronのおかげで、惜しみなくそのOpenStackのノウハウを共有し、この記事のための戦略を監視するために、クラウドプラットフォームエンジニアをリード。
+この記事においてOpenStackに関するノウハウとその監視の考え方について惜しみなく共有してくださったことを、[Lithium][Lithium]、特にリード・クラウドプラットフォーム・エンジニアの[Mike Tougeron][twit]氏に感謝します。
 
 
 <iframe width="100%" height="100" style="border: 0;" src="https://go.pardot.com/l/38172/2015-03-02/h6c2r" scrolling="no" type="text/html" frameborder="0" allowtransparency="true"></iframe>
