@@ -33,7 +33,7 @@ _A Datadog dashboard that Lithium uses to monitor OpenStack_
 ### Number of instances running
 Lithium engineers track the total number of instances running across their OpenStack deployment to correlate with changes in other metrics. For example, a large increase in total RAM used makes sense in light of additional instances being spun up. Tracking the number of instances running alongside other metrics helps inform decisions for capacity and [tenant quota][quotas] planning.
 
-Lithiumのエンジニアは、他のメトリクスの変化と連携させるためにOpenStack環境で起動しているインスタンスの総数の情報を収集しています。例えば、RAM使用量の大幅な増加は、追加のインスタンスの起動に照らし合わせて理解することができます。動作しているインスタンス数を他のメトリクスと併せて把握しておくことは、インフラ規模とtenantに割り当てるquotaの計画をする際の判断材料を与えてくれます。
+Lithiumのエンジニアは、OpenStack環境で起動しているインスタンスの総数を他のメトリクスの変化と連携させるために、動作インスタンス数を収集しています。例えば、RAM使用量の大幅な増加は、追加のインスタンスの起動に照らし合わせれば、説明が付きます。動作インスタンス数を他のメトリクスと併せて把握しておくことは、インフラ規模とtenantに割り当てるquotaの計画をする際の判断材料も与えてくれます。
 
 
 ### Instances per project
@@ -45,13 +45,13 @@ Like the total number of instances running, Lithium tracks the number of instanc
 ### Available memory
 As mentioned in [Part 1][part 1] of our [series][part 2] on [monitoring OpenStack Nova][part 3], visibility into OpenStack's resource consumption is essential to ensuring smooth operation and preventing user frustration. If available resources were insufficient, sales engineers would be breathing down the neck of the techops team, unable to create demo accounts for prospects, and developers would be stuck without a dev environment.
 
-OpenStackのリソースの消費にOpenStackの新星、可視性を監視する上で私たちのシリーズのパート1で述べたように円滑な運営を確保し、ユーザーの不満を防止するために不可欠です。利用可能なリソースが不足した場合は、セールスエンジニアは、見通しのためのデモアカウントを作成することができませんでしtechopsチームの首を、下に呼吸されるだろう、と開発者は、dev環境せずに立ち往生することになります。
+[OpenStack Novaの監視][Part 3]に関する[シリーズ][Part 2]の[Part 1][part 1]で紹介したように、リソースの消費量を把握しておくことは、円滑な運用とユーザーの不満を防止するために不可欠です。もしも、利用可能なリソースが十分確保できていない場合、セールスエンジニアは、見込み客のデモ環境を作ることができなくなり、運用チームの行動を監視するようになるでしょう。開発社は、開発環境を手に入れられず、立ち往生してしまうでしょう。
 
 
 ### VCPU available
 Just like available memory, tracking the number of VCPUs available for allocation is critical—a lack of available CPUs prevents provisioning of additional instances. 
 
-ただ、使用可能なメモリのように、割り当て可能なのVCPUの数を追跡することであるクリティカル利用可能なCPUの欠如は、追加インスタンスのプロビジョニングを防ぐことができます。
+空きメモリと同じように、空きVCPU数を把握しておきことも必要不可欠です。利用可能なCPUの不足は、追加のインスタンスの起動の原因につながります。
 
 
 ### Metric deltas
@@ -61,9 +61,9 @@ Finally, Lithium tracks the changes in metrics' values over time to give insight
 
 Using Datadog's [Change graph feature][graph-change], engineers have a bird's eye view of week-to-week changes in resource usage. By analyzing resource deltas, engineers and decision makers have the data they need to inform hardware purchasing decisions and perform diligent capacity planning.
 
-最後に、リチウムは、リソースの可用性と消費の変化の原因への洞察を与えるために時間をかけて評価指標」値の変化を追跡します。
+最後に、Lithiumは、リソースの利用可能量と消費量の変化の原因を把握するために、メトリクス値の時間変化を把握しています。
 
-Datadog変更グラフ機能を使用して、エンジニアは、リソース使用量の週単位の変更の鳥瞰図を持っています。リソースのデルタを分析することにより、技術者や意思決定者は、彼らは、ハードウェアの購買決定を通知し、勤勉な容量計画を実行するために必要なデータを持っています。
+Datadogの[Change graph機能][graph-change]を使い、エンジニアは、週単位のリソースの使用量の概要を把握しています。リソースの変化を分析することで、エンジニアや意思決定者は、ハードウェア購入の意思決定の必要性を把握でき、容量計画基づいた積極的な運用が可能になります。
 
 
 ## Alerting the right people
@@ -71,16 +71,16 @@ Alerting is an [essential component][alerting-101] of any monitoring strategy—
 
 Lithium generally uses [PagerDuty] for priority alerts, and [HipChat] or email for lower-priority alerts and for alerting specific engineers to a particular issue. For OpenStack, Lithium alerts on excessive resource consumption. As mentioned in [Part 1][part 1] of our OpenStack series, monitoring resource consumption is a **critical** part of a comprehensive OpenStack monitoring strategy.
 
-アラートは、戦略・アラートは、彼らが発生すると、ユーザーに影響が及ぶ前に、エンジニアは、問題に反応させ、任意の監視の必須成分です。 Datadogアラートで、リチウムは、すべてのテクニック人間の介入なしに修正案やトラブルシューティングでエンジニアをそれらの通常の通信チャネル（、PagerDuty、電子メールなどをチャット）を介して通知を送信するだけでなく、提供することができます。
+[アラートの設計][alerting-101]]は、監視戦略を考える上では非常に重要な要素です。アラートは、ユーザーに影響が及ぶ前に、順次発生する障害に対象するように仕向けます。Datadogのアラート機能を使い、Lithiumは、日常的に使っている情報共有チャネル(チャット, 電子メール, PagerDutyなど)に、受信者に対するトラブルシューティングの方法や修正案を含んだ通知を人間が関与することなく送信できるようになりました。
 
-リチウムは、一般的に、優先度の警告、優先順位の低いアラートのHipChatまたは電子メールのために、特に問題に具体的な技術者を警告するPagerDutyを使用しています。 OpenStackのために、リチウムは、過剰なリソース消費で警告します。私たちのOpenStackのシリーズのパート1で述べたように、リソースの消費を監視することは、包括的なOpenStackの監視戦略の重要な部分です。
+Lithiumでは、問題に性質によって特定のエンジニアに通知するために、優先度の高いアラートには[PagerDuty][PagerDuty]を、それほど優先度の高くないアラートには[HipChat][HipChat]や電子メールを使っています。OpenStackの場合は、過剰なリソース消費に対してアラートを通知するようにしています。このOpenStackシリーズの[Part 1][part 1]で紹介したように、リソースの消費量の監視は、総合的なOpenStackの監視を考える上では不可欠な部分です。
 
 
 [![Lithium alerts][lithium-alert]][lithium-alert]
 
 Datadog alerts give Lithium engineers the flexibility to inform the right people that a problem has occurred, at the right time, across an [ever-growing][integration-list] list of platforms. 
 
-Datadogアラートは、リチウムエンジニアはプラットフォームの増え続けるリストを横切って、適切なタイミングで、何らかの問題が発生している右の人々に知らせるための柔軟性を提供します。
+Datadogを使ったアラートは、[日々増え続けるプラットフォーム構成部品][integration-list]を前に、Lithiumのエンジニアに、適切なタイミングで適切な人材に対し通知するための柔軟性を提供しています。
 
 
 ## Why Datadog?
