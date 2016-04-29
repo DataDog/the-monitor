@@ -28,7 +28,7 @@ Schwartz](http://dtdg.co/metrics-attention).
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_1.png)
 
-### Metrics
+## Metrics
 
 Metrics capture a value pertaining to your systems *at a specific point
 in time—*for example, the number of users currently logged in to a web
@@ -41,7 +41,7 @@ metrics are reasonably available, and collect them all.
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
 
-#### Work metrics
+### Work metrics
 
 Work metrics indicate the top-level health of your system by measuring
 its useful output. When considering your work metrics, it’s often
@@ -85,7 +85,7 @@ of systems: a web server and a data store.
 | error       | percentage of queries returning stale data since last measurement  | 4.2       |
 | performance | 90th percentile query time in seconds                              | 0.02      |
 
-#### Resource metrics
+### Resource metrics
 
 Most components of your software infrastructure serve as a resource to
 other systems. Some resources are low-level—for instance, a server’s
@@ -125,7 +125,7 @@ resource metrics, but that nonetheless may come in handy in diagnosing
 causes of problems. Common examples include counts of cache hits or
 database locks. When in doubt, capture the data.
 
-### Events
+## Events
 
 In addition to metrics, which are collected more or less continuously,
 some monitoring systems can also capture events: discrete, infrequent
@@ -156,7 +156,7 @@ is feasible.
 
 ![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_3.png)
 
-### What good data looks like
+## What good data looks like
 
 The data you collect should have four characteristics:
 
@@ -191,7 +191,7 @@ The data you collect should have four characteristics:
     makes it much easier to know what “normal” is, especially if your
     metrics have monthly, seasonal, or annual variations.
 
-### Data for alerts and diagnostics 
+## Data for alerts and diagnostics 
 
 The table below maps the different data types described in this article
 to different levels of alerting urgency outlined [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/). In
@@ -216,8 +216,7 @@ be more appropriate than a page, or vice versa:
 | Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |      
 | Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |  
 
-Conclusion: Collect ’em all
----------------------------
+## Conclusion: Collect ’em all
 
 -   Instrument everything and collect as many work metrics, resource
     metrics, and events as you reasonably can.
