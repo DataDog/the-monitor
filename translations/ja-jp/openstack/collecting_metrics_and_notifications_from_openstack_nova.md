@@ -118,11 +118,11 @@ Content-Type: application/json
 
 `X-Subject-Token` フィールドの部分が、認証トークンになります。
 
+
 > When it comes to retrieving Nova server metrics, you must use the API. The API endpoint for Nova server metrics is: `/v2.1/​<tenant-id>​/servers/​<server-id>/diagnostics`. Using `curl` and the authentication token acquired above, the request would look something like:
 
-
-
 それはノヴァ・サーバーのメトリックを取得することになると、あなたは、APIを使用する必要があります。ノヴァ・サーバー・メトリックのAPIエンドポイントは、次のとおりです。`/v2.1/<テナント-ID>/サーバー/<サーバーID>/ diagnostics`。 `curl`と上記取得した認証トークンを使用して、要求は何かを次のようになります。
+
 
 ```
 curl -H "X-Subject-Token: 3939c299ba0743eb94b6f4ff6ff97f6d" http://localhost:5000/v2.1/<tenant-id>/servers/<server-id>/diagnostics
