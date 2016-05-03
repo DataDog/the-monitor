@@ -315,14 +315,14 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 
 > If you’re just interested in a quick-and-dirty notification listener you can build around, check out this [gist]. Listening in on events requires the `kombu` Python package. [This script][virtualenv] will create a virtual environment and run the event listener. The OpenStack documentation has [additional resources][roll-your-own-listener] on crafting your own notification listener.
 
-通知は、このようなインスタンス作成、インスタンスの削除、およびサイズの変更操作などのイベントに放出されます。 AMQPパイプライン（典型的にはRabbitMQの）を中心に構築された、ノヴァは、約80のイベントの通知を発するように構成されています。ツールの数は、OpenStackのイベントを収集、その浮上しているが、OpenStackの自身のStackTachは、機能完全性およびドキュメントの面でパックをリードしています。それはモジュールのアップグレードに直面してイベントを追跡し続けることができることを意味し、新しいイベントを処理するには、noアップデートを必要としないので、StackTachは特に便利です。
+[通知][notification system]は、インスタンスの作成、削除、サイズの変更など[イベント][monitoring-101-events]が発生した際に送信されます。 AMQPパイプライン（一般的にはRabbitMQ）を中心に構築され、Novaの場合、およそ[80種類のイベント][paste-events]に関して通知を送信します。OpenStackのイベントを集取するために幾つかのツールが生まれてきてはいます。しかし、OpenStack自身が提供している[StackTach][StackTach]が、機能のカバー範囲とドキュメント存在という点で他のツールからリードしてます。更にStackTachは、新たいイベントに足してもアップデートを必要とせず、モジュールをアップデートすることで引き続きイベントを追跡できるため、特に便利です。
 
-クイック・アンド・ダーティ通知リスナーでちょうど興味があるなら、あなたは、周りの構築この主旨をチェックアウトすることができます。イベントにで聴くと昆布のPythonパッケージを必要とします。このスクリプトは、仮想環境を作成し、イベントリスナーを実行します。 OpenStackのドキュメントは独自の通知リスナーを作り上げる上で追加のリソースを持っています。
+もしもあなたが、通知のリスナーを素早く簡単に用意したいのなら、この[gist][gist]の例を参考にすることができます。イベントを監視続けるにはPythonパッケージの`kombu`必要とします。[このスクリプト][vritualenv]は、仮想の実行環境を作成し、イベントリスナーを起動します。OpenStackのドキュメントには、独自の通知リスナーを作るための[更に詳しい記述][roll-your-own-listener]もあります。
 
 
 > The truncated snippet below is an example of notification payloads received after initiating termination of an instance:
 
-以下切り捨てスニペットは、インスタンスの終了を開始した後、受信した通知ペイロードの例です。
+以下に部分的に切り出したスニペットは、インスタンスの終了を開始した後、受信した通知ペイロードの例です:
 
 
 ```
@@ -372,18 +372,18 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 ```
 > By comparing the timestamps from both events, you can see it took approximately 2.2 seconds to destroy the instance.
 
+両方のイベントのタイムスタンプを比較することにより、インスタンスを破棄するのに約2.2秒かかていることがわかります。
+
+
 > Note that in the snippet above there are _two_ notifications emitted: one when initiating instance termination and one that signals the successful completion of a termination operation. This is a common pattern for events in OpenStack: emit one notification when the operation has begun, and another upon completion.
 
-
-
-両方のイベントからタイムスタンプを比較することによって、あなたはそれがインスタンスを破棄するのに約2.2秒かかっ見ることができます。
-
-1インスタンスの終了および終了操作が正常に完了したことを知らせる1の開始：スニペットに上記放出された2つの通知があることに注意してください。これは、OpenStackの中でのイベントのための一般的なパターンです：完了時に一回の操作が開始された通知、および他を発します。
+上記のスニペットでは、 二つの通知が送信されていることに注目してください: 一つ目がインスタンス終了が開始した時で、二つ目がインスタンス終了の操作が完了した時です。この流れは、OpenStackのイベントの流れとして一般的なパターンです: まず、操作が開始する際に通知を送信し、そしてその操作が完了した際に別の通知を送信します。
 
 
 > When combined with collected metrics, notifications give valuable perspective and insight into the potential causes for changes in system behavior. For example, you can measure hypervisor task execution time with events, and correlate that information with the API response time. (_For the curious:_ [in practice][api-vs-load] excessive load on the hypervisor does not appear to affect API response time much.)
 
-収集されたメトリックと組み合わせた場合、通知は、システムの行動の変化のために潜在的な原因に貴重な視点と洞察力を与えます。たとえば、イベントと、ハイパーバイザ・タスクの実行時間を測定し、APIの応答時間と、その情報を相関させることができます。 （好奇心のために：ハイパーバイザ上で実際過大な負荷がはるかにAPIの応答時間に影響を与えるように表示されません。）
+別途収集されているメトリクスと組み合わせた場合、通知は、システムの挙動の変化について、潜在的な原因に関する貴重な視点と洞察を与えます。例えば、イベントを使ってハイパーバイザ・タスクの実行時間を測定することができ、それをAPIのレスポンス時間と相関させることができます。(好奇心として: [実際][api-vs-load]に、ハイパーバイザーの過度な負荷は、APIのレスポンス時間にあまり影響をおよびしません。)
+
 
 <div class="anchor" id="APIChecks" />
 
@@ -392,14 +392,15 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 
 > There are a number of tests you can perform to check the health of the Nova API. However, all tests generally boil down to one of two categories: simple or intrusive.  
 
-サービスチェックとAPIのチェックは、サービスが応答するかどうかを決定するために使用されます。 APIのチェックは、一般的にGETまたはPOST特定のAPIエンドポイントに、応答を確認します。
+_Service checks_と_API checks_は、サービスが応答するかどうかを判定するために使われています。API checksは、一般的に、APIエンドポイントに対し**GET**か**POST**のリクエストを送信し、応答を確認します。
 
-あなたはノヴァのAPIの健全性をチェックするために実行できるテストの数があります。単純または押し付けがましい：しかし、すべてのテストは、一般的に2つのカテゴリのいずれかに煮詰めます。
+NovaのAPIの健全性を確認するには幾つかのテストを実行することができます。しかし、最終的には次の2つのテストに分類することができます: simple又はintrusiveです。
 
 
 > A simple API check reads (usually static) data from an endpoint and verifies that the information received is as expected. A simple API check would be polling the quota information for a project with a **GET** request to `/v2.1/​<tenant-id>​/limits`.
 
-シンプルなA​​PIのチェックは、エンドポイントから（通常は静的な）データを読み込み、期待通りに受信された情報があることを検証します。シンプルなA​​PIチェックは<テナント-ID> /制限を/v2.1/するGETリクエストを使用したプロジェクトのクォータ情報のポーリングであろう。
+simple API checkは、エンドポイントからデータ(通常は静的)を読み込み、受信された情報が期待通りで有ることを検証します。
+例として、simple API checkは、プロジェクトのquotaの情報を、**GET**リクエストを使って`/v2.1/​<tenant-id>​/limits`から調査します。
 
 
 > Intrusive checks modify the state of the receiving endpoint. A typical intrusive check might start by setting a value and optionally following with a request to read or verify the newly created value. Some kind of cleanup would then follow to remove the added values.
@@ -409,10 +410,9 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 > * **POST** `/v2.1/<tenant-id>/os-keypairs '{"keypair": {"name": "test"}}'`  
 > * **DELETE** `/v2.1/<tenant-id>/os-keypairs/test`  
 
+Intrusive checksは、リクエストを受けているエンドポイントの状態を変更します。一般的なintrusive checkは、まず値を設置し、その後その値を読み込むためのリクエスか、新しく設定した値を確認するためのリクエストを送信します。そして、最後に、その設定した値を削除するためのクリーンアップリクエストを送信します。
 
-侵入型チェックは、受信エンドポイントの状態を変更します。典型的な侵入型チェックが値を設定し、必要に応じて新たに作成された値を読み取るか検証するための要求に従うことによって開始される可能性があります。クリーンアップのいくつかの種類を加えた値を削除するために従うことになります。
-
-ノヴァAPIの貫入チェックが（ステータスコードを返したチェック）API呼び出しの次のセットで、鍵ペアの作成と削除の​​ようになります。
+Nova APIのintrusive checkは、キーペアーを作成し、それを削除するようなリクエストになります。次のようなAPIコールで、結果として受信したステータスコードを検証します。
 
 * **POST** `/v2.1/<tenant-id>/os-keypairs '{"keypair": {"name": "test"}}'`  
 * **DELETE** `/v2.1/<tenant-id>/os-keypairs/test`  
@@ -425,11 +425,11 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 
 > Follow along to [part 3][Part 3] to learn how Datadog can help you monitor Nova.
 
-この記事では、あなたの計算クラスタの健全性を確認するために、いくつかの方法を説明しました。
+この記事では、コンピュートクラスターの健全性をチェックする方法について解説してきました。
 
-異なるソースから利用可能なので、多くのデータは、情報を取得すると、あなたは一つの場所ですべてが挑戦することができますしたいです。幸いなことに、Datadogは、プロセスのうち、痛みを取ることができます。あなたが収集し、セットアップを最小限に抑えて、そのメトリックの監視を開始できるようDatadogでは、我々は、ノヴァとの統合を構築しています。
+様々な情報源に分指したデーターを取り扱うために、必要な全ての情報を一つの場所に集めるのは簡単なことではありません。幸いなことに、Datadogを使うことで、この集約のプロセスの手間をなくすことができるようになります。Datadogでは、ユーザーが最低限のセットアップで、メトリクスの収集と監視ができるように、Novaをターゲットにしたインテグレーションを開発しました。
 
-Datadogあなたはノヴァの監視に役立つことができます方法については、第3部に沿って従ってください。
+Novaの監視にDatadogがどのように活用できるかは、[part 3][Part 3]に読み進んで確認してください。
 
 
 <iframe width="100%" height="100" style="border: 0;" src="https://go.pardot.com/l/38172/2015-03-02/h6c2r" scrolling="no" type="text/html" frameborder="0" allowtransparency="true"></iframe>
