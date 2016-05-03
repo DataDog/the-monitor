@@ -1,14 +1,11 @@
 # Collecting monitoring data from OpenStack Nova
 > _This post is Part 2 of a 3-part series on monitoring OpenStack's computation module, Nova. [Part 1] explores the key OpenStack metrics available, and [Part 3] shows you how to monitor OpenStack metrics with Datadog._
 
-この投稿は、OpenStackのの計算モジュール、ノヴァの監視の3回シリーズの第2です。パート1は、キーOpenStackのメトリックを使用可能に探り、そして第3部は、どのようにDatadogとOpenStackのメトリックを監視する方法を示します。
+このポストは、3回に渡るOpenStackのコンピュートモジュールであるNovaの監視のシリーズのPart 2です。[Part 1][Part 1]では、OpenStackのキーメトリックにつて解説しています。そして、[Part 3][Part 3]では、Datadogを使ってOpenStackのメトリックを監視する方法を解説しています。
 
 
 ## Digging into Nova  
 > OpenStack Nova offers a variety of sources from which you can collect operational data for monitoring. To get the complete picture of your OpenStack deployment, you will need to combine data collected from various channels.  
-
-OpenStackの新星は、あなたが監視のための運用データを収集することができ、そこから、さまざまなソースを提供しています。あなたのOpenStackの展開の全体像を取得するには、様々なチャネルから収集されたデータを結合する必要があります。
-
 
 > In this post, we will show you how to get information from each of the following categories:  
 
@@ -17,12 +14,14 @@ OpenStackの新星は、あなたが監視のための運用データを収集�
 > - [Notifications](#Notifications)  
 > - [Service and process checks](#APIChecks)  
 
-この記事では、我々はどのように、次の各カテゴリから情報を取得する方法を紹介します：
+OpenStack Novaの監視のために使う運用データは、様々なソースから集めることができます。そして、OpenStack環境の状態を完全に把握するには、様々なチャネルから収集したデータを関連づけて分析する必要があります。
 
-- ハイパーバイザ、サーバ、およびテナントメトリックなどノヴァメトリックス、
-- RabbitMQのメトリック
-- お知らせ
-- サービスとプロセスをチェックします
+この記事では、次の紹介するカテゴリーの情報ソースから、監視に必要な情報を収集する方法を紹介します:
+
+- [Nova metrics (hypervisor, server, tenantを含む) メトリクス](#NovaMetrics)  
+- [RabbitMQ メトリクス](#RabbitMQ)  
+- [通知](#Notifications)  
+- [Serviceとprocessチェック](#APIChecks) 
 
 
  <div class="anchor" id="NovaMetrics" />
@@ -30,12 +29,7 @@ OpenStackの新星は、あなたが監視のための運用データを収集�
 ### Collecting OpenStack metrics  
 > _Metrics collection_ is done at the source, usually by a [monitoring agent](https://github.com/DataDog/dd-agent) running on the node in question. The agent collects chronologically ordered data points in a timeseries. Collection of timeseries metrics over extended periods gives you the historical context needed to identify what changed, how it changed, and potential causes of the change. Historical baselines are crucial: It is hard to know if something is broken if you don't know what a healthy system looks like. 
 
-メトリックの収集は、通常、問題のノードで実行されている監視エージェントによって、ソースで行われます。エージェントは、年代順に時系列のデータポイントを命じ収集します。長期間にわたる時系列メトリックのコレクションはあなたにそれがどのように変化するか、変更するものを識別するために必要な歴史的文脈、および変更の潜在的な原因を提供します。歴史的なベースラインが重要である：あなたが健康システムがどのように見えるかわからない場合は、何かが壊れているかどうかを知ることは困難です。
-
-
 > Although OpenStack now ships with its own metering module ([Ceilometer]), it was [not built for monitoring][leveraging-ceilometer]. Ceilometer was created with the intent of capturing and storing critical billing messages. While some Ceilometer data may be a useful supplement to your collected metrics, simply querying Ceilometer is not enough to get useful, actionable information about your OpenStack deployment.  
-
-独自の計量モジュール（雲高計）とOpenStackの今船が、監視のために構築されていませんでした。雲高計をキャプチャして、重要な課金メッセージを格納する目的で作成されました。いくつかの雲高計のデータはあなたの収集されたメトリックに役立つサプリメントかもしれないが、単に雲高計を照会すると、OpenStackの展開に関する有用な、実用的な情報を取得するのに十分ではありません。
 
 > Nova offers three different means by which you can collect metrics. You can use:  
 
@@ -43,15 +37,19 @@ OpenStackの新星は、あなたが監視のための運用データを収集�
 > - **MySQL** for some Nova server metrics, tenant metrics  
 > - **[CLI](#CLI)** for hypervisor, server, and tenant metrics  
 
-ノヴァは、あなたがメトリックを収集することができることにより、三つの異なる手段を提供しています。あなたが使用することができます。
-
-- ノヴァサーバーメトリクスとテナントの指標のためのAPI
-- MySQLのいくつかのノヴァサーバメトリクス、テナントメトリックの
-- ハイパーバイザ、サーバ、およびテナントメトリックのCLI
-
 > Arguably the most efficient method to use is the CLI (command line interface)—it is a one-stop solution to getting all the metrics mentioned in [the first part][Part 1] of this series.  
 
-間違いなく使用するのが最も効率的な方法は、このシリーズの最初の部分で述べたすべてのメトリックを取得するワンストップソリューションです-it CLI（コマンドラインインターフェイス）があります。
+メトリック収集は、一般的に監視対象のノードで動作している[監視エージェント](https://github.com/DataDog/dd-agent)を使って、そのソースの原点で実行されます。エージェントは、時系列のデータポイントをタイムシーリーズへと収集していきます。長期間にわたるタイムシリーズメトリックの集合は、何が変化したのか、どのように変化したのか、何が潜在的な原因かのかの、時系列的な理由を教えてくれます。過去の実績に基づく判断は重要です:健全に動作しているシステムの状態を知らずに、障害が起きていることを判断するのは難しいことです。
+
+今日、[Ceilometer][Ceilometer]という計量モジュールがOpenstackと共に提供されていますが、このモジュールは、[監視のためには作られていません][leveraging-ceilometer]。Ceilometerは、重要な課金メッセージをキャプチャーし、それらを保存しておく目的で作られました。OpenStack環境において、いくつかのCeilometerのデータは、収集しているメトリックの補助として役に立つかもしれませんが、Ceilometerへ単純な問い合わせだけは、アクションを起こすべき情報を見分けるためには不十分です。
+
+Novaは、ユーザーがメトリックを収集すルことができる、次の三つの異なる手段を提供しています:
+
+- **API**: Novaサーバーメトリクスとtenantメトリクスを収集。
+- **MySQL**: Novaサーバーメトリクスとtenantメトリクスを収集。
+- **[CLI](#CLI)**: ハイパーバイザー、サーバー、そしてtenantメトリクスを収集。
+
+おそらく、最も効率的な方法は、CLI（コマンドラインインターフェイス）を使うことです。この方法を使えば、このシリーズの[Part 1][Part 1]で紹介したメトリクスを一気に集取することができます。
 
 
 #### Collecting Nova metrics from the API or MySQL  
@@ -62,27 +60,23 @@ OpenStackの新星は、あなたが監視のための運用データを収集�
 >     **OR**  
 > * run the following SQL query in the `nova` database: `select ifnull(sum(vcpus), 0) from compute_nodes where deleted=0`  
 
-ノヴァのメトリックの多くは、ノヴァAPIまたはSQLクエリのいずれかを使用して抽出することができます。例えば、与えられたテナントのためのVCPU数の合計を検索します：
-
-- あなたは/ V2/<テナント-ID>/ OS-ハイパーバイザー/統計エンドポイントでGETを使用してAPIを照会することができ
-    **OR**
-- 新星データベースで次のSQLクエリを実行します。select IFNULL（合計（仮想CPU）を、0）compute_nodesから=0削除場所
-
-
 > The main advantages of querying SQL versus the API are faster execution times and lower overhead. However, not all metrics are available via SQL, and future changes to the SQL schema could break queries, whereas API calls should be more resilient to changes.
-
-APIに対してSQLを照会することの主な利点は、より高速な実行時間と低いオーバーヘッドがあります。ただし、すべてのメトリックは、SQLを介して利用可能であり、API呼び出しが変化に対してより弾力的でなければならないのに対し、SQLスキーマの将来の変更は、クエリを中断する可能性があります。
-
 
 > Some metrics, like the number of running instances per Compute node, are only available via API endpoint. Thankfully, the Nova API is [well-documented][nova-api] with more than 100 endpoints available—everything from SSH keys to virtual machine image metadata is only a request away. In addition to informational endpoints, the API can also be used to manage your OpenStack deployment. You can add hosts, update quotas, and more—all over HTTP.
 
-いくつかの指標は、計算ノードあたりのインスタンスを実行している数と同じように、APIエンドポイント経由でのみ使用可能です。ありがたいことに、ノヴァのAPIは、要求だけ離れた仮想マシンイメージのメタデータへのSSHキーから100以上のエンドポイントが利用可能-すべてにある、よく文書化されています。情報のエンドポイントに加えて、APIはまたあなたOpenStackの展開を管理するために使用することができます。あなたは、ホスト、更新クォータを追加し、より多くの、すべてのHTTP上ですることができます。
+Novaに関連したメトリックの多くは、Nova APIまたはSQLクエリを使って収集することができます。例えば、特定のtenantに割り振られたVCPUの総数は次のようになります:
 
+* **GET** メソッドを使い、エンドポイントに向かって次のようなAPIコールを実行することができます。`/v2/<tenant-id>/os-hypervisors/statistics`
+  **又は**
+* `nova`のデータベースに次のSQLクエリを実行します: `select ifnull(sum(vcpus), 0) from compute_nodes where deleted=0`
+
+APIと比較し、SQLクエリを実行することの利点は、低いオーバーヘッドとより高速な実行時間になります。ただし、すべてのメトリックを、SQLを介して収集することはできず、SQLスキーマが将来変更された場合は、クエリが実行できなくなる原因にもなります。それに対し、APIコールは、変更に対して強いという特徴があります。
+
+コンピュートノードで起動しているインスタンスの数などの幾つかのメトリクスは、APIエンドポイント経由でのみ収集することができます。幸いなことに、NovaのAPIには、100以上のエンドポイントが準備され、[十分に文書化され][nova-api]されています。SSHのキーの情報から、仮想マシンイメージのメタデータの情報まで、全てがAPIリクエスト集取することができます。情報を収集するためにエンドポイントをコールするのに加え、APIを使ってOpenStackの環境を管理することもできます。ホストの追加、Quotasの変更のなど、全てHTTP経由で実行できます。
 
 > Before you can use the API, you must [acquire an authentication token][api-auth]. You can use `curl` or a similar client to get one like so (change your_password to your admin user password and localhost to your Horizon host): 
 
-あなたはAPIを使用する前に、認証トークンを取得する必要があります。あなたは（あなたのホライゾンホストにあなたの管理者ユーザーのパスワードとローカルホストにyour_passwordに変更する）ようなので1を得るために、カールまたは類似のクライアントを使用することができます。
-
+APIを使用するには、[認証トークンを取得する][api-auth]必要があります。`curl`やそれに類似したクライアントを利用し、以下のようにします。("your_password"には、adminのパスワードを指定してください。 "localhost"には、Horizon hostを指定してくさい。)
 
 ```
 curl -i \
@@ -106,7 +100,7 @@ curl -i \
 
 > The above command should return a token in the response header:
 
-上記のコマンドは、レスポンスヘッダ内のトークンを返す必要があります：
+上記のコマンドを実行すると、ヘッダ内にトークンを含んだレスポンスが返ってきます：
 
 ```
 HTTP/1.1 201 Created
@@ -122,9 +116,11 @@ Content-Type: application/json
 
 > Note the `X-Subject-Token` field in the output above: this is the authentication token.
 
+`X-Subject-Token` フィールドの部分が、認証トークンになります。
+
 > When it comes to retrieving Nova server metrics, you must use the API. The API endpoint for Nova server metrics is: `/v2.1/​<tenant-id>​/servers/​<server-id>/diagnostics`. Using `curl` and the authentication token acquired above, the request would look something like:
 
-上記の出力で、 `X-件名-Token`フィールドに注意してください。これは、認証トークンです。
+
 
 それはノヴァ・サーバーのメトリックを取得することになると、あなたは、APIを使用する必要があります。ノヴァ・サーバー・メトリックのAPIエンドポイントは、次のとおりです。`/v2.1/<テナント-ID>/サーバー/<サーバーID>/ diagnostics`。 `curl`と上記取得した認証トークンを使用して、要求は何かを次のようになります。
 
@@ -304,7 +300,11 @@ compute	1
 compute.node0 	1
 compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 ```
-Remember, few queues should have zero consumers.
+>Remember, few queues should have zero consumers.
+
+いくつかのキューがゼロの消費者を持っている必要があり、覚えておいてください。
+
+
 <div class="anchor" id="Notifications" />
 
 ### Collecting Notifications  
