@@ -1,27 +1,27 @@
 # Monitor Openstack with Datadog
 > _This post is the final part of a 3-part series on OpenStack Nova monitoring. [Part 1] explores the key metrics available from Nova, and [part 2][Part 2] is about collecting those metrics on an ad hoc basis._
 
-この投稿は、OpenStackのノヴァのモニタリングに関する3回シリーズの最後の部分です。パート1は、ノヴァから入手可能な主要な指標を探る、とパート2は場当たり的で、これらのメトリックの収集についてです。
-
-
 > _In this last post of the OpenStack series, we show you how to monitor Openstack with Datadog._
 
-> To get the most out of your OpenStack monitoring, you need a way to correlate what’s happening in OpenStack with what’s happening in the rest of your infrastructure. OpenStack deployments often rely on additional software packages not included in the OpenStack codebase itself, including [MySQL][mysql], [RabbitMQ], [Memcached], [HAProxy][haproxy], and Pacemaker. A comprehensive monitoring implementation includes all the layers of your deployment, not just the metrics emitted by OpenStack itself.  
+このポストは、3回に渡るOpenStackのコンピュートモジュールであるNovaの監視のシリーズの最終回です。[Part 1][Part 1]では、OpenStackのキーメトリックにつて解説しています。そして、[Part 2][Part 2]では、アドホック的にそれらのメトリクスを収集する方法を紹介しました。
+
+このOpenStackシリーズの最後のポストでは、Datadogを使ってOpenStackの監視する方法を紹介していきます。
+
+
+> To get the most out of your OpenStack monitoring, you need a way to correlate what’s happening in OpenStack with what’s happening in the rest of your infrastructure. OpenStack deployments often rely on additional software packages not included in the OpenStack codebase itself, including [MySQL][mysql], [RabbitMQ], [Memcached], [HAProxy][haproxy], and Pacemaker. A comprehensive monitoring implementation includes all the layers of your deployment, not just the metrics emitted by OpenStack itself.
 
 > With Datadog, you can collect OpenStack metrics for visualization, alerting, full-infrastructure correlation, and more. Datadog will automatically collect the key metrics discussed in parts [one][Part 1] and [two][Part 2] of this series, and make them available in a template dashboard, as seen below.
 
-OpenStackのシリーズのこの最後のポストでは、私たちはDatadogとOpenStackの監視する方法を示しています。
+OpenStackの監視から最大限に価値を引き出すためには、OpenStackで何が起こっているのかを、それ以外のインフラの部分で何が起こっているかを関連づける方法が必要になります。多くの場合、OpenStackの環境は、[MySQL][mysql], [RabbitMQ], [Memcached], [HAProxy][haproxy], Pacemakerなど、OpenStackのコードベース自体に含まれていない追加のソフトウェアパッケージに依存して構築されています。　OpenStackの包括的な監視には、OpenStack自体から収集できるメトリクスに加え、関連する全ての層を含めて実装が必要になります。
 
-あなたのOpenStackの監視を最大限に活用するためには、インフラストラクチャの残りの部分で何が起こっているかとOpenStackの中で何が起こっているのか相関する方法が必要です。 OpenStackのは、多くの場合、MySQLの、RabbitMQの、Memcachedの、HAProxy、およびペースメーカーなど、OpenStackのコードベース自体に含まれていない追加のソフトウェアパッケージに依存して配備します。包括的なモニタリングの実装では、OpenStackの自体によって放出されたすべての展開の層だけではなく、メトリックが含まれます。
-
-Datadogで、あなたは、フルインフラストラクチャの相関を警告、視覚化のためOpenStackのメトリックを収集し、より多くのことができます。 Datadogは自動的に部品1と、このシリーズの2で説明した主要指標を収集し、下図のように、テンプレートのダッシュボードで利用できるようになります。
+Datadogを使えば、収集したOpenStackのメトリクスを基に、データーを可視化し、アラートを設定し、インフラの全ての部分のと相関関係を見ることができるようになります。DatadogのOpenStackインテグレーションは、このシリーズの[Part 1][Part 1]と[Part 2][Part 2]で紹介したキーメトリクスを自動で収集します、以下のようなダッシュボードに表示してくれます。
 
 
 [![OpenStack default dashboard][default-dash]][default-dash]
 
 > If you're not a Datadog customer but want to follow along, you can get a [free trial][sign up].
 
-あなたはDatadogの顧客ではないですが、に沿ってフォローしたい場合は、無料の試用版を得ることができます。
+あなたが、Datadogの顧客でなくても、[無償トライアル][sign up]に登録して、この手順にそって進めることも可能です。
 
 
 ## Configuring OpenStack
@@ -35,22 +35,21 @@ Datadogで、あなたは、フルインフラストラクチャの相関を警�
     
 > Once you've created the user and role, the next step is to apply the privileges needed to collect metrics, which entails modifying three configuration files.
 
-お互いが、約5分かかりますとDatadogエージェントとOpenStackのを取得する話をします。開始するには、Datadogエージェントは、自身の役割とユーザーが必要になります。あなたのキーストーン（アイデンティティ）サーバー上で、順番に、次の一連のコマンドを実行します。
+Datadog Agentを設定し、OpenStackからメトリクスを収集できるようにするには、約5分くらいの時間が掛かります。まず最初に、Datadog Agentが利用するロールとユーザーが必要になります。Keystoneの認証用サーバーで、次のコマンドを順次実行していきます:
 
-1.openstack役割datadog_monitoringを作成
-2.openstackユーザー作成datadog--password my_passwordという--project my_project_name
-3.openstackの役割追加datadog_monitoring--project my_project_name--user datadog
+1.`openstack role create datadog_monitoring`  
+2.`openstack user create datadog --password my_password --project my_project_name`  
+3.`openstack role add datadog_monitoring --project my_project_name --user datadog`
 
-コマンドを実行する前に、my_passwordというおよびMY_PROJECTを変更してください。
+上記のコマンドを実行する前に、”my_password”と”my_project_name”を実際の環境に合わせて変更しておきます。
 
-あなたはユーザーとロールを作成したら、次のステップは、3つの構成ファイルを変更することを伴うメトリックを収集するために必要な権限を適用することです。
+ユーザーとロールを作成したら、次のステップは、3つの構成ファイルを変更し、メトリックを収集するために必要な権限を設定していきます。
 
 
 ### Nova
 > First, open Nova's policy file, found at `/etc/nova/policy.json`. Edit the following permissions, adding `role:datadog_monitoring`:  
 
-まず、オープンノヴァのポリシーファイルは、/etc/nova/policy.jsonで見つかりました。 datadogモニタリング：役割を追加、次の権限を編集します。
-
+まず、`/etc/nova/policy.json` にあるNovaのポリシー設定ファイルを編集し、`role:datadog_monitoring`を追加していきます:
 
 ``` 
     - "compute_extension:aggregates" : "role:datadog_monitoring",
@@ -71,24 +70,28 @@ Datadogで、あなたは、フルインフラストラクチャの相関を警�
 ```  
 
 > If permissions are already set to a particular rule or role, you can add the new role by appending ` or role:datadog_monitoring`, like so:
+>
 > `"compute_extension:aggregates": "rule:admin_api"` becomes `"compute_extension:aggregates": "rule:admin_api or role:datadog_monitoring"`
-Save and close the file.
 
-そうのように、datadog_monitoring：権限が既に特定のルールや役割に設定されている場合は、追加またはロールによって新しい役割を追加することができます。
-「compute_extension：集合体"："：骨材compute_extension"："ルール：admin_apiまたはロール：datadog_monitoringを"："ルールadmin_apiは "
-ファイルを保存して閉じます。
+>Save and close the file.
+
+上記の項目に既にルールやロールが設定されている場合は、` or role:datadog_monitoring`を末尾に追記することで権限を設定できます:
+
+`"compute_extension:aggregates": "rule:admin_api"` becomes `"compute_extension:aggregates": "rule:admin_api or role:datadog_monitoring"`
+
+権限設定ファイルを保存し、閉じます。
 
 
 ### Neutron
 > Neutron is nice and easy, with only one modification needed. Open its `policy.json` (usually found in `/etc/neutron`) and add `role:datadog_monitoring` to `"get_network"`. Then, save and close the file.
 
-中性子は、必要な唯一の変更で、いいと簡単です。 （通常など/中性子/にあります）、そのpolicy.jsonを開き、役割の追加：「ネットワークの取得」するdatadogの監視を。次に、ファイルを保存して閉じます。
+Neutronは、一カ所の変更なので簡単です。`policy.json` (通常は、`/etc/neutron` 以下にあります）を表示し、`"get_network"`項目に、role:datadog_monitoring`を追記します。その後、ファイルを保存し、閉じます。
 
 
 ### Keystone
 > Last but not least, you need to configure Keystone so the Agent can access the tenant list. Add `role:datadog_monitoring` to the following directives in Keystone's `policy.json` (usually found in `/etc/keystone`):  
 
-最後になりましたが、あなたはエージェントがテナントリストにアクセスできるようにキーストーンを設定する必要があります。役割を追加：キーストーンのpolicy.jsonで次のディレクティブにdatadog_monitoring（通常は/ etc/キーストーンにあります）：
+最後になりましたが、Datadog Agentがtenantリストにアクセスできるように、Keystoneの設定を変更する必要があります。`policy.json`(通常は、`/etc/keysstone` 以下にあります）の以下の項目にたし`role:datadog_monitoring`を追記していきます。
 
 
 ```
@@ -98,11 +101,11 @@ Save and close the file.
 ```
 > Save and close the file.
 
+設定ファイルを保存し、閉じます。
+
 > You may need to restart your Keystone, Neutron and Nova API services to ensure the policy changes are applied.
 
-ファイルを保存して閉じます。
-
-あなたは、変更が適用されるポリシーを確認するためにキーストーン、中性子およびNova APIサービスを再起動する必要があります。
+これまで設定してきたポリシー変更が確実に適応されるように、Keystone, Neutron, Nova API サービスを再起動する必要があります。
 
 
 ## Install the Datadog Agent
@@ -169,7 +172,11 @@ instances:
           domain:
               id: default
 ```
+
 > Save and close openstack.yaml.
+
+`openstack.yaml`を保存し、閉じます。
+
 
 ## Integrating RabbitMQ with Datadog
 > Getting metrics from RabbitMQ requires fewer steps than OpenStack.  
