@@ -121,7 +121,7 @@ Content-Type: application/json
 
 > When it comes to retrieving Nova server metrics, you must use the API. The API endpoint for Nova server metrics is: `/v2.1/​<tenant-id>​/servers/​<server-id>/diagnostics`. Using `curl` and the authentication token acquired above, the request would look something like:
 
-それはノヴァ・サーバーのメトリックを取得することになると、あなたは、APIを使用する必要があります。ノヴァ・サーバー・メトリックのAPIエンドポイントは、次のとおりです。`/v2.1/<テナント-ID>/サーバー/<サーバーID>/ diagnostics`。 `curl`と上記取得した認証トークンを使用して、要求は何かを次のようになります。
+Novaサーバーのメトリクスを収集するには、APIを使用する必要があります。NovaサーバーメトリクスのAPIエンドポイントは、`/v2.1/​<tenant-id>​/servers/​<server-id>/diagnostics`になります。先に入手した認証トークンと`curl`を使うと、リクエストを次のようになります。
 
 
 ```
@@ -130,7 +130,7 @@ curl -H "X-Subject-Token: 3939c299ba0743eb94b6f4ff6ff97f6d" http://localhost:500
 
 > which produces output like below:
 
-これは、以下のような出力を生成します。
+このリクエストは、以下のような結果を出力します。
 
 
 ```
@@ -161,13 +161,14 @@ curl -H "X-Subject-Token: 3939c299ba0743eb94b6f4ff6ff97f6d" http://localhost:500
   
 > The information returned is tenant-dependent, so specify your tenant name, either as a command line argument (`--os-tenant-name <your-tenant-name>`) or as an environment variable (`export OS_TENANT_NAME=<your-tenant-name>`). If the command line complains about a missing username or authentication URL, you can also include them either as additional command line arguments or environment variables, [following the pattern above][env-var].
 
+APIコールやSQLに手を染めたくないなら、又将来のバージョンとの互換性を心配しているなら、OpenStackは、`nova`と呼ばれる、Nova向けにコマンドラインクライアントを提供しています。このクライアントには、メトリクスを収集するためのメソッドから管理ツールに至るまで、[多くのなコマンド][nova-client-ref] が準備されています。
+
+収集できる情報はtenantに紐付けられているので、コマンドラインの引数の中(`--os-tenant-name <your-tenant-name>`)か、環境変数の中(`export OS_TENANT_NAME=<your-tenant-name>`)で、tenant名を指定する必要があります。もしも、ユーザー名や認証URLが指定されておらずコマンドラインクライアントがうまく動作しない場合は、それらについても[上記と同じ][env-var]ように、コマンドラインの引数に追加したり、環境変数に設定することができます。
+
+
 > All but one of the hypervisor metrics from [part 1][Part 1] of this series can be retrieved with a single command (in this example, the tenant name is _testing_): 
 
-あなたはAPI呼び出しまたはSQLで手が汚れて取得したい、または将来のバージョンとの互換性を心配しているしない場合は、OpenStackのは、適切に新星と呼ばノヴァのためのコマンドラインクライアントを、提供します。管理ツールへのメトリック収集の方法に至るまで使用可能なコマンドの多くは、あります。
-
-返された情報は、テナントに依存しているので、あなたのテナント名を指定して、いずれかのコマンドライン引数として（--osテナント名<あなたのテナント名>）、または環境変数として（輸出OS_TENANT_NAME=<あなたの-テナント）>という名前を付けます。コマンドラインが欠落しているユーザー名または認証URL言っている場合、あなたはまた、上記のパターンを次のように追加のコマンドライン引数や環境変数、どちらかそれらを含めることができます。
-
-このシリーズのパート1からのハイパーバイザーのメトリックの1つが、すべてが（この例では、テナント名がテストしている）単一のコマンドで取得できます。
+一つのハイパーバイザーメトリクスを除いて、このシリーズの[Part 1][Part 1]で紹介している全てのメトリクスが、単一のコマンドを実行することで取得できます。(次の例では、tenant名は、_testing_ になります。)
 
 
 ```
@@ -191,11 +192,12 @@ root@compute-0:~# nova --os-tenant-name testing hypervisor-stats
 ```
 > The only hypervisor metric not covered by the previous command is `hypervisor_load`, which you can view by running `uptime` on your compute node.  
 
+上記のコマンドで収集することのできないハイパーバイザーメトリックは、`hypervisor_load`です。このメトリクスは、コンピュートノードで`uptime`を実行することで見ることができます。
+
+
 > Getting tenant metrics is just as easy and can be had with the following command:  
 
-前のコマンドで覆われていないだけで、ハイパーバイザのメトリックは、あなたの計算ノード上で稼働時間を実行することで表示することができますhypervisor_load、です。
-
-テナントのメトリックを取得するのも簡単で、次のコマンドであったことができます。:
+tenantメトリクスの取得は非常に簡単で、次のコマンドを実行することで可能です:
 
 
 ```
@@ -221,12 +223,12 @@ nova quota-show --tenant <tenant-id>
 ```
 > _Note that the command `nova quota-show` requires you pass the tenant id and **not** the tenant name_
 
-コマンド新星クォータ・ショーでは、テナントIDとないテナント名を渡す必要があることに注意してください
+`nova quota-show`のコマンドには、tenant名ではなく、tenantのIDを指定していることに注意してください。
 
 
 > As you can see from the examples above, the Nova CLI is a very powerful tool to add to your monitoring arsenal. With just a handful of commands, you can collect all of the metrics mentioned in [part 1] of this series. To make sure you get the most out of this dynamic tool, check out the [documentation][nova-client-ref] for a list of all available commands with explanations.
 
-あなたは上記の例からわかるように、ノヴァCLIは、あなたの監視兵器庫に追加する非常に強力なツールです。コマンドのほんの一握りで、あなたはこのシリーズのパート1で述べたすべてのメトリックを収集することができます。あなたは、このダイナミックなツールを最大限に説明付きで使用可能なすべてのコマンドのリストについては、ドキュメントをチェックアウトを確認します。
+上記の例から分かるように、NovaのCLIは、あなたの監視を助ける非常に強力なツールです。幾つかのコマンドを実行するだけで、このシリーズの[Part 1][part 1]で紹介した全てのメトリクスを集取することができます。この強力なツールを十分に使いこなすために、利用可能なコマンドのリストとそれらコマンドについて解説した[ドキュメント][nova-client-ref]を、是非読んでみてください。
 
 
 <div class="anchor" id="RabbitMQ" />
@@ -235,29 +237,29 @@ nova quota-show --tenant <tenant-id>
 
 > RabbitMQ provides a convenient command line client `rabbitmqctl` for accessing its metrics. As described in [part 1][Part 1] of this series, there are four RabbitMQ metrics that are of particular interest for OpenStack monitoring:  
 
-- count: number of active queues  
-- memory: size of queues in bytes  
-- consumer_utilisation: percentage of time consumers can receive new messages from queue  
-- consumers: number of consumers by queue  
+> - count: number of active queues  
+> - memory: size of queues in bytes  
+> - consumer_utilisation: percentage of time consumers can receive new messages from queue  
+> - consumers: number of consumers by queue  
 
-RabbitMQのは、そのメトリックにアクセスするための便利なコマンドラインクライアントrabbitmqctlを提供します。このシリーズのパート1で説明したように、OpenStackの監視のために特に重要である4 RabbitMQのメトリックがあります。
+RabbitMQは、自身のメトリックスにアクセスするための便利なコマンドラインクライアントの`rabbitmqctl`を提供します。このシリーズの[Part 1][Part 1]で説明したように、OpenStackの監視をする際に特に重要なRabbitMQのメトリックが四つあります:
 
-- カウント：アクティブなキューの数を
-- メモリ：バイト単位のキューのサイズ
-- consumer_utilisationは：時間の消費者の割合は、キューから新しいメッセージを受け取ることができます
-- 消費者：キューによって消費者の数
+- count: アクティブなキューの数
+- memory: バイト単位のキューのサイズ
+- consumer_utilisation: consumerがキューから新たらしいメッセージを受け取ることのできる時間の割合(1.0が100%を示す)
+- consumers: キュー毎のconsumersの数
 
 
-#### count  
+#### count
 > To get a count of the current number of queues, you can run a command such as `rabbitmqctl list_queue name | wc -l` which pipes the output of `rabbitmqctl` into the UNIX word count program—the optional `-l` flag forces `wc` to return only the line count. Because `rabbitmqctl`'s output includes two extraneous text lines, to get your total number of active queues, subtract two from the number returned by the previous command.
 
-キューの現在の数のカウントを取得するには、あなたがそのような名前list_queue rabbitmqctlとしてコマンドを実行することができます|トイレ-lこれは、UNIXのワードカウントプログラム・オプションの-lフラグを強制的にトイレにrabbitmqctlの出力のみ行数を返すためのパイプ。 rabbitmqctlの出力は、2つの無関係なテキスト行が含まれているため、アクティブキューのあなたの総数を取得する前のコマンドによって返された数から2を減算します。
+現在のキューカウントを取得するには、`rabbitmqctl list_queue name | wc -l`というコマンドを実行します。このコマンドは、`rabbitmqctl` の出力結果をパイプでUNIXのワードカウントプログラムの渡し、`wc`の`-l`オプションを使って行数を出力しています。尚、`rabbitmqctl`の出力には、2行のキューには関係の無い行が含まれているため、先のコマンドで得た数値から2を引いて、アクティブキューの総数を取得します。
 
 
-#### memory  
-> Extracting the size of queues in memory requires a similar command. Running `rabbitmqctl list_queues name memory | grep compute` will show you the memory size of all Nova-related queues (in bytes), like in the output below:  
+#### memory
+> Extracting the size of queues in memory requires a similar command. Running `rabbitmqctl list_queues name memory | grep compute` will show you the memory size of all Nova-related queues (in bytes), like in the output below:
 
-メモリ内のキューのサイズを抽出するようなコマンドを必要とします。 |名前メモリlist_queues rabbitmqctlを実行しますグレップの計算は、以下の出力のように、あなたの（バイト単位）すべての新星関連のキューのメモリサイズが表示されます：
+メモリ内のキューのサイズを収集するにも類似のコマンドを実行します。`rabbitmqctl list_queues name memory | grep compute`を実行することで、以下の出力結果のように、Novaに関連したキューのメモリーサイズがバイト単位で表示されます。
 
 
 ```
@@ -270,7 +272,7 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157 21880
 #### consumer_utilisation
 > Are you noticing a pattern with these commands? To get the consumer utilization rates for all queues, run `rabbitmqctl list_queues name consumer_utilisation`, which produces output resembling the following (recall that a utilization rate of 1.0, or 100 percent, means that the queue never has to wait for its consumers): 
 
-あなたはこれらのコマンドのパターンに気付いていますか？すべてのキュー、次の（1.0、または100パーセントの利用率は、キューが消費者を待たなければならないことを意味していることをリコール）を似た出力を生成し、実行rabbitmqctlのlist_queues名consumer_utilisation、のために消費者の利用率を取得するには：
+これらのコマンドのパターンが分かってきましたか。全てのキューに関しconsumerのutilisation率を集取するには、`rabbitmqctl list_queues name consumer_utilisation`を実行します。このコマンドは以下のような内容を出力します。(utilisation率が1.0で100％の場合、キューはconsumerがメッセージを受け付けるのを待つことはありません。):
 
 
 ```
@@ -286,12 +288,13 @@ cinder-scheduler.devstack	1.0
 
 #### consumers
 > Last but not least, to get a count of the active consumers for a given queue, run: `rabbitmqctl list_queues name consumers | grep compute`. 
- 
+
+最後になりましたが、特定のキューに対してアクティブなconsumerの数を取得するには、`rabbitmqctl list_queues name consumers | grep compute`を実行します。
+
+
 > You should see something like this:  
 
-実行、最後になりましたが、指定されたキューのためのアクティブなコンシューマの数を取得する：`rabbitmqctlのlist_queues名の消費者| grep compute`。
-
-あなたはこのように表示されます。
+以下のような内容が出力されます:
 
 
 ```
@@ -302,7 +305,7 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 ```
 >Remember, few queues should have zero consumers.
 
-いくつかのキューがゼロの消費者を持っている必要があり、覚えておいてください。
+幾つかのキューは、consumerの値がzeroになっていることを思い出してください。
 
 
 <div class="anchor" id="Notifications" />
@@ -312,11 +315,12 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 
 > If you’re just interested in a quick-and-dirty notification listener you can build around, check out this [gist]. Listening in on events requires the `kombu` Python package. [This script][virtualenv] will create a virtual environment and run the event listener. The OpenStack documentation has [additional resources][roll-your-own-listener] on crafting your own notification listener.
 
-> The truncated snippet below is an example of notification payloads received after initiating termination of an instance:
-
 通知は、このようなインスタンス作成、インスタンスの削除、およびサイズの変更操作などのイベントに放出されます。 AMQPパイプライン（典型的にはRabbitMQの）を中心に構築された、ノヴァは、約80のイベントの通知を発するように構成されています。ツールの数は、OpenStackのイベントを収集、その浮上しているが、OpenStackの自身のStackTachは、機能完全性およびドキュメントの面でパックをリードしています。それはモジュールのアップグレードに直面してイベントを追跡し続けることができることを意味し、新しいイベントを処理するには、noアップデートを必要としないので、StackTachは特に便利です。
 
 クイック・アンド・ダーティ通知リスナーでちょうど興味があるなら、あなたは、周りの構築この主旨をチェックアウトすることができます。イベントにで聴くと昆布のPythonパッケージを必要とします。このスクリプトは、仮想環境を作成し、イベントリスナーを実行します。 OpenStackのドキュメントは独自の通知リスナーを作り上げる上で追加のリソースを持っています。
+
+
+> The truncated snippet below is an example of notification payloads received after initiating termination of an instance:
 
 以下切り捨てスニペットは、インスタンスの終了を開始した後、受信した通知ペイロードの例です。
 
@@ -370,11 +374,14 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 
 > Note that in the snippet above there are _two_ notifications emitted: one when initiating instance termination and one that signals the successful completion of a termination operation. This is a common pattern for events in OpenStack: emit one notification when the operation has begun, and another upon completion.
 
-> When combined with collected metrics, notifications give valuable perspective and insight into the potential causes for changes in system behavior. For example, you can measure hypervisor task execution time with events, and correlate that information with the API response time. (_For the curious:_ [in practice][api-vs-load] excessive load on the hypervisor does not appear to affect API response time much.)
+
 
 両方のイベントからタイムスタンプを比較することによって、あなたはそれがインスタンスを破棄するのに約2.2秒かかっ見ることができます。
 
 1インスタンスの終了および終了操作が正常に完了したことを知らせる1の開始：スニペットに上記放出された2つの通知があることに注意してください。これは、OpenStackの中でのイベントのための一般的なパターンです：完了時に一回の操作が開始された通知、および他を発します。
+
+
+> When combined with collected metrics, notifications give valuable perspective and insight into the potential causes for changes in system behavior. For example, you can measure hypervisor task execution time with events, and correlate that information with the API response time. (_For the curious:_ [in practice][api-vs-load] excessive load on the hypervisor does not appear to affect API response time much.)
 
 収集されたメトリックと組み合わせた場合、通知は、システムの行動の変化のために潜在的な原因に貴重な視点と洞察力を与えます。たとえば、イベントと、ハイパーバイザ・タスクの実行時間を測定し、APIの応答時間と、その情報を相関させることができます。 （好奇心のために：ハイパーバイザ上で実際過大な負荷がはるかにAPIの応答時間に影響を与えるように表示されません。）
 
@@ -385,7 +392,15 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 
 > There are a number of tests you can perform to check the health of the Nova API. However, all tests generally boil down to one of two categories: simple or intrusive.  
 
+サービスチェックとAPIのチェックは、サービスが応答するかどうかを決定するために使用されます。 APIのチェックは、一般的にGETまたはPOST特定のAPIエンドポイントに、応答を確認します。
+
+あなたはノヴァのAPIの健全性をチェックするために実行できるテストの数があります。単純または押し付けがましい：しかし、すべてのテストは、一般的に2つのカテゴリのいずれかに煮詰めます。
+
+
 > A simple API check reads (usually static) data from an endpoint and verifies that the information received is as expected. A simple API check would be polling the quota information for a project with a **GET** request to `/v2.1/​<tenant-id>​/limits`.
+
+シンプルなA​​PIのチェックは、エンドポイントから（通常は静的な）データを読み込み、期待通りに受信された情報があることを検証します。シンプルなA​​PIチェックは<テナント-ID> /制限を/v2.1/するGETリクエストを使用したプロジェクトのクォータ情報のポーリングであろう。
+
 
 > Intrusive checks modify the state of the receiving endpoint. A typical intrusive check might start by setting a value and optionally following with a request to read or verify the newly created value. Some kind of cleanup would then follow to remove the added values.
 
@@ -394,11 +409,6 @@ compute_fanout_ec3d52fdbe194d89954a3935a8090157   1
 > * **POST** `/v2.1/<tenant-id>/os-keypairs '{"keypair": {"name": "test"}}'`  
 > * **DELETE** `/v2.1/<tenant-id>/os-keypairs/test`  
 
-サービスチェックとAPIのチェックは、サービスが応答するかどうかを決定するために使用されます。 APIのチェックは、一般的にGETまたはPOST特定のAPIエンドポイントに、応答を確認します。
-
-あなたはノヴァのAPIの健全性をチェックするために実行できるテストの数があります。単純または押し付けがましい：しかし、すべてのテストは、一般的に2つのカテゴリのいずれかに煮詰めます。
-
-シンプルなA​​PIのチェックは、エンドポイントから（通常は静的な）データを読み込み、期待通りに受信された情報があることを検証します。シンプルなA​​PIチェックは<テナント-ID> /制限を/v2.1/するGETリクエストを使用したプロジェクトのクォータ情報のポーリングであろう。
 
 侵入型チェックは、受信エンドポイントの状態を変更します。典型的な侵入型チェックが値を設定し、必要に応じて新たに作成された値を読み取るか検証するための要求に従うことによって開始される可能性があります。クリーンアップのいくつかの種類を加えた値を削除するために従うことになります。
 
