@@ -9,7 +9,8 @@
 
 > Amazon Relational Database Service (RDS) is a hosted database service in the AWS cloud. RDS users can choose from several relational database engines, including MySQL, Oracle, SQL Server, Postgres, MariaDB, and Amazon Aurora, a new MySQL-compatible database built for RDS. This article focuses on the original RDS database engine: MySQL. 
 
-Amazon Relational Database Service (Amazon RDS) を使用すると、クラウドで簡単にリレーショナルデータベースを設定、運用、スケールできます。このサービスは、手間のかかるデータベースの管理タスクをお客様の代わりに行いながら、コスト効率がよく、サイズ変更が可能なキャパシティーを提供します。これによってお客様は自身のアプリケーション開発やビジネスに集中できます。Amazon RDS では、Amazon Aurora、Oracle、Microsoft SQL Server、PostgreSQL、MySQL、MariaDB という 6 つのよく知られたデータベースエンジンからお選びいただけます。
+Amazon Relational Database Service (Amazon RDS)は、AWSのクラウド上で提供されているデータベースサービスです。RDSのユーザーは、MySQL, Oracle, SQL Server, Postgres, MariaDB, and Amazon Aurora, そして新しくRDSのために開発したMySQL互換のデータベースからデータベースエンジンを選ぶことができます。今回の記事では、RDSのオリジナルデータベースエンジンであるMySQLにフォーカスして話を進めることにします。
+
 
 ## Key metrics for MySQL on RDS
 
@@ -119,19 +120,21 @@ mysql> select * from sys.user_summary_by_statement_type;
 
 > Or, to find the slowest statements (those in the 95th percentile by runtime):
 
+又は、最も遅いステートメント(ランタイムによる95パーセンタイル値)
+
 <pre class="lang:mysql">
 mysql> select * from sys.statements_with_runtimes_in_95th_percentile\G
 </pre>
 
 > Many useful usage examples are detailed in the sys schema [documentation][sys-schema].
 
+多くの有用な使用例は、SYSスキーマのドキュメントに詳述されています。
+
 > To enable the performance schema, you must set the `performance_schema` parameter to 1 in the database instance's parameter group using the AWS console. If not enabled, this change requires an instance reboot. More about enabling the performance schema and installing the sys schema in [Part 2][part-2] of this series.
 
 > If your queries are executing more slowly than expected,  evaluate your [resource metrics](#resource-utilization) and MySQL metrics that track how often operations have been blocked on acquiring a lock. In particular, check the `Innodb_row_lock_waits` metric, which counts how often InnoDB (the default storage engine for MySQL on RDS) had to wait to acquire a row lock.
 
 > MySQL users also have a number of caching options to expedite transactions, from making more RAM available for the [buffer pool][buffer-pool] used by InnoDB (MySQL's default storage engine), to enabling the [query cache][query-cache] to serve identical queries from memory, to using an application-level cache such as memcached or [Redis][redis].
-
-多くの有用な使用例は、SYSスキーマのドキュメントに詳述されています。
 
 パフォーマンスのスキーマを有効にするには、AWSコンソールを使用して、データベース・インスタンスのパラメータグループ内の1にperformance_schemaパラメータを設定する必要があります。有効でない場合は、この変更は、インスタンスの再起動が必要です。パフォーマンスのスキーマを有効にし、このシリーズのパート2で、SYSスキーマのインストールの詳細。
 
@@ -379,7 +382,7 @@ RDSは、マスタのMySQLインスタンスからリードレプリカの作成
 
 > In this post we have explored the most important metrics you should monitor to keep tabs on performance for MySQL deployed on Amazon RDS. If you are just getting started with MySQL on RDS, monitoring the metrics listed below will give you great insight into your database’s activity and performance. They will also help you to identify when it is necessary to increase your instance storage, IOPS, or memory to maintain good application performance.
 
-> > * [Query throughput](#query-throughput)
+> * [Query throughput](#query-throughput)
 > * [Query performance and errors](#query-performance)
 > * [Disk queue depth](#disk-i/o-metrics)
 > * [Storage space](#storage-metrics)
