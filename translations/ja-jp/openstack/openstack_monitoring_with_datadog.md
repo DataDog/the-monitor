@@ -111,15 +111,17 @@ Neutronは、一カ所の変更なので簡単です。`policy.json` (通常は�
 ## Install the Datadog Agent
 > The [Datadog Agent](https://github.com/DataDog/dd-agent) is open-source software that collects and reports metrics from all of your hosts and services so you can view, monitor, and correlate them on the Datadog platform. Installing the Agent usually requires just a single command. 
 
+[Datadog Agent](https://github.com/DataDog/dd-agent)は、監視対象の全てのホストやサービスから、メトリクスを収集し、Datadogのプラットフォームに転送するオープンソースのソフトウェアです。Datadogのプラットフォーム上では、収集したメトリクスを基に、それらのデータを可視化したり、アラートを設定しり、相関性を見ることができます。通常、Agentのインストールは、単一のコマンドの実行で完了します。
+
+
 > Installation instructions are platform-dependent and can be found [here](https://app.datadoghq.com/account/settings#agent).  
+
+インストール手順は、プラットフォームに依存しています。詳細に関しては、次の[リンク](https://app.datadoghq.com/account/settings#agent)を参照してくさい。
+
 
 > As soon as the Datadog Agent is up and running, you should see your host begin to report its system metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).  
 
-Datadogエージェントは、あなたが、表示モニター、およびDatadogプラットフォーム上で、それらを関連付けることができますので、あなたのホストとサービスのすべてから収集し、レポートメトリクスのオープンソースソフトウェアです。エージェントをインストールすると、通常は単一のコマンドが必要です。
-
-インストール手順は、プラットフォームに依存しており、ここで見つけることができます。
-
-すぐDatadogエージェントが稼働中であるとして、あなたはあなたのホストはあなたのDatadogアカウントでそのシステム・メトリックを報告し始めるはずです。
+Datadog Agentが起動しメトリクスの送信が始まると、[Datadogアカウント](https://app.datadoghq.com/infrastructure)内に、そのホストから受信しているシステムメトリクスを確認することができるようになります。
 
 
 [![Reporting host in Datadog][default-host]][default-host]
@@ -127,19 +129,22 @@ Datadogエージェントは、あなたが、表示モニター、およびData
 ### Configuring the Agent
 > With the necessary OpenStack policy changes in place, it is time to configure the Agent to connect to your Keystone server.  
 
+既に、OpenStack関連のポリシー変更が完了しテイル場合は、Datadog AgentをKeystoneサーバーと接続するための設定をします。
+
+
 > The location of the Agent configuration directory varies by OS, find it for your platform [here][agent-usage]. In the configuration directory you will find a sample OpenStack configuration file named [openstack.yaml.example][open-yaml]. Copy this file to openstack.yaml, and open it for editing.
+
+Datadog Agentの設定ファイルの保存先は、OSによって異なります。次の[リンク先][agent-usage]から使用中のOSの保存先を確認してください。設定ファイルの保存先から、[openstack.yaml.example][open-yaml]を見つけ出します。このファイルを、`openstack.yaml`というファイル名でコピーし、編集を開始します。
+
 
 > Navigate to the `keystone_server_url` line. Update the URL with the URL of your Keystone server, including the port (usually 5000).  
 
+設定ファイルを、`keystone_server_url`と書かれた行まで移動します。その行のURLの部分をKeystoneサーバーのポート番号付きのURLで書き換えます。(通常、Keystroneは5000番ポートでリッスンしています)
+
+
 > Next, under `instances`, change `project id` to the project ID that corresponds to the project associated with the datadog user. To get the project ID, navigate to `<yourHorizonserver>/identity`. See below for an example:
 
-代わりに、必要なOpenStackのポリシーの変更と、あなたのキーストーンサーバーに接続するようにエージェントを構成するための時間です。
-
-エージェントの設定ディレクトリの場所は、ここで使用しているプラットフォームのためにそれを見つけ、OSによって異なります。設定ディレクトリでは、openstack.yaml.exampleという名前のサンプルOpenStackのコンフィギュレーションファイルを検索します。 openstack.yamlするには、このファイルをコピーし、編集用に開きます。
-
-keystone_server_url行に移動します。ポート（通常は5000）を含め、キーストーンサーバーのURLとURLを更新します。
-
-次に、インスタンスの下で、datadogユーザーに関連付けられているプロジェクトに対応するプロジェクトIDにプロジェクトIDを変更します。プロジェクトIDを取得するには、<yourHorizonserver>/アイデンティティに移動します。以下の例を参照してください：
+次に、`instances`の部分で、Datadogユーザーに対応したプロジェクトのプロジェクトIDを、`project`項目の`id`の部分に追記していきます。プロジェクトIDを確認するには、`<yourHorizonserver>/identity`を実行してください。記載内容に関しては、以下の例を参照してください:
 
 
 ```
@@ -154,9 +159,9 @@ instances:
               id: b9d363ac9a5b4cceae228e03639357ae
 ```
 
-> Finally, you need to modify the authentication credentials to match the user and role created earlier. Navigate to the `# User credentials` section and make the following changes:  
+> Finally, you need to modify the authentication credentials to match the user and role created earlier. Navigate to the `# User credentials` section and make the following changes:
 
-最後に、以前に作成したユーザーとロールに一致するように認証資格情報を変更する必要があります。 ＃ユーザーの資格情報にナビゲートセクションと次のように変更します。電子メールを：
+次に、上記で作成したユーザーとロールに一致するように認証資格情報を書き換えていきます。`# User credentials`のセクションまで移動し、次のような変更を加えていきます:
 
 
 ```
@@ -179,23 +184,27 @@ instances:
 
 
 ## Integrating RabbitMQ with Datadog
-> Getting metrics from RabbitMQ requires fewer steps than OpenStack.  
+> Getting metrics from RabbitMQ requires fewer steps than OpenStack. 
+
+RabbitMQからメトリックを取得する設定は、OpenStackのそれより少ないステップで完了します。
+
+
 > Start by running the following command to install the management plugin for RabbitMQ: `rabbitmq-plugins enable rabbitmq_management`.  
 > This will create a web UI for RabbitMQ on port 15672, and it will expose an HTTP API, which the Datadog Agent uses to collect metrics.
+
+`rabbitmq-plugins enable rabbitmq_management`のコマンドを実行して、RabbitMQにプラグインをインストールするところから始めます。このコマンドは、RabbitMQサーバーの15672ポートにWeb UIを作成し、Datadog Agentがメトリクスを収集するためのHTTP APIを公開してくれます。
+
 
 > Once the plugin is enabled, restart RabbitMQ for the changes to take effect:
 `service rabbitmq-server restart`.
 
+このプラグインを有効にした後、変更を有効にするためにRabbitMQを再起動します。
+`service rabbitmq-server restart`
+
+
 > Next, navigate to the Agent configuration directory again. Find the sample RabbitMQ config file named [rabbitmq.yaml.example][rabbitmq-yaml] and copy it to rabbitmq.yaml. Open it and navigate to the `instances:` section:
 
-RabbitMQのからメトリックを取得するOpenStackのより少ないステップを必要とします。
-RabbitMQの-プラグインがrabbitmq_managementを有効にします。RabbitMQのための管理プラグインをインストールするには、次のコマンドを実行して起動します。
-これは、ポート15672上のRabbitMQのWeb UIを作成し、それがDatadogエージェントがメトリックを収集するために使用するHTTP APIを公開します。
-
-プラグインを有効にすると、変更を有効にするため、RabbitMQのを再起動します。
-サービスのRabbitMQサーバーの再起動。
-
-次に、再びエージェントの設定ディレクトリに移動します。サンプルRabbitMQの設定ファイルの名前rabbitmq.yaml.exampleを見つけて、それがrabbitmq.yamlにコピーします。それを開いて、インスタンスに移動：セクションを：
+次に、再びDatadog Agentの設定ディレクトリに移動します。[rabbitmq.yaml.example][rabbitmq-yaml]を、`rabbitmq.yaml`にコピーし、編集を開始します。編集画面で、`instances:`セクションまで移動します:
 
 
 ```
@@ -206,25 +215,28 @@ instances:
 ```
 > Update the `rabbitmq_user`, `rabbitmq_pass`, and `rabbitmq_api_url` fields appropriately, then save and close the file. 
 
+`rabbitmq_user`, `rabbitmq_pass`, `rabbitmq_api_url`のフィールドは適切に更新し、ファイルを保存して閉じます。
+
+
 > After making the appropriate changes to both yaml files, restart the Agent. The command [varies by platform][agent-usage]. For Debian/Ubuntu: `sudo /etc/init.d/datadog-agent restart`
 
-rabbitmq_user、rabbitmq_pass、およびrabbitmq_api_urlフィールドは適切に、ファイルを保存して閉じます更新します。
-
-両方のYAMLファイルに適切な変更を行った後、エージェントを再起動します。コマンドは、プラットフォームによって異なります。 Debianの/ Ubuntuの場合：sudoの/etc/init.d/datadog-agent再起動
+以上2つのyamlファイルが適切に変更できたら、Datadog Agentを再起動します。[再起動のコマンド][agent-usage]は、OSによって異なります。Debian/Ubuntuの場合は、`sudo /etc/init.d/datadog-agent restart`になります。
 
 
 ## Verify the configuration
 > With the configuration changes in place, it's time to see if everything is properly integrated. Execute the Datadog `info` command. On Debian/Ubuntu, run `sudo /etc/init.d/datadog-agent info`
 
+設定を変更し、Datadog Agentを再起動した後は、設定が正しく反映され、インテグレーションが正しく動作しているか確認します。Datadog Agentの動作確認をするには、`info` オプションをつけて`datadog-agent`コマンドを実行します。Debian/Ubuntuの場合は、`sudo /etc/init.d/datadog-agent info`になります。
+
+
 > For other platforms, find the specific command [here][agent-usage].
+
+他のOSに関しては必要なコマンドの書式を、次の[リンク][agent-usage]より参照してください。
+
 
 > If the configuration is correct, you will see a section like the one below in the `info` output:  
 
-代わりに、設定の変更と、それはすべてが適切に統合されているかどうかを確認する時間です。 Datadog infoコマンドを実行します。 Debianの/ Ubuntuの上、実行sudoの/etc/init.d/datadog-agent情報
-
-その他のプラットフォームの場合、ここで特定のコマンドを見つけます。
-
-設定が正しい場合は、情報の出力に以下のようなセクションが表示されます。
+全てが正しく設定されている場合は、`info`コマンドの出力結果に、以下のようなセクションの内容が表示されます。
 
 
 ```
@@ -239,11 +251,12 @@ Checks
 ```
 > The snippet above shows six service checks in addition to the collected metrics. For OpenStack, the service checks report the availability of your Nova, Neutron, and Keystone APIs as well as checks for individual hypervisors and networks.
 
+上記の出力結果からは、74個のメトリクスと6個のサービスチェックが動作していることが確認できます。OpenStackの場合、サービスチェックは、Nova, Neutron, KeystoneのAPIとハイパーバイザーとネットワークをチェックし、動作状況を報告しています。
+
+
 > You should also see something like the following for RabbitMQ:
 
-スニペットは、上記収集されたメトリックに加えて、6サービスチェックを示しています。 OpenStackのために、サービスチェックは、個々のハイパーバイザーやネットワークのためのあなたの新星、中性子、およびキーストーンのAPIの利用だけでなく、チェックを報告しています。
-
-また、RabbitMQのために、次のように表示されます。
+RabbitMQのためには、以下のような内容が表示されます:
 
 
 ```
@@ -256,27 +269,29 @@ Checks
 ## Enable the integration
 > Finally, click the OpenStack **Install Integration** button inside your Datadog account. The button is located under the Configuration tab in the [OpenStack integration settings][integration-settings].
 
-最後に、OpenStackのは、あなたのDatadogアカウント内部に統合[インストール]ボタンをクリックします。ボタンは、OpenStackの統合設定の[設定]タブの下に位置しています。
+最後に、OpenStackインテグレーションの**Install Integration**ボタンをクリックします。このボタンは、Datadogのダッシュボードの`Configuration`タブ内の、[OpenStack integration][integration-settings]タイルをクリックすると表示されます。
 
-  
+
 [![Enable the integration][install-integration]][install-integration]  
 > Since the Agent automatically queries RabbitMQ via its API endpoint, you don’t need to enable the RabbitMQ integration in your Datadog account.
 
-エージェントが自動的にそのAPIエンドポイントを経由してのRabbitMQを照会しているので、あなたのDatadogアカウントでRabbitMQの統合を有効にする必要はありません。
+OpenStackのケースでは、Datadog Agentは、自動的にRabbitMQのエンドポイントAPIを経由してメトリクスを収集しているため、ダッシュボード上でRabbitMQのインテグレーションを有効にする必要はありません。
 
 
 ## Show me the metrics!
-> Once the Agent begins reporting OpenStack metrics, you will see an [OpenStack dashboard][integration-dash] among your list of available dashboards in Datadog.  
+> Once the Agent begins reporting OpenStack metrics, you will see an [OpenStack dashboard][integration-dash] among your list of available dashboards in Datadog.
+
+Datadog AgentがOpenStackのメトリクスを送信し始めると、インテグレーション用のダッシュボード一覧の中に[OpenStack dashboard][integration-dash]が表示されます。
+
 
 > The default OpenStack dashboard displays the key metrics to watch highlighted in our [introduction to Nova monitoring][Part 1].
 
+OpenStackのインテグレーション用のダッシュボードには、このシリーズの["Part 1: introduction to Nova monitoring"][Part 1]で取り上げたキーメトリクスが表示されています。
+
+
 > You can easily create a tailored dashboard to monitor OpenStack as well as your entire stack by adding additional graphs and metrics from your other systems. For example, you might want to graph Nova metrics alongside metrics from your [Redis databases][redis], or alongside host-level metrics such as network traffic. To start building a custom dashboard, clone the default OpenStack dashboard by clicking on the gear in the upper right of the dashboard and selecting **Clone Dash**.
 
-エージェントは、OpenStackのメトリックを報告し始めると、あなたはDatadogで利用可能なダッシュボードのリストのうち、OpenStackのダッシュボードが表示されます。
-
-デフォルトのOpenStackのダッシュボードには、主要指標は、ノヴァの監視に当社の紹介で強調表示時計に表示されます。
-
-あなたは簡単にOpenStackの監視だけでなく、あなたの他のシステムからの追加のグラフや指標を追加することによって、あなたの全体のスタックに合わせたダッシュボードを作成することができます。たとえば、あなたのRedisデータベースから、または、ネットワークトラフィックなどのホストレベルの指標と並んメトリクスと一緒ノヴァメトリックスをグラフ化することができます。カスタムダッシュボードの作成を開始するには、ダッシュボードの右上にある歯車をクリックしてクローンのダッシュを選択することで、デフォルトOpenStackのダッシュボードのクローンを作成。
+様々なOpenStackの環境の監視に併せ、追加要素のメトリクスを表示するためのグラフを追加し専用のダッシュボードを簡単に作ることができます。例えば、[Redis databases][redis]から集取したメトリクスやネットワークトラフィックなどのホストレベルのメトリクスを、Novaのメトリクスと一緒にグラフ化したいとします。カスタムダッシュボードを構成してく場合は、既存のOpenStackのダッシュボードをクローンするところから始めます。既存のOpenStackのダッシュボードの右上にある歯車のマークをクリックし、**Clone Dash**を選択することで、カスタム用のダッシュボードのベースを新しく生成することができます。
 
 
 [![Clone OpenStack default dash][clone-dash]][clone-dash]
@@ -284,30 +299,35 @@ Checks
 ## Diagnosing and Alerting
 > Systematically collecting monitoring data serves two broad purposes:  alerting operators in real-time to issues as they develop (alerting), and helping to identify the root cause of a problem (diagnosing). A full-featured monitoring solution does both. With Datadog, you get actionable alerts in real-time, so you can respond to issues as they emerge, plus the high-resolution metrics and historical perspective that you need to dive deep into diagnosing the root cause of an issue.
 
-彼らは（警告）、および（診断）問題の根本原因を特定するのに役立つ開発などの問題にリアルタイムでアラート演算子：体系的に監視データを収集することは二つの大きな目的があります。フル機能を備えた監視ソリューションは、両方を行います。 Datadogを使用すると、リアルタイムで実用的なアラートを取得し、それらが出現するように、あなたは、問題に対応することができ、加えてあなたが問題の根本的な原因を診断中に深く潜る必要があり、高解像度の指標と歴史的な視点を。
+体系的に監視データを収集することは二つの大きな目的があります: まず第一にアラートです、問題が発生すると同時にリアルタイムでオペレーターの警告します。次に分析です、問題の根本原因を特定するのを助けます。フル機能を備えた監視ソリューションでは、両方を行っています。Datadogを使用すると、リアルタイムで実行価値のあるアラートを受けることができます。そして、問題が表面化すると同時に対応できるようになります。更に、高解像度のメトリクスと過去に渡って保存されているデータは、問題の根本原因を深く探っていく際の基本データを提供してくれます。
 
 
 ### Alerting on Nova metrics
 > Once Datadog is capturing and visualizing your metrics, you will likely want to set up some [alerts][alert] to be automatically notified of potential issues. You can set up an alert to notify you of API availability issues, for example.
 
+Datadogを使ってメトリクスを収集し可視化できるようになると、問題の可能性がある場合に自動で通知されるように[アラート][alert]を設定したくなるでしょう。例えば、APIの応答状障害に関してアラートを設定することができます。
+
+
 > Datadog can monitor individual hypervisors, instances, containers, services, and processes—or virtually any combination thereof. For instance, you can monitor all of your Nova nodes, or all hosts in a certain availability zone, or a single key metric being reported by all hosts corresponding to a specific tag.
 
-Datadogをキャプチャし、あなたの評価指標を可視化されたら、自動的に潜在的な問題を通知するためにいくつかのアラートを設定する可能性が高いでしょう。次の例のように、APIの可用性の問題を通知するアラートを設定することができます。
+Datadogは、個々のハイパーバイザー, インスタンス, コンテナ, サービス, プロセスと、それらの組み合わせを監視することができます。そして、タグを指定することで、Novaの全てのノードや、特定のアベイラビリティゾーンの全てのホストや、全てのホストから収集した単一キーメトリクスを特定することができます。
 
-Datadogは、個々のハイパーバイザー、インスタンス、コンテナ、サービス、およびプロセス-またはそれらの事実上の任意の組み合わせを監視することができます。たとえば、特定のアベイラビリティゾーンであなたのノヴァ・ノード、またはすべてのホストのすべてを監視することができ、または単一の主要な指標は、特定のタグに対応するすべてのホストによって報告されています。
 
 ## Conclusion
 > In this post we’ve walked you through integrating OpenStack Nova and RabbitMQ with Datadog to visualize your key metrics and notify the right team whenever your infrastructure shows signs of trouble.  
 
+今回のポストでは、Datadogでキーメトリクスを可視化し、インフラがトラブルの兆候を示したときに適切なチームに通知するためのOpenStack NovaとRabbitMQの連携の手順を解説してきました。
+
+
 > If you’ve followed along using your own Datadog account, you should now have [improved visibility][Part 1] into what’s happening in your environment, as well as the ability to create automated alerts tailored to your infrastructure, usage patterns, and the metrics that are most valuable to your organization.  
+
+Datadogアカウントを使って、この手順をここまで進めていたなら、あなたのOpenStackの環境で何が起きているかを[具体的に理解するための視界][Part 1]を手に入れることができたでしょう。それと同時に、あなたのインフラに合わせた自動化されたアラートや、インフラの使用パターンや、組織にとって最も重要なメトリクスも手に入れることができたでしょう。
+
 
 > If you don’t yet have a Datadog account, you can [sign up] for a free trial and start monitoring OpenStack Nova right away.
 
-この記事では、我々はあなたの主要な指標を可視化し、インフラストラクチャはトラブルの兆候を示したときに右のチームに通知するDatadogとOpenStackの新星とのRabbitMQを統合する手順を歩いてきました。
+もしも未だDatadogのアカウントを持っていないなら、無料トライアルへ[ユーザー登録][sign up]すれば直ちにOpenStack Novaの監視を始めることができます。
 
-あなたがあなた自身のDatadogアカウントを使用してに沿って続いてきた場合、あなたは今、自分の環境だけでなく、インフラストラクチャ、使用パターンに合わせた自動化されたアラートを作成する機能で何が起こっているかを可視化を改善し、かついるはずにとって最も価値のあるメトリックあなたの組織。
-
-あなたはまだDatadogアカウントをお持ちでない場合は、無料試用版にサインアップするとすぐにOpenStackのノヴァの監視を開始することができます。
 
 <iframe width="100%" height="100" style="border: 0;" src="https://go.pardot.com/l/38172/2015-03-02/h6c2r" scrolling="no" type="text/html" frameborder="0" allowtransparency="true"></iframe>
 
