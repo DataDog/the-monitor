@@ -54,7 +54,7 @@ Line graphs are the simplest way to translate metric data into visuals, but ofte
  
 <h3>When to use something else</h3>  
 
-<table>
+<table class="wide">
 <thead>
 <tr>
 <th>What</th>
@@ -168,7 +168,7 @@ Bar graphs require no interpolation to connect one interval to the next, making 
 
 <h3>When to use something else</h3>  
 
-<table>
+<table class="wide">
 <thead>
 <tr>
 <th>What</th>
@@ -217,14 +217,15 @@ Heat maps are essentially [distribution graphs](http://docs.datadoghq.com/graphi
 <td><strong>Single metric</strong> reported by a large number of groups</td>
 <td>To convey general trends at a glance</td>
 <td style="width: 335px!important;">Web latency per host<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/web_latency_heat.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/web_latency_heat.png" alt="Webapp latency heat map" /></a></td>
-</tr><tr /><tr>
+</tr><tr />
+<tr>
 <td></td>
 <td colspan="2">
 
 <hr />
 
 </td>
-</tr>
+</tr><tr />
 <tr>
 <td></td>
 <td>To see transient variations across members of a group</td>
@@ -235,7 +236,7 @@ Heat maps are essentially [distribution graphs](http://docs.datadoghq.com/graphi
   
 <h3>When to use something else</h3>  
   
-<table>
+<table class="wide">
 <thead>
 <tr>
 <th>What</th>
