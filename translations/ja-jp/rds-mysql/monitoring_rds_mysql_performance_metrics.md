@@ -22,29 +22,32 @@ Amazon Relational Database Service (Amazon RDS)は、AWSのクラウド上で提
 > * [Connections](#connection-metrics)
 > * [Read replica metrics](#read-replica-metrics)
 
-スムーズに実行しているアプリケーションを維持するために、理解し、以下の分野でのパフォーマンス・メトリックを追跡することが重要です。
+スムーズに動作しているアプリケーションを維持するために、以下の各分野を理解し、パフォーマンス・メトリックを追跡することが重要です。
 
-* [Query throughput](#query-throughput)
-* [Query performance](#query-performance)
-* [Resource utilization](#resource-utilization)
-* [Connections](#connection-metrics)
+* [クエリーのスループット](#query-throughput)
+* [クエリーのパフォーマンス](#query-performance)
+* [リソースの活用状況](#resource-utilization)
+* [コネクション](#connection-metrics)
 * [Read replica metrics](#read-replica-metrics)
 
 > Users of MySQL on RDS have access to hundreds of metrics, but it's not always easy to tell what you should focus on. In this article we'll highlight key metrics in each of the above areas that together give you a detailed view of your database's performance. 
 
+RDS上のMySQLのユーザーは、数百ものメトリックにアクセスできるようになっています。しかし、どのメトリクスにフォーカスするべきかを見つけ出すのは簡単なことではありません。この記事では、先に示した分野毎にキーメトリクスを紹介し、全体としてあなたのデーターベースのパフォーマンスの詳細が読み取れるようにしていきます。
+
+
 > RDS metrics (as opposed to MySQL metrics) are available through Amazon CloudWatch, and are available regardless of which database engine you use. MySQL metrics, on the other hand, must be accessed from the database instance itself. [Part 2 of this series][part-2] explains how to collect both types of metrics. 
+
+RDSのメトリクス(MySQLのメトリクスとは対照的に)は、使用しているデータベースエンジンに関係なく、Amazon CloudWatchを介して集取することができます。その逆に、MySQLのメトリクスは、データベースインスタンス自体に直接アクセスする必要があります。[このシリーズのPart 2][part-2]では、これらの両方のタイプのメトリクスを収集する方法について解説します。
+
 
 > Most of the performance metrics outlined here also apply to Aurora and MariaDB on RDS, but there are some key differences between the database engines. For instance, Aurora has auto-scaling storage and therefore does not expose a metric tracking free storage space. And the version of MariaDB (10.0.17) available on RDS at the time of this writing is not fully compatible with the MySQL Workbench tool or the sys schema, both of which are detailed in [Part 2][part-2] of this series.
 
+ここで概説するパフォーマンス・メトリックのほとんどは、RDS上のAuroraやMariaDBに適用することができます。しかしデータベースエンジン間で、重要な幾つかの違いあるのも認識しておく必要があります。例えば、Auroraでは、ストレージが自動的にスケールするので、ストレージの空き容量を提供していません。更にこの記事を書いている時点で、RDSで使うことのできるMariaDBのバージョン(10.0.17)は、MySQLのワークベンチツールまたはSYSスキーマと完全互換ではありません。このことについては、このシリーズの[Part 2][part-2]で詳しく解説することにします。
+
+
 > This article references metric terminology introduced in [our Monitoring 101 series][metric-101], which provides a framework for metric collection and alerting.
 
-上のMySQLのユーザーは、RDSのメトリックの数百へのアクセスを持って、それはあなたが焦点を当てるべきかを伝えることは必ずしも容易ではありません。この記事では、一緒にあなたのデータベースのパフォーマンスの詳細を与える上記の各分野における主要な指標を強調表示します。
-
-RDSメトリックは（MySQLの指標とは対照的に）はAmazon CloudWatchのを介して利用可能であり、関係なく、あなたが使用しているデータベースエンジンの利用可能です。 MySQLのメトリックは、他の一方で、データベースインスタンス自体からアクセスする必要があります。このシリーズの第2回では、メトリックの両方のタイプを収集する方法について説明します。
-
-ここで概説するパフォーマンス・メトリックのほとんどは、RDSにオーロラやMariaDBに適用されますが、データベースエンジンとの間にいくつかの重要な違いがあります。例えば、オーロラは、自動スケーリングの記憶を持っているので、メトリックの追跡空き容量を公開しません。そして、この記事の執筆時点でRDS上で利用可能なMariaDB（10.0.17）のバージョンは、このシリーズのパート2で詳述されているどちらもMySQLのワークベンチツールまたはSYSスキーマ、と完全に互換性がありません。
-
-この記事の参照メトリック用語は、メトリック収集と警告するためのフレームワークを提供し、当社のモニタリング101シリーズで導入されました。
+この記事では、[Monitoring 101 series][metric-101]で紹介した”メトリクスの収集とアラートのフレームワーク”で解説した用語を採用しています。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds-dash-load.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds-dash-load.png"></a> 
@@ -60,24 +63,25 @@ RDSメトリックは（MySQLの指標とは対照的に）はAmazon CloudWatch�
 
 > Your primary concern in monitoring any system is making sure that its [work is being done][collecting-data] effectively. A database's work is running queries, so the first priority in any monitoring strategy should be making sure that queries are being executed.
 
+システムを監視する場合最も注目するべきことは、["仕事"が効率的に処理されている][collecting-data]ことを確認することです。データベースの"仕事"は、クエリを実行することです。従って、データベースの監視戦略の上での最優先事項は、クエリーが実行されていることに確認することになります。
+
+
 > The MySQL server status variable `Questions` is incremented for all statements sent by client applications. The similar metric `Queries` is a more all-encompassing count that includes statements executed as part of [stored programs][stored], as well as commands such as `PREPARE` and `DEALLOCATE PREPARE`, which are run as part of server-side [prepared statements][prepared]. For most RDS deployments, the client-centric view makes `Questions` the more valuable metric.
 
-任意のシステムを監視する中であなたの主な関心事は、その作業が効率的に行われていることを確認しています。データベースの仕事は、クエリを実行しているので、任意の監視戦略における最優先事項は、クエリが実行されていることを確認するべきです。
-
-MySQLサーバのステータス変数質問は、クライアントアプリケーションによって送信されたすべての文に増加します。同様のメトリッククエリは、サーバー側の準備文の一部として実行されている格納されたプログラムの一部として実行されたステートメント、ならびに、PREPAREおよびDEALLOCATEはPREPAREなどのコマンドを含んでいるより、すべての包括的なカウントです。ほとんどのRDSの展開では、クライアント中心のビューは、質問より多くの貴重なメトリックになります。
+MySQLサーバーの`Questions` ステータス変数は、クライアントアプリから送信されるステートメント毎に加算されていきます。同様のメトリクスの`Queries`では、[stored programs][stored]の一部として実行されたステートメントや、サーバーサイドの[prepared statements][prepared]として実行された`PREPARE`と`DEALLOCATE PREPARE`のコマンドなど、全てを網羅したカウント。RDSの多くの環境では、クライアントを中心とした視点ということで、`Questions`の方が価値のあるメトリクスといいうことになります。
 
 
 > You can also monitor the breakdown of read and write commands to better understand your database's read/write balance and identify potential bottlenecks. Those metrics can be computed by summing native MySQL metrics. Reads increment one of two status variables, depending on whether or not the read is served from the query cache:
 
-あなたはまた、より良いあなたのデータベースの読み取り/書き込みのバランスを理解し、潜在的なボトルネックを特定するための読み取りおよび書き込みコマンドの内訳を監視することができます。これらのメトリックは、ネイティブのMySQLメトリックを合計することによって計算することができます。読み取りは、クエリキャッシュから提供されているか否かに応じて、2つの状態変数の増分1を読み込みます：
+データベースの読み/書きバランスを理解し、潜在的なボトルネックを特定するために、読み取りおよび書き込みコマンドの内訳を監視することもできます。これらのメトリックは、ネイティブのMySQLメトリックを合計することによって求めることができます。
 
+読み込みの実行は、クエリキャッシュから読み込めているか否かに応じて、`Com_select`か`Qcache_hits`のどちらかのステータス変数に加算されいきます:
 
     Reads = `Com_select` + `Qcache_hits`
 
 > Writes increment one of three status variables, depending on the command:
 
-コマンドに応じて、3つのステータス変数の増分1を書き込みます：
-
+書き込みは、コマンドの内容に応じ`Com_insert`, `Com_update`, `Com_delete`のステータス変数に加算されていきます:
 
     Writes = `Com_insert` + `Com_update` + `Com_delete`
 
@@ -85,7 +89,7 @@ MySQLサーバのステータス変数質問は、クライアントアプリケ
 
 > The current rate of queries will naturally rise and fall, and as such is not always an actionable metric based on fixed thresholds alone. But it is worthwhile to alert on sudden changes in query volume—drastic drops in throughput, especially, can indicate a serious problem.
 
-クエリの現在のレートは、自然に立ち上がりおよび立ち下がり、そのように常に単独の固定しきい値に基づいて実用的なメトリックではないでしょう。しかし、それはスループットのクエリボリューム抜本的な滴の急激な変化に警告する価値がある、特に、深刻な問題を示すことができます。
+クエリーの実効レートは、当然ながら増減します。そして、固定的な閾値のみを基準にした場合、価値のあるメトリクスとは言いがたいでしょう。しかし、スループットの急激な低下のようなクエリーの量の突然の変化には、深刻な問題を提起していることがあるので、アラートを設定しておく価値があるでしょう。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/questions_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/questions_2.png"></a> 
@@ -100,18 +104,19 @@ MySQLサーバのステータス変数質問は、クライアントアプリケ
 
 > _*The count of query errors is not exposed directly as a MySQL metric, but can be gathered by a MySQL query._
 
-クエリエラーの数は、MySQLメトリックとして直接公開されていませんが、MySQLのクエリによって収集することができます。
+_*クエリーエラーの数は、MySQLメトリックスとして直接的には公開されていませんが、MySQLのクエリーを集計することで収集することができます。_
 
 
-> Amazon's CloudWatch exposes `ReadLatency` and `WriteLatency` metrics for RDS (discussed [below](#resource-utilization)), but those metrics only capture latency at the disk I/O level. For a more holistic view of query performance, you can dive into native MySQL metrics for query latency. MySQL features a `Slow_queries` metric, which increments every time a query's execution time exceeds the number of seconds specified by the `long_query_time` parameter. `long_query_time` is set to 10 seconds by default but can be modified in the AWS Console. To modify  `long_query_time` (or any other MySQL parameter), simply log in to the Console, navigate to the RDS Dashboard, and select the parameter group that your RDS instance belongs to. You can then filter to find the parameter you want to edit.
+> Amazon's CloudWatch exposes `ReadLatency` and `WriteLatency` metrics for RDS (discussed [below](#resource-utilization)), but those metrics only latency at the disk I/O level. For a more holistic view of query performance, you can dive into native MySQL metrics for query latency. MySQL features a `Slow_queries` metric, which increments every time a query's execution time exceeds the number of seconds specified by the `long_query_time` parameter. `long_query_time` is set to 10 seconds by default but can be modified in the AWS Console. To modify  `long_query_time` (or any other MySQL parameter), simply log in to the Console, navigate to the RDS Dashboard, and select the parameter group that your RDS instance belongs to. You can then filter to find the parameter you want to edit.
 
-AmazonのCloudWatchのは（後述）RDSのReadLatencyとWriteLatencyメトリックを公開しますが、ディスクI/ Oレベルでこれらのメトリックのみキャプチャー待ち時間。クエリのパフォーマンスのより包括的なビューでは、クエリの待機時間のネイティブMySQLのメトリックに飛び込むことができます。 MySQLは、クエリの実行時間がlong_query_timeパラメータで指定した秒数を超えるたびに増加しSlow_queriesメトリックを備えています。 long_query_timeは、デフォルトでは10秒に設定されていますが、AWSコンソールで変更することができます。 long_query_time（または任意の他のMySQLパラメータ）を変更するには、単に、コンソールにログインRDSダッシュボードに移動し、あなたのRDSインスタンスが属するパラメータグループを選択します。その後、編集したいパラメータを見つけるためにフィルタリングすることができます。
+Amazon CloudWatchは、RDSの`ReadLatency`と`WriteLatency`メトリクス（[後述](#resource-utilization)）を公開しています。しかし、これらのメトリクスは、ディスクI/Oレベルのレイテンシーを計測した値です。より包括的にクエリーのパフォーマンスを把握するには、MySQLのネオティブメトリクスのクエリーレイテンシーを使うことができます。MySQLには、`Slow_queries`というメトリクスを公開しています。このクエリーは、`long_query_time`パラメーターで指定した秒数を超える毎に増加していきます。デフォルトで`long_query_time`は、10秒に設定されていますが、AWSコンソール上で変更することができます。`long_query_time`（または他のMySQLパラメータ）を変更するには、AWSコンソールにログインし、RDSの舵手ボードに移動し、RDSインスタンスが属するパラメータグループを選択します。その後、編集したいパラメーターを検索します。
+
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/long_query_time.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/long_query_time.png"></a> 
 
 > MySQL's performance schema (when enabled) also stores valuable statistics, including query latency, from the database server. Though you can query the performance schema directly, it is easier to use Mark Leith’s [sys schema][sys-schema], which provides convenient views, functions, and procedures to gather metrics from MySQL. For instance, to find the execution time of all the different statement types executed by each user:
 
-（有効）MySQLのパフォーマンススキーマは、データベース・サーバーからのクエリの待機時間を含め、貴重な統計情報を、記憶しています。あなたが直接パフォーマンススキーマを照会することができますが、MySQLからメトリックを収集するために便利なビュー、関数、およびプロシージャを提供してマークリースのSYSスキーマを使用する方が簡単です。たとえば、各ユーザーによって実行されたすべての異なるステートメントの種類の実行時間を見つけるために：
+MySQLのパフォーマンススキーマ(有効化されている状態で)は、クエリーのレイテンシーなどのデータベースサーバーからの貴重な統計情報を記憶しています。パフォーマンススキーマーへは直接紹介することはできますが、Mark Leith氏の[sys schema][sys-schema]を使う方が簡単です。このソフトは、MySQLからメトリックを収集する際に、便利なビュー、関数、および手順を提供してくれます。例えば、ユーザー毎の異なるステートメントタイプの実行時間を知りたい場合:
 
 
 <pre class="lang:mysql">
@@ -120,7 +125,7 @@ mysql> select * from sys.user_summary_by_statement_type;
 
 > Or, to find the slowest statements (those in the 95th percentile by runtime):
 
-又は、最も遅いステートメント(ランタイムによる95パーセンタイル値)
+又は、最も遅いステートメントを見つけることもできます(ランタイムによる95パーセンタイル値):
 
 <pre class="lang:mysql">
 mysql> select * from sys.statements_with_runtimes_in_95th_percentile\G
@@ -128,24 +133,26 @@ mysql> select * from sys.statements_with_runtimes_in_95th_percentile\G
 
 > Many useful usage examples are detailed in the sys schema [documentation][sys-schema].
 
-多くの有用な使用例は、SYSスキーマのドキュメントに詳述されています。
+他のsys schemaの便利な使用例に関しては、[ドキュメント][sys-schema]を参照してください。
 
 > To enable the performance schema, you must set the `performance_schema` parameter to 1 in the database instance's parameter group using the AWS console. If not enabled, this change requires an instance reboot. More about enabling the performance schema and installing the sys schema in [Part 2][part-2] of this series.
 
+performance schemaを有効にするには、AWSコンソールから、そのデータベースインスタンスのパラメータグループに対する`performance_schema`パラメーターを1に設定する必要があります。これまで無効になっていた場合に設定を反映するためには、インスタンスの再起動が必要です。performance schemの有効活用とsys schemaのインストールに関しては、このシリーズの[Part 2][part-2]で解説します。
+
+
 > If your queries are executing more slowly than expected,  evaluate your [resource metrics](#resource-utilization) and MySQL metrics that track how often operations have been blocked on acquiring a lock. In particular, check the `Innodb_row_lock_waits` metric, which counts how often InnoDB (the default storage engine for MySQL on RDS) had to wait to acquire a row lock.
+
+もしも、クエリーの実行が予想以上に遅い場合、[リソースメトリクス](#resource-utilization)とロックの実行によってブロックされたオペレーションの発生頻度をMySQLメトリクスから評価します。具体的には、InnoDB(RDS上のMySQLのディフォルトストレージエンジン)の行ロックに起因し発生した待機の回数として`Innodb_row_lock_waits`メトリクスを確認します。
+
 
 > MySQL users also have a number of caching options to expedite transactions, from making more RAM available for the [buffer pool][buffer-pool] used by InnoDB (MySQL's default storage engine), to enabling the [query cache][query-cache] to serve identical queries from memory, to using an application-level cache such as memcached or [Redis][redis].
 
-パフォーマンスのスキーマを有効にするには、AWSコンソールを使用して、データベース・インスタンスのパラメータグループ内の1にperformance_schemaパラメータを設定する必要があります。有効でない場合は、この変更は、インスタンスの再起動が必要です。パフォーマンスのスキーマを有効にし、このシリーズのパート2で、SYSスキーマのインストールの詳細。
-
-あなたのクエリが予想よりも遅く実行している場合は、あなたのリソース・メトリックとロックの取得でブロックされているどのくらいの頻度で操作を追跡MySQLの指標を評価します。具体的には、InnoDBは（RDS上のMySQLのデフォルトのストレージエンジンは）行ロックの取得を待機しなければならなかった回数がカウントされ、メトリックInnodb_row_lock_waitsを確認してください。
-
-MySQLユーザはまた、アプリケーション・レベルを使用して、メモリから同一のクエリを提供するために、クエリキャッシュを有効にするのInnoDB（MySQLのデフォルトのストレージエンジン）によって使用されるバッファー・プールのより多くのRAMを利用可能にすることから、取引を促進するためにキャッシュ・オプションの数を持っていますこのようなmemcachedのやRedisのようキャッシュ。
+MySQLのユーザーには、トランスアクションをスピードアップするためのキャッシュオプションが幾つかあります。例えば、InnoDBによって使用される[バッファープール][buffer-pool]により多くのRAMを追加する。同一のクエリーをメモリーから提供するための[クエリーキャッシュ][query-cache]を有効にする。memcachedや[Redis][redis]などの、アプリケーションレベルのキャッシュを利用する、があります。
 
 
 > The performance schema and sys schema also allow you to quickly assess how many queries generated errors or warnings:
 
-パフォーマンスのスキーマおよびSYSスキーマはまた、あなたがすぐにエラーや警告が発生したどのように多くのクエリを評価することができます。：
+又、クエリーがエラーとワーニングをどの程度発生させているかを、performance schemaとsys schemaを使って知ることもできます:
 
 
 <pre class="lang:mysql">
@@ -156,7 +163,9 @@ mysql> SELECT SUM(errors) FROM sys.statements_with_errors_or_warnings;
 
 > * `Slow_queries`: How you define a slow query (and therefore how you configure the `long_query_time` parameter) will depend heavily on your use case and performance requirements. If the number of slow queries reaches worrisome levels, you will likely want to identify the actual queries that are executing slowly so you can optimize them. You can do this by querying the sys schema or by configuring MySQL to log all slow queries. More information on enabling and accessing the slow query log is available [in the RDS documentation][slow-log]. 
 
-- Slow_queries：あなたはスロークエリを定義する（したがって、あなたがlong_query_timeパラメータを設定する方法）あなたのユースケースと性能要件に大きく依存することになる方法。スロークエリの数が気になるレベルに達した場合、あなたはおそらくあなたがそれらを最適化することができるようにゆっくりと実行されている実際の照会を識別することになるでしょう。あなたは、SYSスキーマを照会することによって、またはすべての遅いクエリをログに記録するMySQLを構成することによってこれを行うことができます。有効にするとスロークエリログへのアクセスの詳細については、RDSのドキュメントを参照してください。
+* `Slow_queries`:あなたはスロークエリを定義する（したがって、あなたが`long_query_tim`パラメータを設定する方法）あなたのユースケースと性能要件に大きく依存することになる方法。スロークエリの数が気になるレベルに達した場合、あなたはおそらくあなたがそれらを最適化することができるようにゆっくりと実行されている実際の照会を識別することになるでしょう。あなたは、SYSスキーマを照会することによって、またはすべての遅いクエリをログに記録するMySQLを構成することによってこれを行うことができます。有効にするとスロークエリログへのアクセスの詳細については、RDSのドキュメントを参照してください。
+
+* `Slow_queries`:あなたはスロークエリを定義する（したがって、あなたが`long_query_tim`パラメータを設定する方法）あなたのユースケースと性能要件に大きく依存することになる方法。スロークエリの数が気になるレベルに達した場合、あなたはおそらくあなたがそれらを最適化することができるようにゆっくりと実行されている実際の照会を識別することになるでしょう。あなたは、SYSスキーマを照会することによって、またはすべての遅いクエリをログに記録するMySQLを構成することによってこれを行うことができます。有効にするとスロークエリログへのアクセスの詳細については、RDSのドキュメントを参照してください。
 
 
 > <pre class="lang:mysql">mysql> select * from mysql.slow_log\G
@@ -177,9 +186,13 @@ last_insert_id: 0
 
 > * Query errors: A sudden increase in query errors can indicate a problem with your client application or your database. You can use the sys schema to quickly explore which queries may be causing problems. For instance, to list the 10 normalized statements that have returned the most errors:
 
-- エラーを照会：クエリエラーの急激な増加は、クライアント・アプリケーションまたはデータベースに問題があることを示すことができます。あなたはすぐにクエリが問題を引き起こすことができる探索するのsysスキーマを使用することができます。例えば、ほとんどのエラーを返した10正規化された文をリストします。
+* Query errors: クエリエラーの急激な増加は、クライアント・アプリケーションまたはデータベースに問題があることを示すことができます。あなたはすぐにクエリが問題を引き起こすことができる探索するのsysスキーマを使用することができます。例えば、ほとんどのエラーを返した10正規化された文をリストします。
+
+
+* * Query errors: クエリエラーの急激な増加は、クライアント・アプリケーションまたはデータベースに問題があることを示すことができます。あなたはすぐにクエリが問題を引き起こすことができる探索するのsysスキーマを使用することができます。例えば、ほとんどのエラーを返した10正規化された文をリストします。
 
 > <pre class="lang:mysql">mysql> SELECT * FROM sys.statements_with_errors_or_warnings ORDER BY errors DESC LIMIT 10\G</pre>
+
 
 <h3 class="anchor" id="resource-utilization">Resource utilization</h3>
 
