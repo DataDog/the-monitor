@@ -163,9 +163,7 @@ mysql> SELECT SUM(errors) FROM sys.statements_with_errors_or_warnings;
 
 > * `Slow_queries`: How you define a slow query (and therefore how you configure the `long_query_time` parameter) will depend heavily on your use case and performance requirements. If the number of slow queries reaches worrisome levels, you will likely want to identify the actual queries that are executing slowly so you can optimize them. You can do this by querying the sys schema or by configuring MySQL to log all slow queries. More information on enabling and accessing the slow query log is available [in the RDS documentation][slow-log]. 
 
-* `Slow_queries`:あなたはスロークエリを定義する（したがって、あなたが`long_query_tim`パラメータを設定する方法）あなたのユースケースと性能要件に大きく依存することになる方法。スロークエリの数が気になるレベルに達した場合、あなたはおそらくあなたがそれらを最適化することができるようにゆっくりと実行されている実際の照会を識別することになるでしょう。あなたは、SYSスキーマを照会することによって、またはすべての遅いクエリをログに記録するMySQLを構成することによってこれを行うことができます。有効にするとスロークエリログへのアクセスの詳細については、RDSのドキュメントを参照してください。
-
-* `Slow_queries`:あなたはスロークエリを定義する（したがって、あなたが`long_query_tim`パラメータを設定する方法）あなたのユースケースと性能要件に大きく依存することになる方法。スロークエリの数が気になるレベルに達した場合、あなたはおそらくあなたがそれらを最適化することができるようにゆっくりと実行されている実際の照会を識別することになるでしょう。あなたは、SYSスキーマを照会することによって、またはすべての遅いクエリをログに記録するMySQLを構成することによってこれを行うことができます。有効にするとスロークエリログへのアクセスの詳細については、RDSのドキュメントを参照してください。
+* `Slow_queries`: どのようにスロークエリーを提起するか(そして、`long_query_tim`のパラメーター値)は、ユースケースと性能要求に大きく依存しています。スロークエリーの数が気になるレベルに達した場合、最適化をするために、それらの処理に時間の掛かっている実際のクエリーを特定したくなることでしょう。この特定は、sys schemaにクエリーを送信するか、スロークエリーを記録する設定をMySQLに施すことにより実現することができます。スロークエリーのログを有効にする方法と、それへのアクセスとの方法についての詳しい情報については、[RDSのドキュメント][slow-log]を参照してください。
 
 
 > <pre class="lang:mysql">mysql> select * from mysql.slow_log\G
@@ -186,10 +184,8 @@ last_insert_id: 0
 
 > * Query errors: A sudden increase in query errors can indicate a problem with your client application or your database. You can use the sys schema to quickly explore which queries may be causing problems. For instance, to list the 10 normalized statements that have returned the most errors:
 
-* Query errors: クエリエラーの急激な増加は、クライアント・アプリケーションまたはデータベースに問題があることを示すことができます。あなたはすぐにクエリが問題を引き起こすことができる探索するのsysスキーマを使用することができます。例えば、ほとんどのエラーを返した10正規化された文をリストします。
+* Query errors: クエリエラーの急激な増加は、クライアント・アプリケーションまたはデータベースに問題があることを示していることがあります。このようなケースでは、sys schemaを使って、どのクエリーが問題を起こしているかを調べることができます。例えば、エラーを返している量の多い正規化ステートメントのtop 10リストが取得できます:
 
-
-* * Query errors: クエリエラーの急激な増加は、クライアント・アプリケーションまたはデータベースに問題があることを示すことができます。あなたはすぐにクエリが問題を引き起こすことができる探索するのsysスキーマを使用することができます。例えば、ほとんどのエラーを返した10正規化された文をリストします。
 
 > <pre class="lang:mysql">mysql> SELECT * FROM sys.statements_with_errors_or_warnings ORDER BY errors DESC LIMIT 10\G</pre>
 
@@ -215,37 +211,46 @@ last_insert_id: 0
 | NetworkReceive<br>Throughput | Network traffic to the MySQL instance, in bytes per second | Resource: Utilization | CloudWatch |
 | NetworkTransmit<br>Throughput | Network traffic from the MySQL instance, in bytes per second | Resource: Utilization | CloudWatch |
 
-> As Baron Schwartz, co-author of *[High Performance MySQL][mysql-book],* often notes, a database needs four fundamental resources: CPU, memory, disk, and network. Any of these can become a performance bottleneck—for a look at how difference RDS instance types can be constrained by their available resources, check out [this 2013 talk][bottlenecks] by Amazon's Grant McAlister. 
+> As Baron Schwartz, co-author of *[High Performance MySQL][mysql-book],* often notes, a database needs four fundamental resources: CPU, memory, disk, and network. Any of these can become a performance bottleneck—for a look at how difference RDS instance types can be constrained by their available resources, check out [this 2013 talk][bottlenecks] by Amazon's Grant McAlister.
 
-バロンシュワルツ、*[ハイパフォーマンスMySQLの] [mysqlのブック]の共著者として、*多くの場合、Notesデータベースは、4つの基本的なリソース必要があります：CPU、メモリ、ディスク、およびネットワークを。これらのいずれかがなることができ、パフォーマンスボトルネックのための差分RDSインスタンスタイプは、それらの利用可能なリソースによって制約することができる方法を見には、AmazonのグラントMcAlisterにより[この2013話] [ボトルネック]をチェックしてください。
+*[High Performance MySQL][mysql-book]*の共著者のBaron Schwartz氏は、しばしば、次のように指摘してます。データーベースには、４つの基本的なリソースが必要です: それらは、CPU、メモリ、ディスク、およびネットワークです。これらのどれもが、ボトルネックになる可能性を持っています。RDSインスタンスタイプのリソースの差異による制約の詳細に関しては、AmazonのGrant McAlister氏による[2013年のプレゼンテーション][bottlenecks]を、是非参照してください。
 
 
 > Whenever your database instance experiences performance problems, you should check metrics pertaining to the four fundamental resources to look for bottlenecks. Though you cannot access the full suite of system-level metrics that are available for EC2, CloudWatch does make available metrics on all four of these resources. For the most part, these metrics are most useful for [investigating (rather than detecting)][investigation] performance issues.
 
-データベース・インスタンスは、パフォーマンスの問題を経験するたび、あなたはボトルネックを探すために、4の基本的なリソースに関連する指標を確認する必要があります。あなたがEC2で利用可能なシステム・レベルのメトリックの完全なスイートにアクセスすることはできませんが、CloudWatchのは、これらのリソースのすべての4つ上の使用可能なメトリックを作るん。ほとんどの部分については、これらの指標は、パフォーマンスの問題を調査する（というよりも検出）のために最も有用です。
+データベースインスタンスにパフォーマンス問題が発生した場合、ボトルネックの原因を見つけ出すために、先の四つの基本メトリクスに関係があるか確認する必要があります。一般的にEC2で利用可能なシステムレベルのメトリクスの全てにはアクセスすることはできませんが、CloudWatch上には、これらの四つの基本的メトリクスが公開されています。そして大抵の場合、これらのメトリクスは、パフォーマンス問題を検出するというより、もその原因を調査する際に最も有用になります。
 
 
 <h4 class="anchor" id="disk-i/o-metrics">Disk I/O metrics</h4>
 
 > CloudWatch makes available RDS metrics on read and write IOPS. These metrics are useful for monitoring the performance of your database and to ensure that your IOPS do not exceed the limits of your chosen instance type. If you are running an RDS instance in production, you will likely want to choose Provisioned IOPS storage to ensure consistent performance. 
 
+CloudWatchには、読み取りと書き込みIOPSのRDSメトリクスも公開されています。これらのメトリックは、データベースのパフォーマンスを監視し、選択したインスタンスタイプに設定されたIOPSの限界を超えないようにするために有用です。もしもあなたが本番環境でRDSインスタンスをつかっているなら、安定したパフォーマンスを確保するために、Provisioned IOPSストレージを選択することになるでしょう。
+
+
 > If your storage volumes cannot keep pace with the volume of read and write requests, you will start to see I/O operations queuing up. The `DiskQueueDepth` metric measures the length of this queue at any given moment.
+
+ストレージの処理スピードが、読み取りおよび書き込み要求の量に追従できなくなると、I/O操作の順番待ちが溜まっていくのを確認することができるようになります。`DiskQueueDepth`は、その瞬間の、このキューの長さを計測しています。
+
 
 > Note that there will not be a one-to-one correspondence between queries and disk operations—queries that can be served from memory will bypass disk, for instance, and queries that return a large amount of data can involve more than one I/O operation. Specifically, reading or writing more than 16 KB, the [default page size][iops] for MySQL, will require multiple I/O operations.
 
+クエリーの量とディスクの操作の量には、1対1の相関関係はありません。メモリーから結果を提供することができる場合は、ディスクへのアクセスはバイパスされます。更に、大量のデーターを返すクエリーは、複数のI/O操作に関係しています。具体的には、[MySQLのディフォルトページサイズ][iops]の16KBを越える読み取り又は書き込みは、複数のI/O操作を必要とします。
+
+
+
 > In addition to I/O throughput metrics, RDS offers `ReadLatency` and `WriteLatency` metrics. These metrics do not capture full query latency—they only measure how long your I/O operations are taking at the disk level. 
+
+I/Oスループットのメトリクスに加えて、RDSは`ReadLatency`と`ReadLatency`メトリックを提供しています。
+
+
+これらの指標は、完全なクエリの待機時間 - 彼らはあなたのI / O操作は、ディスクレベルで取っているどのくらいの時間を測定キャプチャしません。
+
 
 > For read-heavy applications, one way to overcome I/O limitations is to [create a read replica][read-replica] of the database to serve some of the client read requests. For more, see the [section below](#read-replica-metrics) on metrics for read replicas.
 
-CloudWatchのは、読み取りおよび書き込みIOPSで利用できるRDSメトリックになります。これらのメトリックは、データベースのパフォーマンスを監視し、あなたのIOPSは、選択したインスタンス・タイプの限界を超えないようにするために有用です。本番でRDSインスタンスを実行している場合は、可能性の高い安定したパフォーマンスを確保するために、プロビジョニングIOPSストレージを選択することになるでしょう。
-
-お使いのストレージボリュームが読み取りおよび書き込み要求の量のペースを保つことができない場合は、最大キューイングI / O操作を確認するために開始されます。 DiskQueueDepthメトリック措置いつなんどきでも、このキューの長さ。
-
-大量のデータが複数を含むことができる返すクエリおよび例えば、ディスクをバイパスしますメモリから提供することができますディスク操作-クエリ、およびクエリの間に1対1の対応が存在しないことに注意してくださいI / O操作。具体的には、読み取りまたは書き込みを超える16キロバイト、MySQLのデフォルトのページサイズは、複数のI / O操作が必要になります。
-
-I / Oスループットの測定基準に加えて、RDSはReadLatencyとWriteLatencyメトリックを提供しています。これらの指標は、完全なクエリの待機時間 - 彼らはあなたのI / O操作は、ディスクレベルで取っているどのくらいの時間を測定キャプチャしません。
-
 読み取り重用途のために、I / Oの制限を克服する一つの方法は、クライアントのいくつかは、読み取り要求提供するために、データベースのリードレプリカを作成することです。詳細については、読み取りレプリカのメトリックについては、以下のセクションを参照してください。
+
 
 #### CPU metrics
 
