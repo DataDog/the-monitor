@@ -1,0 +1,13 @@
+# the-monitor
+Markdown files for Datadog's long-form blog posts: https://www.datadoghq.com/blog/
+
+このディレクトリーには、Datadog社のblogサイトに掲載されているコンテンツのHTMLを生成する際に使っているmarkdwonを翻訳した内容を保存しています。
+
+これらのコンテンツは、Datadog社が持っている監視に関する重要なノウハウをブログ化しているモノで、これから監視を始めようと考えている人に取っては、無料で基本を学ぶ第一歩になることは間違いありません。
+
+しかしながら、翻訳工数が絶対的に足りていません。もしも、このREADMEを読んでいる人で、僕の進めている翻訳の趣旨に賛同してくれる人がいるなら、このディレクトリでもよいのでPRを送ってくれると本当に助かります。
+
+翻訳協力者、絶賛募集中！
+
+翻訳者:
+堀田　直孝: Naotaka Hotta　(jay@datadoghq.com)
