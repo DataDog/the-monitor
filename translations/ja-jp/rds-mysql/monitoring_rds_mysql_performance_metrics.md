@@ -22,7 +22,7 @@ Amazon Relational Database Service (Amazon RDS)は、AWSのクラウド上で提
 > * [Connections](#connection-metrics)
 > * [Read replica metrics](#read-replica-metrics)
 
-スムーズに動作しているアプリケーションを維持するために、以下の各分野を理解し、パフォーマンス・メトリックを追跡することが重要です。
+スムーズに動作しているアプリケーションを維持するために、以下の各分野を理解し、パフォーマンス・メトリクスを追跡することが重要です。
 
 * [クエリーのスループット](#query-throughput)
 * [クエリーのパフォーマンス](#query-performance)
@@ -32,7 +32,7 @@ Amazon Relational Database Service (Amazon RDS)は、AWSのクラウド上で提
 
 > Users of MySQL on RDS have access to hundreds of metrics, but it's not always easy to tell what you should focus on. In this article we'll highlight key metrics in each of the above areas that together give you a detailed view of your database's performance. 
 
-RDS上のMySQLのユーザーは、数百ものメトリックにアクセスできるようになっています。しかし、どのメトリクスにフォーカスするべきかを見つけ出すのは簡単なことではありません。この記事では、先に示した分野毎にキーメトリクスを紹介し、全体としてあなたのデーターベースのパフォーマンスの詳細が読み取れるようにしていきます。
+RDS上のMySQLのユーザーは、数百ものメトリクスにアクセスできるようになっています。しかし、どのメトリクスにフォーカスするべきかを見つけ出すのは簡単なことではありません。この記事では、先に示した分野毎にキーメトリクスを紹介し、全体としてあなたのデーターベースのパフォーマンスの詳細が読み取れるようにしていきます。
 
 
 > RDS metrics (as opposed to MySQL metrics) are available through Amazon CloudWatch, and are available regardless of which database engine you use. MySQL metrics, on the other hand, must be accessed from the database instance itself. [Part 2 of this series][part-2] explains how to collect both types of metrics. 
@@ -73,7 +73,7 @@ MySQLサーバーの`Questions` ステータス変数は、クライアントア
 
 > You can also monitor the breakdown of read and write commands to better understand your database's read/write balance and identify potential bottlenecks. Those metrics can be computed by summing native MySQL metrics. Reads increment one of two status variables, depending on whether or not the read is served from the query cache:
 
-データベースの読み/書きバランスを理解し、潜在的なボトルネックを特定するために、読み取りおよび書き込みコマンドの内訳を監視することもできます。これらのメトリックは、ネイティブのMySQLメトリックを合計することによって求めることができます。
+データベースの読み/書きバランスを理解し、潜在的なボトルネックを特定するために、読み取りおよび書き込みコマンドの内訳を監視することもできます。これらのメトリクスは、ネイティブのMySQLメトリクスを合計することによって求めることができます。
 
 読み込みの実行は、クエリキャッシュから読み込めているか否かに応じて、`Com_select`か`Qcache_hits`のどちらかのステータス変数に加算されいきます:
 
@@ -104,7 +104,7 @@ MySQLサーバーの`Questions` ステータス変数は、クライアントア
 
 > _*The count of query errors is not exposed directly as a MySQL metric, but can be gathered by a MySQL query._
 
-_*クエリーエラーの数は、MySQLメトリックスとして直接的には公開されていませんが、MySQLのクエリーを集計することで収集することができます。_
+_*クエリーエラーの数は、MySQLメトリクスとして直接的には公開されていませんが、MySQLのクエリーを集計することで収集することができます。_
 
 
 > Amazon's CloudWatch exposes `ReadLatency` and `WriteLatency` metrics for RDS (discussed [below](#resource-utilization)), but those metrics only latency at the disk I/O level. For a more holistic view of query performance, you can dive into native MySQL metrics for query latency. MySQL features a `Slow_queries` metric, which increments every time a query's execution time exceeds the number of seconds specified by the `long_query_time` parameter. `long_query_time` is set to 10 seconds by default but can be modified in the AWS Console. To modify  `long_query_time` (or any other MySQL parameter), simply log in to the Console, navigate to the RDS Dashboard, and select the parameter group that your RDS instance belongs to. You can then filter to find the parameter you want to edit.
@@ -116,7 +116,7 @@ Amazon CloudWatchは、RDSの`ReadLatency`と`WriteLatency`メトリクス（[�
 
 > MySQL's performance schema (when enabled) also stores valuable statistics, including query latency, from the database server. Though you can query the performance schema directly, it is easier to use Mark Leith’s [sys schema][sys-schema], which provides convenient views, functions, and procedures to gather metrics from MySQL. For instance, to find the execution time of all the different statement types executed by each user:
 
-MySQLのパフォーマンススキーマ(有効化されている状態で)は、クエリーのレイテンシーなどのデータベースサーバーからの貴重な統計情報を記憶しています。パフォーマンススキーマーへは直接紹介することはできますが、Mark Leith氏の[sys schema][sys-schema]を使う方が簡単です。このソフトは、MySQLからメトリックを収集する際に、便利なビュー、関数、および手順を提供してくれます。例えば、ユーザー毎の異なるステートメントタイプの実行時間を知りたい場合:
+MySQLのパフォーマンススキーマ(有効化されている状態で)は、クエリーのレイテンシーなどのデータベースサーバーからの貴重な統計情報を記憶しています。パフォーマンススキーマーへは直接紹介することはできますが、Mark Leith氏の[sys schema][sys-schema]を使う方が簡単です。このソフトは、MySQLからメトリクスを収集する際に、便利なビュー、関数、および手順を提供してくれます。例えば、ユーザー毎の異なるステートメントタイプの実行時間を知りたい場合:
 
 
 <pre class="lang:mysql">
@@ -225,7 +225,7 @@ last_insert_id: 0
 
 > CloudWatch makes available RDS metrics on read and write IOPS. These metrics are useful for monitoring the performance of your database and to ensure that your IOPS do not exceed the limits of your chosen instance type. If you are running an RDS instance in production, you will likely want to choose Provisioned IOPS storage to ensure consistent performance. 
 
-CloudWatchには、読み取りと書き込みIOPSのRDSメトリクスも公開されています。これらのメトリックは、データベースのパフォーマンスを監視し、選択したインスタンスタイプに設定されたIOPSの限界を超えないようにするために有用です。もしもあなたが本番環境でRDSインスタンスをつかっているなら、安定したパフォーマンスを確保するために、Provisioned IOPSストレージを選択することになるでしょう。
+CloudWatchには、読み取りと書き込みIOPSのRDSメトリクスも公開されています。これらのメトリクスは、データベースのパフォーマンスを監視し、選択したインスタンスタイプに設定されたIOPSの限界を超えないようにするために有用です。もしもあなたが本番環境でRDSインスタンスをつかっているなら、安定したパフォーマンスを確保するために、Provisioned IOPSストレージを選択することになるでしょう。
 
 
 > If your storage volumes cannot keep pace with the volume of read and write requests, you will start to see I/O operations queuing up. The `DiskQueueDepth` metric measures the length of this queue at any given moment.
@@ -241,56 +241,54 @@ CloudWatchには、読み取りと書き込みIOPSのRDSメトリクスも公開
 
 > In addition to I/O throughput metrics, RDS offers `ReadLatency` and `WriteLatency` metrics. These metrics do not capture full query latency—they only measure how long your I/O operations are taking at the disk level. 
 
-I/Oスループットのメトリクスに加えて、RDSは`ReadLatency`と`ReadLatency`メトリックを提供しています。
-
-
-これらの指標は、完全なクエリの待機時間 - 彼らはあなたのI / O操作は、ディスクレベルで取っているどのくらいの時間を測定キャプチャしません。
+I/Oスループットのメトリクスに加えて、RDSは`ReadLatency`と`ReadLatency`のメトリクスを提供しています。これらのメトリクスは、クエリーの完全なレイテンシーを計測していません。これらのメトリクスは、ディスクレベルでのI/O操作がどれくらい掛かっているかを計測しています。
 
 
 > For read-heavy applications, one way to overcome I/O limitations is to [create a read replica][read-replica] of the database to serve some of the client read requests. For more, see the [section below](#read-replica-metrics) on metrics for read replicas.
 
-読み取り重用途のために、I / Oの制限を克服する一つの方法は、クライアントのいくつかは、読み取り要求提供するために、データベースのリードレプリカを作成することです。詳細については、読み取りレプリカのメトリックについては、以下のセクションを参照してください。
+データーベースからの読み取りの多いアプリで、I/Oの制限を克服する一つの方法は、クライアントの読み込みリクエストを処理するための[読み込み用のレプリカ(複製)を作る][read-replica]ことです。読み取りレプリカのメトリクスの詳細については、[以下のセクション](#read-replica-metrics)を参照してください。
 
 
 #### CPU metrics
 
 > High CPU utilization is not necessarily a bad sign. But if your database is performing poorly while it is within its IOPS and network limits, and while it appears to have sufficient memory, the CPUs of your chosen instance type may be the bottleneck.
 
-高いCPU使用率が必ずしも悪い兆候ではありません。しかし、それはそのIOPSとネットワークの制限内であり、それが十分なメモリを持っているように見えますが、あなたの選択したインスタンス・タイプのCPUがボトルネックになるかもしれないが、あなたのデータベースが不十分な実行している場合。
+高いCPUの利用率は、必ずしも悪いこと兆候ではありません。しかし、IOPSとネットワークが制限値以内にあり、メモリーも十分に確保できている状態では、選択しているインスタンスのCPUがボトルネックになっているかもしれません。
 
 
 #### Memory metrics
 
 > MySQL performs best when most of its working set of data can be held in memory. For this reason, you should monitor `FreeableMemory` and `SwapUsage` to ensure that your database instance is not memory-constrained.
 
-そのデータのワーキングセットのほとんどはメモリに保持することができたときにMySQLが最高の性能を発揮します。このような理由から、あなたのデータベースインスタンスがメモリに制約がないことを確実にするためにFreeableMemoryとSwapUsageを監視する必要があります。
+MySQLは、処理をしているデーター全体がメモリー内に保持されている場合、最高の性能を発揮します。このような理由から、データベースがメモリーから制約を受けていないことを確認するために、`FreeableMemory`と`SwapUsage`を監視する必要があります。
 
 
 > AWS advises that you monitor `ReadIOPS` when the database is under load to ensure that your database instance has enough RAM to [keep the working set almost entirely in memory][working-set]:
 
 > > The value of ReadIOPS should be small and stable. If scaling up the DB instance class—to a class with more RAM—results in a dramatic drop in ReadIOPS, your working set was not almost completely in memory.
 
-AWSは、データベースに負荷がかかっているときに、データベース・インスタンスがメモリ内にほぼ完全にワーキングセット維持するのに十分なRAMを持っていることを確認するためにReadIOPSを監視することを助言します：
+AWSは、データベースに負荷がかかっている時に、そのデータベース・インスタンスが、ほぼ完全なワーキングセットをメモリ内に維持するのに十分なRAMを有していることを確認するために、`ReadIOPS`を監視するようにアドバイスしています：
 
-> ReadIOPSの値が小さく、安定していなければなりません。スケールアップの場合、DBインスタンスクラスにReadIOPSの劇的な低下でより多くのRAM-結果とクラス、あなたのワーキングセットがメモリ内にほぼ完全ではありませんでした。
+> `ReadIOPS`の値は、小さくて、安定していなければなりません。データベースインスタンをRAMの大きいクラスへスケールアップし、`ReadIOPS`値が劇的に低下した場合、以前のインスタンスクラスのRAMでは、ワーキングセットをほぼ完全に保持しておくには容量が足りなかったということになります。
 
 
 <h4 class="anchor" id="storage-metrics">Storage metrics</h4>
 
 > RDS allows you to allocate a fixed amount of storage when you launch your MySQL instance. The CloudWatch metric `FreeStorageSpace` lets you monitor how much of your allocated storage is still available. Note that you can always add more storage by modifying your running database instance in the AWS console, but you may not decrease it. 
 
-RDSは、あなたのMySQLインスタンスを起動したときには、ストレージの一定量を割り当てることができます。 CloudWatchのメトリックFreeStorageSpaceあなたはどのくらいのあなたの割り当てられたストレージのことはまだ可能です監視することができます。あなたは常にAWSコンソールで実行中のデータベース・インスタンスを変更することにより、より多くのストレージを追加することもできますが、あなたはそれを減少しない場合があります。
+RDSは、MySQLのインスタンを起動する際に、ストレージの量を設定することができます。CloudWatchが公開しているメトリクスの`FreeStorageSpace`を使えば、割り当てたストレージの空き容量を監視することができます。ここで注意すべきことは、AWSのコンソールから、動作中のでエータベースインスタンスのストレージ量を増やすことはできますが、それを減らすことができないと言うことです。
 
 
 #### Network metrics
 
 > RDS relies on Amazon Elastic Block Store (Amazon EBS) volumes for storage, and the network connection to EBS can limit your throughput. Monitoring `NetworkReceiveThroughput` and `NetworkTransmitThroughput` will help you identify potential network bottlenecks.
 
+RDSは、Amazon Elastic Block Store (Amazon EBS)をストレージに使っています。そして、EBSとのネットワーク接続の状況が、スループットの制約になることがあります。`NetworkReceiveThroughput`と`NetworkTransmitThroughput`を監視することで、潜在的なネットワークのボトルネックを見つけ出すことができるようになります。 
+
+
 > Even with Provisioned IOPS, it is entirely possible that network limitations will keep your realized IOPS below your provisioned maximum. For instance, if you provision 10,000 IOPS on a db.r3.2xlarge database instance, but your use case is extremely read-heavy, you will reach the bandwidth limit of 1 gigabit per second (roughly 8,000 IOPS) to EBS in each direction before hitting the provisioned limits of your storage.
 
-RDSは、保存のためにアマゾン弾性ブロックストア（アマゾンEBS）ボリュームに依存し、EBSへのネットワーク接続は、あなたのスループットを制限することができます。 NetworkReceiveThroughputとNetworkTransmitThroughputを監視することで、潜在的なネットワークのボトルネックを特定するのに役立ちます。
-
-でもプロビジョニングIOPSと、ネットワークの制限は、あなたのプロビジョニング最大の下にあなたの実現IOPSを維持することは完全に可能です。あなたdb.r3.2xlargeデータベース・インスタンス上の規定万IOPSが、あなたのユースケースは非常に読み取り重い場合たとえば、あなたはそれぞれの方向の前にEBSに毎秒1ギガビット（約8,000 IOPS）の帯域幅の上限に到達しますストレージのプロビジョニング限界を打ちます。
+Provisioned IOPSを設定しても、ネットワーク性能の上限が、プロビジョン設定したIOPSの実現を妨げることもあります。例えば、db.r3.2xlargeのデータベースインスタンスで、10,000をIOPSをプロビジョン設定します。しかし、読み取り中心のケースの場合、ストレージのプロビジョン制限に達する前に、毎秒1ギガビット(約8,000 IOPS)のEBSに対するネットワーク帯域の制限に先に到達してしまいます。
 
 
 #### Metrics to alert on
@@ -301,11 +299,12 @@ RDSは、保存のためにアマゾン弾性ブロックストア（アマゾ�
 
 > * `FreeStorageSpace`: AWS recommends that RDS users take action to delete unneeded data or add more storage if disk usage consistently reaches levels of 85 percent or more.  
 
-- ReadLatencyまたはWriteLatency：あなたのディスク操作の待ち時間を監視するには、あなたのMySQLインスタンスのハードウェアやデータベースの使用パターンに潜在的な制約を識別することが重要です。あなたのレイテンシが登るために起動する場合は、ご使用のインスタンス・タイプの境界を推進しているかどうかを確認するためにあなたのIOPS、ディスクキュー、およびネットワークメトリックをチェックしてください。もしそうであれば、プロビジョニングIOPSレートを持つボリュームを含むストレージ・オプション、詳細については、RDSのドキュメントを参照してください。
+- `ReadLatency`または`WriteLatency`： ディスク操作のレイテンシを監視することは、MySQLインスタンが使っているハードウェアやデータベースのユーセージパターンから来る潜在的な制約を見つけ出す際に重要です。レイテンシが増加し始めたら、IOPSやディスク操作のキューやネットワークのメトリクスを確認し、選択しているインスタンスタイプの限界に達していないかを確認します。もしもそうであれば、provisioned IOPS ratesが設定できるストレージを含め、RDSで設定できる[ストレージオプション][storage]に関してRDSのドキュメントを参照してください。
 
-- DiskQueueDepth：、それは、ディスクキュー内のいくつかの要求を持つことは珍しいことではありませんが、このメトリック開始を登る場合、調査は順序であってもよい場合は特に、結果として、待ち時間が増加します。 （時間は、キューが読み取りおよびレイテンシを書くために追加されたディスクで過ごしました。）
+- `DiskQueueDepth`： ディスクキューにリクエストが溜まっていることは珍しくありません。しかし、このメトリクスが増加傾向にあるなら、調査が必要です。特に、このディスクキューの増加によってレイテンシがぞうかしているなら。(ディスクキュー内で順番を待っている時間は、読み取りや書き込みレイテンシーに加算されていきます。)
 
-- FreeStorageSpace：AWSは、RDS、ユーザーが不要なデータを削除したり、ディスク使用率が一貫して85％以上のレベルに達した場合より多くのストレージを追加する行動を取ることをお勧めします。
+- `FreeStorageSpace`： ディスク使用率が一貫して85％以上を越えている場合、AWSでは、不要なデータを削除したり、ストレージスペースを追加することを、推奨しています。
+
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/latency.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/latency.png"></a> 
@@ -323,14 +322,13 @@ RDSは、保存のためにアマゾン弾性ブロックストア（アマゾ�
 
 > Monitoring how many client connections are in use is critical to understanding your database's activity and capacity. MySQL has a configurable connection limit; on RDS the default value depends on the memory of the database's instance class in bytes, according to the formula: 
 
-多くのクライアント接続が使用中であるかを監視することで、データベースの活動や能力を理解するために重要です。 MySQLは、設定可能な接続の制限があります。 RDSのデフォルト値は、式に従って、バイト単位でデータベースのインスタンスクラスのメモリに依存します。
-
+データーベースの処理状況や処理能力を理解するためにクライアント接続の数を把握することは重要です。MySQLには、このコネクション数の制限を設定する機能があります。RDSの場合、デフォルト値は、データベースのインスタンスクラスのメモリー容量をベースに以下の計算式になっています:
 
 `max_connections` = `DBInstanceClassMemory` / 12582880
 
 > The `max_connections` parameter can be modified by editing the database instance's parameter group using the RDS dashboard in the AWS console. You can also check the current value of `max_connections` by querying the MySQL instance itself (see [part 2][part-2] of this series for more on connecting to RDS instances directly):
 
-MAX_CONNECTIONSパラメータは、AWSコンソールでRDSのダッシュボードを使用して、データベース・インスタンスのパラメータグループを編集することで変更できます。また、MySQLインスタンス自体が（直接インスタンスをRDSへの接続の詳細については、このシリーズのパート2を参照）照会することにより、MAX_CONNECTIONSの現在の値を確認することができます。
+`max_connections`パラメーターは、AWSのコンソールのRDSダッシュボードから、データベースインスタンスのパラメーターグループを編集することで変更できます。又、`max_connections`の値は、MySQLに直接問い合わせることで確認することもできます。(RDSインスタンに直接接続し情報を集取する方法は、このシリーズの[Part 2][part-2]を参照してください。)
 
 
 <pre class="lang:mysql">
@@ -343,17 +341,19 @@ mysql> SELECT @@max_connections;
 1 row in set (0.00 sec)
 </pre>
 
-> To monitor how many connections are in use, CloudWatch exposes a `DatabaseConnections` metric tracking open RDS connections, and MySQL exposes a similar `Threads_connected` metric counting connection threads. (MySQL allocates one thread per connection.) Either metric will help you monitor your connections in use, but the MySQL metric can be collected at higher resolution than the CloudWatch metric, which is reported at one-minute intervals. MySQL also exposes the `Threads_running` metric to isolate the threads that are actively processing queries. 
+> To monitor how many connections are in use, CloudWatch exposes a `DatabaseConnections` metric tracking open RDS connections, and MySQL exposes a similar `Threads_connected` metric counting connection threads. (MySQL allocates one thread per connection.) Either metric will help you monitor your connections in use, but the MySQL metric can be collected at higher resolution than the CloudWatch metric, which is reported at one-minute intervals. MySQL also exposes the `Threads_running` metric to isolate the threads that are actively processing queries.
+
+使用中のコネクション数を監視するには、次の方法があります。CloudWatchは、`DatabaseConnections`メトリクスという使用中のRDSコネクション数を公開しています。MySQLは、類似のメトリクスとして`Threads_connected`(コネクションスレッドの数)を公開しています。(MySQLは、スレッド毎にコネクションを割り当てています。)どちらのメトリクスも使用中のコネクションの数を監視するのには使えますが、MySQLから収集した方が、1分毎にCloudwatchから収集するより短いインターバルでメトリクスを収集することができます。更に、MySQLは、活発にクエリーを処理しているスレッドを識別するために`Threads_running`メトリクスも公開します。
+
 
 > If your server reaches the `max_connections` limit and starts to refuse connections, `Connection_errors_max_connections` will be incremented, as will the `Aborted_connects` metric tracking all failed connection attempts.
 
+もしもサーバーが、`max_connections`の制限値に達し、新しいコネクションを受け入れなくなった場合、`Connection_errors_max_connections`と、接続の試みの失敗を追跡している`Aborted_connects`が加算されていきます。
+
+
 > MySQL exposes a variety of other metrics on connection errors, which can help you identify client issues as well as serious issues with the database instance itself. The metric `Connection_errors_internal` is a good one to watch, because it is incremented when the error comes from the server itself. Internal errors can reflect an out-of-memory condition or the server's inability to start a new thread.
 
-使用中の接続数を監視するには、CloudWatchのは、オープンRDS接続を追跡するメトリックDatabaseConnectionsを公開して、MySQLは同様のThreads_connectedメトリックカウント接続スレッドを公開します。 （MySQLは、接続ごとに1つのスレッドを割り当てます。）どちらか使用中のあなたの接続を監視するのに役立ちますメトリックが、MySQLメトリックは1分間隔で報告されたCloudWatchのメトリック、より高い解像度で収集することができます。 MySQLはまた、積極的にクエリを処理しているスレッドを分離するためにThreads_runningメトリックを公開します。
-
-サーバーがMAX_CONNECTIONS限界に達し、接続を拒否するために開始した場合、すべての接続の試みを失敗した追跡メトリックAborted_connectsを意志として、Connection_errors_max_connectionsは、インクリメントされます。
-
-MySQLはデータベース・インスタンス自体でクライアントの問題と同様に深刻な問題を識別するのに役立ちます接続エラー上の他のメトリック、さまざまなを公開しています。エラーがサーバー自体から来るとき、それがインクリメントされるため、メトリックConnection_errors_internalは、見て良いものです。内部エラーは、メモリ不足の状態か、新しいスレッドを開始するには、サーバーのできないことを反映することができます。
+MySQLは、コネクションエラーに関し、様々なメトリクスを公開しています。これらのメトリクスは、クライアントの問題を識別したり、データーベースインスタンス自体の深刻な問題を識別するのに役立ちます。`Connection_errors_internal`メトリクスは、コネクションエラーがサーバー側で発生している際に加算されるので、把握しておく必要のあるメトリクスです。このインターナルエラーは、メモリーが不足している状態か、サーバーが新しいスレッドを開始できない状況を反映しています。
 
 
 #### Metrics to alert on
@@ -362,9 +362,9 @@ MySQLはデータベース・インスタンス自体でクライアントの問
 
 > * `Aborted_connects`: If this counter is increasing, your clients are probably trying and failing to connect to the database. Dig deeper with metrics such as `Connection_errors_max_connections` and `Connection_errors_internal` to diagnose the problem.
 
-- Threads_connected：クライアントは、利用可能なすべての接続が使用されている場合のMySQLに接続しようとすると、MySQLは「あまりにも多くの接続"エラーと増分Connection_errors_max_connectionsを返します。このシナリオを回避するには、開いている接続の数を監視し、それが安全に設定さmax_connectionsを限界以下に残っていることを確認する必要があります。
+- `Threads_connected`： MySQLの全てのコネクションが使用中の時にクライアントがMySQLに接続しようとすると、MySQLは、"Too many connections"エラーを返し、`Connection_errors_max_connections`が、加算されます。このシナリオを回避するためには、使っているコネクションの数を監視し、`max_connections`の制限に掛からないようにコントロールする必要があります。
 
-- Aborted_connects：このカウンタが増加している場合、クライアントは、おそらくしようとしてデータベースに接続するために失敗しています。問題を診断するためにそのようなConnection_errors_max_connectionsやConnection_errors_internalなどの指標で深く掘ります。
+- `Aborted_connects`： この数が増加している場合、クライアントは、データベースの接続しようとして失敗している状況でしょう。 接続に失敗している原因を診断するために、`Connection_errors_max_connections`や`Connection_errors_internal`のようなメトリクスを使って調査をすすめると良いでしょう。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"></a> 
@@ -378,19 +378,22 @@ MySQLはデータベース・インスタンス自体でクライアントの問
 
 > RDS supports the creation of read replicas from the master MySQL instance. A replica is read-only by default so that its data remains in sync with the master, but that setting can be modified to add an index to the replica—to support a certain type of query, for instance. 
 
+RDSは、マスターMySQLインスタンスからのリードレプリカの作成をサポートします。このレプリカは、マスターと同期し続けるために、デフォルトでは読み取り専用になっています。しかし、この設定は、インデックスを追加して特定のクエリーをサポートするための変更にも対応できます。
+
+
 > These replicas are assigned a separate endpoint, so you can point client applications to read from a replica rather than from the source instance. You can also monitor the replica's connections, throughput, and query performance, just as you would for an ordinary RDS instance.
+
+これらのレプリカには、個別のエンドポイントが割り当てられています。従って、マスターになっているインスタンスではなくレプリカから読み取ることができるようにクライアントアプリを設定し直すこともできます。そして、一般的なRDSインスタンスを監視するように、レプリカのスループットやクエリーパフォーマンスも監視することができます。
+
 
 > The lag time for any read replica is captured by the CloudWatch metric `ReplicaLag`. This metric is usually not actionable, although if the lag is consistently very long, you should investigate your settings and resource usage.
 
+読み込みレプリカの遅延時間は、CloudWatchメトリクスの`ReplicaLag`で収集することができます。一般的は、このメトリクスに対してアクションを起こすことは有りませんが、もしも遅延時間が一貫して非常に長い場合は、設定やリソースの使用状況を再度見直す必要があるでしょう。
+
+
 > Another relevant metric for replication scenarios is `BinLogDiskUsage`, which measures the disk usage on the master database instance of binary logs. MySQL asynchronously replicates its data using a single thread on the master, so periods of high-volume writes cause pileups in the master's binary logs before the updates can be sent to the master.
 
-RDSは、マスタのMySQLインスタンスからリードレプリカの作成をサポートします。レプリカは、読み取り専用である、デフォルトで、そのデータがマスタと同期して残るが、その設定は、例えば、クエリの特定のタイプをサポートするために、レプリカにインデックスを追加するように修正することができるようになっています。
-
-あなたはレプリカからではなく、ソース・インスタンスからの読み取りにクライアントアプリケーションを指すことができますので、これらのレプリカは、個別のエンドポイントが割り当てられています。ちょうどあなたが普通のRDSインスタンスの場合と同じように、あなたはまた、レプリカの接続、スループット、およびクエリのパフォーマンスを監視することができます。
-
-任意の読み取りレプリカの遅延時間は、CloudWatchのメトリックReplicaLagによって捕捉されます。ラグは一貫して非常に長い場合、あなたはあなたの設定やリソースの使用状況を調査する必要がありますが、このメトリックは、通常、実用ではありません。
-
-レプリケーションシナリオのための他の関連するメトリックは、バイナリログのマスター・データベース・インスタンス上のディスク使用量を計測するBinLogDiskUsage、です。更新はマスターに送信することができます前に、大量の期間がマスタのバイナリログに原因パイルアップを書き込むので、MySQLは非同期で、マスタ上の単一スレッドを使用して、そのデータを複製します。
+レプリケーションを考えた場合、価値のある他のメトリクスは、`BinLogDiskUsage`です。このメトリクスは、マスターデータベースインスタンのバイナリーログのディスクの使用量を計測しています。MySQLは、マスター内の単一スレッドを使って非同期でデーターを複製しています。従って、大量の書き込みが発生している期間は、マスターにupdateを送るためのバイナリーログの山積み状態の原因になります。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/binlog.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/binlog.png"></a> 
@@ -417,13 +420,13 @@ RDSは、マスタのMySQLインスタンスからリードレプリカの作成
 
 > [Part 2][part-2] of this series provides instructions for collecting all the metrics you need from CloudWatch and from MySQL.
 
-このシリーズの第2回では、あなたがCloudWatchのからとMySQLから必要なすべてのメトリックを収集するための手順を説明します。
+このシリーズの[Part 2][part-2] では、CloudWatchとMySQLから必要な全てのメトリクスを収集する手順を解説していきます。
 
 ## Acknowledgments
 
 > Many thanks to Baron Schwartz of [VividCortex][vivid] and to [Ronald Bradford][bradford] for reviewing and commenting on this article prior to publication.
 
-見直しと公表する前にこの記事にコメントのためのロナルド・ブラッドフォードVividCortexの男爵シュワルツへとに感謝します。
+この記事を公開するにあたり、レビューに協力しコメントをくれた[VividCortex][vivid]のBaron Schwartz氏と[Ronald Bradford][bradford]氏に感謝します。
 
 
 - - -
