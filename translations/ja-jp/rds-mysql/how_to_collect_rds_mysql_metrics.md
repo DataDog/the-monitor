@@ -1,6 +1,6 @@
 # [翻訳作業中]: How to collect RDS MySQL metrics
 
-> *This post is part 2 of a 3-part series on monitoring MySQL on Amazon RDS. [Part 1][part-1] explores the key performance metrics of RDS and MySQL, and [Part 3][part-3] describes how you can use Datadog to get a full view of your MySQL instance.*ß
+> *This post is part 2 of a 3-part series on monitoring MySQL on Amazon RDS. [Part 1][part-1] explores the key performance metrics of RDS and MySQL, and [Part 3][part-3] describes how you can use Datadog to get a full view of your MySQL instance.*
 
 この投稿は、Amazon RDS上でMySQLを監視する上で3回シリーズの第2部です。パート1は、RDSとMySQLの主要なパフォーマンス指標を探り、そして第3部では、あなたのMySQLインスタンスの完全なビューを取得するためにDatadogを使用する方法について説明します。
 
@@ -45,24 +45,26 @@ RDS metrics can be accessed from CloudWatch in three different ways:
 #### Alerts
 
 > With the CloudWatch console you can also create alerts that trigger when a metric threshold is crossed.
->
+
 > To set up an alert, click on the "Create Alarm" button at the right of your graph and configure the alarm to notify a list of email addresses:
 
-CloudWatchのコンソールを使用すると、また、メトリックしきい値を超えた場合に開始するアラートを作成することができます。
+CloudWatchのコンソールを使用すると、メトリクスが閾値を超えた場合に発報するアラートを作成することができます。
 
-アラートを設定するには、グラフの右側にある「アラームを作成」ボタンをクリックするとメールアドレスのリストを通知するアラームを設定
+アラートを設定するには、グラフの右側にある"Create Alarm"ボタンをクリックし、警報を通知するメールアドレスを指定します:
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-alarm.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-alarm.png"></a>
 
-<h3 class="anchor" id="using-the-command-line-interface">Using the command line interface</h3>
+<!-- <h3 class="anchor" id="using-the-command-line-interface">Using the command line interface</h3> -->
+### <a class="anchor" id="using-the-command-line-interface"></a>Using the command line interface
 
 > You can also retrieve metrics related to your database instance using the command line. Command line queries can be useful for spot checks and ad hoc investigations. To do so, you will need to [install and configure the CloudWatch command line interface][aws-cli]. You will then be able to query for any CloudWatch metrics you want, using different filters.
 >
 > For example, if you want to check the `CPUUtilization` metric across a five-minute window on your MySQL instance, you can run:
 
-また、コマンドラインを使用して、データベース・インスタンスに関連するメトリックを取得することができます。コマンドラインクエリは、スポットチェックやアドホック調査のために有用であり得ます。これを行うには、インストールしてCloudWatchのコマンドラインインターフェイスを設定する必要があります。その後、別のフィルタを使用して、あなたが望む任意のCloudWatchのメトリックを照会することができるようになります。
+コマンドラインを使用して、データベースインスタンスに関するメトリックを取得することもできます。コマンドラインからの問い合わせは、スポット的なチェックやアドホックな原因追及の時に便利です。この方法を使うためには、[CloudWatchのコマンドラインインターフェイス][aws-cli]をインストールし、設定する必要があります。インストールと設定が完了すると、異なる検索コマンドを使ってCloudWatchメトリクスに問い合わせることができるようになります。
 
-あなたのMySQLインスタンス上の5分のウィンドウ間のメトリックCPUUtilizationを確認したい場合たとえば、次のコマンドを実行します。
+例えば、MySQLインスタンスの5分間の`CPUUtilization`(CPU利用率)メトリクスを確認したい場合、次のようなコマンドを実行します:
+
 
 <pre class="lang:sh">
 mon-get-stats CPUUtilization
@@ -75,7 +77,8 @@ mon-get-stats CPUUtilization
 
 > Here is an example of the output returned from a `mon-get-stats` query like the one above:
 
-ここから返される出力の例である月は、取得-統計上のようなクエリ：あなたのMySQLインスタンス上のテウィンドウを、次のコマンドを実行します。
+上記に紹介した`mon-get-stats`コマンドの実行結果の出力は、以下のようになります:
+
 
 <pre class="lang:sh">
 2015-09-29 00:00:00  33.09  Percent
@@ -87,17 +90,23 @@ mon-get-stats CPUUtilization
 
 > Full usage details for the `mon-get-stats` command are available [in the AWS documentation][mon-get-stats].
 
-月-取得-statsコマンドの完全な使用方法の詳細は、AWSのマニュアルでご利用いただけます。
+`mon-get-stats`コマンドの完全は使い方は、[AWSのマニュアルで該当コマンドの詳細][mon-get-stats]を参照してください。
 
-<h3 class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration">Using a monitoring tool with a CloudWatch integration</h3>
+<!-- <h3 class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration">Using a monitoring tool with a CloudWatch integration</h3> -->
+### <a class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration"></a>Using a monitoring tool with a CloudWatch integration
 
 > The third way to collect CloudWatch metrics is via your own monitoring tools, which can offer extended monitoring functionality. For instance, if you want to correlate metrics from your database with other parts of your infrastructure (including the applications that depend on that database), or you want to dynamically slice, aggregate, and filter your metrics on any attribute, or you need dynamic alerting mechanisms, you probably need a dedicated monitoring system. Monitoring tools that seamlessly integrate with the CloudWatch API can, with a single setup process, collect metrics from across your AWS infrastructure.
->
+
+CloudWatchのメトリックを収集する第三の方法は、高度な監視機能を持った独自の監視ツールを使う方法です。例えば、
+
+あなたは、（そのデータベースに依存するアプリケーションを含む）、インフラストラクチャの他の部分を使用してデータベースからのメトリックを相関したい場合や、たとえば、動的に、骨材をスライスし、任意の属性にあなたのメトリックをフィルタするか、ダイナミック必要メカニズムを警告、あなたはおそらく、専用の監視システムが必要です。
+
+シームレスに、単一のセットアッププロセスで、あなたのAWSインフラストラクチャ全体からメトリックを収集することができますCloudWatchのAPIとの統合監視ツール。
+
+
 > In [Part 3][part-3] of this series, we walk through how you can easily collect, visualize, and alert on any RDS metric using Datadog.
 
-CloudWatchのメトリックを収集するための第三の方法は、拡張された監視機能を提供することができ、独自の監視ツールを介してです。あなたは、（そのデータベースに依存するアプリケーションを含む）、インフラストラクチャの他の部分を使用してデータベースからのメトリックを相関したい場合や、たとえば、動的に、骨材をスライスし、任意の属性にあなたのメトリックをフィルタするか、ダイナミック必要メカニズムを警告、あなたはおそらく、専用の監視システムが必要です。シームレスに、単一のセットアッププロセスで、あなたのAWSインフラストラクチャ全体からメトリックを収集することができますCloudWatchのAPIとの統合監視ツール。
-
-このシリーズのパート3では、私たちは、あなたが簡単に視覚化、収集することができますどのようにウォークスルー、およびDatadogを使用してメトリック任意のRDS上の警告。
+このシリーズの[Part 3][part-3]では、Datadogを使用してRDSメトリクスを収集し、可視化し、アラートを設定する手順を解説していきます。
 
 
 ## Collecting native MySQL metrics
@@ -159,7 +168,7 @@ mysql> SHOW GLOBAL STATUS LIKE '%Connection_errors%';
 #### Enabling the performance schema
 
 > To enable the performance schema, you must set the `performance_schema` parameter to 1 in the database instance's parameter group using [the AWS console][rds-console]. This change requires an instance reboot.
-> 
+>
 > Once it is enabled, the performance schema will collect metrics on all the statements executed by the server. Many of those metrics are summarized in the `events_statements_summary_by_digest` table, available in MySQL 5.6 and later. The digest normalizes all the statements, ignoring data values and standardizing whitespace, so that the following two queries [would be considered the same][digest]:
 
 パフォーマンスのスキーマを有効にするには、AWSコンソールを使用して、データベース・インスタンスのパラメータグループ内の1にperformance_schemaパラメータを設定する必要があります。この変更は、インスタンスの再起動が必要です。
@@ -214,7 +223,7 @@ SUM_CREATED_TMP_DISK_TABLES: 0
 #### <a class="anchor" id="using-the-sys-schema"></a>Using the sys schema
 
 > Though the performance schema can be queried directly, it is usually easier to extract meaningful views of the data using the [sys schema][sys-schema], which provides a number of useful tables, functions, and procedures for parsing your data.
-> 
+>
 > To install the sys schema, first clone the [mysql-sys][sys-schema] GitHub repo to the machine that you use to connect to your MySQL instance (e.g., an EC2 instance in the same security group) and position yourself within the newly created directory:
 
 パフォーマンススキーマを直接照会することができますが、あなたのデータを解析するための便利なテーブル、関数、およびプロシージャの数を提供SYSスキーマを使用して、データの意味のある景色を抽出する方が簡単です。
@@ -305,7 +314,7 @@ MySQLのネイティブメトリクスにアクセスするための第四の方
 ## Conclusion
 
 > In this post we have walked through how to use CloudWatch to collect and visualize RDS metrics, and how to generate alerts when these metrics go out of bounds. We've also shown you how to collect more detailed metrics from MySQL itself, whether on an ad hoc or continuous basis.
-> 
+>
 > In [the next and final part][part-3] of this series, we'll show you how you can set up Datadog to collect, visualize, and set alerts on metrics from both RDS and MySQL.
 
 この記事では、RDSのメトリックを収集し、視覚化するCloudWatchの使用方法を歩いていると、これらの指標が範囲外に行くときどのようにアラートを生成します。また、かどうか、広告アドホックまたは継続的に、MySQLの自体からより詳細なメトリックを収集する方法をあなたに示しました。
