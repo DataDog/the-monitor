@@ -2,27 +2,35 @@
 
 > *This post is part 2 of a 3-part series on monitoring MySQL on Amazon RDS. [Part 1][part-1] explores the key performance metrics of RDS and MySQL, and [Part 3][part-3] describes how you can use Datadog to get a full view of your MySQL instance.*ß
 
-この投稿は、Amazon RDS上でMySQLを監視する上で3回シリーズの第2部です。パート1は、RDSとMySQLの主要なパフォーマンス指標を探り、そして第3部では、あなたのMySQLインスタンスの完全なビューを取得するためにDatadogを使用する方法について説明します。
+*このポストは、Amazon RDSの上にあるMySQの監視に関する3回シリーズのポストのPart 2です。[Part 1][part-1]は、”RDSとMySQLのキーメトリクス”を解説しています。[Part 3]では、”Datadogを使ってAmazon RDSの上にあるMySQをどのように監視するか”を解説します。*
 
 
 > As covered in [Part 1][part-1] of this series, MySQL on RDS users can access RDS metrics via Amazon CloudWatch and native MySQL metrics from the database instance itself. Each metric type gives you different insights into MySQL performance; ideally both RDS and MySQL metrics should be collected for a comprehensive view. This post will explain how to collect both metric types.
 
-このシリーズのパート1で取り上げたように、RDSのユーザー上のMySQLは、データベース・インスタンス自体からはAmazon CloudWatchの経由でRDSの指標とネイティブMySQLのメトリクスにアクセスすることができます。各メトリックタイプは、あなたのMySQLのパフォーマンスに異なる洞察を与えます。理想的には、RDSとMySQLの指標の両方を包括的に表示するために収集する必要があります。この投稿は、両方のメトリックのタイプを収集する方法を説明します。
+このシリーズの[Part 1][part-1]で取り上げたように、RDS上のMysqlのユーザーは、Amazon CloudWatch経由でRDSのメトリクスにアクセスでき、更にデータベース自体からネイティブのMySQLメトリクスにもアクセスできます。それぞれのタイプのメトリクスは、MySQLのパフォーマンスについて異なる洞察を与えてくれます。理想的には、包括的に状況を把握できるようにするために、RDSとMySQLの両方のメトリクスを集取している必要があります。この記事では、両方のメトリックタイプを収集する方法を解説していきます。
 
 
 ## Collecting RDS metrics
 
-RDS metrics can be accessed from CloudWatch in three different ways:
+> RDS metrics can be accessed from CloudWatch in three different ways:
 
--   [Using the AWS Management Console and its web interface](#using-the-aws-console)
--   [Using the command line interface](#using-the-command-line-interface)
--   [Using a monitoring tool with a CloudWatch integration](#using-a-monitoring-tool-with-a-cloudwatch-integration)
+> -   [Using the AWS Management Console and its web interface](#using-the-aws-console)
+> -   [Using the command line interface](#using-the-command-line-interface)
+> -   [Using a monitoring tool with a CloudWatch integration](#using-a-monitoring-tool-with-a-cloudwatch-integration)
+
+DSメトリックへは、CloudWatch経由で、次の3つの方法でアクセスできます。
+
+- [AWSの管理コンソールを使用る方法](#using-the-aws-console)
+- [コマンドラインインターフェースを使用する方法](#using-the-command-line-interface)
+- [CloudWatchインテグレーションを持った監視ツールを使用する方法](#using-a-monitoring-tool-with-a-cloudwatch-integration)
+
 
 <h3 class="anchor" id="using-the-aws-console">Using the AWS Console</h3>
 
 > Using the online management console is the simplest way to monitor RDS with CloudWatch. The AWS Console allows you to set up simple automated alerts and get a visual picture of recent changes in individual metrics.
 
-オンライン管理コンソールを使用すると、CloudWatchのでRDSを監視する最も簡単な方法です。 AWSコンソールでは、簡単な自動アラートを設定し、個々のメトリックの最近の変化を視覚的に把握することができます。
+AWSの管理コンソールを使用する方法が、CloudWatchのでRDSを監視する最もな方法です。AWSコンソールのインターフェース上では、個々のメトリックの最近の変化を視覚的に把握したり、簡単な自動アラートを設定することができます。
+
 
 #### Graphs
 
@@ -159,7 +167,7 @@ mysql> SHOW GLOBAL STATUS LIKE '%Connection_errors%';
 #### Enabling the performance schema
 
 > To enable the performance schema, you must set the `performance_schema` parameter to 1 in the database instance's parameter group using [the AWS console][rds-console]. This change requires an instance reboot.
-> 
+>
 > Once it is enabled, the performance schema will collect metrics on all the statements executed by the server. Many of those metrics are summarized in the `events_statements_summary_by_digest` table, available in MySQL 5.6 and later. The digest normalizes all the statements, ignoring data values and standardizing whitespace, so that the following two queries [would be considered the same][digest]:
 
 パフォーマンスのスキーマを有効にするには、AWSコンソールを使用して、データベース・インスタンスのパラメータグループ内の1にperformance_schemaパラメータを設定する必要があります。この変更は、インスタンスの再起動が必要です。
@@ -214,7 +222,7 @@ SUM_CREATED_TMP_DISK_TABLES: 0
 #### <a class="anchor" id="using-the-sys-schema"></a>Using the sys schema
 
 > Though the performance schema can be queried directly, it is usually easier to extract meaningful views of the data using the [sys schema][sys-schema], which provides a number of useful tables, functions, and procedures for parsing your data.
-> 
+>
 > To install the sys schema, first clone the [mysql-sys][sys-schema] GitHub repo to the machine that you use to connect to your MySQL instance (e.g., an EC2 instance in the same security group) and position yourself within the newly created directory:
 
 パフォーマンススキーマを直接照会することができますが、あなたのデータを解析するための便利なテーブル、関数、およびプロシージャの数を提供SYSスキーマを使用して、データの意味のある景色を抽出する方が簡単です。
@@ -305,7 +313,7 @@ MySQLのネイティブメトリクスにアクセスするための第四の方
 ## Conclusion
 
 > In this post we have walked through how to use CloudWatch to collect and visualize RDS metrics, and how to generate alerts when these metrics go out of bounds. We've also shown you how to collect more detailed metrics from MySQL itself, whether on an ad hoc or continuous basis.
-> 
+>
 > In [the next and final part][part-3] of this series, we'll show you how you can set up Datadog to collect, visualize, and set alerts on metrics from both RDS and MySQL.
 
 この記事では、RDSのメトリックを収集し、視覚化するCloudWatchの使用方法を歩いていると、これらの指標が範囲外に行くときどのようにアラートを生成します。また、かどうか、広告アドホックまたは継続的に、MySQLの自体からより詳細なメトリックを収集する方法をあなたに示しました。
