@@ -108,11 +108,7 @@ mon-get-stats CPUUtilization
 
 > The third way to collect CloudWatch metrics is via your own monitoring tools, which can offer extended monitoring functionality. For instance, if you want to correlate metrics from your database with other parts of your infrastructure (including the applications that depend on that database), or you want to dynamically slice, aggregate, and filter your metrics on any attribute, or you need dynamic alerting mechanisms, you probably need a dedicated monitoring system. Monitoring tools that seamlessly integrate with the CloudWatch API can, with a single setup process, collect metrics from across your AWS infrastructure.
 
-CloudWatchのメトリックを収集する第三の方法は、高度な監視機能を持った独自の監視ツールを使う方法です。例えば、
-
-あなたは、（そのデータベースに依存するアプリケーションを含む）、インフラストラクチャの他の部分を使用してデータベースからのメトリックを相関したい場合や、たとえば、動的に、骨材をスライスし、任意の属性にあなたのメトリックをフィルタするか、ダイナミック必要メカニズムを警告、あなたはおそらく、専用の監視システムが必要です。
-
-シームレスに、単一のセットアッププロセスで、あなたのAWSインフラストラクチャ全体からメトリックを収集することができますCloudWatchのAPIとの統合監視ツール。
+CloudWatchのメトリックを収集する第三の方法は、高度な監視機能を持った独自の監視ツールを使う方法です。例えば、データベースから収集したメトリクスを、アプリを含むインフラの他の部分から収集したメトリクスと相関したい場合。又、収集したばかりのメトリクスを属性に基づいて、その場で、分類し、集約し、フィルターしたい場合。ダイナミックなアラートシステムが必要な場合。これなの場合は、ダイナミックな監視システムが必要になるでしょう。単一の設定プロセスで、高度にCloudWatchのAPIと連携できる監視ツールは、AWS上に構築したインフラ全体に渡ってメトリクスを収集してくれるはずです。
 
 
 > In [Part 3][part-3] of this series, we walk through how you can easily collect, visualize, and alert on any RDS metric using Datadog.
@@ -124,32 +120,36 @@ CloudWatchのメトリックを収集する第三の方法は、高度な監視�
 
 > CloudWatch offers several high-level metrics for any database engine, but to get a deeper look at MySQL performance you will need [metrics from the database instance itself][part-1]. Here we will focus on four methods for metric collection:
 
-CloudWatchのは、任意のデータベースエンジンのいくつかの高レベルのメトリックを提供していますが、データベース・インスタンス自体からのメトリックが必要になりますMySQLのパフォーマンスでより深い外観を取得します。ここでは、メトリック収集のための4つの方法に焦点を当てます。
+> - [Querying server status variables](#querying-server-status-variables)
+> - [Querying the performance schema and sys schema](#querying-the-performance-schema-and-sys-schema)
+> - [Using the MySQL Workbench GUI](#using-the-mysql-workbench-gui)
+> - [Using a MySQL monitoring tool](#using-a-mysql-monitoring-tool)
 
+CloudWatchは、任意のデータベースエンジンの概要的なメトリクスを提供してくれています。しかし、より詳細にMySQLのパフォーマンスを把握したい場合は、[データベースインスタンス自体からメトリクスを収集する][part-1]必要があります:
 
--   [Querying server status variables](#querying-server-status-variables)
--   [Querying the performance schema and sys schema](#querying-the-performance-schema-and-sys-schema)
--   [Using the MySQL Workbench GUI](#using-the-mysql-workbench-gui)
--   [Using a MySQL monitoring tool](#using-a-mysql-monitoring-tool)
+- [サーバーステータスに関する変数への問い合わせ](#querying-server-status-variables)
+- [performance schemaとsys schemaへの問い合わせ](#querying-the-performance-schema-and-sys-schema)
+- [MySQL Workbench GUI](#using-the-mysql-workbench-gui)
+- [MySQL監視ツール](#using-a-mysql-monitoring-tool)
+
 
 <!--
-need to fix at the end of translation, since these lines barkes markdown:
 <h3 class="anchor" id="querying-server-status-variables">Querying server status variables</h3>
 <h4 class="anchor" id="connecting-to-your-rds-instance">Connecting to your RDS instance</h4>
 -->
-
 ### <a class="anchor" id="querying-server-status-variables"></a>Querying server status variables
 #### <a class="anchor" id="connecting-to-your-rds-instance"></a>Connecting to your RDS instance
 
 > With RDS you cannot directly access the machines running MySQL. So you cannot run `mysql` commands locally or check CPU utilization from the machine itself, as you could if you installed MySQL yourself on a standalone EC2 instance. That said, you _can_ connect to your MySQL instance remotely using standard tools, provided that the security group for your MySQL instance permits connections from the device or EC2 instance you are using to initiate the connection.
 
-RDSを使用すると、直接MySQLを実行しているマシンにアクセスすることはできません。だから、MySQLがローカルにコマンドを実行するか、あなたは可能性としてスタンドアロンEC2インスタンス上でMySQLを自分でインストールした場合、マシン自体からCPU使用率を確認することはできません。それはあなたがリモートで標準ツールを使用して、MySQLインスタンスに接続することができ、言った、あなたのMySQLインスタンスのセキュリティグループがデバイスまたはEC2インスタンスからの接続では、接続を開始するために使用している可能にすることを条件とします。
+RDSでは、MySQLを実行しているマシンに直接アクセスすることはできません。従って、EC2インスタンス上にMySQLをインストールした場合のように、`mysql`コマンドをローカルから実行したり、CPUの利用率をそのマシン自身から確認したりすることができません。しかしながら、MySQLインスタンスのセキュリティグループが、それに接続使用としているEC2インスタンスやデバイスからの接続を許可している場合、リモートでスタンダードツールを使ってMySQLインスタンスに接続することはできます。
+
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_to_rds.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_to_rds.png"></a>
 
 > For example, if your RDS MySQL instance accepts traffic only from inside its security group, you can launch an EC2 instance in that security group, and then apply a second security group rule to the EC2 instance to accept inbound SSH traffic (*see diagram above*). Then you can SSH to the EC2 instance, from which you can connect to MySQL using the mysql command line tool:
 
-インバウンドSSHトラフィックを許可するようにRDS MySQLインスタンスのみ、そのセキュリティグループ内部からのトラフィックを受け入れる場合たとえば、あなたがそのセキュリティグループにEC2インスタンスを起動することができ、その後、EC2インスタンスに第2のセキュリティグループルールを適用します（*上記の図を参照してください。*）。そして、あなたはmysqlコマンドラインツールを使用してMySQLに接続することができ、そこからEC2インスタンスにSSHすることができます。
+例えば、RDSのMySQLインスタンスがセキュリティグループ内部からのトラフィックを受け入れる場合、そのセキュリティーグループ内にEC2インスタンスを起動します。次に、そのEC2インスタンスに、インバウンドSSHトラフィックを許可するように、第2のセキュリティグループルールを適用します（*上記の図を参照してください。*）。そして、SSH経由でそのEC2インスタンスを操作し、mysqlコマンドラインツールを使用してRDS上のMySQLから情報を集取してきます。
 
 
 <pre class="lang:sh">
@@ -157,12 +157,13 @@ mysql -h instance-name.xxxxxx.us-east-1.rds.amazonaws.com -P 3306 -u yourusernam
 </pre>
 
 > The instance endpoint (ending in `rds.amazonaws.com`) can be found in the list of instances on the [RDS console][rds-console].
->
+
 > Once you connect to your database instance, you can query any of the hundreds of available MySQL metrics, known as [server status variables][ssv]. To check metrics on connection errors, for instance:
 
-（rds.amazonaws.comで終わる）インスタンスのエンドポイントは、RDSのコンソール上のインスタンスのリストに記載されています。
+インスタンスのエンドポイント(`rds.amazonaws.com`で終わる部分)は、[RDSのコンソール][rds-console]上のインスタンスリストに記載されています。
 
-あなたは、データベース・インスタンスに接続したら、サーバーの状態変数として知られている利用可能なMySQLのメトリック、数百人のいずれかを照会することができます。例えば、接続エラーにメトリックを確認するには:
+データベース・インスタンスに接続できたら、[server status variables][ssv]で知られる、数百をもあるMySQLメトリクスを参照することができるようになります。例えば、接続エラーのメトリックを確認するのは次のようになります:
+
 
 <pre class="lang:mysql">
 mysql> SHOW GLOBAL STATUS LIKE '%Connection_errors%';
@@ -174,7 +175,8 @@ mysql> SHOW GLOBAL STATUS LIKE '%Connection_errors%';
 
 > Server status variables by and large capture high-level server activity. To collect metrics at the query level, such as query latency and query errors, you can use the MySQL [performance schema][performance-schema], which captures detailed statistics on server events.
 
-サーバステータス変数と大キャプチャハイレベルのサーバーの活動。このようなクエリの待機時間とクエリエラーとしてクエリレベルでメトリックを収集するには、サーバーのイベントに関する詳細な統計情報をキャプチャし、MySQLのパフォーマンススキーマを使用することができます。
+Server status variablesは、概して、サーバーアクティビティの概要的な情報を収拾しています。"クエリーレイテンシ"や"クエリーエラー"などの、クエリーレベルのメトリクスを収集するには、サーバーイベントに関し詳細な統計情報を集取しているMySQL [performance schema][performance-schema]を使うことができます。
+
 
 #### Enabling the performance schema
 
