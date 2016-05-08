@@ -35,18 +35,20 @@ AWSの管理コンソールを使用する方法が、CloudWatchのでRDSを監�
 #### Graphs
 
 > Once you are signed in to your AWS account, you can open the [CloudWatch console][aws-console] where you will see the metrics related to the different AWS services.
->
+
 > By selecting RDS from the list of services and clicking on "Per-Database Metrics," you will see your database instances, along with the available metrics for each:
 
-あなたのAWSアカウントにサインインしたら、あなたは[CloudWatchのコンソール]を開くことができます[AWS-コンソール]ここで、あなたは別のAWSサービスに関連するメトリックが表示されます。
+AWSアカウントにサインインしたら、各種AWSサービスに関連するメトリックを閲覧することができる[CloudWatchコンソール][aws-console]を開くことができます。
 
-サービスのリストからRDSを選択し、をクリックすると、「データベースごとのメトリック、「あなたはそれぞれのために使用可能なメトリックと一緒に、あなたのデータベース・インスタンスが表示されます。
+サービスリストからRDSを選択し、"Per-Database Metrics"をクリックすると、閲覧可能なメトリクスと共に、データベースインスタンスのリストが表示されます。
+
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-list-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-list-2.png"></a>
 
 > Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console.
 
-ちょうどあなたが視覚化するメトリックの横にあるチェックボックスを選択し、それらは、コンソールの下部にグラフで表示されます。
+可視化したいメトリクスの横のチェックボックスを選択すると、コンソールの下部にグラフで表示されます。
+
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-graph.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-graph.png"></a>
 
@@ -99,6 +101,7 @@ mon-get-stats CPUUtilization
 > Full usage details for the `mon-get-stats` command are available [in the AWS documentation][mon-get-stats].
 
 `mon-get-stats`コマンドの完全は使い方は、[AWSのマニュアルで該当コマンドの詳細][mon-get-stats]を参照してください。
+
 
 <!-- <h3 class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration">Using a monitoring tool with a CloudWatch integration</h3> -->
 ### <a class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration"></a>Using a monitoring tool with a CloudWatch integration
