@@ -1,4 +1,4 @@
-# Monitor RDS MySQL using Datadog
+# [翻訳作業中]: Monitor RDS MySQL using Datadog
 
 > *This post is part 3 of a 3-part series on monitoring MySQL on Amazon RDS. [Part 1][part-1] explores the key metrics available from RDS and MySQL, and [Part 2][part-2] explains how to collect both types of metrics.*
 
