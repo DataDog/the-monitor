@@ -409,13 +409,13 @@ RDSは、マスターMySQLインスタンスからのリードレプリカの作
 > * [Storage space](#storage-metrics)
 > * [Client connections and errors](#connection-metrics)
 
-この記事では、我々はあなたがアマゾンRDS上で展開のMySQLのパフォーマンスのタブを保つために監視する必要があり、最も重要なメトリックを検討しています。あなただけのRDS上のMySQLの使用を開始している場合は、以下に示す評価指標を監視することは、あなたのデータベースのアクティビティとパフォーマンスに優れた洞察力を与えるだろう。彼らはまた、優れたアプリケーションのパフォーマンスを維持するために、ご使用のインスタンス・ストレージ、IOPS、またはメモリを増やす必要があるときに識別するのに役立ちます。
+この記事では、Amazon RDS上にあるMySQLのパフォーマンスを管理するために監視の必要なメトリクスを検討してきました。もしもあなたが、RDS上のMySQLを使い始めたばかりなら、以下にリストたメトリクスは、データベースのアクティビティーとパフォーマンスについて優れた洞察を与えてくれるでしょう。又、それらのメトリクスは、アプリケーションのパフォーマンスを正しく維持するために必要な、ストレージ、IOPS、メモリーの増強のタイミングを判断する材料になるでしょう。
 
-* [Query throughput](#query-throughput)
-* [Query performance and errors](#query-performance)
-* [Disk queue depth](#disk-i/o-metrics)
-* [Storage space](#storage-metrics)
-* [Client connections and errors](#connection-metrics)
+* [クエリーのスループット](#query-throughput)
+* [クエリーのパフォーマンス](#query-performance)
+* [リソースの活用状況](#resource-utilization)
+* [コネクション](#connection-metrics)
+* [Read replica metrics](#read-replica-metrics)
 
 
 > [Part 2][part-2] of this series provides instructions for collecting all the metrics you need from CloudWatch and from MySQL.
