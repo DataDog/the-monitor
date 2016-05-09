@@ -1,4 +1,4 @@
-# [翻訳作業中]: How to collect RDS MySQL metrics
+# How to collect RDS MySQL metrics
 
 > *This post is part 2 of a 3-part series on monitoring MySQL on Amazon RDS. [Part 1][part-1] explores the key performance metrics of RDS and MySQL, and [Part 3][part-3] describes how you can use Datadog to get a full view of your MySQL instance.*
 
