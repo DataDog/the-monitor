@@ -34,14 +34,11 @@ Client metrics measure the volume of client connections and requests.
 <table>
 <tbody>
 <tr>
-<td rowspan="2"><b>Metric description</b></td>
-<td colspan="3"><b>Name</b></td>
-<td rowspan="2"><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/" target="_blank"><b>Metric Type</b></a></td>
-</tr>
-<tr>
+<td><b>Metric description</b></td>
 <td><b>Redis</b></td>
 <td><b>Memcached</b></td>
 <td><b>CloudWatch</b></td>
+<td><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/" target="_blank"><b>Metric Type</b></a></td>
 </tr>
 <tr>
 <td>Number of current <b>client</b> <b>connections</b> to the cache</td>
@@ -84,14 +81,11 @@ By tracking performance metrics you will be able to know at a glance if your cac
 <table>
 <tbody>
 <tr>
-<td rowspan="2"><b>Metric description</b></td>
-<td colspan="3"><b>Name</b></td>
-<td rowspan="2"><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/" target="_blank"><b>Metric Type</b></a></td>
-</tr>
-<tr>
+<td><b>Metric description</b></td>
 <td><b>Redis</b></td>
 <td><b>Memcached</b></td>
 <td><b>CloudWatch</b></td>
+<td><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/" target="_blank"><b>Metric Type</b></a></td>
 </tr>
 <tr>
 <td><b>Hits</b>: Number of requested files that were served from the cache without requesting to the backend</td>
@@ -115,7 +109,7 @@ By tracking performance metrics you will be able to know at a glance if your cac
 <td>Other</td>
 </tr>
 <tr>
-<td><b>Latency</b>: Time between the request being sent and the response being received from the backend</td>
+<td><b>Latency</b>: Time between the request being sent and the response being received from the backend</td>
 <td>See * below</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
@@ -141,21 +135,20 @@ Memory is the essential resource for any cache, and neglecting to monitor Elasti
 <table>
 <tbody>
 <tr>
-<td rowspan="2"><b>Metric description</b></td>
-<td colspan="3"><b>Name</b></td>
-<td rowspan="2"><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/" target="_blank"><b>Metric Type</b></a></td>
-</tr>
-<tr>
+<td><b>Metric description</b></td>
 <td><b>Redis</b></td>
 <td><b>Memcached</b></td>
 <td><b>CloudWatch</b></td>
+<td><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/" target="_blank"><b>Metric Type</b></a></td>
 </tr>
 <tr>
 <td><b>Memory usage</b>: Total number of bytes allocated by the cache engine</td>
-<td>used_memory</p>
-<p>&nbsp;</td>
-<td>bytes</p>
-<p>&nbsp;</td>
+<td>used_memory
+
+&nbsp;</td>
+<td>bytes
+
+&nbsp;</td>
 <td>BytesUsedForCache (Redis), BytesUsedForCacheItems (Memcached)</td>
 <td>Resource: Utilization</td>
 </tr>
@@ -188,7 +181,8 @@ Memory is the essential resource for any cache, and neglecting to monitor Elasti
 <td>Resource: Saturation</td>
 </tr>
 </tbody>
-</table> 
+</table>
+&nbsp;
 
 #### Metrics to alert on:
 

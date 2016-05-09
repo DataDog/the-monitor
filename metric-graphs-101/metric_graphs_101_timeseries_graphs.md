@@ -121,12 +121,13 @@ Area graphs are similar to line graphs, except the metric values are represented
 </thead>
 <tbody>
 <tr>
-<td rowspan="2"><strong>Unaggregated metrics</strong> from large numbers of hosts, making the slices too thin to be meaningful</td>
-<td rowspan="2" style="width: 335px!important;">Throughput metrics across hundreds of app servers<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/stack2_bad.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/stack2_bad.png" alt="Overloaded stacked area graph" /></a></td>
-<td style="width: 335px!important;">Line graph or solid-color area graph to track total, aggregate value<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/stack4_good.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/stack4_good.png" alt="Solid area graph" /></a></td>
-</tr>
-<tr>
-<td>Heat maps to track host-level data<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/stack8_good.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/stack8_good.png" alt="Throughput heat map" /></a></td>
+<td><strong>Unaggregated metrics</strong> from large numbers of hosts, making the slices too thin to be meaningful</td>
+<td style="width: 335px!important;">Throughput metrics across hundreds of app servers<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/stack2_bad.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/stack2_bad.png" alt="Overloaded stacked area graph" /></a></td>
+<td style="width: 335px!important;">Line graph or solid-color area graph to track total, aggregate value<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/stack4_good.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/stack4_good.png" alt="Solid area graph" /></a>
+
+<hr />
+
+Heat maps to track host-level data<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/stack8_good.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/stack8_good.png" alt="Throughput heat map" /></a></td>
 </tr>
 <tr>
 <td>Metrics that <strong>can't be added</strong> sensibly</td>
@@ -182,12 +183,13 @@ Bar graphs require no interpolation to connect one interval to the next, making 
 <td style="width: 335px!important;">Line graphs to isolate timeseries from each host<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/bar_good.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/bar_good.png" alt="Isolated latency metrics" /></a></td>
 </tr>
 <tr>
-<td rowspan="2"><strong>Unaggregated metrics</strong> from large numbers of sources, making the slices too thin to be meaningful</td>
-<td rowspan="2">Completed tasks across dozens of Cassandra nodes<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/cass_bad.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/cass_bad.png" alt="Bar graph of completed tasks" /></a></td>
-<td>Solid-color bars to track total, aggregate metric value<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/cass_good_bars.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/cass_good_bars.png" alt="Solid-color bar graph" /></a></td>
-</tr>
-<tr>
-<td>Heat maps to track host-level values<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/cass_good_heat.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/cass_good_heat.png" alt="Heat map of completed tasks" /></a></td>
+<td><strong>Unaggregated metrics</strong> from large numbers of sources, making the slices too thin to be meaningful</td>
+<td>Completed tasks across dozens of Cassandra nodes<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/cass_bad.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/cass_bad.png" alt="Bar graph of completed tasks" /></a></td>
+<td>Solid-color bars to track total, aggregate metric value<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/cass_good_bars.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/cass_good_bars.png" alt="Solid-color bar graph" /></a>
+
+<hr />
+
+Heat maps to track host-level values<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/cass_good_heat.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/cass_good_heat.png" alt="Heat map of completed tasks" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -202,23 +204,35 @@ Heat maps are essentially [distribution graphs](http://docs.datadoghq.com/graphi
 
 ### When to use heat maps
 
-<table><thead>
+<table class="wide">
+<thead>
 <tr>
 <th>What</th>
 <th>Why</th>
 <th>Example</th>
 </tr>
-</thead><tbody>
+</thead>
+<tbody>
 <tr>
-<td rowspan="2"><strong>Single metric</strong> reported by a large number of groups</td>
+<td><strong>Single metric</strong> reported by a large number of groups</td>
 <td>To convey general trends at a glance</td>
 <td style="width: 335px!important;">Web latency per host<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/web_latency_heat.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/web_latency_heat.png" alt="Webapp latency heat map" /></a></td>
-</tr>
+</tr><tr />
 <tr>
+<td></td>
+<td colspan="2">
+
+<hr />
+
+</td>
+</tr><tr />
+<tr>
+<td></td>
 <td>To see transient variations across members of a group</td>
 <td>Requests received per host<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/web_req.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/web_req.png" alt="Requests per host heat map" /></a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
   
 <h3>When to use something else</h3>  
   
