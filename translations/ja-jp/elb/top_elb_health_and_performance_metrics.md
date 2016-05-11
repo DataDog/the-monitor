@@ -1,5 +1,3 @@
-#[翻訳作業中]
-
 > *This post is part 1 of a 3-part series on monitoring Amazon ELB. [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics) explains how to collect its metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) shows you how Datadog can help you monitor ELB.*
 
 *このポストは、Amazon ELBの監視に関する3回シリーズのPart 1です。 [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics)では、Amazon ELBのメトリクスの収集方法に関して解説していきます。[Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog)では、Amazon ELBの監視にDatadogを役立てる方法を解説していきます。*
@@ -227,15 +225,15 @@ CloudWatchは、バックエンドインスタンスのステータスとパフ�
 > -   [**Backend instances health status**](#backend-metrics)
 > -   **[Backend latency](#backend-metrics)**
 
+このポストでは、Amazon ELBの最も重要なパフォーマンスメトリクスについて検討してきました。もしもあなたが、ELBを使ったロードバランシングを始めたばかりなら、以下に示しメトリクスは、ロードバランサー状況や、バックエンドで動作しているサーバーの状態とパフォーマンスについて洞察を提供してくれるでしょう:
 
-この記事では、最も重要なアマゾンELBパフォーマンス・メトリックを検討しています。あなただけの弾性負荷分散の使用を開始している場合は、以下に示す評価指標を監視することはあなたに偉大なあなたのロードバランサへの洞察だけでなく、バックエンドサーバーの状態とパフォーマンスを提供します：
+- **[**Request count**](#RequestCount)**
+- **[**Surge queue length** and **spillover count**](#SurgeQueueLength)**
+- [**ELB 5xx errors**](#HTTPCode_ELB_5XX)
+- [**Backend instances health status**](#backend-metrics)
+- **[Backend latency](#backend-metrics)**
 
-[リクエスト数]（＃RequestCount）
-（＃のSurgeQueueLength）[キューの長さと波及カウントサージ]
-ELBの5xxのエラー
-バックエンドインスタンス健康状態
-バックエンドの待ち時間
 
 > [Part 2 of this series](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics) provides instructions for collecting all the metrics you need from ELB.
 
-このシリーズの第2回では、あなたがELBから必要なすべてのメトリックを収集するための手順を説明します。
+このシリーズの[Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics)では、ELBから必要なすべてのメトリックを収集する手順を解説します。。
