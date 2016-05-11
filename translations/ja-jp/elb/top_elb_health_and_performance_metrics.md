@@ -1,19 +1,24 @@
-*This post is part 1 of a 3-part series on monitoring Amazon ELB. [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics) explains how to collect its metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) shows you how Datadog can help you monitor ELB.*
+#[翻訳作業中]
 
-## [翻訳作業中] What is Amazon Elastic Load Balancing?
+> *This post is part 1 of a 3-part series on monitoring Amazon ELB. [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics) explains how to collect its metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) shows you how Datadog can help you monitor ELB.*
 
-Elastic Load Balancing (ELB) is an AWS service used to dispatch incoming web traffic from your applications across your Amazon EC2 backend instances, which may be in different availability zones.
+*このポストは、Amazon ELBの監視に関する3回シリーズのPart 1です。 [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics)では、Amazon ELBのメトリクスの収集方法に関して解説していきます。[Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog)では、Amazon ELBの監視にDatadogを役立てる方法を解説していきます。*
 
-ELB is widely used by web and mobile applications to help ensure a smooth user experience and provide increased fault tolerance, handling traffic peaks and failed EC2 instances without interruption.
+## What is Amazon Elastic Load Balancing?
 
-ELB continuously checks for unhealthy EC2 instances. If any are detected, ELB immediately reroutes their traffic until they recover. If an entire availability zone goes offline, Elastic Load Balancing can even route traffic to instances in other availability zones. With [Auto Scaling](https://aws.amazon.com/autoscaling/), AWS can ensure your infrastructure includes the right number of EC2 hosts to support your changing application load patterns.
+> Elastic Load Balancing (ELB) is an AWS service used to dispatch incoming web traffic from your applications across your Amazon EC2 backend instances, which may be in different availability zones.
 
-弾性負荷分散（ELB）は、異なるアベイラビリティゾーンであってもよいあなたのAmazon EC2のバックエンドインスタンス間で、アプリケーションからの着信Webトラフィックをディスパッチするために使用AWSサービスです。
+Elastic Load Balancing (ELB)は、複数のアベイラビリティーゾーンの複数のAmazon EC2のバックエンドインスタンスから来るWebトラフィックを、外部に配信するためのAWSが提供するサービスです。
 
-ELBは広く、トラフィックのピークを処理し、スムーズなユーザーエクスペリエンスを確保し、増加したフォールトトレランスを提供するために、Webおよびモバイルアプリケーションで使用されると、中断することなく、EC2インスタンスを失敗しました。
 
-ELBは、継続的に不健康なEC2インスタンスをチェックします。いずれかが検出された場合、それらが回復するまで、ELBはすぐにトラフィックを再ルーティングします。全体のアベイラビリティゾーンは、他の利用可能ゾーンでインスタンスにオフライン、弾性負荷分散することができてもルートトラフィックを進みます。オートスケーリングにより、AWSは、インフラストラクチャは、あなたの変更、アプリケーションの負荷パターンをサポートするためのEC2ホストの右の数を含んで確保することができます。
+> ELB is widely used by web and mobile applications to help ensure a smooth user experience and provide increased fault tolerance, handling traffic peaks and failed EC2 instances without interruption.
 
+ELBは、スムーズなユーザーエクスペリエンスを確保したり、対障害性能を上げるために、又、トラフィックのピークを処理し、障害の起きたEC2インスタンスを中断無く切り替えるために、Webやモバイルアプリで広く使われています。
+
+
+> ELB continuously checks for unhealthy EC2 instances. If any are detected, ELB immediately reroutes their traffic until they recover. If an entire availability zone goes offline, Elastic Load Balancing can even route traffic to instances in other availability zones. With [Auto Scaling](https://aws.amazon.com/autoscaling/), AWS can ensure your infrastructure includes the right number of EC2 hosts to support your changing application load patterns.
+
+ELBは、EC2インスタンスの状態を継続的にチェックしてます。もしも、不調の兆しが検出されれば、ELBは直ちにトラフィックのルーティング変更し、回復するまでその変更を維持します。もしも、アベイラビリティゾーン全体がオフラインになっても、ELBは、他のアベイラビリティゾーンのインスタンスへトラフィックをルーティングします。ELBのサービスに、EC2の[オートスケール](https://aws.amazon.com/autoscaling/)機能を併せると、AWS上のでインフラに、アプリの負荷のパターンに合わせてEC2のホスト数を追加することができるようになります。
 
 
 [![ELB dashboard - Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-01.png)
@@ -25,13 +30,17 @@ As the first gateway between your users and your application, load balancers are
 -   [Load balancer metrics](#elb-metrics)
 -   [Backend-related metrics](#backend-metrics)
 
+ユーザーとアプリケーションの間の最初のゲートウェイとして、ロードバランサは、スケーラブルなインフラストラの重要な構成要素です。もしも、ロードバランサーが正常に動作しないと、ユーザーは、トランザクションの喪失につながるようなあからさまなエラーや、アプリの長いレスポンス待ち時間を経験したりすることになるでよう。これらの理由により私たちは、ELBを継続的に監視する必要があり、そのキーメトリクスは、ロードバランサー自体とその背後にあるEC2インスタンスを安定的に動作させるために、十分理解されている必要があるのです。
+
+ELBを監視するためのメトリクスには、次の2つの大きなカテゴリーがあります:
+
+- [ロードバランサーのメトリクス](#elb-metrics)
+- [バックエンド関連のメトリクス](#backend-metrics)
+
+
 This article references metric terminology introduced in [our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
-ユーザーとアプリケーションの間の最初のゲートウェイとして、ロードバランサは、任意のスケーラブルなインフラストラクチャの重要な部分です。それが正常に動作しない場合、ユーザーは、例えば、失われたトランザクションにつながる可能性が非常に遅く、アプリケーションの応答時間、あるいはあからさまなエラーを、体験することができます。 ELBを継続的に監視する必要があり、その主要な指標はよくその背後にあるロードバランサ自体とEC2インスタンスが正常な状態であることを確実にするために理解している理由です。監視するELBメトリックの2つのカテゴリがあります。
-
-ロードバランサのメトリック
-バックエンド関連のメトリック
-この記事の参照メトリック用語は、メトリック収集と警告するためのフレームワークを提供し、当社のモニタリング101シリーズで導入されました。
+この記事では、[Monitoring 101 series][metric-101]で紹介した”メトリクスの収集とアラートのフレームワーク”で解説した用語を採用しています。
 
 
 ### Load balancer metrics

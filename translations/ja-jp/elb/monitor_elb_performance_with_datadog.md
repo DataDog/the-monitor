@@ -1,12 +1,13 @@
 *This post is the last of a 3-part series on monitoring Amazon ELB. [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics) explores its key performance metrics, and [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics) explains how to collect these metrics.*
 
+この投稿は、Amazon ELBの監視に3回シリーズの最後です。パート1は、その主要なパフォーマンス指標を探り、そして第2部では、これらのメトリックを収集する方法について説明します。
+
+
 If you’ve already read [our post](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics) on collecting Elastic Load Balancing metrics, you’ve seen that you can visualize their recent evolution and set up simple alerts using the AWS Management Console’s web interface. For a more dynamic and comprehensive view, you can connect ELB to Datadog.
 
 Datadog lets you collect and view ELB metrics, access their historical evolution, and slice and dice them using any combination of properties or custom tags. Crucially, you can also correlate ELB metrics with metrics from any other part of your infrastructure for better insight—especially native metrics from your backend instances. And with more than 100 supported integrations, you can create and send advanced alerts to your team using collaboration tools such as [PagerDuty](https://www.datadoghq.com/blog/pagerduty/) and [Slack](https://www.datadoghq.com/blog/collaborate-share-track-performance-slack-datadog/).
 
 In this post we’ll show you how to get started with the ELB integration, and how to correlate your load balancer performance metrics with your backend instance metrics.
-
-この投稿は、Amazon ELBの監視に3回シリーズの最後です。パート1は、その主要なパフォーマンス指標を探り、そして第2部では、これらのメトリックを収集する方法について説明します。
 
 すでに弾性ロードバランシングメトリックを収集する上で私たちの記事を読んでいれば、あなたは彼らの最近の進化を可視化し、AWS管理コンソールのWebインタフェースを使用して簡単なアラートを設定することができることを見てきました。よりダイナミックかつ包括的なビューでは、DatadogにELBを接続することができます。
 
