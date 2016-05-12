@@ -1,5 +1,3 @@
-# [翻訳作業中]　
-
 > *This post is part 2 of a 3-part series on monitoring Amazon ELB. [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics) explores its key performance metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) shows you how Datadog can help you monitor ELB.*
 
 *このポストは、Amazon ELBの監視に関する3回シリーズのPart 2です。 [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics)では、ELBのキーメトリクスを解説しています。[Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog)では、Amazon ELBの監視にDatadogを役立てる方法を解説していきます。*
@@ -195,47 +193,42 @@ CloudWatchは、APIを介して外部監視システムと連携すうことが�
 
 > > As explained in [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics), CloudWatch’s ELB-related metrics give you great insight about your load balancers’ health and performance. However, for more precision and granularity on your backend instances’ performance, you should consider monitoring their resources directly. Correlating native metrics from your EC2 instances with ELB metrics will give you a fuller, more precise picture. In [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog), we cover a concrete example of this type of metrics collection and detail how to monitor ELB using Datadog.
 
-
-
-
-
-
-パート1で説明したように、CloudWatchののELB-関連のメトリックは、あなたのロードバランサの健康とパフォーマンスについての素晴らしい洞察力を与えます。しかし、あなたのバックエンドインスタンスのパフォーマンスの詳細精度と粒度のために、あなたが直接そのリソースの監視を検討する必要があります。 ELBメトリックを使用してEC2インスタンスからネイティブメトリックを相関させること、あなたに充実し、より正確な画像が得られます。第3部では、指標の収集とELBがDatadogを使用して監視する方法を詳細のこのタイプの具体的な例をカバーしています。
+[Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics)で紹介したように、CloudWatchから集取できるELB関連メトリクスを使えば、ロードバランサの状態とパフォーマンスについての深い洞察力を与ることができます。しかしながら、バックエンドインスタンスの、より高精細で高精度なパフォーマンス情報のためには、それらのリソースを直接監視することを検討刷る必要があります。EC2インスタンスから収集したネーティブのメトリクスをELBのメトリクスと相関することによって、より完結し、より精度の高い内容を把握出るようになります。[Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog)では、このタイプのメトリクス収集方法の例として、Datadogを使ったELBの監視について解説していきます。
 
 
 ## ELB Access Logs
 
 > ELB access logs capture all the information about every request received by the load balancer, such as a time stamp, client IP address, path, backend response, latency, and so on. It can be useful to investigate the access logs for particular requests in case of issues.
 
-ELBのアクセスログは、というように、このようなタイムスタンプ、クライアントのIPアドレス、パス、バックエンドの応答、待ち時間としてロードバランサで受信したすべてのリクエストに関するすべての情報をキャプチャし、。問題の場合には、特定の要求のためのアクセスログを調査することが有用であり得ます。
+ELBのアクセスログには、タイムスタンプ、クライアントのIPアドレス、リクエストパス、バックエンドの応答内容、レイテンシーなどのロードバランサーで受信した全リクエストの情報がキャプチャされています。特定のリクエストに関してアクセスログを調査することが、問題が発生した場合の有効に解決手段になることもあります。
 
 
 ### Configuring the access logs
 
 > First you must enable the access logs feature, which is disabled by default. Logs are stored in an Amazon S3 bucket, which incurs additional storage costs.
 
-まず、デフォルトでは無効になってアクセスログ機能を、有効にする必要があります。ログには、追加のストレージコストがかかるのAmazon S3バケットに格納されます。
+まず最初に、デフォルトでは無効になっているアクセスログ機能を有効にします。ログは、Amazon S3のバケツに収納されます。そして、このログに保存には、Amazon S3のストレージ料金が発生します。
 
 
 > Elastic Load Balancing creates [log files](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html#access-log-file-format) at user-defined intervals, between 5 and 60 minutes. Every single request received by ELB is logged, including those requests that couldn’t be processed by your backend instances (see [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics) for the different root causes of ELB issues). You can see more details [here](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html#access-log-entry-format) about the log entry format and the different fields containing information about a request.
 
-弾性負荷分散は、5〜60分の間で、ユーザ定義の間隔でログファイルが作成されます。 ELBで受信したすべての単一の要求は、バックエンドのインスタンス（ELBの問題の別の根本原因のためにパート1を参照）によって処理することができなかったこれらの要求を含め、ログに記録されます。あなたは、ログエントリのフォーマットや要求に関する情報を含む異なるフィールドについてはこちらの詳細を見ることができます。
+ELBは、ユーザーが定義した間隔(5〜60分の間)で、[ログファイル](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html#access-log-file-format)を生成していきます。ELBで受信した全てのリクエストは、ログに保存されます。このリクエストには、バックエンドインスタンスで、処理ができなかったものも含まれます(ELB障害の異なる根本原因に関しては、[Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics)を参照してください)。アクセスログのフォーマットとリクエストに含まれる情報とそのフィールドに関しては、この[リンク先](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html#access-log-entry-format)を参照してください。
 
 
 ### Analyzing logs
 
 > ELB access logs can be useful when troubleshooting and investigating specific requests. However, if you want to find and analyze patterns in the overall access log files, you might want to use dedicated log analytics tools, especially if you are dealing with large amount of traffic generating heavy log file volume.
 
-トラブルシューティングおよび特定の要求を調査する際ELBアクセスログが役立ちます。あなたが見つけると、全体的なアクセス・ログ・ファイル内のパターンを分析したい場合は、あなたが重いログファイルのボリュームを生成する大量のトラフィックを扱っている場合は特に、専用のログ分析ツールを使用することもできます。
+ELBアクセスログはトラブルシューティングや特定にリクエストに関する調査を実施している時のは非常に便利です。しかし、全てのアクセスログファイルを解析し、パターンを発見たいようなケースでは、専用のログ解析ツールを使った方た方が良いかもしれません。特に、膨大なトラフィックを扱い、大量のログファイルを生成している場合には、専用のログ解析ツールが必要です。
 
 
 ## Conclusion
 
 > In this post we have walked through how to use CloudWatch to collect and visualize ELB metrics, how to generate alerts when these metrics go out of bounds, and how to use access logs for troubleshooting.
 
-この記事では、我々はELBメトリックを収集し、視覚化するCloudWatchの使用方法を歩いている、これらの指標は、トラブルシューティングのためにアクセスログを使用する方法を境界の外に出て、ときにアラートを生成する方法について説明します。
+このポストでは、CloudWatchを使ってELBメトリックを収集し、視覚化する方法を解説しました。次に、メトリクスが閾値を超えた場合にアラートを発生させる方法について解説しました。最後に、アクセスログを使ったトラブルシューティングの方法も解説してきました。
 
 
 > In the [next and final part on this series](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) you will learn how you can monitor ELB metrics using the Datadog integration, along with native metrics from your backend instances for a complete view, with a minimum of setup.
 
-このシリーズの次のと最後の部分では、セットアップを最小限に抑えて、完全なビューのためのバックエンドインスタンスからネイティブの指標とともに、Datadog統合を使用して、ELBのメトリックを監視する方法を学びます。
+この[シリーズの次で最後の部分](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog)では、監視のセットアップを最小限に抑えつつ、更にバックエンドインスタンスもネイティブなメトリクスして完全な状況把握を実現するための、Datadogのインテグレーションを使った、ELBメトリクスの方法を解説していきます。
