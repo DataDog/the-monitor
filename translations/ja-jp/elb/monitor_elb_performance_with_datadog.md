@@ -47,7 +47,7 @@ ELBに加え、RDS, SES, SNMS, 又は他のAWSのサービスを使っている�
 
 > Once you have successfully integrated Datadog with ELB, you will see [a default dashboard](https://app.datadoghq.com/screen/integration/aws_elb) called “AWS-Elastic Load Balancers” in your list of [integration dashboards](https://app.datadoghq.com/dash/list). The ELB dashboard displays all of the key metrics highlighted in [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics) of this series: requests per second, latency, surge queue length, spillover count, healthy and unhealthy hosts counts, HTTP code returned, and more.
 
-
+DatadogとELBの連携が完了すると、インテグレーション用のダッシュボード一覧に、“AWS-Elastic Load Balancers”という名の[ELBのデフォルトダッシュボード](https://app.datadoghq.com/screen/integration/aws_elb) が表示されます。
 
 
 あなたが成功しELBでDatadogを統合したら、統合ダッシュボードのリストに「AWS-弾性ロードバランサ」と呼ばれるデフォルトのダッシュボードが表示されます。 ELBのダッシュボードが表示主要指標のすべてが、このシリーズのパート1で強調表示：秒、待ち時間、サージキューの長さ、波及カウント、健康と不健康なホスト数、HTTPコードが返され、より多くのあたりの要求を。
