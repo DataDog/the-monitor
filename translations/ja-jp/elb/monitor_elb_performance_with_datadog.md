@@ -47,53 +47,37 @@ ELBに加え、RDS, SES, SNMS, 又は他のAWSのサービスを使っている�
 
 > Once you have successfully integrated Datadog with ELB, you will see [a default dashboard](https://app.datadoghq.com/screen/integration/aws_elb) called “AWS-Elastic Load Balancers” in your list of [integration dashboards](https://app.datadoghq.com/dash/list). The ELB dashboard displays all of the key metrics highlighted in [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics) of this series: requests per second, latency, surge queue length, spillover count, healthy and unhealthy hosts counts, HTTP code returned, and more.
 
-DatadogとELBの連携が完了すると、インテグレーション用のダッシュボード一覧に、“AWS-Elastic Load Balancers”という名の[ELBのデフォルトダッシュボード](https://app.datadoghq.com/screen/integration/aws_elb) が表示されます。
-
-
-あなたが成功しELBでDatadogを統合したら、統合ダッシュボードのリストに「AWS-弾性ロードバランサ」と呼ばれるデフォルトのダッシュボードが表示されます。 ELBのダッシュボードが表示主要指標のすべてが、このシリーズのパート1で強調表示：秒、待ち時間、サージキューの長さ、波及カウント、健康と不健康なホスト数、HTTPコードが返され、より多くのあたりの要求を。
+DatadogとELBの連携が完了したら、[“AWS-Elastic Load Balancers”](https://app.datadoghq.com/screen/integration/aws_elb)というELBのデフォルトダッシュボードが、[インテグレーション用ダッシュボード一覧](https://app.datadoghq.com/dash/list)に表示されるようになります。ELBのダッシュボードには、このシリーズの[Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics)で注目した、requests per second、 latency、 surge queue length、 spillover count、 healthyとunhealthy hosts counts、 HTTP code returnedなどのメトリクスがグラフ化されています。
 
 
 [![ELB default dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-02.png)
 
-*ELB default dashboard on Datadog*
+> *ELB default dashboard on Datadog*
+
+DatadogサイトにあるELBのデフォルトダッシュボード
 
 ## Customize your dashboards
 
 > Once you are capturing metrics from Elastic Load Balancing in Datadog, you can build on the default dashboard and edit or add additional graphs of metrics from ELB or even from other parts of your infrastructure. To start building a custom [screenboard](https://www.datadoghq.com/blog/introducing-screenboards-your-data-your-way/), clone the default ELB dashboard by clicking on the gear on the upper right of the default dashboard.
 
-
-
-
-
-あなたはDatadogに弾性負荷分散からメトリックをキャプチャしたら、デフォルトのダッシュボードや編集の上に構築したり、インフラストラクチャの他の部分からでもELBからのメトリックの追加のグラフを追加したりすることができます。カスタムscreenboardの作成を開始するには、デフォルトのダッシュボードの右上の歯車をクリックしてデフォルトELBのダッシュボードのクローンを作成。
+ELBからのメトリクスがDatadogで収集できていることが確認できたら、ディフォルトのダッシュボードを基に、グラフの設定を変更したり、ELBの他のメトリクスやインフラの他の部分のメトリクスを表示するための新たなグラフを追加したり、カスタムダッシュボードを作成します。このカスタム[screenboard](https://www.datadoghq.com/blog/introducing-screenboards-your-data-your-way/)の作成を開始するには、デフォルトのELBダッシュボードの右上にあるギアのマークからダッシュボードのクローンを選択してクローンを作成します。
 
 
 > You can also create [timeboards](http://help.datadoghq.com/hc/en-us/articles/204580349-What-is-the-difference-between-a-ScreenBoard-and-a-TimeBoard-), which are interactive Datadog dashboards displaying the evolution of multiple metrics across any timeframe.
 
-
-
-
-
-また、任意の時間枠全体で複数のメトリックの進化を表示するインタラクティブDatadogダッシュボードですtimeboardsを、作成することができます。
+任意の時間枠で複数のメトリクスの経過を表示できるインタラクティブなDatadogダッシュボードの[timeboards](http://help.datadoghq.com/hc/en-us/articles/204580349-What-is-the-difference-between-a-ScreenBoard-and-a-TimeBoard-)を作成することもできます。
 
 
 ## Correlate ELB with EC2 metrics
 
 > As explained in [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics), CloudWatch’s ELB-related metrics inform you about your load balancers’ health and performance. ELB also provides backend-related metrics reflecting your backend instances health and performance. However, to fully monitor your backend instances, you should consider collecting these backend metrics directly from EC2 as well for better insight. By correlating ELB with EC2 metrics, you will be able to quickly investigate whether, for example, the high number of requests being queued by your load balancers is due to resource saturation on your backend instances (memory usage, CPU utilization, etc.).
 
-
-
-
-
-パート1で説明したように、CloudWatchののELB-関連の指標は、あなたのロードバランサの健康とパフォーマンスについてお知らせ。 ELBはまたあなたのバックエンドインスタンスの健全性とパフォーマンスを反映して、バックエンド関連のメトリックを提供します。しかし、完全にあなたのバックエンドのインスタンスを監視するために、あなたはより良い洞察力だけでなく、EC2から直接これらのバックエンド・メトリックの収集を検討する必要があります。 EC2の指標とELBを相関させることによって、あなたはすぐに、たとえば、要求の高い数は、ロード・バランサによってキューイングされ、かどうかを調査することができるようになりますあなたのバックエンドインスタンス（メモリ使用量、CPU使用率など）の飽和を資源によるものです。
+このシリーズの[Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics)で説明したように、CloudWatchから集取した"ELB-related"のメトリクスは、ロードバランサーの健全性とパフォーマンスの状態を教えてくれます。更に、ELBは、バックエンドインスタンスの健全性とパフォーマンスの状態を反映した"backend-related"のメトリクスも提供してくれています。しかし更に詳しい状況把握のためには、バックエンドインスタンスを完全に監視するためには、バックエンドEC2からメトリクス("backend-related")を直接収集することを検討する必要があります。ELBのメトリクスをEC2のメトリクスと相関させることにより、例えば、ロードバランサーのキューに大量に溜まっているリクエストが、バックエンドインスタンスのリソース(メモリ使用量、CPU使用率など)の飽和に起因しているのかを調査し素早く判断することができるようになります。
 
 
 > Thanks to our integration with CloudWatch and the permissions you set up, you can already access EC2 metrics on Datadog. Here is [your default dashboard](https://app.datadoghq.com/screen/integration/aws_ec2) for EC2.
 
-
-
-
-CloudWatchのあなたが設定したアクセス権との統合のおかげで、あなたはすでにDatadogにEC2メトリックにアクセスすることができます。ここではEC2用のデフォルトのダッシュボードがあります。
+CloudWatchのインテグレーションとそこに設定した権限で、DatadogからはバッグエンドEC2インスタンスのメトリクスにもアクセスできています。次が、[デフォルトのEC2用のダッシュボード](https://app.datadoghq.com/screen/integration/aws_ec2)です。
 
 
 [![Default EC2 dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-03.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-03.png)
@@ -104,19 +88,12 @@ CloudWatchのあなたが設定したアクセス権との統合のおかげで�
 
 > You can add graphs to your custom dashboards and view side by side ELB and EC2 metrics. Correlating peaks in two different metrics to see if they are linked is very easy.
 
-
-
-
-
-あなたが側ELBとEC2の指標により、カスタムダッシュボードとビュー側にグラフを追加することができます。それらがリンクされているかどうかを確認するために、2つの異なるメトリックのピークを相関させることは非常に簡単です。
+カスタムダッシュボードを作り、グラフを追加し、ELBとEC2のメトリクスを並べて表示することもできます。異なるメトリクスのピークが連動しているかを把握するのが非常に簡単になります。
 
 
 > You can also, for example, display a host map to spot at a glance if all your backend instances have a reasonable CPU utilization:
 
-
-
-
-また、例えば、すべてのバックエンドインスタンスが妥当なCPU使用率を持っている場合は、一目でスポットするホストマップを表示することができます。
+更に、全てのバックエンドインスタンスのCPUの利用率が安定しているか、を一目で把握できるHostmapを表示することもできます。
 
 
 [![Default EC2 dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-04.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-04.png)
@@ -125,76 +102,47 @@ CloudWatchのあなたが設定したアクセス権との統合のおかげで�
 
 > In addition to pulling in EC2 metrics via CloudWatch, Datadog also allows you to monitor your EC2 instances’ performance with higher resolution by installing the Datadog Agent to pull native metrics directly from the servers. The Agent is [open-source software](https://github.com/DataDog/dd-agent) that collects and reports metrics from your individual hosts so you can view, monitor and correlate them on the Datadog platform. Installing the Agent usually requires just a single command. Installation instructions for different operating systems are available [here](https://app.datadoghq.com/account/settings#agent).
 
-
-
-
-
-CloudWatchの経由EC2メトリックスを引き込むことに加えて、Datadogはまた、サーバーから直接ネイティブのメトリックを引っ張ってDatadog Agentをインストールすることで、より高い解像度を使用してEC2インスタンスのパフォーマンスを監視することができます。エージェントを使用すると、表示、監視およびDatadogプラットフォーム上で、それらを関連付けることができますので、あなたの個々のホストからのメトリックを収集し、レポートのオープンソースソフトウェアです。エージェントをインストールすると、通常は単一のコマンドが必要です。異なるオペレーティングシステムのインストール手順は、ここから入手できます。
+Datadogでは、CloudWatchを経由してEC2メトリクスを収集することの他に、[Datadog Agent](https://github.com/DataDog/dd-agent)をEC2インスタンスにインストールし、ネイティブメトリクスを直接収集することで、バックエンドEC2インスタンスのパフォーマンスを更に高い精度で監視することができるようになっています。このAgentは、個々のホストから、メトリクスを、収集しレポートするための[オープンソースのソフトウェア](https://github.com/DataDog/dd-agent)です。このAgentによって、バックエンドインスタンのネイティブメトリクスをダッシュボード上で、可視化し、相関してみて、アラートを設定することができるようになります。Agentのインストールは、通常は単一のコマンドで完了します。異なるOSのインストール手順は、この[リンク先](https://app.datadoghq.com/account/settings#agent)を参照してください。
 
 
 > By using the [Datadog Agent](https://www.datadoghq.com/blog/dont-fear-the-agent/), you can collect backend instance metrics with a higher granularity for a better view of their health and performance. The Agent reports metrics directly, at rapid intervals, and does not rely on polling an intermediary (such as CloudWatch), so you can access metrics more frequently without being limited by the provider’s monitoring API.
 
-
-
-
-Datadogエージェントを使用することにより、あなたは自分の健康とパフォーマンスをより良く見るためのより高い粒度でバックエンドインスタンスのメトリックを収集することができます。エージェントは、急速な間隔で、直接メトリックを報告し、ポーリングの仲介を（例えばCloudWatchのように）依存していないので、あなたは、プロバイダの監視APIによって制限されることなく、より頻繁にメトリックにアクセスすることができます。
+[Datadog Agent](https://www.datadoghq.com/blog/dont-fear-the-agent/)を使用することにより、健全性とパフォーマンスの高度な把握に必要なバックエンドインスタンスのネイティブメトリクスを細かい粒度で集取することができます。Datadog Agentは、非事情に短い間隔で、ポーリングの仲介(例:CloudWatch)に依存せず、メトリクスを直接レポートするため、プロバイダーの監視APIの仕様に制約されることなく、より高い頻度でメトリクスを集取できるようになります。
 
 
 > The Agent provides higher-resolution views of all key system metrics, such as CPU utilization or memory consumption by process.
 
-
-
-
-エージェントは、このようなプロセスによるCPU使用率やメモリ消費量など、すべての主要なシステム・メトリックの高解像度のビューを提供します。
+Datadog Agentは、CPU利用率や各プロセスによるメモリ消費量などの、全て主要なシステムメトリクスを高解像度で把握できるようにしてくれます。
 
 
 > Once you have set up the Agent, correlating native metrics from your EC2 instances with ELB’s CloudWatch metrics is a piece of cake (as explained above), and will give you a full and precise picture of your infrastructure’s performance.
 
-
-
-
-[エージェントの設定が完了したら（上記で説明したように）、ELBのCloudWatchのメトリクスを使用してEC2インスタンスからネイティブメトリックを相関させてケーキで、あなたのインフラストラクチャのパフォーマンスの完全かつ正確な画像が得られます。
+Datadog Agentを設定が完了したら、CloudWatch経由のELBメトリクスとEC2インスタンスのネーティブメトリクスを相関させて表示するのは、上記で説明したように、非常に簡単なことです。そして、その相関を施したグラフやダッシュボードは、インフラのパフォーマンスに関する完全かつ正確な現状を表示してくれます。
 
 
 > The Agent can also collect application metrics so that you can correlate your application’s performance with the host-level metrics from your compute layer. The Agent integrates seamlessly with applications such as MySQL, [NGINX](https://www.datadoghq.com/blog/how-to-monitor-nginx/), Cassandra, and many more. It can also collect custom application metrics as well.
 
-
-
-
-あなたのコンピューティング層からホストレベルのメトリックを使用してアプリケーションのパフォーマンスを相関させることができるように、エージェントは、アプリケーションのメトリックを収集することができます。エージェントは、MySQLの、nginxの、カサンドラ、および多くのようなアプリケーションとシームレスに統合します。また、同様に、カスタム・アプリケーション・メトリックを収集することができます。
+更にDatadog Agentは、アプリ関連のメトリクスを、OS層から集取したホストレベルのメトリクスと相関できるようにするために、アプリからもメトリクスを収集できます。Datadog Agentのインテグレーションは、MySQL、[NGINX](https://www.datadoghq.com/blog/how-to-monitor-nginx/)、Cassandraを含む多くのアプリともシームレスに連携することができます。更に、独自に開発してるアプリからメトリクスを収集することもできます。
 
 
 > To install the Datadog Agent, follow the [instructions here](http://docs.datadoghq.com/guides/basic_agent_usage/) depending on the OS your EC2 machines are running.
 
-
-
-
-Datadogエージェントをインストールするには、あなたのEC2のマシンが稼働しているOSに応じて、ここでの指示に従ってください。
+Datadog Agentのインストール手順は、この[リンク先](https://app.datadoghq.com/account/settings#agent)を参照してください。
 
 
 ## Conclusion
 
 > In this post we’ve walked you through integrating Elastic Load Balancing with Datadog so you can visualize and alert on its key metrics. You can also visualize EC2 metrics to keep tab on your backend instances, to improve performance, and to save costs.
 
-
-
-
-この記事では、我々はあなたが視覚化し、その主要な指標に警告できるようDatadogでバランス弾性荷重を統合する手順を歩いてきました。また、パフォーマンスを向上させるために、コストを節約するために、バックエンドインスタンスのタブを保つためにEC2の指標を可視化することができます。
+このポストでは、ELBのキーメトリクスを可視化し、それらにアラートを設定できるように、DatadogとELBを連携する方法を解説してきました。そして、バックエンドインスタンスのパフォーマンスを向上させ、コストを削減できるように、EC2メトリクスの可視化についても解説してきました。
 
 
 > Monitoring ELB with Datadog gives you critical visibility into what’s happening with your load balancers and applications. You can easily create automated [alerts](https://www.datadoghq.com/blog/monitoring-101-alerting/) on any metric across any group of instances, with triggers tailored precisely to your infrastructure and usage patterns.
 
-
-
-
-
-DatadogでELBを監視するあなたのロードバランサやアプリケーションと何が起こっているのかに重要な可視性を提供します。トリガーは、インフラストラクチャと使用パターンに正確に合わせて使えば、簡単に、インスタンスの任意のグループ全体で任意のメトリックに自動化されたアラートを作成することができます。
+Datadogを使ってELBを監視するれば、ロードバランサーやアプリに何が起こっているのかの、を手に入れることができます。更に、障害を検知するため、インフラの使用パターンに併せて、全てのメトリクスをベースに任意に選択したグループに対して、自動化された[アラート](https://www.datadoghq.com/blog/monitoring-101-alerting/)も設定できます。
 
 
 > If you don’t yet have a Datadog account, you can sign up for a [free trial](https://app.datadoghq.com/signup) and start monitoring your cloud infrastructure, applications, and services.
 
+もしも未だDatadogのアカウントを持っていないなら、無料トライアルへ[ユーザー登録](https://app.datadoghq.com/signup)すれば直ちにクラウドインフラ、アプリケーション、およびサービスの監視を始めることができます。
 
-
-
-
-あなたはまだDatadogアカウントをお持ちでない場合は、無料試用版にサインアップして、クラウドインフラストラクチャ、アプリケーション、およびサービスの監視を開始することができます。
