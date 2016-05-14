@@ -1,3 +1,5 @@
+# [翻訳作業中]
+
 *This post is part 1 of a 3-part series about monitoring the Aurora database service on Amazon RDS. [Part 2][part-2] is about collecting metrics from Aurora, and [Part 3][part-3] details how to monitor Aurora with Datadog.*
 
 ## What is Aurora?

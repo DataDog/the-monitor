@@ -1,3 +1,5 @@
+# [翻訳作業中]
+
 *This post is part 2 of a 3-part series on monitoring Amazon ElastiCache. [Part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached) explores its key performance metrics, and [Part 3](https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance) describes how Coursera monitors ElastiCache.*
 
 Many ElastiCache metrics can be collected from AWS via CloudWatch or directly from the cache engine, whether Redis or Memcached. When that’s the case, as discussed in [Part 1](https://www.datadoghq.com/using-elb-cloudwatch-metrics-to-detect-latency/), you should favor monitoring the native cache metric to ensure higher resolution and greater awareness and responsiveness. Therefore this article covers three different ways to access ElastiCache metrics from AWS CloudWatch, as well as the collection of native metrics from both caching engines:
