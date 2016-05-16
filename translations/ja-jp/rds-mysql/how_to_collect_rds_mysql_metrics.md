@@ -2,7 +2,7 @@
 
 > *This post is part 2 of a 3-part series on monitoring MySQL on Amazon RDS. [Part 1][part-1] explores the key performance metrics of RDS and MySQL, and [Part 3][part-3] describes how you can use Datadog to get a full view of your MySQL instance.*
 
-*このポストは、Amazon RDSの上にあるMySQの監視に関する3回シリーズのポストのPart 2です。[Part 1][part-1]は、”RDSとMySQLのキーメトリクス”を解説しています。[Part 3]では、”Datadogを使ってAmazon RDSの上にあるMySQをどのように監視するか”を解説します。*
+*このポストは、Amazon RDSの上にあるMySQの監視に関する3回シリーズのポストのPart 2です。[Part 1][part-1]は、”RDSとMySQLのキーメトリクス”を解説しています。[Part 3][part-3]では、”Datadogを使ってAmazon RDSの上にあるMySQをどのように監視するか”を解説します。*
 
 
 > As covered in [Part 1][part-1] of this series, MySQL on RDS users can access RDS metrics via Amazon CloudWatch and native MySQL metrics from the database instance itself. Each metric type gives you different insights into MySQL performance; ideally both RDS and MySQL metrics should be collected for a comprehensive view. This post will explain how to collect both metric types.
@@ -18,7 +18,7 @@
 > -   [Using the command line interface](#using-the-command-line-interface)
 > -   [Using a monitoring tool with a CloudWatch integration](#using-a-monitoring-tool-with-a-cloudwatch-integration)
 
-DSメトリックへは、CloudWatch経由で、次の3つの方法でアクセスできます。
+RDSメトリックへは、CloudWatch経由で、次の3つの方法でアクセスできます。
 
 - [AWSの管理コンソールを使用る方法](#using-the-aws-console)
 - [コマンドラインインターフェースを使用する方法](#using-the-command-line-interface)
@@ -29,7 +29,7 @@ DSメトリックへは、CloudWatch経由で、次の3つの方法でアクセ�
 
 > Using the online management console is the simplest way to monitor RDS with CloudWatch. The AWS Console allows you to set up simple automated alerts and get a visual picture of recent changes in individual metrics.
 
-AWSの管理コンソールを使用する方法が、CloudWatchのでRDSを監視する最もな方法です。AWSコンソールのインターフェース上では、個々のメトリックの最近の変化を視覚的に把握したり、簡単な自動アラートを設定することができます。
+AWSの管理コンソールを使用する方法が、CloudWatchのでRDSを監視する最もシンプルな方法です。AWSコンソールのインターフェース上では、個々のメトリックの直近の変化を視覚的に把握したり、簡単な自動アラートを設定することができます。
 
 
 #### Graphs
@@ -38,7 +38,7 @@ AWSの管理コンソールを使用する方法が、CloudWatchのでRDSを監�
 
 > By selecting RDS from the list of services and clicking on "Per-Database Metrics," you will see your database instances, along with the available metrics for each:
 
-AWSアカウントにサインインしたら、各種AWSサービスに関連するメトリックを閲覧することができる[CloudWatchコンソール][aws-console]を開くことができます。
+AWSアカウントにサインインしたら、AWSサービスに関連するメトリックを閲覧することができる[CloudWatchコンソール][aws-console]を開くことができます。
 
 サービスリストからRDSを選択し、"Per-Database Metrics"をクリックすると、閲覧可能なメトリクスと共に、データベースインスタンスのリストが表示されます。
 
@@ -47,7 +47,7 @@ AWSアカウントにサインインしたら、各種AWSサービスに関連�
 
 > Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console.
 
-可視化したいメトリクスの横のチェックボックスを選択すると、コンソールの下部にグラフで表示されます。
+可視化したいメトリクスの横にあるチェックボックスを選択すると、コンソールの下部にグラフで表示されます。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-graph.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-graph.png"></a>
@@ -58,9 +58,9 @@ AWSアカウントにサインインしたら、各種AWSサービスに関連�
 
 > To set up an alert, click on the "Create Alarm" button at the right of your graph and configure the alarm to notify a list of email addresses:
 
-CloudWatchのコンソールを使用すると、メトリクスが閾値を超えた場合に発報するアラートを作成することができます。
+CloudWatchのコンソールには、メトリクスが閾値を超えた場合にアラートを発生させる機能があります。
 
-アラートを設定するには、グラフの右側にある"Create Alarm"ボタンをクリックし、警報を通知するメールアドレスを指定します:
+このアラート機能を設定するには、グラフの右側にある"Create Alarm"ボタンをクリックし、警報を通知するメールアドレスを指定します:
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-alarm.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-alarm.png"></a>
 
@@ -71,7 +71,7 @@ CloudWatchのコンソールを使用すると、メトリクスが閾値を超�
 >
 > For example, if you want to check the `CPUUtilization` metric across a five-minute window on your MySQL instance, you can run:
 
-コマンドラインを使用して、データベースインスタンスに関するメトリックを取得することもできます。コマンドラインからの問い合わせは、スポット的なチェックやアドホックな原因追及の時に便利です。この方法を使うためには、[CloudWatchのコマンドラインインターフェイス][aws-cli]をインストールし、設定する必要があります。インストールと設定が完了すると、異なる検索コマンドを使ってCloudWatchメトリクスに問い合わせることができるようになります。
+コマンドラインを使用して、データベースインスタンスに関するメトリックを取得することもできます。コマンドラインからの問い合わせは、スポット的なチェックやアドホックな原因追及の時に便利です。この方法を使うためには、[CloudWatchのコマンドラインから操作するソフト][aws-cli]を手元の端末にインストールし、設定する必要があります。インストールと設定が完了すると、異なる検索コマンドを使ってCloudWatchメトリクスに問い合わせることができるようになります。
 
 例えば、MySQLインスタンスの5分間の`CPUUtilization`(CPU利用率)メトリクスを確認したい場合、次のようなコマンドを実行します:
 
@@ -100,7 +100,7 @@ mon-get-stats CPUUtilization
 
 > Full usage details for the `mon-get-stats` command are available [in the AWS documentation][mon-get-stats].
 
-`mon-get-stats`コマンドの完全は使い方は、[AWSのマニュアルで該当コマンドの詳細][mon-get-stats]を参照してください。
+`mon-get-stats`コマンドの完全な使い方は、[AWSのマニュアルで該当コマンドの詳細][mon-get-stats]を参照してください。
 
 
 <!-- <h3 class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration">Using a monitoring tool with a CloudWatch integration</h3> -->
@@ -108,7 +108,7 @@ mon-get-stats CPUUtilization
 
 > The third way to collect CloudWatch metrics is via your own monitoring tools, which can offer extended monitoring functionality. For instance, if you want to correlate metrics from your database with other parts of your infrastructure (including the applications that depend on that database), or you want to dynamically slice, aggregate, and filter your metrics on any attribute, or you need dynamic alerting mechanisms, you probably need a dedicated monitoring system. Monitoring tools that seamlessly integrate with the CloudWatch API can, with a single setup process, collect metrics from across your AWS infrastructure.
 
-CloudWatchのメトリックを収集する第三の方法は、高度な監視機能を持った独自の監視ツールを使う方法です。例えば、データベースから収集したメトリクスを、アプリを含むインフラの他の部分から収集したメトリクスと相関したい場合。又、収集したばかりのメトリクスを属性に基づいて、その場で、分類し、集約し、フィルターしたい場合。ダイナミックなアラートシステムが必要な場合。これなの場合は、ダイナミックな監視システムが必要になるでしょう。単一の設定プロセスで、高度にCloudWatchのAPIと連携できる監視ツールは、AWS上に構築したインフラ全体に渡ってメトリクスを収集してくれるはずです。
+CloudWatchのメトリックを収集する第三の方法は、高度な監視機能を持った独自の監視ツールを使う方法です。例えば、データベースから収集したメトリクスを、アプリを含むインフラの他の部分から収集したメトリクスと相関したい場合。又、収集したばかりのメトリクスを属性に基づいて、その場で、分類し、集約し、フィルターしたい場合。ダイナミックなアラートシステムが必要な場合。これらの場合は、ダイナミックな監視システムが必要になるでしょう。高度にCloudWatchのAPIと連携できる監視ツールは、AWS上に構築したインフラの全体に渡りメトリクスを収集してくれるはずです。
 
 
 > In [Part 3][part-3] of this series, we walk through how you can easily collect, visualize, and alert on any RDS metric using Datadog.
@@ -142,7 +142,7 @@ CloudWatchは、任意のデータベースエンジンの概要的なメトリ�
 
 > With RDS you cannot directly access the machines running MySQL. So you cannot run `mysql` commands locally or check CPU utilization from the machine itself, as you could if you installed MySQL yourself on a standalone EC2 instance. That said, you _can_ connect to your MySQL instance remotely using standard tools, provided that the security group for your MySQL instance permits connections from the device or EC2 instance you are using to initiate the connection.
 
-RDSでは、MySQLを実行しているマシンに直接アクセスすることはできません。従って、EC2インスタンス上にMySQLをインストールした場合のように、`mysql`コマンドをローカルから実行したり、CPUの利用率をそのマシン自身から確認したりすることができません。しかしながら、MySQLインスタンスのセキュリティグループが、それに接続使用としているEC2インスタンスやデバイスからの接続を許可している場合、リモートでスタンダードツールを使ってMySQLインスタンスに接続することはできます。
+RDSでは、MySQLを実行しているマシンに直接アクセスすることはできません。従って、EC2インスタンス上にMySQLをインストールした場合のように、`mysql`コマンドをローカルから実行したり、CPUの利用率をそのマシン自身から確認したりすることができません。しかしながら、RDS上のMySQLインスタンスのセキュリティグループが、それに接続使用としているバックエンドEC2インスタンスやデバイスからの接続を許可している場合、リモートでスタンダードツールを使ってMySQLインスタンスに接続することはできます。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_to_rds.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_to_rds.png"></a>
@@ -175,7 +175,7 @@ mysql> SHOW GLOBAL STATUS LIKE '%Connection_errors%';
 
 > Server status variables by and large capture high-level server activity. To collect metrics at the query level, such as query latency and query errors, you can use the MySQL [performance schema][performance-schema], which captures detailed statistics on server events.
 
-Server status variablesは、概して、サーバーアクティビティの概要的な情報を収拾しています。"クエリーレイテンシ"や"クエリーエラー"などの、クエリーレベルのメトリクスを収集するには、サーバーイベントに関し詳細な統計情報を集取しているMySQL [performance schema][performance-schema]を使うことができます。
+Server status variablesは、概して、サーバーアクティビティの概要的な情報を収集しています。"クエリーレイテンシー"や"クエリーエラー"などの、クエリーレベルのメトリクスを収集するには、サーバーイベントに関し詳細な統計情報を集取しているMySQL [performance schema][performance-schema]を使うことができます。
 
 
 #### Enabling the performance schema
@@ -196,7 +196,7 @@ SELECT * FROM orders WHERE customer_id = 25 AND quantity > 100
 
 > The performance schema captures information about latency, errors, and query volume for each normalized statement. A sample row from the `events_statements_summary_by_digest` table shows an expensive query that takes multiple seconds to execute (all timer measurements are in picoseconds):
 
-performance schemaは、先に示した正規化の規則に分類したステートメント毎に、レイテンシー, エラー, クエリー数に関する情報を取得しています。`events_statements_summary_by_digest`の表からのサンプル行は、実行に数秒間かかる実行コストの高価なクエリーを表示しています(時間の単位は、ピコ秒):
+performance schemaは、先に示した正規化の規則に基づいて分類したステートメント毎に、レイテンシー, エラー, クエリー数に関する情報を取得しています。以下のサンプル行は、`events_statements_summary_by_digest`の表から抽出した、実行コストの高価(実行に数秒間かかる)なクエリーを表示しています(時間の単位は、ピコ秒):
 
 
 <pre class="lang:mysql">
@@ -240,7 +240,7 @@ SUM_CREATED_TMP_DISK_TABLES: 0
 
 > To install the sys schema, first clone the [mysql-sys][sys-schema] GitHub repo to the machine that you use to connect to your MySQL instance (e.g., an EC2 instance in the same security group) and position yourself within the newly created directory:
 
-performance schemaに直接照会することはできますが、[sys schema][sys-schema]の便利な表や関数、データーパース手順を使用した方が、簡単にデーターから価値の高い検分を手に入れらます。
+performance schemaに直接照会することはできます。しかし、[sys schema][sys-schema]の便利な関数や表、データーパース手順を使用した方が、データーから簡単に価値の高い検分を得ることができます。
 
 sys schemaをインストールするには、まずは、MySQLインスタンスに接続に使用するマシン(例: 同一セキュリティグループに起動したEC2インスタンス)に、GitHubのリポから[mysql-sys][sys-schema]をクローンします。そして、新しく作成したディレクトリ内に移動します:
 
@@ -252,7 +252,7 @@ cd mysql-sys
 
 > Then, run a shell script within the mysql-sys repo that creates an RDS-compatible file for the sys schema. For MySQL version 5.6, the command and output looks like:
 
-そして、sys schemaのRDS互換ファイルを作成するために、mysql-sysリポディレクトの中でシェルスクリプトを実行します。ySQLバージョン5.6の場合、コマンドとその出力は、次のようになります。
+そして、mysql-sysリポディレクトの中でシェルスクリプトを実行し、sys schemaのRDS互換ファイルを作成します。ySQLバージョン5.6の場合、コマンドとその出力は、次のようになります。
 
 
 <pre class="lang:sh">
@@ -327,11 +327,11 @@ RDS上のMySQLと通信するように[EC2インスタンスを設定](#connecti
 
 <!--<h3 class="anchor" id="using-a-mysql-monitoring-tool">Using a MySQL monitoring tool</h3>-->
 
-### <a class="anchor" id="using-a-mysql-monitoring-tool"></a>Using a MySQL monitoring too
+### <a class="anchor" id="using-a-mysql-monitoring-tool"></a>Using a MySQL monitoring tool
 
 > The fourth way to access MySQL's native metrics is to use a full-featured monitoring tool that integrates with MySQL. Such tools allow you to not only glimpse a real-time snapshot of your metrics but to visualize and analyze your metrics' evolution over time, and to set alerts to be notified when key metrics go out of bounds. Comprehensive monitoring tools also allow you to correlate your metrics across systems, so you can quickly determine if errors from your application can be traced back to MySQL, or if increased MySQL latency is caused by system-level resource contention. [Part 3][part-3] of this series demonstrates how you can set up comprehensive monitoring of MySQL on RDS with Datadog.
 
-MySQLのネイティブメトリクスにアクセスするための第四の方法は、MySQLと総合的に連携できるフル装備の監視ツールを使用することです。このようなツールは、メトリクスのリアルタイムスナップショットを見ることができるだけでなく、メトリクスの時間をかけた変化を可視化し分析することができ、キーメトリクスが規定値を超えた場合に通知するためのアラートを設定することができます。更に、総合的な監視ツールは、各システムの間でメトリクスを相関することができ、アプリから出ているエラーからMySQLが起因している可能性を判断できたり、MySQLのレイテンシーがシステムレベルのリソースの競合によって引き起こされている可能性を判断できたりします。このシリーズの[Part 3][part-3]では、RDS上のMySQLの包括的な監視を、Datadogを使って実現する方法を紹介します。
+MySQLのネイティブメトリクスにアクセスするための第四の方法は、MySQLと総合的に連携できるフル装備の監視ツールを使用することです。このようなツールは、メトリクスのリアルタイムスナップショットを見ることができるだけでなく、メトリクスの時間をかけた変化を可視化し分析することができ、キーメトリクスが規定値を超えた場合に通知するためのアラートを設定することができます。更に、総合的な監視ツールは、各システムの間でメトリクスを相関することができ、アプリから出ているエラーがMySQLに起因しているかを判断できたり、MySQLのレイテンシーがシステムレベルのリソースの競合によって引き起こされている可能性を判断できたりします。このシリーズの[Part 3][part-3]では、RDS上のMySQLの包括的な監視を、Datadogを使って実現する方法を紹介します。
 
 ## Conclusion
 
@@ -339,9 +339,9 @@ MySQLのネイティブメトリクスにアクセスするための第四の方
 >
 > In [the next and final part][part-3] of this series, we'll show you how you can set up Datadog to collect, visualize, and set alerts on metrics from both RDS and MySQL.
 
-この記事では、CloudWatchを使ってRDSのメトリックを収集し、視覚化する方法と、メトリクスが閾値を超えた場合にアラートを発生させる方法を解説してきました。更に、MySQL自体から、必要に応じて単発的にや継続的に、より詳細なメトリクスを収集する方法を紹介していきました。
+この記事では、CloudWatchを使ってRDSのメトリックを収集し、視覚化する方法と、メトリクスが閾値を超えた場合にアラートを発生させる方法を解説してきました。更に、MySQL自体から、必要に応じて単発的や継続的に、より詳細なメトリクスを収集する方法を紹介していきました。
 
-このシリーズの[次で又最後のPart 3][part-3]では、Datadogを使って、RDSとMySQL自体の両方からメトリクスを収集し、可視化し、アラートを設定する方法を紹介します。
+このシリーズの[最後のPart 3][part-3]では、Datadogを使って、RDSとMySQL自体の両方からメトリクスを収集し、可視化し、アラートを設定する方法を紹介します。
 
 
 ## Acknowledgments
