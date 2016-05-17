@@ -2,18 +2,19 @@
 
 > *This post is part 1 of a 3-part series on monitoring Amazon ElastiCache. [Part 2](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metrics) explains how to collect its performance metrics, and [Part 3](https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance) describes how Coursera monitors ElastiCache.*
 
-*この投稿は、監視はAmazon ElastiCacheに3回シリーズの第1部です。第2部では、その性能メトリックを収集する方法を説明し、そして第3部は、コーセラがElastiCacheを監視する方法について説明します。*
+*このポストは、Amazon ElastiCacheの監視について解説した3回シリーズのPart 1です。[Part 2](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metr)では、ElastiCacheからパフォーマンスメトリックを収集する方法を解説します。[Part 3](https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance)では、CourseraがElastiCacheを監視する方法について解説します。*
 
 
 ## What is Amazon ElastiCache?
 
 > ElastiCache is a fully managed in-memory cache service offered by AWS. A cache stores often-used assets (such as files, images, css) to respond without hitting the backend and speed up requests. Using a cache greatly improves throughput and reduces latency of read-intensive workloads.
-> 
+
+ElastiCacheは、AWSが提供するフルマネージドのインメモリーキャッシュのサービスです。キャッシュストアは、ファイル、画像、CSSなどのリクエストに、バックエンドに問い合わせをすることなく、スピーディーに応答するために使われることが一般的です。キャッシュを使用すると、スループットが大幅に向上し、読み取り集中したワークロードのではレイテンシーを低く抑えることができます。
+
+
 > AWS allows you to choose between [Redis](https://www.datadoghq.com/blog/how-to-monitor-redis-performance-metrics/) and [Memcached](https://www.datadoghq.com/blog/speed-up-web-applications-memcached/) as caching engine that powers ElastiCache. Among the thousands of Datadog customers using ElastiCache, Redis is much more commonly used than Memcached. But each technology presents unique advantages depending on your needs. [AWS explains here](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html) how to determine which one is more adapted to your usage.
 
-ElastiCacheは、AWSが提供するフルマネージドメモリ内キャッシュサービスです。 （そのようなファイル、画像、CSSなど）資産頻繁に使用されるキャッシュストアはバックエンドを押すことなく対応し、要求をスピードアップします。キャッシュを使用すると、スループットが大幅に向上し、読み取り集中型ワークロードの待ち時間を減らすことができます。
-
-AWSを使用すると、キャッシング・エンジンのパワーElastiCacheとしてRedisのとMemcachedの間で選択することができます。 ElastiCacheを使用してDatadogの何千もの顧客のうち、Redisのは、はるかに一般的にMemcachedのより使用されています。しかし、それぞれの技術は、ニーズに応じて、ユニークな利点を提供します。 AWSは、より多くのあなたの使用に適合されているかを判断する方法をここで説明しています。
+Amazon ElastiCacheには、キャッシュエンジンとして[Redis](https://www.datadoghq.com/blog/how-to-monitor-redis-performance-metrics/)か [Memcached](https://www.datadoghq.com/blog/speed-up-web-applications-memcached/)が選べるようになっています。一般的に、ElasticCahcheを使っている数千ものDatadogのお客様の間では、MemcachedのよりRedisが採用されています。しかしながら、それぞれの技術には、ニーズに応じて、ユニークな利点を持っています。AWSでは、使い方によってどちらのエンジンが適しているかを判断する方法をこの[リンク先にて説明](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html)しています。
 
 
 ## Key metrics
@@ -25,18 +26,21 @@ AWSを使用すると、キャッシング・エンジンのパワーElastiCache
 > -   [Memory metrics](#memory-metrics)
 > -   [Other host-level metrics](#host-metrics)
 
+効率的なキャッシュは、アプリケーションのパフォーマンスやユーザのナビゲーション速度を、大幅に向上させることができます。
+このような理由から、主要なパフォーマンメトリクスを十分理解し、AWS CloudWatchのから収集した一般的なElastiCacheメトリクスと、選択したキャッシュエンジンから集取したネイティブメトリクスを使って、継続的に監視する必要があります。監視が必要なメトリクスは、次のカテゴリーの分類できます:
 
-効率的なキャッシュが大幅にアプリケーションのパフォーマンスやユーザのナビゲーション速度を向上させることができます。主要なパフォーマンス指標が選択したキャッシング・エンジンからAWS CloudWatchのから収集した一般的なElastiCacheの指標だけでなく、ネイティブの指標の両方を使用して、十分に理解し、継続的に監視する必要がある理由です。メトリックあなたは4つの一般的なカテゴリに分類さを監視する必要があります：
-
--   [Client metrics](#client-metrics)
--   [Cache performance](#cache-metrics)
--   [Memory metrics](#memory-metrics)
--   [Other host-level metrics](#host-metrics)
+-   [クライアントメトリクス](#client-metrics)
+-   [キャッシュパフォーマンス](#cache-metrics)
+-   [メモリーメトリクス](#memory-metrics)
+-   [その他ホストレベルのメトリクス](#host-metrics)
 
 
 ### CloudWatch vs native cache metrics
 
 > Metrics can be collected from ElastiCache through CloudWatch or directly from your cache engine (Redis or Memcached). Many of them can be collected from both sources: from CloudWatch and also from the cache. However, unlike CloudWatch metrics, native cache metrics are usually collected in real-time at higher resolution. For these reasons you should prefer monitoring native metrics, when they are available from your cache engine.
+
+
+
 
 メトリックは、ElastiCacheからCloudWatchのを介して、または直接あなたのキャッシュエンジン（RedisのかのMemcached）から採取することができます。彼らの多くは両方のソースから収集することができます：キャッシュからCloudWatchのからとも。しかし、CloudWatchのメトリックとは異なり、ネイティブキャッシュメトリックは通常、より高い分解能でリアルタイムに収集されます。これらの理由から、あなたは彼らがあなたのキャッシュエンジンから利用可能であるとき、ネイティブのメトリックを監視することを好むべきです。
 
