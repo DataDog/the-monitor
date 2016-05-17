@@ -2,11 +2,19 @@
 
 *This post is part 1 of a 3-part series on monitoring Amazon ElastiCache. [Part 2](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metrics) explains how to collect its performance metrics, and [Part 3](https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance) describes how Coursera monitors ElastiCache.*
 
+この投稿は、監視はAmazon ElastiCacheに3回シリーズの第1部です。第2部では、その性能メトリックを収集する方法を説明し、そして第3部は、コーセラがElastiCacheを監視する方法について説明します。
+
+
 ## What is Amazon ElastiCache?
 
 ElastiCache is a fully managed in-memory cache service offered by AWS. A cache stores often-used assets (such as files, images, css) to respond without hitting the backend and speed up requests. Using a cache greatly improves throughput and reduces latency of read-intensive workloads.
 
 AWS allows you to choose between [Redis](https://www.datadoghq.com/blog/how-to-monitor-redis-performance-metrics/) and [Memcached](https://www.datadoghq.com/blog/speed-up-web-applications-memcached/) as caching engine that powers ElastiCache. Among the thousands of Datadog customers using ElastiCache, Redis is much more commonly used than Memcached. But each technology presents unique advantages depending on your needs. [AWS explains here](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html) how to determine which one is more adapted to your usage.
+
+ElastiCacheは、AWSが提供するフルマネージドメモリ内キャッシュサービスです。 （そのようなファイル、画像、CSSなど）資産頻繁に使用されるキャッシュストアはバックエンドを押すことなく対応し、要求をスピードアップします。キャッシュを使用すると、スループットが大幅に向上し、読み取り集中型ワークロードの待ち時間を減らすことができます。
+
+AWSを使用すると、キャッシング・エンジンのパワーElastiCacheとしてRedisのとMemcachedの間で選択することができます。 ElastiCacheを使用してDatadogの何千もの顧客のうち、Redisのは、はるかに一般的にMemcachedのより使用されています。しかし、それぞれの技術は、ニーズに応じて、ユニークな利点を提供します。 AWSは、より多くのあなたの使用に適合されているかを判断する方法をここで説明しています。
+
 
 ## Key metrics
 
@@ -17,9 +25,16 @@ An efficient cache can significantly increase your application’s performance a
 -   [Memory metrics](#memory-metrics)
 -   [Other host-level metrics](#host-metrics)
 
+
+効率的なキャッシュが大幅にアプリケーションのパフォーマンスやユーザのナビゲーション速度を向上させることができます。主要なパフォーマンス指標が選択したキャッシング・エンジンからAWS CloudWatchのから収集した一般的なElastiCacheの指標だけでなく、ネイティブの指標の両方を使用して、十分に理解し、継続的に監視する必要がある理由です。メトリックあなたは4つの一般的なカテゴリに分類さを監視する必要があります：
+
+
+
 ### CloudWatch vs native cache metrics
 
 Metrics can be collected from ElastiCache through CloudWatch or directly from your cache engine (Redis or Memcached). Many of them can be collected from both sources: from CloudWatch and also from the cache. However, unlike CloudWatch metrics, native cache metrics are usually collected in real-time at higher resolution. For these reasons you should prefer monitoring native metrics, when they are available from your cache engine.
+
+メトリックは、ElastiCacheからCloudWatchのを介して、または直接あなたのキャッシュエンジン（RedisのかのMemcached）から採取することができます。彼らの多くは両方のソースから収集することができます：キャッシュからCloudWatchのからとも。しかし、CloudWatchのメトリックとは異なり、ネイティブキャッシュメトリックは通常、より高い分解能でリアルタイムに収集されます。これらの理由から、あなたは彼らがあなたのキャッシュエンジンから利用可能であるとき、ネイティブのメトリックを監視することを好むべきです。
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)
 
@@ -29,9 +44,19 @@ If you are using Redis, we also published a [series of posts](https://www.datado
 
 This article references metric terminology introduced in [our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
+RedisのとMemcachedのによって公開されたように、このマニュアルで扱う各メトリックのために、私たちはその名前を提供するだけでなく、AWS CloudWatchの適用を介して利用可能な同等のメトリックの名前。
+
+あなたはRedisのを使用している場合、我々はまた、Redisのネイティブパフォーマンスメトリックを監視する方法に特化記事のシリーズを発表しました。
+
+この記事の参照メトリック用語は、メトリック収集と警告するためのフレームワークを提供し、当社のモニタリング101シリーズで導入されました。
+
+
+
 ### Client metrics
 
 Client metrics measure the volume of client connections and requests.
+
+クライアントのメトリックは、クライアント接続と要求の量を測定します。
 
 <table>
 <tbody>
@@ -71,6 +96,9 @@ Client metrics measure the volume of client connections and requests.
 
 **Number of commands** processed is a throughput measurement that will help you identify latency issues, especially with Redis, since it is single threaded and processes command requests sequentially. Unlike Memcached, native Redis metrics don’t distinguish between Set or Get commands. ElastiCache provides both for each technology.
 
+処理されたコマンドの数は、それがシングルスレッドで、順次、コマンド要求を処理するので、あなたは特にのRedisと、遅延の問題を特定するのに役立ちますスループット測定です。 Memcachedのとは異なり、ネイティブRedisのメトリックは、Set区別やコマンドを取得していません。 ElastiCacheは、それぞれの技術の両方を提供します。
+
+
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)
 
 #### Metric to alert on:
@@ -79,9 +107,17 @@ Client metrics measure the volume of client connections and requests.
 
 NOTE: ElastiCache also provides the **NewConnections** metric measuring the number of new connections accepted by the server during the selected period of time.
 
+現在の接続：急激な変化が調査を必要とするアプリケーションの問題を示すかもしれませんが、あなたは主にこの指標を追跡する必要があり、それは接続数の制限に達したことがないことを確認します。それは新しい接続が拒否されます発生した場合、あなたはあなたのチームが通知され、それが起こる前に道をスケールアップすることができます確認してください。あなたはMemcachedのを使用している場合は、maxconns_fastが1に設定されている場合、彼らがそうであるようにAWSはRedisのための65,000の同時接続（MaxClientsの）での制限を修正し、パラメータmaxconns_fastは、新しい接続が代わりに閉じているのキューイングされているように、デフォルト値0があることを確認してくださいそして、Memcachedの（max_simultaneous_connections）。
+
+注：ElastiCacheはまた、選択された期間中にサーバーによって受け入れられ、新しい接続の数を測定するNewConnectionsメトリック提供します。
+
+
 ### Cache performance
 
 By tracking performance metrics you will be able to know at a glance if your cache is working properly.
+
+パフォーマンス・メトリックを追跡することにより、あなたのキャッシュが正しく動作しているかどうかを一目で知ることができるようになります。
+
 
 <table>
 <tbody>
@@ -128,6 +164,9 @@ By tracking performance metrics you will be able to know at a glance if your cac
 
 Tracking **replication lag**, available only with Redis, helps to prevent serving stale data. Indeed, by automatically synchronizing data into a secondary cluster, replication ensures high availability, read scalability, and prevents data loss. Replicas contain the same data as the primary node so they can also serve read requests. The replication lag measures the time needed to apply changes from the primary cache node to the replicas. You can also look at the native Redis metric **master\_last\_io\_seconds\_ago** which measures the time (in seconds) since the last interaction between slave and master.
 
+レプリケーションの遅れを追跡、のみのRedisで使用可能な、古いデータを提供して防ぐことができます。確かに、自動的にセカンダリクラスタにデータを同期させることにより、レプリケーションは、高可用性、読んでスケーラビリティを確保し、データの損失を防ぐことができます。彼らはまた、読み出し要求を果たすことができるようにレプリカは、プライマリノードと同じデータが含まれています。レプリケーションの遅れはレプリカに一次キャッシュノードから変更を適用するために必要な時間を測定します。また、スレーブとマスターとの間の最後の対話以降の時間（秒）を測定し、ネイティブのRedisメトリックmaster_last_io_seconds_agoで見ることができます。
+
+
 #### Metric to alert on:
 
 **Cache** **hits** and **misses** measure the number of successful and failed lookups. With these two metrics you can calculate the **hit rate**: hits / (hits+misses), which reflects your cache efficiency. If it is too low, the cache’s size might be too small for the working data set, meaning that the cache has to evict data too often (see **evictions** metric [below](#memory-metrics)). In that case you should add more nodes which will increase the total available memory in your cluster so more data can fit in the cache. A high hit rate helps to reduce your application response time, ensure a smooth user experience and protect your databases which might not be able to address a massive amount of requests if the hit rate is too low.
@@ -136,9 +175,19 @@ Tracking **replication lag**, available only with Redis, helps to prevent servin
 
 Unfortunately, Memcached does not provide a direct measurement of latency, so you will need to rely on throughput measurement via the number of commands processed, [described below](#client-metrics).
 
+キャッシュのヒットとミスは、成功および失敗したルックアップの回数を測定します。ヒット/（ヒット+ミス）、キャッシュの効率を反映している：これらの2つのメトリックを使用すると、ヒット率を計算することができます。それが低すぎると、キャッシュのサイズは、（以下立ち退きメトリック参照）キャッシュがあまりにも頻繁にデータを追い出すために持っていることを意味し、作業データセットに対して小さすぎる可能性があります。その場合、あなたはより多くのデータがキャッシュに収まることができるように、クラスタ内の利用可能な総メモリが増加しますより多くのノードを追加する必要があります。高いヒット率は、アプリケーションの応答時間を短縮スムーズなユーザーエクスペリエンスを確保し、ヒット率が低すぎると要求の膨大な量に対処できないことがあり、あなたのデータベースを保護するのに役立ちます。
+
+*注：待ち時間が他の古典的なメトリクスのような利用できるが、依然として達成可能ではありません：あなたはこの記事でRedisのための待ち時間を測定に関するすべての詳細を見つけるでしょう、Redisのモニタリングに関する我々のシリーズの一部。レイテンシは直接Redisの性能を観察するための最良の方法の一つです。 Redisのであるため、待ち時間分布の異常値は、深刻なボトルネックが発生する可能性があり、シングルスレッド-1の要求のための長い応答時間は、すべての後続の要求のための待ち時間が増加します。高遅延のための一般的な原因は、高いCPU使用率とスワッピングが含まれます。 Redisのからこの刊行物は、詳細に高遅延のトラブルシューティングについて説明します。
+
+あなたは以下で説明する処理されたコマンドの数を介して、スループット測定に依存する必要がありますので、残念ながら、Memcachedのは、待ち時間の直接測定を提供していません。
+
+
 ### Memory metrics
 
 Memory is the essential resource for any cache, and neglecting to monitor ElastiCache’s memory metrics can have critical impact on your applications.
+
+メモリは、任意のキャッシュのために不可欠な資源であり、ElastiCacheメモリメトリックを監視するために無視することは、アプリケーションに重大な影響を与える可能性があります。
+
 
 <table>
 <tbody>
@@ -200,9 +249,20 @@ Memory is the essential resource for any cache, and neglecting to monitor Elasti
 -   **SwapUsage** is a host-level metric that increases when the system runs out of memory and the operating system starts using disk to hold data that should be in memory. Swapping allows the process to continue to run, but severely degrades the performance of your cache and any applications relying on its data. According to AWS, [swap shouldn’t exceed 50MB with Memcached](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheMetrics.WhichShouldIMonitor.html). AWS makes no similar recommendation for Redis.
 -   The **memory fragmentation ratio** metric (available only with Redis) measures the ratio of memory used as seen by the operation system (**used\_memory\_rss**) to memory allocated by Redis (**used\_memory**). The operating system is responsible for allocating physical memory to each process. Its virtual memory manager handles the actual mapping, mediated by a memory allocator. For example, if your Redis instance has a memory footprint of 1GB, the memory allocator will first attempt to find a contiguous memory segment to store the data. If it can’t find one, the allocator divides the process’s data across segments, leading to increased memory overhead. A fragmentation ratio above 1.5 indicates significant memory fragmentation since Redis consumes 150 percent of the physical memory it requested. If the fragmentation ratio rises above 1.5, your memory allocation is inefficient and you should restart the instance. A fragmentation ratio below 1 means that Redis allocated more memory than the available physical memory and the operating system is swapping (see above).
 
+メモリ使用量は、あなたのキャッシュのパフォーマンスのために重要です。それは、総利用可能なシステムメモリを超える場合、OSはメモリの古いまたは未使用のセクションを（次の段落を参照）スワッピングを開始します。書き込みまたはディスクから読み取ることは深刻なキャッシュの性能を低下させる、メモリの読み書きよりも遅い100,000までです。
+キャッシュメモリ使用量の上限（Redisのためmaxmemory）に達したときに立ち退きが起こるとキャッシュエンジンは、新しい書き込みのためのスペースを作るために項目を削除することがあります。超えた場合に使用を交換するリードホストメモリとは異なり、キャッシュメモリの制限は、ノード・タイプノードの数によって定義されます。立ち退きは、RedisのためのLRUとしてあなたのキャッシュ構成で定義された方法に従ってください。多数のキーを追い出しはより長い待ち時間をもたらす、あなたのヒット率を低下させることができます。あなたの立ち退き率が安定であり、あなたのキャッシュヒット率が異常ではありません場合は、あなたのキャッシュはおそらく十分なメモリを持っています。立ち退きの数が増えている場合は、より大きなノードタイプへの移行（またはあなたがのMemcachedを使用する場合は、より多くのノードを追加すること）して、キャッシュサイズを増やす必要があります。
+FreeableMemoryは、ホストのメモリ残量を追跡し、それ以外の場合は、（次の段落を参照）の使用を交換するためにつながる、低すぎてはなりません。
+SwapUsageは、システムがメモリ不足、オペレーティングシステムがメモリにあるべきデータを保持するためにディスクを使用して開始したときに増加するホストレベルのメトリックです。スワッピングは、プロセスの実行を継続することができますが、重大なキャッシュとそのデータに依存するすべてのアプリケーションのパフォーマンスが低下します。 AWSによると、スワップのMemcachedと50メガバイトを超えてはなりません。 AWSは、Redisのための同様の勧告を行うものではありません。
+（のみのRedisで使用可能）メモリの断片化率メトリックのRedis（used_memory）によって割り当てられたメモリへの操作システム（used_memory_rss）によって見られるように使用されるメモリの比率を測定します。オペレーティング・システムは、各プロセスに物理メモリを割り当てる責任があります。その仮想メモリマネージャは、メモリアロケータによって媒介される実際のマッピングを処理します。あなたのRedisのインスタンスは1ギガバイトのメモリフットプリントを有する場合、例えば、メモリアロケータは、最初にデータを格納する連続するメモリセグメントを検索しようとします。それが1を見つけることができない場合、アロケータは増加したメモリのオーバーヘッドにつながる、セグメント全体でプロセスのデータを分割します。 Redisのは、それが要求された物理メモリの150％を消費するので、1.5以上の断片化率はかなりのメモリの断片化を示しています。断片化率が1.5以上になると、お使いのメモリ割り当てが非効率的ですし、インスタンスを再起動する必要があります。 1以下の断片化率は（上記参照）のRedisが使用可能な物理メモリより多くのメモリを割り当てられ、オペレーティングシステムがスワップされていることを意味します。
+
+
+
 ### Other host-level metrics
 
 Host-level metrics for ElastiCache are only available through CloudWatch.
+
+ElastiCacheのためのホストレベルのメトリックは、CloudWatchのを介してのみ利用可能です。
+
 
 <table>
 <tbody>
@@ -237,11 +297,23 @@ All [AWS cache nodes](https://aws.amazon.com/elasticache/pricing/) with more tha
 
 Memcached is multi-threaded so the CPU utilization threshold can be set at 90%. If you exceed that limit, scale up to a larger cache node type or add more cache nodes.
 
+高レベルでCPU使用率は、間接的に大きな遅延を示すことができます。あなたのキャッシュエンジン技術に応じて異なるこのメトリックを解釈する必要があります。
+
+メモリや優れたネットワークパフォーマンスの2.78ギガバイトを超えると、すべてのAWSキャッシュノードは、マルチコアです。あなたはRedisのを使用している場合のRedisはシングルスレッドであるため、余分なコアがアイドル状態になることに注意してください。実際のCPU使用率は、コアの数を乗じ、このメトリックの報告値と同じになります。例えば、20パーセントのCPU使用率を報告して4コアRedisのインスタンスは、実際には1コアで80％の使用率を持っています。したがって、あなたは、キャッシュノード内のプロセッサコアの数に基づいてアラートのしきい値を定義する必要があります。 AWSは、あなたがコアの数で割った90パーセントで警告しきい値を設定することをお勧めします。この閾値は重い読み取りワークロードに超えている場合は、あなたのキャッシュ・クラスタをスケールアップするより、リードレプリカを追加します。それは書き込み要求をするために主に起因するなら、あなたのRedisキャッシュ・インスタンスのサイズを大きくします。
+
+CPU使用率の閾値を90％に設定することができるように、memcachedのは、マルチスレッドです。あなたがその制限を超えた場合は、より大きなキャッシュノードタイプにスケールアップまたは複数のキャッシュノードを追加します。
+
+
 ## Correlate to see the full picture
 
 Most of these key metrics are directly linked together. For example, high memory usage can lead to swapping, increasing latency. That’s why you need to correlate these metrics in order to properly monitor ElastiCache.
 
 Correlating metrics with events sent by ElastiCache, such as node addition failure or cluster creation, will also help you to investigate and to keep an eye on your cache cluster’s activity.
+
+これらの主要指標のほとんどは直接連結されています。例えば、高いメモリ使用量は、待ち時間が増加、スワッピングにつながることができます。あなたが適切ElastiCacheを監視するために、これらの指標を相関させる必要があるのはそういうわけです。
+
+このようなまた、あなたが調査し、あなたのキャッシュ・クラスタの活動に目を維持するのに役立ちますノードの追加障害やクラスタの作成、などElastiCacheによって送信されたイベント、との評価指標の相関。
+
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-dashboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-dashboard.png)
 
@@ -255,3 +327,11 @@ In this post we have explored the most important ElastiCache performance metrics
 -   [CPU Utilization](#host-metrics)
 
 [Part 2 of this series](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metrics) provides instructions for collecting all the metrics you need to monitor ElastiCache.
+
+この記事では、最も重要なElastiCacheパフォーマンス・メトリックを検討しています。あなただけのアマゾンElastiCacheの使用を開始している場合は、以下に示す評価指標を監視することは、あなたのキャッシュの健康とパフォーマンスに優れた洞察力を与えるだろう。
+
+現在の接続数
+ヒット率
+メモリメトリック（特に立ち退きとスワップ使用）
+CPU使用率
+このシリーズの第2回では、あなたがElastiCacheを監視するために必要なすべてのメトリックを収集するための手順を説明します。
