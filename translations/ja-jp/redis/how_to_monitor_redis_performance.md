@@ -1,3 +1,5 @@
+＃[翻訳作業中]
+
 # How to monitor Redis performance metrics
 
 *This post is part 1 of a 3-part series on Redis monitoring. [Part 2](https://www.datadoghq.com/blog/how-to-collect-redis-metrics) is about collecting Redis metrics, and [Part 3](http://www.datadoghq.com/blog/monitor-redis-using-datadog/) details how to monitor Redis with Datadog.*

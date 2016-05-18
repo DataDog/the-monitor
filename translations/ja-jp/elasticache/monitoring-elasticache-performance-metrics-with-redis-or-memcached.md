@@ -179,6 +179,8 @@ Redisのみで提供されている**replication lag**を監視することは�
 
 > **Cache** **hits** and **misses** measure the number of successful and failed lookups. With these two metrics you can calculate the **hit rate**: hits / (hits+misses), which reflects your cache efficiency. If it is too low, the cache’s size might be too small for the working data set, meaning that the cache has to evict data too often (see **evictions** metric [below](#memory-metrics)). In that case you should add more nodes which will increase the total available memory in your cluster so more data can fit in the cache. A high hit rate helps to reduce your application response time, ensure a smooth user experience and protect your databases which might not be able to address a massive amount of requests if the hit rate is too low.
 
+**Cache**、 **hits**と**misses**は、ルックアッププロセスの成功および失敗回数を測定します。
+
 キャッシュのヒットとミスは、成功および失敗したルックアップの回数を測定します。ヒット/（ヒット+ミス）、キャッシュの効率を反映している：これらの2つのメトリックを使用すると、ヒット率を計算することができます。それが低すぎると、キャッシュのサイズは、（以下立ち退きメトリック参照）キャッシュがあまりにも頻繁にデータを追い出すために持っていることを意味し、作業データセットに対して小さすぎる可能性があります。その場合、あなたはより多くのデータがキャッシュに収まることができるように、クラスタ内の利用可能な総メモリが増加しますより多くのノードを追加する必要があります。高いヒット率は、アプリケーションの応答時間を短縮スムーズなユーザーエクスペリエンスを確保し、ヒット率が低すぎると要求の膨大な量に対処できないことがあり、あなたのデータベースを保護するのに役立ちます。
 
 
