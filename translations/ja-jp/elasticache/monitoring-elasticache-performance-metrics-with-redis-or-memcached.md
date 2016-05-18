@@ -1,5 +1,3 @@
-#　[翻訳作業中]
-
 > *This post is part 1 of a 3-part series on monitoring Amazon ElastiCache. [Part 2](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metrics) explains how to collect its performance metrics, and [Part 3](https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance) describes how Coursera monitors ElastiCache.*
 
 *このポストは、Amazon ElastiCacheの監視について解説した3回シリーズのPart 1です。[Part 2](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metr)では、ElastiCacheからパフォーマンスメトリックを収集する方法を解説します。[Part 3](https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance)では、CourseraがElastiCacheを監視する方法について解説します。*
