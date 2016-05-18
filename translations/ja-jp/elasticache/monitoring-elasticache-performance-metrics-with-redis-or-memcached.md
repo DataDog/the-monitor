@@ -179,27 +179,23 @@ Redisのみで提供されている**replication lag**を監視することは�
 
 > **Cache** **hits** and **misses** measure the number of successful and failed lookups. With these two metrics you can calculate the **hit rate**: hits / (hits+misses), which reflects your cache efficiency. If it is too low, the cache’s size might be too small for the working data set, meaning that the cache has to evict data too often (see **evictions** metric [below](#memory-metrics)). In that case you should add more nodes which will increase the total available memory in your cluster so more data can fit in the cache. A high hit rate helps to reduce your application response time, ensure a smooth user experience and protect your databases which might not be able to address a massive amount of requests if the hit rate is too low.
 
-**Cache**、 **hits**と**misses**は、ルックアッププロセスの成功および失敗回数を測定します。
-
-キャッシュのヒットとミスは、成功および失敗したルックアップの回数を測定します。ヒット/（ヒット+ミス）、キャッシュの効率を反映している：これらの2つのメトリックを使用すると、ヒット率を計算することができます。それが低すぎると、キャッシュのサイズは、（以下立ち退きメトリック参照）キャッシュがあまりにも頻繁にデータを追い出すために持っていることを意味し、作業データセットに対して小さすぎる可能性があります。その場合、あなたはより多くのデータがキャッシュに収まることができるように、クラスタ内の利用可能な総メモリが増加しますより多くのノードを追加する必要があります。高いヒット率は、アプリケーションの応答時間を短縮スムーズなユーザーエクスペリエンスを確保し、ヒット率が低すぎると要求の膨大な量に対処できないことがあり、あなたのデータベースを保護するのに役立ちます。
+**Cache**、 **hits**と**misses**は、ルックアッププロセスの成功および失敗回数を測定します。これら2つのメトリクスを基に、キャッシュの効率を表す**hit rate** ( hits / (hits+misses) )を計算することができます。もしも、この値が低過ぎる場合は、作業データーセットに対して、キャッシュのサイズが小さすぎて、データーが頻繁にキャッシュ外に追い出されていることを意味しています([下記](#memory-metrics)の**evictions** メトリクスを参照してください)。そのような場合は、ノードを追加し、クラスター内の利用可能なメモリーの総量を増やし、データーがキャッシュ内に収まる様にする必要があります。**hit rate**の高い値は、アプリのレスポンスタイムを短縮し、スムーズなユーザーエクスペリエンスを確保し、膨大な量のリクエストを処理できないかもしれないデーターベースの保護に役立ちます。
 
 
 > \* NOTE: Latency is not available like other classic metrics, but still attainable: you will find all details about measuring latency for Redis [in this post](https://www.datadoghq.com/blog/how-to-collect-redis-metrics/), part of our series on Redis monitoring. Latency is one of the best ways to directly observe Redis performance. Outliers in the latency distribution could cause serious bottlenecks, since Redis is single-threaded—a long response time for one request increases the latency for all subsequent requests. Common causes for high latency include high CPU usage and swapping. [This publication](http://redis.io/topics/latency) from Redis discusses troubleshooting high latency in detail.
 
-
-\* 注：待ち時間が他の古典的なメトリクスのような利用できるが、依然として達成可能ではありません：あなたはこの記事でRedisのための待ち時間を測定に関するすべての詳細を見つけるでしょう、Redisのモニタリングに関する我々のシリーズの一部。レイテンシは直接Redisの性能を観察するための最良の方法の一つです。 Redisのであるため、待ち時間分布の異常値は、深刻なボトルネックが発生する可能性があり、シングルスレッド-1の要求のための長い応答時間は、すべての後続の要求のための待ち時間が増加します。高遅延のための一般的な原因は、高いCPU使用率とスワッピングが含まれます。 Redisのからこの刊行物は、詳細に高遅延のトラブルシューティングについて説明します。
-
+\* 注: 他の古典的なメトリクスのケースと異なり、レイテンシーは、公開されていません。しかし、依然として類似のデーターを手に入れることは可能です。先に紹介した、Redisの監視に特化したシリーズの一部でのポストで[レイテンシーの計測方法について](https://www.datadoghq.com/blog/how-to-collect-redis-metrics/)紹介しています。レイテンシーは、Redisのパフォーマンスを直接観察する最良の方法の一つです。レイテンシー分布の中に発生する異常に長いレイテンシーは、深刻なボトルネックが発生する可能性があります。なぜならば、Redisは、単一スレッドで動作しているため、ある一つのリクエストの長いレスポンス時間は、それ以降のリクエストのレイテンシーを増加させることに繋がります。高いレイテンシーの値は、高いCPUの利用率とスワップの発生に起因することが多いです。又、Redisが掲載している、次の[刊行物](http://redis.io/topics/latency) では、レイテンシー値が高い場合のトラブルシューティング方法について詳しく解説しています。
 
 > Unfortunately, Memcached does not provide a direct measurement of latency, so you will need to rely on throughput measurement via the number of commands processed, [described below](#client-metrics).
 
-あなたは以下で説明する処理されたコマンドの数を介して、スループット測定に依存する必要がありますので、残念ながら、Memcachedのは、待ち時間の直接測定を提供していません。
+残念ながら、Memcachedは、レイテンシーの直接計測値を公開していません。従って[下記に説明した](#client-metrics)ように、複数のコマンドの実行プロセスからのスループットの計測値に頼る必要があります。
 
 
 ### Memory metrics
 
 > Memory is the essential resource for any cache, and neglecting to monitor ElastiCache’s memory metrics can have critical impact on your applications.
 
-メモリは、任意のキャッシュのために不可欠な資源であり、ElastiCacheメモリメトリックを監視するために無視することは、アプリケーションに重大な影響を与える可能性があります。
+メモリーは、キャッシュにとって非常に重要なリソースです。ElastiCacheのメモリーメトリックを監視しないという選択は、アプリケーションに重大な影響を与える可能性があります。
 
 
 <table>
@@ -256,35 +252,36 @@ Redisのみで提供されている**replication lag**を監視することは�
 
 #### Metrics to alert on:
 
-> -   **Memory usage** is critical for your cache performance. If it exceeds the total available system memory, the OS will start swapping old or unused sections of memory (see next paragraph). Writing or reading from disk is up to 100,000x slower than writing or reading from memory, severely degrading the performance of the cache.
+> - **Memory usage** is critical for your cache performance. If it exceeds the total available system memory, the OS will start swapping old or unused sections of memory (see next paragraph). Writing or reading from disk is up to 100,000x slower than writing or reading from memory, severely degrading the performance of the cache.
 
-- メモリ使用量は、あなたのキャッシュのパフォーマンスのために重要です。それは、総利用可能なシステムメモリを超える場合、OSはメモリの古いまたは未使用のセクションを（次の段落を参照）スワッピングを開始します。書き込みまたはディスクから読み取ることは深刻なキャッシュの性能を低下させる、メモリの読み書きよりも遅い100,000までです。
-
-> -   **Evictions** happen when the cache memory usage limit (**maxmemory** for Redis) is reached and the cache engine has to remove items to make space for new writes. Unlike the host memory, which leads to swap usage when exceeded, the cache memory limit is defined by your node type and number of nodes. The evictions follow the method defined in your cache configuration, such as [LRU for Redis](http://redis.io/topics/lru-cache). Evicting a large number of keys can decrease your hit rate, leading to longer latency times. If your eviction rate is steady and your cache hit rate isn’t abnormal, then your cache has probably enough memory. If the number of evictions is growing, you should increase your cache size by migrating to a larger node type (or adding more nodes if you use Memcached).
-
-- キャッシュメモリ使用量の上限（Redisのためmaxmemory）に達したときに立ち退きが起こるとキャッシュエンジンは、新しい書き込みのためのスペースを作るために項目を削除することがあります。超えた場合に使用を交換するリードホストメモリとは異なり、キャッシュメモリの制限は、ノード・タイプノードの数によって定義されます。立ち退きは、RedisのためのLRUとしてあなたのキャッシュ構成で定義された方法に従ってください。多数のキーを追い出しはより長い待ち時間をもたらす、あなたのヒット率を低下させることができます。あなたの立ち退き率が安定であり、あなたのキャッシュヒット率が異常ではありません場合は、あなたのキャッシュはおそらく十分なメモリを持っています。立ち退きの数が増えている場合は、より大きなノードタイプへの移行（またはあなたがのMemcachedを使用する場合は、より多くのノードを追加すること）して、キャッシュサイズを増やす必要があります。
-
-> -   **FreeableMemory**, tracking the host’s remaining memory, shouldn’t be too low, otherwise it will lead to Swap usage (see next paragraph).
-
-- FreeableMemoryは、ホストのメモリ残量を追跡し、それ以外の場合は、（次の段落を参照）の使用を交換するためにつながる、低すぎてはなりません。
+- **Memory usage**は、キャッシュのパフォーマンスを把握するために重要なメトリクス。利用可能なシステムメモリーの総量を超えると、OSは、使われていないか古いメモリーのセクション(次の段落を参照)を、メモリーからスワップ(退避)し始めます。ディスクへの書き込みやディスクからの読み込みには、メモリーに対するそれらの操作の100,000倍程の時間が掛かります。そして、深刻なキャッシュの性能低下になります。
 
 
-> -   **SwapUsage** is a host-level metric that increases when the system runs out of memory and the operating system starts using disk to hold data that should be in memory. Swapping allows the process to continue to run, but severely degrades the performance of your cache and any applications relying on its data. According to AWS, [swap shouldn’t exceed 50MB with Memcached](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheMetrics.WhichShouldIMonitor.html). AWS makes no similar recommendation for Redis.
+> - **Evictions** happen when the cache memory usage limit (**maxmemory** for Redis) is reached and the cache engine has to remove items to make space for new writes. Unlike the host memory, which leads to swap usage when exceeded, the cache memory limit is defined by your node type and number of nodes. The evictions follow the method defined in your cache configuration, such as [LRU for Redis](http://redis.io/topics/lru-cache). Evicting a large number of keys can decrease your hit rate, leading to longer latency times. If your eviction rate is steady and your cache hit rate isn’t abnormal, then your cache has probably enough memory. If the number of evictions is growing, you should increase your cache size by migrating to a larger node type (or adding more nodes if you use Memcached).
 
-- SwapUsageは、システムがメモリ不足、オペレーティングシステムがメモリにあるべきデータを保持するためにディスクを使用して開始したときに増加するホストレベルのメトリックです。スワッピングは、プロセスの実行を継続することができますが、重大なキャッシュとそのデータに依存するすべてのアプリケーションのパフォーマンスが低下します。 AWSによると、スワップのMemcachedと50メガバイトを超えてはなりません。 AWSは、Redisのための同様の勧告を行うものではありません。
+- **Evictions**は、キャッシュによるメモリ使用量の上限(Redisの場合、**maxmemory**)に達した際に、キャッシュエンジンが、新しい書き込みのスペースを作るために、メモリー内の項目をエビクトする際に発生します。ホストのメモリー総量を超えた場合のスワップと異なり、キャッシュ用のメモリの制限は、ノードタイプとノード数によって決まります。エビクション(evictions)は、[”LRU for Redis”](http://redis.io/topics/lru-cache)の様な、キャッシュの設定で定義された方法によって実行されます。大量のキーのエビクトは、キャッシュのヒット率(hit rate)を低下させる可能性があり、長いレイテンシーを発生させる可能性があります。エビクション率(eviction rate)が安定し、キャッシュのヒット率が異常値を示していない場合は、おそらくキャッシュには十分なメモリーが割り当てられている状態です。もしも、エビクション数が増加している場合は、より大きなノードタイプへ移行し(又は、Memcachedを使用する場合は、ノートを追加することも可能です)、キャッシュサイズを増やす必要があります。(Memcachedを使用する場合は、ノートを追加することもできます)
 
 
-> -   The **memory fragmentation ratio** metric (available only with Redis) measures the ratio of memory used as seen by the operation system (**used\_memory\_rss**) to memory allocated by Redis (**used\_memory**). The operating system is responsible for allocating physical memory to each process. Its virtual memory manager handles the actual mapping, mediated by a memory allocator. For example, if your Redis instance has a memory footprint of 1GB, the memory allocator will first attempt to find a contiguous memory segment to store the data. If it can’t find one, the allocator divides the process’s data across segments, leading to increased memory overhead. A fragmentation ratio above 1.5 indicates significant memory fragmentation since Redis consumes 150 percent of the physical memory it requested. If the fragmentation ratio rises above 1.5, your memory allocation is inefficient and you should restart the instance. A fragmentation ratio below 1 means that Redis allocated more memory than the available physical memory and the operating system is swapping (see above).
+> - **FreeableMemory**, tracking the host’s remaining memory, shouldn’t be too low, otherwise it will lead to Swap usage (see next paragraph).
 
-- （のみのRedisで使用可能）メモリの断片化率メトリックのRedis（used_memory）によって割り当てられたメモリへの操作システム（used_memory_rss）によって見られるように使用されるメモリの比率を測定します。オペレーティング・システムは、各プロセスに物理メモリを割り当てる責任があります。その仮想メモリマネージャは、メモリアロケータによって媒介される実際のマッピングを処理します。あなたのRedisのインスタンスは1ギガバイトのメモリフットプリントを有する場合、例えば、メモリアロケータは、最初にデータを格納する連続するメモリセグメントを検索しようとします。それが1を見つけることができない場合、アロケータは増加したメモリのオーバーヘッドにつながる、セグメント全体でプロセスのデータを分割します。 Redisのは、それが要求された物理メモリの150％を消費するので、1.5以上の断片化率はかなりのメモリの断片化を示しています。断片化率が1.5以上になると、お使いのメモリ割り当てが非効率的ですし、インスタンスを再起動する必要があります。 1以下の断片化率は（上記参照）のRedisが使用可能な物理メモリより多くのメモリを割り当てられ、オペレーティングシステムがスワップされていることを意味します。
+- **FreeableMemory**は、ホスト上のメモリ残量を追跡しています。この値は、低すぎる値にならないよう保つ必要があります。この値が低くなるとOSがスワップを使い始めます。（次の段落を参照）
 
+
+> - **SwapUsage** is a host-level metric that increases when the system runs out of memory and the operating system starts using disk to hold data that should be in memory. Swapping allows the process to continue to run, but severely degrades the performance of your cache and any applications relying on its data. According to AWS, [swap shouldn’t exceed 50MB with Memcached](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheMetrics.WhichShouldIMonitor.html). AWS makes no similar recommendation for Redis.
+
+- **SwapUsage**は、システムがメモリ不足し、OSがメモリにあるべきデーターを保持するためにディスクを使用し始めた時に増加するホストレベルのメトリクスです。スワップを発生させることによって、プロセスの実行を継続することができますが、キャッシュとメモリー上のデーターに依存しているアプリのパフォーマンスを著しく低下させます。AWSによると、[Memcachedを使っている場合、スワップは50MBを越えないようにする必要があります](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheMetrics.WhichShouldIMonitor.html)。尚、Redisに関しては、同様のアドバイスは公開されていません。
+
+
+> - The **memory fragmentation ratio** metric (available only with Redis) measures the ratio of memory used as seen by the operation system (**used\_memory\_rss**) to memory allocated by Redis (**used\_memory**). The operating system is responsible for allocating physical memory to each process. Its virtual memory manager handles the actual mapping, mediated by a memory allocator. For example, if your Redis instance has a memory footprint of 1GB, the memory allocator will first attempt to find a contiguous memory segment to store the data. If it can’t find one, the allocator divides the process’s data across segments, leading to increased memory overhead. A fragmentation ratio above 1.5 indicates significant memory fragmentation since Redis consumes 150 percent of the physical memory it requested. If the fragmentation ratio rises above 1.5, your memory allocation is inefficient and you should restart the instance. A fragmentation ratio below 1 means that Redis allocated more memory than the available physical memory and the operating system is swapping (see above).
+
+- Redisにのみ公開されているメトリクスの **memory fragmentation ratio** は、OSによって使われている物理メモリーの量(**used\_memory\_rss**)と、Redisに使用されているメモリーの量(**used\_memory**)の比率を測定しています。OSは、各プロセスに物理メモリを割り当てる役目を担っています。そしてOSの仮想メモリマネージャは、メモリアロケーターを使って、実際のマッピングを処理していきます。例えば、Redisのインスタンスが1ギガバイトのメモリフットプリントを有する場合、メモリアロケーターは、まず最初に、連続してデーターを格納することのできるメモリーセグメントを検索しようとします。もしも、そのようなセグメントを見つけることができない場合、アロケーターは、プロセスデーターを各セグメントに分散して収納します。このプロセスデーターの分散が、メモリーのオーバーヘッドに繋がります。Redisの場合、要求した物理メモリの150%のメモリーを消費するので、1.5以上の断片化率(fragmentation ratio)は、深刻なメモリーの分断化を意味しています。従って、断片化率が1.5以上に上昇すると、メモリ割り当てが非効率的になり、インスタンスの再起動が必要になります。又、1以下の断片化率は、使用可能な物理メモリーより多くのメモリーをRedisが割り当てられ、OSがスワップをしていることを意味します。
 
 
 ### Other host-level metrics
 
 > Host-level metrics for ElastiCache are only available through CloudWatch.
 
-ElastiCacheのためのホストレベルのメトリックは、CloudWatchのを介してのみ利用可能です。
+ElastiCacheのホストレベルのメトリックは、CloudWatchを介してのみ利用することができます。
 
 
 <table>
@@ -316,29 +313,29 @@ ElastiCacheのためのホストレベルのメトリックは、CloudWatchの�
 
 > **CPU Utilization** at high levels can indirectly indicate high latency. You should interpret this metric differently depending on your cache engine technology.
 
-高レベルでCPU使用率は、間接的に大きな遅延を示すことができます。あなたのキャッシュエンジン技術に応じて異なるこのメトリックを解釈する必要があります。
+**CPU Utilization**(CPU利用率)が高止まりしている場合は、間接的にレイテンシーの値が高くなっていることがあります。このメトリクスは、キャッシュエンジン技術に応じて、異なった解釈をする必要があります。
 
 
 > All [AWS cache nodes](https://aws.amazon.com/elasticache/pricing/) with more than 2.78GB of memory or good network performance are multicore. Be aware that if you are using Redis, the extra cores will be idle since Redis is single-threaded. The actual CPU utilization will be equal to this metric’s reported value multiplied by the number of cores. For example a four-core Redis instance reporting 20 percent CPU utilization actually has 80 percent utilization on one core. Therefore you should define an alert threshold based on the number of processor cores in the cache node. AWS recommends that you set the alert threshold at 90 percent divided by the number of cores. If this threshold is exceeded due to heavy read workload, add more read replicas to scale up your cache cluster. If it’s mainly due to write requests, increase the size of your Redis cache instance.
 
-メモリや優れたネットワークパフォーマンスの2.78ギガバイトを超えると、すべてのAWSキャッシュノードは、マルチコアです。あなたはRedisのを使用している場合のRedisはシングルスレッドであるため、余分なコアがアイドル状態になることに注意してください。実際のCPU使用率は、コアの数を乗じ、このメトリックの報告値と同じになります。例えば、20パーセントのCPU使用率を報告して4コアRedisのインスタンスは、実際には1コアで80％の使用率を持っています。したがって、あなたは、キャッシュノード内のプロセッサコアの数に基づいてアラートのしきい値を定義する必要があります。 AWSは、あなたがコアの数で割った90パーセントで警告しきい値を設定することをお勧めします。この閾値は重い読み取りワークロードに超えている場合は、あなたのキャッシュ・クラスタをスケールアップするより、リードレプリカを追加します。それは書き込み要求をするために主に起因するなら、あなたのRedisキャッシュ・インスタンスのサイズを大きくします。
+優れたネットワークパフォーマンスを持っているか、2.78ギガバイトを超えるメモリーを持っている、全の[AWSキャッシュノード](https://aws.amazon.com/elasticache/pricing/)は、マルチコアのインスタンスです。Redisを使用している場合、プロセスはシングルスレッドで動作するため、使われていないコアはアイドル状態になっていることに注意してください。従って、実際のCPU使用率は、メトリクスの集取している値にコアの数を乗じた値になります。例えば、20%のCPU使用率を報告している4コアRedisのインスタンスは、実際には1つのコアの上で80％のCPU使用率で動作しています。従って、アラートは、キャッシュノード内のプロセッサコア数に基づいて閾値を定義する必要があります。AWSでは、90%をコア数で割った値を閾値に設定することを推奨しています。読み込み中心のワークロードにより、この閾値を超える場合は、読み込み用のレプリカを追加し、キャッシュクラスターをスケールアップします。もしも、書き込みリクエストで閾値を超えるようなら、Redisのキャッシュインスタンスを更に大きなサイズに変更します。
 
 
 > Memcached is multi-threaded so the CPU utilization threshold can be set at 90%. If you exceed that limit, scale up to a larger cache node type or add more cache nodes.
 
-CPU使用率の閾値を90％に設定することができるように、memcachedのは、マルチスレッドです。あなたがその制限を超えた場合は、より大きなキャッシュノードタイプにスケールアップまたは複数のキャッシュノードを追加します。
+memcachedはマルチスレッドなので、CPU使用率の閾値を90％に設定することができます。もしも、その上限を超えるようなら、り大きなキャッシュノードタイプにスケールアップするか、キャッシュノードを追加し対応します。
 
 
 ## Correlate to see the full picture
 
 > Most of these key metrics are directly linked together. For example, high memory usage can lead to swapping, increasing latency. That’s why you need to correlate these metrics in order to properly monitor ElastiCache.
 
-これらの主要指標のほとんどは直接連結されています。例えば、高いメモリ使用量は、待ち時間が増加、スワッピングにつながることができます。あなたが適切ElastiCacheを監視するために、これらの指標を相関させる必要があるのはそういうわけです。
+これらのキーメトリクスのほとんどは、直接的に関連してます。例えば、高いメモリー使用量は、スワッピングに繋がり、レイテンシーを増加の原因になります。従って、ElastiCacheを間違いなく監視するためには、これらのメトリクスを相関させて状況を把握することが必要になってきます。
 
 
 > Correlating metrics with events sent by ElastiCache, such as node addition failure or cluster creation, will also help you to investigate and to keep an eye on your cache cluster’s activity.
 
-このようなまた、あなたが調査し、あなたのキャッシュ・クラスタの活動に目を維持するのに役立ちますノードの追加障害やクラスタの作成、などElastiCacheによって送信されたイベント、との評価指標の相関。
+ノードの追加の失敗やクラスタの作成などの、ElastiCacheから送られてくるイベントを、メトリクスと相関しておくことは、キャッシュクラスタの活動を監視し、必要に応じて調査する場合に役に立ちます。
 
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-dashboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-dashboard.png)
@@ -352,14 +349,14 @@ CPU使用率の閾値を90％に設定することができるように、memcac
 > -   [Memory metrics (especially evictions and swap usage)](#memory-metrics)
 > -   [CPU Utilization](#host-metrics)
 
-この記事では、最も重要なElastiCacheパフォーマンス・メトリックを検討しています。あなただけのアマゾンElastiCacheの使用を開始している場合は、以下に示す評価指標を監視することは、あなたのキャッシュの健康とパフォーマンスに優れた洞察力を与えるだろう。
+このポストでは、ElastiCacheの最も重要なパフォーマンスメトリックを見てきました。もしも、あなたがAmazon ElastiCacheの使用を開始したばかりなら、以下にリスト化したメトリクスを監視することは、キャッシュクラスターの健全性とパフォーマンスに関して優れた洞察力を提供してくれるでしょう。
 
-- 現在の接続数
-- ヒット率
-- メモリメトリック（特に立ち退きとスワップ使用）
-- CPU使用率
+-   [Number of current connections (現在のコネクション数)](#client-metrics)
+-   [Hit rate (キャッシュヒット率)　](#cache-metrics)
+-   [メモリーメトリクス (特に、evictionsと、swap usage)](#memory-metrics)
+-   [CPU Utilization (CPU利用率)](#host-metrics)
 
 
 > [Part 2 of this series](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metrics) provides instructions for collecting all the metrics you need to monitor ElastiCache.
 
-このシリーズの第2回では、あなたがElastiCacheを監視するために必要なすべてのメトリックを収集するための手順を説明します。
+このシリーズの[Part 2](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metrics)では、ElastiCacheを監視すのに必要な全てのメトリックを収集する手順を解説していきます。
