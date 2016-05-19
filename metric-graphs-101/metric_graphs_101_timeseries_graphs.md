@@ -261,7 +261,7 @@ Heat maps are essentially [distribution graphs](http://docs.datadoghq.com/graphi
 ## Conclusion
 By understanding the ideal use cases and limitations of each kind of timeseries graph, you can extract actionable information from your metrics more quickly.
 
-In the next article in this series, we'll explore other methods of graphing and monitoring metrics, including change graphs, ranked lists, distributions, and other visualizations. 
+In [the next article](https://www.datadoghq.com/blog/summary-graphs-metric-graphs-101/) in this series, we'll explore other methods of graphing and monitoring metrics, including change graphs, ranked lists, distributions, and other visualizations. 
 
 ---------------------------------------------------------
 
