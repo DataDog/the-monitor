@@ -246,7 +246,8 @@ Redisのみで提供されている**replication lag**を監視することは�
 <td>Resource: Saturation</td>
 </tr>
 </tbody>
-</table> 
+</table>
+
 
 #### Metrics to alert on:
 
