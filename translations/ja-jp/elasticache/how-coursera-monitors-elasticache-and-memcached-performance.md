@@ -1,5 +1,3 @@
-# [翻訳作業中]
-
 > *This post is part 3 of a 3-part series on monitoring Amazon ElastiCache.* [*Part 1*](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached) *explores the key ElastiCache performance metrics, and* [*Part 2*](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metrics) *explains how to collect those metrics.*
 
 *このポストは、Amazon ElastiCacheの監視について解説した3回シリーズのPart 3です。[Part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached)では、ElastiCacheのキーメトリクスを解説しました。[Part 2](https://www.datadoghq.com/blog/collecting-elasticache-metrics-its-redis-memcached-metr)では、ElastiCacheからパフォーマンスメトリックを収集する方法を解説しました。*
@@ -119,25 +117,22 @@ Courseraでは、致命的な問題には、[PagerDuty](https://www.datadoghq.co
 
 > Using Datadog allows Coursera to track all the metrics they need from the different parts of their infrastructure, in one place, with any relevant type of visualization. Thus they can spot at a glance any potential issue related to their cache and quickly find the root cause.
 
-
-
-
-使用Datadogはコーセラが視覚化の任意の関連タイプで、一つの場所に彼らは、インフラストラクチャのさまざまな部分から必要なすべてのメトリックを、追跡することができます。したがって、彼らは一目で自分のキャッシュに関連する潜在的な問題を発見することができ、迅速に根本的な原因を見つけます。
+Datadogを採用することにより、Courseraでは、インフラのさまざまな部分から収集したメトリクスを、最適な可視化方法使って、一カ所で監視することができるようになりました。そうすることにより、Courseraのエンジニアは、キャッシュに関する障害の可能性とその根本的な原因を、一目で発見することができるようになりました。
 
 
 > By creating [timeboards](http://help.datadoghq.com/hc/en-us/articles/204580349-What-is-the-difference-between-a-ScreenBoard-and-a-TimeBoard-) they can overlay events from a specific service like ElastiCache and correlate them with performance metrics from other parts of their infrastructure.
 
-timeboardsを作成することにより、彼らはElastiCacheのような特定のサービスからイベントをオーバーレイすることができ、それらのインフラストラクチャの他の部分からのパフォーマンスメトリックでそれらを関連付けます。
+[timeboards](http://help.datadoghq.com/hc/en-us/articles/204580349-What-is-the-difference-between-a-ScreenBoard-and-a-TimeBoard-)を作成することにより、ElastiCacheのようなサービスからイベントをグラフ内に上書きして表示することができ、又、キャッシュのパフォーマンスメトリクスをインフラの他の部分からのメトリクスと相関して表示することもできるようになりした。
 
 
 > Datadog also makes it easy to collect and monitor native cache metrics from Redis or Memcached, in addition to generic ElastiCache metrics from Amazon, for even deeper insight into cache performance.
 
-Datadogはまた、それが簡単に収集し、キャッシュのパフォーマンスへのより深い洞察力のために、アマゾンからの一般的なElastiCacheの指標に加えて、Redisのか、Memcachedの由来の天然キャッシュ・メトリックを監視することが可能になります。
+更に、Datadogの採用は、Amazonから集取できる一般的なElastiCacheのメトリクスに加え、Redis や Memcachedからネイティブのキャッシュメトリクスを少ない手間で集取しそれらを監視できるようにしました。
 
 
 > If you’re using ElastiCache and Datadog already, we hope that these tips help you gain improved visibility into what’s happening in your cache. If you don’t yet have a Datadog account, you can start tracking your cache’s health and performance today with a [free trial](https://app.datadoghq.com/signup).
 
-あなたは既にElastiCacheとDatadogを使用している場合は、我々はこれらのヒントは、あなたのキャッシュに何が起こっているかに改善された可視性を得るのを助けることを願っています。あなたはまだDatadogアカウントをお持ちでない場合は、無料の試用版を使用してキャッシュの健康とパフォーマンス今日の追跡を開始することができます。
+もしも未だDatadogのアカウントを持っていないなら、無料トライアルへ[ユーザー登録](https://app.datadoghq.com/signup)すれば直ちにキャッシュの監視を始めることができます。
 
 
 ## Acknowledgments
