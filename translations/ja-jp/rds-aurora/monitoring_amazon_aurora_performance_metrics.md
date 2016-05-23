@@ -1,5 +1,3 @@
-# [翻訳作業中]
-
 > *This post is part 1 of a 3-part series about monitoring the Aurora database service on Amazon RDS. [Part 2][part-2] is about collecting metrics from Aurora, and [Part 3][part-3] details how to monitor Aurora with Datadog.*
 
 *このポストは、Amazon RDS上のAuroraデータベースの監視について解説した3回シリーズのPart 1です。[Part 2][part-2]では、Auroraからメトリックを収集する方法を解説します。[Part 3][part-3]では、Datadogを使ってAuroraを監視する方法について解説します。*
@@ -339,12 +337,11 @@ Auroraのデータベースエンジンは、コネクションエラーに関�
 
 > * Open database connections: If a client attempts to connect to Aurora when all available connections are in use, Aurora will return a "Too many connections" error and increment `Connection_errors_max_connections`. To prevent this scenario, you should monitor the number of open connections and make sure that it remains safely below the configured limit.
 
-- 開いているデータベース接続：クライアントは、利用可能なすべての接続が使用中のときにオーロラに接続しようとすると、オーロラは「あまりにも多くの接続"エラーを返すとConnection_errors_max_connectionsをインクリメントします。このシナリオを回避するには、開いている接続の数を監視し、それが安全に構成された制限を下回ったままでいることを確認する必要があります。
-
+* Open database connections: 利用可能なすべてのコネクションが使用中の際に、クライアントがAuroraに接続使用とすると、Auroraは、"Too many connections"エラーを返し、`Connection_errors_max_connections`が、加算されます。このシナリオを回避するためには、使っているコネクションの数を監視し、`max_connections`の制限に掛からないようにコントロールする必要があります。
 
 > * Failed connection attempts: If this metric is increasing, your clients are probably trying and failing to connect to the database. Dig deeper with metrics such as `Connection_errors_max_connections` and `Connection_errors_internal` to diagnose the problem.
 
-- 接続の試行を失敗しました：このメトリックが増加している場合、クライアントは、おそらくしようとしてデータベースに接続するために失敗しています。問題を診断するためにそのようなConnection_errors_max_connectionsやConnection_errors_internalなどの指標で深く掘ります。
+* Failed connection attempts: この数が増加している場合、クライアントは、データベースの接続しようとして失敗している状況でしょう。 接続に失敗している原因を診断するために、`Connection_errors_max_connections`や`Connection_errors_internal`のようなメトリクスを使って調査をすすめると良いでしょう。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"></a>
@@ -359,19 +356,16 @@ Auroraのデータベースエンジンは、コネクションエラーに関�
 
 > Aurora supports the creation of up to 15 read replicas from the master instance. These replicas are assigned a separate endpoint, so you can point client applications to read from a replica rather than from the source instance. You can also monitor the replica's connections, throughput, and query performance, just as you would for an ordinary RDS instance.
 
-オーロラは、マスター・インスタンスから最大15のリードレプリカの作成をサポートします。あなたはレプリカからではなく、ソース・インスタンスからの読み取りにクライアントアプリケーションを指すことができますので、これらのレプリカは、個別のエンドポイントが割り当てられています。ちょうどあなたが普通のRDSインスタンスの場合と同じように、あなたはまた、レプリカの接続、スループット、およびクエリのパフォーマンスを監視することができます。
-
+Auroraは、マスターインスタンに対し、最大15のリードレプリカの作成をサポートします。これらのレプリカには異なるエンドポイントが割り振られています。従って、マスターになっているインスタンスではなくレプリカから読み取ることができるようにクライアントアプリを設定し直すこともできます。更に、一般的なRDSインスタンスを監視するように、レプリカのスループットやクエリーパフォーマンスも監視することができます。
 
 > The lag time for any read replica is captured by the CloudWatch metric `AuroraReplicaLag`. This metric is usually not actionable, although if the lag is consistently very long, you should investigate your settings and resource usage.
 
 読み込みレプリカの遅延時間は、CloudWatchメトリクスの`ReplicaLag`で収集することができます。一般的は、このメトリクスに対してアクションを起こすことは有りませんが、もしも遅延時間が一貫して非常に長い場合は、設定やリソースの使用状況を再度見直す必要があるでしょう。
 
-任意のタイムラグはレプリカがCloudWatchのメトリックAuroraReplicaLagによって捕捉されるお読みください。ラグは一貫して非常に長い場合、あなたはあなたの設定やリソースの使用状況を調査する必要がありますが、このメトリックは、通常、実用ではありません。
-
 
 > Note that this is a significantly different metric than the generic RDS metric `ReplicaLag`, which applies to other database engines. Because Aurora instances all read from the same virtual storage volume, the `AuroraReplicaLag` tracks the lag in page cache updates from primary to replica rather than the lag in applying all write operations from the primary instance to the replica.
 
-これは他のデータベースエンジンに適用される一般的なRDSメトリックReplicaLag、より有意に異なるメトリックであることに注意してください。オーロラのインスタンスはすべて同じ仮想ストレージ・ボリュームから読み取るので、AuroraReplicaLagは、レプリカへのプライマリからページキャッシュの更新の遅れではなく、すべてのレプリカにプライマリ・インスタンスからの書き込み操作を適用する際の遅れを追跡します。
+Auroraを使っている場合、RDSメトリクスの`ReplicaLag`は、他のデータベースエンジンで収集しているモノと著しく異なっていることを理解しておいてください。Auroraのインスタンスは、皆、同じ仮想ストレージボリュームから読み込むため、`AuroraReplicaLag`は、プライマリインスタンスからレプリカへの書き込み操作の全ての適応するための遅れではなく、プライマリからレプリカへのページキャッシュの更新の遅れを計測しています。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/replica-lag.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/replica-lag.png"></a>
