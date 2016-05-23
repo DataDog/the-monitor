@@ -116,22 +116,19 @@ CloudWatchのメトリックでは、すべてのDMLリクエスト(inserts, upd
 
 > The Aurora-only metrics for `SELECT` latency and DML (insert, update, or delete) latency capture a critical measure of query performance. Along with query volume, latency should be among the top metrics monitored for almost any use case.
 
-SELECTレイテンシとDML（挿入、更新、または削除）待ち時間キャプチャクエリのパフォーマンスの重要な指標のためのオーロラメトリックのみ。クエリのボリュームに加えて、待ち時間はほぼすべてのユースケースについて監視トップの指標の一つである必要があります。
+Auroraのみのメトリクスで、`SELECT`レイテンシーとDMLレイテンシーは、クエリーのパフォーマンスを測るうえできわめて重要なメトリクスです。それらに、クエリーのボリュームと併せ、レイテンシーは、ほとんど全てのユースケースで監視されるべき項目になります。
 
 
 > MySQL (and therefore Aurora) also features a `Slow_queries` metric, which increments every time a query's execution time exceeds the number of seconds specified by the `long_query_time` parameter. To modify `long_query_time` (or any other database parameter), simply log in to the AWS Console, navigate to the RDS Dashboard, and select the parameter group that your RDS instance belongs to. You can then filter to find the parameter you want to edit.
 
-MySQLの（したがって、オーロラ）も、クエリの実行時間がlong_query_timeパラメータで指定した秒数を超えるたびに増加しSlow_queriesメトリックを備えています。 long_query_time（または他のデータベース・パラメータ）を変更するには、単に、AWS ConsoleにログインRDSダッシュボードに移動し、あなたのRDSインスタンスが属するパラメータグループを選択します。その後、編集したいパラメータを見つけるためにフィルタリングすることができます。
+MySQL、そしてAuroraも、`Slow_queries`というメトリクスを公開しています。ます。このクエリーは、`long_query_time`パラメーターで指定した秒数を超える毎に増加していきます。デフォルトで`long_query_time`は、10秒に設定されていますが、AWSコンソール上で変更することができます。`long_query_time`（または他のMySQLパラメータ）を変更するには、AWSコンソールにログインし、RDSのダッシュボードに移動し、RDSインスタンスが属するパラメータグループを選択します。その後、編集したいパラメーターを検索します。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/parameter-groups.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/parameter-groups.png"></a>
 
 > For a deeper look into query performance, the MySQL [performance schema][performance-schema] (which is compatible with Aurora but is disabled by default) also stores valuable statistics, including query latency, from the database server. Though you can query the performance schema directly, it is easier to use Mark Leith’s [sys schema][sys-schema], which provides convenient views, functions, and procedures to gather metrics from MySQL or Aurora. For instance, to find the execution time of all the different statement types executed by each user:
 
-クエリのパフォーマンスに深く一見のために、（オーロラと互換性がありますが、デフォルトでは無効になって）MySQLの性能スキーマは、データベース・サーバーからのクエリの待機時間を含め、貴重な統計情報を、記憶しています。あなたが直接パフォーマンススキーマを照会することができますが、MySQLやオーロラからメトリックを収集するために便利なビュー、関数、およびプロシージャを提供してマークリースのSYSスキーマを使用する方が簡単です。たとえば、各ユーザーによって実行されたすべての異なるステートメントの種類の実行時間を見つけるために：
-
-
-MySQLのパフォーマンススキーマ(有効化されている状態で)は、クエリーのレイテンシーなどのデータベースサーバーからの貴重な統計情報を記憶しています。performance schemaへは直接アクセスすることはできますが、Mark Leith氏の[sys schema][sys-schema]を使う方が簡単です。このソフトは、MySQLからメトリクスを収集する際に、便利なビュー、関数、および手順を提供してくれます。例えば、ユーザー毎に異なるステートメントタイプの実行時間を知りたい場合:
+クエリーを更に深く検証したい場合は、MySQLのperformance schema(Auroraと互換性があり、基本では無効になっています)は、クエリーのレイテンシーなど、データベースサーバーからの貴重な統計情報を保存しています。performance schemaへは、直にアクセスすることはできますが、Mark Leith氏が公開している[sys schema][sys-schema]を使う方が簡単です。このソフトは、MySQLからメトリクスを収集する際に、便利なビュー、関数、および手順を提供してくれます。例えば、ユーザー毎に異なるステートメントタイプの実行時間を知りたい場合:
 
 
 <pre class="lang:mysql">
@@ -159,7 +156,7 @@ performance schemaを有効にするには、AWSコンソールから、その�
 
 > The performance schema and sys schema also allow you to quickly assess how many queries generated errors or warnings:
 
-パフォーマンスのスキーマおよびSYSスキーマはまた、あなたがすぐにエラーや警告が発生したどのように多くのクエリを評価することができます：
+performance schemaおよびsys schemaは、エラーや警告がどれくらい発生しているかを素早く見つけだこともできます:
 
 
 <pre class="lang:mysql">
@@ -170,12 +167,13 @@ mysql> SELECT SUM(errors) FROM sys.statements_with_errors_or_warnings;
 
 > * Latency: Slow reads or writes will necessarily add latency to any application that relies on Aurora. If your queries are executing more slowly than expected, evaluate your RDS [resource metrics](#resource-utilization). Aurora users also have a number of caching options to expedite transactions, from making more RAM available for the [buffer pool][buffer-pool] used by InnoDB (usually by upgrading to a larger instance), to enabling or expanding the [query cache][query-cache] that serves identical queries from memory, to using an application-level cache such as Memcached or [Redis][redis].
 
-* レイテンシ：スロー読み取りまたは書き込みに必ずしもオーロラに依存している任意のアプリケーションに遅延を追加します。あなたのクエリが予想よりも遅く実行している場合は、あなたのRDSのリソースメトリックを評価します。オーロラユーザーもに、有効化またはメモリから同一のクエリを提供していますクエリキャッシュを拡大する、（通常より大きなインスタンスにアップグレードすることによって）はInnoDBが使用するバッファー・プールのより多くのRAMを利用可能にすることから、取引を促進するためにキャッシュ・オプションの数を持っていますこのようなMemcachedのかのRedisなどのアプリケーション・レベルのキャッシュを使用。
+
+* Latency: 遅い読み取り又は書き込みは、Auroraに依存しているアプリケーションのレイテンシーを大きくします。もしもクエリーが予想していたよりも遅く実行されている状態では、RDSの[リソースメトリクス](#resource-utilization)を検証するとよいでしょう。Auroraのユーザーには、トランスアクションをスピードアップするためのキャッシュオプションが幾つかあります。InnoDBが使っている[buffer pool][buffer-pool]により多くのRAMを用意する(通常は、インスタンスのサイズを大きくします)、同一内容のクエリーをメモリーで処理するために、 [クエリー用のキャッシュ][query-cache]を準備したり拡張したりする、Memcached や [Redis][redis]などのアプリケーション・レベルのキャッシュを使用するなどがあります。*
 
 
-> * `Slow_queries`: How you define a slow query (and therefore how you configure the `long_query_time` parameter) will depend heavily on your use case and performance requirements. If the number of slow queries reaches worrisome levels, you will likely want to identify the actual queries that are executing slowly so you can optimize them. You can do this by querying the sys schema or by configuring Aurora to log all slow queries. More information on enabling and accessing the slow query log is available [in the RDS documentation][slow-log]. 
+> * `Slow_queries`: How you define a slow query (and therefore how you configure the `long_query_time` parameter) will depend heavily on your use case and performance requirements. If the number of slow queries reaches worrisome levels, you will likely want to identify the actual queries that are executing slowly so you can optimize them. You can do this by querying the sys schema or by configuring Aurora to log all slow queries. More information on enabling and accessing the slow query log is available [in the RDS documentation][slow-log].
 
-* `Slow_queries`: どのようにスロークエリーを提起するか(そして、`long_query_tim`のパラメーター値)は、ユースケースと性能要求に大きく依存しています。スロークエリーの数が気になるレベルに達した場合、最適化をするために、それらの処理に時間の掛かっている実際のクエリーを特定したくなることでしょう。この特定は、sys schemaにクエリーを送信するか、スロークエリーを記録する設定をMySQLに施すことにより実現することができます。スロークエリーのログを有効にする方法と、それへのアクセスとの方法についての詳しい情報については、[RDSのドキュメント][slow-log]を参照してください。[スローログ]。
+* `Slow_queries`: どのようにスロークエリーを提起するか(そして、`long_query_tim`のパラメーター値)は、ユースケースと性能要求に大きく依存しています。スロークエリーの数が気になるレベルに達した場合、最適化をするために、それらの処理に時間の掛かっている実際のクエリーを特定したくなることでしょう。この特定は、sys schemaにクエリーを送信するか、スロークエリーを記録する設定をMySQLに施すことにより実現することができます。スロークエリーのログを有効にする方法と、それへのアクセスとの方法についての詳しい情報については、[RDSのドキュメント][slow-log]を参照してください。
 
 	<pre class="lang:mysql">mysql> SELECT * FROM mysql.slow_log LIMIT 10\G
 *************************** 1. row ***************************
@@ -236,20 +234,22 @@ last_insert_id: 0
 
 > CloudWatch makes available RDS metrics on read and write IOPS, which indicate how much your database is interacting with backing storage. If your storage volumes cannot keep pace with the volume of read and write requests, you will start to see I/O operations queuing up. The `DiskQueueDepth` metric measures the length of this queue at any given moment.
 
+CloudWatchは、どの程度データベースがバッキングストレージと連動して動いているかを示すために、読み取りと書き込みのIOPSをRDSメトリクスとして公開しています。お使いのストレージボリュームが、読み取りおよび書き込みリクエスト量にペースを保つことができない場合は、I/O操作はキューに溜まっていきます。`DiskQueueDepth`メトリクスは、特定タイミングのこのキューの長さを計測します。
+
+
 > Note that there will not be a one-to-one correspondence between queries and disk operations—queries that can be served from memory will bypass disk, for instance, and queries that return a large amount of data can involve more than one I/O operation.
 
-クエリーの量とディスクの操作の量には、1対1の相関関係はありません。メモリーから結果を提供することができる場合は、ディスクへのアクセスはバイパスされます。更に、大量のデーターを返すクエリーは、複数のI/O操作に関係しています。具体的には、[MySQLのディフォルトページサイズ][iops]の16KBを越える読み取り又は書き込みは、複数のI/O操作を必要とします。
+クエリーの量とディスク操作の量には、1対1の関係にはありません。メモリーからクエリーの結果を提供することができる場合は、ディスクへのアクセスはバイパスされます。更に、大量のデーターを返すクエリーでは、複数のI/O操作に関係しています。
 
 
 > In addition to I/O throughput metrics, RDS offers `ReadLatency` and `WriteLatency` metrics. These metrics do not capture full query latency—they only measure how long your I/O operations are taking at the disk level.
 
-I/Oスループットのメトリクスに加えて、RDSは`ReadLatency`と`ReadLatency`のメトリクスを提供しています。これらのメトリクスは、クエリーの完全なレイテンシーを計測していません。これらのメトリクスは、ディスクレベルでのI/O操作がどれくらい掛かっているかを計測しています。
+I/Oスループットに関するメトリクスに加えて、RDSは`ReadLatency`と`ReadLatency`のメトリクスを提供しています。これらのメトリクスは、クエリーの完全なレイテンシーを計測していません。これらのメトリクスは、ディスクレベルでのI/O操作にどれくらいの時間が掛かっているかを計測しています。
+
 
 > For read-heavy applications, one way to overcome I/O limitations is to [create a read replica][read-replica] of the database to serve some of the client read requests. Aurora allows you to create up to 15 replicas for every primary instance. For more, see the [section below](#read-replica-metrics) on metrics for read replicas.
 
-データーベースからの読み取りが多いアプリで、I/Oの制限を克服する一つの方法は、クライアントの読み込みリクエストを処理するための[読み込み用のレプリカ(複製)を作る][read-replica]ことです。読み取りレプリカのメトリクスの詳細については、[以下のセクション](#read-replica-metrics)を参照してください。
-
-読み取り重用途のために、I / Oの制限を克服する一つの方法は、クライアントのいくつかは、読み取り要求提供するために、データベースのリードレプリカを作成することです。オーロラは、あなたがすべてのプライマリインスタンスのための15のレプリカまで作成することができます。詳細については、読み取りレプリカのメトリックについては、以下のセクションを参照してください。
+データーベースからの読み取りが多いアプリで、I/Oの制限を克服する一つの方法は、クライアントの読み込みリクエストを処理するための[読み込み用のレプリカ(複製)を作る][read-replica]ことです。Auroraは、プライマリーインスタンス1台毎に、15台のレプリカを作成できるようになっています。尚、読み取りレプリカのメトリクスの詳細については、[以下のセクション](#read-replica-metrics)を参照してください。
 
 
 #### CPU metrics
@@ -259,32 +259,28 @@ I/Oスループットのメトリクスに加えて、RDSは`ReadLatency`と`Rea
 高いCPUの利用率は、必ずしも悪いこと兆候ではありません。しかし、IOPSとネットワークが制限値以内にあり、メモリーも十分に確保できている状態では、選択しているインスタンスのCPUがボトルネックになっているかもしれません。
 
 
-高いCPU使用率が必ずしも悪い兆候ではありません。しかし、あなたのデータベースが不十分な実行している場合IOPSおよびネットワークのメトリックは、正常範囲にあり、インスタンスが十分なメモリを持っているように見えますが、あなたの選択したインスタンス・タイプのCPUがボトルネックになる可能性があります。
-
-
 #### Memory metrics
 
 > Databases perform best when most of the working set of data can be held in memory. For this reason, you should monitor `FreeableMemory` to ensure that your database instance is not memory-constrained. AWS advises that you use the ReadIOPS metric to determine whether the working set is largely in memory:
 
 > > To tell if your working set is almost all in memory, check the ReadIOPS metric (using AWS CloudWatch) while the DB instance is under load. The value of ReadIOPS should be small and stable.
 
-データのワーキングセットのほとんどはメモリに保持することができたときにデータベースが最適行います。このような理由から、あなたのデータベースインスタンスがメモリに制約がないことを確認するためにFreeableMemoryを監視する必要があります。 AWSは、設定作業がメモリに大部分があるかどうかを決定するメトリックReadIOPSを使用することを助言します：
+データベースは、処理をしているデーターの全てがメモリー内に保持されている場合、最高の性能を発揮します。このような理由から、データベースがメモリーから制約を受けていないことを確認するために、`FreeableMemory`を監視する必要があります。AWSでは、必要なデーターの大半がメモリー内にロードできているかを判断するのにReadIOPSメトリクスを使うことを推奨しています:
 
-> あなたのワーキングセットがメモリ内のほぼすべてのであれば、教えてDBインスタンスに負荷がかかっている間（AWS CloudWatchのを使用して）メトリックReadIOPSを確認します。 ReadIOPSの値が小さく、安定していなければなりません。
+> 必要なでーたーがメモリ内のほぼ全てロードされているかを判断するためには、データベースインスタンスに負荷の掛かっている状態で、AWS CloudWatch経由で、ReadIOPSメトリクスをチェックします。ReadIOPSの値は、小さく、安定している必要があります。
 
 
 #### Network metrics
 > Unlike other RDS database engines, Aurora's network throughput metrics do not include network traffic from the database instances to the storage volumes. The `NetworkReceiveThroughput` and `NetworkTransmitThroughput` metrics therefore track only network traffic to and from clients.
 
-他のRDSのデータベースエンジンとは異なり、オーロラのネットワークスループットの測定基準は、ストレージボリュームにデータベース・インスタンスからのネットワークトラフィックが含まれていません。 NetworkReceiveThroughputとNetworkTransmitThroughputメトリックは、そのためにクライアントからのネットワークトラフィックのみを追跡します。
+RDS上の他のデータベースエンジンとは異なり、Auroraのネットワークスループットのメトリクスは、ストレージボリュームとデータベースインスタンス間のネットワークトラフィックが含まれていません。そのため、`NetworkReceiveThroughput`メトリクスと`NetworkTransmitThroughput`メトリックは、クライアントとデータベースインスタンスクラス間のネットワークトラフィックのみを計測しています。
 
 
 #### Metrics to alert on
 
 > * `DiskQueueDepth`: It is not unusual to have some requests in the disk queue, but investigation may be in order if this metric starts to climb, especially if latency increases as a result. (Time spent in the disk queue adds to read and write latency.)
 
-DiskQueueDepth：、それは、ディスクキュー内のいくつかの要求を持つことは珍しいことではありませんが、このメトリック開始を登る場合、調査は順序であってもよい場合は特に、結果として、待ち時間が増加します。 （時間は、キューが読み取りおよびレイテンシを書くために追加されたディスクで過ごしました。）
-
+- `DiskQueueDepth`： ディスクキューにリクエストが溜まっていることは珍しくありません。しかし、このメトリクスが増加傾向にあるなら、調査が必要です。特に、このディスクキューの増加によってレイテンシがぞうかしているなら。(ディスクキュー内で順番を待っている時間は、読み取りや書き込みレイテンシーに加算されていきます。)
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/disk-queue.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/disk-queue.png"></a>
 
@@ -302,13 +298,17 @@ DiskQueueDepth：、それは、ディスクキュー内のいくつかの要求
 
 > Monitoring how many client connections are in use is critical to understanding your database's activity and capacity. Aurora has a configurable connection limit; the default value depends on the memory of the database's instance class in bytes, according to the formula:
 
-多くのクライアント接続が使用中であるかを監視することで、データベースの活動や能力を理解するために重要です。オーロラは、設定可能な接続の制限があります。デフォルト値は、式に従って、バイト単位でデータベースのインスタンスクラスのメモリに依存します。
+データーベースの処理状況や処理能力を理解するためにクライアント接続の数を把握することは重要です。Auroraには、このコネクション数の制限を設定する機能があります。RDSの場合、デフォルト値は、データベースのインスタンスクラスが持っているメモリー容量をベースに、以下の様な計算式になります:
+
 
 `log(DBInstanceClassMemory/8187281408)*1000`
 
 > The `max_connections` parameter can be checked or modified via the database instance's parameter group using the RDS dashboard in the AWS console. You can also check the current value of `max_connections` by querying the Aurora instance itself (see [part 2][part-2] of this series for more on connecting to RDS instances directly):
 
 MAX_CONNECTIONSパラメータがオンまたはAWSコンソールでRDSのダッシュボードを使用して、データベース・インスタンスのパラメータ群を経由して変更することができます。また、オーロラインスタンス自体が（直接インスタンスをRDSへの接続の詳細については、このシリーズのパート2を参照）照会することにより、MAX_CONNECTIONSの現在の値を確認することができます。
+
+`max_connections`パラメーターは、AWSのコンソールのRDSダッシュボードから、データベースインスタンスのパラメーターグループを編集することで有効かや変更できます。又、`max_connections`の値は、Auroraインスタンスに直接問い合わせることで確認することもできます。(RDSインスタンに直接接続し情報を集取する方法は、このシリーズの[Part 2][part-2]を参照してください。)
+
 
 <pre class="lang:mysql">
 mysql> SELECT @@max_connections;
@@ -322,25 +322,17 @@ mysql> SELECT @@max_connections;
 
 > To monitor how many connections are in use, CloudWatch exposes a `DatabaseConnections` metric tracking open connections, and the database engine exposes a similar `Threads_connected` metric. The `Threads_running` metric provides additional visibility by isolating the threads that are actively processing queries.
 
-使用中のコネクション数を監視するには、次の方法があります。CloudWatchは、`DatabaseConnections`メトリクスという使用中のRDSコネクション数を公開しています。MySQLは、類似のメトリクスとして`Threads_connected`(コネクションスレッドの数)を公開しています。(MySQLは、スレッド毎にコネクションを割り当てています。)どちらのメトリクスも使用中のコネクションの数を監視するのには使えますが、MySQLから収集した方が、1分毎にCloudwatchから収集するより短いインターバルでメトリクスを収集することができます。更に、MySQLは、活発にクエリーを処理しているスレッドを識別するために`Threads_running`メトリクスも公開します。
-
-使用中の接続数を監視するには、CloudWatchのは、開いている接続を追跡するメトリックDatabaseConnectionsを公開して、データベースエンジンは、同様のThreads_connectedメトリックを公開します。 Threads_runningメトリックは、積極的にクエリを処理しているスレッドを単離することによって、追加の可視性を提供します。
+使用中のコネクション数を監視するには、次の方法があります。CloudWatchは、`DatabaseConnections`メトリクスという使用中のRDSコネクション数を公開しています。データベースエンジンは、類似のメトリクスとして`Threads_connected`(コネクションスレッドの数)を公開しています。更に、活発にクエリーを処理しているスレッドを識別するためには、`Threads_running`メトリクスも公開しています。
 
 
 > If your server reaches the `max_connections` limit and starts to refuse connections, `Connection_errors_max_connections` will be incremented, as will the `Aborted_connects` metric tracking all failed connection attempts. CloudWatch also tracks failed connections via the `LoginFailures` metric.
 
-もしもサーバーが、`max_connections`の制限値に達し、新しいコネクションを受け入れなくなった場合、`Connection_errors_max_connections`と、接続の試みの失敗を追跡している`Aborted_connects`が加算されていきま
-
-
-サーバーがMAX_CONNECTIONS限界に達し、接続を拒否するために開始した場合、すべての接続の試みを失敗した追跡メトリックAborted_connectsを意志として、Connection_errors_max_connectionsは、インクリメントされます。 CloudWatchのもメトリックLoginFailuresを経由して失敗した接続を追跡します。
+もしもサーバーが、`max_connections`の制限値に達し、新しいコネクションを受け入れなくなった場合、`Connection_errors_max_connections`と、接続の試みの全ての失敗を追跡している`Aborted_connects`が加算されていきます。更に、CloudWatchには、コネクションの失敗を計測している`LoginFailures`というメトリクスもあります。
 
 
 > Aurora's database engine exposes a variety of other metrics on connection errors, which can help you identify client issues as well as serious issues with the database instance itself. The metric `Connection_errors_internal` is a good one to watch, because it is incremented when the error comes from the server itself. Internal errors can reflect an out-of-memory condition or the server's inability to start a new thread.
 
-MySQLは、コネクションエラーに関し、様々なメトリクスを公開しています。これらのメトリクスは、クライアントの問題を識別したり、データーベースインスタンス自体の深刻な問題を識別するのに役立ちます。`Connection_errors_internal`メトリクスは、コネクションエラーがサーバー側で発生している際に加算されるので、把握しておく必要のあるメトリクスです。このインターナルエラーは、メモリーが不足している状態か、サーバーが新しいスレッドを開始できない状況を反映しています。
-
-
-オーロラのデータベースエンジンは、データベース・インスタンス自体でクライアントの問題と同様に深刻な問題を識別するのに役立ちます接続エラー上の他のメトリック、さまざまなを公開しています。エラーがサーバー自体から来るとき、それがインクリメントされるため、メトリックConnection_errors_internalは、見て良いものです。内部エラーは、メモリ不足の状態か、新しいスレッドを開始するには、サーバーのできないことを反映することができます。
+Auroraのデータベースエンジンは、コネクションエラーに関し、様々なメトリクスを公開しています。これらのメトリクスは、クライアントの問題を識別したり、データーベースインスタンス自体の深刻な問題を識別するのに役立ちます。`Connection_errors_internal`メトリクスは、コネクションエラーがサーバー側で発生している際に加算されるので、把握しておく必要のあるメトリクスです。このインターナルエラーは、メモリーが不足している状態か、サーバーが新しいスレッドを開始できない状況を反映しています。
 
 
 #### Metrics to alert on
@@ -372,6 +364,8 @@ MySQLは、コネクションエラーに関し、様々なメトリクスを公
 
 > The lag time for any read replica is captured by the CloudWatch metric `AuroraReplicaLag`. This metric is usually not actionable, although if the lag is consistently very long, you should investigate your settings and resource usage.
 
+読み込みレプリカの遅延時間は、CloudWatchメトリクスの`ReplicaLag`で収集することができます。一般的は、このメトリクスに対してアクションを起こすことは有りませんが、もしも遅延時間が一貫して非常に長い場合は、設定やリソースの使用状況を再度見直す必要があるでしょう。
+
 任意のタイムラグはレプリカがCloudWatchのメトリックAuroraReplicaLagによって捕捉されるお読みください。ラグは一貫して非常に長い場合、あなたはあなたの設定やリソースの使用状況を調査する必要がありますが、このメトリックは、通常、実用ではありません。
 
 
@@ -391,7 +385,7 @@ MySQLは、コネクションエラーに関し、様々なメトリクスを公
 > * [Disk queue depth](#disk-i/o-metrics)
 > * [Client connections and errors](#connection-metrics)
 
-この記事では、Amazon RDS上にあるMySQLのパフォーマンスを管理するために監視の必要なメトリクスを検討してきました。もしもあなたが、RDS上のMySQLを使い始めたばかりなら、以下にリストたメトリクスは、データベースのアクティビティーとパフォーマンスについて優れた洞察を与えてくれるでしょう。又、それらのメトリクスは、アプリケーションのパフォーマンスを正しく維持するために必要な、ストレージ、IOPS、メモリーの増強のタイミングを判断する材料になるでしょう。
+この記事では、Auroraのパフォーマンスを管理するために監視の必要なメトリクスを検討してきました。もしもあなたが、Auroraを使い始めたばかりなら、以下にリストたメトリクスは、データベースのアクティビティーとパフォーマンスについて優れた洞察を与えてくれるでしょう。又、それらは、アプリの優れたパフォーマンスを維持するために、インスタンスのアップグレードが必要なタイミングや、読み込み用のレプリカの追加のタイミングを判断する指標を与えてくれるでしょう。
 
 * [クエリーのスループット](#query-throughput)
 * [クエリーのパフォーマンス](#query-performance)
@@ -400,19 +394,9 @@ MySQLは、コネクションエラーに関し、様々なメトリクスを公
 * [Read replica metrics](#read-replica-metrics)
 
 
-この記事では、我々はあなたがアマゾンオーロラのパフォーマンス上のタブを保つために監視する必要があり、最も重要なメトリックを検討しています。あなただけのオーロラの使用を開始している場合は、以下に示す評価指標を監視することは、あなたのデータベースのアクティビティとパフォーマンスに優れた洞察力を与えるだろう。彼らはまた、あなたのインスタンスタイプをアップグレードするか、優れたアプリケーションのパフォーマンスを維持するために、リードレプリカを追加する必要があるときに識別するのに役立ちます。
-
-* [クエリのスループット]（＃クエリスループット）
-* [クエリの待ち時間とエラー]（＃クエリ・パフォーマンス）
-* [ディスクキューの深さ]（＃ディスクI / O-メトリクス）
-* [クライアント接続とエラー]（＃接続-メトリクス）
-
-
 > [Part 2][part-2] of this series provides instructions for collecting all the metrics you need from CloudWatch and from the Aurora instance itself.
 
-このシリーズの[Part 2][part-2] では、CloudWatchとMySQLから必要な全てのメトリクスを収集する手順を解説していきます。
-
-[パート2]この一連のあなたがCloudWatchのからとオーロラインスタンス自体から必要なすべてのメトリックを収集するための手順を説明します[-2パート]。
+このシリーズの[Part 2][part-2] では、CloudWatchとAuroraのインスタンスから必要な全てのメトリクスを収集する手順を解説していきます。
 
 
 - - -
