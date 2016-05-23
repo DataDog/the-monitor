@@ -109,7 +109,7 @@ _*クエリーエラーの数は、MySQLメトリクスとして直接的には�
 
 > Amazon's CloudWatch exposes `ReadLatency` and `WriteLatency` metrics for RDS (discussed [below](#resource-utilization)), but those metrics only latency at the disk I/O level. For a more holistic view of query performance, you can dive into native MySQL metrics for query latency. MySQL features a `Slow_queries` metric, which increments every time a query's execution time exceeds the number of seconds specified by the `long_query_time` parameter. `long_query_time` is set to 10 seconds by default but can be modified in the AWS Console. To modify  `long_query_time` (or any other MySQL parameter), simply log in to the Console, navigate to the RDS Dashboard, and select the parameter group that your RDS instance belongs to. You can then filter to find the parameter you want to edit.
 
-Amazon CloudWatchは、RDSの`ReadLatency`と`WriteLatency`メトリクス（[後述](#resource-utilization)）を公開しています。しかし、これらのメトリクスは、ディスクI/Oレベルのレイテンシーを計測した値です。より包括的にクエリーのパフォーマンスを把握するには、MySQLのネオティブメトリクスのクエリーレイテンシーを使うことができます。MySQLには、`Slow_queries`というメトリクスを公開しています。このクエリーは、`long_query_time`パラメーターで指定した秒数を超える毎に増加していきます。デフォルトで`long_query_time`は、10秒に設定されていますが、AWSコンソール上で変更することができます。`long_query_time`（または他のMySQLパラメータ）を変更するには、AWSコンソールにログインし、RDSのダッシュボードに移動し、RDSインスタンスが属するパラメータグループを選択します。その後、編集したいパラメーターを検索します。
+Amazon CloudWatchは、RDSの`ReadLatency`と`WriteLatency`メトリクス（[後述](#resource-utilization)）を公開しています。しかし、これらのメトリクスは、ディスクI/Oレベルのレイテンシーを計測した値です。より包括的にクエリーのパフォーマンスを把握するには、MySQLのネオティブメトリクスのクエリーレイテンシーを使うことができます。MySQLは、`Slow_queries`というメトリクスを公開しています。このクエリーは、`long_query_time`パラメーターで指定した秒数を超える毎に増加していきます。デフォルトで`long_query_time`は、10秒に設定されていますが、AWSコンソール上で変更することができます。`long_query_time`（または他のMySQLパラメータ）を変更するには、AWSコンソールにログインし、RDSのダッシュボードに移動し、RDSインスタンスが属するパラメータグループを選択します。その後、編集したいパラメーターを検索します。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/long_query_time.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/long_query_time.png"></a>
@@ -238,7 +238,6 @@ CloudWatchには、読み取りと書き込みIOPSのRDSメトリクスも公開
 クエリーの量とディスクの操作の量には、1対1の相関関係はありません。メモリーから結果を提供することができる場合は、ディスクへのアクセスはバイパスされます。更に、大量のデーターを返すクエリーは、複数のI/O操作に関係しています。具体的には、[MySQLのディフォルトページサイズ][iops]の16KBを越える読み取り又は書き込みは、複数のI/O操作を必要とします。
 
 
-
 > In addition to I/O throughput metrics, RDS offers `ReadLatency` and `WriteLatency` metrics. These metrics do not capture full query latency—they only measure how long your I/O operations are taking at the disk level.
 
 I/Oスループットのメトリクスに加えて、RDSは`ReadLatency`と`ReadLatency`のメトリクスを提供しています。これらのメトリクスは、クエリーの完全なレイテンシーを計測していません。これらのメトリクスは、ディスクレベルでのI/O操作がどれくらい掛かっているかを計測しています。
@@ -360,9 +359,10 @@ MySQLは、コネクションエラーに関し、様々なメトリクスを公
 
 > * `Threads_connected`: If a client attempts to connect to MySQL when all available connections are in use, MySQL will return a "Too many connections" error and increment `Connection_errors_max_connections`. To prevent this scenario, you should monitor the number of open connections and make sure that it remains safely below the configured `max_connections` limit.
 
-> * `Aborted_connects`: If this counter is increasing, your clients are probably trying and failing to connect to the database. Dig deeper with metrics such as `Connection_errors_max_connections` and `Connection_errors_internal` to diagnose the problem.
-
 - `Threads_connected`： MySQLの全てのコネクションが使用中の時にクライアントがMySQLに接続しようとすると、MySQLは、"Too many connections"エラーを返し、`Connection_errors_max_connections`が、加算されます。このシナリオを回避するためには、使っているコネクションの数を監視し、`max_connections`の制限に掛からないようにコントロールする必要があります。
+
+
+> * `Aborted_connects`: If this counter is increasing, your clients are probably trying and failing to connect to the database. Dig deeper with metrics such as `Connection_errors_max_connections` and `Connection_errors_internal` to diagnose the problem.
 
 - `Aborted_connects`： この数が増加している場合、クライアントは、データベースの接続しようとして失敗している状況でしょう。 接続に失敗している原因を診断するために、`Connection_errors_max_connections`や`Connection_errors_internal`のようなメトリクスを使って調査をすすめると良いでしょう。
 
