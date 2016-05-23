@@ -95,7 +95,7 @@ MySQLサーバーの`Questions` ステータス変数は、クライアントア
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/questions_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/questions_2.png"></a>
 
 
-<h3 class="anchor" id="query-performance">Query performance</h3>
+### <a class="anchor" id="query-performance"></a>Query performance
 
 | **Name** | **Description** | [**Metric&nbsp;type**][metric-101] | **Availability** |
 |:--------:|:---------------:|:---------------:|:------------:|
