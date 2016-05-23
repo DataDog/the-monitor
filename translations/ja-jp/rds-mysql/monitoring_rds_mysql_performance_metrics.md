@@ -116,7 +116,7 @@ Amazon CloudWatchは、RDSの`ReadLatency`と`WriteLatency`メトリクス（[�
 
 > MySQL's performance schema (when enabled) also stores valuable statistics, including query latency, from the database server. Though you can query the performance schema directly, it is easier to use Mark Leith’s [sys schema][sys-schema], which provides convenient views, functions, and procedures to gather metrics from MySQL. For instance, to find the execution time of all the different statement types executed by each user:
 
-MySQLのパフォーマンススキーマ(有効化されている状態で)は、クエリーのレイテンシーなどのデータベースサーバーからの貴重な統計情報を記憶しています。performance schemaへは直接アクセスすることはできますが、Mark Leith氏の[sys schema][sys-schema]を使う方が簡単です。このソフトは、MySQLからメトリクスを収集する際に、便利なビュー、関数、および手順を提供してくれます。例えば、ユーザー毎に異なるステートメントタイプの実行時間を知りたい場合:
+MySQLのperformance schema(有効化されている状態で)は、クエリーのレイテンシーなど、データベースサーバーからの貴重な統計情報を保存しています。performance schemaへは、直にアクセスすることはできますが、Mark Leith氏が公開している[sys schema][sys-schema]を使う方が簡単です。このソフトは、MySQLからメトリクスを収集する際に、便利なビュー、関数、および手順を提供してくれます。例えば、ユーザー毎に異なるステートメントタイプの実行時間を知りたい場合:
 
 
 <pre class="lang:mysql">
@@ -259,7 +259,7 @@ I/Oスループットのメトリクスに加えて、RDSは`ReadLatency`と`Rea
 
 > MySQL performs best when most of its working set of data can be held in memory. For this reason, you should monitor `FreeableMemory` and `SwapUsage` to ensure that your database instance is not memory-constrained.
 
-MySQLは、処理をしているデーター全体がメモリー内に保持されている場合、最高の性能を発揮します。このような理由から、データベースがメモリーから制約を受けていないことを確認するために、`FreeableMemory`と`SwapUsage`を監視する必要があります。
+MySQLは、処理をしているデーターの全てがメモリー内に保持されている場合、最高の性能を発揮します。このような理由から、データベースがメモリーから制約を受けていないことを確認するために、`FreeableMemory`と`SwapUsage`を監視する必要があります。
 
 
 > AWS advises that you monitor `ReadIOPS` when the database is under load to ensure that your database instance has enough RAM to [keep the working set almost entirely in memory][working-set]:
@@ -294,21 +294,24 @@ Provisioned IOPSを設定しても、ネットワーク性能の上限が、プ�
 
 > * `ReadLatency` or `WriteLatency`: Monitoring the latency of your disk operations is critical to identify potential constraints in your MySQL instance hardware or your database usage patterns. If your latency starts to climb, check your IOPS, disk queue, and network metrics to see if you are pushing the bounds of your instance type. If so, consult the RDS documentation for details about [storage options][storage], including volumes with provisioned IOPS rates.
 
-> * `DiskQueueDepth`: It is not unusual to have some requests in the disk queue, but investigation may be in order if this metric starts to climb, especially if latency increases as a result. (Time spent in the disk queue adds to read and write latency.)
-
-> * `FreeStorageSpace`: AWS recommends that RDS users take action to delete unneeded data or add more storage if disk usage consistently reaches levels of 85 percent or more.  
-
 - `ReadLatency`または`WriteLatency`： ディスク操作のレイテンシを監視することは、MySQLインスタンが使っているハードウェアやデータベースのユーセージパターンに起因する潜在的な制約を見つけ出す際に重要です。レイテンシが増加し始めたら、IOPSやディスク操作のキューやネットワークのメトリクスを確認し、選択しているインスタンスタイプの限界に達していないかを確認します。もしもそうであれば、provisioned IOPS ratesが設定できるストレージを含め、RDSで設定できる[ストレージオプション][storage]に関してRDSのドキュメントを参照してください。
 
+
+> * `DiskQueueDepth`: It is not unusual to have some requests in the disk queue, but investigation may be in order if this metric starts to climb, especially if latency increases as a result. (Time spent in the disk queue adds to read and write latency.)
+
 - `DiskQueueDepth`： ディスクキューにリクエストが溜まっていることは珍しくありません。しかし、このメトリクスが増加傾向にあるなら、調査が必要です。特に、このディスクキューの増加によってレイテンシがぞうかしているなら。(ディスクキュー内で順番を待っている時間は、読み取りや書き込みレイテンシーに加算されていきます。)
+
+
+> * `FreeStorageSpace`: AWS recommends that RDS users take action to delete unneeded data or add more storage if disk usage consistently reaches levels of 85 percent or more.  
 
 - `FreeStorageSpace`： ディスク使用率が一貫して85％以上を越えている場合、AWSでは、不要なデータを削除したり、ストレージスペースを追加することを、推奨しています。
 
 
-
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/latency.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/latency.png"></a>
 
-<h3 class="anchor" id="connection-metrics">Connection metrics</h3>
+<!--<h3 class="anchor" id="connection-metrics">Connection metrics</h3>-->
+
+### <a class="anchor" id="connection-metrics"></a>Connection metrics
 
 | **Name** | **Description** | [**Metric&nbsp;type**][metric-101] | **Availability** |
 |:--------:|:---------------:|:---------------:|:------------:|
@@ -323,11 +326,12 @@ Provisioned IOPSを設定しても、ネットワーク性能の上限が、プ�
 
 データーベースの処理状況や処理能力を理解するためにクライアント接続の数を把握することは重要です。MySQLには、このコネクション数の制限を設定する機能があります。RDSの場合、デフォルト値は、データベースのインスタンスクラスが持っているメモリー容量をベースに、以下の様な計算式になります:
 
+
 `max_connections` = `DBInstanceClassMemory` / 12582880
 
 > The `max_connections` parameter can be modified by editing the database instance's parameter group using the RDS dashboard in the AWS console. You can also check the current value of `max_connections` by querying the MySQL instance itself (see [part 2][part-2] of this series for more on connecting to RDS instances directly):
 
-`max_connections`パラメーターは、AWSのコンソールのRDSダッシュボードから、データベースインスタンスのパラメーターグループを編集することで変更できます。又、`max_connections`の値は、MySQLに直接問い合わせることで確認することもできます。(RDSインスタンに直接接続し情報を集取する方法は、このシリーズの[Part 2][part-2]を参照してください。)
+`max_connections`パラメーターは、AWSのコンソールのRDSダッシュボードから、データベースインスタンスのパラメーターグループを編集することで変更できます。又、`max_connections`の値は、MySQLインスタンスに直接問い合わせることで確認することもできます。(RDSインスタンに直接接続し情報を集取する方法は、このシリーズの[Part 2][part-2]を参照してください。)
 
 
 <pre class="lang:mysql">
@@ -347,7 +351,7 @@ mysql> SELECT @@max_connections;
 
 > If your server reaches the `max_connections` limit and starts to refuse connections, `Connection_errors_max_connections` will be incremented, as will the `Aborted_connects` metric tracking all failed connection attempts.
 
-もしもサーバーが、`max_connections`の制限値に達し、新しいコネクションを受け入れなくなった場合、`Connection_errors_max_connections`と、接続の試みの失敗を追跡している`Aborted_connects`が加算されていきます。
+もしもサーバーが、`max_connections`の制限値に達し、新しいコネクションを受け入れなくなった場合、`Connection_errors_max_connections`と、接続の試みの全ての失敗を追跡している`Aborted_connects`が加算されていきます。
 
 
 > MySQL exposes a variety of other metrics on connection errors, which can help you identify client issues as well as serious issues with the database instance itself. The metric `Connection_errors_internal` is a good one to watch, because it is incremented when the error comes from the server itself. Internal errors can reflect an out-of-memory condition or the server's inability to start a new thread.
