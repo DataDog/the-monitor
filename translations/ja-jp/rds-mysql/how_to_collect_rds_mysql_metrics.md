@@ -106,6 +106,7 @@ mon-get-stats CPUUtilization
 
 
 <!-- <h3 class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration">Using a monitoring tool with a CloudWatch integration</h3> -->
+
 ### <a class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration"></a>Using a monitoring tool with a CloudWatch integration
 
 > The third way to collect CloudWatch metrics is via your own monitoring tools, which can offer extended monitoring functionality. For instance, if you want to correlate metrics from your database with other parts of your infrastructure (including the applications that depend on that database), or you want to dynamically slice, aggregate, and filter your metrics on any attribute, or you need dynamic alerting mechanisms, you probably need a dedicated monitoring system. Monitoring tools that seamlessly integrate with the CloudWatch API can, with a single setup process, collect metrics from across your AWS infrastructure.
@@ -139,6 +140,7 @@ CloudWatchは、任意のデータベースエンジンの概要的なメトリ�
 <h3 class="anchor" id="querying-server-status-variables">Querying server status variables</h3>
 <h4 class="anchor" id="connecting-to-your-rds-instance">Connecting to your RDS instance</h4>
 -->
+
 ### <a class="anchor" id="querying-server-status-variables"></a>Querying server status variables
 #### <a class="anchor" id="connecting-to-your-rds-instance"></a>Connecting to your RDS instance
 
@@ -247,7 +249,7 @@ performance schemaに直接照会することはできます。しかし、[sys 
 
 > To install the sys schema, first clone the [mysql-sys][sys-schema] GitHub repo to the machine that you use to connect to your MySQL instance (e.g., an EC2 instance in the same security group) and position yourself within the newly created directory:
 
-sys schemaをインストールするには、まずは、MySQLインスタンスに接続に使用するマシン(例: 同一セキュリティグループに起動したEC2インスタンス)に、GitHubのリポから[mysql-sys][sys-schema]をクローンします。そして、新しく作成したディレクトリ内に移動します:
+sys schemaをインストールするには、まずは、MySQLインスタンスの接続に使用するマシン(例: 同一セキュリティグループに起動したEC2インスタンス)に、GitHubのリポから[mysql-sys][sys-schema]をクローンします。そして、新しく作成したディレクトリ内に移動します:
 
 
 <pre class="lang:sh">
@@ -257,7 +259,7 @@ cd mysql-sys
 
 > Then, run a shell script within the mysql-sys repo that creates an RDS-compatible file for the sys schema. For MySQL version 5.6, the command and output looks like:
 
-そして、mysql-sysリポディレクトの中でシェルスクリプトを実行し、sys schemaのRDS互換ファイルを作成します。ySQLバージョン5.6の場合、コマンドとその出力は、次のようになります。
+そして、mysql-sysリポディレクトの中でシェルスクリプトを実行し、sys schemaのRDS互換ファイルを作成します。MySQLバージョン5.6の場合、コマンドとその出力は、次のようになります。
 
 
 <pre class="lang:sh">
@@ -318,7 +320,7 @@ mysql> select * from sys.user_summary_by_statement_type;
 
 > If you have [configured an EC2](#connecting-to-your-rds-instance) instance to communicate with MySQL running on RDS, you can connect MySQL Workbench to your MySQL on RDS via SSH tunneling:
 
-RDS上のMySQLと通信するように[EC2インスタンスを設定](#connecting-to-your-rds-instance)している場合、SSHトンネリングを介してRDS上のMySQLへMySQL Workbenchを接続することができます:
+RDS上のMySQLと通信するように[EC2インスタンスを設定](#connecting-to-your-rds-instance)している場合、SSHトンネリングを介して、RDS上のMySQLへMySQL Workbenchを接続することができます:
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_tunneling-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/ssh_tunneling-2.png"></a>
@@ -336,15 +338,16 @@ RDS上のMySQLと通信するように[EC2インスタンスを設定](#connecti
 
 > The fourth way to access MySQL's native metrics is to use a full-featured monitoring tool that integrates with MySQL. Such tools allow you to not only glimpse a real-time snapshot of your metrics but to visualize and analyze your metrics' evolution over time, and to set alerts to be notified when key metrics go out of bounds. Comprehensive monitoring tools also allow you to correlate your metrics across systems, so you can quickly determine if errors from your application can be traced back to MySQL, or if increased MySQL latency is caused by system-level resource contention. [Part 3][part-3] of this series demonstrates how you can set up comprehensive monitoring of MySQL on RDS with Datadog.
 
-MySQLのネイティブメトリクスにアクセスするための第四の方法は、MySQLと総合的に連携できるフル装備の監視ツールを使用することです。このようなツールは、メトリクスのリアルタイムスナップショットを見ることができるだけでなく、メトリクスの時間をかけた変化を可視化し分析することができ、キーメトリクスが規定値を超えた場合に通知するためのアラートを設定することができます。更に、総合的な監視ツールは、各システムの間でメトリクスを相関することができ、アプリから出ているエラーがMySQLに起因しているかを判断できたり、MySQLのレイテンシーがシステムレベルのリソースの競合によって引き起こされている可能性を判断できたりします。このシリーズの[Part 3][part-3]では、RDS上のMySQLの包括的な監視を、Datadogを使って実現する方法を紹介します。
+MySQLのメトリクスにアクセスするための第四の方法は、MySQLと総合的に連携できるフル装備の監視ツールを使用することです。このようなツールは、メトリクスのリアルタイムスナップショットを見ることができるだけでなく、メトリクスの時間をかけた変化を可視化し分析することができ、キーメトリクスが規定値を超えた場合に通知するためのアラートを設定することができます。更に、総合的な監視ツールは、各システムの間でメトリクスを相関することができ、アプリから出ているエラーがMySQLに起因しているかを判断できたり、MySQLのレイテンシーがシステムレベルのリソースの競合によって引き起こされている可能性を判断できたりします。このシリーズの[Part 3][part-3]では、RDS上のMySQLの包括的な監視を、Datadogを使って実現する方法を紹介します。
 
 ## Conclusion
 
 > In this post we have walked through how to use CloudWatch to collect and visualize RDS metrics, and how to generate alerts when these metrics go out of bounds. We've also shown you how to collect more detailed metrics from MySQL itself, whether on an ad hoc or continuous basis.
->
-> In [the next and final part][part-3] of this series, we'll show you how you can set up Datadog to collect, visualize, and set alerts on metrics from both RDS and MySQL.
 
 この記事では、CloudWatchを使ってRDSのメトリックを収集し、視覚化する方法と、メトリクスが閾値を超えた場合にアラートを発生させる方法を解説してきました。更に、MySQL自体から、必要に応じて単発的や継続的に、より詳細なメトリクスを収集する方法を紹介していきました。
+
+
+> In [the next and final part][part-3] of this series, we'll show you how you can set up Datadog to collect, visualize, and set alerts on metrics from both RDS and MySQL.
 
 このシリーズの[最後のPart 3][part-3]では、Datadogを使って、RDSとMySQL自体の両方からメトリクスを収集し、可視化し、アラートを設定する方法を紹介します。
 
