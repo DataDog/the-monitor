@@ -7,7 +7,7 @@
 
 > As covered in [Part 1][part-1] of this series, MySQL on RDS users can access RDS metrics via Amazon CloudWatch and native MySQL metrics from the database instance itself. Each metric type gives you different insights into MySQL performance; ideally both RDS and MySQL metrics should be collected for a comprehensive view. This post will explain how to collect both metric types.
 
-このシリーズの[Part 1][part-1]で取り上げたように、RDS上のMysqlのユーザーは、Amazon CloudWatch経由でRDSのメトリクスにアクセスでき、更にデータベース自体からネイティブのMySQLメトリクスにもアクセスできます。それぞれのタイプのメトリクスは、MySQLのパフォーマンスについて異なる洞察を与えてくれます。理想的には、包括的に状況を把握できるようにするために、RDSとMySQLの両方のメトリクスを集取している必要があります。この記事では、両方のメトリックタイプを収集する方法を解説していきます。
+このシリーズの[Part 1][part-1]で取り上げたように、RDS上のMysqlのユーザーは、Amazon CloudWatch経由でRDSのメトリクスにアクセスでき、更にデータベース自体からネイティブのMySQLメトリクスにもアクセスできます。それぞれのタイプのメトリクスは、MySQLのパフォーマンスについて異なる洞察を与えてくれます。理想的には、包括的に状況を把握できるようにするために、RDSとMySQLの両方のメトリクスを集取している必要があります。この記事では、両方のメトリックタイプの収集する方法について解説していきます。
 
 
 ## Collecting RDS metrics
@@ -56,22 +56,24 @@ AWSアカウントにサインインしたら、AWSサービスに関連する�
 
 > With the CloudWatch console you can also create alerts that trigger when a metric threshold is crossed.
 
-> To set up an alert, click on the "Create Alarm" button at the right of your graph and configure the alarm to notify a list of email addresses:
-
 CloudWatchのコンソールには、メトリクスが閾値を超えた場合にアラートを発生させる機能があります。
+
+
+> To set up an alert, click on the "Create Alarm" button at the right of your graph and configure the alarm to notify a list of email addresses:
 
 このアラート機能を設定するには、グラフの右側にある"Create Alarm"ボタンをクリックし、警報を通知するメールアドレスを指定します:
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-alarm.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/metric-alarm.png"></a>
 
 <!-- <h3 class="anchor" id="using-the-command-line-interface">Using the command line interface</h3> -->
+
 ### <a class="anchor" id="using-the-command-line-interface"></a>Using the command line interface
 
 > You can also retrieve metrics related to your database instance using the command line. Command line queries can be useful for spot checks and ad hoc investigations. To do so, you will need to [install and configure the CloudWatch command line interface][aws-cli]. You will then be able to query for any CloudWatch metrics you want, using different filters.
->
-> For example, if you want to check the `CPUUtilization` metric across a five-minute window on your MySQL instance, you can run:
 
-コマンドラインを使用して、データベースインスタンスに関するメトリックを取得することもできます。コマンドラインからの問い合わせは、スポット的なチェックやアドホックな原因追及の時に便利です。この方法を使うためには、[CloudWatchのコマンドラインから操作するソフト][aws-cli]を手元の端末にインストールし、設定する必要があります。インストールと設定が完了すると、異なる検索コマンドを使ってCloudWatchメトリクスに問い合わせることができるようになります。
+コマンドラインを使用して、データベースインスタンスに関するメトリックを取得することもできます。コマンドラインからの問い合わせは、スポット的なチェックやアドホックな原因追及の時に便利です。この方法を使うためには、[CloudWatchのコマンドラインから操作するソフト][aws-cli]を手元の端末にインストールし、設定する必要があります。インストールと設定が完了すると、異なる検索パラメーターを使ってCloudWatchメトリクスに問い合わせることができるようになります。
+
+> For example, if you want to check the `CPUUtilization` metric across a five-minute window on your MySQL instance, you can run:
 
 例えば、MySQLインスタンスの5分間の`CPUUtilization`(CPU利用率)メトリクスを確認したい場合、次のようなコマンドを実行します:
 
@@ -87,7 +89,7 @@ mon-get-stats CPUUtilization
 
 > Here is an example of the output returned from a `mon-get-stats` query like the one above:
 
-上記に紹介した`mon-get-stats`コマンドの実行結果の出力は、以下のようになります:
+上記で紹介した`mon-get-stats`コマンドの実行結果の出力は、以下のようになります:
 
 
 <pre class="lang:sh">
@@ -158,9 +160,10 @@ mysql -h instance-name.xxxxxx.us-east-1.rds.amazonaws.com -P 3306 -u yourusernam
 
 > The instance endpoint (ending in `rds.amazonaws.com`) can be found in the list of instances on the [RDS console][rds-console].
 
-> Once you connect to your database instance, you can query any of the hundreds of available MySQL metrics, known as [server status variables][ssv]. To check metrics on connection errors, for instance:
-
 インスタンスのエンドポイント(`rds.amazonaws.com`で終わる部分)は、[RDSのコンソール][rds-console]上のインスタンスリストに記載されています。
+
+
+> Once you connect to your database instance, you can query any of the hundreds of available MySQL metrics, known as [server status variables][ssv]. To check metrics on connection errors, for instance:
 
 データベース・インスタンスに接続できたら、[server status variables][ssv]で知られる、数百をもあるMySQLメトリクスを参照することができるようになります。例えば、接続エラーのメトリックを確認するのは次のようになります:
 
@@ -181,10 +184,11 @@ Server status variablesは、概して、サーバーアクティビティの概
 #### Enabling the performance schema
 
 > To enable the performance schema, you must set the `performance_schema` parameter to 1 in the database instance's parameter group using [the AWS console][rds-console]. This change requires an instance reboot.
->
-> Once it is enabled, the performance schema will collect metrics on all the statements executed by the server. Many of those metrics are summarized in the `events_statements_summary_by_digest` table, available in MySQL 5.6 and later. The digest normalizes all the statements, ignoring data values and standardizing whitespace, so that the following two queries [would be considered the same][digest]:
 
 performance schemaを有効にするには、AWSコンソールから該当するデータベース・インスタンスのパラメータグループ内の`performance_schema`項目を1にする必要があります。この変更には、インスタンスの再起動が必要です。
+
+
+> Once it is enabled, the performance schema will collect metrics on all the statements executed by the server. Many of those metrics are summarized in the `events_statements_summary_by_digest` table, available in MySQL 5.6 and later. The digest normalizes all the statements, ignoring data values and standardizing whitespace, so that the following two queries [would be considered the same][digest]:
 
 この設定が有効になると、performance schemaは、サーバによって実行されたすべてのステートメントに関するメトリックを収集します。performance schemaのメトリックの多くは、MySQLの5.6以降で利用可能になった`events_statements_summary_by_digest`の表にまとめられています。この`events_statements_summary_by_digest`では、全てのステートメントのデータ値は無視され、空白は取り除かれて正規化の処理が施されます。従って、次の二つのクエリーは、[同じモノとして処理されます][digest]:
 
@@ -238,9 +242,10 @@ SUM_CREATED_TMP_DISK_TABLES: 0
 
 > Though the performance schema can be queried directly, it is usually easier to extract meaningful views of the data using the [sys schema][sys-schema], which provides a number of useful tables, functions, and procedures for parsing your data.
 
-> To install the sys schema, first clone the [mysql-sys][sys-schema] GitHub repo to the machine that you use to connect to your MySQL instance (e.g., an EC2 instance in the same security group) and position yourself within the newly created directory:
-
 performance schemaに直接照会することはできます。しかし、[sys schema][sys-schema]の便利な関数や表、データーパース手順を使用した方が、データーから簡単に価値の高い検分を得ることができます。
+
+
+> To install the sys schema, first clone the [mysql-sys][sys-schema] GitHub repo to the machine that you use to connect to your MySQL instance (e.g., an EC2 instance in the same security group) and position yourself within the newly created directory:
 
 sys schemaをインストールするには、まずは、MySQLインスタンスに接続に使用するマシン(例: 同一セキュリティグループに起動したEC2インスタンス)に、GitHubのリポから[mysql-sys][sys-schema]をクローンします。そして、新しく作成したディレクトリ内に移動します:
 
