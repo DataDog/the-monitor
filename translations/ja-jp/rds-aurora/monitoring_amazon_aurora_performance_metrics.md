@@ -6,12 +6,12 @@
 
 > [Amazon Aurora][aurora] is a MySQL-compatible database offered on RDS (Relational Database Service), a hosted database service in the AWS cloud. RDS users can choose from several well-known database engines that are also available as standalone products, including MySQL, Oracle, SQL Server, Postgres, and MariaDB, but Aurora is only available on RDS.
 
-[Amazon Aurora][aurora]は、AWSクラウドでホストされたデータベース・サービスのRDS(リレーショナルデータベースサービス)上で提供しているMySQL互換のデーターベースです。RDSユーザーは、MySQLのは、Oracle、SQL Server、Postgres、MariaDBを含む、スタンドアロン製品として入手可能であるいくつかのよく知られているデータベースエンジンから選択することができますが、オーロラは、RDS上でのみ使用可能です。しかしながら、Auroraは、RDSにか提供されていません。
+[Amazon Aurora][aurora]は、AWS上に構築されたRDS(リレーショナルデータベースサービス)上で提供されているMySQL互換のデーターベースです。RDSユーザーは、MySQL、Oracle、SQL Server、Postgres、MariaDBを含む、スタンドアロン製品としても入手可能なデータベースからエンジンを選択することができます。しかしながら、Auroraは、RDS上でしか提供されていません。
 
 
 > Aurora offers unique features such as auto-scaling storage, extremely low-latency replication, and rapid automated failover to a standby instance. Amazon advertises throughput enhancements of up to 5x as compared to MySQL running on similar hardware. Aurora users also have access to an expanded suite of [monitoring metrics][aurora-metrics] as compared to other RDS users. Aurora exposes not just system- and disk-level metrics but also crucial metrics on query throughput and latency, as detailed below.
 
-Auroraは、自動スケーリングストレージ、超低レイテンシーのレプリケーション、スタンバイ・インスタンスへの迅速な自動フェイルオーバーなどのユニークな機能を提供しています。Amazonは、同等のハードウェアで動作するMySQLに比べて5倍のスループットを持っていると公表しています。Auroraのユーザーは、他のデータベースエンジンを使っているユーザーに比較して、多くの種類の[監視メトリクス][aurora-metrics]を、手に入れることができます。Auroraでは、`system-`や、 `disk-level`などのインスタンに関連したメトリクスではなく、以下に記載したようにスループットやレイテンシーなのどきわめて重要なメトリクスも提供しています。
+Auroraは、自動的にスケールするストレージ、超低レイテンシーのレプリケーション、スタンバイ・インスタンスへの迅速な自動フェイルオーバーなど、ユニークな機能を提供しています。Amazonは、同等のハードウェアの上で動作するMySQLに比べて5倍のスループットを持っているとも公表しています。Auroraのユーザーは、他のデータベースエンジンを使っているユーザーと比較して、多くの種類の[監視メトリクス][aurora-metrics]を、手に入れることができます。Aurora上では、`system-`や、 `disk-level`などのインスタンに関連したメトリクスだけではなく、以下に記載したようにスループットやレイテンシーなのどきわめて重要なメトリクスも提供されています。
 
 
 ## Key metrics for Amazon Aurora
@@ -35,24 +35,24 @@ Auroraは、自動スケーリングストレージ、超低レイテンシー�
 
 > RDS exposes dozens of high-level metrics, and Aurora users can access literally hundreds more from the MySQL-compatible database engine. With so many metrics available, it's not always easy to tell what you should focus on. In this article we'll highlight key metrics in each of the above areas that together give you a detailed view of your database's performance.
 
-RDSは、数十のハイレベルなメトリクスを公開しています。そして、Auroraのユーザーは、MySQL互換のデータベースエンジンよりも数百以上も多いメトリクスにアクセスすることができます。あまりにも、多くのメトリクスを収集できるので、どのメトリクスに注目するべきかを判断するのは容易なことではありません。この記事では、上記の各エリアのキーメトリクスに焦点をあて、全体としてデータベースのパフォーマンスの詳細が把握できるように解説していきます。
+RDSは、数十ものハイレベル・メトリクスを公開しています。そして、Auroraのユーザーは、MySQL互換のデータベースエンジンの数百以上のメトリクスにアクセスすることができます。そして、あまりにも多くのメトリクスを収集できるので、どのメトリクスに注目するべきかを判断するのに困ってしまいます。この記事では、データベースのパフォーマンスを詳しく把握する目的で、上記の各エリアのキーメトリクスに焦点をあてて解説していきます。
 
 
 > RDS metrics (as opposed to storage engine metrics) are available through Amazon CloudWatch, and many are available regardless of which database engine you use. Engine metrics, on the other hand, can be accessed from the database instance itself. [Part 2 of this series][part-2] explains how to collect both types of metrics. CloudWatch Aurora metrics are available at one-minute intervals; database engine metrics can be collected at even higher resolution.
 
-ストレージエンジンの指標とは対照的に、RDSメトリックは、Amazon CloudWatch経由で収集できます。そして、どのデーターベースエンジンを使うかに関わらず、大半のメトリクスは集取することができます。一方でデータエンジンのメトリクスは、ベータベースのインスタンスそのものから集取することができます。[このシリーズのPart 2][part-2]では、これらのメトリクスの収集の方法を解説します。CloudWatch Auroraのメトリクスは、1分間隔で収集することができます。データーベースエンジンからのネイティブメトリクスは、更に高い解像度で集取することができます。
+RDSメトリクスは、Amazon CloudWatchを経由して収集できます。そして、大半のRDSのメトリクスは、データーベースエンジンの選択にに関わらず、集取することができます。一方で、データベース・エンジンのネーティブなメトリクスは、ベータベースのインスタンスから直接集取することができます。[このシリーズのPart 2][part-2]では、これらのメトリクスの収集の方法を解説します。CloudWatchを経由したAuroraのRDSメトリクスは、1分間隔で収集することができます。データーベース・エンジンからのネイティブメトリクスは、更に高い解像度で集取することができます。
 
 
 > This article references metric terminology introduced in [our Monitoring 101 series][metric-101], which provides a framework for metric collection and alerting.
 
-この記事では、[Monitoring 101 series][metric-101]で紹介した”メトリクスの収集とアラートのフレームワーク”で解説した用語を採用しています。
+この記事では、[Monitoring 101 series][metric-101]内の”メトリクスの収集とアラートのフレームワーク”で解説した用語を採用しています。
 
 
 ### Compatibility with MySQL and MariaDB
 
 > Because Aurora is compatible with MySQL 5.6, standard MySQL administration and monitoring tools, such as the `mysql` command line interface, will generally work with Aurora without modification. And most of the strategies outlined here also apply to MySQL and MariaDB on RDS. But there are some key differences between the database engines. For instance, Aurora has auto-scaling storage, so it does not expose a metric tracking free storage space. And the version of MariaDB (10.0.17) available on RDS at the time of this writing is not fully compatible with some of the metric collection tools detailed in [Part 2][part-2] of this series. MySQL users should check out our three-part series on [monitoring MySQL on RDS][mysql-rds].
 
-基本的にAuroraは、MySQL 5.6と互換性があります。従って、`mysql`のCLIのような標準的なMySQLの管理ツールや監視ツールは、変更することなくAuroraでも使うことができます。そして、ここで解説している監視に関する考え方は、RDS上のMySQLやMariaDBにも適用することができます。しかしデータベースエンジン間で、幾つかの重要な違いあるのも認識しておく必要があります。例えば、Auroraでは、ストレージが自動的にスケールするので、ストレージの空き容量を提供していません。更にこの記事を書いている時点で、RDSで使うことのできるMariaDBのバージョン(10.0.17)は、MySQLのワークベンチツールまたはsys schemaと完全互換ではありません。このことについては、このシリーズの[Part 2][part-2]で詳しく解説することにします。RDS上でMySQLを使っているなら、3回シリーズの[monitoring MySQL on RDS][mysql-rds]も併せ参照することもお勧めします。
+基本的にAuroraは、MySQL 5.6と互換性があります。従って、`mysql`から始まるCLIなど、標準的なMySQLの管理ツールや監視ツールは、Auroraでも変更なしで使うことができます。更に、ここで解説している監視の戦略の多くは、RDS上のMySQLやMariaDBにも適用することができるはずです。しかし、各データベース・エンジンには、いくつかの重要な違いあるのも認識しておく必要があります。例えば、Auroraでは、ストレージが自動的にスケールするので、ストレージの空き容量に関するメトリクスを提供していません。更にこの記事を書いている時点で、RDS上で使うことのできるMariaDBのバージョン(10.0.17)は、MySQLのワークベンチツールやsys schemaと完全に互換していません。これらの状況については、このシリーズの[Part 2][part-2]で詳しく解説することにします。又、RDS上でMySQLを採用しているなら、[monitoring MySQL on RDS][mysql-rds]の3回シリーズも併せ参照すると良いかもしれません。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
@@ -69,16 +69,16 @@ RDSは、数十のハイレベルなメトリクスを公開しています。�
 
 > Your primary concern in monitoring any system is making sure that its [work is being done][collecting-data] effectively. A database's work is running queries, so the first priority in any monitoring strategy should be making sure that queries are being executed.
 
-システムを監視する場合に、最も注目するべきことは、["仕事"が効率的に処理されている][collecting-data]ことを確認することです。データベースの"仕事"は、クエリを実行することです。従って、データベースの監視戦略の上で最優先事項は、クエリーが実行されていることを確認することになります。
+システムを監視する場合に、最も注目するべきことは、["仕事"が効率的に処理されている][collecting-data]ことを確認することです。データベース"仕事"は、クエリを実行することです。従って、データベースの監視戦略の上で最優先事項は、クエリーが実行されていることを確認することになります。
 
 
 > You can also monitor the breakdown of read and write commands to better understand your database's read/write balance and identify potential bottlenecks. Those metrics can be collected directly from Amazon CloudWatch or computed by summing native MySQL metrics from the database engine. In MySQL metrics, reads increment one of two status variables, depending on whether or not the read is served from the query cache:
 
-あなたはまた、より良いあなたのデータベースの読み取り/書き込みのバランスを理解し、潜在的なボトルネックを特定するための読み取りおよび書き込みコマンドの内訳を監視することができます。これらの指標は、Amazon CloudWatchのから直接収集したり、データベースエンジンからネイティブMySQLのメトリックを合計することによって計算することができます。
 
-MySQLのメトリックでは、読み込みの実行は、クエリキャッシュから読み込めているか否かに応じて、`Com_select`か`Qcache_hits`のどちらかのステータス変数に加算されいきます:
+又、データベースの読み取り/書き込みのバランスを理解し潜在的なボトルネックを特定するため、読み取りと書き込みコマンドの内訳を監視することもできます。これらのメトリクスは、Amazon CloudWatchのから直接収集したり、データベース・エンジンから直せつ集取したMySQLのメトリックを計算することで収集することができます。 MySQLからのメトリクスの場合、読み込みの実行は、クエリキャッシュから読み込めているか否かに応じて、`Com_select`か`Qcache_hits`のどちらかのステータス変数に加算されいきます:
 
-    Reads = `Com_select` + `Qcache_hits`
+
+Reads = `Com_select` + `Qcache_hits`
 
 > Writes increment one of three status variables, depending on the command:
 
