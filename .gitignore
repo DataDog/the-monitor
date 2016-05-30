@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-.python-version
-PDF
-build/doctrees
-build/html
-=======
 .DS_Store
 *~
 *.swp
@@ -12,4 +6,4 @@ PDF
 build/html
 build/doctrees
 *.mo
->>>>>>> 76c9c08fc242453e332f3017da2df05b4bd7e35e
+.idea
