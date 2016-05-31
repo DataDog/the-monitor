@@ -5,7 +5,7 @@
 
 > As covered in [Part 1][part-1] of this series, [Aurora][aurora] users can access metrics from the Relational Database Service (RDS) via Amazon CloudWatch and many additional metrics from the MySQL-compatible database engine itself. Each metric type gives you different insights into Aurora performance; ideally both RDS and engine metrics should be collected for a comprehensive view. This post will explain how to collect both metric types.
 
-このシリーズの[Part 1][part-1]で取り上げたように、Auroraのユーザーは、Amazon CloudWatch経由でRDSのメトリクスにアクセスでき、更に、MySQL互換のデータベース自体からネイティブのメトリクスにもアクセスできます。それぞれのタイプのメトリクスは、Auroraのパフォーマンスについて異なる洞察を与えてくれます。理想的には、包括的に状況を把握できるようにするために、RDSメトリクスとデーターベースメトリクスの両方を集取している必要があります。この記事では、両方のメトリックタイプの収集する方法について解説していきます。
+このシリーズの[Part 1][part-1]で取り上げたように、Auroraのユーザーは、Amazon CloudWatch経由でRDSのメトリクスにアクセスでき、更に、MySQL互換のデータベース自体からネイティブのメトリクスにもアクセスできます。それぞれのタイプのメトリクスは、Auroraのパフォーマンスについて異なる洞察を与えてくれます。理想的には、包括的に状況を把握できるようにするために、RDSメトリクスとデータベースメトリクスの両方を集取している必要があります。この記事では、両方のメトリックタイプの収集する方法について解説していきます。
 
 
 ## Collecting RDS metrics
@@ -16,7 +16,7 @@
 > -   [Using the command line interface](#using-the-command-line-interface)
 > -   [Using a monitoring tool with a CloudWatch integration](#using-a-monitoring-tool-with-a-cloudwatch-integration)
 
-RDSメトリックへは、CloudWatch経由で、次の3つの方法でアクセスできます:
+RDSメトリックへは、CloudWatchを経由して、次の3つの方法でアクセスできます:
 
 - [AWSの管理コンソールを使用る方法](#using-the-aws-console)
 - [コマンドラインインターフェースを使用する方法](#using-the-command-line-interface)
@@ -29,26 +29,26 @@ RDSメトリックへは、CloudWatch経由で、次の3つの方法でアクセ
 
 > Using the online management console is the simplest way to monitor RDS with CloudWatch. The AWS Console allows you to set up simple automated alerts and get a visual picture of recent changes in individual metrics.
 
-AWSの管理コンソールを使用する方法が、CloudWatchのでRDSを監視する最もシンプルな方法です。AWSコンソールのインターフェース上では、個々のメトリックの直近の変化を視覚的に把握したり、簡単な自動アラートを設定することができます。
+AWSの管理コンソールを使用する方法が、CloudWatchを経由してRDSを監視する最もシンプルな方法です。AWSの監視コンソールのインターフェース上では、個々のメトリックの直近の変化を視覚的に把握したり、基本的な自動アラートを設定することができます。
 
 
 #### Graphs
 
 > Once you are signed in to your AWS account, you can open the [CloudWatch console][aws-console] where you will see the metrics related to the different AWS services.
 
-AWSアカウントにサインインしたら、AWSサービスに関連するメトリックを閲覧することができる[CloudWatchコンソール][aws-console]を開くことができます。
+AWSアカウントにサインインすれば、AWSが提供するサービスのメトリックを閲覧することができる[CloudWatchコンソール][aws-console]を開くことができます。
 
 
 > By selecting RDS from the list of services and clicking on "Per-Database Metrics," you will see your database instances, along with the available metrics for each:
 
-サービスリストからRDSを選択し、"Per-Database Metrics"をクリックすると、閲覧可能なメトリクスと共に、データベースインスタンスのリストが表示されます。
+サービスリストからRDSを選択し、"Per-Database Metrics"をクリックすると、閲覧が可能なメトリクスと共に、データベース・インスタンスのリストが表示されます。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"></a>
 
 > Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console.
 
-可視化したいメトリクスの横にあるチェックボックスを選択すると、コンソールの下部にグラフで表示されます。
+可視化したいメトリクスの横にあるチェックボックスを選択すると、コンソールの下部にグラフが表示されます。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/dml-latency.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/dml-latency.png"></a>
@@ -61,7 +61,7 @@ CloudWatchのコンソールには、メトリクスが閾値を超えた場合�
 
 > To set up an alert, click on the "Create Alarm" button at the right of your graph and configure the alarm to notify a list of email addresses:
 
-このアラート機能を設定するには、グラフの右側にある"Create Alarm"ボタンをクリックし、警報を通知するメールアドレスを指定します:
+このアラート機能を設定するには、グラフの右側にある"Create Alarm"ボタンをクリックし、警報を通知する先のメールアドレスを指定します:
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/cloudwatch-alarm.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/cloudwatch-alarm.png"></a>
@@ -72,12 +72,12 @@ CloudWatchのコンソールには、メトリクスが閾値を超えた場合�
 
 > You can also retrieve metrics related to your database instance using the command line. Command line queries can be useful for spot checks and ad hoc investigations. To do so, you will need to [install and configure the CloudWatch command line interface][aws-cli]. You will then be able to query for any CloudWatch metrics you want, using different parameters.
 
-コマンドラインを使用して、データベースインスタンスに関するメトリックを取得することもできます。コマンドラインからの問い合わせは、スポット的なチェックやアドホックな原因追及の時に便利です。この方法を使うためには、[CloudWatchのコマンドラインから操作するソフト][aws-cli]を手元の端末にインストールし、設定する必要があります。インストールと設定が完了すると、異なる検索パラメーターを使ってCloudWatchメトリクスに問い合わせることができるようになります
+コマンドラインを使ってデータベース・インスタンスに関するメトリックを取得することもできます。コマンドラインからの問い合わせは、スポット的なチェックやアドホックな原因追及の時に便利です。この方法を使うためには、[CloudWatchのコマンドラインインターフェース][aws-cli]を手元の端末にインストールし、設定する必要があります。インストールと設定が完了すると、異なる検索パラメーターを使ってCloudWatchが提供するメトリクスに問い合わせることができるようになります。
 
 
 > For example, if you want to check the `SelectLatency` metric across a one-hour window on your Aurora instance, you can run:
 
-例えば、Auroraインスタンスの1時間の`SelectLatency`メトリクスを確認したい場合、次のようなコマンドを実行します:
+例えば、特定時間帯のAuroraインスタンスの`SelectLatency`メトリクスを確認したい場合、次のようなコマンドを実行します:
 
 
 <pre class="lang:sh">
@@ -91,7 +91,7 @@ mon-get-stats SelectLatency
 
 > The `mon-get-stats` query will return output like this—one data point per line:
 
-上記で紹介した`mon-get-stats`コマンドの実行結果の出力は、以下のようになります。一行毎に新しいデーターポイントになります:
+上記で紹介した`mon-get-stats`コマンドの実行結果の出力は、以下のようになります。一行毎に新しいデーターポイントが表示されます:
 
 <pre class="lang:sh">
 2015-11-18 17:00:00  0.41718811881188117  Milliseconds
@@ -105,7 +105,7 @@ mon-get-stats SelectLatency
 
 > Full usage details for the `mon-get-stats` command are available [in the AWS documentation][mon-get-stats].
 
-`mon-get-stats`コマンドの完全な使い方は、[AWSのマニュアルで該当コマンドの詳細][mon-get-stats]を参照してください。
+`mon-get-stats`コマンドの詳しい使い方は、[AWSのマニュアルで該当コマンドの詳細][mon-get-stats]を参照してください。
 
 
 <!--<h3 class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration">Using a monitoring tool with a CloudWatch integration</h3>-->
@@ -114,7 +114,7 @@ mon-get-stats SelectLatency
 
 > The third way to collect CloudWatch metrics is via your own monitoring tools, which can offer extended monitoring functionality. For instance, if you want to correlate metrics from your database with other parts of your infrastructure (including the applications that depend on that database), or you want to dynamically slice, aggregate, and filter your metrics on any attribute, or you need dynamic alerting mechanisms, you probably need a dedicated monitoring system. Monitoring tools that seamlessly integrate with the CloudWatch API can, with a single setup process, collect metrics from across your AWS infrastructure.
 
-CloudWatchのメトリックを収集する第三の方法は、高度な監視機能を持った独自の監視ツールを使う方法です。例えば、データベースから収集したメトリクスを、アプリを含むインフラの他の部分から収集したメトリクスと相関したい場合。又、収集したばかりのメトリクスを属性に基づいて、その場で、分類し、集約し、フィルターしたい場合。ダイナミックなアラートシステムが必要な場合。これらの場合は、ダイナミックな監視システムが必要になるでしょう。高度にCloudWatchのAPIと連携できる監視ツールは、AWS上に構築したインフラの全体に渡りメトリクスを収集してくれるはずです。
+CloudWatchのメトリックを収集する第三の方法は、高度な監視機能を持った独自の監視ツールを使う方法です。例えば、データベースから収集したメトリクスを、アプリを含むインフラの他の部分から収集したメトリクスと相関したい場合。収集したばかりのメトリクスを属性に基づいて、その場で、分類し、集約し、フィルターしたい場合。ダイナミックなアラートシステムが必要な場合。これらの場合は、ダイナミックな監視システムが必要になるでしょう。CloudWatchのAPIと高度に連携できる監視ツールは、簡単な設定で、AWS上に構築したインフラ全体のメトリクスを収集してくれるはずです。
 
 
 > In [Part 3][part-3] of this series, we walk through how you can easily collect, visualize, and alert on any Aurora RDS metric using Datadog.
@@ -131,9 +131,9 @@ CloudWatchのメトリックを収集する第三の方法は、高度な監視�
 > -   [Using the MySQL Workbench GUI](#using-the-mysql-workbench-gui)
 > -   [Using a MySQL-compatible monitoring tool](#using-a-mysql-monitoring-tool)
 
-CloudWatchは、任意のデータベースエンジンの概要的なメトリクスを提供してくれています。しかし、より詳細にAuroraのパフォーマンスを把握したい場合は、[データベースインスタンス自体からメトリクスを収集する][part-1]必要があります:
+CloudWatchは、任意のデータベースエンジンのハイレベル・メトリクスを提供してくれています。しかし、より詳細にAuroraのパフォーマンスを把握したい場合は、[データベースインスタンス自体からメトリクスを収集][part-1]する必要があります:
 
-- [サーバーステータスに関する変数への問い合わせ](#querying-server-status-variables)
+- [サーバステータスに関する変数への問い合わせ](#querying-server-status-variables)
 - [performance schemaとsys schemaへの問い合わせ](#querying-the-performance-schema-and-sys-schema)
 - [MySQL Workbench GUI](#using-the-mysql-workbench-gui)
 - [MySQL監視ツール](#using-a-mysql-monitoring-tool)
@@ -147,14 +147,14 @@ CloudWatchは、任意のデータベースエンジンの概要的なメトリ�
 
 > As with all RDS instances, you cannot directly access the machines running Aurora. So you cannot run `mysql` commands locally or check CPU utilization from the machine itself, as you could if you manually installed MySQL or MariaDB on a standalone EC2 instance. That said, you _can_ connect to Aurora remotely using standard tools, provided that the security group for your Aurora instance permits connections from the device or EC2 instance you are using to initiate the connection.
 
-他のRDSインスタンスと同じように、RDS上のAuroraを実行しているマシンには直接アクセスすることはできません。従って、スタンドアローンのEC2インスタンス上にMySQLやMariaDBをインストールした場合のように、`mysql`コマンドをローカルから実行したり、CPUの利用率をそのマシン自身から確認したりすることができません。しかしながら、RDS上のAuroraインスタンスのセキュリティグループが、それに接続使用としているバックエンドEC2インスタンスやデバイスからの接続を許可している場合、リモートでスタンダードツールを使ってAruroraインスタンスに接続することはできます。
+他のRDSインスタンスと同じように、RDS上でAuroraを実行しているインスタンスには直接アクセスすることはできません。従って、従来型のEC2インスタンス上にMySQLやMariaDBをインストールしたケースのように、`mysql`コマンドをローカルから実行したり、CPUの利用率をそのマシン自身から確認したりすることができません。しかしながら、RDS上のAuroraインスタンスのセキュリティグループが、それに接続使用としているバックエンドEC2インスタンスやデバイスからの接続を許可している場合、リモート・インスタンスからスタンダードツールを使ってAruroraインスタンスに接続することはできます。
 
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"></a>
 
 > For example, if Aurora accepts traffic only from inside its security group, you can launch an EC2 instance in that security group, and then apply a second security group rule to the EC2 instance to accept inbound SSH traffic (*see diagram above*). Then you can SSH to the EC2 instance, from which you can connect to Aurora using the standard mysql command line tool:
 
-例えば、RDSのAuroraインスタンスがセキュリティグループ内部からのトラフィックを受け入れる場合、そのセキュリティーグループ内にEC2インスタンスを起動します。次に、そのEC2インスタンスに、インバウンドSSHトラフィックを許可するように、第2のセキュリティグループルールを適用します（*上記の図を参照してください。*）。そして、SSH経由でそのEC2インスタンスを操作し、mysqlコマンドラインツールを使用してRDS上のから情報を集取してきます。
+例えば、RDSのAuroraインスタンスがセキュリティグループ内部からのトラフィックを受け入れる場合、そのセキュリティーグループ内にEC2インスタンスを起動します。次に、そのEC2インスタンスに、インバウンドSSHトラフィックを許可するように、第2のセキュリティグループルールを適用します（*上記の図を参照してください。*）。そして、SSHを経由しそのEC2インスタンスを操作して、mysqlコマンドラインツールを使用してRDS上のから情報を集取してきます。
 
 
 <pre class="lang:sh">
@@ -181,7 +181,7 @@ mysql> SHOW GLOBAL STATUS LIKE '%Connection_errors%';
 
 > Server status variables by and large capture high-level server activity. To collect metrics at the query level—for instance, to link latency or error metrics to individual queries—you can use the [performance schema][performance-schema], which captures detailed statistics on server events.
 
-Server status variablesは、概して、サーバーアクティビティの概要的な情報を収集しています。"クエリーレイテンシー"や"クエリーエラー"などの、クエリーレベルのメトリクスを収集するには、サーバーイベントに関し詳細な統計情報を集取しているMySQL [performance schema][performance-schema]を使うことができます。
+Server status variablesは、概して、サーバアクティビティの概要的な情報を収集しています。"クエリレイテンシ"や"クエリエラー"などの、クエリレベルのメトリクスを収集するには、サーバイベントに関し詳細な統計情報を集取しているMySQL [performance schema][performance-schema]を使うことができます。
 
 
 #### Enabling the performance schema
@@ -193,7 +193,7 @@ performance schemaを有効にするには、[AWSコンソール][rds-console]�
 
 > Once it is enabled, the performance schema will collect metrics on all the statements executed by the server. Many of those metrics are summarized in the `events_statements_summary_by_digest` table. The digest normalizes all the statements, ignoring data values and standardizing whitespace, so that the following two queries [would be considered the same][digest]:
 
-この設定が有効になると、performance schemaは、サーバによって実行されたすべてのステートメントに関するメトリックを収集します。performance schemaのメトリクスの多くは、`events_statements_summary_by_digest` の表にまとめられています。この`events_statements_summary_by_digest`では、全てのステートメントのデータ値は無視され、空白は取り除かれて正規化の処理が施されます。従って、次の二つのクエリーは、[同じモノとして処理されます][digest]:
+この設定が有効になると、performance schemaは、サーバによって実行されたすべてのステートメントに関するメトリックを収集します。performance schemaのメトリクスの多くは、`events_statements_summary_by_digest` の表にまとめられています。この`events_statements_summary_by_digest`では、全てのステートメントのデータ値は無視され、空白は取り除かれて正規化の処理が施されます。従って、次の二つのクエリは、[同じモノとして処理されます][digest]:
 
 
 <pre class="lang:mysql">
@@ -203,7 +203,7 @@ SELECT * FROM orders WHERE customer_id = 25 AND quantity > 100
 
 > The performance schema captures information about latency, errors, and query volume for each normalized statement. A sample row from the `events_statements_summary_by_digest` table shows an expensive query that takes multiple seconds to execute (all timer measurements are in picoseconds):
 
-performance schemaは、先に示した正規化の規則に基づいて分類したステートメント毎に、レイテンシー, エラー, クエリー数に関する情報を取得しています。以下のサンプル行は、`events_statements_summary_by_digest`の表から抽出した、実行コストの高価(実行に数秒間かかる)なクエリーを表示しています(時間の単位は、ピコ秒):
+performance schemaは、先に示した正規化の規則に基づいて分類したステートメント毎に、レイテンシ, エラー, クエリ数に関する情報を取得しています。以下のサンプル行は、`events_statements_summary_by_digest`の表から抽出した、実行コストの高価(実行に数秒間かかる)なクエリを表示しています(時間の単位は、ピコ秒):
 
 
 <pre class="lang:mysql">
@@ -282,7 +282,7 @@ mysql -h instance-name.xxxxxx.us-east-1.rds.amazonaws.com -P 3306 -u yourusernam
 > Now, when you access your database instance using the mysql command line tool, you will have access to the sys schema and all the views within. The [sys schema documentation][sys-schema] provides information on the various tables and functions, along with a number of useful examples. For instance, to summarize all the statements executed, along with their associated latencies:
 
 ここで、mysqlコマンドラインツールを使用して、データベース・インスタンスにアクセスすると、sys schemaとそれが提供しているビューにアクセスすることができるようになっているはずです。
-[sys schemaのドキュメント][sys-schema]には、多くの例と共に、各種の表や関数の情報が掲載されています。例えば、実行された全てのステートメントとそれに関連したレイテンシーは、次のようにサマライズできます:
+[sys schemaのドキュメント][sys-schema]には、多くの例と共に、各種の表や関数の情報が掲載されています。例えば、実行された全てのステートメントとそれに関連したレイテンシは、次のようにサマライズできます:
 
 
 <pre class="lang:mysql">
@@ -337,7 +337,7 @@ RDS上のAuroraと通信するように[EC2インスタンスを設定](#connect
 
 > The fourth way to access Aurora's database engine metrics is to use a full-featured monitoring tool that integrates with MySQL. Such tools allow you to not only glimpse a real-time snapshot of your metrics but to visualize and analyze your metrics' evolution over time, and to set alerts to be notified when key metrics go out of bounds.　Comprehensive monitoring tools also allow you to correlate your metrics across systems, so you can quickly determine if errors from your application can be traced back to Aurora, or if increased query latency is caused by system-level resource contention. [Part 3][part-3] of this series demonstrates how you can set up comprehensive Aurora monitoring with Datadog.
 
-Auroraのメトリクスにアクセスするための第四の方法は、MySQLと総合的に連携できるフル装備の監視ツールを使用することです。このようなツールは、メトリクスのリアルタイムスナップショットを見ることができるだけでなく、メトリクスの時間をかけた変化を可視化し分析することができ、キーメトリクスが規定値を超えた場合に通知するためのアラートを設定することができます。更に、総合的な監視ツールは、各システムの間でメトリクスを相関することができ、アプリから出ているエラーがMySQLに起因しているかを判断できたり、MySQLのレイテンシーがシステムレベルのリソースの競合によって引き起こされている可能性を判断できたりします。このシリーズの[Part 3][part-3]では、RDS上のMySQLの包括的な監視を、Datadogを使って実現する方法を紹介します。
+Auroraのメトリクスにアクセスするための第四の方法は、MySQLと総合的に連携できるフル装備の監視ツールを使用することです。このようなツールは、メトリクスのリアルタイムスナップショットを見ることができるだけでなく、メトリクスの時間をかけた変化を可視化し分析することができ、キーメトリクスが規定値を超えた場合に通知するためのアラートを設定することができます。更に、総合的な監視ツールは、各システムの間でメトリクスを相関することができ、アプリから出ているエラーがMySQLに起因しているかを判断できたり、MySQLのレイテンシがシステムレベルのリソースの競合によって引き起こされている可能性を判断できたりします。このシリーズの[Part 3][part-3]では、RDS上のMySQLの包括的な監視を、Datadogを使って実現する方法を紹介します。
 
 
 ## Conclusion
