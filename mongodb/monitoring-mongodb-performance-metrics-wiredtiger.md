@@ -1,6 +1,6 @@
 #Monitoring MongoDB performance metrics (WiredTiger)
 
-*This post is part 1 of a 3-part series about monitoring MongoDB performance with the WiredTiger storage engine. [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog) details how to monitor its performance with Datadog.*
+*This post is part 1 of a 3-part series about monitoring MongoDB performance with the WiredTiger storage engine. [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog) details how to start monitoring MongoDB performance with Datadog.*
 
 If you are using the MMAPv1 storage engine, visit the companion article “[Monitoring MongoDB performance metrics (MMAP)](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap)”.
 
@@ -330,7 +330,7 @@ Adding more shards to a cluster increases read and write throughput capacities. 
 
 ## Recap
 
-In this post we’ve explored the metrics you should monitor to keep tabs on your MongoDB cluster. If you are just getting started with MongoDB, monitoring the metrics in the list below will provide visibility into your database’s health, performance, resource usage, and may help identify areas where tuning could provide significant benefits:
+In this post we’ve explored the metrics you should keep tabs on when monitoring MongoDB. If you are just getting started with MongoDB, monitoring the metrics in the list below will provide visibility into your database’s health, performance, resource usage, and may help identify areas where tuning could provide significant benefits:
 
 -   [Throughput metrics](#throughput)
 -   [Database performance](#dbperf)

@@ -1,11 +1,11 @@
 #How to monitor MongoDB performance with Datadog
 
-*This post is the last of a 3-part series about monitoring MongoDB. Part 1 presents the key performance metrics available from MongoDB: there is [one post for the WiredTiger](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) storage engine and [one for MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap). [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB metrics.*
+*This post is the last of a 3-part series about how to best monitor MongoDB performance. Part 1 presents the key performance metrics available from MongoDB: there is [one post for the WiredTiger](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) storage engine and [one for MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap). [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB metrics.*
 
 If you’ve already read our first two parts in this series, you know that monitoring MongoDB gives you a range of metrics that allow you to explore its health and performance in great depth. But for databases running in production, you need a robust monitoring system that collects, aggregates, and visualizes MongoDB metrics along with metrics from the other parts of your infrastructure. Advanced alert mechanisms are also essential to be able to quickly react when things go awry. In this post, we’ll show you how to start monitoring MongoDB in a few minutes with Datadog.
  [![MongoDB graphs on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-performance-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-performance-metrics.png)
 
-## Start monitoring MongoDB performance in 3 easy steps
+## Monitor MongoDB performance in 3 easy steps
 
 ### Step 1: install the Datadog Agent
 
@@ -68,8 +68,8 @@ Datadog also integrates with many communication tools such as Slack, PagerDuty o
 
 ## You are now a MongoDB pro!
 
-This concludes the series about MongoDB monitoring. In this post we’ve walked you through integrating MongoDB with Datadog to visualize your key metrics and notify your team whenever your database shows signs of trouble.
+This concludes the series on how to monitor MongoDB performance. In this post we’ve walked you through integrating MongoDB with Datadog to visualize your key metrics and notify your team whenever your database shows signs of trouble.
 
 If you’ve followed along using your own Datadog account, you should now have unparalleled visibility into MongoDB’s activity and performance. You are also aware of the ability to create automated alerts tailored to your environment, usage patterns, and the metrics that are most valuable to your teams.
 
-If you don’t yet have a Datadog account, you can sign up for [a free trial](https://app.datadoghq.com/signup) and start monitoring MongoDB alongside the rest of your infrastructure, your applications, and your services today.
+If you don’t yet have a Datadog account, you can sign up for [a free trial](https://app.datadoghq.com/signup) and being to monitor MongoDB performance alongside the rest of your infrastructure, your applications, and your services today.

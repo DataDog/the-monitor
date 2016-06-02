@@ -1,7 +1,7 @@
 #Collecting MongoDB metrics and statistics 
-*This post is part 2 of a 3-part series about monitoring MongoDB performance. Part 1 presents the key performance metrics available from MongoDB: there is [one post for the WiredTiger](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) storage engine and [one for MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap). In [Part 3](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog) you will discover how to monitor MongoDB performance with Datadog.*
+*This post is part 2 of a 3-part series about monitoring MongoDB metrics and performance. Part 1 presents the key performance metrics available from MongoDB: there is [one post for the WiredTiger](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) storage engine and [one for MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap). In [Part 3](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog) you will discover how to monitor MongoDB performance with Datadog.*
 
-If you’ve already read our guide to key MongoDB metrics in Part 1 of this series, you’ve seen that MongoDB provides a vast array of metrics on performance and resource utilization. This post covers the different options for collecting MongoDB metrics in order to monitor them. There are three ways to collect metrics from your MongoDB hosts:
+If you’ve already read our guide to key MongoDB metrics in Part 1 of this series, you’ve seen that MongoDB provides a vast array of metrics on performance and resource utilization. This post covers the different options for collecting MongoDB metrics in order to monitor them. There are three ways to collect MongoDB metrics from your hosts:
 
 -   Using [utilities](#utilities) offered by MongoDB to collect real-time activity statistics
 -   Using [database commands](#commands) to check the database’s current state
@@ -40,7 +40,7 @@ MongoDB provides several commands that can be used to collect the different metr
 
 ### serverStatus
 
-**serverStatus** (`db.serverStatus()` if run from the mongo shell) is the most complete native metrics-gathering command for MongoDB. It provides a document with statistics from most of the key metrics categories we talked about in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger): connections, operations, journaling, background flushing, locking, cursors, memory, asserts, etc. You can find the full list of metrics it can return [here](https://docs.mongodb.com/manual/reference/command/serverStatus/#output).
+**serverStatus** (`db.serverStatus()` if run from the mongo shell) is the most complete native metrics-gathering command for MongoDB. It provides a document with statistics from most of the key MongoDB metrics categories we talked about in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger): connections, operations, journaling, background flushing, locking, cursors, memory, asserts, etc. You can find the full list of metrics it can return [here](https://docs.mongodb.com/manual/reference/command/serverStatus/#output).
 
 This command is used by most [third party monitoring tools](#tools) to collect MongoDB metrics along with the dbStats and replSetGetStatus commands that are still necessary to collect storage metrics and statistics about your replica sets (see next paragraphs).
 
