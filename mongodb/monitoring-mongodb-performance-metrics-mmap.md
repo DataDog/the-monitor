@@ -1,6 +1,6 @@
 #Monitoring MongoDB performance metrics (MMAP)
 
-*This post is part 1 of a 3-part series about monitoring MongoDB performance with the MMAPv1 storage engine. [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog) details how to monitor its performance with Datadog.*
+*This post is part 1 of a 3-part series about monitoring MongoDB performance with the MMAPv1 storage engine. [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB performance metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog) details how to monitor MongoDB performance with Datadog.*
 
 If you are using the WiredTiger storage engine, which was introduced with MongoDB 3.0 and is now the default storage engine, visit the companion article “[Monitoring MongoDB performance metrics (WiredTiger)](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger)”.
 
@@ -54,7 +54,7 @@ To get a high-level view of your cluster’s activity levels, the most important
 
 NOTE: A *getmore* is the operation the [cursor](#cursors) executes to get additional data from a query.
 
-##### Metrics to alert on:
+##### MongoDB performance metrics to alert on:
 
 By properly monitoring the **number of read and write requests** you can prevent resource saturation, spot bottlenecks, quickly find the cause of potential overloads, and know when to scale [up or out](#scaling). The `currentQueue` metrics (presented in the section about [Resource Saturation](#resource-saturation)) will confirm if requests are accumulating faster than they are being processed. Look also at `activeClients.readers` or `activeClients.writers` to check if the number of active clients explains the requests load. These two activeClients metrics are reported under “[globalLock](https://docs.mongodb.com/manual/reference/command/serverStatus/#server-status-global-lock)” even if they are not really related to global lock.
 
@@ -269,7 +269,7 @@ With MMAPv1, if journaling is turned on, the amount of **virtual memory** is alw
 
 ##### Note about the working set’s size:
 
-With the MMAPv1 storage engine, your working set—the data that is most often accessed—[needs to fit in RAM](https://docs.mongodb.com/manual/faq/diagnostics/#must-my-working-set-size-fit-ram) to maintain good performance. If it does not fit in RAM, you’ll see a lot of hard page faults and disk I/O.
+With the MMAPv1 storage engine, your working set—the data that is most often accessed—[needs to fit in RAM](https://docs.mongodb.com/manual/faq/diagnostics/#must-my-working-set-size-fit-ram) to maintain good MongoDB performance. If it does not fit in RAM, you’ll see a lot of hard page faults and disk I/O.
 
 #### Other host-level metrics
 
