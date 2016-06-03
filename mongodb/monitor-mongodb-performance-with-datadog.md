@@ -72,4 +72,4 @@ This concludes the series on how to monitor MongoDB performance. In this post we
 
 If you’ve followed along using your own Datadog account, you should now have unparalleled visibility into MongoDB’s activity and performance. You are also aware of the ability to create automated alerts tailored to your environment, usage patterns, and the metrics that are most valuable to your teams.
 
-If you don’t yet have a Datadog account, you can sign up for [a free trial](https://app.datadoghq.com/signup) and being to monitor MongoDB performance alongside the rest of your infrastructure, your applications, and your services today.
+If you don’t yet have a Datadog account, you can sign up for [a free trial](https://app.datadoghq.com/signup) and begin to monitor MongoDB performance alongside the rest of your infrastructure, your applications, and your services today.
