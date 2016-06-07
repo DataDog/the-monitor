@@ -1,8 +1,8 @@
 # How to collect Azure metrics
 
-*This post is part 2 of a 3-part series on monitoring Azure virtual machines. [Part 1](/blog/how-to-monitor-microsoft-azure-vms) explores the key metrics available in Azure, and [Part 3](/blog/monitor-azure-vms-using-datadog) details how to monitor Azure with Datadog.*
+*This post is part 2 of a 3-part series on monitoring Azure virtual machines. [Part 1](/azure/how_to_monitor_microsoft_azure_vms.md) explores the key metrics available in Azure, and [Part 3](/azure/monitor_azure_vms_using_datadog.md) details how to monitor Azure with Datadog.*
 
-How you go about capturing and monitoring Azure metrics depends on your use case and the scale of your infrastructure. There are several ways to access metrics from Azure VMs: you can graph and monitor metrics using the Azure web portal, you can access the raw metric data via Azure storage, or you can use a monitoring service that integrates directly with Azure to gather metrics from your VMs. This post addresses the first two options (using the Azure web portal and accessing raw data); [a companion post](/blog/monitor-azure-vms-using-datadog/) describes how to monitor your VMs by integrating Azure with Datadog.
+How you go about capturing and monitoring Azure metrics depends on your use case and the scale of your infrastructure. There are several ways to access metrics from Azure VMs: you can graph and monitor metrics using the Azure web portal, you can access the raw metric data via Azure storage, or you can use a monitoring service that integrates directly with Azure to gather metrics from your VMs. This post addresses the first two options (using the Azure web portal and accessing raw data); [a companion post](/azure/monitor_azure_vms_using_datadog.md) describes how to monitor your VMs by integrating Azure with Datadog.
 
 ## Viewing Azure metrics in the web portal
 
@@ -67,7 +67,7 @@ The name of your VM can be found at the end of each row’s partition key, which
 
 In this post we have demonstrated how to use Azure’s built-in monitoring functionality to graph VM metrics and generate alerts when those metrics go out of bounds. We have also walked through the process of exporting raw metric data from Azure for custom analysis.
 
-At Datadog, we have integrated directly with Azure so that you can begin collecting and monitoring VM metrics with a minimum of setup. Learn how Datadog can help you to monitor Azure in the [next and final post](/blog/monitor-azure-vms-using-datadog/) of this series.
+At Datadog, we have integrated directly with Azure so that you can begin collecting and monitoring VM metrics with a minimum of setup. Learn how Datadog can help you to monitor Azure in the [next and final post](/azure/monitor_azure_vms_using_datadog.md) of this series.
 
 ------------------------------------------------------------------------
 

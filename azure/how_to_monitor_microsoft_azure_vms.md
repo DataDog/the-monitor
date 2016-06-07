@@ -1,6 +1,6 @@
 # How to monitor Microsoft Azure VMs
 
-*This post is part 1 of a 3-part series on monitoring Azure virtual machines. [Part 2](/blog/how-to-collect-azure-metrics) is about collecting Azure VM metrics, and [Part 3](/blog/monitor-azure-vms-using-datadog) details how to monitor Azure VMs with Datadog.*
+*This post is part 1 of a 3-part series on monitoring Azure virtual machines. [Part 2](/azure/how_to_collect_azure_metrics.md) is about collecting Azure VM metrics, and [Part 3](/azure/monitor_azure_vms_using_datadog.md) details how to monitor Azure VMs with Datadog.*
 
 ## What is Azure?
 
@@ -14,7 +14,7 @@ Whether you run Linux or Windows on Azure, you will want to monitor certain basi
 
 This article references metric terminology [introduced in our Monitoring 101 series](/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
-Users can monitor Azure with the following metrics via [the Azure web portal](https://portal.azure.com/) or can access the raw data directly via the Azure diagnostics extension. Details on how to collect these metrics are available in [the companion post](/blog/how-to-collect-azure-metrics) on Azure metrics collection.
+Users can monitor Azure with the following metrics via [the Azure web portal](https://portal.azure.com/) or can access the raw data directly via the Azure diagnostics extension. Details on how to collect these metrics are available in [the companion post](/azure/how_to_collect_azure_metrics.md) on Azure metrics collection.
 
 ### CPU metrics
 
@@ -103,7 +103,7 @@ In this post we’ve explored several general-purpose metrics you should monitor
 -   [Memory pages](#memory-pages)
 -   [Network traffic sent/received](#network-sent)
 
-Over time you will recognize additional, specialized metrics that are relevant to your applications. [Part 2 of this series](/blog/how-to-collect-azure-metrics/) provides step-by-step instructions for collecting any metric you may need to monitor Azure.
+Over time you will recognize additional, specialized metrics that are relevant to your applications. [Part 2 of this series](/azure/how_to_collect_azure_metrics.md/) provides step-by-step instructions for collecting any metric you may need to monitor Azure.
 
 ## Acknowledgments
 
