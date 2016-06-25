@@ -13,7 +13,7 @@
 >     -   [Redis](#redis)
 >     -   [Memcached](#memcached)
 
-RedisかMemcachedかを使っているかに関わらず、ElastiCacheメトリックの多くは、CloudWatchからとキャッシュエンジンそれ自体の両方から集取することができます。そのようなケースでは、[Part 1](https://www.datadoghq.com/using-elb-cloudwatch-metrics-to-detect-latency/)で説明したように、より高い解像度と応答性を確保するために、ネイティブのキャッシュメトリクスを監視するべきです。従って、この記事で、AWS CloudWatchを介してElastiCacheメトリクスにアクセスする3つの方法を解説し、更に、キャッシュエンジン毎のネイティブメトリクスの収集方法を解説していきます:
+ElastiCacheメトリクスの多くは、Redis又はMemcachedのどちらを選択したかに関わらず、CloudWatchとキャッシュエンジンそれ自体の両方から集取することができます。そのようなケースでは、[Part 1](https://www.datadoghq.com/using-elb-cloudwatch-metrics-to-detect-latency/)で説明したように、より高い解像度と応答性を確保するために、ネイティブのキャッシュメトリクスを監視するべきです。従ってこの記事では、まず、AWS CloudWatchを経由しElastiCacheメトリクスにアクセスする3つの方法を解説し、次に両キャッシュエンジンのネイティブメトリクスの収集方法を解説していきます:
 
 - CloudWatchのメトリックス
 	- [AWS管理コンソールを使用する方法](#console)
@@ -28,7 +28,7 @@ RedisかMemcachedかを使っているかに関わらず、ElastiCacheメトリ�
 
 > Using the online management console is the simplest way to monitor your cache with CloudWatch. It allows you to set up basic automated alerts and to get a visual picture of recent changes in individual metrics. Of course, you won’t be able to access native metrics from your cache engine, but their CloudWatch equivalent is sometimes available (see [Part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached)).
 
-オンライン管理コンソールは、CloudWatchで、キャッシュを監視する最も簡単な方法です。この管理コンソールを使うことで、基本的な自動化されたアラートを設定すると、個々のメトリックの最近の変化を可視化することができまし。勿論、キャッシュエンジンからのネイティブメトリクスにはアクセスすることはできませんが、同等のメトリクスがCloudWatch経由で使用できることがあります。(詳細は、[Part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached)参照)
+オンライン管理コンソールは、CloudWatchで、キャッシュの状態を監視する最も簡単な方法です。この管理コンソールを使うことで、基本的な自動アラートを設定したり、個々のメトリックの最近の変化を可視化することができます。勿論、キャッシュエンジンからのネイティブメトリクスにはアクセスすることはできませんが、同等のメトリクスをCloudWatch経由で使用できることができます。(詳細は、[Part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached)参照)
 
 
 ### Graphs
@@ -54,7 +54,7 @@ ElastiCacheメトリクスを表示するためのカテゴリ項目をクリッ
 
 > Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console:
 
-メトリクスの横にあるボックスにチェックマークを付けつと、コンソールの下部のエリアにグラフが表示されます:
+メトリクスの横にあるボックスにチェックマークを付けると、コンソールの下部のエリアにグラフが表示されます:
 
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-4.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-4.png)
@@ -63,11 +63,11 @@ ElastiCacheメトリクスを表示するためのカテゴリ項目をクリッ
 
 > With the CloudWatch Management Console you can also create simple alerts that trigger when a metric crosses a specified threshold.
 
-CloudWatchの管理コンソールを使用すると、メトリクスが設定した閾値を超えたときに動作する基本的なアラートを作成することができます。
+CloudWatchの管理コンソールを使用すると、メトリクスが設定した閾値を超えたときに動作する基礎的なアラートを作成することができます。
 
 > Click on the “Create Alarm” button at the right of your graph, and you will be able to set up the alert and configure it to notify a list of email addresses.
 
-グラフの右側にある“Create Alarm”ボタンをクリックすると、アラートを作成し、リスト化したメールアドレスへ通知をするための設定をすることができます。
+グラフの右側にある“Create Alarm”ボタンをクリックすると、アラートを作成し、リスト化したメールアドレスへ通知をするための設定ができます。
 
 
 [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-5.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-5.png)
@@ -81,7 +81,7 @@ CloudWatchの管理コンソールを使用すると、メトリクスが設定�
 
 > Command line queries can be useful for spot checks and ad hoc investigations when you can’t, or don’t want to, use a browser.
 
-コマンドラインからの問い合わせは、スポットチェックや臨時の調査が発生した場合で、ブラウザーが使えない又は使いたくない場合に、非常に便利です。
+コマンドラインからの問い合わせは、スポットチェックや臨時の調査が発生した場合に、ブラウザーが使えない又は使いたくない場合に、非常に便利です。
 
 
 > For example, if you want to know the CPU utilization statistics for a cache cluster, you can use the CloudWatch command **mon-get-stats** with the parameters you need:
@@ -118,17 +118,17 @@ CloudWatch CLIで、実行できるコマンドの一覧は、[次のリンク](
 > -   Historical data access
 > -   Sophisticated alerting mechanisms
 
-CloudWatchのメトリックを収集するための第三の方法は、以下のように拡張された監視機能を提供しています専用の監視ツールを使用して次のとおりです。
+CloudWatchのメトリックを収集するための第三の方法は、以下のような拡張された監視機能を持っている専用の監視ツールを使用する方法です。例えば:
 
-- キャッシング・エンジンからのメトリックを持つと、インフラストラクチャの他の部分からCloudWatchのメトリックの相関
-- メトリックの動的スライシング、集計、およびフィルタ
-- 過去のデータアクセス
-- 洗練されたアラートメカニズム
+- キャッシュ・エンジンからのメトリックやインフラの他の部分からのメトリクスと、CloudWatchのメトリックを相関する
+- メトリクスを、動的に分割したり、集計したり、フィルターしたりする
+- 過去のデータアクセスをする
+- 精巧なメカニズムによるアラートができる
 
 
 > CloudWatch can be integrated with outside monitoring systems via API, and in many cases the integration only needs to be enabled once to deliver metrics from all your AWS services.
 
-CloudWatchのは、APIを介して外部監視システムと統合し、多くの場合、統合は、すべてのあなたのAWSサービスからのメトリックを提供するために、一度有効にする必要がありますすることができます。
+CloudWatchは、APIを介して外部監視システムと連携することができます。多くの場合、この連携の設定を一度だけ済ませれば、AWSの全てのサービスからメトリクスを集取することができるようになります。
 
 
 ## Collecting native Redis or Memcached metrics
@@ -142,17 +142,17 @@ CloudWatchより収集したElastiCacheメトリックは、キャッシュの�
 
 > Redis provides extensive monitoring out of the box. The `info` command in the Redis command line interface gives you a snapshot of current cache performance. If you want to dig deeper, Redis also provides a number of tools offering a more detailed look at specific metrics. You will find all the information you need in [our recent post about collecting Redis metrics](https://www.datadoghq.com/blog/how-to-collect-redis-metrics/).
 
-Redisは、初期インストールのままで、広範囲のメトリクスを提供しています。Redisのコマンドラインインターフェイスにある`info`コマンドは、キャッシュの直近のパフォーマンスを把握することができます。もしも、深く調査したい場合は、Redisには、特定のメトリクスを詳細に解析するための多くのツールが用意されいます。これらのツールに関しては、次のリンク先の[Redisメトリクスの収集に関する直近のポスト](https://www.datadoghq.com/blog/how-to-collect-redis-metrics/)を参照してください。
+Redisは、初期インストールのままでも広範囲のメトリクスを提供しています。Redisのコマンドラインインターフェイスにある`info`コマンドでは、キャッシュの直近のパフォーマンスを把握することができます。もしも、深く調査したい場合は、Redisには、特定のメトリクスを詳細に解析するための多くのツールが用意されいます。これらのツールに関しては、次のリンク先の[Redisメトリクスの収集に関する直近のポスト](https://www.datadoghq.com/blog/how-to-collect-redis-metrics/)を参照してください。
 
 
 > For spot-checking the health of your server or looking into causes of significant latency, Redis’s built-in tools offer good insights.
 
-サーバーの健全性に関するスポットチェックや、重大なレイテンシーの原因解明については、Redisのビルトインツールは、十分な洞察を提供してくれています。
+サーバーの健全性に関するスポットチェックや、非常に長いレイテンシの原因究明については、Redisに同胞されているツールを使うことで十分な洞察をえることができます。
 
 
 > However, with so many metrics exposed, getting the information you want all in one place can be a challenge. Moreover, accessing data history and correlating Redis metrics with metrics from other parts of your infrastructure can be essential. That’s why using a monitoring tool integrating with Redis, such as Datadog, will help to take the pain out of your monitoring work.
 
-しかし、非常に多くのメトリクスが公開されているので、一カ所に必要な全ての情報を集めることは大変なことかもしれまません。更に、過去のデーターにアクセスしたり、インフラの他部位から収集したメトリクスとRedisメトリクスを相関することも必要になってきます。従って、Datadogなどのような、Redisと連携した監視ツールは、監視作業の手間の軽減に大幅に役立ちます。
+しかし、非常に多くのメトリクスが公開されているので、必要な全ての情報を一カ所に集めることは大変な作業かもしれまません。更に、過去のデーターにアクセスしたり、インフラの他部位から収集したメトリクスとRedisメトリクスを相関することも必要になってくるでしょう。従って、Datadogなどのような、Redisと連携した監視ツールは、監視作業の手間の軽減に大幅に役立ちます。
 
 
 ### Memcached
@@ -197,7 +197,7 @@ Memcachedに対して実行できるコマンドの詳細を知りたい場合�
 
 > Obviously, you can’t rely only on this snapshot to properly monitor Memcached performance; it tells you nothing about historical values or acceptable bounds, and it is not easy to quickly digest and understand the raw data. From a devops perspective, Memcached is largely a black box, and it becomes even more complex if you run multiple or distributed instances. Other basic tools like [memcache-top](http://code.google.com/p/memcache-top/) (for a changing, real-time snapshot) are useful but remain very limited.
 
-当然ながら、Memcachedのパフォーマンスを適切に監視するために、スナップショットに依存することはできません。スナップショットは、過去の値や容認範囲については把握することができできません。そして、生のデーターを整理し、理解することは容易ではありません。DevOpsの観点からは、Memcachedは、大部分がブラックボックスです。そして、複数や分散インスタンスのMemcachedを運用する場合にはさらに複雑になります。[memcache-top](http://code.google.com/p/memcache-top/)のような他の基本ツールを使うこともできますが、機能は非常に限られています。
+当然ながら、Memcachedのパフォーマンスを適切に監視するために、スナップショットに依存することはできません。スナップショットは、過去の値や容認範囲については把握することができできません。そして、生のデーターを整理し、理解することは容易ではありません。DevOpsの観点からは、Memcachedは、大部分がブラックボックスです。そして、複数や分散インスタンスのMemcachedを運用する場合、状況は、更に複雑になります。[memcache-top](http://code.google.com/p/memcache-top/)のような他の基本ツールを使うこともできますが、機能は非常に限られています。
 
 
 > Thus if you are using Memcached as your ElastiCache engine, like Coursera does (see [Part 3](https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance)), you should use CloudWatch or a dedicated monitoring tool that integrates with [Memcached](https://www.datadoghq.com/blog/speed-up-web-applications-memcached/), such as Datadog.
@@ -209,9 +209,9 @@ ElastiCacheエンジンとしてMemcachedの使用している場合には、Cou
 
 > In this post we have walked through how to use CloudWatch to collect, visualize, and alert on ElastiCache metrics, as well as how to access higher-resolution, native cache metrics from Redis or Memcached.
 
-この記事では、CloudWatchを使ってElastiCacheのメトリックを収集し、視覚化する方法と、メトリクスが閾値を超えた場合にアラートを発生させる方法を解説してきました。更に、RedisとMemcachedの、高い解像度のネイティブキャッシュメトリクスをアクセスする方法も解説してきました。
+この記事では、CloudWatchを使ってElastiCacheのメトリックを収集し、視覚化する方法と、メトリクスが閾値を超えた場合にアラートを発生させる方法を解説してきました。更に、RedisとMemcachedの、高い解像度で収集できるネイティブキャッシュメトリクスへアクセスする方法も解説してきました。
 
 
 > In the [next and final part of this series](https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance) we take you behind the scenes with Coursera’s engineering team to learn their best practices and tips for using ElastiCache and monitoring its performance with Datadog.
 
-このシリーズの[最後のPart 3][(https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance)では、Courseraのエンジニアリングチームの実際のケースを基に、Datadogを使ったElastiCacheのパフォーマンスの監視方法とElastiCacheの運用方法のベストプラクティスとティップスを解説していきます。
+このシリーズの[Part 3][(https://www.datadoghq.com/blog/how-coursera-monitors-elasticache-and-memcached-performance)では、Courseraのエンジニアリングチームの実際のケースを基に、Datadogを使ったElastiCacheのパフォーマンスの監視方法とElastiCacheの運用方法のベストプラクティスとティップスを解説していきます。
