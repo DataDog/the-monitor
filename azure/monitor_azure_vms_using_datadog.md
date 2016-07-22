@@ -27,27 +27,27 @@ Both options provide basic metrics about your Azure VMs with a minimum of overhe
 
 The easiest way to start gathering metrics from Azure is to connect Datadog to Azure’s read-only monitoring API. You won’t need to install anything, and you’ll start seeing basic metrics from all your VMs right away.
 
-To authorize Datadog to collect metrics from your Azure VMs, simply click [this link](https://app.datadoghq.com/azure/landing) and follow the directions on the configuration pane under the heading “To start monitoring all your Azure Virtual Machines”.
+To authorize Datadog to collect metrics from your Azure VMs, simply click [this link](https://app.datadoghq.com/azure/landing) and follow the directions on the configuration pane under the heading “To start monitoring all your Azure Resources”.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-config-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-config-2.png)
+[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-config-update.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-config-update.png)
 
 ### View your Azure performance metrics
 
-Once you have successfully integrated Datadog with Azure, you will see [an Azure default screenboard](https://app.datadoghq.com/screen/integration/azure) on your list of [Integration Dashboards](https://app.datadoghq.com/dash/list). The basic Azure dashboard displays all of the key CPU, disk I/O, and network metrics highlighted in Part 1 of this series, “How to monitor Microsoft Azure VMs”.
+Once you have successfully integrated Datadog with Azure, you will see [an Azure VM default screenboard](https://app.datadoghq.com/screen/integration/azure_vm) on your list of [Integration Dashboards](https://app.datadoghq.com/dash/list). The basic Azure dashboard displays all of the key CPU, disk I/O, and network metrics highlighted in Part 1 of this series, “How to monitor Microsoft Azure VMs”.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-screenboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-screenboard.png)
+[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-vm-screenboard-update.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-vm-screenboard-update.png)
 
 ### Customize your Azure dashboards
 
 Once you are capturing Azure metrics in Datadog, you can build on the default screenboard by adding additional Azure VM metrics or even graphs and metrics from outside systems. To start building a custom screenboard, clone the default Azure dashboard by clicking on the gear on the upper right of the dashboard and selecting “Clone Dash”. You can also add VM metrics to any custom timeboard, which is an interactive Datadog dashboard displaying the evolution of multiple metrics across any timeframe.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-clone-3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-clone-3.png)
+[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-clone-update.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-clone-update.png)
 
 ## Install the Datadog Agent on an Azure VM
 
 Installing the Datadog Agent lets you monitor additional server-level metrics from the host, as well as real-time metrics from the applications running on the VM. Agent metrics are collected at higher resolution than per-minute Azure portal metrics.
 
-Azure users can install the Datadog Agent as an Azure extension in seconds. (Note: At present, Azure extensions are only available for VMs launched running on the “Classic” service management stack.)
+Azure users can install the Datadog Agent as an Azure extension in seconds. 
 
 ### Install the Agent from the Azure portal
 
