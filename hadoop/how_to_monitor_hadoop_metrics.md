@@ -332,8 +332,8 @@ Special thanks to [Ian Wrigley][ian-twit], Director of Education Services at [Co
 [ian-twit]: https://twitter.com/iwrigley
 [confluent]: http://www.confluent.io/
 
-<!--
-_Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]._ -->
+
+_Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]._ 
 
 []: Links
 
@@ -404,3 +404,6 @@ _Source Markdown for this post is available [on GitHub][markdown]. Questions, co
 
 [dn-part1]: https://www.datadoghq.com/blog/hadoop-architecture-overview/#HDFS-architecture
 [nn-part1]: https://www.datadoghq.com/blog/hadoop-architecture-overview/#NameNode
+
+[markdown]: https://github.com/DataDog/the-monitor/blob/master/hadoop/how_to_monitor_hadoop_metrics.md
+[issues]: https://github.com/DataDog/the-monitor/issues

@@ -207,8 +207,7 @@ Thanks to [Ian Wrigley][ian-twit], Director of Education Services at [Confluent]
 [ian-twit]: https://twitter.com/iwrigley
 [confluent]: http://www.confluent.io/
 
-<!--
-_Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]._ -->
+_Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]._
 
 []: Links
 
@@ -257,3 +256,6 @@ _Source Markdown for this post is available [on GitHub][markdown]. Questions, co
 [Part 2]: https://www.datadoghq.com/blog/monitor-hadoop-metrics/
 [Part 3]: https://www.datadoghq.com/blog/collecting-hadoop-metrics/
 [Part 4]: https://www.datadoghq.com/blog/monitor-hadoop-metrics-datadog/
+
+[markdown]: https://github.com/DataDog/the-monitor/blob/master/hadoop/hadoop_architecture_overview.md
+[issues]: https://github.com/DataDog/the-monitor/issues

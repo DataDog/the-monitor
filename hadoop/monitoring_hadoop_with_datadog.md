@@ -109,9 +109,7 @@ Datadog can monitor individual hosts, containers, services, processes—or virtu
 
 In this post we’ve walked you through integrating Hadoop with Datadog to visualize your [key metrics][Part 1] and [set alerts][monitoring] so you can keep your Hadoop jobs running smoothly. If you’ve followed along using your own Datadog account, you should now have improved visibility into your data-processing infrastructure, as well as the ability to create automated alerts tailored to the metrics and events that are most important to you. If you don’t yet have a Datadog account, you can <a class="sign-up-trigger" href="#">sign up for a free trial</a> and start monitoring Hadoop right away. 
 
-<!--
-_Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]._ -->
-
+_Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]._ 
 
 []: Images
 
@@ -153,7 +151,7 @@ _Source Markdown for this post is available [on GitHub][markdown]. Questions, co
 []: Bottom_Links
 
 [issues]: https://github.com/DataDog/the-monitor/issues
-[markdown]: URL_for_github
+[markdown]: https://github.com/DataDog/the-monitor/blob/master/hadoop/monitoring_hadoop_with_datadog.md
 [Part 1]: https://www.datadoghq.com/blog/hadoop-architecture-overview/
 [Part 2]: https://www.datadoghq.com/blog/monitor-hadoop-metrics/
 [Part 3]: https://www.datadoghq.com/blog/collecting-hadoop-metrics/
