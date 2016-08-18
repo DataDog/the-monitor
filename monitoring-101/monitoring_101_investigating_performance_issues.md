@@ -2,7 +2,7 @@
 
 *This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/blog/monitoring-101-collecting-data/) and [Alerting on what matters](/blog/monitoring-101-alerting/).*
 
-The responsibilities of a monitoring system do not end with symptom detection. Once your monitoring system has notified you of a real symptom that requires attention, its next job is to help you diagnose the root cause. Often this is the least structured aspect of monitoring, driven largely by hunches and guess-and-check. This post describes a more directed approach that can help you to find and correct root causes more efficiently.
+The responsibilities of a monitoring system do not end with symptom detection. Once your monitoring system has notified you of a real symptom that requires attention, its next job is to help you diagnose the root cause by making your systems [observable](https://en.wikipedia.org/wiki/Observability) via the monitoring data you have collected. Often this is the least structured aspect of monitoring, driven largely by hunches and guess-and-check. This post describes a more directed approach that can help you to find and correct root causes more efficiently.
 
 This series of articles comes out of our experience monitoring large-scale infrastructure for [our customers](https://www.datadoghq.com/customers/). It also draws on the work of [Brendan Gregg](http://dtdg.co/use-method), [Rob Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron Schwartz](http://dtdg.co/metrics-attention).
 
@@ -16,7 +16,7 @@ There are three main types of monitoring data that can help you investigate the 
 -   **Resource metrics** quantify the utilization, saturation, errors, or availability of a resource that your system depends on
 -   **Events** describe discrete, infrequent occurrences in your system such as code changes, internal alerts, and scaling events
 
-By and large, work metrics will surface the most serious symptoms and should therefore generate [the most serious alerts](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/#page-on-symptoms). But the other metric types are invaluable for investigating the *causes* of those symptoms.
+By and large, work metrics will surface the most serious symptoms and should therefore generate [the most serious alerts](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/#page-on-symptoms). But the other metric types are invaluable for investigating the *causes* of those symptoms. In order for your systems to be [observable](https://en.wikipedia.org/wiki/Observability), you need sufficiently comprehensive measurements to provide a full picture of each system's health and function.
 
 ## It’s resources all the way down
 
@@ -24,7 +24,7 @@ By and large, work metrics will surface the most serious symptoms and should the
 
 Most of the components of your infrastructure can be thought of as resources. At the highest levels, each of your systems that produces useful work likely relies on other systems. For instance, the Apache server in a LAMP stack relies on a MySQL database as a resource to support its work. One level down, within MySQL are database-specific resources that MySQL uses to do *its* work, such as the finite pool of client connections. At a lower level still are the physical resources of the server running MySQL, such as CPU, memory, and disks.
 
-Thinking about which systems *produce* useful work, and which resources *support* that work, can help you to efficiently get to the root of any issues that surface. When an alert notifies you of a possible problem, the following process will help you to approach your investigation systematically.
+Thinking about which systems *produce* useful work, and which resources *support* that work, can help you to efficiently get to the root of any issues that surface. Understanding these hierarchies helps you build a mental model of how your systems interact, so you can quickly focus in on the key diagnostic metrics for any incident. When an alert notifies you of a possible problem, the following process will help you to approach your investigation systematically.
 
 ![recursive investigation](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/investigating_diagram_4.png)
 
@@ -44,13 +44,13 @@ Next consider alerts and other events that may be correlated with your metrics. 
 
 ### 4. Fix it (and don’t forget it)
 
-Once you have determined what caused the issue, correct it. Your investigation is complete when symptoms disappear—you can now think about how to change the system to avoid similar problems in the future.
+Once you have determined what caused the issue, correct it. Your investigation is complete when symptoms disappear—you can now think about how to change the system to avoid similar problems in the future. If you did not have the data you needed to quickly diagnose the problem, add more instrumentation to your system to ensure that those metrics and events are available for future responders.
 
 ## Build dashboards before you need them
 
 [![dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/example-dashboard-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/example-dashboard-2.png)
 
-In an outage, every minute is crucial. To speed your investigation and keep your focus on the task at hand, set up dashboards in advance. You may want to set up one dashboard for your high-level application metrics, and one dashboard for each subsystem. Each system’s dashboard should render the work metrics of that system, along with resource metrics of the system itself and key metrics of the subsystems it depends on. If event data is available, overlay relevant events on the graphs for correlation analysis.
+In an outage, every minute is crucial. To speed your investigation and keep your focus on the task at hand, set up dashboards in advance that help you observe the current and recent state of each system. You may want to set up one dashboard for your high-level application metrics, and one dashboard for each subsystem. Each system’s dashboard should render the work metrics of that system, along with resource metrics of the system itself and key metrics of the subsystems it depends on. If event data is available, overlay relevant events on the graphs for correlation analysis. 
 
 ## Conclusion: Follow the metrics
 

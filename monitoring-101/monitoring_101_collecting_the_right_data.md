@@ -3,7 +3,9 @@ Monitoring 101: Collecting the right data
 
 *This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Alerting on what matters](/blog/monitoring-101-alerting/) and [Investigating performance issues](/blog/monitoring-101-investigation/).*
 
-Monitoring data comes in a variety of forms—some systems pour out data continuously and others only produce data when rare events occur. Some data is most useful for *identifying* problems; some is primarily valuable for *investigating* problems. This post covers which data to collect, and how to classify that data so that you can:
+Monitoring data comes in a variety of forms—some systems pour out data continuously and others only produce data when rare events occur. Some data is most useful for *identifying* problems; some is primarily valuable for *investigating* problems. More broadly, having monitoring data is a necessary condition for [*observability*](https://en.wikipedia.org/wiki/Observability) into the inner workings of your systems. 
+
+This post covers which data to collect, and how to classify that data so that you can:
 
 1.  Receive meaningful, automated alerts for potential problems
 2.  Quickly investigate and get to the bottom of performance issues
@@ -34,6 +36,8 @@ Work metrics indicate the top-level health of your system by measuring its usefu
 - **error** metrics capture the number of erroneous results, usually expressed as a rate of errors per unit time or normalized by the throughput to yield errors per unit of work. Error metrics are often captured separately from success metrics when there are several potential sources of error, some of which are more serious or actionable than others.
 - **performance** metrics quantify how efficiently a component is doing its work. The most common performance metric is latency, which represents the time required to complete a unit of work. Latency can be expressed as an average or as a percentile, such as "99% of requests returned within 0.1s".
 
+These metrics are incredibly important for observability. They are the external measures that can help answer the most pressing questions about a system's internal health and performance: is the system available and actively doing what it was built to do? How fast is it producing work? What is the quality of that work?
+
 Below are example work metrics of all four subtypes for two common kinds of systems: a web server and a data store.
 
 **Example work metrics: Web server (at time 2015-04-24 08:13:01 UTC)**
@@ -59,7 +63,7 @@ Below are example work metrics of all four subtypes for two common kinds of syst
 
 Most components of your software infrastructure serve as a resource to other systems. Some resources are low-level—for instance, a server’s resources include such physical components as CPU, memory, disks, and network interfaces. But a higher-level component, such as a database or a geolocation microservice, can also be considered a resource if another system requires that component to produce work.
 
-Resource metrics are especially valuable for investigation and diagnosis of problems. For each resource in your system, try to collect metrics that cover four key areas:
+Resource metrics can help you reconstruct a detailed picture of a system's state, making them especially valuable for investigation and diagnosis of problems. For each resource in your system, try to collect metrics that cover four key areas:
 
 1.  **utilization** is the percentage of time that the resource is busy, or the percentage of the resource’s capacity that is in use.
 2.  **saturation** is a measure of the amount of requested work that the resource cannot yet service, often queued.
@@ -77,7 +81,7 @@ Here are example metrics for a handful of common resource types:
 
 ### Other metrics
 
-There are a few other types of metrics that are neither work nor resource metrics, but that nonetheless may come in handy in diagnosing causes of problems. Common examples include counts of cache hits or database locks. When in doubt, capture the data.
+There are a few other types of metrics that are neither work nor resource metrics, but that nonetheless may help making a complex system observable. Common examples include counts of cache hits or database locks. When in doubt, capture the data.
 
 ## Events
 
@@ -104,8 +108,8 @@ Events are sometimes used used to generate alerts—someone should be notified o
 The data you collect should have four characteristics:
 
 -   **Well-understood.** You should be able to quickly determine how each metric or event was captured and what it represents. During an outage you won’t want to spend time figuring out what your data means. Keep your metrics and events as simple as possible, use standard concepts described above, and name them clearly.
--   **Granular.** If you collect metrics too infrequently or average values over long windows of time, you may lose important information about system behavior. For example, periods of 100% resource utilization will be obscured if they are averaged with periods of lower utilization. Collect metrics for each system at a frequency that will not conceal problems, without collecting so often that monitoring becomes perceptibly taxing on the system (the [observer effect](https://en.wikipedia.org/wiki/Observer_effect_(information_technology))) or creates noise in your monitoring data by sampling time intervals that are too short to contain meaningful data.
--   **Tagged by scope.** Each of your hosts operates simultaneously in multiple scopes, and you may want to check on the aggregate health of any of these scopes, or their combinations. For example: how is production doing in aggregate? How about production in the Northeast U.S.? How about a particular software/hardware combination? It is important to retain the multiple scopes associated with your data so that you can alert on problems from any scope, and quickly investigate outages without being limited by a fixed hierarchy of hosts.
+-   **Granular.** If you collect metrics too infrequently or average values over long windows of time, you may lose the ability to accurately reconstruct a system's behavior. For example, periods of 100% resource utilization will be obscured if they are averaged with periods of lower utilization. Collect metrics for each system at a frequency that will not conceal problems, without collecting so often that monitoring becomes perceptibly taxing on the system (the [observer effect](https://en.wikipedia.org/wiki/Observer_effect_(information_technology))) or creates noise in your monitoring data by sampling time intervals that are too short to contain meaningful data.
+-   **Tagged by scope.** Each of your hosts operates simultaneously in multiple scopes, and you may want to check on the aggregate health of any of these scopes, or their combinations. For example: how is production doing in aggregate? How about production in the Northeast U.S.? How about a particular role or service? It is important to retain the multiple scopes associated with your data so that you can alert on problems from any scope, and quickly investigate outages without being limited by a fixed hierarchy of hosts.
 -   **Long-lived.** If you discard data too soon, or if after a period of time your monitoring system aggregates your metrics to reduce storage costs, then you lose important information about what happened in the past. Retaining your raw data for a year or more makes it much easier to know what “normal” is, especially if your metrics have monthly, seasonal, or annual variations.
 
 ## Data for alerts and diagnostics 
@@ -126,7 +130,7 @@ The table below maps the different data types described in this article to diffe
 
 ## Conclusion: Collect ’em all
 
--   Instrument everything and collect as many work metrics, resource metrics, and events as you reasonably can.
+-   Instrument everything and collect as many work metrics, resource metrics, and events as you reasonably can. Observability into complex systems demands comprehensive measurements. 
 -   Collect metrics with sufficient granularity to make important spikes and dips visible. The specific granularity depends on the system you are measuring, the cost of measuring and a typical duration between changes in metrics—seconds for memory or CPU metrics, minutes for energy consumption, and so on.
 -   To maximize the value of your data, tag metrics and events with several scopes, and retain them at full granularity for at least a year.
 
