@@ -8,7 +8,7 @@ In the [first part][part-1] of this series, we discussed timeseries graphs—vis
 * [Host maps](#host-maps)
 * [Distributions](#distributions)
 
-For each graph type, we’ll explain how it works and when to use it. But first, we’ll quickly discuss two concepts that are necessary to understand infrastructure summary graphs: aggregation across time (which you can think of as "time flattening" or "snapshotting"), and aggregation across space.
+For each graph type, we’ll explain how it works and when to use it. But first, we’ll quickly discuss two concepts that are necessary to understand infrastructure summary graphs: aggregation across time (which you can think of as "time flattening" or "snapshotting"), and aggregation across space. 
 
 ## Aggregation across time
 
@@ -20,9 +20,9 @@ For example, instead of displaying only the latest reported value for a metric q
 
 ## Aggregation across space
 
-Not all metric queries make sense broken out by host, container, or other unit of infrastructure. So you will often need some *aggregation across space* to sensibly visualize your metrics. This aggregation can take many forms: aggregating metrics by messaging queue, by database table, by application, or by some attribute of your hosts themselves (operating system, availability zone, hardware profile, etc.). 
+Not all metric queries make sense broken out by host, container, or other unit of infrastructure. So you will often need some *aggregation across space* to create a metric visualization that sensibly reflects your infrastructure. This aggregation can take many forms: aggregating metrics by messaging queue, by database table, by application, or by some attribute of your hosts themselves (operating system, availability zone, hardware profile, etc.). 
 
-Aggregation across space allows you to slice and dice your infrastructure to isolate exactly the metrics that matter most to you. 
+Aggregation across space allows you to slice and dice your infrastructure to isolate exactly the metrics that make your key systems [observable](https://en.wikipedia.org/wiki/Observability). 
 
 Instead of listing peak Redis latencies at the host level as in the example above, it may be more useful to see peak latencies for each internal service that is built on Redis. Or you can surface only the maximum value reported by any one host in your infrastructure:
 
@@ -36,7 +36,7 @@ The primary reason to [tag your metrics][value-of-tagging] is to enable aggregat
 
 ## Single-value summaries
 
-Single-value summaries display the current value of a given metric query, with conditional formatting (such as a green/yellow/red background) to convey whether or not the value is in the expected range. The value displayed by a single-value summary need not represent an instantaneous measurement. The widget can display the latest value reported, or an aggregate computed from all query values across the time window.
+Single-value summaries display the current value of a given metric query, with conditional formatting (such as a green/yellow/red background) to convey whether or not the value is in the expected range. The value displayed by a single-value summary need not represent an instantaneous measurement. The widget can display the latest value reported, or an aggregate computed from all query values across the time window. These visualizations provide a narrow but unambiguous window into your infrastructure.
 
 [![Host count widget][single-annotated]][single-annotated]
 
@@ -140,7 +140,7 @@ The key difference between change graphs and other visualizations is that change
 
 ## Host maps
 
-[Host maps][hostmaps] are a unique way to see your entire infrastructure, or any slice of it, at a glance. However you slice and dice your infrastructure (by data center, by service name, by instance type, etc.), you will see each host in the selected group as a hexagon, color-coded and sized by any metrics reported by those hosts.
+[Host maps][hostmaps] are a unique way to observe your entire infrastructure, or any slice of it, at a glance. However you slice and dice your infrastructure (by data center, by service name, by instance type, etc.), you will see each host in the selected group as a hexagon, color-coded and sized by any metrics reported by those hosts.
 
 This particular visualization type is unique to Datadog. As such, it is specifically designed for infrastructure monitoring, in contrast to the general-purpose visualizations described elsewhere in this article.
 
