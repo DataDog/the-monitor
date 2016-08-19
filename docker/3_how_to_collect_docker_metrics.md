@@ -330,9 +330,6 @@ If you're using Docker in production, you probably can't afford to rely on manua
 
 *Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues].*
 
-<iframe width="100%" height="100" style="border: 0;" src="https://go.pardot.com/l/38172/2015-03-02/h6c2r" scrolling="no" type="text/html" frameborder="0" allowtransparency="true"></iframe>
-
-
 [markdown]: https://github.com/DataDog/the-monitor/blob/master/docker/3_how_to_collect_docker_metrics.md
 [issues]: https://github.com/datadog/the-monitor/issues
 [part-1]: https://www.datadoghq.com/blog/the-docker-monitoring-problem/
