@@ -326,9 +326,10 @@ Other useful Docker API calls are documented [here](https://docs.docker.com/refe
 Between pseudo-files, the stats command, and the API, there are several ways to get native Docker metrics, each with their own usage and completeness characteristics. Since Docker is evolving quickly, the metrics provided by these commands will likely continue to change significantly over the coming years. 
 
 If you're using Docker in production, you probably can't afford to rely on manual metric spot-checks with these built-in tools—they won't provide sufficient visibility into your systems' health and performance. Most likely you'll need a dedicated monitoring service that collects and stores your metrics for display, correlation, and alerting. The next and final part of this article (coming soon) describes how the largest TV and radio outlet in the U.S. monitors their Docker metrics.
+
 - - -
 
-*Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues].*
+*Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]. Many thanks to [ssro][ssro] for [contributing to this article][issue-30].*
 
 [markdown]: https://github.com/DataDog/the-monitor/blob/master/docker/3_how_to_collect_docker_metrics.md
 [issues]: https://github.com/datadog/the-monitor/issues
@@ -338,3 +339,5 @@ If you're using Docker in production, you probably can't afford to rely on manua
 [v1.9.0]: https://github.com/docker/docker/releases/tag/v1.9.0
 [other-sockets]: https://docs.docker.com/engine/userguide/basics/#bind-docker-to-another-host-port-or-a-unix-socket
 [part-4]: https://www.datadoghq.com/blog/iheartradio-monitors-docker/
+[ssro]: https://github.com/ssro
+[issue-30]: https://github.com/DataDog/the-monitor/issues/30
