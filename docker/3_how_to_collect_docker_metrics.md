@@ -19,6 +19,10 @@ Your pseudo-file access path includes the long id of your container. For illustr
 <h3 class="anchor" id="pseudo-files-cpu">CPU</h3>
 CPU metrics are reported in cpu and cpuacct (CPU accumulated).
 
+#### OS-specific metric paths
+
+In the commands below, we use the metric directory for standard Linux systems (`/sys/fs/cgroup/cpuacct/docker/$CONTAINER_ID/`). For recent versions of CoreOS, you will need to use this path instead: `/sys/fs/cgroup/cpuacct/init.scope/system.slice/docker-$CONTAINER_ID.scope/`.
+
 #### Usage
 <pre>
 $ cat /sys/fs/cgroup/cpuacct/docker/$CONTAINER_ID/cpuacct.stat
@@ -51,9 +55,11 @@ $ cat /sys/fs/cgroup/cpu/docker/$CONTAINER_ID/cpu.stat
 </pre>
 
 <h3 class="anchor" id="pseudo-files-memory">Memory </h3>
+
 The following command will print a lot of information of memory usage, probably more than you need. Note that the first half of the measures have no standard prefix; these measures exclude sub-cgroups. The second half all are prefixed with "total_"; these measures include sub-cgroups.
 <pre>
 $ cat /sys/fs/cgroup/memory/docker/$CONTAINER_ID/memory.stat
+  # On CoreOS: cat /sys/fs/cgroup/memory/init.scope/system.slice/docker-$CONTAINER_ID.scope/memory.stat 
 	
     cache 532480
     rss 10649600
@@ -88,7 +94,7 @@ $ cat /sys/fs/cgroup/memory/docker/$CONTAINER_ID/memory.stat
     total_unevictable 0
 </pre>
 	
-You can get most interesting memory metrics directly by calling a specific command in the `/sys/fs/cgroup/memory/docker/$CONTAINER_ID/` directory:
+You can get most interesting memory metrics directly by calling a specific command in the `/sys/fs/cgroup/memory/docker/$CONTAINER_ID/` directory (use `/sys/fs/cgroup/memory/init.scope/system.slice/docker-$CONTAINER_ID.scope/` instead on recent versions of CoreOS):
 <pre>
 # Total memory used: cached + rss 
 $ cat /sys/fs/cgroup/memory/docker/$CONTAINER_ID/memory.usage_in_bytes
@@ -110,7 +116,7 @@ $ docker run -m 500M IMAGE [COMMAND] [ARG...]
 Further information about the memory metrics can be found in the official [documentation](https://docs.docker.com/articles/runmetrics/).	
 
 <h3 class="anchor" id="pseudo-files-io">I/O </h3>
-The path to I/O stats pseudo-files is: `/sys/fs/cgroup/blkio/docker/$CONTAINER_ID/`. 
+The path to I/O stats pseudo-files for most operating systems is: `/sys/fs/cgroup/blkio/docker/$CONTAINER_ID/`. For CoreOS, the equivalent path is: `/sys/fs/cgroup/blkio/init.scope/system.slice/docker-$CONTAINER_ID.scope/`.
 
 Depending on your system, you may have many metrics available from these pseudo-files: `blkio.io_queued_recursive`, `blkio.io_service_time_recursive`, `blkio.io_wait_time_recursive` and more. 
 
