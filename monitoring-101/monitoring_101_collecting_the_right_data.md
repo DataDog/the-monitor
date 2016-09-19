@@ -36,7 +36,7 @@ Work metrics indicate the top-level health of your system by measuring its usefu
 - **error** metrics capture the number of erroneous results, usually expressed as a rate of errors per unit time or normalized by the throughput to yield errors per unit of work. Error metrics are often captured separately from success metrics when there are several potential sources of error, some of which are more serious or actionable than others.
 - **performance** metrics quantify how efficiently a component is doing its work. The most common performance metric is latency, which represents the time required to complete a unit of work. Latency can be expressed as an average or as a percentile, such as "99% of requests returned within 0.1s".
 
-These metrics are incredibly important for observability. They are the external measures that can help answer the most pressing questions about a system's internal health and performance: is the system available and actively doing what it was built to do? How fast is it producing work? What is the quality of that work?
+These metrics are incredibly important for observability. They are the big, broad-stroke measures that can help you quickly answer the most pressing questions about a system's internal health and performance: is the system available and actively doing what it was built to do? How fast is it producing work? What is the quality of that work?
 
 Below are example work metrics of all four subtypes for two common kinds of systems: a web server and a data store.
 
@@ -130,7 +130,7 @@ The table below maps the different data types described in this article to diffe
 
 ## Conclusion: Collect ’em all
 
--   Instrument everything and collect as many work metrics, resource metrics, and events as you reasonably can. Observability into complex systems demands comprehensive measurements. 
+-   Instrument everything and collect as many work metrics, resource metrics, and events as you reasonably can. Observability of complex systems demands comprehensive measurements. 
 -   Collect metrics with sufficient granularity to make important spikes and dips visible. The specific granularity depends on the system you are measuring, the cost of measuring and a typical duration between changes in metrics—seconds for memory or CPU metrics, minutes for energy consumption, and so on.
 -   To maximize the value of your data, tag metrics and events with several scopes, and retain them at full granularity for at least a year.
 
