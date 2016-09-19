@@ -3,7 +3,7 @@ Monitoring 101: Alerting on what matters
 
 *This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/blog/monitoring-101-collecting-data/) and [Investigating performance issues](/blog/monitoring-101-investigation/).*
 
-Automated alerts are essential to monitoring. They allow you to spot problems anywhere in your infrastructure, so that you can rapidly identify their causes and minimize service degradation and disruption.
+Automated alerts are essential to monitoring. They allow you to spot problems anywhere in your infrastructure, so that you can rapidly identify their causes and minimize service degradation and disruption. To reference [a companion post](/blog/monitoring-101-collecting-data/), if metrics and other measurements facilitate [observability](https://en.wikipedia.org/wiki/Observability), then alerts draw human attention to the particular systems that require observation, inspection, and intervention. 
 
 But alerts aren’t always as effective as they could be. In particular, real problems are often lost in a sea of noisy alarms. This article describes a simple approach to effective alerting, regardless of the scale of the systems involved. In short:
 
@@ -25,7 +25,7 @@ Not all alerts carry the same degree of urgency. Some require immediate human in
 
 #### Alerts as records (low severity) 
 
-Many alerts will not be associated with a service problem, so a human may never even need to be aware of them. For instance, when a data store that supports a user-facing service starts serving queries much slower than usual, but not slow enough to make an appreciable difference in the overall service’s response time, that should generate a low-urgency alert that is recorded in your monitoring system for future reference or investigation but does not interrupt anyone’s work. After all, transient issues that could be to blame, such as network congestion, often go away on their own. But should a significant issue develop—say, if the service starts returning a large number of timeouts—that alert-based data will provide invaluable context for your investigation.
+Many alerts will not be associated with a service problem, so a human may never even need to be aware of them. For instance, when a data store that supports a user-facing service starts serving queries much slower than usual, but not slow enough to make an appreciable difference in the overall service’s response time, that should generate a low-urgency alert that is recorded in your monitoring system for future reference or investigation but does not interrupt anyone’s work. After all, transient issues that could be to blame, such as network congestion, often go away on their own. But should the service start returning a large number of timeouts, that alert-based data will provide invaluable context for your investigation. 
 
 #### Alerts as notifications (moderate severity) 
 

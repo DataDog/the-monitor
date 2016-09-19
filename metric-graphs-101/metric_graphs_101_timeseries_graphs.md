@@ -1,6 +1,6 @@
 *This is the first post in a series about visualizing monitoring data. This post focuses on timeseries graphs.* 
 
-In order to turn your metrics into actionable insights, it's important to choose the right visualization for your data. There is no one-size-fits-all solution: you can see different things in the same metric with different graph types.
+[Observability](https://en.wikipedia.org/wiki/Observability) is not just about *having* monitoring data—that data must be easily available and interpretable. Choosing the right visualization for your data is an important part of providing human-readable representations of the health and performance of your systems. There is no one-size-fits-all solution: you can see different things in the same metric with different graph types.
 
 To help you effectively visualize your metrics, this first post explores four different types of timeseries graphs, which have time on the x-axis and metric values on the y-axis:
 
@@ -15,7 +15,7 @@ For each graph type, we'll explain how it works, when to use it, and when to use
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/key_pg_classic.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/key_pg_classic.png" alt="Line graph" /></a>
 
-Line graphs are the simplest way to translate metric data into visuals, but often they're used by default when a different graph would be more appropriate. For instance, a graph of wildly fluctuating metrics from hundreds of hosts quickly becomes harder to disentangle than steel wool.
+Line graphs are the simplest way to translate metric data into visuals, but often they're used by default when a different graph would be more appropriate. For instance, a graph of wildly fluctuating metrics from hundreds of hosts quickly becomes harder to disentangle than steel wool. It's nearly impossible to draw any useful conclusions about your systems from a graph like that.
 
 ### When to use line graphs
 <table><thead>
@@ -42,7 +42,7 @@ Line graphs are the simplest way to translate metric data into visuals, but ofte
 </tr>
 <tr>
 <td><strong>Related metrics</strong> sharing the same units</td>
-<td>To spot correlations at a glance</td>
+<td>To spot correlations within a system</td>
 <td>Latency for disk reads and disk writes on the same machine<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/disk_lat.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/300/disk_lat.png" alt="Read and write latency" /></a></td>
 </tr>
 <tr>
@@ -86,7 +86,7 @@ Line graphs are the simplest way to translate metric data into visuals, but ofte
 
 <a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/areas_3.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt1/areas_3.png" alt="Area graph" /></a>
 
-Area graphs are similar to line graphs, except the metric values are represented by two-dimensional bands rather than lines. Multiple timeseries can be summed together simply by stacking the bands, but too many bands makes the graph hard to interpret. If each band is only a pixel or two tall, the actionable information it conveys is minimal.
+Area graphs are similar to line graphs, except the metric values are represented by two-dimensional bands rather than lines. Multiple timeseries can be summed together simply by stacking the bands, but too many bands makes the graph hard to interpret. If each band is only a pixel or two tall, the information conveyed is minimal.
 
 ### When to use stacked area graphs
 
@@ -259,7 +259,7 @@ Heat maps are essentially [distribution graphs](http://docs.datadoghq.com/graphi
 </table>
 
 ## Conclusion
-By understanding the ideal use cases and limitations of each kind of timeseries graph, you can extract actionable information from your metrics more quickly.
+By understanding the ideal use cases and limitations of each kind of timeseries graph, you can present actionable information from your metrics more clearly, thereby providing observability into your systems.
 
 In [the next article](https://www.datadoghq.com/blog/summary-graphs-metric-graphs-101/) in this series, we'll explore other methods of graphing and monitoring metrics, including change graphs, ranked lists, distributions, and other visualizations. 
 
