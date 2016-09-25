@@ -13,7 +13,8 @@ The most common method to access HAProxy metrics is to enable the stats page, wh
 
 To enable the HAProxy stats page, add the following to the bottom of the file `/etc/haproxy/haproxy.cfg` (adding your own username and password to the final line):
 
-        listen stats :9000 #Listen on localhost port 9000
+        listen stats
+        bind :9000  #Listen on localhost port 9000
         mode http
         stats enable #Enable statistics
         stats hide-version #Hide HAPRoxy version, a necessity for any public-facing site
