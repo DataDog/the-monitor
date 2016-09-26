@@ -21,6 +21,17 @@ To enable the HAProxy stats page, add the following to the bottom of the file `/
         stats uri /haproxy_stats #The URI of the stats page, in this case localhost:9000/haproxy_stats
         stats auth Username:Password #Set a username and password
 
+For HAProxy 1.6+ :
+
+      listen stats
+      bind :9000
+      mode http
+      stats enable #Enable statistics
+      stats hide-version #Hide HAPRoxy version, a necessity for any public-facing site
+      stats realm Haproxy\ Statistics #Show this text in authentication popup (escape space characters with backslash)
+      stats uri /haproxy_stats #The URI of the stats page, in this case localhost:9000/haproxy_stats
+      stats auth Username:Password #Set a username and password
+
 _This sets up a listener on port `9000` in HTTP mode with statistics enabled._ 
 
 Next you’ll need to restart HAProxy, which can interrupt client sessions and cause downtime. If you want to be very careful about how you restart HAProxy, check out Yelp’s [research](http://engineeringblog.yelp.com/2015/04/true-zero-downtime-haproxy-reloads.html) on the least disruptive means by which you can reload HAProxy’s configuration. 
