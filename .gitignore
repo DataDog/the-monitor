@@ -1,0 +1,9 @@
+.DS_Store
+*~
+*.swp
+PDF
+.python-version
+build/html
+build/doctrees
+*.mo
+.idea
