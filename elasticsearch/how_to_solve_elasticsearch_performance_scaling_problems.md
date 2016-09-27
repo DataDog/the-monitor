@@ -7,7 +7,7 @@ Like a car, Elasticsearch was designed to allow its users to get up and running 
 ## Problem #1: My cluster status is red or yellow. What should I do?
 ![es-cluster-status.png](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt4-1-es-cluster-status.png)
 
-If you recall from [Part 1][part-1-link], cluster status is reported as red if one or more primary shards is missing, and yellow if one or more replica shards is missing. Normally, this happens when a node drops off the cluster for whatever reason (hardware failure, long garbage collection time, etc.). Once the node recovers, its shards will remain in an initializing state before they transition back to active status. 
+If you recall from [Part 1][part-1-link], cluster status is reported as red if one or more primary shards (and its replicas) is missing, and yellow if one or more replica shards is missing. Normally, this happens when a node drops off the cluster for whatever reason (hardware failure, long garbage collection time, etc.). Once the node recovers, its shards will remain in an initializing state before they transition back to active status. 
 
 The number of initializing shards typically peaks when a node rejoins the cluster, and then drops back down as the shards transition into an active state, as shown in the graph below. 
 
