@@ -48,7 +48,7 @@ To understand the function of the SecondaryNameNode requires an explanation of t
 
 ### fsimage and the edit log
 
-File system metadata is stored in two different constructs: fsimage and the edit log. The fsimage is a file that represents a snapshot of the file system’s metadata at a specific point in time. While the fsimage file format is very efficient to read, it’s unsuitable for making small, incremental updates like renaming a single file or adding information about a new file. Thus, rather than writing a new fsimage every time the namespace is modified, the NameNode instead records the modifying operation in the edit log for durability. This way, if the NameNode crashes, it can restore its state by first loading the fsimage, then replaying all the operations (also called edits or transactions) in the edit log to catch up to the most recent state of the file system.
+File system metadata is stored in two different structures: the fsimage and the edit log. The fsimage is a snapshot of the file system’s metadata at a specific moment in time. It is very efficient for read operations, but unsuited for small changes (like renaming a file or adding a few bytes to afile). So the NameNode records the modifying operation in the edit log for durability, rather than writing changes to the fsimage each time the namespace is modified. With this setup, the NameNode can restore its state by loading the fsimage, then replaying all the edits to the edit log, restoring the file system to its most recent state.
 
 ![Secondary NameNode architecture diagram][secondary-nn-arch]
 
