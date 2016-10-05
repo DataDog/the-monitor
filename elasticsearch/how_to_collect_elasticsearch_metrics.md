@@ -45,7 +45,7 @@ Each node’s metrics are divided into several sections, listed here along with 
 
 The largest section is called `indices`, which contains detailed statistics gathered across all of the indices stored on the node in question. This is where you will find many key metrics, including but not limited to:
 - [Query and fetch performance metrics][search-perform-part1] from Part 1 that are prefixed `indices.search.*`
-- [Indexing performance metrics][index-perform-part1] from Part 1 that are prefixed `indices.indexing.*`, `indices.refresh.*`, and `indices.flush.*` 
+- Indexing performance metrics from Part 1 that are prefixed `indices.indexing.*`, `indices.refresh.*`, and `indices.flush.*` 
 - Fielddata cache metrics (cache size and evictions)
 
 The other sections are as follows:
