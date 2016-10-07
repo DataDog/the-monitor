@@ -2,7 +2,7 @@
 if [[ $(whoami)  != 'root' ]]; then echo "Run as root"; exit; fi
 apt-get update && apt-get install git -y
 cd /usr/local/src || echo "/usr/local/src does not exist"
-git clone -b stable/kilo https://github.com/openstack-dev/devstack.git
+git clone -b stable/newton https://github.com/openstack-dev/devstack.git
 cd devstack || exit
 sed -i 's/HOST_IP=${HOST_IP:-}/HOST_IP=`dig +short myip.opendns.com @resolver1.opendns.com`/g' stackrc
 ./tools/create-stack-user.sh
