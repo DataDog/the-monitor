@@ -329,7 +329,7 @@ If you're using Docker in production, you probably can't afford to rely on manua
 
 - - -
 
-*Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]. Many thanks to [ssro][ssro] for [contributing to this article][issue-30].*
+*Source Markdown for this post is available [on GitHub][markdown]. Questions, corrections, additions, etc.? Please [let us know][issues]. Many thanks to [ssro][ssro] and [kimroen][kimroen] for contributing to this article.*
 
 [markdown]: https://github.com/DataDog/the-monitor/blob/master/docker/3_how_to_collect_docker_metrics.md
 [issues]: https://github.com/datadog/the-monitor/issues
@@ -340,4 +340,4 @@ If you're using Docker in production, you probably can't afford to rely on manua
 [other-sockets]: https://docs.docker.com/engine/userguide/basics/#bind-docker-to-another-host-port-or-a-unix-socket
 [part-4]: https://www.datadoghq.com/blog/iheartradio-monitors-docker/
 [ssro]: https://github.com/ssro
-[issue-30]: https://github.com/DataDog/the-monitor/issues/30
+[kimroen]: https://github.com/kimroen
