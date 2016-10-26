@@ -30,7 +30,7 @@ UN  127.0.0.1  13.92 MB   66.7%   44387d08   3074457345618258602   rack1
 `nodetool info` outputs slightly more detailed statistics for an individual node in the cluster, including uptime, **load**, **key cache hit rate**, and a total count of all **exceptions**. You can specify which node you’d like to inspect by using the `--host` argument with an IP address or hostname:
 
 ```
-$ bin/nodetool info --host 127.0.0.1
+$ bin/nodetool --host 127.0.0.1 info
 
 ID                     : 9aa4fe41-c9a8-43bb-990a-4a6192b3b46d
 Gossip active          : true
