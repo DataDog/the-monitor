@@ -218,7 +218,7 @@ While Elasticsearch provides many application-specific metrics via API, you shou
 | Number of HTTP connections currently open | `http.current_open` | Resource: Utilization | 
 | Total number of HTTP connections opened over time        | `http.total_opened` | Resource: Utilization | 
 
-Requests sent in any language but Java will communicate with Elasticsearch using RESTful API over HTTP. If the total number of opened HTTP connections is constantly increasing, it could indicate that one of your HTTP clients is not using [keep-alive connections][http-elasticsearch]. Reestablishing connections adds extra milliseconds or even seconds to your request response time. Make sure your clients are configured properly to avoid negative impact on performance, or use one of the official [Elasticsearch clients][elasticsearch-clients], which already properly configure HTTP connections.
+Requests sent in any language but Java will communicate with Elasticsearch using RESTful API over HTTP. If the [total number of opened HTTP connections is constantly increasing][http-docs], it could indicate that your HTTP clients are not properly establishing [persistent connections][http-elasticsearch]. Reestablishing connections adds extra milliseconds or even seconds to your request response time. Make sure your clients are configured properly to avoid negative impact on performance, or use one of the official [Elasticsearch clients][elasticsearch-clients], which already properly configure HTTP connections.
 
 <div id="cluster-metrics"></div>
 ### Cluster health and node availability
@@ -229,11 +229,11 @@ Requests sent in any language but Java will communicate with Elasticsearch using
 | Number of initializing shards | `cluster.health.initializing_shards`   | Resource: Availability           |
 | Number of unassigned shards   | `cluster.health.unassigned_shards`     | Resource: Availability           |
 
-**Cluster status:** If cluster status is **yellow**, that means all primary shards are allocated, but at least one replica is missing. Search results will still be complete, but if more shards disappear, you may lose data. 
+**Cluster status:** If the cluster status is **yellow**, at least one replica shard is unallocated or missing. Search results will still be complete, but if more shards disappear, you may lose data. 
 
 A **red** cluster status indicates that at least one primary shard is missing, and you are missing data, which means that searches will return partial results. You will also be blocked from indexing into that shard. Consider [setting up an alert][alert-docs] to trigger if status has been yellow for more than 5 min or if the status has been red for the past minute.
 
-**Initializing and unassigned shards:** When you first create an index, shards will briefly be in a state of initialization, but they shouldn't linger here too long. You may also see initializing shards when a node is first restarted; as shards are loaded from disk, they are categorized as `initializing`. The master node will then attempt to assign shards to nodes in the cluster. If you see shards remain in an initializing or unassigned state too long, it could be a warning sign that your cluster is unstable. 
+**Initializing and unassigned shards:** When you first create an index, or when a node is rebooted, its shards will briefly be in an "initializing" state before transitioning to a status of "started" or "unassigned", as the master node attempts to assign shards to nodes in the cluster. If you see shards remain in an initializing or unassigned state too long, it could be a warning sign that your cluster is unstable. 
 
 <div id="saturation-errors"></div>
 ### Resource saturation and errors
@@ -291,7 +291,7 @@ The fielddata cache is used when sorting or aggregating on a field, a process th
 For versions prior to 1.3, the fielddata cache size was unbounded. Starting in version 1.3, Elasticsearch added a fielddata circuit breaker that is triggered if a query tries to load fielddata that would require over 60 percent of the heap. 
 
 ##### Filter cache
-Filter caches also use JVM heap. In versions prior to 2.0, Elasticsearch automatically cached filtered queries with a max value of 10 percent of the heap, and evicted the least recently used data. Starting in version 2.0, Elasticsearch automatically began optimizing its filter cache, based on frequency and segment size (caching only occurs on segments that have fewer than 10,000 documents or less than 3 percent of total documents in the index). As such, filter cache metrics are only available to Elasticsearch users who are using a version prior to 2.0.
+Filter caches also use JVM heap. In versions prior to 2.0, Elasticsearch automatically cached filtered queries with a max value of 10 percent of the heap, and evicted the least recently used data. [Starting in version 2.0][filter-docs], Elasticsearch automatically began optimizing its filter cache, based on frequency and segment size (caching only occurs on segments that have fewer than 10,000 documents or less than 3 percent of total documents in the index). As such, filter cache metrics are only available to Elasticsearch users who are using a version prior to 2.0.
 
 For example, a filter query could return only the documents for which values in the `year` field fall in the range 2000–2005. During the first execution of a filter query, Elasticsearch will create a bitset of which documents match the filter (1 if the document matches, 0 if not). Subsequent executions of queries with the same filter will reuse this information. Whenever new documents are added or updated, the bitset is updated as well. If you are using a version of Elasticsearch prior to 2.0, you should keep an eye on the filter cache as well as eviction metrics (more about that below).
 
@@ -311,7 +311,7 @@ If you cannot increase your memory at the moment, Elasticsearch recommends a tem
 
 Elasticsearch also recommends using [doc values][doc-values] whenever possible because they serve the same purpose as fielddata. However, because they are stored on disk, they do not rely on JVM heap. Although doc values cannot be used for analyzed string fields, they do save fielddata usage when aggregating or sorting on other types of fields. In version 2.0 and later, doc values are automatically built at document index time, which has reduced fielddata/heap usage for many users. However, if you are using a version between 1.0 and 2.0, you can also benefit from this feature—simply remember to [enable them][enable-doc-values] when creating a new field in an index. 
 
-**Filter cache evictions:** As mentioned earlier, filter cache eviction metrics are only available if you are using a version of Elasticsearch prior to 2.0. Filters are cached on a per-segment basis. Since evictions are costlier operations on large segments than small segments, there’s no clear-cut way to assess how serious each eviction may be. However, if you see evictions occurring more often, this may indicate that you are not using filters to your best advantage—you could just be creating new ones and evicting old ones on a frequent basis, defeating the purpose of even using a cache. You may want to look into tweaking your queries (for example, [using a `bool` query instead of an and/or/not filter][filters-blog]). 
+**Filter cache evictions:** As mentioned earlier, filter cache eviction metrics are only available if you are using a version of Elasticsearch prior to 2.0. Each segment maintains its own individual filter cache. Since evictions are costlier operations on large segments than small segments, there’s no clear-cut way to assess how serious each eviction may be. However, if you see evictions occurring more often, this may indicate that you are not using filters to your best advantage—you could just be creating new ones and evicting old ones on a frequent basis, defeating the purpose of even using a cache. You may want to look into tweaking your queries (for example, [using a `bool` query instead of an and/or/not filter][filters-blog]). 
 
 #### Pending tasks
 
@@ -321,7 +321,7 @@ Elasticsearch also recommends using [doc values][doc-values] whenever possible b
 | Number of urgent pending tasks        | `pending_tasks_priority_urgent` | Resource: Saturation |
 | Number of high-priority pending tasks | `pending_tasks_priority_high`   | Resource: Saturation |
 
-Pending tasks are tasks that only master nodes can handle, like creating a new index or moving shards around the cluster. Pending tasks are processed in priority order—urgent comes first, then high priority. They start to accumulate when the number of changes occurs more quickly than the master can process them. You want to keep an eye on this metric if it keeps increasing. The number of pending tasks is a good indication of how smoothly your cluster is operating. If your master node is very busy and the number of pending tasks doesn't subside, it can lead to an unstable cluster.
+Pending tasks can only be handled by master nodes. Such tasks include creating indices and assigning shards to nodes. Pending tasks are processed in priority order—urgent comes first, then high priority. They start to accumulate when the number of changes occurs more quickly than the master can process them. You want to keep an eye on this metric if it keeps increasing. The number of pending tasks is a good indication of how smoothly your cluster is operating. If your master node is very busy and the number of pending tasks doesn't subside, it can lead to an unstable cluster.
 
 #### Unsuccessful GET requests
 
@@ -377,6 +377,8 @@ As you monitor Elasticsearch metrics along with node-level system metrics, you w
 [settings-api-docs]: https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-update-settings.html
 [master-checks-docs]: https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html
 [thread-pool-docs]: https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-threadpool.html
+[filter-docs]: https://www.elastic.co/blog/better-query-execution-coming-elasticsearch-2-0
+[http-docs]: https://www.elastic.co/guide/en/elasticsearch/guide/2.x/_monitoring_individual_nodes.html
 [part-2-link]: https://www.datadoghq.com/blog/collect-elasticsearch-metrics/
 [part-3-link]: https://www.datadoghq.com/blog/monitor-elasticsearch-datadog
 [part-4-link]: https://www.datadoghq.com/blog/elasticsearch-performance-scaling-problems/
