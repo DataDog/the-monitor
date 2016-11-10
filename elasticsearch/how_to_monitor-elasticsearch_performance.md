@@ -305,9 +305,9 @@ For example, a filter query could return only the documents for which values in 
 ##### Cache metrics to watch
 ![fielddata eviction metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt1-4-fielddata-evictions.png)  
 
-**Fielddata cache evictions:** Ideally, you want the number of fielddata evictions to be zero or close to zero because these evictions can lead to heavy disk I/O and generate a large amount of garbage that will have to be collected later on.
+**Fielddata cache evictions:** Ideally, you want to limit the number of fielddata evictions because they are I/O intensive and can lead to slow garbage collections.
 
-If you cannot increase your memory at the moment, Elasticsearch recommends a temporary fix of limiting fielddata cache to 20 percent of heap; you can do so in your `config/elasticsearch.yml` file. When fielddata reaches 20 percent of the heap, it will evict the least recently used fielddata, which then allows you to load new fielddata into the cache. 
+If you're seeing a lot of evictions and cannot increase your memory at the moment, Elasticsearch recommends a temporary fix of limiting fielddata cache to 20 percent of heap; you can do so in your `config/elasticsearch.yml` file. When fielddata reaches 20 percent of the heap, it will evict the least recently used fielddata, which then allows you to load new fielddata into the cache. 
 
 Elasticsearch also recommends using [doc values][doc-values] whenever possible because they serve the same purpose as fielddata. However, because they are stored on disk, they do not rely on JVM heap. Although doc values cannot be used for analyzed string fields, they do save fielddata usage when aggregating or sorting on other types of fields. In version 2.0 and later, doc values are automatically built at document index time, which has reduced fielddata/heap usage for many users. However, if you are using a version between 1.0 and 2.0, you can also benefit from this feature—simply remember to [enable them][enable-doc-values] when creating a new field in an index. 
 
