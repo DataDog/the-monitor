@@ -352,7 +352,7 @@ As you monitor Elasticsearch metrics along with node-level system metrics, you w
 [mongodb-blog]: https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger
 [limit-memory-usage]: https://www.elastic.co/guide/en/elasticsearch/guide/current/_limiting_memory_usage.html
 [specify-pagination]: https://www.elastic.co/guide/en/elasticsearch/guide/current/pagination.html
-[JVM-GC-guide]: http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
+[JVM-GC-guide]: https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/cms.html
 [JVM-guidelines]: https://www.elastic.co/guide/en/elasticsearch/guide/current/_limiting_memory_usage.html
 [Oracle-JVM-docs]: https://docs.oracle.com/javase/7/docs/api/java/lang/management/MemoryUsage.html
 [heap-sizing]: https://www.elastic.co/blog/a-heap-of-trouble
