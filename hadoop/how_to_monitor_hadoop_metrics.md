@@ -155,7 +155,7 @@ DataNode metrics are host-level metrics specific to a particular DataNode.
 
 ```
 <property>
-    <name<dfs.datanode.failed.volumes.tolerated</name>
+    <name>dfs.datanode.failed.volumes.tolerated</name>
     <value>N</value>
 </property>
 ```
