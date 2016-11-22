@@ -48,9 +48,10 @@ To understand the function of the SecondaryNameNode requires an explanation of t
 
 ### fsimage and the edit log
 
-File system metadata is stored in two different structures: the fsimage and the edit log. The fsimage is a snapshot of the file system’s metadata at a specific moment in time. It is very efficient for read operations, but unsuited for small changes (like renaming a file or adding a few bytes to afile). So the NameNode records the modifying operation in the edit log for durability, rather than writing changes to the fsimage each time the namespace is modified. With this setup, the NameNode can restore its state by loading the fsimage, then replaying all the edits to the edit log, restoring the file system to its most recent state.
-
+The NameNode stores file system metadata in [two different files][checkpointing]: the fsimage and the edit log. The fsimage stores a complete snapshot of the file system’s metadata at a specific moment in time. Incremental changes (like renaming or appending a few bytes to a file) are then stored in the edit log for durability, rather than creating a new fsimage snapshot each time the namespace is modified. With this separation of concerns in places, the NameNode can restore its state by loading the fsimage and performing all the transforms from the edit log, restoring the file system to its most recent state.
 ![Secondary NameNode architecture diagram][secondary-nn-arch]
+
+[checkpointing]: http://blog.cloudera.com/blog/2014/03/a-guide-to-checkpointing-in-hadoop/
 
 Through RPC calls, the SecondaryNameNode is able to independently update its copy of the fsimage each time changes are made to the edit log. Thus, if the NameNode goes down in the presence of a SecondaryNameNode, the NameNode doesn't need to replay the edit log on top of the fsimage; cluster administrators can retrieve an updated copy of the fsimage from the SecondaryNameNode. 
 
