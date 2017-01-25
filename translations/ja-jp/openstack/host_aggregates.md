@@ -21,7 +21,7 @@ You should now have a better sense of the differences between host aggregates, f
 Check out our 3-part series about [how to monitor][part 1] and [collect][part 2] OpenStack Nova performance [metrics][part 3]. Also, be sure to take a look at our piece on [How Lithium monitors OpenStack][part 4].
 
 
-[agg-and-avail]: http://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/host-aggregates/aggregates1.png
+[agg-and-avail]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/host-aggregates/aggregates1.png
 [glossary]: http://docs.openstack.org/glossary/content/glossary.html
 [instance types]: https://aws.amazon.com/ec2/instance-types/
 [OpenStack]: https://openstack.org
