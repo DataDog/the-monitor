@@ -4,7 +4,7 @@
 
 In order to implement ongoing, meaningful monitoring, you will need a dedicated system that allows you to store all relevant Varnish metrics, visualize them, and correlate them with the rest of your infrastructure. You also need to be alerted when anomalies occur. In this post, we’ll show you how to start monitoring Varnish with Datadog.
  [
- ![Varnish cache Datadog dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-01.png)
+ ![Varnish cache Datadog dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-01.png)
 
 ## Integrating Datadog and Varnish
 
@@ -18,7 +18,7 @@ varnishstat -1  && echo -e "VarnishStat - OK" || \ || echo -e "VarnishStat - ERR
 
 Make sure the output displays “Varnishstat – OK”:
 
-[![Varnish running check](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-02.png)
+[![Varnish running check](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-02.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-02.png)
 
 ### Install the Datadog Agent
 
@@ -26,7 +26,7 @@ The Datadog Agent is [open-source software](https://github.com/DataDog/dd-agent)
 
 As soon as the Datadog Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-[![Varnish host reporting to Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-03bis.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-03bis.png)
+[![Varnish host reporting to Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-03bis.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-03bis.png)
 
 ### Configure the Agent
 
@@ -71,7 +71,7 @@ Checks
 
 Finally, click the Varnish “Install Integration” button inside your Datadog account. The button is located under the Configuration tab in the [Varnish integration settings](https://app.datadoghq.com/account/settings#integrations/varnish).
 
-[![Install Varnish integration with Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-04.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-04.png)
+[![Install Varnish integration with Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-04.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-04.png)
 
 ## Metrics!
 
@@ -79,11 +79,11 @@ Once the Agent begins reporting Varnish metrics, you will see [a Varnish dashboa
 
 The basic Varnish dashboard displays the key metrics highlighted in our [introduction to Varnish monitoring](https://www.datadoghq.com/blog/top-varnish-performance-metrics/).
 
-[![Varnish dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-05.png)
+[![Varnish dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-05.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-05.png)
 
 You can easily create a more comprehensive dashboard to monitor your entire web stack by adding additional graphs and metrics from outside systems. For example, you might want to graph Varnish metrics alongside metrics from your Apache web servers, or alongside host-level metrics such as network traffic. To start building a custom dashboard, clone the default Varnish dashboard by clicking on the gear on the upper right of the dashboard and selecting “Clone Dash”.
 
-[![Clone Varnish dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-06.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-06.png)
+[![Clone Varnish dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-06.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-06.png)
 
 ## Alerting on Varnish metrics
 
@@ -99,10 +99,10 @@ Datadog alerts can be threshold-based (alert when the metric exceeds a set value
 
 The `sess_dropped` metric counts client connections Varnish had to drop. There are several possible causes for dropped connections detailed in [part 1](https://www.datadoghq.com/blog/top-varnish-performance-metrics/), but regardless this metric should always be equal to 0.
 
-1.  **Create a new metric monitor**. Select “New Monitor” from the “Monitors” dropdown in Datadog. Select “Metric” as monitor type.[![Create Datadog alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-07.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-07.png)
-2.  **Define your metric monitor**. We want to know when the number of dropped client connections per second exceeds a certain value. So we define the metric of interest to be the sum of `varnish.sess_dropped`.[![Monitor sess\_dropped](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-08.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-08.png)
-3.  **Set metric alert conditions**. Since we want to alert on a fixed threshold, rather than on a change, we select “Threshold Alert.” We’ll set the monitor to alert us whenever Varnish starts dropping client connections. Here we alert whenever the metric has surpassed the threshold of zero at least once during the past minute. You should decide whether “greater than zero” is the right threshold for your organization, or whether some greater number of dropped connections is preferable to paging an engineer.[![Monitor sess\_dropped](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-09.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-09.png)
-4.  **Customize the notification** to notify your team. In this case we will post a notification in the ops team’s chat room and page the engineer on call. In the “Say what’s happening” section we name the monitor and add a short message that will accompany the notification to suggest a first step for investigation. We @mention the [Slack](https://www.datadoghq.com/blog/collaborate-share-track-performance-slack-datadog/) channel that we use for ops and use @pagerduty to route the alert to [PagerDuty](https://www.datadoghq.com/blog/pagerduty/).[![Monitor sess\_dropped](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-10.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/3-10.png)
+1.  **Create a new metric monitor**. Select “New Monitor” from the “Monitors” dropdown in Datadog. Select “Metric” as monitor type.[![Create Datadog alert](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-07.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-07.png)
+2.  **Define your metric monitor**. We want to know when the number of dropped client connections per second exceeds a certain value. So we define the metric of interest to be the sum of `varnish.sess_dropped`.[![Monitor sess\_dropped](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-08.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-08.png)
+3.  **Set metric alert conditions**. Since we want to alert on a fixed threshold, rather than on a change, we select “Threshold Alert.” We’ll set the monitor to alert us whenever Varnish starts dropping client connections. Here we alert whenever the metric has surpassed the threshold of zero at least once during the past minute. You should decide whether “greater than zero” is the right threshold for your organization, or whether some greater number of dropped connections is preferable to paging an engineer.[![Monitor sess\_dropped](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-09.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-09.png)
+4.  **Customize the notification** to notify your team. In this case we will post a notification in the ops team’s chat room and page the engineer on call. In the “Say what’s happening” section we name the monitor and add a short message that will accompany the notification to suggest a first step for investigation. We @mention the [Slack](https://www.datadoghq.com/blog/collaborate-share-track-performance-slack-datadog/) channel that we use for ops and use @pagerduty to route the alert to [PagerDuty](https://www.datadoghq.com/blog/pagerduty/).[![Monitor sess\_dropped](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-10.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/3-10.png)
 5.  **Save the integration monitor**. Click the “Save” button at the bottom of the page. You’re now monitoring a [key Varnish work metric](https://www.datadoghq.com/blog/top-varnish-performance-metrics/), and your on-call engineer will be paged anytime Varnish drops client connections.
 
 ## Conclusion

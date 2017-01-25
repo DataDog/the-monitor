@@ -20,15 +20,15 @@ Using the online management console is the simplest way to monitor DynamoDB with
 
 Once you are signed in to your AWS account, you can open the [CloudWatch console](https://console.aws.amazon.com/cloudwatch/home) where you will see the metrics related to the different AWS technologies.
 
-[![CloudWatch console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-01b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-01b.png)
+[![CloudWatch console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/2-01b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/2-01b.png)
 
 By clicking on DynamoDB’s “Table Metrics” you will see the list of your tables with the available metrics for each one:
 
-[![DynamoDB metrics in CloudWatch](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-02b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-02b.png)
+[![DynamoDB metrics in CloudWatch](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/2-02b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/2-02b.png)
 
 Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console.
 
-[![DynamoDB metric graph in CloudWatch](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-03b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-03b.png)
+[![DynamoDB metric graph in CloudWatch](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/2-03b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/2-03b.png)
 
 ### Alerts
 
@@ -36,7 +36,7 @@ With the CloudWatch Management Console you can also create alerts which trigger 
 
 Click on **Create Alarm** at the right of your graph, and you will be able to set up the alert, and configure it to notify a list of email addresses:
 
-[![DynamoDB CloudWatch alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-04b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/2-04b.png)
+[![DynamoDB CloudWatch alert](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/2-04b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/2-04b.png)
 
 <div class="anchor" id="cli" />
 

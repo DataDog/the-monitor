@@ -16,7 +16,7 @@ RDS上のMySQLからメトリクスを集取する方法を解説した[Part 2][
 * [Connect Datadog to CloudWatch to gather RDS metrics](#connect-datadog-to-cloudwatch)
 * [Integrate Datadog with MySQL to gather native metrics](#integrate-datadog-with-mysql)
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds_dd_diagram.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds_dd_diagram.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/rds_dd_diagram.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/rds_dd_diagram.png"></a>
 
 <!--<h2 class="anchor" id="connect-datadog-to-cloudwatch">Connect Datadog to CloudWatch</h2>-->
 ## <a class="anchor" id="connect-datadog-to-cloudwatch"></a>Connect Datadog to CloudWatch
@@ -101,14 +101,14 @@ Datadog Agentの設定が完了したら、効率的にメトリクスを取り�
 RDSをDatadogと連携する作業が完了すると、“Amazon - RDS (MySQL)”という総合ダッシュボードが、[インテグレーション用のダッシュボード][dash-list]のリストに表示されます。そのダッシュボードは、[Part 1][part-1]で焦点を当てたメトリクスを表示しています。:クエリーのスループットとパフォーマンス、リソース使用率、データベース接続、およびレプリケーション状態が表示されています。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds-dash-load.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds-dash-load.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/rds-dash-load.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/rds-dash-load.png"></a>
 
 > By default the dashboard displays native MySQL metrics from all reporting instances, as well as RDS metrics from all instances running MySQL. You can focus on one particular instance by selecting a `dbinstanceidentifier` variable in the upper left.
 
 レポート対象の全インスタンスのネイティブMySQLメトリクスと、MySQLが動作している全インスタンスのRDSメトリクスが、デフォルトでダッシュボードに表示されます。ダッシュボードの左上にあるテンプレートバリューセレクターを使って`dbinstanceidentifier`を選択することによって、特定のインスタンス情報のみを表示することもできます。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/db-id.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/db-id.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/db-id.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/db-id.png"></a>
 
 ### Customize your dashboard
 
@@ -130,7 +130,7 @@ Datadog Agentは、システム全体のパフォーマンスに関連したメ�
 * 目視点検の補助として、メトリクスの閾値（例: 正常/警告/クリティカル）をグラフに追加します。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/annotated_graph-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/annotated_graph-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/annotated_graph-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/annotated_graph-2.png"></a>
 
 > To start customizing, clone the default RDS MySQL dashboard by clicking on the gear on the upper right of the default dashboard. (If you are running Aurora or MariaDB on RDS, you can easily use the same dashboard. Simply change the scope of the metric queries in the graphs from `engine:mysql` to, for instance, `engine:mariadb`.)
 

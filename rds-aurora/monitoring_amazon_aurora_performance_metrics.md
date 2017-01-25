@@ -26,7 +26,7 @@ This article references metric terminology introduced in [our Monitoring 101 ser
 
 Because Aurora is compatible with MySQL 5.6, standard MySQL administration and monitoring tools, such as the `mysql` command line interface, will generally work with Aurora without modification. And most of the strategies outlined here also apply to MySQL and MariaDB on RDS. But there are some key differences between the database engines. For instance, Aurora has auto-scaling storage, so it does not expose a metric tracking free storage space. And the version of MariaDB (10.0.17) available on RDS at the time of this writing is not fully compatible with some of the metric collection tools detailed in [Part 2][part-2] of this series. MySQL users should check out our three-part series on [monitoring MySQL on RDS][mysql-rds].
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
 
 <h3 class="anchor" id="query-throughput">Query throughput</h3>
 
@@ -52,7 +52,7 @@ In CloudWatch metrics, all DML requests (inserts, updates, and deletes) are roll
 
 The current rate of queries will naturally rise and fall, and as such is not always an actionable metric based on fixed thresholds alone. But it is worthwhile to alert on sudden changes in query volume—drastic drops in throughput, especially, can indicate a serious problem.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/questions_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/questions_2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/questions_2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/questions_2.png"></a>
 <h3 class="anchor" id="query-performance">Query performance</h3>
 
 | **Metric description** | **CloudWatch name** | **MySQL name** | [**Metric&nbsp;type**][metric-101] |
@@ -66,7 +66,7 @@ The Aurora-only metrics for `SELECT` latency and DML (insert, update, or delete)
 
 MySQL (and therefore Aurora) also features a `Slow_queries` metric, which increments every time a query's execution time exceeds the number of seconds specified by the `long_query_time` parameter. To modify `long_query_time` (or any other database parameter), simply log in to the AWS Console, navigate to the RDS Dashboard, and select the parameter group that your RDS instance belongs to. You can then filter to find the parameter you want to edit.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/parameter-groups.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/parameter-groups.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/parameter-groups.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/parameter-groups.png"></a>
 For a deeper look into query performance, the MySQL [performance schema][performance-schema] (which is compatible with Aurora but is disabled by default) also stores valuable statistics, including query latency, from the database server. Though you can query the performance schema directly, it is easier to use Mark Leith’s [sys schema][sys-schema], which provides convenient views, functions, and procedures to gather metrics from MySQL or Aurora. For instance, to find the execution time of all the different statement types executed by each user:
 
 <pre class="lang:mysql">
@@ -161,7 +161,7 @@ Unlike other RDS database engines, Aurora's network throughput metrics do not in
 
 * `DiskQueueDepth`: It is not unusual to have some requests in the disk queue, but investigation may be in order if this metric starts to climb, especially if latency increases as a result. (Time spent in the disk queue adds to read and write latency.)
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/disk-queue.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/disk-queue.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/disk-queue.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/disk-queue.png"></a>
 
 <h3 class="anchor" id="connection-metrics">Connection metrics</h3>
 
@@ -201,7 +201,7 @@ Aurora's database engine exposes a variety of other metrics on connection errors
 
 * Failed connection attempts: If this metric is increasing, your clients are probably trying and failing to connect to the database. Dig deeper with metrics such as `Connection_errors_max_connections` and `Connection_errors_internal` to diagnose the problem.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/threads_connected_2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/threads_connected_2.png"></a>
 
 <h3 class="anchor" id="read-replica-metrics">Read replica metrics</h3>
 
@@ -215,7 +215,7 @@ The lag time for any read replica is captured by the CloudWatch metric `AuroraRe
 
 Note that this is a significantly different metric than the generic RDS metric `ReplicaLag`, which applies to other database engines. Because Aurora instances all read from the same virtual storage volume, the `AuroraReplicaLag` tracks the lag in page cache updates from primary to replica rather than the lag in applying all write operations from the primary instance to the replica.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/replica-lag.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/replica-lag.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/replica-lag.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/replica-lag.png"></a>
 
 ## Conclusion
 

@@ -55,7 +55,7 @@ RDSメトリクスは、Amazon CloudWatchを経由して収集できます。そ
 基本的にAuroraは、MySQL 5.6と互換性があります。従って、`mysql`から始まるCLIなど、標準的なMySQLの管理ツールや監視ツールは、Auroraでも変更なしで使うことができます。更に、ここで解説している監視の戦略の多くは、RDS上のMySQLやMariaDBにも適用することができるはずです。しかし、各データベース・エンジンには、いくつかの重要な違いあるのも認識しておく必要があります。例えば、Auroraでは、ストレージが自動的にスケールするので、ストレージの空き容量に関するメトリクスを提供していません。更にこの記事を書いている時点で、RDS上で使うことのできるMariaDBのバージョン(10.0.17)は、MySQLのワークベンチツールやsys schemaと完全に互換していません。これらの状況については、このシリーズの[Part 2][part-2]で詳しく解説することにします。又、RDS上でMySQLを採用しているなら、[monitoring MySQL on RDS][mysql-rds]の3回シリーズも併せ参照すると良いかもしれません。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
 
 <!--<h3 class="anchor" id="query-throughput">Query throughput</h3>-->
 
@@ -98,7 +98,7 @@ CloudWatchのメトリクスの場合、すべてのDMLリクエスト(inserts, 
 クエリの実行レートは、当然ながら変動します。そして、固定された閾値のみでは、アクションを起こすための十分なメトリクス監視とはいいがたいでしょう。そこで、クエリの量の突然の変化には、アラートを設定しておくとよいでしょう。特に、スループットの急激な低下は、深刻な問題を提起していることがあるので注意しましょう。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/questions_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/questions_2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/questions_2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/questions_2.png"></a>
 
 <!--<h3 class="anchor" id="query-performance">Query performance</h3>-->
 
@@ -121,7 +121,7 @@ Auroraにのみある、`SELECT`レイテンシとDMLレイテンシのメトリ
 MySQL(そしてAuroraも)は、`Slow_queries`というメトリクスを公開しています。このクエリは、`long_query_time`パラメータで指定した秒数を越える度に増加していきます。デフォルトで`long_query_time`は、10秒に設定されていますが、AWSコンソール上で変更することができます。`long_query_time`（または他のMySQLパラメータ）を変更するには、AWSコンソールにログインし、RDSのダッシュボードに移動し、RDSインスタンスが属するパラメータグループを選択します。次に、編集したいパラメータを検索します。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/parameter-groups.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/parameter-groups.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/parameter-groups.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/parameter-groups.png"></a>
 
 > For a deeper look into query performance, the MySQL [performance schema][performance-schema] (which is compatible with Aurora but is disabled by default) also stores valuable statistics, including query latency, from the database server. Though you can query the performance schema directly, it is easier to use Mark Leith’s [sys schema][sys-schema], which provides convenient views, functions, and procedures to gather metrics from MySQL or Aurora. For instance, to find the execution time of all the different statement types executed by each user:
 
@@ -280,7 +280,7 @@ RDS上の他のデータベースエンジンとは異なり、Auroraのネッ�
 
 - `DiskQueueDepth`： ディスクキューにリクエストが溜まっていることは珍しくありません。しかし、このメトリクスに増加の傾向があるなら、調査が必要です。特に、このディスクキューの増加によってレイテンシが増加しているなら、調査は必要です。(ディスクキュー内で順番を待っている時間は、読み取りや書き込みレイテンシに加算されていきます。)
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/disk-queue.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/disk-queue.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/disk-queue.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/disk-queue.png"></a>
 
 <!--<h3 class="anchor" id="connection-metrics">Connection metrics</h3>-->
 
@@ -344,7 +344,7 @@ Auroraのデータベースエンジンは、コネクションエラーに関�
 * Failed connection attempts: この数が増加している場合、クライアントは、データベースの接続しようとして失敗している状況でしょう。 接続に失敗している原因を診断するために、`Connection_errors_max_connections`や`Connection_errors_internal`のようなメトリクスを使って調査をすすめます。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/threads_connected_2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/threads_connected_2.png"></a>
 
 <!--<h3 class="anchor" id="read-replica-metrics">Read replica metrics</h3>-->
 
@@ -368,7 +368,7 @@ Auroraは、マスターインスタンに対し、最大15のリードレプリ
 Auroraを使っている場合、RDSメトリクスの`ReplicaLag`は、他のデータベースエンジンで収集しているモノと著しく異なっていることを理解しておくべ気でしょう。Auroraのインスタンスは、皆、同じ仮想ストレージボリュームから読み込むため、`AuroraReplicaLag`は、プライマリ・インスタンスからレプリカ・インスタンスへの書き込み操作の全が完了するまでの遅延ではなく、プライマリからレプリカへのページキャッシュの更新の遅延を計測しています。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/replica-lag.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/replica-lag.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/replica-lag.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/replica-lag.png"></a>
 
 ## Conclusion
 

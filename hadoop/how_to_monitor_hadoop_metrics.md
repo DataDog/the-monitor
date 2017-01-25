@@ -375,23 +375,23 @@ _Source Markdown for this post is available [on GitHub][markdown]. Questions, co
 
 []: ZooKeeper
 
-[avg-req-latency-zk]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/graphs/zk-lat.png
+[avg-req-latency-zk]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/graphs/zk-lat.png
 
 [hdfs-zookeeper]: https://www.datadoghq.com/blog/hadoop-architecture-overview/#toc-hdfs-and-zookeeper16
 [yarn-zookeeper]: https://www.datadoghq.com/blog/hadoop-architecture-overview/#toc-hdfs-and-zookeeper16
 
 []: Images
 
-[hdfs-capacity-remaining]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/graphs/hdfs-disk-usage-2.png
-[hdfs-totalload]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/graphs/hdfs-totalload.png
-[dn-disk-graph]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/graphs/dn-disk0.png
-[live-dead-decom]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/graphs/live-dead-decom.png
-[nn-cms-graph]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/graphs/nn-cms-1.png
+[hdfs-capacity-remaining]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/graphs/hdfs-disk-usage-2.png
+[hdfs-totalload]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/graphs/hdfs-totalload.png
+[dn-disk-graph]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/graphs/dn-disk0.png
+[live-dead-decom]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/graphs/live-dead-decom.png
+[nn-cms-graph]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/graphs/nn-cms-1.png
 
-[hadoop-metrics-tree]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/metrics-diagrams/hadoop_diagram10-5.png
-[hdfs-metrics-tree]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/metrics-diagrams/hadoop_diagram11-1.png
-[mapreduce-metrics-tree]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/metrics-diagrams/hadoop_diagram12-2.png
-[yarn-metrics-tree]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/metrics-diagrams/hadoop_diagram13-3.png
+[hadoop-metrics-tree]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/metrics-diagrams/hadoop_diagram10-5.png
+[hdfs-metrics-tree]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/metrics-diagrams/hadoop_diagram11-1.png
+[mapreduce-metrics-tree]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/metrics-diagrams/hadoop_diagram12-2.png
+[yarn-metrics-tree]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/metrics-diagrams/hadoop_diagram13-3.png
 
 
 [Part 1]: https://www.datadoghq.com/blog/hadoop-architecture-overview/

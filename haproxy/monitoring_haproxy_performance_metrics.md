@@ -9,7 +9,7 @@ HAProxy consistently performs on par or [better](https://github.com/observing/ba
 
 Like other load balancers or proxies, HAProxy is very flexible and largely protocol-agnostic—it can handle anything sent over TCP. 
 
-[![Overview](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_1.png)
+[![Overview](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/HAProxy_1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/HAProxy_1.png)
 
 ## Key HAProxy performance metrics
 
@@ -21,7 +21,7 @@ A properly functioning HAProxy setup can [handle](http://loadbalancer.org/blog/l
 
 Correlating frontend metrics with backend metrics gives you a more comprehensive view of your infrastructure and helps you quickly identify potential hotspots. 
 
-[![Frontend and backend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/default-screen2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/default-screen2.png) 
+[![Frontend and backend metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/default-screen2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/default-screen2.png) 
 
 Read more about collecting HAProxy performance metrics in [part two](http://www.datadoghq.com/blog/how-to-collect-haproxy-metrics) of this series. This article references metric terminology [introduced in our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
@@ -29,7 +29,7 @@ Read more about collecting HAProxy performance metrics in [part two](http://www.
 
 ### Frontend metrics
 
-[![HAProxy frontend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_2.png) Frontend metrics provide information about the client’s interaction with the load balancer itself.
+[![HAProxy frontend metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/HAProxy_2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/HAProxy_2.png) Frontend metrics provide information about the client’s interaction with the load balancer itself.
 
 |**Name**|**Description**|**[Metric Type](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)**|
 |:---:|:---:|:---:|
@@ -47,23 +47,23 @@ A note about terminology: HAProxy documentation often uses the terms sessions, c
 
 #### Metrics to watch:
 
-![Frontend requests per second](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/frontend-req-rate.png) 
+![Frontend requests per second](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/frontend-req-rate.png) 
 
 **req_rate**: The frontend request rate measures the number of requests received over the last second. Keeping an eye on peaks and drops is essential to ensure continuous service availability. In the event of a traffic spike, clients could see increases in latency or even denied connections. Tracking your request rate over time gives you the data you need to make more informed decisions about HAProxy’s configuration. 
 
-![Frontend sessions per second](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/f-sessions-second.png) 
+![Frontend sessions per second](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/f-sessions-second.png) 
 
 **rate**: HAProxy allows you to configure the maximum number of sessions created per second. If you are not behind a content delivery network (CDN), a significant spike in the number of sessions over a short period could cripple your operations and bring your servers to their knees. 
 
 Tracking your session creation rate over time can help you discern whether a traffic spike was a unique event or part of a larger trend. You can then set a limit based on historic trends and resource availability so that a sudden and dramatic spike does not result in a denial of service. 
 
-[![Response codes](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/response-codes.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/response-codes.png)
+[![Response codes](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/response-codes.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/response-codes.png)
 
 <center>_Frontends are purple, backends blue_</center>
 
 **hrsp\_4xx and hrsp\_5xx**: HAProxy exposes the number of responses by HTTP status code. Ideally, all responses forwarded by HAProxy would be class **2xx** codes, so an unexpected surge in the number of other code classes could be a sign of trouble. Correlating the denial metrics with the response code data can shed light on the cause of an increase in error codes. No change in denials coupled with an increase in the number of **404** responses could point to a misconfigured application or unruly client. Over the course of our internal testing, we graphed the frontend and backend metrics together, one graph per response code, with interesting results. 
 
-![4xx codes](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/4xx1.png) 
+![4xx codes](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/4xx1.png) 
 
 The difference in the **4xx** responses is explained by the [tendency of some browsers to preconnect](http://www.copernica.com/en/blog/how-chromes-pre-connect-breaks-haproxy-and-http), sometimes resulting in a **408** (request timeout) response. If you are seeing excessive **4xx** responses and suspect them to be **408** codes, you can try [this temporary workaround](http://blog.haproxy.com/2014/05/26/haproxy-and-http-errors-408-in-chrome/) and see if that reduces the number of **4xx** responses. 
 
@@ -101,7 +101,7 @@ Under normal conditions, it is acceptable to (infrequently) receive invalid requ
 
 ### Backend metrics
 
-[![HAProxy backend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_3-1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/HAProxy_3-1.png) Backend metrics measure the communication between HAProxy and your backend servers that handle client requests. Monitoring your backend is critical to ensure smooth and responsive performance of your web applications.
+[![HAProxy backend metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/HAProxy_3-1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/HAProxy_3-1.png) Backend metrics measure the communication between HAProxy and your backend servers that handle client requests. Monitoring your backend is critical to ensure smooth and responsive performance of your web applications.
 
 |**Name**| **Description** |**[Metric Type](https://www.datadoghq.com/blog/monitoring-101-collecting-data/)**|
 |:---:|:---:|:---:|
@@ -119,7 +119,7 @@ Under normal conditions, it is acceptable to (infrequently) receive invalid requ
 
 **dresp**: In most cases your denials will originate in the frontend (e.g., a user is attempting to access an unauthorized URL). However, sometimes a request may be benign, yet the corresponding response contains sensitive information. In that case, you would want to [set up an ACL](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#7) to deny the offending response. Backend responses that are denied due to ACL restrictions will emit a **502** error code. With properly configured access controls on your frontend, this metric should stay at or near zero. Denied responses and an increase in **5xx** responses go hand-in-hand. If you are seeing a large number of **5xx** responses, you should check your denied responses to shed some light on the increase in error codes. 
 
-![Retries and Redispatches](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/retries.png) 
+![Retries and Redispatches](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/retries.png) 
 
 **wretr**: Some dropped or timed-out connections are to be expected when connecting to a backend server. The retry rate represents the number of times a connection to a backend server was retried. This metric is usually non-zero under normal operating conditions. Should you begin to see more retries than usual, it is likely that other metrics will also change, including `econ` and `eresp`. Tracking the retry rate in addition to the above two error metrics can shine some light on the true cause of an increase in errors; if you are seeing more errors coupled with low retry rates, the problem most likely resides elsewhere. **wredis**: The redispatch rate metric tracks the number of times a client connection was unable to reach its original target, and was subsequently sent to a different server. If a client holds a cookie referencing a backend server that is down, the default action is to respond to the client with a **502** status code. However, if you have [enabled](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#4-option%20redispatch) `option redispatch` in your `haproxy.cfg`, the request will be sent to any available backend server and the cookie will be ignored. It’s a matter of preference whether you want to trade user session persistence for smoother transitions in the face of failed backends.
 
@@ -129,13 +129,13 @@ Under normal conditions, it is acceptable to (infrequently) receive invalid requ
 
 **qcur**: If your backend is bombarded with connections to the point you have reached your global `maxconn` limit, HAProxy will [seamlessly queue new connections](https://stackoverflow.com/questions/8750518/difference-between-global-maxconn-and-server-maxconn-haproxy) in your system kernel’s socket queue until a backend server becomes available. The `qcur` metric tracks the current number of connections awaiting assignment to a backend server. If you have enabled cookies and the listed server is unavailable, connections will be queued until the queue timeout is reached. However, if you have set the `option redispatch` directive in your global HAProxy configuration, HAProxy can break the session’s persistence and forward the request to any available backend. 
 
-Keeping connections out of the queue is ideal, resulting in less latency and a better user experience. You should alert if the size of your queue exceeds a threshold you are comfortable with. If you find that connections are consistently enqueueing, configuration changes may be in order, such as [increasing](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#3.2-maxconn) your global `maxconn` limit or changing the connection limits on your individual backend servers. ![Backend queue](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/queue.png)
+Keeping connections out of the queue is ideal, resulting in less latency and a better user experience. You should alert if the size of your queue exceeds a threshold you are comfortable with. If you find that connections are consistently enqueueing, configuration changes may be in order, such as [increasing](https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#3.2-maxconn) your global `maxconn` limit or changing the connection limits on your individual backend servers. ![Backend queue](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/queue.png)
 
 <center>_An empty queue is a happy queue_</center>
 
 **qtime**: In addition to the queue size, HAProxy exposes the average time spent in queue via the `qtime` metric. This metric represents an average of the last 1,024 requests, so an abnormally large queue time for one connection could skew results. It goes without saying that minimizing time spent in the queue results in lower latency and an overall better client experience. Each use case can tolerate a certain amount of queue time but in general, you should aim to keep this value as low as possible. 
 
-[![Backend response time](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/response-time.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/response-time.png) 
+[![Backend response time](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/response-time.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/response-time.png) 
 
 <div class="anchor" id="Latency" />
 

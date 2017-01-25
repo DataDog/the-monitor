@@ -18,19 +18,19 @@ Using the online management console is the simplest way to monitor your load bal
 
 Once you are signed in to your AWS account, you can open the [CloudWatch console](https://console.aws.amazon.com/cloudwatch/home#metrics:) and then browse the metrics related to the different AWS services.
 
-[![ELB metrics in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-01.png)
+[![ELB metrics in AWS Console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-01.png)
 
 By clicking on the ELB Metrics category, you will see the list of available metrics per load balancer, per availability zone:
 
-[![List of ELB metrics in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-02.png)
+[![List of ELB metrics in AWS Console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-02.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-02.png)
 
 You can also view the metrics across all your load balancers:
 
-[![List of ELB metrics across all load balancers](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-03.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-03.png)
+[![List of ELB metrics across all load balancers](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-03.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-03.png)
 
 Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console:
 
-[![ELB metrics graphs in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-04.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-04.png)
+[![ELB metrics graphs in AWS Console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-04.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-04.png)
 
 ### Alerts
 
@@ -38,7 +38,7 @@ With the CloudWatch Management Console you can also create simple alerts that tr
 
 Click on the “Create Alarm” button at the right of your graph, and you will be able to set up the alert and configure it to notify a list of email addresses:
 
-[![ELB alerts in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-05.png)
+[![ELB alerts in AWS Console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-05.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-05.png)
 
 <div class="anchor" id="cli" />
 

@@ -356,8 +356,8 @@ Many thanks to [Dave Stokes][stokes] of Oracle and [Ewen Fortune][fortune] of [V
 [markdown]: https://github.com/DataDog/the-monitor/blob/master/mysql/monitoring_mysql_performance_metrics.md
 [issues]: https://github.com/DataDog/the-monitor/issues
 
-[questions-img]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/mysql_questions.png
-[cx-img]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/mysql_conn.png
-[buffer-img]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/mysql_buffer.png
-[latency-img]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/mysql_latency.png
+[questions-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/mysql_questions.png
+[cx-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/mysql_conn.png
+[buffer-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/mysql_buffer.png
+[latency-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/mysql_latency.png
 

@@ -26,7 +26,7 @@ Monitoring 101: Alerting on what matters
 When to alert someone (or no one)
 ---------------------------------
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_chart.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_chart.png)
 
 > An alert should communicate something specific about your systems in plain language: “Two Cassandra nodes are down” or “90% of all web requests are taking more than 0.5s to process and respond.”　Automating alerts across as many of your systems as possible allows you to respond quickly to issues and provide better service, and it also saves time by freeing you from continual manual inspection of metrics.
 
@@ -56,7 +56,7 @@ When to alert someone (or no one)
 
 最高の緊急性を要するアラートには、特別な扱いが必要で、人間の注目を直ちに引くために[ページャー(電話連絡やポケベル連絡の方法)](https://en.wikipedia.org/wiki/Pager)などにエスカレーションする必要があります。例えば、Webアプリケーションのレスポンス時間には、最低でも最も厳しい顧客を念頭に置いたSLAを設定するべきです。そして、この内部SLAの基準を超えるようなWebアプリケーションのレスポンス時間の増大には、どのような時間であっても、迅速な対応が必要です。
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_1.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_band_1.png)
 
 ### When to let a sleeping engineer lie
 
@@ -82,7 +82,7 @@ When to alert someone (or no one)
 2. **この障害には誰かの介入が必要? (Does this issue require attention?)** 合理的に可能であれば、障害に対する対応を自動化することも出来ます。そして、 実際は自動化することを検討するべきでしょう。誰かを仕事や睡眠やプライベート時間から呼び出すことは、現実のコストを要する行為です。起きている障害が **現実の障害で、人間の介入が必要** なら、障害を調査し修正を施せる人材に対し、 アラートを発生させ、通知する必要があるでしょう。その通知は、受信する人が優先順位を決められるように、最低でもメール、チャット、チケットシステムにより送信される必要があるでしょう。
 3. **この障害は、緊急性を要するか? (Is this issue urgent?)** 全ての障害は、緊急事態ではありません。例えば、システムレスポンスが通常よりも若干時間を要していたり、古いデータで応答しているクエリが普段よりわずかに増加していたりしている状態が緊急度の低い障害です。このいずれの問題も対処する必要はありますが、午前4:00ではありません。その逆に、全体の要となるシステムが容認範囲の処理ができなくなった場合は、即座にエンジニアが対応する必要があるでしょう。**現実の障害で、人間の介入が必要、緊急性を要する** なら、ページするべきです。
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_2.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_band_2.png)
 
 ### Page on symptoms
 
@@ -105,7 +105,7 @@ When to alert someone (or no one)
 
 徴候に基づいてページするもう一つの良い理由は、徴候に基づいたアラートは、長持ちする傾向があります。基盤システムに変化が有ろうが無かろうが、もしもシステムが **期待している仕事** をしなくなったら、アラート設定を更新していなくても適切なページを受けることができます。
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_3.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_band_3.png)
 
 #### Exception to the rule: Early warning signs
 

@@ -125,11 +125,11 @@ Otherwise it can be found in `your_JDK_install_dir/bin`
 
 To pull up metrics in JConsole, you can select the relevant local process or monitor a remote process using the node’s IP address (Cassandra uses port 7199 for JMX by default):
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/jconsole_3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/jconsole_3.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/jconsole_3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/jconsole_3.png)
 
 The MBeans tab brings up all the JMX paths available:
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/jmx-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/jmx-metrics.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/jmx-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/jmx-metrics.png)
 
 Out of the box, `org.apache.cassandra.metrics` (based on the [Metrics](https://github.com/dropwizard/metrics) library) provides almost all of the metrics that you need to monitor a Cassandra cluster. (See the first footnote on the table below for exceptions.) Prior to Cassandra 2.2, many identical or similar metrics were also available via alternate JMX paths (`org.apache.cassandra.db`, `org.apache.cassandra.internal`, etc.), which, while still usable in some versions, reflect an older structure that has been deprecated. Below are modern JMX paths, which mirror the JConsole interface’s folder structure, for the key metrics described in this article:
 

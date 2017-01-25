@@ -53,7 +53,7 @@ Keeping an eye on the number of pods currently running (by node or replica set, 
 
 To understand how the number of running pods impacts resource usage (CPU, memory, etc.) in your cluster, you should correlate this metric with the resource metrics described in the next section.
 
-[![pods per node](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/kubernetes-pods-nodes.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/kubernetes-pods-nodes.png)
+[![pods per node](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-pods-nodes.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-pods-nodes.png)
 
 ### Resource utilization
 
@@ -91,7 +91,7 @@ For pod scheduling, Kubernetes allows you to specify how much CPU and memory eac
 ##### Beware of the trap
 
 With other technologies, you are probably used to monitoring actual resource consumption and comparing that with your node capacity. With Kubernetes, if the sum of container **limits** on a node is strictly greater than the sum of **requests** (minimum resources required), the node can be *oversubscribed* and containers might use more resources than they actually need, which is fine. Even if they use 100 percent of the available CPU resources on a node, for example, Kubernetes can still make room to schedule another pod on the node. Kubernetes would simply lower the CPU available to existing pods to free up resources for the new one, as long as all containers have enough resources to meet their **request**. That’s why monitoring the sum of requests on the node and making sure it never exceeds your node’s capacity is much more important than monitoring simple CPU or memory usage. If you don’t have enough capacity to meet the minimum resource requirements of all your containers, you should scale up your nodes’ capacity or add more nodes to distribute the workload.
- [![Kubernetes memory and CPU per host](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/kubernetes-resource-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/kubernetes-resource-metrics.png)
+ [![Kubernetes memory and CPU per host](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-resource-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-resource-metrics.png)
 
 Having some oversubscription on your nodes can be good in many cases since it can help reduce the number of nodes in your Kubernetes cluster. You can tune the request/limit ratio by monitoring it over time and tracking how it impacts your container resource usage.
 
@@ -106,7 +106,7 @@ As explained in the [section about container metrics](#container-metrics), some 
 The percentage of disk in use is generally more useful than the *volume* of disk usage, since the thresholds of concern won’t depend on the size of your clusters. You should graph its evolution over time and trigger an alert if it exceeds 80% for example.
 
 Graphing the number of bytes read from or written to disk provides critical context for higher-level metrics. For example, you can quickly check whether a latency spike is due to increased I/O activity.
- [![Kubernetes disk I/O](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/kubernetes-disk-io.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/kubernetes-disk-io.png)
+ [![Kubernetes disk I/O](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-disk-io.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-disk-io.png)
 
 #### Network
 
@@ -138,7 +138,7 @@ If you are using Docker, check out [our Docker monitoring guide](https://www.dat
 
 Using Docker in the framework provided by Kubernetes labels will give you insights about your containers’ health and performance. Kubernetes labels are already applied to Docker metrics. You could track for example the number of running containers by pod, or the most RAM-intensive pods by graphing the [RSS non-cache memory](https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/#toc-memory3) broken down by *pod name*.
 
-[![containers per pod](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/containers-per-pod.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/containers-per-pod.png)
+[![containers per pod](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/containers-per-pod.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/containers-per-pod.png)
 
 ### Application-specific metrics
 
@@ -179,7 +179,7 @@ Let’s say we are running [NGINX](https://www.datadoghq.com/blog/how-to-monitor
 
 We receive an [alert](https://www.datadoghq.com/blog/monitoring-101-alerting/) triggered after the number of NGINX 5xx errors suddenly skyrocketed over a set threshold.
 
-[![NGINX 5xx errors](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/nginx-errors.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/nginx-errors.png)
+[![NGINX 5xx errors](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/nginx-errors.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/nginx-errors.png)
 
 #### 2. Corresponding Kubernetes labels and events
 
@@ -191,7 +191,7 @@ Let’s investigate the containers impacted by this rolling update to understand
 
 The first place to look is usually resource metrics. Remember that Docker metrics should be preferred to Kubernetes for time-sampled data. So let’s graph the CPU utilization by Docker containers, broken down by pod (or container) and filtered to retain only the pods with the label ***rc-nginx***.
 
-[![CPU per pod](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/cpu-pods.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/cpu-pods.png)
+[![CPU per pod](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/cpu-pods.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/cpu-pods.png)
 
 Interesting! It looks like CPU usage in some pods drastically increased at the moment that the 5xx error peaked. Would it be possible that the underlying hosts running this pod replica saturated their CPU capacity?
 
@@ -199,7 +199,7 @@ Interesting! It looks like CPU usage in some pods drastically increased at the m
 
 By graphing the CPU usage broken down by host, we can see that indeed three hosts maxed out their CPU at that moment.
 
-[![CPU per host](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/hosts-full-cpu.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/hosts-full-cpu.png)
+[![CPU per host](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/hosts-full-cpu.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/hosts-full-cpu.png)
 
 #### Resolving the issue and postmortem
 
@@ -215,7 +215,7 @@ Here we have combined data from across our container infrastructure to find the 
 -   Docker metrics aggregated by Kubernetes labels to investigate hypothesized cause
 -   Host-level metrics to confirm resource constraint
 
-[![Kubernetes monitoring use case](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/k8s-use-case.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/2/k8s-use-case.png)
+[![Kubernetes monitoring use case](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/k8s-use-case.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/k8s-use-case.png)
 
 *Using data from across your orchestrated containerized infrastructure
  to find the root cause of a performance issue*

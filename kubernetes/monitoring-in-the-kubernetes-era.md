@@ -39,7 +39,7 @@ And on each node is one [**kubelet**](http://kubernetes.io/docs/admin/kubelet/),
 
 In Kubernetes you can have multiple virtual clusters, called [**namespaces**](http://kubernetes.io/docs/user-guide/namespaces/), backed by the same physical cluster. That way you can spin up only one cluster and use its resources for multiple environments (*staging* and *dev-test,* for example). This can help save time, resources, and cost.
 
-[![kubernetes cluster pods and nodes](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/1/kubernetes-pods.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/1/kubernetes-pods.png)
+[![kubernetes cluster pods and nodes](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/1/kubernetes-pods.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/1/kubernetes-pods.png)
 
 #### Replica sets and deployments
 
@@ -59,7 +59,7 @@ Services achieve this by leveraging [labels](http://kubernetes.io/docs/user-guid
 
  
 
-[![kubernetes abstraction](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/1/kubernetes-services.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/1/kubernetes-services.png)
+[![kubernetes abstraction](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/1/kubernetes-services.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/1/kubernetes-services.png)
 
 With the new cross-cluster federated services feature released with Kubernetes 1.3, services can now span multiple clusters that can be located in different (availability) zones, which ensures higher availability.
 
@@ -98,7 +98,7 @@ To make your metrics as useful as possible, you should label your pods so that y
 
 These user-generated Kubernetes labels are essential for monitoring since they are the only way you have to slice and dice your metrics and events across the different layers of your infrastructure.
 
-[![kubernetes labels](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/1/kubernetes-labels-monitoring.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/1/hkubernetes-labels-monitoring.png)
+[![kubernetes labels](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/1/kubernetes-labels-monitoring.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/1/hkubernetes-labels-monitoring.png)
 
 *Custom labels attached to pods*
 
@@ -127,7 +127,7 @@ Now Kubernetes, which orchestrates your containers, also needs to be monitored i
 -   Your containerized applications
 -   Kubernetes itself
 
-[![kubernetes monitoring](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/1/kubernetes-monitoring.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/1/hkubernetes-monitoring.png)
+[![kubernetes monitoring](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/1/kubernetes-monitoring.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/1/hkubernetes-monitoring.png)
 
 *Evolution of components to monitor
  from traditional to orchestrated containerized infrastructures*

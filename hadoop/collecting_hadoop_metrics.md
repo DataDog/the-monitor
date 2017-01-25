@@ -561,25 +561,25 @@ _Source Markdown for this post is available [on GitHub][markdown]. Questions, co
 
 []: Ambari
 
-[ambari-config]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/two/ambari-config.png
-[ambari-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/two/ambari-dash.png
+[ambari-config]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/two/ambari-config.png
+[ambari-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/two/ambari-dash.png
 
 []: Cloudera
 
-[cloudera-login]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/two/cloudera-manager-login.png
-[cloudera-finished]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/cloudera-finished.png
+[cloudera-login]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/two/cloudera-manager-login.png
+[cloudera-finished]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/cloudera-finished.png
 
 []: HDFS
 
-[dfshealth]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/two/dfshealth.png
-[datanode-info]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/two/datanode-tab.png
-[zookeeper-screen]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/zookeeper-jconsole.png
+[dfshealth]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/two/dfshealth.png
+[datanode-info]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/two/datanode-tab.png
+[zookeeper-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/zookeeper-jconsole.png
 
 []: MR
 
-[mapred-hist]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/two/mapreduce-history.png
-[mapreduce-counter-nav]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/two/single-job-page1.png
-[mapreduce-counters]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/two/mapreduce-counters-2.png
+[mapred-hist]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/two/mapreduce-history.png
+[mapreduce-counter-nav]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/two/single-job-page1.png
+[mapreduce-counters]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/two/mapreduce-counters-2.png
 
 []: YARN
 

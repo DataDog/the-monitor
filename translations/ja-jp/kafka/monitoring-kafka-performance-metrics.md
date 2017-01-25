@@ -359,29 +359,29 @@ Thanks to [Gwen Shapira][gwenshap], System Architect at Confluent for generously
 
 <IMAGES>
 
-[architecture]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/archy2.png
-[broker-arch]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/broker-zoom.png
-[broker-topic-partition]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/broker-topic-partition2.png
-[consumer-arch]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/consumer-zoom.png
-[producer-arch]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/producer-zoom.png
-[zookeeper-arch]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/zoo-zoom.png
+[architecture]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/archy2.png
+[broker-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/broker-zoom.png
+[broker-topic-partition]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/broker-topic-partition2.png
+[consumer-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/consumer-zoom.png
+[producer-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/producer-zoom.png
+[zookeeper-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/zoo-zoom.png
 
 <GRAPHS>
 
-[avg-req-latency-zk]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/zk-lat-avg.png
-[broker-disk-usage]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/disk-free.png
-[clean-unclean]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/leader-elect.png
+[avg-req-latency-zk]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/zk-lat-avg.png
+[broker-disk-usage]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/disk-free.png
+[clean-unclean]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/leader-elect.png
 
-[consumer-lag]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/con-lag-group.png
-[jvm-gc]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/gc-per-min.png
-[messages-in]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/con-msg.png
-[outstanding-reqs]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/out-reqs.png
-[page-cache]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/pagecache-read.png
-[parnew-time]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/parnew-time-broker.png
-[req-latency-avg]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/req-avg-lat.png
-[req-resp]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/req-resp-rate.png
-[totalTime]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/totalTime.png
-[zk-commits]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/graphs/zk-commit.png
+[consumer-lag]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/con-lag-group.png
+[jvm-gc]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/gc-per-min.png
+[messages-in]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/con-msg.png
+[outstanding-reqs]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/out-reqs.png
+[page-cache]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/pagecache-read.png
+[parnew-time]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/parnew-time-broker.png
+[req-latency-avg]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/req-avg-lat.png
+[req-resp]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/req-resp-rate.png
+[totalTime]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/totalTime.png
+[zk-commits]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/graphs/zk-commit.png
 <DD Links>
 
 [part1]: https://www.datadoghq.com/blog/how-to-monitor-kafka-performance-metrics/ 

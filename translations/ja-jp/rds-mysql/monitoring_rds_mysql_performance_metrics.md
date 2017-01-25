@@ -50,7 +50,7 @@ RDSのメトリクス(MySQLのメトリクスとは対照的に)は、使用し�
 この記事では、[Monitoring 101 series][metric-101]で紹介した”メトリクスの収集とアラートのフレームワーク”で解説した用語を採用しています。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds-dash-load.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/rds-dash-load.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/rds-dash-load.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/rds-dash-load.png"></a>
 
 <h3 class="anchor" id="query-throughput">Query throughput</h3>
 
@@ -92,7 +92,7 @@ MySQLサーバーの`Questions` ステータス変数は、クライアントア
 クエリーの実行レートは、当然ながら増減します。そして、クエリーの実行レートの固定的な閾値のみを基準た方法では、アクションを起こすためのメトリクスとは言いがたいでしょう。しかし、スループットの急激な低下のようなクエリーの量の突然の変化には、深刻な問題を提起していることがあるので、アラートを設定しておく価値があるでしょう。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/questions_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/questions_2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/questions_2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/questions_2.png"></a>
 
 
 ### <a class="anchor" id="query-performance"></a>Query performance
@@ -112,7 +112,7 @@ _*クエリーエラーの数は、MySQLメトリクスとして直接的には�
 Amazon CloudWatchは、RDSの`ReadLatency`と`WriteLatency`メトリクス（[後述](#resource-utilization)）を公開しています。しかし、これらのメトリクスは、ディスクI/Oレベルのレイテンシーを計測した値です。より包括的にクエリーのパフォーマンスを把握するには、MySQLのネオティブメトリクスのクエリーレイテンシーを使うことができます。MySQLは、`Slow_queries`というメトリクスを公開しています。このクエリーは、`long_query_time`パラメーターで指定した秒数を超える毎に増加していきます。デフォルトで`long_query_time`は、10秒に設定されていますが、AWSコンソール上で変更することができます。`long_query_time`（または他のMySQLパラメータ）を変更するには、AWSコンソールにログインし、RDSのダッシュボードに移動し、RDSインスタンスが属するパラメータグループを選択します。その後、編集したいパラメーターを検索します。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/long_query_time.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/long_query_time.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/long_query_time.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/long_query_time.png"></a>
 
 > MySQL's performance schema (when enabled) also stores valuable statistics, including query latency, from the database server. Though you can query the performance schema directly, it is easier to use Mark Leith’s [sys schema][sys-schema], which provides convenient views, functions, and procedures to gather metrics from MySQL. For instance, to find the execution time of all the different statement types executed by each user:
 
@@ -307,7 +307,7 @@ Provisioned IOPSを設定しても、ネットワーク性能の上限が、プ�
 - `FreeStorageSpace`： ディスク使用率が一貫して85％以上を越えている場合、AWSでは、不要なデータを削除したり、ストレージスペースを追加することを、推奨しています。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/latency.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/latency.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/latency.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/latency.png"></a>
 
 <!--<h3 class="anchor" id="connection-metrics">Connection metrics</h3>-->
 
@@ -371,7 +371,7 @@ MySQLは、コネクションエラーに関し、様々なメトリクスを公
 - `Aborted_connects`： この数が増加している場合、クライアントは、データベースの接続しようとして失敗している状況でしょう。 接続に失敗している原因を診断するために、`Connection_errors_max_connections`や`Connection_errors_internal`のようなメトリクスを使って調査をすすめると良いでしょう。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/threads_connected_2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/threads_connected_2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/threads_connected_2.png"></a>
 
 <h3 class="anchor" id="read-replica-metrics">Read replica metrics</h3>
 
@@ -400,7 +400,7 @@ RDSは、マスターMySQLインスタンスからのリードレプリカの作
 レプリケーションを考えた場合、監視する必要がある他のメトリクスは、`BinLogDiskUsage`です。このメトリクスは、マスターデータベースインスタンのバイナリーログのディスクの使用量を計測しています。MySQLは、マスター内の単一スレッドを使って非同期でデーターを複製しています。従って、大量の書き込みが発生している期間は、マスターにupdateを送るためのバイナリーログの山積み状態の原因になります。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/binlog.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/binlog.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/binlog.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/binlog.png"></a>
 
 
 ## Conclusion

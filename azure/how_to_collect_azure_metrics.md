@@ -12,22 +12,22 @@ The [Azure web portal](https://portal.azure.com/) has built-in monitoring functi
 
 Azure’s Diagnostics extension can be enabled when you create a new virtual machine via the Azure web portal. But even if you disabled Diagnostics when creating a VM, you can turn it on later from the “Settings” menu in the VM view. You can select which metrics you wish to collect (Basic metrics, Network and web metrics, .NET metrics, etc.) in the Diagnostics tile as well. You will have to link the VM to an Azure storage account to store your Diagnostics data.
 
-[![Enable Azure diagnostics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-enable-diagnostics-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-enable-diagnostics-2.png)
+[![Enable Azure diagnostics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-enable-diagnostics-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-enable-diagnostics-2.png)
 
 ### Viewing metrics in the web portal
 
 Once monitoring is enabled, you will see several default metric graphs when you click on your VM in the Azure portal.
 
-![Default graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-default-graphs.png)
+![Default graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-default-graphs.png)
  Clicking on any monitoring graph opens a larger view, along with two important settings options: “Edit chart,” which allows you to select the metrics and the timeframe displayed on that graph, and “Add alert,” which opens the Azure alerting tile.
 
-![Metric graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-bigger-graph.png)
+![Metric graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-bigger-graph.png)
 
 ### Adding alert rules
 
 In the alerting tile you can set alerts on Azure VM metrics. Azure alerts can be set against any upper or lower threshold and will alert whenever the selected metric exceeds (or falls below) that threshold for a set amount of time. In the example below, we have set an alert that will notify us by email whenever the CPU usage on the given virtual machine exceeds 90 percent over a 10-minute interval.
 
-[![Create alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-alert-rule.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-alert-rule.png)
+[![Create alert](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-alert-rule.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-alert-rule.png)
 
 ## Accessing raw metric data in Azure storage
 
@@ -39,10 +39,10 @@ Starting with Visual Studio 2015 and Azure SDK 2.7, you can now use Visual Studi
 
 To view the Cloud Explorer interface in Visual Studio 2015, go to View &gt; Other Windows &gt; Cloud Explorer.
 
-[![Cloud Explorer](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-cloud-explorer.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-cloud-explorer.png)
+[![Cloud Explorer](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-cloud-explorer.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-cloud-explorer.png)
  Connect to your Azure account with Cloud Explorer by clicking on the gear and entering your account credentials.
 
-![Add Azure account to Visual Studio](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-add-account.png)
+![Add Azure account to Visual Studio](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-add-account.png)
 
 ### View stored Azure metrics
 
@@ -50,16 +50,16 @@ Once you have signed in to your Azure subscription, you will find your metric st
 
 Metrics are stored in tables, the names of which usually start with “WADMetrics.” Open up a metric table in one of your metric storage accounts, and you will see your VM metrics. Each table contains 10 days worth of data to prevent any one table from growing too large; the date is appended to the end of the table name.
 
-![Azure metrics in storage](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-wad-metrics2.png)
+![Azure metrics in storage](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-wad-metrics2.png)
 
 ### Using stored metrics
 
 The name of your VM can be found at the end of each row’s partition key, which is helpful for filtering metrics when multiple VMs share the same metric storage account. The metric type can be found in the CounterName column.
 
-[![Metrics in tables](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-metric-table.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-metric-table.png)
+[![Metrics in tables](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-metric-table.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-metric-table.png)
  To export your data for use in Excel or another analytics tool, click the “Export to CSV File” button on the toolbar just above your table.
 
-![Export metrics to CSV](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-export-to-csv.png)
+![Export metrics to CSV](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-export-to-csv.png)
 
 ## Conclusion
 

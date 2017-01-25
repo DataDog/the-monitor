@@ -240,20 +240,20 @@ If you don’t yet have a Datadog account, you can <a class="sign-up-trigger" hr
 
 []: imgs
 
-[agent-restart]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/restart-agent-windows1.gif
-[enable-eventlog-int]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/enable_integration.png
-[enable-int]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/install-integration.png
-[enable-integration-agent]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/enable-integrations-1.gif
-[event-prop]: https://d33tyra1llx9zy.cloudfront.net/blog/images/20https://d33tyra1llx9zy.cloudfront.net16-09-windows-server-2012/3/event-prop.png
-[host-reporting]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/default-host.png
-[windows-service]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/service-shortname-1.png 
-[windows-2012-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/server2012-dash.png
-[windows-clone]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/windows-clone.png
-[wbem-connect]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/wbem-connect.png
-[wbemtest-gif]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/wbemtest.gif
-[wbem-prop]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/wbem-prop.png
-[wbem-recursive]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/wbem-recursive.png
-[wbem-select]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/3/wbem-select-class.png
+[agent-restart]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/restart-agent-windows1.gif
+[enable-eventlog-int]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/enable_integration.png
+[enable-int]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/install-integration.png
+[enable-integration-agent]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/enable-integrations-1.gif
+[event-prop]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/20https://don08600y3gfm.cloudfront.net16-09-windows-server-2012/3/event-prop.png
+[host-reporting]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/default-host.png
+[windows-service]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/service-shortname-1.png 
+[windows-2012-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/server2012-dash.png
+[windows-clone]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/windows-clone.png
+[wbem-connect]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/wbem-connect.png
+[wbemtest-gif]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/wbemtest.gif
+[wbem-prop]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/wbem-prop.png
+[wbem-recursive]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/wbem-recursive.png
+[wbem-select]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/wbem-select-class.png
 
 []: blog
 

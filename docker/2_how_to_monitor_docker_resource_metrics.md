@@ -31,7 +31,7 @@ Docker can tell you the number of times throttling was enforced for each contain
 
 As discussed in the next article, CPU metrics can be collected from [pseudo-files][part-3-pseudo-files-cpu], the [stats command][part-3-stats-cpu] (basic CPU usage metrics), or from the [API][part-3-api-cpu].
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p2_divider_1.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p2_divider_1.png)
 ### Memory
 Just as you would expect, Docker can report on the amount of memory available to it, and the amount of memory it is using. 
 
@@ -57,7 +57,7 @@ As with a traditional host, when you have performance problems, some of the firs
 
 As discussed in the next article, memory metrics can be collected from [pseudo-files][part-3-pseudo-files-memory], the [stats command][part-3-stats-memory] (basic memory usage metrics), or from the [API][part-3-api-memory].
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p2_divider_2.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p2_divider_2.png)
 ### I/O
 
 For each block device, Docker reports the following two metrics, decomposed into four counters: by reads versus writes, and by synchronous versus asynchronous I/O.
@@ -85,7 +85,7 @@ Just like an ordinary host, Docker can report several different network metrics,
 
 As discussed in the next article, network metrics can be collected from [pseudo-files][part-3-pseudo-files-network], the [stats command][part-3-stats-network] (bytes sent and received), or from the [API][part-3-api-network].
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p2_divider_3.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p2_divider_3.png)
 ## Up next
 Docker can report all the basic resource metrics you'd expect from a traditional host: CPU, memory, I/O, and network. However, some specific metrics you might expect (such as nice, idle, iowait, or irq CPU time) are not available, and others metrics are unique to containers, such as CPU throttling.
 

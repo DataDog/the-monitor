@@ -18,19 +18,19 @@ Using the online management console is the simplest way to monitor your cache wi
 
 Once you are signed in to your AWS account, you can open the [CloudWatch console](https://console.aws.amazon.com/cloudwatch/home#metrics:) and then browse the metrics related to the different AWS services.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-1.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-1.png)
 
 By clicking on the ElastiCache Metrics category, you will see the list of available metrics:
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-2.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-2.png)
 
 You can also view these metrics per cache cluster:
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-3.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-3.png)
 
 Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console:
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-4.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-4.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-4.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-4.png)
 
 ### Alerts
 
@@ -38,7 +38,7 @@ With the CloudWatch Management Console you can also create simple alerts that tr
 
 Click on the “Create Alarm” button at the right of your graph, and you will be able to set up the alert and configure it to notify a list of email addresses.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-5.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-5.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-5.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-5.png)
 
 ## Using the CloudWatch Command Line Interface
 

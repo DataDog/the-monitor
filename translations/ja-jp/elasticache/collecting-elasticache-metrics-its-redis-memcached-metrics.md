@@ -38,26 +38,26 @@ ElastiCacheメトリクスの多くは、Redis又はMemcachedのどちらを選�
 AWSアカウントにサインインしたら[CloudWatchのコンソール](https://console.aws.amazon.com/cloudwatch/home#metrics:) を開き、AWSが提供する各種サービスのページへ移動します。
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-1.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-1.png)
 
 > By clicking on the ElastiCache Metrics category, you will see the list of available metrics:
 
 ElastiCacheメトリクスを表示するためのカテゴリ項目をクリックすると、公開されているメトリクスのリストが表示されます。
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-2.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-2.png)
 
 > You can also view these metrics per cache cluster:
 
 キャッシュクラスター単位で、これらのメトリクスを閲覧することも可能です。
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-3.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-3.png)
 
 > Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console:
 
 メトリクスの横にあるボックスにチェックマークを付けると、コンソールの下部のエリアにグラフが表示されます:
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-4.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-4.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-4.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-4.png)
 
 ### Alerts
 
@@ -70,7 +70,7 @@ CloudWatchの管理コンソールを使用すると、メトリクスが設定�
 グラフの右側にある“Create Alarm”ボタンをクリックすると、アラートを作成し、リスト化したメールアドレスへ通知をするための設定ができます。
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-5.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/2-5.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-5.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/2-5.png)
 
 ## Using the CloudWatch Command Line Interface
 

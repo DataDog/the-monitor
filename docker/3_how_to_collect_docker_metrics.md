@@ -153,7 +153,7 @@ $ ln -sf /proc/$CONTAINER_PID/ns/net /var/run/netns/$CONTAINER_ID
 $ ip netns exec $CONTAINER_ID netstat -i 
 </pre>
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p3_divider_1.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p3_divider_1.png)
 
 <h2 class="anchor" id="stats-command">Stats command</h2>
 The `docker stats` command will continuously report a live stream of basic CPU, memory, and network metrics. As of [version 1.9.0][v1.9.0], `docker stats` also includes disk I/O metrics.
@@ -181,7 +181,7 @@ Displays total bytes received (RX) and transmitted (TX).
 1. Docker version 1.5.0 (released February 2015) or higher
 2. Exec driver 'libcontainer', which has been the default since Docker 0.9. If you are [overriding the default](http://docs.docker.com/reference/commandline/cli/#docker-exec-driver-option) exec driver, neither `docker stats` nor the API will report metrics. 
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p3_divider_2.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p3_divider_2.png)
 <h2 class="anchor" id="api">API</h2>
 Like the `docker stats` command, the API will continuously report a live stream of CPU, memory, I/O, and network metrics. The difference is that the API provides far more detail than the stats command.
 
@@ -320,7 +320,7 @@ Same as the stats command, [above](#stats-requirements).
 ### Additional API calls
 Other useful Docker API calls are documented [here](https://docs.docker.com/reference/api/docker_remote_api/). You can call them using `nc` as described in above.
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p3_divider_3.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p3_divider_3.png)
 # Conclusion
 Between pseudo-files, the stats command, and the API, there are several ways to get native Docker metrics, each with their own usage and completeness characteristics. Since Docker is evolving quickly, the metrics provided by these commands will likely continue to change significantly over the coming years. 
 

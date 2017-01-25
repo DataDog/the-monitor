@@ -17,7 +17,7 @@ Utilities provide real-time statistics on the current activity of your MongoDB c
 **mongostat** is the most powerful utility. It reports real-time statistics about connections, inserts, queries, updates, deletes, queued reads and writes, flushes, memory usage, page faults, and much more. It can be useful to quickly spot-check database activity, see if values are not abnormally high, and make sure you have enough capacity.
 
 However **mongostat** does not provide insights on metrics about Replication and oplog, cursors, storage, resource saturation, asserts, or host-level metrics. **mongostat** returns cache statistics only if you use the WiredTiger storage engine.
- [![mongostat](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongostat.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongostat.png)
+ [![mongostat](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongostat.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongostat.png)
 
 You can find in the [MongoDB documentation](https://docs.mongodb.com/manual/reference/program/mongostat/#bin.mongostat) the meaning of [the different fields](https://docs.mongodb.com/manual/reference/program/mongostat/#fields) returned by mongostat along with the available [options](https://docs.mongodb.com/manual/reference/program/mongostat/#options).
 
@@ -28,7 +28,7 @@ NOTE: Prior version 3.2, MongoDB offered an HTTP console displaying monitoring s
 ### mongotop
 
 **mongotop** returns the amount of time a MongoDB instance spends performing read and write operations. It is broken down by collection (namespace). This allows you to make sure there is no unexpected activity and see where resources are consumed. All active namespaces are reported.
- [![mongotop](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongotop.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongotop.png)
+ [![mongotop](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongotop.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongotop.png)
 
 By default, values are printed every second but you can specify the frequency. For example if you want it to return every 20 seconds, you can run mongotop 20. Many other [options](https://docs.mongodb.com/manual/reference/program/mongotop/#options) are available as well.
 
@@ -84,7 +84,7 @@ With [MongoDB Enterprise Advanced](https://www.mongodb.com/products/mongodb-ente
 -   [Ops Manager](https://www.mongodb.com/products/ops-manager) is the easiest way to manage MongoDB from your own data center
 -   [Cloud Manager](https://www.mongodb.com/cloud/) allows you to manage your MongoDB deployment through MongoDB’s cloud service
 
-[![MongoDB Cloud Manager](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongodb-cloud-manager.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongodb-cloud-manager.png)
+[![MongoDB Cloud Manager](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-cloud-manager.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-cloud-manager.png)
 
 If you have it, MongoDB Ops Manager will likely be your go-to place to take actions to monitor, prevent or resolve MongoDB performance issues.
 
@@ -98,6 +98,6 @@ Datadog offers extended monitoring functionality, such as:
 -   Historical data access
 -   Advanced alerting mechanisms
 
-[![MongoDB Datadog dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)
+[![MongoDB Datadog dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)
 
 For more details, check out our guide to monitoring MongoDB metrics with Datadog in the [third and last part of this series](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog).

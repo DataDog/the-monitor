@@ -95,7 +95,7 @@ If you don’t yet have a Datadog account, you can sign up for a [free trial][tr
 [conf]: https://github.com/DataDog/dd-agent/blob/master/conf.d/mysql.yaml.example
 [metric-list]: http://docs.datadoghq.com/integrations/mysql/#metrics
 [runtime]: https://www.datadoghq.com/blog/monitoring-mysql-performance-metrics/#query-performance
-[dash-img]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/mysql-dash-dd.png
+[dash-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/mysql-dash-dd.png
 [markdown]: https://github.com/DataDog/the-monitor/blob/master/mysql/mysql_monitoring_with_datadog.md
 [issues]: https://github.com/DataDog/the-monitor/issues
 

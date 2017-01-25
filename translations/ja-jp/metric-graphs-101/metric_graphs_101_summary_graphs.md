@@ -54,22 +54,22 @@ Single-value summaries display the current value of a given metric query, with c
 <tr>
 <td><strong><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/">Work metrics</a></strong> from a given system</td>
 <td>To make key metrics immediately visible</td>
-<td>Web server requests per second<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/nginx_req_g.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/nginx_req_g.png" alt="NGINX requests per second" /></a></td>
+<td>Web server requests per second<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/nginx_req_g.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/nginx_req_g.png" alt="NGINX requests per second" /></a></td>
 </tr>
 <tr>
 <td>Critical <strong><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/">resource metrics</a></strong></td>
 <td>To provide an overview of resource status and health at a glance</td>
-<td>Healthy hosts behind load balancer<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/elb_host_g.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/elb_host_g.png" alt="Total ELB host count" /></a></td>
+<td>Healthy hosts behind load balancer<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/elb_host_g.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/elb_host_g.png" alt="Total ELB host count" /></a></td>
 </tr>
 <tr>
 <td><strong>Error metrics</strong></td>
 <td>To quickly draw attention to potential problems</td>
-<td>Fatal database exceptions<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/cass_unavailable.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/cass_unavailable.png" alt="Cassandra unavailable exceptions" /></a></td>
+<td>Fatal database exceptions<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/cass_unavailable.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/cass_unavailable.png" alt="Cassandra unavailable exceptions" /></a></td>
 </tr>
 <tr>
 <td>Computed <strong>metric changes</strong> as compared to previous values</td>
 <td>To communicate key trends clearly</td>
-<td>Hosts in use versus one week ago<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/ec2_host_growth.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/ec2_host_growth.png" alt="Increase in EC2 hosts" /></a></td>
+<td>Hosts in use versus one week ago<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/ec2_host_growth.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/ec2_host_growth.png" alt="Increase in EC2 hosts" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -96,12 +96,12 @@ Compared to single-value summaries, toplists have an additional layer of aggrega
 <tr>
 <td><strong><a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/">Work or resource metrics</a></strong> taken from different hosts or groups</td>
 <td>To spot outliers, underperformers, or resource overconsumers at a glance</td>
-<td>Points processed per app server<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/sobo_throughput.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/sobo_throughput.png" alt="Server toplist" /></a></td>
+<td>Points processed per app server<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/sobo_throughput.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/sobo_throughput.png" alt="Server toplist" /></a></td>
 </tr>
 <tr>
 <td><strong>Custom metrics</strong> returned as a list of values</td>
 <td>To convey KPIs in an easy-to-read format (e.g. for status boards on wall-mounted displays)</td>
-<td>Versions of the Datadog agent in use<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/agent_version.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/agent_version.png" alt="Agent version toplist" /></a></td>
+<td>Versions of the Datadog agent in use<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/agent_version.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/agent_version.png" alt="Agent version toplist" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -128,12 +128,12 @@ The key difference between change graphs and other visualizations is that change
 <tr>
 <td><strong>Cyclic metrics</strong> that rise and fall daily, weekly, or monthly</td>
 <td>To separate metric trends from periodic baselines</td>
-<td>Database write throughput, compared to same time last week<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/cass_writes.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/cass_writes.png" alt="Cassandra write throughput" /></a></td>
+<td>Database write throughput, compared to same time last week<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/cass_writes.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/cass_writes.png" alt="Cassandra write throughput" /></a></td>
 </tr>
 <tr>
 <td><strong>High-level</strong> infrastructure metrics</td>
 <td>To quickly identify large-scale trends</td>
-<td>Total host count, compared to same time yesterday<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/ec2_change.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/ec2_change.png" alt="EC2 host count change graph" /></a></td>
+<td>Total host count, compared to same time yesterday<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/ec2_change.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/ec2_change.png" alt="EC2 host count change graph" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -160,7 +160,7 @@ This particular visualization type is unique to Datadog. As such, it is specific
 <tr>
 <td><strong>Resource utilization</strong> metrics</td>
 <td>To spot overloaded components at a glance</td>
-<td>Load per app host, grouped by cluster<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/load_cluster2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/load_cluster2.png" alt="Load per cluster host map" /></a></td>
+<td>Load per app host, grouped by cluster<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/load_cluster2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/load_cluster2.png" alt="Load per cluster host map" /></a></td>
 </tr>
 <tr>
 <td></td>
@@ -171,17 +171,17 @@ This particular visualization type is unique to Datadog. As such, it is specific
 <tr>
 <td></td>
 <td>To identify resource misallocation (e.g. whether any instances are over- or undersized)</td>
-<td>CPU usage per EC2 instance type<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/instance_hostmap.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/instance_hostmap.png" alt="CPU per instance type" /></a></td>
+<td>CPU usage per EC2 instance type<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/instance_hostmap.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/instance_hostmap.png" alt="CPU per instance type" /></a></td>
 </tr>
 <tr>
 <td><strong>Error or other <a href="https://www.datadoghq.com/blog/monitoring-101-collecting-data/">work</a></strong> metrics</td>
 <td>To quickly identify degraded hosts</td>
-<td>HAProxy 5xx errors per server<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/haproxy_5xx.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/haproxy_5xx.png" alt="Server errors per HAProxy hosy" /></a></td>
+<td>HAProxy 5xx errors per server<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/haproxy_5xx.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/haproxy_5xx.png" alt="Server errors per HAProxy hosy" /></a></td>
 </tr>
 <tr>
 <td><strong>Related</strong> metrics</td>
 <td>To see correlations in a single graph</td>
-<td>App server throughput versus memory used<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/throughput-vs-memory.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/throughput-vs-memory.png" alt="Server errors per HAProxy host" /></a></td>
+<td>App server throughput versus memory used<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/throughput-vs-memory.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/throughput-vs-memory.png" alt="Server errors per HAProxy host" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -208,7 +208,7 @@ Distribution graphs are closely related to [heat maps][part-1-heat-maps]. The ke
 <tr>
 <td><strong>Single metric</strong> reported by a large number of entities</td>
 <td>To convey general health or status at a glance</td>
-<td>Web latency per host<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/latency-distro.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/latency-distro.png" alt="Latency per host distribution" /></a></td>
+<td>Web latency per host<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/latency-distro.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/latency-distro.png" alt="Latency per host distribution" /></a></td>
 </tr>
 <tr>
 <td></td>
@@ -219,7 +219,7 @@ Distribution graphs are closely related to [heat maps][part-1-heat-maps]. The ke
 <tr>
 <td></td>
 <td>To see variations across members of a group</td>
-<td>Uptime per host<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/uptime.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/300/uptime.png" alt="Uptime per server distribution" /></a></td>
+<td>Uptime per host<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/uptime.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/300/uptime.png" alt="Uptime per server distribution" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -237,12 +237,12 @@ In the next article in this series, we'll explore common anti-patterns in metric
 [hostmaps]: https://www.datadoghq.com/blog/introducing-host-maps-know-thy-infrastructure/
 [distribution-docs]: http://docs.datadoghq.com/graphing/#distribution
 [part-1-heat-maps]: https://www.datadoghq.com/blog/timeseries-metric-graphs-101/#heat-maps
-[toplevel-agg-time]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/redis-toplist1.png
-[toplevel-agg-timeseries]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/redis-agg-space2.png
-[toplevel-agg-snapshot]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/redis-toplist3.png
+[toplevel-agg-time]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/redis-toplist1.png
+[toplevel-agg-timeseries]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/redis-agg-space2.png
+[toplevel-agg-snapshot]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/redis-toplist3.png
 [value-of-tagging]: https://www.datadoghq.com/blog/the-power-of-tagged-metrics/
-[single-annotated]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/single-annotated4.png
-[toplist-annotated]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/toplist-annotated2.png
-[change-annotated]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/change-annotated6.png
-[hostmap-annotated]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/hostmap-annotated4.png
-[distribution-annotated]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-01-graphing-101/pt2/distribution-annotated6.png
+[single-annotated]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/single-annotated4.png
+[toplist-annotated]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/toplist-annotated2.png
+[change-annotated]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/change-annotated6.png
+[hostmap-annotated]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/hostmap-annotated4.png
+[distribution-annotated]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-01-graphing-101/pt2/distribution-annotated6.png

@@ -8,7 +8,7 @@ ELB is widely used by web and mobile applications to help ensure a smooth user e
 
 ELB continuously checks for unhealthy EC2 instances. If any are detected, ELB immediately reroutes their traffic until they recover. If an entire availability zone goes offline, Elastic Load Balancing can even route traffic to instances in other availability zones. With [Auto Scaling](https://aws.amazon.com/autoscaling/), AWS can ensure your infrastructure includes the right number of EC2 hosts to support your changing application load patterns.
 
-[![ELB dashboard - Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-01.png)
+[![ELB dashboard - Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-01.png)
 
 ## Key ELB performance metrics
 
@@ -23,7 +23,7 @@ This article references metric terminology introduced in [our Monitoring 101 ser
 
 ### Load balancer metrics
 
-![Load balancer metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-02.png)
+![Load balancer metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-02.png)
 
 The first category of metrics to consider comes from the load balancer itself, as opposed to the backend instances registered with the load balancer. For each metric we noted the most relevant and useful statistic to monitor (sum, avg, min, or max) since they are usually all available.
 
@@ -56,7 +56,7 @@ The first category of metrics to consider comes from the load balancer itself, a
     -   If it’s [503 (Service Unavailable)](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/ts-elb-error-message.html#ts-elb-errorcodes-http503), the error comes from your backend instances or the load balancer, which may not have had enough capacity to handle the request. Make sure your instances are healthy and registered with your load balancer.
     -   If a [504 error (Gateway Timeout)](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/ts-elb-error-message.html#ts-elb-errorcodes-http504) is returned, the response time exceeded ELB’s idle timeout. You can confirm it by checking if latency (see table below) is high and 5xx errors are returned by ELB. In that case, consider scaling up your backend, tuning it, or increasing the idle timeout to support slow operations such as file uploads. If your instances are closing connections with ELB, you should enable keep-alive with a timeout higher than the ELB idle timeout.
 
-[![Load balancer metrics graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-03.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-03.png)
+[![Load balancer metrics graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-03.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-03.png)
 
 #### Note about HTTPCode\_ELB\_4XX:
 
@@ -66,7 +66,7 @@ There is usually not much you can do about 4xx errors, since this metric basical
 
 ### Backend-related metrics
 
-![Backend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-04.png)
+![Backend metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-04.png)
 
 CloudWatch also provides metrics about the status and performance of your backend instances, for example response latency or the results of ELB health checks. Health checks are the mechanism ELB uses to identify unhealthy instances so it can send requests elsewhere. You can use the default health checks or [configure them](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-healthchecks.html) to use different protocols, ports, or healthy/unhealthy thresholds. The frequency of health checks is 30 seconds by default but you can set this interval to anywhere between 5–300 seconds.
 
@@ -130,7 +130,7 @@ CloudWatch also provides metrics about the status and performance of your backen
 
 NOTE: If a connection with the backend fails, ELB will retry it, so this count can be higher than the request rate.
 
-[![Backend metrics graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-05.png)
+[![Backend metrics graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-05.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-05.png)
 
 #### About backend response codes
 

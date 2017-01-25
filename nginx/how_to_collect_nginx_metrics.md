@@ -143,7 +143,7 @@ The NGINX status page is an easy way to get a quick snapshot of your metrics, bu
 
 The commercial NGINX Plus provides [many more metrics](http://nginx.org/en/docs/http/ngx_http_status_module.html#data) through its ngx\_http\_status\_module than are available in open-source NGINX. Among the additional metrics exposed by NGINX Plus are bytes streamed, as well as information about upstream systems and caches. NGINX Plus also reports counts of all HTTP status code types (1xx, 2xx, 3xx, 4xx, 5xx). A sample NGINX Plus status board is available [here](http://demo.nginx.com/status.html).
 
-[![NGINX Plus status board](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/status_plus-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/status_plus-2.png)
+[![NGINX Plus status board](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/status_plus-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/status_plus-2.png)
 
 *Note: the “Active” connections on the NGINX Plus status dashboard are defined slightly differently than the Active state connections in the metrics collected via the open-source NGINX stub status module. In NGINX Plus metrics, Active connections do not include connections in the Waiting state (aka Idle connections).*
 
