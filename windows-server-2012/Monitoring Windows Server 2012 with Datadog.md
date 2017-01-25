@@ -244,7 +244,7 @@ If you don’t yet have a Datadog account, you can <a class="sign-up-trigger" hr
 [enable-eventlog-int]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/enable_integration.png
 [enable-int]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/install-integration.png
 [enable-integration-agent]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/enable-integrations-1.gif
-[event-prop]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/20https://don08600y3gfm.cloudfront.net16-09-windows-server-2012/3/event-prop.png
+[event-prop]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/event-prop.png
 [host-reporting]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/default-host.png
 [windows-service]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/service-shortname-1.png 
 [windows-2012-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/3/server2012-dash.png
