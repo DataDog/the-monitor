@@ -34,7 +34,7 @@ CPU metrics allow you to determine not only how utilized your processors are (vi
 
 Although a system in good health can run with consistently high CPU utilization, you will want to be notified if your hosts’ CPUs are nearing saturation.
 
-[![Azure CPU heat map](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-1-cpu.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-1-cpu.png)
+[![Azure CPU heat map](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/azure-1-cpu.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/azure-1-cpu.png)
 
 ### Disk I/O metrics
 
@@ -54,7 +54,7 @@ Monitoring the amount of data read from disk can help you understand your applic
 #### Metric to alert on: Disk write
 
 Monitoring the amount of data written to disk can help you identify bottlenecks caused by I/O. If you are running a write-heavy application, you may wish to upgrade[the size of your VM](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/) to increase the maximum number of IOPS (input/output operations per second).
- [![Azure disk write speed](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-disk-write-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-disk-write-2.png)
+ [![Azure disk write speed](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-disk-write-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-disk-write-2.png)
 
 ### Memory metrics
 
@@ -70,7 +70,7 @@ Monitoring memory usage can help identify low-memory conditions and performance 
 #### Metric to alert on: Memory pages
 
 Paging events occur when a program requests a [page](https://en.wikipedia.org/wiki/Page_(computer_memory)) that is not available in memory and must be retrieved from disk, or when a page is written to disk to free up working memory. Excessive paging can introduce slowdowns in an application. A low level of paging can occur even when the VM is underutilized—for instance, when the virtual memory manager automatically trims a process’s [working set](https://msdn.microsoft.com/en-us/library/windows/desktop/cc441804(v=vs.85).aspx) to maintain free memory. But a sudden spike in paging can indicate that the VM needs more memory to operate efficiently.
- [![Azure memory paging](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-memory-pages.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-memory-pages.png)
+ [![Azure memory paging](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-memory-pages.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-memory-pages.png)
 
 ### Network metrics
 
@@ -92,7 +92,7 @@ You may wish to generate [a low-urgency alert](/blog/monitoring-101-alerting/#lo
 #### Metric to alert on: Bytes/TCP segments received
 
 If your network traffic suddenly plummets, your application or network may be overloaded.
- [![Azure network out](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-network-out.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-network-out.png)
+ [![Azure network out](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-network-out.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-network-out.png)
 
 ## Conclusion
 

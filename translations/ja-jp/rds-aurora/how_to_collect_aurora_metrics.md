@@ -44,14 +44,14 @@ AWSアカウントにサインインすれば、AWSが提供するサービス�
 サービスリストからRDSを選択し、"Per-Database Metrics"をクリックすると、閲覧が可能なメトリクスと共に、データベース・インスタンスのリストが表示されます。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"></a>
 
 > Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console.
 
 可視化したいメトリクスの横にあるチェックボックスを選択すると、コンソールの下部にグラフが表示されます。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/dml-latency.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/dml-latency.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/dml-latency.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/dml-latency.png"></a>
 
 #### Alerts
 
@@ -64,7 +64,7 @@ CloudWatchのコンソールには、メトリクスが閾値を超えた場合�
 このアラート機能を設定するには、グラフの右側にある"Create Alarm"ボタンをクリックし、警報を通知する先のメールアドレスを指定します:
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/cloudwatch-alarm.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/cloudwatch-alarm.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/cloudwatch-alarm.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/cloudwatch-alarm.png"></a>
 
 <!--<h3 class="anchor" id="using-the-command-line-interface">Using the command line interface</h3>-->
 
@@ -150,7 +150,7 @@ CloudWatchは、任意のデータベースエンジンのハイレベル・メ�
 他のRDSインスタンスと同じように、RDS上でAuroraを実行しているインスタンスには直接アクセスすることはできません。従って、従来型のEC2インスタンス上にMySQLやMariaDBをインストールしたケースのように、`mysql`コマンドをローカルから実行したり、CPUの利用率をそのマシン自身から確認したりすることができません。しかしながら、RDS上のAuroraインスタンスのセキュリティグループが、それに接続使用としているバックエンドEC2インスタンスやデバイスからの接続を許可している場合、リモート・インスタンスからスタンダードツールを使ってAruroraインスタンスに接続することはできます。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora_diagram_2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora_diagram_2.png"></a>
 
 > For example, if Aurora accepts traffic only from inside its security group, you can launch an EC2 instance in that security group, and then apply a second security group rule to the EC2 instance to accept inbound SSH traffic (*see diagram above*). Then you can SSH to the EC2 instance, from which you can connect to Aurora using the standard mysql command line tool:
 
@@ -316,20 +316,20 @@ mysql> select * from sys.user_summary_by_statement_type;
 [MySQL Workbench][workbench]は、MySQL又は、Aruroraのような互換性のあるデータベースインスタンスを管理し、監視するためのGUI付き無料アプリケーションです。MySQL Workbenchは、パフォーマンスの概要についてのダッシュボード、ならびに、performance metricsを閲覧するための使いやすいインターフェース([sys schema](#using-the-sys-schema)のビューを使った)を提供します。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/workbench-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/workbench-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/workbench-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/workbench-2.png"></a>
 
 > If you have [configured an EC2](#connecting-to-your-rds-instance) instance to communicate with Aurora, you can connect MySQL Workbench to your Aurora instance via SSH tunneling:
 
 RDS上のAuroraと通信するように[EC2インスタンスを設定](#connecting-to-your-rds-instance)している場合、SSHトンネリングを介して、RDS上のAuroraへMySQL Workbenchを接続することができます
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/ssh-tunnel.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/ssh-tunnel.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/ssh-tunnel.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/ssh-tunnel.png"></a>
 > You can then view recent metrics on the performance dashboard or click through the statistics available from the sys schema:
 
 パフォーマンスダッシュボード上で、最新のメトリックを表示したり、sys schema提供されているから統計を閲覧することができます:
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/95th_percentile-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/95th_percentile-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/95th_percentile-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/95th_percentile-2.png"></a>
 
 <!--<h3 class="anchor" id="using-a-mysql-monitoring-tool">Using a MySQL-compatible monitoring tool</h3>-->
 

@@ -113,11 +113,11 @@ _Source Markdown for this post is available [on GitHub][markdown]. Questions, co
 
 []: Images
 
-[clone-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/dd/clone-dash.png
-[dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/dd/default-dash2.png
-[zk-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/dd/zk-dash.png
-[host0]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/default-host.png
-[install-integration]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/dd/install-integration.png
+[clone-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/dd/clone-dash.png
+[dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/dd/default-dash2.png
+[zk-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/dd/zk-dash.png
+[host0]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/default-host.png
+[install-integration]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/dd/install-integration.png
 
 []: Links
 

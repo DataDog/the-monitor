@@ -11,7 +11,7 @@
 
 ## Key Apache Cassandra performance metrics
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/cass_dash.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/cass_dash.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/cass_dash.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/cass_dash.png)
  By monitoring Apache Cassandra performance you can identify slowdowns, hiccups, or pressing resource limitations—and take swift action to correct them. Some of the key areas where you will want to capture and analyze metrics are:
 
 -   Throughput, especially [read and write requests](#throughput)
@@ -37,13 +37,13 @@ Cassandra’s standard metrics include [exponentially weighted moving averages](
 
 Monitoring the rate of queries at any given time provides the highest-level view of how your clients are interacting with Cassandra. And since Cassandra excels at handling high volumes of writes, you will often want to keep a close eye on the read rate to look out for potential problems or significant changes in your clients’ query patterns. Consider alerting on sustained spikes (over historical baselines) or sudden, unexpected drops (on a percentage basis over a short timeframe) in throughput.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/reads_3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/reads_3.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/reads_3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/reads_3.png)
 
 #### Metric to alert on: Write throughput
 
 Cassandra should be able to gracefully handle large numbers of writes. Nevertheless, it is well worth monitoring the volume of write requests coming into Cassandra so that you can track your cluster’s overall activity levels and watch for any anomalous spikes or dips that warrant further investigation.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/writes_3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/writes_3.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/writes_3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/writes_3.png)
 
 <h3 id="latency" class="anchor">Latency</h3>
 
@@ -71,7 +71,7 @@ The **replication factor** dictates how many nodes in a data center contain a re
 
 Together, these two factors control how many independent read or write operations must take place before an individual request is fulfilled. For instance, consider the 12-node data center in the diagram below, with a replication factor of three. Each write request will eventually propagate to three replica nodes, but the number of nodes that must perform a write before the request can be acknowledged as successful depends on the consistency level: one node (for consistency level `ONE`), two nodes (`QUORUM`), or three nodes (`ALL`). Similarly, a read request must retrieve responses from only the nearest node (`ONE`), from two replicas (`QUORUM`), or from all three replica nodes (`ALL`). If replica nodes return conflicting data in response to a read request, the most recently timestamped version of the row will be sent to the client.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/diagram.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/diagram.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/diagram.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/diagram.png)
 
 These parameters provide you with control over your data store’s consistency, availability, and latency. For instance, a consistency level of ONE for provides the lowest latency, but increases the probability of stale data being read, since recent updates to a row may not have propagated to every node by the time a read request arrives for that row. On the other hand, a consistency level of `ALL` provides the highest levels of data consistency but means that a read or write request will fail if any of the replicas are unavailable.
 
@@ -110,13 +110,13 @@ The same command can be used to set the size of the row cache (set to zero in th
 
 Cassandra writes are usually much faster than reads, since a write need only be recorded in memory and appended to a durable commit log before it is acknowledged as a success. The specific latency levels that you deem acceptable will depend on your use case. Chronically slow writes point to systemic issues; you may need to upgrade your disks to faster SSDs or check your consistency settings. (The consistency setting `EACH_QUORUM`, for example, requires communication between data centers, which may be geographically distant.) But a sudden change, as seen midway through the time-series graph below, usually indicates potentially problematic developments such as network issues or changes in usage patterns (e.g., a significant increase in the size of database inserts).
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/write_latency.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/write_latency.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/write_latency.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/write_latency.png)
 
 #### Metric to alert on: Read latency
 
 Cassandra’s read operations are usually much slower than writes, because reads involve more I/O. If a row is frequently updated, it may be spread across several SSTables, increasing the latency of the read. Nevertheless, read latency can be a very important metric to watch, especially if Cassandra queries are serving up data into a user-facing application. Slow reads can point to problems with your hardware or your data model, or else a parameter in need of tuning, such as compaction strategy. In particular, if read latency starts to climb in a cluster running level-tiered compaction, it may be a sign that nodes are struggling to handle the volume of writes and the associated compaction operations.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/read_latency.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/read_latency.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/read_latency.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/read_latency.png)
 
 <h3 id="disk" class="anchor">Disk usage</h3>
 
@@ -145,7 +145,7 @@ Compaction activity can be tracked via metrics for **completed compaction tasks*
 
 Monitoring the disk used by each node can alert you to an unbalanced cluster or looming resource constraints. Depending on how your Cassandra cluster is used and the compaction strategy that you choose, you can monitor disk utilization to determine when you should add more nodes to your cluster to ensure that Cassandra always has enough room to run compactions.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/disk_usage.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/disk_usage.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/disk_usage.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/disk_usage.png)
 
 <h3 id="gc" class="anchor">Garbage collection</h3>
 
@@ -185,7 +185,7 @@ Another way to detect signs of incipient problems is to monitor the status of Ca
 
 An unavailable exception is the only exception that will cause a write to fail, so any occurrences are serious. Cassandra’s inability to meet consistency requirements can mean that several nodes are down or otherwise unreachable, or that stringent consistency settings are limiting the availability of your cluster.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/unavailables.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/unavailables.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/unavailables.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/unavailables.png)
 
 ## Conclusion
 

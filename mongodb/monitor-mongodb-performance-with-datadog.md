@@ -3,7 +3,7 @@
 *This post is the last of a 3-part series about how to best monitor MongoDB performance. Part 1 presents the key performance metrics available from MongoDB: there is [one post for the WiredTiger](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) storage engine and [one for MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap). [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB metrics.*
 
 If you’ve already read our first two parts in this series, you know that monitoring MongoDB gives you a range of metrics that allow you to explore its health and performance in great depth. But for databases running in production, you need a robust monitoring system that collects, aggregates, and visualizes MongoDB metrics along with metrics from the other parts of your infrastructure. Advanced alert mechanisms are also essential to be able to quickly react when things go awry. In this post, we’ll show you how to start monitoring MongoDB in a few minutes with Datadog.
- [![MongoDB graphs on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-performance-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-performance-metrics.png)
+ [![MongoDB graphs on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-performance-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-performance-metrics.png)
 
 ## Monitor MongoDB performance in 3 easy steps
 
@@ -14,10 +14,10 @@ The Datadog Agent is [the open-source software](https://github.com/DataDog/dd-ag
 Installation instructions for a variety of platforms are available [here](https://app.datadoghq.com/account/settings#agent).
 
 MongoDB also requires a user with “[read](https://docs.mongodb.com/manual/reference/built-in-roles/#read)” and “[clusterMonitor](https://docs.mongodb.com/manual/reference/built-in-roles/#clusterMonitor)” client [roles](https://docs.mongodb.com/manual/reference/built-in-roles/#database-user-roles) for Datadog so the Agent can collect all the server statistics. The commands to run in the mongo shell differs between MongoDB versions 2.x and 3.x. They are detailed in the “configuration” tab of the [MongoDB’s integration tile on the integrations page on Datadog](https://app.datadoghq.com/account/settings#integrations/mongodb).
- [![MongoDB graphs on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/3-datadog/mongodb-integration.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/3-datadog/mongodb-integration.png)
+ [![MongoDB graphs on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-integration.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-integration.png)
 
 As soon as your Agent is up and running, you should see your host reporting metrics [on your Datadog account](https://app.datadoghq.com/infrastructure).
- [![MongoDB Datadog Agent reporting metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/3-datadog/mongodb-agent-setup.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/3-datadog/mongodb-agent-setup.png)
+ [![MongoDB Datadog Agent reporting metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-agent-setup.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-agent-setup.png)
 
 ### Step 2: configure the Agent
 
@@ -52,7 +52,7 @@ Now that the Agent is properly configured, you will see all the MongoDB metrics 
 
 You can immediately see your metrics populating a default dashboard for MongoDB containing the essential MongoDB metrics presented in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger). It should be a great starting point for your monitoring. You can clone this dashboard and customize it as you wish, even adding metrics from other parts of your infrastructure so that you can easily correlate what’s happening in MongoDB with what’s happening throughout your stack.
 
-[![MongoDB Dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/new-datadog-mongodb-dashboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/new-datadog-mongodb-dashboard.png)
+[![MongoDB Dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/new-datadog-mongodb-dashboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/new-datadog-mongodb-dashboard.png)
 
 *MongoDB default dashboard on Datadog*
 
@@ -62,7 +62,7 @@ Once Datadog is capturing and graphing your metrics, you will likely want to set
 
 Datadog allows you to alert on individual hosts, services, processes, and metrics—or virtually any combination thereof. For instance, you can monitor all of your hosts in a certain availability zone, or you can monitor a single key metric being reported by each of your MongoDB hosts.
  For example, as explained in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger), the number of current connections is limited to 65,536 simultaneous connections by default since v3.0. So you might want to set up an alert whenever the corresponding metric is getting close to this maximum.
- [![MongoDB Datadog alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/3-datadog/mongodb-datadog-alert.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/3-datadog/mongodb-datadog-alert.png)
+ [![MongoDB Datadog alert](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-datadog-alert.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-datadog-alert.png)
 
 Datadog also integrates with many communication tools such as Slack, PagerDuty or HipChat so you can notify your teams via the channels you already use.
 

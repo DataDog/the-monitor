@@ -22,10 +22,10 @@ A significant architectural shift toward containers is underway, and as with any
 The significant operational challenge of *monitoring* containers is much less well-understood.
 
 ## Docker monitoring is crucial 
-![driving in the rain](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/obscured-vision.png)
+![driving in the rain](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/obscured-vision.png)
 Running software in production without monitoring is like driving without visibility: you have no idea if you're about to crash, or how to stay on the road. 
 
-[![diagram stack with no gap](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_1.png)
+[![diagram stack with no gap](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_1.png)
 
 The need for monitoring is well understood, so traditional monitoring solutions cover the traditional stack: 
 
@@ -33,10 +33,10 @@ The need for monitoring is well understood, so traditional monitoring solutions 
 * infrastructure monitoring collects metrics about the host, such as CPU load and available memory
 
 ### Gap in the stack
-[![diagram stack gap](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_2.png)
+[![diagram stack gap](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_2.png)
 
 However, as we describe later in this post, containers exist in a twilight zone somewhere between hosts and applications where neither application performance monitoring nor traditional infrastructure monitoring are effective. This creates a blind spot in your monitoring, which is a big problem for containers and for the companies that adopt them.
-![prod without container monitoring](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/road-partial-view.png)
+![prod without container monitoring](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/road-partial-view.png)
 
 ## A quick overview of containers
 In order to understand why containers are a big problem for traditional monitoring tools, let's go deeper on what a container is and give some historical context.
@@ -64,7 +64,7 @@ As mentioned, containers provide some (relative) security benefits with low over
 Using a container technology like Docker, it is easy to deploy new containers programmatically using projects/services such as [Kubernetes](http://kubernetes.io/) or [ECS](https://www.datadoghq.com/blog/monitor-docker-on-aws-ecs/). If you also design your systems to have a [microservice architecture](http://martinfowler.com/articles/microservices.html) so that different pieces of your system may be swapped out or scaled up without affecting the rest, you've got a great pattern for scale. The system can be elastic; growing and shrinking automatically with load, and releases may be rolled out without downtime.
 
 ### Escape from dependency hell
-[![Dependency Hell](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_5-1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_5-1.png)
+[![Dependency Hell](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_5-1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_5-1.png)
 
 The second (and possibly more important) benefit of containers is that they free engineers from dependency hell. 
 
@@ -83,7 +83,7 @@ Today, containers provide software engineers and ops engineers the best escape f
 ## Container challenge: Massive operational complexity
 We know that a container is basically a mini-host. Best practices for host ops are well-established, so you might suppose that container ops are basically the same—but they are not.
 ### Host proliferation
-[![Host proliferation over time](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_4.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_4.png)
+[![Host proliferation over time](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_4.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_4.png)
 
 The diagram above shows how a standard application stack has evolved over the past 15 years. ("Off-the-shelf" could represent your J2EE runtime or your database.)
 
@@ -107,7 +107,7 @@ Now let's add containers to the stack. For each container, assume you collect 50
 OS + (Containers per host \* (Container + Off-the-shelf)) =  
 100 + (4 \* (50 + 50)) =  **500 metrics per host**
 
-![Metrics explosion: 100 hosts, 50,000 metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_5.png)
+![Metrics explosion: 100 hosts, 50,000 metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_5.png)
 
 ### Change acceleration 
 But it is not quite that simple.
@@ -121,7 +121,7 @@ To manage this, you'll likely want to use [Kubernetes](http://kubernetes.io/) or
 In summary, with containers you'll be doing **a lot more, a lot faster** and you will need a modern monitoring solution to be prepared for this new reality.
 
 ## Host-centric monitoring
-![Ptolemaic astronomy diagram](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/ptolemaic-astronomy.png)
+![Ptolemaic astronomy diagram](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/ptolemaic-astronomy.png)
 
 If your monitoring is centered around hosts, your world looks like Ptolemaic astronomy: complicated. It's pretty hard to account for the movement of planets this way.
 
@@ -135,7 +135,7 @@ Whether or not you are using the cloud, if you add containers to your stack, you
 If you're planning to monitor containers the same way as you've monitored hosts before, you should expect a very painful ride.
 
 ## Goal: Simplify monitoring
-![Copernican Astronomy](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/copernican-astronomy.png)
+![Copernican Astronomy](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/copernican-astronomy.png)
 Instead we need a new approach, one that does not treat everything as a host.
 
 The picture above represents Copernican astronomy. Compared with putting the earth at the center of the universe, Copernicus's radical suggestion is strikingly clear and simple.
@@ -143,18 +143,18 @@ The picture above represents Copernican astronomy. Compared with putting the ear
 If you forget about hosts and recenter your monitoring around layers and tags, the complexity will fall away and your operations will be sane and straightforward.
 
 ### Layers
-[![Monitoring the stack in layers](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_6.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/docker_p1_6.png)
+[![Monitoring the stack in layers](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_6.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/docker_p1_6.png)
 
 #### No Gaps
 To avoid driving blind, you want your entire stack to be monitored from the top to the bottom, without gaps. If you're building on EC2, you probably use CloudWatch to monitor the VMs, infrastructure monitoring in the middle, and application performance monitoring at the top to measure throughput and help pinpoint problem areas in your code.
 
 #### One timeline
-[![Correlating metrics across the stack](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/stack-infra.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/stack-infra.png)
+[![Correlating metrics across the stack](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/stack-infra.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/stack-infra.png)
 
 For monitoring layers to work, the key is that you must be able to see what's happening across the layers simultaneously, and determine how problems in one part of the stack ripple to the rest of the stack. For example, if you see slow response times in your application, but can't tell that it is being caused by a spike in IO at the VM layer, then your monitoring approach isn't helping you solve your problem.
 
 ### Tags
-[![AWS tags](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/tags-console.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/tags-console.png)
+[![AWS tags](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/tags-console.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/tags-console.png)
 
 To effectively monitor containers, you also need to tag (label) your containers. The good news is that you probably already use tags through AWS or server automation tools.
 

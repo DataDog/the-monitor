@@ -200,13 +200,13 @@ If you've been following along on your own machine, you should now have a DevSta
 
 
 
-[horizon-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/devstack/horizon-dash.png
+[horizon-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/devstack/horizon-dash.png
 
-[instance-size]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/devstack/instance-size.png
+[instance-size]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/devstack/instance-size.png
 
-[http-port]:  https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/devstack/devstack-ports1.png
+[http-port]:  https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/devstack/devstack-ports1.png
 
-[pub-ip]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/devstack/public-ip.png
+[pub-ip]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/devstack/public-ip.png
 
 
 [DevStack]: https://wiki.openstack.org/wiki/DevStack

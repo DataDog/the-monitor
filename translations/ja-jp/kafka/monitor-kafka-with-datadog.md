@@ -118,8 +118,8 @@ If you don’t yet have a Datadog account, you can [sign up for a free trial][si
 
 <IMAGES>
 
-[clone-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/three/clone-dash.png
-[dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/three/dash1.png
-[default-host]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/default-host.png
-[kafka-integration-img]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/three/kafka-enable-integration.png
-[zookeeper-integration-img]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/three/zookeeper-integration.png
+[clone-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/clone-dash.png
+[dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/dash1.png
+[default-host]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/default-host.png
+[kafka-integration-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/kafka-enable-integration.png
+[zookeeper-integration-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/zookeeper-integration.png

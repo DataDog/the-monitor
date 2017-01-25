@@ -34,7 +34,7 @@ NGINX Plus can report basic activity metrics exactly like open-source NGINX, but
 
 The diagram below shows the lifecycle of a client connection and how the open-source version of NGINX collects metrics during a connection.
 
-![connection, request states](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_connection_diagram-2.png)
+![connection, request states](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx_connection_diagram-2.png)
 
 Accepts, handled, and requests are ever-increasing counters. Active, waiting, reading, and writing grow and shrink with request volume.
 
@@ -97,7 +97,7 @@ Often a connection will only support one request at a time. In this case, the nu
 
 As mentioned above, all of open-source NGINX’s metrics are available within NGINX Plus, but Plus can also report additional metrics. The section covers the metrics that are only available from NGINX Plus.
 
-![connection, request states](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_plus_connection_diagram-2.png)
+![connection, request states](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx_plus_connection_diagram-2.png)
 
 Accepted, dropped, and total are ever-increasing counters. Active, idle, and current track the current number of connections or requests in each of those states, so they grow and shrink with request volume.
 
@@ -164,7 +164,7 @@ The **accepted** counter is incremented when an NGINX Plus worker picks up a req
 
 The number of connections that have been dropped is equal to the difference between accepts and handled (NGINX) or is exposed directly as a standard metric (NGINX Plus). Under normal circumstances, dropped connections should be zero. If your rate of dropped connections per unit time starts to rise, look for possible resource saturation.
 
-[![Dropped connections](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/dropped_connections.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/dropped_connections.png)
+[![Dropped connections](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/dropped_connections.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/dropped_connections.png)
 
 <div class="anchor" id="requests-per-second" />
 
@@ -173,7 +173,7 @@ The number of connections that have been dropped is equal to the difference betw
 
 Sampling your request data (**requests** in open-source, or **total** in Plus) with a fixed time interval provides you with the number of requests you’re receiving per unit of time—often minutes or seconds. Monitoring this metric can alert you to spikes in incoming web traffic, whether legitimate or nefarious, or sudden drops, which are usually indicative of problems. A drastic change in requests per second can alert you to problems brewing somewhere in your environment, even if it cannot tell you exactly where those problems lie. Note that all requests are counted the same, regardless of their URLs.
 
-[![Requests per second](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/requests_per_sec.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/requests_per_sec.png)
+[![Requests per second](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/requests_per_sec.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/requests_per_sec.png)
 
 #### Collecting activity metrics
 
@@ -196,7 +196,7 @@ NGINX error metrics tell you how often your servers are returning errors instead
 
 Your server error rate is equal to the number of 5xx errors, such as "502 Bad Gateway", divided by the total number of [status codes](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) (1xx, 2xx, 3xx, 4xx, 5xx), per unit of time (often one to five minutes). If your error rate starts to climb over time, investigation may be in order. If it spikes suddenly, urgent action may be required, as clients are likely to report errors to the end user.
 
-[![Server error rate](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/5xx_rate.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/5xx_rate.png)
+[![Server error rate](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/5xx_rate.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/5xx_rate.png)
 
 A note on client errors: while it is tempting to monitor 4xx, there is limited information you can derive from that metric since it measures client behavior without offering any insight into particular URLs. In other words, a change in 4xx could be noise, e.g. web scanners blindly looking for vulnerabilities.
 

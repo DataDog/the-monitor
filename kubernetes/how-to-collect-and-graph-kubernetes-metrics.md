@@ -5,7 +5,7 @@
 
 ## The handmade solution
 
-![kubernetes metric collection](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/3/kubernetes-metric-collection.png)
+![kubernetes metric collection](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/3/kubernetes-metric-collection.png)
 
 ### Collecting and storing metrics from Heapster
 
@@ -19,7 +19,7 @@ cAdvisor is an open source agent that is integrated into the kubelet of a node. 
 
 Heapster runs as a pod on Kubernetes like any other application. Its pod discovers all the nodes in the same cluster and then pulls metrics from the kubelet of each node, aggregates them by pod and label, and reports metrics to a monitoring service or storage backend.
 
-[![kubernetes heapster](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/3/kubernetes-heapster.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/3/kubernetes-heapster.png)
+[![kubernetes heapster](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/3/kubernetes-heapster.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/3/kubernetes-heapster.png)
 
 *How Heapster works*
 
@@ -204,7 +204,7 @@ When working with Heapster metrics, your storage backend and data visualization 
 
 As discussed in Parts [1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/) and [2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics), properly monitoring your orchestrated, containerized infrastructure requires you to combine metrics, events, and labels from Kubernetes, your container technology, the applications running in your containers, and even the underlying hosts.
 
-![kubernetes components to monitor](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/3/kubernetes-component-monitoring.png)
+![kubernetes components to monitor](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/3/kubernetes-component-monitoring.png)
 
 That’s why your visualization or monitoring tool needs to provide powerful correlation features, as well as the ability to collect metrics from all of these components. Below we’ll outline how to do it using native and open source tools.
 

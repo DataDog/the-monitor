@@ -40,7 +40,7 @@ Amazon ElastiCacheには、キャッシュエンジンとして[Redis](https://w
 メトリクスは、ElastiCacheからCloudWatchを経由し集取するモノと、RedidsとMemcachedのキャッシュエンジンから直接集取するモノがあります。メトリクスに含まれる項目の多くは、CloudWatchとキャッシュの両方のソースから収集することができます。しかし、キャッシュエンジンから直接収集するネイティブメトリックは、CloudWatchから集取するメトリクスとは異なり、一般的に高い分解能でリアルタイムに収集することができます。これらの理由から、同一項目のメトリクスがキャッシュエンジンから集取可能な場合は、それらのネイティブメトリクスを監視することを推奨しています。
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)
 
 > For each metric discussed in this publication, we provide its name as exposed by Redis and Memcached, as well as the name of the equivalent metric available through AWS CloudWatch, where applicable.
 
@@ -104,7 +104,7 @@ Client metrics measure the volume of client connections and requests.
 **Number of commands**は、処理されたコマンドの数です。この値は、キャッシュのスループットの測定値で、レイテンシ問題を特定する際に役に立ちます。特にRedisの場合、シングルスレッドで、コマンドリクエストを順番に処理するして行くため、役に立ちます。更に、Memcachedのように、Redisのネイティブメトリクスは、SetとGetの区別がありません。最後に、CloudWatch経由で集取したElastiCacheメトリクスでは、それぞれの技術に対して、両方のメトリクスを集取することができます。
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)
 
 #### Metric to alert on:
 
@@ -337,7 +337,7 @@ memcachedはマルチスレッドなので、CPU使用率の閾値を90％に設
 ノードの追加の失敗やクラスタの作成などの、ElastiCacheから送られてくるイベントを、メトリクスと相関しておくことは、キャッシュクラスタの活動を監視し、必要に応じて調査する場合に役に立ちます。
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-dashboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-dashboard.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/elasticache-dashboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/elasticache-dashboard.png)
 
 ## Conclusion
 

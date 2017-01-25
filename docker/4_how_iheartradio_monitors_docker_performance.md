@@ -11,13 +11,13 @@ They needed a simple way for small groups of engineers to build very specific ap
 
 iHeartRadio has been quite happy with Docker—for them it "works as advertised". Docker performance is also rapidly improving; while it doesn't yet support log collection as well as iHeartRadio would like, Docker did add support for multi-host networking in November, which was high on iHeartRadio's wish list.
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p4_divider_1.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p4_divider_1.png)
 ## One key shortcoming
 There was just one thing about Docker that made iHeartRadio unhappy: they had no visibility into container-level resource consumption. They were using traditional monitoring tools, which could only see host-level resource usage. Since iHeartRadio runs dozens of containers per host, this visibility was entirely insufficient. 
 
 Compounding this problem, iHeartRadio, like many companies, treats containers as cattle rather than pets—which is to say that they care more about the health of a service, which is powered by redundant, often geographically distributed containers, and less about the status of the individual containers. They needed a way to [aggregate their metrics using tags][part-1-tags], which would allow them to monitor service-level metrics by aggregating by Docker image.
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p4_divider_2.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p4_divider_2.png)
 ## Monitoring Docker performance with Datadog
 After deep investigation of several different monitoring platforms, iHeartRadio decided to use Datadog for infrastructure monitoring. Out of the box, Datadog collects CPU, memory, I/O, and network metrics from each Docker container, and can aggregate metrics by any tag or tags. That meant that immediately the company had access to high-resolution resource metrics at the container level, at the service level, or at any other tag-defined level.
 
@@ -27,7 +27,7 @@ One of the reasons iHeartRadio uses Datadog is that Datadog breaks down network 
 
 Additionally, iHeartRadio uses Datadog to monitor its non-Docker services such as HAProxy, MongoDB, and Elasticsearch, which allows their engineers to correlate Docker performance metrics with health and performance throughout their infrastructure.
 
-[![Hero image, Docker performance monitoring dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/iheartmedia-screenshot.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/iheartmedia-screenshot.png)
+[![Hero image, Docker performance monitoring dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/iheartmedia-screenshot.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/iheartmedia-screenshot.png)
 <center>*A Datadog dashboard that iHeartRadio uses to monitor Docker performance*</center>
 
 ## Alerting and investigation
@@ -47,8 +47,8 @@ Optionally you can include `-e TAGS="simple-tag-0,tag-key-1:tag-value-1"` to add
 
 That's all you need to do to start collecting resource metrics from your containers and their hosts. You'll immediately have a pre-designed Docker dashboard like the one below, which covers the key metrics discussed in [part 2][part-2] and [part 3][part-3]. As mentioned above iHeartRadio sets its alerts on  `docker.net.bytes_rcvd` and `docker.net.bytes_sent`, aggregated by image but visible per-container. These important metrics will be automatically collected and provided.
 
-[![Pre-built Docker dashboard in Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/default-docker-dashboard-datadog.png)
-](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/default-docker-dashboard-datadog.png)
+[![Pre-built Docker dashboard in Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/default-docker-dashboard-datadog.png)
+](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/default-docker-dashboard-datadog.png)
 
 <center>*An out-of-the-box Docker dashboard in Datadog*</center>
 
@@ -67,7 +67,7 @@ If you want to bake your configurations and integrations into your Datadog Agent
 
 If you want to access the container's logs from the host, or if you want to submit metrics directly to DogStatsD without the Agent, instructions are [here](https://github.com/DataDog/docker-dd-agent#logs).
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p4_divider_3.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p4_divider_3.png)
 ## Alternative: Native Agent
 Most companies choose to run the Datadog Agent inside a container—it's easier to orchestrate dynamic infrastructure if everything is containerized. But there are a few limitations to running the Agent inside a container:
 
@@ -77,7 +77,7 @@ Most companies choose to run the Datadog Agent inside a container—it's easier 
 
 If you chose to install the Agent directly on your host without a container, it can still collect metrics from inside Docker containers on the same host. Follow the installation [instructions][os-agent-install] for your OS, and turn on the [Docker integration](https://app.datadoghq.com/account/settings#integrations/docker).
 
-![Visual break](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-03-container-monitoring/p4_divider_4.png)
+![Visual break](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-03-container-monitoring/p4_divider_4.png)
 ## Conclusion
 iHeartRadio uses Docker to isolate dependencies and resource usage of applications from each other, and it's worked very well for them as they've continued to scale up and expand the number of platforms they support. But Docker performance can be quite hard to monitor as discussed in [part 1][part-1] of this article, so they use Datadog to monitor all of their infrastructure, whether containerized or not. Datadog gives them the ability to aggregate and disaggregate metrics from across hosts and containers to understand the health and performance of all their services, wherever they are running.
 

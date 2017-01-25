@@ -32,13 +32,13 @@ Amazon DynamoDBを正しくプロビジョニングし、そしてアプリケ�
 
 This article references metric terminology introduced in [our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
-[![DynamoDB monitoring dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-01.png)
+[![DynamoDB monitoring dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-01.png)
 
 ### What DynamoDB can’t see
 
 Most DynamoDB API clients [automatically implement retries](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries). This is great because if, for example, a request fails due to throttling, it may eventually succeed without sending your application an error. However because retries are completely managed on the client side, DynamoDB can’t track them.
 
-[![DynamoDB requests retries](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-02b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-02b.png)
+[![DynamoDB requests retries](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-02b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-02b.png)
 
 All the metrics discussed in this first post can be collected from DynamoDB via AWS CloudWatch, as detailed in the [second post](https://www.datadoghq.com/blog/how-to-collect-dynamodb-metrics) of this series. But since DynamoDB is not aware of retries, metrics do not capture the full lifetime of a request. This means, for example, that  `SuccessfulRequestLatency` only measures the latency of a successful query attempt and doesn’t add latency for retried failures. This can add complexity to your database performance analysis, but other good monitoring strategies exist, such as those employed by Medium, as described in [Part 3](https://www.datadoghq.com/blog/how-medium-monitors-dynamodb-performance).
 
@@ -74,11 +74,11 @@ Metrics related to read and write queries should be monitored for each DynamoDB 
 
 `ThrottledRequests` is not necessarily incremented every time `ReadThrottleEvents` or `WriteThrottleEvents` are. The diagrams below illustrate several such scenarios.
 
-[![Batch Read Requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-03b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-03b.png)
+[![Batch Read Requests](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-03b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-03b.png)
 
-[![Write Requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-04b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-04b.png)
+[![Write Requests](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-04b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-04b.png)
 
-[![Batch Write Requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-05b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-05b.png)
+[![Batch Write Requests](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-05b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-05b.png)
 
 *GSI: [Global Secondary Indexes](#gsi)*
 
@@ -96,7 +96,7 @@ When a request gets throttled, the DynamoDB API client can automatically retry i
 
 The most important thing you can do to keep DynamoDB healthy is ensure that you always have enough provisioned throughput for your application. As explained, this can be tricky. Some independent tools, such as [Dynamic DynamoDB](https://aws.amazon.com/blogs/aws/auto-scale-dynamodb-with-dynamic-dynamodb/), can help somewhat by automatically adjusting your provisioned capacity according to the consumption variations. However these tools should be configured very carefully since your costs will be impacted.
 
-[![Consumed throughput and throttling graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-06.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-06.png)
+[![Consumed throughput and throttling graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-06.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-06.png)
 
  
 
@@ -121,7 +121,7 @@ If your application needs to catch throttled read/write requests, look for error
 -   `UserErrors`: If your client application is interacting correctly with DynamoDB, this metric should always be equal to zero. It is incremented for any 400 error [listed here](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIError) except for `ProvisionedThroughputExceededException, ThrottlingException,` and `ConditionalCheckFailedException`. It is usually due to a client error such as an authentication failure.
 -   `SystemErrors`: This metric should always be equal to zero. If it is not, you may want to get involved—perhaps restarting portions of the service, temporarily disabling some functionality in your application, or getting in touch with AWS support.
 
-[![System Errors graph](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-07.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/1-07.png)
+[![System Errors graph](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-07.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/1-07.png)
 
  
 

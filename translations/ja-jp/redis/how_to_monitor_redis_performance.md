@@ -63,7 +63,7 @@ Latency is the measurement of the time it takes between a client request and the
 
 Once you have determined that latency is an issue, there are several measures you can take to diagnose and address performance problems. Refer to the section “Using the latency command to improve performance” on page 14 in our white-paper, *[Understanding the Top 5 Redis Performance Metrics](http://go.datadoghq.com/top-5-redis-performance-metrics-guide)*.
 
-[![Redis Latency graph](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img1.png)
+[![Redis Latency graph](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img1.png)
 
 #### Metric to watch: instantaneous\_ops\_per\_sec
 
@@ -71,7 +71,7 @@ Tracking the throughput of commands processed is critical for diagnosing causes 
 
 A drop in the number of commands processed per second as compared to historical norms could be a sign of either low command volume or slow commands blocking the system. Low command volume could be normal, or it could be indicative of problems upstream. Identifying slow commands is detailed in [Part 2](https://www.datadoghq.com/blog/how-to-collect-redis-metrics) about Collecting Redis Metrics.
 
-[![Redis Commands per second graph](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img2.png)
+[![Redis Commands per second graph](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img2.png)
 
 #### Metric to watch: hit rate
 
@@ -99,7 +99,7 @@ Memory usage is a critical component of Redis performance. If `used_memory` exce
 
 You can configure Redis to remain confined to a specified amount of memory. Setting the `maxmemory` directive in the redis.conf file gives you direct control over Redis’s memory usage. Enabling `maxmemory` requires you to configure an eviction policy for Redis to determine how it should free up memory. Read more about configuring the maxmemory-policy directive in the [evicted\_keys section](#evicted-keys-metric).
 
-[![Redis Memory used by host](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img3.png)
+[![Redis Memory used by host](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img3.png)
 
 *This “flat line” pattern is common for Redis when it is used as a cache; all available memory is consumed, and old data is evicted at the same rate that new data is inserted*
 
@@ -194,7 +194,7 @@ Regardless, the maximum number of client connections is always a limited resourc
 #### Metric to alert on: connected\_slaves
 
 If your database is read-heavy, you are probably making use of the master-slave database replication features available in Redis. In this case, monitoring the number of connected slaves is key. Should the number of connected slaves change unexpectedly, it could indicate a down host or problem with the slave instance.
- [![Redis Master-Slave](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img4.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img4.png)
+ [![Redis Master-Slave](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img4.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img4.png)
 
 NOTE: In the diagram above, the Redis Master would show that it has two connected slaves, and the first children would each report that they, too, have two connected slaves each. Because the secondary slaves are not directly connected to Redis Master, they are not included in Redis Master’s `connected_slaves`.
 
@@ -210,7 +210,7 @@ If you are using Redis as a cache and see keyspace saturation as in the graph ab
 
 Alternatively, if you are using Redis as a database or queue, volatile keys may not be an option. As your keyspace grows, you may want to consider adding memory to your box or splitting your dataset across hosts, if possible. Adding more memory is a simple and effective solution. When more resources are needed than one box can provide, partitioning or sharding your data allows you to combine the resources of many computers. With a partitioning plan in place, Redis can store more keys without evictions or swapping. However, applying a partitioning plan is much more challenging than swapping in a few memory sticks. Thankfully, the Redis documentation has a great section on implementing a partitioning scheme with your Redis instances, read more [here](http://redis.io/topics/partitioning).
 
-[![Redis Keys by host](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img5.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img5.png)
+[![Redis Keys by host](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img5.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img5.png)
 
 ### Persistence metrics
 
@@ -244,7 +244,7 @@ Redis error metrics can alert you to anomalistic conditions. The following metri
 
 Redis is capable of handling many active connections, with a default of 10,000 client connections available. You can set the maximum number of connections to a different value, by altering the `maxclient` directive in redis.conf. Any new connection attempts will be disconnected if your Redis instance is currently at its maximum number of connections.
 
-[![Redis Keys by host](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img6.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/1-img6.png)
+[![Redis Keys by host](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img6.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/1-img6.png)
 
 Note that your system may not support the number of connections you request with the `maxclient` directive. Redis checks with the kernel to determine the number of available file descriptor. If the number of available file descriptors is smaller than `maxclient` + 32 (Redis reserves 32 file descriptors for its own use), then the `maxclient` directive is ignored and the number of available file descriptors is used.
 

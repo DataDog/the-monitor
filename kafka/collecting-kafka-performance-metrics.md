@@ -225,10 +225,10 @@ At Datadog, we have developed both Kafka and ZooKeeper integrations so that you 
 
 <IMAGES>
 
-[burrow-arch]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/burrow-arch3.png
-[jconsole-screen]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/jconsole-remote2.png
-[mbean-screen]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/mbean-screen.png
-[zookeeper-screen]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-02-kafka/zookeeper-jconsole.png
+[burrow-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/burrow-arch3.png
+[jconsole-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/jconsole-remote2.png
+[mbean-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/mbean-screen.png
+[zookeeper-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/zookeeper-jconsole.png
 
 [part1]: https://www.datadoghq.com/blog/how-to-monitor-kafka-performance-metrics/ 
 [part2]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/  

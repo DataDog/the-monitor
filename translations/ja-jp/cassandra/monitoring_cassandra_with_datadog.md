@@ -2,7 +2,7 @@
 
 If you’ve already read our [first](https://www.datadoghq.com/blog/how-to-monitor-cassandra-performance-metrics/) [two](https://www.datadoghq.com/blog/how-to-collect-cassandra-metrics/) posts in this series, you know that monitoring Cassandra gives you a range of metrics that allow you to explore the health of your data store in great depth. But to get lasting value from those metrics, you need a robust monitoring system that collects, aggregates, and visualizes your Cassandra metrics—and alerts you when things go awry. In this post, we’ll show you how to set up Cassandra monitoring in Datadog.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/intro-dashboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/intro-dashboard.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/intro-dashboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/intro-dashboard.png)
 
 ## Integrating Datadog and Cassandra
 
@@ -14,7 +14,7 @@ Install instructions for a variety of platforms are available [here](https://app
 
 As soon as your Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/infra_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/infra_2.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/infra_2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/infra_2.png)
 
 ### Configure the Agent
 
@@ -62,7 +62,7 @@ Once the Agent is properly configured, you will see dozens of Cassandra metrics 
 
 You can easily create a comprehensive dashboard for your data store and its associated systems by graphing the Cassandra metrics from Part 1 with important metrics from outside Cassandra. For example, you may want to monitor system metrics, such as CPU and memory usage, as well as JVM metrics, such as the duration of stop-the-world garbage collection (GC) episodes, which is captured by the `jvm.gc.parnew.time` metric:
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/gc-parnew.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/gc-parnew.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/gc-parnew.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/gc-parnew.png)
 
 You can also manipulate the raw metrics that come out of Cassandra into something much more usable. For instance, recent versions of Cassandra expose metrics on *total* latency but not recent latency, which is the metric you will likely want. In Datadog you can easily extract and graph real-time latency, resampled several times a minute, using two metrics scoped to `clientrequest:read`:
 
@@ -71,7 +71,7 @@ You can also manipulate the raw metrics that come out of Cassandra into somethin
 
 By taking the diffs of each metric at every sampling interval and dividing them, you can monitor the real-time read latency (divided by 1,000 here to measure latency in milliseconds). In Datadog this just takes a few clicks in the graph editor:
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/diff.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-cassandra/diff.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/diff.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-cassandra/diff.png)
 
 ## Monitoring Cassandra
 

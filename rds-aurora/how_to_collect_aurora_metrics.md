@@ -20,17 +20,17 @@ Once you are signed in to your AWS account, you can open the [CloudWatch console
 
 By selecting RDS from the list of services and clicking on "Per-Database Metrics," you will see your database instances, along with the available metrics for each:
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-metrics-cloudwatch.png"></a>
 Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/dml-latency.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/dml-latency.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/dml-latency.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/dml-latency.png"></a>
 #### Alerts
 
 With the CloudWatch console you can also create alerts that trigger when a metric threshold is crossed.
 
 To set up an alert, click on the "Create Alarm" button at the right of your graph and configure the alarm to notify a list of email addresses:
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/cloudwatch-alarm.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/cloudwatch-alarm.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/cloudwatch-alarm.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/cloudwatch-alarm.png"></a>
 
 <h3 class="anchor" id="using-the-command-line-interface">Using the command line interface</h3>
 
@@ -80,7 +80,7 @@ CloudWatch offers several high-level metrics for any database engine, but to get
 <h4 class="anchor" id="connecting-to-your-rds-instance">Connecting to your RDS instance</h4>
 As with all RDS instances, you cannot directly access the machines running Aurora. So you cannot run `mysql` commands locally or pull CPU utilization metrics directly from the machine itself, as you could if you manually installed MySQL or MariaDB on a standalone EC2 instance. That said, you _can_ connect to Aurora remotely using standard tools, provided that the security group for your Aurora instance permits connections from the device or EC2 instance you are using to initiate the connection.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora_diagram_2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora_diagram_2.png"></a>
 
 For example, if Aurora accepts traffic only from inside its security group, you can launch an EC2 instance in that security group, and then apply a second security group rule to the EC2 instance to accept inbound SSH traffic (*see diagram above*). Then you can SSH to the EC2 instance, from which you can connect to Aurora using the standard mysql command line tool:
 
@@ -198,14 +198,14 @@ mysql> select * from sys.user_summary_by_statement_type;
 <h3 class="anchor" id="using-the-mysql-workbench-gui">Using the MySQL Workbench GUI</h3>
 [MySQL Workbench][workbench] is a free application with a GUI for managing and monitoring MySQL or a compatible database such as Aurora. MySQL Workbench provides a high-level performance dashboard, as well as an easy-to-use interface for browsing performance metrics (using the views provided by the [sys schema](#using-the-sys-schema)).
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/workbench-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/workbench-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/workbench-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/workbench-2.png"></a>
 
 If you have [configured an EC2](#connecting-to-your-rds-instance) instance to communicate with Aurora, you can connect MySQL Workbench to your Aurora instance via SSH tunneling:
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/ssh-tunnel.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/ssh-tunnel.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/ssh-tunnel.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/ssh-tunnel.png"></a>
 You can then view recent metrics on the performance dashboard or click through the statistics available from the sys schema:
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/95th_percentile-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/95th_percentile-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/95th_percentile-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/95th_percentile-2.png"></a>
 
 <h3 class="anchor" id="using-a-mysql-monitoring-tool">Using a MySQL-compatible monitoring tool</h3>
 The fourth way to access Aurora's database engine metrics is to use a full-featured monitoring tool that integrates with MySQL. Such tools allow you to not only glimpse a real-time snapshot of your metrics but to visualize and analyze your metrics' evolution over time, and to set alerts to be notified when key metrics go out of bounds. Comprehensive monitoring tools also allow you to correlate your metrics across systems, so you can quickly determine if errors from your application can be traced back to Aurora, or if increased query latency is caused by system-level resource contention. [Part 3][part-3] of this series demonstrates how you can set up comprehensive Aurora monitoring with Datadog.

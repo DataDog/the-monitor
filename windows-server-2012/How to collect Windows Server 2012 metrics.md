@@ -301,9 +301,9 @@ Last but not least, you can also set alerts on service failure by selecting the 
 [![Service alerts][service-alert]][service-alert]
 
 
-[service-alert]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/service-alert.png
-[service-depends]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/service-depends.png
-[services-snap]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/service_snap-in.png
+[service-alert]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/service-alert.png
+[service-depends]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/service-depends.png
+[services-snap]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/service_snap-in.png
 
 <div id="server_manager"></div>
 
@@ -321,8 +321,8 @@ Also included in Server Manager is the Windows Server Best Practices Analyzer. W
 
 [roles]: https://technet.microsoft.com/en-us/library/hh831669(v=ws.11).aspx
 
-[bpa]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/bpa.png
-[server-manager]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/server-manager.png
+[bpa]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/bpa.png
+[server-manager]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/server-manager.png
 
 <div id="task_manager"></div>
 
@@ -367,17 +367,17 @@ For more details, check out our guide to [monitoring Windows Server 2012 R2 perf
 
 []: imgs
 
-[dependency-walker]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/dependency-walker.gif
-[perfmon]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/perfmon.png
-[perfmon-add-counters]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/perfmon-add-counters.png
-[perfmon-descript]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/perfmon-descript.png
-[procexp]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/procexp.png
-[procexp-priority]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/procexp-priority.png
-[resourcemon]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/resource-mon.png
-[reliability]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/reliability-mon-expanded.png
-[reliability-check-solution]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/reliability-check-solution.png
-[taskman]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/taskmanager-noborder.gif
-[view-details]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/2/view-details.png
+[dependency-walker]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/dependency-walker.gif
+[perfmon]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/perfmon.png
+[perfmon-add-counters]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/perfmon-add-counters.png
+[perfmon-descript]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/perfmon-descript.png
+[procexp]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/procexp.png
+[procexp-priority]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/procexp-priority.png
+[resourcemon]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/resource-mon.png
+[reliability]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/reliability-mon-expanded.png
+[reliability-check-solution]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/reliability-check-solution.png
+[taskman]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/taskmanager-noborder.gif
+[view-details]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/2/view-details.png
 
 []: blog
 

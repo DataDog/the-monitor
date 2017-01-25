@@ -11,7 +11,7 @@ As explained in [Part 1](https://www.datadoghq.com/blog/top-dynamodb-performance
 
 Medium uses Datadog to track the number of reads and writes per second on each of their tables, and to compare the actual usage to provisioned capacity. A snapshot of one of their Datadog graphs is below. As you can see, except for one brief spike their actual usage is well below their capacity.
 
-[![DynamoDB Read Capacity](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-01.png)
+[![DynamoDB Read Capacity](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-01.png)
 
 ### Invisibly partitioned capacity
 
@@ -25,7 +25,7 @@ The challenge is that the AWS console does not expose the number of partitions i
 
 Next Medium logs each request, and feeds the log to an ELK stack ([Elasticsearch](https://www.elastic.co/products/elasticsearch), [Logstash](https://www.elastic.co/products/logstash), and [Kibana](https://github.com/elastic/kibana)) so that they can track the hottest keys. As seen in the snapshot below (bottom chart), one post on Medium is getting more requests per second than the next 17 combined. If the number of requests per second for that post starts to approach their estimated partitioned limit, they can take action to increase capacity.
 
-[![Kibana screenshot](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-02.png)
+[![Kibana screenshot](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-02.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-02.png)
 
 Note that since partitioning is automatic and invisible, two “semi-hot” posts could be in the same partition. In that case, they may be throttled even before this strategy would predict.
 
@@ -39,7 +39,7 @@ DynamoDB’s API [automatically retries its queries](http://docs.aws.amazon.com/
 
 Using Datadog, Medium created the two graphs below. The bottom graph tracks each throttled request “as seen by CloudWatch”. The top graph, “as seen by the apps”, tracks requests that failed, despite retries. Note that there are about two orders of magnitude more throttling events than failed requests. That means retries work, which is good since throttling may only slow down page loads, while failed requests can cause user-facing issues.
 
-[![Throttling CloudWatch vs. application](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-03.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-03.png)
+[![Throttling CloudWatch vs. application](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-03.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-03.png)
 
 In order to track throttling as seen by the app, Medium created a custom throttling metric: Each time that Medium’s application receives an error response from DynamoDB, it checks [the type of error](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html). If it’s a **ProvisionedThroughputExceededException**, it increments the custom metric. The metric is reported to Datadog via [DogStatsD](http://docs.datadoghq.com/guides/dogstatsd/), which implements the [StatsD](https://www.datadoghq.com/blog/statsd/) protocol (along with a few extensions for Datadog features). This approach also has the secondary benefit of providing real-time metrics and alerts on user-facing errors, rather than waiting through the slight [delay in information from CloudWatch metrics](http://docs.datadoghq.com/integrations/aws/#metrics-delayed).
 
@@ -54,11 +54,11 @@ In any event, Medium still has some DynamoDB-throttled requests. To reduce throt
 
 Since Datadog alerts can be triggered by any metric (including custom metrics), they set up alerts on their production throttling metrics which are collected by their application for each table:
 
-[![Throttling alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-04.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-04.png)
+[![Throttling alert](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-04.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-04.png)
 
 Throttled requests reported by their application mean they failed even after several retries, which means potential user-facing impact. So they send a high-priority alert, set up with the right channels and an adapted message:
 
-[![Throttling alert configuration](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-dynamodb/3-05.png)
+[![Throttling alert configuration](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-05.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-dynamodb/3-05.png)
 
 ## Saving money
 

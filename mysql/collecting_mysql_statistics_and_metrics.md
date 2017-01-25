@@ -172,10 +172,10 @@ In [the next and final part][part-3] of this series, we'll show you how you can 
 [sample-ps-row]: https://www.datadoghq.com/blog/monitoring-mysql-performance-metrics/#performance-schema-statement-digest
 [sys-examples]: https://www.datadoghq.com/blog/monitoring-mysql-performance-metrics/#the-sys-schema
 [workbench]: http://dev.mysql.com/downloads/workbench/
-[workbench-ui]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/workbench-ui.png
-[ssh-tunneling]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/workbench-mysql-ssh.png
-[95th]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/95th_percentile.png
-[install-sys-gui]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-04-mysql/sys-schema-56.png
+[workbench-ui]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/workbench-ui.png
+[ssh-tunneling]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/workbench-mysql-ssh.png
+[95th]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/95th_percentile.png
+[install-sys-gui]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-04-mysql/sys-schema-56.png
 [markdown]: https://github.com/DataDog/the-monitor/blob/master/mysql/collecting_mysql_statistics_and_metrics.md
 [issues]: https://github.com/DataDog/the-monitor/issues
 

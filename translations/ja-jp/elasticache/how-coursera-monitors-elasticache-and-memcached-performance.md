@@ -25,7 +25,7 @@ ElastiCacheは、Courseraのクラウドインフラの重要な構成要素で�
 もしも、Elasticacheが適切に監視されていないと、キャッシュクラウドのメモリーが不足し、キャッシュしているアイテムのエビクト(追い出し)が発生します。このことにより、キャッシュのヒット率(hit rate)に影響を与え、アプリの遅延を大きくします。このような理由から、Courseraでは、ElastiCacheのパフォーマンスメトリクスと、インフラの他の構成要素から収集したメトリクスを、同じ場所に表示し、相関させて状況を把握するためにDatadogを使っています。そして、Courseraのエンジニアは、アプリのパフォーマンス問題がキャッシュに起因しているかを、一目で判断することができます。更に、決定的に重要なメトリクスには、高度な判定基準をもったアラートも設定しています。
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/screenboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/screenboard.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/screenboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/screenboard.png)
 
 ## Key metrics for Coursera
 
@@ -48,7 +48,7 @@ CPU使用率のケースとは反対に、メモリーに関するメトリク�
 Courseraのキャッシュクラスタでは、スワップも発生しています。しかし、Memcachdを採用したケースで、AWSが提唱している50MBの限界を大幅に下回っています。([Part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached)参照)
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/memory.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/memory.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/memory.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/memory.png)
 
 ### Get and Set
 
@@ -73,7 +73,7 @@ Elasticacheは、ネットワークを簡単に飽和させるほど高速なた
 最後に、キャッシュのパフォーマンスメトリクスとElastiCacheのイベントを関連づけて見ることは、キャッシュ上で起きている各イベント(クラスターの作成、ノードの追加/再起動)が、パフォーマンスに与える影響を把握することに役立ちました。
 
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/events.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/events.png)
 
 ## Alerting via the right channel
 
@@ -94,14 +94,14 @@ Courseraのエンジニアは、エビクション率(eviction rate)、使用可
 Datadogのアラートは、多岐に渡る項目について設定することができます。例えば、ホストの状態、サービス又はプロセスの動作状況、イベント、そして[outliers](https://www.datadoghq.com/blog/introducing-outlier-detection-in-datadog/)(グループから外れている値)などの項目に設定することができます。
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/monitor-type.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/monitor-type.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/monitor-type.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/monitor-type.png)
 
 > For example, as explained in [part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached) of this series, where we detail the key ElastiCache metrics and which ones to alert on, CPU usage shouldn’t exceed 90 percent with Memcached. Here is how an alert can be triggered any time any individual node sees its CPU utilization approaching this threshold:
 
 例として、このシリーズの[part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached)の”Elasticacheのキーメトリクスとアラートの必要な項目"で説明したように、MemcachedのCPU使用率は、90%を越える内容に維持しておきべきです。以下は、個々のノードのCPU使用率が予め設定した閾値に近づいた場合に動作するアラートの設定例です:
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/define-metric.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/define-metric.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/define-metric.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/define-metric.png)
 
 ### The right communication channel
 
@@ -110,7 +110,7 @@ Datadogのアラートは、多岐に渡る項目について設定すること�
 Courseraでは、致命的な問題には、[PagerDuty](https://www.datadoghq.com/blog/pagerduty/)を使用しています。そして、緊急性の低い問題には、[Slack](https://www.datadoghq.com/blog/collaborate-share-track-performance-slack-datadog/)や電子メールを使用しています。Datadogのアラートを設定する際には、通知を受ける人やチーム、アラートを送信するチャネルを指定して、カスタムメッセージ（障害への対応方法や内部のドキュメントへのリンクを含む）を定義することができます。例えば、オンコールで待機してるメンバーへPagerDutyを使って通知し、補足としてSlackの特定チャネルへアラートを送信する場合は、以下のようになります:
 
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/alert-msg.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/alert-msg.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/alert-msg.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/alert-msg.png)
 
 ## Why Datadog?
 

@@ -8,7 +8,7 @@ Varnish Cache is a web application accelerator designed specifically for content
 
 As a reverse proxy, Varnish is server-side, as opposed as a client-side forward proxy. It acts as an invisible conduit between a client and a backend, intermediating all communications between the two. As a cache, it stores often-used assets (such as files, images, css) for faster retrieval and response without hitting the backend. Unlike other caching reverse proxies, which may support FTP, SMTP, or other network protocols, Varnish is exclusively focused on HTTP. As a caching HTTP proxy, Varnish also differs from browser-based HTTP proxies in that it can cache reusable assets between different clients, and cached objects can be invalidated everywhere simultaneously.
 
-[![Varnish client backend](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-01.png)
+[![Varnish client backend](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-01.png)
 
 Varnish is a mature technology, and is in use at many high-traffic websites such as The New York Times, Wikipedia, Tumblr, Twitter, Vimeo, and Facebook.
 
@@ -21,7 +21,7 @@ When running well, Varnish Cache can speed up information delivery by a factor o
 -   **Thread metrics**: thread creation, failures, queues
 -   **Backend metrics:** success, failure, and health of backend connections
 
-[![Key Varnish metrics dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-02.png)
+[![Key Varnish metrics dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-02.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-02.png)
 
 This article references metric terminology [introduced in our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
@@ -33,8 +33,8 @@ This article references metric terminology [introduced in our Monitoring 101 ser
 
 ### Client metrics
 
-[![Varnish client metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-03.png)
-](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-03.png)
+[![Varnish client metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-03.png)
+](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-03.png)
  Client metrics measure volume and success of client connections and requests. Below we discuss some of the most important.
 
 
@@ -57,8 +57,8 @@ Once a connection is established, the client can use that connection to make sev
 
 <span class="s1">Note that, for historical reasons, there is a `sess_drop` metric present in Varnish which is not the same as `sess_dropped`, discussed above. In new versions of Varnish, `sess_drop` is never incremented so it does not need to be monitored.</span>
 
-[![Varnish client requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-04.jpg)
-](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-04.jpg)
+[![Varnish client requests](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-04.jpg)
+](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-04.jpg)
 
 ### Cache performance
 
@@ -69,7 +69,7 @@ Varnish is a cache, so by measuring cache performance you can see instantly how 
 #### Hit rate
 
 The diagram below illustrates how Varnish routes requests, and when each of its cache hit metrics is incremented.
- [![Varnish routes requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-05.png)
+ [![Varnish routes requests](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-05.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-05.png)
 
 
 | **Name**           | **Description**                                                                                                        | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
@@ -86,7 +86,7 @@ The **cache hit rate** is the ratio of cache hits to total cache lookups: `cache
 
 If after increasing the amount of memory available to your cache, your hit rate is still too low, you might also want to look at which objects are not being cached and why. For this you’ll need to use [Varnishlog](https://www.varnish-cache.org/docs/3.0/reference/varnishlog.html) and then optimize your VCL (Varnish Configuration Language) [tuning to improve the hit/miss ratio](https://www.varnish-cache.org/docs/4.0/users-guide/increasing-your-hitrate.html).
 
-[![Varnish cache hit rate](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)
+[![Varnish cache hit rate](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-06.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-06.png)
 
 <div class="anchor" id="cached-objects"></div>
 
@@ -105,7 +105,7 @@ The LRU (Least Recently Used) Nuked Objects counter, `n_lru_nuked`, should be cl
 
 ### Thread-related metrics
 
-[![Varnish thread metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-07.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-07.png)
+[![Varnish thread metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-07.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-07.png)
 
 Metrics related to worker threads tell you if your thread pools are healthy and functioning well.
 
@@ -129,7 +129,7 @@ Keep an eye on the metric `thread_queue_len` which should not be too high. If it
 
 ### Backend metrics
 
-[![Varnish backend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-08.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-08.png)
+[![Varnish backend metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-08.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-08.png)
 
 Keeping an eye on the state of your connections with backend web servers is also crucial to understand how well Varnish is able to do its work.
 
@@ -159,7 +159,7 @@ Backend requests, `backend_req`, should be monitored to detect network or cache 
 
 -   **`backend_unhealthy`**: Varnish [periodically pings](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html#health-checks) the backend to make sure it is still up and responsive. If it doesn’t receive a 200 response quickly enough, the backend is marked as unhealthy and every new request to it increments this counter until the backend recovers and sends a timely 200 response.
 
-[![Varnish metrics backend connections](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-09.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-09.png)
+[![Varnish metrics backend connections](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-09.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-09.png)
 
 ### Other metrics to monitor
 

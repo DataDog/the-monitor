@@ -6,7 +6,7 @@ Datadog lets you collect and view ELB metrics, access their historical evolution
 
 In this post we’ll show you how to get started with the ELB integration, and how to correlate your load balancer performance metrics with your backend instance metrics.
 
-[![ELB metrics graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-01.png)
+[![ELB metrics graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-01.png)
 
 *ELB metrics graphs on Datadog*
 
@@ -22,7 +22,7 @@ Note that if, in addition to ELB, you are using RDS, SES, SNS, or other AWS prod
 
 Once you have successfully integrated Datadog with ELB, you will see [a default dashboard](https://app.datadoghq.com/screen/integration/aws_elb) called “AWS-Elastic Load Balancers” in your list of [integration dashboards](https://app.datadoghq.com/dash/list). The ELB dashboard displays all of the key metrics highlighted in [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics) of this series: requests per second, latency, surge queue length, spillover count, healthy and unhealthy hosts counts, HTTP code returned, and more.
 
-[![ELB default dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-02.png)
+[![ELB default dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-02.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-02.png)
 
 *ELB default dashboard on Datadog*
 
@@ -38,7 +38,7 @@ As explained in [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-perfo
 
 Thanks to our integration with CloudWatch and the permissions you set up, you can already access EC2 metrics on Datadog. Here is [your default dashboard](https://app.datadoghq.com/screen/integration/aws_ec2) for EC2.
 
-[![Default EC2 dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-03.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-03.png)
+[![Default EC2 dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-03.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-03.png)
 
 *Default EC2 dashboard on Datadog*
 
@@ -46,7 +46,7 @@ You can add graphs to your custom dashboards and view side by side ELB and EC2 m
 
 You can also, for example, display a host map to spot at a glance if all your backend instances have a reasonable CPU utilization:
 
-[![Default EC2 dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-04.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-04.png)
+[![Default EC2 dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-04.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-04.png)
 
 ### Native metrics for more precision
 

@@ -19,7 +19,7 @@ MongoDB ensures high availability thanks to its replication mechanisms, horizont
 
 ## Key MongoDB performance metrics to monitor
 
-[![MongoDB monitoring dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)
+[![MongoDB monitoring dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)
 
 By properly monitoring MongoDB you can quickly spot slowdowns, hiccups, or pressing resource limitations, and know which actions to take to correct these issues before there are user-facing consequences. Here are the key areas you will want to track and analyze metrics.
 
@@ -37,7 +37,7 @@ All these metrics are accessible using a variety of tools, including MongoDB’s
 
 ### Throughput metrics
 
-![MongoDB Throughput metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-throughput-metrics.png)
+![MongoDB Throughput metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-throughput-metrics.png)
 
 Throughput metrics are crucial and most of your alerts should be set on these metrics in order to avoid any [performance](#dbperf) issue, [resource saturation](#resource-saturation), or [errors](#errors). The majority of the metrics presented in the other sections are typically used to investigate problems.
 
@@ -62,7 +62,7 @@ In order to be able to quickly spot the potential causes of abnormal changes in 
 
 ### Database performance
 
-![MongoDB database performance metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-database-performance.png)
+![MongoDB database performance metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-database-performance.png)
 
 #### Replication and Oplog
 
@@ -93,7 +93,7 @@ A high replication lag can be due to:
 -   Insufficient write capacity in which case you should add more shards: check queued write requests (see [section about resource saturation](#resource-saturation))
 -   Slow operations on the primary node blocking replication. You can [spot slow queries](https://docs.mongodb.com/manual/tutorial/manage-the-database-profiler/#profiling-levels) with the [db.getProfilingStatus()](https://docs.mongodb.com/manual/reference/method/db.getProfilingStatus/#db.getProfilingStatus) command or through the *Visual Query Profiler* in [MongoDB Ops Manager](https://www.mongodb.com/products/ops-manager) if you are using it: level 1 corresponds to slow operations (taking longer than the threshold defined by the `operationProfiling.slowOpThresholdMs` parameter set to 100 ms by default). It can be due to heavy write operations on the primary node or an under-provisioned secondary. You can prevent the latter by scaling up the secondary to match the primary capacity. You can use *“majority”* [*write concern*](https://docs.mongodb.com/manual/reference/write-concern/) to make sure writes are not getting ahead of replication.
 
-[![MongoDB replication lag by replica set](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/replication-lag-grouped-by-replica-set.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/replication-lag-grouped-by-replica-set.png)
+[![MongoDB replication lag by replica set](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/replication-lag-grouped-by-replica-set.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/replication-lag-grouped-by-replica-set.png)
 
 The **oplog window** represents the interval of time between the oldest and the latest entries in the oplog, which usually corresponds to the approximate amount of time available in the primary’s replication oplog. So if a secondary is down longer than this oplog window, it won’t be able to catch up unless it completely resyncs all data from the primary. The amount of time it takes to fill the oplog varies: during heavy traffic times, it will shrink since the oplog will receive more operations per second. If the oplog window for a primary node is getting too short you should consider [increasing the **size of your oplog**](https://docs.mongodb.com/manual/tutorial/change-oplog-size/). MongoDB advises to send a warning notification if the oplog windows is 25% below its usual value during traffic peaks, and a high priority alert under 50%.
 
@@ -176,7 +176,7 @@ This also explains why cursors with no timeout should be avoided: they can preve
 
 ### Resource Utilization
 
-![MongoDB resource utilization metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-resource-utilization.png)
+![MongoDB resource utilization metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-resource-utilization.png)
 
 #### Connections
 
@@ -208,7 +208,7 @@ With MMAPv1, collections are stored in areas called **extents**. Each extent con
 Extents are stored in larger storage units of 2GB called **data files**, and a set of data files constitutes a database. A MongoDB server has multiple databases.
 
 Here is a diagram to better understand the storage structure with MMAPv1:
- [![MongoDB MMAPv1 storage structure](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-mmap-storage-structure.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-mmap-storage-structure.png)
+ [![MongoDB MMAPv1 storage structure](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-mmap-storage-structure.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-mmap-storage-structure.png)
 
 ##### Storage size metrics (from dbStats):
 
@@ -221,7 +221,7 @@ Here are the different storage metrics you should know:
 -   `storageSize` measures the size of all the data extents in the database. With MMAPv1, it’s always greater than or equal to dataSize because extents contain free space not yet used or freed by deleted and moved documents. storageSize is not affected when documents shrink or are moved.
 -   `fileSize` correspond to the size of your data files. It’s obviously always larger than storageSize and can be seen as the storage footprint of you database on disk. It decreases only if you delete a database and is not affected when collections, documents, or indexes are removed.
 
-[![MongoDB MMAPv1 dbStats metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-mmap-dbstats-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-mmap-dbstats-metrics.png)
+[![MongoDB MMAPv1 dbStats metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-mmap-dbstats-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-mmap-dbstats-metrics.png)
 
 ##### Metrics to monitor
 
@@ -265,7 +265,7 @@ The **resident memory** usage usually approaches the amount of physical RAM avai
 With MMAPv1, if journaling is turned on, the amount of **virtual memory** is always at least two times larger than the memory mapped. In the unlikely event that it gets to be more than 3 times larger than the mapped memory, it means that the non-mapped virtual memory is getting too high (cf: paragraph above for troubleshooting).
 
 **Page faults** indicate operations which required the MongoDB to fetch data from disk because it wasn’t available in active memory (“hard” page fault), or when the operation required in-memory page relocation (“soft” page fault). Requests which trigger page faults take more time to execute than requests that do not. Frequent page faults may indicate that your data set is too large for the allocated memory. However that’s not a big issue if the throughput remains healthy. Limited and occasional page faults do not necessarily indicate serious problems. In order to reduce the frequency of page faults, you can increase the size of your RAM or consider adding more shards to your deployments in order to better distribute incoming requests. Page faults can also be a sign of inefficient schema design, redundant or unnecessary indexes, or anything using available RAM unnecessarily.
- [![MongoDB page faults](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-page-faults.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-page-faults.png)
+ [![MongoDB page faults](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-page-faults.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-page-faults.png)
 
 ##### Note about the working set’s size:
 
@@ -285,7 +285,7 @@ When **I/O utilization** is getting close to 100% for lengthy periods of time, i
 
 ### Resource Saturation
 
-![MongoDB resource saturation metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-resource-saturation-metrics.png)
+![MongoDB resource saturation metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-resource-saturation-metrics.png)
 
 | **Metric Description**                                                                                                 | **Name**                        | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
 |------------------------------------------------------------------------------------------------------------------------|---------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
@@ -302,7 +302,7 @@ When **I/O utilization** is getting close to 100% for lengthy periods of time, i
 
 ### Errors: asserts
 
-![MongoDB asserts errors](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-asserts-errors.png)
+![MongoDB asserts errors](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-asserts-errors.png)
 
 Asserts typically represent errors. MongoDB generates [a document](https://docs.mongodb.com/manual/reference/command/serverStatus/#asserts) reporting on the number of each type of assertions that have been raised: message, warning, regular, and user. Assertions don’t occur often but should be investigated when they do.
 
@@ -332,13 +332,13 @@ Both regular and user asserts will result in the corresponding operation failing
 ## Scaling MongoDB: sharding vs replication
 
 A replica set represents multiple servers running MongoDB, each one containing the exact same data. There is one primary node and the rest are secondary nodes. Replica sets provide fault-tolerance and high data availability. If the primary node becomes unavailable, one of the secondary nodes will be elected to take over as the new primary.
- [![MongoDB sharding vs replication](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-replication-sharding.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-replication-sharding.png)
+ [![MongoDB sharding vs replication](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-replication-sharding.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-replication-sharding.png)
 
 In order to increase your throughput capacity, you can scale horizontally by adding more shards to your cluster. Sharding splits data and distributes it among the shards (mongod instances) of a cluster according to a *[shard key](https://docs.mongodb.com/manual/core/sharding-shard-key/)* defined for your collections. Incoming requests will be addressed by the corresponding shard(s) containing the requested data. Thus it allows to support more **read and write** throughputs. You can also upgrade the hardware on the cluster.
  NOTE: For rare very specific cases where reads on secondaries can be acceptable (reads querying all the data for example), you can also consider adding more secondaries to your replica set and using them to support more **read** requests. But this is definitely not a general scaling tactic. Replica set members main purpose is to ensure high data availability, not to support read-heavy throughputs. The MongoDB’s documentation [gives more details](https://docs.mongodb.com/manual/core/read-preference/#counter-indications) on why using more secondaries to provide extra read capacity shouldn’t be a scaling tactic most of the time.
 
 Since write operations can only be directed to the primary node (they are then applied to secondaries), additional secondaries will not increase write-throughput capacity. If you need to support higher write throughput, you should use more shards instead.
- [![MongoDB sharding](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-sharding.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-sharding.png)
+ [![MongoDB sharding](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-sharding.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-sharding.png)
 
 *Sharding in MongoDB
 *
@@ -355,7 +355,7 @@ In this post we’ve explored the metrics you should monitor to keep tabs on you
 -   [Resource saturation](#resource-saturation)
 -   [Errors](#errors) (asserts)
 
-[![MongoDB metrics categories](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-metrics-categories.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-05-mongodb/1-monitor/mongodb-metrics-categories.png)
+[![MongoDB metrics categories](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-metrics-categories.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-metrics-categories.png)
 
 Closely tracking throughput metrics should give you a great overview of your database activity. Database performance, errors, resource utilization and resource saturation metrics will help you investigate issues and understand what to do to maintain good performance.
 

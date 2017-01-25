@@ -19,7 +19,7 @@ ELBは、スムーズなユーザエクスペリエンスを確保し対障害�
 ELBは、EC2インスタンスの状態を継続的にチェックしてます。不調の兆しが検出されれば、ELBは直ちにトラフィックのルーティングを変更し、回復するまでその変更を維持します。もしも、アベイラビリティゾーンの全体がオフラインになっても、ELBは、他のアベイラビリティゾーンのインスタンスへトラフィックをルーティングし直します。ELBのサービスに、EC2の[オートスケール](https://aws.amazon.com/autoscaling/)機能を併せると、AWS上のインフラに、アプリの負荷のパターンに合わせてEC2のホスト数を追加することができるようになります。
 
 
-[![ELB dashboard - Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-01.png)
+[![ELB dashboard - Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-01.png)
 
 ## Key ELB metrics
 
@@ -43,7 +43,7 @@ This article references metric terminology introduced in [our Monitoring 101 ser
 
 ### Load balancer metrics
 
-![Load balancer metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-02.png)
+![Load balancer metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-02.png)
 
 The first category of metrics to consider comes from the load balancer itself, as opposed to the backend instances registered with the load balancer. For each metric we noted the most relevant and useful statistic to monitor (sum, avg, min, or max) since they are usually all available.
 
@@ -93,7 +93,7 @@ The first category of metrics to consider comes from the load balancer itself, a
 	- エラーコードが [504 error (Gateway Timeout)](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/ts-elb-error-message.html#ts-elb-errorcodes-http504)の場合は、リクエストに対する応答時間がELBのアイドルタイムアウトを越えたことを意味します。この状態は、"高いレイテンシ(下の表を参照)は発生していないか"と"5xxエラーはロードバランサから出ていないか"を、確認することで判定することができます。このケースに当てはまる場合は、バックエンドインスタスをスケールアップするか、それらのインスタインスをチューニングすりか、又はファイルのアップロードなどの低速操作をサポートするために、アイドルタイムアウトを長くすることを検討します。インスタンスがELBとの接続をクローズしている場合は、ELBアイドルタイムアウトよりもkeep-aliveのタイムアウトを長く設定する必要があります。
 
 
-[![Load balancer metrics graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-03.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-03.png)
+[![Load balancer metrics graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-03.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-03.png)
 
 #### Note about HTTPCode\_ELB\_4XX:
 
@@ -104,7 +104,7 @@ The first category of metrics to consider comes from the load balancer itself, a
 
 ### Backend-related metrics
 
-![Backend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-04.png)
+![Backend metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-04.png)
 
 > CloudWatch also provides metrics about the status and performance of your backend instances, for example response latency or the results of ELB health checks. Health checks are the mechanism ELB uses to identify unhealthy instances so it can send requests elsewhere. You can use the default health checks or [configure them](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-healthchecks.html) to use different protocols, ports, or healthy/unhealthy thresholds. The frequency of health checks is 30 seconds by default but you can set this interval to anywhere between 5–300 seconds.
 
@@ -187,7 +187,7 @@ CloudWatchは、バックエンドインスタンスのステータスとパフ�
 注: ELBが、バックエンドとの接続に失敗した場合、その接続を再試行しますので、このカウントは実際のリクエストレイトよりも高くなることがあります。
 
 
-[![Backend metrics graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/1-05.png)
+[![Backend metrics graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-05.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/1-05.png)
 
 #### About backend response codes
 

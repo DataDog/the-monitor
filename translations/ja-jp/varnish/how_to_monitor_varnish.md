@@ -14,7 +14,7 @@ Varnishキャッシュは、コンテンツが豊富で、APIの使用頻度の�
 
 Varnishは、クライアント側に存在するフォワードプロキシとは対照的に、リバースプロキシとしてサーバー側に存在します。Varnishは、クライアントとバックエンドの間のすべての通信の間に入り、目に見えない仲介者として機能します。Varnishは、キャッシュのように頻繁に使用されるコンテンツ(files、images、cssなど)を保持し、高速な検索やバックエンドにアクセスせずにリクエストに応答をできるようなっています。Varnishは、他のFTP、SMTP、その他のプロトコルに対応しているキャッシュ用リバースプロキーとは異なり、HTTPプロトコルのみにフォーカスしています。キャッシュ用HTTPプロキシーとしても、Varnishは、ブラウザベースのHTTPプロキシと異なります。Varnishは、異なるクライアント間においても再利用できるコンテンツをキャッシュしておくことができ、またキャッシュされたオブジェクトは、どこでも無効にすることができます。
 
-[![Varnish client backend](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-01.png)
+[![Varnish client backend](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-01.png)
 
 > Varnish is a mature technology, and is in use at many high-traffic websites such as The New York Times, Wikipedia, Tumblr, Twitter, Vimeo, and Facebook.
 
@@ -36,7 +36,7 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 - **Thread metrics**: スレッドの作成、失敗、キュー待ち
 - **Backend metrics:** 成功、失敗とバックエンドコネクションの健全性
 
-[![Key Varnish metrics dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-02.png)
+[![Key Varnish metrics dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-02.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-02.png)
 
 > This article references metric terminology [introduced in our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
 
@@ -48,8 +48,8 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 
 ### Client metrics
 
-[![Varnish client metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-03.png)
-](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-03.png)
+[![Varnish client metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-03.png)
+](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-03.png)
 
 > Client metrics measure volume and success of client connections and requests. Below we discuss some of the most important.
 
@@ -83,8 +83,8 @@ Varnishは、成熟した技術であり、New York Times、Wikipedia、Tumblr�
 Varnishには、歴史的な理由で`sess_drop`というメトリクスが存在します。このメトリクスは、上記で紹介した`sess_dropped`とは異なります。また、新しいバージョンのVarnishでは、`sess_drop`は、増加することはありません。従って、監視する必要はありません。
 </span>
 
-[![Varnish client requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-04.jpg)
-](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-04.jpg)
+[![Varnish client requests](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-04.jpg)
+](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-04.jpg)
 
 ### Cache performance
 
@@ -98,7 +98,7 @@ Varnishはキャッシュです。従って、キャッシュのパフォーマ�
 
 以下の図は、Varnishがどのようにしてリクエストの経路を定めるかを示しています。又その際、どのキャッシュヒットメトリクスの値を増やすかを示しています。
 
- [![Varnish routes requests](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-05.png)
+ [![Varnish routes requests](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-05.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-05.png)
 
 
 | **Name**           | **Description**                                                                                                        | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
@@ -121,7 +121,7 @@ Varnishは、レスポンスがキャッシュされない可能性があるこ�
 
 キャッシュが使用することが出来るメモリの量を増やした後でも、キャッシュヒット率が依然低すぎる場合は、キャッシュされていないオブジェクトを見つけ出し、キャッシュされていない理由を検討します。[Varnishlog](https://www.varnish-cache.org/docs/3.0/reference/varnishlog.html)の中身を検討した後、VCL (Varnish Configuration Language)の内容を最適化し、[hit/miss率が改善するようにチューニング](https://www.varnish-cache.org/docs/4.0/users-guide/increasing-your-hitrate.html)します。
 
-[![Varnish cache hit rate](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-06.png)
+[![Varnish cache hit rate](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-06.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-06.png)
 
 #### Cached objects
 
@@ -138,7 +138,7 @@ LRU (Least Recently Used) Nuked Objects(`n_lru_nuked`)のカウンター値は�
 
 ### Thread-related metrics
 
-[![Varnish thread metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-07.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-07.png)
+[![Varnish thread metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-07.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-07.png)
 
 > Metrics related to worker threads tell you if your thread pools are healthy and functioning well.
 
@@ -168,7 +168,7 @@ LRU (Least Recently Used) Nuked Objects(`n_lru_nuked`)のカウンター値は�
 
 ### Backend metrics
 
-[![Varnish backend metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-08.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-08.png)
+[![Varnish backend metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-08.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-08.png)
 
 > Keeping an eye on the state of your connections with backend web servers is also crucial to understand how well Varnish is able to do its work.
 
@@ -211,7 +211,7 @@ Varnishが適切に機能できる状態になっているかを把握するに�
   - Time in between bytes: バックエンドが、応答のための送信を開始したが、コネクションを閉じずにデータの送信を停止したとき。
 - **`backend_unhealthy`**: Varnishは、バックエンドが動作し、応答可能な状態になっているのか確認するために、[定期的にping](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html#health-checks)を送信します。Varnishは、バックエンドから一定時間内に200系のレスポンスを受信しなかった場合、そのバックエンドは、異常と判断します。そして、そのバックエンドが一定時間内に200系レスポンスで応答できるように回復するまで、新しいリクエストがある度に`backend_unhealthy`の値を増やしていきます。
 
-[![Varnish metrics backend connections](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-09.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/1-09.png)
+[![Varnish metrics backend connections](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-09.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/1-09.png)
 
 ### Other metrics to monitor
 

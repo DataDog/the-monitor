@@ -10,7 +10,7 @@ Elasticsearch represents data in the form of structured JSON documents, and make
 ### The elements of Elasticsearch 
 Before we start exploring performance metrics, let's examine what makes Elasticsearch work. In Elasticsearch, a cluster is made up of one or more nodes, as illustrated below:
 
-![elasticsearch cluster structure](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch_diagram1a.png)
+![elasticsearch cluster structure](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch_diagram1a.png)
 
 Each node is a single running instance of Elasticsearch, and its `elasticsearch.yml` configuration file designates which cluster it belongs to (`cluster.name`) and what type of node it can be. Any property (including cluster name) set in the configuration file can also be specified via command line argument. The cluster in the diagram above consists of one dedicated master node and five data nodes.
 
@@ -26,12 +26,12 @@ In Elasticsearch, related data is often stored in the same **index**, which can 
 
 An index is stored across one or more primary shards, and zero or more replica shards, and each **shard** is a complete instance of [Lucene][lucene-link], like a mini search engine.
 
-![elasticsearch index](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch_diagram1bb.png) 
+![elasticsearch index](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch_diagram1bb.png) 
 
 When creating an index, you can specify the number of primary shards, as well as the number of replicas per primary. The defaults are five primary shards per index, and one replica per primary. The number of primary shards cannot be changed once an index has been created, so [choose carefully][shard-allocation], or you will likely need to [reindex][reindex-docs] later on. The number of replicas can be updated later on as needed. To protect against data loss, the master node ensures that each replica shard is not allocated to the same node as its primary shard.
 
 ## Key Elasticsearch performance metrics to monitor
-[![elasticsearch datadog dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)
+[![elasticsearch datadog dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)
 
 Elasticsearch provides plenty of metrics that can help you detect signs of trouble and take action when you're faced with problems like unreliable nodes, out-of-memory errors, and long garbage collection times. A few key areas to monitor are:  
 
@@ -49,9 +49,9 @@ All of these metrics are accessible via Elasticsearch's API as well as single-pu
 ### Search performance metrics
 Search requests are one of the two main request types in Elasticsearch, along with index requests. These requests are somewhat akin to read and write requests, respectively, in a traditional database system. Elasticsearch provides metrics that correspond to the two main phases of the search process (query and fetch). Click through the diagrams below to follow the path of a search request from start to finish. 
 
-<div class="carousel slide" data-ride="carousel" id="carousel-example-generic"> <div class="carousel-inner" role="listbox"> <div class="item active"> <div> <img alt="Elasticsearch search process step 1" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/search-diagram1.png"> </div><div class="carousel-caption">1. Client sends a search request to node 2.</div><br></div>
-<div class="item"> <div> <img alt="Elasticsearch search process step 2" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/search-diagram2.png"> </div>
-<div class="carousel-caption">2. Node 2 (the coordinating node) sends the query to a copy (either replica or primary) of every shard in the index.</div></div><div class="item"> <div><img alt="Elasticsearch search process step 3" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/search-diagram3.png"> </div><div class="carousel-caption">3. Each shard executes the query locally and delivers results to Node 2. Node 2 sorts and compiles them into a global priority queue.</div></div><div class="item"> <div> <img alt="Elasticsearch search process step 4" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/search-diagram4.png"> </div><div class="carousel-caption">4. Node 2 finds out which documents need to be fetched and sends a multi GET request to the relevant shards.</div></div><div class="item"> <div> <img alt="Elasticsearch search process step 5" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/search-diagram5.png"> </div><div class="carousel-caption">5. Each shard loads the documents and returns them to Node 2.</div><br></div><div class="item"> <div> <img alt="Elasticsearch search process step 6" src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/search-diagram6.png"> </div><div class="carousel-caption">6. Node 2 delivers the search results to the client.</div><br></div></div><div class="carousel-controls"> <a class="left carousel-control" data-slide="prev" href="#carousel-example-generic" role="button"><span aria-hidden="true" class="icon-small-arrow-left"></span></a><a class="right carousel-control" data-slide="next" href="#carousel-example-generic" role="button"><span aria-hidden="true" class="icon-small-arrow-right"></span></a> </div></div>
+<div class="carousel slide" data-ride="carousel" id="carousel-example-generic"> <div class="carousel-inner" role="listbox"> <div class="item active"> <div> <img alt="Elasticsearch search process step 1" src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/search-diagram1.png"> </div><div class="carousel-caption">1. Client sends a search request to node 2.</div><br></div>
+<div class="item"> <div> <img alt="Elasticsearch search process step 2" src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/search-diagram2.png"> </div>
+<div class="carousel-caption">2. Node 2 (the coordinating node) sends the query to a copy (either replica or primary) of every shard in the index.</div></div><div class="item"> <div><img alt="Elasticsearch search process step 3" src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/search-diagram3.png"> </div><div class="carousel-caption">3. Each shard executes the query locally and delivers results to Node 2. Node 2 sorts and compiles them into a global priority queue.</div></div><div class="item"> <div> <img alt="Elasticsearch search process step 4" src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/search-diagram4.png"> </div><div class="carousel-caption">4. Node 2 finds out which documents need to be fetched and sends a multi GET request to the relevant shards.</div></div><div class="item"> <div> <img alt="Elasticsearch search process step 5" src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/search-diagram5.png"> </div><div class="carousel-caption">5. Each shard loads the documents and returns them to Node 2.</div><br></div><div class="item"> <div> <img alt="Elasticsearch search process step 6" src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/search-diagram6.png"> </div><div class="carousel-caption">6. Node 2 delivers the search results to the client.</div><br></div></div><div class="carousel-controls"> <a class="left carousel-control" data-slide="prev" href="#carousel-example-generic" role="button"><span aria-hidden="true" class="icon-small-arrow-left"></span></a><a class="right carousel-control" data-slide="next" href="#carousel-example-generic" role="button"><span aria-hidden="true" class="icon-small-arrow-right"></span></a> </div></div>
 <br> 
 
 If you are using Elasticsearch mainly for search, or if search is a customer-facing feature that is key to your organization, you should monitor query latency and take action if it surpasses a threshold. It's important to monitor relevant metrics about queries and fetches that can help you determine how your searches perform over time. For example, you may want to track spikes and long-term increases in query requests, so that you can be prepared to [optimize for better performance and reliability][part-4-link]. 
@@ -78,7 +78,7 @@ Indexing requests are similar to write requests in a traditional database system
 #### Index refresh
 Newly indexed documents are not immediately made available for search. First they are written to an in-memory buffer where they await the next index refresh, which occurs once per second by default. The refresh process creates a new in-memory segment from the contents of the in-memory buffer (making the newly indexed documents searchable), then empties the buffer, as shown below. 
 
-[![Elasticsearch refresh process](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch_diagram2a.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch_diagram2a.png) 
+[![Elasticsearch refresh process](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch_diagram2a.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch_diagram2a.png) 
 > Index refresh process
 
 ##### A special segment on segments
@@ -99,7 +99,7 @@ The translog helps prevent data loss in the event that a node fails. It is desig
 
 The flush process is illustrated below:
 
-[![Elasticsearch flush process](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch_diagram2b.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch_diagram2b.png) 
+[![Elasticsearch flush process](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch_diagram2b.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch_diagram2b.png) 
 > Index flush process
  
 Elasticsearch provides a number of metrics that you can use to assess indexing performance and optimize the way you update your indices. 
@@ -168,7 +168,7 @@ Because garbage collection uses resources (in order to free up resources!), you 
 | Amount of JVM heap committed                                | `jvm.mem.heap_committed_in_bytes`                         | Resource: Utilization | 
 
 #### JVM metrics to watch
-![jvm heap in use](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt1-1-jvm-heap.png)
+![jvm heap in use](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt1-1-jvm-heap.png)
 
 **JVM heap in use:** Elasticsearch is set up to initiate garbage collections whenever JVM heap usage hits 75 percent. As shown above, it may be useful to monitor which nodes exhibit high heap usage, and set up an alert to find out if any node is consistently using over 85 percent of heap memory; this indicates that the rate of garbage collection isn't keeping up with the rate of garbage creation. To address this problem, you can either increase your heap size (as long as it remains below the recommended guidelines stated above), or scale out the cluster by adding more nodes.  
 
@@ -203,7 +203,7 @@ While Elasticsearch provides many application-specific metrics via API, you shou
 <div id="io-monitoring"></div>
 **I/O utilization:** As segments are created, queried, and merged, Elasticsearch does a lot of writing to and reading from disk. For write-heavy clusters with nodes that are continually experiencing heavy I/O activity, Elasticsearch recommends using SSDs to boost performance. 
 
-![CPU usage Elasticsearch nodes](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt1-2-CPU-usage.png) 
+![CPU usage Elasticsearch nodes](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt1-2-CPU-usage.png) 
 
 **CPU utilization on your nodes:** It can be helpful to visualize CPU usage in a [heat map][heat-map-guide] (like the one shown above) for each of your node types. For example, you could create three different graphs to represent each group of nodes in your cluster (data nodes, master-eligible nodes, and client nodes, for example) to see if one type of node is being overloaded with activity in comparison to another. If you see an increase in CPU usage, this is usually caused by a heavy search or indexing workload. Set up a notification to find out if your nodes’ CPU usage is consistently increasing, and add more nodes to redistribute the load if needed. 
 
@@ -253,7 +253,7 @@ The size of each thread pool's queue represents how many requests are waiting to
 <div id="search-queue"></div>
 **Thread pool queues:** Large queues are not ideal because they use up resources and also increase the risk of losing requests if a node goes down. If you see the number of queued and rejected threads increasing steadily, you may want to try slowing down the rate of requests (if possible), increasing the number of processors on your nodes, or increasing the number of nodes in the cluster. As shown in the screenshot below, query load spikes correlate with spikes in search thread pool queue size, as the node attempts to keep up with rate of query requests.
 
-![Elasticsearch query metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt1-3-search-query-current-rate.png) 
+![Elasticsearch query metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt1-3-search-query-current-rate.png) 
 
 **Bulk rejections and bulk queues:** Bulk operations are a more efficient way to send many requests at one time. Generally, if you want to perform many actions (create an index, or add, update, or delete documents), you should try to send the requests as a bulk operation instead of many individual requests. 
 
@@ -303,7 +303,7 @@ For example, a filter query could return only the documents for which values in 
 | Number of evictions from the filter cache (_only pre-version 2.x_) | `indices.filter_cache.evictions`             | Resource: Saturation            | 
 
 ##### Cache metrics to watch
-![fielddata eviction metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt1-4-fielddata-evictions.png)  
+![fielddata eviction metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt1-4-fielddata-evictions.png)  
 
 **Fielddata cache evictions:** Ideally, you want to limit the number of fielddata evictions because they are I/O intensive and can lead to slow garbage collections.
 

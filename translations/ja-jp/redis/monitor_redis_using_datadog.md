@@ -88,7 +88,7 @@ The [Datadog Agent](https://github.com/DataDog/dd-agent) is open-source software
 
 As soon as the Datadog Agent is up and running, you should see your host reporting basic system metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-[![Reporting host in Datadog ](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/3-img1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/3-img1.png)
+[![Reporting host in Datadog ](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/3-img1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/3-img1.png)
 
 ### Configure the Agent
 
@@ -200,7 +200,7 @@ The snippet above shows two service checks in addition to the collected metrics.
 
 Finally, click the Redis **Install Integration** button inside your Datadog account. The button is located under the Configuration tab in the [Redis integration settings](https://app.datadoghq.com/account/settings#integrations/redis).
 
-[![Redis integration installation](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/3-img2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/3-img2.png)
+[![Redis integration installation](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/3-img2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/3-img2.png)
 
 ## Metrics!
 
@@ -208,11 +208,11 @@ Once the Agent begins reporting Redis metrics, you will see [a Redis dashboard](
 
 The default Redis dashboard displays the key metrics to watch highlighted in our introduction to Redis monitoring.
 
-[![default Redis dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/part3-dashboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/part3-dashboard.png)
+[![default Redis dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/part3-dashboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/part3-dashboard.png)
 
 You can easily create a more comprehensive dashboard to monitor your entire web stack by adding additional graphs and metrics from your other systems. For example, you might want to graph Redis metrics alongside metrics from your [NGINX web servers](https://www.datadoghq.com/blog/how-to-monitor-nginx-with-datadog/), or alongside host-level metrics such as network traffic. To start building a custom dashboard, clone the default Redis dashboard by clicking on the gear on the upper right of the dashboard and selecting **Clone Dash**.
 
-[![Clone Redis dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/3-img4.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/3-img4.png)
+[![Clone Redis dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/3-img4.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/3-img4.png)
 
 ## Alerting on Redis metrics
 

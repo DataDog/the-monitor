@@ -269,11 +269,11 @@ After you've installed the plugin, open up a browser and navigate to `localhost:
 
 The Cluster Overview page shows you the state of your cluster's health and shards, as well as index-level information (number of documents stored on each index, size of the index in bytes, and number of primary and replica shards per index). Navigating to `localhost:9200/_plugin/hq/#nodediagnostics` will give you at-a-glance information about refresh and flush time, memory usage, cache activity, disk space usage, and network usage. You can drill down into a node to see node-specific graphs of JVM heap usage, the operating system (CPU and memory usage), thread pool activity, processes, network connections, and disk reads/writes.
 
-![ElasticHQ monitor Elasticsearch metrics JVM](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt2-1-elastichq-1.png) 
+![ElasticHQ monitor Elasticsearch metrics JVM](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt2-1-elastichq-1.png) 
 
 ElasticHQ automatically color-codes metrics to highlight potential problems. For example, in the screenshot below, we see a potential issue with the index's refresh time highlighted in red. In this example, since the average refresh process takes over 20 milliseconds, it warns that you may have a problem with slow I/O.
 
-![ElasticHQ monitor Elasticsearch metrics I/O](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt2-2-elastichq-2.png) 
+![ElasticHQ monitor Elasticsearch metrics I/O](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt2-2-elastichq-2.png) 
 
 Like the Index Stats API, you can also navigate into any particular index to see that index's query and fetch time, document count, and get-by-ID metrics.
 
@@ -289,14 +289,14 @@ open http://localhost:9200/_plugin/kopf
 
 The Kopf dashboard displays everything from overall cluster health to node-level stats, such as per-node load average, CPU usage, heap usage, disk usage, and uptime:
 
-![monitor elasticsearch metrics kopf overall stats](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt2-3-kopf-dash.png) 
+![monitor elasticsearch metrics kopf overall stats](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt2-3-kopf-dash.png) 
 
 You can also access each node's Node Stats API information in JSON format, as shown below for a node by the name of `master-test`:
-![monitor elasticsearch metrics kopf nodes stats](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt2-4-kopf-nodes-stat.png)
+![monitor elasticsearch metrics kopf nodes stats](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt2-4-kopf-nodes-stat.png)
 
 Kopf's REST section is similar to [Elasticsearch's Sense][sense-homepage] tool for interacting with Elasticsearch. You can directly query an index and view results in the right-hand pane:
 
-![kopf rest api elasticsearch metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt2-5-kopf-rest.png) 
+![kopf rest api elasticsearch metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt2-5-kopf-rest.png) 
 
 ### Elastic's monitoring tool: Marvel
 Elastic, the company behind Elasticsearch, created [Marvel][marvel-link], a dedicated monitoring solution that helps you assess and visualize many of the metrics mentioned in [Part 1][part-1-link]. Marvel is free to use in development and production [with a basic license][marvel-license]. It provides clear visibility into the state of your cluster(s) on every level. 
@@ -323,15 +323,15 @@ Last but not least, start up Elasticsearch:
 
 Marvel should now be accessible at `http://localhost:5601/app/marvel`. When you open it up, you'll see a dashboard of graphs that display search rate, search latency, indexing rate, and indexing latency across your entire cluster. You can also get an idea of how these metrics have changed over different intervals, ranging from the last 15 minutes to the last 5 years.
 
-![marvel monitor elasticsearch metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt2-6-marvel%20monitoring.png) 
+![marvel monitor elasticsearch metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt2-6-marvel%20monitoring.png) 
 
 Marvel also graphs node-specific metrics like search latency, indexing latency, JVM heap usage, CPU utilization, system load average, and segment count. 
-![marvel monitor elasticsearch metrics node dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt2-7-marvel-nodes.png) 
+![marvel monitor elasticsearch metrics node dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt2-7-marvel-nodes.png) 
 
 ## See the whole picture with Datadog
 As you've seen, there are several good options for viewing Elasticsearch metrics in isolation. To monitor Elasticsearch health and performance in context with metrics and events from the rest of your infrastructure, you need a more comprehensive monitoring system. 
 
-[![elasticsearch datadog dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)
+[![elasticsearch datadog dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)
 
 Datadog's Elasticsearch integration enables you to collect and graph all of the metrics mentioned in [Part 1][part-1-link]. You can monitor and correlate them with detailed [system-level metrics from your nodes][system-docs] as well as metrics and events from other components of your stack. For example, if you're using [NGINX][NGINX-blog] as a proxy with Elasticsearch, you can easily graph NGINX metrics for requests and connections alongside key metrics from your Elasticsearch cluster. 
 

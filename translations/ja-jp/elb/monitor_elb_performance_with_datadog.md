@@ -18,7 +18,7 @@ Datadogを使うと、ELBメトリクスからを集取し、可視化し、そ�
 このポストでは、ELBインテグレーションの導入方法を解説し、ロードバランサーメトリクスとバックエンドインスタンスからのメトリクスを相関させる方法を解説していきます。
 
 
-[![ELB metrics graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-01.png)
+[![ELB metrics graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-01.png)
 
 > *ELB metrics graphs on Datadog*
 
@@ -48,7 +48,7 @@ ELBに加え、RDS, SES, SNMS, 又は他のAWSのサービスを使っている�
 DatadogとELBの連携が完了したら、[“AWS-Elastic Load Balancers”](https://app.datadoghq.com/screen/integration/aws_elb)というELBのデフォルトダッシュボードが、[インテグレーション用ダッシュボード一覧](https://app.datadoghq.com/dash/list)に表示されるようになります。ELBのダッシュボードには、このシリーズの[Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics)で注目した、requests per second、 latency、 surge queue length、 spillover count、 healthyとunhealthy hosts counts、 HTTP code returnedなどのメトリクスがグラフ化されています。
 
 
-[![ELB default dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-02.png)
+[![ELB default dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-02.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-02.png)
 
 > *ELB default dashboard on Datadog*
 
@@ -78,7 +78,7 @@ ELBからのメトリクスがDatadogで収集できていることが確認で�
 CloudWatchのインテグレーションとそこに設定した権限で、DatadogからはバッグエンドEC2インスタンスのメトリクスにもアクセスできています。次が、[デフォルトのEC2用のダッシュボード](https://app.datadoghq.com/screen/integration/aws_ec2)です。
 
 
-[![Default EC2 dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-03.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-03.png)
+[![Default EC2 dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-03.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-03.png)
 
 > *Default EC2 dashboard on Datadog*
 
@@ -94,7 +94,7 @@ CloudWatchのインテグレーションとそこに設定した権限で、Data
 更に、全てのバックエンドインスタンスのCPUの利用率が安定しているか、を一目で把握できるHostmapを表示することもできます。
 
 
-[![Default EC2 dashboard on Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-04.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/3-04.png)
+[![Default EC2 dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-04.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/3-04.png)
 
 ### Native metrics for more precision
 

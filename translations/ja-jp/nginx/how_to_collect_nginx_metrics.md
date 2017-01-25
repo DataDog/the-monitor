@@ -165,7 +165,7 @@ NGINXのステータスページは、メトリクスの現状を把握するた
 
 商用版のNGINX Plusは、ngx\_http\_status\_moduleを介し、オープンソース版のNGINXよりも[多くのメトリクス](http://nginx.org/en/docs/http/ngx_http_status_module.html#data) を提供しています。NGINX Plus上で追加提供されているメトリクスには、送信したバイト数、Upstreamシステムやキャシュの情報などが有ります。更に、NGINX Plusは、HTTPのステータスコードタイプ(1xx, 2xx, 3xx, 4xx, 5xx)の集計値もレポーティングしています。NGINX Plusのステータスボードのサンプルは[ここから](http://demo.nginx.com/status.html)見ることが出来ます。
 
-[![NGINX Plus status board](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/status_plus-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/status_plus-2.png)
+[![NGINX Plus status board](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/status_plus-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/status_plus-2.png)
 
 > *Note: the “Active” connections on the NGINX Plus status dashboard are defined slightly differently than the Active state connections in the metrics collected via the open-source NGINX stub status module. In NGINX Plus metrics, Active connections do not include connections in the Waiting state (aka Idle connections).*
 

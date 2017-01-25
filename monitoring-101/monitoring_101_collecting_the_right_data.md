@@ -17,7 +17,7 @@ Whatever form your monitoring data takes, the unifying theme is this:
 This series of articles comes out of our experience monitoring
 large-scale infrastructure for [our customers](https://www.datadoghq.com/customers/). It also draws on the work of [Brendan Gregg](http://dtdg.co/use-method), [Rob Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron Schwartz](http://dtdg.co/metrics-attention).
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_1.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_band_1.png)
 
 ## Metrics
 
@@ -25,7 +25,7 @@ Metrics capture a value pertaining to your systems *at a specific point in time�
 
 There are two important categories of metrics in our framework: work metrics and resource metrics. For each system that is part of your software infrastructure, consider which work metrics and resource metrics are reasonably available, and collect them all.
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
 
 ### Work metrics
 
@@ -101,7 +101,7 @@ An event usually carries enough information that it can be interpreted on its ow
 
 Events are sometimes used used to generate alerts—someone should be notified of events such as the third example in the table above, which indicates that critical work has failed. But more often they are used to investigate issues and correlate across systems. In general, think of events like metrics—they are valuable data to be collected wherever it is feasible.
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_3.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_band_3.png)
 
 ## What good data looks like
 

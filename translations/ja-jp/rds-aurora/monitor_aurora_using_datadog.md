@@ -11,7 +11,7 @@ Amazon Auroraからメトリクスを集取する方法を解説した[Part 2][p
 * [Connect Datadog to CloudWatch](#connect-datadog-to-cloudwatch)
 * [Integrate Datadog with Aurora's MySQL-compatible database engine](#integrate-datadog-with-mysql)
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_1.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_1.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora_diagram_1.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora_diagram_1.png"></a>
 
 <!--<h2 class="anchor" id="connect-datadog-to-cloudwatch">Connect Datadog to CloudWatch</h2>-->
 
@@ -98,14 +98,14 @@ Datadog Agentの設定が完了したら、効率的にメトリクスを取り�
 RDSをDatadogと連携する作業が完了すると、“Amazon - RDS (Aurora)”という総合ダッシュボードが、[インテグレーション用のダッシュボード][dash-list]のリストに表示されます。そのダッシュボードは、[Part 1][part-1]で焦点を当てたメトリクスを表示しています。:クエリーのスループットとパフォーマンス、リソース使用率、データベース接続、およびレプリケーションのログが表示されています。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
 
 > Out of the box, the dashboard displays database engine metrics from all instances configured via the MySQL integration, as well as RDS metrics from all instances running Aurora. You can focus on one particular instance by selecting a particular `dbinstanceidentifier` in the upper left.
 
 インストールを済ませると、レポート対象の全のデータベースインスタンスのネイティブメトリクスと、Auroraが動作している全インスタンスのRDSメトリクスが、デフォルトでダッシュボードに表示されます。ダッシュボードの左上にあるテンプレートバリューセレクターを使って`dbinstanceidentifier`を選択することによって、特定のインスタンス情報のみを表示することもできます。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/db-id.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/db-id.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/db-id.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/db-id.png"></a>
 
 ### Customize your dashboard
 
@@ -129,7 +129,7 @@ Datadog Agentは、システム全体のパフォーマンスに関連したメ�
 * 目視点検の補助として、メトリクスの閾値（例: 正常/警告/クリティカル）をグラフに追加します。
 
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/max_conn.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/max_conn.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/max_conn.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/max_conn.png"></a>
 > To start customizing, clone the default Aurora dashboard by clicking on the gear on the upper right of the default dashboard.
 
 カスタマイズを始めるには、デフォルトのダッシュボード(例:Aurora)の右上の歯車をクリックすることで、そのダッシュボードのクローンを作成することができます。

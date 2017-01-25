@@ -5,7 +5,7 @@ To implement ongoing, [meaningful monitoring](https://www.datadoghq.com/blog/hap
 
 In this post, we will show you how to use Datadog to capture and monitor all the key metrics identified in [Part 1](http://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics) of this series, and more. 
 
-[![Default HAProxy dashboard in Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/default-screen2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/default-screen2.png) 
+[![Default HAProxy dashboard in Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/default-screen2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/default-screen2.png) 
 
 <center>_Built-in HAProxy dashboard in Datadog_</center>
 
@@ -16,11 +16,11 @@ In this post, we will show you how to use Datadog to capture and monitor all the
 Before you begin, you must verify that HAProxy is set to output metrics over HTTP. To read more about enabling the HAProxy status page, refer to [Part 2](http://www.datadoghq.com/blog/how-to-collect-haproxy-metrics#Stats) of this series. Simply open a browser to the stats URL listed in `haproxy.cfg`.  
 You should see something like this:
 
- [![HAProxy Stats Page](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/haproxy-stats-page.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/haproxy-stats-page.png)
+ [![HAProxy Stats Page](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/haproxy-stats-page.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/haproxy-stats-page.png)
 
 ### Install the Datadog Agent
 
-The [Datadog Agent](https://github.com/DataDog/dd-agent) is open-source software that collects and reports metrics from all of your hosts so you can view, monitor, and correlate them on the Datadog platform. Installing the Agent usually requires just a single command. Installation instructions are platform-dependent and can be found [here](https://app.datadoghq.com/account/settings#agent). As soon as the Datadog Agent is up and running, you should see your host reporting basic system metrics [in your Datadog account](https://app.datadoghq.com/infrastructure). [![Reporting host in Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/default-host.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/default-host.png)
+The [Datadog Agent](https://github.com/DataDog/dd-agent) is open-source software that collects and reports metrics from all of your hosts so you can view, monitor, and correlate them on the Datadog platform. Installing the Agent usually requires just a single command. Installation instructions are platform-dependent and can be found [here](https://app.datadoghq.com/account/settings#agent). As soon as the Datadog Agent is up and running, you should see your host reporting basic system metrics [in your Datadog account](https://app.datadoghq.com/infrastructure). [![Reporting host in Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/default-host.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/default-host.png)
 
 ### Configure the Agent
 
@@ -54,7 +54,7 @@ To check that Datadog and HAProxy are properly integrated, execute the Datadog `
 
 ### Turn on the integration
 
-Finally, click the HAProxy **Install Integration** button inside your Datadog account. The button is located under the _Configuration_ tab in the [HAProxy integration settings](https://app.datadoghq.com/account/settings#integrations/haproxy). [![Install the integration](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/install-integration.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/install-integration.png)
+Finally, click the HAProxy **Install Integration** button inside your Datadog account. The button is located under the _Configuration_ tab in the [HAProxy integration settings](https://app.datadoghq.com/account/settings#integrations/haproxy). [![Install the integration](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/install-integration.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/install-integration.png)
 
 ### Show me the metrics!
 
@@ -64,7 +64,7 @@ You can easily create a more comprehensive dashboard to monitor your entire web 
 
 To start building a custom dashboard, clone the default HAProxy dashboard by clicking on the gear on the upper right of the dashboard and selecting **Clone Dash**. 
 
-![Clone dash](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/clone-dash.png)
+![Clone dash](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/clone-dash.png)
 
 ### Alerting on HAProxy metrics
 

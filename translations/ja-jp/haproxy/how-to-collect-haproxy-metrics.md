@@ -27,11 +27,11 @@ Next you’ll need to restart HAProxy, which can interrupt client sessions and c
 
 If you’re comfortable with session interruption, you can restart HAProxy with `sudo service haproxy restart`. After restarting HAProxy with your modified configuration, you can access a stats page like the one below after authenticating via the URL: `http://<YourHAProxyServer>:9000/haproxy_stats` 
 
-[![HAProxy status page](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/haproxy-stats-page.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/haproxy-stats-page.png) 
+[![HAProxy status page](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/haproxy-stats-page.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/haproxy-stats-page.png) 
 
 You can even mouse over some stats for more information, as seen in this screenshot: 
 
-[![HAProxy Stats Page Mouseover](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/stats-page-mouseover.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/stats-page-mouseover.png) 
+[![HAProxy Stats Page Mouseover](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/stats-page-mouseover.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/stats-page-mouseover.png) 
 
 If you prefer machine-readable output, you can choose to view the page as CSV output instead by appending `;csv` to the end of your stats URL. The stats page is great for a quick, human-readable view of HAProxy. 
 
@@ -104,10 +104,10 @@ The output metrics are grouped by server. In the snippet above you can see four 
 
 ### Third party tools
 
-There is no shortage of third party tools available in the HAProxy community, though many are unmaintained. Luckily, there is [HATop](http://feurix.org/projects/hatop/). [![HATop Screenshot](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/hatop-screen.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/hatop-screen.png) Though unpatched for over five years, HATop to this day remains the go-to tool for taking a closer look at a running HAProxy service. HATop was designed to mimic the appearance of [htop](https://en.wikipedia.org/wiki/Htop). It is an excellent management and diagnostics tool capable of overseeing the entirety of your HAProxy service stack. 
+There is no shortage of third party tools available in the HAProxy community, though many are unmaintained. Luckily, there is [HATop](http://feurix.org/projects/hatop/). [![HATop Screenshot](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/hatop-screen.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/hatop-screen.png) Though unpatched for over five years, HATop to this day remains the go-to tool for taking a closer look at a running HAProxy service. HATop was designed to mimic the appearance of [htop](https://en.wikipedia.org/wiki/Htop). It is an excellent management and diagnostics tool capable of overseeing the entirety of your HAProxy service stack. 
 
 Once downloaded, start HATop with the following command (assuming HATop is in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable))): `hatop -s /var/run/haproxy.sock` You should see something similar to the screen below: 
-[![HATop Up and Running](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/hatop-output.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-haproxy/hatop-output.png) 
+[![HATop Up and Running](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/hatop-output.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-haproxy/hatop-output.png) 
 
 With a tool like HATop, you get human-readable metrics (updated in real time), along with the ability to perform common tasks, such as changing backend weights or placing servers into maintenance mode. The [HATop documentation](http://feurix.org/projects/hatop/readme/#) has details on what you can do with this useful tool.
 

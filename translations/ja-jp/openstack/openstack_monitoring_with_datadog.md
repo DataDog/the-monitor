@@ -335,16 +335,16 @@ Datadogアカウントを使って、この手順をここまで進めていた�
 
 [alert]: https://www.datadoghq.com/blog/monitoring-101-alerting/
 
-[clone-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/clone-dash.png
+[clone-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/clone-dash.png
 
-[default-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/default-dash.png
+[default-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/default-dash.png
 
 
-[default-host]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/default-host.png
+[default-host]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/default-host.png
 
 [haproxy]: https://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics/
 
-[install-integration]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/install-integration.png
+[install-integration]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/install-integration.png
 
 [integration-dash]: https://app.datadoghq.com/dash/integration/openstack
 

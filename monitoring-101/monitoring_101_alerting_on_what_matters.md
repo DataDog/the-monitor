@@ -15,7 +15,7 @@ This series of articles comes out of our experience monitoring large-scale infra
 When to alert someone (or no one) 
 ---------------------------------
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_chart.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_chart.png)
 
 An alert should communicate something specific about your systems in plain language: “Two Cassandra nodes are down” or “90% of all web requests are taking more than 0.5s to process and respond.” Automating alerts across as many of your systems as possible allows you to respond quickly to issues and provide better service, and it also saves time by freeing you from continual manual inspection of metrics.
 
@@ -35,7 +35,7 @@ The next tier of alerting urgency is for issues that do require intervention, bu
 
 The most urgent alerts should receive special treatment and be escalated to a page (as in “[pager](https://en.wikipedia.org/wiki/Pager)”) to urgently request human attention. Response times for your web application, for instance, should have an internal SLA that is at least as aggressive as your strictest customer-facing SLA. Any instance of response times exceeding your internal SLA would warrant immediate attention, whatever the hour.
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_1.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_band_1.png)
 
 ### When to let a sleeping engineer lie 
 
@@ -74,7 +74,7 @@ Whenever you consider setting an alert, ask yourself three questions to determin
     should take a look immediately. If the symptom is **real *and* it
     requires attention *and* it is urgent**, it should generate a page.
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_2.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_band_2.png)
 
 ### Page on symptoms
 
@@ -88,7 +88,7 @@ Paging on symptoms surfaces real, oftentimes user-facing problems, rather than h
 
 Another good reason to page on symptoms is that symptom-triggered alerts tend to be durable. This means that regardless of how underlying system architectures may change, if the system stops doing work as well as it should, you will get an appropriate page even without updating your alert definitions.
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_band_3.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_band_3.png)
 
 #### Exception to the rule: Early warning signs 
 

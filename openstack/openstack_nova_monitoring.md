@@ -204,17 +204,17 @@ In the future, you may recognize additional OpenStack metrics that are particula
 
 [aliveness]: http://hg.rabbitmq.com/rabbitmq-management/raw-file/default/priv/www/api/index.html
 
-[amqp-diag]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/rabbitmq-3.png
+[amqp-diag]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/rabbitmq-3.png
 
 [api-compat]: https://wiki.openstack.org/wiki/Swift/APIFeatureComparison#Amazon_S3_REST_API_Compatability
 
-[arch-over]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/arch_over-4.png
+[arch-over]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/arch_over-4.png
 
-[avail-vcpu]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/vCPU.png
+[avail-vcpu]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/vCPU.png
 
 [aws]: https://aws.amazon.com/
 
-[default-dash]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/default-dash.png
+[default-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/default-dash.png
 
 [diag]: https://wiki.openstack.org/wiki/Nova_VM_Diagnostics
 

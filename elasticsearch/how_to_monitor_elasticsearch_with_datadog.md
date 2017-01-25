@@ -4,7 +4,7 @@
 
 If you've read [our post][part-2-link] on collecting Elasticsearch metrics, you already know that the Elasticsearch APIs are a quick way to gain a  snapshot of performance metrics at any particular moment in time. However, to truly get a grasp on performance, you need to track Elasticsearch metrics over time and monitor them in context with the rest of your infrastructure.
 
-[![elasticsearch datadog dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)
+[![elasticsearch datadog dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/elasticsearch-dashboard-final2.png)
 *Datadog's out-of-the-box Elasticsearch dashboard*
 
 This post will show you how to set up Datadog to automatically collect the key metrics discussed in [Part 1][part-1-link] of this series. We'll also show you how to set alerts and use tags to effectively monitor your clusters by focusing on the metrics that matter most to you. 
@@ -54,7 +54,7 @@ Save your changes and verify that the integration is properly configured by rest
 
 The last step is to navigate to [Elasticsearch's integration tile][es-tile] in the Datadog App and click on the **Install Integration** button under the "Configuration" tab. Once the Agent is up and running, you should see your hosts reporting metrics in [Datadog][datadog-infrastructure], as shown below:
 
-![elastic-datadog-infra.png](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt3-1-elastic-datadog-infra.png) 
+![elastic-datadog-infra.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt3-1-elastic-datadog-infra.png) 
 
 ## Dig into the Elasticsearch metrics!
 Once the Agent is configured on your nodes, you should see an Elasticsearch overview screenboard among your [list of available dashboards][dashboard-link]. 
@@ -71,11 +71,11 @@ For example, if your cluster includes dedicated master, data, and client nodes, 
 ### Tag, you're (alerting) it
 Now that you've finished tagging your nodes, you can set up smarter, targeted alerts to watch over your metrics and notify the appropriate people when issues arise. In the screenshot below, we set up an alert to [notify team members][datadog-alerts] when any data node (tagged with `elasticsearch-role:data-node` in this case) starts running out of disk space. The `elasticsearch-role` tag is quite useful for this alert—we can exclude dedicated master-eligible nodes, which don't store any data.
 
-![es-disk-space-monitor.png](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt3-2-es-disk-space-monitor.png)
+![es-disk-space-monitor.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt3-2-es-disk-space-monitor.png)
 
 Other useful alert triggers include long garbage collection times and search latency thresholds. You might also want to set up an Elasticsearch integration check in Datadog to find out if any of your master-eligible nodes have failed to connect to the Agent in the past five minutes, as shown below:
 
-[![es-status-check-monitor.png](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-elasticsearch/pt3-3-es-status-check-monitor.png)
+[![es-status-check-monitor.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt3-3-es-status-check-monitor.png)
 
 ## Conclusion
 In this post, we've walked through how to use Datadog to collect, visualize, and alert on your Elasticsearch metrics. If you've followed along with your Datadog account, you should now have greater visibility into the state of your clusters and be better prepared to address potential issues. The [next part in this series][part-4-link] describes how to solve five common Elasticsearch scaling and performance issues.

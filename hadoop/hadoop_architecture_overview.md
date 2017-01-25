@@ -231,24 +231,24 @@ _Source Markdown for this post is available [on GitHub][markdown]. Questions, co
 
 []: Images
 
-[hdfs-arch]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hdfs_architecture.jpg
+[hdfs-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hdfs_architecture.jpg
 
-[mapreduce-wordcount]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hadoop_diagram1-3.png
+[mapreduce-wordcount]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hadoop_diagram1-3.png
 
-[namenode-federation-diagram]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/namenode-federation-diagram.png
-[namenode-ha]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hadoop_diagram7.png
+[namenode-federation-diagram]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/namenode-federation-diagram.png
+[namenode-ha]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hadoop_diagram7.png
 
-[qjm-diagram]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hadoop_diagram2.png
+[qjm-diagram]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hadoop_diagram2.png
 
-[resource-manager-ha]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hadoop_diagram6-1.png
+[resource-manager-ha]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hadoop_diagram6-1.png
 
-[secondary-nn-arch]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hadoop_diagram4.png
+[secondary-nn-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hadoop_diagram4.png
 
-[vanilla]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hadoop_diagram3.png
+[vanilla]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hadoop_diagram3.png
 
-[yarn-arch-alt]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hadoop_diagram8.png
+[yarn-arch-alt]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hadoop_diagram8.png
 
-[yarn-exec-flow]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-07-hadoop/hadoop_diagram9-1.png
+[yarn-exec-flow]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-07-hadoop/hadoop_diagram9-1.png
 
 [yarn-ha]: http://blog.cloudera.com/wp-content/uploads/2014/05/Client_Failover.png
 

@@ -20,7 +20,7 @@ DatadogとAzureを連携することで、インフラ全体のメトリクス�
 
 ## How to integrate Datadog and Azure
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-azure-dash-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-azure-dash-2.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-azure-dash-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-azure-dash-2.png)
 
 *Host map of Azure VMs by region*
 
@@ -48,7 +48,7 @@ DatadogとAzureを連携することで、インフラ全体のメトリクス�
 
 Azure 仮想マシンからのメトリクスの収集をDatadogに許可するためには、DatadogのIntegrationページ内の[Azureのタイル](https://app.datadoghq.com/azure/landing)をクリックし、“To start monitoring all your Azure Virtual Machines”と書かれている部分の設定ペインの手順に従って作業を進めていきます。
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-config-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-config-2.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-config-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-config-2.png)
 
 ### View your Azure metrics
 
@@ -56,7 +56,7 @@ Azure 仮想マシンからのメトリクスの収集をDatadogに許可する�
 
 AzureとDatadogの連携が完了すると、インストールが完了している各種IngtegrationのデフォルトScreenBoardが一覧表示される部分に、Azureのデフォルトダッシュボードが表示されるようになります。この基礎的なAzureのダッシュボードには、CPU、disk I/O, ネットワークに関する主要なメトリクスが表示されています。(シリーズ Part 1の[「Azureの監視方法」](/blog/how-to-monitor-microsoft-azure-vms)で紹介したメトリクス)
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-screenboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-screenboard.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/azure-screenboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/azure-screenboard.png)
 
 ### Customize your Azure dashboards
 
@@ -64,7 +64,7 @@ AzureとDatadogの連携が完了すると、インストールが完了して�
 
 AzureのメトリクスをDatadog上で表示できるようなったら、そのデフォルトのScreenBoardに、Azure上の他の仮想マシンのメトリクスや、外部のシステムで発生しているイベントやメトリクスを追加し、カスタムダッシュボードをつくることが出来ます。カスタムScreenBoardを作り始めるには、ダッシュボードの右上の歯車をクリックし、“Clone Dash”を選択してAzureのデフォルトダッシュボードのクローンを作成します。又、Azureの仮想マシンメトリクスをTimeBoardに追加してカスタムダッシュボードを作成することもできます。(TimeBoard: Datadogが提供する対話的ダッシュボード。任意の時間軸が選択でき、複数のメトリクスが自動的に更新され、指定したイベントの発生状態がグラフに合成常時されるダッシュボード。)
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-clone-3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-clone-3.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-clone-3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-clone-3.png)
 
 ## Install the Datadog Agent on an Azure VM
 
@@ -82,13 +82,13 @@ Azureのユーザは、Datadog AgentをAzure extentionとして短時間でイ�
 
 [Azure web portal](https://portal.azure.com/)上で仮想マシンの名前をクリックし、詳細情報を表示させます。詳細情報のペインで、歯車マークの“Settings”をクリックし、“Extensions”を選択します。
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-extensions.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-extensions.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-extensions.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-extensions.png)
 
 > On the Extensions tile, click “Add” to select a new extension. From the list of extensions, select the Datadog Agent for your operating system.
 
 新しいExtentionを追加するには、Extentionタイルが表示部分で、"+Add"をクリックします。次にExtentionのリストから、使っているOS用のDatadog Agentを選択します。
 
- [![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-dd-agent.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-dd-agent.png)
+ [![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-dd-agent.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-dd-agent.png)
 
 > Click “Create” to add the extension.
 
@@ -106,7 +106,7 @@ Azureのユーザは、Datadog AgentをAzure extentionとして短時間でイ�
 
 Datadog Agnetがメトリクスを送信し始めると、Datadogの`Infrastructure`タブ以下の各表示項目で、Azure上の仮想マシンを確認することができるようになります。(以下は、`Host Map`の事例です)
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-hostmap.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-hostmap.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-hostmap.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-hostmap.png)
 
 > Clicking on any VM allows you to view the integrations and metrics from that VM.
 
@@ -122,7 +122,7 @@ Datadog Agentをインストールることで、上記で紹介したAzureの�
 
 Datadog Agentは、アプリケーションのメトリクスを収集できるようになっています。そうすることで、計算用インスタンス達のホストレベルでのメトリクスと実行されているアプリケーションにパフォーマンスに関するメトリクスを関連付けて分析できるようになるからです。Datadog Agentは、Azureの仮想マシンで動作しているIIS、SQLサーバーなどのサービスに加え、MySQL、 NGINX、CassandraなどのWindowsではないサービスも監視することができます。
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-wmi.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/3-wmi.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-wmi.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/3-wmi.png)
 
 ## Conclusion
 

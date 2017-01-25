@@ -10,7 +10,7 @@ Among other uses, they cache most of the elements on a course page, such as titl
 
 If ElastiCache is not properly monitored, the cache could run out of memory, leading to evicted items. This in turn could impact the hit rate, which would increase the latency of the application. That’s why Coursera’s engineers continuously monitor ElastiCache. They use [Datadog](https://www.datadoghq.com/) so they can correlate all the relevant ElastiCache performance metrics with metrics from other parts of their infrastructure, all in one place. They can spot at a glance if their cache is the root cause of any application performance issue, and set up advanced alerts on crucial metrics.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/screenboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/screenboard.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/screenboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/screenboard.png)
 
 ## Key metrics for Coursera
 
@@ -24,7 +24,7 @@ Memory metrics, on the other hand, are critical and are closely monitored. By ma
 
 They tolerate some swap usage for one of their cache clusters but it remains far below the 50-megabyte limit AWS recommends when using Memcached (see [part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached)).
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/memory.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/memory.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/memory.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/memory.png)
 
 ### Get and Set
 
@@ -38,7 +38,7 @@ Coursera also tracks network throughput because ElastiCache is so fast that it c
 
 Lastly, seeing ElastiCache events along with cache performance metrics allows them to keep track of cache activities—such as cluster created, node added, or node restarted—and their impact on performance.
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/events.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/events.png)
 
 ## Alerting via the right channel
 
@@ -50,17 +50,17 @@ Coursera’s engineers have set up alerts on eviction rate, available memory, hi
 
 Datadog alerts can also be configured to trigger on host health, whether services or processes are up or down, events, [outliers](https://www.datadoghq.com/blog/introducing-outlier-detection-in-datadog/), and more.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/monitor-type.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/monitor-type.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/monitor-type.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/monitor-type.png)
 
 For example, as explained in [part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached) of this series, where we detail the key ElastiCache metrics and which ones to alert on, CPU usage shouldn’t exceed 90 percent with Memcached. Here is how an alert can be triggered any time any individual node sees its CPU utilization approaching this threshold:
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/define-metric.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/define-metric.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/define-metric.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/define-metric.png)
 
 ### The right communication channel
 
 Coursera uses [PagerDuty](https://www.datadoghq.com/blog/pagerduty/) for critical issues, and [Slack](https://www.datadoghq.com/blog/collaborate-share-track-performance-slack-datadog/) or email for low-priority problems. When configuring an alert, you can define a custom message (including suggested fixes or links to internal documentation), the people or team that will be notified, and the specific channel by which the alert will be sent. For example, you can send the notification to the people on-call via PagerDuty and to a specific Slack channel:
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/alert-msg.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/alert-msg.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/alert-msg.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/alert-msg.png)
 
 ## Why Datadog?
 

@@ -51,7 +51,7 @@ CPUメトリクスを監視することによりプロセッサーの利用状�
 
 システムが良好な状態にあってもCPUの使用率が常に高い場合、ホストの個々のCPUが飽和状態に近づいた際には、通知されるようにしたいものです。
 
-[![Azure CPU heat map](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-1-cpu.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/azure-1-cpu.png)
+[![Azure CPU heat map](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/azure-1-cpu.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/azure-1-cpu.png)
 
 ### Disk I/O metrics
 
@@ -76,7 +76,7 @@ Monitoring the amount of data read from disk can help you understand your applic
 
 ディスクへ書き込むデータ量を監視することは、ディスクI/Oに起因するボトルネック(遅延)を発見するのに役立ちます。ディスクへの書き込みの多いアプリケーションを実行している場合、IOPSの上限値を増やすために[仮想マシンのサイズ](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/)をアップグレードする必要があるかもしれません。
 
-[![Azure disk write speed](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-disk-write-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-disk-write-2.png)
+[![Azure disk write speed](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-disk-write-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-disk-write-2.png)
 
 ### Memory metrics
 
@@ -96,7 +96,7 @@ Monitoring the amount of data read from disk can help you understand your applic
 プログラムがメモリ内にページを確保できずにディスクからその領域を確保している場合、利用可能なメモリ領域を確保するためにディスクにページを退避する場合に、ページングイベントが発生します。過度に発生するページングは、アプリケーションの実行速度を低下の原因になります。仮想マシンの負荷が低くても、多少のページングは発生しています。例えば、”virtual memory manager”(仮想メモリーのマネージャー)
 が、[プロセスが使っているメモリ](https://msdn.microsoft.com/en-us/library/windows/desktop/cc441804(v=vs.85).aspx)を整理し、空きメモリのスペースを確保する場合です。しかし、突然のページング量の増加は、その仮想マシンが効率的に動作するためにメモリを追加する必要があることを教えてくれています。
 
- [![Azure memory paging](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-memory-pages.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-memory-pages.png)
+ [![Azure memory paging](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-memory-pages.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-memory-pages.png)
 
 ### Network metrics
 
@@ -123,7 +123,7 @@ Azurreが提供するデフォルトのメトリクスセットには、仮想�
 
 ネットワークの通信量が、突然急降下(垂直に落ちる)した場合、アプリケーションかネットワークが過負荷状態にあることを示しています。
 
- [![Azure network out](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-network-out.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/1-network-out.png)
+ [![Azure network out](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-network-out.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/1-network-out.png)
 
 ## Conclusion
 

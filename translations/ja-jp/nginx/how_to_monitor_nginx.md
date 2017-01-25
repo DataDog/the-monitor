@@ -348,12 +348,12 @@ _Source Markdown for this post is available [on GitHub][33]. Questions, correcti
 [11]:	http://nginx.org/en/docs/ngx_core_module.html#worker_connections
 [12]:	http://nginx.org/en/docs/ngx_core_module.html#worker_connections
 [13]:	#active-state
-[14]:	https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/dropped_connections.png
-[15]:	https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/requests_per_sec.png
+[14]:	https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/dropped_connections.png
+[15]:	https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/requests_per_sec.png
 [16]:	/blog/how-to-collect-nginx-metrics/
 [17]:	/blog/monitoring-101-collecting-data/
 [18]:	http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-[19]:	https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/5xx_rate.png
+[19]:	https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/5xx_rate.png
 [20]:	/blog/monitoring-101-collecting-data/
 [21]:	/blog/how-to-collect-nginx-metrics/
 [22]:	/blog/monitoring-101-collecting-data/
@@ -370,8 +370,8 @@ _Source Markdown for this post is available [on GitHub][33]. Questions, correcti
 [33]:	https://github.com/DataDog/the-monitor/blob/master/nginx/how_to_monitor_nginx.md
 [34]:	https://github.com/DataDog/the-monitor/issues
 
-[image-1]:	https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_connection_diagram-2.png
-[image-2]:	https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_plus_connection_diagram-2.png
-[image-3]:	https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/dropped_connections.png
-[image-4]:	https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/requests_per_sec.png
-[image-5]:	https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/5xx_rate.png
+[image-1]:	https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx_connection_diagram-2.png
+[image-2]:	https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx_plus_connection_diagram-2.png
+[image-3]:	https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/dropped_connections.png
+[image-4]:	https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/requests_per_sec.png
+[image-5]:	https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/5xx_rate.png

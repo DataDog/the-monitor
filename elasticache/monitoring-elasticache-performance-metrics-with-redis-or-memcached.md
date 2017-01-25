@@ -19,7 +19,7 @@ An efficient cache can significantly increase your application’s performance a
 
 Metrics can be collected from ElastiCache through CloudWatch or directly from your cache engine (Redis or Memcached). Many of them can be collected from both sources: from CloudWatch and also from the cache. However, unlike CloudWatch metrics, native cache metrics are usually collected in real-time at higher resolution. For these reasons you should prefer monitoring native metrics, when they are available from your cache engine.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/elasticache-vs-redis-or-memcached-metrics.png)
 
 For each metric discussed in this publication, we provide its name as exposed by Redis and Memcached, as well as the name of the equivalent metric available through AWS CloudWatch, where applicable.
 
@@ -66,7 +66,7 @@ Client metrics measure the volume of client connections and requests.
 
 **Number of commands** processed is a throughput measurement that will help you identify latency issues, especially with Redis, since it is single threaded and processes command requests sequentially. Unlike Memcached, native Redis metrics don’t distinguish between Set or Get commands. ElastiCache provides both for each technology.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/get-and-set-commands-elasticache.png)
 
 #### Metric to alert on:
 
@@ -235,7 +235,7 @@ Most of these key metrics are directly linked together. For example, high memory
 
 Correlating metrics with events sent by ElastiCache, such as node addition failure or cluster creation, will also help you to investigate and to keep an eye on your cache cluster’s activity.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-dashboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-elasticache/elasticache-dashboard.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/elasticache-dashboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-elasticache/elasticache-dashboard.png)
 
 ## Conclusion
 

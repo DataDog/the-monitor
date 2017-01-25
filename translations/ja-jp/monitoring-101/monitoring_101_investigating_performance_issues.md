@@ -14,7 +14,7 @@ Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています
 
 ## A word about data
 
-![metric types](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
+![metric types](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
 
 > There are three main types of monitoring data that can help you investigate the root causes of problems in your infrastructure. Data types and best practices for their collection are discussed in-depth [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/), but in short:
 
@@ -36,7 +36,7 @@ Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています
 
 ## It’s resources all the way down
 
-![metric uses](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_2_chart.png)
+![metric uses](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_chart.png)
 
 > Most of the components of your infrastructure can be thought of as resources. At the highest levels, each of your systems that produces useful work likely relies on other systems. For instance, the Apache server in a LAMP stack relies on a MySQL database as a resource to support its work. One level down, within MySQL are database-specific resources that MySQL uses to do *its* work, such as the finite pool of client connections. At a lower level still are the physical resources of the server running MySQL, such as CPU, memory, and disks.
 
@@ -46,7 +46,7 @@ Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています
 
 まず、どのシステムが価値のある仕事を生み出し、どのリソースがその仕事をサポートしているか考えてみて下さい。この考え方は、表面化している問題の根本原因に効率的にたどり着く手助けをしてくれるでしょう。次に紹介するプロセスは、アラートが問題かもしれない状況を通知した時、あなたが体系的に調査を進める上で、手助けとなるでしょう。
 
-![recursive investigation](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/investigating_diagram_4.png)
+![recursive investigation](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/investigating_diagram_4.png)
 
 ### 1. Start at the top with work metrics
 
@@ -78,7 +78,7 @@ Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています
 
 ## Build dashboards before you need them
 
-[![dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/example-dashboard-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/example-dashboard-2.png)
+[![dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/example-dashboard-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/example-dashboard-2.png)
 
 > In an outage, every minute is crucial. To speed your investigation and keep your focus on the task at hand, set up dashboards in advance. You may want to set up one dashboard for your high-level application metrics, and one dashboard for each subsystem. Each system’s dashboard should render the work metrics of that system, along with resource metrics of the system itself and key metrics of the subsystems it depends on. If event data is available, overlay relevant events on the
 graphs for correlation analysis.

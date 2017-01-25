@@ -11,7 +11,7 @@ If you’ve read [Part 3](https://www.datadoghq.com/blog/how-to-collect-and-grap
 Datadog is built to monitor modern infrastructure and offers all these essential functionalities. Our Kubernetes and Docker integrations have been designed to tackle the considerable challenges of monitoring orchestrated containers, as explained in [Part 1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/).
 
 This post will show you how to set up Datadog to automatically collect the key metrics discussed in [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics) of this series.
- [![kubernetes dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/4/kubernetes-dashboard-small.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/4/kubernetes-dashboard-small.png)
+ [![kubernetes dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/4/kubernetes-dashboard-small.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/4/kubernetes-dashboard-small.png)
 
 ## Full observability for your containerized infrastructure
 
@@ -148,7 +148,7 @@ The number of ***desired*** and ***current*** pods should be equal to the number
 ## Dive into the metrics!
 
 Once the Agent is configured on your Kubernetes nodes, you will have access to our [default Kubernetes screenboard](https://app.datadoghq.com/screen/integration/kubernetes) among your [list of available dashboards](https://app.datadoghq.com/dash/list). It displays the most important metrics presented in [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics) and should be a great starting point for monitoring your Kubernetes clusters.
- [![kubernetes default dashboard in Datadog](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/4/kubernetes-dashboard.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-11-kubernetes/4/kubernetes-dashboard.png)
+ [![kubernetes default dashboard in Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/4/kubernetes-dashboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/4/kubernetes-dashboard.png)
 
 *Kubernetes default dashboard in Datadog*
 

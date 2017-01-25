@@ -55,7 +55,7 @@ $ varnishstat
 
 例: `varnishstat -f MAIN.threads`は、現在使用しているスレッドの値を継続的に更新しながら表示します。
 
- [![varnishstat output](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/2-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-07-varnish/2-01.png)
+ [![varnishstat output](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/2-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-07-varnish/2-01.png)
 
 > Varnishstat is useful as a standalone tool if you need to spot-check the health of your cache. However, if Varnish is an important part of your software service, you will almost certainly want to graph its performance over time, correlate it with other metrics from across your infrastructure, and be alerted about any problems that may arise. To do this you will probably want to integrate the metrics that Varnishstat is reporting with a dedicated monitoring service.
 

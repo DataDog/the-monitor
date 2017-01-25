@@ -4,7 +4,7 @@
 
 If you’ve already read [our post on monitoring NGINX](/blog/how-to-monitor-nginx/), you know how much information you can gain about your web environment from just a handful of metrics. And you’ve also seen just how easy it is to start collecting metrics from NGINX on ad hoc basis. But to implement comprehensive, ongoing NGINX performance monitoring, you will need a robust monitoring system to store and visualize your metrics, and to alert you when anomalies happen. In this post, we’ll show you how to set up NGINX monitoring in Datadog so that you can view your metrics on customizable dashboards like this:
 
-[![NGINX dashboard](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_board_5.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx_board_5.png)
+[![NGINX dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx_board_5.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx_board_5.png)
 
 Datadog allows you to build graphs and alerts around individual hosts, services, processes, metrics—or virtually any combination thereof. For instance, you can monitor all of your NGINX hosts, or all hosts in a certain availability zone, or you can monitor a single key metric being reported by all hosts with a certain tag. This post will show you how to:
 
@@ -23,7 +23,7 @@ The Datadog Agent is [the open-source software](https://github.com/DataDog/dd-ag
 
 As soon as your Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-[![Datadog infrastructure list](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/infra_2.png)
+[![Datadog infrastructure list](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/infra_2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/infra_2.png)
 
 ### Configure the Agent
 
@@ -69,7 +69,7 @@ Checks
 
 Finally, switch on the NGINX integration inside your Datadog account. It’s as simple as clicking the “Install Integration” button under the Configuration tab in the [NGINX integration settings](https://app.datadoghq.com/account/settings#integrations/nginx).
 
-[![Install integration](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/install.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/install.png)
+[![Install integration](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/install.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/install.png)
 
 ## Metrics!
 
@@ -79,11 +79,11 @@ The basic NGINX dashboard displays a handful of graphs encapsulating most of the
 
 You can easily create a comprehensive dashboard for monitoring your entire web stack by adding additional graphs with important metrics from outside NGINX. For example, you might want to monitor host-level metrics on your NGINX hosts, such as system load. To start building a custom dashboard, simply clone the default NGINX dashboard by clicking on the gear near the upper right of the dashboard and selecting “Clone Dash”.
 
-[![Clone dash](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/clone_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/clone_2.png)
+[![Clone dash](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/clone_2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/clone_2.png)
 
 You can also monitor your NGINX instances at a higher level using Datadog’s [Host Maps](/blog/introducing-host-maps-know-thy-infrastructure/)—for instance, color-coding all your NGINX hosts by CPU usage to identify potential hotspots.
 
-[![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx-host-map-3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/nginx-host-map-3.png)
+[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx-host-map-3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx-host-map-3.png)
 
 ## Alerting on NGINX performance metrics
 
@@ -94,13 +94,13 @@ Once Datadog is capturing and visualizing your metrics, you will likely want to 
 Datadog metric alerts can be threshold-based (alert when the metric exceeds a set value) or change-based (alert when the metric changes by a certain amount). In this case we’ll take the latter approach, alerting when our incoming requests per second drop precipitously. Such drops are often indicative of problems.
 
 1.  **Create a new metric monitor.** Select “New Monitor” from the “Monitors” dropdown in Datadog. Select “Metric” as the monitor type.
-     [![NGINX metric monitor](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_1.png)
+     [![NGINX metric monitor](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/monitor2_step_1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/monitor2_step_1.png)
 2.  **Define your metric monitor.** We want to know when our total NGINX requests per second drop by a certain amount. So we define the metric of interest to be the sum of `nginx.net.request_per_s` across our infrastructure.
-     [![NGINX metric](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_2.png)
+     [![NGINX metric](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/monitor2_step_2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/monitor2_step_2.png)
 3.  **Set metric alert conditions.** Since we want to alert on a change, rather than on a fixed threshold, we select “Change Alert.” We’ll set the monitor to alert us whenever the request volume drops by 30 percent or more. Here we use a one-minute window of data to represent the metric’s value “now” and alert on the average change across that interval, as compared to the metric’s value 10 minutes prior.
-     [![NGINX metric change alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_3.png)
+     [![NGINX metric change alert](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/monitor2_step_3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/monitor2_step_3.png)
 4.  **Customize the notification.** If our NGINX request volume drops, we want to notify our team. In this case we will post a notification in the ops team’s chat room and page the engineer on call. In “Say what’s happening”, we name the monitor and add a short message that will accompany the notification to suggest a first step for investigation. We @mention the Slack channel that we use for ops and use @pagerduty to [route the alert to PagerDuty](/blog/pagerduty/).
-     [![NGINX metric notification](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_4v3.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-06-nginx/monitor2_step_4v3.png)
+     [![NGINX metric notification](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/monitor2_step_4v3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/monitor2_step_4v3.png)
 5.  **Save the integration monitor.** Click the “Save” button at the bottom of the page. You’re now monitoring a key NGINX [work metric](/blog/monitoring-101-collecting-data/#metrics), and your on-call engineer will be paged anytime it drops rapidly.
 
 ## Conclusion

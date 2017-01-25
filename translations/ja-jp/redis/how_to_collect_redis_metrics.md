@@ -370,7 +370,7 @@ Although the output is not very fine-grained, you can use the timestamps alongsi
 
 The latency monitor also offers rudimentary graphing, outputting ASCII graphs to the terminal. You can use it to spot trends in a specific latency event without having to involve other tools. To see a graph of the command event type, run the following from within the redis-cli: `latency graph <event-type>`
 
-[![latency graph event-type ](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/2-img1.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-redis/2-img1.png)
+[![latency graph event-type ](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/2-img1.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-redis/2-img1.png)
 
 The graph is normalized between the minimum and maximum response times with vertical labels. The times beneath each column represent the time since that event occurred. In the above output, the leftmost column shows the oldest event (which also happens to be the fastest event), occurring 24 seconds ago.
 

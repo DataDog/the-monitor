@@ -11,7 +11,7 @@ For an even more expansive view of your database instances, you can enable the n
 
 ## Connect Datadog to CloudWatch
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_1.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora_diagram_1.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora_diagram_1.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora_diagram_1.png"></a>
 
 To start monitoring metrics from Amazon's Relational Database Service (RDS), you just need to configure our [CloudWatch integration][aws-integration]. Create a new user via [the IAM console][iam] in AWS and grant that user (or group of users) read-only permissions to these three services, at a minimum:
 
@@ -52,11 +52,11 @@ Once you have set up the Agent, all the metrics from your database instance will
 
 Once you have integrated Datadog with RDS, a comprehensive dashboard called “[Amazon - RDS (Aurora)][rds-aurora-dash]” will appear in your list of [integration dashboards][dash-list]. The dashboard gathers the metrics highlighted in [Part 1][part-1] of this series: metrics on query throughput and performance, along with key metrics around resource utilization, database connections, and replication lag.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/aurora-ootb-dash-2.png"></a>
 
 Out of the box, the dashboard displays database engine metrics from all instances configured via the MySQL integration, as well as RDS metrics from all instances running Aurora. You can focus on one particular instance by selecting a particular `dbinstanceidentifier` in the upper left.
 
-<a href="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/db-id.png"><img src="https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-11-aurora/db-id.png"></a>
+<a href="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/db-id.png"><img src="https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-11-aurora/db-id.png"></a>
 
 ### Customize your dashboard
 
@@ -68,7 +68,7 @@ To add more metrics from Aurora or other systems to your RDS dashboard, clone [t
 AWS [recently announced][aws-enhanced] enhanced monitoring for RDS instances running MySQL, MariaDB, and Aurora. Enhanced monitoring includes more than 50 new CPU, memory, file system, and disk I/O metrics that can be collected on a per-instance basis as frequently as once per second. 
 
 [AWS has worked with Datadog][aws-guest-post] to help customers monitor this new, high-resolution data. With a few minutes of work your enhanced RDS metrics will immediately begin populating a pre-built, customizable dashboard in Datadog.
-[![Pre-built Datadog RDS dashboard with enhanced metrics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-Datadog-dashboard-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-Datadog-dashboard-2.png)
+[![Pre-built Datadog RDS dashboard with enhanced metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-Datadog-dashboard-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-Datadog-dashboard-2.png)
 
 ### Connect RDS to Datadog
 
@@ -76,14 +76,14 @@ When you enable enhanced RDS metrics, the metrics will be written to CloudWatch 
 
 #### Enable enhanced metrics reporting to CloudWatch logs
 You can enable enhanced RDS metrics during instance creation, or on an existing RDS instance by selecting it in the [RDS Console][rds-console] and then choosing Instance Options &#8594; Modify:
-![UI for enabling enhanced RDS monitoring](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-dialog.png)
+![UI for enabling enhanced RDS monitoring](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-dialog.png)
 
 Set "Granularity" to 1–60 seconds; every 15 seconds is often a good choice. These metrics will be sent to CloudWatch logs.
 
 #### Send CloudWatch log data to Datadog
 Next you can use a ready-made Lambda function to process the logs and send the metrics to Datadog.
 
-1. Create a [role for your Lambda function][iam-roles]. Name it something like `lambda-datadog-enhanced-rds-collector` and select "AWS Lambda" as the role type. ![Role type selector](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-role-type.png)
+1. Create a [role for your Lambda function][iam-roles]. Name it something like `lambda-datadog-enhanced-rds-collector` and select "AWS Lambda" as the role type. ![Role type selector](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-role-type.png)
 2. From the **Encryption Keys** tab on the IAM Management Console, create a new encryption key. Enter an Alias for the key like `lambda-datadog-key`. On the next page, add the appropriate administrators for the key. Next you'll be prompted to add users to the key. Add at least two: yourself (so that you can *encrypt* the Datadog API key from the AWS CLI in the next step), and the role created above, e.g. `lambda-datadog-enhanced-rds-collector` (so that it can *decrypt* the API key and submit metrics to Datadog). Finish creating the key.
 3. Encrypt the token using the [AWS CLI][aws-cli], providing the Alias of your just-created key (e.g. `lambda-datadog-key`) as well as your Datadog keys, available [here][dd-api-keys]:
     ```
@@ -92,8 +92,8 @@ Next you can use a ready-made Lambda function to process the logs and send the m
     You'll need the output of this command in the next steps.
 4. From the [Lambda Management Console][lambda-console], create a new Lambda Function. Filter blueprints by "datadog", and select the "datadog-process-rds-metrics" blueprint.
 5. Choose RDSOSMetrics from the Log Group dropdown, enter anything as a Filter Name, and click **Next**. Note that you must have [enabled enhanced metrics](#enable-enhanced-metrics-reporting-to-cloudwatch-logs) before RDSOSMetrics will appear as an option.
-![Set up Datadog Lambda blueprent](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-datadog-blueprint.png)
-6. Give your function a name like `send-enhanced-rds-to-datadog`. In the Lambda function code area, replace the string after KMS_ENCRYPTED_KEYS with the ciphertext blob part of the CLI command output above. ![Configure Datadog Lambda blueprint](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-datadog-blueprint-config.png)
+![Set up Datadog Lambda blueprent](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-datadog-blueprint.png)
+6. Give your function a name like `send-enhanced-rds-to-datadog`. In the Lambda function code area, replace the string after KMS_ENCRYPTED_KEYS with the ciphertext blob part of the CLI command output above. ![Configure Datadog Lambda blueprint](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-09-mysql-rds/AWS-RDS-enhanced-monitoring-datadog-blueprint-config.png)
 7. Under "Lambda function handler and role", choose the role you created earlier, e.g. `lambda-datadog-enhanced-rds-collector`. Go to the next page, select the **Enable Now** radio button, and create your function.
 
 ### Customize your enhanced metrics dashboard

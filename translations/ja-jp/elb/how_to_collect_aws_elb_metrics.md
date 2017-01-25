@@ -34,27 +34,27 @@ ELBのアクセスログの使用が、特定リクエストの問題の調査�
 AWSアカウントにサインインしたら、[CloudWatchコンソール](https://console.aws.amazon.com/cloudwatch/home#metrics:)を表示すると、各サービスに関連するメトリクスを閲覧することができます。
 
 
-[![ELB metrics in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-01.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-01.png)
+[![ELB metrics in AWS Console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-01.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-01.png)
 
 > By clicking on the ELB Metrics category, you will see the list of available metrics per load balancer, per availability zone:
 
 ELBメトリクスのカテゴリをクリックすると、アベイラビリティゾーン毎にリスト化されたロードバランサー毎に監視しているメトリクスのリストが表示されます:
 
 
-[![List of ELB metrics in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-02.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-02.png)
+[![List of ELB metrics in AWS Console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-02.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-02.png)
 
 > You can also view the metrics across all your load balancers:
 
 又、特定メトリクスという切り口で、全てのロードバランサーを横断的に表示することもできます。
 
-[![List of ELB metrics across all load balancers](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-03.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-03.png)
+[![List of ELB metrics across all load balancers](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-03.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-03.png)
 
 > Just select the checkbox next to the metrics you want to visualize, and they will appear in the graph at the bottom of the console:
 
 可視化したいメトリクスの横のチェックボックスを選択すると、そのメトリクスは、コンソールの下部にあるグラフに表示されます。
 
 
-[![ELB metrics graphs in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-04.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-04.png)
+[![ELB metrics graphs in AWS Console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-04.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-04.png)
 
 ### Alerts
 
@@ -68,7 +68,7 @@ CloudWatchの管理コンソールを使用すると、ELBメトリクスが予�
 グラフの右側にある“Create Alarm”ボタンをクリックすると、閾値を指定し、リストで指定した電子メールアドレスに通知を送信するアラートが設定できます:
 
 
-[![ELB alerts in AWS Console](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-05.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-10-elb/2-05.png)
+[![ELB alerts in AWS Console](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-05.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-10-elb/2-05.png)
 
 ## Using the AWS Command Line Interface
 

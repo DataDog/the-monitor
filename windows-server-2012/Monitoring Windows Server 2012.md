@@ -383,18 +383,18 @@ Most of the metrics and events covered in this post should be relevant to genera
 
 []: imgs
 
-[app-event-1000]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/application-event1000.png
-[disk-queue-img]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/disk-queue.png
-[dpcqueue]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/dpcqueue.png
-[eventlog]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/eventlog.png
-[fs-cache]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/fs-cache.png
+[app-event-1000]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/application-event1000.png
+[disk-queue-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/disk-queue.png
+[dpcqueue]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/dpcqueue.png
+[eventlog]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/eventlog.png
+[fs-cache]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/fs-cache.png
 [hung-ghost]: https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Components.PostAttachments/00/09/94/76/37/Hang02.jpg
-[irql-bsod]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/bugcheck_irql_bsod.png
-[logon-fail]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/eventid_4625_failed-logon.png
-[net-throughput]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/net-throughput.png
-[pagefaults]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/pagefaults.png
-[page-read-in]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/pages-input.png
-[services-snap-in]: https://d33tyra1llx9zy.cloudfront.net/blog/images/2016-09-windows-server-2012/1/services-snap-in.png
+[irql-bsod]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/bugcheck_irql_bsod.png
+[logon-fail]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/eventid_4625_failed-logon.png
+[net-throughput]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/net-throughput.png
+[pagefaults]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/pagefaults.png
+[page-read-in]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/pages-input.png
+[services-snap-in]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-windows-server-2012/1/services-snap-in.png
 
 
 []: etc

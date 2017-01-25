@@ -30,13 +30,13 @@ Azureの"Diagnostics extension"は、Azure web portalより新しい仮想マシ
 
 注意: Azure portalのユーザは、2つの異なる"deployment model"(“Classic”と“Resource Manager”)で、仮想マシンを作成することができます。現時点で、いくつかの監視機能は"Classic deployment model"でのみ利用可能です。
 
-[![Enable Azure diagnostics](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-enable-diagnostics-2.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-enable-diagnostics-2.png)
+[![Enable Azure diagnostics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-enable-diagnostics-2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-enable-diagnostics-2.png)
 
 > Once monitoring is enabled, you will see several default metric graphs when you click on your VM in the Azure portal.
 
 監視が有効になると、Azure portal上で仮想マシンをクリックすることにより、デフォルトメトリクスに関するグラフを閲覧することができるようになります。
 
-![Default graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-default-graphs.png)
+![Default graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-default-graphs.png)
 
 > Clicking on any monitoring graph opens a larger view, along with two important settings options: “Edit chart,” which allows you to select the metrics and the timeframe displayed on that graph, and “Add alert,” which opens the Azure alerting tile.
 
@@ -45,13 +45,13 @@ Azureの"Diagnostics extension"は、Azure web portalより新しい仮想マシ
 - **Edit chart**: グラフに表示されるメトリクスの選択と時間軸設定を可能にします。
 - **Add alert**: Azure上でアラートを設定をするためのタイルを表示します。
 
-![Metric graphs](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-bigger-graph.png)
+![Metric graphs](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-bigger-graph.png)
 
 > In the alerting tile you can set alerts on Azure VM metrics. Azure alerts can be set against any upper or lower threshold and will alert whenever the selected metric exceeds (or falls below) that threshold for a set amount of time. In the example below, we have set an alert that will notify us by email whenever the CPU usage on the given virtual machine exceeds 90 percent over a 10-minute interval.
 
 アラート設定のタイルでは、Azureの仮想マシンのメトリクスに対してアラートを設定することができます。Azureのアラートは、上限または下限の閾値に対して設定することができます。そして、閾値を設定されたメトリクスが、指定した時間以上の間、閾値を超えた場合(又は、下回った場合)に、アラートを発生させることが出来ます。以下の例では、ある仮想マシンのCPU使用率が10分間に渡って90%を超えた場合、メールで通知するアラートを設定しています。
 
-[![Create alert](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-alert-rule.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-alert-rule.png)
+[![Create alert](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-alert-rule.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-alert-rule.png)
 
 ## Accessing raw metric data in Azure storage
 
@@ -71,13 +71,13 @@ Visual Studio 2015とAzure SDK2.7を組み合わせることで、Visual Studio�
 
 Visual Studio 2015のCloud Explorerインターフェースを表示するには、View &gt; Other Windows &gt; Cloud Explorer とメニューを選択していきます。
 
-[![Cloud Explorer](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-cloud-explorer.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-cloud-explorer.png)
+[![Cloud Explorer](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-cloud-explorer.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-cloud-explorer.png)
 
 > Connect to your Azure account with Cloud Explorer by clicking on the gear and entering your account credentials.
 
 歯車のマークをクリックし、Azureアカウント情報を入力することで、Cloud ExplorerにAzureへのアクセス権を付与します。
 
-![Add Azure account to Visual Studio](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-add-account.png)
+![Add Azure account to Visual Studio](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-add-account.png)
 
 ### View stored metrics
 
@@ -89,7 +89,7 @@ Visual Studio 2015のCloud Explorerインターフェースを表示するには
 
 メトリクスは、テーブルに格納され、“WADMetrics.”始まる名前が付与されます。"metric storage account"内のテーブルを表示すると、仮想マシンに関するメトリクスが表示されます。テーブルが巨大化するのを防ぐために、各テーブルには10日分のデーターが保存されるようになっています。そして、新しい日付のデータは、テーブルの末尾に追加されていきます。
 
-![Azure metrics in storage](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-wad-metrics2.png)
+![Azure metrics in storage](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-wad-metrics2.png)
 
 ### Using stored metrics
 
@@ -97,13 +97,13 @@ Visual Studio 2015のCloud Explorerインターフェースを表示するには
 
 仮想マシンの名前は、各行の、`partition key`の欄の末尾の部分で確認することができます。`partition key`の列の末尾に仮想マシン名を持っていることは、複数の仮想マシンで"metric storage account"を共有している場合に、メトリクスを抽出する際に非常に便利です。(尚、メトリクスのタイプは、CounterName欄に記載されています。)
 
-[![Metrics in tables](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-metric-table.png)](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-metric-table.png)
+[![Metrics in tables](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-metric-table.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-metric-table.png)
 
 > To export your data for use in Excel or another analytics tool, click the “Export to CSV File” button on the toolbar just above your table.
 
 Excelや他の解析ツールで使用するために、データをエクスポートするには、テーブルの上にあるツールバー内にある“Export to CSV File”ボタンをクリックします。
 
-![Export metrics to CSV](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-08-azure/2-export-to-csv.png)
+![Export metrics to CSV](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-08-azure/2-export-to-csv.png)
 
 ## Conclusion
 

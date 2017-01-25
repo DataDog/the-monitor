@@ -40,7 +40,7 @@ collect, and how to classify that data so that you can:
 Ewaschuk](http://dtdg.co/philosophy-alerting)、 [Baron
 Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています。
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_1.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_band_1.png)
 
 ### Metrics
 
@@ -55,7 +55,7 @@ Schwartz](http://dtdg.co/metrics-attention) を参照して構成しています
 
 メトリクスは、そのシステムが *ある時点で* 持っている価値を数値化します。(例えば、webのアプリケーションに現在ログインしているユーザー数)　従って、メトリクスは、通常1秒に1回や1分間に1回、又は他の定期的な間隔で収集されます。私たちのメトリクスの捉え方には、2つの重要なカテゴリーがあります。それらは、**work metrics** と **resource metorics** です。あなたのソフトウェアインフラを構成している各システムで、どのような **work metrics** と **resource metorics** が無理をしない範囲で収集出来るかを検討し、全てを収集するようにします。
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
 
 #### Work metrics
 
@@ -248,7 +248,7 @@ workメトリクスにもリソースメトリクスにも属さない別のタ�
 
 折につけイベント情報は、アラートを発生させるために使われることがあります。上の表の第三の例のように危機的な状況を起こし得ない作業の失敗イベントに関しては、誰かが通知を受けている必要があります。しかし多くのケースでは、障害の原因調査やシステムの他の情報と相互に関連付けシステムの状態を理解するのに利用します。一般的に、イベント情報もメトリクスと同じように、収集可能な範囲で集めておくべき価値のあるデータと考えます。
 
-![](https://d33tyra1llx9zy.cloudfront.net/blog/images/2015-05-how-to-monitor/alerting101_band_3.png)
+![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_band_3.png)
 
 ### What good data looks like
 
