@@ -357,9 +357,9 @@ OpenStackを使い込んでいくと、運用しているインフラやユー�
 
 [diag]: https://wiki.openstack.org/wiki/Nova_VM_Diagnostics
 
-[hypervisor-metrics]: http://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/hypervisor-3.png
+[hypervisor-metrics]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/hypervisor-3.png
 
-[hv-work]: http://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/hv-work.png
+[hv-work]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/hv-work.png
 
 [hypervisor-operations]: http://docs.openstack.org/developer/nova/support-matrix.html
 
@@ -377,7 +377,7 @@ OpenStackを使い込んでいくと、運用しているインフラやユー�
 
 [notifs]: https://wiki.openstack.org/wiki/SystemUsageData
 
-[nova]: http://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/nova-high-level-3.png
+[nova]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/nova-high-level-3.png
 
 [nova-arch]: http://docs.openstack.org/developer/nova/_images/architecture.svg
 
@@ -391,9 +391,9 @@ OpenStackを使い込んでいくと、運用しているインフラやユー�
 
 [prefetching]: https://www.rabbitmq.com/consumer-prefetch.html
 
-[queue-consume]: http://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/queue-consume.png
+[queue-consume]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/queue-consume.png
 
-[queue-mem]: http://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/queue-mem.png
+[queue-mem]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/queue-mem.png
 
 [RPC]: http://docs.openstack.org/developer/nova/rpc.html
 
@@ -406,7 +406,7 @@ OpenStackを使い込んでいくと、運用しているインフラやユー�
 [stacktach]: https://github.com/openstack/stacktach
 
 [thrashing]: https://en.wikipedia.org/wiki/Thrashing_(computer_science)
-[utilization]: http://d33tyra1llx9zy.cloudfront.net/blog/images/2015-12-OpenStack/utilization.png
+[utilization]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/utilization.png
 
 
 [Part 1]: http://datadoghq.com/blog/openstack-monitoring-nova
