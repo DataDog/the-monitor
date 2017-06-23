@@ -5,7 +5,7 @@ If you’ve read [Part 3](https://www.datadoghq.com/blog/how-to-collect-and-grap
 
 -   Ingesting metrics from all the different layers of your infrastructure, even if your clusters are distributed across multiple data centers or cloud providers
 -   Aggregating metrics around Kubernetes labels for better context
--   Tracking your running applications via service discovery as they move across hosts
+-   Tracking your running applications via autodiscovery as they move across hosts
 -   All the advanced graphing and alerting features you need for production-ready infrastructure
 
 Datadog is built to monitor modern infrastructure and offers all these essential functionalities. Our Kubernetes and Docker integrations have been designed to tackle the considerable challenges of monitoring orchestrated containers, as explained in [Part 1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/).
@@ -24,15 +24,15 @@ After reading the previous parts of this series, you know that it’s essential 
 -   No matter where your Kubernetes clusters are running–AWS, [Google Cloud Platform](https://www.datadoghq.com/blog/monitor-google-compute-engine-performance-with-datadog/), or [Azure](https://www.datadoghq.com/blog/monitor-azure-vms-using-datadog/)– you can monitor the **underlying hosts** of your Kubernetes clusters with Datadog
 -   With [150+ integrations](https://www.datadoghq.com/product/integrations/) and full support for [custom metrics](http://docs.datadoghq.com/guides/metrics/), Datadog allows you to monitor all the **applications** running on your Kubernetes clusters
 
-### Service discovery: check
+### Autodiscovery: check
 
-Thanks to Datadog’s service discovery feature, you can continuously monitor your Dockerized applications without interruption even as they expand, contract, and shift across containers and hosts.
+Thanks to Datadog’s autodiscovery feature, you can continuously monitor your Dockerized applications without interruption even as they expand, contract, and shift across containers and hosts.
 
- Service discovery continuously listens to Docker events. Whenever a container is created or started, the Agent identifies which application is running in the new container, loads your custom monitoring configuration for that application, and starts collecting and reporting metrics. Whenever a container is stopped or destroyed, the Agent understands that too.
+Autodiscovery continuously listens to Docker events. Whenever a container is created or started, the Agent identifies which application is running in the new container, loads your custom monitoring configuration for that application, and starts collecting and reporting metrics. Whenever a container is stopped or destroyed, the Agent understands that too.
 
-Datadog’s service discovery applies Kubernetes labels to application metrics so you can keep monitoring them based on labels, as you do for Kubernetes and Docker data.
+Datadog’s autodiscovery applies Kubernetes labels to application metrics so you can keep monitoring them based on labels, as you do for Kubernetes and Docker data.
 
-To learn more about how service discovery works and how to set it up, check out our [blog post](https://www.datadoghq.com/blog/service-discovery-monitoring-docker-containers-move/) and [documentation](http://docs.datadoghq.com/guides/servicediscovery/).
+To learn more about how autodiscovery works and how to set it up, check out our [blog post](https://www.datadoghq.com/blog/autodiscovery-docker-monitoring/) and [documentation](https://docs.datadoghq.com/guides/autodiscovery/).
 
 ## Unleash Datadog
 
