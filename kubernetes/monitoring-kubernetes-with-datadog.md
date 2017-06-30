@@ -67,7 +67,7 @@ Thanks to Kubernetes, you can take advantage of [DaemonSets](http://kubernetes.i
                 protocol: UDP
             env:
               - name: API_KEY
-                Value: "YOUR_API_KEY_HERE"
+                value: "YOUR_API_KEY_HERE"
               - name: KUBERNETES
                 value: "yes"
             volumeMounts:
