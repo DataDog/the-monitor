@@ -60,8 +60,9 @@ A drop in the number of commands processed per second as compared to historical 
 
 When using Redis as a cache, monitoring the cache hit rate can tell you if your cache is being used effectively or not. A low hit rate means that clients are looking for keys that no longer exist. Redis does not offer a hit rate metric directly. We can still calculate it like this:
 
-<span style="font-size: 1.2em;">
- $$HitRate={keyspace\\\_hits}/{(keyspace\\\_hits+keyspace\\\_misses)}$$</span>
+<div style="font-size: 1.2em;">
+$$HitRate={keyspace\_hits}/{(keyspace\_hits+keyspace\_misses)}$$
+</div>
 
 The `keyspace_misses` metric is discussed in the [Error metrics section](#error-metrics).
 
@@ -93,8 +94,10 @@ You can configure Redis to remain confined to a specified amount of memory. Sett
 #### Metric to alert on: mem\_fragmentation\_ratio
 
 The `mem_fragmentation_ratio` metric gives the ratio of memory used as seen by the operating system to memory allocated by Redis.
- <span style="font-size: 1.2em;">
- $$MemoryFragmentationRatio={Used\\\_Memory\\\_RSS}/{(Used\\\_Memory)}$$</span>
+
+<div style="font-size: 1.2em;">
+$$MemoryFragmentationRatio={Used\_Memory\_RSS}/{(Used\_Memory)}$$
+</div>
 
 The operating system is responsible for allocating physical memory to each process. The operating system’s virtual memory manager handles the actual mapping, mediated by a memory allocator.
 
