@@ -1,5 +1,7 @@
 *This post is part 1 of a 3-part series on monitoring Amazon ELB. [Part 2](https://www.datadoghq.com/blog/how-to-collect-aws-elb-metrics) explains how to collect its metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) shows you how Datadog can help you monitor ELB.*
 
+*__Note:__ The metrics referenced in this article pertain to [classic](https://aws.amazon.com/elasticloadbalancing/classicloadbalancer/) ELB load balancers. We will cover Application Load Balancer metrics in a future article.*
+
 ## What is Amazon Elastic Load Balancing?
 
 Elastic Load Balancing (ELB) is an AWS service used to dispatch incoming web traffic from your applications across your Amazon EC2 backend instances, which may be in different availability zones.

@@ -1,5 +1,7 @@
 *This post is part 2 of a 3-part series on monitoring Amazon ELB. [Part 1](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics) explores its key performance metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-elb-performance-with-datadog) shows you how Datadog can help you monitor ELB.*
 
+*__Note:__ The metrics referenced in this article pertain to [classic](https://aws.amazon.com/elasticloadbalancing/classicloadbalancer/) ELB load balancers. We will cover Application Load Balancer metrics in a future article.*
+
 This part of the series is about collecting ELB metrics, which are available from AWS via CloudWatch. They can be accessed in three different ways:
 
 -   [Using the AWS Management Console](#console)
