@@ -40,7 +40,7 @@ Redisとは異なり、Memcachedは、CPU利用率が90%になってもパフォ
 
 > Memory metrics, on the other hand, are critical and are closely monitored. By making sure the memory allocated to the cache is always higher than the **memory usage**, Coursera’s engineering team avoids **evictions**. Indeed they want to keep a very high **hit rate** in order to ensure optimal performance, but also to protect their databases. Coursera’s traffic is so high that their backend wouldn’t be able to address the massive amount of requests it would get if the cache hit rate were to decrease significantly.
 
-CPU使用率のケースとは反対に、メモリーに関するメトリクスは、致命的で、厳密に監視しています。Courseraのエンジニアチームは、**evictions**(エビクション)が派生しないように、キャッシュに割り当てられたメモリの値が、**memory usage**の値よりも常に大きい状態を維持するようにしています。最高の性能をだし続けるために**hit rate**(ヒット率)を維持したいのも目的ですが、それと同時にデータベースを保護するのが目的です。Courseraで発生しているトラフィックは著し多く、キャッシュの**hit rate**(ヒット率)が著しく低下した場合、そのバックエンドに発生する膨大な量のリクエストには対処することができないのです。
+CPU使用率のケースとは反対に、メモリーに関するメトリクスは、致命的で、厳密に監視しています。Courseraのエンジニアチームは、**evictions**(エビクション)が発生しないように、キャッシュに割り当てられたメモリの値が、**memory usage**の値よりも常に大きい状態を維持するようにしています。最高の性能をだし続けるために**hit rate**(ヒット率)を維持したいのも目的ですが、それと同時にデータベースを保護するのが目的です。Courseraで発生しているトラフィックは著し多く、キャッシュの**hit rate**(ヒット率)が著しく低下した場合、そのバックエンドに発生する膨大な量のリクエストには対処することができないのです。
 
 
 > They tolerate some swap usage for one of their cache clusters but it remains far below the 50-megabyte limit AWS recommends when using Memcached (see [part 1](https://www.datadoghq.com/blog/monitoring-elasticache-performance-metrics-with-redis-or-memcached)).
