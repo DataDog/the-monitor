@@ -11,6 +11,7 @@ blog/tag:
 - message broker
 - performance
 date: 2018-01-24T00:00:01Z
+date_last_updated: 2018-01-31
 description: For tracking the performance of your messaging setup, check out these RabbitMQ monitoring tools.
 draft: false
 image: 160509_RabbitMQ-02.png
@@ -161,7 +162,9 @@ The RabbitMQ management UI can also graph your memory usage. You'll find this gr
 While less customizable than `rabbitmqctl` or the HTTP API, the web UI gives you quick visibility into the health of your RabbitMQ setup.
 
 ### `rabbitmq_top`
-For monitoring the memory use of your RabbitMQ application, `rabbitmqctl` and the management plugin give you a breakdown by application component: `connection_readers`, `queue_procs`, `binary`, and so on. For a breakdown by RabbitMQ process, you can use [another plugin][rabbitmq-top], `rabbitmq_top`, which extends the management web server with a `top`-like list. As with the management plugin, it's built into RabbitMQ (as of version 3.6.3 and later). To enable it, run this command:
+For monitoring the memory use of your RabbitMQ application, `rabbitmqctl` and the management plugin give you a breakdown by application component: `connection_readers`, `queue_procs`, `binary`, and so on. For a breakdown by RabbitMQ process, you can use [another plugin][rabbitmq-top], `rabbitmq_top`, which extends the management web server with a `top`-like list. As with the management plugin, it's built into RabbitMQ (as of version 3.6.3 and later). Since `rabbitmq_top` is resource intensive, Pivotal advises that you run it only when needed.
+
+To enable `rabbitmq_top`, run this command:
 
 ```
 rabbitmq-plugins enable rabbitmq_top
@@ -184,7 +187,7 @@ The RabbitMQ management plugin also ships with `rabbitmqadmin`, a [CLI][manageme
 To connect the swings of your performance metrics with events in the life of the message broker, RabbitMQ offers two plugins and one built-in tool.
 
 - The event exchange ([more info](#event-exchange)): Receives messages when application objects are created and destroyed, policies are set, and user configurations are changed.
-- The firehose ([more info](#the-firehose)): Re-publishes every message in your RabbitMQ setup to a single exchange for fine-grained analysis of your messaging activity. 
+- The firehose ([more info](#the-firehose)): Re-publishes every message in your RabbitMQ setup to a single exchange for fine-grained debugging of your messaging activity. 
 - `rabbitmq_tracing` ([more info](#rabbitmq-tracing)): Lets you decouple tracing from your application code by controlling the firehose through the management UI.
 
 ### Event exchange
@@ -205,11 +208,9 @@ conn = Bunny.new
 conn.start
 ch = conn.create_channel
 
-q = Bunny::Queue.new(ch, 'all_events')
+q = ch.queue('all_events')
 
-x = Bunny::Exchange.new(
-    ch, 
-    :topic, 
+x = ch.topic( 
     'amq.rabbitmq.event', 
     :durable => true,
     :internal => true
@@ -217,7 +218,7 @@ x = Bunny::Exchange.new(
 
 q.bind(x, :routing_key => "#")
 
-q.subscribe(:block => true) do |delivery_info, properties, body|
+q.subscribe do |delivery_info, properties, body|
     # Process the messages (not shown)
 end
 ```
@@ -225,7 +226,7 @@ end
 The routing keys in the event exchange include two or three words. You can route all events to a single queue with the routing key `#` (as above). You can also declare separate queues for events that belong to different kinds of objects, for instance `queue.#` or `alarm.#`. When declaring the exchange inside your application, you'll need to make sure that the options `durable` and `internal` are set to `true`, matching the plugin's built-in configuration.
 
 ### The firehose
-While the event exchange follows changes in your messaging setup, you'll need another tool for events related to messages themselves. This is the [firehose][firehose], which routes a copy of every message published in RabbitMQ into a single exchange. The tool is built into the RabbitMQ server, and does not require any RabbitMQ plugins. To the extent that your application is organized around a message-based architecture, the firehose is one way of achieving visibility at a fine grain. 
+While the event exchange follows changes in your messaging setup, you'll need another tool for events related to messages themselves. This is the [firehose][firehose], which routes a copy of every message published in RabbitMQ into a single exchange. The tool is built into the RabbitMQ server, and does not require any RabbitMQ plugins. The firehose is one way of debugging your messaging setup by achieving visibility at a fine grain. It's important to note that since the firehose publishes additional messages to a new exchange, the bump in activity will impact performance.
 
 To enable the firehose, run this command:
 
@@ -237,7 +238,7 @@ You will need to run this command every time you start the RabbitMQ server.
 
 One advantage of the firehose is the ability to log messages without touching your application code. Rather than instrument each producer to publish to an exchange for logging, you can simply handle messages from the firehose, which are re-published to that exchange automatically. Just declare the exchange `amq.rabbitmq.trace`, along with its queues, bindings, and consumers, and set the exchange's `durable` and `internal` properties to true. 
 
-You can identify the position of a message inside your application by its routing key within the firehose: `publish.<exchange name>` when it enters the broker, `deliver.<queue name>` when it leaves. Messages in the firehose have the same bodies as their counterparts elsewhere. Since the firehose works by publishing additional messages to a new exchange, there will be a cost in performance.
+You can identify the position of a message inside your application by its routing key within the firehose: `publish.<exchange name>` when it enters the broker, `deliver.<queue name>` when it leaves. Messages in the firehose have the same bodies as their counterparts elsewhere. 
 
 ### `rabbitmq_tracing`
 RabbitMQ makes it possible to log your messages at an even greater remove from your application code than the standard firehose. Rather than handling messages from the firehose by declaring exchanges, queues, and consumers within your code, you instead use the management UI to route the firehose into a log file. The tool for this is a plugin, `rabbitmq_tracing`, which extends the RabbitMQ management plugin's web server. `rabbitmq_tracing` is especially useful for obtaining traces quickly, avoiding the need to instrument any application code at all.
@@ -301,7 +302,7 @@ You can also format the log file as JSON. In the "Add a new trace" form, set the
 
 The name of your log file becomes an endpoint for the management API. In our example, this would be `http://localhost:15672/api/trace-files/tracer.log`.
 
-It's important to know that `rabbitmq_tracing` has a [performance cost][rabbit-tracing], using both memory and CPU, and isn't recommended for systems that log more than 2,000 messages per second.
+It's important to know that `rabbitmq_tracing` has a [performance cost][rabbit-tracing], using both memory and CPU, and isn't recommended for systems that log more than 2,000 messages per second. Like the firehose, `rabbitmq_tracing` is a debugging tool to run only when needed.
 
 ## RabbitMQ monitoring tools: Beyond one-at-a-time
 In this post, we've covered a number of RabbitMQ monitoring tools. Each measures its own slice of performance. `rabbitmqctl` gives you metrics as at-the-moment counts. The management plugin goes one step further, adding rates. With the event exchange and firehose, you get logs, both for messages and events. 
@@ -349,7 +350,6 @@ With Datadog's RabbitMQ integration, you can get a unified view of data that, wi
 [rabbitmq-top]: https://github.com/rabbitmq/rabbitmq-top
 
 [rabbit-tracing]: https://github.com/rabbitmq/rabbitmq-tracing
-
 
 [rabbitmqctl-man]: https://www.rabbitmq.com/man/rabbitmqctl.1.man.html
 
