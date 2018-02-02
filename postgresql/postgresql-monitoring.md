@@ -74,7 +74,7 @@ PostgreSQL collects internal statistics about its activity in order to provide a
 | :------------ | :----------- | :------------------- | :------------------- |
 | Number of index scans on a table    | idx_scan     | Other  |  pg_stat_user_tables | 
 | Number of sequential scans on a table    |  seq_scan    | Other  |  pg_stat_user_tables | 
-| Rows fetched vs. returned by queries to the database    |  tup_fetched / tup_returned    | Work: Throughput  |  pg_stat_database | 
+| Rows fetched vs. returned by queries to the database    |  tup_fetched vs. tup_returned    | Work: Throughput  |  pg_stat_database | 
 | Amount of data written temporarily to disk to execute queries (available in v. 9.2+)  | temp_bytes      | Resource: Saturation  |  pg_stat_database | 
 
 **Sequential scans vs. index scans:** If you see your database regularly performing more sequential scans over time, its performance could be improved by creating an [**index**](https://www.postgresql.org/docs/current/static/sql-createindex.html) on data that is frequently accessed. Running EXPLAIN on your queries can tell you more details about how the planner decides to access the data. Sequential scans typically take longer than index scans because they have to scan through each row of a table sequentially, rather than relying on an index to point to the location of specific rows. However, note that the planner will prefer a sequential scan over an index scan if it determines that the query would need to return a large portion of the table. 
@@ -83,7 +83,7 @@ To track trends in performance, you can use a monitoring tool to continuously co
 
 {{< img src="postgresql-monitoring-sequential-scans.png" alt="postgresql sequential scans with timeshift" wide="true" >}}
 
-If you believe that the query planner is mistakenly preferring sequential scans over index scans, you can try tweaking the `random_page_cost` setting (the estimated cost of randomly accessing a page from disk). [According to the docs][random-page-cost], lowering this value in proportion to `seq_page_cost` will encourage the planner to prefer index scans over sequential scans. The default setting assumes that [~90 percent of your reads will access data that has already been cached][random-page-cost] in memory. However, if you're running a dedicated database instance, and your entire database can easily fit into memory, you may want to try lowering the random page cost to see if it yields good results. 
+If you believe that the query planner is mistakenly preferring sequential scans over index scans, you can try tweaking the `random_page_cost` setting (the estimated cost of randomly accessing a page from disk). [According to the docs][random-page-cost], lowering this value in proportion to `seq_page_cost` (explained in more detail in the [next section](#seqpagecost)) will encourage the planner to prefer index scans over sequential scans. The default setting assumes that [~90 percent of your reads will access data that has already been cached][random-page-cost] in memory. However, if you're running a dedicated database instance, and your entire database can easily fit into memory, you may want to try lowering the random page cost to see if it yields good results. 
 
 **Rows fetched vs. rows returned by queries to the database:** Somewhat confusingly, PostgreSQL tracks `tup_returned` as the number of rows *read/scanned*, rather than indicating anything about whether those rows were actually returned to the client. Rather, `tup_fetched`, or "rows fetched", is the metric that counts how many rows contained data that was actually needed to execute the query. Ideally, the number of rows fetched should be close to the number of rows returned (read/scanned) on the database. This indicates that the database is completing read queries efficiently—it is not scanning through many more rows than it needs to in order to satisfy read queries. 
 
@@ -125,13 +125,15 @@ SELECT relpages, reltuples FROM pg_class WHERE relname='blog_article';
        38 |      4261
 ```
 
-This tells us that our `blog_article` table contains data that is stored across 38 pages, which contain 4261 tuples/rows. To calculate the cost of the sequential scan in the query plan above, the planner used this formula:
+This tells us that our `blog_article` table contains data that is stored across 38 pages, which contain 4,261 tuples/rows. To calculate the cost of the sequential scan in the query plan above, the planner used this formula:
 
 ```
 cost of sequential scan = (pages read * seq_page_cost) + (rows scanned * cpu_tuple_cost)
 ```
 
-`seq_page_cost` refers to the value that the planner uses to estimate the cost of fetching a page from disk, while `cpu_tuple_cost` is the value that the planner uses to estimate the CPU cost of querying a row/tuple. The sequential page cost will vary according to your disk hardware, so if you're using high-performance SSDs, your cost of fetching a page from disk will be lower than if you were storing data on hard disk drives. You can adjust the values of `seq_page_cost` and `cpu_tuple_cost` in your PostgreSQL settings to match the performance of your hardware. For now, we'll use the default values to calculate the cost shown in our query plan above:
+<div id="seqpagecost"></div>
+
+`seq_page_cost` refers to the planner's estimate of the cost of fetching a page from disk during a sequential scan, while `cpu_tuple_cost` is the planner's estimate of the CPU cost of querying a row/tuple. Actual sequential page cost will vary according to your disk hardware, so if you're using high-performance SSDs, your cost of fetching a page from disk will be lower than if you were storing data on hard disk drives. You can adjust the values of `seq_page_cost` and `cpu_tuple_cost` in your PostgreSQL settings to match the performance of your hardware. For now, we'll use the default values to calculate the cost shown in our query plan above:
 
 ```
 cost = (38 pages read * 1.0) + (4261 rows scanned * 0.01) = 80.61
@@ -264,9 +266,21 @@ PostgreSQL's statistics collector tracks several key metrics that pertain to con
 ##### Exploring the VACUUM process
 MVCC enables operations to occur concurrently by utilizing snapshots of the database (hence the "multi-version" aspect of MVCC), but the tradeoff is that it creates dead rows that eventually need to be cleaned up by running a VACUUM process. 
 
-The VACUUM process removes dead rows from tables and indexes and adds a marker to indicate that the space is available. Usually, the operating system will still technically consider that disk space to be "in use," but PostgreSQL will still be able to use it to store updated and/or newly inserted data. In order to actually recover disk space to the OS, you need to run a [VACUUM FULL](https://www.postgresql.org/docs/9.6/static/routine-vacuuming.html) process, which is more resource-intensive, and requires an exclusive lock on each table as it works. If you do determine that you need to run a VACUUM FULL, you should do so during off-peak hours.
+The VACUUM process removes dead rows from tables and indexes and adds a marker to indicate that the space is available. Usually, the operating system will technically consider that disk space to be "in use," but PostgreSQL will still be able to use it to store updated and/or newly inserted data. In order to actually recover disk space to the OS, you need to run a [VACUUM FULL](https://www.postgresql.org/docs/9.6/static/routine-vacuuming.html) process, which is more resource-intensive, and requires an exclusive lock on each table as it works. If you do determine that you need to run a VACUUM FULL, you should do so during off-peak hours.
 
-Routinely running VACUUM processes is crucial to maintaining efficient queries—not just because sequential scans have to scan through those dead rows, but also because VACUUM processes help provide the query planner with updated information about tables. To automate this process, you can enable the [autovacuum daemon][postgres-docs-autovacuum] to periodically run a VACUUM process, either when it detects a certain number of dead rows (as determined by the  [`autovacuum_vacuum_threshold`](https://www.postgresql.org/docs/current/static/runtime-config-autovacuum.html#GUC-AUTOVACUUM-VACUUM-THRESHOLD) setting), or every `autovacuum_naptime` seconds (the minimum amount of time the autovacuum process can go without launching a VACUUM), whichever comes earlier. 
+Routinely running VACUUM processes is crucial to maintaining efficient queries—not just because sequential scans have to scan through those dead rows, but also because VACUUM processes provide the query planner with updated internal statistics about tables, so that it can plan more efficient queries. To automate this process, you can enable the [autovacuum daemon][autovacuum-docs] to periodically run a VACUUM process whenever the number of dead rows in a table surpasses a specific threshold. This threshold is calculated based on a combination of factors:
+
+- the [`autovacuum_vacuum_threshold`](https://www.postgresql.org/docs/current/static/runtime-config-autovacuum.html#GUC-AUTOVACUUM-VACUUM-THRESHOLD) (50, by default) 
+- the [`autovacuum_vacuum_scale_factor`](https://www.postgresql.org/docs/current/static/runtime-config-autovacuum.html#GUC-AUTOVACUUM-VACUUM-SCALE-FACTOR) (0.2 or 20 percent, by default) 
+- the estimated number of rows in the table (based on the value of [`pg_class.reltuples`][pgclass-docs])
+
+The autovacuum daemon uses the following formula to calculate when it will trigger a VACUUM process on any particular table:
+
+``` 
+autovacuuming threshold = autovacuum_vacuum_threshold + autovacuum_vacuum_scale_factor * estimated number of rows in the table
+```
+
+For example, if a table contains an estimated 5,000 rows, the autovacuum daemon (configured using the default settings listed above) would launch a VACUUM on it whenever the number of dead rows in that table surpasses a threshold of `50 + 0.2 * 5000`, or 1,050.
 
 If it detects that a table has recently seen an increase in updates, the autovacuum process will run an `ANALYZE` command to gather statistics to help the query planner make more informed decisions. Each VACUUM process also updates the [visibility map](https://www.postgresql.org/docs/current/static/storage-vm.html), which shows which pages are visible to active transactions. This can improve the performance of index-only scans and will make the next VACUUM more efficient by enabling it to skip those pages. VACUUM processes can normally run concurrently with most operations like SELECT/INSERT/UPDATE/DELETE queries, but they may not be able to operate on a table if there is a lock-related conflict (e.g. due to an ALTER TABLE or LOCK TABLE operation).
 
@@ -295,12 +309,12 @@ In order for either transaction to complete, one of the transactions must be rol
 {{< img src="postgresql-monitoring-dead-rows-sawtooth.png" alt="postgresql dead rows removed by vacuum process" caption="The number of dead rows normally drops after a VACUUM process runs successfully, and then rises again as the database accumulates more dead rows over time, resulting in a sawtooth pattern." wide="true" >}}
 
 ### Replication and reliability
-As mentioned earlier, PostgreSQL writes and updates data by noting each transaction in the [write-ahead log (WAL)][wal-docs]. In order to maintain data integrity without sacrificing too much performance, PostgreSQL only needs to record updates in the WAL and then commit the WAL (not the actual updated data itself) to disk to ensure data reliability in case the primary/master fails. After logging the transaction to the WAL, PostgreSQL will check if the block is in memory, and if so, it will update it in memory, marking it as a "dirty page." 
+As mentioned earlier, PostgreSQL writes and updates data by noting each transaction in the [write-ahead log (WAL)][wal-docs]. In order to maintain data integrity without sacrificing too much performance, PostgreSQL only needs to record updates in the WAL and then commit the WAL (not the actual updated page/block) to disk to ensure data reliability in case the primary/master fails. After logging the transaction to the WAL, PostgreSQL will check if the block is in memory, and if so, it will update it in memory, marking it as a "dirty page." 
 
-The [`wal_buffers`](https://www.postgresql.org/docs/9.6/static/runtime-config-wal.html#GUC-WAL-BUFFERS) setting specifies the amount of shared memory that WAL can use to store data not yet written to disk. By default, PostgreSQL will set this value to about 3% of `shared_buffers`. You can adjust this setting, but keep in mind that it cannot be less than 64 KB, or greater than the size of one WAL segment (16 MB). The WAL is flushed to disk, either every [`wal_writer_delay`](https://www.postgresql.org/docs/9.6/static/runtime-config-wal.html#GUC-WAL-WRITER-DELAY) ms (200 ms, by default), or when the WAL reaches a certain size, as specified by `wal_writer_flush_after` (1 MB, by default). [According to the documentation](https://www.postgresql.org/docs/9.6/static/runtime-config-wal.html#GUC-WAL-WRITER-DELAY), the maximum window of potential data loss is actually about 3X the value of `wal_writer_delay`, because the WAL writer tries to optimize performance by writing whole pages to disk at a time when the database is very busy. 
+The [`wal_buffers`](https://www.postgresql.org/docs/9.6/static/runtime-config-wal.html#GUC-WAL-BUFFERS) setting specifies the amount of shared memory that WAL can use to store data not yet written to disk. By default, PostgreSQL will set this value to about 3% of `shared_buffers`. You can adjust this setting, but keep in mind that it cannot be less than 64 KB, or greater than the size of one WAL segment (16 MB). The WAL is flushed to disk every time a transaction is committed. It is also flushed to disk either every [`wal_writer_delay`](https://www.postgresql.org/docs/9.6/static/runtime-config-wal.html#GUC-WAL-WRITER-DELAY) ms (200 ms, by default), or when the WAL reaches a certain size, as specified by `wal_writer_flush_after` (1 MB, by default). [According to the documentation](https://www.postgresql.org/docs/9.6/static/runtime-config-wal.html#GUC-WAL-WRITER-DELAY), the maximum window of potential data loss is actually about 3X the value of `wal_writer_delay`, because the WAL writer tries to optimize performance by writing whole pages to disk at a time when the database is very busy. 
 
 #### WAL replication in PostgreSQL
-Many users set up PostgreSQL to replicate changes from each primary/master server to one or more replica servers, in order to improve performance by directing queries to specific pools of read-only replicas. It is also common to replicate changes from each primary/master server to a standby server, so that, if the primary/master server experiences a failure, the database will be ready to failover to a standby. Replication from the primary/master to standby and/or replica servers is typically achieved in any one of three ways:
+Many users set up PostgreSQL to replicate WAL changes from each primary/master server to one or more standby servers, in order to improve performance by directing queries to specific pools of read-only standbys. Replication also makes the database highly available—if the primary/master server experiences a failure, the database will always be prepared to failover to a standby. Replication is typically achieved in any one of three ways:
 
 **Streaming replication:** The master server streams WAL updates to the standby as they come in. This method is asynchronous, which means that there is a slight delay between a transaction that has been committed in the primary/master and the same transaction taking effect in the standby.
 
@@ -310,7 +324,7 @@ Many users set up PostgreSQL to replicate changes from each primary/master serve
 
 {{< img src="postgresql-monitoring-cascading-replication.png" alt="monitor postgres streaming replication diagram" caption="In this example of cascading replication, the master/primary server asynchronously replicates its WAL updates to one standby, which then communicates those updates to two other standby servers." >}}
 
-**Synchronous replication:** Available in PostgreSQL version 9.1+, this is the only method that ensures that every transaction on the primary/master is written to each standby server's WAL, and written to disk, before the transaction can be considered "committed." This is slower than the other two asynchronous methods, but it is the only method that ensures that data is always consistent across the primary/master and all standby servers, even in the event that the primary/master server crashes.
+**Synchronous replication:** Available in PostgreSQL version 9.1+, this is the only method that ensures that every transaction on the primary/master is written to each standby server's WAL, and written to disk, before the transaction can be considered "committed." This is slower than the asynchronous methods, but it is the only method that ensures that data is always consistent across the primary/master and all standby servers, even in the event that the primary/master server crashes.
 
 {{< img src="postgresql-monitoring-synchronous-replication.png" alt="monitor postgres synchronous replication diagram" caption="In this example, a master/primary server replicates its WAL updates to three standby servers." >}}
 
@@ -319,12 +333,12 @@ Of course, the WAL is not the only file that needs to be committed to disk when 
 
 Checkpoints occur every [`checkpoint_timeout`](https://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-CHECKPOINT-TIMEOUT) seconds (5 minutes by default), or when the WAL file reaches a certain size specified in your configuration settings. This setting was known as [`checkpoint_segments` prior to version 9.5](https://www.postgresql.org/docs/9.4/static/runtime-config-wal.html#GUC-CHECKPOINT-SEGMENTS) (~48 MB by default) , and renamed to [`max_wal_size`](https://www.postgresql.org/docs/9.6/static/runtime-config-wal.html#GUC-MAX-WAL-SIZE) in versions 9.5+ (1 GB by default). When either one of these settings is reached, it will trigger a checkpoint.
 
-Checkpoint frequency is also influenced by the [`checkpoint_completion_target`](https://www.postgresql.org/docs/9.6/static/runtime-config-wal.html#GUC-CHECKPOINT-COMPLETION-TARGET) setting, which is specified as the ratio of how quickly a checkpoint should be completed in relation to the time between checkpoints. By default, it is 0.5, which means that it aims to complete the current checkpoint in about half the time between the current checkpoint and when the next checkpoint is estimated to run. This is designed to space out checkpoints to distribute the I/O load of writing data to disk. 
+Checkpoint frequency is also influenced by the [`checkpoint_completion_target`](https://www.postgresql.org/docs/current/static/runtime-config-wal.html#GUC-CHECKPOINT-COMPLETION-TARGET) setting, which is specified as the ratio of how quickly a checkpoint should be completed in relation to the time between checkpoints. By default, it is 0.5, which means that it aims to complete the current checkpoint in about half the time between the current checkpoint and when the next checkpoint is estimated to run. This is designed to space out checkpoints to distribute the I/O load of writing data to disk. 
 
 #### Replication & checkpoint metrics
 | **Metric description**  | **Name** | [**Metric type**][monitoring-101-blog] | [**Availability**][part-2] |
 | :------------ | :----------- | :------------------- | :------------------- |
-| Replication delay (seconds)    |  pg_last_xlog_receive_location() - pg_last_xlog_replay_location(), or pg_last_wal_receive_lsn() -  pg_last_wal_replay_lsn() in version 10+       | Other |  pg_xlog | 
+| Replication delay (seconds)    |  time elapsed since pg_last_xlog_replay_location() timestamp, or pg_last_wal_replay_lsn() in version 10+       | Other |  pg_xlog | 
 | Number of checkpoints requested & scheduled    | checkpoints_req & checkpoints_timed      | Other  |  pg_stat_bgwriter | 
 | Number of buffers written during checkpoints    | buffers_checkpoint      | Other  |  pg_stat_bgwriter | 
 | Number of buffers written by the background writer    | buffers_clean      | Other  |  pg_stat_bgwriter | 
@@ -335,7 +349,7 @@ Checkpoint frequency is also influenced by the [`checkpoint_completion_target`](
 
 Replication delay is typically measured as the time delay between the last WAL update received from a primary/master, and the last WAL update applied/replayed on disk on that standby/replica. Collecting and graphing this metric over time is particularly insightful, as it tells you how consistently data is being updated across your replica servers. 
 
-For example, if you see that replication lag is increasing by one second, every second, on a read-only replica, that means the it isn’t receiving any new data updates, so it is likely serving queries with stale or outdated data. PostgreSQL enables you to track replication lag in seconds (as of version 9.1) and bytes (as of version 9.2). We'll explain how to collect this metric in the [next part][part-2] of this series.
+For example, if you see that replication lag is increasing by one second, every second, on a standby that accepts read queries, that means that it hasn’t been receiving any new data updates, so it could be serving queries with stale or outdated data. PostgreSQL enables you to track replication lag in seconds (as of version 9.1) and bytes (as of version 9.2). We'll explain how to collect this metric in the [next part][part-2] of this series.
 
 If your data is constantly being updated, you should closely monitor replication lag on any standby/replica servers that are serving read queries, to ensure that they are not serving stale data. However, it's also important to monitor lag on standby servers that are not actively serving any queries, because they need to be prepared to step in quickly if the primary/master fails.  
 
@@ -405,7 +419,6 @@ In this post, we've covered an overview of PostgreSQL monitoring and its key per
 [explain-docs]: https://www.postgresql.org/docs/current/static/using-explain.html
 [mvcc-docs]: https://www.postgresql.org/docs/current/static/mvcc-intro.html
 [toast-docs]: https://www.postgresql.org/docs/current/static/storage-toast.html
-[postgres-docs-autovacuum]: https://www.postgresql.org/docs/current/static/routine-vacuuming.html
 [pg-locks]: https://www.postgresql.org/docs/current/static/view-pg-locks.html
 [wal-docs]: https://www.postgresql.org/docs/current/static/wal-intro.html
 [checkpoint-docs]: https://www.postgresql.org/docs/current/static/wal-configuration.html
@@ -421,4 +434,5 @@ In this post, we've covered an overview of PostgreSQL monitoring and its key per
 [internal-statistics-docs]: https://www.postgresql.org/docs/current/static/planner-stats.html
 [part-2]: /blog/postgresql-monitoring-tools
 [part-3]: /blog/collect-postgresql-data-with-datadog
-
+[autovacuum-docs]: https://www.postgresql.org/docs/current/static/routine-vacuuming.html#AUTOVACUUM
+[pgclass-docs]: https://www.postgresql.org/docs/current/static/catalog-pg-class.html
