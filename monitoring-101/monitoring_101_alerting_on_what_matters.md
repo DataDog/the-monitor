@@ -1,9 +1,9 @@
 Monitoring 101: Alerting on what matters
 ===================================================
 
-*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/monitoring-101-collecting-data/) and [Investigating performance issues](/monitoring-101-investigating_perfomance_issues/).*
+*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) and [Investigating performance issues](https://www.datadoghq.com/blog/monitoring-101-investigation/).*
 
-Automated alerts are essential to monitoring. They allow you to spot problems anywhere in your infrastructure, so that you can rapidly identify their causes and minimize service degradation and disruption. To reference [a companion post](/monitoring-101-collecting-data/), if metrics and other measurements facilitate [observability](https://en.wikipedia.org/wiki/Observability), then alerts draw human attention to the particular systems that require observation, inspection, and intervention.
+Automated alerts are essential to monitoring. They allow you to spot problems anywhere in your infrastructure, so that you can rapidly identify their causes and minimize service degradation and disruption. To reference [a companion post](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), if metrics and other measurements facilitate [observability](https://en.wikipedia.org/wiki/Observability), then alerts draw human attention to the particular systems that require observation, inspection, and intervention.
 
 But alerts aren’t always as effective as they could be. In particular, real problems are often lost in a sea of noisy alarms. This article describes a simple approach to effective alerting, regardless of the scale of the systems involved. In short:
 

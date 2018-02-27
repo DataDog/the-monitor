@@ -1,7 +1,7 @@
 Monitoring 101: Collecting the right data
 ====================================================
 
-*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Alerting on what matters](/monitoring-101-alerting/) and [Investigating performance issues](/monitoring-101-investigation/).*
+*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Alerting on what matters](https://www.datadoghq.com/blog/monitoring-101-alerting/) and [Investigating performance issues](https://www.datadoghq.com/blog/monitoring-101-investigation).*
 
 Monitoring data comes in a variety of forms—some systems pour out data continuously and others only produce data when rare events occur. Some data is most useful for *identifying* problems; some is primarily valuable for *investigating* problems. More broadly, having monitoring data is a necessary condition for [*observability*](https://en.wikipedia.org/wiki/Observability) into the inner workings of your systems.
 

@@ -1,6 +1,6 @@
 # Monitoring 101: Investigating performance issues
 
-*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/monitoring-101-collecting-data/) and [Alerting on what matters](/monitoring-101-alerting/).*
+*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) and [Alerting on what matters](https://www.datadoghq.com/blog/monitoring-101-alerting/).*
 
 The responsibilities of a monitoring system do not end with symptom detection. Once your monitoring system has notified you of a real symptom that requires attention, its next job is to help you diagnose the root cause by making your systems [observable](https://en.wikipedia.org/wiki/Observability) via the monitoring data you have collected. Often this is the least structured aspect of monitoring, driven largely by hunches and guess-and-check. This post describes a more directed approach that can help you to find and correct root causes more efficiently.
 
@@ -60,4 +60,4 @@ Adhering to a standardized monitoring framework allows you to investigate proble
 -   Investigate causes of problems by starting with the highest-level system that is showing symptoms, reviewing its [work and resource metrics](https://www.datadoghq.com/blog/monitoring-101-collecting-data/#metrics) and any associated events.
 -   If problematic resources are detected, apply the same investigation pattern to the resource (and its constituent resources) until your root problem is discovered and corrected.
 
-We would like to hear about your experiences as you apply this framework to your own monitoring practice. If it is working well, please [let us know on Twitter](https://twitter.com/datadoghq)! Questions, corrections, additions, complaints, etc? Please [let us know on GitHub](https://github.com/DataDog/the-monitor/blob/master/monitoring-101/monitoring_101_investigating_performance_issues.md).
+We would like to hear about your experiences as you apply this framework to your own monitoring practice. If it is working well, please [let us know on Twitter](https://twitter.com/datadoghq)! Questions, corrections, additions, complaints, etc? Please [let us know on GitHub](https://github.com/DataDog/the-monitor).
