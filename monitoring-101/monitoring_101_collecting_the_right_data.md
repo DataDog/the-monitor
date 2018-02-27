@@ -1,9 +1,9 @@
 Monitoring 101: Collecting the right data
 ====================================================
 
-*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Alerting on what matters](/blog/monitoring-101-alerting/) and [Investigating performance issues](/blog/monitoring-101-investigation/).*
+*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Alerting on what matters](/monitoring-101-alerting/) and [Investigating performance issues](/monitoring-101-investigation/).*
 
-Monitoring data comes in a variety of forms—some systems pour out data continuously and others only produce data when rare events occur. Some data is most useful for *identifying* problems; some is primarily valuable for *investigating* problems. More broadly, having monitoring data is a necessary condition for [*observability*](https://en.wikipedia.org/wiki/Observability) into the inner workings of your systems. 
+Monitoring data comes in a variety of forms—some systems pour out data continuously and others only produce data when rare events occur. Some data is most useful for *identifying* problems; some is primarily valuable for *investigating* problems. More broadly, having monitoring data is a necessary condition for [*observability*](https://en.wikipedia.org/wiki/Observability) into the inner workings of your systems.
 
 This post covers which data to collect, and how to classify that data so that you can:
 
@@ -72,12 +72,12 @@ Resource metrics can help you reconstruct a detailed picture of a system's state
 
 Here are example metrics for a handful of common resource types:
 
-| **Resource** | **Utilization**                                       | **Saturation**       | **Errors**                                   | **Availability**             |   
+| **Resource** | **Utilization**                                       | **Saturation**       | **Errors**                                   | **Availability**             |
 |--------------|-------------------------------------------------------|----------------------|----------------------------------------------|------------------------------|
-| Disk IO      | % time that device was busy                           | wait queue length    | \# device errors                             | % time writable              |   
-| Memory       | % of total memory capacity in use                     | swap usage           | N/A (not usually observable)                 | N/A                          |       
-| Microservice | average % time each request-servicing thread was busy | \# enqueued requests | \# internal errors such as caught exceptions | % time service is reachable  |   
-| Database     | average % time each connection was busy               | \# enqueued queries  | \# internal errors, e.g. replication errors  | % time database is reachable |   
+| Disk IO      | % time that device was busy                           | wait queue length    | \# device errors                             | % time writable              |
+| Memory       | % of total memory capacity in use                     | swap usage           | N/A (not usually observable)                 | N/A                          |
+| Microservice | average % time each request-servicing thread was busy | \# enqueued requests | \# internal errors such as caught exceptions | % time service is reachable  |
+| Database     | average % time each connection was busy               | \# enqueued queries  | \# internal errors, e.g. replication errors  | % time database is reachable |
 
 ### Other metrics
 
@@ -114,23 +114,23 @@ The data you collect should have four characteristics:
 
 ## Data for alerts and diagnostics 
 
-The table below maps the different data types described in this article to different levels of alerting urgency outlined [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/). In short, a *record* is a low-urgency alert that does not notify anyone automatically but is recorded in a monitoring system in case it becomes useful for later analysis or investigation. A *notification* is a moderate-urgency alert that notifies someone who can fix the problem in a non-interrupting way such as email or chat. A *page* is an urgent alert that interrupts a recipient’s work, sleep, or personal time, whatever the hour. Note that depending on severity, a notification may be more appropriate than a page, or vice versa:
+The table below maps the different data types described in this article to different levels of alerting urgency outlined [in a companion post](https://www.datadoghq.com/blog/monitoring-101-alerting/). In short, a *record* is a low-urgency alert that does not notify anyone automatically but is recorded in a monitoring system in case it becomes useful for later analysis or investigation. A *notification* is a moderate-urgency alert that notifies someone who can fix the problem in a non-interrupting way such as email or chat. A *page* is an urgent alert that interrupts a recipient’s work, sleep, or personal time, whatever the hour. Note that depending on severity, a notification may be more appropriate than a page, or vice versa:
 
 | **Data**                      | **Alert**    | **Trigger**                                                                         |
 |-------------------------------|--------------|-------------------------------------------------------------------------------------|
-| Work metric: Throughput       | Page         | value is much higher or lower than usual, or there is an anomalous rate of change   |  
-| Work metric: Success          | Page         | the percentage of work that is successfully processed drops below a threshold       |  
-| Work metric: Errors           | Page         | the error rate exceeds a threshold                                                  |  
-| Work metric: Performance      | Page         | work takes too long to complete (e.g., performance violates internal SLA)           |  
-| Resource metric: Utilization  | Notification | approaching critical resource limit (e.g., free disk space drops below a threshold) |  
-| Resource metric: Saturation   | Record       | number of waiting processes exceeds a threshold                                     |  
-| Resource metric: Errors       | Record       | number of errors during a fixed period exceeds a threshold                          |  
-| Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |      
-| Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |  
+| Work metric: Throughput       | Page         | value is much higher or lower than usual, or there is an anomalous rate of change   |
+| Work metric: Success          | Page         | the percentage of work that is successfully processed drops below a threshold       |
+| Work metric: Errors           | Page         | the error rate exceeds a threshold                                                  |
+| Work metric: Performance      | Page         | work takes too long to complete (e.g., performance violates internal SLA)           |
+| Resource metric: Utilization  | Notification | approaching critical resource limit (e.g., free disk space drops below a threshold) |
+| Resource metric: Saturation   | Record       | number of waiting processes exceeds a threshold                                     |
+| Resource metric: Errors       | Record       | number of errors during a fixed period exceeds a threshold                          |
+| Resource metric: Availability | Record       | the resource is unavailable for a percentage of time that exceeds a threshold       |
+| Event: Work-related           | Page         | critical work that should have been completed is reported as incomplete or failed   |
 
 ## Conclusion: Collect ’em all
 
--   Instrument everything and collect as many work metrics, resource metrics, and events as you reasonably can. Observability of complex systems demands comprehensive measurements. 
+-   Instrument everything and collect as many work metrics, resource metrics, and events as you reasonably can. Observability of complex systems demands comprehensive measurements.
 -   Collect metrics with sufficient granularity to make important spikes and dips visible. The specific granularity depends on the system you are measuring, the cost of measuring and a typical duration between changes in metrics—seconds for memory or CPU metrics, minutes for energy consumption, and so on.
 -   To maximize the value of your data, tag metrics and events with several scopes, and retain them at full granularity for at least a year.
 

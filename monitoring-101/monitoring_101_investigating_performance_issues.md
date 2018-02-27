@@ -1,6 +1,6 @@
 # Monitoring 101: Investigating performance issues
 
-*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/blog/monitoring-101-collecting-data/) and [Alerting on what matters](/blog/monitoring-101-alerting/).*
+*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/monitoring-101-collecting-data/) and [Alerting on what matters](/monitoring-101-alerting/).*
 
 The responsibilities of a monitoring system do not end with symptom detection. Once your monitoring system has notified you of a real symptom that requires attention, its next job is to help you diagnose the root cause by making your systems [observable](https://en.wikipedia.org/wiki/Observability) via the monitoring data you have collected. Often this is the least structured aspect of monitoring, driven largely by hunches and guess-and-check. This post describes a more directed approach that can help you to find and correct root causes more efficiently.
 
@@ -10,13 +10,13 @@ This series of articles comes out of our experience monitoring large-scale infra
 
 ![metric types](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_chart_1.png)
 
-There are three main types of monitoring data that can help you investigate the root causes of problems in your infrastructure. Data types and best practices for their collection are discussed in-depth [in a companion post](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/), but in short:
+There are three main types of monitoring data that can help you investigate the root causes of problems in your infrastructure. Data types and best practices for their collection are discussed in-depth [in a companion post](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), but in short:
 
 -   **Work metrics** indicate the top-level health of your system by measuring its useful output
 -   **Resource metrics** quantify the utilization, saturation, errors, or availability of a resource that your system depends on
 -   **Events** describe discrete, infrequent occurrences in your system such as code changes, internal alerts, and scaling events
 
-By and large, work metrics will surface the most serious symptoms and should therefore generate [the most serious alerts](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/#page-on-symptoms). But the other metric types are invaluable for investigating the *causes* of those symptoms. In order for your systems to be [observable](https://en.wikipedia.org/wiki/Observability), you need sufficiently comprehensive measurements to provide a full picture of each system's health and function.
+By and large, work metrics will surface the most serious symptoms and should therefore generate [the most serious alerts](https://www.datadoghq.com/blog/monitoring-101-alerting/#page-on-symptoms). But the other metric types are invaluable for investigating the *causes* of those symptoms. In order for your systems to be [observable](https://en.wikipedia.org/wiki/Observability), you need sufficiently comprehensive measurements to provide a full picture of each system's health and function.
 
 ## It’s resources all the way down
 
@@ -40,7 +40,7 @@ If you haven’t found the cause of the problem by inspecting top-level work met
 
 ### 3. Did something change?
 
-Next consider alerts and other events that may be correlated with your metrics. If a code release, [internal alert](https://www.datadoghq.com/blog/2015/06/monitoring-101-alerting/#levels-of-urgency), or other event was registered slightly before problems started occurring, investigate whether they may be connected to the problem.
+Next consider alerts and other events that may be correlated with your metrics. If a code release, [internal alert](https://www.datadoghq.com/blog/monitoring-101-alerting/#levels-of-urgency), or other event was registered slightly before problems started occurring, investigate whether they may be connected to the problem.
 
 ### 4. Fix it (and don’t forget it)
 
@@ -57,7 +57,7 @@ In an outage, every minute is crucial. To speed your investigation and keep your
 Adhering to a standardized monitoring framework allows you to investigate problems more systematically:
 
 -   For each system in your infrastructure, set up a dashboard ahead of time that displays all its key metrics, with relevant events overlaid.
--   Investigate causes of problems by starting with the highest-level system that is showing symptoms, reviewing its [work and resource metrics](https://www.datadoghq.com/blog/2015/06/monitoring-101-collecting-data/#metrics) and any associated events.
+-   Investigate causes of problems by starting with the highest-level system that is showing symptoms, reviewing its [work and resource metrics](https://www.datadoghq.com/blog/monitoring-101-collecting-data/#metrics) and any associated events.
 -   If problematic resources are detected, apply the same investigation pattern to the resource (and its constituent resources) until your root problem is discovered and corrected.
 
 We would like to hear about your experiences as you apply this framework to your own monitoring practice. If it is working well, please [let us know on Twitter](https://twitter.com/datadoghq)! Questions, corrections, additions, complaints, etc? Please [let us know on GitHub](https://github.com/DataDog/the-monitor/blob/master/monitoring-101/monitoring_101_investigating_performance_issues.md).
