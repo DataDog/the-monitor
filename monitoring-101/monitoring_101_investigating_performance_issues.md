@@ -40,7 +40,7 @@ If you haven’t found the cause of the problem by inspecting top-level work met
 
 ### 3. Did something change?
 
-Next consider alerts and other events that may be correlated with your metrics. If a code release, [internal alert](https://www.datadoghq.com/blog/monitoring-101-alerting/#levels-of-urgency), or other event was registered slightly before problems started occurring, investigate whether they may be connected to the problem.
+Next consider alerts and other events that may be correlated with your metrics. If a code release, [internal alert](https://www.datadoghq.com/blog/monitoring-101-alerting/#levels-of-alerting-urgency), or other event was registered slightly before problems started occurring, investigate whether they may be connected to the problem.
 
 ### 4. Fix it (and don’t forget it)
 
