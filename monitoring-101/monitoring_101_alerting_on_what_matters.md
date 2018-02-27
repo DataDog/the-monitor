@@ -1,9 +1,9 @@
 Monitoring 101: Alerting on what matters
 ===================================================
 
-*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](/blog/monitoring-101-collecting-data/) and [Investigating performance issues](/blog/monitoring-101-investigation/).*
+*This post is part of a series on effective monitoring. Be sure to check out the rest of the series: [Collecting the right data](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) and [Investigating performance issues](https://www.datadoghq.com/blog/monitoring-101-investigation/).*
 
-Automated alerts are essential to monitoring. They allow you to spot problems anywhere in your infrastructure, so that you can rapidly identify their causes and minimize service degradation and disruption. To reference [a companion post](/blog/monitoring-101-collecting-data/), if metrics and other measurements facilitate [observability](https://en.wikipedia.org/wiki/Observability), then alerts draw human attention to the particular systems that require observation, inspection, and intervention. 
+Automated alerts are essential to monitoring. They allow you to spot problems anywhere in your infrastructure, so that you can rapidly identify their causes and minimize service degradation and disruption. To reference [a companion post](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), if metrics and other measurements facilitate [observability](https://en.wikipedia.org/wiki/Observability), then alerts draw human attention to the particular systems that require observation, inspection, and intervention.
 
 But alerts aren’t always as effective as they could be. In particular, real problems are often lost in a sea of noisy alarms. This article describes a simple approach to effective alerting, regardless of the scale of the systems involved. In short:
 
@@ -12,32 +12,32 @@ But alerts aren’t always as effective as they could be. In particular, real pr
 
 This series of articles comes out of our experience monitoring large-scale infrastructure for [our customers](https://www.datadoghq.com/customers/). It also draws on the work of [Brendan Gregg](http://dtdg.co/use-method), [Rob Ewaschuk](http://dtdg.co/philosophy-alerting), and [Baron Schwartz](http://dtdg.co/metrics-attention).
 
-When to alert someone (or no one) 
+When to alert someone (or no one)
 ---------------------------------
 
 ![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_chart.png)
 
 An alert should communicate something specific about your systems in plain language: “Two Cassandra nodes are down” or “90% of all web requests are taking more than 0.5s to process and respond.” Automating alerts across as many of your systems as possible allows you to respond quickly to issues and provide better service, and it also saves time by freeing you from continual manual inspection of metrics.
 
-### Levels of alerting urgency 
+### Levels of alerting urgency
 
 Not all alerts carry the same degree of urgency. Some require immediate human intervention, some require eventual human intervention, and some point to areas where attention may be needed in the future. All alerts should, at a minimum, be logged to a central location for easy correlation with other metrics and events.
 
-#### Alerts as records (low severity) 
+#### Alerts as records (low severity)
 
-Many alerts will not be associated with a service problem, so a human may never even need to be aware of them. For instance, when a data store that supports a user-facing service starts serving queries much slower than usual, but not slow enough to make an appreciable difference in the overall service’s response time, that should generate a low-urgency alert that is recorded in your monitoring system for future reference or investigation but does not interrupt anyone’s work. After all, transient issues that could be to blame, such as network congestion, often go away on their own. But should the service start returning a large number of timeouts, that alert-based data will provide invaluable context for your investigation. 
+Many alerts will not be associated with a service problem, so a human may never even need to be aware of them. For instance, when a data store that supports a user-facing service starts serving queries much slower than usual, but not slow enough to make an appreciable difference in the overall service’s response time, that should generate a low-urgency alert that is recorded in your monitoring system for future reference or investigation but does not interrupt anyone’s work. After all, transient issues that could be to blame, such as network congestion, often go away on their own. But should the service start returning a large number of timeouts, that alert-based data will provide invaluable context for your investigation.
 
-#### Alerts as notifications (moderate severity) 
+#### Alerts as notifications (moderate severity)
 
 The next tier of alerting urgency is for issues that do require intervention, but not right away. Perhaps the data store is running low on disk space and should be scaled out in the next several days. Sending an email and/or posting a notification in the service owner’s chat room is a perfect way to deliver these alerts—both message types are highly visible, but they won’t wake anyone in the middle of the night or disrupt an engineer’s flow.
 
-#### Alerts as pages (high severity) 
+#### Alerts as pages (high severity)
 
 The most urgent alerts should receive special treatment and be escalated to a page (as in “[pager](https://en.wikipedia.org/wiki/Pager)”) to urgently request human attention. Response times for your web application, for instance, should have an internal SLA that is at least as aggressive as your strictest customer-facing SLA. Any instance of response times exceeding your internal SLA would warrant immediate attention, whatever the hour.
 
 ![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_band_1.png)
 
-### When to let a sleeping engineer lie 
+### When to let a sleeping engineer lie
 
 Whenever you consider setting an alert, ask yourself three questions to determine the alert’s level of urgency and how it should be handled:
 
@@ -90,13 +90,13 @@ Another good reason to page on symptoms is that symptom-triggered alerts tend to
 
 ![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-05-how-to-monitor/alerting101_2_band_3.png)
 
-#### Exception to the rule: Early warning signs 
+#### Exception to the rule: Early warning signs
 
 It is sometimes necessary to call human attention to a small handful of metrics even when the system is performing adequately. Early warning metrics reflect an unacceptably high probability that serious symptoms will soon develop and require immediate intervention.
 
 Disk space is a classic example. Unlike running out of free memory or CPU, when you run out of disk space, the system will not likely recover, and you probably will have only a few seconds before your system hard stops. Of course, if you can notify someone with plenty of lead time, then there is no need to wake anyone in the middle of the night. Better yet, you can anticipate some situations when disk space will run low and build automated remediation based on the data you can afford to erase, such as logs or data that exists somewhere else.
 
-Conclusion: Get serious about symptoms 
+Conclusion: Get serious about symptoms
 --------------------------------------
 
 -   Send a page only when symptoms of urgent problems in your system’s
