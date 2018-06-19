@@ -44,53 +44,13 @@ The [Datadog Agent](https://docs.datadoghq.com/guides/basic_agent_usage/) is ope
 
 For Kubernetes, it’s recommended to run the Agent in a container. We have created a Docker image with both the Docker and the Kubernetes integrations enabled.
 
-Thanks to Kubernetes, you can take advantage of [DaemonSets](http://kubernetes.io/docs/admin/daemons/) to automatically deploy the Datadog Agent on all your nodes (or on specific nodes by using [nodeSelectors](http://kubernetes.io/docs/user-guide/node-selection/#nodeselector)). You just need to create the following [dd-agent.yaml](https://app.datadoghq.com/account/settings#agent/kubernetes) manifest:
+Thanks to Kubernetes, you can take advantage of [DaemonSets](http://kubernetes.io/docs/admin/daemons/) to automatically deploy the Datadog Agent on all your nodes (or on specific nodes by using [nodeSelectors](http://kubernetes.io/docs/user-guide/node-selection/#nodeselector)). You just need to create a manifest `.yaml` file, pasting in the text you'll find within the Datadog Agent [installation page](https://app.datadoghq.com/account/settings#agent/kubernetes).
 
-    apiVersion: extensions/v1beta1
-    kind: DaemonSet
-    metadata:
-      name: dd-agent
-    spec:
-      template:
-        metadata:
-          labels:
-            app: dd-agent
-          name: dd-agent
-        spec:
-          containers:
-          - image: datadog/docker-dd-agent:latest
-            imagePullPolicy: Always
-            name: dd-agent
-            ports:
-              - containerPort: 8125
-                name: dogstatsdport
-                protocol: UDP
-            env:
-              - name: API_KEY
-                value: "YOUR_API_KEY_HERE"
-              - name: KUBERNETES
-                value: "yes"
-            volumeMounts:
-              - name: dockersocket
-                mountPath: /var/run/docker.sock
-              - name: procdir
-                mountPath: /host/proc
-                readOnly: true
-              - name: cgroups
-                mountPath: /host/sys/fs/cgroup
-                readOnly: true
-          volumes:
-            - hostPath:
-                path: /var/run/docker.sock
-              name: dockersocket
-            - hostPath:
-                path: /proc
-              name: procdir
-            - hostPath:
-                path: /sys/fs/cgroup
-              name: cgroups
+Then simply deploy the DaemonSet with the command 
 
-Then simply deploy the DaemonSet with the command `kubectl create -f dd-agent.yaml`
+```
+kubectl create -f /path/to/the/manifest/.yaml
+```
 
 Now that the Agent is running on nodes across your Kubernetes cluster, the next step is to configure it.
 
