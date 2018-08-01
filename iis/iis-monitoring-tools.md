@@ -1,4 +1,4 @@
-﻿# Collecting IIS metrics with Microsoft monitoring tools
+﻿# Collecting metrics with IIS monitoring tools
 
 You may recall from [Part 1][part1] of this series that IIS exposes metrics in two principal ways: 
 
