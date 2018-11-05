@@ -226,14 +226,8 @@ If **memory space metrics** (dataSize, indexSize, or storageSize) or the **numbe
 |---------------------------------------------------------------|--------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Virtual memory usage (MB)                                     | mem.virtual              | Resource: Utilization                                                             | serverStatus                                                                                 |
 | Amount of memory used by the database process (MB)            | mem.resident             | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Number of times MongoDB had to request from disk (per second) | extra\_info.page\_faults | Other                                                                             | serverStatus                                                                                 |
 
 The **resident memory** usage usually approaches the amount of physical RAM available to the MongoDB server.
-
-##### Metric to notify on:
-
-**Page faults** indicate operations which required the MongoDB to fetch data from disk because it wasn’t available in active memory (“hard” page fault), or when the operation required in-memory page relocation (“soft” page fault). Requests which trigger page faults take more time to execute than requests that do not. Frequent page faults may indicate that your data set is too large for the allocated memory. However that’s not a big issue if the throughput remains healthy. Limited and occasional page faults do not necessarily indicate serious problems. In order to reduce the frequency of page faults, you can increase the size of your RAM or consider adding more shards to your deployments in order to better distribute incoming requests. Page faults can also be a sign of inefficient schema design, redundant or unnecessary indexes, or anything using available RAM unnecessarily.
- [![Monitoring MongoDB page faults](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-page-faults.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-page-faults.png)
 
 #### Cache metrics
 
