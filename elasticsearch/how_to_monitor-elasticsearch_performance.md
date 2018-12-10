@@ -240,14 +240,42 @@ A **red** cluster status indicates that at least one primary shard is missing, a
 Elasticsearch nodes use thread pools to manage how threads consume memory and CPU. Since thread pool settings are automatically configured based on the number of processors, it usually doesn't make sense to tweak them. However, it's a good idea to keep an eye on queues and rejections to find out if your nodes aren't able to keep up; if so, you may want to add more nodes to handle all of the concurrent requests. Fielddata and filter cache usage is another area to monitor, as evictions may point to inefficient queries or signs of memory pressure.
 
 #### Thread pool queues and rejections
-Each node maintains many types of thread pools; the exact ones you'll want to monitor will depend on your particular usage of Elasticsearch. In general, the most important ones to monitor are search, index, merge, and bulk, which correspond to the request type (search, index, and merge and bulk operations). 
+Each node maintains many types of thread pools; the exact ones you'll want to monitor will depend on your particular usage of Elasticsearch. In general, the most important ones to monitor are search, merge, and bulk (also known as the write thread pool, depending on your version), which correspond to the request type (search, and merge and bulk/write operations). [As of version 6.3.x+](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html), the bulk thread pool is now known as the write thread pool. The write thread pool handles each write request, whether it writes/updates/deletes a single document or many documents (in a bulk operation). Starting in version 7.x, [the index thread pool will be deprecated](https://github.com/elastic/elasticsearch/pull/29540), but you may also want to monitor this thread pool if you're using an earlier version of Elasticsearch [(prior to 6.x)](https://discuss.elastic.co/t/index-threadpool-vs-write-threadpool/151864).
 
 The size of each thread pool's queue represents how many requests are waiting to be served while the node is currently at capacity. The queue allows the node to track and eventually serve these requests instead of discarding them. Thread pool rejections arise once the [thread pool's maximum queue size][thread-pool-docs] (which varies based on the type of thread pool) is reached.
 
-| **Metric description**                                  | **Name**                          | [**Metric type**][monitoring-101-blog]          |
-|-----------------------------------|--------------------------|--------------------|
-| Number of queued threads in a thread pool     | `thread_pool.bulk.queue`<br>`thread_pool.index.queue`<br>`thread_pool.search.queue`<br>`thread_pool.merge.queue`      | Resource: Saturation | 
-| Number of rejected threads a thread pool   | `thread_pool.bulk.rejected`<br>`thread_pool.index.rejected`<br>`thread_pool.search.rejected`<br>`thread_pool.merge.rejected`   | Resource: Error          | 
+<table>
+<thead>
+<tr class="header">
+<th><strong>Metric description</strong></th>
+<th><strong>Name</strong></th>
+<th><a href="/blog/monitoring-101-collecting-data/"><strong>Metric type</strong></a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of queued threads in a thread pool</td>
+<td><code>thread_pool.search.queue</code><br />
+<code>thread_pool.merge.queue</code><br />
+<code>thread_pool.write.queue</code> (or <code>thread_pool.bulk.queue*</code>)<br />
+<code>thread_pool.index.queue*</code> 
+</td>
+<td>Resource: Saturation</td>
+</tr>
+<tr class="even">
+<td>Number of rejected threads a thread pool</td>
+<td><code>thread_pool.search.rejected</code><br />
+<code>thread_pool.merge.rejected</code><br />
+<code>thread_pool.write.rejected</code> (or <code>thread_pool.bulk.rejected*</code>)<br />
+<code>thread_pool.index.rejected*</code> 
+</td>
+<td>Resource: Error</td>
+</tr>
+<tr>
+<td colspan="3"><i>*Prior to version <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html">6.3.x</a></i></td>
+</tr>
+</tbody>
+</table>
 
 ##### Metrics to watch
 <div id="search-queue"></div>

@@ -52,7 +52,7 @@ The other sections are as follows:
 - `os`: Information about the operating system's resource usage, including CPU utilization and memory usage. 
 - `process`: Like the `os` section, this section offers metrics about resource usage, but limited to what the Elasticsearch JVM process is using. This section also provides the number of open file descriptors being used by Elasticsearch.
 - `jvm`: This is where you will find all of the JVM metrics, including JVM heap currently in use, amount of JVM heap committed, and the total count and time spent on young- and old-generation garbage collections. Note that garbage collection count is cumulative, so the longer a node has been running, the higher this number will be.
-- `thread_pool`: Provides the number of active, queued, and rejected threads for each thread pool; the main ones to focus on are `index`, `bulk`, `merge`, and `search`.
+-   `thread_pool`: Provides the number of active, queued, and rejected threads for each thread pool; the main ones to focus on are `bulk` (renamed to `write` in v. 6.3.x+), `merge`, and `search`.
 - `fs`: File system information (available disk space and disk I/O stats).
 - `transport`: Stats about cluster communication (bytes sent and received).
 - `http`: Number of HTTP connections currently open and total number of HTTP connections opened over time.
