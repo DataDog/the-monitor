@@ -1,33 +1,3 @@
----
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-blog/category:
-- series datadog
-blog/tag:
-- pivotal
-- cloud foundry
-- metrics
-- logs
-- datadog
-date: 2018-10-10 00:00:01
-description: Learn how to get visibility into your PCF cluster and applications with Datadog.
-draft: false
-image: PCF_hero_4.jpg
-preview_image: PCF_hero_4.jpg
-slug: pcf-monitoring-with-datadog
-technology: pivotal-cloud-foundry
-title: Pivotal Cloud Foundry Monitoring with Datadog
-series: pivotal-cloud-foundry-monitoring
-tcp:
-- title: "eBook: Monitoring In The Cloud"
-  desc: "Build a framework for monitoring dynamic infrastructure and applications."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/resources/monitoring-in-the-cloud-ebook/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringInTheCloud"
-  img: Thumbnail-MonitoringInTheCloud.png
----
-
 In [part three][part-three] of this series, we showed you a number of methods and tools for accessing [key metrics][part-two] and logs from a Pivotal Cloud Foundry deployment. Some of these tools help PCF operators monitor the health and performance of the cluster, whereas others allow developers to view metrics, logs, and performance data from their applications running on the cluster.
 
 In this post, we’ll show you how you can use Datadog to collect and monitor metrics and logs from PCF, whether you are an operator or a developer. By monitoring PCF with Datadog, you can visualize the data from all your applications, cluster components, and cloud services in one place; set sophisticated alerts; and view historical data on demand. To get you started, we’ll cover:
