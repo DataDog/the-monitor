@@ -1,32 +1,3 @@
----
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-blog/category:
-- series collection
-blog/tag:
-- pivotal
-- cloud foundry
-- metrics
-- logs
-date: 2018-10-10 00:00:02
-description: Learn about tools operators and developers can use to view and collect PCF logs and metrics.
-draft: false
-image: PCF_hero_3.jpg
-preview_image: PCF_hero_3.jpg
-slug: collecting-pcf-logs
-technology: pivotal-cloud-foundry
-title: Collecting Pivotal Cloud Foundry logs and metrics
-series: pivotal-cloud-foundry-monitoring
-tcp:
-- title: "eBook: Monitoring In The Cloud"
-  desc: "Build a framework for monitoring dynamic infrastructure and applications."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/resources/monitoring-in-the-cloud-ebook/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringInTheCloud"
-  img: Thumbnail-MonitoringInTheCloud.png
----
-
 So far in this series we’ve [explored Pivotal Cloud Foundry’s architecture][part-one] and looked at some of the [most important metrics for monitoring each PCF component][part-two]. In this post, we’ll show you how you can view these metrics, as well as application and system logs, in order to monitor your PCF cluster and the applications running on it.
 
 ## Logs and more logs
