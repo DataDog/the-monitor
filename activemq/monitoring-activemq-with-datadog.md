@@ -1,32 +1,4 @@
----
-authors:
-- email: david.lentz@datadoghq.com
-  name: David M. Lentz
-  image: lentz.jpg
-blog/category: 
-- series datadog
-blog/tag:
-- activemq
-- metrics
-- JMX
-- message broker
-date: 2018-12-04
-description: Learn how to use Datadog to monitor ActiveMQ metrics and logs.
-excerpt: Learn how to use Datadog to monitor ActiveMQ metrics and logs.
-draft: false
-image: active-mq_longform_series_181009_Part_3.png
-preview_image: active-mq_longform_series_181009_Part_3.png
-slug: monitoring-activemq-with-datadog
-technology: activemq
-title: Monitoring ActiveMQ with Datadog
-series: activemq-monitoring
-tcp:
-- title: "eBook: Monitoring In The Cloud"
-  desc: "Build a framework for monitoring dynamic infrastructure and applications."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/resources/monitoring-in-the-cloud-ebook/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringInTheCloud"
-  img: Thumbnail-MonitoringInTheCloud.png
----
+# Monitoring ActiveMQ with Datadog
 
 As you operate and scale ActiveMQ, comprehensive monitoring will enable you to rapidly identify any bottlenecks and maintain the flow of data through your applications. Earlier in this series, we introduced some [key ActiveMQ metrics to watch][part-1], and looked at some [tools you can use to monitor ActiveMQ][part-2]. But to get a complete understanding of ActiveMQ's performance, you should monitor your broker and destinations alongside the client applications that send and receive messages, and the infrastructure that runs it all. In this post, we'll show you how you can monitor ActiveMQ and all its related systems using Datadog.
 

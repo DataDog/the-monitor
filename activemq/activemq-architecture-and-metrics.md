@@ -1,33 +1,4 @@
----
-authors:
-- email: david.lentz@datadoghq.com
-  name: David M. Lentz
-  image: lentz.jpg
-blog/category: 
-- series metrics
-blog/tag:
-- activemq
-- metrics
-- JMX
-- architecture
-- message broker
-date: 2018-12-04
-description: Understand the ActiveMQ architecture, and learn about key ActiveMQ metrics to track.
-excerpt: Understand the ActiveMQ architecture, and learn about key ActiveMQ metrics to track.
-draft: false
-image: active-mq_longform_series_181009_Part_1.png
-preview_image: active-mq_longform_series_181009_Part_1.png
-slug: activemq-architecture-and-metrics
-technology: activemq
-title: ActiveMQ architecture and key metrics
-series: activemq-monitoring
-tcp:
-- title: "eBook: Monitoring In The Cloud"
-  desc: "Build a framework for monitoring dynamic infrastructure and applications."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/resources/monitoring-in-the-cloud-ebook/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringInTheCloud"
-  img: Thumbnail-MonitoringInTheCloud.png
----
+# ActiveMQ architecture and key metrics
 
 Apache ActiveMQ is message-oriented middleware (MOM), a category of software that sends messages between applications. Using standards-based, asynchronous communication, ActiveMQ allows loose coupling of the elements in an IT environment, which is often foundational to enterprise messaging and distributed applications.
 
