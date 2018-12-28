@@ -1,35 +1,3 @@
----
-authors:
-- email: mallory.mooney@datadoghq.com
-  image: mallory.jpg
-  name: Mallory Mooney
-blog/category:
-- series metrics
-- series theory
-blog/tag:
-- Tomcat architecture
-- Tomcat performance
-- JMX
-- Java
-- web server
-Date: 2018-12-10
-description: Learn about the Tomcat architecture and the key Tomcat performance metrics that you should monitor.
-draft: false
-image: 1-apache-tomcat-architecture.png
-meta_title: Understanding the Tomcat architecture and key performance metrics
-preview_image: 1-apache-tomcat-architecture.png
-slug: tomcat-architecture-and-performance
-technology: Tomcat
-title: Key metrics for monitoring Tomcat
-series: tomcat-monitoring
-tcp:
-- title: "eBook: Monitoring Modern Infrastructure"
-  desc: "Explore key steps for implementing a successful cloud-scale monitoring strategy."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/ebook/monitoring-modern-infrastructure/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringModernInfrastructure"
-  img: Thumbnail-MonitoringModernInfrastructure.png
----
-
 ## What is Tomcat?
 [Apache Tomcat](http://tomcat.apache.org/) is a server for Java-based web applications, developed by the Apache Software Foundation. The Tomcat project's source was originally created by Sun Microsystems and donated to the foundation in 1999. Tomcat is one of the more popular server implementations for Java web applications and runs in a Java Virtual Machine (JVM). Though it's primarily used as an application server, it can be configured to work as a basic web server or with the [Apache HTTP server](http://httpd.apache.org/). Tomcat works as a Java Servlet Container that provides the runtime environment needed for Java applications and supports the Java Enterprise Edition (EE) [Servlet specification](https://javaee.github.io/servlet-spec/). Tomcat can serve dynamic content through the servlet API, including [Java Server Pages](http://www.oracle.com/technetwork/java/index-jsp-138231.html) (JSP) and Java servlets. 
 
