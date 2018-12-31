@@ -178,14 +178,14 @@ It's important to note that Tomcat maps ThreadPool's _currentThreadsBusy_ to the
 **ThreadPool**
 
 | JMX Attribute | Description | MBean | [Metric Type][monitor-101] | 
-| ----------- | ---------- | --------------- | -------------- | ------- |
+| ----------- | ---------- | --------------- | -------------- |
 | currentThreadsBusy | The number of threads currently processing requests | Catalina:type=ThreadPool,name="http-nio-8080" | Resource: Utilization | 
 | maxThreads | The maximum number of threads to be created by the connector and made available for requests | Catalina:type=ThreadPool,name="http-nio-8080" | Resource: Utilization | 
 
 **Executor**
 
 | JMX Attribute | Description | MBean | [Metric Type][monitor-101] | 
-| ----------- | ---------- | --------------- | -------------- | ------- |
+| ----------- | ---------- | --------------- | -------------- |
 | activeCount | The number of active threads in the thread pool | Catalina:type=Executor,name="http-nio-8080" | Resource: Utilization | 
 | maximumPoolSize | The maximum number of threads available in the thread pool | Catalina:type=Executor,name="http-nio-8080" | Resource: Utilization | 
 
@@ -292,7 +292,7 @@ Your server's throughput, thread usage, and error rates only provide part of the
 
 
 | JMX Attribute | Description | MBean | [Metric Type][monitor-101] | 
-| ----------- | ---------- | --------------- | -------------- | ------- |
+| ----------- | ---------- | --------------- | -------------- |
 | HeapMemoryUsage  | The amount of heap memory used by Tomcat |  java.lang:type=memory |  Resource: Utilization | 
 | CollectionCount | The cumulative number of invoked garbage collections since the start of the server  | java.lang:type=GarbageCollector,name=(PS MarkSweep\|PS Scavenge) | Other | 
 
