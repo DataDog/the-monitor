@@ -1,4 +1,5 @@
-﻿# Key IIS metrics to monitor
+---
+
 
 Microsoft's [Internet Information Services][iis-homepage-link] (IIS) is a web server that has traditionally come bundled with Windows (e.g., versions [5.0, 6.0][install-iis-5-6], and [beyond][install-iis-recent]). IIS has numerous extensibility features. Swappable interfaces like [ISAPI][isapi] and [FastCGI][fastcgi] make it possible to use IIS with a variety of backend technologies, from micro-frameworks like [Flask][iis-with-flask] to runtimes like [Node.js][iis-with-node], along with technologies you'd expect to find within a Windows-based production environment (e.g., [ASP.NET][iis-with-asp]). And through an ecosystem of IIS extensions, called modules, you can equip your server to perform tasks like [rewriting URLs][iis-url-rewrite-link] and [programmatically load balancing requests][iis-application-request-routing]. IIS lets you optimize performance with built-in content caching and compression features, and improve the reliability of your applications by isolating them in separate application pools. 
  
@@ -294,6 +295,7 @@ Below, we see a bump in memory consumption per worker process in a specific appl
 This post has covered some key IIS metrics for tracking the health and performance of IIS. In particular, we've illustrated the importance of monitoring the traffic and resource usage of IIS application pools alongside metrics aggregated from HTTP requests. In [Part 2][part-2-link] of this series, we will show you how to collect these metrics from Windows Performance Counters, IIS logs, and the IIS HTTP API.
 
 
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/iis/iis-metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 
 [app-pools]: https://blogs.msdn.microsoft.com/rohithrajan/2017/10/08/quick-reference-iis-application-pool/

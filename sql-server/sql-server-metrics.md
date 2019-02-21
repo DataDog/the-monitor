@@ -1,37 +1,4 @@
 ---
-authors:
-- email: rishabh.moudgil@datadoghq.com
-  image: rish-static.jpg
-  name: Rishabh Moudgil
-- email: paul.gottschling@datadoghq.com
-  name: Paul Gottschling
-  image: paulgottschling.jpg
-blog/category:
-- integration
-blog/tag:
-- sql-server
-- alerts
-- dbms
-- sql
-- microsoft
-date: 2018-05-04T17:00:00Z
-description: Gather custom SQL Server metrics with performance counters, stored procedures, and the WMI integration
-draft: false
-featured: false
-image: "SQL-Server-Metrics-hero.png"
-preview_image: "SQL-Server-Metrics-hero.png"
-meta_title: Monitor Microsoft SQL Server
-slug: sql-server-metrics
-technology: sql-server
-title: "Custom SQL Server metrics for detailed monitoring"
-series: sql-server-monitoring
-header_video:
-    mp4: superheroes_microsoftsq04_v17.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
-
----
 
 We've shown in [Part 3][part3] of this series how Datadog can help you monitor your SQL Server databases within the context of your application. In this post, we'll show you how to go one step further by collecting custom SQL Server metrics that let you choose the exact functionality you want to monitor and improve. You can configure the Agent to collect custom metrics and report them every time it runs its built-in SQL Server check.
 
@@ -71,11 +38,11 @@ To collect metrics automatically from specific performance counters, edit the SQ
         
         - name: sqlserver.workload.queued_requests
           counter_name: Queued Requests
-          instance: internal                  
+          instance_name: internal                  
 
         - name: sqlserver.databases.log_flushes
           counter_name: Log Flushes/sec
-          instance: ALL
+          instance_name: ALL
           tag_by: db        
 
         - name: sqlserver.index_searches
@@ -85,11 +52,11 @@ To collect metrics automatically from specific performance counters, edit the SQ
 
 For each entry, you must specify values for `name` and `counter_name`. The `name` value will be the name of the metric as you want it to appear in Datadog, whereas the `counter_name` maps to the `counter_name` column of `sys.dm_os_performance_counters`. In the case of "Page lookups/sec," the configuration above will cause the metric to appear in Datadog as `sqlserver.buffer.page_lookups`. 
 
-Some performance objects are associated with multiple instances within SQL Server, and you can identify these with the `instance_name` column of `sys.dm_os_performance_counters`. You'll want to check the [documentation][performance-objects] for the performance objects you're interested in to see what `instance` means in that context. In our example above, `Log Flushes/sec` is a counter within the object [`SQLServer:Databases`][performance-objects-db]. There's a separate instance of the object (and its counters) for each database. The [resource pool performance object][performance-objects-pool] has a separate instance for each resource pool. Other performance objects, like the Buffer Manager object where you'll find `Page lookups/sec`, always have a single instance.
+Some performance objects are associated with multiple instances within SQL Server, and you can identify these with the `instance_name` column of `sys.dm_os_performance_counters`. You'll want to check the [documentation][performance-objects] for the performance objects you're interested in to see what `instance_name` means in that context. In our example above, `Log Flushes/sec` is a counter within the object [`SQLServer:Databases`][performance-objects-db]. There's a separate instance of the object (and its counters) for each database. The [resource pool performance object][performance-objects-pool] has a separate instance for each resource pool. Other performance objects, like the Buffer Manager object where you'll find `Page lookups/sec`, always have a single instance.
 
-If a performance counter has multiple instances, you have two options for sending metrics to Datadog. One is to collect metrics from a single instance, by specifying the `instance` in the `custom_metrics` section. In our example above, we've edited the item for `Queued Requests` to gather metrics only from the `internal` instance. 
+If a performance counter has multiple instances, you have two options for sending metrics to Datadog. One is to collect metrics from a single instance, by specifying `instance_name` in the `custom_metrics` section. In our example above, we've edited the item for `Queued Requests` to gather metrics only from the `internal` instance. 
 
-If you want to collect metrics associated with _every_ instance, set the `instance` value to `ALL`. Then add a `tag_by` line, which creates a key-value tag pair for each instance of a performance counter. If the metric `Log Flushes/sec` is reported for instances `tempdb`, `model`, and `demo_db`, for example, a `tag_by` prefix of `db` will create the tags `db:tempdb`, `db:model`, and `db:demo_db`. While you can name the prefix anything you'd like, you may want to name it after the object that each instance represents (a database, a resource pool, etc.).
+If you want to collect metrics associated with _every_ instance, set the value of `instance_name` to `ALL`. Then add a `tag_by` line, which creates a key-value tag pair for each instance of a performance counter. If the metric `Log Flushes/sec` is reported for instances `tempdb`, `model`, and `demo_db`, for example, a `tag_by` prefix of `db` will create the tags `db:tempdb`, `db:model`, and `db:demo_db`. While you can name the prefix anything you'd like, you may want to name it after the object that each instance represents (a database, a resource pool, etc.).
 
 After restarting the Agent, you'll be able to add your custom metrics to dashboards and alerts, just like any other metric in Datadog. Below, we're graphing the custom metric `sqlserver.index_searches`, which we've named from the counter `Index Searches/sec` within the [`Access Methods`][access-methods] performance object (see [above](#custom-datadog-metrics-with-the-performance-counters-view)).
 
@@ -269,7 +236,7 @@ If you are not using Datadog and want to gain visiblity into the health and perf
 
 [dd-mssql-config]: https://docs.datadoghq.com/integrations/sqlserver/#configuration
 
-[example-yaml]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/conf.yaml.example
+[example-yaml]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/datadog_checks/sqlserver/data/conf.yaml.example
 
 [gauges]: https://docs.datadoghq.com/developers/metrics/#gauges
 

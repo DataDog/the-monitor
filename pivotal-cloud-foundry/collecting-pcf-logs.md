@@ -1,3 +1,5 @@
+---
+
 So far in this series we’ve [explored Pivotal Cloud Foundry’s architecture][part-one] and looked at some of the [most important metrics for monitoring each PCF component][part-two]. In this post, we’ll show you how you can view these metrics, as well as application and system logs, in order to monitor your PCF cluster and the applications running on it.
 
 ## Logs and more logs

@@ -1,26 +1,4 @@
 ---
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series metrics
-blog/tag:
-- rabbitmq
-- alerts
-- amqp
-- message broker
-- performance
-date: 2018-01-24T00:00:02Z
-description: With RabbitMQ monitoring, see how your messaging setup affects your system and holds up to demand.
-draft: false
-image: 160509_RabbitMQ-01.png
-preview_image: 160509_RabbitMQ-01.png
-slug: rabbitmq-monitoring
-technology: rabbitmq
-title: Key metrics for RabbitMQ monitoring
-series: rabbitmq-monitoring
----
 ## What is RabbitMQ?
 RabbitMQ is a message broker, a tool for implementing a messaging architecture. Some parts of your application publish messages, others consume them, and RabbitMQ routes them between producers and consumers. The broker is well suited for loosely coupled microservices. If no service or part of the application can handle a given message, RabbitMQ keeps the message in a queue until it can be delivered. RabbitMQ leaves it to your application to define the details of routing and queuing, which depend on the relationships of objects in the broker: exchanges, queues, and bindings.
 
@@ -160,6 +138,8 @@ In [Part 2][part2] of this series, we'll show you how to use a number of RabbitM
 
 ## Acknowledgments
 We wish to thank our friends at [Pivotal][pivotal] for their technical review of this series.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/rabbitmq/rabbitmq-monitoring.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 [alarms]: https://www.rabbitmq.com/alarms.html
 

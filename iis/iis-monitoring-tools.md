@@ -1,4 +1,5 @@
-﻿# Collecting metrics with IIS monitoring tools
+---
+
 
 You may recall from [Part 1][part1] of this series that IIS exposes metrics in two principal ways: 
 
@@ -449,7 +450,7 @@ Examining IIS performance counters and log entries allows you to glean informati
 
 Datadog's IIS integration collects metrics and logs from your servers, so you can start gaining insights in minutes. And since Datadog integrates with more than {{< translate key="integration_count" >}} other technologies, you can monitor every component of your infrastructure and applications in one place. We'll show you how to start using Datadog to monitor IIS in [Part 3][part3].
 
-
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/iis/iis-monitoring-tools.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 
 [all-wmi-classes]: https://msdn.microsoft.com/en-us/library/aa394554(v=vs.85).aspx 

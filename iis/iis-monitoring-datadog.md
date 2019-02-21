@@ -1,4 +1,4 @@
-# IIS monitoring with Datadog
+---
 
 In [Part 2][part2] of this series, we learned how to access IIS metrics and logs using Windows tools. In this post, we'll show you a more comprehensive approach to IIS monitoring, one that brings together out-of-the-box dashboards, automated alerts, and log analytics, all in a single platform. 
 
@@ -273,7 +273,7 @@ In this post, we've shown you how to get full visibility into your IIS deploymen
 If you're new to Datadog and want to bring your IIS logs and metrics into a centralized platform for graphing, analysis, and alerting, here's a <a class="sign-up-trigger" href="#">free trial</a> to get you started.
 
 
-
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/iis/iis-monitoring-datadog.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 
 

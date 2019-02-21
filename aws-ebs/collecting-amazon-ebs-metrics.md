@@ -1,32 +1,4 @@
 ---
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-  twitter: maximybrown
-blog/category:
-- series collection
-blog/tag:
-- monitoring
-- AWS
-- alerts
-- performance
-date: 2018-04-06
-description: "Learn how to query and collect key Amazon EBS resource metrics."
-draft: false
-image: ebs-hero-two.png
-meta_title: Collecting Amazon EBS metrics
-preview_image: ebs-hero-two.png
-header_video:
-    mp4: superhero_EBS_prores_20.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
-slug: collecting-amazon-ebs-metrics
-technology: aws ebs
-title: Collecting Amazon EBS metrics
-series: amazon-ebs-monitoring
----
 
 The simplest way to begin collecting Amazon EBS [metrics and status checks][part-one] is to use Amazon’s built-in CloudWatch monitoring service. There are a few different methods to do so, although each will let you access the same metrics. CloudWatch is accessible via:
 

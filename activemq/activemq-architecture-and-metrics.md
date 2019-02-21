@@ -1,4 +1,4 @@
-# ActiveMQ architecture and key metrics
+---
 
 Apache ActiveMQ is message-oriented middleware (MOM), a category of software that sends messages between applications. Using standards-based, asynchronous communication, ActiveMQ allows loose coupling of the elements in an IT environment, which is often foundational to enterprise messaging and distributed applications.
 
@@ -17,7 +17,7 @@ ActiveMQ sends messages between client applications—**producers**, which creat
 
 ActiveMQ gives you the flexibility to send messages through both queues and topics using a single broker. In point-to-point messaging, the broker acts as a load balancer by routing each message from the queue to one of the available consumers in a round-robin pattern. When you use pub/sub messaging, the broker delivers each message to every consumer that is subscribed to the topic. 
 
-{{< img src="activemq_diagram1.png" caption="The ActiveMQ architecture contains the broker, destinations, and client applications." alt="The ActiveMQ broker sends messages from producers to consumers." >}}
+{{< img src="activemq_diagram2.png" caption="The ActiveMQ architecture contains the broker, destinations, and client applications." alt="The ActiveMQ broker sends messages from producers to consumers." >}}
 
 
 **JMS** is the communication standard that ActiveMQ uses to send and receive messages. ActiveMQ is a **JMS provider**, which means that it implements the functionality [specified in the JMS API][jms-api]. Client applications—producers and consumers—use the JMS API to send and receive messages. Non-JMS clients (written in PHP, Python, or other languages) can also connect to the ActiveMQ broker via the [AMQP][amqp-protocol], [MQTT][mqtt-protocol], and [STOMP][stomp-protocol] protocols.
@@ -326,6 +326,8 @@ ActiveMQ metrics can help you proactively maintain your messaging infrastructure
 
 ## Acknowledgments
 We'd like to thank Gary Tully of [Red Hat][red-hat] for his technical review of this series.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/activemq/activemq-architecture-and-metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 [acknowledgment-mode]: https://docs.oracle.com/cd/E19798-01/821-1841/bncfw/index.html
 [activemq-best-practices]: http://activemq.apache.org/how-do-i-configure-10s-of-1000s-of-queues-in-a-single-broker-.html

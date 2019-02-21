@@ -1,4 +1,4 @@
-# Monitoring ActiveMQ with Datadog
+---
 
 As you operate and scale ActiveMQ, comprehensive monitoring will enable you to rapidly identify any bottlenecks and maintain the flow of data through your applications. Earlier in this series, we introduced some [key ActiveMQ metrics to watch][part-1], and looked at some [tools you can use to monitor ActiveMQ][part-2]. But to get a complete understanding of ActiveMQ's performance, you should monitor your broker and destinations alongside the client applications that send and receive messages, and the infrastructure that runs it all. In this post, we'll show you how you can monitor ActiveMQ and all its related systems using Datadog.
 
@@ -12,7 +12,7 @@ This post will show you how to:
 
 First we'll walk through how to connect your ActiveMQ infrastructure to your Datadog account. If you're new to Datadog, but you'd like to follow along, here's a <a href="#" class="sign-up-trigger">free trial</a>.
 
-{{< img src="activemq_dash4.png" alt="Datadog's out-of-the-box ActiveMQ dashboard graphs many key metrics." wide="true" >}}
+{{< img src="activemq_dash4.png" popup="true" alt="Datadog's out-of-the-box ActiveMQ dashboard graphs many key metrics." wide="true" >}}
 
 ## Connecting ActiveMQ with Datadog
 This section will describe how to configure ActiveMQ to send metrics to Datadog.
@@ -352,6 +352,8 @@ You can integrate your Datadog account with PagerDuty, Slack, and many other [no
 ## Start monitoring
 
 Monitoring ActiveMQ in isolation gives you only part of the information you need to keep your infrastructure performing well. You can use Datadog's dashboards, alerts, and log management features to monitor your whole messaging infrastructure—brokers, destinations, clients, and the hosts that run it all. If you're not already using Datadog, get started with a <a href="#" class="sign-up-trigger">free 14-day trial</a>.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/activemq/monitoring-activemq-with-datadog.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 [activemq-web-console]: http://activemq.apache.org/web-console.html
 [apache-activemq-getting-started]: http://activemq.apache.org/version-5-getting-started.html#Version5GettingStarted-StartingActiveMQStartingActiveMQ

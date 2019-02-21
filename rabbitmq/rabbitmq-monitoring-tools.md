@@ -1,31 +1,9 @@
 ---
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series collection
-blog/tag:
-- rabbitmq
-- amqp
-- message broker
-- performance
-date: 2018-01-24T00:00:01Z
-date_last_updated: 2018-01-31
-description: For tracking the performance of your messaging setup, check out these RabbitMQ monitoring tools.
-draft: false
-image: 160509_RabbitMQ-02.png
-preview_image: 160509_RabbitMQ-02.png
-slug: rabbitmq-monitoring-tools
-technology: rabbitmq
-title: Collecting metrics with RabbitMQ monitoring tools
-series: rabbitmq-monitoring
----
 When collecting [RabbitMQ metrics][part1], you can take advantage of RabbitMQ's built-in monitoring tools and ecosystem of plugins. In this post, we'll introduce these RabbitMQ monitoring tools and show you how you can use them in your own messaging setup.
 
 | Tool | What you get | Metrics it collects |
 |:------|:-----|:-----|
-| [Built-in CLI](the-built-in-cli) | Status snapshots of RabbitMQ's core application objects | [Node resource use][part1nodes], [Queue performance][part1qperformance] |
+| [Built-in CLI](#the-builtin-cli) | Status snapshots of RabbitMQ's core application objects | [Node resource use][part1nodes], [Queue performance][part1qperformance] |
 | [Management plugin](#the-management-plugin) | A built-in web server that reports metrics via UI and API | [Exchange metrics][part1exchanges], [Node resource use][part1nodes], [Connection performance][part1connection], [Queue performance][part1qperformance] |
 | [Tracing tools](#events-and-tracing) | Exchanges that report events from messages and application objects | Events |
 
@@ -310,6 +288,9 @@ In this post, we've covered a number of RabbitMQ monitoring tools. Each measures
 You can go tool by tool, monitoring each level on its own. The process is a manual one, requiring deliberate commands and API calls. And there is no built-in, automatic method for comparing data between tools. As your messaging infrastructure scales, you'll want a monitoring solution that does more work for you.
 
 With Datadog's RabbitMQ integration, you can get a unified view of data that, with your suite of RabbitMQ monitoring tools, you would need to piece together on your own. You can receive alerts, traces, and logs in a single place. We'll show you how this works in [Part 3][part3]. If you'd like to jump straight into Datadog, get started right away with a <a href="#" class="sign-up-trigger">free trial</a>.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/rabbitmq/rabbitmq-monitoring-tools.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
+
 
 [erlang-config]: http://erlang.org/doc/man/config.html
 

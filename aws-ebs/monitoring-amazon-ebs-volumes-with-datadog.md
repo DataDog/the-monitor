@@ -1,32 +1,4 @@
 ---
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-  twitter: maximybrown
-blog/category:
-- series datadog
-blog/tag:
-- monitoring
-- AWS
-- alerts
-- performance
-date: 2018-04-06
-description: "Learn how to use Datadog to monitor Amazon EBS metrics."
-draft: false
-image: ebs-hero-three.png
-meta_title: Monitoring Amazon EBS volumes with Datadog
-preview_image: ebs-hero-three.png
-header_video:
-    mp4: superhero_EBS_prores_25.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
-slug: monitoring-amazon-ebs-volumes-with-datadog
-technology: aws ebs
-title: Monitoring Amazon EBS volumes with Datadog
-series: amazon-ebs-monitoring
----
 
 Datadog’s AWS integration lets you connect CloudWatch to Datadog in order to automatically collect metrics from multiple AWS services—including EBS. Datadog’s more than {{< translate key="integration_count" >}} integrations let you correlate AWS metrics with those from other services in your environment. And your data will be accessible for {{< translate key="retention" >}} at full granularity.
 
