@@ -1,31 +1,5 @@
----
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series metrics
-blog/tag:
-- sql-server
-- alerts
-- dbms
-- sql
-- microsoft
-date: 2018-05-04T17:00:01Z
-description: "Spot SQL Server performance issues using metrics, tracing, and log management."
-draft: false
-image: SQL-Server-performance-hero.png
-preview_image: SQL-Server-performance-hero.png
-slug: sql-server-performance
-technology: sql-server
-title: Monitor SQL Server performance with Datadog
-series: sql-server-monitoring
-header_video:
-    mp4: superheroes_microsoftsq03_v02.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
----
+# Monitor SQL Server performance with Datadog
+
 In [Part 2 of this series][part2], we surveyed tools for monitoring SQL Server performance. If your SQL Server instances are part of a complex web application, handling queries from HTTP servers, running in a cluster, or otherwise connecting to other services, you'll need a monitoring solution that can peer into your databases while keeping their interactions with your stack in the picture. Datadog provides end-to-end visibility into the health and performance of your SQL Server instances—along with {{< translate key="integration_count" >}}+ other technologies running alongside them. 
 
 In this post, we will walk you through the process of setting up Datadog's SQL Server integration to monitor metrics, distributed request traces, and logs in a single platform—and how to pivot between these sources to get insights into your system.
@@ -58,7 +32,6 @@ You can see if the Agent is reporting by running the [Agent information command]
 
 ```no-minimize
   sqlserver
-  ---------
     Total Runs: 105
     Metrics: 10, Total Metrics: 1050
     Events: 0, Total Events: 0
@@ -79,7 +52,7 @@ You can clone and customize these dashboards to visualize data from SQL Server a
 We can already see an issue: T-SQL batch compilations regularly approach the number of batch requests, which we know from [Part 1][part1-tsql] suggests that our batches are not benefiting from caching. We'll want to consider taking steps like [specifying parameters][t-sql-params] to make execution plans within the cache more reusable. 
 
 ## Query-level data with distributed tracing
-You can use Datadog distributed tracing and application performance monitoring ([APM][apm]) to visualize requests in detailed flame graphs and generate latency, error, and throughput statistics for your applications. The Agent has built-in tracing support for common web frameworks and libraries in {{< translate key="apm_languages" >}}, including popular ORMs for SQL Server. 
+You can use Datadog distributed tracing and application performance monitoring ([APM][apm]) to visualize requests in detailed flame graphs and generate latency, error, and throughput statistics for your applications. The Agent has built-in tracing support for common web frameworks and libraries in a [growing number of languages][apm_languages], including popular ORMs for SQL Server. 
 
 In this example, we'll be tracing requests to SQL Server within a [Ruby on Rails][ruby-framework-tracing] application using Datadog's [tracing library][ddtrace-rails]. Links to similar libraries for other languages are available in the Datadog [documentation][tracing-setup].
 
@@ -211,6 +184,8 @@ If you're already using Datadog, you can follow the steps above to enable the SQ
 
 [apm]: https://www.datadoghq.com/apm/
 
+[apm_languages]: https://docs.datadoghq.com/tracing/languages/
+
 [basic-agent-usage]: https://docs.datadoghq.com/agent/basic_agent_usage/
 
 [config-env]: https://docs.datadoghq.com/tracing/setup/environment/
@@ -273,4 +248,4 @@ If you're already using Datadog, you can follow the steps above to enable the SQ
 
 [windows-only]: https://github.com/DataDog/integrations-core/blob/27b476b5cd6a36dfc66b163cebce85005c5be69a/sqlserver/manifest.json
 
-[yaml-example]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/conf.yaml.example
+[yaml-example]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/datadog_checks/sqlserver/data/conf.yaml.example

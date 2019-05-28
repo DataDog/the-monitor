@@ -1,4 +1,5 @@
-﻿# Collecting metrics with IIS monitoring tools
+# Collecting metrics with IIS monitoring tools
+
 
 You may recall from [Part 1][part1] of this series that IIS exposes metrics in two principal ways: 
 
@@ -20,7 +21,6 @@ Performance counters report metrics from classes stored within a given IIS host,
 
 
 | Name in Performance Monitor | Full name |
-|:---------|:---------------------|
 | [Web Service][web-service-class] | Win32_PerfFormattedData_W3SVC_WebService |
 | [HTTP Service Request Queues][http-sys-perfmon] | Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues |
 | [W3SVC_W3WP][w3wp-counters] | Win32_PerfFormattedData_W3SVCW3WPCounterProvider_W3SVCW3WP |
@@ -46,12 +46,11 @@ If the Web Service class is already installed, the output should include the fol
 
 ```
 Name
-----
 Win32_PerfFormattedData_W3SVC_WebService
 ```
 
 
-If it doesn’t, run the following command to install the class:
+If it doesn't, run the following command to install the class:
 
 
 ```
@@ -151,7 +150,7 @@ To start graphing IIS metrics within Performance Monitor, open the application f
 {{< img src="iis-monitoring-tools-perfmon-select-counters.png" alt="IIS monitoring tools - Selecting performance counters to visualize" popup="true" wide="true" >}}
 
 
-Each performance counter can have one or several instances (depending on what it tracks). For performance counters that track IIS worker processes, you'll see one instance per process. For the Web Service class, there's one instance per IIS site. You can choose to graph counters for one instance or all of them—in the example below, we've plotted all of the counters that correspond to a single instance, an IIS site. 
+Each performance counter can have one or several instances (depending on what it tracks). For performance counters that track IIS worker processes, you'll see one instance per process. For the Web Service class, there's one instance per IIS site. You can choose to graph counters for one instance or all of them-in the example below, we've plotted all of the counters that correspond to a single instance, an IIS site. 
 
 {{< img src="iis-monitoring-tools-perfmon-graph.png" alt="IIS monitoring tools - graphing performance counters for a single IIS site" popup="true" wide="true" >}}
 
@@ -184,7 +183,7 @@ By default, the API microservice listens on port 55539, and you can change it th
 
 You can query data from the IIS Administration REST API in a few different ways. One approach is to use a browser-based [graphical interface][iis-management-console-link] that displays a dashboard of timeseries graphs. You'll see a range of high-level IIS metrics, including requests per second, available system memory, bytes sent and received per second, and CPU utilization. You can access the frontend by navigating to `https://manage.iis.net/connect` and entering your access token and the API server URL (by default, `https://localhost:55539`).
  
-Like Performance Monitor, the API's browser-based interface displays graphs that are updated in real time. Unlike Performance Monitor, you can graph each metric as a separate timeseries graph on the same dashboard, which makes it easier to correlate metrics even if they have vastly different y-axis scales. You won’t, however, get to choose which metrics to display.
+Like Performance Monitor, the API's browser-based interface displays graphs that are updated in real time. Unlike Performance Monitor, you can graph each metric as a separate timeseries graph on the same dashboard, which makes it easier to correlate metrics even if they have vastly different y-axis scales. You won't, however, get to choose which metrics to display.
 
 {{< img src="iis-monitoring-tools-api-frontend.png" alt="IIS monitoring tools - API frontend" popup="true" wide="true" >}}
   
@@ -194,7 +193,7 @@ Like Performance Monitor, the API's browser-based interface displays graphs that
 You can also return metrics from the API as JSON, either by sending a GET request directly to one of the [API endpoints reserved for monitoring][iis-api-monitoring] or by using the browser-based [API Explorer][iis-api-explorer].
 
 
-If you’re querying the API from the command line, you can take advantage of PowerShell’s [`Invoke-WebRequest`][invoke-webrequest] command. In this example, we'll use PowerShell to query the **/api/webserver/monitoring** endpoint for high-level metrics from the IIS instance. 
+If you're querying the API from the command line, you can take advantage of PowerShell's [`Invoke-WebRequest`][invoke-webrequest] command. In this example, we'll use PowerShell to query the **/api/webserver/monitoring** endpoint for high-level metrics from the IIS instance. 
 
 
 ```
@@ -203,7 +202,7 @@ https://localhost:55539/api/webserver/monitoring -UseDefaultCredentials | Conver
 ```
 
 
-There are several things to note for these requests. First, every request to the API must include a valid [access token][iis-api-access] under the `Access-Token` header, beginning with the string, `Bearer ` (note the space). In this example, we’ve used the `-Headers` option to specify headers. The argument for this option is a PowerShell [dictionary][powershell-hash-table]. We've also specified the `-Method`, which must be GET, along with the URI for the API endpoint (`https://localhost:55539/api/webserver/monitoring`). We’ve included the switch, `UseDefaultCredentials`, which sends the current user's credentials with the request—if you omit this, the API will return a 401 (Unauthorized) response. 
+There are several things to note for these requests. First, every request to the API must include a valid [access token][iis-api-access] under the `Access-Token` header, beginning with the string, `Bearer ` (note the space). In this example, we've used the `-Headers` option to specify headers. The argument for this option is a PowerShell [dictionary][powershell-hash-table]. We've also specified the `-Method`, which must be GET, along with the URI for the API endpoint (`https://localhost:55539/api/webserver/monitoring`). We've included the switch, `UseDefaultCredentials`, which sends the current user's credentials with the request-if you omit this, the API will return a 401 (Unauthorized) response. 
 
 
 Finally, we're piping the output of `Invoke-WebRequest` into `ConvertFrom-Json`, a PowerShell command that converts the response of our GET request into JSON. If you don't use `ConvertFrom-Json`, the response will show up as an incomplete value of a `RawContent` key. 
@@ -229,7 +228,7 @@ cache    : @{file_cache_count=0; file_cache_memory_usage=0; file_cache_hits=0; f
 The IIS Administration API also exposes endpoints that give you access to statistics from specific application pools and websites. You can obtain statistics about your application pools by querying the following endpoint: **/api/webserver/application-pools/monitoring**. To fetch metrics about your IIS sites, you'd query the endpoint, **/api/webserver/websites/monitoring**.
 
 
-For manual querying, you might find it easier to use the API Explorer, a browser-based GUI that makes API calls with information that you submit through an HTML form. The API Explorer is available at the root of the IIS Administration microservice, `https://localhost:55539`. One advantage of using the API Explorer is that you don't need to include credentials or define headers—all you need to do is enter the URI of the endpoint.
+For manual querying, you might find it easier to use the API Explorer, a browser-based GUI that makes API calls with information that you submit through an HTML form. The API Explorer is available at the root of the IIS Administration microservice, `https://localhost:55539`. One advantage of using the API Explorer is that you don't need to include credentials or define headers-all you need to do is enter the URI of the endpoint.
 
 
 In the example below, we've queried the **/monitoring** endpoint to obtain data about our IIS instance as a whole, including metrics related to network connections, requests, memory, CPU, disk, and the IIS cache. The UI includes an input box for the API endpoint and a menu of HTTP methods.
@@ -322,7 +321,6 @@ This particular log entry contains the following fields:
 
 
 | Field | Description |
-|:------- | :-------------- |
 |`date`  | Date of the request |
 | `time` | Time of the request |
 | `s-ip` | Server IP address |
@@ -350,13 +348,13 @@ After you've configured IIS to generate logs, you'll need a way to gather metric
 In order to use Log Parser Studio, you'll need to install Log Parser by following the [instructions][log-parser-install]. Once you've done this, [install Log Parser Studio][log-parser-studio-download] and open it.
 
 
-Within Log Parser Studio, choose the location of the log files you'd like to analyze, and click the "Create a new query" button. You'll see a text field at the bottom of the screen. Above the text field, make sure the "Log Type" matches the format of the files you’d like to query. If you're using the W3C Extended log format, select "IISW3CLOG." 
+Within Log Parser Studio, choose the location of the log files you'd like to analyze, and click the "Create a new query" button. You'll see a text field at the bottom of the screen. Above the text field, make sure the "Log Type" matches the format of the files you'd like to query. If you're using the W3C Extended log format, select "IISW3CLOG." 
 
 
 You can send queries in Log Parser Studio as SQL `SELECT` statements. There are several important variations on the SQL standard. First, the argument of a `FROM` clause is the absolute path of a given log file, rather than the name of a table. To find the location of your log files, enter IIS Manager, return to the Logging view where you enabled logging earlier, and within the "Actions" sidebar, click "View Log Files." 
 
 
-Second, the arguments of a `WHERE` clause will be the names of fields within the log file you’d like to query, rather than the names of columns in a table. If you’re querying a log file that uses the W3C format, you can see a list of fields within the file on the fourth line, under `#Fields`. In the example below, we are querying one log file for all requests that have taken longer than nine seconds to complete. 
+Second, the arguments of a `WHERE` clause will be the names of fields within the log file you'd like to query, rather than the names of columns in a table. If you're querying a log file that uses the W3C format, you can see a list of fields within the file on the fourth line, under `#Fields`. In the example below, we are querying one log file for all requests that have taken longer than nine seconds to complete. 
 
 
 ```
@@ -398,7 +396,6 @@ GROUP BY Method
 The output will be a table resembling the following.
 
 | Method | TimeTaken |
-|:-----------|:----------------|
 |GET       | 2,109          |
 |POST    | 295             |
 
@@ -410,7 +407,7 @@ We find that, in fact, GET requests to **/create** have taken an average of 2,10
 ## DebugDiag
 
 
-The Debug Diagnostic Tool ([DebugDiag][debug-diag-setup]) is a Windows application that analyzes memory dumps and integrates with IIS. You can write the contents of a process’s memory to a [`.dmp` file][mem-dump], then process the file to generate a report. DebugDiag can perform stack traces to suss out memory leaks and high CPU utilization within user-mode processes, making it well-suited for debugging IIS applications. If you've encountered a performance issue in an IIS application pool, you can use DebugDiag to investigate further by inspecting comprehensive traces of your application.
+The Debug Diagnostic Tool ([DebugDiag][debug-diag-setup]) is a Windows application that analyzes memory dumps and integrates with IIS. You can write the contents of a process's memory to a [`.dmp` file][mem-dump], then process the file to generate a report. DebugDiag can perform stack traces to suss out memory leaks and high CPU utilization within user-mode processes, making it well-suited for debugging IIS applications. If you've encountered a performance issue in an IIS application pool, you can use DebugDiag to investigate further by inspecting comprehensive traces of your application.
 
 
 To start using DebugDiag, [download the installer][debug-diag-download] and finish the installation wizard. While this example uses IIS 10.0, the [setup process][debug-diag-setup] for previous versions of IIS may differ. 
@@ -444,12 +441,12 @@ The report displays a call stack for the threads within each memory dump, as wel
 ## Automate your IIS monitoring
 
 
-Examining IIS performance counters and log entries allows you to glean information about specific requests and perform spot checks on your server's performance. However, using multiple IIS monitoring tools to query log entries and pull data from each individual performance counter becomes onerous at scale. In order to automate your IIS monitoring—and gain access to extensive visualizations and log analysis for IIS and the rest of your stack—you'll need a more comprehensive solution.
+Examining IIS performance counters and log entries allows you to glean information about specific requests and perform spot checks on your server's performance. However, using multiple IIS monitoring tools to query log entries and pull data from each individual performance counter becomes onerous at scale. In order to automate your IIS monitoring-and gain access to extensive visualizations and log analysis for IIS and the rest of your stack-you'll need a more comprehensive solution.
 
 
 Datadog's IIS integration collects metrics and logs from your servers, so you can start gaining insights in minutes. And since Datadog integrates with more than {{< translate key="integration_count" >}} other technologies, you can monitor every component of your infrastructure and applications in one place. We'll show you how to start using Datadog to monitor IIS in [Part 3][part3].
 
-
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/iis/iis-monitoring-tools.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 
 [all-wmi-classes]: https://msdn.microsoft.com/en-us/library/aa394554(v=vs.85).aspx 

@@ -1,30 +1,5 @@
----
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series metrics
-blog/tag:
-- sql-server
-- dbms
-- sql
-- microsoft
-date: 2018-05-04T17:00:03Z
-description: "SQL Server monitoring can help you keep your batches fast and your connections alive."
-draft: false
-image: 180315_Datadog-MicrosoftSQLServer_Part-1.png
-preview_image: 180315_Datadog-MicrosoftSQLServer_Part-1.png
-slug: sql-server-monitoring
-technology: sql-server
-title: Key metrics for SQL Server monitoring
-series: sql-server-monitoring
-header_video:
-    mp4: superheroes_microsoftsq02_v00_.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
----
+# Key metrics for SQL Server monitoring
+
 SQL Server is a relational database management system (RDBMS) [developed by Microsoft][mssql-home] for Windows and, [more recently][mssql-techcrunch], for Linux. Its query language, an implementation of SQL called Transact-SQL ([T-SQL][t-sql]), can be written as batches of statements that SQL Server compiles and caches to improve query performance. SQL Server also gives you several ways to configure resource use. It can store tables in memory rather than on disk, and it lets you control the distribution of CPU, memory, and storage by configuring resource pools, which we'll cover in detail below. 
 
 With so much to optimize, you'll want to make sure that the configuration you choose fits the needs of your system, and that SQL Server is performing well in general. This post explains the metrics that can help you implement in-depth SQL Server monitoring to ensure that your instances are optimized, healthy, and available.
@@ -92,7 +67,6 @@ This article references metric terminology [from our Monitoring 101 series][moni
 SQL Server attempts to minimize the latency of your queries by batching, compiling, and caching T-SQL statements. You can get the most out of this behavior, and check that SQL Server is handling queries as expected, by monitoring these metrics.
 
 Name  | Description  | [Metric type][monitor-101] | [Availability][part2]
-:--|:---|:--|:--|
 Batch requests/sec| Rate of T-SQL batches received per second | Work: Throughput | SQL Statistics Object ([performance counters][part2-dmv])
 `last_elapsed_time` | Time taken to complete the most recent execution of a query plan, in microseconds ([accurate to milliseconds][execution-plan-dmv]) | Work: Performance | `sys.dm_exec_query_stats` ([Dynamic Management View][part2-dmv]) |
 SQL compilations/sec | Number of times SQL Server compiles T-SQL queries per second | Other | SQL Statistics Object ([performance counters][part2-dmv])
@@ -137,7 +111,6 @@ Before you make changes that affect the recompilation threshold, it's worth noti
 Much of the work involved in executing your queries takes place between the buffer cache and the database. Monitoring the buffer cache lets you ensure that SQL Server is performing as many read and write operations as possible in memory, rather than carrying out the more sluggish operations on disk.
 
 Name  | Description  | [Metric type][monitor-101] | [Availability][part2]
-:--|:---|:--|:--|
 Buffer cache hit ratio | Percentage of requested pages found in the buffer cache | Other | Buffer Manager Object ([performance counters][part2-dmv])
 Page life expectancy | Time a page is expected to spend in the buffer cache, in seconds | Other | Buffer Manager Object ([performance counters][part2-dmv])
 Checkpoint pages/sec | Number of pages written to disk per second by a checkpoint | Other | Buffer Manager Object ([performance counters][part2-dmv])
@@ -169,7 +142,6 @@ During a checkpoint, the buffer manager writes all dirty pages to disk. As we've
 It's important to monitor resource use in SQL Server tables in order to ensure that you have enough space for your data in storage or, depending on your SQL Server configuration, in memory.
 
 Name  | Description  | [Metric type][monitor-101] | [Availability][part2]
-:--|:---|:--|:--|
 `memory_used_by_table_kb` | For memory-optimized tables, the memory used in kilobytes, by table | Resource: Utilization | `sys.dm_db_xtp_table_memory_stats` ([Dynamic Management View][part2-dmv]) |
 Disk usage | Space used by data or by indexes in a given table | Resource: Utilization| `sp_spaceused` ([Stored Procedure][part2-functions])
 
@@ -195,7 +167,6 @@ As your data nears capacity, you'll want to think about the design of your stora
 A transaction [locks certain resources][transaction-locks-basics], such as rows, pages, or tables, and stops subsequent transactions from accessing them before the first is committed. SQL Server's locking behavior is designed to keep transactions atomic, consistent, isolated, and durable ([ACID][transaction-locks-acid]), that is, to make sure that each transaction presents a self-contained operation. The SQL Server query processor automatically creates locks at different levels of granularity (rows, pages, tables) and isolation (e.g., whether to lock on a read operation) for the data that a given query needs. By monitoring locks, you can determine the extent to which tables (along with rows or pages) are acting as bottlenecks.
 
 Name  | Description  | [Metric type][monitor-101] | [Availability][part2]
-:--|:---|:--|:--|
 Lock waits/sec | Number of requests causing the calling transaction to wait for a lock, per second | Other | Locks Object ([performance counters][part2-dmv])
 Processes blocked | Count of processes blocked at the time of measurement | Other | General Statistics Object ([performance counters][part2-dmv])
 
@@ -218,7 +189,6 @@ If you've configured SQL Server into [resource pools][resource-gov-pool], it's i
 One way to achieve this is by measuring resource use within each pool. In the resource pool, you can limit memory, CPU, and disk I/O. You can use resource-specific metrics to help you create and assess your limits.
 
 Name  | Description  | [Metric type][monitor-101] | [Availability][part2]
-:--|:---|:--|:--|
 Used memory | Kilobytes of memory used in the resource pool | Resource: Utilization | Resource Pool Stats Object ([performance counters][part2-dmv])
 CPU usage % | Percentage of CPU used by all workload groups in the resource pool | Resource: Utilization | Resource Pool Stats Object ([performance counters][part2-dmv])
 Disk read IO/sec | Count of disk read operations in the last second per resource pool | Resource: Utilization | Resource Pool Stats Object ([performance counters][part2-dmv])
@@ -247,7 +217,6 @@ Rules for disk I/O are defined in terms of I/O operations per second (IOPS). You
 Indexes are often a key part of the way tables work in an RDBMS, making it possible to comb through production-level datasets at a reasonable rate. SQL Server gives you latitude in how you [design your indexes][index-design]. Monitoring these index-related metrics can help you keep your queries efficient.
 
 Name  | Description  | [Metric type][monitor-101] | [Availability][part2]
-:--|:---|:--|:--|
 Page splits/sec | Count of page splits resulting from index page overflows per second | Other | Access Methods Object ([performance counters][part2-dmv])
 `avg_fragmentation_in_percent` | Percentage of leaf pages in an index that are out of order | Other | `sys.dm_db_index_physical_stats` ([Dynamic Management View][part2-dmv])
 
@@ -274,7 +243,6 @@ Indexes within SQL Server are [structured][index-architecture] as [B-trees][b-tr
 In any RDBMS, executing queries depends on establishing and maintaining client connections. Monitoring your connections is a good starting point for diagnosing changes in availability or performance.
 
 Name  | Description  | [Metric type][monitor-101] | [Availability][part2]
-:--|:---|:--|:--|
 User connections | Count of users connected to SQL Server at the time of measurement | Resource: Utilization | General Statistics Object ([performance counters][part2-dmv])
 
 #### Metric to alert on: User connections
@@ -335,7 +303,7 @@ SQL Server provides a set of data sources for gathering these metrics and a suit
 
 [files-filegroups]: https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-files-and-filegroups
 
-[forced-parameterization]: "https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms175037(v=sql.105)"
+[forced-parameterization]: https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms175037(v=sql.105)
 
 [fragmentation]: https://technet.microsoft.com/en-us/library/ms189858(v=sql.110).aspx
 

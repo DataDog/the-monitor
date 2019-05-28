@@ -1,32 +1,5 @@
----
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-  twitter: maximybrown
-blog/category:
-- series metrics
-blog/tag:
-- monitoring
-- AWS
-- alerts
-- performance
-date: 2018-04-06
-description: "Identify and monitor key metrics for your Amazon EBS volumes."
-draft: false
-image: ebs-hero-one.png
-meta_title: Key metrics for Amazon EBS monitoring
-preview_image: ebs-hero-one.png
-header_video:
-    mp4: superhero_EBS_prores_24b.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
-slug: amazon-ebs-monitoring
-technology: aws ebs
-title: Key metrics for Amazon EBS monitoring
-series: amazon-ebs-monitoring
----
+# Key metrics for Amazon EBS monitoring
+
 
 ## What is Amazon EBS?
 Amazon Elastic Block Storage (EBS) is persistent block-level storage as a service that works in conjunction with [EC2 instances](/blog/ec2-monitoring). Unlike EC2 instance store volumes, which are ephemeral and lose any data once the instance is destroyed, EBS volumes maintain their state when stopped or detached from an instance. You can connect multiple EBS volumes to a single instance, though they must all be within the same availability zone.
@@ -89,7 +62,6 @@ Corresponding with the two volume types available, SSD and HDD, there are two pr
 Correlating volume IOPS with overall throughput and average I/O block size can reveal if your application would benefit from a different volume type. This is because of how EBS logically organizes I/O. EBS attempts to merge contiguous I/O blocks into a single unit as much as possible. So for example, for an SSD volume—keeping in mind that SSD block size is capped at 256 KiB—four sequential 128 KiB writes would count as two operations, while four random 128 KiB writes would count as four operations. This can have a significant effect on performance. Using the same example with an HDD volume, where block size is capped at 1,024 KiB, four sequential 128 KiB writes would only be one operation. So in this case, an SSD volume could hit its throughput limits while being well under its IOPS capacity. Likewise, small random I/O operations would each count individually, meaning that IOPS can add up quickly while throughput levels remain relatively low.
 
 |Name|Description|Metric type|
-|--- |--- |--- |
 |VolumeReadOps and VolumeWriteOps|Completed read/write operations from and to the volume|Resource: Utilization|
 |VolumeReadBytes and VolumeWriteBytes|Bytes read from or written to the volume|Resource: Utilization|
 |VolumeThroughputPercentage*|The percentage of IOPS delivered of the volume’s total provisioned IOPS|Resource: Utilization|
@@ -121,7 +93,6 @@ _Only applicable to Provisioned IOPS volumes._ This metric is a total sum of com
 EBS latency is a measure of the time taken between sending a read or write operation to an EBS volume and that operation’s completion. Latency is particularly important to monitor for applications that require high IOPS, and correlating latency with metrics related to volume activity can help pinpoint performance issues.
 
 |Name|Description|Metric type|
-|--- |--- |--- |
 |VolumeTotalReadTime and VolumeTotalWriteTime|Total time taken, in seconds, for all read/write operations completed within the specified period|Work: Performance|
 
 #### Metrics to watch: VolumeTotalReadTime and VolumeTotalWriteTime
@@ -135,7 +106,6 @@ As mentioned above, due to resource sharing among AWS users, increases in per-op
 Aside from making sure your applications are running smoothly, measuring disk activity can provide information to help optimize volume usage so that you can avoid paying for unused resources. It’s useful to keep an eye on whether any volumes are sitting idle, or whether their operation queue length is zero, meaning they are spending time waiting for instructions.
 
 |Name|Description|Metric type|
-|--- |--- |--- |
 |VolumeQueueLength|The number of read/write operations waiting to be completed|Resource: Saturation|
 |VolumeIdleTime|Time, in seconds, when a volume received no read/write operations|Resource: Utilization|
 |BurstBalance*|The percentage of I/O or throughput credits available in the burst bucket|Resource: Utilization|
@@ -164,7 +134,6 @@ If you see that your volumes are draining their burst buckets more often than ex
 AWS automatically runs [status checks][status-checks] on your EBS volumes. These provide a high-level indication of your volumes’ I/O status and whether there are any potential issues with your data or, in the case of io1 volumes, volume performance.
 
 |Name|Description|Metric type|
-|--- |--- |--- |
 |VolumeStatus|Indicates general I/O status for the volume|Resource: Availability|
 |IOPerformance*|Measures I/O performance against expected levels|Resource: Availability|
 |*_Only applicable to io1 volumes._|

@@ -1,3 +1,6 @@
+# Key metrics for monitoring Pivotal Cloud Foundry
+
+
 In the first part of this series, we outlined the [different components][part-one] of a Pivotal Cloud Foundry deployment and how they work together to host and run applications. In this article we will look at some of the most important metrics that PCF operators should monitor. These metrics provide information that can help you ensure that the deployment is running smoothly, that it has [enough capacity to meet demand][capacity-management], and that the applications hosted on it are healthy.
 
 Pivotal Cloud Foundry operators have access to hundreds of metrics. We will break down a selection of key indicators that give you an overview of your deployment’s health and help determine if you need to scale up to accommodate users’ needs. Keeping an eye on these important metrics will help operators avoid performance issues for the developers deploying apps and the end users accessing them. They can also help identify potential scaling bottlenecks ahead of time.
@@ -24,7 +27,6 @@ This article refers to metric terminology from our [Monitoring 101 series](/blog
 BOSH is a Cloud Foundry tool that provisions and manages the necessary resources to create your deployment’s infrastructure based on the configuration blueprints you provide. BOSH metrics provide insight into the system-level health of the various VMs running your deployment. These metrics can also be high-level indicators of resource problems depending on the job running on that VM. For example, for VMs running [Diego cells](/blog/pivotal-cloud-foundry-architecture#diego-cells), insufficient memory or disk space can cause problems with running or starting new containers. 
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | system.healthy | Health check for the VM; returns `1` if VM is up and all processes are running, `0` if not | Resource: Availability |
 | system.cpu.user | Percent of CPU utilization at the user level | Resource: Utilization |
 | system.load.1m | Average system load over the previous minute | Resource: Utilization |
@@ -58,7 +60,6 @@ The [User Account and Authentication server](/blog/pivotal-cloud-foundry-archite
 These metrics are emitted per UAA server instance.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | requests.global.completed.count | Lifetime number of requests completed by the UAA | Work: Throughput |
 | server.inflight.count | Number of requests that the UAA is currently processing | Work: Throughput |
 
@@ -74,7 +75,6 @@ The [Gorouter](/blog/pivotal-cloud-foundry-architecture#gorouter) is the entrypo
 These metrics are emitted per Gorouter instance.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | total_requests | Lifetime number of requests completed by the Gorouter | Work: Throughput |
 | requests.\<component\> | Lifetime number of requests received by the Gorouter for the specified component (e.g., the UAA server or the Cloud Controller) | Work: Throughput |
 | latency | Average round-trip time (in milliseconds) for requests to go from the Gorouter to their endpoint (an application or a component API) and back again | Work: Performance |
@@ -151,7 +151,6 @@ Important metrics from the Auctioneer provide information on the number of aucti
 Note that these metrics are reported per Auctioneer instance.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | AuctioneerLRPAuctionsStarted | Lifetime number of LRP instances that the Auctioneer has successfully placed on cells | Work: Success |
 | AuctioneerLRPAuctionsFailed | Lifetime number of LRP instances that the Auctioneer has failed to place on cells | Work: Error |
 | AuctioneerTaskAuctionsStarted | Lifetime number of tasks that the Auctioneer has successfully placed on cells | Work: Success |
@@ -189,7 +188,6 @@ Metrics to watch here pertain to possible differences between `DesiredLRPs` and 
 Note that each of these metrics are reported per BBS instance.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | convergenceLRPDuration | Total time (in nanoseconds) that the BBS takes to run a convergence pass | Other |
 | domain.cf-apps | Indicates whether the `cf-apps` domain is up to date and thus apps from the CC are synchronized with `DesiredLRPs` in Diego; `1` if domain is up to date, no data if not | Other |
 | domain.cf-tasks | Indicates whether the `cf-tasks` domain is up to date and thus tasks from the CC are synchronized with tasks in Diego; `1` if domain is up to date, no data if not | Other |
@@ -225,7 +223,6 @@ PCF uses the Locket service to register distributed locks to ensure that the cor
 Note that these metrics are reported per Locket instance.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | ActiveLocks | Total count of system component locks | Other  |
 | \<component\>.LockHeld | Presence of component lock (e.g., Auctioneer or BBS); returns `1` if held, `0` if not | Other  |
 | ActivePresences | Total count of active cells with a registered presence | Resource: Availability  |
@@ -247,7 +244,6 @@ Many of the most important metrics for monitoring your Diego cells come from the
 Note that these metrics are reported per Diego cell.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | UnhealthyCell | Diego cell health check; returns `0` for healthy, `1` for unhealthy | Resource: Availability |
 | ContainerCount | Number of containers on the cell | Resource: Utilization |
 | CapacityTotalContainers | Total number of containers the cell can host | Resource: Utilization |
@@ -295,7 +291,6 @@ Correct routing tables are necessary for the Gorouter to monitor which applicati
 Note that these metrics are reported per Route-Emitter instance.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | RoutesTotal | Total number of routes in the routing table | Other |
 | RouteEmitterSyncDuration | Average time (in nanoseconds) for the Route-Emitter to complete a synchronization pass | Work: Performance |
 | HTTPRouteNATSMessagesEmitted | Lifetime number of route registration messages sent by the Route-Emitter to the Gorouter | Work: Throughput |
@@ -321,7 +316,6 @@ The volume of messages that the Loggregator system can process depends on how qu
 Individual components within Loggregator emit metrics tracking the volume of messages sent and received. For example, the Doppler metric `doppler.dropped` indicates the number of messages not delivered before being replaced by incoming messages. The following component metrics provide information about how many messages are being received or dropped by various components within the Loggregator chain:
 
 | Component | Metric Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- | --- |
 | Loggregator | doppler.ingress | The lifetime number of messages being ingested by the Doppler to send downstream | Work: Throughput |
 | Loggregator | doppler.dropped | The lifetime number of messages dropped by the Doppler without being delivered to a downstream component | Resource: Saturation |
 | CF syslog drain | adapter.ingress | The lifetime number of messages being ingested by the Syslog Adapter (only relevant for applications with a syslog drain) | Work: Throughput |
@@ -335,7 +329,6 @@ The number of messages sent through Loggregator, and even the number that are dr
 The following are Healthwatch metrics that use raw component metrics to derive rates of message loss across various Loggregator layers, making it easier to observe changes in Loggregator throughput and performance.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | healthwatch.Firehose.LossRate.1M | The rate of message loss from the Metron Agents to the Firehose endpoints, as a percentage over the previous minute | Work: Error |
 | healthwatch.Doppler.MessagesAverage.1M | The average rate of messages processed per Doppler server instance | Work: Throughput |
 | healthwatch.SyslogDrain.Adapter.BindingsAverage.5M | The average number of syslog drain bindings per Syslog Adapter | Other |
@@ -370,7 +363,6 @@ High rates of syslog drain log loss can indicate performance problems with your 
 Aside from the metrics mentioned above, there are several additional PCF Healthwatch metrics that can be helpful for monitoring overall deployment health.
 
 | Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
 | healthwatch.health.check.cliCommand.\<command\> | Status of Pivotal Cloud Foundry CLI command health tests; returns `1` for pass, `0` for fail, `-1` for did not run when applicable | Resource: Availability |
 | healthwatch.health.check.OpsMan.available | Status of Ops Manager availability test; returns `1` for pass, `0` for fail | Resource: Availability |
 | healthwatch.health.check.CanaryApp.available | Status of Apps Manager health check; returns `1` for pass, `0` for fail | Resource: Availability |

@@ -1,27 +1,5 @@
----
-authors:
-- email: paul.gottschling@datadoghq.com
-  name: Paul Gottschling
-  image: paulgottschling.jpg
+# Monitoring RabbitMQ performance with Datadog
 
-blog/category:
-- series datadog
-blog/tag:
-- rabbitmq
-- amqp
-- message broker
-- performance
-date: 2018-01-24T00:00:00Z
-description: "See your RabbitMQ performance metrics in the context of your infrastructure with Datadog."
-draft: false
-image: 160509_RabbitMQ-03.png
-meta_title: RabbitMQ monitoring with Datadog
-preview_image: 160509_RabbitMQ-03.png
-slug: monitoring-rabbitmq-performance-with-datadog
-technology: rabbitmq
-title: Monitoring RabbitMQ performance with Datadog
-series: rabbitmq-monitoring
----
 In Part 2 of this series, we've seen how RabbitMQ [ships with tools][part2] for monitoring different aspects of your application: how your queues handle message traffic, how your nodes consume memory, whether your consumers are operational, and so on. While RabbitMQ plugins and built-in tools give you a view of your messaging setup in isolation, RabbitMQ weaves through the very design of your applications. To better understand your applications, you need to see how RabbitMQ performance relates to the rest of your stack.
 
 Datadog gives you an all-at-once view of key RabbitMQ metrics, out of the box, with our RabbitMQ dashboard. You can also set alerts to notify you when the availability of your messaging setup is at stake. In this post we'll show you how to set up comprehensive monitoring using Datadog's RabbitMQ integration.
@@ -52,7 +30,6 @@ Once you've [restarted the Agent][agent-restart], RabbitMQ should be reporting m
 
 ```
     rabbitmq (5.21.0)
-    -----------------
       - instance #0 [OK]
       - Collected 33 metrics, 0 events & 2 service checks
 ```
@@ -94,9 +71,11 @@ In this post, we've shown how to install the Datadog Agent and the RabbitMQ inte
 
 Using Datadog, you can observe all aspects of your RabbitMQ setup, all in one place. And with more than {{< translate key="integration_count" >}} supported integrations for out-of-the-box monitoring, it's possible to see your RabbitMQ performance metrics alongside those of related systems like [OpenStack][monitor-openstack]. If you don’t yet have a Datadog account, you can sign up for a <a href="#" class="sign-up-trigger">free trial</a> and start monitoring your applications and infrastructure today.
 
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/rabbitmq/monitoring-rabbitmq-performance-with-datadog.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
+
 [agent-docs]: https://docs.datadoghq.com/agent/
 
-[agent-info]: https://help.datadoghq.com/hc/en-us/articles/203764635-Agent-Status-and-Information
+[agent-info]: https://docs.datadoghq.com/agent/faq/agent-commands/#agent-information
 
 [agent-restart]: https://help.datadoghq.com/hc/en-us/articles/203764515-Start-Stop-Restart-the-Datadog-Agent
 
@@ -150,6 +129,4 @@ Using Datadog, you can observe all aspects of your RabbitMQ setup, all in one pl
 
 [ruby-distrib-tracing]: http://www.rubydoc.info/gems/ddtrace/#Distributed_Tracing
 
-[template-config]: https://github.com/DataDog/integrations-core/blob/master/rabbitmq/conf.yaml.example
-
-[timeboard]: https://app.datadoghq.com/dash/integration/37/rabbitmq---metrics
+[template-config]: https://github.com/DataDog/integrations-core/blob/master/rabbitmq/datadog_checks/rabbitmq/data/conf.yaml.example

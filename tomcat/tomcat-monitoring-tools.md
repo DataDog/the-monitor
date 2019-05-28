@@ -1,3 +1,7 @@
+# Collecting metrics with Tomcat monitoring&nbsp;tools
+
+
+
 In [Part 1][part-one-link] of this series, we discussed some key Tomcat and JVM metrics that are exposed through Java Management Extensions (JMX). Now that you are familiar with metrics necessary for monitoring Tomcat, we can look at how to collect and query that data. In this post, we'll walk through:
 
 - [using Tomcat Manager](#using-tomcat-managers-web-interface), a built-in web management interface
@@ -280,6 +284,9 @@ org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/manager].handler
 By setting a few simple permissions, you can immediately begin viewing Tomcat and JVM data with Tomcat Manager. And once you've enabled remote connections for JMX, you can use tools like JConsole and JavaMelody to monitor Tomcat data with simple graphical interfaces. Tomcat also provides low-level diagnostic information about requests and server activity in its access and server logs. 
 
 Each of these platforms offers different capabilities for monitoring Tomcat, but none of them enable you to see the full picture when an issue occurs. And, if you are running Tomcat alongside other technologies like [Apache](https://www.datadoghq.com/blog/monitoring-apache-web-server-performance/) or [MySQL](https://www.datadoghq.com/blog/monitoring-mysql-performance-metrics/), then you'll need a way to monitor all of them in one platform. In the [next part][part-three-link] of this series, we'll show you how to use Datadog for comprehensive Tomcat monitoring.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/tomcat/tomcat-monitoring-tools.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
+
 
 [part-one-link]: /blog/tomcat-architecture-and-performance
 [part-one-memory-link]: /blog/tomcat-architecture-and-performance/#jvm-memory-usage

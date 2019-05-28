@@ -1,4 +1,6 @@
-﻿# Key IIS metrics to monitor
+# Key IIS metrics to monitor
+
+
 
 Microsoft's [Internet Information Services][iis-homepage-link] (IIS) is a web server that has traditionally come bundled with Windows (e.g., versions [5.0, 6.0][install-iis-5-6], and [beyond][install-iis-recent]). IIS has numerous extensibility features. Swappable interfaces like [ISAPI][isapi] and [FastCGI][fastcgi] make it possible to use IIS with a variety of backend technologies, from micro-frameworks like [Flask][iis-with-flask] to runtimes like [Node.js][iis-with-node], along with technologies you'd expect to find within a Windows-based production environment (e.g., [ASP.NET][iis-with-asp]). And through an ecosystem of IIS extensions, called modules, you can equip your server to perform tasks like [rewriting URLs][iis-url-rewrite-link] and [programmatically load balancing requests][iis-application-request-routing]. IIS lets you optimize performance with built-in content caching and compression features, and improve the reliability of your applications by isolating them in separate application pools. 
  
@@ -70,7 +72,6 @@ Tracking the volume of requests gives you an idea of how busy your server is, an
 
 
 | Name | Description | [Metric Type][dd-monitoring-101-link] | [Availability][part-2-link] |
-|:-----|:------------|:------------|:-------------|
 | `TotalMethodRequestsPerSec` | Rate of requests received per second by the WWW Service, per site  | Work: Throughput | [Web Service counter set][web-service-class] |
 | `Requests / Sec` | Rate of requests received by a given worker process | Work: Throughput | [`W3SVC_W3WP`][w3wp-counters] performance counter set |
 | `CurrentQueueSize` | Number of requests in the HTTP.sys queue, per application pool | Resource: Saturation | [HTTP Service Request Queues counter set][http-sys-perfmon]|
@@ -148,7 +149,6 @@ In [Part 2][part-2-link], we'll show you how to use the IIS [logging module][iis
 
 
 | Name | Description | [Metric Type][dd-monitoring-101-link] | [Availability][part-2-link] |
-|:-----|:------------|:------------|:-------------|
 | 4xx errors | Count or rate of 4xx client errors | Work: Error | IIS logs, [`W3SVC_W3WP`][w3wp-counters] performance counter set (for certain error codes) |
 | 5xx errors | Count or rate of 5xx server errors | Work: Error | IIS logs, [`W3SVC_W3WP`][w3wp-counters] performance counter set (for 500 error codes) |
 | `time-taken` | Time elapsed between the first byte of a request and the final byte of a response | Work: Performance | IIS logs
@@ -211,7 +211,6 @@ While records of most HTTP errors are only available through logs, it's worth no
 To ensure that your users can access your content, you'll need to monitor the availability of several components of IIS. You'll want to know when your application pools have recently restarted or stopped running entirely. You'll also want to get alerted if IIS is no longer listening for HTTP requests. In this section, we'll discuss two IIS metrics that can give you insight into the availability of your server.
   
 | Name | Description | [Metric Type][dd-monitoring-101-link] | [Availability][part-2-link] |
-|:-----|:------------|:------------|:-------------|
 | `ElapsedTime` | Number of seconds a process has been running | Resource: Availability | [Process performance counter set][perfproc-class] |
 | `ServiceUptime` | Number of seconds the WWW Service has been running (per site or across all sites) | Resource: Availability | [Web Service counter set][web-service-class] |
 
@@ -249,7 +248,6 @@ Since application pools are isolated from one another, with their own worker pro
 
 
 | Name | Description | [Metric Type][dd-monitoring-101-link] | [Availability][part-2-link] |
-|:-----|:------------|:------------|:-------------|
 | `PercentProcessorTime` | Percentage of CPU utilization per process (within a user-configured sample interval) | Resource: Utilization | [Process performance counter set][perfproc-class] |
 | `WorkingSet` | Number of bytes within a process's virtual address space stored in physical memory | Resource: Utilization |[Process performance counter set][perfproc-class]  |
 
@@ -294,6 +292,7 @@ Below, we see a bump in memory consumption per worker process in a specific appl
 This post has covered some key IIS metrics for tracking the health and performance of IIS. In particular, we've illustrated the importance of monitoring the traffic and resource usage of IIS application pools alongside metrics aggregated from HTTP requests. In [Part 2][part-2-link] of this series, we will show you how to collect these metrics from Windows Performance Counters, IIS logs, and the IIS HTTP API.
 
 
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/iis/iis-metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 
 [app-pools]: https://blogs.msdn.microsoft.com/rohithrajan/2017/10/08/quick-reference-iis-application-pool/

@@ -1,26 +1,5 @@
----
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series metrics
-blog/tag:
-- rabbitmq
-- alerts
-- amqp
-- message broker
-- performance
-date: 2018-01-24T00:00:02Z
-description: With RabbitMQ monitoring, see how your messaging setup affects your system and holds up to demand.
-draft: false
-image: 160509_RabbitMQ-01.png
-preview_image: 160509_RabbitMQ-01.png
-slug: rabbitmq-monitoring
-technology: rabbitmq
-title: Key metrics for RabbitMQ monitoring
-series: rabbitmq-monitoring
----
+# Key metrics for RabbitMQ monitoring
+
 ## What is RabbitMQ?
 RabbitMQ is a message broker, a tool for implementing a messaging architecture. Some parts of your application publish messages, others consume them, and RabbitMQ routes them between producers and consumers. The broker is well suited for loosely coupled microservices. If no service or part of the application can handle a given message, RabbitMQ keeps the message in a queue until it can be delivered. RabbitMQ leaves it to your application to define the details of routing and queuing, which depend on the relationships of objects in the broker: exchanges, queues, and bindings.
 
@@ -59,7 +38,6 @@ You can gather RabbitMQ metrics through a set of plugins and built-in tools. One
 Exchanges tell your messages where to go. Monitoring exchanges lets you see whether messages are being routed as expected.
 
 Name  | Description  | [Metric type][monitor-101] | Availability
-:--|:---|:--|:--|
 Messages published in| Messages published to an exchange (as a count and a rate per second) | Work: Throughput | management plugin
 Messages published out | Messages that have left an exchange (as a count and a rate per second)| Work: Throughput | management plugin
 Messages unroutable | Count of messages not routed to a queue | Work: Errors | management plugin
@@ -76,7 +54,6 @@ RabbitMQ runs inside an Erlang runtime system called a [node][distrib-erlang]. F
 When use of certain resources reaches a threshold, RabbitMQ [triggers an alarm][alarms] and blocks connections. These connections [appear][alarms] as `blocking` in built-in monitoring tools, but it is left to the user to set up notifications (see [Part 2][part2]). For this reason, monitoring resource use across your RabbitMQ system is necessary for ensuring availability.
 
 Name  | Description  | [Metric type][monitor-101] | Availability
-:--|:---|:--|:--|
 | File descriptors used | Count of file descriptors used by RabbitMQ processes | Resource: Utilization | management plugin, `rabbitmqctl` |
 | File descriptors used as sockets | Count of file descriptors used as network sockets by RabbitMQ processes | Resource: Utilization | management plugin, `rabbitmqctl` |
 | Disk space used | Bytes of disk used by a RabbitMQ node | Resource: Utilization | management plugin, `rabbitmqctl` |
@@ -99,7 +76,6 @@ The challenge for monitoring memory in RabbitMQ is that it's used [across your s
 Any traffic in RabbitMQ flows through a TCP connection. Messages in RabbitMQ [implement][amqp-concepts] the structure of the AMQP frame: a set of headers for attributes like content type and routing key, as well as a binary payload that contains the content of the message. RabbitMQ is well suited for a [distributed network][distributed], and even single-machine setups work through local TCP connections. Like monitoring exchanges, monitoring your connections helps you understand your application's messaging traffic. While exchange-level metrics are observable in terms of RabbitMQ-specific abstractions such as message rates, connection-level metrics are reported in terms of computational resources.
 
 Name  | Description  | [Metric type][monitor-101] | Availability
-:--|:---|:--|:--|
 Data rates | Number of octets sent/received within a TCP connection per second | Resource: Utilization | management plugin |
 
 #### Metrics to watch: Data rates
@@ -111,7 +87,6 @@ One way to get insight into the payloads of your messages, then, is by monitorin
 Queues receive, push, and store messages. After the exchange, the queue is a message's final stop within the RabbitMQ server before it reaches your application. In addition to [observing your exchanges](#exchange-performance), then, you will want to monitor your [queues][queue-docs]. Since the message is the top-level unit of work in RabbitMQ, monitoring queue traffic is one way of measuring your application's throughput and performance.
 
 Name  | Description  | [Metric type][monitor-101] | Availability
-:--|:---|:--|:--|
 Queue depth | Count of all messages in the queue | Resource: Saturation | `rabbitmqctl`
 Messages unacknowledged | Count of messages a queue has delivered without receiving acknowledgment from a consumer | Resource: Error | `rabbitmqctl`
 Messages ready | Count of messages available to consumer | Other | `rabbitmqctl`
@@ -160,6 +135,8 @@ In [Part 2][part2] of this series, we'll show you how to use a number of RabbitM
 
 ## Acknowledgments
 We wish to thank our friends at [Pivotal][pivotal] for their technical review of this series.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/rabbitmq/rabbitmq-monitoring.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 [alarms]: https://www.rabbitmq.com/alarms.html
 

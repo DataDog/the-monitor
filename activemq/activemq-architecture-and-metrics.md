@@ -1,4 +1,5 @@
-# ActiveMQ architecture and key metrics
+# ActiveMQ architecture and key&nbsp;metrics
+
 
 Apache ActiveMQ is message-oriented middleware (MOM), a category of software that sends messages between applications. Using standards-based, asynchronous communication, ActiveMQ allows loose coupling of the elements in an IT environment, which is often foundational to enterprise messaging and distributed applications.
 
@@ -17,7 +18,7 @@ ActiveMQ sends messages between client applications—**producers**, which creat
 
 ActiveMQ gives you the flexibility to send messages through both queues and topics using a single broker. In point-to-point messaging, the broker acts as a load balancer by routing each message from the queue to one of the available consumers in a round-robin pattern. When you use pub/sub messaging, the broker delivers each message to every consumer that is subscribed to the topic. 
 
-{{< img src="activemq_diagram1.png" caption="The ActiveMQ architecture contains the broker, destinations, and client applications." alt="The ActiveMQ broker sends messages from producers to consumers." >}}
+{{< img src="activemq_diagram2.png" caption="The ActiveMQ architecture contains the broker, destinations, and client applications." alt="The ActiveMQ broker sends messages from producers to consumers." >}}
 
 
 **JMS** is the communication standard that ActiveMQ uses to send and receive messages. ActiveMQ is a **JMS provider**, which means that it implements the functionality [specified in the JMS API][jms-api]. Client applications—producers and consumers—use the JMS API to send and receive messages. Non-JMS clients (written in PHP, Python, or other languages) can also connect to the ActiveMQ broker via the [AMQP][amqp-protocol], [MQTT][mqtt-protocol], and [STOMP][stomp-protocol] protocols.
@@ -170,7 +171,6 @@ All ActiveMQ messages pass through destinations. Monitoring destination metrics 
 
 
 |JMX attribute|Description|MBean|Metric type|
-|---|---|---|---|
 |`MemoryPercentUsage`|Percentage of configured memory used by the destination|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>,destinationType=(Queue\|Topic),destinationName=\<MY_DESTINATION\>|Resource: Utilization|
 |`ConsumerCount`|The number of consumers currently subscribed to the destination|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>,destinationType=(Queue\|Topic),destinationName=\<MY_DESTINATION\>|Other|
 |`ProducerCount`|The number of producers currently attached to the  destination|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>,destinationType=(Queue\|Topic),destinationName=\<MY_DESTINATION\>|Other|
@@ -227,7 +227,6 @@ In some cases, though, expired messages may not be a sign of trouble. For exampl
 As mentioned earlier, the ActiveMQ broker has configurable limits on the amount of memory and disk space it's allowed to use. Here are some of the metrics you should monitor to ensure that your broker is working properly within its resource limits.
 
 |JMX attribute|Description|MBean|Metric type|
-|---|---|---|---|
 |`MemoryPercentUsage`|Percentage of available memory used by the broker|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Resource: Utilization|
 |`StorePercentUsage`|Percentage of available disk space ([`storeUsage`](#memory-and-storage)) used for persistent message storage|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Resource: Utilization|
 |`TempPercentUsage`|Percentage of available disk space ([`tempUsage`](#memory-and-storage)) used for non-persistent message storage|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Resource: Utilization|
@@ -274,7 +273,6 @@ ActiveMQ runs within the JVM, so metrics that inform you of the health of the JV
 {{< img src="activemq_dash2.png" wide="true" alt="Dashboard graphs show JVM resource usage." >}}
 
 |JMX attribute|Description|MBean|Metric type|
-|---|---|---|---|
 |`CollectionTime`|The total amount of time (in milliseconds) the JVM has spent executing garbage collection processes|java.lang:type=GarbageCollector,name=(Copy\|MarkSweepCompact\|PS MarkSweep\|PS Scavenge)|Other|
 |`CollectionCount`|The total count of garbage collection processes executed by the JVM|java.lang:type=GarbageCollector,name=(Copy\|MarkSweepCompact\|PS MarkSweep\|PS Scavenge)|Other|
 |`HeapMemoryUsage`|This contains values for the heap's `init`, `max`, `committed`, and `used` metrics|java.lang:type=Memory|Resource: Utilization|
@@ -307,7 +305,6 @@ As described in the [ActiveMQ documentation][activemq-scaling], you can reduce t
 Your host is the foundation of all the processes involved in ActiveMQ's messaging activities. To understand bottlenecks that may arise, and to make informed decisions about when to scale out, look to your host-level metrics.
 
 |Name|Description|Metric type|
-|---|---|---|
 |Disk usage|The percentage of the host's available disk space currently in use|Resource: Utilization|
 |Disk I/O|The rate of read and write operations per second|Resource: Utilization|
 
@@ -326,6 +323,8 @@ ActiveMQ metrics can help you proactively maintain your messaging infrastructure
 
 ## Acknowledgments
 We'd like to thank Gary Tully of [Red Hat][red-hat] for his technical review of this series.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/activemq/activemq-architecture-and-metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 [acknowledgment-mode]: https://docs.oracle.com/cd/E19798-01/821-1841/bncfw/index.html
 [activemq-best-practices]: http://activemq.apache.org/how-do-i-configure-10s-of-1000s-of-queues-in-a-single-broker-.html

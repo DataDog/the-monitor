@@ -1,31 +1,5 @@
----
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series metrics
-blog/tag:
-- sql-server
-- alerts
-- dbms
-- sql
-- microsoft
-date: 2018-05-04T17:00:02Z
-description: "Use these SQL Server monitoring tools to get detailed views of performance and resource use"
-draft: false
-image: "SQL-Server-Monitoring-Tools-Datadog-Hero.png"
-preview_image: "SQL-Server-Monitoring-Tools-Datadog-Hero.png"
-slug: sql-server-monitoring-tools
-technology: sql-server
-title: SQL Server monitoring tools
-series: sql-server-monitoring
-header_video:
-    mp4: superheroes_microsoftsq_v24.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
----
+# SQL Server monitoring tools
+
 In [Part 1][part1] of this series, we covered a number of features that SQL Server provides for optimizing its resource usage. You can, for example, adjust the way your query batches are compiled, configure your buffer cache to flush at different intervals, and create memory-optimized tables. Making the most of these features requires that you get real-time insights into the health and performance of SQL Server. Here we'll survey SQL Server monitoring tools within built-in features and commonly used applications, including:
 
 - **[T-SQL queries](#using-tsql-queries):** Use SQL Server's query language to gather internally collected data
@@ -55,7 +29,6 @@ You'll get a result similar to this (but with many more rows!):
 
 ```no-minimize
 object_name                            counter_name                         cntr_value
----------------------------------------------------------------------------------------
 SQLServer:Buffer Manager               Buffer cache hit ratio               30
 SQLServer:Buffer Manager               Buffer cache hit ratio base          30
 SQLServer:Buffer Manager               Page lookups/sec                     11091500
@@ -80,7 +53,6 @@ You'll receive output similar to:
 
 ```no-minimize
 Total Connections
------------------
              1571
 ```
 
@@ -100,11 +72,9 @@ The output will have a similar format to the following:
 
 ```no-minimize
 database_name     database_size      unallocated space
---------------- ----------------- ---------------------
 master            6.00 MB            0.52 MB
 
 reserved           data               index_size         unused
---------------- ----------------- ------------------ ------------
 3568 KB            1536 KB           1600 KB             432 KB
 ```
 

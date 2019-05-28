@@ -1,3 +1,6 @@
+# Collecting Pivotal Cloud Foundry logs and metrics
+
+
 So far in this series we’ve [explored Pivotal Cloud Foundry’s architecture][part-one] and looked at some of the [most important metrics for monitoring each PCF component][part-two]. In this post, we’ll show you how you can view these metrics, as well as application and system logs, in order to monitor your PCF cluster and the applications running on it.
 
 ## Logs and more logs
@@ -33,7 +36,6 @@ In this post, we will cover ways to collect these types of data. We'll go over u
 For the metrics and logs available from the Firehose and Log Cache, remember that PCF’s [Loggregator](/blog/pivotal-cloud-foundry-architecture#loggregator) system packages information using the [dropsonde protocol][dropsonde], in a process called “marshalling.” Marshalling data into dropsonde involves categorizing messages into envelopes based on the event type (the type of monitoring data that a message represents), and wrapping each message with classifying metadata. As a result, all messages coming off the Firehose are standardized into the same format but carry different metadata that allows them to be decoded, or unmarshalled, into their respective data types downstream:
 
 | Loggregator event type | Dropsonde envelope | Description |
-| --- | --- | --- |
 | `Gauge` | `ValueMetric` | PCF Platform component metrics representing a value at a specific moment in time |
 | `Gauge` | `ContainerMetric` | Metrics tracking resource utilization for the [Garden containers](/blog/pivotal-cloud-foundry-architecture#diego) running applications |
 | `Counter` | `CounterEvent`| PCF Platform component metrics representing an incrementing counter |
@@ -170,11 +172,8 @@ Below is example output from the command `cf logs pcf-app`, which tails logs fro
 
 2018-07-23T19:21:12.79+0000 [RTR/0] OUT
 
-2018-07-23T19:21:12.63+0000 [APP/PROC/WEB/1] OUT 2018-07-23 19:21:12.634  INFO 16 --- [nio-8080-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
 
-2018-07-23T19:21:12.63+0000 [APP/PROC/WEB/1] OUT 2018-07-23 19:21:12.634  INFO 16 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 
-2018-07-23T19:21:12.66+0000 [APP/PROC/WEB/1] OUT 2018-07-23 19:21:12.663  INFO 16 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
 . . .
 ```
 
@@ -265,7 +264,6 @@ By default, `cf tail` returns the 10 most recent messages. Each message includes
 There are several flags that you can include with `cf tail` to focus your queries:
 
 | Flag | Description |
-|--- |--- |
 | `--follow` | Tails the stream in real time |
 | `--json` | Outputs messages in JSON format |
 | `--lines` | Sets the number of messages to return (default is 10) |
@@ -283,7 +281,6 @@ To query the Log Cache programmatically, you can make API calls to its RESTful e
 As with the cf CLI, `<source>` can be either an application or component. You will need to provide a [UAA authorization token][uaa-tokens] that includes the `doppler.firehose` scope with each API request. You can also include optional query parameters to filter the response:
 
 | Parameter | Description |
-|--- |--- |
 | `start_time` | Sets the start time of messages to return (UNIX timestamp) |
 | `end_time` | Sets the end time of messages to return (UNIX timestamp) |
 | `envelope_types` | Returns only messages of the provided envelope type (may be called multiple times to return multiple types; note that `log` messages will be base64 encoded) |
@@ -407,8 +404,6 @@ Once you apply the log forwarding settings, you will see system logs for your pl
 Jul 30 09:31:41 10.0.4.23 route_registrar: [2018-07-30 13:31:41+0000] {"timestamp":"1532957501.300919056","source":"Route Registrar","message":"Route Registrar.Registered routes successfully","log_level":1,"data":{}}
 Jul 30 09:31:41 10.0.4.23 consul_agent:    2018/07/30 13:31:41 [WARN] agent: Check 'service:reverse-log-proxy' is now critical
 Jul 30 09:31:42 10.0.4.23 consul_agent:    2018/07/30 13:31:42 [WARN] agent: Check 'service:cloud-controller-ng' is now critical
-Jul 30 09:31:43 10.0.4.23 uaa: [2018-07-30 13:31:43.004] uaa - 15573 [pool-4-thread-1] .... DEBUG --- JdbcTemplate: Executing SQL query [select count(*) from users]
-Jul 30 09:31:43 10.0.4.23 uaa: [2018-07-30 13:31:43.005] uaa - 15573 [pool-4-thread-1] .... DEBUG --- JdbcTemplate: Executing SQL query [select count(*) from oauth_client_details]
 Jul 30 09:31:43 10.0.4.23 rsyslogd-2359: action 'action 17' resumed (module 'builtin:omfile') [v8.22.0 try http://www.rsyslog.com/e/2359 ]
 Jul 30 09:31:43 10.0.4.23 rsyslogd-2359: message repeated 9 times: [action 'action 17' resumed (module 'builtin:omfile') [v8.22.0 try http://www.rsyslog.com/e/2359 ]]
 Jul 30 09:31:43 10.0.4.23 rsyslogd-2007: action 'action 17' suspended, next retry is Mon Jul 30 13:32:13 2018 [v8.22.0 try http://www.rsyslog.com/e/2007 ]

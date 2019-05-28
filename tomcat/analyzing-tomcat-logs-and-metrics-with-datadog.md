@@ -1,3 +1,6 @@
+# Analyzing Tomcat logs and metrics with&nbsp;Datadog
+
+
 In [Part 2][part-two-link] of this series, we showed you how to collect key Tomcat performance metrics and logs with open source tools. These tools are useful for quickly viewing health and performance data from Tomcat, but don't provide much context for how those metrics and logs relate to other applications or systems within your infrastructure. 
 
 In this post, we will look at how Datadog provides more comprehensive monitoring for Tomcat and other technologies in your infrastructure, by connecting events, logs, and metrics together in one fully integrated platform. And, because Datadog integrates with more than {{< translate key="integration_count" >}} technologies, you can track long-term performance trends and patterns across all systems in your infrastructure, not just your Tomcat server. You can also get deeper visibility into Tomcat applications by collecting, processing, and analyzing your logs.
@@ -95,7 +98,6 @@ The Tomcat [log pipeline](https://docs.datadoghq.com/logs/processing/pipelines/#
 The Tomcat logging integration pipeline automatically processes Tomcat access logs that use the standard `%h %l %u %t "%r" %s %b` [valve pattern][part-two-valve-patterns], and maps them to pre-defined log attributes:
 
 | Valve pattern | Description | Log attribute |
-| ------------------ | --------------- | ----------------- |
 | `%h` | the IP address of the client sending the request | `client.ip` |
 | `%l` | the username from the identd service | `http.ident`|
 | `%u` | the user id of the authenticated user requesting the page (if HTTP authentication is used) | `http.useragent` |
@@ -191,6 +193,9 @@ Log alerts are useful for sifting through a large volume of logs for you, and au
 
 ## Monitor Tomcat with Datadog
 Comprehensive monitoring for Tomcat involves identifying key metrics for both the Tomcat server and JVM, collecting and extracting log data, and connecting everything in a meaningful way. In this post, we've shown you how to monitor Tomcat logs and metrics in one place with Datadog dashboards and alerts. And with more than {{< translate key="integration_count" >}} integrations, you can easily start monitoring Tomcat alongside metrics, logs, and distributed request traces from all of the other technologies in your infrastructure. Get deeper visibility into Tomcat today with a <a href="#" class="sign-up-trigger">free Datadog trial</a>.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/tomcat/analyzing-tomcat-logs-and-metrics-with-datadog.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
+
 
 [part-one-link]: /blog/tomcat-architecture-and-performance
 [part-two-link]: /blog/tomcat-monitoring-tools
