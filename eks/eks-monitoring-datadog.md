@@ -258,6 +258,7 @@ spec:
       name: datadog-agent
     spec:
       serviceAccountName: datadog-cluster-agent
+      automountServiceAccountToken: true
       containers:
       - image: datadog/cluster-agent:latest
         imagePullPolicy: Always
@@ -322,6 +323,7 @@ spec:
       name: datadog-agent
     spec:
       serviceAccountName: datadog-agent
+      automountServiceAccountToken: true
       containers:
       - image: datadog/agent:latest
         imagePullPolicy: Always
