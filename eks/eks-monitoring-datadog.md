@@ -347,7 +347,7 @@ spec:
           - name: DD_KUBERNETES_KUBELET_HOST
             valueFrom:
               fieldRef:
-                fieldPath: status.hostIP
+                fieldPath: spec.nodeName
           - name: DD_CLUSTER_AGENT_ENABLED
             value: "true"
           - name: DD_CLUSTER_AGENT_AUTH_TOKEN
