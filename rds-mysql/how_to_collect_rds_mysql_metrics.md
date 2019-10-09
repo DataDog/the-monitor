@@ -44,7 +44,7 @@ For example, if you want to check the `CPUUtilization` metric across a five-minu
 
 ```
 aws cloudwatch get-metric-statistics --namespace AWS/RDS --metric-name CPUUtilization --dimensions Name=DBInstanceIdentifier,Value=<YOUR_INSTANCE_NAME> --statistics=Maximum --start-time 2019-10-03T21:00:00 --end-time 2019-10-03T21:05:00 --period=60
-```1
+```
 
 Here is an example of the output returned from a `get-metric-statistics` query like the one above:
 
