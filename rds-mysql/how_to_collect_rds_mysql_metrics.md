@@ -38,30 +38,50 @@ To set up an alert, click on the "Create Alarm" button at the right of your grap
 
 <h3 class="anchor" id="using-the-command-line-interface">Using the command line interface</h3>
 
-You can also retrieve metrics related to your database instance using the command line. Command line queries can be useful for spot checks and ad hoc investigations. To do so, you will need to [install and configure the CloudWatch command line interface][aws-cli]. You will then be able to query for any CloudWatch metrics you want, using different filters.
+You can also retrieve metrics related to your database instance using the command line. Command line queries can be useful for spot checks and ad hoc investigations. To do so, you will need to [install][aws-cli-install] and [configure][aws-cli-configure] the AWS command line interface. You will then be able to query for any CloudWatch metrics you want, using different filters.
 
 For example, if you want to check the `CPUUtilization` metric across a five-minute window on your MySQL instance, you can run:
 
-<pre class="lang:sh">
-mon-get-stats CPUUtilization 
-    --namespace="AWS/RDS" 
-    --dimensions="DBInstanceIdentifier=instance-name" 
-    --statistics Maximum 
-    --start-time 2015-09-29T00:00:00 
-    --end-time 2015-09-29T00:05:00
-</pre>
+{{< code-snippet lang="bash" wrap="true"  >}}
+aws cloudwatch get-metric-statistics --namespace AWS/RDS --metric-name CPUUtilization --dimensions Name=DBInstanceIdentifier,Value=<YOUR_INSTANCE_NAME> --statistics=Maximum --start-time 2019-10-03T21:00:00 --end-time 2019-10-03T21:05:00 --period=60
+{{< /code-snippet >}}
 
-Here is an example of the output returned from a `mon-get-stats` query like the one above:
+Here is an example of the output returned from a `get-metric-statistics` query like the one above:
 
-<pre class="lang:sh">
-2015-09-29 00:00:00  33.09  Percent
-2015-09-29 00:01:00  32.17  Percent
-2015-09-29 00:02:00  34.67  Percent
-2015-09-29 00:03:00  32.33  Percent
-2015-09-29 00:04:00  31.45  Percent
-</pre>
+{{< code-snippet lang="json" wrap="false"  >}}
+{
+    "Label": "CPUUtilization",
+    "Datapoints": [
+        {
+            "Timestamp": "2019-10-03T21:00:00Z",
+            "Maximum": 2.20338983050847,
+            "Unit": "Percent"
+        },
+        {
+            "Timestamp": "2019-10-03T21:01:00Z",
+            "Maximum": 1.50000000000001,
+            "Unit": "Percent"
+        },
+        {
+            "Timestamp": "2019-10-03T21:02:00Z",
+            "Maximum": 1.49999999999999,
+            "Unit": "Percent"
+        },
+        {
+            "Timestamp": "2019-10-03T21:03:00Z",
+            "Maximum": 1.50000000000001,
+            "Unit": "Percent"
+        },
+        {
+            "Timestamp": "2019-10-03T21:04:00Z",
+            "Maximum": 1.66666666666667,
+            "Unit": "Percent"
+        }
+    ]
+}
+{{< /code-snippet >}}
 
-Full usage details for the `mon-get-stats` command are available [in the AWS documentation][mon-get-stats].
+Full usage details for the `get-metric-statistics` command are available [in the AWS documentation][aws-get-metric-statistics]. 
 
 <h3 class="anchor" id="using-a-monitoring-tool-with-a-cloudwatch-integration">Using a monitoring tool with a CloudWatch integration</h3>
 
@@ -241,3 +261,6 @@ We are grateful to have had input on this series from Baron Schwartz, whose comp
 [sys-schema]: https://github.com/MarkLeith/mysql-sys/
 [workbench]: http://dev.mysql.com/downloads/workbench/
 [vivid]: https://www.vividcortex.com/
+[aws-cli-configure]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+[aws-cli-install]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+[aws-get-metric-statistics]: https://docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-statistics.html
