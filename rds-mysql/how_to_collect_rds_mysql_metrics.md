@@ -42,13 +42,13 @@ You can also retrieve metrics related to your database instance using the comman
 
 For example, if you want to check the `CPUUtilization` metric across a five-minute window on your MySQL instance, you can run:
 
-{{< code-snippet lang="bash" wrap="true"  >}}
+```
 aws cloudwatch get-metric-statistics --namespace AWS/RDS --metric-name CPUUtilization --dimensions Name=DBInstanceIdentifier,Value=<YOUR_INSTANCE_NAME> --statistics=Maximum --start-time 2019-10-03T21:00:00 --end-time 2019-10-03T21:05:00 --period=60
-{{< /code-snippet >}}
+```1
 
 Here is an example of the output returned from a `get-metric-statistics` query like the one above:
 
-{{< code-snippet lang="json" wrap="false"  >}}
+```
 {
     "Label": "CPUUtilization",
     "Datapoints": [
@@ -79,7 +79,7 @@ Here is an example of the output returned from a `get-metric-statistics` query l
         }
     ]
 }
-{{< /code-snippet >}}
+```
 
 Full usage details for the `get-metric-statistics` command are available [in the AWS documentation][aws-get-metric-statistics]. 
 
