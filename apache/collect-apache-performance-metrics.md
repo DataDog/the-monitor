@@ -81,13 +81,7 @@ After you're done making changes, save and exit. You can check your configuratio
 Perform a [graceful restart][graceful-restart] to apply the changes without interrupting live connections (`apachectl -k graceful` or `service apache2 graceful`).  
 
 ### Apache's mod_status metrics
-After enabling mod_status and restarting Apache, you will be able to see your status page at `http://<YOUR_DOMAIN>/server-status`.
-
-In a future release of Apache, users will be able to view an out-of-the-box status page that looks like [Apache Software Foundation's status page][asf-status]. 
-
-{{< img src="asf-server-status.png" alt="Apache Software Foundation web server metrics on mod status page" popup="true" >}}
-
-Currently (as of version 2.4), your Apache status page will look more basic, like this:
+After enabling mod_status and restarting Apache, you will be able to see your status page at `http://<YOUR_DOMAIN>/server-status`. Your Apache status page will look like this:
 
 {{< img src="local-server-status.png" alt="Apache web server metrics on mod status page" popup="true" >}}
 
@@ -146,7 +140,7 @@ Scoreboard: _W..................................................................
 
 The machine-readable page will not display detailed information about individual requests; in order to view that information, you will need to visit the main server-status page.
 
-Mod_status provides many of the [resource utilization and activity metrics][part1-resource] discussed in Part 1. Some tools, including [collectD][collectd-plugin] and [Datadog][datadog-apache], can automatically parse the machine-readable status page and enable you to visualize those metrics in graphs. A future release of Apache will also output status metrics as JSON, as shown [here][apache-json]. 
+Mod_status provides many of the [resource utilization and activity metrics][part1-resource] discussed in Part 1. Some tools, including [collectD][collectd-plugin] and [Datadog][datadog-apache], can automatically parse the machine-readable status page and enable you to visualize those metrics in graphs. 
 
 ## Apache logs
 In addition to the status module, Apache's [access log][access-log-docs] provides even more detailed information about each client request. You can customize what information is included in your Apache logs so that it is more relevant for your needs. Within your main Apache configuration file, locate the section that starts with "LogFormat":
@@ -238,7 +232,6 @@ Learn how to start monitoring Apache with Datadog in our [next post][part-3], or
 [apache-auth-docs]: http://httpd.apache.org/docs/2.4/howto/auth.html
 [htpasswd-docs]: https://httpd.apache.org/docs/current/programs/htpasswd.html
 [mod-status-docs]: https://httpd.apache.org/docs/current/mod/mod_status.html
-[asf-status]: https://www.apache.org/server-status
 [log-variables-docs]: http://httpd.apache.org/docs/current/mod/mod_log_config.html
 [rsyslog-apache]: http://wiki.rsyslog.com/index.php/Working_Apache_and_Rsyslog_configuration
 [part1-resource]: /blog/monitoring-apache-web-server-performance/#resource-utilization-and-activity-metrics
@@ -255,6 +248,5 @@ Learn how to start monitoring Apache with Datadog in our [next post][part-3], or
 [graphite-logstash]: https://www.elastic.co/guide/en/logstash/current/
 [collectd-plugin]: https://collectd.org/wiki/index.php/Plugin:Apache
 [datadog-apache]: http://docs.datadoghq.com/integrations/apache/
-[apache-json]: https://www-eu.apache.org/server-status?view=json
 [fluentd]: http://www.fluentd.org/
 [graceful-restart]: http://httpd.apache.org/docs/current/stopping.html
