@@ -368,7 +368,7 @@ In this post, we’ve covered some of the most important areas of Elasticsearch 
 * Cluster health and node availability
 * Resource saturation and errors
 
-As you monitor Elasticsearch metrics along with node-level system metrics, you will discover which areas are the most meaningful for your specific use case. Read [part 2][part-2-link] of our series to learn how to start collecting and visualizing the Elasticsearch metrics that matter most to you.
+As you monitor Elasticsearch metrics along with node-level system metrics, you will discover which areas are the most meaningful for your specific use case. Read [Part 2][part-2-link] to learn how to start collecting and visualizing the Elasticsearch metrics that matter most to you, or check out [Part 3][part-3-link] to see how you can monitor Elasticsearch metrics, request traces, and logs in one platform. In [Part 4][part-4-link], we'll discuss how to solve five common Elasticsearch performance and scaling problems.
 
 [elastic-home]: https://www.elastic.co/products/elasticsearch
 [Apache-Lucene]: https://lucene.apache.org/
