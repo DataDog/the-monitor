@@ -5,21 +5,21 @@
 Like a car, Elasticsearch was designed to allow its users to get up and running quickly, without having to understand all of its inner workings. However, it's only a matter of time before you run into engine trouble here or there. This article will walk through five common Elasticsearch challenges, and how to deal with them. 
 
 ## Problem #1: My cluster status is red or yellow. What should I do?
-![es-cluster-status.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt4-1-es-cluster-status.png)
+{{< img src="elasticsearch-performance-cluster-status-v5.png" alt="Elasticsearch performance monitor node status" border="true" >}}
 
 If you recall from [Part 1][part-1-link], cluster status is reported as red if one or more primary shards (and its replicas) is missing, and yellow if one or more replica shards is missing. Normally, this happens when a node drops off the cluster for whatever reason (hardware failure, long garbage collection time, etc.). Once the node recovers, its shards will remain in an initializing state before they transition back to active status. 
 
 The number of initializing shards typically peaks when a node rejoins the cluster, and then drops back down as the shards transition into an active state, as shown in the graph below. 
 
-![initializing-shards.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt4-2-initializing-shards.png) 
+{{< img src="elasticsearch-performance-initializing-shards-v3.png" alt="Elasticsearch performance monitor number of initializing shards" border="true" >}} 
 
 During this initialization period, your cluster state may transition from green to yellow or red until the shards on the recovering node regain active status. In many cases, a brief status change to yellow or red may not require any action on your part.
 
-![node-status.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt4-3-node-status.png) 
+{{< img src="elasticsearch-performance-node-status-v2.png" border="true" alt="monitor Elasticsearch performance cluster status" >}}
 
 However, if you notice that your cluster status is lingering in red or yellow state for an extended period of time, verify that the cluster is recognizing the correct number of Elasticsearch nodes, either by consulting [Datadog's dashboard][elasticsearch-dash] or by querying the Cluster Health API detailed in [Part 2][part-2-link]. 
 
-![es-num-of-nodes.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt4-4-es-num-of-nodes.png) 
+{{< img src="elasticsearch-performance-num-of-nodes-v2.png" alt="Elasticsearch performance monitoring graph the number of nodes currently in the cluster" border="true" >}}
 
 If the number of active nodes is lower than expected, it means that at least one of your nodes lost its connection and hasn't been able to rejoin the cluster. To find out which node(s) left the cluster, check the logs (located by default in the `logs` folder of your Elasticsearch home directory) for a line similar to the following: 
 
@@ -30,7 +30,7 @@ Reasons for node failure can vary, ranging from hardware or hypervisor failures,
 However, if you lost both the primary and replica copy of a shard, you can try to recover as much of the missing data as possible by using Elasticsearch's [snapshot and restore module][snapshot-docs]. If you're not already familiar with this module, it can be used to store snapshots of indices over time in a remote repository for backup purposes. 
 
 ## Problem #2: Help! Data nodes are running out of disk space
-![disk-space-available.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt4-5-disk-space-available.png) 
+{{< img src="elasticsearch-performance-disk-space-available-v2.png" alt="Elasticsearch performance monitor disk space on data nodes" border="true" >}}
 
 If all of your data nodes are running low on disk space, you will need to add more data nodes to your cluster. You will also need to make sure that your indices have enough primary shards to be able to balance their data across all those nodes. 
 
@@ -45,7 +45,11 @@ The second approach is the only option for you if you need to continue storing a
 Another way to scale horizontally is to [roll over the index][rollover-docs] by creating a new index, and using an [alias][alias-docs] to join the two indices together under one namespace. Though there is technically no limit to how much data you can store on a single shard, Elasticsearch recommends a soft upper limit of 50 GB per shard, which you can use as a general guideline that signals when it's time to start a new index. 
 
 ## Problem #3: My searches are taking too long to execute
-Search performance varies widely according to what type of data is being searched and how each query is structured. Depending on the way your data is organized, you may need to experiment with a few different methods before finding one that will help speed up search performance. We'll cover two of them here: custom routing and force merging.
+Search performance varies widely according to what type of data is being searched and how each query is structured. If you're using an application performance monitoring service like Datadog, you can [inspect individual request traces](https://www.datadoghq.com/blog/monitor-elasticsearch-datadog/#tracing-elasticsearch-queries-with-apm) to see which types of Elasticsearch queries are creating bottlenecks, and navigate to related logs and metrics to get more context.
+
+{{< img src="elasticsearch-performance-monitor-search-in-apm.png" alt="monitor Elasticsearch query performance in Datadog APM" border="true" >}}
+
+Depending on the way your data is organized, you may need to experiment with a few different methods before finding one that will help speed up search performance. We'll cover two of them here: custom routing and force merging.
 
 Typically, when a node receives a search request, it needs to communicate that request to a copy (either primary or replica) of every shard in the index. [Custom routing][routing-docs] allows you to store related data on the same shard, so that you only have to search a single shard to satisfy a query. 
 
@@ -106,7 +110,7 @@ Elasticsearch comes pre-configured with many settings that try to ensure that yo
 For more suggestions on boosting indexing performance, check out [this guide][elastic-blog] from Elastic.
 
 ## Problem #5: What should I do about all these bulk thread pool rejections?
-![bulk-rejections-top.png](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-09-elasticsearch/pt4-6-bulk-rejections-top.png) 
+{{< img src="elasticsearch-performance-bulk-rejections-top-v3.png" border="true" alt="Elasticsearch performance bulk thread pool rejections"  >}}
 
 Thread pool rejections are typically a sign that you are sending too many requests to your nodes, too quickly. If this is a temporary situation (for instance, you have to index an unusually large amount of data this week, and you anticipate that it will return to normal soon), you can try to slow down the rate of your requests. However, if you want your cluster to be able to sustain the current rate of requests, you will probably need to scale out your cluster by adding more data nodes. In order to utilize the processing power of the increased number of nodes, you should also make sure that your indices contain enough shards to be able to spread the load evenly across all of your nodes.
 
@@ -115,7 +119,7 @@ Even more performance tips are available in Elasticsearch's [learning resources 
 
 As you experiment with these and other optimizations, make sure to watch your Elasticsearch dashboards closely to monitor the resulting impact on your clusters' [key performance metrics][part-1-link]. 
 
-With a built-in Elasticsearch dashboard that highlights key cluster metrics, Datadog enables you to effectively monitor Elasticsearch in real-time. If you already have a Datadog account, you can [set up the Elasticsearch integration][dd-config] in minutes. If you don’t yet have a Datadog account, sign up for a <a class="sign-up-trigger" href="#">free trial</a> today.
+With an out-of-the-box Elasticsearch dashboard that highlights key cluster metrics, Datadog enables you to effectively monitor Elasticsearch in real time. [Datadog APM's](https://docs.datadoghq.com/tracing/) open source clients for Java, Python, and other languages include built-in support for auto-instrumenting popular frameworks and data stores, so you can monitor Elasticsearch query performance in full context with the rest of your services. If you already have a Datadog account, you can [set up the Elasticsearch integration](https://app.datadoghq.com/account/settings#integrations/elasticsearch) in minutes.  If you already have a Datadog account, you can [set up the Elasticsearch integration][dd-config] in minutes. If you don’t yet have a Datadog account, sign up for a <a class="sign-up-trigger" href="#">free trial</a> today.
 
 
 [part-1-link]: https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics
