@@ -344,10 +344,11 @@ export CATALINA_OPTS="-Xms1024M -Xmx1024M"
 Oracle recommends setting initial and maximum heap size parameters with the same value to minimize the number of times garbage collection is invoked. You can check out the official [Oracle documentation](https://docs.oracle.com/cd/E21764_01/web.1111/e13814/jvm_tuning.htm#PERFM160) for more information on tuning the JVM. 
 
 ## Working with Tomcat metrics
-There are many moving pieces for running applications on Tomcat, so it's crucial to incorporate monitoring for each Tomcat element. This not only includes metrics for the servlets and JSP pages that make up an application, but the metrics for the Tomcat server and JVM. Now that you know which metrics are most important for Tomcat monitoring, you can use tools such as Tomcat's built-in web management interface and JConsole to easily view metric data. In the [next part][part-2] of this series, we'll show you how to configure Tomcat and enable JMX remote for metric collection.  
+There are many moving pieces for running applications on Tomcat, so it's crucial to incorporate monitoring for each Tomcat element. This not only includes metrics for the servlets and JSP pages that make up an application, but the metrics for the Tomcat server and JVM. Now that you know which metrics are most important for Tomcat monitoring, you can use tools such as Tomcat's built-in web management interface and JConsole to easily view metric data. In the [next part][part-2] of this series, we'll show you how to configure Tomcat and enable JMX remote for metric collection. In [Part 3][part-3] of this series, we'll walk through how you can use Datadog to monitor Tomcat [application performance](https://docs.datadoghq.com/tracing/), metrics, and logs.  
 
 ## Acknowledgments
 We’d like to thank Christopher Schultz and Mark Thomas from the [Apache Tomcat project](http://tomcat.apache.org/whoweare.html) for their technical reviews of Part 1 of this series.
 
 [part-2]: /blog/tomcat-monitoring-tools
 [monitor-101]: /blog/monitoring-101-collecting-data/
+[part-3]: /blog/analyzing-tomcat-logs-and-metrics-with-datadog
