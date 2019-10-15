@@ -1,33 +1,3 @@
----
-authors:
-- email: mallory.mooney@datadoghq.com
-  image: mallory.jpg
-  name: Mallory Mooney
-blog/category:
-- series datadog
-blog/tag:
-- Tomcat
-- JMX
-- Java
-- web server
-Date: 2018-12-10
-description: Learn how to monitor and analyze Tomcat logs and metrics with Datadog.
-draft: false
-image: 1-analyze_apache_tomcat_metrics.png
-meta_title: Analyzing Tomcat logs and metrics with Datadog
-preview_image: 1-analyze_apache_tomcat_metrics.png
-slug: analyzing-tomcat-logs-and-metrics-with-datadog
-technology: Tomcat
-title: Analyzing Tomcat logs and metrics with&nbsp;Datadog
-series: tomcat-monitoring
-tcp:
-- title: "eBook: Monitoring Modern Infrastructure"
-  desc: "Explore key steps for implementing a successful cloud-scale monitoring strategy."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/ebook/monitoring-modern-infrastructure/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringModernInfrastructure"
-  img: Thumbnail-MonitoringModernInfrastructure.png
----
-
 In [Part 2][part-two-link] of this series, we showed you how to collect key Tomcat performance metrics and logs with open source tools. These tools are useful for quickly viewing health and performance data from Tomcat, but don't provide much context for how those metrics and logs relate to other applications or systems within your infrastructure.
 
 In this post, we will look at how Datadog provides more comprehensive monitoring for Tomcat and other technologies in your infrastructure, by connecting events, logs, and metrics together in one fully integrated platform. And, because Datadog integrates with more than {{< translate key="integration_count" >}} technologies, you can track long-term performance trends and patterns across all systems in your infrastructure, not just your Tomcat server. You can also get deeper visibility into Tomcat applications by collecting, processing, and analyzing your logs.
