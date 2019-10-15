@@ -207,9 +207,6 @@ Log alerts are useful for sifting through a large volume of logs for you, and au
 ## Monitor Tomcat with Datadog
 Comprehensive monitoring for Tomcat involves identifying key metrics for both the Tomcat server and JVM, collecting and extracting log data, and connecting everything in a meaningful way. In this post, we've shown you how to monitor Tomcat logs and metrics in one place with Datadog dashboards and alerts. And with more than {{< translate key="integration_count" >}} integrations, you can easily start monitoring Tomcat alongside metrics, logs, and distributed request traces from all of the other technologies in your infrastructure. Get deeper visibility into Tomcat today with a <a href="#" class="sign-up-trigger">free Datadog trial</a>.
 
-_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/tomcat/analyzing-tomcat-logs-and-metrics-with-datadog.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
-
-
 [part-one-link]: /blog/tomcat-architecture-and-performance
 [part-two-link]: /blog/tomcat-monitoring-tools
 [link-to-remote-connections]: /blog/tomcat-monitoring-tools#enabling-remote-jmx-connections-for-tomcat-monitoring-tools
