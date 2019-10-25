@@ -65,7 +65,7 @@ All of the metrics mentioned in this article are accessible through PostgreSQL's
 
 This article references metric terminology defined in our [Monitoring 101 series][monitoring-101-blog], which provides a framework for metric collection and alerting. 
 
-{{< img src="postgresql-monitoring-dashboard-pt1v2.png" alt="postgresql dashboard" popup="true" wide="true" >}}
+{{< img src="postgresql-monitoring-dashboard-pt1v3.png" alt="postgresql dashboard" popup="true" wide="true" border="true" >}}
 
 ### Read query throughput and performance
 PostgreSQL collects internal statistics about its activity in order to provide a window into how effectively the database is performing its work. One major category of its work is read query throughput—monitoring this metric helps you ensure that your applications are able to access data from your database. 
@@ -81,7 +81,7 @@ PostgreSQL collects internal statistics about its activity in order to provide a
 
 To track trends in performance, you can use a monitoring tool to continuously collect the number of sequential scans as a metric, and compare the number of sequential scans performed this week and last week, like in the graph below.  
 
-{{< img src="postgresql-monitoring-sequential-scans.png" alt="postgresql sequential scans with timeshift" wide="true" >}}
+{{< img src="postgresql-monitoring-sequential-scans.png" alt="postgresql sequential scans with timeshift" wide="true" border="true" >}}
 
 If you believe that the query planner is mistakenly preferring sequential scans over index scans, you can try tweaking the `random_page_cost` setting (the estimated cost of randomly accessing a page from disk). [According to the docs][random-page-cost], lowering this value in proportion to `seq_page_cost` (explained in more detail in the [next section](#seqpagecost)) will encourage the planner to prefer index scans over sequential scans. The default setting assumes that [~90 percent of your reads will access data that has already been cached][random-page-cost] in memory. However, if you're running a dedicated database instance, and your entire database can easily fit into memory, you may want to try lowering the random page cost to see if it yields good results. 
 
@@ -89,7 +89,7 @@ If you believe that the query planner is mistakenly preferring sequential scans 
 
 In the screenshot below, PostgreSQL is scanning (purple) through more rows in this particular database than it is fetching (green), which indicates that the data may not be properly indexed.
 
-{{< img src="postgresql-monitoring-rows-fetched-vs-returned.png" alt="postgresql rows fetched vs rows returned" popup="true" wide="true" >}}
+{{< img src="postgresql-monitoring-rows-fetched-vs-returned.png" alt="postgresql rows fetched vs rows returned" popup="true" wide="true" border="true" >}}
 
 PostgreSQL can only perform an index scan if the query does not need to access any columns that haven't been indexed. Typically, creating indexes on frequently accessed columns can help improve this ratio. However, maintaining each index doesn’t come free—it requires the database to perform additional work whenever it needs to add, update, or remove data included in any particular index. 
 
@@ -298,7 +298,7 @@ If it detects that a table has recently seen an increase in updates, the autovac
 
 Viewing the number of locks per table, categorized by lock mode, can help ensure that you are able to access data consistently. Some types of lock modes, such as ACCESS SHARE, are less restrictive than others, like ACCESS EXCLUSIVE (which conflicts with every other type of lock), so it can be helpful to focus on monitoring the more restrictive lock modes. A high rate of locks in your database indicates that active connections could be building up from long-running queries, which will result in queries timing out.  
 
-{{< img src="postgresql-monitoring-locks_by_lockmode.png" alt="postgresql locks" popup="true" wide="true" >}}
+{{< img src="postgresql-monitoring-locks_by_lockmode.png" alt="postgresql locks" popup="true" wide="true" border="true" >}}
 
 **Deadlocks:** A deadlock occurs when one or more transactions holds exclusive lock(s) on the same rows/tables that other transactions need in order to proceed. Let's say that transaction A has a row-level lock on row 1, and transaction B has a row-level lock on row 2. Transaction A then tries to update row 2, while transaction B requests a lock on row 1 to update a column value. Each transaction is forced to wait for the other transaction to release its lock before it can proceed. 
 
@@ -306,7 +306,7 @@ In order for either transaction to complete, one of the transactions must be rol
 
 **Dead rows:** If you have a vacuuming schedule in place (either through autovacuum or some other means), the number of dead rows should not be steadily increasing over time—this indicates that something is interfering with your VACUUM process. VACUUM processes can get blocked if there is a lock on the table/row that needs to be vacuumed. If you suspect that a VACUUM is stuck, you will need to investigate to see what is causing this slowdown, as it can lead to slower queries and increase the amount of disk space that PostgreSQL uses. Therefore, it's crucial to monitor the number of dead rows to ensure that your tables are being maintained with regular, periodic VACUUM processes.
 
-{{< img src="postgresql-monitoring-dead-rows-sawtooth.png" alt="postgresql dead rows removed by vacuum process" caption="The number of dead rows normally drops after a VACUUM process runs successfully, and then rises again as the database accumulates more dead rows over time, resulting in a sawtooth pattern." wide="true" >}}
+{{< img src="postgresql-monitoring-dead-rows-sawtooth.png" alt="postgresql dead rows removed by vacuum process" caption="The number of dead rows normally drops after a VACUUM process runs successfully, and then rises again as the database accumulates more dead rows over time, resulting in a sawtooth pattern." wide="true" border="true" >}}
 
 ### Replication and reliability
 As mentioned earlier, PostgreSQL writes and updates data by noting each transaction in the [write-ahead log (WAL)][wal-docs]. In order to maintain data integrity without sacrificing too much performance, PostgreSQL only needs to record updates in the WAL and then commit the WAL (not the actual updated page/block) to disk to ensure data reliability in case the primary/master fails. After logging the transaction to the WAL, PostgreSQL will check if the block is in memory, and if so, it will update it in memory, marking it as a "dirty page." 
@@ -318,15 +318,15 @@ Many users set up PostgreSQL to replicate WAL changes from each primary/master s
 
 **Streaming replication:** The master server streams WAL updates to the standby as they come in. This method is asynchronous, which means that there is a slight delay between a transaction that has been committed in the primary/master and the same transaction taking effect in the standby.
 
-{{< img src="postgresql-monitoring-streaming-replication2.png" alt="monitor postgres streaming replication diagram" caption="In this example of streaming replication, the master/primary server asynchronously replicates its WAL updates to three standby servers." >}}
+{{< img src="postgresql-monitoring-streaming-replication2.png" alt="monitor postgres streaming replication diagram" caption="In this example of streaming replication, the master/primary server asynchronously replicates its WAL updates to three standby servers." border="true" >}}
 
 **Cascading replication:** A standby server receives updates from the primary/master, and then communicates those updates to other standby servers. This method helps reduce the number of direct connections to the primary/master. This method of replication is also asynchronous.
 
-{{< img src="postgresql-monitoring-cascading-replication.png" alt="monitor postgres streaming replication diagram" caption="In this example of cascading replication, the master/primary server asynchronously replicates its WAL updates to one standby, which then communicates those updates to two other standby servers." >}}
+{{< img src="postgresql-monitoring-cascading-replication.png" alt="monitor postgres streaming replication diagram" caption="In this example of cascading replication, the master/primary server asynchronously replicates its WAL updates to one standby, which then communicates those updates to two other standby servers." border="true" >}}
 
 **Synchronous replication:** Available in PostgreSQL version 9.1+, this is the only method that ensures that every transaction on the primary/master is written to each standby server's WAL, and written to disk, before the transaction can be considered "committed." This is slower than the asynchronous methods, but it is the only method that ensures that data is always consistent across the primary/master and all standby servers, even in the event that the primary/master server crashes.
 
-{{< img src="postgresql-monitoring-synchronous-replication.png" alt="monitor postgres synchronous replication diagram" caption="In this example, a master/primary server replicates its WAL updates to three standby servers." >}}
+{{< img src="postgresql-monitoring-synchronous-replication.png" alt="monitor postgres synchronous replication diagram" caption="In this example, a master/primary server replicates its WAL updates to three standby servers." border="true" >}}
 
 #### Checkpoints and PostgreSQL reliability
 Of course, the WAL is not the only file that needs to be committed to disk when data is inserted, updated, or deleted. [PostgreSQL's checkpoints][checkpoint-docs] are designed to periodically flush updated/dirty buffers (stored in memory) to disk. The WAL also notes each time a checkpoint completes, so that, in the event of a failure, the standby server will know where to pick up and start replaying transactions. 
@@ -353,7 +353,7 @@ For example, if you see that replication lag is increasing by one second, every 
 
 If your data is constantly being updated, you should closely monitor replication lag on any standby/replica servers that are serving read queries, to ensure that they are not serving stale data. However, it's also important to monitor lag on standby servers that are not actively serving any queries, because they need to be prepared to step in quickly if the primary/master fails.  
 
-{{< img src="postgresql-monitoring-replication-delay-seconds.png" alt="postgresql replication delay on replica" wide="true" >}}
+{{< img src="postgresql-monitoring-replication-delay-seconds.png" alt="postgresql replication delay on replica" wide="true" border="true" >}}
 
 **Metrics to watch:**  
 **Requested checkpoints:** If you see a high percentage of checkpoints being requested as opposed to time-based/scheduled, this tells you that WAL updates are reaching the `max_wal_size` or `checkpoint_segments` size before the `checkout_timeout` is reached. This indicates that your checkpoints can't keep up with the rate of data updates. Generally it's better for your databases' health if checkpoints are scheduled rather than requested, as the latter can indicate that your databases are under heavy load. Increasing `max_wal_size` or `checkpoint_segments` can help checkpoints become a time-driven process rather than a load-driven one, but only to a certain extent. If you are using a version prior to 9.5, the default `checkpoint_segments` setting is quite low, at 48 MB, so you can probably safely increase this up to 32 segments (or ~1 GB). As of version 9.5 and later, the default `max_wal_size` has already been raised to 1 GB.
@@ -408,7 +408,7 @@ PostgreSQL collects statistics internally to help you track the size of tables a
 In the [next part][part-2] of this series, we'll show you how to query `pg_stat_user_indexes` to see if there are any underutilized indexes that you could remove in order to free up disk space and decrease unnecessary load on the database. As mentioned in a previous section, indexes can be increasingly difficult to maintain as they grow in size, so it may not be worth applying resources to data that isn't queried very often. 
 
 ## Next steps in PostgreSQL monitoring
-In this post, we've covered an overview of PostgreSQL monitoring and its key performance metrics. As you continue to scale your PostgreSQL deployment over time, keeping an eye on these metrics will help you effectively detect and troubleshoot potential issues in real time. Read the [next part][part-2] of this series to learn how to collect all of these metrics from PostgreSQL.
+In this post, we've covered an overview of PostgreSQL monitoring and its key performance metrics. As you continue to scale your PostgreSQL deployment over time, keeping an eye on these metrics will help you effectively detect and troubleshoot potential issues in real time. Read the [next part][part-2] of this series to learn how to collect all of these metrics from PostgreSQL, or check out [Part 3](https://www.datadoghq.com/blog/collect-postgresql-data-with-datadog/) to learn how to monitor these metrics alongside distributed traces from your applications, all in one place.
 
 
 [postgres-scalable]: https://www.postgresql.org/about/
