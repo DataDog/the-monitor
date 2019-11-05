@@ -1,33 +1,3 @@
----
-authors:
-- email: david.lentz@datadoghq.com
-  name: David M. Lentz
-  image: lentz.jpg
-blog/category:
-- series metrics
-blog/tag:
-- Amazon MQ
-- AWS
-- message broker
-date: 2019-11-04
-description: Monitor Amazon MQ's key metrics to know the health of your message brokers and destinations. Learn which metrics you should monitor and alert on to ensure that your Amazon MQ infrastructure is operating efficiently and with plenty of resources at all times.
-subheader: Learn the key metrics you should monitor to know that your Amazon MQ infrastructure is healthy.
-draft: false
-image: amazon-mq_longform_part1_191030_v2.png
-meta_title: 
-preview_image: amazon-mq_longform_part1_191030_v2.png
-slug: amazon-mq-monitoring
-technology: Amazon MQ
-title: "How to monitor Amazon MQ"
-series: amazon-mq-monitoring
-tcp:
-- title: "eBook: Monitoring Modern Infrastructure"
-  desc: "Explore key steps for implementing a successful cloud-scale monitoring strategy."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/ebook/monitoring-modern-infrastructure/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringModernInfrastructure"
-  img: Thumbnail-MonitoringModernInfrastructure.png
----
-
 [Amazon MQ][aws-amazon-mq] is a managed [ActiveMQ][apache-activemq] messaging service hosted on the AWS cloud. Amazon MQ's brokers route messages between the nodes in a distributed application. Each broker is a managed AWS instance, so your messaging infrastructure doesn't require the maintenance and upfront costs of a self-hosted solution. Amazon MQ [supports several ActiveMQ versions][aws-activemq-versions] and is designed to help users easily migrate ActiveMQ message brokers—or any brokers that use its [supported messaging protocols][apache-activemq-protocols]—to the cloud. 
 
 Like other message queues, Amazon MQ can help you solve problems like [integrating disparate systems](https://www.enterpriseintegrationpatterns.com/patterns/messaging/Chapter1.html) to allow them to exchange data. If you need to transition an application
