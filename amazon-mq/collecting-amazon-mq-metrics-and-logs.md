@@ -105,13 +105,13 @@ Destination metrics, like `MemoryUsage`, `ConsumerCount`, and `QueueSize`, are s
 
 The sample query below fetches the average `QueueSize` of the `testqueue` destination on the broker named `MyBroker` in the `us-west-2` region:
 
-{{< code-snippet lang="bash" wrap="true"  >}}
+```
 aws cloudwatch get-metric-statistics --namespace "AWS/AmazonMQ" --metric-name QueueSize --statistics Average --start-time 2019-07-17T18:30:00Z --end-time 2019-07-17T19:00:00Z --period 600 --region us-west-2 --dimensions Name="Broker",Value="MyBroker" Name="Queue",Value="testqueue"
-{{< /code-snippet >}}
+```
 
 Because the query specifies a 10-minute granularity (`period`) and a 30-minute time span, it returns three records, each showing the average of all the `QueueSize` datapoints within the period:
 
-{{< code-snippet lang="json" wrap="false"  >}}
+```
 {
     "Label": "QueueSize",
     "Datapoints": [
@@ -132,7 +132,7 @@ Because the query specifies a 10-minute granularity (`period`) and a 30-minute t
         }
     ]
 }
-{{< /code-snippet >}}
+```
 
 ### Call the CloudWatch API
 You can also use the [AWS SDKs][aws-sdk-documentation] to build a custom solution to programmatically collect Amazon MQ metrics and logs from CloudWatch. AWS supports many languages—including Node.js, Python, and Go—that you can use to build applications that access the CloudWatch API.

@@ -52,7 +52,7 @@ Adding tags to your metrics gives you [depth and flexibility][datadog-the-power-
 
 You can easily add custom tags to a new or existing broker, whether you're using the [Amazon MQ console][aws-amazon-mq-console] or CloudFormation. The code snippet below shows a portion of a CloudFormation template that creates a broker with two custom tags applied to it:
 
-{{< code-snippet lang="yaml" wrap="false"  >}}
+```
   TestBroker1:
     Type: "AWS::AmazonMQ::Broker"
     Properties:
@@ -63,7 +63,7 @@ You can easily add custom tags to a new or existing broker, whether you're using
         -
           Key: "app"
           Value: "enrollment"
-{{< /code-snippet >}}
+```
 
 Datadog will automatically pull these custom key-value tags and apply them to any metrics collected from this broker, so you can use them to slice and dice your data. For example, an `env` tag like the one shown above can help you easily distinguish metrics from your development stack from that of your production infrastructure.
 ## Visualizing Amazon MQ performance
