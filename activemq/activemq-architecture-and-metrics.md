@@ -1,360 +1,1 @@
-# ActiveMQ architecture and key metrics
-
-Apache ActiveMQ is message-oriented middleware (MOM), a category of software that sends messages between applications. Using standards-based, asynchronous communication, ActiveMQ allows loose coupling of the elements in an IT environment, which is often foundational to enterprise messaging and distributed applications.
-
-ActiveMQ is a Java-based open source project developed by the [Apache Software Foundation](http://activemq.apache.org/). It's comparable to other messaging systems, such as [Apache Kafka](https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/), [RabbitMQ](https://www.datadoghq.com/blog/rabbitmq-monitoring/), and [Amazon Simple Queue Service](https://aws.amazon.com/sqs/). Amazon also offers [Amazon MQ](https://aws.amazon.com/amazon-mq/), which is a managed implementation of ActiveMQ, integrated into its AWS cloud services. Essentially, each of these technologies supports enterprise messaging through a loosely coupled infrastructure. 
-
-ActiveMQ makes use of the Java Message Service (JMS) API, which defines a standard for software to use in creating, sending, and receiving messages. JMS is included in the Java Enterprise Edition, making it available for Java developers to use as they create the client applications that send, receive, and process messages. It's possible to write ActiveMQ clients in other languages (such as Node.js, Ruby, and Python), but ActiveMQ is built on Java, and is probably best suited for an organization that's already invested in Java.
-
-In this post, we'll look at how ActiveMQ works, and at some key ActiveMQ metrics you can monitor to understand the performance of your messaging infrastructure.
-
-## How does ActiveMQ work?
-
-ActiveMQ sends messages between client applicationsâ€”**producers**, which create messages and submit them for delivery, and **consumers**, which receive and process messages. The ActiveMQ **broker** routes each message through one of two types of **destinations**:
-
-* a **queue**, where it awaits delivery to a single consumer (in a messaging domain called **point-to-point**), or 
-* a **topic**, to be delivered to multiple consumers that are subscribed to that topic (in a messaging domain called **publish/subscribe**, or "pub/sub") 
-
-ActiveMQ gives you the flexibility to send messages through both queues and topics using a single broker. In point-to-point messaging, the broker acts as a load balancer by routing each message from the queue to one of the available consumers in a round-robin pattern. When you use pub/sub messaging, the broker delivers each message to every consumer that is subscribed to the topic. 
-
-{{< img src="activemq_diagram1.png" caption="The ActiveMQ architecture contains the broker, destinations, and client applications." alt="The ActiveMQ broker sends messages from producers to consumers." >}}
-
-
-**JMS** is the communication standard that ActiveMQ uses to send and receive messages. ActiveMQ is a **JMS provider**, which means that it implements the functionality [specified in the JMS API][jms-api]. Client applicationsâ€”producers and consumersâ€”use the JMS API to send and receive messages. Non-JMS clients (written in PHP, Python, or other languages) can also connect to the ActiveMQ broker via the [AMQP][amqp-protocol], [MQTT][mqtt-protocol], and [STOMP][stomp-protocol] protocols.
-
-ActiveMQ sends messages asynchronously, so consumers don't necessarily receive messages immediately. The producer's task of composing and sending a message is disconnected from the consumer's task of fetching it. Because ActiveMQ uses a broker as an intermediary, producers and consumers are independent (and even unaware) of each other. As soon as a producer sends a message to a broker, its task is complete, regardless of whether or when a consumer receives the message. Conversely, when a consumer receives a message from a broker, it does so without knowledge of the producer that created the message. 
-
-This type of arrangement, in which clients function without knowledge of one another, is known as loose coupling. The benefits of loose coupling include:
-
-* High throughput: Because producers don't need to wait for acknowledgment from the consumer or broker, they can send messages quickly. ActiveMQ can achieve throughput of [thousands of messages per second][activemq-performance]. 
-* Flexibility: Clients can be temporarily unavailable, can be dynamically added to the environment, and can even be rewritten in a new language without affecting other clients or causing errors in the messaging process.
-* Heterogeneity: Clients operate independently, communicating with the ActiveMQ broker but not directly with one another. As a result, they may be written in any of the [languages ActiveMQ supports][supported-languages]. 
-
-Because the components of the ActiveMQ architecture are decoupled, you need to monitor producers, consumers, destinations, and brokers holistically to understand the context of any issues that may arise. For example, metrics that show a producer's output has paused may not indicate a problem, but if they are viewed alongside metrics showing a destination's rising memory usage, they can reveal a bottleneck in the larger system. Later, we'll look at some specific metrics that contribute to the big picture of ActiveMQ monitoring. But first, we'll examine ActiveMQ's fundamental unit of workâ€”the message.
-
-### Messages
-
-Each **message** ActiveMQ sends is based on the JMS specification, and is made up of **headers**, optional **properties**, and a **body**. 
-
-#### Headers
-
-JMS message headers contain metadata about the message. Headers are defined in the JMS specification, and their values are set either when the producer creates the message, or when ActiveMQ sends it. 
-
-Headers convey qualities of the message that affect how the broker and clients behave. Let's take a look at two key characteristics that ActiveMQ takes into account when delivering messages: expiration and persistence.
-
-##### Message expiration
-Depending on its content and purpose, a message may lose its value after a certain amount of time. When a producer creates a message, it can set an expiration value in the message header. If it does not, the header value remains empty and the message never expires.
-
-ActiveMQ discards any expired messages from its queues and topics rather than delivering them, and consumer code is expected to disregard any message that remains unprocessed after its expiration. 
-
-##### Message persistence
-Persistence is a characteristic of a message. It's defined in the JMS spec and isn't unique to ActiveMQ. ActiveMQ messages are persistent by default, but you can [configure persistence][activemq-persistence] on a per-message or per-producer basis. When you send a persistent message, the broker saves the message to the message store on disk before attempting delivery. If the broker were to crash at that point, a copy of the message would remain and the process of sending the message could recover when the broker restarted. A non-persistent message, on the other hand, exists only in the broker's memory and would be lost in an event that caused the broker to restart.
-
-Sending non-persistent messages is usually faster, because it doesn't require the broker to execute expensive write operations. Non-persistent messaging is appropriate for short-lived data that gets replaced at frequent intervals, such as a once-a-minute update of an item's location.
-
-#### Properties
-[Properties][activemq-message-properties] function similar to headers, and provide a way of adding optional metadata to a message. ActiveMQ supports some properties that are defined in the JMS specification, and also implements some properties that aren't part of the spec.
-
-Producers can also define propertiesâ€”arbitrarily and outside the JMS specâ€”and apply them to each message. Consumers can implement [selectors][activemq-selectors] to filter messages based on values present in the message properties. For example, you can configure an ActiveMQ producer to attach a `coin` property to each message, with a value of either `heads` or `tails`, and send them all to the same topic. You can write two consumersâ€”a `heads` consumer and a `tails` consumerâ€”that subscribe to that topic but that only receive messages with their selected value of the `coin` property.
-
-#### Body
-The content of an ActiveMQ message is the **body**. The body of a message can be text or binary data. (It's also acceptable for a message's body to be empty.) The value of the `JMSType` message header, which is set explicitly by the producer when the message is created, determines what can be carried in the body of the message: a file, a byte stream, a Java object, a stream of Java primitives, a set of name-value pairs, or a string of text.
-
-For more information about message types, see [this JMS documentation][message-bodies].
-
-### Memory and storage
-ActiveMQ uses memory to store messages awaiting dispatch to consumers. Each message occupies some of the available memory (how much depends on the size of the message) until it is dequeuedâ€”delivered to a consumer that then processes the message and acknowledges receipt. At that point, ActiveMQ frees up the memory that had been used for that message. When producers are faster than consumersâ€”there's more enqueuing than dequeuing over a given time periodâ€”ActiveMQ's memory use increases. 
-
-ActiveMQ also writes messages to disk, in either a message store (where persistent messages go), or a temp store (where non-persistent messages go when the broker runs out of memory to store them).
-
-In this section, we'll look at how ActiveMQ uses memory and disk to store messages.
-
-#### Memory
-The host system dedicates some of its memory as heap memory for the JVM in which ActiveMQ runs. By default, the ActiveMQ startup script tells Java to create a heap with a maximum size of 1 GB. To specify the maximum percentage of the JVM's heap memory that ActiveMQ can use, adjust the `memoryUsage` child of the `systemUsage` element in the **activemq.xml** file. You can express this as a percentage of the JVM's heap memory (e.g., `<memoryUsage percentOfJvmHeap="60" />`), or as a number of bytes, as shown in the following partial **activemq.xml** file. (Note that your `<broker>` element may look different than the one in this example, depending on your configuration.)
-
-```
-<broker xmlns="http://activemq.apache.org/schema/core" brokerName="MY_BROKER">
-[...]
-    <systemUsage>
-        <systemUsage>
-            <memoryUsage>
-                <memoryUsage limit="1 gb" />
-            </memoryUsage>
-        </systemUsage>
-    </systemUsage>
-[...]
-</broker>
-```
-
-This broker memory limit applies to all destinations, combined. In other words, the memory specified on the broker's `memoryUsage` element must be shared amongst all queues and topics. Each destination may be configured with an explicit memory limit, designated in the `memoryLimit` element inside an optional `policyEntry` in the **activemq.xml** file:
-
-```
-<broker xmlns="http://activemq.apache.org/schema/core" brokerName="MY_BROKER">
-[...]
-    <destinationPolicy>
-        <policyMap>
-            <policyEntries>
-                <policyEntry queue="MY_QUEUE" memoryLimit="100mb" />
-                <policyEntry topic="MY_TOPIC" memoryLimit="50mb" />
-            </policyEntries>
-        </policyMap>
-    </destinationPolicy>
-[...]
-</broker>
-```
-
-ActiveMQ uses memory differently for non-persistent messages than it does for persistent messages. Each non-persistent message is stored in memory as it arrives. When the available memory is full, all messages in memory are moved to the temp store on the disk. Each persistent message is also stored in memory as it arrives, and is also written to the message store on disk. If no more memory is available, incoming persistent messages are written directly into the message store.
-
-As long as the destination's memory doesn't fill up, incoming messages remain there and can be dispatched directly from memory without incurring any latency related to disk activity. If the message is not available in memory (either because it got flushed from memory to the temp store or because it was written to the message store when available memory was full), the broker must page the message data from disk in order to dispatch it to a consumer. 
-
-#### Storage
-You can specify the amount of storage to be used for persistent messages in the **activemq.xml** file's `storeUsage` element, as in the example below:
-
-```
-<systemUsage>
-    <systemUsage>
-        <storeUsage>
-            <storeUsage limit="100 mb"/>
-        </storeUsage>
-    </systemUsage>
-</systemUsage>
-```
-
-Storage for non-persistent messages is specified separately. Non-persistent messages are written to storage only after available memory is exhausted. You can specify the amount of storage to be used for non-persistent messages in the **activemq.xml** file's `tempUsage` element, which defaults to 50 GB. You can configure this as a percentage of available disk space ([`percentLimit`][activemq-pfc]) or as a number of bytes (as shown below):
-
-```
-<systemUsage>
-    <systemUsage>
-        <tempUsage>
-            <tempUsage limit="100 mb"/>
-        </tempUsage>
-    </systemUsage>
-</systemUsage>
-```
-
-[KahaDB][kahadb] is ActiveMQ's default message storage mechanism. It stores both persistent and non-persistent messages. KahaDB is designed to quickly persist a large number of messages to support a busy messaging system. KahaDB replaces [AMQ Message Store][amq-message-store], which is still available but is no longer the default message store as of ActiveMQ version 5.4. 
-
-ActiveMQ also supports storing messages via [JDBC][activemq-jdbc]. Using this configuration, you can choose from a number of SQL databases to find the storage mechanism that best meets your needs for scalability and support.
-
-We've looked at some characteristics of JMS messages, and at some different ways ActiveMQ stores and sends them. But ActiveMQ's work isn't done until a message is delivered to a consumer. In the next section we'll look at how consumers handle messages. 
-
-### Consumers
-Consumers are the applications that receive the messages ActiveMQ sends. In this section, we'll look at some key characteristics that influence the behavior of consumers: subscriptions and acknowledgment.
-
-#### Durable vs. nondurable subscriptions
-A consumer can subscribe to a topic as either a durable or nondurable subscriber. (Durability applies only to messages within a topic, not within a queue.) In the case of a durable subscription, ActiveMQ will retain messages if the subscriber is unavailable. When that subscriber reconnects, it receives new messages that arrived during the time it was disconnected. A nondurable subscriber would not receive any messages published to the topic during the time it was disconnected from the broker.
-
-#### Acknowledgment
-Each consumer is configured to use an [acknowledgment mode][acknowledgment-mode] that determines when and how it will acknowledge a messageâ€”either automatically upon receipt, or by making an explicit call to an `acknowledge` method. ActiveMQ's metrics show information about the number of messages acknowledged and not yet acknowledged, but the meaning of those metrics depends on the consumer's acknowledgment mode. A spike in unacknowledged messages could mean the consumer is offline and unable to receive messages, or that the consumer is failing to successfully execute its manual `acknowledge` call.
-
-So far, we've covered what ActiveMQ is, and how it works. In the next section, we'll introduce some useful metrics to help you understand how to monitor ActiveMQ.
-
-## Key ActiveMQ metrics
-By tracking ActiveMQ metrics, you can effectively monitor resource usage, broker performance, and message activity. Monitoring these metrics can help you understand the performance of your messaging infrastructure and detect potential problems that might affect your services. 
-
-{{< img src="activemq_dash1.png" wide="true" alt="Datadog's ActiveMQ dashboard is made up of graphs showing resource usage, broker performance, and message activity." >}}
-
-ActiveMQ metrics come from:
-
-* [the destinations](#destination-metrics) (topics and queues)
-* [the broker](#broker-metrics)
-* [the JVM](#jvm-metrics) in which the broker is running
-* [the host system](#hostlevel-metrics) that runs the JVM
-
-Because ActiveMQ is written in Java, you can query destination, broker, and JVM metrics via [Java Management Extensions][oracle-jmx] (JMX). You can view these metrics using [JConsole][oracle-jconsole], a GUI that's included in the JDK, or with other JMX-compliant monitoring systems. ActiveMQ also comes with a Web Console and a statistics plugin. In [Part 2][part-2] of this series, we'll look at the tools available to help you collect and view ActiveMQ metrics. 
-
-In this section, we'll explore key ActiveMQ metricsâ€”where to find them, and the reasons you might want to collect them. This builds on our [Monitoring 101 series][monitoring-101], which discusses how to identify high-value monitoring data, how to create a smart strategy for alerting, and how to investigate the issues your monitoring uncovers. 
-
-### Destination metrics
-All ActiveMQ messages pass through destinations. Monitoring destination metrics can give you information about the speed, volume, and resource usage of your messaging system.
-
-
-|JMX attribute|Description|MBean|Metric type|
-|---|---|---|---|
-|`MemoryPercentUsage`|Percentage of configured memory used by the destination|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>,destinationType=(Queue\|Topic),destinationName=\<MY_DESTINATION\>|Resource: Utilization|
-|`ConsumerCount`|The number of consumers currently subscribed to the destination|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>,destinationType=(Queue\|Topic),destinationName=\<MY_DESTINATION\>|Other|
-|`ProducerCount`|The number of producers currently attached to the  destination|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>,destinationType=(Queue\|Topic),destinationName=\<MY_DESTINATION\>|Other|
-|`QueueSize`|The number of messages (per destination) that have not been acknowledged by a consumer. Includes those not yet dispatched|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>,destinationType=(Queue\|Topic),destinationName=\<MY_DESTINATION\>|Resource: Saturation|
-|`ExpiredCount`|The number of messages in the destination that expired before they could be delivered|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>,destinationType=(Queue\|Topic),destinationName=\<MY_DESTINATION\>|Other|
-
-#### Metric to alert on: MemoryPercentUsage
-The `MemoryPercentUsage` metric represents the percentage of the destination's `memoryLimit` currently in use. If you haven't set a `memoryLimit` for the destination, it inherits the broker's configured `memoryUsage`, and the `MemoryPercentUsage` metric represents the percentage of that value currently being used by the destination. (See the [Memory and storage](#memory-and-storage) section for more details.)
-
-As the destination's `MemoryPercentUsage` rises, you may see a decrease in the rate at which your producers send messages. This is thanks to [Producer Flow Control][activemq-pfc] (PFC), which is enabled by default for persistent messages. When destination memory becomes limited (or when the broker's disk space runs low), PFC throttles message flow by causing the broker to hold incoming messages instead of delivering them. When a message is held, the producer that sent it doesn't receive an acknowledgment from the broker, so it delays sending any further messages. 
-
-PFC is triggered once the destination's memory usage is at or above the `cursorMemoryHighWaterMark` value defined for the destination. The `cursorMemoryHighWaterMark` defaults to 70 percent of the available memory (either the broker's `memoryUsage` limit or, if defined, the destination's `memoryLimit`). You can change this value by adding an attribute to the relevant `policyEntry` element in **activemq.xml**. The example below shows how you would set `cursorMemoryHighWaterMark` values of 80 percent for a queue named `MY_QUEUE`, and 50 percent for a topic named `MY_TOPIC`. 
-
-```
-<broker xmlns="http://activemq.apache.org/schema/core" brokerName="MY_BROKER">
-[...]
-    <destinationPolicy>
-        <policyMap>
-            <policyEntries>
-                <policyEntry queue="MY_QUEUE" cursorMemoryHighWaterMark="80" />
-                <policyEntry topic="MY_TOPIC" cursorMemoryHighWaterMark="50" />
-            </policyEntries>
-        </policyMap>
-    </destinationPolicy>
-[...]
-</broker>
-```
-
-See [the ActiveMQ documentation][activemq-destination-policies] for more information about configuring memory limits.
-
-Because PFC could have a noticeable effect on the performance of your messaging system, you should create an alert to notify you when a destination's `MemoryPercentUsage` value approaches its `cursorMemoryHighWaterMark` value, so you can take action before PFC is activated.
-
-If you are using queues, you can reduce memory pressure by scaling out your consumer fleet to dequeue messages more quickly. If your system is using topics with durable subscribers, make sure those consumers are available often enough to prevent a backlog of messages. In either case, increasing memory available to your destinations will help, too.
-
-#### Metric to watch: ConsumerCount
-Sooner or later, each destination (queue or topic) needs to deliver messages to consumers. Consumers may come and go, though (for example, as your infrastructure dynamically scales), and a fluctuating consumer count could be normal in some cases. However, you should be able to identify some normal operating parameters for `ConsumerCount`, and watch this metric for abnormalities. If your `ConsumerCount` value changes unexpectedly, your consumer fleet may have scaled out more than usual, or some hosts may have become unavailable.
-
-#### Metric to watch: ProducerCount
-This metric tracks the number of producers currently attached to a broker. Whether a `ProducerCount` of zero indicates a problem depends on your expected pattern of activity. If your producers are typically active only sporadically (e.g., if they send a batch of messages once a day), this may be normal. However, if you expect to have active producers at all times, you should investigate a `ProducerCount` of zero, as it could indicate a service interruption.
-
-#### Metric to watch: QueueSize
-QueueSize tracks the number of messages that have not been acknowledged by consumers. If you see this metric consistently increasing, it could indicate that the producers are publishing messages faster than consumers are processing them, or that consumers are failing to acknowledge the messages they receive. This could cause the destination to run out of memory (which could even affect the performance of the broker's other destinations), so you should monitor the destination's `MemoryPercentUsage` metric alongside this one. 
-
-{{< img src="activemq_dash3.png" alt="QueueSize and MemoryPercentUsage metrics rise together." >}}
-
-Despite what its name suggests, you can track the `QueueSize` of queues _and_ topics. In the case of a queue, you may be able to reduce `QueueSize` by scaling out your consumer fleet so that more hosts are available to read from the queue. A topic's `QueueSize` could rise if durable consumers are unavailable to fetch messagesâ€”you can address this by decreasing the expiration time of new messages or by [removing durable subscribers][activemq-durable-subscribers] that are consistently unavailable.
-
-#### Metric to watch: ExpiredCount
-This metric represents the number of messages that expired before they could be delivered. If you expect all messages to be delivered and acknowledged within a certain amount of time, you can set an expiration for each message, and investigate if your `ExpiredCount` metric rises above zero.
-
-In some cases, though, expired messages may not be a sign of trouble. For example, if your environment includes consumers with durable subscriptions but an unreliable network, some messages could expire while those consumers are disconnected. When the consumers reconnect, theyâ€™ll request all messages published in the interim, but if some of those messages contain information that frequently gets updated (e.g., status updates at one-minute intervals), it's better to discard them than deliver them.
-
-### Broker metrics
-As mentioned earlier, the ActiveMQ broker has configurable limits on the amount of memory and disk space it's allowed to use. Here are some of the metrics you should monitor to ensure that your broker is working properly within its resource limits.
-
-|JMX attribute|Description|MBean|Metric type|
-|---|---|---|---|
-|`MemoryPercentUsage`|Percentage of available memory used by the broker|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Resource: Utilization|
-|`StorePercentUsage`|Percentage of available disk space ([`storeUsage`](#memory-and-storage)) used for persistent message storage|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Resource: Utilization|
-|`TempPercentUsage`|Percentage of available disk space ([`tempUsage`](#memory-and-storage)) used for non-persistent message storage|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Resource: Utilization|
-|`TotalEnqueueCount`|The total number of messages sent to the broker|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Work: Throughput
-|`TotalDequeueCount`|The total number of messages the broker has delivered to consumers|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Work: Throughput|
-|`Topics`|A count of topics currently attached to this broker|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Other|
-|`Queues`|A count of queues currently attached to this broker|org.apache.activemq:type=Broker,brokerName=\<MY_BROKER\>|Other|
-
-
-#### Metric to alert on: MemoryPercentUsage
-If you find that a broker's memory usage is rising, there are a few steps you can take to prevent resource constraints from affecting your application's performance.
-
-* Scale out your consumers. This can increase the rate at which messages are consumed, allowing the broker to reclaim memory and disk space.
-* Increase the memory available to the broker. (See the [Memory and storage](#memory-and-storage) section of this post for information.) To do this, you may need to scale up the amount of memory allocated to the JVM, which could require adding memory to the host.
-* Reduce the memory available to the destinations associated with the broker (particularly if you have a large number of destinations). Although this will force the broker to persist messages to disk sooner, it also reduces the possibility of triggering PFC and enables producers to continue sending messages even when consumers are falling behind. See the [ActiveMQ documentation][activemq-out-of-memory] for more information.
-
-If your host runs services in addition to ActiveMQ, comparing ActiveMQ memory usage to overall host-level usage may help you troubleshoot resource constraints by showing you specifically *how* your host's memory is being consumed.
-
-#### Metric to alert on: StorePercentUsage
-This is the percentage of available disk space ([`storeUsage`](#memory-and-storage)) used by the broker's persistent message store (which is KahaDB, by default). The broker can reach its persistent storage limit if consumers are slow or unavailable, and if messages are large. It's important to monitor this metric because if a broker runs out of persistent storage, PFC will cause producers to stop sending messages.
-
-#### Metric to watch: TempPercentUsage
-The broker holds non-persistent messages in memory. When memory fills up, the broker moves those messages to a temp location on the filesystem to free up memory. If the broker runs out of disk space to store temporary messages, producers will stop sending messages until storage space is freed up (assuming PFC is enabled). 
-
-You might run out of temporary storage space for any number of reasons, including:
-
-* Slow or absent consumers.
-* Specifying a `tempUsage` value that is smaller than the broker's `memoryUsage`. In this case, the memory holds more message data than the temp store has room for, and `TempPercentUsage` will exceed 100% as soon as memory fills and messages are sent to the temp store.
-* Specifying a `tempUsage` value that is smaller than [KahaDB's `journalMaxFileLength`][kahadb] (which is 32 MB by default). This could cause the temp store to fill up because the broker will create a 32 MB journal file to hold the message data on disk, regardless of the amount of message data in memory. 
-
-If PFC is activated, your messaging throughput will drop, so it's important to monitor your `TempPercentUsage` value. You should alert on a value that gives you enough time to remove messages or add disk space before `TempPercentUsage` reaches 100% and triggers PFC.
-
-#### Metrics to watch: TotalEnqueueCount and TotalDequeueCount
-`TotalEnqueueCount` tracks the number of messages sent to the broker. You can monitor this metric to understand the volume of messages emitted by your producers. `TotalDequeueCount` is another throughput-related metric that shows the number of messages that have been delivered by the broker and acknowledged by your consumers. (Both `TotalEnqueueCount` and `TotalDequeueCount` are cumulative counts calculated over the entire time the broker has been running, and reset to zero when the broker is restarted.) 
-
-You should monitor `TotalDequeueCount` alongside `TotalEnqueueCount` to understand your system's overall message volume and the degree to which consumers are keeping up with producers.
-
-#### Metrics to watch: Topics and Queues
-There's no correct number of topics or queues for any given ActiveMQ deployment, but you probably have expectations about what's right for your environment. This metric may help you troubleshoot any misbehavior like missing messages or producer errors, which could occur if a destination isn't available as expected. 
-
-### JVM metrics
-ActiveMQ runs within the JVM, so metrics that inform you of the health of the JVM can be critical in monitoring your messaging. In this section, we'll look at some key JVM metrics.
-
-{{< img src="activemq_dash2.png" wide="true" alt="Dashboard graphs show JVM resource usage." >}}
-
-|JMX attribute|Description|MBean|Metric type|
-|---|---|---|---|
-|`CollectionTime`|The total amount of time (in milliseconds) the JVM has spent executing garbage collection processes|java.lang:type=GarbageCollector,name=(Copy\|MarkSweepCompact\|PS MarkSweep\|PS Scavenge)|Other|
-|`CollectionCount`|The total count of garbage collection processes executed by the JVM|java.lang:type=GarbageCollector,name=(Copy\|MarkSweepCompact\|PS MarkSweep\|PS Scavenge)|Other|
-|`HeapMemoryUsage`|This contains values for the heap's `init`, `max`, `committed`, and `used` metrics|java.lang:type=Memory|Resource: Utilization|
-|`ThreadCount`|Threads currently used by the JVM|java.lang:type=Threading|Other|
-
-
-#### Metric to alert on: CollectionTime
-Because ActiveMQ runs in the JVM, its memory is managed by [Java's garbage collection (GC) process][oracle-gc]. A running Java application requires memory to create the objects it uses, and the Java garbage collector periodically evaluates memory usage and frees up unused memory. As ActiveMQ's message volume increases, it will use more memory. As a result, the JVM will execute garbage collection more frequently, which could slow down messaging overall.
-
-You can use JMX to query metrics that show the overall time spent on garbage collection. Any time the JVM spends on GC will have [some effect][understanding-gc] on the applications running there (like ActiveMQ), though it may not always be perceptible. GC metrics are cumulative, so you should expect to see them rise continually, returning to zero only when the JVM restarts. You should use a monitoring tool to track how frequently garbage collection is happening, and how long each process takes.
-
-In [part 2][part-2] of this series, we'll look at some of the tools that use JMX to monitor ActiveMQ. You can use tools like these to watch for an increase in the frequency of GC activity. You can correlate GC activity with any corresponding spikes in the broker's `MemoryPercentUsage` that could explain a slowdown in your messaging activity.
-
-#### Metric to watch: HeapMemoryUsage
-The HeapMemoryUsage metric is a JSON object made up of `init`, `committed`, `max`, and `used` values.
-
-* `init` is set when the JVM starts, and ActiveMQ's startup script passes an `init` value of 64 MB.
-* `max` holds the value of the maximum possible size of the heap. By default, ActiveMQ sets this value to 1 GB.
-* `committed` is set by the JVM, and fluctuates. This value indicates how much memory is guaranteed to be available for the JVM to use.
-* `used` represents the amount of JVM heap memory currently in use.
-
-You should watch `used` and `committed` together to ensure that the JVM isn't running out of available memory. Java will throw an `OutOfMemoryError` exception if the JVM's memory is exhausted. See the [Java documentation][java-out-of-memory] and the [ActiveMQ FAQ][activemq-out-of-memory] for guidance on resolving this problem.
-
-#### Metric to watch: ThreadCount
-Synchronous messaging requires a greater number of threads than asynchronous delivery. Using more threads causes the broker to incur the overhead of context switching, which requires more work from the host's CPU. This could cause a slowdown in the queueing and dispatching of messages, and ultimately could lead to lower message throughput. 
-
-As described in the [ActiveMQ documentation][activemq-scaling], you can reduce the number of threads ActiveMQ requires by using thread pooling, [enabling optimized dispatch on your queues][activemq-per-destination-policies], or [using the NIO protocol][activemq-transports]. 
-
-### Host-level metrics
-Your host is the foundation of all the processes involved in ActiveMQ's messaging activities. To understand bottlenecks that may arise, and to make informed decisions about when to scale out, look to your host-level metrics.
-
-|Name|Description|Metric type|
-|---|---|---|
-|Disk usage|The percentage of the host's available disk space currently in use|Resource: Utilization|
-|Disk I/O|The rate of read and write operations per second|Resource: Utilization|
-
-#### Metric to alert on: Disk usage
-ActiveMQ uses disk space to store persistent messages, as well as non-persistent messages that get swapped to disk when memory fills up. After a message has been acknowledged by a consumer, ActiveMQ marks it to be deleted in the next cleanup cycle. (By default, this is every 30 seconds.) 
-
-If your broker's `TotalEnqueueCount` is higher than its `TotalDequeueCount`, your host's disk could fill up. You'll also see this in the broker's `TempPercentUsage` and `StorePercentUsage` values. Create alerts to keep you informed of diminishing disk space so you can prevent performance problems.
-
-#### Metric to watch: Disk I/O
-When sending a persistent message, the broker first writes it to a journal. With multiple producers sending persistent messages, threads within the broker may compete for the chance to write to the journal. Rising disk I/O doesn't necessarily indicate contention between the threads, but it could be a sign that write operations are queuing up, reducing message throughput overall.
-
-If you see high disk activity, it could mean that your broker is very busy, especially if you also see high `MemoryPercentUsage`. If this is the case, you should employ [ActiveMQ best practices][activemq-best-practices] for supporting many queues and topics. Additionally, you should consider creating a [network of brokers][activemq-network-of-brokers]. 
-
-## Making meaning of the metrics
-ActiveMQ metrics can help you proactively maintain your messaging infrastructure, providing you with information you need to investigate errors, missing messages, and unexpected latency. In this post, we've looked at the metrics you can collect from ActiveMQ, and highlighted some that are particularly valuable to monitor. In [part 2 of this series][part-2], we'll show you some of the tools you can use to gather metrics from your ActiveMQ brokers, queues, and topics.
-
-## Acknowledgments
-We'd like to thank Gary Tully of [Red Hat][red-hat] for his technical review of this series.
-
-[acknowledgment-mode]: https://docs.oracle.com/cd/E19798-01/821-1841/bncfw/index.html
-[activemq-best-practices]: http://activemq.apache.org/how-do-i-configure-10s-of-1000s-of-queues-in-a-single-broker-.html
-[activemq-destination-policies]: http://activemq.apache.org/per-destination-policies.html
-[activemq-durable-subscribers]: http://activemq.apache.org/manage-durable-subscribers.html
-[activemq-jdbc]: http://activemq.apache.org/jdbc-support.html
-[activemq-message-properties]: http://activemq.apache.org/activemq-message-properties.html
-[activemq-network-of-brokers]: http://activemq.apache.org/networks-of-brokers.html
-[activemq-out-of-memory]: https://activemq.apache.org/javalangoutofmemory.html
-[activemq-per-destination-policies]: http://activemq.apache.org/per-destination-policies.html
-[activemq-performance]: http://activemq.apache.org/performance.html
-[activemq-persistence]: http://activemq.apache.org/what-is-the-difference-between-persistent-and-non-persistent-delivery.html
-[activemq-pfc]: http://activemq.apache.org/producer-flow-control.html
-[activemq-scaling]: http://activemq.apache.org/scaling-queues.html
-[activemq-selectors]: http://activemq.apache.org/selectors.html
-[activemq-transports]: http://activemq.apache.org/configuring-transports.html
-[amq-message-store]: http://activemq.apache.org/amq-message-store.html
-[amqp-protocol]: http://activemq.apache.org/amqp.html
-[java-out-of-memory]: https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/memleaks002.html
-[jms-api]: https://javaee.github.io/jms-spec/pages/JMS20FinalRelease
-[kahadb]: http://activemq.apache.org/kahadb.html
-[message-bodies]: https://docs.oracle.com/cd/E19798-01/821-1841/6nmq2cpps/index.html#bncex
-[monitoring-101]: https://www.datadoghq.com/blog/tag/monitoring-101/
-[mqtt-protocol]: http://activemq.apache.org/mqtt.html
-[oracle-gc]: https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm
-[oracle-jconsole]: https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html
-[oracle-jmx]: https://www.oracle.com/technetwork/articles/java/javamanagement-140525.html
-[part-2]: /blog/collecting-activemq-metrics/
-[red-hat]: https://www.redhat.com/
-[stomp-protocol]: https://activemq.apache.org/stomp.html
-[supported-languages]: http://activemq.apache.org/cross-language-clients.html
-[understanding-gc]: https://www.cubrid.org/blog/understanding-java-garbage-collection
+mÑ¥Ù•5D…É¡¥Ñ•ÑÕÉ”…¹­•ä™¹‰ÍÀíµ•ÑÉ¥Ì(()Á…¡”Ñ¥Ù•5D¥Ìµ•ÍÍ…”µ½É¥•¹Ñ•µ¥‘‘±•İ…É”€¡5=4¤°„…Ñ•½Éä½˜Í½™Ñİ…É”Ñ¡…ĞÍ•¹‘Ìµ•ÍÍ…•Ì‰•Ñİ••¸…ÁÁ±¥…Ñ¥½¹Ì¸UÍ¥¹œÍÑ…¹‘…É‘Ìµ‰…Í•°…Íå¹¡É½¹½ÕÌ½µµÕ¹¥…Ñ¥½¸°Ñ¥Ù•5D…±±½İÌ±½½Í”½ÕÁ±¥¹œ½˜Ñ¡”•±•µ•¹ÑÌ¥¸…¸%P•¹Ù¥É½¹µ•¹Ğ°İ¡¥ ¥Ì½™Ñ•¸™½Õ¹‘…Ñ¥½¹…°Ñ¼•¹Ñ•ÉÁÉ¥Í”µ•ÍÍ…¥¹œ…¹‘¥ÍÑÉ¥‰ÕÑ•…ÁÁ±¥…Ñ¥½¹Ì¸()Ñ¥Ù•5D¥Ì„)…Ù„µ‰…Í•½Á•¸Í½ÕÉ”ÁÉ½©•Ğ‘•Ù•±½Á•‰äÑ¡”mÁ…¡”M½™Ñİ…É”½Õ¹‘…Ñ¥½¹t¡¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ¼¤¸%ĞÌ½µÁ…É…‰±”Ñ¼½Ñ¡•Èµ•ÍÍ…¥¹œÍåÍÑ•µÌ°ÍÕ …ÌmÁ…¡”-…™­…t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°mI…‰‰¥Ñ5Et¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œ¼¤°…¹mµ…é½¸M¥µÁ±”EÕ•Õ”M•ÉÙ¥•t¡¡ÑÑÁÌè¼½…İÌ¹…µ…é½¸¹½´½ÍÅÌ¼¤¸µ…é½¸…±Í¼½™™•ÉÌmµ…é½¸5Et¡¡ÑÑÁÌè¼½…İÌ¹…µ…é½¸¹½´½…µ…é½¸µµÄ¼¤°İ¡¥ ¥Ì„µ…¹…•¥µÁ±•µ•¹Ñ…Ñ¥½¸½˜Ñ¥Ù•5D°¥¹Ñ•É…Ñ•¥¹Ñ¼¥ÑÌ]L±½ÕÍ•ÉÙ¥•Ì¸ÍÍ•¹Ñ¥…±±ä°•… ½˜Ñ¡•Í”Ñ•¡¹½±½¥•ÌÍÕÁÁ½ÉÑÌ•¹Ñ•ÉÁÉ¥Í”µ•ÍÍ…¥¹œÑ¡É½Õ „±½½Í•±ä½ÕÁ±•¥¹™É…ÍÑÉÕÑÕÉ”¸€()Ñ¥Ù•5Dµ…­•ÌÕÍ”½˜Ñ¡”)…Ù„5•ÍÍ…”M•ÉÙ¥”€¡)5L¤A$°İ¡¥ ‘•™¥¹•Ì„ÍÑ…¹‘…É™½ÈÍ½™Ñİ…É”Ñ¼ÕÍ”¥¸É•…Ñ¥¹œ°Í•¹‘¥¹œ°…¹É••¥Ù¥¹œµ•ÍÍ…•Ì¸)5L¥Ì¥¹±Õ‘•¥¸Ñ¡”)…Ù„¹Ñ•ÉÁÉ¥Í”‘¥Ñ¥½¸°µ…­¥¹œ¥Ğ…Ù…¥±…‰±”™½È)…Ù„‘•Ù•±½Á•ÉÌÑ¼ÕÍ”…ÌÑ¡•äÉ•…Ñ”Ñ¡”±¥•¹Ğ…ÁÁ±¥…Ñ¥½¹ÌÑ¡…ĞÍ•¹°É••¥Ù”°…¹ÁÉ½•ÍÌµ•ÍÍ…•Ì¸%ĞÌÁ½ÍÍ¥‰±”Ñ¼İÉ¥Ñ”Ñ¥Ù•5D±¥•¹ÑÌ¥¸½Ñ¡•È±…¹Õ…•Ì€¡ÍÕ …Ì9½‘”¹©Ì°IÕ‰ä°…¹AåÑ¡½¸¤°‰ÕĞÑ¥Ù•5D¥Ì‰Õ¥±Ğ½¸)…Ù„°…¹¥ÌÁÉ½‰…‰±ä‰•ÍĞÍÕ¥Ñ•™½È…¸½É…¹¥é…Ñ¥½¸Ñ¡…ĞÌ…±É•…‘ä¥¹Ù•ÍÑ•¥¸)…Ù„¸()%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°±½½¬…Ğ¡½ÜÑ¥Ù•5Dİ½É­Ì°…¹…ĞÍ½µ”­•äÑ¥Ù•5Dµ•ÑÉ¥Ìå½Ô…¸µ½¹¥Ñ½ÈÑ¼Õ¹‘•ÉÍÑ…¹Ñ¡”Á•É™½Éµ…¹”½˜å½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”¸((ŒŒ!½Ü‘½•ÌÑ¥Ù•5Dİ½É¬ü()Ñ¥Ù•5DÍ•¹‘Ìµ•ÍÍ…•Ì‰•Ñİ••¸±¥•¹Ğ…ÁÁ±¥…Ñ¥½¹ÏŠP¨©ÁÉ½‘Õ•ÉÌ¨¨°İ¡¥ É•…Ñ”µ•ÍÍ…•Ì…¹ÍÕ‰µ¥ĞÑ¡•´™½È‘•±¥Ù•Éä°…¹€¨©½¹ÍÕµ•ÉÌ¨¨°İ¡¥ É••¥Ù”…¹ÁÉ½•ÍÌµ•ÍÍ…•Ì¸Q¡”Ñ¥Ù•5D€¨©‰É½­•È¨¨É½ÕÑ•Ì•… µ•ÍÍ…”Ñ¡É½Õ ½¹”½˜Ñİ¼ÑåÁ•Ì½˜€¨©‘•ÍÑ¥¹…Ñ¥½¹Ì¨¨è((¨„€¨©ÅÕ•Õ”¨¨°İ¡•É”¥Ğ…İ…¥ÑÌ‘•±¥Ù•ÉäÑ¼„Í¥¹±”½¹ÍÕµ•È€¡¥¸„µ•ÍÍ…¥¹œ‘½µ…¥¸…±±•€¨©Á½¥¹ĞµÑ¼µÁ½¥¹Ğ¨¨¤°½È€(¨„€¨©Ñ½Á¥Œ¨¨°Ñ¼‰”‘•±¥Ù•É•Ñ¼µÕ±Ñ¥Á±”½¹ÍÕµ•ÉÌÑ¡…Ğ…É”ÍÕ‰ÍÉ¥‰•Ñ¼Ñ¡…ĞÑ½Á¥Œ€¡¥¸„µ•ÍÍ…¥¹œ‘½µ…¥¸…±±•€¨©ÁÕ‰±¥Í ½ÍÕ‰ÍÉ¥‰”¨¨°½È€‰ÁÕˆ½ÍÕˆˆ¤€()Ñ¥Ù•5D¥Ù•Ìå½ÔÑ¡”™±•á¥‰¥±¥ÑäÑ¼Í•¹µ•ÍÍ…•ÌÑ¡É½Õ ‰½Ñ ÅÕ•Õ•Ì…¹Ñ½Á¥ÌÕÍ¥¹œ„Í¥¹±”‰É½­•È¸%¸Á½¥¹ĞµÑ¼µÁ½¥¹Ğµ•ÍÍ…¥¹œ°Ñ¡”‰É½­•È…ÑÌ…Ì„±½…‰…±…¹•È‰äÉ½ÕÑ¥¹œ•… µ•ÍÍ…”™É½´Ñ¡”ÅÕ•Õ”Ñ¼½¹”½˜Ñ¡”…Ù…¥±…‰±”½¹ÍÕµ•ÉÌ¥¸„É½Õ¹µÉ½‰¥¸Á…ÑÑ•É¸¸]¡•¸å½ÔÕÍ”ÁÕˆ½ÍÕˆµ•ÍÍ…¥¹œ°Ñ¡”‰É½­•È‘•±¥Ù•ÉÌ•… µ•ÍÍ…”Ñ¼•Ù•Éä½¹ÍÕµ•ÈÑ¡…Ğ¥ÌÍÕ‰ÍÉ¥‰•Ñ¼Ñ¡”Ñ½Á¥Œ¸€()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘¥…É…´È¹Á¹œˆ…ÁÑ¥½¸ô‰Q¡”Ñ¥Ù•5D…É¡¥Ñ•ÑÕÉ”½¹Ñ…¥¹ÌÑ¡”‰É½­•È°‘•ÍÑ¥¹…Ñ¥½¹Ì°…¹±¥•¹Ğ…ÁÁ±¥…Ñ¥½¹Ì¸ˆ…±Ğô‰Q¡”Ñ¥Ù•5D‰É½­•ÈÍ•¹‘Ìµ•ÍÍ…•Ì™É½´ÁÉ½‘Õ•ÉÌÑ¼½¹ÍÕµ•ÉÌ¸ˆ€ùõô(((¨©)5L¨¨¥ÌÑ¡”½µµÕ¹¥…Ñ¥½¸ÍÑ…¹‘…ÉÑ¡…ĞÑ¥Ù•5DÕÍ•ÌÑ¼Í•¹…¹É••¥Ù”µ•ÍÍ…•Ì¸Ñ¥Ù•5D¥Ì„€¨©)5LÁÉ½Ù¥‘•È¨¨°İ¡¥ µ•…¹ÌÑ¡…Ğ¥Ğ¥µÁ±•µ•¹ÑÌÑ¡”™Õ¹Ñ¥½¹…±¥ÑämÍÁ•¥™¥•¥¸Ñ¡”)5LA%um©µÌµ…Á¥t¸±¥•¹Ğ…ÁÁ±¥…Ñ¥½¹ÏŠQÁÉ½‘Õ•ÉÌ…¹½¹ÍÕµ•ÉÏŠQÕÍ”Ñ¡”)5LA$Ñ¼Í•¹…¹É••¥Ù”µ•ÍÍ…•Ì¸9½¸µ)5L±¥•¹ÑÌ€¡İÉ¥ÑÑ•¸¥¸A!@°AåÑ¡½¸°½È½Ñ¡•È±…¹Õ…•Ì¤…¸…±Í¼½¹¹•ĞÑ¼Ñ¡”Ñ¥Ù•5D‰É½­•ÈÙ¥„Ñ¡”m5EAum…µÅÀµÁÉ½Ñ½½±t°m5EQQumµÅÑĞµÁÉ½Ñ½½±t°…¹mMQ=5AumÍÑ½µÀµÁÉ½Ñ½½±tÁÉ½Ñ½½±Ì¸()Ñ¥Ù•5DÍ•¹‘Ìµ•ÍÍ…•Ì…Íå¹¡É½¹½ÕÍ±ä°Í¼½¹ÍÕµ•ÉÌ‘½¸Ğ¹••ÍÍ…É¥±äÉ••¥Ù”µ•ÍÍ…•Ì¥µµ•‘¥…Ñ•±ä¸Q¡”ÁÉ½‘Õ•ÈÌÑ…Í¬½˜½µÁ½Í¥¹œ…¹Í•¹‘¥¹œ„µ•ÍÍ…”¥Ì‘¥Í½¹¹•Ñ•™É½´Ñ¡”½¹ÍÕµ•ÈÌÑ…Í¬½˜™•Ñ¡¥¹œ¥Ğ¸	•…ÕÍ”Ñ¥Ù•5DÕÍ•Ì„‰É½­•È…Ì…¸¥¹Ñ•Éµ•‘¥…Éä°ÁÉ½‘Õ•ÉÌ…¹½¹ÍÕµ•ÉÌ…É”¥¹‘•Á•¹‘•¹Ğ€¡…¹•Ù•¸Õ¹…İ…É”¤½˜•… ½Ñ¡•È¸ÌÍ½½¸…Ì„ÁÉ½‘Õ•ÈÍ•¹‘Ì„µ•ÍÍ…”Ñ¼„‰É½­•È°¥ÑÌÑ…Í¬¥Ì½µÁ±•Ñ”°É•…É‘±•ÍÌ½˜İ¡•Ñ¡•È½Èİ¡•¸„½¹ÍÕµ•ÈÉ••¥Ù•ÌÑ¡”µ•ÍÍ…”¸½¹Ù•ÉÍ•±ä°İ¡•¸„½¹ÍÕµ•ÈÉ••¥Ù•Ì„µ•ÍÍ…”™É½´„‰É½­•È°¥Ğ‘½•ÌÍ¼İ¥Ñ¡½ÕĞ­¹½İ±•‘”½˜Ñ¡”ÁÉ½‘Õ•ÈÑ¡…ĞÉ•…Ñ•Ñ¡”µ•ÍÍ…”¸€()Q¡¥ÌÑåÁ”½˜…ÉÉ…¹•µ•¹Ğ°¥¸İ¡¥ ±¥•¹ÑÌ™Õ¹Ñ¥½¸İ¥Ñ¡½ÕĞ­¹½İ±•‘”½˜½¹”…¹½Ñ¡•È°¥Ì­¹½İ¸…Ì±½½Í”½ÕÁ±¥¹œ¸Q¡”‰•¹•™¥ÑÌ½˜±½½Í”½ÕÁ±¥¹œ¥¹±Õ‘”è((¨!¥ Ñ¡É½Õ¡ÁÕĞè	•…ÕÍ”ÁÉ½‘Õ•ÉÌ‘½¸Ğ¹••Ñ¼İ…¥Ğ™½È…­¹½İ±•‘µ•¹Ğ™É½´Ñ¡”½¹ÍÕµ•È½È‰É½­•È°Ñ¡•ä…¸Í•¹µ•ÍÍ…•ÌÅÕ¥­±ä¸Ñ¥Ù•5D…¸…¡¥•Ù”Ñ¡É½Õ¡ÁÕĞ½˜mÑ¡½ÕÍ…¹‘Ì½˜µ•ÍÍ…•ÌÁ•ÈÍ•½¹‘um…Ñ¥Ù•µÄµÁ•É™½Éµ…¹•t¸€(¨±•á¥‰¥±¥Ñäè±¥•¹ÑÌ…¸‰”Ñ•µÁ½É…É¥±äÕ¹…Ù…¥±…‰±”°…¸‰”‘å¹…µ¥…±±ä…‘‘•Ñ¼Ñ¡”•¹Ù¥É½¹µ•¹Ğ°…¹…¸•Ù•¸‰”É•İÉ¥ÑÑ•¸¥¸„¹•Ü±…¹Õ…”İ¥Ñ¡½ÕĞ…™™•Ñ¥¹œ½Ñ¡•È±¥•¹ÑÌ½È…ÕÍ¥¹œ•ÉÉ½ÉÌ¥¸Ñ¡”µ•ÍÍ…¥¹œÁÉ½•ÍÌ¸(¨!•Ñ•É½•¹•¥Ñäè±¥•¹ÑÌ½Á•É…Ñ”¥¹‘•Á•¹‘•¹Ñ±ä°½µµÕ¹¥…Ñ¥¹œİ¥Ñ Ñ¡”Ñ¥Ù•5D‰É½­•È‰ÕĞ¹½Ğ‘¥É•Ñ±äİ¥Ñ ½¹”…¹½Ñ¡•È¸Ì„É•ÍÕ±Ğ°Ñ¡•äµ…ä‰”İÉ¥ÑÑ•¸¥¸…¹ä½˜Ñ¡”m±…¹Õ…•ÌÑ¥Ù•5DÍÕÁÁ½ÉÑÍumÍÕÁÁ½ÉÑ•µ±…¹Õ…•Ít¸€()	•…ÕÍ”Ñ¡”½µÁ½¹•¹ÑÌ½˜Ñ¡”Ñ¥Ù•5D…É¡¥Ñ•ÑÕÉ”…É”‘•½ÕÁ±•°å½Ô¹••Ñ¼µ½¹¥Ñ½ÈÁÉ½‘Õ•ÉÌ°½¹ÍÕµ•ÉÌ°‘•ÍÑ¥¹…Ñ¥½¹Ì°…¹‰É½­•ÉÌ¡½±¥ÍÑ¥…±±äÑ¼Õ¹‘•ÉÍÑ…¹Ñ¡”½¹Ñ•áĞ½˜…¹ä¥ÍÍÕ•ÌÑ¡…Ğµ…ä…É¥Í”¸½È•á…µÁ±”°µ•ÑÉ¥ÌÑ¡…ĞÍ¡½Ü„ÁÉ½‘Õ•ÈÌ½ÕÑÁÕĞ¡…ÌÁ…ÕÍ•µ…ä¹½Ğ¥¹‘¥…Ñ”„ÁÉ½‰±•´°‰ÕĞ¥˜Ñ¡•ä…É”Ù¥•İ•…±½¹Í¥‘”µ•ÑÉ¥ÌÍ¡½İ¥¹œ„‘•ÍÑ¥¹…Ñ¥½¸ÌÉ¥Í¥¹œµ•µ½ÉäÕÍ…”°Ñ¡•ä…¸É•Ù•…°„‰½ÑÑ±•¹•¬¥¸Ñ¡”±…É•ÈÍåÍÑ•´¸1…Ñ•È°İ”±°±½½¬…ĞÍ½µ”ÍÁ•¥™¥Œµ•ÑÉ¥ÌÑ¡…Ğ½¹ÑÉ¥‰ÕÑ”Ñ¼Ñ¡”‰¥œÁ¥ÑÕÉ”½˜Ñ¥Ù•5Dµ½¹¥Ñ½É¥¹œ¸	ÕĞ™¥ÉÍĞ°İ”±°•á…µ¥¹”Ñ¥Ù•5DÌ™Õ¹‘…µ•¹Ñ…°Õ¹¥Ğ½˜İ½É¯ŠQÑ¡”µ•ÍÍ…”¸((ŒŒŒ5•ÍÍ…•Ì()… €¨©µ•ÍÍ…”¨¨Ñ¥Ù•5DÍ•¹‘Ì¥Ì‰…Í•½¸Ñ¡”)5LÍÁ•¥™¥…Ñ¥½¸°…¹¥Ìµ…‘”ÕÀ½˜€¨©¡•…‘•ÉÌ¨¨°½ÁÑ¥½¹…°€¨©ÁÉ½Á•ÉÑ¥•Ì¨¨°…¹„€¨©‰½‘ä¨¨¸€((ŒŒŒŒ!•…‘•ÉÌ())5Lµ•ÍÍ…”¡•…‘•ÉÌ½¹Ñ…¥¸µ•Ñ…‘…Ñ„…‰½ÕĞÑ¡”µ•ÍÍ…”¸!•…‘•ÉÌ…É”‘•™¥¹•¥¸Ñ¡”)5LÍÁ•¥™¥…Ñ¥½¸°…¹Ñ¡•¥ÈÙ…±Õ•Ì…É”Í•Ğ•¥Ñ¡•Èİ¡•¸Ñ¡”ÁÉ½‘Õ•ÈÉ•…Ñ•ÌÑ¡”µ•ÍÍ…”°½Èİ¡•¸Ñ¥Ù•5DÍ•¹‘Ì¥Ğ¸€()!•…‘•ÉÌ½¹Ù•äÅÕ…±¥Ñ¥•Ì½˜Ñ¡”µ•ÍÍ…”Ñ¡…Ğ…™™•Ğ¡½ÜÑ¡”‰É½­•È…¹±¥•¹ÑÌ‰•¡…Ù”¸1•ĞÌÑ…­”„±½½¬…ĞÑİ¼­•ä¡…É…Ñ•É¥ÍÑ¥ÌÑ¡…ĞÑ¥Ù•5DÑ…­•Ì¥¹Ñ¼…½Õ¹Ğİ¡•¸‘•±¥Ù•É¥¹œµ•ÍÍ…•Ìè•áÁ¥É…Ñ¥½¸…¹Á•ÉÍ¥ÍÑ•¹”¸((ŒŒŒŒŒ5•ÍÍ…”•áÁ¥É…Ñ¥½¸)•Á•¹‘¥¹œ½¸¥ÑÌ½¹Ñ•¹Ğ…¹ÁÕÉÁ½Í”°„µ•ÍÍ…”µ…ä±½Í”¥ÑÌÙ…±Õ”…™Ñ•È„•ÉÑ…¥¸…µ½Õ¹Ğ½˜Ñ¥µ”¸]¡•¸„ÁÉ½‘Õ•ÈÉ•…Ñ•Ì„µ•ÍÍ…”°¥Ğ…¸Í•Ğ…¸•áÁ¥É…Ñ¥½¸Ù…±Õ”¥¸Ñ¡”µ•ÍÍ…”¡•…‘•È¸%˜¥Ğ‘½•Ì¹½Ğ°Ñ¡”¡•…‘•ÈÙ…±Õ”É•µ…¥¹Ì•µÁÑä…¹Ñ¡”µ•ÍÍ…”¹•Ù•È•áÁ¥É•Ì¸()Ñ¥Ù•5D‘¥Í…É‘Ì…¹ä•áÁ¥É•µ•ÍÍ…•Ì™É½´¥ÑÌÅÕ•Õ•Ì…¹Ñ½Á¥ÌÉ…Ñ¡•ÈÑ¡…¸‘•±¥Ù•É¥¹œÑ¡•´°…¹½¹ÍÕµ•È½‘”¥Ì•áÁ•Ñ•Ñ¼‘¥ÍÉ•…É…¹äµ•ÍÍ…”Ñ¡…ĞÉ•µ…¥¹ÌÕ¹ÁÉ½•ÍÍ•…™Ñ•È¥ÑÌ•áÁ¥É…Ñ¥½¸¸€((ŒŒŒŒŒ5•ÍÍ…”Á•ÉÍ¥ÍÑ•¹”)A•ÉÍ¥ÍÑ•¹”¥Ì„¡…É…Ñ•É¥ÍÑ¥Œ½˜„µ•ÍÍ…”¸%ĞÌ‘•™¥¹•¥¸Ñ¡”)5LÍÁ•Œ…¹¥Í¸ĞÕ¹¥ÅÕ”Ñ¼Ñ¥Ù•5D¸Ñ¥Ù•5Dµ•ÍÍ…•Ì…É”Á•ÉÍ¥ÍÑ•¹Ğ‰ä‘•™…Õ±Ğ°‰ÕĞå½Ô…¸m½¹™¥ÕÉ”Á•ÉÍ¥ÍÑ•¹•um…Ñ¥Ù•µÄµÁ•ÉÍ¥ÍÑ•¹•t½¸„Á•Èµµ•ÍÍ…”½ÈÁ•ÈµÁÉ½‘Õ•È‰…Í¥Ì¸]¡•¸å½ÔÍ•¹„Á•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…”°Ñ¡”‰É½­•ÈÍ…Ù•ÌÑ¡”µ•ÍÍ…”Ñ¼Ñ¡”µ•ÍÍ…”ÍÑ½É”½¸‘¥Í¬‰•™½É”…ÑÑ•µÁÑ¥¹œ‘•±¥Ù•Éä¸%˜Ñ¡”‰É½­•Èİ•É”Ñ¼É…Í …ĞÑ¡…ĞÁ½¥¹Ğ°„½Áä½˜Ñ¡”µ•ÍÍ…”İ½Õ±É•µ…¥¸…¹Ñ¡”ÁÉ½•ÍÌ½˜Í•¹‘¥¹œÑ¡”µ•ÍÍ…”½Õ±É•½Ù•Èİ¡•¸Ñ¡”‰É½­•ÈÉ•ÍÑ…ÉÑ•¸¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…”°½¸Ñ¡”½Ñ¡•È¡…¹°•á¥ÍÑÌ½¹±ä¥¸Ñ¡”‰É½­•ÈÌµ•µ½Éä…¹İ½Õ±‰”±½ÍĞ¥¸…¸•Ù•¹ĞÑ¡…Ğ…ÕÍ•Ñ¡”‰É½­•ÈÑ¼É•ÍÑ…ÉĞ¸()M•¹‘¥¹œ¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¥ÌÕÍÕ…±±ä™…ÍÑ•È°‰•…ÕÍ”¥Ğ‘½•Í¸ĞÉ•ÅÕ¥É”Ñ¡”‰É½­•ÈÑ¼•á•ÕÑ”•áÁ•¹Í¥Ù”İÉ¥Ñ”½Á•É…Ñ¥½¹Ì¸9½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…¥¹œ¥Ì…ÁÁÉ½ÁÉ¥…Ñ”™½ÈÍ¡½ÉĞµ±¥Ù•‘…Ñ„Ñ¡…Ğ•ÑÌÉ•Á±…•…Ğ™É•ÅÕ•¹Ğ¥¹Ñ•ÉÙ…±Ì°ÍÕ …Ì„½¹”µ„µµ¥¹ÕÑ”ÕÁ‘…Ñ”½˜…¸¥Ñ•´Ì±½…Ñ¥½¸¸((ŒŒŒŒAÉ½Á•ÉÑ¥•Ì)mAÉ½Á•ÉÑ¥•Íum…Ñ¥Ù•µÄµµ•ÍÍ…”µÁÉ½Á•ÉÑ¥•Ít™Õ¹Ñ¥½¸Í¥µ¥±…ÈÑ¼¡•…‘•ÉÌ°…¹ÁÉ½Ù¥‘”„İ…ä½˜…‘‘¥¹œ½ÁÑ¥½¹…°µ•Ñ…‘…Ñ„Ñ¼„µ•ÍÍ…”¸Ñ¥Ù•5DÍÕÁÁ½ÉÑÌÍ½µ”ÁÉ½Á•ÉÑ¥•ÌÑ¡…Ğ…É”‘•™¥¹•¥¸Ñ¡”)5LÍÁ•¥™¥…Ñ¥½¸°…¹…±Í¼¥µÁ±•µ•¹ÑÌÍ½µ”ÁÉ½Á•ÉÑ¥•ÌÑ¡…Ğ…É•¸ĞÁ…ÉĞ½˜Ñ¡”ÍÁ•Œ¸()AÉ½‘Õ•ÉÌ…¸…±Í¼‘•™¥¹”ÁÉ½Á•ÉÑ¥•ÏŠQ…É‰¥ÑÉ…É¥±ä…¹½ÕÑÍ¥‘”Ñ¡”)5LÍÁ•ŠQ…¹…ÁÁ±äÑ¡•´Ñ¼•… µ•ÍÍ…”¸½¹ÍÕµ•ÉÌ…¸¥µÁ±•µ•¹ĞmÍ•±•Ñ½ÉÍum…Ñ¥Ù•µÄµÍ•±•Ñ½ÉÍtÑ¼™¥±Ñ•Èµ•ÍÍ…•Ì‰…Í•½¸Ù…±Õ•ÌÁÉ•Í•¹Ğ¥¸Ñ¡”µ•ÍÍ…”ÁÉ½Á•ÉÑ¥•Ì¸½È•á…µÁ±”°å½Ô…¸½¹™¥ÕÉ”…¸Ñ¥Ù•5DÁÉ½‘Õ•ÈÑ¼…ÑÑ… „½¥¹€ÁÉ½Á•ÉÑäÑ¼•… µ•ÍÍ…”°İ¥Ñ „Ù…±Õ”½˜•¥Ñ¡•È¡•…‘Í€½ÈÑ…¥±Í€°…¹Í•¹Ñ¡•´…±°Ñ¼Ñ¡”Í…µ”Ñ½Á¥Œ¸e½Ô…¸İÉ¥Ñ”Ñİ¼½¹ÍÕµ•ÉÏŠQ„¡•…‘Í€½¹ÍÕµ•È…¹„Ñ…¥±Í€½¹ÍÕµ•ËŠQÑ¡…ĞÍÕ‰ÍÉ¥‰”Ñ¼Ñ¡…ĞÑ½Á¥Œ‰ÕĞÑ¡…Ğ½¹±äÉ••¥Ù”µ•ÍÍ…•Ìİ¥Ñ Ñ¡•¥ÈÍ•±•Ñ•Ù…±Õ”½˜Ñ¡”½¥¹€ÁÉ½Á•ÉÑä¸((ŒŒŒŒ	½‘ä)Q¡”½¹Ñ•¹Ğ½˜…¸Ñ¥Ù•5Dµ•ÍÍ…”¥ÌÑ¡”€¨©‰½‘ä¨¨¸Q¡”‰½‘ä½˜„µ•ÍÍ…”…¸‰”Ñ•áĞ½È‰¥¹…Éä‘…Ñ„¸€¡%ĞÌ…±Í¼…•ÁÑ…‰±”™½È„µ•ÍÍ…”Ì‰½‘äÑ¼‰”•µÁÑä¸¤Q¡”Ù…±Õ”½˜Ñ¡”)5MQåÁ•€µ•ÍÍ…”¡•…‘•È°İ¡¥ ¥ÌÍ•Ğ•áÁ±¥¥Ñ±ä‰äÑ¡”ÁÉ½‘Õ•Èİ¡•¸Ñ¡”µ•ÍÍ…”¥ÌÉ•…Ñ•°‘•Ñ•Éµ¥¹•Ìİ¡…Ğ…¸‰”…ÉÉ¥•¥¸Ñ¡”‰½‘ä½˜Ñ¡”µ•ÍÍ…”è„™¥±”°„‰åÑ”ÍÑÉ•…´°„)…Ù„½‰©•Ğ°„ÍÑÉ•…´½˜)…Ù„ÁÉ¥µ¥Ñ¥Ù•Ì°„Í•Ğ½˜¹…µ”µÙ…±Õ”Á…¥ÉÌ°½È„ÍÑÉ¥¹œ½˜Ñ•áĞ¸()½Èµ½É”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞµ•ÍÍ…”ÑåÁ•Ì°Í•”mÑ¡¥Ì)5L‘½Õµ•¹Ñ…Ñ¥½¹umµ•ÍÍ…”µ‰½‘¥•Ít¸((ŒŒŒ5•µ½Éä…¹ÍÑ½É…”)Ñ¥Ù•5DÕÍ•Ìµ•µ½ÉäÑ¼ÍÑ½É”µ•ÍÍ…•Ì…İ…¥Ñ¥¹œ‘¥ÍÁ…Ñ Ñ¼½¹ÍÕµ•ÉÌ¸… µ•ÍÍ…”½ÕÁ¥•ÌÍ½µ”½˜Ñ¡”…Ù…¥±…‰±”µ•µ½Éä€¡¡½ÜµÕ ‘•Á•¹‘Ì½¸Ñ¡”Í¥é”½˜Ñ¡”µ•ÍÍ…”¤Õ¹Ñ¥°¥Ğ¥Ì‘•ÅÕ•Õ•“ŠQ‘•±¥Ù•É•Ñ¼„½¹ÍÕµ•ÈÑ¡…ĞÑ¡•¸ÁÉ½•ÍÍ•ÌÑ¡”µ•ÍÍ…”…¹…­¹½İ±•‘•ÌÉ••¥ÁĞ¸ĞÑ¡…ĞÁ½¥¹Ğ°Ñ¥Ù•5D™É••ÌÕÀÑ¡”µ•µ½ÉäÑ¡…Ğ¡…‰••¸ÕÍ•™½ÈÑ¡…Ğµ•ÍÍ…”¸]¡•¸ÁÉ½‘Õ•ÉÌ…É”™…ÍÑ•ÈÑ¡…¸½¹ÍÕµ•ÉÏŠQÑ¡•É”Ìµ½É”•¹ÅÕ•Õ¥¹œÑ¡…¸‘•ÅÕ•Õ¥¹œ½Ù•È„¥Ù•¸Ñ¥µ”Á•É¥½“ŠQÑ¥Ù•5DÌµ•µ½ÉäÕÍ”¥¹É•…Í•Ì¸€()Ñ¥Ù•5D…±Í¼İÉ¥Ñ•Ìµ•ÍÍ…•ÌÑ¼‘¥Í¬°¥¸•¥Ñ¡•È„µ•ÍÍ…”ÍÑ½É”€¡İ¡•É”Á•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¼¤°½È„Ñ•µÀÍÑ½É”€¡İ¡•É”¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¼İ¡•¸Ñ¡”‰É½­•ÈÉÕ¹Ì½ÕĞ½˜µ•µ½ÉäÑ¼ÍÑ½É”Ñ¡•´¤¸()%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°±½½¬…Ğ¡½ÜÑ¥Ù•5DÕÍ•Ìµ•µ½Éä…¹‘¥Í¬Ñ¼ÍÑ½É”µ•ÍÍ…•Ì¸((ŒŒŒŒ5•µ½Éä)Q¡”¡½ÍĞÍåÍÑ•´‘•‘¥…Ñ•ÌÍ½µ”½˜¥ÑÌµ•µ½Éä…Ì¡•…Àµ•µ½Éä™½ÈÑ¡”)Y4¥¸İ¡¥ Ñ¥Ù•5DÉÕ¹Ì¸	ä‘•™…Õ±Ğ°Ñ¡”Ñ¥Ù•5DÍÑ…ÉÑÕÀÍÉ¥ÁĞÑ•±±Ì)…Ù„Ñ¼É•…Ñ”„¡•…Àİ¥Ñ „µ…á¥µÕ´Í¥é”½˜€Ä¸Q¼ÍÁ•¥™äÑ¡”µ…á¥µÕ´Á•É•¹Ñ…”½˜Ñ¡”)Y4Ì¡•…Àµ•µ½ÉäÑ¡…ĞÑ¥Ù•5D…¸ÕÍ”°…‘©ÕÍĞÑ¡”µ•µ½ÉåUÍ…•€¡¥±½˜Ñ¡”ÍåÍÑ•µUÍ…•€•±•µ•¹Ğ¥¸Ñ¡”€¨©…Ñ¥Ù•µÄ¹áµ°¨¨™¥±”¸e½Ô…¸•áÁÉ•ÍÌÑ¡¥Ì…Ì„Á•É•¹Ñ…”½˜Ñ¡”)Y4Ì¡•…Àµ•µ½Éä€¡”¹œ¸°€ñµ•µ½ÉåUÍ…”Á•É•¹Ñ=™)Ùµ!•…ÀôˆØÀˆ€¼ù€¤°½È…Ì„¹Õµ‰•È½˜‰åÑ•Ì°…ÌÍ¡½İ¸¥¸Ñ¡”™½±±½İ¥¹œÁ…ÉÑ¥…°€¨©…Ñ¥Ù•µÄ¹áµ°¨¨™¥±”¸€¡9½Ñ”Ñ¡…Ğå½ÕÈ€ñ‰É½­•Èù€•±•µ•¹Ğµ…ä±½½¬‘¥™™•É•¹ĞÑ¡…¸Ñ¡”½¹”¥¸Ñ¡¥Ì•á…µÁ±”°‘•Á•¹‘¥¹œ½¸å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸¸¤()€(ñ‰É½­•Èáµ±¹Ìô‰¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Í¡•µ„½½É”ˆ‰É½­•É9…µ”ô‰5e}	I=-Hˆø)l¸¸¹t(€€€€ñÍåÍÑ•µUÍ…”ø(€€€€€€€€ñÍåÍÑ•µUÍ…”ø(€€€€€€€€€€€€ñµ•µ½ÉåUÍ…”ø(€€€€€€€€€€€€€€€€ñµ•µ½ÉåUÍ…”±¥µ¥ĞôˆÄˆˆ€¼ø(€€€€€€€€€€€€ğ½µ•µ½ÉåUÍ…”ø(€€€€€€€€ğ½ÍåÍÑ•µUÍ…”ø(€€€€ğ½ÍåÍÑ•µUÍ…”ø)l¸¸¹t(ğ½‰É½­•Èø)€()Q¡¥Ì‰É½­•Èµ•µ½Éä±¥µ¥Ğ…ÁÁ±¥•ÌÑ¼…±°‘•ÍÑ¥¹…Ñ¥½¹Ì°½µ‰¥¹•¸%¸½Ñ¡•Èİ½É‘Ì°Ñ¡”µ•µ½ÉäÍÁ•¥™¥•½¸Ñ¡”‰É½­•ÈÌµ•µ½ÉåUÍ…•€•±•µ•¹ĞµÕÍĞ‰”Í¡…É•…µ½¹ÍĞ…±°ÅÕ•Õ•Ì…¹Ñ½Á¥Ì¸… ‘•ÍÑ¥¹…Ñ¥½¸µ…ä‰”½¹™¥ÕÉ•İ¥Ñ …¸•áÁ±¥¥Ğµ•µ½Éä±¥µ¥Ğ°‘•Í¥¹…Ñ•¥¸Ñ¡”µ•µ½Éå1¥µ¥Ñ€•±•µ•¹Ğ¥¹Í¥‘”…¸½ÁÑ¥½¹…°Á½±¥å¹ÑÉå€¥¸Ñ¡”€¨©…Ñ¥Ù•µÄ¹áµ°¨¨™¥±”è()€(ñ‰É½­•Èáµ±¹Ìô‰¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Í¡•µ„½½É”ˆ‰É½­•É9…µ”ô‰5e}	I=-Hˆø)l¸¸¹t(€€€€ñ‘•ÍÑ¥¹…Ñ¥½¹A½±¥äø(€€€€€€€€ñÁ½±¥å5…Àø(€€€€€€€€€€€€ñÁ½±¥å¹ÑÉ¥•Ìø(€€€€€€€€€€€€€€€€ñÁ½±¥å¹ÑÉäÅÕ•Õ”ô‰5e}EUUˆµ•µ½Éå1¥µ¥ĞôˆÄÀÁµˆˆ€¼ø(€€€€€€€€€€€€€€€€ñÁ½±¥å¹ÑÉäÑ½Á¥Œô‰5e}Q=A%ˆµ•µ½Éå1¥µ¥ĞôˆÔÁµˆˆ€¼ø(€€€€€€€€€€€€ğ½Á½±¥å¹ÑÉ¥•Ìø(€€€€€€€€ğ½Á½±¥å5…Àø(€€€€ğ½‘•ÍÑ¥¹…Ñ¥½¹A½±¥äø)l¸¸¹t(ğ½‰É½­•Èø)€()Ñ¥Ù•5DÕÍ•Ìµ•µ½Éä‘¥™™•É•¹Ñ±ä™½È¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•ÌÑ¡…¸¥Ğ‘½•Ì™½ÈÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¸… ¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…”¥ÌÍÑ½É•¥¸µ•µ½Éä…Ì¥Ğ…ÉÉ¥Ù•Ì¸]¡•¸Ñ¡”…Ù…¥±…‰±”µ•µ½Éä¥Ì™Õ±°°…±°µ•ÍÍ…•Ì¥¸µ•µ½Éä…É”µ½Ù•Ñ¼Ñ¡”Ñ•µÀÍÑ½É”½¸Ñ¡”‘¥Í¬¸… Á•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…”¥Ì…±Í¼ÍÑ½É•¥¸µ•µ½Éä…Ì¥Ğ…ÉÉ¥Ù•Ì°…¹¥Ì…±Í¼İÉ¥ÑÑ•¸Ñ¼Ñ¡”µ•ÍÍ…”ÍÑ½É”½¸‘¥Í¬¸%˜¹¼µ½É”µ•µ½Éä¥Ì…Ù…¥±…‰±”°¥¹½µ¥¹œÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì…É”İÉ¥ÑÑ•¸‘¥É•Ñ±ä¥¹Ñ¼Ñ¡”µ•ÍÍ…”ÍÑ½É”¸()Ì±½¹œ…ÌÑ¡”‘•ÍÑ¥¹…Ñ¥½¸Ìµ•µ½Éä‘½•Í¸Ğ™¥±°ÕÀ°¥¹½µ¥¹œµ•ÍÍ…•ÌÉ•µ…¥¸Ñ¡•É”…¹…¸‰”‘¥ÍÁ…Ñ¡•‘¥É•Ñ±ä™É½´µ•µ½Éäİ¥Ñ¡½ÕĞ¥¹ÕÉÉ¥¹œ…¹ä±…Ñ•¹äÉ•±…Ñ•Ñ¼‘¥Í¬…Ñ¥Ù¥Ñä¸%˜Ñ¡”µ•ÍÍ…”¥Ì¹½Ğ…Ù…¥±…‰±”¥¸µ•µ½Éä€¡•¥Ñ¡•È‰•…ÕÍ”¥Ğ½Ğ™±ÕÍ¡•™É½´µ•µ½ÉäÑ¼Ñ¡”Ñ•µÀÍÑ½É”½È‰•…ÕÍ”¥Ğİ…ÌİÉ¥ÑÑ•¸Ñ¼Ñ¡”µ•ÍÍ…”ÍÑ½É”İ¡•¸…Ù…¥±…‰±”µ•µ½Éäİ…Ì™Õ±°¤°Ñ¡”‰É½­•ÈµÕÍĞÁ…”Ñ¡”µ•ÍÍ…”‘…Ñ„™É½´‘¥Í¬¥¸½É‘•ÈÑ¼‘¥ÍÁ…Ñ ¥ĞÑ¼„½¹ÍÕµ•È¸€((ŒŒŒŒMÑ½É…”)e½Ô…¸ÍÁ•¥™äÑ¡”…µ½Õ¹Ğ½˜ÍÑ½É…”Ñ¼‰”ÕÍ•™½ÈÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¥¸Ñ¡”€¨©…Ñ¥Ù•µÄ¹áµ°¨¨™¥±”ÌÍÑ½É•UÍ…•€•±•µ•¹Ğ°…Ì¥¸Ñ¡”•á…µÁ±”‰•±½Üè()€(ñÍåÍÑ•µUÍ…”ø(€€€€ñÍåÍÑ•µUÍ…”ø(€€€€€€€€ñÍÑ½É•UÍ…”ø(€€€€€€€€€€€€ñÍÑ½É•UÍ…”±¥µ¥ĞôˆÄÀÀµˆˆ¼ø(€€€€€€€€ğ½ÍÑ½É•UÍ…”ø(€€€€ğ½ÍåÍÑ•µUÍ…”ø(ğ½ÍåÍÑ•µUÍ…”ø)€()MÑ½É…”™½È¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¥ÌÍÁ•¥™¥•Í•Á…É…Ñ•±ä¸9½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì…É”İÉ¥ÑÑ•¸Ñ¼ÍÑ½É…”½¹±ä…™Ñ•È…Ù…¥±…‰±”µ•µ½Éä¥Ì•á¡…ÕÍÑ•¸e½Ô…¸ÍÁ•¥™äÑ¡”…µ½Õ¹Ğ½˜ÍÑ½É…”Ñ¼‰”ÕÍ•™½È¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¥¸Ñ¡”€¨©…Ñ¥Ù•µÄ¹áµ°¨¨™¥±”ÌÑ•µÁUÍ…•€•±•µ•¹Ğ°İ¡¥ ‘•™…Õ±ÑÌÑ¼€ÔÀ¸e½Ô…¸½¹™¥ÕÉ”Ñ¡¥Ì…Ì„Á•É•¹Ñ…”½˜…Ù…¥±…‰±”‘¥Í¬ÍÁ…”€¡mÁ•É•¹Ñ1¥µ¥Ñum…Ñ¥Ù•µÄµÁ™t¤½È…Ì„¹Õµ‰•È½˜‰åÑ•Ì€¡…ÌÍ¡½İ¸‰•±½Ü¤è()€(ñÍåÍÑ•µUÍ…”ø(€€€€ñÍåÍÑ•µUÍ…”ø(€€€€€€€€ñÑ•µÁUÍ…”ø(€€€€€€€€€€€€ñÑ•µÁUÍ…”±¥µ¥ĞôˆÄÀÀµˆˆ¼ø(€€€€€€€€ğ½Ñ•µÁUÍ…”ø(€€€€ğ½ÍåÍÑ•µUÍ…”ø(ğ½ÍåÍÑ•µUÍ…”ø)€()m-…¡…	um­…¡…‘‰t¥ÌÑ¥Ù•5DÌ‘•™…Õ±Ğµ•ÍÍ…”ÍÑ½É…”µ•¡…¹¥Í´¸%ĞÍÑ½É•Ì‰½Ñ Á•ÉÍ¥ÍÑ•¹Ğ…¹¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¸-…¡…¥Ì‘•Í¥¹•Ñ¼ÅÕ¥­±äÁ•ÉÍ¥ÍĞ„±…É”¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¼ÍÕÁÁ½ÉĞ„‰ÕÍäµ•ÍÍ…¥¹œÍåÍÑ•´¸-…¡…É•Á±…•Ìm5D5•ÍÍ…”MÑ½É•um…µÄµµ•ÍÍ…”µÍÑ½É•t°İ¡¥ ¥ÌÍÑ¥±°…Ù…¥±…‰±”‰ÕĞ¥Ì¹¼±½¹•ÈÑ¡”‘•™…Õ±Ğµ•ÍÍ…”ÍÑ½É”…Ì½˜Ñ¥Ù•5DÙ•ÉÍ¥½¸€Ô¸Ğ¸€()Ñ¥Ù•5D…±Í¼ÍÕÁÁ½ÉÑÌÍÑ½É¥¹œµ•ÍÍ…•ÌÙ¥„m)	um…Ñ¥Ù•µÄµ©‘‰t¸UÍ¥¹œÑ¡¥Ì½¹™¥ÕÉ…Ñ¥½¸°å½Ô…¸¡½½Í”™É½´„¹Õµ‰•È½˜ME0‘…Ñ…‰…Í•ÌÑ¼™¥¹Ñ¡”ÍÑ½É…”µ•¡…¹¥Í´Ñ¡…Ğ‰•ÍĞµ••ÑÌå½ÕÈ¹••‘Ì™½ÈÍ…±…‰¥±¥Ñä…¹ÍÕÁÁ½ÉĞ¸()]”Ù”±½½­•…ĞÍ½µ”¡…É…Ñ•É¥ÍÑ¥Ì½˜)5Lµ•ÍÍ…•Ì°…¹…ĞÍ½µ”‘¥™™•É•¹Ğİ…åÌÑ¥Ù•5DÍÑ½É•Ì…¹Í•¹‘ÌÑ¡•´¸	ÕĞÑ¥Ù•5DÌİ½É¬¥Í¸Ğ‘½¹”Õ¹Ñ¥°„µ•ÍÍ…”¥Ì‘•±¥Ù•É•Ñ¼„½¹ÍÕµ•È¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸İ”±°±½½¬…Ğ¡½Ü½¹ÍÕµ•ÉÌ¡…¹‘±”µ•ÍÍ…•Ì¸€((ŒŒŒ½¹ÍÕµ•ÉÌ)½¹ÍÕµ•ÉÌ…É”Ñ¡”…ÁÁ±¥…Ñ¥½¹ÌÑ¡…ĞÉ••¥Ù”Ñ¡”µ•ÍÍ…•ÌÑ¥Ù•5DÍ•¹‘Ì¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°±½½¬…ĞÍ½µ”­•ä¡…É…Ñ•É¥ÍÑ¥ÌÑ¡…Ğ¥¹™±Õ•¹”Ñ¡”‰•¡…Ù¥½È½˜½¹ÍÕµ•ÉÌèÍÕ‰ÍÉ¥ÁÑ¥½¹Ì…¹…­¹½İ±•‘µ•¹Ğ¸((ŒŒŒŒÕÉ…‰±”ÙÌ¸¹½¹‘ÕÉ…‰±”ÍÕ‰ÍÉ¥ÁÑ¥½¹Ì)½¹ÍÕµ•È…¸ÍÕ‰ÍÉ¥‰”Ñ¼„Ñ½Á¥Œ…Ì•¥Ñ¡•È„‘ÕÉ…‰±”½È¹½¹‘ÕÉ…‰±”ÍÕ‰ÍÉ¥‰•È¸€¡ÕÉ…‰¥±¥Ñä…ÁÁ±¥•Ì½¹±äÑ¼µ•ÍÍ…•Ìİ¥Ñ¡¥¸„Ñ½Á¥Œ°¹½Ğİ¥Ñ¡¥¸„ÅÕ•Õ”¸¤%¸Ñ¡”…Í”½˜„‘ÕÉ…‰±”ÍÕ‰ÍÉ¥ÁÑ¥½¸°Ñ¥Ù•5Dİ¥±°É•Ñ…¥¸µ•ÍÍ…•Ì¥˜Ñ¡”ÍÕ‰ÍÉ¥‰•È¥ÌÕ¹…Ù…¥±…‰±”¸]¡•¸Ñ¡…ĞÍÕ‰ÍÉ¥‰•ÈÉ•½¹¹•ÑÌ°¥ĞÉ••¥Ù•Ì¹•Üµ•ÍÍ…•ÌÑ¡…Ğ…ÉÉ¥Ù•‘ÕÉ¥¹œÑ¡”Ñ¥µ”¥Ğİ…Ì‘¥Í½¹¹•Ñ•¸¹½¹‘ÕÉ…‰±”ÍÕ‰ÍÉ¥‰•Èİ½Õ±¹½ĞÉ••¥Ù”…¹äµ•ÍÍ…•ÌÁÕ‰±¥Í¡•Ñ¼Ñ¡”Ñ½Á¥Œ‘ÕÉ¥¹œÑ¡”Ñ¥µ”¥Ğİ…Ì‘¥Í½¹¹•Ñ•™É½´Ñ¡”‰É½­•È¸((ŒŒŒŒ­¹½İ±•‘µ•¹Ğ)… ½¹ÍÕµ•È¥Ì½¹™¥ÕÉ•Ñ¼ÕÍ”…¸m…­¹½İ±•‘µ•¹Ğµ½‘•um…­¹½İ±•‘µ•¹Ğµµ½‘•tÑ¡…Ğ‘•Ñ•Éµ¥¹•Ìİ¡•¸…¹¡½Ü¥Ğİ¥±°…­¹½İ±•‘”„µ•ÍÍ…—ŠQ•¥Ñ¡•È…ÕÑ½µ…Ñ¥…±±äÕÁ½¸É••¥ÁĞ°½È‰äµ…­¥¹œ…¸•áÁ±¥¥Ğ…±°Ñ¼…¸…­¹½İ±•‘•€µ•Ñ¡½¸Ñ¥Ù•5DÌµ•ÑÉ¥ÌÍ¡½Ü¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•Ì…­¹½İ±•‘•…¹¹½Ğå•Ğ…­¹½İ±•‘•°‰ÕĞÑ¡”µ•…¹¥¹œ½˜Ñ¡½Í”µ•ÑÉ¥Ì‘•Á•¹‘Ì½¸Ñ¡”½¹ÍÕµ•ÈÌ…­¹½İ±•‘µ•¹Ğµ½‘”¸ÍÁ¥­”¥¸Õ¹…­¹½İ±•‘•µ•ÍÍ…•Ì½Õ±µ•…¸Ñ¡”½¹ÍÕµ•È¥Ì½™™±¥¹”…¹Õ¹…‰±”Ñ¼É••¥Ù”µ•ÍÍ…•Ì°½ÈÑ¡…ĞÑ¡”½¹ÍÕµ•È¥Ì™…¥±¥¹œÑ¼ÍÕ•ÍÍ™Õ±±ä•á•ÕÑ”¥ÑÌµ…¹Õ…°…­¹½İ±•‘•€…±°¸()M¼™…È°İ”Ù”½Ù•É•İ¡…ĞÑ¥Ù•5D¥Ì°…¹¡½Ü¥Ğİ½É­Ì¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°¥¹ÑÉ½‘Õ”Í½µ”ÕÍ•™Õ°µ•ÑÉ¥ÌÑ¼¡•±Àå½ÔÕ¹‘•ÉÍÑ…¹¡½ÜÑ¼µ½¹¥Ñ½ÈÑ¥Ù•5D¸((ŒŒ-•äÑ¥Ù•5Dµ•ÑÉ¥Ì)	äÑÉ…­¥¹œÑ¥Ù•5Dµ•ÑÉ¥Ì°å½Ô…¸•™™•Ñ¥Ù•±äµ½¹¥Ñ½ÈÉ•Í½ÕÉ”ÕÍ…”°‰É½­•ÈÁ•É™½Éµ…¹”°…¹µ•ÍÍ…”…Ñ¥Ù¥Ñä¸5½¹¥Ñ½É¥¹œÑ¡•Í”µ•ÑÉ¥Ì…¸¡•±Àå½ÔÕ¹‘•ÉÍÑ…¹Ñ¡”Á•É™½Éµ…¹”½˜å½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”…¹‘•Ñ•ĞÁ½Ñ•¹Ñ¥…°ÁÉ½‰±•µÌÑ¡…Ğµ¥¡Ğ…™™•Ğå½ÕÈÍ•ÉÙ¥•Ì¸€()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í Ä¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰…Ñ…‘½œÌÑ¥Ù•5D‘…Í¡‰½…É¥Ìµ…‘”ÕÀ½˜É…Á¡ÌÍ¡½İ¥¹œÉ•Í½ÕÉ”ÕÍ…”°‰É½­•ÈÁ•É™½Éµ…¹”°…¹µ•ÍÍ…”…Ñ¥Ù¥Ñä¸ˆ€ùõô()Ñ¥Ù•5Dµ•ÑÉ¥Ì½µ”™É½´è((¨mÑ¡”‘•ÍÑ¥¹…Ñ¥½¹Ít ‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ì¤€¡Ñ½Á¥Ì…¹ÅÕ•Õ•Ì¤(¨mÑ¡”‰É½­•Ét ‰É½­•Èµµ•ÑÉ¥Ì¤(¨mÑ¡”)Y5t ©Ù´µµ•ÑÉ¥Ì¤¥¸İ¡¥ Ñ¡”‰É½­•È¥ÌÉÕ¹¹¥¹œ(¨mÑ¡”¡½ÍĞÍåÍÑ•µt ¡½ÍÑ±•Ù•°µµ•ÑÉ¥Ì¤Ñ¡…ĞÉÕ¹ÌÑ¡”)Y4()	•…ÕÍ”Ñ¥Ù•5D¥ÌİÉ¥ÑÑ•¸¥¸)…Ù„°å½Ô…¸ÅÕ•Éä‘•ÍÑ¥¹…Ñ¥½¸°‰É½­•È°…¹)Y4µ•ÑÉ¥ÌÙ¥„m)…Ù„5…¹…•µ•¹ĞáÑ•¹Í¥½¹Íum½É…±”µ©µát€¡)5`¤¸e½Ô…¸Ù¥•ÜÑ¡•Í”µ•ÑÉ¥ÌÕÍ¥¹œm)½¹Í½±•um½É…±”µ©½¹Í½±•t°„U$Ñ¡…ĞÌ¥¹±Õ‘•¥¸Ñ¡”),°½Èİ¥Ñ ½Ñ¡•È)5`µ½µÁ±¥…¹Ğµ½¹¥Ñ½É¥¹œÍåÍÑ•µÌ¸Ñ¥Ù•5D…±Í¼½µ•Ìİ¥Ñ „]•ˆ½¹Í½±”…¹„ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸¸%¸mA…ÉĞ€ÉumÁ…ÉĞ´Ét½˜Ñ¡¥ÌÍ•É¥•Ì°İ”±°±½½¬…ĞÑ¡”Ñ½½±Ì…Ù…¥±…‰±”Ñ¼¡•±Àå½Ô½±±•Ğ…¹Ù¥•ÜÑ¥Ù•5Dµ•ÑÉ¥Ì¸€()%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°•áÁ±½É”­•äÑ¥Ù•5Dµ•ÑÉ¥ÏŠQİ¡•É”Ñ¼™¥¹Ñ¡•´°…¹Ñ¡”É•…Í½¹Ìå½Ôµ¥¡Ğİ…¹ĞÑ¼½±±•ĞÑ¡•´¸Q¡¥Ì‰Õ¥±‘Ì½¸½ÕÈm5½¹¥Ñ½É¥¹œ€ÄÀÄÍ•É¥•Íumµ½¹¥Ñ½É¥¹œ´ÄÀÅt°İ¡¥ ‘¥ÍÕÍÍ•Ì¡½ÜÑ¼¥‘•¹Ñ¥™ä¡¥ µÙ…±Õ”µ½¹¥Ñ½É¥¹œ‘…Ñ„°¡½ÜÑ¼É•…Ñ”„Íµ…ÉĞÍÑÉ…Ñ•ä™½È…±•ÉÑ¥¹œ°…¹¡½ÜÑ¼¥¹Ù•ÍÑ¥…Ñ”Ñ¡”¥ÍÍÕ•Ìå½ÕÈµ½¹¥Ñ½É¥¹œÕ¹½Ù•ÉÌ¸€((ŒŒŒ•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Ì)±°Ñ¥Ù•5Dµ•ÍÍ…•ÌÁ…ÍÌÑ¡É½Õ ‘•ÍÑ¥¹…Ñ¥½¹Ì¸5½¹¥Ñ½É¥¹œ‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Ì…¸¥Ù”å½Ô¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”ÍÁ••°Ù½±Õµ”°…¹É•Í½ÕÉ”ÕÍ…”½˜å½ÕÈµ•ÍÍ…¥¹œÍåÍÑ•´¸(()ñ)5`…ÑÑÉ¥‰ÕÑ•ñ•ÍÉ¥ÁÑ¥½¹ñ5	•…¹ñ5•ÑÉ¥ŒÑåÁ•ğ)ğ´´µğ´´µğ´´µğ´´µğ)ñ5•µ½ÉåA•É•¹ÑUÍ…•ñA•É•¹Ñ…”½˜½¹™¥ÕÉ•µ•µ½ÉäÕÍ•‰äÑ¡”‘•ÍÑ¥¹…Ñ¥½¹ñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipø±‘•ÍÑ¥¹…Ñ¥½¹QåÁ”ô¡EÕ•Õ•qñQ½Á¥Œ¤±‘•ÍÑ¥¹…Ñ¥½¹9…µ”õpñ5e}MQ%9Q%=9pùñI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¹ğ)ñ½¹ÍÕµ•É½Õ¹ÑñQ¡”¹Õµ‰•È½˜½¹ÍÕµ•ÉÌÕÉÉ•¹Ñ±äÍÕ‰ÍÉ¥‰•Ñ¼Ñ¡”‘•ÍÑ¥¹…Ñ¥½¹ñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipø±‘•ÍÑ¥¹…Ñ¥½¹QåÁ”ô¡EÕ•Õ•qñQ½Á¥Œ¤±‘•ÍÑ¥¹…Ñ¥½¹9…µ”õpñ5e}MQ%9Q%=9pùñ=Ñ¡•Éğ)ñAÉ½‘Õ•É½Õ¹ÑñQ¡”¹Õµ‰•È½˜ÁÉ½‘Õ•ÉÌÕÉÉ•¹Ñ±ä…ÑÑ…¡•Ñ¼Ñ¡”€‘•ÍÑ¥¹…Ñ¥½¹ñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipø±‘•ÍÑ¥¹…Ñ¥½¹QåÁ”ô¡EÕ•Õ•qñQ½Á¥Œ¤±‘•ÍÑ¥¹…Ñ¥½¹9…µ”õpñ5e}MQ%9Q%=9pùñ=Ñ¡•Éğ)ñEÕ•Õ•M¥é•ñQ¡”¹Õµ‰•È½˜µ•ÍÍ…•Ì€¡Á•È‘•ÍÑ¥¹…Ñ¥½¸¤Ñ¡…Ğ¡…Ù”¹½Ğ‰••¸…­¹½İ±•‘•‰ä„½¹ÍÕµ•È¸%¹±Õ‘•ÌÑ¡½Í”¹½Ğå•Ğ‘¥ÍÁ…Ñ¡•‘ñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipø±‘•ÍÑ¥¹…Ñ¥½¹QåÁ”ô¡EÕ•Õ•qñQ½Á¥Œ¤±‘•ÍÑ¥¹…Ñ¥½¹9…µ”õpñ5e}MQ%9Q%=9pùñI•Í½ÕÉ”èM…ÑÕÉ…Ñ¥½¹ğ)ñáÁ¥É•‘½Õ¹ÑñQ¡”¹Õµ‰•È½˜µ•ÍÍ…•Ì¥¸Ñ¡”‘•ÍÑ¥¹…Ñ¥½¸Ñ¡…Ğ•áÁ¥É•‰•™½É”Ñ¡•ä½Õ±‰”‘•±¥Ù•É•‘ñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipø±‘•ÍÑ¥¹…Ñ¥½¹QåÁ”ô¡EÕ•Õ•qñQ½Á¥Œ¤±‘•ÍÑ¥¹…Ñ¥½¹9…µ”õpñ5e}MQ%9Q%=9pùñ=Ñ¡•Éğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è5•µ½ÉåA•É•¹ÑUÍ…”)Q¡”5•µ½ÉåA•É•¹ÑUÍ…•€µ•ÑÉ¥ŒÉ•ÁÉ•Í•¹ÑÌÑ¡”Á•É•¹Ñ…”½˜Ñ¡”‘•ÍÑ¥¹…Ñ¥½¸Ìµ•µ½Éå1¥µ¥Ñ€ÕÉÉ•¹Ñ±ä¥¸ÕÍ”¸%˜å½Ô¡…Ù•¸ĞÍ•Ğ„µ•µ½Éå1¥µ¥Ñ€™½ÈÑ¡”‘•ÍÑ¥¹…Ñ¥½¸°¥Ğ¥¹¡•É¥ÑÌÑ¡”‰É½­•ÈÌ½¹™¥ÕÉ•µ•µ½ÉåUÍ…•€°…¹Ñ¡”5•µ½ÉåA•É•¹ÑUÍ…•€µ•ÑÉ¥ŒÉ•ÁÉ•Í•¹ÑÌÑ¡”Á•É•¹Ñ…”½˜Ñ¡…ĞÙ…±Õ”ÕÉÉ•¹Ñ±ä‰•¥¹œÕÍ•‰äÑ¡”‘•ÍÑ¥¹…Ñ¥½¸¸€¡M•”Ñ¡”m5•µ½Éä…¹ÍÑ½É…•t µ•µ½Éäµ…¹µÍÑ½É…”¤Í•Ñ¥½¸™½Èµ½É”‘•Ñ…¥±Ì¸¤()ÌÑ¡”‘•ÍÑ¥¹…Ñ¥½¸Ì5•µ½ÉåA•É•¹ÑUÍ…•€É¥Í•Ì°å½Ôµ…äÍ•”„‘•É•…Í”¥¸Ñ¡”É…Ñ”…Ğİ¡¥ å½ÕÈÁÉ½‘Õ•ÉÌÍ•¹µ•ÍÍ…•Ì¸Q¡¥Ì¥ÌÑ¡…¹­ÌÑ¼mAÉ½‘Õ•È±½Ü½¹ÑÉ½±um…Ñ¥Ù•µÄµÁ™t€¡A¤°İ¡¥ ¥Ì•¹…‰±•‰ä‘•™…Õ±Ğ™½ÈÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¸]¡•¸‘•ÍÑ¥¹…Ñ¥½¸µ•µ½Éä‰•½µ•Ì±¥µ¥Ñ•€¡½Èİ¡•¸Ñ¡”‰É½­•ÈÌ‘¥Í¬ÍÁ…”ÉÕ¹Ì±½Ü¤°AÑ¡É½ÑÑ±•Ìµ•ÍÍ…”™±½Ü‰ä…ÕÍ¥¹œÑ¡”‰É½­•ÈÑ¼¡½±¥¹½µ¥¹œµ•ÍÍ…•Ì¥¹ÍÑ•…½˜‘•±¥Ù•É¥¹œÑ¡•´¸]¡•¸„µ•ÍÍ…”¥Ì¡•±°Ñ¡”ÁÉ½‘Õ•ÈÑ¡…ĞÍ•¹Ğ¥Ğ‘½•Í¸ĞÉ••¥Ù”…¸…­¹½İ±•‘µ•¹Ğ™É½´Ñ¡”‰É½­•È°Í¼¥Ğ‘•±…åÌÍ•¹‘¥¹œ…¹ä™ÕÉÑ¡•Èµ•ÍÍ…•Ì¸€()A¥ÌÑÉ¥•É•½¹”Ñ¡”‘•ÍÑ¥¹…Ñ¥½¸Ìµ•µ½ÉäÕÍ…”¥Ì…Ğ½È…‰½Ù”Ñ¡”ÕÉÍ½É5•µ½Éå!¥¡]…Ñ•É5…É­€Ù…±Õ”‘•™¥¹•™½ÈÑ¡”‘•ÍÑ¥¹…Ñ¥½¸¸Q¡”ÕÉÍ½É5•µ½Éå!¥¡]…Ñ•É5…É­€‘•™…Õ±ÑÌÑ¼€ÜÀÁ•É•¹Ğ½˜Ñ¡”…Ù…¥±…‰±”µ•µ½Éä€¡•¥Ñ¡•ÈÑ¡”‰É½­•ÈÌµ•µ½ÉåUÍ…•€±¥µ¥Ğ½È°¥˜‘•™¥¹•°Ñ¡”‘•ÍÑ¥¹…Ñ¥½¸Ìµ•µ½Éå1¥µ¥Ñ€¤¸e½Ô…¸¡…¹”Ñ¡¥ÌÙ…±Õ”‰ä…‘‘¥¹œ…¸…ÑÑÉ¥‰ÕÑ”Ñ¼Ñ¡”É•±•Ù…¹ĞÁ½±¥å¹ÑÉå€•±•µ•¹Ğ¥¸€¨©…Ñ¥Ù•µÄ¹áµ°¨¨¸Q¡”•á…µÁ±”‰•±½ÜÍ¡½İÌ¡½Üå½Ôİ½Õ±Í•ĞÕÉÍ½É5•µ½Éå!¥¡]…Ñ•É5…É­€Ù…±Õ•Ì½˜€àÀÁ•É•¹Ğ™½È„ÅÕ•Õ”¹…µ•5e}EUU€°…¹€ÔÀÁ•É•¹Ğ™½È„Ñ½Á¥Œ¹…µ•5e}Q=A%€¸€()€(ñ‰É½­•Èáµ±¹Ìô‰¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Í¡•µ„½½É”ˆ‰É½­•É9…µ”ô‰5e}	I=-Hˆø)l¸¸¹t(€€€€ñ‘•ÍÑ¥¹…Ñ¥½¹A½±¥äø(€€€€€€€€ñÁ½±¥å5…Àø(€€€€€€€€€€€€ñÁ½±¥å¹ÑÉ¥•Ìø(€€€€€€€€€€€€€€€€ñÁ½±¥å¹ÑÉäÅÕ•Õ”ô‰5e}EUUˆÕÉÍ½É5•µ½Éå!¥¡]…Ñ•É5…É¬ôˆàÀˆ€¼ø(€€€€€€€€€€€€€€€€ñÁ½±¥å¹ÑÉäÑ½Á¥Œô‰5e}Q=A%ˆÕÉÍ½É5•µ½Éå!¥¡]…Ñ•É5…É¬ôˆÔÀˆ€¼ø(€€€€€€€€€€€€ğ½Á½±¥å¹ÑÉ¥•Ìø(€€€€€€€€ğ½Á½±¥å5…Àø(€€€€ğ½‘•ÍÑ¥¹…Ñ¥½¹A½±¥äø)l¸¸¹t(ğ½‰É½­•Èø)€()M•”mÑ¡”Ñ¥Ù•5D‘½Õµ•¹Ñ…Ñ¥½¹um…Ñ¥Ù•µÄµ‘•ÍÑ¥¹…Ñ¥½¸µÁ½±¥¥•Ít™½Èµ½É”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ½¹™¥ÕÉ¥¹œµ•µ½Éä±¥µ¥ÑÌ¸()	•…ÕÍ”A½Õ±¡…Ù”„¹½Ñ¥•…‰±”•™™•Ğ½¸Ñ¡”Á•É™½Éµ…¹”½˜å½ÕÈµ•ÍÍ…¥¹œÍåÍÑ•´°å½ÔÍ¡½Õ±É•…Ñ”…¸…±•ÉĞÑ¼¹½Ñ¥™äå½Ôİ¡•¸„‘•ÍÑ¥¹…Ñ¥½¸Ì5•µ½ÉåA•É•¹ÑUÍ…•€Ù…±Õ”…ÁÁÉ½…¡•Ì¥ÑÌÕÉÍ½É5•µ½Éå!¥¡]…Ñ•É5…É­€Ù…±Õ”°Í¼å½Ô…¸Ñ…­”…Ñ¥½¸‰•™½É”A¥Ì…Ñ¥Ù…Ñ•¸()%˜å½Ô…É”ÕÍ¥¹œÅÕ•Õ•Ì°å½Ô…¸É•‘Õ”µ•µ½ÉäÁÉ•ÍÍÕÉ”‰äÍ…±¥¹œ½ÕĞå½ÕÈ½¹ÍÕµ•È™±••ĞÑ¼‘•ÅÕ•Õ”µ•ÍÍ…•Ìµ½É”ÅÕ¥­±ä¸%˜å½ÕÈÍåÍÑ•´¥ÌÕÍ¥¹œÑ½Á¥Ìİ¥Ñ ‘ÕÉ…‰±”ÍÕ‰ÍÉ¥‰•ÉÌ°µ…­”ÍÕÉ”Ñ¡½Í”½¹ÍÕµ•ÉÌ…É”…Ù…¥±…‰±”½™Ñ•¸•¹½Õ Ñ¼ÁÉ•Ù•¹Ğ„‰…­±½œ½˜µ•ÍÍ…•Ì¸%¸•¥Ñ¡•È…Í”°¥¹É•…Í¥¹œµ•µ½Éä…Ù…¥±…‰±”Ñ¼å½ÕÈ‘•ÍÑ¥¹…Ñ¥½¹Ìİ¥±°¡•±À°Ñ½¼¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è½¹ÍÕµ•É½Õ¹Ğ)M½½¹•È½È±…Ñ•È°•… ‘•ÍÑ¥¹…Ñ¥½¸€¡ÅÕ•Õ”½ÈÑ½Á¥Œ¤¹••‘ÌÑ¼‘•±¥Ù•Èµ•ÍÍ…•ÌÑ¼½¹ÍÕµ•ÉÌ¸½¹ÍÕµ•ÉÌµ…ä½µ”…¹¼°Ñ¡½Õ €¡™½È•á…µÁ±”°…Ìå½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”‘å¹…µ¥…±±äÍ…±•Ì¤°…¹„™±ÕÑÕ…Ñ¥¹œ½¹ÍÕµ•È½Õ¹Ğ½Õ±‰”¹½Éµ…°¥¸Í½µ”…Í•Ì¸!½İ•Ù•È°å½ÔÍ¡½Õ±‰”…‰±”Ñ¼¥‘•¹Ñ¥™äÍ½µ”¹½Éµ…°½Á•É…Ñ¥¹œÁ…É…µ•Ñ•ÉÌ™½È½¹ÍÕµ•É½Õ¹Ñ€°…¹İ…Ñ Ñ¡¥Ìµ•ÑÉ¥Œ™½È…‰¹½Éµ…±¥Ñ¥•Ì¸%˜å½ÕÈ½¹ÍÕµ•É½Õ¹Ñ€Ù…±Õ”¡…¹•ÌÕ¹•áÁ•Ñ•‘±ä°å½ÕÈ½¹ÍÕµ•È™±••Ğµ…ä¡…Ù”Í…±•½ÕĞµ½É”Ñ¡…¸ÕÍÕ…°°½ÈÍ½µ”¡½ÍÑÌµ…ä¡…Ù”‰•½µ”Õ¹…Ù…¥±…‰±”¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èAÉ½‘Õ•É½Õ¹Ğ)Q¡¥Ìµ•ÑÉ¥ŒÑÉ…­ÌÑ¡”¹Õµ‰•È½˜ÁÉ½‘Õ•ÉÌÕÉÉ•¹Ñ±ä…ÑÑ…¡•Ñ¼„‰É½­•È¸]¡•Ñ¡•È„AÉ½‘Õ•É½Õ¹Ñ€½˜é•É¼¥¹‘¥…Ñ•Ì„ÁÉ½‰±•´‘•Á•¹‘Ì½¸å½ÕÈ•áÁ•Ñ•Á…ÑÑ•É¸½˜…Ñ¥Ù¥Ñä¸%˜å½ÕÈÁÉ½‘Õ•ÉÌ…É”ÑåÁ¥…±±ä…Ñ¥Ù”½¹±äÍÁ½É…‘¥…±±ä€¡”¹œ¸°¥˜Ñ¡•äÍ•¹„‰…Ñ ½˜µ•ÍÍ…•Ì½¹”„‘…ä¤°Ñ¡¥Ìµ…ä‰”¹½Éµ…°¸!½İ•Ù•È°¥˜å½Ô•áÁ•ĞÑ¼¡…Ù”…Ñ¥Ù”ÁÉ½‘Õ•ÉÌ…Ğ…±°Ñ¥µ•Ì°å½ÔÍ¡½Õ±¥¹Ù•ÍÑ¥…Ñ”„AÉ½‘Õ•É½Õ¹Ñ€½˜é•É¼°…Ì¥Ğ½Õ±¥¹‘¥…Ñ”„Í•ÉÙ¥”¥¹Ñ•ÉÉÕÁÑ¥½¸¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èEÕ•Õ•M¥é”)EÕ•Õ•M¥é”ÑÉ…­ÌÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¡…Ğ¡…Ù”¹½Ğ‰••¸…­¹½İ±•‘•‰ä½¹ÍÕµ•ÉÌ¸%˜å½ÔÍ•”Ñ¡¥Ìµ•ÑÉ¥Œ½¹Í¥ÍÑ•¹Ñ±ä¥¹É•…Í¥¹œ°¥Ğ½Õ±¥¹‘¥…Ñ”Ñ¡…ĞÑ¡”ÁÉ½‘Õ•ÉÌ…É”ÁÕ‰±¥Í¡¥¹œµ•ÍÍ…•Ì™…ÍÑ•ÈÑ¡…¸½¹ÍÕµ•ÉÌ…É”ÁÉ½•ÍÍ¥¹œÑ¡•´°½ÈÑ¡…Ğ½¹ÍÕµ•ÉÌ…É”™…¥±¥¹œÑ¼…­¹½İ±•‘”Ñ¡”µ•ÍÍ…•ÌÑ¡•äÉ••¥Ù”¸Q¡¥Ì½Õ±…ÕÍ”Ñ¡”‘•ÍÑ¥¹…Ñ¥½¸Ñ¼ÉÕ¸½ÕĞ½˜µ•µ½Éä€¡İ¡¥ ½Õ±•Ù•¸…™™•ĞÑ¡”Á•É™½Éµ…¹”½˜Ñ¡”‰É½­•ÈÌ½Ñ¡•È‘•ÍÑ¥¹…Ñ¥½¹Ì¤°Í¼å½ÔÍ¡½Õ±µ½¹¥Ñ½ÈÑ¡”‘•ÍÑ¥¹…Ñ¥½¸Ì5•µ½ÉåA•É•¹ÑUÍ…•€µ•ÑÉ¥Œ…±½¹Í¥‘”Ñ¡¥Ì½¹”¸€()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í Ì¹Á¹œˆ…±Ğô‰EÕ•Õ•M¥é”…¹5•µ½ÉåA•É•¹ÑUÍ…”µ•ÑÉ¥ÌÉ¥Í”Ñ½•Ñ¡•È¸ˆ€ùõô()•ÍÁ¥Ñ”İ¡…Ğ¥ÑÌ¹…µ”ÍÕ•ÍÑÌ°å½Ô…¸ÑÉ…¬Ñ¡”EÕ•Õ•M¥é•€½˜ÅÕ•Õ•Ì}…¹‘|Ñ½Á¥Ì¸%¸Ñ¡”…Í”½˜„ÅÕ•Õ”°å½Ôµ…ä‰”…‰±”Ñ¼É•‘Õ”EÕ•Õ•M¥é•€‰äÍ…±¥¹œ½ÕĞå½ÕÈ½¹ÍÕµ•È™±••ĞÍ¼Ñ¡…Ğµ½É”¡½ÍÑÌ…É”…Ù…¥±…‰±”Ñ¼É•…™É½´Ñ¡”ÅÕ•Õ”¸Ñ½Á¥ŒÌEÕ•Õ•M¥é•€½Õ±É¥Í”¥˜‘ÕÉ…‰±”½¹ÍÕµ•ÉÌ…É”Õ¹…Ù…¥±…‰±”Ñ¼™•Ñ µ•ÍÍ…•ÏŠQå½Ô…¸…‘‘É•ÍÌÑ¡¥Ì‰ä‘•É•…Í¥¹œÑ¡”•áÁ¥É…Ñ¥½¸Ñ¥µ”½˜¹•Üµ•ÍÍ…•Ì½È‰ämÉ•µ½Ù¥¹œ‘ÕÉ…‰±”ÍÕ‰ÍÉ¥‰•ÉÍum…Ñ¥Ù•µÄµ‘ÕÉ…‰±”µÍÕ‰ÍÉ¥‰•ÉÍtÑ¡…Ğ…É”½¹Í¥ÍÑ•¹Ñ±äÕ¹…Ù…¥±…‰±”¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èáÁ¥É•‘½Õ¹Ğ)Q¡¥Ìµ•ÑÉ¥ŒÉ•ÁÉ•Í•¹ÑÌÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¡…Ğ•áÁ¥É•‰•™½É”Ñ¡•ä½Õ±‰”‘•±¥Ù•É•¸%˜å½Ô•áÁ•Ğ…±°µ•ÍÍ…•ÌÑ¼‰”‘•±¥Ù•É•…¹…­¹½İ±•‘•İ¥Ñ¡¥¸„•ÉÑ…¥¸…µ½Õ¹Ğ½˜Ñ¥µ”°å½Ô…¸Í•Ğ…¸•áÁ¥É…Ñ¥½¸™½È•… µ•ÍÍ…”°…¹¥¹Ù•ÍÑ¥…Ñ”¥˜å½ÕÈáÁ¥É•‘½Õ¹Ñ€µ•ÑÉ¥ŒÉ¥Í•Ì…‰½Ù”é•É¼¸()%¸Í½µ”…Í•Ì°Ñ¡½Õ °•áÁ¥É•µ•ÍÍ…•Ìµ…ä¹½Ğ‰”„Í¥¸½˜ÑÉ½Õ‰±”¸½È•á…µÁ±”°¥˜å½ÕÈ•¹Ù¥É½¹µ•¹Ğ¥¹±Õ‘•Ì½¹ÍÕµ•ÉÌİ¥Ñ ‘ÕÉ…‰±”ÍÕ‰ÍÉ¥ÁÑ¥½¹Ì‰ÕĞ…¸Õ¹É•±¥…‰±”¹•Ñİ½É¬°Í½µ”µ•ÍÍ…•Ì½Õ±•áÁ¥É”İ¡¥±”Ñ¡½Í”½¹ÍÕµ•ÉÌ…É”‘¥Í½¹¹•Ñ•¸]¡•¸Ñ¡”½¹ÍÕµ•ÉÌÉ•½¹¹•Ğ°Ñ¡•çŠe±°É•ÅÕ•ÍĞ…±°µ•ÍÍ…•ÌÁÕ‰±¥Í¡•¥¸Ñ¡”¥¹Ñ•É¥´°‰ÕĞ¥˜Í½µ”½˜Ñ¡½Í”µ•ÍÍ…•Ì½¹Ñ…¥¸¥¹™½Éµ…Ñ¥½¸Ñ¡…Ğ™É•ÅÕ•¹Ñ±ä•ÑÌÕÁ‘…Ñ•€¡”¹œ¸°ÍÑ…ÑÕÌÕÁ‘…Ñ•Ì…Ğ½¹”µµ¥¹ÕÑ”¥¹Ñ•ÉÙ…±Ì¤°¥ĞÌ‰•ÑÑ•ÈÑ¼‘¥Í…ÉÑ¡•´Ñ¡…¸‘•±¥Ù•ÈÑ¡•´¸((ŒŒŒ	É½­•Èµ•ÑÉ¥Ì)Ìµ•¹Ñ¥½¹••…É±¥•È°Ñ¡”Ñ¥Ù•5D‰É½­•È¡…Ì½¹™¥ÕÉ…‰±”±¥µ¥ÑÌ½¸Ñ¡”…µ½Õ¹Ğ½˜µ•µ½Éä…¹‘¥Í¬ÍÁ…”¥ĞÌ…±±½İ•Ñ¼ÕÍ”¸!•É”…É”Í½µ”½˜Ñ¡”µ•ÑÉ¥Ìå½ÔÍ¡½Õ±µ½¹¥Ñ½ÈÑ¼•¹ÍÕÉ”Ñ¡…Ğå½ÕÈ‰É½­•È¥Ìİ½É­¥¹œÁÉ½Á•É±äİ¥Ñ¡¥¸¥ÑÌÉ•Í½ÕÉ”±¥µ¥ÑÌ¸()ñ)5`…ÑÑÉ¥‰ÕÑ•ñ•ÍÉ¥ÁÑ¥½¹ñ5	•…¹ñ5•ÑÉ¥ŒÑåÁ•ğ)ğ´´µğ´´µğ´´µğ´´µğ)ñ5•µ½ÉåA•É•¹ÑUÍ…•ñA•É•¹Ñ…”½˜…Ù…¥±…‰±”µ•µ½ÉäÕÍ•‰äÑ¡”‰É½­•Éñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-IpùñI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¹ğ)ñMÑ½É•A•É•¹ÑUÍ…•ñA•É•¹Ñ…”½˜…Ù…¥±…‰±”‘¥Í¬ÍÁ…”€¡mÍÑ½É•UÍ…•t µ•µ½Éäµ…¹µÍÑ½É…”¤¤ÕÍ•™½ÈÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…”ÍÑ½É…•ñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-IpùñI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¹ğ)ñQ•µÁA•É•¹ÑUÍ…•ñA•É•¹Ñ…”½˜…Ù…¥±…‰±”‘¥Í¬ÍÁ…”€¡mÑ•µÁUÍ…•t µ•µ½Éäµ…¹µÍÑ½É…”¤¤ÕÍ•™½È¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…”ÍÑ½É…•ñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-IpùñI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¹ğ)ñQ½Ñ…±¹ÅÕ•Õ•½Õ¹ÑñQ¡”Ñ½Ñ…°¹Õµ‰•È½˜µ•ÍÍ…•ÌÍ•¹ĞÑ¼Ñ¡”‰É½­•Éñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipùñ]½É¬èQ¡É½Õ¡ÁÕĞ)ñQ½Ñ…±•ÅÕ•Õ•½Õ¹ÑñQ¡”Ñ½Ñ…°¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¡”‰É½­•È¡…Ì‘•±¥Ù•É•Ñ¼½¹ÍÕµ•ÉÍñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipùñ]½É¬èQ¡É½Õ¡ÁÕÑğ)ñQ½Á¥Íñ½Õ¹Ğ½˜Ñ½Á¥ÌÕÉÉ•¹Ñ±ä…ÑÑ…¡•Ñ¼Ñ¡¥Ì‰É½­•Éñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipùñ=Ñ¡•Éğ)ñEÕ•Õ•Íñ½Õ¹Ğ½˜ÅÕ•Õ•ÌÕÉÉ•¹Ñ±ä…ÑÑ…¡•Ñ¼Ñ¡¥Ì‰É½­•Éñ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄéÑåÁ”õ	É½­•È±‰É½­•É9…µ”õpñ5e}	I=-Ipùñ=Ñ¡•Éğ(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è5•µ½ÉåA•É•¹ÑUÍ…”)%˜å½Ô™¥¹Ñ¡…Ğ„‰É½­•ÈÌµ•µ½ÉäÕÍ…”¥ÌÉ¥Í¥¹œ°Ñ¡•É”…É”„™•ÜÍÑ•ÁÌå½Ô…¸Ñ…­”Ñ¼ÁÉ•Ù•¹ĞÉ•Í½ÕÉ”½¹ÍÑÉ…¥¹ÑÌ™É½´…™™•Ñ¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¸ÌÁ•É™½Éµ…¹”¸((¨M…±”½ÕĞå½ÕÈ½¹ÍÕµ•ÉÌ¸Q¡¥Ì…¸¥¹É•…Í”Ñ¡”É…Ñ”…Ğİ¡¥ µ•ÍÍ…•Ì…É”½¹ÍÕµ•°…±±½İ¥¹œÑ¡”‰É½­•ÈÑ¼É•±…¥´µ•µ½Éä…¹‘¥Í¬ÍÁ…”¸(¨%¹É•…Í”Ñ¡”µ•µ½Éä…Ù…¥±…‰±”Ñ¼Ñ¡”‰É½­•È¸€¡M•”Ñ¡”m5•µ½Éä…¹ÍÑ½É…•t µ•µ½Éäµ…¹µÍÑ½É…”¤Í•Ñ¥½¸½˜Ñ¡¥ÌÁ½ÍĞ™½È¥¹™½Éµ…Ñ¥½¸¸¤Q¼‘¼Ñ¡¥Ì°å½Ôµ…ä¹••Ñ¼Í…±”ÕÀÑ¡”…µ½Õ¹Ğ½˜µ•µ½Éä…±±½…Ñ•Ñ¼Ñ¡”)Y4°İ¡¥ ½Õ±É•ÅÕ¥É”…‘‘¥¹œµ•µ½ÉäÑ¼Ñ¡”¡½ÍĞ¸(¨I•‘Õ”Ñ¡”µ•µ½Éä…Ù…¥±…‰±”Ñ¼Ñ¡”‘•ÍÑ¥¹…Ñ¥½¹Ì…ÍÍ½¥…Ñ•İ¥Ñ Ñ¡”‰É½­•È€¡Á…ÉÑ¥Õ±…É±ä¥˜å½Ô¡…Ù”„±…É”¹Õµ‰•È½˜‘•ÍÑ¥¹…Ñ¥½¹Ì¤¸±Ñ¡½Õ Ñ¡¥Ìİ¥±°™½É”Ñ¡”‰É½­•ÈÑ¼Á•ÉÍ¥ÍĞµ•ÍÍ…•ÌÑ¼‘¥Í¬Í½½¹•È°¥Ğ…±Í¼É•‘Õ•ÌÑ¡”Á½ÍÍ¥‰¥±¥Ñä½˜ÑÉ¥•É¥¹œA…¹•¹…‰±•ÌÁÉ½‘Õ•ÉÌÑ¼½¹Ñ¥¹Õ”Í•¹‘¥¹œµ•ÍÍ…•Ì•Ù•¸İ¡•¸½¹ÍÕµ•ÉÌ…É”™…±±¥¹œ‰•¡¥¹¸M•”Ñ¡”mÑ¥Ù•5D‘½Õµ•¹Ñ…Ñ¥½¹um…Ñ¥Ù•µÄµ½ÕĞµ½˜µµ•µ½Éåt™½Èµ½É”¥¹™½Éµ…Ñ¥½¸¸()%˜å½ÕÈ¡½ÍĞÉÕ¹ÌÍ•ÉÙ¥•Ì¥¸…‘‘¥Ñ¥½¸Ñ¼Ñ¥Ù•5D°½µÁ…É¥¹œÑ¥Ù•5Dµ•µ½ÉäÕÍ…”Ñ¼½Ù•É…±°¡½ÍĞµ±•Ù•°ÕÍ…”µ…ä¡•±Àå½ÔÑÉ½Õ‰±•Í¡½½ĞÉ•Í½ÕÉ”½¹ÍÑÉ…¥¹ÑÌ‰äÍ¡½İ¥¹œå½ÔÍÁ•¥™¥…±±ä€©¡½Ü¨å½ÕÈ¡½ÍĞÌµ•µ½Éä¥Ì‰•¥¹œ½¹ÍÕµ•¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èMÑ½É•A•É•¹ÑUÍ…”)Q¡¥Ì¥ÌÑ¡”Á•É•¹Ñ…”½˜…Ù…¥±…‰±”‘¥Í¬ÍÁ…”€¡mÍÑ½É•UÍ…•t µ•µ½Éäµ…¹µÍÑ½É…”¤¤ÕÍ•‰äÑ¡”‰É½­•ÈÌÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…”ÍÑ½É”€¡İ¡¥ ¥Ì-…¡…°‰ä‘•™…Õ±Ğ¤¸Q¡”‰É½­•È…¸É•… ¥ÑÌÁ•ÉÍ¥ÍÑ•¹ĞÍÑ½É…”±¥µ¥Ğ¥˜½¹ÍÕµ•ÉÌ…É”Í±½Ü½ÈÕ¹…Ù…¥±…‰±”°…¹¥˜µ•ÍÍ…•Ì…É”±…É”¸%ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼µ½¹¥Ñ½ÈÑ¡¥Ìµ•ÑÉ¥Œ‰•…ÕÍ”¥˜„‰É½­•ÈÉÕ¹Ì½ÕĞ½˜Á•ÉÍ¥ÍÑ•¹ĞÍÑ½É…”°Aİ¥±°…ÕÍ”ÁÉ½‘Õ•ÉÌÑ¼ÍÑ½ÀÍ•¹‘¥¹œµ•ÍÍ…•Ì¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èQ•µÁA•É•¹ÑUÍ…”)Q¡”‰É½­•È¡½±‘Ì¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì¥¸µ•µ½Éä¸]¡•¸µ•µ½Éä™¥±±ÌÕÀ°Ñ¡”‰É½­•Èµ½Ù•ÌÑ¡½Í”µ•ÍÍ…•ÌÑ¼„Ñ•µÀ±½…Ñ¥½¸½¸Ñ¡”™¥±•ÍåÍÑ•´Ñ¼™É•”ÕÀµ•µ½Éä¸%˜Ñ¡”‰É½­•ÈÉÕ¹Ì½ÕĞ½˜‘¥Í¬ÍÁ…”Ñ¼ÍÑ½É”Ñ•µÁ½É…Éäµ•ÍÍ…•Ì°ÁÉ½‘Õ•ÉÌİ¥±°ÍÑ½ÀÍ•¹‘¥¹œµ•ÍÍ…•ÌÕ¹Ñ¥°ÍÑ½É…”ÍÁ…”¥Ì™É••ÕÀ€¡…ÍÍÕµ¥¹œA¥Ì•¹…‰±•¤¸€()e½Ôµ¥¡ĞÉÕ¸½ÕĞ½˜Ñ•µÁ½É…ÉäÍÑ½É…”ÍÁ…”™½È…¹ä¹Õµ‰•È½˜É•…Í½¹Ì°¥¹±Õ‘¥¹œè((¨M±½Ü½È…‰Í•¹Ğ½¹ÍÕµ•ÉÌ¸(¨MÁ•¥™å¥¹œ„Ñ•µÁUÍ…•€Ù…±Õ”Ñ¡…Ğ¥ÌÍµ…±±•ÈÑ¡…¸Ñ¡”‰É½­•ÈÌµ•µ½ÉåUÍ…•€¸%¸Ñ¡¥Ì…Í”°Ñ¡”µ•µ½Éä¡½±‘Ìµ½É”µ•ÍÍ…”‘…Ñ„Ñ¡…¸Ñ¡”Ñ•µÀÍÑ½É”¡…ÌÉ½½´™½È°…¹Q•µÁA•É•¹ÑUÍ…•€İ¥±°•á••€ÄÀÀ”…ÌÍ½½¸…Ìµ•µ½Éä™¥±±Ì…¹µ•ÍÍ…•Ì…É”Í•¹ĞÑ¼Ñ¡”Ñ•µÀÍÑ½É”¸(¨MÁ•¥™å¥¹œ„Ñ•µÁUÍ…•€Ù…±Õ”Ñ¡…Ğ¥ÌÍµ…±±•ÈÑ¡…¸m-…¡…Ì©½ÕÉ¹…±5…á¥±•1•¹Ñ¡um­…¡…‘‰t€¡İ¡¥ ¥Ì€ÌÈ5‰ä‘•™…Õ±Ğ¤¸Q¡¥Ì½Õ±…ÕÍ”Ñ¡”Ñ•µÀÍÑ½É”Ñ¼™¥±°ÕÀ‰•…ÕÍ”Ñ¡”‰É½­•Èİ¥±°É•…Ñ”„€ÌÈ5©½ÕÉ¹…°™¥±”Ñ¼¡½±Ñ¡”µ•ÍÍ…”‘…Ñ„½¸‘¥Í¬°É•…É‘±•ÍÌ½˜Ñ¡”…µ½Õ¹Ğ½˜µ•ÍÍ…”‘…Ñ„¥¸µ•µ½Éä¸€()%˜A¥Ì…Ñ¥Ù…Ñ•°å½ÕÈµ•ÍÍ…¥¹œÑ¡É½Õ¡ÁÕĞİ¥±°‘É½À°Í¼¥ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼µ½¹¥Ñ½Èå½ÕÈQ•µÁA•É•¹ÑUÍ…•€Ù…±Õ”¸e½ÔÍ¡½Õ±…±•ÉĞ½¸„Ù…±Õ”Ñ¡…Ğ¥Ù•Ìå½Ô•¹½Õ Ñ¥µ”Ñ¼É•µ½Ù”µ•ÍÍ…•Ì½È…‘‘¥Í¬ÍÁ…”‰•™½É”Q•µÁA•É•¹ÑUÍ…•€É•…¡•Ì€ÄÀÀ”…¹ÑÉ¥•ÉÌA¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼İ…Ñ èQ½Ñ…±¹ÅÕ•Õ•½Õ¹Ğ…¹Q½Ñ…±•ÅÕ•Õ•½Õ¹Ğ)Q½Ñ…±¹ÅÕ•Õ•½Õ¹Ñ€ÑÉ…­ÌÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÍ•¹ĞÑ¼Ñ¡”‰É½­•È¸e½Ô…¸µ½¹¥Ñ½ÈÑ¡¥Ìµ•ÑÉ¥ŒÑ¼Õ¹‘•ÉÍÑ…¹Ñ¡”Ù½±Õµ”½˜µ•ÍÍ…•Ì•µ¥ÑÑ•‰äå½ÕÈÁÉ½‘Õ•ÉÌ¸Q½Ñ…±•ÅÕ•Õ•½Õ¹Ñ€¥Ì…¹½Ñ¡•ÈÑ¡É½Õ¡ÁÕĞµÉ•±…Ñ•µ•ÑÉ¥ŒÑ¡…ĞÍ¡½İÌÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¡…Ğ¡…Ù”‰••¸‘•±¥Ù•É•‰äÑ¡”‰É½­•È…¹…­¹½İ±•‘•‰äå½ÕÈ½¹ÍÕµ•ÉÌ¸€¡	½Ñ Q½Ñ…±¹ÅÕ•Õ•½Õ¹Ñ€…¹Q½Ñ…±•ÅÕ•Õ•½Õ¹Ñ€…É”ÕµÕ±…Ñ¥Ù”½Õ¹ÑÌ…±Õ±…Ñ•½Ù•ÈÑ¡”•¹Ñ¥É”Ñ¥µ”Ñ¡”‰É½­•È¡…Ì‰••¸ÉÕ¹¹¥¹œ°…¹É•Í•ĞÑ¼é•É¼İ¡•¸Ñ¡”‰É½­•È¥ÌÉ•ÍÑ…ÉÑ•¸¤€()e½ÔÍ¡½Õ±µ½¹¥Ñ½ÈQ½Ñ…±•ÅÕ•Õ•½Õ¹Ñ€…±½¹Í¥‘”Q½Ñ…±¹ÅÕ•Õ•½Õ¹Ñ€Ñ¼Õ¹‘•ÉÍÑ…¹å½ÕÈÍåÍÑ•´Ì½Ù•É…±°µ•ÍÍ…”Ù½±Õµ”…¹Ñ¡”‘•É•”Ñ¼İ¡¥ ½¹ÍÕµ•ÉÌ…É”­••Á¥¹œÕÀİ¥Ñ ÁÉ½‘Õ•ÉÌ¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼İ…Ñ èQ½Á¥Ì…¹EÕ•Õ•Ì)Q¡•É”Ì¹¼½ÉÉ•Ğ¹Õµ‰•È½˜Ñ½Á¥Ì½ÈÅÕ•Õ•Ì™½È…¹ä¥Ù•¸Ñ¥Ù•5D‘•Á±½åµ•¹Ğ°‰ÕĞå½ÔÁÉ½‰…‰±ä¡…Ù”•áÁ•Ñ…Ñ¥½¹Ì…‰½ÕĞİ¡…ĞÌÉ¥¡Ğ™½Èå½ÕÈ•¹Ù¥É½¹µ•¹Ğ¸Q¡¥Ìµ•ÑÉ¥Œµ…ä¡•±Àå½ÔÑÉ½Õ‰±•Í¡½½Ğ…¹äµ¥Í‰•¡…Ù¥½È±¥­”µ¥ÍÍ¥¹œµ•ÍÍ…•Ì½ÈÁÉ½‘Õ•È•ÉÉ½ÉÌ°İ¡¥ ½Õ±½ÕÈ¥˜„‘•ÍÑ¥¹…Ñ¥½¸¥Í¸Ğ…Ù…¥±…‰±”…Ì•áÁ•Ñ•¸€((ŒŒŒ)Y4µ•ÑÉ¥Ì)Ñ¥Ù•5DÉÕ¹Ìİ¥Ñ¡¥¸Ñ¡”)Y4°Í¼µ•ÑÉ¥ÌÑ¡…Ğ¥¹™½É´å½Ô½˜Ñ¡”¡•…±Ñ ½˜Ñ¡”)Y4…¸‰”É¥Ñ¥…°¥¸µ½¹¥Ñ½É¥¹œå½ÕÈµ•ÍÍ…¥¹œ¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°±½½¬…ĞÍ½µ”­•ä)Y4µ•ÑÉ¥Ì¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í È¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰…Í¡‰½…ÉÉ…Á¡ÌÍ¡½Ü)Y4É•Í½ÕÉ”ÕÍ…”¸ˆ€ùõô()ñ)5`…ÑÑÉ¥‰ÕÑ•ñ•ÍÉ¥ÁÑ¥½¹ñ5	•…¹ñ5•ÑÉ¥ŒÑåÁ•ğ)ğ´´µğ´´µğ´´µğ´´µğ)ñ½±±•Ñ¥½¹Q¥µ•ñQ¡”Ñ½Ñ…°…µ½Õ¹Ğ½˜Ñ¥µ”€¡¥¸µ¥±±¥Í•½¹‘Ì¤Ñ¡”)Y4¡…ÌÍÁ•¹Ğ•á•ÕÑ¥¹œ…É‰…”½±±•Ñ¥½¸ÁÉ½•ÍÍ•Íñ©…Ù„¹±…¹œéÑåÁ”õ…É‰…•½±±•Ñ½È±¹…µ”ô¡½Áåqñ5…É­Mİ••Á½µÁ…ÑqñAL5…É­Mİ••ÁqñALM…Ù•¹”¥ñ=Ñ¡•Éğ)ñ½±±•Ñ¥½¹½Õ¹ÑñQ¡”Ñ½Ñ…°½Õ¹Ğ½˜…É‰…”½±±•Ñ¥½¸ÁÉ½•ÍÍ•Ì•á•ÕÑ•‰äÑ¡”)Y5ñ©…Ù„¹±…¹œéÑåÁ”õ…É‰…•½±±•Ñ½È±¹…µ”ô¡½Áåqñ5…É­Mİ••Á½µÁ…ÑqñAL5…É­Mİ••ÁqñALM…Ù•¹”¥ñ=Ñ¡•Éğ)ñ!•…Á5•µ½ÉåUÍ…•ñQ¡¥Ì½¹Ñ…¥¹ÌÙ…±Õ•Ì™½ÈÑ¡”¡•…ÀÌ¥¹¥Ñ€°µ…á€°½µµ¥ÑÑ•‘€°…¹ÕÍ•‘€µ•ÑÉ¥Íñ©…Ù„¹±…¹œéÑåÁ”õ5•µ½ÉåñI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¹ğ)ñQ¡É•…‘½Õ¹ÑñQ¡É•…‘ÌÕÉÉ•¹Ñ±äÕÍ•‰äÑ¡”)Y5ñ©…Ù„¹±…¹œéÑåÁ”õQ¡É•…‘¥¹ñ=Ñ¡•Éğ(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è½±±•Ñ¥½¹Q¥µ”)	•…ÕÍ”Ñ¥Ù•5DÉÕ¹Ì¥¸Ñ¡”)Y4°¥ÑÌµ•µ½Éä¥Ìµ…¹…•‰äm)…Ù„Ì…É‰…”½±±•Ñ¥½¸€¡¤ÁÉ½•ÍÍum½É…±”µt¸ÉÕ¹¹¥¹œ)…Ù„…ÁÁ±¥…Ñ¥½¸É•ÅÕ¥É•Ìµ•µ½ÉäÑ¼É•…Ñ”Ñ¡”½‰©•ÑÌ¥ĞÕÍ•Ì°…¹Ñ¡”)…Ù„…É‰…”½±±•Ñ½ÈÁ•É¥½‘¥…±±ä•Ù…±Õ…Ñ•Ìµ•µ½ÉäÕÍ…”…¹™É••ÌÕÀÕ¹ÕÍ•µ•µ½Éä¸ÌÑ¥Ù•5DÌµ•ÍÍ…”Ù½±Õµ”¥¹É•…Í•Ì°¥Ğİ¥±°ÕÍ”µ½É”µ•µ½Éä¸Ì„É•ÍÕ±Ğ°Ñ¡”)Y4İ¥±°•á•ÕÑ”…É‰…”½±±•Ñ¥½¸µ½É”™É•ÅÕ•¹Ñ±ä°İ¡¥ ½Õ±Í±½Ü‘½İ¸µ•ÍÍ…¥¹œ½Ù•É…±°¸()e½Ô…¸ÕÍ”)5`Ñ¼ÅÕ•Éäµ•ÑÉ¥ÌÑ¡…ĞÍ¡½ÜÑ¡”½Ù•É…±°Ñ¥µ”ÍÁ•¹Ğ½¸…É‰…”½±±•Ñ¥½¸¸¹äÑ¥µ”Ñ¡”)Y4ÍÁ•¹‘Ì½¸İ¥±°¡…Ù”mÍ½µ”•™™•ÑumÕ¹‘•ÉÍÑ…¹‘¥¹œµt½¸Ñ¡”…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œÑ¡•É”€¡±¥­”Ñ¥Ù•5D¤°Ñ¡½Õ ¥Ğµ…ä¹½Ğ…±İ…åÌ‰”Á•É•ÁÑ¥‰±”¸µ•ÑÉ¥Ì…É”ÕµÕ±…Ñ¥Ù”°Í¼å½ÔÍ¡½Õ±•áÁ•ĞÑ¼Í•”Ñ¡•´É¥Í”½¹Ñ¥¹Õ…±±ä°É•ÑÕÉ¹¥¹œÑ¼é•É¼½¹±äİ¡•¸Ñ¡”)Y4É•ÍÑ…ÉÑÌ¸e½ÔÍ¡½Õ±ÕÍ”„µ½¹¥Ñ½É¥¹œÑ½½°Ñ¼ÑÉ…¬¡½Ü™É•ÅÕ•¹Ñ±ä…É‰…”½±±•Ñ¥½¸¥Ì¡…ÁÁ•¹¥¹œ°…¹¡½Ü±½¹œ•… ÁÉ½•ÍÌÑ…­•Ì¸()%¸mÁ…ÉĞ€ÉumÁ…ÉĞ´Ét½˜Ñ¡¥ÌÍ•É¥•Ì°İ”±°±½½¬…ĞÍ½µ”½˜Ñ¡”Ñ½½±ÌÑ¡…ĞÕÍ”)5`Ñ¼µ½¹¥Ñ½ÈÑ¥Ù•5D¸e½Ô…¸ÕÍ”Ñ½½±Ì±¥­”Ñ¡•Í”Ñ¼İ…Ñ ™½È…¸¥¹É•…Í”¥¸Ñ¡”™É•ÅÕ•¹ä½˜…Ñ¥Ù¥Ñä¸e½Ô…¸½ÉÉ•±…Ñ”…Ñ¥Ù¥Ñäİ¥Ñ …¹ä½ÉÉ•ÍÁ½¹‘¥¹œÍÁ¥­•Ì¥¸Ñ¡”‰É½­•ÈÌ5•µ½ÉåA•É•¹ÑUÍ…•€Ñ¡…Ğ½Õ±•áÁ±…¥¸„Í±½İ‘½İ¸¥¸å½ÕÈµ•ÍÍ…¥¹œ…Ñ¥Ù¥Ñä¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è!•…Á5•µ½ÉåUÍ…”)Q¡”!•…Á5•µ½ÉåUÍ…”µ•ÑÉ¥Œ¥Ì„)M=8½‰©•Ğµ…‘”ÕÀ½˜¥¹¥Ñ€°½µµ¥ÑÑ•‘€°µ…á€°…¹ÕÍ•‘€Ù…±Õ•Ì¸((¨¥¹¥Ñ€¥ÌÍ•Ğİ¡•¸Ñ¡”)Y4ÍÑ…ÉÑÌ°…¹Ñ¥Ù•5DÌÍÑ…ÉÑÕÀÍÉ¥ÁĞÁ…ÍÍ•Ì…¸¥¹¥Ñ€Ù…±Õ”½˜€ØĞ5¸(¨µ…á€¡½±‘ÌÑ¡”Ù…±Õ”½˜Ñ¡”µ…á¥µÕ´Á½ÍÍ¥‰±”Í¥é”½˜Ñ¡”¡•…À¸	ä‘•™…Õ±Ğ°Ñ¥Ù•5DÍ•ÑÌÑ¡¥ÌÙ…±Õ”Ñ¼€Ä¸(¨½µµ¥ÑÑ•‘€¥ÌÍ•Ğ‰äÑ¡”)Y4°…¹™±ÕÑÕ…Ñ•Ì¸Q¡¥ÌÙ…±Õ”¥¹‘¥…Ñ•Ì¡½ÜµÕ µ•µ½Éä¥ÌÕ…É…¹Ñ••Ñ¼‰”…Ù…¥±…‰±”™½ÈÑ¡”)Y4Ñ¼ÕÍ”¸(¨ÕÍ•‘€É•ÁÉ•Í•¹ÑÌÑ¡”…µ½Õ¹Ğ½˜)Y4¡•…Àµ•µ½ÉäÕÉÉ•¹Ñ±ä¥¸ÕÍ”¸()e½ÔÍ¡½Õ±İ…Ñ ÕÍ•‘€…¹½µµ¥ÑÑ•‘€Ñ½•Ñ¡•ÈÑ¼•¹ÍÕÉ”Ñ¡…ĞÑ¡”)Y4¥Í¸ĞÉÕ¹¹¥¹œ½ÕĞ½˜…Ù…¥±…‰±”µ•µ½Éä¸)…Ù„İ¥±°Ñ¡É½Ü…¸=ÕÑ=™5•µ½ÉåÉÉ½É€•á•ÁÑ¥½¸¥˜Ñ¡”)Y4Ìµ•µ½Éä¥Ì•á¡…ÕÍÑ•¸M•”Ñ¡”m)…Ù„‘½Õµ•¹Ñ…Ñ¥½¹um©…Ù„µ½ÕĞµ½˜µµ•µ½Éåt…¹Ñ¡”mÑ¥Ù•5DEum…Ñ¥Ù•µÄµ½ÕĞµ½˜µµ•µ½Éåt™½ÈÕ¥‘…¹”½¸É•Í½±Ù¥¹œÑ¡¥ÌÁÉ½‰±•´¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èQ¡É•…‘½Õ¹Ğ)Må¹¡É½¹½ÕÌµ•ÍÍ…¥¹œÉ•ÅÕ¥É•Ì„É•…Ñ•È¹Õµ‰•È½˜Ñ¡É•…‘ÌÑ¡…¸…Íå¹¡É½¹½ÕÌ‘•±¥Ù•Éä¸UÍ¥¹œµ½É”Ñ¡É•…‘Ì…ÕÍ•ÌÑ¡”‰É½­•ÈÑ¼¥¹ÕÈÑ¡”½Ù•É¡•…½˜½¹Ñ•áĞÍİ¥Ñ¡¥¹œ°İ¡¥ É•ÅÕ¥É•Ìµ½É”İ½É¬™É½´Ñ¡”¡½ÍĞÌAT¸Q¡¥Ì½Õ±…ÕÍ”„Í±½İ‘½İ¸¥¸Ñ¡”ÅÕ•Õ•¥¹œ…¹‘¥ÍÁ…Ñ¡¥¹œ½˜µ•ÍÍ…•Ì°…¹Õ±Ñ¥µ…Ñ•±ä½Õ±±•…Ñ¼±½İ•Èµ•ÍÍ…”Ñ¡É½Õ¡ÁÕĞ¸€()Ì‘•ÍÉ¥‰•¥¸Ñ¡”mÑ¥Ù•5D‘½Õµ•¹Ñ…Ñ¥½¹um…Ñ¥Ù•µÄµÍ…±¥¹t°å½Ô…¸É•‘Õ”Ñ¡”¹Õµ‰•È½˜Ñ¡É•…‘ÌÑ¥Ù•5DÉ•ÅÕ¥É•Ì‰äÕÍ¥¹œÑ¡É•…Á½½±¥¹œ°m•¹…‰±¥¹œ½ÁÑ¥µ¥é•‘¥ÍÁ…Ñ ½¸å½ÕÈÅÕ•Õ•Íum…Ñ¥Ù•µÄµÁ•Èµ‘•ÍÑ¥¹…Ñ¥½¸µÁ½±¥¥•Ít°½ÈmÕÍ¥¹œÑ¡”9%<ÁÉ½Ñ½½±um…Ñ¥Ù•µÄµÑÉ…¹ÍÁ½ÉÑÍt¸€((ŒŒŒ!½ÍĞµ±•Ù•°µ•ÑÉ¥Ì)e½ÕÈ¡½ÍĞ¥ÌÑ¡”™½Õ¹‘…Ñ¥½¸½˜…±°Ñ¡”ÁÉ½•ÍÍ•Ì¥¹Ù½±Ù•¥¸Ñ¥Ù•5DÌµ•ÍÍ…¥¹œ…Ñ¥Ù¥Ñ¥•Ì¸Q¼Õ¹‘•ÉÍÑ…¹‰½ÑÑ±•¹•­ÌÑ¡…Ğµ…ä…É¥Í”°…¹Ñ¼µ…­”¥¹™½Éµ•‘•¥Í¥½¹Ì…‰½ÕĞİ¡•¸Ñ¼Í…±”½ÕĞ°±½½¬Ñ¼å½ÕÈ¡½ÍĞµ±•Ù•°µ•ÑÉ¥Ì¸()ñ9…µ•ñ•ÍÉ¥ÁÑ¥½¹ñ5•ÑÉ¥ŒÑåÁ•ğ)ğ´´µğ´´µğ´´µğ)ñ¥Í¬ÕÍ…•ñQ¡”Á•É•¹Ñ…”½˜Ñ¡”¡½ÍĞÌ…Ù…¥±…‰±”‘¥Í¬ÍÁ…”ÕÉÉ•¹Ñ±ä¥¸ÕÍ•ñI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¹ğ)ñ¥Í¬$½=ñQ¡”É…Ñ”½˜É•……¹İÉ¥Ñ”½Á•É…Ñ¥½¹ÌÁ•ÈÍ•½¹‘ñI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¹ğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è¥Í¬ÕÍ…”)Ñ¥Ù•5DÕÍ•Ì‘¥Í¬ÍÁ…”Ñ¼ÍÑ½É”Á•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì°…Ìİ•±°…Ì¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•ÌÑ¡…Ğ•ĞÍİ…ÁÁ•Ñ¼‘¥Í¬İ¡•¸µ•µ½Éä™¥±±ÌÕÀ¸™Ñ•È„µ•ÍÍ…”¡…Ì‰••¸…­¹½İ±•‘•‰ä„½¹ÍÕµ•È°Ñ¥Ù•5Dµ…É­Ì¥ĞÑ¼‰”‘•±•Ñ•¥¸Ñ¡”¹•áĞ±•…¹ÕÀå±”¸€¡	ä‘•™…Õ±Ğ°Ñ¡¥Ì¥Ì•Ù•Éä€ÌÀÍ•½¹‘Ì¸¤€()%˜å½ÕÈ‰É½­•ÈÌQ½Ñ…±¹ÅÕ•Õ•½Õ¹Ñ€¥Ì¡¥¡•ÈÑ¡…¸¥ÑÌQ½Ñ…±•ÅÕ•Õ•½Õ¹Ñ€°å½ÕÈ¡½ÍĞÌ‘¥Í¬½Õ±™¥±°ÕÀ¸e½Ô±°…±Í¼Í•”Ñ¡¥Ì¥¸Ñ¡”‰É½­•ÈÌQ•µÁA•É•¹ÑUÍ…•€…¹MÑ½É•A•É•¹ÑUÍ…•€Ù…±Õ•Ì¸É•…Ñ”…±•ÉÑÌÑ¼­••Àå½Ô¥¹™½Éµ•½˜‘¥µ¥¹¥Í¡¥¹œ‘¥Í¬ÍÁ…”Í¼å½Ô…¸ÁÉ•Ù•¹ĞÁ•É™½Éµ…¹”ÁÉ½‰±•µÌ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è¥Í¬$½<)]¡•¸Í•¹‘¥¹œ„Á•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…”°Ñ¡”‰É½­•È™¥ÉÍĞİÉ¥Ñ•Ì¥ĞÑ¼„©½ÕÉ¹…°¸]¥Ñ µÕ±Ñ¥Á±”ÁÉ½‘Õ•ÉÌÍ•¹‘¥¹œÁ•ÉÍ¥ÍÑ•¹Ğµ•ÍÍ…•Ì°Ñ¡É•…‘Ìİ¥Ñ¡¥¸Ñ¡”‰É½­•Èµ…ä½µÁ•Ñ”™½ÈÑ¡”¡…¹”Ñ¼İÉ¥Ñ”Ñ¼Ñ¡”©½ÕÉ¹…°¸I¥Í¥¹œ‘¥Í¬$½<‘½•Í¸Ğ¹••ÍÍ…É¥±ä¥¹‘¥…Ñ”½¹Ñ•¹Ñ¥½¸‰•Ñİ••¸Ñ¡”Ñ¡É•…‘Ì°‰ÕĞ¥Ğ½Õ±‰”„Í¥¸Ñ¡…ĞİÉ¥Ñ”½Á•É…Ñ¥½¹Ì…É”ÅÕ•Õ¥¹œÕÀ°É•‘Õ¥¹œµ•ÍÍ…”Ñ¡É½Õ¡ÁÕĞ½Ù•É…±°¸()%˜å½ÔÍ•”¡¥ ‘¥Í¬…Ñ¥Ù¥Ñä°¥Ğ½Õ±µ•…¸Ñ¡…Ğå½ÕÈ‰É½­•È¥ÌÙ•Éä‰ÕÍä°•ÍÁ•¥…±±ä¥˜å½Ô…±Í¼Í•”¡¥ 5•µ½ÉåA•É•¹ÑUÍ…•€¸%˜Ñ¡¥Ì¥ÌÑ¡”…Í”°å½ÔÍ¡½Õ±•µÁ±½ämÑ¥Ù•5D‰•ÍĞÁÉ…Ñ¥•Íum…Ñ¥Ù•µÄµ‰•ÍĞµÁÉ…Ñ¥•Ít™½ÈÍÕÁÁ½ÉÑ¥¹œµ…¹äÅÕ•Õ•Ì…¹Ñ½Á¥Ì¸‘‘¥Ñ¥½¹…±±ä°å½ÔÍ¡½Õ±½¹Í¥‘•ÈÉ•…Ñ¥¹œ„m¹•Ñİ½É¬½˜‰É½­•ÉÍum…Ñ¥Ù•µÄµ¹•Ñİ½É¬µ½˜µ‰É½­•ÉÍt¸€((ŒŒ5…­¥¹œµ•…¹¥¹œ½˜Ñ¡”µ•ÑÉ¥Ì)Ñ¥Ù•5Dµ•ÑÉ¥Ì…¸¡•±Àå½ÔÁÉ½…Ñ¥Ù•±äµ…¥¹Ñ…¥¸å½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”°ÁÉ½Ù¥‘¥¹œå½Ôİ¥Ñ ¥¹™½Éµ…Ñ¥½¸å½Ô¹••Ñ¼¥¹Ù•ÍÑ¥…Ñ”•ÉÉ½ÉÌ°µ¥ÍÍ¥¹œµ•ÍÍ…•Ì°…¹Õ¹•áÁ•Ñ•±…Ñ•¹ä¸%¸Ñ¡¥ÌÁ½ÍĞ°İ”Ù”±½½­•…ĞÑ¡”µ•ÑÉ¥Ìå½Ô…¸½±±•Ğ™É½´Ñ¥Ù•5D°…¹¡¥¡±¥¡Ñ•Í½µ”Ñ¡…Ğ…É”Á…ÉÑ¥Õ±…É±äÙ…±Õ…‰±”Ñ¼µ½¹¥Ñ½È¸%¸mÁ…ÉĞ€È½˜Ñ¡¥ÌÍ•É¥•ÍumÁ…ÉĞ´Ét°İ”±°Í¡½Üå½ÔÍ½µ”½˜Ñ¡”Ñ½½±Ìå½Ô…¸ÕÍ”Ñ¼…Ñ¡•Èµ•ÑÉ¥Ì™É½´å½ÕÈÑ¥Ù•5D‰É½­•ÉÌ°ÅÕ•Õ•Ì°…¹Ñ½Á¥Ì¸((ŒŒ­¹½İ±•‘µ•¹ÑÌ)]”±¥­”Ñ¼Ñ¡…¹¬…ÉäQÕ±±ä½˜mI•!…ÑumÉ•µ¡…Ñt™½È¡¥ÌÑ•¡¹¥…°É•Ù¥•Ü½˜Ñ¡¥ÌÍ•É¥•Ì¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½…Ñ¥Ù•µÄ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|()m…­¹½İ±•‘µ•¹Ğµµ½‘•tè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½½ÄäÜäà´ÀÄ¼àÈÄ´ÄàĞÄ½‰¹™Ü½¥¹‘•à¹¡Ñµ°)m…Ñ¥Ù•µÄµ‰•ÍĞµÁÉ…Ñ¥•Ítè¡ÑÑÁÌè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½¡½Üµ‘¼µ¤µ½¹™¥ÕÉ”´ÄÁÌµ½˜´ÄÀÀÁÌµ½˜µÅÕ•Õ•Ìµ¥¸µ„µÍ¥¹±”µ‰É½­•È)m…Ñ¥Ù•µÄµ‘•ÍÑ¥¹…Ñ¥½¸µÁ½±¥¥•Ítè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Á•Èµ‘•ÍÑ¥¹…Ñ¥½¸µÁ½±¥¥•Ì¹¡Ñµ°)m…Ñ¥Ù•µÄµ‘ÕÉ…‰±”µÍÕ‰ÍÉ¥‰•ÉÍtè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½µ…¹…”µ‘ÕÉ…‰±”µÍÕ‰ÍÉ¥‰•ÉÌ¹¡Ñµ°)m…Ñ¥Ù•µÄµ©‘‰tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½©‘‰ŒµÍÕÁÁ½ÉĞ¹¡Ñµ°)m…Ñ¥Ù•µÄµµ•ÍÍ…”µÁÉ½Á•ÉÑ¥•Ítè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½…Ñ¥Ù•µÄµµ•ÍÍ…”µÁÉ½Á•ÉÑ¥•Ì¹¡Ñµ°)m…Ñ¥Ù•µÄµ¹•Ñİ½É¬µ½˜µ‰É½­•ÉÍtè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½¹•Ñİ½É­Ìµ½˜µ‰É½­•ÉÌ¹¡Ñµ°)m…Ñ¥Ù•µÄµ½ÕĞµ½˜µµ•µ½Éåtè¡ÑÑÁÌè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½©…Ù…±…¹½ÕÑ½™µ•µ½Éä¹¡Ñµ°)m…Ñ¥Ù•µÄµÁ•Èµ‘•ÍÑ¥¹…Ñ¥½¸µÁ½±¥¥•Ítè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Á•Èµ‘•ÍÑ¥¹…Ñ¥½¸µÁ½±¥¥•Ì¹¡Ñµ°)m…Ñ¥Ù•µÄµÁ•É™½Éµ…¹•tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Á•É™½Éµ…¹”¹¡Ñµ°)m…Ñ¥Ù•µÄµÁ•ÉÍ¥ÍÑ•¹•tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½İ¡…Ğµ¥ÌµÑ¡”µ‘¥™™•É•¹”µ‰•Ñİ••¸µÁ•ÉÍ¥ÍÑ•¹Ğµ…¹µ¹½¸µÁ•ÉÍ¥ÍÑ•¹Ğµ‘•±¥Ù•Éä¹¡Ñµ°)m…Ñ¥Ù•µÄµÁ™tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½ÁÉ½‘Õ•Èµ™±½Üµ½¹ÑÉ½°¹¡Ñµ°)m…Ñ¥Ù•µÄµÍ…±¥¹tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Í…±¥¹œµÅÕ•Õ•Ì¹¡Ñµ°)m…Ñ¥Ù•µÄµÍ•±•Ñ½ÉÍtè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Í•±•Ñ½ÉÌ¹¡Ñµ°)m…Ñ¥Ù•µÄµÑÉ…¹ÍÁ½ÉÑÍtè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½½¹™¥ÕÉ¥¹œµÑÉ…¹ÍÁ½ÉÑÌ¹¡Ñµ°)m…µÄµµ•ÍÍ…”µÍÑ½É•tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½…µÄµµ•ÍÍ…”µÍÑ½É”¹¡Ñµ°)m…µÅÀµÁÉ½Ñ½½±tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½…µÅÀ¹¡Ñµ°)m©…Ù„µ½ÕĞµ½˜µµ•µ½Éåtè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼à½‘½Ì½Ñ•¡¹½Ñ•Ì½Õ¥‘•Ì½ÑÉ½Õ‰±•Í¡½½Ğ½µ•µ±•…­ÌÀÀÈ¹¡Ñµ°)m©µÌµ…Á¥tè¡ÑÑÁÌè¼½©…Ù…•”¹¥Ñ¡Õˆ¹¥¼½©µÌµÍÁ•Œ½Á…•Ì½)5LÈÁ¥¹…±I•±•…Í”)m­…¡…‘‰tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½­…¡…‘ˆ¹¡Ñµ°)mµ•ÍÍ…”µ‰½‘¥•Ítè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½½ÄäÜäà´ÀÄ¼àÈÄ´ÄàĞÄ¼Ù¹µÄÉÁÁÌ½¥¹‘•à¹¡Ñµ°‰¹•à)mµ½¹¥Ñ½É¥¹œ´ÄÀÅtè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½Ñ…œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄ¼)mµÅÑĞµÁÉ½Ñ½½±tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½µÅÑĞ¹¡Ñµ°)m½É…±”µtè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼ä½ÑÕ¹¥¹œ½¥¹ÑÉ½‘ÕÑ¥½¸µ…É‰…”µ½±±•Ñ¥½¸µÑÕ¹¥¹œ¹¡Ñ´)m½É…±”µ©½¹Í½±•tè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼Ü½‘½Ì½Ñ•¡¹½Ñ•Ì½Õ¥‘•Ì½µ…¹…•µ•¹Ğ½©½¹Í½±”¹¡Ñµ°)m½É…±”µ©µátè¡ÑÑÁÌè¼½İİÜ¹½É…±”¹½´½Ñ•¡¹•Ñİ½É¬½…ÉÑ¥±•Ì½©…Ù„½©…Ù…µ…¹…•µ•¹Ğ´ÄĞÀÔÈÔ¹¡Ñµ°)mÁ…ÉĞ´Étè€½‰±½œ½½±±•Ñ¥¹œµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ì¼)mÉ•µ¡…Ñtè¡ÑÑÁÌè¼½İİÜ¹É•‘¡…Ğ¹½´¼)mÍÑ½µÀµÁÉ½Ñ½½±tè¡ÑÑÁÌè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½ÍÑ½µÀ¹¡Ñµ°)mÍÕÁÁ½ÉÑ•µ±…¹Õ…•Ítè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½É½ÍÌµ±…¹Õ…”µ±¥•¹ÑÌ¹¡Ñµ°)mÕ¹‘•ÉÍÑ…¹‘¥¹œµtè¡ÑÑÁÌè¼½İİÜ¹Õ‰É¥¹½Éœ½‰±½œ½Õ¹‘•ÉÍÑ…¹‘¥¹œµ©…Ù„µ…É‰…”µ½±±•Ñ¥½

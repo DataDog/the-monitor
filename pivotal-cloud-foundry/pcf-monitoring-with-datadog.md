@@ -1,342 +1,1 @@
-In [part three][part-three] of this series, we showed you a number of methods and tools for accessing [key metrics][part-two] and logs from a Pivotal Cloud Foundry deployment. Some of these tools help PCF operators monitor the health and performance of the cluster, whereas others allow developers to view metrics, logs, and performance data from their applications running on the cluster.
-
-In this post, weâ€™ll show you how you can use Datadog to collect and monitor metrics and logs from PCF, whether you are an operator or a developer. By monitoring PCF with Datadog, you can visualize the data from all your applications, cluster components, and cloud services in one place; set sophisticated alerts; and view historical data on demand. To get you started, weâ€™ll cover:
-
-- [Datadogâ€™s Cluster Monitoring tile](#monitor-a-pcf-cluster-with-datadog), which operators can use to collect, visualize, and alert on metrics from PCF components
-- [Datadogâ€™s Application Monitoring tile](#monitor-applications-running-on-pcf-with-datadog), which enables developers to collect custom metrics, traces, and logs from their applications
-- [Ingesting and processing system logs with Datadog](#collect-system-logs-with-datadog)
-
-{{< img src="pcf-monitoring-datadog-pcf-dashboard.png" caption="Datadog's customizable out-of-the-box Cloud Foundry dashboard." alt="Datadog Cloud Foundry dashboard" popup="true" wide="true" >}}
-
-## Monitor a Pivotal Cloud Foundry cluster with Datadog
-PCF operators can get deep visibility into their cluster by installing the [Datadog Cluster Monitoring for PCF tile][cluster-tile]. The [tile][tile-basics] deploys two componentsâ€”a Firehose nozzle and the Datadog Agentâ€”which together deliver metrics from your PCF components as well as system-level resource metrics from the underlying VMs.
-
-The Datadog [Firehose nozzle](/blog/pivotal-cloud-foundry-architecture#firehose) consumes information from your deploymentâ€™s [Loggregator](/blog/pivotal-cloud-foundry-architecture#loggregator), PCFâ€™s system for aggregating deployment metrics and application logs. The Datadog nozzle collects Loggregator [CounterEvents][counter], which report an incrementing value; [ValueMetrics][metric], which represent an instantaneous measurement; and [ContainerMetrics][metric], which provide resource metrics for the containers running applications. Armed with these metrics, you can monitor and alert on the key indicators discussed in [part two][part-two] of this series as well as hundreds of additional metrics that are available from the Firehose.
-
-Because the nozzle will read any and all information included in the Firehose stream, you can use it to collect metrics from services such as [PCF Healthwatch][healthwatch], which transforms raw PCF metrics into per-minute or per-hour rates, percentages of available capacity, and other useful computed metrics. For example, the Healthwatch metric `Diego.AvailableFreeChunks` uses the [cell Rep](/blog/pivotal-cloud-foundry-metrics#cellsrep) metric `rep.CapacityRemainingMemory` to calculate the number of available blocks of memory large enough to stage and run new applications. If you install PCF Healthwatch on your cluster, its metrics will be available in Datadog with the `cloudfoundry.nozzle.healthwatch` prefix.
-
-The second component installed by the Datadog Cluster Monitoring tile is the open source [Datadog Agent][agent]. The tile deploys the Agent as a BOSH release onto every host in your cluster. The Agent then automatically begins reporting system-level metrics from each VM, so you can monitor and aggregate CPU, memory, network, and other resource metrics from across your cluster.
-
-### Install the cluster monitoring tile
-To install the Datadog Cluster Monitoring tile, operators can download it from the [Pivotal Network][pivotal-network]. Once you download the service, you can then import it into the Ops Manager to configure and deploy it.
-
-{{< img src="pcf-monitoring-datadog-cluster-tile-rev2.png" caption="Import the Datadog Cluster Monitoring tile before configuring and deploying it to your cluster." alt="Datadog PCF cluster monitoring" wide="true" >}}
-
-In the Ops Manager, under the tileâ€™s **Datadog Config** tab, enter your Datadog [API key][datadog-api]. You can also add tags for your deployment, which will be applied to all VMs in your cluster so you can easily filter and aggregate your metrics using relevant attributes. For instance, if you are operating multiple PCF clusters for different stages of the development process, you can tag them by the name of the environment, such as `env:development` and `env:production`.
-
-{{< img src="pcf-monitoring-datadog-cluster-tile-config.png" alt="Datadog PCF cluster monitoring config" >}}
-
-The next configuration step is to create a UAA client account for Datadog that can access the Firehose data. First, using the [UAA command line client][uaac], or UAAC, target your domainâ€™s UAA server with the command:
-
-    uuac target uaa.<your-domain>.com
-
-Then retrieve an access token from the server with the following command, where the secret is the password for the **admin client** of your deployment (all deployment credentials are available from the **Credentials** tab of your Pivotal Application Services tile in the Ops Manager):
-
-    uaac token client get admin -s <secret>
-
-Once youâ€™ve retrieved an admin client token, you can use the UAAC to create an account that can access the Firehose. Use the command below to create a new client account for the Datadog nozzle, assigning it a name and password:
-
-```
-uaac client add datadog-firehose-nozzle \
-    --name <datadog_client_name*> \
-    --scope doppler.firehose,cloud_controller.admin_read_only,oauth.login \
-    --authorities doppler.firehose,cloud_controller.admin_read_only,openid,oauth.approvals \
-    --authorized_grant_types client_credentials,refresh_token \
-    --access_token_validity 1209600 \
-    -s <datadog_client_password>
-```
-
-*In the tile settings (configured below), the name defaults to `datadog-firehose-nozzle`.
-
-Then, in the **Cloud Foundry Settings** tab, enter the client name (if different from the default) and the Datadog client password you created in the previous step. Save your configuration and apply the changes to deploy the nozzle and Datadog Agent.
-
-### Monitor your cluster with Datadog graphs and alerts
-Once youâ€™ve deployed Datadogâ€™s Cluster Monitoring tile, you will see your PCF infrastructure appear in Datadog and reporting metrics. Datadog automatically tags your metrics and infrastructure components with attributes from the cloud provider your cluster is running on (such as the availability zone and instance type), as well as various BOSH settings. For example, each VM is tagged with a deployment ID and a BOSH job identifying what role that VM is running. Tags let you easily organize and group your clusterâ€™s VMs using visualizations such as the Datadog host map.
-
-{{< img src="pcf-monitoring-datadog-pcf-hostmap.png" caption="All the nodes in a PCF Small Footprint cluster, grouped by availability zone and BOSH job in the Datadog host map." alt="PCF hostmap in Datadog" wide="true" >}}
-
-This high-level view is useful for quickly identifying hot spots in your cluster. For example, you can see if a certain Diego cell or UAA server is running with a particularly high level of CPU utilization, which can have significant effects on performance.
-
-Datadog dashboards allow you to visualize and correlate any of the metrics coming from the Firehose. You can easily clone and customize Datadogâ€™s out-of-the-box Cloud Foundry dashboard, or you can create one from scratch to focus on the performance indicators that are most important to your organization.
-
-{{< img src="pcf-monitoring-datadog-pcf-metrics.png" alt="PCF metrics in Datadog" wide="true" >}}
-
-#### Alerting
-In addition to dashboards, Datadog lets you set [alerts][monitors] on any metrics coming from PCF. These include threshold alerts as well as machine learningâ€“driven alerts based on metric forecasts as well as outlier and anomaly detection.
-
-For example, below we are creating an outlier alert that evaluates the metric [`RepBulkSyncDuration`](/blog/pivotal-cloud-foundry-metrics#metric-to-watch-repbulksyncduration) for each Diego cell. This alert will trigger if one cell is taking significantly longer than the other cells to synchronize the number of [LRPs](/blog/pivotal-cloud-foundry-architecture#tasks-and-lrps) running on its containers with the `ActualLRP` count from the [BBS](/blog/pivotal-cloud-foundry-architecture#bbs), indicating a possible communication problem between that cell and the BBS.
-
-{{< img src="pcf-monitoring-datadog-outlier-alert.png" caption="Creating an outlier detection alert in Datadog to monitor a PCF cluster." alt="Outlier detection alert in Datadog" wide="true" >}}
-
-#### Alert on slow consumers
-The Datadog Firehose nozzle that is deployed with the Cluster Monitoring tile generates a metric called [`datadog.nozzle.slowConsumerAlert`][slow-consumer-alert]. This metric provides a status check to indicate if the nozzle is ingesting messages as quickly as the Firehose is sending them. If the `slowConsumerAlert` metric's value is 1, that means the nozzle is not able to keep up with the Firehose. By setting an alert on this metric, operators can quickly be notified if Datadogâ€™s connection to the deploymentâ€™s Traffic Controllers is slow or down.
-
-## Monitor applications running on PCF with Datadog
-Just as PCF operators use Datadogâ€™s Cluster Monitoring tile to gain visibility into their deployments, developers can use Datadogâ€™s Application Monitoring tile to track the status and performance of their applications. The Application Monitoring tile enables developers to collect custom metrics, distributed traces, and logs from their applications running in PCF.
-
-### Install the Application Monitoring tile
-The process of installing the Datadog Application Monitoring tile is similar to installing the Cluster Monitoring tile. First, download the service tile from [Pivotal Network][pivotal-application-monitoring]. Then upload it to the Ops Manager and apply the changes to deploy it to your cluster.
-
-{{< img src="pcf-monitoring-datadog-application-tile-rev2.png" alt="Datadog PCF application monitoring" wide="true" >}}
-
-Installing this tile will add Datadogâ€™s Application Monitoring buildpack to your list of available buildpacks. If you list installed buildpacks via the `cf buildpacks` command, you should see something similar to the following:
-
-```
-buildpack                        position   enabled   locked   filename
-meta_buildpack                   1          true      false    meta_buildpack.zip
-staticfile_buildpack             2          true      false    staticfile_buildpack-cached-cflinuxfs2-v1.4.28.zip
-java_buildpack_offline           3          true      false    java-buildpack-offline-cflinuxfs2-v4.12.1.zip
-ruby_buildpack                   4          true      false    ruby_buildpack-cached-cflinuxfs2-v1.7.19.zip
-nodejs_buildpack                 5          true      false    nodejs_buildpack-cached-cflinuxfs2-v1.6.25.zip
-go_buildpack                     6          true      false    go_buildpack-cached-cflinuxfs2-v1.8.23.zip
-python_buildpack                 7          true      false    python_buildpack-cached-cflinuxfs2-v1.6.17.zip
-php_buildpack                    8          true      false    php_buildpack-cached-cflinuxfs2-v4.3.56.zip
-dotnet_core_buildpack            9          true      false    dotnet-core_buildpack-cached-cflinuxfs2-v2.0.7.zip
-binary_buildpack                 10         true      false    binary_buildpack-cached-v1.0.18.zip
-datadog_application_monitoring   11         true      false    datadog-cloudfoundry-buildpack-v0.9.5.zip
-```
-
-In the next section, we'll show how you can push an application with the Application Monitoring buildpack. The buildpack includes [Datadogâ€™s DogStatsD library][dogstatsd] for collecting custom metrics and enables you to instrument your application to send traces and logs to Datadog.
-
-### Push the Application Monitoring buildpack with your application
-To use Datadogâ€™s Application Monitoring tile with your applications, you must push an application with [multiple buildpacks][multiple-buildpacks]. Adding multiple buildpacks requires a couple of additional steps beyond a standard `cf-push`.
-
-First, push your application with the Cloud Foundry binary buildpack, while including a `--no-start` flag to keep the application from running:
-
-    cf push <app-name> --no-start -b binary_buildpack
-
-Next, you can push the application with the Application Monitoring buildpack and any other buildpacks your application needs. Pushing multiple buildpacks currently requires using the Cloud Controllerâ€™s v3 API, which you can specify by adding a `v3-` prefix before the `push` command. Note that the core required buildpack, which provides the application start command, must come last. Other buildpacks provide dependencies for the application.  
-
-    cf v3-push <app-name> -b datadog-cloudfoundry-buildpack -b <second-buildpack>
-
-### Configure Datadog using environment variables
-
-Now that your application is up and running with the Datadog buildpack, you need to pass one or more configuration options to Datadog using environment variables for your application. You can either use the `cf set-env` command to set environment variables, or you can add the environment variables to a manifest file for your application. We'll detail each of those approaches below.
-
-#### Option 1: Set environment variables from the command line
-
-At minimum, you need to set an environment variable to provide your Datadog [API key][dd-api] so that your application data will appear in your Datadog account:
-
-    cf set-env <app-name> DD_API_KEY <api-key>
-
-With [Datadog APM][datadog-apm], you can visualize distributed traces across your application. If you're using APM, itâ€™s recommended that you set a service name and add tags so you can easily search, filter, and aggregate your data in Datadog. For example:
-
-```
-cf set-env <app-name> DD_SERVICE_NAME pcf-app
-cf set-env <app-name> DD_TRACE_SPAN_TAGS 'env:maxim-pcf'
-```
-
-The `DD_SERVICE_NAME` variable tags all traces from our application with the service name (**pcf-app**, in this case), which lets you focus on performance data from individual services in Datadog and correlate request traces with other monitoring data from that same service. The `DD_TRACE_SPAN_TAGS` variable adds the provided tags to all traces from your application, so that you can quickly and easily drill down into the specific subsets of your data (e.g. request traces from different environments).
-
-Finally, restage your application to pick up the changes:
-
-    cf restage <app-name>
-
-#### Option 2: Set environment variables using a manifest file
-
-Rather than configuring Datadog via `cf set-env`, you can also use a [**manifest.yml** file][manifest] to set these variables when pushing your application. When you initiate `cf push`, Cloud Foundry will automatically detect a manifest file in the current working directory. Or you can point to a file in a different directory:
-
-    cf push -f path/to/manifest.yml
-
-A manifest file can also be used to include other requirements specific to your application, such as the **dd-java-agent.jar** for [tracing requests to Java applications][java-trace]. A simple manifest file that configures an application to send traces to Datadog for application monitoring might resemble the following:
-
-```
-applications:
-- name: <app-name>
-  memory: 1G
-  env:
-    JAVA_OPTS: '-javaagent:BOOT-INF/lib/dd-java-agent.jar'
-    DD_API_KEY: <api-key>
-    DD_SERVICE_NAME: pcf-app
-    DD_TRACE_SPAN_TAGS: 'env:maxim-pcf'
-```
-
-Whether you set your environment variables via the command line or using a manifest file, you should now have a running application that is configured to report custom metrics and distributed traces to Datadog.
-
-#### Instrument your application to send custom metrics to Datadog
-The [DogStatsD binary][dogstatsd] included in the Datadog Application Monitoring buildpack lets you emit custom metrics from your application using an appropriate client [library][dogstatsd-library].
-
-For example, in a Spring Boot Java application, we can use the [java-dogstatsd-client][java-dogstatsd] library. First we initialize the StatsDClient, including any tags we want to apply to our metrics:
-
-```
-private static final StatsDClient statsd = new NonBlockingStatsDClient(
-  "pcf.app",                      /* prefix to any stats; may be null or empty string */
-  "localhost",                    /* common case: localhost */
-  8125,                           /* port */
-  new String[] {"env:maxim-pcf"}  /* Datadog extension: Constant tags, always applied */
-);
-```
-
-Then, we can use the client to create and increment our custom metrics. For example, in a simple dictionary application, you can increment a `searches` metric when a search is performed and a `missedWords` metric if no definition is found:
-
-```
-statsd.incrementCounter(â€œsearchesâ€);
-statsd.incrementCounter(â€œmissedWordsâ€);
-```
-
-Your custom application metrics will automatically appear in Datadog. You can then visualize them, correlate them with metrics from the underlying infrastructure, and set alerts so you can be notified of any unexpected application behavior. Below, weâ€™ve graphed `searches` and `missedWords`. Note that `pcf.app` has been prepended to both metrics, as we specified when configuring the client.
-
-{{< img src="pcf-monitoring-datadog-pcf-custom-metrics.png" caption="Visualizing custom application metrics in Datadog." alt="Datadog PCF custom metrics" wide="true" >}}
-
-#### Instrument your PCF application for tracing
-Using Datadog APM lets you visualize how individual requests were executed and provides request throughput, latency, and error statistics for every service, endpoint, and database query. Datadog APM supports distributed tracing in [Java][java], [Python][python], [Ruby][ruby], [Go][go], [Node][node], and [.NET][dotnet]. Visit the APM documentation for your language to learn how you can start instrumenting your application.
-
-By [instrumenting your code][apm-setup] for APM, you can get granular insights into application performance, as well as how your application interacts with other services. Datadog APM provides out-of-the-box support for various data stores that are available as managed services for PCF, so developers using those data stores will have instant visibility into the data layer of their applications. And with the Datadog [Service Map][service-map], you can visualize the request traffic between your application and any related services to identify dependencies and potential bottlenecks.
-
-Datadog filters APM data by [environment][apm-env] and then by service name. Both of these can be set using environment variables as described [above](#configure-datadog-using-environment-variables). (If you do not provide values, Datadog will default to `env:none` and attempt to pull the service name from the application.) In Datadog APM, you can view graphs of performance metrics that are automatically aggregated for any service or for individual resources (application endpoints, request types, or specific database queries) within a service, including request throughput, error rates, and latency percentiles.
-
-{{< img src="pcf-monitoring-datadog-pcf-services.png" alt="Application services in Datadog APM" wide="true" >}}
-
-Drilling down to a single trace will display a flame graph that provides a detailed breakdown of how a particular request was executed. You can see at a glance which services helped fulfill the request, how long each operation in the request took, and where any errors arose in the request pathway. You can also see metrics from the application host, to identify any infrastructure issues or resource constraints, as well as relevant logs from the same timeframe.
-
-{{< img src="pcf-monitoring-datadog-pcf-flamegraph.png" caption="A flame graph breakdown of a distributed trace in a PCF application." alt="Datadog flame graph" wide="true" >}}
-
-#### Collect application logs in Datadog
-As of version 0.9.5 of the Datadog Application Monitoring tile, developers can use the tile to collect application logs in addition to custom metrics and traces. The log collection feature of the Application Monitoring tile automatically collects and forwards application logs to Datadog for alerting, correlation, [analysis](/blog/log-analytics-dashboards/), and archiving.
-
-To enable log collection, set the following environment variables, either from [the command line](#option-1-set-environment-variables-from-the-command-line) or using [a manifest file](#option-2-set-environment-variables-using-a-manifest-file):
-
-```
-RUN_AGENT true
-DD_LOGS_ENABLED true
-DD_ENABLE_CHECKS false
-```
-
-Once you restage your application, logs will start streaming into the [Log Explorer][log-explorer]:
-
-    cf restage <app-name>
-
-Datadog automatically applies certain Cloud Foundry properties as tags to your logs. For example, the logs will include an `application_name` tag. Creating [facets][facets] from these tags allows you to easily search, filter, and drill down into a specific applicationâ€™s log data.
-
-To make it even easier to parse and view log data, you can configure your application to write logs in JSON format, if your logging library supports it. Datadog will automatically read the logsâ€™ data fields and create attributes from them:
-
-{{< img src="pcf-monitoring-pcf-json-logs.png" caption="Datadog automatically parses JSON logs, making it easy to filter and sort your data." alt="JSON logs in Datadog" wide="true" >}}
-
-To make it easier to pivot between your logs and correlated monitoring data from the same application, you can attach a `service` tag to the root of your applicationâ€™s JSON logs. The implementation depends on the library that you are using. For example, in [Javaâ€™s Log4j 2 library][log4j2], we can add the following to our **log4j2.xml** configuration file to insert `service:pcf-app` into all our applicationâ€™s logs:
-
-```
-<Appenders>
-  <Console name="ConsoleJSONAppender" target="SYSTEM_OUT">
-    <JsonLayout complete="false" compact="true">
-      <KeyValuePair key="service" value="pcf-app" />
-    </JsonLayout>
-  </Console>
-</Appenders>
-```
-This service tag allows you to automatically unify the metrics, traces, and logs from your application and navigate between them. For example, if you are alerted to a higher than normal number of error logs, you can dive into APM data to identify which endpoint or resource is having issues.
-
-With custom metrics, traces, and logs, the Datadog Application Monitoring tile lets developers get deep insight into the performance of their applications and makes it easy to investigate and troubleshoot problems.
-
-## Collect system logs with Datadog
-
-Recall from [part three][part-three] of this series that PCF component system logs, or logs from the internal processes running on the individual components that make up a PCF cluster, are sent via rsyslog to a syslog drain, or an external syslog endpoint. They are not collected by Loggregator.
-
-You can collect PCF component system logs with Datadog by setting up your PCF platform to forward them to a syslog server. Then, you can configure a log processor (for example, rsyslog) to route them to Datadog.
-
-To enable your deployment to forward system logs, first click on the **System Logging** tab of the Pivotal Application Services tile in the Ops Manager. Then provide the URL or IP address of your syslog endpoint or server and an open TCP port. Note that your syslog server must use the [RELP protocol][relp] in order to receive syslogs from PCF.
-
-{{< img src="pcf-monitoring-pcf-syslog-config-rev2.png" alt="PCF syslog forwarding config" >}}
-
-Once you deploy these changes, your cluster will begin forwarding all system logs to the endpoint. Note, however, that these forwarded logs do not include system logs produced by the VMs for _add-on_ services, such as Redis or PCF Healthwatch. You will need to follow similar steps to configure log forwarding for those services that support it. For example, the Redis service tile has a tab labeled **Syslog** where you can enter your endpointâ€™s information.
-
-### Separate your clusterâ€™s logs from the serverâ€™s logs
-By default, an external syslog server will treat incoming system logs like its own and write them to its **syslog** file. Configuring rsyslog to write these incoming logs to a separate file makes it much easier to forward only the clusterâ€™s system logs to Datadog.
-
-A syslog-format message includes the hostname or IP address of the logâ€™s source. We can use this to target logs from our cluster because the VMs' internal IP addresses all begin the same way, in most cases.
-
-For example, to target logs from IP addresses beginning with **10.0.4.**, create an rsyslog configuration file in the **/etc/rsyslog.d** folder and add the following lines:
-
-```
-if $hostname startswith '10.0.4.' then /var/log/pcf-sys.log
-if $hostname startswith '10.0.4.' then stop
-```
-
-This configuration instructs rsyslog to look for logs coming from any of our deploymentâ€™s VMs (as identified by their IP addresses) and write them to a separate file, **pcf-sys.log**. The second line prevents rsyslog from also writing them to the standard **syslog** file. You can adjust your rules to segregate logs as you see fit. See [rsyslogâ€™s documentation][rsyslog] for more details.
-
-#### Forward logs to Datadog
-Now that we have our PCF system logs in their own file, we can [configure rsyslog][rsyslog-dd-config] to forward them to Datadog. First, create a **datadog.conf** file in the **/etc/rsyslog.d** directory on your syslog server. Add the following lines to the newly created config file, replacing `<API-KEY>` with the API key for your Datadog account and `<ENV-TAG>` with the name of your environment:
-
-```
-input(type="imfile" ruleset="infiles" File="/var/log/pcf-sys.log")
-
-$template DatadogFormat,"<API-KEY> <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - [metas ddsource=\"cloud_foundry\" ddtags=\"env:<ENV-TAG>\"] %msg%\n"
-
-ruleset(name="infiles") {
-    action(type="omfwd" target="intake.logs.datadoghq.com" protocol="tcp" port="10514" template="DatadogFormat")
-}
-```
-
-The first line of the config snippet above instructs rsyslog to look for logs in our PCF system log file.
-
-Next, the config provides the log template that includes our Datadog API key. Note that in the example above, weâ€™ve set the logsâ€™ source and added tags. The source makes it easy to route logs to the appropriate [log processing pipelines][log-processing] in Datadog. Adding tags such as `env` makes it easier to drill down and find the logs you want to view.
-
-Finally, the configuration creates a ruleset for the applicable logs, specifying the Datadog endpoint where logs should be sent. Save the file and restart rsyslog:
-
-    sudo service rsyslog restart
-
-Logs will now be flowing into Datadog, where you can [build custom log-processing pipelines][pipelines]. These pipelines let you parse and enrich logs so you can more easily search, filter, and aggregate the data in your logs on the fly. You can also build alerts and graphs from your logs to [visualize and correlate with your metrics](/blog/log-analytics-dashboards/).
-
-#### Logging without Limits
-Pivotal Cloud Foundry produces a large volume of system logs, and managing them all can be a challenge. Datadogâ€™s [Logging without Limits](/blog/logging-without-limits/) approach means that you can ship all your logs, without worrying about gaps or missing data, and use Datadog to filter or retain them on the fly. By sending all your logs to Datadog, you have full visibility when you need it for troubleshooting and analysis, but you can also customize your processing pipelines and filters to exclude unnecessary logs.
-
-If, however, your syslog server becomes a bottleneck for log forwarding, the **System Logging** tab of the PCF Ops Manager provides the option to customize which system logs PCF will forward, allowing you to limit the volume of messages. The Ops Manager supports syslog rules using [RainerScript][rainerscript] syntax. So, for example, the following rule would filter out any system logs not emitted by the cell Reps:
-
-```
-if not ($app-name startswith 'rep') then stop
-```
-
-You can create additional rules and filter conditions to have PCF forward only those logs you want to monitor, analyze, or archive with Datadog.
-
-## Get started
-In this post weâ€™ve covered how both PCF operators and developers can use Datadog to get deep visibility into their cluster and applications, respectively. The Datadog Cluster Monitoring tile gives operators key insights into their PCF infrastructure by tapping into the Firehose stream, letting them visualize and alert on all of the key metrics covered in [part two][part-two] of this series, plus many more. And, with Datadog's integrations with cloud providers including [AWS][aws-dd], [Google][gcp-dd], [Azure][azure-dd], and others, operators can easily visualize their PCF metrics alongside those from their underlying infrastructure.
-
-Developers deploying applications to a PCF cluster can push them with the Datadog Application Monitoring buildpack so that they can monitor the performance of their applications with custom metrics and traces. Finally, we outlined how to ship both application logs and PCF system logs to Datadog, letting you apply Datadogâ€™s powerful log analytics features to the full range of logs available from PCF.
-
-If youâ€™re new to Datadog, you can sign up for a <a href="#" class="sign-up-trigger">free 14-day trial</a> to start monitoring your PCF deployment and applications today.
-
-[part-two]: http://www.datadoghq.com/blog/pivotal-cloud-foundry-metrics
-[part-three]: http://www.datadoghq.com/blog/collecting-pcf-logs
-[healthwatch]: https://docs.pivotal.io/pcf-healthwatch/index.html
-[cluster-tile]: https://network.pivotal.io/products/datadog/
-[tile-basics]: https://docs.pivotal.io/tiledev/tile-basics.html
-[counter]: https://github.com/cloudfoundry/loggregator-api#counter
-[metric]: https://github.com/cloudfoundry/loggregator-api#gauge
-[agent]: https://github.com/DataDog/datadog-agent
-[pivotal-network]: https://network.pivotal.io/
-[datadog-api]: https://app.datadoghq.com/account/settings#api
-[uaac]: https://docs.pivotal.io/pivotalcf/uaa/uaa-user-management.html
-[monitors]: https://app.datadoghq.com/monitors/manage
-[slow-consumer-alert]: https://github.com/DataDog/datadog-firehose-nozzle#slowconsumeralert
-[pivotal-application-monitoring]: https://network.pivotal.io/products/datadog-application-monitoring/
-[dd-api]: https://app.datadoghq.com/account/settings#api
-[java-trace]: https://docs.datadoghq.com/tracing/setup/java/#installation-and-getting-started
-[dogstatsd]: https://docs.datadoghq.com/developers/dogstatsd/
-[dogstatsd-library]: https://docs.datadoghq.com/developers/libraries/#api-and-dogstatsd-client-libraries
-[java-dogstatsd]: https://github.com/DataDog/java-dogstatsd-client
-[datadog-apm]: https://www.datadoghq.com/apm/
-[apm-setup]: https://docs.datadoghq.com/tracing/setup/
-[apm-env]: https://docs.datadoghq.com/tracing/setup/first_class_dimensions/#environment
-[log-explorer]: https://app.datadoghq.com/logs
-[log-processing]: https://docs.datadoghq.com/logs/processing/
-[log-integrations]: https://docs.datadoghq.com/integrations/#cat-log-collection
-[rsyslog-integration]: https://docs.datadoghq.com/integrations/rsyslog/
-[pipelines]: https://docs.datadoghq.com/logs/processing/pipelines/
-[processors]: https://docs.datadoghq.com/logs/processing/processors/
-[relp]: https://www.rsyslog.com/doc/v8-stable/configuration/modules/imrelp.html
-[rainerscript]: https://www.rsyslog.com/doc/v8-stable/rainerscript/index.html
-[service-map]: /blog/service-map/
-[multiple-buildpacks]: https://docs.pivotal.io/pivotalcf/buildpacks/use-multiple-buildpacks.html
-[manifest]: https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/manifest.html
-[facets]: https://docs.datadoghq.com/logs/explorer/?tab=facets#setup
-[log4j2]: https://logging.apache.org/log4j/2.x/
-[rsyslog]: https://www.rsyslog.com/doc/v8-stable/configuration/index.html
-[rsyslog-dd-config]: https://app.datadoghq.com/logs/onboarding/other
-[java]: http://docs.datadoghq.com/tracing/setup/java
-[python]: http://docs.datadoghq.com/tracing/setup/python
-[ruby]: http://docs.datadoghq.com/tracing/setup/ruby
-[go]: http://docs.datadoghq.com/tracing/setup/go
-[node]: http://docs.datadoghq.com/tracing/setup/nodejs
-[dotnet]: http://docs.datadoghq.com/tracing/setup/dotnet
-[aws-dd]: https://docs.datadoghq.com/integrations/amazon_web_services/
-[gcp-dd]: https://docs.datadoghq.com/integrations/google_cloud_platform/
-[azure-dd]: https://docs.datadoghq.com/integrations/azure/
+mA¥Ù½Ñ…°±½Õ½Õ¹‘Éä5½¹¥Ñ½É¥¹œİ¥Ñ …Ñ…‘½œ(()%¸mÁ…ÉĞÑ¡É••umÁ…ÉĞµÑ¡É••t½˜Ñ¡¥ÌÍ•É¥•Ì°İ”Í¡½İ•å½Ô„¹Õµ‰•È½˜µ•Ñ¡½‘Ì…¹Ñ½½±Ì™½È…•ÍÍ¥¹œm­•äµ•ÑÉ¥ÍumÁ…ÉĞµÑİ½t…¹±½Ì™É½´„A¥Ù½Ñ…°±½Õ½Õ¹‘Éä‘•Á±½åµ•¹Ğ¸M½µ”½˜Ñ¡•Í”Ñ½½±Ì¡•±ÀA½Á•É…Ñ½ÉÌµ½¹¥Ñ½ÈÑ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜Ñ¡”±ÕÍÑ•È°İ¡•É•…Ì½Ñ¡•ÉÌ…±±½Ü‘•Ù•±½Á•ÉÌÑ¼Ù¥•Üµ•ÑÉ¥Ì°±½Ì°…¹Á•É™½Éµ…¹”‘…Ñ„™É½´Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ½¸Ñ¡”±ÕÍÑ•È¸()%¸Ñ¡¥ÌÁ½ÍĞ°İ—Še±°Í¡½Üå½Ô¡½Üå½Ô…¸ÕÍ”…Ñ…‘½œÑ¼½±±•Ğ…¹µ½¹¥Ñ½Èµ•ÑÉ¥Ì…¹±½Ì™É½´A°İ¡•Ñ¡•Èå½Ô…É”…¸½Á•É…Ñ½È½È„‘•Ù•±½Á•È¸	äµ½¹¥Ñ½É¥¹œAİ¥Ñ …Ñ…‘½œ°å½Ô…¸Ù¥ÍÕ…±¥é”Ñ¡”‘…Ñ„™É½´…±°å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì°±ÕÍÑ•È½µÁ½¹•¹ÑÌ°…¹±½ÕÍ•ÉÙ¥•Ì¥¸½¹”Á±…”ìÍ•ĞÍ½Á¡¥ÍÑ¥…Ñ•…±•ÉÑÌì…¹Ù¥•Ü¡¥ÍÑ½É¥…°‘…Ñ„½¸‘•µ…¹¸Q¼•Ğå½ÔÍÑ…ÉÑ•°İ—Še±°½Ù•Èè((´m…Ñ…‘½ŸŠeÌ±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±•t µ½¹¥Ñ½Èµ„µÁ˜µ±ÕÍÑ•Èµİ¥Ñ µ‘…Ñ…‘½œ¤°İ¡¥ ½Á•É…Ñ½ÉÌ…¸ÕÍ”Ñ¼½±±•Ğ°Ù¥ÍÕ…±¥é”°…¹…±•ÉĞ½¸µ•ÑÉ¥Ì™É½´A½µÁ½¹•¹ÑÌ(´m…Ñ…‘½ŸŠeÌÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±•t µ½¹¥Ñ½Èµ…ÁÁ±¥…Ñ¥½¹ÌµÉÕ¹¹¥¹œµ½¸µÁ˜µİ¥Ñ µ‘…Ñ…‘½œ¤°İ¡¥ •¹…‰±•Ì‘•Ù•±½Á•ÉÌÑ¼½±±•ĞÕÍÑ½´µ•ÑÉ¥Ì°ÑÉ…•Ì°…¹±½Ì™É½´Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹Ì(´m%¹•ÍÑ¥¹œ…¹ÁÉ½•ÍÍ¥¹œÍåÍÑ•´±½Ìİ¥Ñ …Ñ…‘½t ½±±•ĞµÍåÍÑ•´µ±½Ìµİ¥Ñ µ‘…Ñ…‘½œ¤()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµÁ˜µ‘…Í¡‰½…É¹Á¹œˆ…ÁÑ¥½¸ô‰…Ñ…‘½œÌÕÍÑ½µ¥é…‰±”½ÕĞµ½˜µÑ¡”µ‰½à±½Õ½Õ¹‘Éä‘…Í¡‰½…É¸ˆ…±Ğô‰…Ñ…‘½œ±½Õ½Õ¹‘Éä‘…Í¡‰½…ÉˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒ5½¹¥Ñ½È„A¥Ù½Ñ…°±½Õ½Õ¹‘Éä±ÕÍÑ•Èİ¥Ñ …Ñ…‘½œ)A½Á•É…Ñ½ÉÌ…¸•Ğ‘••ÀÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡•¥È±ÕÍÑ•È‰ä¥¹ÍÑ…±±¥¹œÑ¡”m…Ñ…‘½œ±ÕÍÑ•È5½¹¥Ñ½É¥¹œ™½ÈAÑ¥±•um±ÕÍÑ•ÈµÑ¥±•t¸Q¡”mÑ¥±•umÑ¥±”µ‰…Í¥Ít‘•Á±½åÌÑİ¼½µÁ½¹•¹ÑÏŠQ„¥É•¡½Í”¹½éé±”…¹Ñ¡”…Ñ…‘½œ•¹ÓŠQİ¡¥ Ñ½•Ñ¡•È‘•±¥Ù•Èµ•ÑÉ¥Ì™É½´å½ÕÈA½µÁ½¹•¹ÑÌ…Ìİ•±°…ÌÍåÍÑ•´µ±•Ù•°É•Í½ÕÉ”µ•ÑÉ¥Ì™É½´Ñ¡”Õ¹‘•É±å¥¹œY5Ì¸()Q¡”…Ñ…‘½œm¥É•¡½Í”¹½éé±•t ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”™¥É•¡½Í”¤½¹ÍÕµ•Ì¥¹™½Éµ…Ñ¥½¸™É½´å½ÕÈ‘•Á±½åµ•¹ÓŠeÌm1½É•…Ñ½Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”±½É•…Ñ½È¤°AŠeÌÍåÍÑ•´™½È…É•…Ñ¥¹œ‘•Á±½åµ•¹Ğµ•ÑÉ¥Ì…¹…ÁÁ±¥…Ñ¥½¸±½Ì¸Q¡”…Ñ…‘½œ¹½éé±”½±±•ÑÌ1½É•…Ñ½Èm½Õ¹Ñ•ÉÙ•¹ÑÍum½Õ¹Ñ•Ét°İ¡¥ É•Á½ÉĞ…¸¥¹É•µ•¹Ñ¥¹œÙ…±Õ”ìmY…±Õ•5•ÑÉ¥Íumµ•ÑÉ¥t°İ¡¥ É•ÁÉ•Í•¹Ğ…¸¥¹ÍÑ…¹Ñ…¹•½ÕÌµ•…ÍÕÉ•µ•¹Ğì…¹m½¹Ñ…¥¹•É5•ÑÉ¥Íumµ•ÑÉ¥t°İ¡¥ ÁÉ½Ù¥‘”É•Í½ÕÉ”µ•ÑÉ¥Ì™½ÈÑ¡”½¹Ñ…¥¹•ÉÌÉÕ¹¹¥¹œ…ÁÁ±¥…Ñ¥½¹Ì¸Éµ•İ¥Ñ Ñ¡•Í”µ•ÑÉ¥Ì°å½Ô…¸µ½¹¥Ñ½È…¹…±•ÉĞ½¸Ñ¡”­•ä¥¹‘¥…Ñ½ÉÌ‘¥ÍÕÍÍ•¥¸mÁ…ÉĞÑİ½umÁ…ÉĞµÑİ½t½˜Ñ¡¥ÌÍ•É¥•Ì…Ìİ•±°…Ì¡Õ¹‘É•‘Ì½˜…‘‘¥Ñ¥½¹…°µ•ÑÉ¥ÌÑ¡…Ğ…É”…Ù…¥±…‰±”™É½´Ñ¡”¥É•¡½Í”¸()	•…ÕÍ”Ñ¡”¹½éé±”İ¥±°É•……¹ä…¹…±°¥¹™½Éµ…Ñ¥½¸¥¹±Õ‘•¥¸Ñ¡”¥É•¡½Í”ÍÑÉ•…´°å½Ô…¸ÕÍ”¥ĞÑ¼½±±•Ğµ•ÑÉ¥Ì™É½´Í•ÉÙ¥•ÌÍÕ …ÌmA!•…±Ñ¡İ…Ñ¡um¡•…±Ñ¡İ…Ñ¡t°İ¡¥ ÑÉ…¹Í™½ÉµÌÉ…ÜAµ•ÑÉ¥Ì¥¹Ñ¼Á•Èµµ¥¹ÕÑ”½ÈÁ•Èµ¡½ÕÈÉ…Ñ•Ì°Á•É•¹Ñ…•Ì½˜…Ù…¥±…‰±”…Á…¥Ñä°…¹½Ñ¡•ÈÕÍ•™Õ°½µÁÕÑ•µ•ÑÉ¥Ì¸½È•á…µÁ±”°Ñ¡”!•…±Ñ¡İ…Ñ µ•ÑÉ¥Œ¥•¼¹Ù…¥±…‰±•É••¡Õ¹­Í€ÕÍ•ÌÑ¡”m•±°I•Át ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµµ•ÑÉ¥Ì•±±ÍÉ•À¤µ•ÑÉ¥ŒÉ•À¹…Á…¥ÑåI•µ…¥¹¥¹5•µ½Éå€Ñ¼…±Õ±…Ñ”Ñ¡”¹Õµ‰•È½˜…Ù…¥±…‰±”‰±½­Ì½˜µ•µ½Éä±…É”•¹½Õ Ñ¼ÍÑ…”…¹ÉÕ¸¹•Ü…ÁÁ±¥…Ñ¥½¹Ì¸%˜å½Ô¥¹ÍÑ…±°A!•…±Ñ¡İ…Ñ ½¸å½ÕÈ±ÕÍÑ•È°¥ÑÌµ•ÑÉ¥Ìİ¥±°‰”…Ù…¥±…‰±”¥¸…Ñ…‘½œİ¥Ñ Ñ¡”±½Õ‘™½Õ¹‘Éä¹¹½éé±”¹¡•…±Ñ¡İ…Ñ¡€ÁÉ•™¥à¸()Q¡”Í•½¹½µÁ½¹•¹Ğ¥¹ÍÑ…±±•‰äÑ¡”…Ñ…‘½œ±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±”¥ÌÑ¡”½Á•¸Í½ÕÉ”m…Ñ…‘½œ•¹Ñum…•¹Ñt¸Q¡”Ñ¥±”‘•Á±½åÌÑ¡”•¹Ğ…Ì„	=M É•±•…Í”½¹Ñ¼•Ù•Éä¡½ÍĞ¥¸å½ÕÈ±ÕÍÑ•È¸Q¡”•¹ĞÑ¡•¸…ÕÑ½µ…Ñ¥…±±ä‰•¥¹ÌÉ•Á½ÉÑ¥¹œÍåÍÑ•´µ±•Ù•°µ•ÑÉ¥Ì™É½´•… Y4°Í¼å½Ô…¸µ½¹¥Ñ½È…¹…É•…Ñ”AT°µ•µ½Éä°¹•Ñİ½É¬°…¹½Ñ¡•ÈÉ•Í½ÕÉ”µ•ÑÉ¥Ì™É½´…É½ÍÌå½ÕÈ±ÕÍÑ•È¸((ŒŒŒ%¹ÍÑ…±°Ñ¡”±ÕÍÑ•Èµ½¹¥Ñ½É¥¹œÑ¥±”)Q¼¥¹ÍÑ…±°Ñ¡”…Ñ…‘½œ±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±”°½Á•É…Ñ½ÉÌ…¸‘½İ¹±½…¥Ğ™É½´Ñ¡”mA¥Ù½Ñ…°9•Ñİ½É­umÁ¥Ù½Ñ…°µ¹•Ñİ½É­t¸=¹”å½Ô‘½İ¹±½…Ñ¡”Í•ÉÙ¥”°å½Ô…¸Ñ¡•¸¥µÁ½ÉĞ¥Ğ¥¹Ñ¼Ñ¡”=ÁÌ5…¹…•ÈÑ¼½¹™¥ÕÉ”…¹‘•Á±½ä¥Ğ¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµ±ÕÍÑ•ÈµÑ¥±”µÉ•ØÈ¹Á¹œˆ…ÁÑ¥½¸ô‰%µÁ½ÉĞÑ¡”…Ñ…‘½œ±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±”‰•™½É”½¹™¥ÕÉ¥¹œ…¹‘•Á±½å¥¹œ¥ĞÑ¼å½ÕÈ±ÕÍÑ•È¸ˆ…±Ğô‰…Ñ…‘½œA±ÕÍÑ•Èµ½¹¥Ñ½É¥¹œˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()%¸Ñ¡”=ÁÌ5…¹…•È°Õ¹‘•ÈÑ¡”Ñ¥±—ŠeÌ€¨©…Ñ…‘½œ½¹™¥œ¨¨Ñ…ˆ°•¹Ñ•Èå½ÕÈ…Ñ…‘½œmA$­•åum‘…Ñ…‘½œµ…Á¥t¸e½Ô…¸…±Í¼…‘Ñ…Ì™½Èå½ÕÈ‘•Á±½åµ•¹Ğ°İ¡¥ İ¥±°‰”…ÁÁ±¥•Ñ¼…±°Y5Ì¥¸å½ÕÈ±ÕÍÑ•ÈÍ¼å½Ô…¸•…Í¥±ä™¥±Ñ•È…¹…É•…Ñ”å½ÕÈµ•ÑÉ¥ÌÕÍ¥¹œÉ•±•Ù…¹Ğ…ÑÑÉ¥‰ÕÑ•Ì¸½È¥¹ÍÑ…¹”°¥˜å½Ô…É”½Á•É…Ñ¥¹œµÕ±Ñ¥Á±”A±ÕÍÑ•ÉÌ™½È‘¥™™•É•¹ĞÍÑ…•Ì½˜Ñ¡”‘•Ù•±½Áµ•¹ĞÁÉ½•ÍÌ°å½Ô…¸Ñ…œÑ¡•´‰äÑ¡”¹…µ”½˜Ñ¡”•¹Ù¥É½¹µ•¹Ğ°ÍÕ …Ì•¹Øé‘•Ù•±½Áµ•¹Ñ€…¹•¹ØéÁÉ½‘ÕÑ¥½¹€¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµ±ÕÍÑ•ÈµÑ¥±”µ½¹™¥œ¹Á¹œˆ…±Ğô‰…Ñ…‘½œA±ÕÍÑ•Èµ½¹¥Ñ½É¥¹œ½¹™¥œˆ€ùõô()Q¡”¹•áĞ½¹™¥ÕÉ…Ñ¥½¸ÍÑ•À¥ÌÑ¼É•…Ñ”„U±¥•¹Ğ…½Õ¹Ğ™½È…Ñ…‘½œÑ¡…Ğ…¸…•ÍÌÑ¡”¥É•¡½Í”‘…Ñ„¸¥ÉÍĞ°ÕÍ¥¹œÑ¡”mU½µµ…¹±¥¹”±¥•¹ÑumÕ……t°½ÈU°Ñ…É•Ğå½ÕÈ‘½µ…¥»ŠeÌUÍ•ÉÙ•Èİ¥Ñ Ñ¡”½µµ…¹è((€€€ÕÕ…ŒÑ…É•ĞÕ…„¸ñå½ÕÈµ‘½µ…¥¸ø¹½´()Q¡•¸É•ÑÉ¥•Ù”…¸…•ÍÌÑ½­•¸™É½´Ñ¡”Í•ÉÙ•Èİ¥Ñ Ñ¡”™½±±½İ¥¹œ½µµ…¹°İ¡•É”Ñ¡”Í•É•Ğ¥ÌÑ¡”Á…ÍÍİ½É™½ÈÑ¡”€¨©…‘µ¥¸±¥•¹Ğ¨¨½˜å½ÕÈ‘•Á±½åµ•¹Ğ€¡…±°‘•Á±½åµ•¹ĞÉ•‘•¹Ñ¥…±Ì…É”…Ù…¥±…‰±”™É½´Ñ¡”€¨©É•‘•¹Ñ¥…±Ì¨¨Ñ…ˆ½˜å½ÕÈA¥Ù½Ñ…°ÁÁ±¥…Ñ¥½¸M•ÉÙ¥•ÌÑ¥±”¥¸Ñ¡”=ÁÌ5…¹…•È¤è((€€€Õ……ŒÑ½­•¸±¥•¹Ğ•Ğ…‘µ¥¸€µÌ€ñÍ•É•Ğø()=¹”å½×ŠeÙ”É•ÑÉ¥•Ù•…¸…‘µ¥¸±¥•¹ĞÑ½­•¸°å½Ô…¸ÕÍ”Ñ¡”UÑ¼É•…Ñ”…¸…½Õ¹ĞÑ¡…Ğ…¸…•ÍÌÑ¡”¥É•¡½Í”¸UÍ”Ñ¡”½µµ…¹‰•±½ÜÑ¼É•…Ñ”„¹•Ü±¥•¹Ğ…½Õ¹Ğ™½ÈÑ¡”…Ñ…‘½œ¹½éé±”°…ÍÍ¥¹¥¹œ¥Ğ„¹…µ”…¹Á…ÍÍİ½Éè()€)Õ……Œ±¥•¹Ğ…‘‘…Ñ…‘½œµ™¥É•¡½Í”µ¹½éé±”p(€€€€´µ¹…µ”€ñ‘…Ñ…‘½}±¥•¹Ñ}¹…µ”¨øp(€€€€´µÍ½Á”‘½ÁÁ±•È¹™¥É•¡½Í”±±½Õ‘}½¹ÑÉ½±±•È¹…‘µ¥¹}É•…‘}½¹±ä±½…ÕÑ ¹±½¥¸p(€€€€´µ…ÕÑ¡½É¥Ñ¥•Ì‘½ÁÁ±•È¹™¥É•¡½Í”±±½Õ‘}½¹ÑÉ½±±•È¹…‘µ¥¹}É•…‘}½¹±ä±½Á•¹¥±½…ÕÑ ¹…ÁÁÉ½Ù…±Ìp(€€€€´µ…ÕÑ¡½É¥é•‘}É…¹Ñ}ÑåÁ•Ì±¥•¹Ñ}É•‘•¹Ñ¥…±Ì±É•™É•Í¡}Ñ½­•¸p(€€€€´µ…•ÍÍ}Ñ½­•¹}Ù…±¥‘¥Ñä€ÄÈÀäØÀÀp(€€€€µÌ€ñ‘…Ñ…‘½}±¥•¹Ñ}Á…ÍÍİ½Éø)€((©%¸Ñ¡”Ñ¥±”Í•ÑÑ¥¹Ì€¡½¹™¥ÕÉ•‰•±½Ü¤°Ñ¡”¹…µ”‘•™…Õ±ÑÌÑ¼‘…Ñ…‘½œµ™¥É•¡½Í”µ¹½éé±•€¸()Q¡•¸°¥¸Ñ¡”€¨©±½Õ½Õ¹‘ÉäM•ÑÑ¥¹Ì¨¨Ñ…ˆ°•¹Ñ•ÈÑ¡”±¥•¹Ğ¹…µ”€¡¥˜‘¥™™•É•¹Ğ™É½´Ñ¡”‘•™…Õ±Ğ¤…¹Ñ¡”…Ñ…‘½œ±¥•¹ĞÁ…ÍÍİ½Éå½ÔÉ•…Ñ•¥¸Ñ¡”ÁÉ•Ù¥½ÕÌÍÑ•À¸M…Ù”å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸…¹…ÁÁ±äÑ¡”¡…¹•ÌÑ¼‘•Á±½äÑ¡”¹½éé±”…¹…Ñ…‘½œ•¹Ğ¸((ŒŒŒ5½¹¥Ñ½Èå½ÕÈ±ÕÍÑ•Èİ¥Ñ …Ñ…‘½œÉ…Á¡Ì…¹…±•ÉÑÌ)=¹”å½×ŠeÙ”‘•Á±½å•…Ñ…‘½ŸŠeÌ±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±”°å½Ôİ¥±°Í•”å½ÕÈA¥¹™É…ÍÑÉÕÑÕÉ”…ÁÁ•…È¥¸…Ñ…‘½œ…¹É•Á½ÉÑ¥¹œµ•ÑÉ¥Ì¸…Ñ…‘½œ…ÕÑ½µ…Ñ¥…±±äÑ…Ìå½ÕÈµ•ÑÉ¥Ì…¹¥¹™É…ÍÑÉÕÑÕÉ”½µÁ½¹•¹ÑÌİ¥Ñ …ÑÑÉ¥‰ÕÑ•Ì™É½´Ñ¡”±½ÕÁÉ½Ù¥‘•Èå½ÕÈ±ÕÍÑ•È¥ÌÉÕ¹¹¥¹œ½¸€¡ÍÕ …ÌÑ¡”…Ù…¥±…‰¥±¥Ñäé½¹”…¹¥¹ÍÑ…¹”ÑåÁ”¤°…Ìİ•±°…ÌÙ…É¥½ÕÌ	=M Í•ÑÑ¥¹Ì¸½È•á…µÁ±”°•… Y4¥ÌÑ…•İ¥Ñ „‘•Á±½åµ•¹Ğ%…¹„	=M ©½ˆ¥‘•¹Ñ¥™å¥¹œİ¡…ĞÉ½±”Ñ¡…ĞY4¥ÌÉÕ¹¹¥¹œ¸Q…Ì±•Ğå½Ô•…Í¥±ä½É…¹¥é”…¹É½ÕÀå½ÕÈ±ÕÍÑ•ËŠeÌY5ÌÕÍ¥¹œÙ¥ÍÕ…±¥é…Ñ¥½¹ÌÍÕ …ÌÑ¡”…Ñ…‘½œ¡½ÍĞµ…À¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµÁ˜µ¡½ÍÑµ…À¹Á¹œˆ…ÁÑ¥½¸ô‰±°Ñ¡”¹½‘•Ì¥¸„AMµ…±°½½ÑÁÉ¥¹Ğ±ÕÍÑ•È°É½ÕÁ•‰ä…Ù…¥±…‰¥±¥Ñäé½¹”…¹	=M ©½ˆ¥¸Ñ¡”…Ñ…‘½œ¡½ÍĞµ…À¸ˆ…±Ğô‰A¡½ÍÑµ…À¥¸…Ñ…‘½œˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()Q¡¥Ì¡¥ µ±•Ù•°Ù¥•Ü¥ÌÕÍ•™Õ°™½ÈÅÕ¥­±ä¥‘•¹Ñ¥™å¥¹œ¡½ĞÍÁ½ÑÌ¥¸å½ÕÈ±ÕÍÑ•È¸½È•á…µÁ±”°å½Ô…¸Í•”¥˜„•ÉÑ…¥¸¥•¼•±°½ÈUÍ•ÉÙ•È¥ÌÉÕ¹¹¥¹œİ¥Ñ „Á…ÉÑ¥Õ±…É±ä¡¥ ±•Ù•°½˜ATÕÑ¥±¥é…Ñ¥½¸°İ¡¥ …¸¡…Ù”Í¥¹¥™¥…¹Ğ•™™•ÑÌ½¸Á•É™½Éµ…¹”¸()…Ñ…‘½œ‘…Í¡‰½…É‘Ì…±±½Üå½ÔÑ¼Ù¥ÍÕ…±¥é”…¹½ÉÉ•±…Ñ”…¹ä½˜Ñ¡”µ•ÑÉ¥Ì½µ¥¹œ™É½´Ñ¡”¥É•¡½Í”¸e½Ô…¸•…Í¥±ä±½¹”…¹ÕÍÑ½µ¥é”…Ñ…‘½ŸŠeÌ½ÕĞµ½˜µÑ¡”µ‰½à±½Õ½Õ¹‘Éä‘…Í¡‰½…É°½Èå½Ô…¸É•…Ñ”½¹”™É½´ÍÉ…Ñ Ñ¼™½ÕÌ½¸Ñ¡”Á•É™½Éµ…¹”¥¹‘¥…Ñ½ÉÌÑ¡…Ğ…É”µ½ÍĞ¥µÁ½ÉÑ…¹ĞÑ¼å½ÕÈ½É…¹¥é…Ñ¥½¸¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµÁ˜µµ•ÑÉ¥Ì¹Á¹œˆ…±Ğô‰Aµ•ÑÉ¥Ì¥¸…Ñ…‘½œˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ±•ÉÑ¥¹œ)%¸…‘‘¥Ñ¥½¸Ñ¼‘…Í¡‰½…É‘Ì°…Ñ…‘½œ±•ÑÌå½ÔÍ•Ğm…±•ÉÑÍumµ½¹¥Ñ½ÉÍt½¸…¹äµ•ÑÉ¥Ì½µ¥¹œ™É½´A¸Q¡•Í”¥¹±Õ‘”Ñ¡É•Í¡½±…±•ÉÑÌ…Ìİ•±°…Ìµ…¡¥¹”±•…É¹¥¹ŸŠM‘É¥Ù•¸…±•ÉÑÌ‰…Í•½¸µ•ÑÉ¥Œ™½É•…ÍÑÌ…Ìİ•±°…Ì½ÕÑ±¥•È…¹…¹½µ…±ä‘•Ñ•Ñ¥½¸¸()½È•á…µÁ±”°‰•±½Üİ”…É”É•…Ñ¥¹œ…¸½ÕÑ±¥•È…±•ÉĞÑ¡…Ğ•Ù…±Õ…Ñ•ÌÑ¡”µ•ÑÉ¥ŒmI•Á	Õ±­Må¹ÕÉ…Ñ¥½¹t ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµµ•ÑÉ¥Ìµ•ÑÉ¥ŒµÑ¼µİ…Ñ µÉ•Á‰Õ±­Íå¹‘ÕÉ…Ñ¥½¸¤™½È•… ¥•¼•±°¸Q¡¥Ì…±•ÉĞİ¥±°ÑÉ¥•È¥˜½¹”•±°¥ÌÑ…­¥¹œÍ¥¹¥™¥…¹Ñ±ä±½¹•ÈÑ¡…¸Ñ¡”½Ñ¡•È•±±ÌÑ¼Íå¹¡É½¹¥é”Ñ¡”¹Õµ‰•È½˜m1IAÍt ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”Ñ…Í­Ìµ…¹µ±ÉÁÌ¤ÉÕ¹¹¥¹œ½¸¥ÑÌ½¹Ñ…¥¹•ÉÌİ¥Ñ Ñ¡”ÑÕ…±1IA€½Õ¹Ğ™É½´Ñ¡”m		Mt ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”‰‰Ì¤°¥¹‘¥…Ñ¥¹œ„Á½ÍÍ¥‰±”½µµÕ¹¥…Ñ¥½¸ÁÉ½‰±•´‰•Ñİ••¸Ñ¡…Ğ•±°…¹Ñ¡”		L¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµ½ÕÑ±¥•Èµ…±•ÉĞ¹Á¹œˆ…ÁÑ¥½¸ô‰É•…Ñ¥¹œ…¸½ÕÑ±¥•È‘•Ñ•Ñ¥½¸…±•ÉĞ¥¸…Ñ…‘½œÑ¼µ½¹¥Ñ½È„A±ÕÍÑ•È¸ˆ…±Ğô‰=ÕÑ±¥•È‘•Ñ•Ñ¥½¸…±•ÉĞ¥¸…Ñ…‘½œˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ±•ÉĞ½¸Í±½Ü½¹ÍÕµ•ÉÌ)Q¡”…Ñ…‘½œ¥É•¡½Í”¹½éé±”Ñ¡…Ğ¥Ì‘•Á±½å•İ¥Ñ Ñ¡”±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±”•¹•É…Ñ•Ì„µ•ÑÉ¥Œ…±±•m‘…Ñ…‘½œ¹¹½éé±”¹Í±½İ½¹ÍÕµ•É±•ÉÑumÍ±½Üµ½¹ÍÕµ•Èµ…±•ÉÑt¸Q¡¥Ìµ•ÑÉ¥ŒÁÉ½Ù¥‘•Ì„ÍÑ…ÑÕÌ¡•¬Ñ¼¥¹‘¥…Ñ”¥˜Ñ¡”¹½éé±”¥Ì¥¹•ÍÑ¥¹œµ•ÍÍ…•Ì…ÌÅÕ¥­±ä…ÌÑ¡”¥É•¡½Í”¥ÌÍ•¹‘¥¹œÑ¡•´¸%˜Ñ¡”Í±½İ½¹ÍÕµ•É±•ÉÑ€µ•ÑÉ¥ŒÌÙ…±Õ”¥Ì€Ä°Ñ¡…Ğµ•…¹ÌÑ¡”¹½éé±”¥Ì¹½Ğ…‰±”Ñ¼­••ÀÕÀİ¥Ñ Ñ¡”¥É•¡½Í”¸	äÍ•ÑÑ¥¹œ…¸…±•ÉĞ½¸Ñ¡¥Ìµ•ÑÉ¥Œ°½Á•É…Ñ½ÉÌ…¸ÅÕ¥­±ä‰”¹½Ñ¥™¥•¥˜…Ñ…‘½ŸŠeÌ½¹¹•Ñ¥½¸Ñ¼Ñ¡”‘•Á±½åµ•¹ÓŠeÌQÉ…™™¥Œ½¹ÑÉ½±±•ÉÌ¥ÌÍ±½Ü½È‘½İ¸¸((ŒŒ5½¹¥Ñ½È…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ½¸Aİ¥Ñ …Ñ…‘½œ))ÕÍĞ…ÌA½Á•É…Ñ½ÉÌÕÍ”…Ñ…‘½ŸŠeÌ±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±”Ñ¼…¥¸Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡•¥È‘•Á±½åµ•¹ÑÌ°‘•Ù•±½Á•ÉÌ…¸ÕÍ”…Ñ…‘½ŸŠeÌÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±”Ñ¼ÑÉ…¬Ñ¡”ÍÑ…ÑÕÌ…¹Á•É™½Éµ…¹”½˜Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹Ì¸Q¡”ÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±”•¹…‰±•Ì‘•Ù•±½Á•ÉÌÑ¼½±±•ĞÕÍÑ½´µ•ÑÉ¥Ì°‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…•Ì°…¹±½Ì™É½´Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ¥¸A¸((ŒŒŒ%¹ÍÑ…±°Ñ¡”ÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±”)Q¡”ÁÉ½•ÍÌ½˜¥¹ÍÑ…±±¥¹œÑ¡”…Ñ…‘½œÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±”¥ÌÍ¥µ¥±…ÈÑ¼¥¹ÍÑ…±±¥¹œÑ¡”±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±”¸¥ÉÍĞ°‘½İ¹±½…Ñ¡”Í•ÉÙ¥”Ñ¥±”™É½´mA¥Ù½Ñ…°9•Ñİ½É­umÁ¥Ù½Ñ…°µ…ÁÁ±¥…Ñ¥½¸µµ½¹¥Ñ½É¥¹t¸Q¡•¸ÕÁ±½…¥ĞÑ¼Ñ¡”=ÁÌ5…¹…•È…¹…ÁÁ±äÑ¡”¡…¹•ÌÑ¼‘•Á±½ä¥ĞÑ¼å½ÕÈ±ÕÍÑ•È¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµ…ÁÁ±¥…Ñ¥½¸µÑ¥±”µÉ•ØÈ¹Á¹œˆ…±Ğô‰…Ñ…‘½œA…ÁÁ±¥…Ñ¥½¸µ½¹¥Ñ½É¥¹œˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()%¹ÍÑ…±±¥¹œÑ¡¥ÌÑ¥±”İ¥±°…‘…Ñ…‘½ŸŠeÌÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œ‰Õ¥±‘Á…¬Ñ¼å½ÕÈ±¥ÍĞ½˜…Ù…¥±…‰±”‰Õ¥±‘Á…­Ì¸%˜å½Ô±¥ÍĞ¥¹ÍÑ…±±•‰Õ¥±‘Á…­ÌÙ¥„Ñ¡”˜‰Õ¥±‘Á…­Í€½µµ…¹°å½ÔÍ¡½Õ±Í•”Í½µ•Ñ¡¥¹œÍ¥µ¥±…ÈÑ¼Ñ¡”™½±±½İ¥¹œè()€)‰Õ¥±‘Á…¬€€€€€€€€€€€€€€€€€€€€€€€Á½Í¥Ñ¥½¸€€•¹…‰±•€€±½­•€€™¥±•¹…µ”)µ•Ñ…}‰Õ¥±‘Á…¬€€€€€€€€€€€€€€€€€€€Ä€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€µ•Ñ…}‰Õ¥±‘Á…¬¹é¥À)ÍÑ…Ñ¥™¥±•}‰Õ¥±‘Á…¬€€€€€€€€€€€€€È€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€ÍÑ…Ñ¥™¥±•}‰Õ¥±‘Á…¬µ…¡•µ™±¥¹Õá™ÌÈµØÄ¸Ğ¸Èà¹é¥À)©…Ù…}‰Õ¥±‘Á…­}½™™±¥¹”€€€€€€€€€€€Ì€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€©…Ù„µ‰Õ¥±‘Á…¬µ½™™±¥¹”µ™±¥¹Õá™ÌÈµØĞ¸ÄÈ¸Ä¹é¥À)ÉÕ‰å}‰Õ¥±‘Á…¬€€€€€€€€€€€€€€€€€€€Ğ€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€ÉÕ‰å}‰Õ¥±‘Á…¬µ…¡•µ™±¥¹Õá™ÌÈµØÄ¸Ü¸Ää¹é¥À)¹½‘•©Í}‰Õ¥±‘Á…¬€€€€€€€€€€€€€€€€€Ô€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€¹½‘•©Í}‰Õ¥±‘Á…¬µ…¡•µ™±¥¹Õá™ÌÈµØÄ¸Ø¸ÈÔ¹é¥À)½}‰Õ¥±‘Á…¬€€€€€€€€€€€€€€€€€€€€€Ø€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€½}‰Õ¥±‘Á…¬µ…¡•µ™±¥¹Õá™ÌÈµØÄ¸à¸ÈÌ¹é¥À)ÁåÑ¡½¹}‰Õ¥±‘Á…¬€€€€€€€€€€€€€€€€€Ü€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€ÁåÑ¡½¹}‰Õ¥±‘Á…¬µ…¡•µ™±¥¹Õá™ÌÈµØÄ¸Ø¸ÄÜ¹é¥À)Á¡Á}‰Õ¥±‘Á…¬€€€€€€€€€€€€€€€€€€€€à€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€Á¡Á}‰Õ¥±‘Á…¬µ…¡•µ™±¥¹Õá™ÌÈµØĞ¸Ì¸ÔØ¹é¥À)‘½Ñ¹•Ñ}½É•}‰Õ¥±‘Á…¬€€€€€€€€€€€€ä€€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€‘½Ñ¹•Ğµ½É•}‰Õ¥±‘Á…¬µ…¡•µ™±¥¹Õá™ÌÈµØÈ¸À¸Ü¹é¥À)‰¥¹…Éå}‰Õ¥±‘Á…¬€€€€€€€€€€€€€€€€€ÄÀ€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€‰¥¹…Éå}‰Õ¥±‘Á…¬µ…¡•µØÄ¸À¸Äà¹é¥À)‘…Ñ…‘½}…ÁÁ±¥…Ñ¥½¹}µ½¹¥Ñ½É¥¹œ€€€ÄÄ€€€€€€€€ÑÉÕ”€€€€€™…±Í”€€€‘…Ñ…‘½œµ±½Õ‘™½Õ¹‘Éäµ‰Õ¥±‘Á…¬µØÀ¸ä¸Ô¹é¥À)€()%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°Í¡½Ü¡½Üå½Ô…¸ÁÕÍ …¸…ÁÁ±¥…Ñ¥½¸İ¥Ñ Ñ¡”ÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œ‰Õ¥±‘Á…¬¸Q¡”‰Õ¥±‘Á…¬¥¹±Õ‘•Ìm…Ñ…‘½ŸŠeÌ½MÑ…ÑÍ±¥‰É…Éåum‘½ÍÑ…ÑÍ‘t™½È½±±•Ñ¥¹œÕÍÑ½´µ•ÑÉ¥Ì…¹•¹…‰±•Ìå½ÔÑ¼¥¹ÍÑÉÕµ•¹Ğå½ÕÈ…ÁÁ±¥…Ñ¥½¸Ñ¼Í•¹ÑÉ…•Ì…¹±½ÌÑ¼…Ñ…‘½œ¸((ŒŒŒAÕÍ Ñ¡”ÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œ‰Õ¥±‘Á…¬İ¥Ñ å½ÕÈ…ÁÁ±¥…Ñ¥½¸)Q¼ÕÍ”…Ñ…‘½ŸŠeÌÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±”İ¥Ñ å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì°å½ÔµÕÍĞÁÕÍ …¸…ÁÁ±¥…Ñ¥½¸İ¥Ñ mµÕ±Ñ¥Á±”‰Õ¥±‘Á…­ÍumµÕ±Ñ¥Á±”µ‰Õ¥±‘Á…­Ít¸‘‘¥¹œµÕ±Ñ¥Á±”‰Õ¥±‘Á…­ÌÉ•ÅÕ¥É•Ì„½ÕÁ±”½˜…‘‘¥Ñ¥½¹…°ÍÑ•ÁÌ‰•å½¹„ÍÑ…¹‘…É˜µÁÕÍ¡€¸()¥ÉÍĞ°ÁÕÍ å½ÕÈ…ÁÁ±¥…Ñ¥½¸İ¥Ñ Ñ¡”±½Õ½Õ¹‘Éä‰¥¹…Éä‰Õ¥±‘Á…¬°İ¡¥±”¥¹±Õ‘¥¹œ„€´µ¹¼µÍÑ…ÉÑ€™±…œÑ¼­••ÀÑ¡”…ÁÁ±¥…Ñ¥½¸™É½´ÉÕ¹¹¥¹œè((€€€˜ÁÕÍ €ñ…ÁÀµ¹…µ”ø€´µ¹¼µÍÑ…ÉĞ€µˆ‰¥¹…Éå}‰Õ¥±‘Á…¬()9•áĞ°å½Ô…¸ÁÕÍ Ñ¡”…ÁÁ±¥…Ñ¥½¸İ¥Ñ Ñ¡”ÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œ‰Õ¥±‘Á…¬…¹…¹ä½Ñ¡•È‰Õ¥±‘Á…­Ìå½ÕÈ…ÁÁ±¥…Ñ¥½¸¹••‘Ì¸AÕÍ¡¥¹œµÕ±Ñ¥Á±”‰Õ¥±‘Á…­ÌÕÉÉ•¹Ñ±äÉ•ÅÕ¥É•ÌÕÍ¥¹œÑ¡”±½Õ½¹ÑÉ½±±•ËŠeÌØÌA$°İ¡¥ å½Ô…¸ÍÁ•¥™ä‰ä…‘‘¥¹œ„ØÌµ€ÁÉ•™¥à‰•™½É”Ñ¡”ÁÕÍ¡€½µµ…¹¸9½Ñ”Ñ¡…ĞÑ¡”½É”É•ÅÕ¥É•‰Õ¥±‘Á…¬°İ¡¥ ÁÉ½Ù¥‘•ÌÑ¡”…ÁÁ±¥…Ñ¥½¸ÍÑ…ÉĞ½µµ…¹°µÕÍĞ½µ”±…ÍĞ¸=Ñ¡•È‰Õ¥±‘Á…­ÌÁÉ½Ù¥‘”‘•Á•¹‘•¹¥•Ì™½ÈÑ¡”…ÁÁ±¥…Ñ¥½¸¸((€€€˜ØÌµÁÕÍ €ñ…ÁÀµ¹…µ”ø€µˆ‘…Ñ…‘½œµ±½Õ‘™½Õ¹‘Éäµ‰Õ¥±‘Á…¬€µˆ€ñÍ•½¹µ‰Õ¥±‘Á…¬ø((ŒŒŒ½¹™¥ÕÉ”…Ñ…‘½œÕÍ¥¹œ•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•Ì()9½ÜÑ¡…Ğå½ÕÈ…ÁÁ±¥…Ñ¥½¸¥ÌÕÀ…¹ÉÕ¹¹¥¹œİ¥Ñ Ñ¡”…Ñ…‘½œ‰Õ¥±‘Á…¬°å½Ô¹••Ñ¼Á…ÍÌ½¹”½Èµ½É”½¹™¥ÕÉ…Ñ¥½¸½ÁÑ¥½¹ÌÑ¼…Ñ…‘½œÕÍ¥¹œ•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•Ì™½Èå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸e½Ô…¸•¥Ñ¡•ÈÕÍ”Ñ¡”˜Í•Ğµ•¹Ù€½µµ…¹Ñ¼Í•Ğ•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•Ì°½Èå½Ô…¸…‘Ñ¡”•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•ÌÑ¼„µ…¹¥™•ÍĞ™¥±”™½Èå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸]”±°‘•Ñ…¥°•… ½˜Ñ¡½Í”…ÁÁÉ½…¡•Ì‰•±½Ü¸((ŒŒŒŒ=ÁÑ¥½¸€ÄèM•Ğ•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•Ì™É½´Ñ¡”½µµ…¹±¥¹”()Ğµ¥¹¥µÕ´°å½Ô¹••Ñ¼Í•Ğ…¸•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±”Ñ¼ÁÉ½Ù¥‘”å½ÕÈ…Ñ…‘½œmA$­•åum‘µ…Á¥tÍ¼Ñ¡…Ğå½ÕÈ…ÁÁ±¥…Ñ¥½¸‘…Ñ„İ¥±°…ÁÁ•…È¥¸å½ÕÈ…Ñ…‘½œ…½Õ¹Ğè((€€€˜Í•Ğµ•¹Ø€ñ…ÁÀµ¹…µ”ø}A%}-d€ñ…Á¤µ­•äø()]¥Ñ m…Ñ…‘½œA5um‘…Ñ…‘½œµ…Áµt°å½Ô…¸Ù¥ÍÕ…±¥é”‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…•Ì…É½ÍÌå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸%˜å½ÔÉ”ÕÍ¥¹œA4°¥ÓŠeÌÉ•½µµ•¹‘•Ñ¡…Ğå½Ô…ÑÑ… „Í•ÉÙ¥”¹…µ”…¹…‘Ñ…ÌÍ¼å½Ô…¸•…Í¥±äÍ•…É °™¥±Ñ•È°…¹…É•…Ñ”Ñ¡”‘…Ñ„™É½´å½ÕÈ…ÁÁ±¥…Ñ¥½¸¥¸…Ñ…‘½œ¸½È•á…µÁ±”è()€)˜Í•Ğµ•¹Ø€ñ…ÁÀµ¹…µ”ø}MIY%}95Á˜µ…ÁÀ)˜Í•Ğµ•¹Ø€ñ…ÁÀµ¹…µ”ø}QI}MA9}QL€•¹Øéµ…á¥´µÁ˜œ)€()Q¡”}MIY%}95€Ù…É¥…‰±”Ñ…Ì…±°ÑÉ…•Ì™É½´½ÕÈ…ÁÁ±¥…Ñ¥½¸İ¥Ñ Ñ¡”Í•ÉÙ¥”¹…µ”€ ¨©Á˜µ…ÁÀ¨¨°¥¸Ñ¡¥Ì…Í”¤°İ¡¥ ±•ÑÌå½Ô™½ÕÌ½¸Á•É™½Éµ…¹”‘…Ñ„™É½´¥¹‘¥Ù¥‘Õ…°Í•ÉÙ¥•Ì¥¸…Ñ…‘½œ…¹½ÉÉ•±…Ñ”É•ÅÕ•ÍĞÑÉ…•Ìİ¥Ñ ½Ñ¡•Èµ½¹¥Ñ½É¥¹œ‘…Ñ„™É½´Ñ¡…ĞÍ…µ”Í•ÉÙ¥”¸Q¡”}QI}MA9}QM€Ù…É¥…‰±”…‘‘ÌÑ¡”ÁÉ½Ù¥‘•Ñ…ÌÑ¼…±°ÑÉ…•Ì™É½´å½ÕÈ…ÁÁ±¥…Ñ¥½¸°Í¼Ñ¡…Ğå½Ô…¸ÅÕ¥­±ä…¹•…Í¥±ä‘É¥±°‘½İ¸¥¹Ñ¼Ñ¡”ÍÁ•¥™¥ŒÍÕ‰Í•ÑÌ½˜å½ÕÈ‘…Ñ„€¡”¹œ¸É•ÅÕ•ÍĞÑÉ…•Ì™É½´‘¥™™•É•¹Ğ•¹Ù¥É½¹µ•¹ÑÌ¤¸()¥¹…±±ä°É•ÍÑ…”å½ÕÈ…ÁÁ±¥…Ñ¥½¸Ñ¼Á¥¬ÕÀÑ¡”¡…¹•Ìè((€€€˜É•ÍÑ…”€ñ…ÁÀµ¹…µ”ø((ŒŒŒŒ=ÁÑ¥½¸€ÈèM•Ğ•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•ÌÕÍ¥¹œ„µ…¹¥™•ÍĞ™¥±”()I…Ñ¡•ÈÑ¡…¸½¹™¥ÕÉ¥¹œ…Ñ…‘½œÙ¥„˜Í•Ğµ•¹Ù€°å½Ô…¸…±Í¼ÕÍ”„l¨©µ…¹¥™•ÍĞ¹åµ°¨¨™¥±•umµ…¹¥™•ÍÑtÑ¼Í•ĞÑ¡•Í”Ù…É¥…‰±•Ìİ¡•¸ÁÕÍ¡¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸]¡•¸å½Ô¥¹¥Ñ¥…Ñ”˜ÁÕÍ¡€°±½Õ½Õ¹‘Éäİ¥±°…ÕÑ½µ…Ñ¥…±±ä‘•Ñ•Ğ„µ…¹¥™•ÍĞ™¥±”¥¸Ñ¡”ÕÉÉ•¹Ğİ½É­¥¹œ‘¥É•Ñ½Éä¸=Èå½Ô…¸Á½¥¹ĞÑ¼„™¥±”¥¸„‘¥™™•É•¹Ğ‘¥É•Ñ½Éäè((€€€˜ÁÕÍ €µ˜Á…Ñ ½Ñ¼½µ…¹¥™•ÍĞ¹åµ°()µ…¹¥™•ÍĞ™¥±”…¸…±Í¼‰”ÕÍ•Ñ¼¥¹±Õ‘”½Ñ¡•ÈÉ•ÅÕ¥É•µ•¹ÑÌÍÁ•¥™¥ŒÑ¼å½ÕÈ…ÁÁ±¥…Ñ¥½¸°ÍÕ …ÌÑ¡”€¨©‘µ©…Ù„µ…•¹Ğ¹©…È¨¨™½ÈmÑÉ…¥¹œÉ•ÅÕ•ÍÑÌÑ¼)…Ù„…ÁÁ±¥…Ñ¥½¹Íum©…Ù„µÑÉ…•t¸Í¥µÁ±”µ…¹¥™•ÍĞ™¥±”Ñ¡…Ğ½¹™¥ÕÉ•Ì…¸…ÁÁ±¥…Ñ¥½¸Ñ¼Í•¹ÑÉ…•ÌÑ¼…Ñ…‘½œ™½È…ÁÁ±¥…Ñ¥½¸µ½¹¥Ñ½É¥¹œµ¥¡ĞÉ•Í•µ‰±”Ñ¡”™½±±½İ¥¹œè()€)…ÁÁ±¥…Ñ¥½¹Ìè(´¹…µ”è€ñ…ÁÀµ¹…µ”ø(€µ•µ½Éäè€Å(€•¹Øè(€€€)Y}=AQLè€œµ©…Ù……•¹Ğé	==Pµ%9½±¥ˆ½‘µ©…Ù„µ…•¹Ğ¹©…Èœ(€€€}A%}-dè€ñ…Á¤µ­•äø(€€€}MIY%}95èÁ˜µ…ÁÀ(€€€}QI}MA9}QLè€•¹Øéµ…á¥´µÁ˜œ)€()]¡•Ñ¡•Èå½ÔÍ•Ğå½ÕÈ•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•ÌÙ¥„Ñ¡”½µµ…¹±¥¹”½ÈÕÍ¥¹œ„µ…¹¥™•ÍĞ™¥±”°å½ÔÍ¡½Õ±¹½Ü¡…Ù”„ÉÕ¹¹¥¹œ…ÁÁ±¥…Ñ¥½¸Ñ¡…Ğ¥Ì½¹™¥ÕÉ•Ñ¼É•Á½ÉĞÕÍÑ½´µ•ÑÉ¥Ì…¹‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…•ÌÑ¼…Ñ…‘½œ¸((ŒŒŒŒ%¹ÍÑÉÕµ•¹Ğå½ÕÈ…ÁÁ±¥…Ñ¥½¸Ñ¼Í•¹ÕÍÑ½´µ•ÑÉ¥ÌÑ¼…Ñ…‘½œ)Q¡”m½MÑ…ÑÍ‰¥¹…Éåum‘½ÍÑ…ÑÍ‘t¥¹±Õ‘•¥¸Ñ¡”…Ñ…‘½œÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œ‰Õ¥±‘Á…¬±•ÑÌå½Ô•µ¥ĞÕÍÑ½´µ•ÑÉ¥Ì™É½´å½ÕÈ…ÁÁ±¥…Ñ¥½¸ÕÍ¥¹œ…¸…ÁÁÉ½ÁÉ¥…Ñ”±¥•¹Ğm±¥‰É…Éåum‘½ÍÑ…ÑÍµ±¥‰É…Éåt¸()½È•á…µÁ±”°¥¸„MÁÉ¥¹œ	½½Ğ)…Ù„…ÁÁ±¥…Ñ¥½¸°İ”…¸ÕÍ”Ñ¡”m©…Ù„µ‘½ÍÑ…ÑÍµ±¥•¹Ñum©…Ù„µ‘½ÍÑ…ÑÍ‘t±¥‰É…Éä¸¥ÉÍĞİ”¥¹¥Ñ¥…±¥é”Ñ¡”MÑ…ÑÍ±¥•¹Ğ°¥¹±Õ‘¥¹œ…¹äÑ…Ìİ”İ…¹ĞÑ¼…ÁÁ±äÑ¼½ÕÈµ•ÑÉ¥Ìè()€)ÁÉ¥Ù…Ñ”ÍÑ…Ñ¥Œ™¥¹…°MÑ…ÑÍ±¥•¹ĞÍÑ…ÑÍ€ô¹•Ü9½¹	±½­¥¹MÑ…ÑÍ±¥•¹Ğ (€€‰Á˜¹…ÁÀˆ°€€€€€€€€€€€€€€€€€€€€€€¼¨ÁÉ•™¥àÑ¼…¹äÍÑ…ÑÌìµ…ä‰”¹Õ±°½È•µÁÑäÍÑÉ¥¹œ€¨¼(€€‰±½…±¡½ÍĞˆ°€€€€€€€€€€€€€€€€€€€€¼¨½µµ½¸…Í”è±½…±¡½ÍĞ€¨¼(€€àÄÈÔ°€€€€€€€€€€€€€€€€€€€€€€€€€€€¼¨Á½ÉĞ€¨¼(€¹•ÜMÑÉ¥¹mtì‰•¹Øéµ…á¥´µÁ˜‰ô€€¼¨…Ñ…‘½œ•áÑ•¹Í¥½¸è½¹ÍÑ…¹ĞÑ…Ì°…±İ…åÌ…ÁÁ±¥•€¨¼(¤ì)€()Q¡•¸°İ”…¸ÕÍ”Ñ¡”±¥•¹ĞÑ¼É•…Ñ”…¹¥¹É•µ•¹Ğ½ÕÈÕÍÑ½´µ•ÑÉ¥Ì¸½È•á…µÁ±”°¥¸„Í¥µÁ±”‘¥Ñ¥½¹…Éä…ÁÁ±¥…Ñ¥½¸°å½Ô…¸¥¹É•µ•¹Ğ„Í•…É¡•Í€µ•ÑÉ¥Œİ¡•¸„Í•…É ¥ÌÁ•É™½Éµ•…¹„µ¥ÍÍ•‘]½É‘Í€µ•ÑÉ¥Œ¥˜¹¼‘•™¥¹¥Ñ¥½¸¥Ì™½Õ¹è()€)ÍÑ…ÑÍ¹¥¹É•µ•¹Ñ½Õ¹Ñ•È£ŠqÍ•…É¡•ÏŠt¤ì)ÍÑ…ÑÍ¹¥¹É•µ•¹Ñ½Õ¹Ñ•È£Šqµ¥ÍÍ•‘]½É‘ÏŠt¤ì)€()e½ÕÈÕÍÑ½´…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ìİ¥±°…ÕÑ½µ…Ñ¥…±±ä…ÁÁ•…È¥¸…Ñ…‘½œ¸e½Ô…¸Ñ¡•¸Ù¥ÍÕ…±¥é”Ñ¡•´°½ÉÉ•±…Ñ”Ñ¡•´İ¥Ñ µ•ÑÉ¥Ì™É½´Ñ¡”Õ¹‘•É±å¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”°…¹Í•Ğ…±•ÉÑÌÍ¼å½Ô…¸‰”¹½Ñ¥™¥•½˜…¹äÕ¹•áÁ•Ñ•…ÁÁ±¥…Ñ¥½¸‰•¡…Ù¥½È¸	•±½Ü°İ—ŠeÙ”É…Á¡•Í•…É¡•Í€…¹µ¥ÍÍ•‘]½É‘Í€¸9½Ñ”Ñ¡…ĞÁ˜¹…ÁÁ€¡…Ì‰••¸ÁÉ•Á•¹‘•Ñ¼‰½Ñ µ•ÑÉ¥Ì°…Ìİ”ÍÁ•¥™¥•İ¡•¸½¹™¥ÕÉ¥¹œÑ¡”±¥•¹Ğ¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµÁ˜µÕÍÑ½´µµ•ÑÉ¥Ì¹Á¹œˆ…ÁÑ¥½¸ô‰Y¥ÍÕ…±¥é¥¹œÕÍÑ½´…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ì¥¸…Ñ…‘½œ¸ˆ…±Ğô‰…Ñ…‘½œAÕÍÑ½´µ•ÑÉ¥Ìˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ%¹ÍÑÉÕµ•¹Ğå½ÕÈA…ÁÁ±¥…Ñ¥½¸™½ÈÑÉ…¥¹œ)UÍ¥¹œ…Ñ…‘½œA4±•ÑÌå½ÔÙ¥ÍÕ…±¥é”¡½Ü¥¹‘¥Ù¥‘Õ…°É•ÅÕ•ÍÑÌİ•É”•á•ÕÑ•…¹ÁÉ½Ù¥‘•ÌÉ•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ°±…Ñ•¹ä°…¹•ÉÉ½ÈÍÑ…Ñ¥ÍÑ¥Ì™½È•Ù•ÉäÍ•ÉÙ¥”°•¹‘Á½¥¹Ğ°…¹‘…Ñ…‰…Í”ÅÕ•Éä¸…Ñ…‘½œA4ÍÕÁÁ½ÉÑÌ‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…¥¹œ¥¸m)…Ù…um©…Ù…t°mAåÑ¡½¹umÁåÑ¡½¹t°mIÕ‰åumÉÕ‰åt°m½um½t°m9½‘•um¹½‘•t°…¹l¹9Qum‘½Ñ¹•Ñt¸Y¥Í¥ĞÑ¡”A4‘½Õµ•¹Ñ…Ñ¥½¸™½Èå½ÕÈ±…¹Õ…”Ñ¼±•…É¸¡½Üå½Ô…¸ÍÑ…ÉĞ¥¹ÍÑÉÕµ•¹Ñ¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸()	äm¥¹ÍÑÉÕµ•¹Ñ¥¹œå½ÕÈ½‘•um…Á´µÍ•ÑÕÁt™½ÈA4°å½Ô…¸•ĞÉ…¹Õ±…È¥¹Í¥¡ÑÌ¥¹Ñ¼…ÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”°…Ìİ•±°…Ì¡½Üå½ÕÈ…ÁÁ±¥…Ñ¥½¸¥¹Ñ•É…ÑÌİ¥Ñ ½Ñ¡•ÈÍ•ÉÙ¥•Ì¸…Ñ…‘½œA4ÁÉ½Ù¥‘•Ì½ÕĞµ½˜µÑ¡”µ‰½àÍÕÁÁ½ÉĞ™½ÈÙ…É¥½ÕÌ‘…Ñ„ÍÑ½É•ÌÑ¡…Ğ…É”…Ù…¥±…‰±”…Ìµ…¹…•Í•ÉÙ¥•Ì™½ÈA°Í¼‘•Ù•±½Á•ÉÌÕÍ¥¹œÑ¡½Í”‘…Ñ„ÍÑ½É•Ìİ¥±°¡…Ù”¥¹ÍÑ…¹ĞÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡”‘…Ñ„±…å•È½˜Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹Ì¸¹İ¥Ñ Ñ¡”…Ñ…‘½œmM•ÉÙ¥”5…ÁumÍ•ÉÙ¥”µµ…Át°å½Ô…¸Ù¥ÍÕ…±¥é”Ñ¡”É•ÅÕ•ÍĞÑÉ…™™¥Œ‰•Ñİ••¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸…¹…¹äÉ•±…Ñ•Í•ÉÙ¥•ÌÑ¼¥‘•¹Ñ¥™ä‘•Á•¹‘•¹¥•Ì…¹Á½Ñ•¹Ñ¥…°‰½ÑÑ±•¹•­Ì¸()…Ñ…‘½œ™¥±Ñ•ÉÌA4‘…Ñ„‰äm•¹Ù¥É½¹µ•¹Ñum…Á´µ•¹Ùt…¹Ñ¡•¸‰äÍ•ÉÙ¥”¹…µ”¸	½Ñ ½˜Ñ¡•Í”…¸‰”Í•ĞÕÍ¥¹œ•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•Ì…Ì‘•ÍÉ¥‰•m…‰½Ù•t ½¹™¥ÕÉ”µ‘…Ñ…‘½œµÕÍ¥¹œµ•¹Ù¥É½¹µ•¹ĞµÙ…É¥…‰±•Ì¤¸€¡%˜å½Ô‘¼¹½ĞÁÉ½Ù¥‘”Ù…±Õ•Ì°…Ñ…‘½œİ¥±°‘•™…Õ±ĞÑ¼•¹Øé¹½¹•€…¹…ÑÑ•µÁĞÑ¼ÁÕ±°Ñ¡”Í•ÉÙ¥”¹…µ”™É½´Ñ¡”…ÁÁ±¥…Ñ¥½¸¸¤%¸…Ñ…‘½œA4°å½Ô…¸Ù¥•ÜÉ…Á¡Ì½˜Á•É™½Éµ…¹”µ•ÑÉ¥ÌÑ¡…Ğ…É”…ÕÑ½µ…Ñ¥…±±ä…É•…Ñ•™½È…¹äÍ•ÉÙ¥”½È™½È¥¹‘¥Ù¥‘Õ…°É•Í½ÕÉ•Ì€¡…ÁÁ±¥…Ñ¥½¸•¹‘Á½¥¹ÑÌ°É•ÅÕ•ÍĞÑåÁ•Ì°½ÈÍÁ•¥™¥Œ‘…Ñ…‰…Í”ÅÕ•É¥•Ì¤İ¥Ñ¡¥¸„Í•ÉÙ¥”°¥¹±Õ‘¥¹œÉ•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ°•ÉÉ½ÈÉ…Ñ•Ì°…¹±…Ñ•¹äÁ•É•¹Ñ¥±•Ì¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµÁ˜µÍ•ÉÙ¥•Ì¹Á¹œˆ…±Ğô‰ÁÁ±¥…Ñ¥½¸Í•ÉÙ¥•Ì¥¸…Ñ…‘½œA4ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()É¥±±¥¹œ‘½İ¸Ñ¼„Í¥¹±”ÑÉ…”İ¥±°‘¥ÍÁ±…ä„™±…µ”É…Á Ñ¡…ĞÁÉ½Ù¥‘•Ì„‘•Ñ…¥±•‰É•…­‘½İ¸½˜¡½Ü„Á…ÉÑ¥Õ±…ÈÉ•ÅÕ•ÍĞİ…Ì•á•ÕÑ•¸e½Ô…¸Í•”…Ğ„±…¹”İ¡¥ Í•ÉÙ¥•Ì¡•±Á•™Õ±™¥±°Ñ¡”É•ÅÕ•ÍĞ°¡½Ü±½¹œ•… ½Á•É…Ñ¥½¸¥¸Ñ¡”É•ÅÕ•ÍĞÑ½½¬°…¹İ¡•É”…¹ä•ÉÉ½ÉÌ…É½Í”¥¸Ñ¡”É•ÅÕ•ÍĞÁ…Ñ¡İ…ä¸e½Ô…¸…±Í¼Í•”µ•ÑÉ¥Ì™É½´Ñ¡”…ÁÁ±¥…Ñ¥½¸¡½ÍĞ°Ñ¼¥‘•¹Ñ¥™ä…¹ä¥¹™É…ÍÑÉÕÑÕÉ”¥ÍÍÕ•Ì½ÈÉ•Í½ÕÉ”½¹ÍÑÉ…¥¹ÑÌ°…Ìİ•±°…ÌÉ•±•Ù…¹Ğ±½Ì™É½´Ñ¡”Í…µ”Ñ¥µ•™É…µ”¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµÁ˜µ™±…µ•É…Á ¹Á¹œˆ…ÁÑ¥½¸ô‰™±…µ”É…Á ‰É•…­‘½İ¸½˜„‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…”¥¸„A…ÁÁ±¥…Ñ¥½¸¸ˆ…±Ğô‰…Ñ…‘½œ™±…µ”É…Á ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ½±±•Ğ…ÁÁ±¥…Ñ¥½¸±½Ì¥¸…Ñ…‘½œ)Ì½˜Ù•ÉÍ¥½¸€À¸ä¸Ô½˜Ñ¡”…Ñ…‘½œÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±”°‘•Ù•±½Á•ÉÌ…¸ÕÍ”Ñ¡”Ñ¥±”Ñ¼½±±•Ğ…ÁÁ±¥…Ñ¥½¸±½Ì¥¸…‘‘¥Ñ¥½¸Ñ¼ÕÍÑ½´µ•ÑÉ¥Ì…¹ÑÉ…•Ì¸Q¡”±½œ½±±•Ñ¥½¸™•…ÑÕÉ”½˜Ñ¡”ÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±”…ÕÑ½µ…Ñ¥…±±ä½±±•ÑÌ…¹™½Éİ…É‘Ì…ÁÁ±¥…Ñ¥½¸±½ÌÑ¼…Ñ…‘½œ™½È…±•ÉÑ¥¹œ°½ÉÉ•±…Ñ¥½¸°m…¹…±åÍ¥Ít ½‰±½œ½±½œµ…¹…±åÑ¥Ìµ‘…Í¡‰½…É‘Ì¼¤°…¹…É¡¥Ù¥¹œ¸()Q¼•¹…‰±”±½œ½±±•Ñ¥½¸°Í•ĞÑ¡”™½±±½İ¥¹œ•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±•Ì°•¥Ñ¡•È™É½´mÑ¡”½µµ…¹±¥¹•t ½ÁÑ¥½¸´ÄµÍ•Ğµ•¹Ù¥É½¹µ•¹ĞµÙ…É¥…‰±•Ìµ™É½´µÑ¡”µ½µµ…¹µ±¥¹”¤½ÈÕÍ¥¹œm„µ…¹¥™•ÍĞ™¥±•t ½ÁÑ¥½¸´ÈµÍ•Ğµ•¹Ù¥É½¹µ•¹ĞµÙ…É¥…‰±•ÌµÕÍ¥¹œµ„µµ…¹¥™•ÍĞµ™¥±”¤è()€)IU9}9PÑÉÕ”)}1=M}9	1ÑÉÕ”)}9	1}!-L™…±Í”)}MQ}1=}=11Q%=9}A=IP€ñÁ½ÉĞø)1=M}=9%€mì‰ÑåÁ”ˆè‰ÑÀˆ°‰Á½ÉĞˆèˆñÁ½ÉĞøˆ°‰Í½ÕÉ”ˆèˆñÍ½ÕÉ”øˆ°‰Í•ÉÙ¥”ˆèˆñÍ•ÉÙ¥”ø‰õtœ)€()}MQ}1=}=11Q%=9}A=IQ€¥ÌÕÍ•İ¡•¸½±±•Ñ¥¹œÍÑ‘½ÕÑ€½ÍÑ‘•ÉÉ€±½ÌÑ¼É•‘¥É•ĞÑ¡•´Ñ¼„ÍÁ•¥™¥Œ±½…°Á½ÉĞ°™½È•á…µÁ±”€ÄÀÔÄĞ¸()Q¡”™¥¹…°Ù…É¥…‰±”°1=M}=9%€°¥¹±Õ‘•Ì„™•ÜÁ¥••Ì½˜¥¹™½Éµ…Ñ¥½¸¸¥ÉÍĞ°¥ĞÑ•±±ÌÑ¡”•¹ĞÑ¼±¥ÍÑ•¸Ñ¼Ñ¡”Á½ÉĞÍÁ•¥™¥•‰ä}MQ}1=}=11Q%=9}A=IQ€¸%Ğ…±Í¼Í•ÑÌÑ¡”Í½ÕÉ•€…¹Í•ÉÙ¥•€Á…É…µ•Ñ•ÉÌ™½È±½Ì½µ¥¹œ™É½´Ñ¡”…ÁÁ±¥…Ñ¥½¸¸Q¡”Í½ÕÉ•€µ…­•Ì¥Ğ•…ÍäÑ¼É½ÕÑ”±½ÌÑ¼Ñ¡”…ÁÁÉ½ÁÉ¥…Ñ”m±½œÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹•Íum±½œµÁÉ½•ÍÍ¥¹t¥¸…Ñ…‘½œ¸Q¡”Í•ÉÙ¥•€Ñ…œ±•ÑÌ…Ñ…‘½œ…ÕÑ½µ…Ñ¥…±±äÕ¹¥™äÑ¡”µ•ÑÉ¥Ì°ÑÉ…•Ì°…¹±½Ì™É½´å½ÕÈ…ÁÁ±¥…Ñ¥½¸Í¼å½Ô…¸¹…Ù¥…Ñ”‰•Ñİ••¸Ñ¡•´¸½È•á…µÁ±”°¥˜å½Ô…É”…±•ÉÑ•Ñ¼„¡¥¡•ÈÑ¡…¸¹½Éµ…°¹Õµ‰•È½˜•ÉÉ½È±½Ì°å½Ô…¸‘¥Ù”¥¹Ñ¼½ÉÉ•ÍÁ½¹‘¥¹œA4‘…Ñ„™É½´Ñ¡”Í•ÉÙ¥”Ñ¼¥‘•¹Ñ¥™äİ¡¥ •¹‘Á½¥¹Ğ½ÈÉ•Í½ÕÉ”¥Ì¡…Ù¥¹œ¥ÍÍÕ•Ì¸	•±½Ü¥Ì…¸•á…µÁ±”½˜Ñ¡¥Ì½¹™¥ÕÉ…Ñ¥½¸è()€)1=M}=9%€mì‰ÑåÁ”ˆè‰ÑÀˆ°‰Á½ÉĞˆèˆÄÀÔÄĞˆ°‰Í½ÕÉ”ˆè‰±½Õ‘}™½Õ¹‘Éäˆ°‰Í•ÉÙ¥”ˆè‰Á˜µ…ÁÀ‰õtœ)€()=¹”å½ÔÉ•ÍÑ…”å½ÕÈ…ÁÁ±¥…Ñ¥½¸°±½Ìİ¥±°ÍÑ…ÉĞÍÑÉ•…µ¥¹œ¥¹Ñ¼Ñ¡”m1½œáÁ±½É•Éum±½œµ•áÁ±½É•Étè((€€€˜É•ÍÑ…”€ñ…ÁÀµ¹…µ”ø()…Ñ…‘½œ…ÕÑ½µ…Ñ¥…±±ä…ÁÁ±¥•Ì•ÉÑ…¥¸±½Õ½Õ¹‘ÉäÁÉ½Á•ÉÑ¥•Ì…ÌÑ…ÌÑ¼å½ÕÈ±½Ì¸½È•á…µÁ±”°Ñ¡”±½Ìİ¥±°¥¹±Õ‘”…¸…ÁÁ±¥…Ñ¥½¹}¹…µ•€Ñ…œ¸É•…Ñ¥¹œm™…•ÑÍum™…•ÑÍt™É½´Ñ¡•Í”Ñ…Ì…±±½İÌå½ÔÑ¼•…Í¥±äÍ•…É °™¥±Ñ•È°…¹‘É¥±°‘½İ¸¥¹Ñ¼„ÍÁ•¥™¥Œ…ÁÁ±¥…Ñ¥½»ŠeÌ±½œ‘…Ñ„¸()Q¼µ…­”¥Ğ•Ù•¸•…Í¥•ÈÑ¼Á…ÉÍ”…¹Ù¥•Ü±½œ‘…Ñ„°å½Ô…¸½¹™¥ÕÉ”å½ÕÈ…ÁÁ±¥…Ñ¥½¸Ñ¼İÉ¥Ñ”±½Ì¥¸)M=8™½Éµ…Ğ°¥˜å½ÕÈ±½¥¹œ±¥‰É…ÉäÍÕÁÁ½ÉÑÌ¥Ğ¸…Ñ…‘½œİ¥±°…ÕÑ½µ…Ñ¥…±±äÉ•…Ñ¡”±½ÏŠd‘…Ñ„™¥•±‘Ì…¹É•…Ñ”…ÑÑÉ¥‰ÕÑ•Ì™É½´Ñ¡•´è()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµÁ˜µ©Í½¸µ±½ÌµÉ•Ø¹Á¹œˆ…ÁÑ¥½¸ô‰…Ñ…‘½œ…ÕÑ½µ…Ñ¥…±±äÁ…ÉÍ•Ì)M=8±½Ì°µ…­¥¹œ¥Ğ•…ÍäÑ¼™¥±Ñ•È…¹Í½ÉĞå½ÕÈ‘…Ñ„¸ˆ…±Ğô‰)M=8±½Ì¥¸…Ñ…‘½œˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()]¥Ñ ÕÍÑ½´µ•ÑÉ¥Ì°ÑÉ…•Ì°…¹±½Ì°Ñ¡”…Ñ…‘½œÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œÑ¥±”±•ÑÌ‘•Ù•±½Á•ÉÌ•Ğ‘••À¥¹Í¥¡Ğ¥¹Ñ¼Ñ¡”Á•É™½Éµ…¹”½˜Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹Ì…¹µ…­•Ì¥Ğ•…ÍäÑ¼¥¹Ù•ÍÑ¥…Ñ”…¹ÑÉ½Õ‰±•Í¡½½ĞÁÉ½‰±•µÌ¸((ŒŒ½±±•ĞÍåÍÑ•´±½Ìİ¥Ñ …Ñ…‘½œ()I•…±°™É½´mÁ…ÉĞÑ¡É••umÁ…ÉĞµÑ¡É••t½˜Ñ¡¥ÌÍ•É¥•ÌÑ¡…ĞA½µÁ½¹•¹ĞÍåÍÑ•´±½Ì°½È±½Ì™É½´Ñ¡”¥¹Ñ•É¹…°ÁÉ½•ÍÍ•ÌÉÕ¹¹¥¹œ½¸Ñ¡”¥¹‘¥Ù¥‘Õ…°½µÁ½¹•¹ÑÌÑ¡…Ğµ…­”ÕÀ„A±ÕÍÑ•È°…É”Í•¹ĞÙ¥„ÉÍåÍ±½œÑ¼„ÍåÍ±½œ‘É…¥¸°½È…¸•áÑ•É¹…°ÍåÍ±½œ•¹‘Á½¥¹Ğ¸Q¡•ä…É”¹½Ğ½±±•Ñ•‰ä1½É•…Ñ½È¸()e½Ô…¸½±±•ĞA½µÁ½¹•¹ĞÍåÍÑ•´±½Ìİ¥Ñ …Ñ…‘½œ‰äÍ•ÑÑ¥¹œÕÀå½ÕÈAÁ±…Ñ™½É´Ñ¼™½Éİ…ÉÑ¡•´Ñ¼„ÍåÍ±½œÍ•ÉÙ•È¸Q¡•¸°å½Ô…¸½¹™¥ÕÉ”„±½œÁÉ½•ÍÍ½È€¡™½È•á…µÁ±”°ÉÍåÍ±½œ¤Ñ¼É½ÕÑ”Ñ¡•´Ñ¼…Ñ…‘½œ¸()Q¼•¹…‰±”å½ÕÈ‘•Á±½åµ•¹ĞÑ¼™½Éİ…ÉÍåÍÑ•´±½Ì°™¥ÉÍĞ±¥¬½¸Ñ¡”€¨©MåÍÑ•´1½¥¹œ¨¨Ñ…ˆ½˜Ñ¡”A¥Ù½Ñ…°ÁÁ±¥…Ñ¥½¸M•ÉÙ¥•ÌÑ¥±”¥¸Ñ¡”=ÁÌ5…¹…•È¸Q¡•¸ÁÉ½Ù¥‘”Ñ¡”UI0½È%@…‘‘É•ÍÌ½˜å½ÕÈÍåÍ±½œ•¹‘Á½¥¹Ğ½ÈÍ•ÉÙ•È…¹…¸½Á•¸Q@Á½ÉĞ¸9½Ñ”Ñ¡…Ğå½ÕÈÍåÍ±½œÍ•ÉÙ•ÈµÕÍĞÕÍ”Ñ¡”mI1@ÁÉ½Ñ½½±umÉ•±Át¥¸½É‘•ÈÑ¼É••¥Ù”ÍåÍ±½Ì™É½´A¸()íìğ¥µœÍÉŒô‰Á˜µµ½¹¥Ñ½É¥¹œµÁ˜µÍåÍ±½œµ½¹™¥œµÉ•ØÈ¹Á¹œˆ…±Ğô‰AÍåÍ±½œ™½Éİ…É‘¥¹œ½¹™¥œˆ€ùõô()=¹”å½Ô‘•Á±½äÑ¡•Í”¡…¹•Ì°å½ÕÈ±ÕÍÑ•Èİ¥±°‰•¥¸™½Éİ…É‘¥¹œ…±°ÍåÍÑ•´±½ÌÑ¼Ñ¡”•¹‘Á½¥¹Ğ¸9½Ñ”°¡½İ•Ù•È°Ñ¡…ĞÑ¡•Í”™½Éİ…É‘•±½Ì‘¼¹½Ğ¥¹±Õ‘”ÍåÍÑ•´±½ÌÁÉ½‘Õ•‰äÑ¡”Y5Ì™½È}…‘µ½¹|Í•ÉÙ¥•Ì°ÍÕ …ÌI•‘¥Ì½ÈA!•…±Ñ¡İ…Ñ ¸e½Ôİ¥±°¹••Ñ¼™½±±½ÜÍ¥µ¥±…ÈÍÑ•ÁÌÑ¼½¹™¥ÕÉ”±½œ™½Éİ…É‘¥¹œ™½ÈÑ¡½Í”Í•ÉÙ¥•ÌÑ¡…ĞÍÕÁÁ½ÉĞ¥Ğ¸½È•á…µÁ±”°Ñ¡”I•‘¥ÌÍ•ÉÙ¥”Ñ¥±”¡…Ì„Ñ…ˆ±…‰•±•€¨©MåÍ±½œ¨¨İ¡•É”å½Ô…¸•¹Ñ•Èå½ÕÈ•¹‘Á½¥¹ÓŠeÌ¥¹™½Éµ…Ñ¥½¸¸((ŒŒŒM•Á…É…Ñ”å½ÕÈ±ÕÍÑ•ËŠeÌ±½Ì™É½´Ñ¡”Í•ÉÙ•ËŠeÌ±½Ì)	ä‘•™…Õ±Ğ°…¸•áÑ•É¹…°ÍåÍ±½œÍ•ÉÙ•Èİ¥±°ÑÉ•…Ğ¥¹½µ¥¹œÍåÍÑ•´±½Ì±¥­”¥ÑÌ½İ¸…¹İÉ¥Ñ”Ñ¡•´Ñ¼¥ÑÌ€¨©ÍåÍ±½œ¨¨™¥±”¸½¹™¥ÕÉ¥¹œÉÍåÍ±½œÑ¼İÉ¥Ñ”Ñ¡•Í”¥¹½µ¥¹œ±½ÌÑ¼„Í•Á…É…Ñ”™¥±”µ…­•Ì¥ĞµÕ •…Í¥•ÈÑ¼™½Éİ…É½¹±äÑ¡”±ÕÍÑ•ËŠeÌÍåÍÑ•´±½ÌÑ¼…Ñ…‘½œ¸()ÍåÍ±½œµ™½Éµ…Ğµ•ÍÍ…”¥¹±Õ‘•ÌÑ¡”¡½ÍÑ¹…µ”½È%@…‘‘É•ÍÌ½˜Ñ¡”±½ŸŠeÌÍ½ÕÉ”¸]”…¸ÕÍ”Ñ¡¥ÌÑ¼Ñ…É•Ğ±½Ì™É½´½ÕÈ±ÕÍÑ•È‰•…ÕÍ”Ñ¡”Y5Ìœ¥¹Ñ•É¹…°%@…‘‘É•ÍÍ•Ì…±°‰•¥¸Ñ¡”Í…µ”İ…ä°¥¸µ½ÍĞ…Í•Ì¸()½È•á…µÁ±”°Ñ¼Ñ…É•Ğ±½Ì™É½´%@…‘‘É•ÍÍ•Ì‰•¥¹¹¥¹œİ¥Ñ €¨¨ÄÀ¸À¸Ğ¸¨¨°É•…Ñ”…¸ÉÍåÍ±½œ½¹™¥ÕÉ…Ñ¥½¸™¥±”¥¸Ñ¡”€¨¨½•ÑŒ½ÉÍåÍ±½œ¹¨¨™½±‘•È…¹…‘Ñ¡”™½±±½İ¥¹œ±¥¹•Ìè()€)¥˜€‘¡½ÍÑ¹…µ”ÍÑ…ÉÑÍİ¥Ñ €œÄÀ¸À¸Ğ¸œÑ¡•¸€½Ù…È½±½œ½Á˜µÍåÌ¹±½œ)¥˜€‘¡½ÍÑ¹…µ”ÍÑ…ÉÑÍİ¥Ñ €œÄÀ¸À¸Ğ¸œÑ¡•¸ÍÑ½À)€()Q¡¥Ì½¹™¥ÕÉ…Ñ¥½¸¥¹ÍÑÉÕÑÌÉÍåÍ±½œÑ¼±½½¬™½È±½Ì½µ¥¹œ™É½´…¹ä½˜½ÕÈ‘•Á±½åµ•¹ÓŠeÌY5Ì€¡…Ì¥‘•¹Ñ¥™¥•‰äÑ¡•¥È%@…‘‘É•ÍÍ•Ì¤…¹İÉ¥Ñ”Ñ¡•´Ñ¼„Í•Á…É…Ñ”™¥±”°€¨©Á˜µÍåÌ¹±½œ¨¨¸Q¡”Í•½¹±¥¹”ÁÉ•Ù•¹ÑÌÉÍåÍ±½œ™É½´…±Í¼İÉ¥Ñ¥¹œÑ¡•´Ñ¼Ñ¡”ÍÑ…¹‘…É€¨©ÍåÍ±½œ¨¨™¥±”¸e½Ô…¸…‘©ÕÍĞå½ÕÈÉÕ±•ÌÑ¼Í•É•…Ñ”±½Ì…Ìå½ÔÍ•”™¥Ğ¸M•”mÉÍåÍ±½ŸŠeÌ‘½Õµ•¹Ñ…Ñ¥½¹umÉÍåÍ±½t™½Èµ½É”‘•Ñ…¥±Ì¸((ŒŒŒŒ½Éİ…É±½ÌÑ¼…Ñ…‘½œ)9½ÜÑ¡…Ğİ”¡…Ù”½ÕÈAÍåÍÑ•´±½Ì¥¸Ñ¡•¥È½İ¸™¥±”°İ”…¸m½¹™¥ÕÉ”ÉÍåÍ±½umÉÍåÍ±½œµ‘µ½¹™¥tÑ¼™½Éİ…ÉÑ¡•´Ñ¼…Ñ…‘½œ¸¥ÉÍĞ°É•…Ñ”„€¨©‘…Ñ…‘½œ¹½¹˜¨¨™¥±”¥¸Ñ¡”€¨¨½•ÑŒ½ÉÍåÍ±½œ¹¨¨‘¥É•Ñ½Éä½¸å½ÕÈÍåÍ±½œÍ•ÉÙ•È¸‘Ñ¡”™½±±½İ¥¹œ±¥¹•ÌÑ¼Ñ¡”¹•İ±äÉ•…Ñ•½¹™¥œ™¥±”°É•Á±…¥¹œ€ñA$µ-dù€İ¥Ñ Ñ¡”A$­•ä™½Èå½ÕÈ…Ñ…‘½œ…½Õ¹Ğ…¹€ñ9XµQù€İ¥Ñ Ñ¡”¹…µ”½˜å½ÕÈ•¹Ù¥É½¹µ•¹Ğè()€)¥¹ÁÕĞ¡ÑåÁ”ô‰¥µ™¥±”ˆÉÕ±•Í•Ğô‰¥¹™¥±•Ìˆ¥±”ôˆ½Ù…È½±½œ½Á˜µÍåÌ¹±½œˆ¤((‘Ñ•µÁ±…Ñ”…Ñ…‘½½Éµ…Ğ°ˆñA$µ-dø€ğ•ÁÉ¤”ø•ÁÉ½Ñ½½°µÙ•ÉÍ¥½¸”€•Ñ¥µ•ÍÑ…µÀèèé‘…Ñ”µÉ™ŒÌÌÌä”€•!=MQ95”€•…ÁÀµ¹…µ””€´€´mµ•Ñ…Ì‘‘Í½ÕÉ”õp‰±½Õ‘}™½Õ¹‘Éåpˆ‘‘Ñ…Ìõp‰•¹Øèñ9XµQùp‰t€•µÍœ•q¸ˆ()ÉÕ±•Í•Ğ¡¹…µ”ô‰¥¹™¥±•Ìˆ¤ì(€€€…Ñ¥½¸¡ÑåÁ”ô‰½µ™İˆÑ…É•Ğô‰¥¹Ñ…­”¹±½Ì¹‘…Ñ…‘½¡Ä¹½´ˆÁÉ½Ñ½½°ô‰ÑÀˆÁ½ÉĞôˆÄÀÔÄĞˆÑ•µÁ±…Ñ”ô‰…Ñ…‘½½Éµ…Ğˆ¤)ô)€()Q¡”™¥ÉÍĞ±¥¹”½˜Ñ¡”½¹™¥œÍ¹¥ÁÁ•Ğ…‰½Ù”¥¹ÍÑÉÕÑÌÉÍåÍ±½œÑ¼±½½¬™½È±½Ì¥¸½ÕÈAÍåÍÑ•´±½œ™¥±”¸()9•áĞ°Ñ¡”½¹™¥œÁÉ½Ù¥‘•ÌÑ¡”±½œÑ•µÁ±…Ñ”Ñ¡…Ğ¥¹±Õ‘•Ì½ÕÈ…Ñ…‘½œA$­•ä¸9½Ñ”Ñ¡…Ğ¥¸Ñ¡”•á…µÁ±”…‰½Ù”°İ—ŠeÙ”Í•ĞÑ¡”±½ÏŠdÍ½ÕÉ”…¹…‘‘•Ñ…Ì¸‘‘¥¹œÑ…ÌÍÕ …Ì•¹Ù€µ…­•Ì¥Ğ•…Í¥•ÈÑ¼‘É¥±°‘½İ¸…¹™¥¹Ñ¡”±½Ìå½Ôİ…¹ĞÑ¼Ù¥•Ü¸()¥¹…±±ä°Ñ¡”½¹™¥ÕÉ…Ñ¥½¸É•…Ñ•Ì„ÉÕ±•Í•Ğ™½ÈÑ¡”…ÁÁ±¥…‰±”±½Ì°ÍÁ•¥™å¥¹œÑ¡”…Ñ…‘½œ•¹‘Á½¥¹Ğİ¡•É”±½ÌÍ¡½Õ±‰”Í•¹Ğ¸M…Ù”Ñ¡”™¥±”…¹É•ÍÑ…ÉĞÉÍåÍ±½œè((€€€ÍÕ‘¼Í•ÉÙ¥”ÉÍåÍ±½œÉ•ÍÑ…ÉĞ()1½Ìİ¥±°¹½Ü‰”™±½İ¥¹œ¥¹Ñ¼…Ñ…‘½œ°İ¡•É”å½Ô…¸m‰Õ¥±ÕÍÑ½´±½œµÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹•ÍumÁ¥Á•±¥¹•Ít¸Q¡•Í”Á¥Á•±¥¹•Ì±•Ğå½ÔÁ…ÉÍ”…¹•¹É¥ ±½ÌÍ¼å½Ô…¸µ½É”•…Í¥±äÍ•…É °™¥±Ñ•È°…¹…É•…Ñ”Ñ¡”‘…Ñ„¥¸å½ÕÈ±½Ì½¸Ñ¡”™±ä¸e½Ô…¸…±Í¼‰Õ¥±…±•ÉÑÌ…¹É…Á¡Ì™É½´å½ÕÈ±½ÌÑ¼mÙ¥ÍÕ…±¥é”…¹½ÉÉ•±…Ñ”İ¥Ñ å½ÕÈµ•ÑÉ¥Ít ½‰±½œ½±½œµ…¹…±åÑ¥Ìµ‘…Í¡‰½…É‘Ì¼¤¸((ŒŒŒŒ1½¥¹œİ¥Ñ¡½ÕĞ1¥µ¥ÑÌ™ÑÉ…‘”ì)A¥Ù½Ñ…°±½Õ½Õ¹‘ÉäÁÉ½‘Õ•Ì„±…É”Ù½±Õµ”½˜ÍåÍÑ•´±½Ì°…¹µ…¹…¥¹œÑ¡•´…±°…¸‰”„¡…±±•¹”¸…Ñ…‘½ŸŠeÌm1½¥¹œİ¥Ñ¡½ÕĞ1¥µ¥ÑÍt ½‰±½œ½±½¥¹œµİ¥Ñ¡½ÕĞµ±¥µ¥ÑÌ¼¤…ÁÁÉ½… µ•…¹ÌÑ¡…Ğå½Ô…¸Í¡¥À…±°å½ÕÈ±½Ì°İ¥Ñ¡½ÕĞİ½ÉÉå¥¹œ…‰½ÕĞ…ÁÌ½Èµ¥ÍÍ¥¹œ‘…Ñ„°…¹ÕÍ”…Ñ…‘½œÑ¼™¥±Ñ•È½ÈÉ•Ñ…¥¸Ñ¡•´½¸Ñ¡”™±ä¸	äÍ•¹‘¥¹œ…±°å½ÕÈ±½ÌÑ¼…Ñ…‘½œ°å½Ô¡…Ù”™Õ±°Ù¥Í¥‰¥±¥Ñäİ¡•¸å½Ô¹••¥Ğ™½ÈÑÉ½Õ‰±•Í¡½½Ñ¥¹œ…¹…¹…±åÍ¥Ì°‰ÕĞå½Ô…¸…±Í¼ÕÍÑ½µ¥é”å½ÕÈÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹•Ì…¹™¥±Ñ•ÉÌÑ¼•á±Õ‘”Õ¹¹••ÍÍ…Éä±½Ì¸()%˜°¡½İ•Ù•È°å½ÕÈÍåÍ±½œÍ•ÉÙ•È‰•½µ•Ì„‰½ÑÑ±•¹•¬™½È±½œ™½Éİ…É‘¥¹œ°Ñ¡”€¨©MåÍÑ•´1½¥¹œ¨¨Ñ…ˆ½˜Ñ¡”A=ÁÌ5…¹…•ÈÁÉ½Ù¥‘•ÌÑ¡”½ÁÑ¥½¸Ñ¼ÕÍÑ½µ¥é”İ¡¥ ÍåÍÑ•´±½ÌAİ¥±°™½Éİ…É°…±±½İ¥¹œå½ÔÑ¼±¥µ¥ĞÑ¡”Ù½±Õµ”½˜µ•ÍÍ…•Ì¸Q¡”=ÁÌ5…¹…•ÈÍÕÁÁ½ÉÑÌÍåÍ±½œÉÕ±•ÌÕÍ¥¹œmI…¥¹•ÉMÉ¥ÁÑumÉ…¥¹•ÉÍÉ¥ÁÑtÍå¹Ñ…à¸M¼°™½È•á…µÁ±”°Ñ¡”™½±±½İ¥¹œÉÕ±”İ½Õ±™¥±Ñ•È½ÕĞ…¹äÍåÍÑ•´±½Ì¹½Ğ•µ¥ÑÑ•‰äÑ¡”•±°I•ÁÌè()€)¥˜¹½Ğ€ ‘…ÁÀµ¹…µ”ÍÑ…ÉÑÍİ¥Ñ €É•Àœ¤Ñ¡•¸ÍÑ½À)€()e½Ô…¸É•…Ñ”…‘‘¥Ñ¥½¹…°ÉÕ±•Ì…¹™¥±Ñ•È½¹‘¥Ñ¥½¹ÌÑ¼¡…Ù”A™½Éİ…É½¹±äÑ¡½Í”±½Ìå½Ôİ…¹ĞÑ¼µ½¹¥Ñ½È°…¹…±åé”°½È…É¡¥Ù”İ¥Ñ …Ñ…‘½œ¸((ŒŒ•ĞÍÑ…ÉÑ•)%¸Ñ¡¥ÌÁ½ÍĞİ—ŠeÙ”½Ù•É•¡½Ü‰½Ñ A½Á•É…Ñ½ÉÌ…¹‘•Ù•±½Á•ÉÌ…¸ÕÍ”…Ñ…‘½œÑ¼•Ğ‘••ÀÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡•¥È±ÕÍÑ•È…¹…ÁÁ±¥…Ñ¥½¹Ì°É•ÍÁ•Ñ¥Ù•±ä¸Q¡”…Ñ…‘½œ±ÕÍÑ•È5½¹¥Ñ½É¥¹œÑ¥±”¥Ù•Ì½Á•É…Ñ½ÉÌ­•ä¥¹Í¥¡ÑÌ¥¹Ñ¼Ñ¡•¥ÈA¥¹™É…ÍÑÉÕÑÕÉ”‰äÑ…ÁÁ¥¹œ¥¹Ñ¼Ñ¡”¥É•¡½Í”ÍÑÉ•…´°±•ÑÑ¥¹œÑ¡•´Ù¥ÍÕ…±¥é”…¹…±•ÉĞ½¸…±°½˜Ñ¡”­•äµ•ÑÉ¥Ì½Ù•É•¥¸mÁ…ÉĞÑİ½umÁ…ÉĞµÑİ½t½˜Ñ¡¥ÌÍ•É¥•Ì°Á±ÕÌµ…¹äµ½É”¸¹°İ¥Ñ …Ñ…‘½œÌ¥¹Ñ•É…Ñ¥½¹Ìİ¥Ñ ±½ÕÁÉ½Ù¥‘•ÉÌ¥¹±Õ‘¥¹œm]Mum…İÌµ‘‘t°m½½±•umÀµ‘‘t°méÕÉ•um…éÕÉ”µ‘‘t°…¹½Ñ¡•ÉÌ°½Á•É…Ñ½ÉÌ…¸•…Í¥±äÙ¥ÍÕ…±¥é”Ñ¡•¥ÈAµ•ÑÉ¥Ì…±½¹Í¥‘”Ñ¡½Í”™É½´Ñ¡•¥ÈÕ¹‘•É±å¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”¸()•Ù•±½Á•ÉÌ‘•Á±½å¥¹œ…ÁÁ±¥…Ñ¥½¹ÌÑ¼„A±ÕÍÑ•È…¸ÁÕÍ Ñ¡•´İ¥Ñ Ñ¡”…Ñ…‘½œÁÁ±¥…Ñ¥½¸5½¹¥Ñ½É¥¹œ‰Õ¥±‘Á…¬Í¼Ñ¡…ĞÑ¡•ä…¸µ½¹¥Ñ½ÈÑ¡”Á•É™½Éµ…¹”½˜Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹Ìİ¥Ñ ÕÍÑ½´µ•ÑÉ¥Ì…¹ÑÉ…•Ì¸¥¹…±±ä°İ”½ÕÑ±¥¹•¡½ÜÑ¼Í¡¥À‰½Ñ …ÁÁ±¥…Ñ¥½¸±½Ì…¹AÍåÍÑ•´±½ÌÑ¼…Ñ…‘½œ°±•ÑÑ¥¹œå½Ô…ÁÁ±ä…Ñ…‘½ŸŠeÌÁ½İ•É™Õ°±½œ…¹…±åÑ¥Ì™•…ÑÕÉ•ÌÑ¼Ñ¡”™Õ±°É…¹”½˜±½Ì…Ù…¥±…‰±”™É½´A¸()%˜å½×ŠeÉ”¹•ÜÑ¼…Ñ…‘½œ°å½Ô…¸Í¥¸ÕÀ™½È„€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”€ÄĞµ‘…äÑÉ¥…°ğ½„øÑ¼ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œå½ÕÈA‘•Á±½åµ•¹Ğ…¹…ÁÁ±¥…Ñ¥½¹ÌÑ½‘…ä¸()mÁ…ÉĞµÑİ½tè¡ÑÑÀè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµµ•ÑÉ¥Ì)mÁ…ÉĞµÑ¡É••tè¡ÑÑÀè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµÁ˜µ±½Ì)m¡•…±Ñ¡İ…Ñ¡tè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µ¡•…±Ñ¡İ…Ñ ½¥¹‘•à¹¡Ñµ°)m±ÕÍÑ•ÈµÑ¥±•tè¡ÑÑÁÌè¼½¹•Ñİ½É¬¹Á¥Ù½Ñ…°¹¥¼½ÁÉ½‘ÕÑÌ½‘…Ñ…‘½œ¼)mÑ¥±”µ‰…Í¥Ítè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Ñ¥±•‘•Ø½Ñ¥±”µ‰…Í¥Ì¹¡Ñµ°)m½Õ¹Ñ•Étè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éä½±½É•…Ñ½Èµ…Á¤½Õ¹Ñ•È)mµ•ÑÉ¥tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éä½±½É•…Ñ½Èµ…Á¤…Õ”)m…•¹Ñtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½‘…Ñ…‘½œµ…•¹Ğ)mÁ¥Ù½Ñ…°µ¹•Ñİ½É­tè¡ÑÑÁÌè¼½¹•Ñİ½É¬¹Á¥Ù½Ñ…°¹¥¼¼)m‘…Ñ…‘½œµ…Á¥tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…Á¤)mÕ……tè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½Õ…„½Õ…„µÕÍ•Èµµ…¹…•µ•¹Ğ¹¡Ñµ°)mµ½¹¥Ñ½ÉÍtè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½µ…¹…”)mÍ±½Üµ½¹ÍÕµ•Èµ…±•ÉÑtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½‘…Ñ…‘½œµ™¥É•¡½Í”µ¹½éé±”Í±½İ½¹ÍÕµ•É…±•ÉĞ)mÁ¥Ù½Ñ…°µ…ÁÁ±¥…Ñ¥½¸µµ½¹¥Ñ½É¥¹tè¡ÑÑÁÌè¼½¹•Ñİ½É¬¹Á¥Ù½Ñ…°¹¥¼½ÁÉ½‘ÕÑÌ½‘…Ñ…‘½œµ…ÁÁ±¥…Ñ¥½¸µµ½¹¥Ñ½É¥¹œ¼)m‘µ…Á¥tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…Á¤)m©…Ù„µÑÉ…•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½©…Ù„¼¥¹ÍÑ…±±…Ñ¥½¸µ…¹µ•ÑÑ¥¹œµÍÑ…ÉÑ•)m‘½ÍÑ…ÑÍ‘tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½‘•Ù•±½Á•ÉÌ½‘½ÍÑ…ÑÍ¼)m‘½ÍÑ…ÑÍµ±¥‰É…Éåtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½‘•Ù•±½Á•ÉÌ½±¥‰É…É¥•Ì¼…Á¤µ…¹µ‘½ÍÑ…ÑÍµ±¥•¹Ğµ±¥‰É…É¥•Ì)m©…Ù„µ‘½ÍÑ…ÑÍ‘tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½©…Ù„µ‘½ÍÑ…ÑÍµ±¥•¹Ğ)m‘…Ñ…‘½œµ…Áµtè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½…Á´¼)m…Á´µÍ•ÑÕÁtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ¼)m…Á´µ•¹Ùtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½™¥ÉÍÑ}±…ÍÍ}‘¥µ•¹Í¥½¹Ì¼•¹Ù¥É½¹µ•¹Ğ)m±½œµ•áÁ±½É•Étè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½±½Ì)m±½œµÁÉ½•ÍÍ¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ¼)m±½œµ¥¹Ñ•É…Ñ¥½¹Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì¼…Ğµ±½œµ½±±•Ñ¥½¸)mÉÍåÍ±½œµ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½ÉÍåÍ±½œ¼)mÁ¥Á•±¥¹•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ½Á¥Á•±¥¹•Ì¼)mÁÉ½•ÍÍ½ÉÍtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ½ÁÉ½•ÍÍ½ÉÌ¼)mÉ•±Átè¡ÑÑÁÌè¼½İİÜ¹ÉÍåÍ±½œ¹½´½‘½Œ½ØàµÍÑ…‰±”½½¹™¥ÕÉ…Ñ¥½¸½µ½‘Õ±•Ì½¥µÉ•±À¹¡Ñµ°)mÉ…¥¹•ÉÍÉ¥ÁÑtè¡ÑÑÁÌè¼½İİÜ¹ÉÍåÍ±½œ¹½´½‘½Œ½ØàµÍÑ…‰±”½É…¥¹•ÉÍÉ¥ÁĞ½¥¹‘•à¹¡Ñµ°)mÍ•ÉÙ¥”µµ…Átè€½‰±½œ½Í•ÉÙ¥”µµ…À¼)mµÕ±Ñ¥Á±”µ‰Õ¥±‘Á…­Ítè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½‰Õ¥±‘Á…­Ì½ÕÍ”µµÕ±Ñ¥Á±”µ‰Õ¥±‘Á…­Ì¹¡Ñµ°)mµ…¹¥™•ÍÑtè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½‘•ÙÕ¥‘”½‘•Á±½äµ…ÁÁÌ½µ…¹¥™•ÍĞ¹¡Ñµ°)m™…•ÑÍtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É•È¼ıÑ…ˆõ™…•ÑÌÍ•ÑÕÀ)m±½œÑ¨Étè¡ÑÑÁÌè¼½±½¥¹œ¹…Á…¡”¹½Éœ½±½œÑ¨¼È¹à¼)mÉÍåÍ±½tè¡ÑÑÁÌè¼½İİÜ¹ÉÍåÍ±½œ¹½´½‘½Œ½ØàµÍÑ…‰±”½½¹™¥ÕÉ…Ñ¥½¸½¥¹‘•à¹¡Ñµ°)mÉÍåÍ±½œµ‘µ½¹™¥tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½±½Ì½½¹‰½…É‘¥¹œ½½Ñ¡•È)m©…Ù…tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½©…Ù„)mÁåÑ¡½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½ÁåÑ¡½¸)mÉÕ‰åtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½ÉÕ‰ä)m½tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½¼)m¹½‘•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½¹½‘•©Ì)m‘½Ñ¹•Ñtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½‘½Ñ¹•Ğ)m…İÌµ‘‘tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…µ…é½¹}İ•‰}Í•ÉÙ¥•Ì¼)mÀµ‘‘tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½½½±•}±½Õ‘}Á±…Ñ™½É´¼)m…éÕÉ”µ‘‘tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…éÕÉ”¼(

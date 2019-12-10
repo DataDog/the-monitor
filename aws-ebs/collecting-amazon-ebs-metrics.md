@@ -1,281 +1,1 @@
----
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-  twitter: maximybrown
-blog/category:
-- series collection
-blog/tag:
-- monitoring
-- AWS
-- alerts
-- performance
-date: 2018-04-06
-description: "Learn how to query and collect key Amazon EBS resource metrics."
-draft: false
-image: ebs-hero-two.png
-meta_title: Collecting Amazon EBS metrics
-preview_image: ebs-hero-two.png
-header_video:
-    mp4: superhero_EBS_prores_20.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
-slug: collecting-amazon-ebs-metrics
-technology: aws ebs
-title: Collecting Amazon EBS metrics
-series: amazon-ebs-monitoring
----
-
-The simplest way to begin collecting Amazon EBS [metrics and status checks][part-one] is to use Amazonâ€™s built-in CloudWatch monitoring service. There are a few different methods to do so, although each will let you access the same metrics. CloudWatch is accessible via:
-
-- the [CloudWatch](#cloudwatch-console) or [EC2](#ec2-console) web consoles,
-- the [AWS command line tool](#metrics-via-cli), or 
-- a program or third-party monitoring service that connects to the [CloudWatch API](#metrics-via-api).
-
-You can also install a monitoring agent on your EC2 instances to pull system-level information from any attached EBS volumes that CloudWatch does not collect on its own. We will go over all of these approaches in this post.
-
-## Authorization required
-Securing and controlling user access to AWS can get complicated, especially at larger organizations that might have multiple teams and hundreds of users, not all of whom require the same permissions. AWS Identity and Access Management (IAM) provides a way to [administer and secure API access](/blog/engineering/secure-aws-account-iam-setup/). The following steps for monitoring CloudWatch metrics assume that you have access to a user [account or role][iam] whose [security policy][access-policy] grants the minimal permissions needed to manage the CloudWatch and EBS APIs. See the [AWS documentation for information][aws-security].
-
-## Crossing borders
-As mentioned in [part one][part-one] of this series, EC2 instances and EBS volumes are specific to the region in which they were launched. Generally, CloudWatch will return metrics only for resources within a specified region. You can create [dashboards](#dashboards) that pull metrics in from multiple regions, but otherwise you must specify which region's volumes you want to monitor. Weâ€™ll describe how to do this below.
-
-## Collecting EBS metrics from CloudWatch
-CloudWatch collects metrics through a hypervisor from any AWS services you may use in your infrastructure. You can use [AWS namespaces][aws-namespaces] to isolate CloudWatch metrics from a specific service (e.g., EBS). As mentioned in [part one][part-one] of this series, CloudWatch collects metrics at five-minute granularity for all volume types except io1, from which it collects data at one-minute intervals. Custom metrics, which will be covered later, can be forwarded at a much higher frequency, though that can incur additional charges.
-
-Note that, although EC2 instances with [detailed monitoring][detailed-monitoring] enabled report EC2 metrics at one-minute resolution, any attached EBS volumes that are not io1 will still only report at five-minute intervals.
-
-When viewing volume metrics, CloudWatch provides two complementary ways to aggregate the data: [periods](#periods) and [statistics](#statistics).
-
-### Periods
-
-The period sets the timespan, in seconds, over which CloudWatch will aggregate a metric into data points. By default, this will be the standard collection interval of five minutes (or one minute for io1 volumes). The larger the period, the less granular your metric data will be. Periods shorter than one minute are only possible with custom metrics. 
-
-Many EBS volume performance characteristics are measured in terms of throughput per second. On the other hand, CloudWatch metrics are generally aggregated over the full period. So it may be helpful or even necessary to divide the returned CloudWatch metric by the number of seconds in the period to benchmark volume performance.
-
-### Statistics
-
-Statistics are different ways to aggregate the data over the collection period. The following options are available: `Minimum`, `Maximum`, `Sum`, `Average`, `SampleCount` (the number of data points used for the aggregation), and `pNN.NN`. The `pNN.NN` aggregation returns any user-specified percentile (for example `p95.00`). This provides useful data for monitoring median values, outliers, and worst-case metrics.
-
-For EBS metrics, different statistics for the same metric can provide very different bits of information, and some may not be supported by volumes attached to certain instance types. For example, when looking at the VolumeWriteBytes metric, the sum will report the total number of bytes written over the period while the average will return the average size of each write operation during the period. Many of these differences and exceptions are covered in [part one][part-one] of this series, and you can find more information in the [EBS documentation][ebs-docs].
-
-## How to collect EBS metrics
-
-There are three primary ways to view EBS metrics from CloudWatch: via the AWS web console, via the AWS CLI, and via a third-party tool that integrates with the CloudWatch API.
-
-For the first option, viewing metrics from the AWS console, there are actually two different methods, with small but important differences in how the data is presented. You can use the CloudWatch console, or go to the EC2 console.
-
-### CloudWatch console
-
-The main CloudWatch page lets you view metrics on a per-volume basis, and includes useful features like the ability to:
-
-- browse available metrics for a quick overview of your volumes,
-- create dashboards to track multiple metrics, and
-- set alarms to notify you if metrics pass fixed thresholds.
-
-#### Browse metrics
-
-In the CloudWatch console, you can use the region selector to specify which region you want to view. Then, select an AWS namespace to see metrics from that service or source. Within the EBS namespace, metrics are only available on a per-volume basis, so you must select or search for the specific volume or volumes you want to see.
-
-{{< img src="ebs-metrics-cloudwatch-console-rev.png" alt="View EBS metrics in CloudWatch" popup="true" >}}
-
-The basic CloudWatch graph provides options for the time range you wish to view as well as the type of graph displayedâ€”line, stacked graph, or a [number graph](/blog/summary-graphs-metric-graphs-101/#single-value-summaries) that displays the metricâ€™s current value. You can plot multiple metrics, from the same source or from different sources, on the same graph. So, for example, you can view disk reads per second for different volumes at the same time, or compare disk read to disk write levels on the same volume.
-
-{{< img src="cloudwatch-ebs-metrics-graph.png" alt="Single volume EBS metrics from the CloudWatch console" wide="true" popup="true" >}}
-
-#### Dashboards
-
-For a more comprehensive picture of your EBS volumes and AWS infrastructure, you can create and save CloudWatch dashboards, which let you visualize multiple configurable graphs simultaneously. This is helpful for correlating instance metrics with each other and with data from other Amazon services. Dashboards provide the additional ability to change the metric aggregation period. You can also add metric graphs from different regions to the same dashboard.
-
-#### Alarms
-
-CloudWatch lets you create basic alarms on EBS metrics. Alarms can be set against any upper or lower threshold and will trigger whenever the selected metric, aggregated across the specified dimension, exceeds (or falls below) that threshold for a set amount of time. In the following example, we are creating an alarm that will notify us if the average [volume queue length](/blog/amazon-ebs-monitoring/#metric-to-watch-volume-queue-length) of the volume is more than six (the recommended queue size for a volume with 3,000 IOPS) for three consecutive periods of five minutes.
-
-{{< img src="ebs-cloudwatch-alarm.png" alt="Creating a CloudWatch alarm for EBS metrics" popup="true" >}}
-
-Alarm actions can be tied to any CloudWatch metric. EBS volumes can be [modified][ebs-modify] and scaled up (though not down) without detaching them. So, for example, you can create an alarm to notify you if an io1 volume uses a certain percentage of its available IOPS, then make a decision if you need to modify that volume to provision more IOPS. AWS Auto Scaling lets you automate the size of your EC2 fleet. Combine this with alarms based on EBS metrics to automatically launch more instances to help shoulder the load or terminate unnecessary ones.
-
-### EC2 console
-
-From the EC2 console you can access information about your volumes either from the volume list, which will show a full inventory of volumes (attached or unattached), or by selecting an instance and then navigating to the volumes that are attached to it (as shown below).
-
-{{< img src="ebs-metrics-volume-lists-rev.png" alt="View EBS volumes from the EC2 console" popup="true" >}}
-
-In either case, once a volume is selected, you can view metrics and status checks from the `Monitoring` and `Status Checks` tabs respectively. 
-
-#### Monitoring
-
-The `Monitoring` tab displays metric graphs for a selected volume. It is important to note these are _not_ identical to the graphs you can view through CloudWatch. The EC2 console collects the same metrics from CloudWatch, but the visualizations for many are different as a result of [additional calculations][ec2-graphs] that provide values that can be easily compared to your volumesâ€™ performance specifications and used to help benchmark your volume configuration. For example, where the CloudWatch console will provide the number of read operations fully aggregated over the period (regardless of the statistic requested), the EC2 console will divide that number by the number of seconds in the period to provide the volumeâ€™s IOPS.
-
-{{< img src="ebs-metrics-cloudwatch-monitoring.png" alt="EBS metrics graphs in the EC2 console" popup="true" >}}
-
-#### Status checks
-
-Volume [status checks](/blog/amazon-ebs-monitoring/#status-checks) are reported from the EC2 namespace instead of through CloudWatch, and you can view them via the EC2 console. The volume list view includes a simple `Volume Status` field that will indicate `Okay` if the volume has passed all status checks or `Impaired` if either the I/O status check or the performance status check (for io1 volumes only) fails. After selecting a specific volume, the `Status Checks` tab provides further information on the volumeâ€™s I/O status and, in the case of io1 volumes, performance status.
-
-{{< img src="ebs-metrics-status-checks-rev.png" alt="EBS volume status checks" popup="true" >}}
-
-### Metrics via CLI
-
-Installing the [AWS CLI tool][aws-cli] allows you to query the full AWS API from the command line. Most EBS metrics are requested from the CloudWatch namespace. However, status checks are reported from the EC2 namespace, so youâ€™ll need two different CLI commands to request all the metrics described in [the first part][part-one] of this series. In either case, you can specify which region you want to query in two ways. First, you can set the environment variable, `AWS_DEFAULT_REGION` (this is also set when you initially configure the AWS CLI tool). Or you can include the `--region` parameter with the command.
-
-#### EBS metrics
-
-You can request CloudWatch metrics through the AWS CLI by running the CloudWatch [`get-metric-statistics`][get-metric-statistics] command. CloudWatch pulls metrics from many AWS services, so you must point `get-metric-statistics` to EBS with the `namespace` parameter to target the correct metrics. 
-
-The following additional parameters are required:
-
-- `metric-name`
-- `start-time` ([ISO 8601 UTC format][iso])
-- `end-time` (ISO 8601 UTC format)
-- `period` (in seconds)
-- `statistics`, or `extended-statistics` if you want to specify a percentile.
-
-Finally, as we saw on the CloudWatch web console, CloudWatch only provides EBS volume metrics on a per-volume basis. So when requesting metrics via the CLI, you have to specify a single volume via the `dimensions` parameter, which takes a name/value pair.
-
-For example:
-
-```
-aws cloudwatch get-metric-statistics 
---namespace AWS/EBS
---metric-name VolumeReadBytes 
---start-time 2018-02-08T20:00:00 
---end-time 2018-02-08T20:15:00 
---period 300 
---statistics Sum
---dimensions Name=VolumeId,Value=vol-0222g36795js57015
-```
-
-This requests the total read throughout for the specified volume for the 15-minute timespan indicated, with datapoints aggregated over five-minute periods. The JSON response looks like the following:
-
-```
-{
-    "Label": "VolumeWriteBytes",
-    "Datapoints": [
-        {
-            "Timestamp": "2018-02-08T20:05:00Z",
-            "Sum": 1486848.0,
-            "Unit": "Bytes"
-        },
-        {
-            "Timestamp": "2018-02-08T20:10:00Z",
-            "Sum": 1474560.0,
-            "Unit": "Bytes"
-        },
-        {
-            "Timestamp": "2018-02-08T20:00:00Z",
-            "Sum": 1601536.0,
-            "Unit": "Bytes"
-        }
-    ]
-}
-```
-
-Note that CloudWatchâ€™s JSON response is not necessarily ordered chronologically when it returns more than one datapoint. 
-
-#### EBS status checks
-
-To request volume I/O status checks using the CLI, you must use the EC2 [`describe-volume-status`][describe-volume-status] command. Absent any user-specified arguments, this command will return the status and any associated events and actions for all active volumes within the default region. You can narrow down results either by passing a list of one or more volume IDs or by using filters. For example, you can view metrics for all volumes that have an impaired volume status, or for volumes within a specific availability zone. 
-
-The following command simply requests volume status for two specified volumes:
-
-```
-aws ec2 describe-volume-status --volume-ids vol-0452s36845ej27015 vol-0a63ni625x0b22fc7
-```
-
-This returns:
-
-```
-{
-    "VolumeStatuses": [
-        {
-            "Actions": [],
-            "AvailabilityZone": "us-east-1a",
-            "Events": [],
-            "VolumeId": "vol-0452s36845ej27015",
-            "VolumeStatus": {
-                "Details": [
-                    {
-                        "Name": "io-enabled",
-                        "Status": "passed"
-                    },
-                    {
-                        "Name": "io-performance",
-                        "Status": "not-applicable"
-                    }
-                ],
-                "Status": "ok"
-            }
-        },
-        {
-            "Actions": [],
-            "AvailabilityZone": "us-east-1a",
-            "Events": [],
-            "VolumeId": "vol-0a63ni625x0b22fc7",
-            "VolumeStatus": {
-                "Details": [
-                    {
-                        "Name": "io-enabled",
-                        "Status": "passed"
-                    },
-                    {
-                        "Name": "io-performance",
-                        "Status": "normal"
-                    }
-                ],
-                "Status": "ok"
-            }
-        }
-    ]
-}
-
-```
-
-
-Note that `io-performance` is listed as `not-applicable` for the first volume in the response. This is because the I/O Performance check is only available for Provisioned IOPS volumes.
-
-If there are any [scheduled events](/blog/amazon-ebs-monitoring/#events) associated with the volumes you are checking, those will also appear in the response to `describe-volume-status`.
-
-### Metrics via API
-
-Amazon provides SDKs for major programming languages and mobile platforms to create applications and libraries that can communicate with AWS via specific APIs. A number of third-party monitoring products take advantage of these APIs to pull and aggregate metrics automatically.
-
-If you want to access the API directly, refer to the individual [SDK documentation][sdk] for information on how to make requests to the CloudWatch and EBS namespaces for metrics and status checks. Amazon also supports a basic [REST API][rest] that accepts HTTP and HTTPS requests.
-
-
-## Full observability
-
-CloudWatch gives you a convenient and general overview of your volume fleet. And because CloudWatch collects metrics from most AWS services, you can monitor several different parts of your infrastructure from one location. But because it gathers metrics via a hypervisor instead of reporting from your volumes themselves, it doesnâ€™t collect all the EBS metrics that you might want to keep an eye on, notably disk space statistics.
-
-One way to fill this gap is to install an agent on your instances that can collect system-level information such as disk utilization metrics. An example of this is Amazon's [CloudWatch Agent][cw-agent]. CloudWatch treats metrics forwarded by its agent as [custom metrics][custom-metrics], meaning that by default it collects them at a one-minute resolution and has the ability to go as high as one second. Note, however, that additional charges will accrue for custom metrics.
-
-A comprehensive monitoring service can provide even more visibility into your infrastructure by integrating with each part of your stack. This way you can get complete, single-platform coverage of your applications as well as all the components that support them, including EBS volumes, EC2 instances, and other technologies. A monitoring service also has the potential added benefit of increased resolution, because metric collection is not restricted by CloudWatchâ€™s hypervisor. 
-
-In [the third and final post][part-three] of this series, you will learn how to use Datadog to set up comprehensive, high-resolution monitoring for your EBS volumes and the rest of your stack.
-
-_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/aws-ebs/collecting-amazon-ebs-metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
-
-[part-one]: /blog/amazon-ebs-monitoring/
-[regions]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html
-[part-three]: /blog/monitoring-amazon-ebs-volumes-with-datadog/
-[iam]: http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
-[access-policy]: http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html
-[aws-security]: http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html
-[aws-namespaces]: http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-namespaces.html
-[detailed-monitoring]: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html#enable-detailed-monitoring
-[ebs-docs]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html
-[autoscaling]: https://aws.amazon.com/autoscaling/
-[ami]: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
-[ebs-modify]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html
-[ec2-graphs]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html#graphs-in-the-aws-management-console-2
-[aws-cli]: https://aws.amazon.com/cli/
-[get-metric-statistics]: http://docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-statistics.html
-[iso]: https://en.wikipedia.org/wiki/ISO_8601
-[describe-volume-status]: https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-volume-status.html
-[sdk]: https://aws.amazon.com/tools/
-[rest]: http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html
-[custom-metrics]: http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html
-[cw-agent]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html
-[scripts]: https://aws.amazon.com/code/amazon-cloudwatch-monitoring-scripts-for-linux/
+m½±±•Ñ¥¹œµ…é½¸	Lµ•ÑÉ¥Ì(()Q¡”Í¥µÁ±•ÍĞİ…äÑ¼‰•¥¸½±±•Ñ¥¹œµ…é½¸	Lmµ•ÑÉ¥Ì…¹ÍÑ…ÑÕÌ¡•­ÍumÁ…ÉĞµ½¹•t¥ÌÑ¼ÕÍ”µ…é½»ŠeÌ‰Õ¥±Ğµ¥¸±½Õ‘]…Ñ µ½¹¥Ñ½É¥¹œÍ•ÉÙ¥”¸Q¡•É”…É”„™•Ü‘¥™™•É•¹Ğµ•Ñ¡½‘ÌÑ¼‘¼Í¼°…±Ñ¡½Õ •… İ¥±°±•Ğå½Ô…•ÍÌÑ¡”Í…µ”µ•ÑÉ¥Ì¸±½Õ‘]…Ñ ¥Ì…•ÍÍ¥‰±”Ù¥„è((´Ñ¡”m±½Õ‘]…Ñ¡t ±½Õ‘İ…Ñ µ½¹Í½±”¤½ÈmÉt •ŒÈµ½¹Í½±”¤İ•ˆ½¹Í½±•Ì°(´Ñ¡”m]L½µµ…¹±¥¹”Ñ½½±t µ•ÑÉ¥ÌµÙ¥„µ±¤¤°½È€(´„ÁÉ½É…´½ÈÑ¡¥ÉµÁ…ÉÑäµ½¹¥Ñ½É¥¹œÍ•ÉÙ¥”Ñ¡…Ğ½¹¹•ÑÌÑ¼Ñ¡”m±½Õ‘]…Ñ A%t µ•ÑÉ¥ÌµÙ¥„µ…Á¤¤¸()e½Ô…¸…±Í¼¥¹ÍÑ…±°„µ½¹¥Ñ½É¥¹œ…•¹Ğ½¸å½ÕÈÈ¥¹ÍÑ…¹•ÌÑ¼ÁÕ±°ÍåÍÑ•´µ±•Ù•°¥¹™½Éµ…Ñ¥½¸™É½´…¹ä…ÑÑ…¡•	LÙ½±Õµ•ÌÑ¡…Ğ±½Õ‘]…Ñ ‘½•Ì¹½Ğ½±±•Ğ½¸¥ÑÌ½İ¸¸]”İ¥±°¼½Ù•È…±°½˜Ñ¡•Í”…ÁÁÉ½…¡•Ì¥¸Ñ¡¥ÌÁ½ÍĞ¸((ŒŒÕÑ¡½É¥é…Ñ¥½¸É•ÅÕ¥É•)M•ÕÉ¥¹œ…¹½¹ÑÉ½±±¥¹œÕÍ•È…•ÍÌÑ¼]L…¸•Ğ½µÁ±¥…Ñ•°•ÍÁ•¥…±±ä…Ğ±…É•È½É…¹¥é…Ñ¥½¹ÌÑ¡…Ğµ¥¡Ğ¡…Ù”µÕ±Ñ¥Á±”Ñ•…µÌ…¹¡Õ¹‘É•‘Ì½˜ÕÍ•ÉÌ°¹½Ğ…±°½˜İ¡½´É•ÅÕ¥É”Ñ¡”Í…µ”Á•Éµ¥ÍÍ¥½¹Ì¸]L%‘•¹Ñ¥Ñä…¹•ÍÌ5…¹…•µ•¹Ğ€¡%4¤ÁÉ½Ù¥‘•Ì„İ…äÑ¼m…‘µ¥¹¥ÍÑ•È…¹Í•ÕÉ”A$…•ÍÍt ½‰±½œ½•¹¥¹••É¥¹œ½Í•ÕÉ”µ…İÌµ…½Õ¹Ğµ¥…´µÍ•ÑÕÀ¼¤¸Q¡”™½±±½İ¥¹œÍÑ•ÁÌ™½Èµ½¹¥Ñ½É¥¹œ±½Õ‘]…Ñ µ•ÑÉ¥Ì…ÍÍÕµ”Ñ¡…Ğå½Ô¡…Ù”…•ÍÌÑ¼„ÕÍ•Èm…½Õ¹Ğ½ÈÉ½±•um¥…µtİ¡½Í”mÍ•ÕÉ¥ÑäÁ½±¥åum…•ÍÌµÁ½±¥åtÉ…¹ÑÌÑ¡”µ¥¹¥µ…°Á•Éµ¥ÍÍ¥½¹Ì¹••‘•Ñ¼µ…¹…”Ñ¡”±½Õ‘]…Ñ …¹	LA%Ì¸M•”Ñ¡”m]L‘½Õµ•¹Ñ…Ñ¥½¸™½È¥¹™½Éµ…Ñ¥½¹um…İÌµÍ•ÕÉ¥Ñåt¸((ŒŒÉ½ÍÍ¥¹œ‰½É‘•ÉÌ)Ìµ•¹Ñ¥½¹•¥¸mÁ…ÉĞ½¹•umÁ…ÉĞµ½¹•t½˜Ñ¡¥ÌÍ•É¥•Ì°È¥¹ÍÑ…¹•Ì…¹	LÙ½±Õµ•Ì…É”ÍÁ•¥™¥ŒÑ¼Ñ¡”É•¥½¸¥¸İ¡¥ Ñ¡•äİ•É”±…Õ¹¡•¸•¹•É…±±ä°±½Õ‘]…Ñ İ¥±°É•ÑÕÉ¸µ•ÑÉ¥Ì½¹±ä™½ÈÉ•Í½ÕÉ•Ìİ¥Ñ¡¥¸„ÍÁ•¥™¥•É•¥½¸¸e½Ô…¸É•…Ñ”m‘…Í¡‰½…É‘Ít ‘…Í¡‰½…É‘Ì¤Ñ¡…ĞÁÕ±°µ•ÑÉ¥Ì¥¸™É½´µÕ±Ñ¥Á±”É•¥½¹Ì°‰ÕĞ½Ñ¡•Éİ¥Í”å½ÔµÕÍĞÍÁ•¥™äİ¡¥ É•¥½¸ÌÙ½±Õµ•Ìå½Ôİ…¹ĞÑ¼µ½¹¥Ñ½È¸]—Še±°‘•ÍÉ¥‰”¡½ÜÑ¼‘¼Ñ¡¥Ì‰•±½Ü¸((ŒŒ½±±•Ñ¥¹œ	Lµ•ÑÉ¥Ì™É½´±½Õ‘]…Ñ )±½Õ‘]…Ñ ½±±•ÑÌµ•ÑÉ¥ÌÑ¡É½Õ „¡åÁ•ÉÙ¥Í½È™É½´…¹ä]LÍ•ÉÙ¥•Ìå½Ôµ…äÕÍ”¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¸e½Ô…¸ÕÍ”m]L¹…µ•ÍÁ…•Íum…İÌµ¹…µ•ÍÁ…•ÍtÑ¼¥Í½±…Ñ”±½Õ‘]…Ñ µ•ÑÉ¥Ì™É½´„ÍÁ•¥™¥ŒÍ•ÉÙ¥”€¡”¹œ¸°	L¤¸Ìµ•¹Ñ¥½¹•¥¸mÁ…ÉĞ½¹•umÁ…ÉĞµ½¹•t½˜Ñ¡¥ÌÍ•É¥•Ì°±½Õ‘]…Ñ ½±±•ÑÌµ•ÑÉ¥Ì…Ğ™¥Ù”µµ¥¹ÕÑ”É…¹Õ±…É¥Ñä™½È…±°Ù½±Õµ”ÑåÁ•Ì•á•ÁĞ¥¼Ä°™É½´İ¡¥ ¥Ğ½±±•ÑÌ‘…Ñ„…Ğ½¹”µµ¥¹ÕÑ”¥¹Ñ•ÉÙ…±Ì¸ÕÍÑ½´µ•ÑÉ¥Ì°İ¡¥ İ¥±°‰”½Ù•É•±…Ñ•È°…¸‰”™½Éİ…É‘•…Ğ„µÕ ¡¥¡•È™É•ÅÕ•¹ä°Ñ¡½Õ Ñ¡…Ğ…¸¥¹ÕÈ…‘‘¥Ñ¥½¹…°¡…É•Ì¸()9½Ñ”Ñ¡…Ğ°…±Ñ¡½Õ È¥¹ÍÑ…¹•Ìİ¥Ñ m‘•Ñ…¥±•µ½¹¥Ñ½É¥¹um‘•Ñ…¥±•µµ½¹¥Ñ½É¥¹t•¹…‰±•É•Á½ÉĞÈµ•ÑÉ¥Ì…Ğ½¹”µµ¥¹ÕÑ”É•Í½±ÕÑ¥½¸°…¹ä…ÑÑ…¡•	LÙ½±Õµ•ÌÑ¡…Ğ…É”¹½Ğ¥¼Äİ¥±°ÍÑ¥±°½¹±äÉ•Á½ÉĞ…Ğ™¥Ù”µµ¥¹ÕÑ”¥¹Ñ•ÉÙ…±Ì¸()]¡•¸Ù¥•İ¥¹œÙ½±Õµ”µ•ÑÉ¥Ì°±½Õ‘]…Ñ ÁÉ½Ù¥‘•ÌÑİ¼½µÁ±•µ•¹Ñ…Éäİ…åÌÑ¼…É•…Ñ”Ñ¡”‘…Ñ„èmÁ•É¥½‘Ít Á•É¥½‘Ì¤…¹mÍÑ…Ñ¥ÍÑ¥Ít ÍÑ…Ñ¥ÍÑ¥Ì¤¸((ŒŒŒA•É¥½‘Ì()Q¡”Á•É¥½Í•ÑÌÑ¡”Ñ¥µ•ÍÁ…¸°¥¸Í•½¹‘Ì°½Ù•Èİ¡¥ ±½Õ‘]…Ñ İ¥±°…É•…Ñ”„µ•ÑÉ¥Œ¥¹Ñ¼‘…Ñ„Á½¥¹ÑÌ¸	ä‘•™…Õ±Ğ°Ñ¡¥Ìİ¥±°‰”Ñ¡”ÍÑ…¹‘…É½±±•Ñ¥½¸¥¹Ñ•ÉÙ…°½˜™¥Ù”µ¥¹ÕÑ•Ì€¡½È½¹”µ¥¹ÕÑ”™½È¥¼ÄÙ½±Õµ•Ì¤¸Q¡”±…É•ÈÑ¡”Á•É¥½°Ñ¡”±•ÍÌÉ…¹Õ±…Èå½ÕÈµ•ÑÉ¥Œ‘…Ñ„İ¥±°‰”¸A•É¥½‘ÌÍ¡½ÉÑ•ÈÑ¡…¸½¹”µ¥¹ÕÑ”…É”½¹±äÁ½ÍÍ¥‰±”İ¥Ñ ÕÍÑ½´µ•ÑÉ¥Ì¸€()5…¹ä	LÙ½±Õµ”Á•É™½Éµ…¹”¡…É…Ñ•É¥ÍÑ¥Ì…É”µ•…ÍÕÉ•¥¸Ñ•ÉµÌ½˜Ñ¡É½Õ¡ÁÕĞÁ•ÈÍ•½¹¸=¸Ñ¡”½Ñ¡•È¡…¹°±½Õ‘]…Ñ µ•ÑÉ¥Ì…É”•¹•É…±±ä…É•…Ñ•½Ù•ÈÑ¡”™Õ±°Á•É¥½¸M¼¥Ğµ…ä‰”¡•±Á™Õ°½È•Ù•¸¹••ÍÍ…ÉäÑ¼‘¥Ù¥‘”Ñ¡”É•ÑÕÉ¹•±½Õ‘]…Ñ µ•ÑÉ¥Œ‰äÑ¡”¹Õµ‰•È½˜Í•½¹‘Ì¥¸Ñ¡”Á•É¥½Ñ¼‰•¹¡µ…É¬Ù½±Õµ”Á•É™½Éµ…¹”¸((ŒŒŒMÑ…Ñ¥ÍÑ¥Ì()MÑ…Ñ¥ÍÑ¥Ì…É”‘¥™™•É•¹Ğİ…åÌÑ¼…É•…Ñ”Ñ¡”‘…Ñ„½Ù•ÈÑ¡”½±±•Ñ¥½¸Á•É¥½¸Q¡”™½±±½İ¥¹œ½ÁÑ¥½¹Ì…É”…Ù…¥±…‰±”è5¥¹¥µÕµ€°5…á¥µÕµ€°MÕµ€°Ù•É…•€°M…µÁ±•½Õ¹Ñ€€¡Ñ¡”¹Õµ‰•È½˜‘…Ñ„Á½¥¹ÑÌÕÍ•™½ÈÑ¡”…É•…Ñ¥½¸¤°…¹Á98¹99€¸Q¡”Á98¹99€…É•…Ñ¥½¸É•ÑÕÉ¹Ì…¹äÕÍ•ÈµÍÁ•¥™¥•Á•É•¹Ñ¥±”€¡™½È•á…µÁ±”ÀäÔ¸ÀÁ€¤¸Q¡¥ÌÁÉ½Ù¥‘•ÌÕÍ•™Õ°‘…Ñ„™½Èµ½¹¥Ñ½É¥¹œµ•‘¥…¸Ù…±Õ•Ì°½ÕÑ±¥•ÉÌ°…¹İ½ÉÍĞµ…Í”µ•ÑÉ¥Ì¸()½È	Lµ•ÑÉ¥Ì°‘¥™™•É•¹ĞÍÑ…Ñ¥ÍÑ¥Ì™½ÈÑ¡”Í…µ”µ•ÑÉ¥Œ…¸ÁÉ½Ù¥‘”Ù•Éä‘¥™™•É•¹Ğ‰¥ÑÌ½˜¥¹™½Éµ…Ñ¥½¸°…¹Í½µ”µ…ä¹½Ğ‰”ÍÕÁÁ½ÉÑ•‰äÙ½±Õµ•Ì…ÑÑ…¡•Ñ¼•ÉÑ…¥¸¥¹ÍÑ…¹”ÑåÁ•Ì¸½È•á…µÁ±”°İ¡•¸±½½­¥¹œ…ĞÑ¡”Y½±Õµ•]É¥Ñ•	åÑ•Ìµ•ÑÉ¥Œ°Ñ¡”ÍÕ´İ¥±°É•Á½ÉĞÑ¡”Ñ½Ñ…°¹Õµ‰•È½˜‰åÑ•ÌİÉ¥ÑÑ•¸½Ù•ÈÑ¡”Á•É¥½İ¡¥±”Ñ¡”…Ù•É…”İ¥±°É•ÑÕÉ¸Ñ¡”…Ù•É…”Í¥é”½˜•… İÉ¥Ñ”½Á•É…Ñ¥½¸‘ÕÉ¥¹œÑ¡”Á•É¥½¸5…¹ä½˜Ñ¡•Í”‘¥™™•É•¹•Ì…¹•á•ÁÑ¥½¹Ì…É”½Ù•É•¥¸mÁ…ÉĞ½¹•umÁ…ÉĞµ½¹•t½˜Ñ¡¥ÌÍ•É¥•Ì°…¹å½Ô…¸™¥¹µ½É”¥¹™½Éµ…Ñ¥½¸¥¸Ñ¡”m	L‘½Õµ•¹Ñ…Ñ¥½¹um•‰Ìµ‘½Ít¸((ŒŒ!½ÜÑ¼½±±•Ğ	Lµ•ÑÉ¥Ì()Q¡•É”…É”Ñ¡É•”ÁÉ¥µ…Éäİ…åÌÑ¼Ù¥•Ü	Lµ•ÑÉ¥Ì™É½´±½Õ‘]…Ñ èÙ¥„Ñ¡”]Lİ•ˆ½¹Í½±”°Ù¥„Ñ¡”]L1$°…¹Ù¥„„Ñ¡¥ÉµÁ…ÉÑäÑ½½°Ñ¡…Ğ¥¹Ñ•É…Ñ•Ìİ¥Ñ Ñ¡”±½Õ‘]…Ñ A$¸()½ÈÑ¡”™¥ÉÍĞ½ÁÑ¥½¸°Ù¥•İ¥¹œµ•ÑÉ¥Ì™É½´Ñ¡”]L½¹Í½±”°Ñ¡•É”…É”…ÑÕ…±±äÑİ¼‘¥™™•É•¹Ğµ•Ñ¡½‘Ì°İ¥Ñ Íµ…±°‰ÕĞ¥µÁ½ÉÑ…¹Ğ‘¥™™•É•¹•Ì¥¸¡½ÜÑ¡”‘…Ñ„¥ÌÁÉ•Í•¹Ñ•¸e½Ô…¸ÕÍ”Ñ¡”±½Õ‘]…Ñ ½¹Í½±”°½È¼Ñ¼Ñ¡”È½¹Í½±”¸((ŒŒŒ±½Õ‘]…Ñ ½¹Í½±”()Q¡”µ…¥¸±½Õ‘]…Ñ Á…”±•ÑÌå½ÔÙ¥•Üµ•ÑÉ¥Ì½¸„Á•ÈµÙ½±Õµ”‰…Í¥Ì°…¹¥¹±Õ‘•ÌÕÍ•™Õ°™•…ÑÕÉ•Ì±¥­”Ñ¡”…‰¥±¥ÑäÑ¼è((´‰É½İÍ”…Ù…¥±…‰±”µ•ÑÉ¥Ì™½È„ÅÕ¥¬½Ù•ÉÙ¥•Ü½˜å½ÕÈÙ½±Õµ•Ì°(´É•…Ñ”‘…Í¡‰½…É‘ÌÑ¼ÑÉ…¬µÕ±Ñ¥Á±”µ•ÑÉ¥Ì°…¹(´Í•Ğ…±…ÉµÌÑ¼¹½Ñ¥™äå½Ô¥˜µ•ÑÉ¥ÌÁ…ÍÌ™¥á•Ñ¡É•Í¡½±‘Ì¸((ŒŒŒŒ	É½İÍ”µ•ÑÉ¥Ì()%¸Ñ¡”±½Õ‘]…Ñ ½¹Í½±”°å½Ô…¸ÕÍ”Ñ¡”É•¥½¸Í•±•Ñ½ÈÑ¼ÍÁ•¥™äİ¡¥ É•¥½¸å½Ôİ…¹ĞÑ¼Ù¥•Ü¸Q¡•¸°Í•±•Ğ…¸]L¹…µ•ÍÁ…”Ñ¼Í•”µ•ÑÉ¥Ì™É½´Ñ¡…ĞÍ•ÉÙ¥”½ÈÍ½ÕÉ”¸]¥Ñ¡¥¸Ñ¡”	L¹…µ•ÍÁ…”°µ•ÑÉ¥Ì…É”½¹±ä…Ù…¥±…‰±”½¸„Á•ÈµÙ½±Õµ”‰…Í¥Ì°Í¼å½ÔµÕÍĞÍ•±•Ğ½ÈÍ•…É ™½ÈÑ¡”ÍÁ•¥™¥ŒÙ½±Õµ”½ÈÙ½±Õµ•Ìå½Ôİ…¹ĞÑ¼Í•”¸()íìğ¥µœÍÉŒô‰•‰Ìµµ•ÑÉ¥Ìµ±½Õ‘İ…Ñ µ½¹Í½±”µÉ•Ø¹Á¹œˆ…±Ğô‰Y¥•Ü	Lµ•ÑÉ¥Ì¥¸±½Õ‘]…Ñ ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()Q¡”‰…Í¥Œ±½Õ‘]…Ñ É…Á ÁÉ½Ù¥‘•Ì½ÁÑ¥½¹Ì™½ÈÑ¡”Ñ¥µ”É…¹”å½Ôİ¥Í Ñ¼Ù¥•Ü…Ìİ•±°…ÌÑ¡”ÑåÁ”½˜É…Á ‘¥ÍÁ±…å•“ŠQ±¥¹”°ÍÑ…­•É…Á °½È„m¹Õµ‰•ÈÉ…Á¡t ½‰±½œ½ÍÕµµ…ÉäµÉ…Á¡Ìµµ•ÑÉ¥ŒµÉ…Á¡Ì´ÄÀÄ¼Í¥¹±”µÙ…±Õ”µÍÕµµ…É¥•Ì¤Ñ¡…Ğ‘¥ÍÁ±…åÌÑ¡”µ•ÑÉ¥ŠeÌÕÉÉ•¹ĞÙ…±Õ”¸e½Ô…¸Á±½ĞµÕ±Ñ¥Á±”µ•ÑÉ¥Ì°™É½´Ñ¡”Í…µ”Í½ÕÉ”½È™É½´‘¥™™•É•¹ĞÍ½ÕÉ•Ì°½¸Ñ¡”Í…µ”É…Á ¸M¼°™½È•á…µÁ±”°å½Ô…¸Ù¥•Ü‘¥Í¬É•…‘ÌÁ•ÈÍ•½¹™½È‘¥™™•É•¹ĞÙ½±Õµ•Ì…ĞÑ¡”Í…µ”Ñ¥µ”°½È½µÁ…É”‘¥Í¬É•…Ñ¼‘¥Í¬İÉ¥Ñ”±•Ù•±Ì½¸Ñ¡”Í…µ”Ù½±Õµ”¸()íìğ¥µœÍÉŒô‰±½Õ‘İ…Ñ µ•‰Ìµµ•ÑÉ¥ÌµÉ…Á ¹Á¹œˆ…±Ğô‰M¥¹±”Ù½±Õµ”	Lµ•ÑÉ¥Ì™É½´Ñ¡”±½Õ‘]…Ñ ½¹Í½±”ˆİ¥‘”ô‰ÑÉÕ”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ…Í¡‰½…É‘Ì()½È„µ½É”½µÁÉ•¡•¹Í¥Ù”Á¥ÑÕÉ”½˜å½ÕÈ	LÙ½±Õµ•Ì…¹]L¥¹™É…ÍÑÉÕÑÕÉ”°å½Ô…¸É•…Ñ”…¹Í…Ù”±½Õ‘]…Ñ ‘…Í¡‰½…É‘Ì°İ¡¥ ±•Ğå½ÔÙ¥ÍÕ…±¥é”µÕ±Ñ¥Á±”½¹™¥ÕÉ…‰±”É…Á¡ÌÍ¥µÕ±Ñ…¹•½ÕÍ±ä¸Q¡¥Ì¥Ì¡•±Á™Õ°™½È½ÉÉ•±…Ñ¥¹œ¥¹ÍÑ…¹”µ•ÑÉ¥Ìİ¥Ñ •… ½Ñ¡•È…¹İ¥Ñ ‘…Ñ„™É½´½Ñ¡•Èµ…é½¸Í•ÉÙ¥•Ì¸…Í¡‰½…É‘ÌÁÉ½Ù¥‘”Ñ¡”…‘‘¥Ñ¥½¹…°…‰¥±¥ÑäÑ¼¡…¹”Ñ¡”µ•ÑÉ¥Œ…É•…Ñ¥½¸Á•É¥½¸e½Ô…¸…±Í¼…‘µ•ÑÉ¥ŒÉ…Á¡Ì™É½´‘¥™™•É•¹ĞÉ•¥½¹ÌÑ¼Ñ¡”Í…µ”‘…Í¡‰½…É¸((ŒŒŒŒ±…ÉµÌ()±½Õ‘]…Ñ ±•ÑÌå½ÔÉ•…Ñ”‰…Í¥Œ…±…ÉµÌ½¸	Lµ•ÑÉ¥Ì¸±…ÉµÌ…¸‰”Í•Ğ……¥¹ÍĞ…¹äÕÁÁ•È½È±½İ•ÈÑ¡É•Í¡½±…¹İ¥±°ÑÉ¥•Èİ¡•¹•Ù•ÈÑ¡”Í•±•Ñ•µ•ÑÉ¥Œ°…É•…Ñ•…É½ÍÌÑ¡”ÍÁ•¥™¥•‘¥µ•¹Í¥½¸°•á••‘Ì€¡½È™…±±Ì‰•±½Ü¤Ñ¡…ĞÑ¡É•Í¡½±™½È„Í•Ğ…µ½Õ¹Ğ½˜Ñ¥µ”¸%¸Ñ¡”™½±±½İ¥¹œ•á…µÁ±”°İ”…É”É•…Ñ¥¹œ…¸…±…É´Ñ¡…Ğİ¥±°¹½Ñ¥™äÕÌ¥˜Ñ¡”…Ù•É…”mÙ½±Õµ”ÅÕ•Õ”±•¹Ñ¡t ½‰±½œ½…µ…é½¸µ•‰Ìµµ½¹¥Ñ½É¥¹œ¼µ•ÑÉ¥ŒµÑ¼µİ…Ñ µÙ½±Õµ”µÅÕ•Õ”µ±•¹Ñ ¤½˜Ñ¡”Ù½±Õµ”¥Ìµ½É”Ñ¡…¸Í¥à€¡Ñ¡”É•½µµ•¹‘•ÅÕ•Õ”Í¥é”™½È„Ù½±Õµ”İ¥Ñ €Ì°ÀÀÀ%=AL¤™½ÈÑ¡É•”½¹Í•ÕÑ¥Ù”Á•É¥½‘Ì½˜™¥Ù”µ¥¹ÕÑ•Ì¸()íìğ¥µœÍÉŒô‰•‰Ìµ±½Õ‘İ…Ñ µ…±…É´¹Á¹œˆ…±Ğô‰É•…Ñ¥¹œ„±½Õ‘]…Ñ …±…É´™½È	Lµ•ÑÉ¥ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()±…É´…Ñ¥½¹Ì…¸‰”Ñ¥•Ñ¼…¹ä±½Õ‘]…Ñ µ•ÑÉ¥Œ¸	LÙ½±Õµ•Ì…¸‰”mµ½‘¥™¥•‘um•‰Ìµµ½‘¥™åt…¹Í…±•ÕÀ€¡Ñ¡½Õ ¹½Ğ‘½İ¸¤İ¥Ñ¡½ÕĞ‘•Ñ…¡¥¹œÑ¡•´¸M¼°™½È•á…µÁ±”°å½Ô…¸É•…Ñ”…¸…±…É´Ñ¼¹½Ñ¥™äå½Ô¥˜…¸¥¼ÄÙ½±Õµ”ÕÍ•Ì„•ÉÑ…¥¸Á•É•¹Ñ…”½˜¥ÑÌ…Ù…¥±…‰±”%=AL°Ñ¡•¸µ…­”„‘•¥Í¥½¸¥˜å½Ô¹••Ñ¼µ½‘¥™äÑ¡…ĞÙ½±Õµ”Ñ¼ÁÉ½Ù¥Í¥½¸µ½É”%=AL¸]LÕÑ¼M…±¥¹œ±•ÑÌå½Ô…ÕÑ½µ…Ñ”Ñ¡”Í¥é”½˜å½ÕÈÈ™±••Ğ¸½µ‰¥¹”Ñ¡¥Ìİ¥Ñ …±…ÉµÌ‰…Í•½¸	Lµ•ÑÉ¥ÌÑ¼…ÕÑ½µ…Ñ¥…±±ä±…Õ¹ µ½É”¥¹ÍÑ…¹•ÌÑ¼¡•±ÀÍ¡½Õ±‘•ÈÑ¡”±½…½ÈÑ•Éµ¥¹…Ñ”Õ¹¹••ÍÍ…Éä½¹•Ì¸((ŒŒŒÈ½¹Í½±”()É½´Ñ¡”È½¹Í½±”å½Ô…¸…•ÍÌ¥¹™½Éµ…Ñ¥½¸…‰½ÕĞå½ÕÈÙ½±Õµ•Ì•¥Ñ¡•È™É½´Ñ¡”Ù½±Õµ”±¥ÍĞ°İ¡¥ İ¥±°Í¡½Ü„™Õ±°¥¹Ù•¹Ñ½Éä½˜Ù½±Õµ•Ì€¡…ÑÑ…¡•½ÈÕ¹…ÑÑ…¡•¤°½È‰äÍ•±•Ñ¥¹œ…¸¥¹ÍÑ…¹”…¹Ñ¡•¸¹…Ù¥…Ñ¥¹œÑ¼Ñ¡”Ù½±Õµ•ÌÑ¡…Ğ…É”…ÑÑ…¡•Ñ¼¥Ğ€¡…ÌÍ¡½İ¸‰•±½Ü¤¸()íìğ¥µœÍÉŒô‰•‰Ìµµ•ÑÉ¥ÌµÙ½±Õµ”µ±¥ÍÑÌµÉ•Ø¹Á¹œˆ…±Ğô‰Y¥•Ü	LÙ½±Õµ•Ì™É½´Ñ¡”È½¹Í½±”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()%¸•¥Ñ¡•È…Í”°½¹”„Ù½±Õµ”¥ÌÍ•±•Ñ•°å½Ô…¸Ù¥•Üµ•ÑÉ¥Ì…¹ÍÑ…ÑÕÌ¡•­Ì™É½´Ñ¡”5½¹¥Ñ½É¥¹€…¹MÑ…ÑÕÌ¡•­Í€Ñ…‰ÌÉ•ÍÁ•Ñ¥Ù•±ä¸€((ŒŒŒŒ5½¹¥Ñ½É¥¹œ()Q¡”5½¹¥Ñ½É¥¹€Ñ…ˆ‘¥ÍÁ±…åÌµ•ÑÉ¥ŒÉ…Á¡Ì™½È„Í•±•Ñ•Ù½±Õµ”¸%Ğ¥Ì¥µÁ½ÉÑ…¹ĞÑ¼¹½Ñ”Ñ¡•Í”…É”}¹½Ñ|¥‘•¹Ñ¥…°Ñ¼Ñ¡”É…Á¡Ìå½Ô…¸Ù¥•ÜÑ¡É½Õ ±½Õ‘]…Ñ ¸Q¡”È½¹Í½±”½±±•ÑÌÑ¡”Í…µ”µ•ÑÉ¥Ì™É½´±½Õ‘]…Ñ °‰ÕĞÑ¡”Ù¥ÍÕ…±¥é…Ñ¥½¹Ì™½Èµ…¹ä…É”‘¥™™•É•¹Ğ…Ì„É•ÍÕ±Ğ½˜m…‘‘¥Ñ¥½¹…°…±Õ±…Ñ¥½¹Íum•ŒÈµÉ…Á¡ÍtÑ¡…ĞÁÉ½Ù¥‘”Ù…±Õ•ÌÑ¡…Ğ…¸‰”•…Í¥±ä½µÁ…É•Ñ¼å½ÕÈÙ½±Õµ•ÏŠdÁ•É™½Éµ…¹”ÍÁ•¥™¥…Ñ¥½¹Ì…¹ÕÍ•Ñ¼¡•±À‰•¹¡µ…É¬å½ÕÈÙ½±Õµ”½¹™¥ÕÉ…Ñ¥½¸¸½È•á…µÁ±”°İ¡•É”Ñ¡”±½Õ‘]…Ñ ½¹Í½±”İ¥±°ÁÉ½Ù¥‘”Ñ¡”¹Õµ‰•È½˜É•…½Á•É…Ñ¥½¹Ì™Õ±±ä…É•…Ñ•½Ù•ÈÑ¡”Á•É¥½€¡É•…É‘±•ÍÌ½˜Ñ¡”ÍÑ…Ñ¥ÍÑ¥ŒÉ•ÅÕ•ÍÑ•¤°Ñ¡”È½¹Í½±”İ¥±°‘¥Ù¥‘”Ñ¡…Ğ¹Õµ‰•È‰äÑ¡”¹Õµ‰•È½˜Í•½¹‘Ì¥¸Ñ¡”Á•É¥½Ñ¼ÁÉ½Ù¥‘”Ñ¡”Ù½±Õµ—ŠeÌ%=AL¸()íìğ¥µœÍÉŒô‰•‰Ìµµ•ÑÉ¥Ìµ±½Õ‘İ…Ñ µµ½¹¥Ñ½É¥¹œ¹Á¹œˆ…±Ğô‰	Lµ•ÑÉ¥ÌÉ…Á¡Ì¥¸Ñ¡”È½¹Í½±”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒMÑ…ÑÕÌ¡•­Ì()Y½±Õµ”mÍÑ…ÑÕÌ¡•­Ít ½‰±½œ½…µ…é½¸µ•‰Ìµµ½¹¥Ñ½É¥¹œ¼ÍÑ…ÑÕÌµ¡•­Ì¤…É”É•Á½ÉÑ•™É½´Ñ¡”È¹…µ•ÍÁ…”¥¹ÍÑ•…½˜Ñ¡É½Õ ±½Õ‘]…Ñ °…¹å½Ô…¸Ù¥•ÜÑ¡•´Ù¥„Ñ¡”È½¹Í½±”¸Q¡”Ù½±Õµ”±¥ÍĞÙ¥•Ü¥¹±Õ‘•Ì„Í¥µÁ±”Y½±Õµ”MÑ…ÑÕÍ€™¥•±Ñ¡…Ğİ¥±°¥¹‘¥…Ñ”=­…å€¥˜Ñ¡”Ù½±Õµ”¡…ÌÁ…ÍÍ•…±°ÍÑ…ÑÕÌ¡•­Ì½È%µÁ…¥É•‘€¥˜•¥Ñ¡•ÈÑ¡”$½<ÍÑ…ÑÕÌ¡•¬½ÈÑ¡”Á•É™½Éµ…¹”ÍÑ…ÑÕÌ¡•¬€¡™½È¥¼ÄÙ½±Õµ•Ì½¹±ä¤™…¥±Ì¸™Ñ•ÈÍ•±•Ñ¥¹œ„ÍÁ•¥™¥ŒÙ½±Õµ”°Ñ¡”MÑ…ÑÕÌ¡•­Í€Ñ…ˆÁÉ½Ù¥‘•Ì™ÕÉÑ¡•È¥¹™½Éµ…Ñ¥½¸½¸Ñ¡”Ù½±Õµ—ŠeÌ$½<ÍÑ…ÑÕÌ…¹°¥¸Ñ¡”…Í”½˜¥¼ÄÙ½±Õµ•Ì°Á•É™½Éµ…¹”ÍÑ…ÑÕÌ¸()íìğ¥µœÍÉŒô‰•‰Ìµµ•ÑÉ¥ÌµÍÑ…ÑÕÌµ¡•­ÌµÉ•Ø¹Á¹œˆ…±Ğô‰	LÙ½±Õµ”ÍÑ…ÑÕÌ¡•­ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒŒ5•ÑÉ¥ÌÙ¥„1$()%¹ÍÑ…±±¥¹œÑ¡”m]L1$Ñ½½±um…İÌµ±¥t…±±½İÌå½ÔÑ¼ÅÕ•ÉäÑ¡”™Õ±°]LA$™É½´Ñ¡”½µµ…¹±¥¹”¸5½ÍĞ	Lµ•ÑÉ¥Ì…É”É•ÅÕ•ÍÑ•™É½´Ñ¡”±½Õ‘]…Ñ ¹…µ•ÍÁ…”¸!½İ•Ù•È°ÍÑ…ÑÕÌ¡•­Ì…É”É•Á½ÉÑ•™É½´Ñ¡”È¹…µ•ÍÁ…”°Í¼å½×Še±°¹••Ñİ¼‘¥™™•É•¹Ğ1$½µµ…¹‘ÌÑ¼É•ÅÕ•ÍĞ…±°Ñ¡”µ•ÑÉ¥Ì‘•ÍÉ¥‰•¥¸mÑ¡”™¥ÉÍĞÁ…ÉÑumÁ…ÉĞµ½¹•t½˜Ñ¡¥ÌÍ•É¥•Ì¸%¸•¥Ñ¡•È…Í”°å½Ô…¸ÍÁ•¥™äİ¡¥ É•¥½¸å½Ôİ…¹ĞÑ¼ÅÕ•Éä¥¸Ñİ¼İ…åÌ¸¥ÉÍĞ°å½Ô…¸Í•ĞÑ¡”•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±”°]M}U1Q}I%=9€€¡Ñ¡¥Ì¥Ì…±Í¼Í•Ğİ¡•¸å½Ô¥¹¥Ñ¥…±±ä½¹™¥ÕÉ”Ñ¡”]L1$Ñ½½°¤¸=Èå½Ô…¸¥¹±Õ‘”Ñ¡”€´µÉ•¥½¹€Á…É…µ•Ñ•Èİ¥Ñ Ñ¡”½µµ…¹¸((ŒŒŒŒ	Lµ•ÑÉ¥Ì()e½Ô…¸É•ÅÕ•ÍĞ±½Õ‘]…Ñ µ•ÑÉ¥ÌÑ¡É½Õ Ñ¡”]L1$‰äÉÕ¹¹¥¹œÑ¡”±½Õ‘]…Ñ m•Ğµµ•ÑÉ¥ŒµÍÑ…Ñ¥ÍÑ¥Íum•Ğµµ•ÑÉ¥ŒµÍÑ…Ñ¥ÍÑ¥Ít½µµ…¹¸±½Õ‘]…Ñ ÁÕ±±Ìµ•ÑÉ¥Ì™É½´µ…¹ä]LÍ•ÉÙ¥•Ì°Í¼å½ÔµÕÍĞÁ½¥¹Ğ•Ğµµ•ÑÉ¥ŒµÍÑ…Ñ¥ÍÑ¥Í€Ñ¼	Lİ¥Ñ Ñ¡”¹…µ•ÍÁ…•€Á…É…µ•Ñ•ÈÑ¼Ñ…É•ĞÑ¡”½ÉÉ•Ğµ•ÑÉ¥Ì¸€()Q¡”™½±±½İ¥¹œ…‘‘¥Ñ¥½¹…°Á…É…µ•Ñ•ÉÌ…É”É•ÅÕ¥É•è((´µ•ÑÉ¥Œµ¹…µ•€(´ÍÑ…ÉĞµÑ¥µ•€€¡m%M<€àØÀÄUQ™½Éµ…Ñum¥Í½t¤(´•¹µÑ¥µ•€€¡%M<€àØÀÄUQ™½Éµ…Ğ¤(´Á•É¥½‘€€¡¥¸Í•½¹‘Ì¤(´ÍÑ…Ñ¥ÍÑ¥Í€°½È•áÑ•¹‘•µÍÑ…Ñ¥ÍÑ¥Í€¥˜å½Ôİ…¹ĞÑ¼ÍÁ•¥™ä„Á•É•¹Ñ¥±”¸()¥¹…±±ä°…Ìİ”Í…Ü½¸Ñ¡”±½Õ‘]…Ñ İ•ˆ½¹Í½±”°±½Õ‘]…Ñ ½¹±äÁÉ½Ù¥‘•Ì	LÙ½±Õµ”µ•ÑÉ¥Ì½¸„Á•ÈµÙ½±Õµ”‰…Í¥Ì¸M¼İ¡•¸É•ÅÕ•ÍÑ¥¹œµ•ÑÉ¥ÌÙ¥„Ñ¡”1$°å½Ô¡…Ù”Ñ¼ÍÁ•¥™ä„Í¥¹±”Ù½±Õµ”Ù¥„Ñ¡”‘¥µ•¹Í¥½¹Í€Á…É…µ•Ñ•È°İ¡¥ Ñ…­•Ì„¹…µ”½Ù…±Õ”Á…¥È¸()½È•á…µÁ±”è()€)…İÌ±½Õ‘İ…Ñ •Ğµµ•ÑÉ¥ŒµÍÑ…Ñ¥ÍÑ¥Ì€(´µ¹…µ•ÍÁ…”]L½	L(´µµ•ÑÉ¥Œµ¹…µ”Y½±Õµ•I•…‘	åÑ•Ì€(´µÍÑ…ÉĞµÑ¥µ”€ÈÀÄà´ÀÈ´ÀáPÈÀèÀÀèÀÀ€(´µ•¹µÑ¥µ”€ÈÀÄà´ÀÈ´ÀáPÈÀèÄÔèÀÀ€(´µÁ•É¥½€ÌÀÀ€(´µÍÑ…Ñ¥ÍÑ¥ÌMÕ´(´µ‘¥µ•¹Í¥½¹Ì9…µ”õY½±Õµ•%±Y…±Õ”õÙ½°´ÀÈÈÉœÌØÜäÕ©ÌÔÜÀÄÔ)€()Q¡¥ÌÉ•ÅÕ•ÍÑÌÑ¡”Ñ½Ñ…°É•…Ñ¡É½Õ¡½ÕĞ™½ÈÑ¡”ÍÁ•¥™¥•Ù½±Õµ”™½ÈÑ¡”€ÄÔµµ¥¹ÕÑ”Ñ¥µ•ÍÁ…¸¥¹‘¥…Ñ•°İ¥Ñ ‘…Ñ…Á½¥¹ÑÌ…É•…Ñ•½Ù•È™¥Ù”µµ¥¹ÕÑ”Á•É¥½‘Ì¸Q¡”)M=8É•ÍÁ½¹Í”±½½­Ì±¥­”Ñ¡”™½±±½İ¥¹œè()€)ì(€€€€‰1…‰•°ˆè€‰Y½±Õµ•]É¥Ñ•	åÑ•Ìˆ°(€€€€‰…Ñ…Á½¥¹ÑÌˆèl(€€€€€€€ì(€€€€€€€€€€€€‰Q¥µ•ÍÑ…µÀˆè€ˆÈÀÄà´ÀÈ´ÀáPÈÀèÀÔèÀÁhˆ°(€€€€€€€€€€€€‰MÕ´ˆè€ÄĞàØàĞà¸À°(€€€€€€€€€€€€‰U¹¥Ğˆè€‰	åÑ•Ìˆ(€€€€€€€ô°(€€€€€€€ì(€€€€€€€€€€€€‰Q¥µ•ÍÑ…µÀˆè€ˆÈÀÄà´ÀÈ´ÀáPÈÀèÄÀèÀÁhˆ°(€€€€€€€€€€€€‰MÕ´ˆè€ÄĞÜĞÔØÀ¸À°(€€€€€€€€€€€€‰U¹¥Ğˆè€‰	åÑ•Ìˆ(€€€€€€€ô°(€€€€€€€ì(€€€€€€€€€€€€‰Q¥µ•ÍÑ…µÀˆè€ˆÈÀÄà´ÀÈ´ÀáPÈÀèÀÀèÀÁhˆ°(€€€€€€€€€€€€‰MÕ´ˆè€ÄØÀÄÔÌØ¸À°(€€€€€€€€€€€€‰U¹¥Ğˆè€‰	åÑ•Ìˆ(€€€€€€€ô(€€€t)ô)€()9½Ñ”Ñ¡…Ğ±½Õ‘]…Ñ£ŠeÌ)M=8É•ÍÁ½¹Í”¥Ì¹½Ğ¹••ÍÍ…É¥±ä½É‘•É•¡É½¹½±½¥…±±äİ¡•¸¥ĞÉ•ÑÕÉ¹Ìµ½É”Ñ¡…¸½¹”‘…Ñ…Á½¥¹Ğ¸€((ŒŒŒŒ	LÍÑ…ÑÕÌ¡•­Ì()Q¼É•ÅÕ•ÍĞÙ½±Õµ”$½<ÍÑ…ÑÕÌ¡•­ÌÕÍ¥¹œÑ¡”1$°å½ÔµÕÍĞÕÍ”Ñ¡”Èm‘•ÍÉ¥‰”µÙ½±Õµ”µÍÑ…ÑÕÍum‘•ÍÉ¥‰”µÙ½±Õµ”µÍÑ…ÑÕÍt½µµ…¹¸‰Í•¹Ğ…¹äÕÍ•ÈµÍÁ•¥™¥•…ÉÕµ•¹ÑÌ°Ñ¡¥Ì½µµ…¹İ¥±°É•ÑÕÉ¸Ñ¡”ÍÑ…ÑÕÌ…¹…¹ä…ÍÍ½¥…Ñ••Ù•¹ÑÌ…¹…Ñ¥½¹Ì™½È…±°…Ñ¥Ù”Ù½±Õµ•Ìİ¥Ñ¡¥¸Ñ¡”‘•™…Õ±ĞÉ•¥½¸¸e½Ô…¸¹…ÉÉ½Ü‘½İ¸É•ÍÕ±ÑÌ•¥Ñ¡•È‰äÁ…ÍÍ¥¹œ„±¥ÍĞ½˜½¹”½Èµ½É”Ù½±Õµ”%Ì½È‰äÕÍ¥¹œ™¥±Ñ•ÉÌ¸½È•á…µÁ±”°å½Ô…¸Ù¥•Üµ•ÑÉ¥Ì™½È…±°Ù½±Õµ•ÌÑ¡…Ğ¡…Ù”…¸¥µÁ…¥É•Ù½±Õµ”ÍÑ…ÑÕÌ°½È™½ÈÙ½±Õµ•Ìİ¥Ñ¡¥¸„ÍÁ•¥™¥Œ…Ù…¥±…‰¥±¥Ñäé½¹”¸€()Q¡”™½±±½İ¥¹œ½µµ…¹Í¥µÁ±äÉ•ÅÕ•ÍÑÌÙ½±Õµ”ÍÑ…ÑÕÌ™½ÈÑİ¼ÍÁ•¥™¥•Ù½±Õµ•Ìè()€)…İÌ•ŒÈ‘•ÍÉ¥‰”µÙ½±Õµ”µÍÑ…ÑÕÌ€´µÙ½±Õµ”µ¥‘ÌÙ½°´ÀĞÔÉÌÌØàĞÕ•¨ÈÜÀÄÔÙ½°´Á„ØÍ¹¤ØÈÕàÁˆÈÉ™ŒÜ)€()Q¡¥ÌÉ•ÑÕÉ¹Ìè()€)ì(€€€€‰Y½±Õµ•MÑ…ÑÕÍ•Ìˆèl(€€€€€€€ì(€€€€€€€€€€€€‰Ñ¥½¹Ìˆèmt°(€€€€€€€€€€€€‰Ù…¥±…‰¥±¥Ñåi½¹”ˆè€‰ÕÌµ•…ÍĞ´Å„ˆ°(€€€€€€€€€€€€‰Ù•¹ÑÌˆèmt°(€€€€€€€€€€€€‰Y½±Õµ•%ˆè€‰Ù½°´ÀĞÔÉÌÌØàĞÕ•¨ÈÜÀÄÔˆ°(€€€€€€€€€€€€‰Y½±Õµ•MÑ…ÑÕÌˆèì(€€€€€€€€€€€€€€€€‰•Ñ…¥±Ìˆèl(€€€€€€€€€€€€€€€€€€€ì(€€€€€€€€€€€€€€€€€€€€€€€€‰9…µ”ˆè€‰¥¼µ•¹…‰±•ˆ°(€€€€€€€€€€€€€€€€€€€€€€€€‰MÑ…ÑÕÌˆè€‰Á…ÍÍ•ˆ(€€€€€€€€€€€€€€€€€€€ô°(€€€€€€€€€€€€€€€€€€€ì(€€€€€€€€€€€€€€€€€€€€€€€€‰9…µ”ˆè€‰¥¼µÁ•É™½Éµ…¹”ˆ°(€€€€€€€€€€€€€€€€€€€€€€€€‰MÑ…ÑÕÌˆè€‰¹½Ğµ…ÁÁ±¥…‰±”ˆ(€€€€€€€€€€€€€€€€€€€ô(€€€€€€€€€€€€€€€t°(€€€€€€€€€€€€€€€€‰MÑ…ÑÕÌˆè€‰½¬ˆ(€€€€€€€€€€€ô(€€€€€€€ô°(€€€€€€€ì(€€€€€€€€€€€€‰Ñ¥½¹Ìˆèmt°(€€€€€€€€€€€€‰Ù…¥±…‰¥±¥Ñåi½¹”ˆè€‰ÕÌµ•…ÍĞ´Å„ˆ°(€€€€€€€€€€€€‰Ù•¹ÑÌˆèmt°(€€€€€€€€€€€€‰Y½±Õµ•%ˆè€‰Ù½°´Á„ØÍ¹¤ØÈÕàÁˆÈÉ™ŒÜˆ°(€€€€€€€€€€€€‰Y½±Õµ•MÑ…ÑÕÌˆèì(€€€€€€€€€€€€€€€€‰•Ñ…¥±Ìˆèl(€€€€€€€€€€€€€€€€€€€ì(€€€€€€€€€€€€€€€€€€€€€€€€‰9…µ”ˆè€‰¥¼µ•¹…‰±•ˆ°(€€€€€€€€€€€€€€€€€€€€€€€€‰MÑ…ÑÕÌˆè€‰Á…ÍÍ•ˆ(€€€€€€€€€€€€€€€€€€€ô°(€€€€€€€€€€€€€€€€€€€ì(€€€€€€€€€€€€€€€€€€€€€€€€‰9…µ”ˆè€‰¥¼µÁ•É™½Éµ…¹”ˆ°(€€€€€€€€€€€€€€€€€€€€€€€€‰MÑ…ÑÕÌˆè€‰¹½Éµ…°ˆ(€€€€€€€€€€€€€€€€€€€ô(€€€€€€€€€€€€€€€t°(€€€€€€€€€€€€€€€€‰MÑ…ÑÕÌˆè€‰½¬ˆ(€€€€€€€€€€€ô(€€€€€€€ô(€€€t)ô()€(()9½Ñ”Ñ¡…Ğ¥¼µÁ•É™½Éµ…¹•€¥Ì±¥ÍÑ•…Ì¹½Ğµ…ÁÁ±¥…‰±•€™½ÈÑ¡”™¥ÉÍĞÙ½±Õµ”¥¸Ñ¡”É•ÍÁ½¹Í”¸Q¡¥Ì¥Ì‰•…ÕÍ”Ñ¡”$½<A•É™½Éµ…¹”¡•¬¥Ì½¹±ä…Ù…¥±…‰±”™½ÈAÉ½Ù¥Í¥½¹•%=ALÙ½±Õµ•Ì¸()%˜Ñ¡•É”…É”…¹ämÍ¡•‘Õ±••Ù•¹ÑÍt ½‰±½œ½…µ…é½¸µ•‰Ìµµ½¹¥Ñ½É¥¹œ¼•Ù•¹ÑÌ¤…ÍÍ½¥…Ñ•İ¥Ñ Ñ¡”Ù½±Õµ•Ìå½Ô…É”¡•­¥¹œ°Ñ¡½Í”İ¥±°…±Í¼…ÁÁ•…È¥¸Ñ¡”É•ÍÁ½¹Í”Ñ¼‘•ÍÉ¥‰”µÙ½±Õµ”µÍÑ…ÑÕÍ€¸((ŒŒŒ5•ÑÉ¥ÌÙ¥„A$()µ…é½¸ÁÉ½Ù¥‘•ÌM-Ì™½Èµ…©½ÈÁÉ½É…µµ¥¹œ±…¹Õ…•Ì…¹µ½‰¥±”Á±…Ñ™½ÉµÌÑ¼É•…Ñ”…ÁÁ±¥…Ñ¥½¹Ì…¹±¥‰É…É¥•ÌÑ¡…Ğ…¸½µµÕ¹¥…Ñ”İ¥Ñ ]LÙ¥„ÍÁ•¥™¥ŒA%Ì¸¹Õµ‰•È½˜Ñ¡¥ÉµÁ…ÉÑäµ½¹¥Ñ½É¥¹œÁÉ½‘ÕÑÌÑ…­”…‘Ù…¹Ñ…”½˜Ñ¡•Í”A%ÌÑ¼ÁÕ±°…¹…É•…Ñ”µ•ÑÉ¥Ì…ÕÑ½µ…Ñ¥…±±ä¸()%˜å½Ôİ…¹ĞÑ¼…•ÍÌÑ¡”A$‘¥É•Ñ±ä°É•™•ÈÑ¼Ñ¡”¥¹‘¥Ù¥‘Õ…°mM,‘½Õµ•¹Ñ…Ñ¥½¹umÍ‘­t™½È¥¹™½Éµ…Ñ¥½¸½¸¡½ÜÑ¼µ…­”É•ÅÕ•ÍÑÌÑ¼Ñ¡”±½Õ‘]…Ñ …¹	L¹…µ•ÍÁ…•Ì™½Èµ•ÑÉ¥Ì…¹ÍÑ…ÑÕÌ¡•­Ì¸µ…é½¸…±Í¼ÍÕÁÁ½ÉÑÌ„‰…Í¥ŒmIMPA%umÉ•ÍÑtÑ¡…Ğ…•ÁÑÌ!QQ@…¹!QQALÉ•ÅÕ•ÍÑÌ¸(((ŒŒÕ±°½‰Í•ÉÙ…‰¥±¥Ñä()±½Õ‘]…Ñ ¥Ù•Ìå½Ô„½¹Ù•¹¥•¹Ğ…¹•¹•É…°½Ù•ÉÙ¥•Ü½˜å½ÕÈÙ½±Õµ”™±••Ğ¸¹‰•…ÕÍ”±½Õ‘]…Ñ ½±±•ÑÌµ•ÑÉ¥Ì™É½´µ½ÍĞ]LÍ•ÉÙ¥•Ì°å½Ô…¸µ½¹¥Ñ½ÈÍ•Ù•É…°‘¥™™•É•¹ĞÁ…ÉÑÌ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”™É½´½¹”±½…Ñ¥½¸¸	ÕĞ‰•…ÕÍ”¥Ğ…Ñ¡•ÉÌµ•ÑÉ¥ÌÙ¥„„¡åÁ•ÉÙ¥Í½È¥¹ÍÑ•…½˜É•Á½ÉÑ¥¹œ™É½´å½ÕÈÙ½±Õµ•ÌÑ¡•µÍ•±Ù•Ì°¥Ğ‘½•Í»ŠeĞ½±±•Ğ…±°Ñ¡”	Lµ•ÑÉ¥ÌÑ¡…Ğå½Ôµ¥¡Ğİ…¹ĞÑ¼­••À…¸•å”½¸°¹½Ñ…‰±ä‘¥Í¬ÍÁ…”ÍÑ…Ñ¥ÍÑ¥Ì¸()=¹”İ…äÑ¼™¥±°Ñ¡¥Ì…À¥ÌÑ¼¥¹ÍÑ…±°…¸…•¹Ğ½¸å½ÕÈ¥¹ÍÑ…¹•ÌÑ¡…Ğ…¸½±±•ĞÍåÍÑ•´µ±•Ù•°¥¹™½Éµ…Ñ¥½¸ÍÕ …Ì‘¥Í¬ÕÑ¥±¥é…Ñ¥½¸µ•ÑÉ¥Ì¸¸•á…µÁ±”½˜Ñ¡¥Ì¥Ìµ…é½¸Ìm±½Õ‘]…Ñ •¹ÑumÜµ…•¹Ñt¸±½Õ‘]…Ñ ÑÉ•…ÑÌµ•ÑÉ¥Ì™½Éİ…É‘•‰ä¥ÑÌ…•¹Ğ…ÌmÕÍÑ½´µ•ÑÉ¥ÍumÕÍÑ½´µµ•ÑÉ¥Ít°µ•…¹¥¹œÑ¡…Ğ‰ä‘•™…Õ±Ğ¥Ğ½±±•ÑÌÑ¡•´…Ğ„½¹”µµ¥¹ÕÑ”É•Í½±ÕÑ¥½¸…¹¡…ÌÑ¡”…‰¥±¥ÑäÑ¼¼…Ì¡¥ …Ì½¹”Í•½¹¸9½Ñ”°¡½İ•Ù•È°Ñ¡…Ğ…‘‘¥Ñ¥½¹…°¡…É•Ìİ¥±°…ÉÕ”™½ÈÕÍÑ½´µ•ÑÉ¥Ì¸()½µÁÉ•¡•¹Í¥Ù”µ½¹¥Ñ½É¥¹œÍ•ÉÙ¥”…¸ÁÉ½Ù¥‘”•Ù•¸µ½É”Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”‰ä¥¹Ñ•É…Ñ¥¹œİ¥Ñ •… Á…ÉĞ½˜å½ÕÈÍÑ…¬¸Q¡¥Ìİ…äå½Ô…¸•Ğ½µÁ±•Ñ”°Í¥¹±”µÁ±…Ñ™½É´½Ù•É…”½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì…Ìİ•±°…Ì…±°Ñ¡”½µÁ½¹•¹ÑÌÑ¡…ĞÍÕÁÁ½ÉĞÑ¡•´°¥¹±Õ‘¥¹œ	LÙ½±Õµ•Ì°È¥¹ÍÑ…¹•Ì°…¹½Ñ¡•ÈÑ•¡¹½±½¥•Ì¸µ½¹¥Ñ½É¥¹œÍ•ÉÙ¥”…±Í¼¡…ÌÑ¡”Á½Ñ•¹Ñ¥…°…‘‘•‰•¹•™¥Ğ½˜¥¹É•…Í•É•Í½±ÕÑ¥½¸°‰•…ÕÍ”µ•ÑÉ¥Œ½±±•Ñ¥½¸¥Ì¹½ĞÉ•ÍÑÉ¥Ñ•‰ä±½Õ‘]…Ñ£ŠeÌ¡åÁ•ÉÙ¥Í½È¸€()%¸mÑ¡”Ñ¡¥É…¹™¥¹…°Á½ÍÑumÁ…ÉĞµÑ¡É••t½˜Ñ¡¥ÌÍ•É¥•Ì°å½Ôİ¥±°±•…É¸¡½ÜÑ¼ÕÍ”…Ñ…‘½œÑ¼Í•ĞÕÀ½µÁÉ•¡•¹Í¥Ù”°¡¥ µÉ•Í½±ÕÑ¥½¸µ½¹¥Ñ½É¥¹œ™½Èå½ÕÈ	LÙ½±Õµ•Ì…¹Ñ¡”É•ÍĞ½˜å½ÕÈÍÑ…¬¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½…İÌµ•‰Ì½½±±•Ñ¥¹œµ…µ…é½¸µ•‰Ìµµ•ÑÉ¥Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|()mÁ…ÉĞµ½¹•tè€½‰±½œ½…µ…é½¸µ•‰Ìµµ½¹¥Ñ½É¥¹œ¼)mÉ•¥½¹Ítè¡ÑÑÁÌè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½ÕÍ¥¹œµÉ•¥½¹Ìµ…Ù…¥±…‰¥±¥Ñäµé½¹•Ì¹¡Ñµ°)mÁ…ÉĞµÑ¡É••tè€½‰±½œ½µ½¹¥Ñ½É¥¹œµ…µ…é½¸µ•‰ÌµÙ½±Õµ•Ìµİ¥Ñ µ‘…Ñ…‘½œ¼)m¥…µtè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½µ…é½¹±½Õ‘]…Ñ ½±…Ñ•ÍĞ½µ½¹¥Ñ½É¥¹œ½…ÕÑ µ…¹µ…•ÍÌµ½¹ÑÉ½°µÜ¹¡Ñµ°)m…•ÍÌµÁ½±¥åtè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½%4½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½…•ÍÍ}Á½±¥¥•Í}É•…Ñ”¹¡Ñµ°)m…İÌµÍ•ÕÉ¥Ñåtè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½•¹•É…°½±…Ñ•ÍĞ½È½…İÌµÍ•ŒµÉ•µÑåÁ•Ì¹¡Ñµ°)m…İÌµ¹…µ•ÍÁ…•Ítè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½µ…é½¹±½Õ‘]…Ñ ½±…Ñ•ÍĞ½µ½¹¥Ñ½É¥¹œ½…İÌµ¹…µ•ÍÁ…•Ì¹¡Ñµ°)m‘•Ñ…¥±•µµ½¹¥Ñ½É¥¹tè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½ÕÍ¥¹œµ±½Õ‘İ…Ñ µ¹•Ü¹¡Ñµ°•¹…‰±”µ‘•Ñ…¥±•µµ½¹¥Ñ½É¥¹œ)m•‰Ìµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½µ½¹¥Ñ½É¥¹œµÙ½±Õµ”µÍÑ…ÑÕÌ¹¡Ñµ°)m…ÕÑ½Í…±¥¹tè¡ÑÑÁÌè¼½…İÌ¹…µ…é½¸¹½´½…ÕÑ½Í…±¥¹œ¼)m…µ¥tè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½5%Ì¹¡Ñµ°)m•‰Ìµµ½‘¥™åtè¡ÑÑÁÌè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½•‰Ìµµ½‘¥™äµÙ½±Õµ”¹¡Ñµ°)m•ŒÈµÉ…Á¡Ítè¡ÑÑÁÌè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½µ½¹¥Ñ½É¥¹œµÙ½±Õµ”µÍÑ…ÑÕÌ¹¡Ñµ°É…Á¡Ìµ¥¸µÑ¡”µ…İÌµµ…¹…•µ•¹Ğµ½¹Í½±”´È)m…İÌµ±¥tè¡ÑÑÁÌè¼½…İÌ¹…µ…é½¸¹½´½±¤¼)m•Ğµµ•ÑÉ¥ŒµÍÑ…Ñ¥ÍÑ¥Ítè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½±¤½±…Ñ•ÍĞ½É•™•É•¹”½±½Õ‘İ…Ñ ½•Ğµµ•ÑÉ¥ŒµÍÑ…Ñ¥ÍÑ¥Ì¹¡Ñµ°)m¥Í½tè¡ÑÑÁÌè¼½•¸¹İ¥­¥Á•‘¥„¹½Éœ½İ¥­¤½%M=|àØÀÄ)m‘•ÍÉ¥‰”µÙ½±Õµ”µÍÑ…ÑÕÍtè¡ÑÑÁÌè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½±¤½±…Ñ•ÍĞ½É•™•É•¹”½•ŒÈ½‘•ÍÉ¥‰”µÙ½±Õµ”µÍÑ…ÑÕÌ¹¡Ñµ°)mÍ‘­tè¡ÑÑÁÌè¼½…İÌ¹…µ…é½¸¹½´½Ñ½½±Ì¼)mÉ•ÍÑtè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½A%I•™•É•¹”½]•±½µ”¹¡Ñµ°)mÕÍÑ½´µµ•ÑÉ¥Ítè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½µ…é½¹±½Õ‘]…Ñ ½±…Ñ•ÍĞ½µ½¹¥Ñ½É¥¹œ½ÁÕ‰±¥Í¡¥¹5•ÑÉ¥Ì¹¡Ñµ°)mÜµ…•¹Ñtè¡ÑÑÁÌè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½µ…é½¹±½Õ‘]…Ñ ½±…Ñ•ÍĞ½µ½¹¥Ñ½É¥¹œ½%¹ÍÑ…±°µ±½Õ‘]…Ñ µ•¹Ğ¹¡Ñµ°)mÍÉ¥ÁÑÍtè¡ÑÑÁÌè¼½…İÌ¹…µ…é½¸¹½´½½‘”½…µ…é½¸µ±½Õ‘İ…Ñ µµ½¹¥Ñ½É¥¹œµÍÉ¥ÁÑÌµ™½Èµ±¥¹Õà¼

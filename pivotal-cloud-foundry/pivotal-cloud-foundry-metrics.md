@@ -1,411 +1,1 @@
-In the first part of this series, we outlined the [different components][part-one] of a Pivotal Cloud Foundry deployment and how they work together to host and run applications. In this article we will look at some of the most important metrics that PCF operators should monitor. These metrics provide information that can help you ensure that the deployment is running smoothly, that it has [enough capacity to meet demand][capacity-management], and that the applications hosted on it are healthy.
-
-Pivotal Cloud Foundry operators have access to hundreds of metrics. We will break down a selection of key indicators that give you an overview of your deploymentâ€™s health and help determine if you need to scale up to accommodate usersâ€™ needs. Keeping an eye on these important metrics will help operators avoid performance issues for the developers deploying apps and the end users accessing them. They can also help identify potential scaling bottlenecks ahead of time.
-
-Note that this post focuses specifically on deployment metrics that describe the performance, availability, and resource usage of the various components that make up a PCF cluster. We will cover additional data types, such as logs and custom application metrics, in more detail in [part three][part-three] of this series.
-
-## Key Pivotal Cloud Foundry metrics
-
-In this post, we will cover some of the most important metrics for monitoring several important PCF components:
-
-- [BOSH](#bosh)
-- [The User Account and Authentication (UAA) server](#the-user-account-and-authentication-server)
-- [The Gorouter](#gorouter)
-- [Diego](#diego)
-- [Loggregator](#loggregator)
-
-The majority of these metrics are available by default via the Loggregator Firehose. Recall that PCFâ€™s [Loggregator](/blog/pivotal-cloud-foundry-architecture#loggregator) aggregates (â€œlogâ€ + â€œaggregatorâ€) and streams out through the [Firehose](/blog/pivotal-cloud-foundry-architecture#firehose) all available application logs, VM system metrics, and component metrics from a PCF cluster. One key data source not available through Loggregator are system logs, or logs that internal system processes generate. These are available instead via syslog drains reading from rsyslog.
-
-Pivotal also provides [PCF Healthwatch][pcf-healthwatch], an add-on service that reports additional metrics, many of which are derived from the metrics covered below. These metrics are only available for deployments that have Healthwatch installed and are designed to give operators a more immediately useful selection of metrics to gauge the health and utilization of their deployment (for example, by computing percentages and per-minute rates from the raw data). Healthwatch will be discussed in more detail in the [next part][part-three] of this series.
-
-This article refers to metric terminology from our [Monitoring 101 series](/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
-
-## BOSH
-BOSH is a Cloud Foundry tool that provisions and manages the necessary resources to create your deploymentâ€™s infrastructure based on the configuration blueprints you provide. BOSH metrics provide insight into the system-level health of the various VMs running your deployment. These metrics can also be high-level indicators of resource problems depending on the job running on that VM. For example, for VMs running [Diego cells](/blog/pivotal-cloud-foundry-architecture#diego-cells), insufficient memory or disk space can cause problems with running or starting new containers. 
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| system.healthy | Health check for the VM; returns `1` if VM is up and all processes are running, `0` if not | Resource: Availability |
-| system.cpu.user | Percent of CPU utilization at the user level | Resource: Utilization |
-| system.load.1m | Average system load over the previous minute | Resource: Utilization |
-| system.mem.percent | Percent of the VM's memory used | Resource: Utilization |
-| system.disk.\<type\>.percent | Percent of `system`, `persistent`, or `ephemeral` disk space used | Resource: Utilization |
-
-#### Metric to alert on: system.healthy
-This metric is the simplest and highest-level indicator of VM health; it tells you if the VM is up and if its processes are running properly. The failure of multiple VMs likely indicates problems with the deployment.
-
-#### Metric to alert on: system.cpu.user
-User CPU utilization can be an excellent indicator of performance issues as processes begin to throttle due to limited CPU resources. This is particularly true with VMs running the [Gorouter](/blog/pivotal-cloud-foundry-architecture#gorouter) and the [UAA server](/blog/pivotal-cloud-foundry-architecture#user-account-and-authentication), as reduced request throughput in those components can create a performance bottleneck for the entire deployment.
-
-If you notice higher-than-normal CPU utilization, you can scale your available resources by increasing the capacity of the VM or by spinning up additional instances of whatever job the VM is running. Elevated CPU could also point to issues with the application or job running on that VM that warrant investigation. PCF recommends setting a warning threshold of 85 percent and a critical alert threshold of 95 percent CPU utilization on critical components.
-
-#### Metric to watch: system.load.1m
-This metric represents the overall system load over the previous one-minute period. As with CPU utilization, this can be a quick indicator that a VM might need to be scaled up if the overall load levels are consistently higher than expected.
-
-#### Metric to watch: system.mem.percent
-If the level of available memory on the VM is too low, process performance might suffer. Keeping an eye on this metric can help determine if a VMâ€™s instance needs to be scaled up, or if additional instances of that VM should be created. PCF recommends setting a warning threshold of 80 percent and a critical alert threshold of 90 percent for memory usage.
-
-{{< img src="pcf-metrics-bosh-disk-metrics.png" alt="BOSH VM disk metrics" wide="true" >}}
-
-#### Metrics to alert on: system.disk.system.percent, system.disk.ephemeral.percent, system.disk.persistent.percent
-BOSH VMs can have either ephemeral storageâ€”disk storage that is destroyed when the VM is terminated or stoppedâ€”or [persistent disk storage][persistent-disks]. These metrics track the percent of disk usage for each disk type.  
-
-Keeping an eye on disk utilization will let you know if you need to add more storage or remove data before any jobs might be affected (e.g., a VM running a database server). If disks are filling up unexpectedly, you should investigate the cause to make sure that your storage resources are being used appropriately. BOSH generally shouldnâ€™t write to system, or root, disk, so if you see high system disk usage you should check what is filling the partition. For each disk type, PCF recommends a warning threshold of 80 percent and a critical alert threshold of 90 percent.
-
-## The User Account and Authentication server
-The [User Account and Authentication server](/blog/pivotal-cloud-foundry-architecture#user-account-and-authentication), or UAA, is PCFâ€™s identity management system. It stores user credentials and provides authorization tokens for applications when a user needs them. Metrics to watch for the UAA generally have to do with overall request throughput. You can also track UAA latency by using the Gorouter metric `latency.uaa`, covered [in the Gorouter section below](#gorouter).
-
-These metrics are emitted per UAA server instance.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| requests.global.completed.count | Lifetime number of requests completed by the UAA | Work: Throughput |
-| server.inflight.count | Number of requests that the UAA is currently processing | Work: Throughput |
-
-#### Metric to watch: requests.global.completed.count
-This metric is a good measure of overall UAA workload. Displaying completed requests as a per-second or per-minute rate helps identify unexpected spikes or drops. Monitoring UAA total requests completed also helps in planning deployment scaling, particularly when correlating it with UAA request latency and CPU utilization on UAA VMs.
-
-#### Metric to watch: server.inflight.count
-This metric also measures UAA server request throughput, but it measures how many requests the UAA server is handling _at that moment_ rather than a lifetime total. Too many concurrent requests can affect UAA latency and throughput. Correlating this metric with UAA latency and CPU usage on UAA VMs can help determine if your UAA servers need to be scaled up.
-
-## Gorouter
-The [Gorouter](/blog/pivotal-cloud-foundry-architecture#gorouter) is the entrypoint to your deployment, whether for operators and developers sending requests to the Cloud Controller API or for end users accessing applications. The Gorouter maintains dynamic routing tables tracking which containers on which cells are running which applications so it can send incoming HTTP requests appropriately. Router metrics will help you track the overall volume of incoming traffic and the kind of responses users are getting. These metrics also provide information on the latency of requests made by various components of your deployment.
-
-These metrics are emitted per Gorouter instance.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| total_requests | Lifetime number of requests completed by the Gorouter | Work: Throughput |
-| requests.\<component\> | Lifetime number of requests received by the Gorouter for the specified component (e.g., the UAA server or the Cloud Controller) | Work: Throughput |
-| latency | Average round-trip time (in milliseconds) for requests to go from the Gorouter to their endpoint (an application or a component API) and back again | Work: Performance |
-| latency.\<component\> | Maximum time (in milliseconds) that the specified component took to process a request from the Gorouter | Work: Performance |
-| total_routes | Total number of routes currently registered with the Gorouter | Other |
-| responses.5xx | Lifetime number of specified HTTP server error responses (e.g., 500, 503) received by the Gorouter from a backend application | Work: Error |
-| bad_gateways | Lifetime number of 502 responses emitted by the Gorouter | Work: Error |
-| responses.4xx | Lifetime number of specified HTTP client error responses (e.g., 403, 404) received by the Gorouter from a backend application | Work: Error |
-| file_descriptors | Number of file descriptors the Gorouter instance is currently using | Resource: Utilization |
-| backend_exhausted_conns | Lifetime number of requests rejected by the Gorouter because of the maximum connections per backend limit being reached | Work: Errors |
-| registry_message.route-emitter | Lifetime number of route registration messages received by the Gorouter | Other |
-| ms_since_last_registry_update | Amount of time (in milliseconds) since last route register was received and emitted by the Gorouter | Other |
-
-{{< img src="pcf-metrics-pcf-gorouter-metrics-rev.png" alt="Pivotal Cloud Foundry Gorouter metrics" wide="true" >}}
-
-#### Metric to alert on: total_requests
-Monitoring the total number of requests completed by Gorouter VMs can help you understand traffic flow through your deployment. Pivotal recommends scaling your Gorouters to maintain a rate of around 2,500 requests per second per Gorouter in order to keep request latency down. Correlating this metric with request latency and CPU utilization of the Gorouter VMs can provide insight into whether you need to scale your Gorouters. Significant drops in the request rate can alert you to major problems accessing the deployment.
-
-You can also monitor the number of requests that are bound for specific components, such as the Cloud Controller, via `requests.<component>`. This provides a more detailed view of traffic flow to particular parts of your deployment.
-
-#### Metric to alert on: latency
-Increases in the time it takes for a request to make its way from the Gorouter to the requested backend and back again can result from several different issues, including network connectivity problems, poor application health, or simply traffic congestion and an overutilized Gorouter instance. Correlating latency with CPU utilization of the Gorouter and total request throughput can help zero in on the cause of request slowdowns. Pivotal recommends starting with an alert on Gorouter latency of 100 ms and then tuning your alert thresholds to your deploymentâ€™s specific configuration.
-
-Itâ€™s also possible to monitor a specific componentâ€™s maximum latency in handling a request from the Gorouter with `latency.<component>` (e.g., the UAA server).
-
-#### Metric to watch: total_routes
-Diego cells send constant updates to the Gorouter to register new and changed routes to application instances. Keeping an eye on the total number of registered routes can help inform decisions about scaling your deployment to match growing usage. Alerting on significant variations in the number of registered routes can also be valuable in identifying app outages or problems with the Gorouter and overall route registration. If you notice a severe drop in this metric, it may be useful to correlate it with [`ms_since_last_registry_update`](#metric-to-alert-on-ms-since-last-registry-update) to see if there may be a problem with registering routes.
-
-Itâ€™s also worth tracking whether the number of total registered routes is the same across all Gorouter instances. Discrepancies can be a result of problems with the route registration process or with an individual Gorouter instance.
-
-#### Metric to alert on: responses.5xx
-A spike in server-side errors can indicate a range of problems, including applications crashing or application VMs that donâ€™t have the resources to handle the volume of incoming requests. Checking the Gorouter logs can help pinpoint the cause of the errors. 
-
-#### Metric to watch: bad_gateways
-This metric tracks the number of 502 responses that the Gorouter emits. PCF emits this specific metric in addition to the number of 5xx responses because an increase in bad gateway responses can indicate that the Gorouterâ€™s routing tables are not being updated properly, causing connections to applications to fail.
-
-#### Metric to watch: responses.4xx
-Itâ€™s worth keeping an eye out for high levels of specific client-side errors. They can alert you to incorrect URLs or possible misconfigurations that are blocking incoming traffic. Check the Gorouter logs for more details about the cause of the errors if you notice an unexpected uptick.
-
-#### Metric to alert on: file_descriptors
-In Unix-like OSes, [file descriptors][file-descriptors] are unique records for each file and network connection opened by a process. PCF sets a limit of 100,000 file descriptors per Gorouter instance. If an application exhausts the available Gorouter file descriptors, other applications will not be able to establish routes with the Gorouter and, in extreme cases, the Gorouter can lose its connection to the rest of PCF and lose its routing table.
-
-Alerting on a Gorouterâ€™s file descriptor count when it approaches 60,000 per Gorouter can give you time to investigate whether a specific application is causing issues or if you simply need to add more Gorouter VMs to increase the number of available file descriptors.
-
-#### Metric to watch: backend_exhausted_conns
-Setting the maximum connections per backend limits the number of connections a Gorouter can make with any one application instance. By correlating how many requests have been rejected due to hitting this limit with other throughput metrics, like the total number of requests coming through the Gorouter, you can determine if the Gorouter is experiencing consistently higher levels of usage (in which case you might scale up your deployment) or if requests are being rejected due to unresponsive or problematic applications.
-
-#### Metric to alert on: registry_message.route-emitter
-The Gorouter periodically receives route registration messages to update routing tables from the Route-Emitter sitting on each [Diego cell](/blog/pivotal-cloud-foundry-architecture#diego-cells). By itself, this metric reports the total number of registry messages the Gorouter instance has received. Correlating it with the metric [`route_emitter.HTTPRouteNATSMessagesEmitted`](#metric-to-alert-on-httproutenatsmessagesemitted), which measures the lifetime number of route registration messages _sent_ by a Route-Emitter, can reveal communication problems between Diego and the Gorouter.
-
-Each Gorouter instance should receive identical updates from all Route-Emitters, so the number of messages received by each Gorouter instance should equal the total number of messages sent across all Route-Emitters. PCF recommends alerting if the average number of messages received falls below the total messages sent.
-
-#### Metric to alert on: ms_since_last_registry_update
-Routing maps on the Gorouters are set to expire after 120 seconds. By default, Diego cells send messages every 20 seconds to all Gorouters to reset the 120-second timer and maintain routing consistency. If you notice a significant delay since the last time the Gorouter received a registry update, it might indicate connectivity problems or issues with the Gorouter, NATS (internal network communication between components), or Route-Emitter VMs.
-
-PCF recommends setting an alert to trigger after 30 seconds since the Gorouter last received route registration updates.
-
-## Diego
-Diego makes up the container orchestration and runtime environment components of PCF. It runs the tasks and LRPs, or application instances, that are pushed up to the deployment. So Diego component metrics to watch primarily relate to the deploymentâ€™s ability to assign incoming requests correctly, whether the resources are available to run all required work, and whether Diego is correctly monitoring and balancing the number of instances it should be running.
-
-The sub-components of Diego that we will cover metrics for are:
-
-- [The Auctioneer](#auctioneer)
-- [The BBS](#bbs)
-- [Locket](#locket)
-- [Diego cells (specifically the Rep)](#cells-rep)
-- [The Route-Emitter](#route-emitter)
-
-### Auctioneer
-The [Auctioneer](/blog/pivotal-cloud-foundry-architecture#diego-brain) receives workloads from the Cloud Controller in the form of [tasks and LRPs](/blog/pivotal-cloud-foundry-architecture#tasks-and-lrps) and distributes them across Diego cells based on its auction algorithm. Tasks are one-off, terminating processes while LRPs, or long-running processes, are continuous and meant to always have at least one instance running. Most often, LRPs can be thought of as application instances.
-
-Important metrics from the Auctioneer provide information on the number of auctions started and how many have failed, as well as how long it takes the Auctioneer to get the state of all Diego cells before initiating an auction.
-
-Note that these metrics are reported per Auctioneer instance.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| AuctioneerLRPAuctionsStarted | Lifetime number of LRP instances that the Auctioneer has successfully placed on cells | Work: Success |
-| AuctioneerLRPAuctionsFailed | Lifetime number of LRP instances that the Auctioneer has failed to place on cells | Work: Error |
-| AuctioneerTaskAuctionsStarted | Lifetime number of tasks that the Auctioneer has successfully placed on cells | Work: Success |
-| AuctioneerTaskAuctionsFailed | Lifetime number of tasks that the Auctioneer has failed to place on cells | Work: Error |
-| AuctioneerFetchStatesDuration | Total amount of time (in nanoseconds) that the Auctioneer takes to fetch the state of all cells during an auction | Work: Performance |
-
-#### Metrics to watch: AuctioneerLRPAuctionsStarted and AuctioneerTaskAuctionsStarted
-Note that these metrics do not track the number of auctions that the Auctioneer has _initiated_ but rather the number of LRPs or tasks the Auctioneer has placed on cells. In the case of LRP auctions, the metric is essentially a measure of how many application instances have been created.
-
-Significant and unexpected increases in Auctioneer activity can mean that your deployment is seeing more utilization and should be scaled up, or that there might be some problem that is causing instances or tasks to fail. Because PCF will automatically attempt to restart crashed processes, high numbers of LRP auctions might indicate container churn if Diego is constantly restarting application instances. 
-
-These metrics are not emitted regularly but rather when an auction event occurs, so there will be gaps in this metric during periods when no tasks or LRPs are scheduled.
-
-#### Metrics to alert on: AuctioneerLRPAuctionsFailed and AuctioneerTaskAuctionsFailed
-Failure of the Auctioneer to place work on Diego cells is often a result of resource constraints, indicating that existing cells are already operating at their full capacity. If you notice an increase in the value of one of these metrics, dive into your [cell resource metrics](#cellsrep) to see if you need to scale them up or add additional cell VMs to the deployment. 
-
-Particularly for LRP auctions, PCF recommends measuring the average of this metric over a five-minute period. Using this measurement, PCF suggests setting a critical alert threshold of one failed LRP auction per minute on average, as any future auctions might also fail if there is a shortage of resources.
-
-These metrics are not emitted regularly but rather when an auction event occurs, so there will be gaps in this metric during periods when no tasks or LRPs are scheduled.
-
-#### Metric to alert on: AuctioneerFetchStatesDuration
-In order to place work, the Auctioneer needs an accurate record of the current state of the Diego cells, as well as the tasks and LRPs already placed. When beginning an auction, the Auctioneer will query all Diego cells for their state. An inability to record what work the cells are doing can lead to staging tasks failing. Extended latency in the time it takes to fetch the state can indicate connectivity issues or that your Diego cells are unhealthy.
-
-PCF recommends setting a warning threshold of two seconds and a critical alert threshold of five seconds when measuring how long it takes for the Auctioneer to fetch the state of Diego cells.
-
-These metrics are not emitted regularly but rather when an auction event occurs, so there will be gaps in this metric during periods when no tasks or LRPs are scheduled.
-
-### BBS
-All work that is done by Diego comes through the BBS. The BBS receives requests from the Cloud Controller and schedules tasks and LRPs on Diego cells. It also plays an important part in synchronizing the number of application instances that _should_ be running, as reported by the Cloud Controller, with how many application instances the cells are _actually_ running. When a developer updates the number of instances, by scaling or pushing an application, the Cloud Controller updates the BBS's recorded `DesiredLRPs`. The BBS periodically runs convergence passes that compare the desired state of the Diego cells as forwarded by the Cloud Controller with the actual state, or `ActualLRPs`, reported by the cells.
-
-{{< img src="pcf-metrics-LRP-sync-diagram.png" alt="PCF metrics LRP synchronization" wide="true" caption="The stages to synchronize how many LRPs should be running with how many the cells are running." >}}
-
-Metrics to watch here pertain to possible differences between `DesiredLRPs` and `ActualLRPs` due to, for example, a break in communication between the Cloud Controller and Diego. Another key BBS metric to watch is how long these convergence passes are taking to complete. Finally, BBS metrics allow you to track how long the BBS takes to process new requests.
-
-Note that each of these metrics are reported per BBS instance.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| convergenceLRPDuration | Total time (in nanoseconds) that the BBS takes to run a convergence pass | Other |
-| domain.cf-apps | Indicates whether the `cf-apps` domain is up to date and thus apps from the CC are synchronized with `DesiredLRPs` in Diego; `1` if domain is up to date, no data if not | Other |
-| domain.cf-tasks | Indicates whether the `cf-tasks` domain is up to date and thus tasks from the CC are synchronized with tasks in Diego; `1` if domain is up to date, no data if not | Other |
-| LRPsRunning | Total number of LRP instances running on cells | Resource: Availability |
-| LRPsExtra | Total number of LRP instances recorded by the BBS that are no longer desired | Resource: Availability |
-| LRPsMissing | Total number of LRP instances that are desired but are not recorded by the BBS | Resource: Availability |
-| crashedActualLRPs | Total number of LRP instances that have crashed | Resource: Error |
-| RequestLatency | Maximum time (in nanoseconds) it took for the BBS to process a request | Work: Performance |
-
-#### Metric to alert on: convergenceLRPDuration
-The BBSâ€™s convergence passes check `DesiredLRPs` as reported by the Cloud Controller against `ActualLRPs` running as stated by the Diego cells. Confirming that these numbers are the same is necessary to keep Diegoâ€™s state up to date and ensure that applications are running the way developers intend. Delays in the convergence pass might mean that instances or tasks that crash are not restarted by Diego. If this metric's value begins to climb, it could also indicate problems with the BBS communicating with other components. PCF recommends that a convergence pass duration of more than 10 seconds is worth alerting on, while more than 20 seconds is critical.
-
-#### Metrics to alert on: domain.cf-apps and domain.cf-tasks
-These metrics indicate whether the Cloud Controllerâ€™s record of current applications (`cf-apps`) and current tasks running for a specific application (`cf-tasks`) is synchronized with the `bbs.LRPsDesired` metric. A disparity between the Cloud Controller and Diego can affect whether requests coming in through the Cloud Controllerâ€”for example, a user trying to scale up the number of instances for an applicationâ€”will be recorded and handled correctly.
-
-#### Metric to watch: LRPsRunning
-The number of running LRPs is not necessarily useful as a snapshot, but itâ€™s worth tracking this metricâ€™s rate of change to keep an eye on overall deployment growth and plan for scaling capacity.
-
-#### Metrics to alert on: LRPsExtra and LRPsMissing
-These metrics report differences between the record of desired LRPs and the BBSâ€™s record of running LRPs. Pushing or deleting an application that has many instances can cause brief spikes in the number of missing or extra LRPs, respectively, but any extended high levels of either can indicate a problem with the BBS. In both cases, PCF suggests setting a warning threshold of around five and a critical alert threshold of around 10.
-
-#### Metric to alert on: crashedActualLRPs
-Crashing LRPs can be a result of either application or platform problems. This metric provides a high-level indication of potential issuesâ€”if you see a large number of instances beginning to crash, you will want to investigate the cause.
-
-Alerting thresholds for this metric will vary depending on your deploymentâ€™s size and utilization. Monitoring crashed LRPs and investigating their cause (a troublesome application or a problem with the deployment itself) can help determine what levels to set for alerts.
-
-#### Metric to alert on: RequestLatency
-This metric tracks the maximum observed time the BBS took to handle a request to all its API endpoints over the previous 60 seconds. In other words, it reports the slowest measured request time. Increases in BBS request latency will manifest as slow responses to commands from the [cf CLI][cf-cli], the Cloud Foundry command line tool. PCF recommends a warning threshold of five seconds and a critical alert threshold of 10 seconds for this metric.
-
-### Locket
-PCF uses the Locket service to register distributed locks to ensure that the correct component processes a request and that the same work isnâ€™t assigned to multiple cells. Particularly, the four components that use Locket are the BBS, the Auctioneer, the Route-Emitter, and the TPS Watcher, which sits on the Diego Brain and monitors for crashed LRPs. Missing locks can indicate problems with these components. Locket also records the presence of Diego cells and therefore can provide a quick overview of Diego health.
-
-Note that these metrics are reported per Locket instance.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| ActiveLocks | Total count of system component locks | Other  |
-| \<component\>.LockHeld | Presence of component lock (e.g., Auctioneer or BBS); returns `1` if held, `0` if not | Other  |
-| ActivePresences | Total count of active cells with a registered presence | Resource: Availability  |
-
-#### Metric to alert on: ActiveLocks
-When Diego is healthy, this metric should consistently report four active locks: one each for the Auctioneer, the BBS, the Route-Emitter, and the TPS Watcher. If this metric shows fewer than four active locks for several minutes, you can check the `<component>.LockHeld` metrics. However, note that only the Auctioneer and BBS register a LockHeld.
-
-Regardless of how many instances there are of each component that reports a lockâ€”Auctioneer, BBS, Route-Emitter, and TPS Watcherâ€”there will only be one lock reported for that component.
-
-#### Metric to alert on: \<component\>.LockHeld
-These metrics complement `ActiveLocks` by providing individual status reports for component locks, albeit only for the Auctioneer and the BBS. Note that a component might report a lost lock briefly if the instances perform a leader transition.
-
-#### Metric to watch: ActivePresences
-Presences are records of Diego cells, required to let the rest of PCF know that they exist and are able to be assigned work. This metric will of course vary depending on the size of the deployment, but keeping an eye on `ActivePresences` and any significant, unexpected changes can alert you to problems with Diego.
-
-### Cells/Rep
-Many of the most important metrics for monitoring your Diego cells come from the cell Rep. The Rep reports the state of the Diego cell and of Garden, which creates and manages the actual containers. The Rep's report includes statistics on available resources, so these metrics will help determine if the deployment has adequate capacity for applications or if it needs to be scaled.
-
-Note that these metrics are reported per Diego cell.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| UnhealthyCell | Diego cell health check; returns `0` for healthy, `1` for unhealthy | Resource: Availability |
-| ContainerCount | Number of containers on the cell | Resource: Utilization |
-| CapacityTotalContainers | Total number of containers the cell can host | Resource: Utilization |
-| CapacityRemainingContainers | Number of additional containers the cell can host | Resource: Utilization |
-| CapacityTotalMemory | Total memory (MiB) available to cell for containers | Resource: Utilization |
-| CapacityRemainingMemory | Remaining memory (MiB) available to cell for containers | Resource: Utilization |
-| CapacityTotalDisk | Total disk space (MiB) available to cell for containers | Resource: Utilization |
-| CapacityRemainingDisk | Remaining disk space (MiB) available to cell for containers | Resource: Utilization | 
-| RepBulkSyncDuration | Total time (in nanoseconds) the cell Rep took to synchronize `ActualLRP` count from the BBS with LRP reports from the Garden containers | Work: Performance  |
-
-#### Metric to alert on: UnhealthyCell
-This metric indicates whether a cell has passed a Diego health check. Several cells failing within a short time period can have a negative effect on end-user experience. Triggering an alert when multiple cells fail can call your attention quickly to potential performance or availability problems.
-
-#### Metrics to watch: ContainerCount, CapacityTotalContainers, and CapacityRemainingContainers
-Use these metrics to track cell capacity and utilization in terms of the number of containers running on a given cell. By default, the maximum containers one cell may host is 250. This can be changed by modifying a [BOSH property][max-containers], however Pivotal does not recommend increasing it beyond 250.
-
-Monitoring the number of currently running containers on your cells is important for understanding overall deployment usage. Checking how many additional containers the cell can run can help indicate whether or not you need to scale out your deployment.
-
-Note that [PCF Healthwatch][pcf-healthwatch] provides the additional metric `healthwatch.Diego.TotalPercentageAvailableContainerCapacity.5M`, which expresses `CapacityRemainingContainers` divided by `CapacityTotalContainers` over the previous five minutes to calculate a percentage of remaining container capacity for the cell.
-
-#### Metrics to alert on: CapacityTotalMemory and CapacityRemainingMemory
-Insufficient cell memory can make it impossible to scale existing applications or push new ones. Monitoring these metrics will help you understand if your deployment has sufficient resources. When monitoring remaining memory aggregated across all cells, PCF recommends setting a warning threshold of around 64 GB and a critical alert threshold of 32 GB.
-
-One important thing to note is that when a user assigns resources to an application, Diego allocates those resources assuming the workload will require all of them at some point. In other words, the remaining memory metric will reflect what Diego has allocated as _potentially_ needed, rather than the amount of memory that is actually in use at the moment the metric is reported.
-
-Note that [PCF Healthwatch][pcf-healthwatch] generates two additional metrics to help monitor cell memory. By default, Healthwatch uses 4 GB as a standard â€œchunkâ€ of memory for safely staging applications, though this can be changed using the [Healthwatch API][free-chunks]. The Healthwatch metric `healthwatch.Diego.AvailableFreeChunks` reports the number of available chunks of memory remaining across all cells, providing a quick understanding of remaining capacity. This metric is most useful after determining the footprint of a standard application on your deployment.
-
-Healthwatch also reports the metric `healthwatch.Diego.TotalPercentageAvailableMemoryCapacity.5M`, which expresses `CapacityRemainingMemory` divided by `CapacityTotalMemory` over the previous five minutes to provide a percentage of remaining memory for the cell.
-
-#### Metrics to alert on: CapacityTotalDisk and CapacityRemainingDisk
-Monitoring how much disk space cells have available can provide insight into whether staging tasks are likely to start failing, as well as whether the deployment needs larger or more cells. The standard amount of disk capacity needed to ensure staging tasks do not fail is 6 GB, so PCF recommends setting a warning threshold of 12 GB and a critical alert threshold of 6 GB.
-
-As with memory, Diego reports remaining disk space based on the resources that have been assigned to currently running tasks, rather than the resources that are actually in use at the moment that the metric is reported.
-
-Note that [PCF Healthwatch][pcf-healthwatch] generates the additional metric `healthwatch.Diego.TotalPercentageAvailableDiskCapacity.5M`, which expresses `CapacityRemainingDisk` divided by `CapacityTotalDisk` over the previous five minutes to provide a percentage of remaining disk capacity for the cell. PCF recommends alerting if this metric falls below about 35 percent.
-
-#### Metric to watch: RepBulkSyncDuration
-As with other syncing processes, like the BBSâ€™s convergence passes and the Cloud Controllerâ€™s Diego sync, the Rep performs a periodic check to sync the number of `ActualLRPs` it has on record from the BBSâ€”LRPs that the BBS has recorded as assigned to cellsâ€”with reports directly from the containers about the work they are doing. If the Rep begins to report high sync duration times, the slowdown might point to problems with the BBS. PCF recommends setting a warning threshold of five seconds and a critical alert threshold of around 10 seconds for this metric.
-
-{{< img src="pcf-metrics-diego-cell-rep-sync.png" alt="Diego cell RepBulkSyncDuration" wide="true" >}}
-
-### Route-Emitter
-Correct routing tables are necessary for the Gorouter to monitor which application instances are available so it can route traffic appropriately. The Route-Emitter on each cell sends an update to the BBS whenever there are any changes in registered routes, and it also periodically sends an up-to-date image of the full routing table.
-
-Note that these metrics are reported per Route-Emitter instance.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| RoutesTotal | Total number of routes in the routing table | Other |
-| RouteEmitterSyncDuration | Average time (in nanoseconds) for the Route-Emitter to complete a synchronization pass | Work: Performance |
-| HTTPRouteNATSMessagesEmitted | Lifetime number of route registration messages sent by the Route-Emitter to the Gorouter | Work: Throughput |
-
-#### Metric to watch: RoutesTotal
-Monitoring the total number of routes in the routing table can give you a sense of deployment scale and can also alert you to  significant and rapid changes, such as many routes suddenly becoming unregistered. The Gorouter depends on the routing tables sent by the Route-Emitter, so discrepancies or dropped routes would leave the Gorouter unable to shuttle traffic correctly.
-
-#### Metric to alert on: RouteEmitterSyncDuration
-The time it takes for the Route-Emitter to complete its synchronization will differ depending the deployment, so itâ€™s important to choose an alerting threshold appropriately. As an example, PCF uses a threshold of 10 seconds for their Pivotal Web Services deployment. In any case, if the Route-Emitter seems to have difficulty syncing its routing table, it could be an indication that the BBS is failing and isnâ€™t sending its periodic updates.
-
-#### Metric to alert on: HTTPRouteNATSMessagesEmitted
-As discussed [above](#metric-to-alert-on-registry-message-route-emitter), when correlated with `registry_message.route-emitter`, or the number of route registration messages the Gorouters are receiving, this metric can help surface connectivity problems between Diego and the Gorouter. PCF recommends alerting if the average number of registration messages received by the Gorouters falls below the total number of messages sent across all Route-Emitters.
-
-## Loggregator
-[Loggregator](/blog/pivotal-cloud-foundry-architecture#loggregator) is a system of components that aggregates and streams application logs and deployment metrics. As part of this process, Loggregator standardizes and packages these messages as [envelopes][loggregator-api] based on their type to make it easier for downstream components to sort and parse them.
-
-The primary components of Loggregator to monitor are the Metron Agents, which sit on both infrastructure and host VMs and forward messages; the Doppler servers, which aggregate messages from all Metrons and store them in buffers based on envelope type; and Traffic Controllers, which consume messages from Dopplers and stream them via the Firehose.
-
-Alternatively, operators can choose to bind a syslog drain to applications, in which case messages go from the Dopplers to a Reverse Log Proxy and then on to a Syslog Adapter. From there, the logs are streamed via rsyslog to the specified drain endpoint. 
-
-The volume of messages that the Loggregator system can process depends on how quickly each downstream component can consume the information. If consumers cannot keep up with the data being sent from sources, messages will simply be dropped to make room for the next batch. This means that each individual step in the Loggregator chain provides a possible breaking point. In particular, message loss can result if the message buffer gets backed up at the Doppler layer, as the Dopplers receive messages from multiple Metron Agents.
-
-Individual components within Loggregator emit metrics tracking the volume of messages sent and received. For example, the Doppler metric `doppler.dropped` indicates the number of messages not delivered before being replaced by incoming messages. The following component metrics provide information about how many messages are being received or dropped by various components within the Loggregator chain:
-
-| Component | Metric Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- | --- |
-| Loggregator | doppler.ingress | The lifetime number of messages being ingested by the Doppler to send downstream | Work: Throughput |
-| Loggregator | doppler.dropped | The lifetime number of messages dropped by the Doppler without being delivered to a downstream component | Resource: Saturation |
-| CF syslog drain | adapter.ingress | The lifetime number of messages being ingested by the Syslog Adapter (only relevant for applications with a syslog drain) | Work: Throughput |
-| CF syslog drain | adapter.dropped | The lifetime number of messages being dropped by the Syslog Adapter without being delivered to a downstream component (only relevant for applications with a syslog drain) | Resource: Saturation |
-| CF syslog drain | scheduler.drains | The total number of syslog drain bindings | Other |
-| Loggregator | rlp.ingress | The lifetime number of messages being ingested by the Reverse Log Proxy to send downstream (only relevant for applications with a syslog drain) | Work: Throughput |
-| Loggregator | rlp.dropped | The lifetime number of messages dropped by the Reverse Log Proxy without being delivered to a downstream component (only relevant for applications with a syslog drain) | Resource: Saturation |
-
-The number of messages sent through Loggregator, and even the number that are dropped without delivery, can be largely dependent on the size of the deployment. In order to get a clearer, more at-a-glance indicator of Firehose performance, it is helpful to use these metrics to calculate rates of message throughput and loss. PCF Healthwatch derives several metrics that give operators insight into the performance and capacity of their Loggregator system. 
-
-The following are Healthwatch metrics that use raw component metrics to derive rates of message loss across various Loggregator layers, making it easier to observe changes in Loggregator throughput and performance.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| healthwatch.Firehose.LossRate.1M | The rate of message loss from the Metron Agents to the Firehose endpoints, as a percentage over the previous minute | Work: Error |
-| healthwatch.Doppler.MessagesAverage.1M | The average rate of messages processed per Doppler server instance | Work: Throughput |
-| healthwatch.SyslogDrain.Adapter.BindingsAverage.5M | The average number of syslog drain bindings per Syslog Adapter | Other |
-| healthwatch.SyslogDrain.Adapter.LossRate.1M | The loss rate of messages going through the Syslog Adapter on their way to a syslog drain | Work: Error |
-| healthwatch.SyslogDrain.RLP.LossRate.1M | The loss rate of messages going through the Reverse Log Proxy on their way to a syslog drain | Work: Error |
-
-#### Metric to alert on: healthwatch.Firehose.LossRate.1M
-This metric reports the rate of message loss as messages pass through the Doppler servers by comparing the number of messages the Dopplers receive with the number of messages that the Dopplers drop without forwarding. (In other words, the metric is derived from `loggregator.doppler.dropped` / `loggregator.doppler.ingress`.) PCF suggests setting a warning threshold of 0.005, or 0.5 percent, and a critical alert threshold of 0.01, or 1 percent.
-
-Increases in the rate of message loss can indicate that you need to scale up your Doppler or Traffic Controller instances to process the messages effectively.
-
-#### Metric to alert on: healthwatch.Doppler.MessagesAverage.1M
-This metric provides the average number of messages that each Doppler instance is processing per minute. It is derived by dividing the sum of all messages ingested by all Dopplers by the number of Doppler servers. This metric indicates whether your deployment needs more Doppler servers to handle the number of log messages being processed. Correlating this with `healthwatch.Firehose.LossRate.1M` can reveal whether your Dopplers are becoming saturated and are dropping data.
-
-PCF recommends setting an alert threshold of 16,000 messages per second, or one million messages per minute. At this point, you will likely need to scale the number of Doppler instances to avoid message loss.
-
-#### Metric to watch: healthwatch.SyslogDrain.Adapter.BindingsAverage.5M
-This metric represents the number of syslog drains divided by the number of Syslog Adapters (i.e., `cf-syslog-drain.scheduler.drains` / `cf-syslog-drain.scheduler.adapters`).
-
-Each Syslog Adapter can support around 250 drain bindings. The metric `cf-syslog-drain.scheduler.drains` provides the aggregate number of drain bindings across all Syslog Adapters. Dividing that across the number of available Syslog Adapters clearly indicates whether the deployment needs more adapters to support the number of drain bindings. 
-
-#### Metrics to alert on: healthwatch.SyslogDrain.RLP.LossRate.1M and healthwatch.SyslogDrain.Adapter.LossRate.1M 
-These metrics are derived by `loggregator.rlp.dropped` / `loggregator.rlp.ingress` and `cf-syslog-drain.adapter.dropped` / `cf-syslog-drain.adapter.ingress`, respectively.
-
-This pair of metrics are applicable only to application logs generated by applications that have a syslog drain bound to them and do not reflect the status of the Firehose. These derived metrics provide insight into the percentage of message loss per minute at the Reverse Log Proxy layer and at the Syslog Adapter layer. In both cases, PCF suggests setting a warning threshold at a rate of 0.01, or 1 percent, and a critical alert threshold of 0.1, or 10 percent.
-
-The Reverse Log Proxy is colocated with the Traffic Controller, so increasing levels of log loss at the RLP might point to a need to scale up Traffic Controller instances.
-
-High rates of syslog drain log loss can indicate performance problems with your syslog server or endpoint.
-
-### Additional PCF Healthwatch metrics
-Aside from the metrics mentioned above, there are several additional PCF Healthwatch metrics that can be helpful for monitoring overall deployment health.
-
-| Name | Description | [Metric type](/blog/monitoring-101-collecting-data/) |
-| --- | --- | --- |
-| healthwatch.health.check.cliCommand.\<command\> | Status of Pivotal Cloud Foundry CLI command health tests; returns `1` for pass, `0` for fail, `-1` for did not run when applicable | Resource: Availability |
-| healthwatch.health.check.OpsMan.available | Status of Ops Manager availability test; returns `1` for pass, `0` for fail | Resource: Availability |
-| healthwatch.health.check.CanaryApp.available | Status of Apps Manager health check; returns `1` for pass, `0` for fail | Resource: Availability |
-| healthwatch.health.check.bosh.director.success | Status of BOSH Director health check; returns `1` for pass, `0` for fail | Resource: Availability |
-
-#### Metrics to alert on: healthwatch.health.check.cliCommand.\<command\>
-The most important available health checks for cf CLI commands are for `login`, `push`, `start`, `logs`, `stop`, and `delete`. These status checks perform smoke tests to confirm whether these fundamental commands are working so that developers can push and manage applications. Any failed health checks for these commands indicate that your platform is missing key functionality that is needed for normal operations.
-
-#### Metrics to alert on: healthwatch.health.check.OpsMan.available, healthwatch.health.check.CanaryApp.available, healthwatch.health.check.bosh.director.success
-These checks test the health and availability of different PCF components: the [Ops Manager](/blog/pivotal-cloud-foundry-architecture#ops-manager), the [PCF Apps Manager][pcf-apps-manager] (or a different application if the operator has changed the default canary application setting), and the [BOSH Director](/blog/pivotal-cloud-foundry-architecture#bosh-and-the-ops-manager). 
-
-By default, the Apps Manager acts as a canary app. That is, Healthwatch queries whether it is up and running as a test of overall application health. Its failure can be an indicator that other staged applications might be encountering performance or availability problems.
-
-## Getting started with PCF monitoring
-
-Pivotal Cloud Foundry is a complex, distributed system that abstracts underlying infrastructure so that developers can focus on code. It provides a scalable and highly available platform for developers to simply push an application and have it be available within minutes.
-
-In this post, we have taken a look at several key metrics that can give PCF operators insight into the utilization and health of their overall deployment, as well as the status of the components that make up that deployment. These metrics are invaluable for tracking not only current performance but also for determining whether it is necessary to scale your deployment to ensure sufficient resources are available for developers and end users.
-
-In [part three][part-three] of this series, we will demonstrate several methods of collecting PCF metrics and logs. We will cover both how to tap the Firehose stream of deployment metrics and application logs, and how to utilize a syslog drain to view component system logs.
-
-## Acknowledgments
-
-We wish to thank Amber Alston, Katrina Bakas, Matt Cholick, Jared Ruckle, and the rest of the Pivotal Cloud Foundry team for their technical review and feedback for this series.
-
-[part-one]: https://www.datadoghq.com/blog/pivotal-cloud-foundry-architecture
-[part-three]: https://www.datadoghq.com/blog/collecting-pcf-logs
-[part-four]: https://www.datadoghq.com/blog/pcf-monitoring-with-datadog
-[capacity-management]: https://content.pivotal.io/blog/keep-your-app-platform-in-a-happy-state-an-operators-guide-to-capacity-management-on-pivotal-cloud-foundry
-[pcf-healthwatch]: http://docs.pivotal.io/pcf-healthwatch/index.html
-[persistent-disks]: https://bosh.io/docs/persistent-disks/
-[file-descriptors]: https://en.wikipedia.org/wiki/File_descriptor
-[healthwatch-api]: http://docs.pivotal.io/pcf-healthwatch/api/free-chunks.html
-[loggregator-api]: https://github.com/cloudfoundry/loggregator-api
-[pcf-apps-manager]: https://docs.pivotal.io/pivotalcf/console/
-[max-containers]: https://github.com/cloudfoundry/garden-runc-release/blob/v1.16.4/jobs/garden/spec#L146-L148
-[free-chunks]: http://docs.pivotal.io/pcf-healthwatch/api/free-chunks.html
-[cf-cli]: https://docs.run.pivotal.io/cf-cli/
+m-•äµ•ÑÉ¥Ì™½Èµ½¹¥Ñ½É¥¹œA¥Ù½Ñ…°±½Õ½Õ¹‘Éä(()%¸Ñ¡”™¥ÉÍĞÁ…ÉĞ½˜Ñ¡¥ÌÍ•É¥•Ì°İ”½ÕÑ±¥¹•Ñ¡”m‘¥™™•É•¹Ğ½µÁ½¹•¹ÑÍumÁ…ÉĞµ½¹•t½˜„A¥Ù½Ñ…°±½Õ½Õ¹‘Éä‘•Á±½åµ•¹Ğ…¹¡½ÜÑ¡•äİ½É¬Ñ½•Ñ¡•ÈÑ¼¡½ÍĞ…¹ÉÕ¸…ÁÁ±¥…Ñ¥½¹Ì¸%¸Ñ¡¥Ì…ÉÑ¥±”İ”İ¥±°±½½¬…ĞÍ½µ”½˜Ñ¡”µ½ÍĞ¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥ÌÑ¡…ĞA½Á•É…Ñ½ÉÌÍ¡½Õ±µ½¹¥Ñ½È¸Q¡•Í”µ•ÑÉ¥ÌÁÉ½Ù¥‘”¥¹™½Éµ…Ñ¥½¸Ñ¡…Ğ…¸¡•±Àå½Ô•¹ÍÕÉ”Ñ¡…ĞÑ¡”‘•Á±½åµ•¹Ğ¥ÌÉÕ¹¹¥¹œÍµ½½Ñ¡±ä°Ñ¡…Ğ¥Ğ¡…Ìm•¹½Õ …Á…¥ÑäÑ¼µ••Ğ‘•µ…¹‘um…Á…¥Ñäµµ…¹…•µ•¹Ñt°…¹Ñ¡…ĞÑ¡”…ÁÁ±¥…Ñ¥½¹Ì¡½ÍÑ•½¸¥Ğ…É”¡•…±Ñ¡ä¸()A¥Ù½Ñ…°±½Õ½Õ¹‘Éä½Á•É…Ñ½ÉÌ¡…Ù”…•ÍÌÑ¼¡Õ¹‘É•‘Ì½˜µ•ÑÉ¥Ì¸]”İ¥±°‰É•…¬‘½İ¸„Í•±•Ñ¥½¸½˜­•ä¥¹‘¥…Ñ½ÉÌÑ¡…Ğ¥Ù”å½Ô…¸½Ù•ÉÙ¥•Ü½˜å½ÕÈ‘•Á±½åµ•¹ÓŠeÌ¡•…±Ñ …¹¡•±À‘•Ñ•Éµ¥¹”¥˜å½Ô¹••Ñ¼Í…±”ÕÀÑ¼…½µµ½‘…Ñ”ÕÍ•ÉÏŠd¹••‘Ì¸-••Á¥¹œ…¸•å”½¸Ñ¡•Í”¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥Ìİ¥±°¡•±À½Á•É…Ñ½ÉÌ…Ù½¥Á•É™½Éµ…¹”¥ÍÍÕ•Ì™½ÈÑ¡”‘•Ù•±½Á•ÉÌ‘•Á±½å¥¹œ…ÁÁÌ…¹Ñ¡”•¹ÕÍ•ÉÌ…•ÍÍ¥¹œÑ¡•´¸Q¡•ä…¸…±Í¼¡•±À¥‘•¹Ñ¥™äÁ½Ñ•¹Ñ¥…°Í…±¥¹œ‰½ÑÑ±•¹•­Ì…¡•…½˜Ñ¥µ”¸()9½Ñ”Ñ¡…ĞÑ¡¥ÌÁ½ÍĞ™½ÕÍ•ÌÍÁ•¥™¥…±±ä½¸‘•Á±½åµ•¹Ğµ•ÑÉ¥ÌÑ¡…Ğ‘•ÍÉ¥‰”Ñ¡”Á•É™½Éµ…¹”°…Ù…¥±…‰¥±¥Ñä°…¹É•Í½ÕÉ”ÕÍ…”½˜Ñ¡”Ù…É¥½ÕÌ½µÁ½¹•¹ÑÌÑ¡…Ğµ…­”ÕÀ„A±ÕÍÑ•È¸]”İ¥±°½Ù•È…‘‘¥Ñ¥½¹…°‘…Ñ„ÑåÁ•Ì°ÍÕ …Ì±½Ì…¹ÕÍÑ½´…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ì°¥¸µ½É”‘•Ñ…¥°¥¸mÁ…ÉĞÑ¡É••umÁ…ÉĞµÑ¡É••t½˜Ñ¡¥ÌÍ•É¥•Ì¸((ŒŒ-•äA¥Ù½Ñ…°±½Õ½Õ¹‘Éäµ•ÑÉ¥Ì()%¸Ñ¡¥ÌÁ½ÍĞ°İ”İ¥±°½Ù•ÈÍ½µ”½˜Ñ¡”µ½ÍĞ¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥Ì™½Èµ½¹¥Ñ½É¥¹œÍ•Ù•É…°¥µÁ½ÉÑ…¹ĞA½µÁ½¹•¹ÑÌè((´m	=M!t ‰½Í ¤(´mQ¡”UÍ•È½Õ¹Ğ…¹ÕÑ¡•¹Ñ¥…Ñ¥½¸€¡U¤Í•ÉÙ•Ét Ñ¡”µÕÍ•Èµ…½Õ¹Ğµ…¹µ…ÕÑ¡•¹Ñ¥…Ñ¥½¸µÍ•ÉÙ•È¤(´mQ¡”½É½ÕÑ•Ét ½É½ÕÑ•È¤(´m¥•½t ‘¥•¼¤(´m1½É•…Ñ½Ét ±½É•…Ñ½È¤()Q¡”µ…©½É¥Ñä½˜Ñ¡•Í”µ•ÑÉ¥Ì…É”…Ù…¥±…‰±”‰ä‘•™…Õ±ĞÙ¥„Ñ¡”1½É•…Ñ½È¥É•¡½Í”¸I•…±°Ñ¡…ĞAŠeÌm1½É•…Ñ½Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”±½É•…Ñ½È¤…É•…Ñ•Ì€£Šq±½ŸŠt€¬ƒŠq…É•…Ñ½ËŠt¤…¹ÍÑÉ•…µÌ½ÕĞÑ¡É½Õ Ñ¡”m¥É•¡½Í•t ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”™¥É•¡½Í”¤…±°…Ù…¥±…‰±”…ÁÁ±¥…Ñ¥½¸±½Ì°Y4ÍåÍÑ•´µ•ÑÉ¥Ì°…¹½µÁ½¹•¹Ğµ•ÑÉ¥Ì™É½´„A±ÕÍÑ•È¸=¹”­•ä‘…Ñ„Í½ÕÉ”¹½Ğ…Ù…¥±…‰±”Ñ¡É½Õ 1½É•…Ñ½È…É”ÍåÍÑ•´±½Ì°½È±½ÌÑ¡…Ğ¥¹Ñ•É¹…°ÍåÍÑ•´ÁÉ½•ÍÍ•Ì•¹•É…Ñ”¸Q¡•Í”…É”…Ù…¥±…‰±”¥¹ÍÑ•…Ù¥„ÍåÍ±½œ‘É…¥¹ÌÉ•…‘¥¹œ™É½´ÉÍåÍ±½œ¸()A¥Ù½Ñ…°…±Í¼ÁÉ½Ù¥‘•ÌmA!•…±Ñ¡İ…Ñ¡umÁ˜µ¡•…±Ñ¡İ…Ñ¡t°…¸…‘µ½¸Í•ÉÙ¥”Ñ¡…ĞÉ•Á½ÉÑÌ…‘‘¥Ñ¥½¹…°µ•ÑÉ¥Ì°µ…¹ä½˜İ¡¥ …É”‘•É¥Ù•™É½´Ñ¡”µ•ÑÉ¥Ì½Ù•É•‰•±½Ü¸Q¡•Í”µ•ÑÉ¥Ì…É”½¹±ä…Ù…¥±…‰±”™½È‘•Á±½åµ•¹ÑÌÑ¡…Ğ¡…Ù”!•…±Ñ¡İ…Ñ ¥¹ÍÑ…±±•…¹…É”‘•Í¥¹•Ñ¼¥Ù”½Á•É…Ñ½ÉÌ„µ½É”¥µµ•‘¥…Ñ•±äÕÍ•™Õ°Í•±•Ñ¥½¸½˜µ•ÑÉ¥ÌÑ¼…Õ”Ñ¡”¡•…±Ñ …¹ÕÑ¥±¥é…Ñ¥½¸½˜Ñ¡•¥È‘•Á±½åµ•¹Ğ€¡™½È•á…µÁ±”°‰ä½µÁÕÑ¥¹œÁ•É•¹Ñ…•Ì…¹Á•Èµµ¥¹ÕÑ”É…Ñ•Ì™É½´Ñ¡”É…Ü‘…Ñ„¤¸!•…±Ñ¡İ…Ñ İ¥±°‰”‘¥ÍÕÍÍ•¥¸µ½É”‘•Ñ…¥°¥¸Ñ¡”m¹•áĞÁ…ÉÑumÁ…ÉĞµÑ¡É••t½˜Ñ¡¥ÌÍ•É¥•Ì¸()Q¡¥Ì…ÉÑ¥±”É•™•ÉÌÑ¼µ•ÑÉ¥ŒÑ•Éµ¥¹½±½ä™É½´½ÕÈm5½¹¥Ñ½É¥¹œ€ÄÀÄÍ•É¥•Ít ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤°İ¡¥ ÁÉ½Ù¥‘•Ì„™É…µ•İ½É¬™½Èµ•ÑÉ¥Œ½±±•Ñ¥½¸…¹…±•ÉÑ¥¹œ¸((ŒŒ	=M )	=M ¥Ì„±½Õ½Õ¹‘ÉäÑ½½°Ñ¡…ĞÁÉ½Ù¥Í¥½¹Ì…¹µ…¹…•ÌÑ¡”¹••ÍÍ…ÉäÉ•Í½ÕÉ•ÌÑ¼É•…Ñ”å½ÕÈ‘•Á±½åµ•¹ÓŠeÌ¥¹™É…ÍÑÉÕÑÕÉ”‰…Í•½¸Ñ¡”½¹™¥ÕÉ…Ñ¥½¸‰±Õ•ÁÉ¥¹ÑÌå½ÔÁÉ½Ù¥‘”¸	=M µ•ÑÉ¥ÌÁÉ½Ù¥‘”¥¹Í¥¡Ğ¥¹Ñ¼Ñ¡”ÍåÍÑ•´µ±•Ù•°¡•…±Ñ ½˜Ñ¡”Ù…É¥½ÕÌY5ÌÉÕ¹¹¥¹œå½ÕÈ‘•Á±½åµ•¹Ğ¸Q¡•Í”µ•ÑÉ¥Ì…¸…±Í¼‰”¡¥ µ±•Ù•°¥¹‘¥…Ñ½ÉÌ½˜É•Í½ÕÉ”ÁÉ½‰±•µÌ‘•Á•¹‘¥¹œ½¸Ñ¡”©½ˆÉÕ¹¹¥¹œ½¸Ñ¡…ĞY4¸½È•á…µÁ±”°™½ÈY5ÌÉÕ¹¹¥¹œm¥•¼•±±Ít ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”‘¥•¼µ•±±Ì¤°¥¹ÍÕ™™¥¥•¹Ğµ•µ½Éä½È‘¥Í¬ÍÁ…”…¸…ÕÍ”ÁÉ½‰±•µÌİ¥Ñ ÉÕ¹¹¥¹œ½ÈÍÑ…ÉÑ¥¹œ¹•Ü½¹Ñ…¥¹•ÉÌ¸€()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğÍåÍÑ•´¹¡•…±Ñ¡äğ!•…±Ñ ¡•¬™½ÈÑ¡”Y4ìÉ•ÑÕÉ¹Ì€Å€¥˜Y4¥ÌÕÀ…¹…±°ÁÉ½•ÍÍ•Ì…É”ÉÕ¹¹¥¹œ°€Á€¥˜¹½ĞğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ)ğÍåÍÑ•´¹ÁÔ¹ÕÍ•ÈğA•É•¹Ğ½˜ATÕÑ¥±¥é…Ñ¥½¸…ĞÑ¡”ÕÍ•È±•Ù•°ğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğÍåÍÑ•´¹±½…¸Å´ğÙ•É…”ÍåÍÑ•´±½…½Ù•ÈÑ¡”ÁÉ•Ù¥½ÕÌµ¥¹ÕÑ”ğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğÍåÍÑ•´¹µ•´¹Á•É•¹ĞğA•É•¹Ğ½˜Ñ¡”Y4Ìµ•µ½ÉäÕÍ•ğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğÍåÍÑ•´¹‘¥Í¬¹pñÑåÁ•pø¹Á•É•¹ĞğA•É•¹Ğ½˜ÍåÍÑ•µ€°Á•ÉÍ¥ÍÑ•¹Ñ€°½È•Á¡•µ•É…±€‘¥Í¬ÍÁ…”ÕÍ•ğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÍåÍÑ•´¹¡•…±Ñ¡ä)Q¡¥Ìµ•ÑÉ¥Œ¥ÌÑ¡”Í¥µÁ±•ÍĞ…¹¡¥¡•ÍĞµ±•Ù•°¥¹‘¥…Ñ½È½˜Y4¡•…±Ñ ì¥ĞÑ•±±Ìå½Ô¥˜Ñ¡”Y4¥ÌÕÀ…¹¥˜¥ÑÌÁÉ½•ÍÍ•Ì…É”ÉÕ¹¹¥¹œÁÉ½Á•É±ä¸Q¡”™…¥±ÕÉ”½˜µÕ±Ñ¥Á±”Y5Ì±¥­•±ä¥¹‘¥…Ñ•ÌÁÉ½‰±•µÌİ¥Ñ Ñ¡”‘•Á±½åµ•¹Ğ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÍåÍÑ•´¹ÁÔ¹ÕÍ•È)UÍ•ÈATÕÑ¥±¥é…Ñ¥½¸…¸‰”…¸•á•±±•¹Ğ¥¹‘¥…Ñ½È½˜Á•É™½Éµ…¹”¥ÍÍÕ•Ì…ÌÁÉ½•ÍÍ•Ì‰•¥¸Ñ¼Ñ¡É½ÑÑ±”‘Õ”Ñ¼±¥µ¥Ñ•ATÉ•Í½ÕÉ•Ì¸Q¡¥Ì¥ÌÁ…ÉÑ¥Õ±…É±äÑÉÕ”İ¥Ñ Y5ÌÉÕ¹¹¥¹œÑ¡”m½É½ÕÑ•Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”½É½ÕÑ•È¤…¹Ñ¡”mUÍ•ÉÙ•Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”ÕÍ•Èµ…½Õ¹Ğµ…¹µ…ÕÑ¡•¹Ñ¥…Ñ¥½¸¤°…ÌÉ•‘Õ•É•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ¥¸Ñ¡½Í”½µÁ½¹•¹ÑÌ…¸É•…Ñ”„Á•É™½Éµ…¹”‰½ÑÑ±•¹•¬™½ÈÑ¡”•¹Ñ¥É”‘•Á±½åµ•¹Ğ¸()%˜å½Ô¹½Ñ¥”¡¥¡•ÈµÑ¡…¸µ¹½Éµ…°ATÕÑ¥±¥é…Ñ¥½¸°å½Ô…¸Í…±”å½ÕÈ…Ù…¥±…‰±”É•Í½ÕÉ•Ì‰ä¥¹É•…Í¥¹œÑ¡”…Á…¥Ñä½˜Ñ¡”Y4½È‰äÍÁ¥¹¹¥¹œÕÀ…‘‘¥Ñ¥½¹…°¥¹ÍÑ…¹•Ì½˜İ¡…Ñ•Ù•È©½ˆÑ¡”Y4¥ÌÉÕ¹¹¥¹œ¸±•Ù…Ñ•AT½Õ±…±Í¼Á½¥¹ĞÑ¼¥ÍÍÕ•Ìİ¥Ñ Ñ¡”…ÁÁ±¥…Ñ¥½¸½È©½ˆÉÕ¹¹¥¹œ½¸Ñ¡…ĞY4Ñ¡…Ğİ…ÉÉ…¹Ğ¥¹Ù•ÍÑ¥…Ñ¥½¸¸AÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±½˜€àÔÁ•É•¹Ğ…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜€äÔÁ•É•¹ĞATÕÑ¥±¥é…Ñ¥½¸½¸É¥Ñ¥…°½µÁ½¹•¹ÑÌ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èÍåÍÑ•´¹±½…¸Å´)Q¡¥Ìµ•ÑÉ¥ŒÉ•ÁÉ•Í•¹ÑÌÑ¡”½Ù•É…±°ÍåÍÑ•´±½…½Ù•ÈÑ¡”ÁÉ•Ù¥½ÕÌ½¹”µµ¥¹ÕÑ”Á•É¥½¸Ìİ¥Ñ ATÕÑ¥±¥é…Ñ¥½¸°Ñ¡¥Ì…¸‰”„ÅÕ¥¬¥¹‘¥…Ñ½ÈÑ¡…Ğ„Y4µ¥¡Ğ¹••Ñ¼‰”Í…±•ÕÀ¥˜Ñ¡”½Ù•É…±°±½…±•Ù•±Ì…É”½¹Í¥ÍÑ•¹Ñ±ä¡¥¡•ÈÑ¡…¸•áÁ•Ñ•¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èÍåÍÑ•´¹µ•´¹Á•É•¹Ğ)%˜Ñ¡”±•Ù•°½˜…Ù…¥±…‰±”µ•µ½Éä½¸Ñ¡”Y4¥ÌÑ½¼±½Ü°ÁÉ½•ÍÌÁ•É™½Éµ…¹”µ¥¡ĞÍÕ™™•È¸-••Á¥¹œ…¸•å”½¸Ñ¡¥Ìµ•ÑÉ¥Œ…¸¡•±À‘•Ñ•Éµ¥¹”¥˜„Y7ŠeÌ¥¹ÍÑ…¹”¹••‘ÌÑ¼‰”Í…±•ÕÀ°½È¥˜…‘‘¥Ñ¥½¹…°¥¹ÍÑ…¹•Ì½˜Ñ¡…ĞY4Í¡½Õ±‰”É•…Ñ•¸AÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±½˜€àÀÁ•É•¹Ğ…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜€äÀÁ•É•¹Ğ™½Èµ•µ½ÉäÕÍ…”¸()íìğ¥µœÍÉŒô‰Á˜µµ•ÑÉ¥Ìµ‰½Í µ‘¥Í¬µµ•ÑÉ¥Ì¹Á¹œˆ…±Ğô‰	=M Y4‘¥Í¬µ•ÑÉ¥Ìˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸èÍåÍÑ•´¹‘¥Í¬¹ÍåÍÑ•´¹Á•É•¹Ğ°ÍåÍÑ•´¹‘¥Í¬¹•Á¡•µ•É…°¹Á•É•¹Ğ°ÍåÍÑ•´¹‘¥Í¬¹Á•ÉÍ¥ÍÑ•¹Ğ¹Á•É•¹Ğ)	=M Y5Ì…¸¡…Ù”•¥Ñ¡•È•Á¡•µ•É…°ÍÑ½É…—ŠQ‘¥Í¬ÍÑ½É…”Ñ¡…Ğ¥Ì‘•ÍÑÉ½å•İ¡•¸Ñ¡”Y4¥ÌÑ•Éµ¥¹…Ñ•½ÈÍÑ½ÁÁ•“ŠQ½ÈmÁ•ÉÍ¥ÍÑ•¹Ğ‘¥Í¬ÍÑ½É…•umÁ•ÉÍ¥ÍÑ•¹Ğµ‘¥Í­Ít¸Q¡•Í”µ•ÑÉ¥ÌÑÉ…¬Ñ¡”Á•É•¹Ğ½˜‘¥Í¬ÕÍ…”™½È•… ‘¥Í¬ÑåÁ”¸€€()-••Á¥¹œ…¸•å”½¸‘¥Í¬ÕÑ¥±¥é…Ñ¥½¸İ¥±°±•Ğå½Ô­¹½Ü¥˜å½Ô¹••Ñ¼…‘µ½É”ÍÑ½É…”½ÈÉ•µ½Ù”‘…Ñ„‰•™½É”…¹ä©½‰Ìµ¥¡Ğ‰”…™™•Ñ•€¡”¹œ¸°„Y4ÉÕ¹¹¥¹œ„‘…Ñ…‰…Í”Í•ÉÙ•È¤¸%˜‘¥Í­Ì…É”™¥±±¥¹œÕÀÕ¹•áÁ•Ñ•‘±ä°å½ÔÍ¡½Õ±¥¹Ù•ÍÑ¥…Ñ”Ñ¡”…ÕÍ”Ñ¼µ…­”ÍÕÉ”Ñ¡…Ğå½ÕÈÍÑ½É…”É•Í½ÕÉ•Ì…É”‰•¥¹œÕÍ•…ÁÁÉ½ÁÉ¥…Ñ•±ä¸	=M •¹•É…±±äÍ¡½Õ±‘»ŠeĞİÉ¥Ñ”Ñ¼ÍåÍÑ•´°½ÈÉ½½Ğ°‘¥Í¬°Í¼¥˜å½ÔÍ•”¡¥ ÍåÍÑ•´‘¥Í¬ÕÍ…”å½ÔÍ¡½Õ±¡•¬İ¡…Ğ¥Ì™¥±±¥¹œÑ¡”Á…ÉÑ¥Ñ¥½¸¸½È•… ‘¥Í¬ÑåÁ”°AÉ•½µµ•¹‘Ì„İ…É¹¥¹œÑ¡É•Í¡½±½˜€àÀÁ•É•¹Ğ…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜€äÀÁ•É•¹Ğ¸((ŒŒQ¡”UÍ•È½Õ¹Ğ…¹ÕÑ¡•¹Ñ¥…Ñ¥½¸Í•ÉÙ•È)Q¡”mUÍ•È½Õ¹Ğ…¹ÕÑ¡•¹Ñ¥…Ñ¥½¸Í•ÉÙ•Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”ÕÍ•Èµ…½Õ¹Ğµ…¹µ…ÕÑ¡•¹Ñ¥…Ñ¥½¸¤°½ÈU°¥ÌAŠeÌ¥‘•¹Ñ¥Ñäµ…¹…•µ•¹ĞÍåÍÑ•´¸%ĞÍÑ½É•ÌÕÍ•ÈÉ•‘•¹Ñ¥…±Ì…¹ÁÉ½Ù¥‘•Ì…ÕÑ¡½É¥é…Ñ¥½¸Ñ½­•¹Ì™½È…ÁÁ±¥…Ñ¥½¹Ìİ¡•¸„ÕÍ•È¹••‘ÌÑ¡•´¸5•ÑÉ¥ÌÑ¼İ…Ñ ™½ÈÑ¡”U•¹•É…±±ä¡…Ù”Ñ¼‘¼İ¥Ñ ½Ù•É…±°É•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ¸e½Ô…¸…±Í¼ÑÉ…¬U±…Ñ•¹ä‰äÕÍ¥¹œÑ¡”½É½ÕÑ•Èµ•ÑÉ¥Œ±…Ñ•¹ä¹Õ……€°½Ù•É•m¥¸Ñ¡”½É½ÕÑ•ÈÍ•Ñ¥½¸‰•±½İt ½É½ÕÑ•È¤¸()Q¡•Í”µ•ÑÉ¥Ì…É”•µ¥ÑÑ•Á•ÈUÍ•ÉÙ•È¥¹ÍÑ…¹”¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğÉ•ÅÕ•ÍÑÌ¹±½‰…°¹½µÁ±•Ñ•¹½Õ¹Ğğ1¥™•Ñ¥µ”¹Õµ‰•È½˜É•ÅÕ•ÍÑÌ½µÁ±•Ñ•‰äÑ¡”Uğ]½É¬èQ¡É½Õ¡ÁÕĞğ)ğÍ•ÉÙ•È¹¥¹™±¥¡Ğ¹½Õ¹Ğğ9Õµ‰•È½˜É•ÅÕ•ÍÑÌÑ¡…ĞÑ¡”U¥ÌÕÉÉ•¹Ñ±äÁÉ½•ÍÍ¥¹œğ]½É¬èQ¡É½Õ¡ÁÕĞğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èÉ•ÅÕ•ÍÑÌ¹±½‰…°¹½µÁ±•Ñ•¹½Õ¹Ğ)Q¡¥Ìµ•ÑÉ¥Œ¥Ì„½½µ•…ÍÕÉ”½˜½Ù•É…±°Uİ½É­±½…¸¥ÍÁ±…å¥¹œ½µÁ±•Ñ•É•ÅÕ•ÍÑÌ…Ì„Á•ÈµÍ•½¹½ÈÁ•Èµµ¥¹ÕÑ”É…Ñ”¡•±ÁÌ¥‘•¹Ñ¥™äÕ¹•áÁ•Ñ•ÍÁ¥­•Ì½È‘É½ÁÌ¸5½¹¥Ñ½É¥¹œUÑ½Ñ…°É•ÅÕ•ÍÑÌ½µÁ±•Ñ•…±Í¼¡•±ÁÌ¥¸Á±…¹¹¥¹œ‘•Á±½åµ•¹ĞÍ…±¥¹œ°Á…ÉÑ¥Õ±…É±äİ¡•¸½ÉÉ•±…Ñ¥¹œ¥Ğİ¥Ñ UÉ•ÅÕ•ÍĞ±…Ñ•¹ä…¹ATÕÑ¥±¥é…Ñ¥½¸½¸UY5Ì¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èÍ•ÉÙ•È¹¥¹™±¥¡Ğ¹½Õ¹Ğ)Q¡¥Ìµ•ÑÉ¥Œ…±Í¼µ•…ÍÕÉ•ÌUÍ•ÉÙ•ÈÉ•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ°‰ÕĞ¥Ğµ•…ÍÕÉ•Ì¡½Üµ…¹äÉ•ÅÕ•ÍÑÌÑ¡”UÍ•ÉÙ•È¥Ì¡…¹‘±¥¹œ}…ĞÑ¡…Ğµ½µ•¹Ñ|É…Ñ¡•ÈÑ¡…¸„±¥™•Ñ¥µ”Ñ½Ñ…°¸Q½¼µ…¹ä½¹ÕÉÉ•¹ĞÉ•ÅÕ•ÍÑÌ…¸…™™•ĞU±…Ñ•¹ä…¹Ñ¡É½Õ¡ÁÕĞ¸½ÉÉ•±…Ñ¥¹œÑ¡¥Ìµ•ÑÉ¥Œİ¥Ñ U±…Ñ•¹ä…¹ATÕÍ…”½¸UY5Ì…¸¡•±À‘•Ñ•Éµ¥¹”¥˜å½ÕÈUÍ•ÉÙ•ÉÌ¹••Ñ¼‰”Í…±•ÕÀ¸((ŒŒ½É½ÕÑ•È)Q¡”m½É½ÕÑ•Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”½É½ÕÑ•È¤¥ÌÑ¡”•¹ÑÉåÁ½¥¹ĞÑ¼å½ÕÈ‘•Á±½åµ•¹Ğ°İ¡•Ñ¡•È™½È½Á•É…Ñ½ÉÌ…¹‘•Ù•±½Á•ÉÌÍ•¹‘¥¹œÉ•ÅÕ•ÍÑÌÑ¼Ñ¡”±½Õ½¹ÑÉ½±±•ÈA$½È™½È•¹ÕÍ•ÉÌ…•ÍÍ¥¹œ…ÁÁ±¥…Ñ¥½¹Ì¸Q¡”½É½ÕÑ•Èµ…¥¹Ñ…¥¹Ì‘å¹…µ¥ŒÉ½ÕÑ¥¹œÑ…‰±•ÌÑÉ…­¥¹œİ¡¥ ½¹Ñ…¥¹•ÉÌ½¸İ¡¥ •±±Ì…É”ÉÕ¹¹¥¹œİ¡¥ …ÁÁ±¥…Ñ¥½¹ÌÍ¼¥Ğ…¸Í•¹¥¹½µ¥¹œ!QQ@É•ÅÕ•ÍÑÌ…ÁÁÉ½ÁÉ¥…Ñ•±ä¸I½ÕÑ•Èµ•ÑÉ¥Ìİ¥±°¡•±Àå½ÔÑÉ…¬Ñ¡”½Ù•É…±°Ù½±Õµ”½˜¥¹½µ¥¹œÑÉ…™™¥Œ…¹Ñ¡”­¥¹½˜É•ÍÁ½¹Í•ÌÕÍ•ÉÌ…É”•ÑÑ¥¹œ¸Q¡•Í”µ•ÑÉ¥Ì…±Í¼ÁÉ½Ù¥‘”¥¹™½Éµ…Ñ¥½¸½¸Ñ¡”±…Ñ•¹ä½˜É•ÅÕ•ÍÑÌµ…‘”‰äÙ…É¥½ÕÌ½µÁ½¹•¹ÑÌ½˜å½ÕÈ‘•Á±½åµ•¹Ğ¸()Q¡•Í”µ•ÑÉ¥Ì…É”•µ¥ÑÑ•Á•È½É½ÕÑ•È¥¹ÍÑ…¹”¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğÑ½Ñ…±}É•ÅÕ•ÍÑÌğ1¥™•Ñ¥µ”¹Õµ‰•È½˜É•ÅÕ•ÍÑÌ½µÁ±•Ñ•‰äÑ¡”½É½ÕÑ•Èğ]½É¬èQ¡É½Õ¡ÁÕĞğ)ğÉ•ÅÕ•ÍÑÌ¹pñ½µÁ½¹•¹Ñpøğ1¥™•Ñ¥µ”¹Õµ‰•È½˜É•ÅÕ•ÍÑÌÉ••¥Ù•‰äÑ¡”½É½ÕÑ•È™½ÈÑ¡”ÍÁ•¥™¥•½µÁ½¹•¹Ğ€¡”¹œ¸°Ñ¡”UÍ•ÉÙ•È½ÈÑ¡”±½Õ½¹ÑÉ½±±•È¤ğ]½É¬èQ¡É½Õ¡ÁÕĞğ)ğ±…Ñ•¹äğÙ•É…”É½Õ¹µÑÉ¥ÀÑ¥µ”€¡¥¸µ¥±±¥Í•½¹‘Ì¤™½ÈÉ•ÅÕ•ÍÑÌÑ¼¼™É½´Ñ¡”½É½ÕÑ•ÈÑ¼Ñ¡•¥È•¹‘Á½¥¹Ğ€¡…¸…ÁÁ±¥…Ñ¥½¸½È„½µÁ½¹•¹ĞA$¤…¹‰…¬……¥¸ğ]½É¬èA•É™½Éµ…¹”ğ)ğ±…Ñ•¹ä¹pñ½µÁ½¹•¹Ñpøğ5…á¥µÕ´Ñ¥µ”€¡¥¸µ¥±±¥Í•½¹‘Ì¤Ñ¡…ĞÑ¡”ÍÁ•¥™¥•½µÁ½¹•¹ĞÑ½½¬Ñ¼ÁÉ½•ÍÌ„É•ÅÕ•ÍĞ™É½´Ñ¡”½É½ÕÑ•Èğ]½É¬èA•É™½Éµ…¹”ğ)ğÑ½Ñ…±}É½ÕÑ•ÌğQ½Ñ…°¹Õµ‰•È½˜É½ÕÑ•ÌÕÉÉ•¹Ñ±äÉ•¥ÍÑ•É•İ¥Ñ Ñ¡”½É½ÕÑ•Èğ=Ñ¡•Èğ)ğÉ•ÍÁ½¹Í•Ì¸Õáàğ1¥™•Ñ¥µ”¹Õµ‰•È½˜ÍÁ•¥™¥•!QQ@Í•ÉÙ•È•ÉÉ½ÈÉ•ÍÁ½¹Í•Ì€¡”¹œ¸°€ÔÀÀ°€ÔÀÌ¤É••¥Ù•‰äÑ¡”½É½ÕÑ•È™É½´„‰…­•¹…ÁÁ±¥…Ñ¥½¸ğ]½É¬èÉÉ½Èğ)ğ‰…‘}…Ñ•İ…åÌğ1¥™•Ñ¥µ”¹Õµ‰•È½˜€ÔÀÈÉ•ÍÁ½¹Í•Ì•µ¥ÑÑ•‰äÑ¡”½É½ÕÑ•Èğ]½É¬èÉÉ½Èğ)ğÉ•ÍÁ½¹Í•Ì¸Ñáàğ1¥™•Ñ¥µ”¹Õµ‰•È½˜ÍÁ•¥™¥•!QQ@±¥•¹Ğ•ÉÉ½ÈÉ•ÍÁ½¹Í•Ì€¡”¹œ¸°€ĞÀÌ°€ĞÀĞ¤É••¥Ù•‰äÑ¡”½É½ÕÑ•È™É½´„‰…­•¹…ÁÁ±¥…Ñ¥½¸ğ]½É¬èÉÉ½Èğ)ğ™¥±•}‘•ÍÉ¥ÁÑ½ÉÌğ9Õµ‰•È½˜™¥±”‘•ÍÉ¥ÁÑ½ÉÌÑ¡”½É½ÕÑ•È¥¹ÍÑ…¹”¥ÌÕÉÉ•¹Ñ±äÕÍ¥¹œğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğ‰…­•¹‘}•á¡…ÕÍÑ•‘}½¹¹Ìğ1¥™•Ñ¥µ”¹Õµ‰•È½˜É•ÅÕ•ÍÑÌÉ•©•Ñ•‰äÑ¡”½É½ÕÑ•È‰•…ÕÍ”½˜Ñ¡”µ…á¥µÕ´½¹¹•Ñ¥½¹ÌÁ•È‰…­•¹±¥µ¥Ğ‰•¥¹œÉ•…¡•ğ]½É¬èÉÉ½ÉÌğ)ğÉ•¥ÍÑÉå}µ•ÍÍ…”¹É½ÕÑ”µ•µ¥ÑÑ•Èğ1¥™•Ñ¥µ”¹Õµ‰•È½˜É½ÕÑ”É•¥ÍÑÉ…Ñ¥½¸µ•ÍÍ…•ÌÉ••¥Ù•‰äÑ¡”½É½ÕÑ•Èğ=Ñ¡•Èğ)ğµÍ}Í¥¹•}±…ÍÑ}É•¥ÍÑÉå}ÕÁ‘…Ñ”ğµ½Õ¹Ğ½˜Ñ¥µ”€¡¥¸µ¥±±¥Í•½¹‘Ì¤Í¥¹”±…ÍĞÉ½ÕÑ”É•¥ÍÑ•Èİ…ÌÉ••¥Ù•…¹•µ¥ÑÑ•‰äÑ¡”½É½ÕÑ•Èğ=Ñ¡•Èğ()íìğ¥µœÍÉŒô‰Á˜µµ•ÑÉ¥ÌµÁ˜µ½É½ÕÑ•Èµµ•ÑÉ¥ÌµÉ•Ø¹Á¹œˆ…±Ğô‰A¥Ù½Ñ…°±½Õ½Õ¹‘Éä½É½ÕÑ•Èµ•ÑÉ¥Ìˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÑ½Ñ…±}É•ÅÕ•ÍÑÌ)5½¹¥Ñ½É¥¹œÑ¡”Ñ½Ñ…°¹Õµ‰•È½˜É•ÅÕ•ÍÑÌ½µÁ±•Ñ•‰ä½É½ÕÑ•ÈY5Ì…¸¡•±Àå½ÔÕ¹‘•ÉÍÑ…¹ÑÉ…™™¥Œ™±½ÜÑ¡É½Õ å½ÕÈ‘•Á±½åµ•¹Ğ¸A¥Ù½Ñ…°É•½µµ•¹‘ÌÍ…±¥¹œå½ÕÈ½É½ÕÑ•ÉÌÑ¼µ…¥¹Ñ…¥¸„É…Ñ”½˜…É½Õ¹€È°ÔÀÀÉ•ÅÕ•ÍÑÌÁ•ÈÍ•½¹Á•È½É½ÕÑ•È¥¸½É‘•ÈÑ¼­••ÀÉ•ÅÕ•ÍĞ±…Ñ•¹ä‘½İ¸¸½ÉÉ•±…Ñ¥¹œÑ¡¥Ìµ•ÑÉ¥Œİ¥Ñ É•ÅÕ•ÍĞ±…Ñ•¹ä…¹ATÕÑ¥±¥é…Ñ¥½¸½˜Ñ¡”½É½ÕÑ•ÈY5Ì…¸ÁÉ½Ù¥‘”¥¹Í¥¡Ğ¥¹Ñ¼İ¡•Ñ¡•Èå½Ô¹••Ñ¼Í…±”å½ÕÈ½É½ÕÑ•ÉÌ¸M¥¹¥™¥…¹Ğ‘É½ÁÌ¥¸Ñ¡”É•ÅÕ•ÍĞÉ…Ñ”…¸…±•ÉĞå½ÔÑ¼µ…©½ÈÁÉ½‰±•µÌ…•ÍÍ¥¹œÑ¡”‘•Á±½åµ•¹Ğ¸()e½Ô…¸…±Í¼µ½¹¥Ñ½ÈÑ¡”¹Õµ‰•È½˜É•ÅÕ•ÍÑÌÑ¡…Ğ…É”‰½Õ¹™½ÈÍÁ•¥™¥Œ½µÁ½¹•¹ÑÌ°ÍÕ …ÌÑ¡”±½Õ½¹ÑÉ½±±•È°Ù¥„É•ÅÕ•ÍÑÌ¸ñ½µÁ½¹•¹Ğù€¸Q¡¥ÌÁÉ½Ù¥‘•Ì„µ½É”‘•Ñ…¥±•Ù¥•Ü½˜ÑÉ…™™¥Œ™±½ÜÑ¼Á…ÉÑ¥Õ±…ÈÁ…ÉÑÌ½˜å½ÕÈ‘•Á±½åµ•¹Ğ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è±…Ñ•¹ä)%¹É•…Í•Ì¥¸Ñ¡”Ñ¥µ”¥ĞÑ…­•Ì™½È„É•ÅÕ•ÍĞÑ¼µ…­”¥ÑÌİ…ä™É½´Ñ¡”½É½ÕÑ•ÈÑ¼Ñ¡”É•ÅÕ•ÍÑ•‰…­•¹…¹‰…¬……¥¸…¸É•ÍÕ±Ğ™É½´Í•Ù•É…°‘¥™™•É•¹Ğ¥ÍÍÕ•Ì°¥¹±Õ‘¥¹œ¹•Ñİ½É¬½¹¹•Ñ¥Ù¥ÑäÁÉ½‰±•µÌ°Á½½È…ÁÁ±¥…Ñ¥½¸¡•…±Ñ °½ÈÍ¥µÁ±äÑÉ…™™¥Œ½¹•ÍÑ¥½¸…¹…¸½Ù•ÉÕÑ¥±¥é•½É½ÕÑ•È¥¹ÍÑ…¹”¸½ÉÉ•±…Ñ¥¹œ±…Ñ•¹äİ¥Ñ ATÕÑ¥±¥é…Ñ¥½¸½˜Ñ¡”½É½ÕÑ•È…¹Ñ½Ñ…°É•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ…¸¡•±Àé•É¼¥¸½¸Ñ¡”…ÕÍ”½˜É•ÅÕ•ÍĞÍ±½İ‘½İ¹Ì¸A¥Ù½Ñ…°É•½µµ•¹‘ÌÍÑ…ÉÑ¥¹œİ¥Ñ …¸…±•ÉĞ½¸½É½ÕÑ•È±…Ñ•¹ä½˜€ÄÀÀµÌ…¹Ñ¡•¸ÑÕ¹¥¹œå½ÕÈ…±•ÉĞÑ¡É•Í¡½±‘ÌÑ¼å½ÕÈ‘•Á±½åµ•¹ÓŠeÌÍÁ•¥™¥Œ½¹™¥ÕÉ…Ñ¥½¸¸()%ÓŠeÌ…±Í¼Á½ÍÍ¥‰±”Ñ¼µ½¹¥Ñ½È„ÍÁ•¥™¥Œ½µÁ½¹•¹ÓŠeÌµ…á¥µÕ´±…Ñ•¹ä¥¸¡…¹‘±¥¹œ„É•ÅÕ•ÍĞ™É½´Ñ¡”½É½ÕÑ•Èİ¥Ñ ±…Ñ•¹ä¸ñ½µÁ½¹•¹Ğù€€¡”¹œ¸°Ñ¡”UÍ•ÉÙ•È¤¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èÑ½Ñ…±}É½ÕÑ•Ì)¥•¼•±±ÌÍ•¹½¹ÍÑ…¹ĞÕÁ‘…Ñ•ÌÑ¼Ñ¡”½É½ÕÑ•ÈÑ¼É•¥ÍÑ•È¹•Ü…¹¡…¹•É½ÕÑ•ÌÑ¼…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•Ì¸-••Á¥¹œ…¸•å”½¸Ñ¡”Ñ½Ñ…°¹Õµ‰•È½˜É•¥ÍÑ•É•É½ÕÑ•Ì…¸¡•±À¥¹™½É´‘•¥Í¥½¹Ì…‰½ÕĞÍ…±¥¹œå½ÕÈ‘•Á±½åµ•¹ĞÑ¼µ…Ñ É½İ¥¹œÕÍ…”¸±•ÉÑ¥¹œ½¸Í¥¹¥™¥…¹ĞÙ…É¥…Ñ¥½¹Ì¥¸Ñ¡”¹Õµ‰•È½˜É•¥ÍÑ•É•É½ÕÑ•Ì…¸…±Í¼‰”Ù…±Õ…‰±”¥¸¥‘•¹Ñ¥™å¥¹œ…ÁÀ½ÕÑ…•Ì½ÈÁÉ½‰±•µÌİ¥Ñ Ñ¡”½É½ÕÑ•È…¹½Ù•É…±°É½ÕÑ”É•¥ÍÑÉ…Ñ¥½¸¸%˜å½Ô¹½Ñ¥”„Í•Ù•É”‘É½À¥¸Ñ¡¥Ìµ•ÑÉ¥Œ°¥Ğµ…ä‰”ÕÍ•™Õ°Ñ¼½ÉÉ•±…Ñ”¥Ğİ¥Ñ mµÍ}Í¥¹•}±…ÍÑ}É•¥ÍÑÉå}ÕÁ‘…Ñ•t µ•ÑÉ¥ŒµÑ¼µ…±•ÉĞµ½¸µµÌµÍ¥¹”µ±…ÍĞµÉ•¥ÍÑÉäµÕÁ‘…Ñ”¤Ñ¼Í•”¥˜Ñ¡•É”µ…ä‰”„ÁÉ½‰±•´İ¥Ñ É•¥ÍÑ•É¥¹œÉ½ÕÑ•Ì¸()%ÓŠeÌ…±Í¼İ½ÉÑ ÑÉ…­¥¹œİ¡•Ñ¡•ÈÑ¡”¹Õµ‰•È½˜Ñ½Ñ…°É•¥ÍÑ•É•É½ÕÑ•Ì¥ÌÑ¡”Í…µ”…É½ÍÌ…±°½É½ÕÑ•È¥¹ÍÑ…¹•Ì¸¥ÍÉ•Á…¹¥•Ì…¸‰”„É•ÍÕ±Ğ½˜ÁÉ½‰±•µÌİ¥Ñ Ñ¡”É½ÕÑ”É•¥ÍÑÉ…Ñ¥½¸ÁÉ½•ÍÌ½Èİ¥Ñ …¸¥¹‘¥Ù¥‘Õ…°½É½ÕÑ•È¥¹ÍÑ…¹”¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÉ•ÍÁ½¹Í•Ì¸Õáà)ÍÁ¥­”¥¸Í•ÉÙ•ÈµÍ¥‘”•ÉÉ½ÉÌ…¸¥¹‘¥…Ñ”„É…¹”½˜ÁÉ½‰±•µÌ°¥¹±Õ‘¥¹œ…ÁÁ±¥…Ñ¥½¹ÌÉ…Í¡¥¹œ½È…ÁÁ±¥…Ñ¥½¸Y5ÌÑ¡…Ğ‘½»ŠeĞ¡…Ù”Ñ¡”É•Í½ÕÉ•ÌÑ¼¡…¹‘±”Ñ¡”Ù½±Õµ”½˜¥¹½µ¥¹œÉ•ÅÕ•ÍÑÌ¸¡•­¥¹œÑ¡”½É½ÕÑ•È±½Ì…¸¡•±ÀÁ¥¹Á½¥¹ĞÑ¡”…ÕÍ”½˜Ñ¡”•ÉÉ½ÉÌ¸€((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è‰…‘}…Ñ•İ…åÌ)Q¡¥Ìµ•ÑÉ¥ŒÑÉ…­ÌÑ¡”¹Õµ‰•È½˜€ÔÀÈÉ•ÍÁ½¹Í•ÌÑ¡…ĞÑ¡”½É½ÕÑ•È•µ¥ÑÌ¸A•µ¥ÑÌÑ¡¥ÌÍÁ•¥™¥Œµ•ÑÉ¥Œ¥¸…‘‘¥Ñ¥½¸Ñ¼Ñ¡”¹Õµ‰•È½˜€ÕáàÉ•ÍÁ½¹Í•Ì‰•…ÕÍ”…¸¥¹É•…Í”¥¸‰……Ñ•İ…äÉ•ÍÁ½¹Í•Ì…¸¥¹‘¥…Ñ”Ñ¡…ĞÑ¡”½É½ÕÑ•ËŠeÌÉ½ÕÑ¥¹œÑ…‰±•Ì…É”¹½Ğ‰•¥¹œÕÁ‘…Ñ•ÁÉ½Á•É±ä°…ÕÍ¥¹œ½¹¹•Ñ¥½¹ÌÑ¼…ÁÁ±¥…Ñ¥½¹ÌÑ¼™…¥°¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èÉ•ÍÁ½¹Í•Ì¸Ñáà)%ÓŠeÌİ½ÉÑ ­••Á¥¹œ…¸•å”½ÕĞ™½È¡¥ ±•Ù•±Ì½˜ÍÁ•¥™¥Œ±¥•¹ĞµÍ¥‘”•ÉÉ½ÉÌ¸Q¡•ä…¸…±•ÉĞå½ÔÑ¼¥¹½ÉÉ•ĞUI1Ì½ÈÁ½ÍÍ¥‰±”µ¥Í½¹™¥ÕÉ…Ñ¥½¹ÌÑ¡…Ğ…É”‰±½­¥¹œ¥¹½µ¥¹œÑÉ…™™¥Œ¸¡•¬Ñ¡”½É½ÕÑ•È±½Ì™½Èµ½É”‘•Ñ…¥±Ì…‰½ÕĞÑ¡”…ÕÍ”½˜Ñ¡”•ÉÉ½ÉÌ¥˜å½Ô¹½Ñ¥”…¸Õ¹•áÁ•Ñ•ÕÁÑ¥¬¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è™¥±•}‘•ÍÉ¥ÁÑ½ÉÌ)%¸U¹¥àµ±¥­”=M•Ì°m™¥±”‘•ÍÉ¥ÁÑ½ÉÍum™¥±”µ‘•ÍÉ¥ÁÑ½ÉÍt…É”Õ¹¥ÅÕ”É•½É‘Ì™½È•… ™¥±”…¹¹•Ñİ½É¬½¹¹•Ñ¥½¸½Á•¹•‰ä„ÁÉ½•ÍÌ¸AÍ•ÑÌ„±¥µ¥Ğ½˜€ÄÀÀ°ÀÀÀ™¥±”‘•ÍÉ¥ÁÑ½ÉÌÁ•È½É½ÕÑ•È¥¹ÍÑ…¹”¸%˜…¸…ÁÁ±¥…Ñ¥½¸•á¡…ÕÍÑÌÑ¡”…Ù…¥±…‰±”½É½ÕÑ•È™¥±”‘•ÍÉ¥ÁÑ½ÉÌ°½Ñ¡•È…ÁÁ±¥…Ñ¥½¹Ìİ¥±°¹½Ğ‰”…‰±”Ñ¼•ÍÑ…‰±¥Í É½ÕÑ•Ìİ¥Ñ Ñ¡”½É½ÕÑ•È…¹°¥¸•áÑÉ•µ”…Í•Ì°Ñ¡”½É½ÕÑ•È…¸±½Í”¥ÑÌ½¹¹•Ñ¥½¸Ñ¼Ñ¡”É•ÍĞ½˜A…¹±½Í”¥ÑÌÉ½ÕÑ¥¹œÑ…‰±”¸()±•ÉÑ¥¹œ½¸„½É½ÕÑ•ËŠeÌ™¥±”‘•ÍÉ¥ÁÑ½È½Õ¹Ğİ¡•¸¥Ğ…ÁÁÉ½…¡•Ì€ØÀ°ÀÀÀÁ•È½É½ÕÑ•È…¸¥Ù”å½ÔÑ¥µ”Ñ¼¥¹Ù•ÍÑ¥…Ñ”İ¡•Ñ¡•È„ÍÁ•¥™¥Œ…ÁÁ±¥…Ñ¥½¸¥Ì…ÕÍ¥¹œ¥ÍÍÕ•Ì½È¥˜å½ÔÍ¥µÁ±ä¹••Ñ¼…‘µ½É”½É½ÕÑ•ÈY5ÌÑ¼¥¹É•…Í”Ñ¡”¹Õµ‰•È½˜…Ù…¥±…‰±”™¥±”‘•ÍÉ¥ÁÑ½ÉÌ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è‰…­•¹‘}•á¡…ÕÍÑ•‘}½¹¹Ì)M•ÑÑ¥¹œÑ¡”µ…á¥µÕ´½¹¹•Ñ¥½¹ÌÁ•È‰…­•¹±¥µ¥ÑÌÑ¡”¹Õµ‰•È½˜½¹¹•Ñ¥½¹Ì„½É½ÕÑ•È…¸µ…­”İ¥Ñ …¹ä½¹”…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹”¸	ä½ÉÉ•±…Ñ¥¹œ¡½Üµ…¹äÉ•ÅÕ•ÍÑÌ¡…Ù”‰••¸É•©•Ñ•‘Õ”Ñ¼¡¥ÑÑ¥¹œÑ¡¥Ì±¥µ¥Ğİ¥Ñ ½Ñ¡•ÈÑ¡É½Õ¡ÁÕĞµ•ÑÉ¥Ì°±¥­”Ñ¡”Ñ½Ñ…°¹Õµ‰•È½˜É•ÅÕ•ÍÑÌ½µ¥¹œÑ¡É½Õ Ñ¡”½É½ÕÑ•È°å½Ô…¸‘•Ñ•Éµ¥¹”¥˜Ñ¡”½É½ÕÑ•È¥Ì•áÁ•É¥•¹¥¹œ½¹Í¥ÍÑ•¹Ñ±ä¡¥¡•È±•Ù•±Ì½˜ÕÍ…”€¡¥¸İ¡¥ …Í”å½Ôµ¥¡ĞÍ…±”ÕÀå½ÕÈ‘•Á±½åµ•¹Ğ¤½È¥˜É•ÅÕ•ÍÑÌ…É”‰•¥¹œÉ•©•Ñ•‘Õ”Ñ¼Õ¹É•ÍÁ½¹Í¥Ù”½ÈÁÉ½‰±•µ…Ñ¥Œ…ÁÁ±¥…Ñ¥½¹Ì¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÉ•¥ÍÑÉå}µ•ÍÍ…”¹É½ÕÑ”µ•µ¥ÑÑ•È)Q¡”½É½ÕÑ•ÈÁ•É¥½‘¥…±±äÉ••¥Ù•ÌÉ½ÕÑ”É•¥ÍÑÉ…Ñ¥½¸µ•ÍÍ…•ÌÑ¼ÕÁ‘…Ñ”É½ÕÑ¥¹œÑ…‰±•Ì™É½´Ñ¡”I½ÕÑ”µµ¥ÑÑ•ÈÍ¥ÑÑ¥¹œ½¸•… m¥•¼•±±t ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”‘¥•¼µ•±±Ì¤¸	ä¥ÑÍ•±˜°Ñ¡¥Ìµ•ÑÉ¥ŒÉ•Á½ÉÑÌÑ¡”Ñ½Ñ…°¹Õµ‰•È½˜É•¥ÍÑÉäµ•ÍÍ…•ÌÑ¡”½É½ÕÑ•È¥¹ÍÑ…¹”¡…ÌÉ••¥Ù•¸½ÉÉ•±…Ñ¥¹œ¥Ğİ¥Ñ Ñ¡”µ•ÑÉ¥ŒmÉ½ÕÑ•}•µ¥ÑÑ•È¹!QQAI½ÕÑ•9QM5•ÍÍ…•Íµ¥ÑÑ•‘t µ•ÑÉ¥ŒµÑ¼µ…±•ÉĞµ½¸µ¡ÑÑÁÉ½ÕÑ•¹…ÑÍµ•ÍÍ…•Í•µ¥ÑÑ•¤°İ¡¥ µ•…ÍÕÉ•ÌÑ¡”±¥™•Ñ¥µ”¹Õµ‰•È½˜É½ÕÑ”É•¥ÍÑÉ…Ñ¥½¸µ•ÍÍ…•Ì}Í•¹Ñ|‰ä„I½ÕÑ”µµ¥ÑÑ•È°…¸É•Ù•…°½µµÕ¹¥…Ñ¥½¸ÁÉ½‰±•µÌ‰•Ñİ••¸¥•¼…¹Ñ¡”½É½ÕÑ•È¸()… ½É½ÕÑ•È¥¹ÍÑ…¹”Í¡½Õ±É••¥Ù”¥‘•¹Ñ¥…°ÕÁ‘…Ñ•Ì™É½´…±°I½ÕÑ”µµ¥ÑÑ•ÉÌ°Í¼Ñ¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÉ••¥Ù•‰ä•… ½É½ÕÑ•È¥¹ÍÑ…¹”Í¡½Õ±•ÅÕ…°Ñ¡”Ñ½Ñ…°¹Õµ‰•È½˜µ•ÍÍ…•ÌÍ•¹Ğ…É½ÍÌ…±°I½ÕÑ”µµ¥ÑÑ•ÉÌ¸AÉ•½µµ•¹‘Ì…±•ÉÑ¥¹œ¥˜Ñ¡”…Ù•É…”¹Õµ‰•È½˜µ•ÍÍ…•ÌÉ••¥Ù•™…±±Ì‰•±½ÜÑ¡”Ñ½Ñ…°µ•ÍÍ…•ÌÍ•¹Ğ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èµÍ}Í¥¹•}±…ÍÑ}É•¥ÍÑÉå}ÕÁ‘…Ñ”)I½ÕÑ¥¹œµ…ÁÌ½¸Ñ¡”½É½ÕÑ•ÉÌ…É”Í•ĞÑ¼•áÁ¥É”…™Ñ•È€ÄÈÀÍ•½¹‘Ì¸	ä‘•™…Õ±Ğ°¥•¼•±±ÌÍ•¹µ•ÍÍ…•Ì•Ù•Éä€ÈÀÍ•½¹‘ÌÑ¼…±°½É½ÕÑ•ÉÌÑ¼É•Í•ĞÑ¡”€ÄÈÀµÍ•½¹Ñ¥µ•È…¹µ…¥¹Ñ…¥¸É½ÕÑ¥¹œ½¹Í¥ÍÑ•¹ä¸%˜å½Ô¹½Ñ¥”„Í¥¹¥™¥…¹Ğ‘•±…äÍ¥¹”Ñ¡”±…ÍĞÑ¥µ”Ñ¡”½É½ÕÑ•ÈÉ••¥Ù•„É•¥ÍÑÉäÕÁ‘…Ñ”°¥Ğµ¥¡Ğ¥¹‘¥…Ñ”½¹¹•Ñ¥Ù¥ÑäÁÉ½‰±•µÌ½È¥ÍÍÕ•Ìİ¥Ñ Ñ¡”½É½ÕÑ•È°9QL€¡¥¹Ñ•É¹…°¹•Ñİ½É¬½µµÕ¹¥…Ñ¥½¸‰•Ñİ••¸½µÁ½¹•¹ÑÌ¤°½ÈI½ÕÑ”µµ¥ÑÑ•ÈY5Ì¸()AÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œ…¸…±•ÉĞÑ¼ÑÉ¥•È…™Ñ•È€ÌÀÍ•½¹‘ÌÍ¥¹”Ñ¡”½É½ÕÑ•È±…ÍĞÉ••¥Ù•É½ÕÑ”É•¥ÍÑÉ…Ñ¥½¸ÕÁ‘…Ñ•Ì¸((ŒŒ¥•¼)¥•¼µ…­•ÌÕÀÑ¡”½¹Ñ…¥¹•È½É¡•ÍÑÉ…Ñ¥½¸…¹ÉÕ¹Ñ¥µ”•¹Ù¥É½¹µ•¹Ğ½µÁ½¹•¹ÑÌ½˜A¸%ĞÉÕ¹ÌÑ¡”Ñ…Í­Ì…¹1IAÌ°½È…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•Ì°Ñ¡…Ğ…É”ÁÕÍ¡•ÕÀÑ¼Ñ¡”‘•Á±½åµ•¹Ğ¸M¼¥•¼½µÁ½¹•¹Ğµ•ÑÉ¥ÌÑ¼İ…Ñ ÁÉ¥µ…É¥±äÉ•±…Ñ”Ñ¼Ñ¡”‘•Á±½åµ•¹ÓŠeÌ…‰¥±¥ÑäÑ¼…ÍÍ¥¸¥¹½µ¥¹œÉ•ÅÕ•ÍÑÌ½ÉÉ•Ñ±ä°İ¡•Ñ¡•ÈÑ¡”É•Í½ÕÉ•Ì…É”…Ù…¥±…‰±”Ñ¼ÉÕ¸…±°É•ÅÕ¥É•İ½É¬°…¹İ¡•Ñ¡•È¥•¼¥Ì½ÉÉ•Ñ±äµ½¹¥Ñ½É¥¹œ…¹‰…±…¹¥¹œÑ¡”¹Õµ‰•È½˜¥¹ÍÑ…¹•Ì¥ĞÍ¡½Õ±‰”ÉÕ¹¹¥¹œ¸()Q¡”ÍÕˆµ½µÁ½¹•¹ÑÌ½˜¥•¼Ñ¡…Ğİ”İ¥±°½Ù•Èµ•ÑÉ¥Ì™½È…É”è((´mQ¡”ÕÑ¥½¹••Ét …ÕÑ¥½¹••È¤(´mQ¡”		Mt ‰‰Ì¤(´m1½­•Ñt ±½­•Ğ¤(´m¥•¼•±±Ì€¡ÍÁ•¥™¥…±±äÑ¡”I•À¥t •±±ÌµÉ•À¤(´mQ¡”I½ÕÑ”µµ¥ÑÑ•Ét É½ÕÑ”µ•µ¥ÑÑ•È¤((ŒŒŒÕÑ¥½¹••È)Q¡”mÕÑ¥½¹••Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”‘¥•¼µ‰É…¥¸¤É••¥Ù•Ìİ½É­±½…‘Ì™É½´Ñ¡”±½Õ½¹ÑÉ½±±•È¥¸Ñ¡”™½É´½˜mÑ…Í­Ì…¹1IAÍt ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”Ñ…Í­Ìµ…¹µ±ÉÁÌ¤…¹‘¥ÍÑÉ¥‰ÕÑ•ÌÑ¡•´…É½ÍÌ¥•¼•±±Ì‰…Í•½¸¥ÑÌ…ÕÑ¥½¸…±½É¥Ñ¡´¸Q…Í­Ì…É”½¹”µ½™˜°Ñ•Éµ¥¹…Ñ¥¹œÁÉ½•ÍÍ•Ìİ¡¥±”1IAÌ°½È±½¹œµÉÕ¹¹¥¹œÁÉ½•ÍÍ•Ì°…É”½¹Ñ¥¹Õ½ÕÌ…¹µ•…¹ĞÑ¼…±İ…åÌ¡…Ù”…Ğ±•…ÍĞ½¹”¥¹ÍÑ…¹”ÉÕ¹¹¥¹œ¸5½ÍĞ½™Ñ•¸°1IAÌ…¸‰”Ñ¡½Õ¡Ğ½˜…Ì…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•Ì¸()%µÁ½ÉÑ…¹Ğµ•ÑÉ¥Ì™É½´Ñ¡”ÕÑ¥½¹••ÈÁÉ½Ù¥‘”¥¹™½Éµ…Ñ¥½¸½¸Ñ¡”¹Õµ‰•È½˜…ÕÑ¥½¹ÌÍÑ…ÉÑ•…¹¡½Üµ…¹ä¡…Ù”™…¥±•°…Ìİ•±°…Ì¡½Ü±½¹œ¥ĞÑ…­•ÌÑ¡”ÕÑ¥½¹••ÈÑ¼•ĞÑ¡”ÍÑ…Ñ”½˜…±°¥•¼•±±Ì‰•™½É”¥¹¥Ñ¥…Ñ¥¹œ…¸…ÕÑ¥½¸¸()9½Ñ”Ñ¡…ĞÑ¡•Í”µ•ÑÉ¥Ì…É”É•Á½ÉÑ•Á•ÈÕÑ¥½¹••È¥¹ÍÑ…¹”¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğÕÑ¥½¹••É1IAÕÑ¥½¹ÍMÑ…ÉÑ•ğ1¥™•Ñ¥µ”¹Õµ‰•È½˜1I@¥¹ÍÑ…¹•ÌÑ¡…ĞÑ¡”ÕÑ¥½¹••È¡…ÌÍÕ•ÍÍ™Õ±±äÁ±…•½¸•±±Ìğ]½É¬èMÕ•ÍÌğ)ğÕÑ¥½¹••É1IAÕÑ¥½¹Í…¥±•ğ1¥™•Ñ¥µ”¹Õµ‰•È½˜1I@¥¹ÍÑ…¹•ÌÑ¡…ĞÑ¡”ÕÑ¥½¹••È¡…Ì™…¥±•Ñ¼Á±…”½¸•±±Ìğ]½É¬èÉÉ½Èğ)ğÕÑ¥½¹••ÉQ…Í­ÕÑ¥½¹ÍMÑ…ÉÑ•ğ1¥™•Ñ¥µ”¹Õµ‰•È½˜Ñ…Í­ÌÑ¡…ĞÑ¡”ÕÑ¥½¹••È¡…ÌÍÕ•ÍÍ™Õ±±äÁ±…•½¸•±±Ìğ]½É¬èMÕ•ÍÌğ)ğÕÑ¥½¹••ÉQ…Í­ÕÑ¥½¹Í…¥±•ğ1¥™•Ñ¥µ”¹Õµ‰•È½˜Ñ…Í­ÌÑ¡…ĞÑ¡”ÕÑ¥½¹••È¡…Ì™…¥±•Ñ¼Á±…”½¸•±±Ìğ]½É¬èÉÉ½Èğ)ğÕÑ¥½¹••É•Ñ¡MÑ…Ñ•ÍÕÉ…Ñ¥½¸ğQ½Ñ…°…µ½Õ¹Ğ½˜Ñ¥µ”€¡¥¸¹…¹½Í•½¹‘Ì¤Ñ¡…ĞÑ¡”ÕÑ¥½¹••ÈÑ…­•ÌÑ¼™•Ñ Ñ¡”ÍÑ…Ñ”½˜…±°•±±Ì‘ÕÉ¥¹œ…¸…ÕÑ¥½¸ğ]½É¬èA•É™½Éµ…¹”ğ((ŒŒŒŒ5•ÑÉ¥ÌÑ¼İ…Ñ èÕÑ¥½¹••É1IAÕÑ¥½¹ÍMÑ…ÉÑ•…¹ÕÑ¥½¹••ÉQ…Í­ÕÑ¥½¹ÍMÑ…ÉÑ•)9½Ñ”Ñ¡…ĞÑ¡•Í”µ•ÑÉ¥Ì‘¼¹½ĞÑÉ…¬Ñ¡”¹Õµ‰•È½˜…ÕÑ¥½¹ÌÑ¡…ĞÑ¡”ÕÑ¥½¹••È¡…Ì}¥¹¥Ñ¥…Ñ•‘|‰ÕĞÉ…Ñ¡•ÈÑ¡”¹Õµ‰•È½˜1IAÌ½ÈÑ…Í­ÌÑ¡”ÕÑ¥½¹••È¡…ÌÁ±…•½¸•±±Ì¸%¸Ñ¡”…Í”½˜1I@…ÕÑ¥½¹Ì°Ñ¡”µ•ÑÉ¥Œ¥Ì•ÍÍ•¹Ñ¥…±±ä„µ•…ÍÕÉ”½˜¡½Üµ…¹ä…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•Ì¡…Ù”‰••¸É•…Ñ•¸()M¥¹¥™¥…¹Ğ…¹Õ¹•áÁ•Ñ•¥¹É•…Í•Ì¥¸ÕÑ¥½¹••È…Ñ¥Ù¥Ñä…¸µ•…¸Ñ¡…Ğå½ÕÈ‘•Á±½åµ•¹Ğ¥ÌÍ••¥¹œµ½É”ÕÑ¥±¥é…Ñ¥½¸…¹Í¡½Õ±‰”Í…±•ÕÀ°½ÈÑ¡…ĞÑ¡•É”µ¥¡Ğ‰”Í½µ”ÁÉ½‰±•´Ñ¡…Ğ¥Ì…ÕÍ¥¹œ¥¹ÍÑ…¹•Ì½ÈÑ…Í­ÌÑ¼™…¥°¸	•…ÕÍ”Aİ¥±°…ÕÑ½µ…Ñ¥…±±ä…ÑÑ•µÁĞÑ¼É•ÍÑ…ÉĞÉ…Í¡•ÁÉ½•ÍÍ•Ì°¡¥ ¹Õµ‰•ÉÌ½˜1I@…ÕÑ¥½¹Ìµ¥¡Ğ¥¹‘¥…Ñ”½¹Ñ…¥¹•È¡ÕÉ¸¥˜¥•¼¥Ì½¹ÍÑ…¹Ñ±äÉ•ÍÑ…ÉÑ¥¹œ…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•Ì¸€()Q¡•Í”µ•ÑÉ¥Ì…É”¹½Ğ•µ¥ÑÑ•É•Õ±…É±ä‰ÕĞÉ…Ñ¡•Èİ¡•¸…¸…ÕÑ¥½¸•Ù•¹Ğ½ÕÉÌ°Í¼Ñ¡•É”İ¥±°‰”…ÁÌ¥¸Ñ¡¥Ìµ•ÑÉ¥Œ‘ÕÉ¥¹œÁ•É¥½‘Ìİ¡•¸¹¼Ñ…Í­Ì½È1IAÌ…É”Í¡•‘Õ±•¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸èÕÑ¥½¹••É1IAÕÑ¥½¹Í…¥±•…¹ÕÑ¥½¹••ÉQ…Í­ÕÑ¥½¹Í…¥±•)…¥±ÕÉ”½˜Ñ¡”ÕÑ¥½¹••ÈÑ¼Á±…”İ½É¬½¸¥•¼•±±Ì¥Ì½™Ñ•¸„É•ÍÕ±Ğ½˜É•Í½ÕÉ”½¹ÍÑÉ…¥¹ÑÌ°¥¹‘¥…Ñ¥¹œÑ¡…Ğ•á¥ÍÑ¥¹œ•±±Ì…É”…±É•…‘ä½Á•É…Ñ¥¹œ…ĞÑ¡•¥È™Õ±°…Á…¥Ñä¸%˜å½Ô¹½Ñ¥”…¸¥¹É•…Í”¥¸Ñ¡”Ù…±Õ”½˜½¹”½˜Ñ¡•Í”µ•ÑÉ¥Ì°‘¥Ù”¥¹Ñ¼å½ÕÈm•±°É•Í½ÕÉ”µ•ÑÉ¥Ít •±±ÍÉ•À¤Ñ¼Í•”¥˜å½Ô¹••Ñ¼Í…±”Ñ¡•´ÕÀ½È…‘…‘‘¥Ñ¥½¹…°•±°Y5ÌÑ¼Ñ¡”‘•Á±½åµ•¹Ğ¸€()A…ÉÑ¥Õ±…É±ä™½È1I@…ÕÑ¥½¹Ì°AÉ•½µµ•¹‘Ìµ•…ÍÕÉ¥¹œÑ¡”…Ù•É…”½˜Ñ¡¥Ìµ•ÑÉ¥Œ½Ù•È„™¥Ù”µµ¥¹ÕÑ”Á•É¥½¸UÍ¥¹œÑ¡¥Ìµ•…ÍÕÉ•µ•¹Ğ°AÍÕ•ÍÑÌÍ•ÑÑ¥¹œ„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜½¹”™…¥±•1I@…ÕÑ¥½¸Á•Èµ¥¹ÕÑ”½¸…Ù•É…”°…Ì…¹ä™ÕÑÕÉ”…ÕÑ¥½¹Ìµ¥¡Ğ…±Í¼™…¥°¥˜Ñ¡•É”¥Ì„Í¡½ÉÑ…”½˜É•Í½ÕÉ•Ì¸()Q¡•Í”µ•ÑÉ¥Ì…É”¹½Ğ•µ¥ÑÑ•É•Õ±…É±ä‰ÕĞÉ…Ñ¡•Èİ¡•¸…¸…ÕÑ¥½¸•Ù•¹Ğ½ÕÉÌ°Í¼Ñ¡•É”İ¥±°‰”…ÁÌ¥¸Ñ¡¥Ìµ•ÑÉ¥Œ‘ÕÉ¥¹œÁ•É¥½‘Ìİ¡•¸¹¼Ñ…Í­Ì½È1IAÌ…É”Í¡•‘Õ±•¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÕÑ¥½¹••É•Ñ¡MÑ…Ñ•ÍÕÉ…Ñ¥½¸)%¸½É‘•ÈÑ¼Á±…”İ½É¬°Ñ¡”ÕÑ¥½¹••È¹••‘Ì…¸…ÕÉ…Ñ”É•½É½˜Ñ¡”ÕÉÉ•¹ĞÍÑ…Ñ”½˜Ñ¡”¥•¼•±±Ì°…Ìİ•±°…ÌÑ¡”Ñ…Í­Ì…¹1IAÌ…±É•…‘äÁ±…•¸]¡•¸‰•¥¹¹¥¹œ…¸…ÕÑ¥½¸°Ñ¡”ÕÑ¥½¹••Èİ¥±°ÅÕ•Éä…±°¥•¼•±±Ì™½ÈÑ¡•¥ÈÍÑ…Ñ”¸¸¥¹…‰¥±¥ÑäÑ¼É•½Éİ¡…Ğİ½É¬Ñ¡”•±±Ì…É”‘½¥¹œ…¸±•…Ñ¼ÍÑ…¥¹œÑ…Í­Ì™…¥±¥¹œ¸áÑ•¹‘•±…Ñ•¹ä¥¸Ñ¡”Ñ¥µ”¥ĞÑ…­•ÌÑ¼™•Ñ Ñ¡”ÍÑ…Ñ”…¸¥¹‘¥…Ñ”½¹¹•Ñ¥Ù¥Ñä¥ÍÍÕ•Ì½ÈÑ¡…Ğå½ÕÈ¥•¼•±±Ì…É”Õ¹¡•…±Ñ¡ä¸()AÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±½˜Ñİ¼Í•½¹‘Ì…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜™¥Ù”Í•½¹‘Ìİ¡•¸µ•…ÍÕÉ¥¹œ¡½Ü±½¹œ¥ĞÑ…­•Ì™½ÈÑ¡”ÕÑ¥½¹••ÈÑ¼™•Ñ Ñ¡”ÍÑ…Ñ”½˜¥•¼•±±Ì¸()Q¡•Í”µ•ÑÉ¥Ì…É”¹½Ğ•µ¥ÑÑ•É•Õ±…É±ä‰ÕĞÉ…Ñ¡•Èİ¡•¸…¸…ÕÑ¥½¸•Ù•¹Ğ½ÕÉÌ°Í¼Ñ¡•É”İ¥±°‰”…ÁÌ¥¸Ñ¡¥Ìµ•ÑÉ¥Œ‘ÕÉ¥¹œÁ•É¥½‘Ìİ¡•¸¹¼Ñ…Í­Ì½È1IAÌ…É”Í¡•‘Õ±•¸((ŒŒŒ		L)±°İ½É¬Ñ¡…Ğ¥Ì‘½¹”‰ä¥•¼½µ•ÌÑ¡É½Õ Ñ¡”		L¸Q¡”		LÉ••¥Ù•ÌÉ•ÅÕ•ÍÑÌ™É½´Ñ¡”±½Õ½¹ÑÉ½±±•È…¹Í¡•‘Õ±•ÌÑ…Í­Ì…¹1IAÌ½¸¥•¼•±±Ì¸%Ğ…±Í¼Á±…åÌ…¸¥µÁ½ÉÑ…¹ĞÁ…ÉĞ¥¸Íå¹¡É½¹¥é¥¹œÑ¡”¹Õµ‰•È½˜…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•ÌÑ¡…Ğ}Í¡½Õ±‘|‰”ÉÕ¹¹¥¹œ°…ÌÉ•Á½ÉÑ•‰äÑ¡”±½Õ½¹ÑÉ½±±•È°İ¥Ñ ¡½Üµ…¹ä…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•ÌÑ¡”•±±Ì…É”}…ÑÕ…±±å|ÉÕ¹¹¥¹œ¸]¡•¸„‘•Ù•±½Á•ÈÕÁ‘…Ñ•ÌÑ¡”¹Õµ‰•È½˜¥¹ÍÑ…¹•Ì°‰äÍ…±¥¹œ½ÈÁÕÍ¡¥¹œ…¸…ÁÁ±¥…Ñ¥½¸°Ñ¡”±½Õ½¹ÑÉ½±±•ÈÕÁ‘…Ñ•ÌÑ¡”		LÌÉ•½É‘••Í¥É•‘1IAÍ€¸Q¡”		LÁ•É¥½‘¥…±±äÉÕ¹Ì½¹Ù•É•¹”Á…ÍÍ•ÌÑ¡…Ğ½µÁ…É”Ñ¡”‘•Í¥É•ÍÑ…Ñ”½˜Ñ¡”¥•¼•±±Ì…Ì™½Éİ…É‘•‰äÑ¡”±½Õ½¹ÑÉ½±±•Èİ¥Ñ Ñ¡”…ÑÕ…°ÍÑ…Ñ”°½ÈÑÕ…±1IAÍ€°É•Á½ÉÑ•‰äÑ¡”•±±Ì¸()íìğ¥µœÍÉŒô‰Á˜µµ•ÑÉ¥Ìµ1I@µÍå¹Œµ‘¥…É…´¹Á¹œˆ…±Ğô‰Aµ•ÑÉ¥Ì1I@Íå¹¡É½¹¥é…Ñ¥½¸ˆİ¥‘”ô‰ÑÉÕ”ˆ…ÁÑ¥½¸ô‰Q¡”ÍÑ…•ÌÑ¼Íå¹¡É½¹¥é”¡½Üµ…¹ä1IAÌÍ¡½Õ±‰”ÉÕ¹¹¥¹œİ¥Ñ ¡½Üµ…¹äÑ¡”•±±Ì…É”ÉÕ¹¹¥¹œ¸ˆ€ùõô()5•ÑÉ¥ÌÑ¼İ…Ñ ¡•É”Á•ÉÑ…¥¸Ñ¼Á½ÍÍ¥‰±”‘¥™™•É•¹•Ì‰•Ñİ••¸•Í¥É•‘1IAÍ€…¹ÑÕ…±1IAÍ€‘Õ”Ñ¼°™½È•á…µÁ±”°„‰É•…¬¥¸½µµÕ¹¥…Ñ¥½¸‰•Ñİ••¸Ñ¡”±½Õ½¹ÑÉ½±±•È…¹¥•¼¸¹½Ñ¡•È­•ä		Lµ•ÑÉ¥ŒÑ¼İ…Ñ ¥Ì¡½Ü±½¹œÑ¡•Í”½¹Ù•É•¹”Á…ÍÍ•Ì…É”Ñ…­¥¹œÑ¼½µÁ±•Ñ”¸¥¹…±±ä°		Lµ•ÑÉ¥Ì…±±½Üå½ÔÑ¼ÑÉ…¬¡½Ü±½¹œÑ¡”		LÑ…­•ÌÑ¼ÁÉ½•ÍÌ¹•ÜÉ•ÅÕ•ÍÑÌ¸()9½Ñ”Ñ¡…Ğ•… ½˜Ñ¡•Í”µ•ÑÉ¥Ì…É”É•Á½ÉÑ•Á•È		L¥¹ÍÑ…¹”¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğ½¹Ù•É•¹•1IAÕÉ…Ñ¥½¸ğQ½Ñ…°Ñ¥µ”€¡¥¸¹…¹½Í•½¹‘Ì¤Ñ¡…ĞÑ¡”		LÑ…­•ÌÑ¼ÉÕ¸„½¹Ù•É•¹”Á…ÍÌğ=Ñ¡•Èğ)ğ‘½µ…¥¸¹˜µ…ÁÁÌğ%¹‘¥…Ñ•Ìİ¡•Ñ¡•ÈÑ¡”˜µ…ÁÁÍ€‘½µ…¥¸¥ÌÕÀÑ¼‘…Ñ”…¹Ñ¡ÕÌ…ÁÁÌ™É½´Ñ¡”…É”Íå¹¡É½¹¥é•İ¥Ñ •Í¥É•‘1IAÍ€¥¸¥•¼ì€Å€¥˜‘½µ…¥¸¥ÌÕÀÑ¼‘…Ñ”°¹¼‘…Ñ„¥˜¹½Ğğ=Ñ¡•Èğ)ğ‘½µ…¥¸¹˜µÑ…Í­Ìğ%¹‘¥…Ñ•Ìİ¡•Ñ¡•ÈÑ¡”˜µÑ…Í­Í€‘½µ…¥¸¥ÌÕÀÑ¼‘…Ñ”…¹Ñ¡ÕÌÑ…Í­Ì™É½´Ñ¡”…É”Íå¹¡É½¹¥é•İ¥Ñ Ñ…Í­Ì¥¸¥•¼ì€Å€¥˜‘½µ…¥¸¥ÌÕÀÑ¼‘…Ñ”°¹¼‘…Ñ„¥˜¹½Ğğ=Ñ¡•Èğ)ğ1IAÍIÕ¹¹¥¹œğQ½Ñ…°¹Õµ‰•È½˜1I@¥¹ÍÑ…¹•ÌÉÕ¹¹¥¹œ½¸•±±ÌğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ)ğ1IAÍáÑÉ„ğQ½Ñ…°¹Õµ‰•È½˜1I@¥¹ÍÑ…¹•ÌÉ•½É‘•‰äÑ¡”		LÑ¡…Ğ…É”¹¼±½¹•È‘•Í¥É•ğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ)ğ1IAÍ5¥ÍÍ¥¹œğQ½Ñ…°¹Õµ‰•È½˜1I@¥¹ÍÑ…¹•ÌÑ¡…Ğ…É”‘•Í¥É•‰ÕĞ…É”¹½ĞÉ•½É‘•‰äÑ¡”		LğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ)ğÉ…Í¡•‘ÑÕ…±1IAÌğQ½Ñ…°¹Õµ‰•È½˜1I@¥¹ÍÑ…¹•ÌÑ¡…Ğ¡…Ù”É…Í¡•ğI•Í½ÕÉ”èÉÉ½Èğ)ğI•ÅÕ•ÍÑ1…Ñ•¹äğ5…á¥µÕ´Ñ¥µ”€¡¥¸¹…¹½Í•½¹‘Ì¤¥ĞÑ½½¬™½ÈÑ¡”		LÑ¼ÁÉ½•ÍÌ„É•ÅÕ•ÍĞğ]½É¬èA•É™½Éµ…¹”ğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è½¹Ù•É•¹•1IAÕÉ…Ñ¥½¸)Q¡”		OŠeÌ½¹Ù•É•¹”Á…ÍÍ•Ì¡•¬•Í¥É•‘1IAÍ€…ÌÉ•Á½ÉÑ•‰äÑ¡”±½Õ½¹ÑÉ½±±•È……¥¹ÍĞÑÕ…±1IAÍ€ÉÕ¹¹¥¹œ…ÌÍÑ…Ñ•‰äÑ¡”¥•¼•±±Ì¸½¹™¥Éµ¥¹œÑ¡…ĞÑ¡•Í”¹Õµ‰•ÉÌ…É”Ñ¡”Í…µ”¥Ì¹••ÍÍ…ÉäÑ¼­••À¥•¿ŠeÌÍÑ…Ñ”ÕÀÑ¼‘…Ñ”…¹•¹ÍÕÉ”Ñ¡…Ğ…ÁÁ±¥…Ñ¥½¹Ì…É”ÉÕ¹¹¥¹œÑ¡”İ…ä‘•Ù•±½Á•ÉÌ¥¹Ñ•¹¸•±…åÌ¥¸Ñ¡”½¹Ù•É•¹”Á…ÍÌµ¥¡Ğµ•…¸Ñ¡…Ğ¥¹ÍÑ…¹•Ì½ÈÑ…Í­ÌÑ¡…ĞÉ…Í …É”¹½ĞÉ•ÍÑ…ÉÑ•‰ä¥•¼¸%˜Ñ¡¥Ìµ•ÑÉ¥ŒÌÙ…±Õ”‰•¥¹ÌÑ¼±¥µˆ°¥Ğ½Õ±…±Í¼¥¹‘¥…Ñ”ÁÉ½‰±•µÌİ¥Ñ Ñ¡”		L½µµÕ¹¥…Ñ¥¹œİ¥Ñ ½Ñ¡•È½µÁ½¹•¹ÑÌ¸AÉ•½µµ•¹‘ÌÑ¡…Ğ„½¹Ù•É•¹”Á…ÍÌ‘ÕÉ…Ñ¥½¸½˜µ½É”Ñ¡…¸€ÄÀÍ•½¹‘Ì¥Ìİ½ÉÑ …±•ÉÑ¥¹œ½¸°İ¡¥±”µ½É”Ñ¡…¸€ÈÀÍ•½¹‘Ì¥ÌÉ¥Ñ¥…°¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è‘½µ…¥¸¹˜µ…ÁÁÌ…¹‘½µ…¥¸¹˜µÑ…Í­Ì)Q¡•Í”µ•ÑÉ¥Ì¥¹‘¥…Ñ”İ¡•Ñ¡•ÈÑ¡”±½Õ½¹ÑÉ½±±•ËŠeÌÉ•½É½˜ÕÉÉ•¹Ğ…ÁÁ±¥…Ñ¥½¹Ì€¡˜µ…ÁÁÍ€¤…¹ÕÉÉ•¹ĞÑ…Í­ÌÉÕ¹¹¥¹œ™½È„ÍÁ•¥™¥Œ…ÁÁ±¥…Ñ¥½¸€¡˜µÑ…Í­Í€¤¥ÌÍå¹¡É½¹¥é•İ¥Ñ Ñ¡”‰‰Ì¹1IAÍ•Í¥É•‘€µ•ÑÉ¥Œ¸‘¥ÍÁ…É¥Ñä‰•Ñİ••¸Ñ¡”±½Õ½¹ÑÉ½±±•È…¹¥•¼…¸…™™•Ğİ¡•Ñ¡•ÈÉ•ÅÕ•ÍÑÌ½µ¥¹œ¥¸Ñ¡É½Õ Ñ¡”±½Õ½¹ÑÉ½±±•ËŠQ™½È•á…µÁ±”°„ÕÍ•ÈÑÉå¥¹œÑ¼Í…±”ÕÀÑ¡”¹Õµ‰•È½˜¥¹ÍÑ…¹•Ì™½È…¸…ÁÁ±¥…Ñ¥½»ŠQİ¥±°‰”É•½É‘•…¹¡…¹‘±•½ÉÉ•Ñ±ä¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è1IAÍIÕ¹¹¥¹œ)Q¡”¹Õµ‰•È½˜ÉÕ¹¹¥¹œ1IAÌ¥Ì¹½Ğ¹••ÍÍ…É¥±äÕÍ•™Õ°…Ì„Í¹…ÁÍ¡½Ğ°‰ÕĞ¥ÓŠeÌİ½ÉÑ ÑÉ…­¥¹œÑ¡¥Ìµ•ÑÉ¥ŠeÌÉ…Ñ”½˜¡…¹”Ñ¼­••À…¸•å”½¸½Ù•É…±°‘•Á±½åµ•¹ĞÉ½İÑ …¹Á±…¸™½ÈÍ…±¥¹œ…Á…¥Ñä¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è1IAÍáÑÉ„…¹1IAÍ5¥ÍÍ¥¹œ)Q¡•Í”µ•ÑÉ¥ÌÉ•Á½ÉĞ‘¥™™•É•¹•Ì‰•Ñİ••¸Ñ¡”É•½É½˜‘•Í¥É•1IAÌ…¹Ñ¡”		OŠeÌÉ•½É½˜ÉÕ¹¹¥¹œ1IAÌ¸AÕÍ¡¥¹œ½È‘•±•Ñ¥¹œ…¸…ÁÁ±¥…Ñ¥½¸Ñ¡…Ğ¡…Ìµ…¹ä¥¹ÍÑ…¹•Ì…¸…ÕÍ”‰É¥•˜ÍÁ¥­•Ì¥¸Ñ¡”¹Õµ‰•È½˜µ¥ÍÍ¥¹œ½È•áÑÉ„1IAÌ°É•ÍÁ•Ñ¥Ù•±ä°‰ÕĞ…¹ä•áÑ•¹‘•¡¥ ±•Ù•±Ì½˜•¥Ñ¡•È…¸¥¹‘¥…Ñ”„ÁÉ½‰±•´İ¥Ñ Ñ¡”		L¸%¸‰½Ñ …Í•Ì°AÍÕ•ÍÑÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±½˜…É½Õ¹™¥Ù”…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜…É½Õ¹€ÄÀ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÉ…Í¡•‘ÑÕ…±1IAÌ)É…Í¡¥¹œ1IAÌ…¸‰”„É•ÍÕ±Ğ½˜•¥Ñ¡•È…ÁÁ±¥…Ñ¥½¸½ÈÁ±…Ñ™½É´ÁÉ½‰±•µÌ¸Q¡¥Ìµ•ÑÉ¥ŒÁÉ½Ù¥‘•Ì„¡¥ µ±•Ù•°¥¹‘¥…Ñ¥½¸½˜Á½Ñ•¹Ñ¥…°¥ÍÍÕ•ÏŠQ¥˜å½ÔÍ•”„±…É”¹Õµ‰•È½˜¥¹ÍÑ…¹•Ì‰•¥¹¹¥¹œÑ¼É…Í °å½Ôİ¥±°İ…¹ĞÑ¼¥¹Ù•ÍÑ¥…Ñ”Ñ¡”…ÕÍ”¸()±•ÉÑ¥¹œÑ¡É•Í¡½±‘Ì™½ÈÑ¡¥Ìµ•ÑÉ¥Œİ¥±°Ù…Éä‘•Á•¹‘¥¹œ½¸å½ÕÈ‘•Á±½åµ•¹ÓŠeÌÍ¥é”…¹ÕÑ¥±¥é…Ñ¥½¸¸5½¹¥Ñ½É¥¹œÉ…Í¡•1IAÌ…¹¥¹Ù•ÍÑ¥…Ñ¥¹œÑ¡•¥È…ÕÍ”€¡„ÑÉ½Õ‰±•Í½µ”…ÁÁ±¥…Ñ¥½¸½È„ÁÉ½‰±•´İ¥Ñ Ñ¡”‘•Á±½åµ•¹Ğ¥ÑÍ•±˜¤…¸¡•±À‘•Ñ•Éµ¥¹”İ¡…Ğ±•Ù•±ÌÑ¼Í•Ğ™½È…±•ÉÑÌ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èI•ÅÕ•ÍÑ1…Ñ•¹ä)Q¡¥Ìµ•ÑÉ¥ŒÑÉ…­ÌÑ¡”µ…á¥µÕ´½‰Í•ÉÙ•Ñ¥µ”Ñ¡”		LÑ½½¬Ñ¼¡…¹‘±”„É•ÅÕ•ÍĞÑ¼…±°¥ÑÌA$•¹‘Á½¥¹ÑÌ½Ù•ÈÑ¡”ÁÉ•Ù¥½ÕÌ€ØÀÍ•½¹‘Ì¸%¸½Ñ¡•Èİ½É‘Ì°¥ĞÉ•Á½ÉÑÌÑ¡”Í±½İ•ÍĞµ•…ÍÕÉ•É•ÅÕ•ÍĞÑ¥µ”¸%¹É•…Í•Ì¥¸		LÉ•ÅÕ•ÍĞ±…Ñ•¹äİ¥±°µ…¹¥™•ÍĞ…ÌÍ±½ÜÉ•ÍÁ½¹Í•ÌÑ¼½µµ…¹‘Ì™É½´Ñ¡”m˜1%um˜µ±¥t°Ñ¡”±½Õ½Õ¹‘Éä½µµ…¹±¥¹”Ñ½½°¸AÉ•½µµ•¹‘Ì„İ…É¹¥¹œÑ¡É•Í¡½±½˜™¥Ù”Í•½¹‘Ì…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜€ÄÀÍ•½¹‘Ì™½ÈÑ¡¥Ìµ•ÑÉ¥Œ¸((ŒŒŒ1½­•Ğ)AÕÍ•ÌÑ¡”1½­•ĞÍ•ÉÙ¥”Ñ¼É•¥ÍÑ•È‘¥ÍÑÉ¥‰ÕÑ•±½­ÌÑ¼•¹ÍÕÉ”Ñ¡…ĞÑ¡”½ÉÉ•Ğ½µÁ½¹•¹ĞÁÉ½•ÍÍ•Ì„É•ÅÕ•ÍĞ…¹Ñ¡…ĞÑ¡”Í…µ”İ½É¬¥Í»ŠeĞ…ÍÍ¥¹•Ñ¼µÕ±Ñ¥Á±”•±±Ì¸A…ÉÑ¥Õ±…É±ä°Ñ¡”™½ÕÈ½µÁ½¹•¹ÑÌÑ¡…ĞÕÍ”1½­•Ğ…É”Ñ¡”		L°Ñ¡”ÕÑ¥½¹••È°Ñ¡”I½ÕÑ”µµ¥ÑÑ•È°…¹Ñ¡”QAL]…Ñ¡•È°İ¡¥ Í¥ÑÌ½¸Ñ¡”¥•¼	É…¥¸…¹µ½¹¥Ñ½ÉÌ™½ÈÉ…Í¡•1IAÌ¸5¥ÍÍ¥¹œ±½­Ì…¸¥¹‘¥…Ñ”ÁÉ½‰±•µÌİ¥Ñ Ñ¡•Í”½µÁ½¹•¹ÑÌ¸1½­•Ğ…±Í¼É•½É‘ÌÑ¡”ÁÉ•Í•¹”½˜¥•¼•±±Ì…¹Ñ¡•É•™½É”…¸ÁÉ½Ù¥‘”„ÅÕ¥¬½Ù•ÉÙ¥•Ü½˜¥•¼¡•…±Ñ ¸()9½Ñ”Ñ¡…ĞÑ¡•Í”µ•ÑÉ¥Ì…É”É•Á½ÉÑ•Á•È1½­•Ğ¥¹ÍÑ…¹”¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğÑ¥Ù•1½­ÌğQ½Ñ…°½Õ¹Ğ½˜ÍåÍÑ•´½µÁ½¹•¹Ğ±½­Ìğ=Ñ¡•È€ğ)ğpñ½µÁ½¹•¹Ñpø¹1½­!•±ğAÉ•Í•¹”½˜½µÁ½¹•¹Ğ±½¬€¡”¹œ¸°ÕÑ¥½¹••È½È		L¤ìÉ•ÑÕÉ¹Ì€Å€¥˜¡•±°€Á€¥˜¹½Ğğ=Ñ¡•È€ğ)ğÑ¥Ù•AÉ•Í•¹•ÌğQ½Ñ…°½Õ¹Ğ½˜…Ñ¥Ù”•±±Ìİ¥Ñ „É•¥ÍÑ•É•ÁÉ•Í•¹”ğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñä€ğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÑ¥Ù•1½­Ì)]¡•¸¥•¼¥Ì¡•…±Ñ¡ä°Ñ¡¥Ìµ•ÑÉ¥ŒÍ¡½Õ±½¹Í¥ÍÑ•¹Ñ±äÉ•Á½ÉĞ™½ÕÈ…Ñ¥Ù”±½­Ìè½¹”•… ™½ÈÑ¡”ÕÑ¥½¹••È°Ñ¡”		L°Ñ¡”I½ÕÑ”µµ¥ÑÑ•È°…¹Ñ¡”QAL]…Ñ¡•È¸%˜Ñ¡¥Ìµ•ÑÉ¥ŒÍ¡½İÌ™•İ•ÈÑ¡…¸™½ÕÈ…Ñ¥Ù”±½­Ì™½ÈÍ•Ù•É…°µ¥¹ÕÑ•Ì°å½Ô…¸¡•¬Ñ¡”€ñ½µÁ½¹•¹Ğø¹1½­!•±‘€µ•ÑÉ¥Ì¸!½İ•Ù•È°¹½Ñ”Ñ¡…Ğ½¹±äÑ¡”ÕÑ¥½¹••È…¹		LÉ•¥ÍÑ•È„1½­!•±¸()I•…É‘±•ÍÌ½˜¡½Üµ…¹ä¥¹ÍÑ…¹•ÌÑ¡•É”…É”½˜•… ½µÁ½¹•¹ĞÑ¡…ĞÉ•Á½ÉÑÌ„±½¯ŠQÕÑ¥½¹••È°		L°I½ÕÑ”µµ¥ÑÑ•È°…¹QAL]…Ñ¡•ËŠQÑ¡•É”İ¥±°½¹±ä‰”½¹”±½¬É•Á½ÉÑ•™½ÈÑ¡…Ğ½µÁ½¹•¹Ğ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èpñ½µÁ½¹•¹Ñpø¹1½­!•±)Q¡•Í”µ•ÑÉ¥Ì½µÁ±•µ•¹ĞÑ¥Ù•1½­Í€‰äÁÉ½Ù¥‘¥¹œ¥¹‘¥Ù¥‘Õ…°ÍÑ…ÑÕÌÉ•Á½ÉÑÌ™½È½µÁ½¹•¹Ğ±½­Ì°…±‰•¥Ğ½¹±ä™½ÈÑ¡”ÕÑ¥½¹••È…¹Ñ¡”		L¸9½Ñ”Ñ¡…Ğ„½µÁ½¹•¹Ğµ¥¡ĞÉ•Á½ÉĞ„±½ÍĞ±½¬‰É¥•™±ä¥˜Ñ¡”¥¹ÍÑ…¹•ÌÁ•É™½É´„±•…‘•ÈÑÉ…¹Í¥Ñ¥½¸¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èÑ¥Ù•AÉ•Í•¹•Ì)AÉ•Í•¹•Ì…É”É•½É‘Ì½˜¥•¼•±±Ì°É•ÅÕ¥É•Ñ¼±•ĞÑ¡”É•ÍĞ½˜A­¹½ÜÑ¡…ĞÑ¡•ä•á¥ÍĞ…¹…É”…‰±”Ñ¼‰”…ÍÍ¥¹•İ½É¬¸Q¡¥Ìµ•ÑÉ¥Œİ¥±°½˜½ÕÉÍ”Ù…Éä‘•Á•¹‘¥¹œ½¸Ñ¡”Í¥é”½˜Ñ¡”‘•Á±½åµ•¹Ğ°‰ÕĞ­••Á¥¹œ…¸•å”½¸Ñ¥Ù•AÉ•Í•¹•Í€…¹…¹äÍ¥¹¥™¥…¹Ğ°Õ¹•áÁ•Ñ•¡…¹•Ì…¸…±•ÉĞå½ÔÑ¼ÁÉ½‰±•µÌİ¥Ñ ¥•¼¸((ŒŒŒ•±±Ì½I•À)5…¹ä½˜Ñ¡”µ½ÍĞ¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥Ì™½Èµ½¹¥Ñ½É¥¹œå½ÕÈ¥•¼•±±Ì½µ”™É½´Ñ¡”•±°I•À¸Q¡”I•ÀÉ•Á½ÉÑÌÑ¡”ÍÑ…Ñ”½˜Ñ¡”¥•¼•±°…¹½˜…É‘•¸°İ¡¥ É•…Ñ•Ì…¹µ…¹…•ÌÑ¡”…ÑÕ…°½¹Ñ…¥¹•ÉÌ¸Q¡”I•ÀÌÉ•Á½ÉĞ¥¹±Õ‘•ÌÍÑ…Ñ¥ÍÑ¥Ì½¸…Ù…¥±…‰±”É•Í½ÕÉ•Ì°Í¼Ñ¡•Í”µ•ÑÉ¥Ìİ¥±°¡•±À‘•Ñ•Éµ¥¹”¥˜Ñ¡”‘•Á±½åµ•¹Ğ¡…Ì…‘•ÅÕ…Ñ”…Á…¥Ñä™½È…ÁÁ±¥…Ñ¥½¹Ì½È¥˜¥Ğ¹••‘ÌÑ¼‰”Í…±•¸()9½Ñ”Ñ¡…ĞÑ¡•Í”µ•ÑÉ¥Ì…É”É•Á½ÉÑ•Á•È¥•¼•±°¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğU¹¡•…±Ñ¡å•±°ğ¥•¼•±°¡•…±Ñ ¡•¬ìÉ•ÑÕÉ¹Ì€Á€™½È¡•…±Ñ¡ä°€Å€™½ÈÕ¹¡•…±Ñ¡äğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ)ğ½¹Ñ…¥¹•É½Õ¹Ğğ9Õµ‰•È½˜½¹Ñ…¥¹•ÉÌ½¸Ñ¡”•±°ğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğ…Á…¥ÑåQ½Ñ…±½¹Ñ…¥¹•ÉÌğQ½Ñ…°¹Õµ‰•È½˜½¹Ñ…¥¹•ÉÌÑ¡”•±°…¸¡½ÍĞğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğ…Á…¥ÑåI•µ…¥¹¥¹½¹Ñ…¥¹•ÉÌğ9Õµ‰•È½˜…‘‘¥Ñ¥½¹…°½¹Ñ…¥¹•ÉÌÑ¡”•±°…¸¡½ÍĞğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğ…Á…¥ÑåQ½Ñ…±5•µ½ÉäğQ½Ñ…°µ•µ½Éä€¡5¥¤…Ù…¥±…‰±”Ñ¼•±°™½È½¹Ñ…¥¹•ÉÌğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğ…Á…¥ÑåI•µ…¥¹¥¹5•µ½ÉäğI•µ…¥¹¥¹œµ•µ½Éä€¡5¥¤…Ù…¥±…‰±”Ñ¼•±°™½È½¹Ñ…¥¹•ÉÌğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğ…Á…¥ÑåQ½Ñ…±¥Í¬ğQ½Ñ…°‘¥Í¬ÍÁ…”€¡5¥¤…Ù…¥±…‰±”Ñ¼•±°™½È½¹Ñ…¥¹•ÉÌğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ)ğ…Á…¥ÑåI•µ…¥¹¥¹¥Í¬ğI•µ…¥¹¥¹œ‘¥Í¬ÍÁ…”€¡5¥¤…Ù…¥±…‰±”Ñ¼•±°™½È½¹Ñ…¥¹•ÉÌğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ€)ğI•Á	Õ±­Må¹ÕÉ…Ñ¥½¸ğQ½Ñ…°Ñ¥µ”€¡¥¸¹…¹½Í•½¹‘Ì¤Ñ¡”•±°I•ÀÑ½½¬Ñ¼Íå¹¡É½¹¥é”ÑÕ…±1IA€½Õ¹Ğ™É½´Ñ¡”		Lİ¥Ñ 1I@É•Á½ÉÑÌ™É½´Ñ¡”…É‘•¸½¹Ñ…¥¹•ÉÌğ]½É¬èA•É™½Éµ…¹”€ğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èU¹¡•…±Ñ¡å•±°)Q¡¥Ìµ•ÑÉ¥Œ¥¹‘¥…Ñ•Ìİ¡•Ñ¡•È„•±°¡…ÌÁ…ÍÍ•„¥•¼¡•…±Ñ ¡•¬¸M•Ù•É…°•±±Ì™…¥±¥¹œİ¥Ñ¡¥¸„Í¡½ÉĞÑ¥µ”Á•É¥½…¸¡…Ù”„¹•…Ñ¥Ù”•™™•Ğ½¸•¹µÕÍ•È•áÁ•É¥•¹”¸QÉ¥•É¥¹œ…¸…±•ÉĞİ¡•¸µÕ±Ñ¥Á±”•±±Ì™…¥°…¸…±°å½ÕÈ…ÑÑ•¹Ñ¥½¸ÅÕ¥­±äÑ¼Á½Ñ•¹Ñ¥…°Á•É™½Éµ…¹”½È…Ù…¥±…‰¥±¥ÑäÁÉ½‰±•µÌ¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼İ…Ñ è½¹Ñ…¥¹•É½Õ¹Ğ°…Á…¥ÑåQ½Ñ…±½¹Ñ…¥¹•ÉÌ°…¹…Á…¥ÑåI•µ…¥¹¥¹½¹Ñ…¥¹•ÉÌ)UÍ”Ñ¡•Í”µ•ÑÉ¥ÌÑ¼ÑÉ…¬•±°…Á…¥Ñä…¹ÕÑ¥±¥é…Ñ¥½¸¥¸Ñ•ÉµÌ½˜Ñ¡”¹Õµ‰•È½˜½¹Ñ…¥¹•ÉÌÉÕ¹¹¥¹œ½¸„¥Ù•¸•±°¸	ä‘•™…Õ±Ğ°Ñ¡”µ…á¥µÕ´½¹Ñ…¥¹•ÉÌ½¹”•±°µ…ä¡½ÍĞ¥Ì€ÈÔÀ¸Q¡¥Ì…¸‰”¡…¹•‰äµ½‘¥™å¥¹œ„m	=M ÁÉ½Á•ÉÑåumµ…àµ½¹Ñ…¥¹•ÉÍt°¡½İ•Ù•ÈA¥Ù½Ñ…°‘½•Ì¹½ĞÉ•½µµ•¹¥¹É•…Í¥¹œ¥Ğ‰•å½¹€ÈÔÀ¸()5½¹¥Ñ½É¥¹œÑ¡”¹Õµ‰•È½˜ÕÉÉ•¹Ñ±äÉÕ¹¹¥¹œ½¹Ñ…¥¹•ÉÌ½¸å½ÕÈ•±±Ì¥Ì¥µÁ½ÉÑ…¹Ğ™½ÈÕ¹‘•ÉÍÑ…¹‘¥¹œ½Ù•É…±°‘•Á±½åµ•¹ĞÕÍ…”¸¡•­¥¹œ¡½Üµ…¹ä…‘‘¥Ñ¥½¹…°½¹Ñ…¥¹•ÉÌÑ¡”•±°…¸ÉÕ¸…¸¡•±À¥¹‘¥…Ñ”İ¡•Ñ¡•È½È¹½Ğå½Ô¹••Ñ¼Í…±”½ÕĞå½ÕÈ‘•Á±½åµ•¹Ğ¸()9½Ñ”Ñ¡…ĞmA!•…±Ñ¡İ…Ñ¡umÁ˜µ¡•…±Ñ¡İ…Ñ¡tÁÉ½Ù¥‘•ÌÑ¡”…‘‘¥Ñ¥½¹…°µ•ÑÉ¥Œ¡•…±Ñ¡İ…Ñ ¹¥•¼¹Q½Ñ…±A•É•¹Ñ…•Ù…¥±…‰±•½¹Ñ…¥¹•É…Á…¥Ñä¸Õ5€°İ¡¥ •áÁÉ•ÍÍ•Ì…Á…¥ÑåI•µ…¥¹¥¹½¹Ñ…¥¹•ÉÍ€‘¥Ù¥‘•‰ä…Á…¥ÑåQ½Ñ…±½¹Ñ…¥¹•ÉÍ€½Ù•ÈÑ¡”ÁÉ•Ù¥½ÕÌ™¥Ù”µ¥¹ÕÑ•ÌÑ¼…±Õ±…Ñ”„Á•É•¹Ñ…”½˜É•µ…¥¹¥¹œ½¹Ñ…¥¹•È…Á…¥Ñä™½ÈÑ¡”•±°¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è…Á…¥ÑåQ½Ñ…±5•µ½Éä…¹…Á…¥ÑåI•µ…¥¹¥¹5•µ½Éä)%¹ÍÕ™™¥¥•¹Ğ•±°µ•µ½Éä…¸µ…­”¥Ğ¥µÁ½ÍÍ¥‰±”Ñ¼Í…±”•á¥ÍÑ¥¹œ…ÁÁ±¥…Ñ¥½¹Ì½ÈÁÕÍ ¹•Ü½¹•Ì¸5½¹¥Ñ½É¥¹œÑ¡•Í”µ•ÑÉ¥Ìİ¥±°¡•±Àå½ÔÕ¹‘•ÉÍÑ…¹¥˜å½ÕÈ‘•Á±½åµ•¹Ğ¡…ÌÍÕ™™¥¥•¹ĞÉ•Í½ÕÉ•Ì¸]¡•¸µ½¹¥Ñ½É¥¹œÉ•µ…¥¹¥¹œµ•µ½Éä…É•…Ñ•…É½ÍÌ…±°•±±Ì°AÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±½˜…É½Õ¹€ØĞ…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜€ÌÈ¸()=¹”¥µÁ½ÉÑ…¹ĞÑ¡¥¹œÑ¼¹½Ñ”¥ÌÑ¡…Ğİ¡•¸„ÕÍ•È…ÍÍ¥¹ÌÉ•Í½ÕÉ•ÌÑ¼…¸…ÁÁ±¥…Ñ¥½¸°¥•¼…±±½…Ñ•ÌÑ¡½Í”É•Í½ÕÉ•Ì…ÍÍÕµ¥¹œÑ¡”İ½É­±½…İ¥±°É•ÅÕ¥É”…±°½˜Ñ¡•´…ĞÍ½µ”Á½¥¹Ğ¸%¸½Ñ¡•Èİ½É‘Ì°Ñ¡”É•µ…¥¹¥¹œµ•µ½Éäµ•ÑÉ¥Œİ¥±°É•™±•Ğİ¡…Ğ¥•¼¡…Ì…±±½…Ñ•…Ì}Á½Ñ•¹Ñ¥…±±å|¹••‘•°É…Ñ¡•ÈÑ¡…¸Ñ¡”…µ½Õ¹Ğ½˜µ•µ½ÉäÑ¡…Ğ¥Ì…ÑÕ…±±ä¥¸ÕÍ”…ĞÑ¡”µ½µ•¹ĞÑ¡”µ•ÑÉ¥Œ¥ÌÉ•Á½ÉÑ•¸()9½Ñ”Ñ¡…ĞmA!•…±Ñ¡İ…Ñ¡umÁ˜µ¡•…±Ñ¡İ…Ñ¡t•¹•É…Ñ•ÌÑİ¼…‘‘¥Ñ¥½¹…°µ•ÑÉ¥ÌÑ¼¡•±Àµ½¹¥Ñ½È•±°µ•µ½Éä¸	ä‘•™…Õ±Ğ°!•…±Ñ¡İ…Ñ ÕÍ•Ì€Ğ…Ì„ÍÑ…¹‘…ÉƒŠq¡Õ¹¯Št½˜µ•µ½Éä™½ÈÍ…™•±äÍÑ…¥¹œ…ÁÁ±¥…Ñ¥½¹Ì°Ñ¡½Õ Ñ¡¥Ì…¸‰”¡…¹•ÕÍ¥¹œÑ¡”m!•…±Ñ¡İ…Ñ A%um™É•”µ¡Õ¹­Ít¸Q¡”!•…±Ñ¡İ…Ñ µ•ÑÉ¥Œ¡•…±Ñ¡İ…Ñ ¹¥•¼¹Ù…¥±…‰±•É••¡Õ¹­Í€É•Á½ÉÑÌÑ¡”¹Õµ‰•È½˜…Ù…¥±…‰±”¡Õ¹­Ì½˜µ•µ½ÉäÉ•µ…¥¹¥¹œ…É½ÍÌ…±°•±±Ì°ÁÉ½Ù¥‘¥¹œ„ÅÕ¥¬Õ¹‘•ÉÍÑ…¹‘¥¹œ½˜É•µ…¥¹¥¹œ…Á…¥Ñä¸Q¡¥Ìµ•ÑÉ¥Œ¥Ìµ½ÍĞÕÍ•™Õ°…™Ñ•È‘•Ñ•Éµ¥¹¥¹œÑ¡”™½½ÑÁÉ¥¹Ğ½˜„ÍÑ…¹‘…É…ÁÁ±¥…Ñ¥½¸½¸å½ÕÈ‘•Á±½åµ•¹Ğ¸()!•…±Ñ¡İ…Ñ …±Í¼É•Á½ÉÑÌÑ¡”µ•ÑÉ¥Œ¡•…±Ñ¡İ…Ñ ¹¥•¼¹Q½Ñ…±A•É•¹Ñ…•Ù…¥±…‰±•5•µ½Éå…Á…¥Ñä¸Õ5€°İ¡¥ •áÁÉ•ÍÍ•Ì…Á…¥ÑåI•µ…¥¹¥¹5•µ½Éå€‘¥Ù¥‘•‰ä…Á…¥ÑåQ½Ñ…±5•µ½Éå€½Ù•ÈÑ¡”ÁÉ•Ù¥½ÕÌ™¥Ù”µ¥¹ÕÑ•ÌÑ¼ÁÉ½Ù¥‘”„Á•É•¹Ñ…”½˜É•µ…¥¹¥¹œµ•µ½Éä™½ÈÑ¡”•±°¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è…Á…¥ÑåQ½Ñ…±¥Í¬…¹…Á…¥ÑåI•µ…¥¹¥¹¥Í¬)5½¹¥Ñ½É¥¹œ¡½ÜµÕ ‘¥Í¬ÍÁ…”•±±Ì¡…Ù”…Ù…¥±…‰±”…¸ÁÉ½Ù¥‘”¥¹Í¥¡Ğ¥¹Ñ¼İ¡•Ñ¡•ÈÍÑ…¥¹œÑ…Í­Ì…É”±¥­•±äÑ¼ÍÑ…ÉĞ™…¥±¥¹œ°…Ìİ•±°…Ìİ¡•Ñ¡•ÈÑ¡”‘•Á±½åµ•¹Ğ¹••‘Ì±…É•È½Èµ½É”•±±Ì¸Q¡”ÍÑ…¹‘…É…µ½Õ¹Ğ½˜‘¥Í¬…Á…¥Ñä¹••‘•Ñ¼•¹ÍÕÉ”ÍÑ…¥¹œÑ…Í­Ì‘¼¹½Ğ™…¥°¥Ì€Ø°Í¼AÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±½˜€ÄÈ…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜€Ø¸()Ìİ¥Ñ µ•µ½Éä°¥•¼É•Á½ÉÑÌÉ•µ…¥¹¥¹œ‘¥Í¬ÍÁ…”‰…Í•½¸Ñ¡”É•Í½ÕÉ•ÌÑ¡…Ğ¡…Ù”‰••¸…ÍÍ¥¹•Ñ¼ÕÉÉ•¹Ñ±äÉÕ¹¹¥¹œÑ…Í­Ì°É…Ñ¡•ÈÑ¡…¸Ñ¡”É•Í½ÕÉ•ÌÑ¡…Ğ…É”…ÑÕ…±±ä¥¸ÕÍ”…ĞÑ¡”µ½µ•¹ĞÑ¡…ĞÑ¡”µ•ÑÉ¥Œ¥ÌÉ•Á½ÉÑ•¸()9½Ñ”Ñ¡…ĞmA!•…±Ñ¡İ…Ñ¡umÁ˜µ¡•…±Ñ¡İ…Ñ¡t•¹•É…Ñ•ÌÑ¡”…‘‘¥Ñ¥½¹…°µ•ÑÉ¥Œ¡•…±Ñ¡İ…Ñ ¹¥•¼¹Q½Ñ…±A•É•¹Ñ…•Ù…¥±…‰±•¥Í­…Á…¥Ñä¸Õ5€°İ¡¥ •áÁÉ•ÍÍ•Ì…Á…¥ÑåI•µ…¥¹¥¹¥Í­€‘¥Ù¥‘•‰ä…Á…¥ÑåQ½Ñ…±¥Í­€½Ù•ÈÑ¡”ÁÉ•Ù¥½ÕÌ™¥Ù”µ¥¹ÕÑ•ÌÑ¼ÁÉ½Ù¥‘”„Á•É•¹Ñ…”½˜É•µ…¥¹¥¹œ‘¥Í¬…Á…¥Ñä™½ÈÑ¡”•±°¸AÉ•½µµ•¹‘Ì…±•ÉÑ¥¹œ¥˜Ñ¡¥Ìµ•ÑÉ¥Œ™…±±Ì‰•±½Ü…‰½ÕĞ€ÌÔÁ•É•¹Ğ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èI•Á	Õ±­Må¹ÕÉ…Ñ¥½¸)Ìİ¥Ñ ½Ñ¡•ÈÍå¹¥¹œÁÉ½•ÍÍ•Ì°±¥­”Ñ¡”		OŠeÌ½¹Ù•É•¹”Á…ÍÍ•Ì…¹Ñ¡”±½Õ½¹ÑÉ½±±•ËŠeÌ¥•¼Íå¹Œ°Ñ¡”I•ÀÁ•É™½ÉµÌ„Á•É¥½‘¥Œ¡•¬Ñ¼Íå¹ŒÑ¡”¹Õµ‰•È½˜ÑÕ…±1IAÍ€¥Ğ¡…Ì½¸É•½É™É½´Ñ¡”		OŠQ1IAÌÑ¡…ĞÑ¡”		L¡…ÌÉ•½É‘•…Ì…ÍÍ¥¹•Ñ¼•±±ÏŠQİ¥Ñ É•Á½ÉÑÌ‘¥É•Ñ±ä™É½´Ñ¡”½¹Ñ…¥¹•ÉÌ…‰½ÕĞÑ¡”İ½É¬Ñ¡•ä…É”‘½¥¹œ¸%˜Ñ¡”I•À‰•¥¹ÌÑ¼É•Á½ÉĞ¡¥ Íå¹Œ‘ÕÉ…Ñ¥½¸Ñ¥µ•Ì°Ñ¡”Í±½İ‘½İ¸µ¥¡ĞÁ½¥¹ĞÑ¼ÁÉ½‰±•µÌİ¥Ñ Ñ¡”		L¸AÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±½˜™¥Ù”Í•½¹‘Ì…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜…É½Õ¹€ÄÀÍ•½¹‘Ì™½ÈÑ¡¥Ìµ•ÑÉ¥Œ¸()íìğ¥µœÍÉŒô‰Á˜µµ•ÑÉ¥Ìµ‘¥•¼µ•±°µÉ•ÀµÍå¹Œ¹Á¹œˆ…±Ğô‰¥•¼•±°I•Á	Õ±­Må¹ÕÉ…Ñ¥½¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒI½ÕÑ”µµ¥ÑÑ•È)½ÉÉ•ĞÉ½ÕÑ¥¹œÑ…‰±•Ì…É”¹••ÍÍ…Éä™½ÈÑ¡”½É½ÕÑ•ÈÑ¼µ½¹¥Ñ½Èİ¡¥ …ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•Ì…É”…Ù…¥±…‰±”Í¼¥Ğ…¸É½ÕÑ”ÑÉ…™™¥Œ…ÁÁÉ½ÁÉ¥…Ñ•±ä¸Q¡”I½ÕÑ”µµ¥ÑÑ•È½¸•… •±°Í•¹‘Ì…¸ÕÁ‘…Ñ”Ñ¼Ñ¡”		Lİ¡•¹•Ù•ÈÑ¡•É”…É”…¹ä¡…¹•Ì¥¸É•¥ÍÑ•É•É½ÕÑ•Ì°…¹¥Ğ…±Í¼Á•É¥½‘¥…±±äÍ•¹‘Ì…¸ÕÀµÑ¼µ‘…Ñ”¥µ…”½˜Ñ¡”™Õ±°É½ÕÑ¥¹œÑ…‰±”¸()9½Ñ”Ñ¡…ĞÑ¡•Í”µ•ÑÉ¥Ì…É”É•Á½ÉÑ•Á•ÈI½ÕÑ”µµ¥ÑÑ•È¥¹ÍÑ…¹”¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğI½ÕÑ•ÍQ½Ñ…°ğQ½Ñ…°¹Õµ‰•È½˜É½ÕÑ•Ì¥¸Ñ¡”É½ÕÑ¥¹œÑ…‰±”ğ=Ñ¡•Èğ)ğI½ÕÑ•µ¥ÑÑ•ÉMå¹ÕÉ…Ñ¥½¸ğÙ•É…”Ñ¥µ”€¡¥¸¹…¹½Í•½¹‘Ì¤™½ÈÑ¡”I½ÕÑ”µµ¥ÑÑ•ÈÑ¼½µÁ±•Ñ”„Íå¹¡É½¹¥é…Ñ¥½¸Á…ÍÌğ]½É¬èA•É™½Éµ…¹”ğ)ğ!QQAI½ÕÑ•9QM5•ÍÍ…•Íµ¥ÑÑ•ğ1¥™•Ñ¥µ”¹Õµ‰•È½˜É½ÕÑ”É•¥ÍÑÉ…Ñ¥½¸µ•ÍÍ…•ÌÍ•¹Ğ‰äÑ¡”I½ÕÑ”µµ¥ÑÑ•ÈÑ¼Ñ¡”½É½ÕÑ•Èğ]½É¬èQ¡É½Õ¡ÁÕĞğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èI½ÕÑ•ÍQ½Ñ…°)5½¹¥Ñ½É¥¹œÑ¡”Ñ½Ñ…°¹Õµ‰•È½˜É½ÕÑ•Ì¥¸Ñ¡”É½ÕÑ¥¹œÑ…‰±”…¸¥Ù”å½Ô„Í•¹Í”½˜‘•Á±½åµ•¹ĞÍ…±”…¹…¸…±Í¼…±•ÉĞå½ÔÑ¼€Í¥¹¥™¥…¹Ğ…¹É…Á¥¡…¹•Ì°ÍÕ …Ìµ…¹äÉ½ÕÑ•ÌÍÕ‘‘•¹±ä‰•½µ¥¹œÕ¹É•¥ÍÑ•É•¸Q¡”½É½ÕÑ•È‘•Á•¹‘Ì½¸Ñ¡”É½ÕÑ¥¹œÑ…‰±•ÌÍ•¹Ğ‰äÑ¡”I½ÕÑ”µµ¥ÑÑ•È°Í¼‘¥ÍÉ•Á…¹¥•Ì½È‘É½ÁÁ•É½ÕÑ•Ìİ½Õ±±•…Ù”Ñ¡”½É½ÕÑ•ÈÕ¹…‰±”Ñ¼Í¡ÕÑÑ±”ÑÉ…™™¥Œ½ÉÉ•Ñ±ä¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èI½ÕÑ•µ¥ÑÑ•ÉMå¹ÕÉ…Ñ¥½¸)Q¡”Ñ¥µ”¥ĞÑ…­•Ì™½ÈÑ¡”I½ÕÑ”µµ¥ÑÑ•ÈÑ¼½µÁ±•Ñ”¥ÑÌÍå¹¡É½¹¥é…Ñ¥½¸İ¥±°‘¥™™•È‘•Á•¹‘¥¹œÑ¡”‘•Á±½åµ•¹Ğ°Í¼¥ÓŠeÌ¥µÁ½ÉÑ…¹ĞÑ¼¡½½Í”…¸…±•ÉÑ¥¹œÑ¡É•Í¡½±…ÁÁÉ½ÁÉ¥…Ñ•±ä¸Ì…¸•á…µÁ±”°AÕÍ•Ì„Ñ¡É•Í¡½±½˜€ÄÀÍ•½¹‘Ì™½ÈÑ¡•¥ÈA¥Ù½Ñ…°]•ˆM•ÉÙ¥•Ì‘•Á±½åµ•¹Ğ¸%¸…¹ä…Í”°¥˜Ñ¡”I½ÕÑ”µµ¥ÑÑ•ÈÍ••µÌÑ¼¡…Ù”‘¥™™¥Õ±ÑäÍå¹¥¹œ¥ÑÌÉ½ÕÑ¥¹œÑ…‰±”°¥Ğ½Õ±‰”…¸¥¹‘¥…Ñ¥½¸Ñ¡…ĞÑ¡”		L¥Ì™…¥±¥¹œ…¹¥Í»ŠeĞÍ•¹‘¥¹œ¥ÑÌÁ•É¥½‘¥ŒÕÁ‘…Ñ•Ì¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è!QQAI½ÕÑ•9QM5•ÍÍ…•Íµ¥ÑÑ•)Ì‘¥ÍÕÍÍ•m…‰½Ù•t µ•ÑÉ¥ŒµÑ¼µ…±•ÉĞµ½¸µÉ•¥ÍÑÉäµµ•ÍÍ…”µÉ½ÕÑ”µ•µ¥ÑÑ•È¤°İ¡•¸½ÉÉ•±…Ñ•İ¥Ñ É•¥ÍÑÉå}µ•ÍÍ…”¹É½ÕÑ”µ•µ¥ÑÑ•É€°½ÈÑ¡”¹Õµ‰•È½˜É½ÕÑ”É•¥ÍÑÉ…Ñ¥½¸µ•ÍÍ…•ÌÑ¡”½É½ÕÑ•ÉÌ…É”É••¥Ù¥¹œ°Ñ¡¥Ìµ•ÑÉ¥Œ…¸¡•±ÀÍÕÉ™…”½¹¹•Ñ¥Ù¥ÑäÁÉ½‰±•µÌ‰•Ñİ••¸¥•¼…¹Ñ¡”½É½ÕÑ•È¸AÉ•½µµ•¹‘Ì…±•ÉÑ¥¹œ¥˜Ñ¡”…Ù•É…”¹Õµ‰•È½˜É•¥ÍÑÉ…Ñ¥½¸µ•ÍÍ…•ÌÉ••¥Ù•‰äÑ¡”½É½ÕÑ•ÉÌ™…±±Ì‰•±½ÜÑ¡”Ñ½Ñ…°¹Õµ‰•È½˜µ•ÍÍ…•ÌÍ•¹Ğ…É½ÍÌ…±°I½ÕÑ”µµ¥ÑÑ•ÉÌ¸((ŒŒ1½É•…Ñ½È)m1½É•…Ñ½Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”±½É•…Ñ½È¤¥Ì„ÍåÍÑ•´½˜½µÁ½¹•¹ÑÌÑ¡…Ğ…É•…Ñ•Ì…¹ÍÑÉ•…µÌ…ÁÁ±¥…Ñ¥½¸±½Ì…¹‘•Á±½åµ•¹Ğµ•ÑÉ¥Ì¸ÌÁ…ÉĞ½˜Ñ¡¥ÌÁÉ½•ÍÌ°1½É•…Ñ½ÈÍÑ…¹‘…É‘¥é•Ì…¹Á…­…•ÌÑ¡•Í”µ•ÍÍ…•Ì…Ìm•¹Ù•±½Á•Íum±½É•…Ñ½Èµ…Á¥t‰…Í•½¸Ñ¡•¥ÈÑåÁ”Ñ¼µ…­”¥Ğ•…Í¥•È™½È‘½İ¹ÍÑÉ•…´½µÁ½¹•¹ÑÌÑ¼Í½ÉĞ…¹Á…ÉÍ”Ñ¡•´¸()Q¡”ÁÉ¥µ…Éä½µÁ½¹•¹ÑÌ½˜1½É•…Ñ½ÈÑ¼µ½¹¥Ñ½È…É”Ñ¡”5•ÑÉ½¸•¹ÑÌ°İ¡¥ Í¥Ğ½¸‰½Ñ ¥¹™É…ÍÑÉÕÑÕÉ”…¹¡½ÍĞY5Ì…¹™½Éİ…Éµ•ÍÍ…•ÌìÑ¡”½ÁÁ±•ÈÍ•ÉÙ•ÉÌ°İ¡¥ …É•…Ñ”µ•ÍÍ…•Ì™É½´…±°5•ÑÉ½¹Ì…¹ÍÑ½É”Ñ¡•´¥¸‰Õ™™•ÉÌ‰…Í•½¸•¹Ù•±½Á”ÑåÁ”ì…¹QÉ…™™¥Œ½¹ÑÉ½±±•ÉÌ°İ¡¥ ½¹ÍÕµ”µ•ÍÍ…•Ì™É½´½ÁÁ±•ÉÌ…¹ÍÑÉ•…´Ñ¡•´Ù¥„Ñ¡”¥É•¡½Í”¸()±Ñ•É¹…Ñ¥Ù•±ä°½Á•É…Ñ½ÉÌ…¸¡½½Í”Ñ¼‰¥¹„ÍåÍ±½œ‘É…¥¸Ñ¼…ÁÁ±¥…Ñ¥½¹Ì°¥¸İ¡¥ …Í”µ•ÍÍ…•Ì¼™É½´Ñ¡”½ÁÁ±•ÉÌÑ¼„I•Ù•ÉÍ”1½œAÉ½áä…¹Ñ¡•¸½¸Ñ¼„MåÍ±½œ‘…ÁÑ•È¸É½´Ñ¡•É”°Ñ¡”±½Ì…É”ÍÑÉ•…µ•Ù¥„ÉÍåÍ±½œÑ¼Ñ¡”ÍÁ•¥™¥•‘É…¥¸•¹‘Á½¥¹Ğ¸€()Q¡”Ù½±Õµ”½˜µ•ÍÍ…•ÌÑ¡…ĞÑ¡”1½É•…Ñ½ÈÍåÍÑ•´…¸ÁÉ½•ÍÌ‘•Á•¹‘Ì½¸¡½ÜÅÕ¥­±ä•… ‘½İ¹ÍÑÉ•…´½µÁ½¹•¹Ğ…¸½¹ÍÕµ”Ñ¡”¥¹™½Éµ…Ñ¥½¸¸%˜½¹ÍÕµ•ÉÌ…¹¹½Ğ­••ÀÕÀİ¥Ñ Ñ¡”‘…Ñ„‰•¥¹œÍ•¹Ğ™É½´Í½ÕÉ•Ì°µ•ÍÍ…•Ìİ¥±°Í¥µÁ±ä‰”‘É½ÁÁ•Ñ¼µ…­”É½½´™½ÈÑ¡”¹•áĞ‰…Ñ ¸Q¡¥Ìµ•…¹ÌÑ¡…Ğ•… ¥¹‘¥Ù¥‘Õ…°ÍÑ•À¥¸Ñ¡”1½É•…Ñ½È¡…¥¸ÁÉ½Ù¥‘•Ì„Á½ÍÍ¥‰±”‰É•…­¥¹œÁ½¥¹Ğ¸%¸Á…ÉÑ¥Õ±…È°µ•ÍÍ…”±½ÍÌ…¸É•ÍÕ±Ğ¥˜Ñ¡”µ•ÍÍ…”‰Õ™™•È•ÑÌ‰…­•ÕÀ…ĞÑ¡”½ÁÁ±•È±…å•È°…ÌÑ¡”½ÁÁ±•ÉÌÉ••¥Ù”µ•ÍÍ…•Ì™É½´µÕ±Ñ¥Á±”5•ÑÉ½¸•¹ÑÌ¸()%¹‘¥Ù¥‘Õ…°½µÁ½¹•¹ÑÌİ¥Ñ¡¥¸1½É•…Ñ½È•µ¥Ğµ•ÑÉ¥ÌÑÉ…­¥¹œÑ¡”Ù½±Õµ”½˜µ•ÍÍ…•ÌÍ•¹Ğ…¹É••¥Ù•¸½È•á…µÁ±”°Ñ¡”½ÁÁ±•Èµ•ÑÉ¥Œ‘½ÁÁ±•È¹‘É½ÁÁ•‘€¥¹‘¥…Ñ•ÌÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•Ì¹½Ğ‘•±¥Ù•É•‰•™½É”‰•¥¹œÉ•Á±…•‰ä¥¹½µ¥¹œµ•ÍÍ…•Ì¸Q¡”™½±±½İ¥¹œ½µÁ½¹•¹Ğµ•ÑÉ¥ÌÁÉ½Ù¥‘”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ¡½Üµ…¹äµ•ÍÍ…•Ì…É”‰•¥¹œÉ••¥Ù•½È‘É½ÁÁ•‰äÙ…É¥½ÕÌ½µÁ½¹•¹ÑÌİ¥Ñ¡¥¸Ñ¡”1½É•…Ñ½È¡…¥¸è()ğ½µÁ½¹•¹Ğğ5•ÑÉ¥Œ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ€´´´ğ)ğ1½É•…Ñ½Èğ‘½ÁÁ±•È¹¥¹É•ÍÌğQ¡”±¥™•Ñ¥µ”¹Õµ‰•È½˜µ•ÍÍ…•Ì‰•¥¹œ¥¹•ÍÑ•‰äÑ¡”½ÁÁ±•ÈÑ¼Í•¹‘½İ¹ÍÑÉ•…´ğ]½É¬èQ¡É½Õ¡ÁÕĞğ)ğ1½É•…Ñ½Èğ‘½ÁÁ±•È¹‘É½ÁÁ•ğQ¡”±¥™•Ñ¥µ”¹Õµ‰•È½˜µ•ÍÍ…•Ì‘É½ÁÁ•‰äÑ¡”½ÁÁ±•Èİ¥Ñ¡½ÕĞ‰•¥¹œ‘•±¥Ù•É•Ñ¼„‘½İ¹ÍÑÉ•…´½µÁ½¹•¹ĞğI•Í½ÕÉ”èM…ÑÕÉ…Ñ¥½¸ğ)ğÍåÍ±½œ‘É…¥¸ğ…‘…ÁÑ•È¹¥¹É•ÍÌğQ¡”±¥™•Ñ¥µ”¹Õµ‰•È½˜µ•ÍÍ…•Ì‰•¥¹œ¥¹•ÍÑ•‰äÑ¡”MåÍ±½œ‘…ÁÑ•È€¡½¹±äÉ•±•Ù…¹Ğ™½È…ÁÁ±¥…Ñ¥½¹Ìİ¥Ñ „ÍåÍ±½œ‘É…¥¸¤ğ]½É¬èQ¡É½Õ¡ÁÕĞğ)ğÍåÍ±½œ‘É…¥¸ğ…‘…ÁÑ•È¹‘É½ÁÁ•ğQ¡”±¥™•Ñ¥µ”¹Õµ‰•È½˜µ•ÍÍ…•Ì‰•¥¹œ‘É½ÁÁ•‰äÑ¡”MåÍ±½œ‘…ÁÑ•Èİ¥Ñ¡½ÕĞ‰•¥¹œ‘•±¥Ù•É•Ñ¼„‘½İ¹ÍÑÉ•…´½µÁ½¹•¹Ğ€¡½¹±äÉ•±•Ù…¹Ğ™½È…ÁÁ±¥…Ñ¥½¹Ìİ¥Ñ „ÍåÍ±½œ‘É…¥¸¤ğI•Í½ÕÉ”èM…ÑÕÉ…Ñ¥½¸ğ)ğÍåÍ±½œ‘É…¥¸ğÍ¡•‘Õ±•È¹‘É…¥¹ÌğQ¡”Ñ½Ñ…°¹Õµ‰•È½˜ÍåÍ±½œ‘É…¥¸‰¥¹‘¥¹Ìğ=Ñ¡•Èğ)ğ1½É•…Ñ½ÈğÉ±À¹¥¹É•ÍÌğQ¡”±¥™•Ñ¥µ”¹Õµ‰•È½˜µ•ÍÍ…•Ì‰•¥¹œ¥¹•ÍÑ•‰äÑ¡”I•Ù•ÉÍ”1½œAÉ½áäÑ¼Í•¹‘½İ¹ÍÑÉ•…´€¡½¹±äÉ•±•Ù…¹Ğ™½È…ÁÁ±¥…Ñ¥½¹Ìİ¥Ñ „ÍåÍ±½œ‘É…¥¸¤ğ]½É¬èQ¡É½Õ¡ÁÕĞğ)ğ1½É•…Ñ½ÈğÉ±À¹‘É½ÁÁ•ğQ¡”±¥™•Ñ¥µ”¹Õµ‰•È½˜µ•ÍÍ…•Ì‘É½ÁÁ•‰äÑ¡”I•Ù•ÉÍ”1½œAÉ½áäİ¥Ñ¡½ÕĞ‰•¥¹œ‘•±¥Ù•É•Ñ¼„‘½İ¹ÍÑÉ•…´½µÁ½¹•¹Ğ€¡½¹±äÉ•±•Ù…¹Ğ™½È…ÁÁ±¥…Ñ¥½¹Ìİ¥Ñ „ÍåÍ±½œ‘É…¥¸¤ğI•Í½ÕÉ”èM…ÑÕÉ…Ñ¥½¸ğ()Q¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÍ•¹ĞÑ¡É½Õ 1½É•…Ñ½È°…¹•Ù•¸Ñ¡”¹Õµ‰•ÈÑ¡…Ğ…É”‘É½ÁÁ•İ¥Ñ¡½ÕĞ‘•±¥Ù•Éä°…¸‰”±…É•±ä‘•Á•¹‘•¹Ğ½¸Ñ¡”Í¥é”½˜Ñ¡”‘•Á±½åµ•¹Ğ¸%¸½É‘•ÈÑ¼•Ğ„±•…É•È°µ½É”…Ğµ„µ±…¹”¥¹‘¥…Ñ½È½˜¥É•¡½Í”Á•É™½Éµ…¹”°¥Ğ¥Ì¡•±Á™Õ°Ñ¼ÕÍ”Ñ¡•Í”µ•ÑÉ¥ÌÑ¼…±Õ±…Ñ”É…Ñ•Ì½˜µ•ÍÍ…”Ñ¡É½Õ¡ÁÕĞ…¹±½ÍÌ¸A!•…±Ñ¡İ…Ñ ‘•É¥Ù•ÌÍ•Ù•É…°µ•ÑÉ¥ÌÑ¡…Ğ¥Ù”½Á•É…Ñ½ÉÌ¥¹Í¥¡Ğ¥¹Ñ¼Ñ¡”Á•É™½Éµ…¹”…¹…Á…¥Ñä½˜Ñ¡•¥È1½É•…Ñ½ÈÍåÍÑ•´¸€()Q¡”™½±±½İ¥¹œ…É”!•…±Ñ¡İ…Ñ µ•ÑÉ¥ÌÑ¡…ĞÕÍ”É…Ü½µÁ½¹•¹Ğµ•ÑÉ¥ÌÑ¼‘•É¥Ù”É…Ñ•Ì½˜µ•ÍÍ…”±½ÍÌ…É½ÍÌÙ…É¥½ÕÌ1½É•…Ñ½È±…å•ÉÌ°µ…­¥¹œ¥Ğ•…Í¥•ÈÑ¼½‰Í•ÉÙ”¡…¹•Ì¥¸1½É•…Ñ½ÈÑ¡É½Õ¡ÁÕĞ…¹Á•É™½Éµ…¹”¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğ¡•…±Ñ¡İ…Ñ ¹¥É•¡½Í”¹1½ÍÍI…Ñ”¸Å4ğQ¡”É…Ñ”½˜µ•ÍÍ…”±½ÍÌ™É½´Ñ¡”5•ÑÉ½¸•¹ÑÌÑ¼Ñ¡”¥É•¡½Í”•¹‘Á½¥¹ÑÌ°…Ì„Á•É•¹Ñ…”½Ù•ÈÑ¡”ÁÉ•Ù¥½ÕÌµ¥¹ÕÑ”ğ]½É¬èÉÉ½Èğ)ğ¡•…±Ñ¡İ…Ñ ¹½ÁÁ±•È¹5•ÍÍ…•ÍÙ•É…”¸Å4ğQ¡”…Ù•É…”É…Ñ”½˜µ•ÍÍ…•ÌÁÉ½•ÍÍ•Á•È½ÁÁ±•ÈÍ•ÉÙ•È¥¹ÍÑ…¹”ğ]½É¬èQ¡É½Õ¡ÁÕĞğ)ğ¡•…±Ñ¡İ…Ñ ¹MåÍ±½É…¥¸¹‘…ÁÑ•È¹	¥¹‘¥¹ÍÙ•É…”¸Õ4ğQ¡”…Ù•É…”¹Õµ‰•È½˜ÍåÍ±½œ‘É…¥¸‰¥¹‘¥¹ÌÁ•ÈMåÍ±½œ‘…ÁÑ•Èğ=Ñ¡•Èğ)ğ¡•…±Ñ¡İ…Ñ ¹MåÍ±½É…¥¸¹‘…ÁÑ•È¹1½ÍÍI…Ñ”¸Å4ğQ¡”±½ÍÌÉ…Ñ”½˜µ•ÍÍ…•Ì½¥¹œÑ¡É½Õ Ñ¡”MåÍ±½œ‘…ÁÑ•È½¸Ñ¡•¥Èİ…äÑ¼„ÍåÍ±½œ‘É…¥¸ğ]½É¬èÉÉ½Èğ)ğ¡•…±Ñ¡İ…Ñ ¹MåÍ±½É…¥¸¹I1@¹1½ÍÍI…Ñ”¸Å4ğQ¡”±½ÍÌÉ…Ñ”½˜µ•ÍÍ…•Ì½¥¹œÑ¡É½Õ Ñ¡”I•Ù•ÉÍ”1½œAÉ½áä½¸Ñ¡•¥Èİ…äÑ¼„ÍåÍ±½œ‘É…¥¸ğ]½É¬èÉÉ½Èğ((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è¡•…±Ñ¡İ…Ñ ¹¥É•¡½Í”¹1½ÍÍI…Ñ”¸Å4)Q¡¥Ìµ•ÑÉ¥ŒÉ•Á½ÉÑÌÑ¡”É…Ñ”½˜µ•ÍÍ…”±½ÍÌ…Ìµ•ÍÍ…•ÌÁ…ÍÌÑ¡É½Õ Ñ¡”½ÁÁ±•ÈÍ•ÉÙ•ÉÌ‰ä½µÁ…É¥¹œÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¡”½ÁÁ±•ÉÌÉ••¥Ù”İ¥Ñ Ñ¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¡…ĞÑ¡”½ÁÁ±•ÉÌ‘É½Àİ¥Ñ¡½ÕĞ™½Éİ…É‘¥¹œ¸€¡%¸½Ñ¡•Èİ½É‘Ì°Ñ¡”µ•ÑÉ¥Œ¥Ì‘•É¥Ù•™É½´±½É•…Ñ½È¹‘½ÁÁ±•È¹‘É½ÁÁ•‘€€¼±½É•…Ñ½È¹‘½ÁÁ±•È¹¥¹É•ÍÍ€¸¤AÍÕ•ÍÑÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±½˜€À¸ÀÀÔ°½È€À¸ÔÁ•É•¹Ğ°…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜€À¸ÀÄ°½È€ÄÁ•É•¹Ğ¸()%¹É•…Í•Ì¥¸Ñ¡”É…Ñ”½˜µ•ÍÍ…”±½ÍÌ…¸¥¹‘¥…Ñ”Ñ¡…Ğå½Ô¹••Ñ¼Í…±”ÕÀå½ÕÈ½ÁÁ±•È½ÈQÉ…™™¥Œ½¹ÑÉ½±±•È¥¹ÍÑ…¹•ÌÑ¼ÁÉ½•ÍÌÑ¡”µ•ÍÍ…•Ì•™™•Ñ¥Ù•±ä¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è¡•…±Ñ¡İ…Ñ ¹½ÁÁ±•È¹5•ÍÍ…•ÍÙ•É…”¸Å4)Q¡¥Ìµ•ÑÉ¥ŒÁÉ½Ù¥‘•ÌÑ¡”…Ù•É…”¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¡…Ğ•… ½ÁÁ±•È¥¹ÍÑ…¹”¥ÌÁÉ½•ÍÍ¥¹œÁ•Èµ¥¹ÕÑ”¸%Ğ¥Ì‘•É¥Ù•‰ä‘¥Ù¥‘¥¹œÑ¡”ÍÕ´½˜…±°µ•ÍÍ…•Ì¥¹•ÍÑ•‰ä…±°½ÁÁ±•ÉÌ‰äÑ¡”¹Õµ‰•È½˜½ÁÁ±•ÈÍ•ÉÙ•ÉÌ¸Q¡¥Ìµ•ÑÉ¥Œ¥¹‘¥…Ñ•Ìİ¡•Ñ¡•Èå½ÕÈ‘•Á±½åµ•¹Ğ¹••‘Ìµ½É”½ÁÁ±•ÈÍ•ÉÙ•ÉÌÑ¼¡…¹‘±”Ñ¡”¹Õµ‰•È½˜±½œµ•ÍÍ…•Ì‰•¥¹œÁÉ½•ÍÍ•¸½ÉÉ•±…Ñ¥¹œÑ¡¥Ìİ¥Ñ ¡•…±Ñ¡İ…Ñ ¹¥É•¡½Í”¹1½ÍÍI…Ñ”¸Å5€…¸É•Ù•…°İ¡•Ñ¡•Èå½ÕÈ½ÁÁ±•ÉÌ…É”‰•½µ¥¹œÍ…ÑÕÉ…Ñ•…¹…É”‘É½ÁÁ¥¹œ‘…Ñ„¸()AÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œ…¸…±•ÉĞÑ¡É•Í¡½±½˜€ÄØ°ÀÀÀµ•ÍÍ…•ÌÁ•ÈÍ•½¹°½È½¹”µ¥±±¥½¸µ•ÍÍ…•ÌÁ•Èµ¥¹ÕÑ”¸ĞÑ¡¥ÌÁ½¥¹Ğ°å½Ôİ¥±°±¥­•±ä¹••Ñ¼Í…±”Ñ¡”¹Õµ‰•È½˜½ÁÁ±•È¥¹ÍÑ…¹•ÌÑ¼…Ù½¥µ•ÍÍ…”±½ÍÌ¸((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è¡•…±Ñ¡İ…Ñ ¹MåÍ±½É…¥¸¹‘…ÁÑ•È¹	¥¹‘¥¹ÍÙ•É…”¸Õ4)Q¡¥Ìµ•ÑÉ¥ŒÉ•ÁÉ•Í•¹ÑÌÑ¡”¹Õµ‰•È½˜ÍåÍ±½œ‘É…¥¹Ì‘¥Ù¥‘•‰äÑ¡”¹Õµ‰•È½˜MåÍ±½œ‘…ÁÑ•ÉÌ€¡¤¹”¸°˜µÍåÍ±½œµ‘É…¥¸¹Í¡•‘Õ±•È¹‘É…¥¹Í€€¼˜µÍåÍ±½œµ‘É…¥¸¹Í¡•‘Õ±•È¹…‘…ÁÑ•ÉÍ€¤¸()… MåÍ±½œ‘…ÁÑ•È…¸ÍÕÁÁ½ÉĞ…É½Õ¹€ÈÔÀ‘É…¥¸‰¥¹‘¥¹Ì¸Q¡”µ•ÑÉ¥Œ˜µÍåÍ±½œµ‘É…¥¸¹Í¡•‘Õ±•È¹‘É…¥¹Í€ÁÉ½Ù¥‘•ÌÑ¡”…É•…Ñ”¹Õµ‰•È½˜‘É…¥¸‰¥¹‘¥¹Ì…É½ÍÌ…±°MåÍ±½œ‘…ÁÑ•ÉÌ¸¥Ù¥‘¥¹œÑ¡…Ğ…É½ÍÌÑ¡”¹Õµ‰•È½˜…Ù…¥±…‰±”MåÍ±½œ‘…ÁÑ•ÉÌ±•…É±ä¥¹‘¥…Ñ•Ìİ¡•Ñ¡•ÈÑ¡”‘•Á±½åµ•¹Ğ¹••‘Ìµ½É”…‘…ÁÑ•ÉÌÑ¼ÍÕÁÁ½ÉĞÑ¡”¹Õµ‰•È½˜‘É…¥¸‰¥¹‘¥¹Ì¸€((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è¡•…±Ñ¡İ…Ñ ¹MåÍ±½É…¥¸¹I1@¹1½ÍÍI…Ñ”¸Å4…¹¡•…±Ñ¡İ…Ñ ¹MåÍ±½É…¥¸¹‘…ÁÑ•È¹1½ÍÍI…Ñ”¸Å4€)Q¡•Í”µ•ÑÉ¥Ì…É”‘•É¥Ù•‰ä±½É•…Ñ½È¹É±À¹‘É½ÁÁ•‘€€¼±½É•…Ñ½È¹É±À¹¥¹É•ÍÍ€…¹˜µÍåÍ±½œµ‘É…¥¸¹…‘…ÁÑ•È¹‘É½ÁÁ•‘€€¼˜µÍåÍ±½œµ‘É…¥¸¹…‘…ÁÑ•È¹¥¹É•ÍÍ€°É•ÍÁ•Ñ¥Ù•±ä¸()Q¡¥ÌÁ…¥È½˜µ•ÑÉ¥Ì…É”…ÁÁ±¥…‰±”½¹±äÑ¼…ÁÁ±¥…Ñ¥½¸±½Ì•¹•É…Ñ•‰ä…ÁÁ±¥…Ñ¥½¹ÌÑ¡…Ğ¡…Ù”„ÍåÍ±½œ‘É…¥¸‰½Õ¹Ñ¼Ñ¡•´…¹‘¼¹½ĞÉ•™±•ĞÑ¡”ÍÑ…ÑÕÌ½˜Ñ¡”¥É•¡½Í”¸Q¡•Í”‘•É¥Ù•µ•ÑÉ¥ÌÁÉ½Ù¥‘”¥¹Í¥¡Ğ¥¹Ñ¼Ñ¡”Á•É•¹Ñ…”½˜µ•ÍÍ…”±½ÍÌÁ•Èµ¥¹ÕÑ”…ĞÑ¡”I•Ù•ÉÍ”1½œAÉ½áä±…å•È…¹…ĞÑ¡”MåÍ±½œ‘…ÁÑ•È±…å•È¸%¸‰½Ñ …Í•Ì°AÍÕ•ÍÑÌÍ•ÑÑ¥¹œ„İ…É¹¥¹œÑ¡É•Í¡½±…Ğ„É…Ñ”½˜€À¸ÀÄ°½È€ÄÁ•É•¹Ğ°…¹„É¥Ñ¥…°…±•ÉĞÑ¡É•Í¡½±½˜€À¸Ä°½È€ÄÀÁ•É•¹Ğ¸()Q¡”I•Ù•ÉÍ”1½œAÉ½áä¥Ì½±½…Ñ•İ¥Ñ Ñ¡”QÉ…™™¥Œ½¹ÑÉ½±±•È°Í¼¥¹É•…Í¥¹œ±•Ù•±Ì½˜±½œ±½ÍÌ…ĞÑ¡”I1@µ¥¡ĞÁ½¥¹ĞÑ¼„¹••Ñ¼Í…±”ÕÀQÉ…™™¥Œ½¹ÑÉ½±±•È¥¹ÍÑ…¹•Ì¸()!¥ É…Ñ•Ì½˜ÍåÍ±½œ‘É…¥¸±½œ±½ÍÌ…¸¥¹‘¥…Ñ”Á•É™½Éµ…¹”ÁÉ½‰±•µÌİ¥Ñ å½ÕÈÍåÍ±½œÍ•ÉÙ•È½È•¹‘Á½¥¹Ğ¸((ŒŒŒ‘‘¥Ñ¥½¹…°A!•…±Ñ¡İ…Ñ µ•ÑÉ¥Ì)Í¥‘”™É½´Ñ¡”µ•ÑÉ¥Ìµ•¹Ñ¥½¹•…‰½Ù”°Ñ¡•É”…É”Í•Ù•É…°…‘‘¥Ñ¥½¹…°A!•…±Ñ¡İ…Ñ µ•ÑÉ¥ÌÑ¡…Ğ…¸‰”¡•±Á™Õ°™½Èµ½¹¥Ñ½É¥¹œ½Ù•É…±°‘•Á±½åµ•¹Ğ¡•…±Ñ ¸()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒÑåÁ•t ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğ¡•…±Ñ¡İ…Ñ ¹¡•…±Ñ ¹¡•¬¹±¥½µµ…¹¹pñ½µµ…¹‘pøğMÑ…ÑÕÌ½˜A¥Ù½Ñ…°±½Õ½Õ¹‘Éä1$½µµ…¹¡•…±Ñ Ñ•ÍÑÌìÉ•ÑÕÉ¹Ì€Å€™½ÈÁ…ÍÌ°€Á€™½È™…¥°°€´Å€™½È‘¥¹½ĞÉÕ¸İ¡•¸…ÁÁ±¥…‰±”ğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ)ğ¡•…±Ñ¡İ…Ñ ¹¡•…±Ñ ¹¡•¬¹=ÁÍ5…¸¹…Ù…¥±…‰±”ğMÑ…ÑÕÌ½˜=ÁÌ5…¹…•È…Ù…¥±…‰¥±¥ÑäÑ•ÍĞìÉ•ÑÕÉ¹Ì€Å€™½ÈÁ…ÍÌ°€Á€™½È™…¥°ğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ)ğ¡•…±Ñ¡İ…Ñ ¹¡•…±Ñ ¹¡•¬¹…¹…ÉåÁÀ¹…Ù…¥±…‰±”ğMÑ…ÑÕÌ½˜ÁÁÌ5…¹…•È¡•…±Ñ ¡•¬ìÉ•ÑÕÉ¹Ì€Å€™½ÈÁ…ÍÌ°€Á€™½È™…¥°ğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ)ğ¡•…±Ñ¡İ…Ñ ¹¡•…±Ñ ¹¡•¬¹‰½Í ¹‘¥É•Ñ½È¹ÍÕ•ÍÌğMÑ…ÑÕÌ½˜	=M ¥É•Ñ½È¡•…±Ñ ¡•¬ìÉ•ÑÕÉ¹Ì€Å€™½ÈÁ…ÍÌ°€Á€™½È™…¥°ğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è¡•…±Ñ¡İ…Ñ ¹¡•…±Ñ ¹¡•¬¹±¥½µµ…¹¹pñ½µµ…¹‘pø)Q¡”µ½ÍĞ¥µÁ½ÉÑ…¹Ğ…Ù…¥±…‰±”¡•…±Ñ ¡•­Ì™½È˜1$½µµ…¹‘Ì…É”™½È±½¥¹€°ÁÕÍ¡€°ÍÑ…ÉÑ€°±½Í€°ÍÑ½Á€°…¹‘•±•Ñ•€¸Q¡•Í”ÍÑ…ÑÕÌ¡•­ÌÁ•É™½É´Íµ½­”Ñ•ÍÑÌÑ¼½¹™¥É´İ¡•Ñ¡•ÈÑ¡•Í”™Õ¹‘…µ•¹Ñ…°½µµ…¹‘Ì…É”İ½É­¥¹œÍ¼Ñ¡…Ğ‘•Ù•±½Á•ÉÌ…¸ÁÕÍ …¹µ…¹…”…ÁÁ±¥…Ñ¥½¹Ì¸¹ä™…¥±•¡•…±Ñ ¡•­Ì™½ÈÑ¡•Í”½µµ…¹‘Ì¥¹‘¥…Ñ”Ñ¡…Ğå½ÕÈÁ±…Ñ™½É´¥Ìµ¥ÍÍ¥¹œ­•ä™Õ¹Ñ¥½¹…±¥ÑäÑ¡…Ğ¥Ì¹••‘•™½È¹½Éµ…°½Á•É…Ñ¥½¹Ì¸((ŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è¡•…±Ñ¡İ…Ñ ¹¡•…±Ñ ¹¡•¬¹=ÁÍ5…¸¹…Ù…¥±…‰±”°¡•…±Ñ¡İ…Ñ ¹¡•…±Ñ ¹¡•¬¹…¹…ÉåÁÀ¹…Ù…¥±…‰±”°¡•…±Ñ¡İ…Ñ ¹¡•…±Ñ ¹¡•¬¹‰½Í ¹‘¥É•Ñ½È¹ÍÕ•ÍÌ)Q¡•Í”¡•­ÌÑ•ÍĞÑ¡”¡•…±Ñ …¹…Ù…¥±…‰¥±¥Ñä½˜‘¥™™•É•¹ĞA½µÁ½¹•¹ÑÌèÑ¡”m=ÁÌ5…¹…•Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”½ÁÌµµ…¹…•È¤°Ñ¡”mAÁÁÌ5…¹…•ÉumÁ˜µ…ÁÁÌµµ…¹…•Ét€¡½È„‘¥™™•É•¹Ğ…ÁÁ±¥…Ñ¥½¸¥˜Ñ¡”½Á•É…Ñ½È¡…Ì¡…¹•Ñ¡”‘•™…Õ±Ğ…¹…Éä…ÁÁ±¥…Ñ¥½¸Í•ÑÑ¥¹œ¤°…¹Ñ¡”m	=M ¥É•Ñ½Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”‰½Í µ…¹µÑ¡”µ½ÁÌµµ…¹…•È¤¸€()	ä‘•™…Õ±Ğ°Ñ¡”ÁÁÌ5…¹…•È…ÑÌ…Ì„…¹…Éä…ÁÀ¸Q¡…Ğ¥Ì°!•…±Ñ¡İ…Ñ ÅÕ•É¥•Ìİ¡•Ñ¡•È¥Ğ¥ÌÕÀ…¹ÉÕ¹¹¥¹œ…Ì„Ñ•ÍĞ½˜½Ù•É…±°…ÁÁ±¥…Ñ¥½¸¡•…±Ñ ¸%ÑÌ™…¥±ÕÉ”…¸‰”…¸¥¹‘¥…Ñ½ÈÑ¡…Ğ½Ñ¡•ÈÍÑ…•…ÁÁ±¥…Ñ¥½¹Ìµ¥¡Ğ‰”•¹½Õ¹Ñ•É¥¹œÁ•É™½Éµ…¹”½È…Ù…¥±…‰¥±¥ÑäÁÉ½‰±•µÌ¸((ŒŒ•ÑÑ¥¹œÍÑ…ÉÑ•İ¥Ñ Aµ½¹¥Ñ½É¥¹œ()A¥Ù½Ñ…°±½Õ½Õ¹‘Éä¥Ì„½µÁ±•à°‘¥ÍÑÉ¥‰ÕÑ•ÍåÍÑ•´Ñ¡…Ğ…‰ÍÑÉ…ÑÌÕ¹‘•É±å¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”Í¼Ñ¡…Ğ‘•Ù•±½Á•ÉÌ…¸™½ÕÌ½¸½‘”¸%ĞÁÉ½Ù¥‘•Ì„Í…±…‰±”…¹¡¥¡±ä…Ù…¥±…‰±”Á±…Ñ™½É´™½È‘•Ù•±½Á•ÉÌÑ¼Í¥µÁ±äÁÕÍ …¸…ÁÁ±¥…Ñ¥½¸…¹¡…Ù”¥Ğ‰”…Ù…¥±…‰±”İ¥Ñ¡¥¸µ¥¹ÕÑ•Ì¸()%¸Ñ¡¥ÌÁ½ÍĞ°İ”¡…Ù”Ñ…­•¸„±½½¬…ĞÍ•Ù•É…°­•äµ•ÑÉ¥ÌÑ¡…Ğ…¸¥Ù”A½Á•É…Ñ½ÉÌ¥¹Í¥¡Ğ¥¹Ñ¼Ñ¡”ÕÑ¥±¥é…Ñ¥½¸…¹¡•…±Ñ ½˜Ñ¡•¥È½Ù•É…±°‘•Á±½åµ•¹Ğ°…Ìİ•±°…ÌÑ¡”ÍÑ…ÑÕÌ½˜Ñ¡”½µÁ½¹•¹ÑÌÑ¡…Ğµ…­”ÕÀÑ¡…Ğ‘•Á±½åµ•¹Ğ¸Q¡•Í”µ•ÑÉ¥Ì…É”¥¹Ù…±Õ…‰±”™½ÈÑÉ…­¥¹œ¹½Ğ½¹±äÕÉÉ•¹ĞÁ•É™½Éµ…¹”‰ÕĞ…±Í¼™½È‘•Ñ•Éµ¥¹¥¹œİ¡•Ñ¡•È¥Ğ¥Ì¹••ÍÍ…ÉäÑ¼Í…±”å½ÕÈ‘•Á±½åµ•¹ĞÑ¼•¹ÍÕÉ”ÍÕ™™¥¥•¹ĞÉ•Í½ÕÉ•Ì…É”…Ù…¥±…‰±”™½È‘•Ù•±½Á•ÉÌ…¹•¹ÕÍ•ÉÌ¸()%¸mÁ…ÉĞÑ¡É••umÁ…ÉĞµÑ¡É••t½˜Ñ¡¥ÌÍ•É¥•Ì°İ”İ¥±°‘•µ½¹ÍÑÉ…Ñ”Í•Ù•É…°µ•Ñ¡½‘Ì½˜½±±•Ñ¥¹œAµ•ÑÉ¥Ì…¹±½Ì¸]”İ¥±°½Ù•È‰½Ñ ¡½ÜÑ¼Ñ…ÀÑ¡”¥É•¡½Í”ÍÑÉ•…´½˜‘•Á±½åµ•¹Ğµ•ÑÉ¥Ì…¹…ÁÁ±¥…Ñ¥½¸±½Ì°…¹¡½ÜÑ¼ÕÑ¥±¥é”„ÍåÍ±½œ‘É…¥¸Ñ¼Ù¥•Ü½µÁ½¹•¹ĞÍåÍÑ•´±½Ì¸((ŒŒ­¹½İ±•‘µ•¹ÑÌ()]”İ¥Í Ñ¼Ñ¡…¹¬µ‰•È±ÍÑ½¸°-…ÑÉ¥¹„	…­…Ì°5…ÑĞ¡½±¥¬°)…É•IÕ­±”°…¹Ñ¡”É•ÍĞ½˜Ñ¡”A¥Ù½Ñ…°±½Õ½Õ¹‘ÉäÑ•…´™½ÈÑ¡•¥ÈÑ•¡¹¥…°É•Ù¥•Ü…¹™••‘‰…¬™½ÈÑ¡¥ÌÍ•É¥•Ì¸()mÁ…ÉĞµ½¹•tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”)mÁ…ÉĞµÑ¡É••tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµÁ˜µ±½Ì)mÁ…ÉĞµ™½ÕÉtè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½Á˜µµ½¹¥Ñ½É¥¹œµİ¥Ñ µ‘…Ñ…‘½œ)m…Á…¥Ñäµµ…¹…•µ•¹Ñtè¡ÑÑÁÌè¼½½¹Ñ•¹Ğ¹Á¥Ù½Ñ…°¹¥¼½‰±½œ½­••Àµå½ÕÈµ…ÁÀµÁ±…Ñ™½É´µ¥¸µ„µ¡…ÁÁäµÍÑ…Ñ”µ…¸µ½Á•É…Ñ½ÉÌµÕ¥‘”µÑ¼µ…Á…¥Ñäµµ…¹…•µ•¹Ğµ½¸µÁ¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éä)mÁ˜µ¡•…±Ñ¡İ…Ñ¡tè¡ÑÑÀè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µ¡•…±Ñ¡İ…Ñ ½¥¹‘•à¹¡Ñµ°)mÁ•ÉÍ¥ÍÑ•¹Ğµ‘¥Í­Ítè¡ÑÑÁÌè¼½‰½Í ¹¥¼½‘½Ì½Á•ÉÍ¥ÍÑ•¹Ğµ‘¥Í­Ì¼)m™¥±”µ‘•ÍÉ¥ÁÑ½ÉÍtè¡ÑÑÁÌè¼½•¸¹İ¥­¥Á•‘¥„¹½Éœ½İ¥­¤½¥±•}‘•ÍÉ¥ÁÑ½È)m¡•…±Ñ¡İ…Ñ µ…Á¥tè¡ÑÑÀè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µ¡•…±Ñ¡İ…Ñ ½…Á¤½™É•”µ¡Õ¹­Ì¹¡Ñµ°)m±½É•…Ñ½Èµ…Á¥tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éä½±½É•…Ñ½Èµ…Á¤)mÁ˜µ…ÁÁÌµµ…¹…•Étè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½½¹Í½±”¼)mµ…àµ½¹Ñ…¥¹•ÉÍtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éä½…É‘•¸µÉÕ¹ŒµÉ•±•…Í”½‰±½ˆ½ØÄ¸ÄØ¸Ğ½©½‰Ì½…É‘•¸½ÍÁ•Œ0ÄĞØµ0ÄĞà)m™É•”µ¡Õ¹­Ítè¡ÑÑÀè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µ¡•…±Ñ¡İ…Ñ ½…Á¤½™É•”µ¡Õ¹­Ì¹¡Ñµ°)m˜µ±¥tè¡ÑÑÁÌè¼½‘½Ì¹ÉÕ¸¹Á¥Ù½Ñ…°¹¥¼½˜µ±¤¼

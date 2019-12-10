@@ -1,457 +1,1 @@
-So far in this series weâ€™ve [explored Pivotal Cloud Foundryâ€™s architecture][part-one] and looked at some of the [most important metrics for monitoring each PCF component][part-two]. In this post, weâ€™ll show you how you can view these metrics, as well as application and system logs, in order to monitor your PCF cluster and the applications running on it.
-
-## Logs and more logs
-Before diving in to how to collect them, itâ€™s important to understand the different types of monitoring data that are available from a PCF deployment. The following table breaks down these data types and how to access them:
-
-<table>
-<td><strong>Log message type</strong></td>
-<td><strong>Access method</strong></td>
-<tbody>
-<tr class="odd">
-<td><a href="#component-metrics">PCF component metrics</a></td>
-<td><a href="http://www.datadoghq.com/blog/pivotal-cloud-foundry-architecture#firehose">Firehose</a></td>
-<tr class="even">
-<td><a href="#application-logs">Application logs</a></td>
-<td>Firehose, Log Cache, or <a href="https://github.com/cloudfoundry/cf-syslog-drain-release">syslog drain</a>*</td>
-</tr>
-<tr class="odd">
-<td><a href="#syslog-collection">PCF component system logs</a></td>
-<td>syslog drain or component VMs</td>
-</tr>
-<tr>
-<td colspan="3"><em>* A syslog drain is an external service or endpoint that receives log messages in the syslog standard format.</em></td>
-</tr>
-</tbody>
-</table>
-
-In this post, we will cover ways to collect these types of data. We'll go over using:
-
-- Tools for [accessing the Firehose](#tapping-the-firehose)
-- PCF's [Log Cache](#log-cache)
-- [Syslog drains](#syslog-collection)
-
-For the metrics and logs available from the Firehose and Log Cache, remember that PCFâ€™s [Loggregator](/blog/pivotal-cloud-foundry-architecture#loggregator) system packages information using the [dropsonde protocol][dropsonde], in a process called â€œmarshalling.â€ Marshalling data into dropsonde involves categorizing messages into envelopes based on the event type (the type of monitoring data that a message represents), and wrapping each message with classifying metadata. As a result, all messages coming off the Firehose are standardized into the same format but carry different metadata that allows them to be decoded, or unmarshalled, into their respective data types downstream:
-
-| Loggregator event type | Dropsonde envelope | Description |
-| --- | --- | --- |
-| `Gauge` | `ValueMetric` | PCF Platform component metrics representing a value at a specific moment in time |
-| `Gauge` | `ContainerMetric` | Metrics tracking resource utilization for the [Garden containers](/blog/pivotal-cloud-foundry-architecture#diego) running applications |
-| `Counter` | `CounterEvent`| PCF Platform component metrics representing an incrementing counter |
-| `Timer` | `HttpStartStop` | Application log messages recording the lifecycle of HTTP requests |
-| `Log` | `LogMessage` | Application log messages written to `stderr` or `stdout` |
-
-The following is an example of a Firehose message from the [Firehose plugin](#firehose-plugin). You can see the dropsonde event type (`ContainerMetric`) as well as other metadata such as a timestamp and the name of the PCF component that emitted it (the cell Rep):
-
-```
-origin:"rep" eventType:ContainerMetric timestamp:1538745163443777235 deployment:"cf" job:"compute" index:"542240fa-abc2-4961-99ed-682977b62b9e" ip:"10.0.4.38" tags:<key:"source_id" value:"693c90af-a273-4c58-a053-b90fea4fa377" > containerMetric:<applicationId:"693c90af-a273-4c58-a053-b90fea4fa377" instanceIndex:0 cpuPercentage:0.30435965342458493 memoryBytes:429666304 diskBytes:244805632 memoryBytesQuota:1073741824 diskBytesQuota:1073741824 >  
-```
-
-### Component metrics
-Component metrics are, naturally enough, metrics that are emitted by the various PCF components. They are messages tagged as `ValueMetric`, `CounterEvent`, or `ContainerMetric` types. They cover any of the key metrics covered in [part two][part-two], including BOSH VM system metrics. So these types of messages would include, for example, data on [Gorouter](/blog/pivotal-cloud-foundry-architecture#gorouter) latency, or disk usage for your component VMs. Component metrics also include any metrics sent to Loggregator by add-on services deployed on your cluster, such as Redis or PCF Healthwatch. Note, however, that not all add-on services emit metrics.
-
-### Application logs
-Application logs are messages tagged as `HttpStartStop` or `LogMessage`. Application logs within PCF cover both log output from the application code itself, written to `stdout` or `stderr`, as well as logs produced by processes running on PCF components that are involved in running and managing the application. So application logs include, for example, [Cloud Controller](/blog/pivotal-cloud-foundry-architecture#cloud-controller) staging logs when an application is pushed, or Gorouter logs reporting HTTP requests for an application.
-
-### System logs
-Component system logs are logs related to a PCF componentâ€™s internal system processes. They are written to log files stored on the component VMs and are not collected by Loggregator, so they are not available from the Firehose. Instead, they are streamed from the components via rsyslog and can be accessed from a syslog drain.
-
-{{< img src="pcf-logs-loggregator-diagram-rev.png" caption="Overview of PCF's Loggregator system." alt="PCF's Loggregator system" popup="true" >}}
-
-## Tapping the Firehose
-
-In this section, we will cover several monitoring tools that pull information off the Firehose. These either use the [cf CLI][cf-cli]â€”the Cloud Foundry command line toolâ€”or are available as add-on services that operators may [install][pcf-install-services] from [Pivotal Network][pivotal-network].
-
-Different monitoring tools may provide access to different subsets of Firehose data, which might be of interest to different parties. Below, we will look at tools that are primarily for [operators](#pcf-monitoring-tools-for-operators) to track indicators of cluster health, and others that offer [developers](#pcf-monitoring-tools-for-developers) insight into the performance of their applications. We will also go over third-party [nozzles](#thirdparty-nozzles), which can provide more customized or specific monitoring solutions.
-
-### PCF monitoring tools for operators
-Operators are responsible for monitoring and maintaining the health and performance of the PCF cluster and ensuring that developers and end users are able to deploy and access applications. As such, the platform metrics covered in [part two][part-two] of this series are especially valuable to operators, who can access them using the following monitoring tools:
-
-- The [Firehose plugin](#firehose-plugin) for streaming messages from the Firehose on the command line
-- [PCF Healthwatch](#pcf-healthwatch) for viewing key platform metrics in a web UI
-
-#### Firehose plugin
-The [Firehose plugin][firehose-plugin] provides access from the cf CLI to the full Firehose data stream. Install the plugin by first adding the plugin repository (you can skip this step if you have already added the repository to install other plugins):
-
-    cf add-plugin-repo CF-Community http://plugins.cloudfoundry.org
-
-Then, install the Firehose plugin:
-
-    cf install-plugin â€œFirehose Pluginâ€ -r CF-Community
-
-Once the Firehose plugin is installed, it offers two commands to tail Firehose data:
-
-- `cf nozzle` streams all available Firehose messages. 
-- `cf app-nozzle <app-name>` streams application logs and container metrics related to a specific application.
-
-As even a few seconds of output will demonstrate, filtering the Firehose stream is necessary for making any sense out of the data. Both commands will prompt you for what type of message to stream, using the event types outlined [above](#logs-and-more-logs) (e.g., ValueMetric, LogMessage) as filters. Or, you can include a `--filter <message-type>` flag. For example, the following will stream all the ValueMetric messages from your deployment:
-
-    cf nozzle --filter ValueMetric
-
-Without selecting one of these types, both `cf nozzle` and `cf app-nozzle` will stream all log messages combined:
-
-```
-
-origin:"cc" eventType:ValueMetric timestamp:1532457529878708929 deployment:"cf" job:"control" index:"8af621a8-a93e-4d0a-999f-51326a485a4c" ip:"10.0.4.23" valueMetric:<name:"requests.outstanding" value:1 unit:"counter" >  
-
-origin:"gorouter" eventType:ValueMetric timestamp:1532457529924320083 deployment:"cf" job:"router" index:"b2862fac-7e42-493c-9592-8756281e568b" ip:"10.0.4.26" valueMetric:<name:"latency" value:52 unit:"ms" >  
-
-origin:"gorouter" eventType:HttpStartStop timestamp:1532457529924022817 deployment:"cf" job:"router" index:"b2862fac-7e42-493c-9592-8756281e568b" ip:"10.0.4.26" httpStartStop:<startTimestamp:1532457529871991963 stopTimestamp:1532457529924009068 requestId:<low:4920818481314641058 high:12858159354617128031 > peerType:Client method:GET uri:"http://api.sys.pcf.cf-test.com/v2/apps/0d06d7ed-1ab2-4ccc-9145-9c863667241f" remoteAddress:"130.211.1.101:59009" userAgent:"datadog-firehose-nozzle" statusCode:200 contentLength:15690 instanceId:"e05f390c-ed39-4283-73d0-11c561b7e485" forwarded:"35.237.192.216" forwarded:"35.186.213.131" forwarded:"130.211.1.101" >  
-
-origin:"gorouter" eventType:ValueMetric timestamp:1532457529927120531 deployment:"cf" job:"router" index:"b2862fac-7e42-493c-9592-8756281e568b" ip:"10.0.4.26" valueMetric:<name:"route_lookup_time" value:2375 unit:"ns" >  
-
-origin:"garden-linux" eventType:ValueMetric timestamp:1532457529944474048 deployment:"cf" job:"compute" index:"8e254030-3a9e-4abf-969e-5d89ecdb3762" ip:"10.0.4.24" valueMetric:<name:"numGoRoutines" value:395 unit:"count" >  
-```
-
-All messages displayed by the Firehose plugin share a similar structure. Each message includes the following:
-
-- the name of the originating component
-- the type of event, or envelope
-- a UNIX timestamp
-- the name of the deployment
-- the labeled BOSH job of the originating component
-- the BOSH-provided globally unique identifier (GUID) of the originating component
-- the internal IP address of the originating component
-- the contents, such as the log message or the metric name, value, and unit
-
-#### PCF Healthwatch
-PCF Healthwatch is an add-on from Pivotal that ingests and transforms data from the Firehose to surface a predefined set of platform metrics and status checks. The data displayed in the Healthwatch UIâ€”accessible at **healthwatch.sys.\<your-domain\>.com**â€”are key performance indicators (KPIs) that Pivotal has identified as particularly important for monitoring deployment health.
-
-In addition to visualizing these KPIs, Healthwatch uses them to calculate [additional metrics](/blog/pivotal-cloud-foundry-metrics#additional-pcf-healthwatch-metrics) that make monitoring PCF deployment health and performance easier. For example, Healthwatch uses standard deployment metrics to generate a new metric, `healthwatch.Firehose.LossRate.1M`, which provides an at-a-glance indicator of any Firehose log loss on the platform.
-
-[Installing Healthwatch][install-healthwatch] deploys a number of applications that read data from the Firehose, serve a Healthwatch UI, and run periodic health and uptime checks on various componentsâ€”including the BOSH director and the Ops Manager. Healthwatch also performs smoke tests on several cf CLI commands to ensure they are working properly.
-
-{{< img src="pcf-logs-healthwatch-main.png" caption="Main PCF Healthwatch dashboard." alt="PCF Healthwatch dashboard" wide="true" >}}
-
-PCF Healthwatch generates several dashboards to visualize KPIs. The main dashboard displays core KPIs that have the biggest potential impact on end users, developers, and the platform itself. For example, Healthwatch displays the number of crashed application instances as a core KPI for end users.
-
-Additional dashboards have more detailed breakdowns of health checks and expanded selections of performance metrics grouped by function. They include dashboards for routing, the [User Account and Authentication server](/blog/pivotal-cloud-foundry-architecture#user-account-and-authentication), logging performance, and others.
-
-Unlike CLI tools like `cf nozzle`, which donâ€™t persist any of the data they display, Healthwatch stores its metrics and status checks in a database, where they are accessible over a 25-hour retention window. PCF Healthwatch also forwards its metrics on to the Firehose stream, tagged with `origin:"healthwatch"`. Those metrics are then accessible via the [Firehose plugin](#firehose-plugin) or third-party nozzles.
-
-{{< img src="pcf-logs-healthwatch-logging.png" caption="PCF Healthwatch's logging performance dashboard." alt="PCF Healthwatch logging dashboard" wide="true" >}}
-
-Operators can use the PCF Healthwatch API to create [alert configurations][healthwatch-alerts] for Healthwatch metrics. These configurations instruct Healthwatch to trigger an alert when a given metric's value crosses set thresholds. When used in conjunction with another Pivotal add-on, [PCF Event Alerts][event-alerts], itâ€™s possible for operators to be alerted by automated emails, Slack messages, or webhooks when an alert is triggered.
-
-Each alert configuration contains the originating component, the name of the metric, and threshold values for critical and warning alerts. It also requires a threshold type, which specifies whether Healthwatch should trigger the alert if the metric value is above (`UPPER`), below (`LOWER`), or not equal to (`EQUALITY`) the provided threshold values.
-
-To view or create an alert configuration, operators can submit GET or POST requests to their Healthwatch API endpoint. These requests query, create, or change alert settings using [Spring Expression Language][spring] statements.
-
-Below is an example of a request to view an alert configuration for the metric [`locket.ActiveLocks`](/blog/pivotal-cloud-foundry-metrics#metric-to-alert-on-activelocks). Note that you need to include an [authorization token][uaa-tokens] for a UAA client with `healthwatch.read` for GET requests, or `healthwatch.admin` for GET and POST.
-
-```
-curl -G "healthwatch-api.sys.pcf.cf-deploy.com/v1/alert-configurations" \
-    --data-urlencode "q=origin == 'locket' and name == 'activelocks'" \
-    -H "Authorization: Bearer <token>"
-```
-
-The query returns a response showing that the alert is configured to trigger when the metric's value is not equal to 4:
-
-```
-[{"query":"origin == 'locket' and name == 'ActiveLocks'","threshold":{"critical":4.0,"type":"EQUALITY"}}]
-```
-
-Healthwatch includes a number of [out-of-the-box alert configurations][healthwatch-alerts] that you can use or modify on a global or per-deployment basis. Then, you can select one or more of the alert configurations as [targets][event-targets] for notifications via email, Slack, or custom webhooks, so that the appropriate people or teams are notified whenever an alert is triggered.
-
-### PCF monitoring tools for developers
-One of the primary selling points of Pivotal Cloud Foundry is that it lets developers focus on their applications without worrying about the underlying infrastructure. Unlike the operator-centric tools outlined above, which focus on platform metrics, the following monitoring tools and services give developers access to application logs as well as metrics more specifically related to application access and container resources:
-
-- [`cf logs`](#cf-logs) for streaming logs from an application
-- [PCF Metrics](#pcf-metrics) for monitoring application performance and resource utilization
-- [PCF Metrics Forwarder](#pcf-metrics-forwarder) for gathering custom metrics from an application
-
-#### `cf logs`
-
-The `cf logs` command is a Cloud Foundryâ€“native command line utility. The `cf logs <app-name>` command functions similarly to the [Firehose plugin](#firehose-plugin) command `cf app-nozzle <app-name>` in that it streams application logs for a specific application. Unlike the Firehose plugin, though, `cf logs` does not include container metrics.
-
-Below is example output from the command `cf logs pcf-app`, which tails logs from a Spring Boot application called **pcf-app**:
-
-```
-2018-07-23T19:21:12.79+0000 [RTR/0] OUT pcf-app.apps.pcf.cf-domain.com - [2018-07-23T19:21:12.590+0000] "GET /define?word=test HTTP/1.1" 200 0 171 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36" "136.275.2.566:61827" "10.0.6.56:61232" x_forwarded_for:"38.124.226.010, 37.226.214.171, 130.235.2.529" x_forwarded_proto:"https" vcap_request_id:"02cl32ee-3093-466c-5687-232z61954dc9" response_time:0.202286235 app_id:"b4fdb2ff-e0c9-45b3-9aa2-25a6041389eb" app_index:"1" x_b3_traceid:"8be948839f6fad8b" x_b3_spanid:"8be948839f6fad8b" x_b3_parentspanid:"-"
-
-2018-07-23T19:21:12.79+0000 [RTR/0] OUT
-
-2018-07-23T19:21:12.63+0000 [APP/PROC/WEB/1] OUT 2018-07-23 19:21:12.634  INFO 16 --- [nio-8080-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-
-2018-07-23T19:21:12.63+0000 [APP/PROC/WEB/1] OUT 2018-07-23 19:21:12.634  INFO 16 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-
-2018-07-23T19:21:12.66+0000 [APP/PROC/WEB/1] OUT 2018-07-23 19:21:12.663  INFO 16 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
-. . .
-```
-
-Each application log line streamed by `cf logs` has four core parts. The first is a **timestamp** that Loggregator prepends to the message regardless of whether the log message includes its own timestamp. 
-
-The second part is a code identifying the **component** that the application is interacting with. The code can be any one of the following:
-
-- `API` for the Cloud Controller
-- `STG` for staging functions run by Diego
-- `RTR` for the Gorouter
-- `LGR` for Loggregator
-- `APP` for logs that the application code emits (including any custom logs)
-- `SSH` for logs related to a user SSH-ing into an application container
-- `CELL` for Diego cell logs about the containers and applications it is running
-
-Because a cluster may have more than one instance of a given component, the component code will also include which instance, starting with index 0, emitted the message.
-
-The third part of each log message is `OUT` or `ERR` based on whether the log came from `stdout` or `stderr`. The final part is the **log message** itself.
-
-So, in the example above, we can see that the first log message was emitted by the Gorouter, indicating that it is handling an HTTP GET request to the application. This is followed by a few log messages from the Spring Boot application itself indicating the initialization of the servlet.
-
-While `cf logs` will tail the log stream from an application, using the `--recent` flag provides a dump of the 100 or so most recent logs the application has emitted:
-
-    cf logs pcf-app --recent
-
-#### PCF Metrics
-Like Healthwatch, [PCF Metrics][pcf-metrics] is a Pivotal monitoring add-on that installs a series of applications and components that ingest data from the Firehose and provide visualizations of metrics and logs within a web UI. But whereas Healthwatch gives PCF operators a high-level overview of the deployment, PCF Metrics shows a specific set of metrics that focus on application performance and resource utilization. These include:
-
-- container metrics, showing container resource utilization
-- network metrics, reporting requests, response times, etc.
-- custom metrics programmatically emitted by applications 
-- app events related to instance starts, stops, crashes, etc.
-
-Along with these, PCF Metrics provides an application log stream and a [trace explorer][pcf-traces] that displays request traces. For instructions on installing PCF Metrics, [see its documentation][pcf-metrics-install].
-
-Once youâ€™ve selected an application to monitor, PCF Metrics loads a customizable dashboard that includes a set of default metric graphs as well as the log stream. You can add or remove charts to view other metrics and change the time frame to view historical information. (PCF Metrics retains data for up to two weeks.) You can visualize metrics aggregated across all application instances or on an individual instance.
-
-{{< img src="pcf-logs-pcf-metrics.png" caption="The main PCF Metrics dashboard." alt="Main PCF Metrics dashboard" wide="true" >}}
-
-#### PCF Metrics Forwarder
-A final PCF monitoring add-on is [Metrics Forwarder][pcf-metrics-forwarder]. Once [installed][metrics-forwarder-install], this service gives developers the ability to emit custom metrics from their applications and have them collected by Loggregator and streamed in the Firehose.
-
-When bound to an application, Metrics Forwarder creates a URL endpoint where developers can [`POST` metrics][metrics-forwarder-post] from their application. Metrics Forwarder packages these as [ValueMetrics](#logs-and-more-logs) and forwards them to Loggregator. They will then show up in the Firehose stream with `metrics_forwarder` as the originating component.
-
-### Third-party nozzles
-There are a number of nozzles available from the Pivotal Services Marketplace as [managed services][managed-services] that can be used with your deployment. Many of these are developed and maintained by various monitoring services or IaaS providers and serve to ingest Firehose messages into a specific platform for processing, visualization, and storage.
-
-Like the Pivotal add-ons discussed so far, operators can install services via the PCF Ops Manager. After downloading the service tile from [Pivotal Network][pivotal-network], operators upload the tile and any required BOSH stemcells into the Ops Manager, configure it, and deploy it to their cluster.
-
-## Log Cache
-Pivotal Cloud Foundry versions 2.2 and above include [Log Cache][log-cache]. Log Cache is a component colocated on the Doppler servers that duplicates and stores the information coming from Loggregator. Unlike the Firehose data stream, which is constantly cleared to make room for new messages, the Log Cache persists data from Loggregator so that it may be queried on demand. When enabled via the **Advanced Features** of the PAS tile in the Ops Manager, Log Cache will retain messages for 15 minutes, and will return up to 1,000 recent messages when a developer queries the cache.
-
-{{< img src="pcf-log-cache-rev.png" caption="Enable Log Cache from the PAS tile in the Ops Manager." alt="Enable PCF Log Cache" wide="true" >}}
-
-Operators and developers can access the Log Cache API either with the cf CLI plugin or via a RESTful interface, as outlined below:
-
-### Query the Log Cache using the cf CLI
-Once you install the [Log Cache plugin][log-cache-plugin], you can use the following cf CLI command to access your logs and metrics:
-
-    cf tail <source>
-
-In this case, `<source>` can be either an application's GUID or the name of a PCF component. For example, you can request PCF metrics for your Cloud Controller instances with the command:
-
-    cf tail cc
-
-This query would return a series of timestamped metrics like the following:
-
-```
-2018-10-02T13:43:26.87-0400 [cc] GAUGE requests.completed:1083365.000000 counter
-2018-10-02T13:43:26.87-0400 [cc] GAUGE http_status.2XX:1082898.000000 counter
-2018-10-02T13:43:26.87-0400 [cc] GAUGE requests.outstanding:1.000000 counter
-2018-10-02T13:43:26.88-0400 [cc] GAUGE requests.outstanding:0.000000 counter
-2018-10-02T13:43:26.88-0400 [cc] GAUGE requests.completed:1083366.000000 counter
-2018-10-02T13:43:26.88-0400 [cc] GAUGE http_status.2XX:1082899.000000 counter
-2018-10-02T13:43:26.89-0400 [cc] GAUGE requests.outstanding:1.000000 counter
-2018-10-02T13:43:26.90-0400 [cc] GAUGE requests.outstanding:0.000000 counter
-2018-10-02T13:43:26.90-0400 [cc] GAUGE requests.completed:1083367.000000 counter
-2018-10-02T13:43:26.90-0400 [cc] GAUGE http_status.2XX:1082900.000000 counter
-```
-
-By default, `cf tail` returns the 10 most recent messages. Each message includes the following:
-
-- A timestamp
-- The source application or component
-- The event or envelope type
-- The message contents
-
-There are several flags that you can include with `cf tail` to focus your queries:
-
-| Flag | Description |
-|--- |--- |
-| `--follow` | Tails the stream in real time |
-| `--json` | Outputs messages in JSON format |
-| `--lines` | Sets the number of messages to return (default is 10) |
-| `--start-time` | Sets the start time of messages to return (UNIX timestamp) |
-| `--end-time` | Sets the end time of messages to return (UNIX timestamp) |
-| `--envelope-type` | Returns only messages of the provided envelope type |
-| `--gauge-name` | Returns only messages of type `gauge` with the provided metric name |
-| `--counter-name` | Returns only messages of type `counter` with the provided metric name |
-
-### Query the Log Cache using the RESTful interface
-To query the Log Cache programmatically, you can make API calls to its RESTful endpoint:
-
-    https://log-cache.<your-domain>/v1/read/<source>
-
-As with the cf CLI, `<source>` can be either an application or component. You will need to provide a [UAA authorization token][uaa-tokens] that includes the `doppler.firehose` scope with each API request. You can also include optional query parameters to filter the response:
-
-| Parameter | Description |
-|--- |--- |
-| `start_time` | Sets the start time of messages to return (UNIX timestamp) |
-| `end_time` | Sets the end time of messages to return (UNIX timestamp) |
-| `envelope_types` | Returns only messages of the provided envelope type (may be called multiple times to return multiple types; note that `log` messages will be base64 encoded) |
-| `limit` | Maximum number of messages to return (limit is 1,000; default is 100) |
-
-Below is an example of a full request for `gauge` messages for an application instance (identified by its GUID) and a portion of the resulting JSON response:
-
-```
-curl -s -H "Authorization: Bearer <token>" 'https://log-cache.sys.pcf.cf-deploy.com/v1/read/693c90af-a273-4c58-a053-b90fea4fa377?envelope_types=gauge&limit=3' | jq .
-```
-
-```
-{
-  "envelopes": {
-    "batch": [
-      {
-        "timestamp": "1538588258669046676",
-        "source_id": "693c90af-a273-4c58-a053-b90fea4fa377",
-        "instance_id": "2",
-        "deprecated_tags": {},
-        "tags": {
-          "deployment": "cf",
-          "index": "4c38973d-450d-4135-9c76-98517919f760",
-          "ip": "10.0.4.37",
-          "job": "compute",
-          "origin": "rep"
-        },
-        "gauge": {
-          "metrics": {
-            "cpu": {
-              "unit": "percentage",
-              "value": 239.2020044624913
-            },
-            "disk": {
-              "unit": "bytes",
-              "value": 235376640
-            },
-            "disk_quota": {
-              "unit": "bytes",
-              "value": 1073741824
-            },
-            "memory": {
-              "unit": "bytes",
-              "value": 408858624
-            },
-            "memory_quota": {
-              "unit": "bytes",
-              "value": 1073741824
-            }
-          }
-        }
-      },
-```
-
-## Syslog collection
-The tools and approaches outlined above allow you to collect all of the data that is aggregated and streamed via PCFâ€™s Loggregator. Next, weâ€™ll look at how to access the other potential source of monitoring data: logs that are shipped via rsyslog out to a syslog drain.
-
-### Draining application logs
-By default, Loggregator aggregates [application logs](#application-logs) and includes them in the Firehose stream. As we have seen, however, unless you use a nozzle to pull messages off the Firehose and send them to a managed service that retains the data, these messages are immediately dropped as new messages come through. The exception to this is deployments with [Log Cache](#log-cache) enabled, which provides limited persistence.
-
-If an appropriate Firehose nozzle is not available, or if Log Cache is not enabled, another option for digesting and storing application logs is to convert them to the syslog protocol and stream them via rsyslog to an external service or dedicated server. This method lets you, for example, send application logs to a separate syslog server for archiving, or to a log management service that can ingest remote syslogs.
-
-Forwarding application logs this way requires creating and binding a [custom service instance][managing-service-instances] to your application. This service instructs your application to shuttle logs to the Syslog Adapter. The adapter converts them into the syslog standard format. They can then be streamed via rsyslog to the specified syslog endpoint, or syslog drain. The endpoint might be a managed service available on the Pivotal Marketplace, an external logging service that is not available via the marketplace, or a user-provided destination such as a standalone syslog server.
-
-There are two ways to create and bind a service to an application: via the Pivotal Apps Manager and the `cf cups` command. In both cases, you need to provide a name for the service and the endpoint URL, which is either the IP address and open TCP port of your external server, or the URL provided by the log management service. So, as demonstrated in the examples below, we can create a syslog drain service called **application-syslog-drain** that forwards application logs to a syslog server with an IP of 12.345.678.90 at port 514. We can then bind it to our application, **pcf-app**.
-
-#### Create a service using the Apps Manager
-The Apps Manager acts as a wrapper for several cf CLI commands. Its web UI can be accessed from the URL **apps.sys.\<your-domain\>.com**. From the Apps Manager, you can view resource metrics, usage statistics, and logs for applications running on the deployment. You can also use the Apps Manager to manage your services or create a new user-provided service instance and bind it to an application.
-
-{{< img src="pcf-logs-pcf-apps-manager-rev2.png" alt="PCF Apps Manager" wide="true" >}}
-
-After you create and bind the service to the application, you must restage the application with the cf CLI command:
-
-    cf restage pcf-app
-
-#### Create a service using the `cf cups` command
-The `cf create-user-provided-service` (or `cf cups`) CLI command provides the same functionality as creating a service in the Apps Manager, but it does not require the admin credentials needed to log on to the Apps Manager. The following command creates the same syslog drain service as in the Apps Manager example above, which forwards application logs to an external syslog server by indicating its IP address and open TCP port:
-
-    cf cups application-syslog-drain -l syslog://12.345.678.90:514
-
-Then, we can bind the drain service to our application, **pcf-app**:
-
-    cf bind-service pcf-app application-syslog-drain
-
-Finally, we restage the application to commit the changes:
-
-    cf restage pcf-app
-
-Note that you can also install the [CF Drain CLI plugin][cf-drain-plugin], which accomplishes the same task with a simpler workflow.
-
-Once the drain service has been bound to the application, you can view application logs on the external endpoint. For example, if your endpoint is a remote syslog server, your PCF application logs will appear in the server's **syslog** file.
-
-### System logs
-System logsâ€”that is, logs emitted by the internal processes of PCF componentsâ€”can be very useful for troubleshooting deployment issues. PCF operators using the Ops Manager can access and download component syslogs without any additional configuration.
-
-#### Download system logs
-After selecting a tile in the Ops Manager, the **Status** tab will show high-level system information about the VMs running that service. From there, you can download a .zip file of all system logs for a given VM.
-
-{{< img src="pcf-logs-opsman-status-rev2.png" caption="The Ops Manager Status page for a PCF Small Footprint PAS tile." alt="PCF Ops Manager status" wide="true" >}}
-
-Downloaded logs for a particular VM are segregated by job. The below example shows logs from the **Control** VM, which in a [PCF Small Footprint][small-footprint] deployment includes many services that a standard deployment would run in separate VMs. In this case we can see `stdout` system logs for the Auctioneer job.
-
-{{< img src="pcf-logs-system-logs.png" alt="PCF system logs" wide="true" >}}
-
-Downloading system logs from the Ops Manager is a simple way to retrieve troubleshooting data, but itâ€™s impossible to view real-time logs in this way, and you must manually select which componentâ€™s logs you want to download. Another option is to forward system logs to a separate server or endpoint, much like you can with [application logs](#draining-application-logs), as explained above.
-
-#### Stream system logs
-From the Pivotal Application Service tile in the Ops Manager, the **System Logging** screen allows you to use rsyslog to [forward component system logs][syslog-forwarder] to a syslog endpoint, such as a custom syslog server or an external log management service. To configure syslog forwarding, you'll need to provide the URL or IP address and the TCP port of the endpoint.
-
-{{< img src="pcf-logs-syslog-forwarding-rev.png" alt="PCF syslog forwarding" popup="true" >}}
-
-There are a few caveats to note about forwarding system logs from your cluster. First, unlike sending application logs via the Syslog Adapter, forwarding platform syslogs requires an endpoint that is configured to use the [RELP protocol][relp].
-
-Second, the steps described above will only forward system logs produced by your Pivotal Application Service tile. That is, log forwarding will only apply to the core VMs of your deployment and not to any additional managed service VMs you might have installed. These services may have their own syslog forwarding settings that you will have configure separately. For example, below is the syslog configuration tab for the PCF Healthwatch tile.
-
-{{< img src="pcf-logs-healthwatch-syslog.png" alt="PCF Healthwatch syslog forwarding" popup="true" >}}
-
-Once you apply the log forwarding settings, you will see system logs for your platform VMs and any additional configured service VMs flowing to your endpoint. Below is a sample of the log stream from a component VM collected on an external syslog server. The syslog standard format includes the IP address of the VM that forwarded the log, and each log line includes a tag to indicate the job that originated it:
-
-```
-Jul 30 09:31:41 10.0.4.23 route_registrar: [2018-07-30 13:31:41+0000] {"timestamp":"1532957501.300919056","source":"Route Registrar","message":"Route Registrar.Registered routes successfully","log_level":1,"data":{}}
-Jul 30 09:31:41 10.0.4.23 consul_agent:    2018/07/30 13:31:41 [WARN] agent: Check 'service:reverse-log-proxy' is now critical
-Jul 30 09:31:42 10.0.4.23 consul_agent:    2018/07/30 13:31:42 [WARN] agent: Check 'service:cloud-controller-ng' is now critical
-Jul 30 09:31:43 10.0.4.23 uaa: [2018-07-30 13:31:43.004] uaa - 15573 [pool-4-thread-1] .... DEBUG --- JdbcTemplate: Executing SQL query [select count(*) from users]
-Jul 30 09:31:43 10.0.4.23 uaa: [2018-07-30 13:31:43.005] uaa - 15573 [pool-4-thread-1] .... DEBUG --- JdbcTemplate: Executing SQL query [select count(*) from oauth_client_details]
-Jul 30 09:31:43 10.0.4.23 rsyslogd-2359: action 'action 17' resumed (module 'builtin:omfile') [v8.22.0 try http://www.rsyslog.com/e/2359 ]
-Jul 30 09:31:43 10.0.4.23 rsyslogd-2359: message repeated 9 times: [action 'action 17' resumed (module 'builtin:omfile') [v8.22.0 try http://www.rsyslog.com/e/2359 ]]
-Jul 30 09:31:43 10.0.4.23 rsyslogd-2007: action 'action 17' suspended, next retry is Mon Jul 30 13:32:13 2018 [v8.22.0 try http://www.rsyslog.com/e/2007 ]
-Jul 30 09:31:44 10.0.4.23 consul_agent:    2018/07/30 13:31:44 [WARN] agent: Check 'service:reverse-log-proxy' is now critical
-```
-
-## All in one place
-
-As weâ€™ve seen, a Pivotal Cloud Foundry cluster emits many different kinds of information, each of which can be vital to monitoring the health of the deployment and the applications running on it. In this post, weâ€™ve explored some of the ways that you can collect or access the various logs and metrics available in PCF.
-
-Datadogâ€™s Pivotal Cloud Foundry integration enables operators and developers to collect PCF deployment metrics and logs for use with Datadogâ€™s powerful visualization, analytics, and alerting features. In the [final part][part-four] of this series, weâ€™ll show you how you can integrate Pivotal Cloud Foundry with Datadog to aggregate the full range of deployment and application metrics, as well as application and system logs, so that you can get deep visibility into your entire deployment in a single platform.
-
-## Acknowledgments
-
-We wish to thank Amber Alston, Katrina Bakas, Matt Cholick, Jared Ruckle, and the rest of the Pivotal Cloud Foundry team for their technical review and feedback for this series.
-
-[part-one]: /blog/pivotal-cloud-foundry-architecture
-[part-two]: /blog/pivotal-cloud-foundry-metrics
-[part-four]: /blog/pcf-monitoring-with-datadog
-[cf-cli]: https://docs.run.pivotal.io/cf-cli
-[pivotal-network]: https://network.pivotal.io/
-[log-cache-plugin]: https://github.com/cloudfoundry/log-cache-cli
-[dropsonde]: https://github.com/cloudfoundry/dropsonde-protocol/tree/master/events
-[pcf-install-services]: https://docs.pivotal.io/pivotalcf/customizing/add-delete.html
-[nozzles]: https://docs.pivotal.io/tiledev/nozzle.html
-[firehose-plugin]: https://github.com/cloudfoundry-community/firehose-plugin
-[healthwatch-alerts]: http://docs.pivotal.io/pcf-healthwatch/api/alerts.html
-[event-alerts]: http://docs.pivotal.io/event-alerts/index.html
-[spring]: https://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/expressions.html
-[event-targets]: http://docs.pivotal.io/event-alerts/using.html
-[log-cache]: https://docs.pivotal.io/pivotalcf/opsguide/logging-config-opsman.html#log-cache
-[install-healthwatch]: https://docs.pivotal.io/pcf-healthwatch/installing.html
-[healthwatch-alerts]: https://docs.pivotal.io/pcf-healthwatch/api/alerts.html#defaults
-[pcf-metrics]: http://docs.pivotal.io/pcf-metrics/index.html
-[pcf-traces]: https://docs.pivotal.io/pcf-metrics/using.html#trace
-[pcf-metrics-install]: https://docs.pivotal.io/pcf-metrics/installing.html
-[pcf-metrics-forwarder]: https://docs.pivotal.io/metrics-forwarder/index.html
-[metrics-forwarder-install]: https://docs.pivotal.io/metrics-forwarder/installing.html
-[metrics-forwarder-post]: https://docs.pivotal.io/metrics-forwarder/emitting.html#emitting-metrics
-[managed-services]: https://docs.pivotal.io/tiledev/managed.html
-[uaa-tokens]: https://docs.pivotal.io/pivotalcf/uaa/uaa-user-management.html
-[managing-service-instances]: https://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html
-[cf-drain-plugin]: https://github.com/cloudfoundry/cf-drain-cli
-[small-footprint]: https://docs.pivotal.io/pivotalcf/customizing/small-footprint.html
-[syslog-forwarder]: https://docs.pivotal.io/pivotalcf/opsguide/logging-config-opsman.html#syslog-forward
-[relp]: https://blog.g3rt.nl/remote-logging-rsyslog-relp.html#configure-the-server
+m½±±•Ñ¥¹œA¥Ù½Ñ…°±½Õ½Õ¹‘Éä±½Ì…¹µ•ÑÉ¥Ì(()M¼™…È¥¸Ñ¡¥ÌÍ•É¥•Ìİ—ŠeÙ”m•áÁ±½É•A¥Ù½Ñ…°±½Õ½Õ¹‘ÉçŠeÌ…É¡¥Ñ•ÑÕÉ•umÁ…ÉĞµ½¹•t…¹±½½­•…ĞÍ½µ”½˜Ñ¡”mµ½ÍĞ¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥Ì™½Èµ½¹¥Ñ½É¥¹œ•… A½µÁ½¹•¹ÑumÁ…ÉĞµÑİ½t¸%¸Ñ¡¥ÌÁ½ÍĞ°İ—Še±°Í¡½Üå½Ô¡½Üå½Ô…¸Ù¥•ÜÑ¡•Í”µ•ÑÉ¥Ì°…Ìİ•±°…Ì…ÁÁ±¥…Ñ¥½¸…¹ÍåÍÑ•´±½Ì°¥¸½É‘•ÈÑ¼µ½¹¥Ñ½Èå½ÕÈA±ÕÍÑ•È…¹Ñ¡”…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ½¸¥Ğ¸((ŒŒ1½Ì…¹µ½É”±½Ì)	•™½É”‘¥Ù¥¹œ¥¸Ñ¼¡½ÜÑ¼½±±•ĞÑ¡•´°¥ÓŠeÌ¥µÁ½ÉÑ…¹ĞÑ¼Õ¹‘•ÉÍÑ…¹Ñ¡”‘¥™™•É•¹ĞÑåÁ•Ì½˜µ½¹¥Ñ½É¥¹œ‘…Ñ„Ñ¡…Ğ…É”…Ù…¥±…‰±”™É½´„A‘•Á±½åµ•¹Ğ¸Q¡”™½±±½İ¥¹œÑ…‰±”‰É•…­Ì‘½İ¸Ñ¡•Í”‘…Ñ„ÑåÁ•Ì…¹¡½ÜÑ¼…•ÍÌÑ¡•´è((ñÑ…‰±”ø(ñÑøñÍÑÉ½¹œù1½œµ•ÍÍ…”ÑåÁ”ğ½ÍÑÉ½¹œøğ½Ñø(ñÑøñÍÑÉ½¹œù•ÍÌµ•Ñ¡½ğ½ÍÑÉ½¹œøğ½Ñø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑøñ„¡É•˜ôˆ½µÁ½¹•¹Ğµµ•ÑÉ¥ÌˆùA½µÁ½¹•¹Ğµ•ÑÉ¥Ìğ½„øğ½Ñø(ñÑøñ„¡É•˜ô‰¡ÑÑÀè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”™¥É•¡½Í”ˆù¥É•¡½Í”ğ½„øğ½Ñø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑøñ„¡É•˜ôˆ…ÁÁ±¥…Ñ¥½¸µ±½ÌˆùÁÁ±¥…Ñ¥½¸±½Ìğ½„øğ½Ñø(ñÑù¥É•¡½Í”°1½œ…¡”°½È€ñ„¡É•˜ô‰¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éä½˜µÍåÍ±½œµ‘É…¥¸µÉ•±•…Í”ˆùÍåÍ±½œ‘É…¥¸ğ½„ø¨ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑøñ„¡É•˜ôˆÍåÍ±½œµ½±±•Ñ¥½¸ˆùA½µÁ½¹•¹ĞÍåÍÑ•´±½Ìğ½„øğ½Ñø(ñÑùÍåÍ±½œ‘É…¥¸½È½µÁ½¹•¹ĞY5Ìğ½Ñø(ğ½ÑÈø(ñÑÈø(ñÑ½±ÍÁ…¸ôˆÌˆøñ•´ø¨ÍåÍ±½œ‘É…¥¸¥Ì…¸•áÑ•É¹…°Í•ÉÙ¥”½È•¹‘Á½¥¹ĞÑ¡…ĞÉ••¥Ù•Ì±½œµ•ÍÍ…•Ì¥¸Ñ¡”ÍåÍ±½œÍÑ…¹‘…É™½Éµ…Ğ¸ğ½•´øğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø()%¸Ñ¡¥ÌÁ½ÍĞ°İ”İ¥±°½Ù•Èİ…åÌÑ¼½±±•ĞÑ¡•Í”ÑåÁ•Ì½˜‘…Ñ„¸]”±°¼½Ù•ÈÕÍ¥¹œè((´Q½½±Ì™½Èm…•ÍÍ¥¹œÑ¡”¥É•¡½Í•t Ñ…ÁÁ¥¹œµÑ¡”µ™¥É•¡½Í”¤(´AÌm1½œ…¡•t ±½œµ…¡”¤(´mMåÍ±½œ‘É…¥¹Ít ÍåÍ±½œµ½±±•Ñ¥½¸¤()½ÈÑ¡”µ•ÑÉ¥Ì…¹±½Ì…Ù…¥±…‰±”™É½´Ñ¡”¥É•¡½Í”…¹1½œ…¡”°É•µ•µ‰•ÈÑ¡…ĞAŠeÌm1½É•…Ñ½Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”±½É•…Ñ½È¤ÍåÍÑ•´Á…­…•Ì¥¹™½Éµ…Ñ¥½¸ÕÍ¥¹œÑ¡”m‘É½ÁÍ½¹‘”ÁÉ½Ñ½½±um‘É½ÁÍ½¹‘•t°¥¸„ÁÉ½•ÍÌ…±±•ƒŠqµ…ÉÍ¡…±±¥¹œ»Št5…ÉÍ¡…±±¥¹œ‘…Ñ„¥¹Ñ¼‘É½ÁÍ½¹‘”¥¹Ù½±Ù•Ì…Ñ•½É¥é¥¹œµ•ÍÍ…•Ì¥¹Ñ¼•¹Ù•±½Á•Ì‰…Í•½¸Ñ¡”•Ù•¹ĞÑåÁ”€¡Ñ¡”ÑåÁ”½˜µ½¹¥Ñ½É¥¹œ‘…Ñ„Ñ¡…Ğ„µ•ÍÍ…”É•ÁÉ•Í•¹ÑÌ¤°…¹İÉ…ÁÁ¥¹œ•… µ•ÍÍ…”İ¥Ñ ±…ÍÍ¥™å¥¹œµ•Ñ…‘…Ñ„¸Ì„É•ÍÕ±Ğ°…±°µ•ÍÍ…•Ì½µ¥¹œ½™˜Ñ¡”¥É•¡½Í”…É”ÍÑ…¹‘…É‘¥é•¥¹Ñ¼Ñ¡”Í…µ”™½Éµ…Ğ‰ÕĞ…ÉÉä‘¥™™•É•¹Ğµ•Ñ…‘…Ñ„Ñ¡…Ğ…±±½İÌÑ¡•´Ñ¼‰”‘•½‘•°½ÈÕ¹µ…ÉÍ¡…±±•°¥¹Ñ¼Ñ¡•¥ÈÉ•ÍÁ•Ñ¥Ù”‘…Ñ„ÑåÁ•Ì‘½İ¹ÍÑÉ•…´è()ğ1½É•…Ñ½È•Ù•¹ĞÑåÁ”ğÉ½ÁÍ½¹‘”•¹Ù•±½Á”ğ•ÍÉ¥ÁÑ¥½¸ğ)ğ€´´´ğ€´´´ğ€´´´ğ)ğ…Õ•€ğY…±Õ•5•ÑÉ¥€ğAA±…Ñ™½É´½µÁ½¹•¹Ğµ•ÑÉ¥ÌÉ•ÁÉ•Í•¹Ñ¥¹œ„Ù…±Õ”…Ğ„ÍÁ•¥™¥Œµ½µ•¹Ğ¥¸Ñ¥µ”ğ)ğ…Õ•€ğ½¹Ñ…¥¹•É5•ÑÉ¥€ğ5•ÑÉ¥ÌÑÉ…­¥¹œÉ•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸™½ÈÑ¡”m…É‘•¸½¹Ñ…¥¹•ÉÍt ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”‘¥•¼¤ÉÕ¹¹¥¹œ…ÁÁ±¥…Ñ¥½¹Ìğ)ğ½Õ¹Ñ•É€ğ½Õ¹Ñ•ÉÙ•¹ÑğAA±…Ñ™½É´½µÁ½¹•¹Ğµ•ÑÉ¥ÌÉ•ÁÉ•Í•¹Ñ¥¹œ…¸¥¹É•µ•¹Ñ¥¹œ½Õ¹Ñ•Èğ)ğQ¥µ•É€ğ!ÑÑÁMÑ…ÉÑMÑ½Á€ğÁÁ±¥…Ñ¥½¸±½œµ•ÍÍ…•ÌÉ•½É‘¥¹œÑ¡”±¥™•å±”½˜!QQ@É•ÅÕ•ÍÑÌğ)ğ1½€ğ1½5•ÍÍ…•€ğÁÁ±¥…Ñ¥½¸±½œµ•ÍÍ…•ÌİÉ¥ÑÑ•¸Ñ¼ÍÑ‘•ÉÉ€½ÈÍÑ‘½ÕÑ€ğ()Q¡”™½±±½İ¥¹œ¥Ì…¸•á…µÁ±”½˜„¥É•¡½Í”µ•ÍÍ…”™É½´Ñ¡”m¥É•¡½Í”Á±Õ¥¹t ™¥É•¡½Í”µÁ±Õ¥¸¤¸e½Ô…¸Í•”Ñ¡”‘É½ÁÍ½¹‘”•Ù•¹ĞÑåÁ”€¡½¹Ñ…¥¹•É5•ÑÉ¥€¤…Ìİ•±°…Ì½Ñ¡•Èµ•Ñ…‘…Ñ„ÍÕ …Ì„Ñ¥µ•ÍÑ…µÀ…¹Ñ¡”¹…µ”½˜Ñ¡”A½µÁ½¹•¹ĞÑ¡…Ğ•µ¥ÑÑ•¥Ğ€¡Ñ¡”•±°I•À¤è()€)½É¥¥¸è‰É•Àˆ•Ù•¹ÑQåÁ”é½¹Ñ…¥¹•É5•ÑÉ¥ŒÑ¥µ•ÍÑ…µÀèÄÔÌàÜĞÔÄØÌĞĞÌÜÜÜÈÌÔ‘•Á±½åµ•¹Ğè‰˜ˆ©½ˆè‰½µÁÕÑ”ˆ¥¹‘•àèˆÔĞÈÈĞÁ™„µ…‰ŒÈ´ĞäØÄ´äå•´ØàÈäÜİˆØÉˆå”ˆ¥ÀèˆÄÀ¸À¸Ğ¸ÌàˆÑ…Ìèñ­•äè‰Í½ÕÉ•}¥ˆÙ…±Õ”èˆØäÍŒäÁ…˜µ„ÈÜÌ´ÑŒÔàµ„ÀÔÌµˆäÁ™•„Ñ™„ÌÜÜˆ€ø½¹Ñ…¥¹•É5•ÑÉ¥Œèñ…ÁÁ±¥…Ñ¥½¹%èˆØäÍŒäÁ…˜µ„ÈÜÌ´ÑŒÔàµ„ÀÔÌµˆäÁ™•„Ñ™„ÌÜÜˆ¥¹ÍÑ…¹•%¹‘•àèÀÁÕA•É•¹Ñ…”èÀ¸ÌÀĞÌÔäØÔÌĞÈĞÔàĞäÌµ•µ½Éå	åÑ•ÌèĞÈäØØØÌÀĞ‘¥Í­	åÑ•ÌèÈĞĞàÀÔØÌÈµ•µ½Éå	åÑ•ÍEÕ½Ñ„èÄÀÜÌÜĞÄàÈĞ‘¥Í­	åÑ•ÍEÕ½Ñ„èÄÀÜÌÜĞÄàÈĞ€ø€€)€((ŒŒŒ½µÁ½¹•¹Ğµ•ÑÉ¥Ì)½µÁ½¹•¹Ğµ•ÑÉ¥Ì…É”°¹…ÑÕÉ…±±ä•¹½Õ °µ•ÑÉ¥ÌÑ¡…Ğ…É”•µ¥ÑÑ•‰äÑ¡”Ù…É¥½ÕÌA½µÁ½¹•¹ÑÌ¸Q¡•ä…É”µ•ÍÍ…•ÌÑ…•…ÌY…±Õ•5•ÑÉ¥€°½Õ¹Ñ•ÉÙ•¹Ñ€°½È½¹Ñ…¥¹•É5•ÑÉ¥€ÑåÁ•Ì¸Q¡•ä½Ù•È…¹ä½˜Ñ¡”­•äµ•ÑÉ¥Ì½Ù•É•¥¸mÁ…ÉĞÑİ½umÁ…ÉĞµÑİ½t°¥¹±Õ‘¥¹œ	=M Y4ÍåÍÑ•´µ•ÑÉ¥Ì¸M¼Ñ¡•Í”ÑåÁ•Ì½˜µ•ÍÍ…•Ìİ½Õ±¥¹±Õ‘”°™½È•á…µÁ±”°‘…Ñ„½¸m½É½ÕÑ•Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”½É½ÕÑ•È¤±…Ñ•¹ä°½È‘¥Í¬ÕÍ…”™½Èå½ÕÈ½µÁ½¹•¹ĞY5Ì¸½µÁ½¹•¹Ğµ•ÑÉ¥Ì…±Í¼¥¹±Õ‘”…¹äµ•ÑÉ¥ÌÍ•¹ĞÑ¼1½É•…Ñ½È‰ä…‘µ½¸Í•ÉÙ¥•Ì‘•Á±½å•½¸å½ÕÈ±ÕÍÑ•È°ÍÕ …ÌI•‘¥Ì½ÈA!•…±Ñ¡İ…Ñ ¸9½Ñ”°¡½İ•Ù•È°Ñ¡…Ğ¹½Ğ…±°…‘µ½¸Í•ÉÙ¥•Ì•µ¥Ğµ•ÑÉ¥Ì¸((ŒŒŒÁÁ±¥…Ñ¥½¸±½Ì)ÁÁ±¥…Ñ¥½¸±½Ì…É”µ•ÍÍ…•ÌÑ…•…Ì!ÑÑÁMÑ…ÉÑMÑ½Á€½È1½5•ÍÍ…•€¸ÁÁ±¥…Ñ¥½¸±½Ìİ¥Ñ¡¥¸A½Ù•È‰½Ñ ±½œ½ÕÑÁÕĞ™É½´Ñ¡”…ÁÁ±¥…Ñ¥½¸½‘”¥ÑÍ•±˜°İÉ¥ÑÑ•¸Ñ¼ÍÑ‘½ÕÑ€½ÈÍÑ‘•ÉÉ€°…Ìİ•±°…Ì±½ÌÁÉ½‘Õ•‰äÁÉ½•ÍÍ•ÌÉÕ¹¹¥¹œ½¸A½µÁ½¹•¹ÑÌÑ¡…Ğ…É”¥¹Ù½±Ù•¥¸ÉÕ¹¹¥¹œ…¹µ…¹…¥¹œÑ¡”…ÁÁ±¥…Ñ¥½¸¸M¼…ÁÁ±¥…Ñ¥½¸±½Ì¥¹±Õ‘”°™½È•á…µÁ±”°m±½Õ½¹ÑÉ½±±•Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”±½Õµ½¹ÑÉ½±±•È¤ÍÑ…¥¹œ±½Ìİ¡•¸…¸…ÁÁ±¥…Ñ¥½¸¥ÌÁÕÍ¡•°½È½É½ÕÑ•È±½ÌÉ•Á½ÉÑ¥¹œ!QQ@É•ÅÕ•ÍÑÌ™½È…¸…ÁÁ±¥…Ñ¥½¸¸((ŒŒŒMåÍÑ•´±½Ì)½µÁ½¹•¹ĞÍåÍÑ•´±½Ì…É”±½ÌÉ•±…Ñ•Ñ¼„A½µÁ½¹•¹ÓŠeÌ¥¹Ñ•É¹…°ÍåÍÑ•´ÁÉ½•ÍÍ•Ì¸Q¡•ä…É”İÉ¥ÑÑ•¸Ñ¼±½œ™¥±•ÌÍÑ½É•½¸Ñ¡”½µÁ½¹•¹ĞY5Ì…¹…É”¹½Ğ½±±•Ñ•‰ä1½É•…Ñ½È°Í¼Ñ¡•ä…É”¹½Ğ…Ù…¥±…‰±”™É½´Ñ¡”¥É•¡½Í”¸%¹ÍÑ•…°Ñ¡•ä…É”ÍÑÉ•…µ•™É½´Ñ¡”½µÁ½¹•¹ÑÌÙ¥„ÉÍåÍ±½œ…¹…¸‰”…•ÍÍ•™É½´„ÍåÍ±½œ‘É…¥¸¸()íìğ¥µœÍÉŒô‰Á˜µ±½Ìµ±½É•…Ñ½Èµ‘¥…É…´µÉ•Ø¹Á¹œˆ…ÁÑ¥½¸ô‰=Ù•ÉÙ¥•Ü½˜AÌ1½É•…Ñ½ÈÍåÍÑ•´¸ˆ…±Ğô‰AÌ1½É•…Ñ½ÈÍåÍÑ•´ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒQ…ÁÁ¥¹œÑ¡”¥É•¡½Í”()%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”İ¥±°½Ù•ÈÍ•Ù•É…°µ½¹¥Ñ½É¥¹œÑ½½±ÌÑ¡…ĞÁÕ±°¥¹™½Éµ…Ñ¥½¸½™˜Ñ¡”¥É•¡½Í”¸Q¡•Í”•¥Ñ¡•ÈÕÍ”Ñ¡”m˜1%um˜µ±¥wŠQÑ¡”±½Õ½Õ¹‘Éä½µµ…¹±¥¹”Ñ½½³ŠQ½È…É”…Ù…¥±…‰±”…Ì…‘µ½¸Í•ÉÙ¥•ÌÑ¡…Ğ½Á•É…Ñ½ÉÌµ…äm¥¹ÍÑ…±±umÁ˜µ¥¹ÍÑ…±°µÍ•ÉÙ¥•Ít™É½´mA¥Ù½Ñ…°9•Ñİ½É­umÁ¥Ù½Ñ…°µ¹•Ñİ½É­t¸()¥™™•É•¹Ğµ½¹¥Ñ½É¥¹œÑ½½±Ìµ…äÁÉ½Ù¥‘”…•ÍÌÑ¼‘¥™™•É•¹ĞÍÕ‰Í•ÑÌ½˜¥É•¡½Í”‘…Ñ„°İ¡¥ µ¥¡Ğ‰”½˜¥¹Ñ•É•ÍĞÑ¼‘¥™™•É•¹ĞÁ…ÉÑ¥•Ì¸	•±½Ü°İ”İ¥±°±½½¬…ĞÑ½½±ÌÑ¡…Ğ…É”ÁÉ¥µ…É¥±ä™½Èm½Á•É…Ñ½ÉÍt Á˜µµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ™½Èµ½Á•É…Ñ½ÉÌ¤Ñ¼ÑÉ…¬¥¹‘¥…Ñ½ÉÌ½˜±ÕÍÑ•È¡•…±Ñ °…¹½Ñ¡•ÉÌÑ¡…Ğ½™™•Èm‘•Ù•±½Á•ÉÍt Á˜µµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ™½Èµ‘•Ù•±½Á•ÉÌ¤¥¹Í¥¡Ğ¥¹Ñ¼Ñ¡”Á•É™½Éµ…¹”½˜Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹Ì¸]”İ¥±°…±Í¼¼½Ù•ÈÑ¡¥ÉµÁ…ÉÑäm¹½éé±•Ít Ñ¡¥É‘Á…ÉÑäµ¹½éé±•Ì¤°İ¡¥ …¸ÁÉ½Ù¥‘”µ½É”ÕÍÑ½µ¥é•½ÈÍÁ•¥™¥Œµ½¹¥Ñ½É¥¹œÍ½±ÕÑ¥½¹Ì¸((ŒŒŒAµ½¹¥Ñ½É¥¹œÑ½½±Ì™½È½Á•É…Ñ½ÉÌ)=Á•É…Ñ½ÉÌ…É”É•ÍÁ½¹Í¥‰±”™½Èµ½¹¥Ñ½É¥¹œ…¹µ…¥¹Ñ…¥¹¥¹œÑ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜Ñ¡”A±ÕÍÑ•È…¹•¹ÍÕÉ¥¹œÑ¡…Ğ‘•Ù•±½Á•ÉÌ…¹•¹ÕÍ•ÉÌ…É”…‰±”Ñ¼‘•Á±½ä…¹…•ÍÌ…ÁÁ±¥…Ñ¥½¹Ì¸ÌÍÕ °Ñ¡”Á±…Ñ™½É´µ•ÑÉ¥Ì½Ù•É•¥¸mÁ…ÉĞÑİ½umÁ…ÉĞµÑİ½t½˜Ñ¡¥ÌÍ•É¥•Ì…É”•ÍÁ•¥…±±äÙ…±Õ…‰±”Ñ¼½Á•É…Ñ½ÉÌ°İ¡¼…¸…•ÍÌÑ¡•´ÕÍ¥¹œÑ¡”™½±±½İ¥¹œµ½¹¥Ñ½É¥¹œÑ½½±Ìè((´Q¡”m¥É•¡½Í”Á±Õ¥¹t ™¥É•¡½Í”µÁ±Õ¥¸¤™½ÈÍÑÉ•…µ¥¹œµ•ÍÍ…•Ì™É½´Ñ¡”¥É•¡½Í”½¸Ñ¡”½µµ…¹±¥¹”(´mA!•…±Ñ¡İ…Ñ¡t Á˜µ¡•…±Ñ¡İ…Ñ ¤™½ÈÙ¥•İ¥¹œ­•äÁ±…Ñ™½É´µ•ÑÉ¥Ì¥¸„İ•ˆU$((ŒŒŒŒ¥É•¡½Í”Á±Õ¥¸)Q¡”m¥É•¡½Í”Á±Õ¥¹um™¥É•¡½Í”µÁ±Õ¥¹tÁÉ½Ù¥‘•Ì…•ÍÌ™É½´Ñ¡”˜1$Ñ¼Ñ¡”™Õ±°¥É•¡½Í”‘…Ñ„ÍÑÉ•…´¸%¹ÍÑ…±°Ñ¡”Á±Õ¥¸‰ä™¥ÉÍĞ…‘‘¥¹œÑ¡”Á±Õ¥¸É•Á½Í¥Ñ½Éä€¡å½Ô…¸Í­¥ÀÑ¡¥ÌÍÑ•À¥˜å½Ô¡…Ù”…±É•…‘ä…‘‘•Ñ¡”É•Á½Í¥Ñ½ÉäÑ¼¥¹ÍÑ…±°½Ñ¡•ÈÁ±Õ¥¹Ì¤è((€€€˜…‘µÁ±Õ¥¸µÉ•Á¼µ½µµÕ¹¥Ñä¡ÑÑÀè¼½Á±Õ¥¹Ì¹±½Õ‘™½Õ¹‘Éä¹½Éœ()Q¡•¸°¥¹ÍÑ…±°Ñ¡”¥É•¡½Í”Á±Õ¥¸è((€€€˜¥¹ÍÑ…±°µÁ±Õ¥¸ƒŠq¥É•¡½Í”A±Õ¥»Št€µÈµ½µµÕ¹¥Ñä()=¹”Ñ¡”¥É•¡½Í”Á±Õ¥¸¥Ì¥¹ÍÑ…±±•°¥Ğ½™™•ÉÌÑİ¼½µµ…¹‘ÌÑ¼Ñ…¥°¥É•¡½Í”‘…Ñ„è((´˜¹½éé±•€ÍÑÉ•…µÌ…±°…Ù…¥±…‰±”¥É•¡½Í”µ•ÍÍ…•Ì¸€(´˜…ÁÀµ¹½éé±”€ñ…ÁÀµ¹…µ”ù€ÍÑÉ•…µÌ…ÁÁ±¥…Ñ¥½¸±½Ì…¹½¹Ñ…¥¹•Èµ•ÑÉ¥ÌÉ•±…Ñ•Ñ¼„ÍÁ•¥™¥Œ…ÁÁ±¥…Ñ¥½¸¸()Ì•Ù•¸„™•ÜÍ•½¹‘Ì½˜½ÕÑÁÕĞİ¥±°‘•µ½¹ÍÑÉ…Ñ”°™¥±Ñ•É¥¹œÑ¡”¥É•¡½Í”ÍÑÉ•…´¥Ì¹••ÍÍ…Éä™½Èµ…­¥¹œ…¹äÍ•¹Í”½ÕĞ½˜Ñ¡”‘…Ñ„¸	½Ñ ½µµ…¹‘Ìİ¥±°ÁÉ½µÁĞå½Ô™½Èİ¡…ĞÑåÁ”½˜µ•ÍÍ…”Ñ¼ÍÑÉ•…´°ÕÍ¥¹œÑ¡”•Ù•¹ĞÑåÁ•Ì½ÕÑ±¥¹•m…‰½Ù•t ±½Ìµ…¹µµ½É”µ±½Ì¤€¡”¹œ¸°Y…±Õ•5•ÑÉ¥Œ°1½5•ÍÍ…”¤…Ì™¥±Ñ•ÉÌ¸=È°å½Ô…¸¥¹±Õ‘”„€´µ™¥±Ñ•È€ñµ•ÍÍ…”µÑåÁ”ù€™±…œ¸½È•á…µÁ±”°Ñ¡”™½±±½İ¥¹œİ¥±°ÍÑÉ•…´…±°Ñ¡”Y…±Õ•5•ÑÉ¥Œµ•ÍÍ…•Ì™É½´å½ÕÈ‘•Á±½åµ•¹Ğè((€€€˜¹½éé±”€´µ™¥±Ñ•ÈY…±Õ•5•ÑÉ¥Œ()]¥Ñ¡½ÕĞÍ•±•Ñ¥¹œ½¹”½˜Ñ¡•Í”ÑåÁ•Ì°‰½Ñ ˜¹½éé±•€…¹˜…ÁÀµ¹½éé±•€İ¥±°ÍÑÉ•…´…±°±½œµ•ÍÍ…•Ì½µ‰¥¹•è()€()½É¥¥¸è‰Œˆ•Ù•¹ÑQåÁ”éY…±Õ•5•ÑÉ¥ŒÑ¥µ•ÍÑ…µÀèÄÔÌÈĞÔÜÔÈäàÜàÜÀàäÈä‘•Á±½åµ•¹Ğè‰˜ˆ©½ˆè‰½¹ÑÉ½°ˆ¥¹‘•àèˆá…˜ØÈÅ„àµ„äÍ”´ÑÁ„´ääå˜´ÔÄÌÈÙ„ĞàÕ„ÑŒˆ¥ÀèˆÄÀ¸À¸Ğ¸ÈÌˆÙ…±Õ•5•ÑÉ¥Œèñ¹…µ”è‰É•ÅÕ•ÍÑÌ¹½ÕÑÍÑ…¹‘¥¹œˆÙ…±Õ”èÄÕ¹¥Ğè‰½Õ¹Ñ•Èˆ€ø€€()½É¥¥¸è‰½É½ÕÑ•Èˆ•Ù•¹ÑQåÁ”éY…±Õ•5•ÑÉ¥ŒÑ¥µ•ÍÑ…µÀèÄÔÌÈĞÔÜÔÈääÈĞÌÈÀÀàÌ‘•Á±½åµ•¹Ğè‰˜ˆ©½ˆè‰É½ÕÑ•Èˆ¥¹‘•àè‰ˆÈàØÉ™…Œ´İ”ĞÈ´ĞäÍŒ´äÔäÈ´àÜÔØÈàÅ”ÔØáˆˆ¥ÀèˆÄÀ¸À¸Ğ¸ÈØˆÙ…±Õ•5•ÑÉ¥Œèñ¹…µ”è‰±…Ñ•¹äˆÙ…±Õ”èÔÈÕ¹¥Ğè‰µÌˆ€ø€€()½É¥¥¸è‰½É½ÕÑ•Èˆ•Ù•¹ÑQåÁ”é!ÑÑÁMÑ…ÉÑMÑ½ÀÑ¥µ•ÍÑ…µÀèÄÔÌÈĞÔÜÔÈääÈĞÀÈÈàÄÜ‘•Á±½åµ•¹Ğè‰˜ˆ©½ˆè‰É½ÕÑ•Èˆ¥¹‘•àè‰ˆÈàØÉ™…Œ´İ”ĞÈ´ĞäÍŒ´äÔäÈ´àÜÔØÈàÅ”ÔØáˆˆ¥ÀèˆÄÀ¸À¸Ğ¸ÈØˆ¡ÑÑÁMÑ…ÉÑMÑ½ÀèñÍÑ…ÉÑQ¥µ•ÍÑ…µÀèÄÔÌÈĞÔÜÔÈäàÜÄääÄäØÌÍÑ½ÁQ¥µ•ÍÑ…µÀèÄÔÌÈĞÔÜÔÈääÈĞÀÀäÀØàÉ•ÅÕ•ÍÑ%èñ±½ÜèĞäÈÀàÄàĞàÄÌÄĞØĞÄÀÔà¡¥ èÄÈàÔàÄÔäÌÔĞØÄÜÄÈàÀÌÄ€øÁ••ÉQåÁ”é±¥•¹Ğµ•Ñ¡½éPÕÉ¤è‰¡ÑÑÀè¼½…Á¤¹ÍåÌ¹Á˜¹˜µÑ•ÍĞ¹½´½ØÈ½…ÁÁÌ¼ÁÀÙİ•´Å…ˆÈ´ÑŒ´äÄĞÔ´åŒàØÌØØÜÈĞÅ˜ˆÉ•µ½Ñ•‘‘É•ÍÌèˆÄÌÀ¸ÈÄÄ¸Ä¸ÄÀÄèÔäÀÀäˆÕÍ•É•¹Ğè‰‘…Ñ…‘½œµ™¥É•¡½Í”µ¹½éé±”ˆÍÑ…ÑÕÍ½‘”èÈÀÀ½¹Ñ•¹Ñ1•¹Ñ èÄÔØäÀ¥¹ÍÑ…¹•%è‰”ÀÕ˜ÌäÁŒµ•Ìä´ĞÈàÌ´ÜÍÀ´ÄÅŒÔØÅˆİ”ĞàÔˆ™½Éİ…É‘•èˆÌÔ¸ÈÌÜ¸ÄäÈ¸ÈÄØˆ™½Éİ…É‘•èˆÌÔ¸ÄàØ¸ÈÄÌ¸ÄÌÄˆ™½Éİ…É‘•èˆÄÌÀ¸ÈÄÄ¸Ä¸ÄÀÄˆ€ø€€()½É¥¥¸è‰½É½ÕÑ•Èˆ•Ù•¹ÑQåÁ”éY…±Õ•5•ÑÉ¥ŒÑ¥µ•ÍÑ…µÀèÄÔÌÈĞÔÜÔÈääÈÜÄÈÀÔÌÄ‘•Á±½åµ•¹Ğè‰˜ˆ©½ˆè‰É½ÕÑ•Èˆ¥¹‘•àè‰ˆÈàØÉ™…Œ´İ”ĞÈ´ĞäÍŒ´äÔäÈ´àÜÔØÈàÅ”ÔØáˆˆ¥ÀèˆÄÀ¸À¸Ğ¸ÈØˆÙ…±Õ•5•ÑÉ¥Œèñ¹…µ”è‰É½ÕÑ•}±½½­ÕÁ}Ñ¥µ”ˆÙ…±Õ”èÈÌÜÔÕ¹¥Ğè‰¹Ìˆ€ø€€()½É¥¥¸è‰…É‘•¸µ±¥¹Õàˆ•Ù•¹ÑQåÁ”éY…±Õ•5•ÑÉ¥ŒÑ¥µ•ÍÑ…µÀèÄÔÌÈĞÔÜÔÈääĞĞĞÜĞÀĞà‘•Á±½åµ•¹Ğè‰˜ˆ©½ˆè‰½µÁÕÑ”ˆ¥¹‘•àèˆá”ÈÔĞÀÌÀ´Í„å”´Ñ…‰˜´äØå”´Õàå•‘ˆÌÜØÈˆ¥ÀèˆÄÀ¸À¸Ğ¸ÈĞˆÙ…±Õ•5•ÑÉ¥Œèñ¹…µ”è‰¹Õµ½I½ÕÑ¥¹•ÌˆÙ…±Õ”èÌäÔÕ¹¥Ğè‰½Õ¹Ğˆ€ø€€)€()±°µ•ÍÍ…•Ì‘¥ÍÁ±…å•‰äÑ¡”¥É•¡½Í”Á±Õ¥¸Í¡…É”„Í¥µ¥±…ÈÍÑÉÕÑÕÉ”¸… µ•ÍÍ…”¥¹±Õ‘•ÌÑ¡”™½±±½İ¥¹œè((´Ñ¡”¹…µ”½˜Ñ¡”½É¥¥¹…Ñ¥¹œ½µÁ½¹•¹Ğ(´Ñ¡”ÑåÁ”½˜•Ù•¹Ğ°½È•¹Ù•±½Á”(´„U9%`Ñ¥µ•ÍÑ…µÀ(´Ñ¡”¹…µ”½˜Ñ¡”‘•Á±½åµ•¹Ğ(´Ñ¡”±…‰•±•	=M ©½ˆ½˜Ñ¡”½É¥¥¹…Ñ¥¹œ½µÁ½¹•¹Ğ(´Ñ¡”	=M µÁÉ½Ù¥‘•±½‰…±±äÕ¹¥ÅÕ”¥‘•¹Ñ¥™¥•È€¡U%¤½˜Ñ¡”½É¥¥¹…Ñ¥¹œ½µÁ½¹•¹Ğ(´Ñ¡”¥¹Ñ•É¹…°%@…‘‘É•ÍÌ½˜Ñ¡”½É¥¥¹…Ñ¥¹œ½µÁ½¹•¹Ğ(´Ñ¡”½¹Ñ•¹ÑÌ°ÍÕ …ÌÑ¡”±½œµ•ÍÍ…”½ÈÑ¡”µ•ÑÉ¥Œ¹…µ”°Ù…±Õ”°…¹Õ¹¥Ğ((ŒŒŒŒA!•…±Ñ¡İ…Ñ )A!•…±Ñ¡İ…Ñ ¥Ì…¸…‘µ½¸™É½´A¥Ù½Ñ…°Ñ¡…Ğ¥¹•ÍÑÌ…¹ÑÉ…¹Í™½ÉµÌ‘…Ñ„™É½´Ñ¡”¥É•¡½Í”Ñ¼ÍÕÉ™…”„ÁÉ•‘•™¥¹•Í•Ğ½˜Á±…Ñ™½É´µ•ÑÉ¥Ì…¹ÍÑ…ÑÕÌ¡•­Ì¸Q¡”‘…Ñ„‘¥ÍÁ±…å•¥¸Ñ¡”!•…±Ñ¡İ…Ñ U'ŠQ…•ÍÍ¥‰±”…Ğ€¨©¡•…±Ñ¡İ…Ñ ¹ÍåÌ¹pñå½ÕÈµ‘½µ…¥¹pø¹½´¨«ŠQ…É”­•äÁ•É™½Éµ…¹”¥¹‘¥…Ñ½ÉÌ€¡-A%Ì¤Ñ¡…ĞA¥Ù½Ñ…°¡…Ì¥‘•¹Ñ¥™¥•…ÌÁ…ÉÑ¥Õ±…É±ä¥µÁ½ÉÑ…¹Ğ™½Èµ½¹¥Ñ½É¥¹œ‘•Á±½åµ•¹Ğ¡•…±Ñ ¸()%¸…‘‘¥Ñ¥½¸Ñ¼Ù¥ÍÕ…±¥é¥¹œÑ¡•Í”-A%Ì°!•…±Ñ¡İ…Ñ ÕÍ•ÌÑ¡•´Ñ¼…±Õ±…Ñ”m…‘‘¥Ñ¥½¹…°µ•ÑÉ¥Ít ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµµ•ÑÉ¥Ì…‘‘¥Ñ¥½¹…°µÁ˜µ¡•…±Ñ¡İ…Ñ µµ•ÑÉ¥Ì¤Ñ¡…Ğµ…­”µ½¹¥Ñ½É¥¹œA‘•Á±½åµ•¹Ğ¡•…±Ñ …¹Á•É™½Éµ…¹”•…Í¥•È¸½È•á…µÁ±”°!•…±Ñ¡İ…Ñ ÕÍ•ÌÍÑ…¹‘…É‘•Á±½åµ•¹Ğµ•ÑÉ¥ÌÑ¼•¹•É…Ñ”„¹•Üµ•ÑÉ¥Œ°¡•…±Ñ¡İ…Ñ ¹¥É•¡½Í”¹1½ÍÍI…Ñ”¸Å5€°İ¡¥ ÁÉ½Ù¥‘•Ì…¸…Ğµ„µ±…¹”¥¹‘¥…Ñ½È½˜…¹ä¥É•¡½Í”±½œ±½ÍÌ½¸Ñ¡”Á±…Ñ™½É´¸()m%¹ÍÑ…±±¥¹œ!•…±Ñ¡İ…Ñ¡um¥¹ÍÑ…±°µ¡•…±Ñ¡İ…Ñ¡t‘•Á±½åÌ„¹Õµ‰•È½˜…ÁÁ±¥…Ñ¥½¹ÌÑ¡…ĞÉ•…‘…Ñ„™É½´Ñ¡”¥É•¡½Í”°Í•ÉÙ”„!•…±Ñ¡İ…Ñ U$°…¹ÉÕ¸Á•É¥½‘¥Œ¡•…±Ñ …¹ÕÁÑ¥µ”¡•­Ì½¸Ù…É¥½ÕÌ½µÁ½¹•¹ÑÏŠQ¥¹±Õ‘¥¹œÑ¡”	=M ‘¥É•Ñ½È…¹Ñ¡”=ÁÌ5…¹…•È¸!•…±Ñ¡İ…Ñ …±Í¼Á•É™½ÉµÌÍµ½­”Ñ•ÍÑÌ½¸Í•Ù•É…°˜1$½µµ…¹‘ÌÑ¼•¹ÍÕÉ”Ñ¡•ä…É”İ½É­¥¹œÁÉ½Á•É±ä¸()íìğ¥µœÍÉŒô‰Á˜µ±½Ìµ¡•…±Ñ¡İ…Ñ µµ…¥¸¹Á¹œˆ…ÁÑ¥½¸ô‰5…¥¸A!•…±Ñ¡İ…Ñ ‘…Í¡‰½…É¸ˆ…±Ğô‰A!•…±Ñ¡İ…Ñ ‘…Í¡‰½…Éˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()A!•…±Ñ¡İ…Ñ •¹•É…Ñ•ÌÍ•Ù•É…°‘…Í¡‰½…É‘ÌÑ¼Ù¥ÍÕ…±¥é”-A%Ì¸Q¡”µ…¥¸‘…Í¡‰½…É‘¥ÍÁ±…åÌ½É”-A%ÌÑ¡…Ğ¡…Ù”Ñ¡”‰¥•ÍĞÁ½Ñ•¹Ñ¥…°¥µÁ…Ğ½¸•¹ÕÍ•ÉÌ°‘•Ù•±½Á•ÉÌ°…¹Ñ¡”Á±…Ñ™½É´¥ÑÍ•±˜¸½È•á…µÁ±”°!•…±Ñ¡İ…Ñ ‘¥ÍÁ±…åÌÑ¡”¹Õµ‰•È½˜É…Í¡•…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•Ì…Ì„½É”-A$™½È•¹ÕÍ•ÉÌ¸()‘‘¥Ñ¥½¹…°‘…Í¡‰½…É‘Ì¡…Ù”µ½É”‘•Ñ…¥±•‰É•…­‘½İ¹Ì½˜¡•…±Ñ ¡•­Ì…¹•áÁ…¹‘•Í•±•Ñ¥½¹Ì½˜Á•É™½Éµ…¹”µ•ÑÉ¥ÌÉ½ÕÁ•‰ä™Õ¹Ñ¥½¸¸Q¡•ä¥¹±Õ‘”‘…Í¡‰½…É‘Ì™½ÈÉ½ÕÑ¥¹œ°Ñ¡”mUÍ•È½Õ¹Ğ…¹ÕÑ¡•¹Ñ¥…Ñ¥½¸Í•ÉÙ•Ét ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”ÕÍ•Èµ…½Õ¹Ğµ…¹µ…ÕÑ¡•¹Ñ¥…Ñ¥½¸¤°±½¥¹œÁ•É™½Éµ…¹”°…¹½Ñ¡•ÉÌ¸()U¹±¥­”1$Ñ½½±Ì±¥­”˜¹½éé±•€°İ¡¥ ‘½»ŠeĞÁ•ÉÍ¥ÍĞ…¹ä½˜Ñ¡”‘…Ñ„Ñ¡•ä‘¥ÍÁ±…ä°!•…±Ñ¡İ…Ñ ÍÑ½É•Ì¥ÑÌµ•ÑÉ¥Ì…¹ÍÑ…ÑÕÌ¡•­Ì¥¸„‘…Ñ…‰…Í”°İ¡•É”Ñ¡•ä…É”…•ÍÍ¥‰±”½Ù•È„€ÈÔµ¡½ÕÈÉ•Ñ•¹Ñ¥½¸İ¥¹‘½Ü¸A!•…±Ñ¡İ…Ñ …±Í¼™½Éİ…É‘Ì¥ÑÌµ•ÑÉ¥Ì½¸Ñ¼Ñ¡”¥É•¡½Í”ÍÑÉ•…´°Ñ…•İ¥Ñ ½É¥¥¸è‰¡•…±Ñ¡İ…Ñ ‰€¸Q¡½Í”µ•ÑÉ¥Ì…É”Ñ¡•¸…•ÍÍ¥‰±”Ù¥„Ñ¡”m¥É•¡½Í”Á±Õ¥¹t ™¥É•¡½Í”µÁ±Õ¥¸¤½ÈÑ¡¥ÉµÁ…ÉÑä¹½éé±•Ì¸()íìğ¥µœÍÉŒô‰Á˜µ±½Ìµ¡•…±Ñ¡İ…Ñ µ±½¥¹œ¹Á¹œˆ…ÁÑ¥½¸ô‰A!•…±Ñ¡İ…Ñ Ì±½¥¹œÁ•É™½Éµ…¹”‘…Í¡‰½…É¸ˆ…±Ğô‰A!•…±Ñ¡İ…Ñ ±½¥¹œ‘…Í¡‰½…Éˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()=Á•É…Ñ½ÉÌ…¸ÕÍ”Ñ¡”A!•…±Ñ¡İ…Ñ A$Ñ¼É•…Ñ”m…±•ÉĞ½¹™¥ÕÉ…Ñ¥½¹Íum¡•…±Ñ¡İ…Ñ µ…±•ÉÑÍt™½È!•…±Ñ¡İ…Ñ µ•ÑÉ¥Ì¸Q¡•Í”½¹™¥ÕÉ…Ñ¥½¹Ì¥¹ÍÑÉÕĞ!•…±Ñ¡İ…Ñ Ñ¼ÑÉ¥•È…¸…±•ÉĞİ¡•¸„¥Ù•¸µ•ÑÉ¥ŒÌÙ…±Õ”É½ÍÍ•ÌÍ•ĞÑ¡É•Í¡½±‘Ì¸]¡•¸ÕÍ•¥¸½¹©Õ¹Ñ¥½¸İ¥Ñ …¹½Ñ¡•ÈA¥Ù½Ñ…°…‘µ½¸°mAÙ•¹Ğ±•ÉÑÍum•Ù•¹Ğµ…±•ÉÑÍt°¥ÓŠeÌÁ½ÍÍ¥‰±”™½È½Á•É…Ñ½ÉÌÑ¼‰”…±•ÉÑ•‰ä…ÕÑ½µ…Ñ••µ…¥±Ì°M±…¬µ•ÍÍ…•Ì°½Èİ•‰¡½½­Ìİ¡•¸…¸…±•ÉĞ¥ÌÑÉ¥•É•¸()… …±•ÉĞ½¹™¥ÕÉ…Ñ¥½¸½¹Ñ…¥¹ÌÑ¡”½É¥¥¹…Ñ¥¹œ½µÁ½¹•¹Ğ°Ñ¡”¹…µ”½˜Ñ¡”µ•ÑÉ¥Œ°…¹Ñ¡É•Í¡½±Ù…±Õ•Ì™½ÈÉ¥Ñ¥…°…¹İ…É¹¥¹œ…±•ÉÑÌ¸%Ğ…±Í¼É•ÅÕ¥É•Ì„Ñ¡É•Í¡½±ÑåÁ”°İ¡¥ ÍÁ•¥™¥•Ìİ¡•Ñ¡•È!•…±Ñ¡İ…Ñ Í¡½Õ±ÑÉ¥•ÈÑ¡”…±•ÉĞ¥˜Ñ¡”µ•ÑÉ¥ŒÙ…±Õ”¥Ì…‰½Ù”€¡UAAI€¤°‰•±½Ü€¡1=]I€¤°½È¹½Ğ•ÅÕ…°Ñ¼€¡EU1%Qe€¤Ñ¡”ÁÉ½Ù¥‘•Ñ¡É•Í¡½±Ù…±Õ•Ì¸()Q¼Ù¥•Ü½ÈÉ•…Ñ”…¸…±•ÉĞ½¹™¥ÕÉ…Ñ¥½¸°½Á•É…Ñ½ÉÌ…¸ÍÕ‰µ¥ĞP½ÈA=MPÉ•ÅÕ•ÍÑÌÑ¼Ñ¡•¥È!•…±Ñ¡İ…Ñ A$•¹‘Á½¥¹Ğ¸Q¡•Í”É•ÅÕ•ÍÑÌÅÕ•Éä°É•…Ñ”°½È¡…¹”…±•ÉĞÍ•ÑÑ¥¹ÌÕÍ¥¹œmMÁÉ¥¹œáÁÉ•ÍÍ¥½¸1…¹Õ…•umÍÁÉ¥¹tÍÑ…Ñ•µ•¹ÑÌ¸()	•±½Ü¥Ì…¸•á…µÁ±”½˜„É•ÅÕ•ÍĞÑ¼Ù¥•Ü…¸…±•ÉĞ½¹™¥ÕÉ…Ñ¥½¸™½ÈÑ¡”µ•ÑÉ¥Œm±½­•Ğ¹Ñ¥Ù•1½­Ít ½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµµ•ÑÉ¥Ìµ•ÑÉ¥ŒµÑ¼µ…±•ÉĞµ½¸µ…Ñ¥Ù•±½­Ì¤¸9½Ñ”Ñ¡…Ğå½Ô¹••Ñ¼¥¹±Õ‘”…¸m…ÕÑ¡½É¥é…Ñ¥½¸Ñ½­•¹umÕ…„µÑ½­•¹Ít™½È„U±¥•¹Ğİ¥Ñ ¡•…±Ñ¡İ…Ñ ¹É•…‘€™½ÈPÉ•ÅÕ•ÍÑÌ°½È¡•…±Ñ¡İ…Ñ ¹…‘µ¥¹€™½ÈP…¹A=MP¸()€)ÕÉ°€µ€‰¡•…±Ñ¡İ…Ñ µ…Á¤¹ÍåÌ¹Á˜¹˜µ‘•Á±½ä¹½´½ØÄ½…±•ÉĞµ½¹™¥ÕÉ…Ñ¥½¹Ìˆp(€€€€´µ‘…Ñ„µÕÉ±•¹½‘”€‰Äõ½É¥¥¸€ôô€±½­•Ğœ…¹¹…µ”€ôô€…Ñ¥Ù•±½­Ìœˆp(€€€€µ €‰ÕÑ¡½É¥é…Ñ¥½¸è	•…É•È€ñÑ½­•¸øˆ)€()Q¡”ÅÕ•ÉäÉ•ÑÕÉ¹Ì„É•ÍÁ½¹Í”Í¡½İ¥¹œÑ¡…ĞÑ¡”…±•ÉĞ¥Ì½¹™¥ÕÉ•Ñ¼ÑÉ¥•Èİ¡•¸Ñ¡”µ•ÑÉ¥ŒÌÙ…±Õ”¥Ì¹½Ğ•ÅÕ…°Ñ¼€Ğè()€)mì‰ÅÕ•Éäˆè‰½É¥¥¸€ôô€±½­•Ğœ…¹¹…µ”€ôô€Ñ¥Ù•1½­Ìœˆ°‰Ñ¡É•Í¡½±ˆéì‰É¥Ñ¥…°ˆèĞ¸À°‰ÑåÁ”ˆè‰EU1%Qd‰õõt)€()!•…±Ñ¡İ…Ñ ¥¹±Õ‘•Ì„¹Õµ‰•È½˜m½ÕĞµ½˜µÑ¡”µ‰½à…±•ÉĞ½¹™¥ÕÉ…Ñ¥½¹Íum¡•…±Ñ¡İ…Ñ µ…±•ÉÑÍtÑ¡…Ğå½Ô…¸ÕÍ”½Èµ½‘¥™ä½¸„±½‰…°½ÈÁ•Èµ‘•Á±½åµ•¹Ğ‰…Í¥Ì¸Q¡•¸°å½Ô…¸Í•±•Ğ½¹”½Èµ½É”½˜Ñ¡”…±•ÉĞ½¹™¥ÕÉ…Ñ¥½¹Ì…ÌmÑ…É•ÑÍum•Ù•¹ĞµÑ…É•ÑÍt™½È¹½Ñ¥™¥…Ñ¥½¹ÌÙ¥„•µ…¥°°M±…¬°½ÈÕÍÑ½´İ•‰¡½½­Ì°Í¼Ñ¡…ĞÑ¡”…ÁÁÉ½ÁÉ¥…Ñ”Á•½Á±”½ÈÑ•…µÌ…É”¹½Ñ¥™¥•İ¡•¹•Ù•È…¸…±•ÉĞ¥ÌÑÉ¥•É•¸((ŒŒŒAµ½¹¥Ñ½É¥¹œÑ½½±Ì™½È‘•Ù•±½Á•ÉÌ)=¹”½˜Ñ¡”ÁÉ¥µ…ÉäÍ•±±¥¹œÁ½¥¹ÑÌ½˜A¥Ù½Ñ…°±½Õ½Õ¹‘Éä¥ÌÑ¡…Ğ¥Ğ±•ÑÌ‘•Ù•±½Á•ÉÌ™½ÕÌ½¸Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹Ìİ¥Ñ¡½ÕĞİ½ÉÉå¥¹œ…‰½ÕĞÑ¡”Õ¹‘•É±å¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”¸U¹±¥­”Ñ¡”½Á•É…Ñ½Èµ•¹ÑÉ¥ŒÑ½½±Ì½ÕÑ±¥¹•…‰½Ù”°İ¡¥ ™½ÕÌ½¸Á±…Ñ™½É´µ•ÑÉ¥Ì°Ñ¡”™½±±½İ¥¹œµ½¹¥Ñ½É¥¹œÑ½½±Ì…¹Í•ÉÙ¥•Ì¥Ù”‘•Ù•±½Á•ÉÌ…•ÍÌÑ¼…ÁÁ±¥…Ñ¥½¸±½Ì…Ìİ•±°…Ìµ•ÑÉ¥Ìµ½É”ÍÁ•¥™¥…±±äÉ•±…Ñ•Ñ¼…ÁÁ±¥…Ñ¥½¸…•ÍÌ…¹½¹Ñ…¥¹•ÈÉ•Í½ÕÉ•Ìè((´m˜±½Ít ˜µ±½Ì¤™½ÈÍÑÉ•…µ¥¹œ±½Ì™É½´…¸…ÁÁ±¥…Ñ¥½¸(´mA5•ÑÉ¥Ít Á˜µµ•ÑÉ¥Ì¤™½Èµ½¹¥Ñ½É¥¹œ…ÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”…¹É•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸(´mA5•ÑÉ¥Ì½Éİ…É‘•Ét Á˜µµ•ÑÉ¥Ìµ™½Éİ…É‘•È¤™½È…Ñ¡•É¥¹œÕÍÑ½´µ•ÑÉ¥Ì™É½´…¸…ÁÁ±¥…Ñ¥½¸((ŒŒŒŒ˜±½Í€()Q¡”˜±½Í€½µµ…¹¥Ì„±½Õ½Õ¹‘ÉçŠM¹…Ñ¥Ù”½µµ…¹±¥¹”ÕÑ¥±¥Ñä¸Q¡”˜±½Ì€ñ…ÁÀµ¹…µ”ù€½µµ…¹™Õ¹Ñ¥½¹ÌÍ¥µ¥±…É±äÑ¼Ñ¡”m¥É•¡½Í”Á±Õ¥¹t ™¥É•¡½Í”µÁ±Õ¥¸¤½µµ…¹˜…ÁÀµ¹½éé±”€ñ…ÁÀµ¹…µ”ù€¥¸Ñ¡…Ğ¥ĞÍÑÉ•…µÌ…ÁÁ±¥…Ñ¥½¸±½Ì™½È„ÍÁ•¥™¥Œ…ÁÁ±¥…Ñ¥½¸¸U¹±¥­”Ñ¡”¥É•¡½Í”Á±Õ¥¸°Ñ¡½Õ °˜±½Í€‘½•Ì¹½Ğ¥¹±Õ‘”½¹Ñ…¥¹•Èµ•ÑÉ¥Ì¸()	•±½Ü¥Ì•á…µÁ±”½ÕÑÁÕĞ™É½´Ñ¡”½µµ…¹˜±½ÌÁ˜µ…ÁÁ€°İ¡¥ Ñ…¥±Ì±½Ì™É½´„MÁÉ¥¹œ	½½Ğ…ÁÁ±¥…Ñ¥½¸…±±•€¨©Á˜µ…ÁÀ¨¨è()€(ÈÀÄà´ÀÜ´ÈÍPÄäèÈÄèÄÈ¸Üä¬ÀÀÀÀmIQH¼Át=UPÁ˜µ…ÁÀ¹…ÁÁÌ¹Á˜¹˜µ‘½µ…¥¸¹½´€´lÈÀÄà´ÀÜ´ÈÍPÄäèÈÄèÄÈ¸ÔäÀ¬ÀÀÀÁt€‰P€½‘•™¥¹”ıİ½ÉõÑ•ÍĞ!QQ@¼Ä¸Äˆ€ÈÀÀ€À€ÄÜÄ€ˆ´ˆ€‰5½é¥±±„¼Ô¸À€¡5…¥¹Ñ½Í ì%¹Ñ•°5…Œ=L`€ÄÁ|ÄÍ|Ø¤ÁÁ±•]•‰-¥Ğ¼ÔÌÜ¸ÌØ€¡-!Q50°±¥­”•­¼¤¡É½µ”¼ØÜ¸À¸ÌÌäØ¸ääM…™…É¤¼ÔÌÜ¸ÌØˆ€ˆÄÌØ¸ÈÜÔ¸È¸ÔØØèØÄàÈÜˆ€ˆÄÀ¸À¸Ø¸ÔØèØÄÈÌÈˆá}™½Éİ…É‘•‘}™½ÈèˆÌà¸ÄÈĞ¸ÈÈØ¸ÀÄÀ°€ÌÜ¸ÈÈØ¸ÈÄĞ¸ÄÜÄ°€ÄÌÀ¸ÈÌÔ¸È¸ÔÈäˆá}™½Éİ…É‘•‘}ÁÉ½Ñ¼è‰¡ÑÑÁÌˆÙ…Á}É•ÅÕ•ÍÑ}¥èˆÀÉ°ÌÉ•”´ÌÀäÌ´ĞØÙŒ´ÔØàÜ´ÈÌÉèØÄäÔÑ‘ŒäˆÉ•ÍÁ½¹Í•}Ñ¥µ”èÀ¸ÈÀÈÈàØÈÌÔ…ÁÁ}¥è‰ˆÑ™‘ˆÉ™˜µ”ÁŒä´ĞÕˆÌ´å…„È´ÈÕ„ØÀĞÄÌàå•ˆˆ…ÁÁ}¥¹‘•àèˆÄˆá}ˆÍ}ÑÉ…•¥èˆá‰”äĞààÌå˜Ù™…áˆˆá}ˆÍ}ÍÁ…¹¥èˆá‰”äĞààÌå˜Ù™…áˆˆá}ˆÍ}Á…É•¹ÑÍÁ…¹¥èˆ´ˆ((ÈÀÄà´ÀÜ´ÈÍPÄäèÈÄèÄÈ¸Üä¬ÀÀÀÀmIQH¼Át=UP((ÈÀÄà´ÀÜ´ÈÍPÄäèÈÄèÄÈ¸ØÌ¬ÀÀÀÀmA@½AI=½]¼Åt=UP€ÈÀÄà´ÀÜ´ÈÌ€ÄäèÈÄèÄÈ¸ØÌĞ€%9<€ÄØ€´´´m¹¥¼´àÀàÀµ•á•Œ´át¼¹„¹Œ¹Œ¹¹mQ½µ…Ñt¹m±½…±¡½ÍÑt¹l½t€€€€€€€è%¹¥Ñ¥…±¥é¥¹œMÁÉ¥¹œÉ…µ•İ½É­M•ÉÙ±•Ğ€‘¥ÍÁ…Ñ¡•ÉM•ÉÙ±•Ğœ((ÈÀÄà´ÀÜ´ÈÍPÄäèÈÄèÄÈ¸ØÌ¬ÀÀÀÀmA@½AI=½]¼Åt=UP€ÈÀÄà´ÀÜ´ÈÌ€ÄäèÈÄèÄÈ¸ØÌĞ€%9<€ÄØ€´´´m¹¥¼´àÀàÀµ•á•Œ´át¼¹Ì¹İ•ˆ¹Í•ÉÙ±•Ğ¹¥ÍÁ…Ñ¡•ÉM•ÉÙ±•Ğ€€€€€€€€èÉ…µ•İ½É­M•ÉÙ±•Ğ€‘¥ÍÁ…Ñ¡•ÉM•ÉÙ±•Ğœè¥¹¥Ñ¥…±¥é…Ñ¥½¸ÍÑ…ÉÑ•((ÈÀÄà´ÀÜ´ÈÍPÄäèÈÄèÄÈ¸ØØ¬ÀÀÀÀmA@½AI=½]¼Åt=UP€ÈÀÄà´ÀÜ´ÈÌ€ÄäèÈÄèÄÈ¸ØØÌ€%9<€ÄØ€´´´m¹¥¼´àÀàÀµ•á•Œ´át¼¹Ì¹İ•ˆ¹Í•ÉÙ±•Ğ¹¥ÍÁ…Ñ¡•ÉM•ÉÙ±•Ğ€€€€€€€€èÉ…µ•İ½É­M•ÉÙ±•Ğ€‘¥ÍÁ…Ñ¡•ÉM•ÉÙ±•Ğœè¥¹¥Ñ¥…±¥é…Ñ¥½¸½µÁ±•Ñ•¥¸€ÈàµÌ(¸€¸€¸)€()… …ÁÁ±¥…Ñ¥½¸±½œ±¥¹”ÍÑÉ•…µ•‰ä˜±½Í€¡…Ì™½ÕÈ½É”Á…ÉÑÌ¸Q¡”™¥ÉÍĞ¥Ì„€¨©Ñ¥µ•ÍÑ…µÀ¨¨Ñ¡…Ğ1½É•…Ñ½ÈÁÉ•Á•¹‘ÌÑ¼Ñ¡”µ•ÍÍ…”É•…É‘±•ÍÌ½˜İ¡•Ñ¡•ÈÑ¡”±½œµ•ÍÍ…”¥¹±Õ‘•Ì¥ÑÌ½İ¸Ñ¥µ•ÍÑ…µÀ¸€()Q¡”Í•½¹Á…ÉĞ¥Ì„½‘”¥‘•¹Ñ¥™å¥¹œÑ¡”€¨©½µÁ½¹•¹Ğ¨¨Ñ¡…ĞÑ¡”…ÁÁ±¥…Ñ¥½¸¥Ì¥¹Ñ•É…Ñ¥¹œİ¥Ñ ¸Q¡”½‘”…¸‰”…¹ä½¹”½˜Ñ¡”™½±±½İ¥¹œè((´A%€™½ÈÑ¡”±½Õ½¹ÑÉ½±±•È(´MQ€™½ÈÍÑ…¥¹œ™Õ¹Ñ¥½¹ÌÉÕ¸‰ä¥•¼(´IQI€™½ÈÑ¡”½É½ÕÑ•È(´1I€™½È1½É•…Ñ½È(´AA€™½È±½ÌÑ¡…ĞÑ¡”…ÁÁ±¥…Ñ¥½¸½‘”•µ¥ÑÌ€¡¥¹±Õ‘¥¹œ…¹äÕÍÑ½´±½Ì¤(´MM!€™½È±½ÌÉ•±…Ñ•Ñ¼„ÕÍ•ÈMM µ¥¹œ¥¹Ñ¼…¸…ÁÁ±¥…Ñ¥½¸½¹Ñ…¥¹•È(´11€™½È¥•¼•±°±½Ì…‰½ÕĞÑ¡”½¹Ñ…¥¹•ÉÌ…¹…ÁÁ±¥…Ñ¥½¹Ì¥Ğ¥ÌÉÕ¹¹¥¹œ()	•…ÕÍ”„±ÕÍÑ•Èµ…ä¡…Ù”µ½É”Ñ¡…¸½¹”¥¹ÍÑ…¹”½˜„¥Ù•¸½µÁ½¹•¹Ğ°Ñ¡”½µÁ½¹•¹Ğ½‘”İ¥±°…±Í¼¥¹±Õ‘”İ¡¥ ¥¹ÍÑ…¹”°ÍÑ…ÉÑ¥¹œİ¥Ñ ¥¹‘•à€À°•µ¥ÑÑ•Ñ¡”µ•ÍÍ…”¸()Q¡”Ñ¡¥ÉÁ…ÉĞ½˜•… ±½œµ•ÍÍ…”¥Ì=UQ€½ÈII€‰…Í•½¸İ¡•Ñ¡•ÈÑ¡”±½œ…µ”™É½´ÍÑ‘½ÕÑ€½ÈÍÑ‘•ÉÉ€¸Q¡”™¥¹…°Á…ÉĞ¥ÌÑ¡”€¨©±½œµ•ÍÍ…”¨¨¥ÑÍ•±˜¸()M¼°¥¸Ñ¡”•á…µÁ±”…‰½Ù”°İ”…¸Í•”Ñ¡…ĞÑ¡”™¥ÉÍĞ±½œµ•ÍÍ…”İ…Ì•µ¥ÑÑ•‰äÑ¡”½É½ÕÑ•È°¥¹‘¥…Ñ¥¹œÑ¡…Ğ¥Ğ¥Ì¡…¹‘±¥¹œ…¸!QQ@PÉ•ÅÕ•ÍĞÑ¼Ñ¡”…ÁÁ±¥…Ñ¥½¸¸Q¡¥Ì¥Ì™½±±½İ•‰ä„™•Ü±½œµ•ÍÍ…•Ì™É½´Ñ¡”MÁÉ¥¹œ	½½Ğ…ÁÁ±¥…Ñ¥½¸¥ÑÍ•±˜¥¹‘¥…Ñ¥¹œÑ¡”¥¹¥Ñ¥…±¥é…Ñ¥½¸½˜Ñ¡”Í•ÉÙ±•Ğ¸()]¡¥±”˜±½Í€İ¥±°Ñ…¥°Ñ¡”±½œÍÑÉ•…´™É½´…¸…ÁÁ±¥…Ñ¥½¸°ÕÍ¥¹œÑ¡”€´µÉ••¹Ñ€™±…œÁÉ½Ù¥‘•Ì„‘ÕµÀ½˜Ñ¡”€ÄÀÀ½ÈÍ¼µ½ÍĞÉ••¹Ğ±½ÌÑ¡”…ÁÁ±¥…Ñ¥½¸¡…Ì•µ¥ÑÑ•è((€€€˜±½ÌÁ˜µ…ÁÀ€´µÉ••¹Ğ((ŒŒŒŒA5•ÑÉ¥Ì)1¥­”!•…±Ñ¡İ…Ñ °mA5•ÑÉ¥ÍumÁ˜µµ•ÑÉ¥Ít¥Ì„A¥Ù½Ñ…°µ½¹¥Ñ½É¥¹œ…‘µ½¸Ñ¡…Ğ¥¹ÍÑ…±±Ì„Í•É¥•Ì½˜…ÁÁ±¥…Ñ¥½¹Ì…¹½µÁ½¹•¹ÑÌÑ¡…Ğ¥¹•ÍĞ‘…Ñ„™É½´Ñ¡”¥É•¡½Í”…¹ÁÉ½Ù¥‘”Ù¥ÍÕ…±¥é…Ñ¥½¹Ì½˜µ•ÑÉ¥Ì…¹±½Ìİ¥Ñ¡¥¸„İ•ˆU$¸	ÕĞİ¡•É•…Ì!•…±Ñ¡İ…Ñ ¥Ù•ÌA½Á•É…Ñ½ÉÌ„¡¥ µ±•Ù•°½Ù•ÉÙ¥•Ü½˜Ñ¡”‘•Á±½åµ•¹Ğ°A5•ÑÉ¥ÌÍ¡½İÌ„ÍÁ•¥™¥ŒÍ•Ğ½˜µ•ÑÉ¥ÌÑ¡…Ğ™½ÕÌ½¸…ÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”…¹É•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸¸Q¡•Í”¥¹±Õ‘”è((´½¹Ñ…¥¹•Èµ•ÑÉ¥Ì°Í¡½İ¥¹œ½¹Ñ…¥¹•ÈÉ•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸(´¹•Ñİ½É¬µ•ÑÉ¥Ì°É•Á½ÉÑ¥¹œÉ•ÅÕ•ÍÑÌ°É•ÍÁ½¹Í”Ñ¥µ•Ì°•ÑŒ¸(´ÕÍÑ½´µ•ÑÉ¥ÌÁÉ½É…µµ…Ñ¥…±±ä•µ¥ÑÑ•‰ä…ÁÁ±¥…Ñ¥½¹Ì€(´…ÁÀ•Ù•¹ÑÌÉ•±…Ñ•Ñ¼¥¹ÍÑ…¹”ÍÑ…ÉÑÌ°ÍÑ½ÁÌ°É…Í¡•Ì°•ÑŒ¸()±½¹œİ¥Ñ Ñ¡•Í”°A5•ÑÉ¥ÌÁÉ½Ù¥‘•Ì…¸…ÁÁ±¥…Ñ¥½¸±½œÍÑÉ•…´…¹„mÑÉ…”•áÁ±½É•ÉumÁ˜µÑÉ…•ÍtÑ¡…Ğ‘¥ÍÁ±…åÌÉ•ÅÕ•ÍĞÑÉ…•Ì¸½È¥¹ÍÑÉÕÑ¥½¹Ì½¸¥¹ÍÑ…±±¥¹œA5•ÑÉ¥Ì°mÍ•”¥ÑÌ‘½Õµ•¹Ñ…Ñ¥½¹umÁ˜µµ•ÑÉ¥Ìµ¥¹ÍÑ…±±t¸()=¹”å½×ŠeÙ”Í•±•Ñ•…¸…ÁÁ±¥…Ñ¥½¸Ñ¼µ½¹¥Ñ½È°A5•ÑÉ¥Ì±½…‘Ì„ÕÍÑ½µ¥é…‰±”‘…Í¡‰½…ÉÑ¡…Ğ¥¹±Õ‘•Ì„Í•Ğ½˜‘•™…Õ±Ğµ•ÑÉ¥ŒÉ…Á¡Ì…Ìİ•±°…ÌÑ¡”±½œÍÑÉ•…´¸e½Ô…¸…‘½ÈÉ•µ½Ù”¡…ÉÑÌÑ¼Ù¥•Ü½Ñ¡•Èµ•ÑÉ¥Ì…¹¡…¹”Ñ¡”Ñ¥µ”™É…µ”Ñ¼Ù¥•Ü¡¥ÍÑ½É¥…°¥¹™½Éµ…Ñ¥½¸¸€¡A5•ÑÉ¥ÌÉ•Ñ…¥¹Ì‘…Ñ„™½ÈÕÀÑ¼Ñİ¼İ••­Ì¸¤e½Ô…¸Ù¥ÍÕ…±¥é”µ•ÑÉ¥Ì…É•…Ñ•…É½ÍÌ…±°…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹•Ì½È½¸…¸¥¹‘¥Ù¥‘Õ…°¥¹ÍÑ…¹”¸()íìğ¥µœÍÉŒô‰Á˜µ±½ÌµÁ˜µµ•ÑÉ¥Ì¹Á¹œˆ…ÁÑ¥½¸ô‰Q¡”µ…¥¸A5•ÑÉ¥Ì‘…Í¡‰½…É¸ˆ…±Ğô‰5…¥¸A5•ÑÉ¥Ì‘…Í¡‰½…Éˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒA5•ÑÉ¥Ì½Éİ…É‘•È)™¥¹…°Aµ½¹¥Ñ½É¥¹œ…‘µ½¸¥Ìm5•ÑÉ¥Ì½Éİ…É‘•ÉumÁ˜µµ•ÑÉ¥Ìµ™½Éİ…É‘•Ét¸=¹”m¥¹ÍÑ…±±•‘umµ•ÑÉ¥Ìµ™½Éİ…É‘•Èµ¥¹ÍÑ…±±t°Ñ¡¥ÌÍ•ÉÙ¥”¥Ù•Ì‘•Ù•±½Á•ÉÌÑ¡”…‰¥±¥ÑäÑ¼•µ¥ĞÕÍÑ½´µ•ÑÉ¥Ì™É½´Ñ¡•¥È…ÁÁ±¥…Ñ¥½¹Ì…¹¡…Ù”Ñ¡•´½±±•Ñ•‰ä1½É•…Ñ½È…¹ÍÑÉ•…µ•¥¸Ñ¡”¥É•¡½Í”¸()]¡•¸‰½Õ¹Ñ¼…¸…ÁÁ±¥…Ñ¥½¸°5•ÑÉ¥Ì½Éİ…É‘•ÈÉ•…Ñ•Ì„UI0•¹‘Á½¥¹Ğİ¡•É”‘•Ù•±½Á•ÉÌ…¸mA=MQ€µ•ÑÉ¥Íumµ•ÑÉ¥Ìµ™½Éİ…É‘•ÈµÁ½ÍÑt™É½´Ñ¡•¥È…ÁÁ±¥…Ñ¥½¸¸5•ÑÉ¥Ì½Éİ…É‘•ÈÁ…­…•ÌÑ¡•Í”…ÌmY…±Õ•5•ÑÉ¥Ít ±½Ìµ…¹µµ½É”µ±½Ì¤…¹™½Éİ…É‘ÌÑ¡•´Ñ¼1½É•…Ñ½È¸Q¡•äİ¥±°Ñ¡•¸Í¡½ÜÕÀ¥¸Ñ¡”¥É•¡½Í”ÍÑÉ•…´İ¥Ñ µ•ÑÉ¥Í}™½Éİ…É‘•É€…ÌÑ¡”½É¥¥¹…Ñ¥¹œ½µÁ½¹•¹Ğ¸((ŒŒŒQ¡¥ÉµÁ…ÉÑä¹½éé±•Ì)Q¡•É”…É”„¹Õµ‰•È½˜¹½éé±•Ì…Ù…¥±…‰±”™É½´Ñ¡”A¥Ù½Ñ…°M•ÉÙ¥•Ì5…É­•ÑÁ±…”…Ìmµ…¹…•Í•ÉÙ¥•Íumµ…¹…•µÍ•ÉÙ¥•ÍtÑ¡…Ğ…¸‰”ÕÍ•İ¥Ñ å½ÕÈ‘•Á±½åµ•¹Ğ¸5…¹ä½˜Ñ¡•Í”…É”‘•Ù•±½Á•…¹µ…¥¹Ñ…¥¹•‰äÙ…É¥½ÕÌµ½¹¥Ñ½É¥¹œÍ•ÉÙ¥•Ì½È%……LÁÉ½Ù¥‘•ÉÌ…¹Í•ÉÙ”Ñ¼¥¹•ÍĞ¥É•¡½Í”µ•ÍÍ…•Ì¥¹Ñ¼„ÍÁ•¥™¥ŒÁ±…Ñ™½É´™½ÈÁÉ½•ÍÍ¥¹œ°Ù¥ÍÕ…±¥é…Ñ¥½¸°…¹ÍÑ½É…”¸()1¥­”Ñ¡”A¥Ù½Ñ…°…‘µ½¹Ì‘¥ÍÕÍÍ•Í¼™…È°½Á•É…Ñ½ÉÌ…¸¥¹ÍÑ…±°Í•ÉÙ¥•ÌÙ¥„Ñ¡”A=ÁÌ5…¹…•È¸™Ñ•È‘½İ¹±½…‘¥¹œÑ¡”Í•ÉÙ¥”Ñ¥±”™É½´mA¥Ù½Ñ…°9•Ñİ½É­umÁ¥Ù½Ñ…°µ¹•Ñİ½É­t°½Á•É…Ñ½ÉÌÕÁ±½…Ñ¡”Ñ¥±”…¹…¹äÉ•ÅÕ¥É•	=M ÍÑ•µ•±±Ì¥¹Ñ¼Ñ¡”=ÁÌ5…¹…•È°½¹™¥ÕÉ”¥Ğ°…¹‘•Á±½ä¥ĞÑ¼Ñ¡•¥È±ÕÍÑ•È¸((ŒŒ1½œ…¡”)A¥Ù½Ñ…°±½Õ½Õ¹‘ÉäÙ•ÉÍ¥½¹Ì€È¸È…¹…‰½Ù”¥¹±Õ‘”m1½œ…¡•um±½œµ…¡•t¸1½œ…¡”¥Ì„½µÁ½¹•¹Ğ½±½…Ñ•½¸Ñ¡”½ÁÁ±•ÈÍ•ÉÙ•ÉÌÑ¡…Ğ‘ÕÁ±¥…Ñ•Ì…¹ÍÑ½É•ÌÑ¡”¥¹™½Éµ…Ñ¥½¸½µ¥¹œ™É½´1½É•…Ñ½È¸U¹±¥­”Ñ¡”¥É•¡½Í”‘…Ñ„ÍÑÉ•…´°İ¡¥ ¥Ì½¹ÍÑ…¹Ñ±ä±•…É•Ñ¼µ…­”É½½´™½È¹•Üµ•ÍÍ…•Ì°Ñ¡”1½œ…¡”Á•ÉÍ¥ÍÑÌ‘…Ñ„™É½´1½É•…Ñ½ÈÍ¼Ñ¡…Ğ¥Ğµ…ä‰”ÅÕ•É¥•½¸‘•µ…¹¸]¡•¸•¹…‰±•Ù¥„Ñ¡”€¨©‘Ù…¹••…ÑÕÉ•Ì¨¨½˜Ñ¡”ALÑ¥±”¥¸Ñ¡”=ÁÌ5…¹…•È°1½œ…¡”İ¥±°É•Ñ…¥¸µ•ÍÍ…•Ì™½È€ÄÔµ¥¹ÕÑ•Ì°…¹İ¥±°É•ÑÕÉ¸ÕÀÑ¼€Ä°ÀÀÀÉ••¹Ğµ•ÍÍ…•Ìİ¡•¸„‘•Ù•±½Á•ÈÅÕ•É¥•ÌÑ¡”…¡”¸()íìğ¥µœÍÉŒô‰Á˜µ±½œµ…¡”µÉ•Ø¹Á¹œˆ…ÁÑ¥½¸ô‰¹…‰±”1½œ…¡”™É½´Ñ¡”ALÑ¥±”¥¸Ñ¡”=ÁÌ5…¹…•È¸ˆ…±Ğô‰¹…‰±”A1½œ…¡”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()=Á•É…Ñ½ÉÌ…¹‘•Ù•±½Á•ÉÌ…¸…•ÍÌÑ¡”1½œ…¡”A$•¥Ñ¡•Èİ¥Ñ Ñ¡”˜1$Á±Õ¥¸½ÈÙ¥„„IMQ™Õ°¥¹Ñ•É™…”°…Ì½ÕÑ±¥¹•‰•±½Üè((ŒŒŒEÕ•ÉäÑ¡”1½œ…¡”ÕÍ¥¹œÑ¡”˜1$)=¹”å½Ô¥¹ÍÑ…±°Ñ¡”m1½œ…¡”Á±Õ¥¹um±½œµ…¡”µÁ±Õ¥¹t°å½Ô…¸ÕÍ”Ñ¡”™½±±½İ¥¹œ˜1$½µµ…¹Ñ¼…•ÍÌå½ÕÈ±½Ì…¹µ•ÑÉ¥Ìè((€€€˜Ñ…¥°€ñÍ½ÕÉ”ø()%¸Ñ¡¥Ì…Í”°€ñÍ½ÕÉ”ù€…¸‰”•¥Ñ¡•È…¸…ÁÁ±¥…Ñ¥½¸ÌU%½ÈÑ¡”¹…µ”½˜„A½µÁ½¹•¹Ğ¸½È•á…µÁ±”°å½Ô…¸É•ÅÕ•ÍĞAµ•ÑÉ¥Ì™½Èå½ÕÈ±½Õ½¹ÑÉ½±±•È¥¹ÍÑ…¹•Ìİ¥Ñ Ñ¡”½µµ…¹è((€€€˜Ñ…¥°Œ()Q¡¥ÌÅÕ•Éäİ½Õ±É•ÑÕÉ¸„Í•É¥•Ì½˜Ñ¥µ•ÍÑ…µÁ•µ•ÑÉ¥Ì±¥­”Ñ¡”™½±±½İ¥¹œè()€(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸àÜ´ÀĞÀÀmtUÉ•ÅÕ•ÍÑÌ¹½µÁ±•Ñ•èÄÀàÌÌØÔ¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸àÜ´ÀĞÀÀmtU¡ÑÑÁ}ÍÑ…ÑÕÌ¸Éa`èÄÀàÈàäà¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸àÜ´ÀĞÀÀmtUÉ•ÅÕ•ÍÑÌ¹½ÕÑÍÑ…¹‘¥¹œèÄ¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸àà´ÀĞÀÀmtUÉ•ÅÕ•ÍÑÌ¹½ÕÑÍÑ…¹‘¥¹œèÀ¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸àà´ÀĞÀÀmtUÉ•ÅÕ•ÍÑÌ¹½µÁ±•Ñ•èÄÀàÌÌØØ¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸àà´ÀĞÀÀmtU¡ÑÑÁ}ÍÑ…ÑÕÌ¸Éa`èÄÀàÈàää¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸àä´ÀĞÀÀmtUÉ•ÅÕ•ÍÑÌ¹½ÕÑÍÑ…¹‘¥¹œèÄ¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸äÀ´ÀĞÀÀmtUÉ•ÅÕ•ÍÑÌ¹½ÕÑÍÑ…¹‘¥¹œèÀ¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸äÀ´ÀĞÀÀmtUÉ•ÅÕ•ÍÑÌ¹½µÁ±•Ñ•èÄÀàÌÌØÜ¸ÀÀÀÀÀÀ½Õ¹Ñ•È(ÈÀÄà´ÄÀ´ÀÉPÄÌèĞÌèÈØ¸äÀ´ÀĞÀÀmtU¡ÑÑÁ}ÍÑ…ÑÕÌ¸Éa`èÄÀàÈäÀÀ¸ÀÀÀÀÀÀ½Õ¹Ñ•È)€()	ä‘•™…Õ±Ğ°˜Ñ…¥±€É•ÑÕÉ¹ÌÑ¡”€ÄÀµ½ÍĞÉ••¹Ğµ•ÍÍ…•Ì¸… µ•ÍÍ…”¥¹±Õ‘•ÌÑ¡”™½±±½İ¥¹œè((´Ñ¥µ•ÍÑ…µÀ(´Q¡”Í½ÕÉ”…ÁÁ±¥…Ñ¥½¸½È½µÁ½¹•¹Ğ(´Q¡”•Ù•¹Ğ½È•¹Ù•±½Á”ÑåÁ”(´Q¡”µ•ÍÍ…”½¹Ñ•¹ÑÌ()Q¡•É”…É”Í•Ù•É…°™±…ÌÑ¡…Ğå½Ô…¸¥¹±Õ‘”İ¥Ñ ˜Ñ…¥±€Ñ¼™½ÕÌå½ÕÈÅÕ•É¥•Ìè()ğ±…œğ•ÍÉ¥ÁÑ¥½¸ğ)ğ´´´ğ´´´ğ)ğ€´µ™½±±½İ€ğQ…¥±ÌÑ¡”ÍÑÉ•…´¥¸É•…°Ñ¥µ”ğ)ğ€´µ©Í½¹€ğ=ÕÑÁÕÑÌµ•ÍÍ…•Ì¥¸)M=8™½Éµ…Ğğ)ğ€´µ±¥¹•Í€ğM•ÑÌÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¼É•ÑÕÉ¸€¡‘•™…Õ±Ğ¥Ì€ÄÀ¤ğ)ğ€´µÍÑ…ÉĞµÑ¥µ•€ğM•ÑÌÑ¡”ÍÑ…ÉĞÑ¥µ”½˜µ•ÍÍ…•ÌÑ¼É•ÑÕÉ¸€¡U9%`Ñ¥µ•ÍÑ…µÀ¤ğ)ğ€´µ•¹µÑ¥µ•€ğM•ÑÌÑ¡”•¹Ñ¥µ”½˜µ•ÍÍ…•ÌÑ¼É•ÑÕÉ¸€¡U9%`Ñ¥µ•ÍÑ…µÀ¤ğ)ğ€´µ•¹Ù•±½Á”µÑåÁ•€ğI•ÑÕÉ¹Ì½¹±äµ•ÍÍ…•Ì½˜Ñ¡”ÁÉ½Ù¥‘••¹Ù•±½Á”ÑåÁ”ğ)ğ€´µ…Õ”µ¹…µ•€ğI•ÑÕÉ¹Ì½¹±äµ•ÍÍ…•Ì½˜ÑåÁ”…Õ•€İ¥Ñ Ñ¡”ÁÉ½Ù¥‘•µ•ÑÉ¥Œ¹…µ”ğ)ğ€´µ½Õ¹Ñ•Èµ¹…µ•€ğI•ÑÕÉ¹Ì½¹±äµ•ÍÍ…•Ì½˜ÑåÁ”½Õ¹Ñ•É€İ¥Ñ Ñ¡”ÁÉ½Ù¥‘•µ•ÑÉ¥Œ¹…µ”ğ((ŒŒŒEÕ•ÉäÑ¡”1½œ…¡”ÕÍ¥¹œÑ¡”IMQ™Õ°¥¹Ñ•É™…”)Q¼ÅÕ•ÉäÑ¡”1½œ…¡”ÁÉ½É…µµ…Ñ¥…±±ä°å½Ô…¸µ…­”A$…±±ÌÑ¼¥ÑÌIMQ™Õ°•¹‘Á½¥¹Ğè((€€€¡ÑÑÁÌè¼½±½œµ…¡”¸ñå½ÕÈµ‘½µ…¥¸ø½ØÄ½É•…¼ñÍ½ÕÉ”ø()Ìİ¥Ñ Ñ¡”˜1$°€ñÍ½ÕÉ”ù€…¸‰”•¥Ñ¡•È…¸…ÁÁ±¥…Ñ¥½¸½È½µÁ½¹•¹Ğ¸e½Ôİ¥±°¹••Ñ¼ÁÉ½Ù¥‘”„mU…ÕÑ¡½É¥é…Ñ¥½¸Ñ½­•¹umÕ…„µÑ½­•¹ÍtÑ¡…Ğ¥¹±Õ‘•ÌÑ¡”‘½ÁÁ±•È¹™¥É•¡½Í•€Í½Á”İ¥Ñ •… A$É•ÅÕ•ÍĞ¸e½Ô…¸…±Í¼¥¹±Õ‘”½ÁÑ¥½¹…°ÅÕ•ÉäÁ…É…µ•Ñ•ÉÌÑ¼™¥±Ñ•ÈÑ¡”É•ÍÁ½¹Í”è()ğA…É…µ•Ñ•Èğ•ÍÉ¥ÁÑ¥½¸ğ)ğ´´´ğ´´´ğ)ğÍÑ…ÉÑ}Ñ¥µ•€ğM•ÑÌÑ¡”ÍÑ…ÉĞÑ¥µ”½˜µ•ÍÍ…•ÌÑ¼É•ÑÕÉ¸€¡U9%`Ñ¥µ•ÍÑ…µÀ¤ğ)ğ•¹‘}Ñ¥µ•€ğM•ÑÌÑ¡”•¹Ñ¥µ”½˜µ•ÍÍ…•ÌÑ¼É•ÑÕÉ¸€¡U9%`Ñ¥µ•ÍÑ…µÀ¤ğ)ğ•¹Ù•±½Á•}ÑåÁ•Í€ğI•ÑÕÉ¹Ì½¹±äµ•ÍÍ…•Ì½˜Ñ¡”ÁÉ½Ù¥‘••¹Ù•±½Á”ÑåÁ”€¡µ…ä‰”…±±•µÕ±Ñ¥Á±”Ñ¥µ•ÌÑ¼É•ÑÕÉ¸µÕ±Ñ¥Á±”ÑåÁ•Ìì¹½Ñ”Ñ¡…Ğ±½€µ•ÍÍ…•Ìİ¥±°‰”‰…Í”ØĞ•¹½‘•¤ğ)ğ±¥µ¥Ñ€ğ5…á¥µÕ´¹Õµ‰•È½˜µ•ÍÍ…•ÌÑ¼É•ÑÕÉ¸€¡±¥µ¥Ğ¥Ì€Ä°ÀÀÀì‘•™…Õ±Ğ¥Ì€ÄÀÀ¤ğ()	•±½Ü¥Ì…¸•á…µÁ±”½˜„™Õ±°É•ÅÕ•ÍĞ™½È…Õ•€µ•ÍÍ…•Ì™½È…¸…ÁÁ±¥…Ñ¥½¸¥¹ÍÑ…¹”€¡¥‘•¹Ñ¥™¥•‰ä¥ÑÌU%¤…¹„Á½ÉÑ¥½¸½˜Ñ¡”É•ÍÕ±Ñ¥¹œ)M=8É•ÍÁ½¹Í”è()€)ÕÉ°€µÌ€µ €‰ÕÑ¡½É¥é…Ñ¥½¸è	•…É•È€ñÑ½­•¸øˆ€¡ÑÑÁÌè¼½±½œµ…¡”¹ÍåÌ¹Á˜¹˜µ‘•Á±½ä¹½´½ØÄ½É•…¼ØäÍŒäÁ…˜µ„ÈÜÌ´ÑŒÔàµ„ÀÔÌµˆäÁ™•„Ñ™„ÌÜÜı•¹Ù•±½Á•}ÑåÁ•Ìõ…Õ”™±¥µ¥ĞôÌœğ©Ä€¸)€()€)ì(€€‰•¹Ù•±½Á•Ìˆèì(€€€€‰‰…Ñ ˆèl(€€€€€ì(€€€€€€€€‰Ñ¥µ•ÍÑ…µÀˆè€ˆÄÔÌàÔààÈÔàØØäÀĞØØÜØˆ°(€€€€€€€€‰Í½ÕÉ•}¥ˆè€ˆØäÍŒäÁ…˜µ„ÈÜÌ´ÑŒÔàµ„ÀÔÌµˆäÁ™•„Ñ™„ÌÜÜˆ°(€€€€€€€€‰¥¹ÍÑ…¹•}¥ˆè€ˆÈˆ°(€€€€€€€€‰‘•ÁÉ•…Ñ•‘}Ñ…Ìˆèíô°(€€€€€€€€‰Ñ…Ìˆèì(€€€€€€€€€€‰‘•Á±½åµ•¹Ğˆè€‰˜ˆ°(€€€€€€€€€€‰¥¹‘•àˆè€ˆÑŒÌàäÜÍ´ĞÔÁ´ĞÄÌÔ´åŒÜØ´äàÔÄÜäÄå˜ÜØÀˆ°(€€€€€€€€€€‰¥Àˆè€ˆÄÀ¸À¸Ğ¸ÌÜˆ°(€€€€€€€€€€‰©½ˆˆè€‰½µÁÕÑ”ˆ°(€€€€€€€€€€‰½É¥¥¸ˆè€‰É•Àˆ(€€€€€€€ô°(€€€€€€€€‰…Õ”ˆèì(€€€€€€€€€€‰µ•ÑÉ¥Ìˆèì(€€€€€€€€€€€€‰ÁÔˆèì(€€€€€€€€€€€€€€‰Õ¹¥Ğˆè€‰Á•É•¹Ñ…”ˆ°(€€€€€€€€€€€€€€‰Ù…±Õ”ˆè€ÈÌä¸ÈÀÈÀÀĞĞØÈĞäÄÌ(€€€€€€€€€€€ô°(€€€€€€€€€€€€‰‘¥Í¬ˆèì(€€€€€€€€€€€€€€‰Õ¹¥Ğˆè€‰‰åÑ•Ìˆ°(€€€€€€€€€€€€€€‰Ù…±Õ”ˆè€ÈÌÔÌÜØØĞÀ(€€€€€€€€€€€ô°(€€€€€€€€€€€€‰‘¥Í­}ÅÕ½Ñ„ˆèì(€€€€€€€€€€€€€€‰Õ¹¥Ğˆè€‰‰åÑ•Ìˆ°(€€€€€€€€€€€€€€‰Ù…±Õ”ˆè€ÄÀÜÌÜĞÄàÈĞ(€€€€€€€€€€€ô°(€€€€€€€€€€€€‰µ•µ½Éäˆèì(€€€€€€€€€€€€€€‰Õ¹¥Ğˆè€‰‰åÑ•Ìˆ°(€€€€€€€€€€€€€€‰Ù…±Õ”ˆè€ĞÀààÔàØÈĞ(€€€€€€€€€€€ô°(€€€€€€€€€€€€‰µ•µ½Éå}ÅÕ½Ñ„ˆèì(€€€€€€€€€€€€€€‰Õ¹¥Ğˆè€‰‰åÑ•Ìˆ°(€€€€€€€€€€€€€€‰Ù…±Õ”ˆè€ÄÀÜÌÜĞÄàÈĞ(€€€€€€€€€€€ô(€€€€€€€€€ô(€€€€€€€ô(€€€€€ô°)€((ŒŒMåÍ±½œ½±±•Ñ¥½¸)Q¡”Ñ½½±Ì…¹…ÁÁÉ½…¡•Ì½ÕÑ±¥¹•…‰½Ù”…±±½Üå½ÔÑ¼½±±•Ğ…±°½˜Ñ¡”‘…Ñ„Ñ¡…Ğ¥Ì…É•…Ñ•…¹ÍÑÉ•…µ•Ù¥„AŠeÌ1½É•…Ñ½È¸9•áĞ°İ—Še±°±½½¬…Ğ¡½ÜÑ¼…•ÍÌÑ¡”½Ñ¡•ÈÁ½Ñ•¹Ñ¥…°Í½ÕÉ”½˜µ½¹¥Ñ½É¥¹œ‘…Ñ„è±½ÌÑ¡…Ğ…É”Í¡¥ÁÁ•Ù¥„ÉÍåÍ±½œ½ÕĞÑ¼„ÍåÍ±½œ‘É…¥¸¸((ŒŒŒÉ…¥¹¥¹œ…ÁÁ±¥…Ñ¥½¸±½Ì)	ä‘•™…Õ±Ğ°1½É•…Ñ½È…É•…Ñ•Ìm…ÁÁ±¥…Ñ¥½¸±½Ít …ÁÁ±¥…Ñ¥½¸µ±½Ì¤…¹¥¹±Õ‘•ÌÑ¡•´¥¸Ñ¡”¥É•¡½Í”ÍÑÉ•…´¸Ìİ”¡…Ù”Í••¸°¡½İ•Ù•È°Õ¹±•ÍÌå½ÔÕÍ”„¹½éé±”Ñ¼ÁÕ±°µ•ÍÍ…•Ì½™˜Ñ¡”¥É•¡½Í”…¹Í•¹Ñ¡•´Ñ¼„µ…¹…•Í•ÉÙ¥”Ñ¡…ĞÉ•Ñ…¥¹ÌÑ¡”‘…Ñ„°Ñ¡•Í”µ•ÍÍ…•Ì…É”¥µµ•‘¥…Ñ•±ä‘É½ÁÁ•…Ì¹•Üµ•ÍÍ…•Ì½µ”Ñ¡É½Õ ¸Q¡”•á•ÁÑ¥½¸Ñ¼Ñ¡¥Ì¥Ì‘•Á±½åµ•¹ÑÌİ¥Ñ m1½œ…¡•t ±½œµ…¡”¤•¹…‰±•°İ¡¥ ÁÉ½Ù¥‘•Ì±¥µ¥Ñ•Á•ÉÍ¥ÍÑ•¹”¸()%˜…¸…ÁÁÉ½ÁÉ¥…Ñ”¥É•¡½Í”¹½éé±”¥Ì¹½Ğ…Ù…¥±…‰±”°½È¥˜1½œ…¡”¥Ì¹½Ğ•¹…‰±•°…¹½Ñ¡•È½ÁÑ¥½¸™½È‘¥•ÍÑ¥¹œ…¹ÍÑ½É¥¹œ…ÁÁ±¥…Ñ¥½¸±½Ì¥ÌÑ¼½¹Ù•ÉĞÑ¡•´Ñ¼Ñ¡”ÍåÍ±½œÁÉ½Ñ½½°…¹ÍÑÉ•…´Ñ¡•´Ù¥„ÉÍåÍ±½œÑ¼…¸•áÑ•É¹…°Í•ÉÙ¥”½È‘•‘¥…Ñ•Í•ÉÙ•È¸Q¡¥Ìµ•Ñ¡½±•ÑÌå½Ô°™½È•á…µÁ±”°Í•¹…ÁÁ±¥…Ñ¥½¸±½ÌÑ¼„Í•Á…É…Ñ”ÍåÍ±½œÍ•ÉÙ•È™½È…É¡¥Ù¥¹œ°½ÈÑ¼„±½œµ…¹…•µ•¹ĞÍ•ÉÙ¥”Ñ¡…Ğ…¸¥¹•ÍĞÉ•µ½Ñ”ÍåÍ±½Ì¸()½Éİ…É‘¥¹œ…ÁÁ±¥…Ñ¥½¸±½ÌÑ¡¥Ìİ…äÉ•ÅÕ¥É•ÌÉ•…Ñ¥¹œ…¹‰¥¹‘¥¹œ„mÕÍÑ½´Í•ÉÙ¥”¥¹ÍÑ…¹•umµ…¹…¥¹œµÍ•ÉÙ¥”µ¥¹ÍÑ…¹•ÍtÑ¼å½ÕÈ…ÁÁ±¥…Ñ¥½¸¸Q¡¥ÌÍ•ÉÙ¥”¥¹ÍÑÉÕÑÌå½ÕÈ…ÁÁ±¥…Ñ¥½¸Ñ¼Í¡ÕÑÑ±”±½ÌÑ¼Ñ¡”MåÍ±½œ‘…ÁÑ•È¸Q¡”…‘…ÁÑ•È½¹Ù•ÉÑÌÑ¡•´¥¹Ñ¼Ñ¡”ÍåÍ±½œÍÑ…¹‘…É™½Éµ…Ğ¸Q¡•ä…¸Ñ¡•¸‰”ÍÑÉ•…µ•Ù¥„ÉÍåÍ±½œÑ¼Ñ¡”ÍÁ•¥™¥•ÍåÍ±½œ•¹‘Á½¥¹Ğ°½ÈÍåÍ±½œ‘É…¥¸¸Q¡”•¹‘Á½¥¹Ğµ¥¡Ğ‰”„µ…¹…•Í•ÉÙ¥”…Ù…¥±…‰±”½¸Ñ¡”A¥Ù½Ñ…°5…É­•ÑÁ±…”°…¸•áÑ•É¹…°±½¥¹œÍ•ÉÙ¥”Ñ¡…Ğ¥Ì¹½Ğ…Ù…¥±…‰±”Ù¥„Ñ¡”µ…É­•ÑÁ±…”°½È„ÕÍ•ÈµÁÉ½Ù¥‘•‘•ÍÑ¥¹…Ñ¥½¸ÍÕ …Ì„ÍÑ…¹‘…±½¹”ÍåÍ±½œÍ•ÉÙ•È¸()Q¡•É”…É”Ñİ¼İ…åÌÑ¼É•…Ñ”…¹‰¥¹„Í•ÉÙ¥”Ñ¼…¸…ÁÁ±¥…Ñ¥½¸èÙ¥„Ñ¡”A¥Ù½Ñ…°ÁÁÌ5…¹…•È…¹Ñ¡”˜ÕÁÍ€½µµ…¹¸%¸‰½Ñ …Í•Ì°å½Ô¹••Ñ¼ÁÉ½Ù¥‘”„¹…µ”™½ÈÑ¡”Í•ÉÙ¥”…¹Ñ¡”•¹‘Á½¥¹ĞUI0°İ¡¥ ¥Ì•¥Ñ¡•ÈÑ¡”%@…‘‘É•ÍÌ…¹½Á•¸Q@Á½ÉĞ½˜å½ÕÈ•áÑ•É¹…°Í•ÉÙ•È°½ÈÑ¡”UI0ÁÉ½Ù¥‘•‰äÑ¡”±½œµ…¹…•µ•¹ĞÍ•ÉÙ¥”¸M¼°…Ì‘•µ½¹ÍÑÉ…Ñ•¥¸Ñ¡”•á…µÁ±•Ì‰•±½Ü°İ”…¸É•…Ñ”„ÍåÍ±½œ‘É…¥¸Í•ÉÙ¥”…±±•€¨©…ÁÁ±¥…Ñ¥½¸µÍåÍ±½œµ‘É…¥¸¨¨Ñ¡…Ğ™½Éİ…É‘Ì…ÁÁ±¥…Ñ¥½¸±½ÌÑ¼„ÍåÍ±½œÍ•ÉÙ•Èİ¥Ñ …¸%@½˜€ÄÈ¸ÌĞÔ¸ØÜà¸äÀ…ĞÁ½ÉĞ€ÔÄĞ¸]”…¸Ñ¡•¸‰¥¹¥ĞÑ¼½ÕÈ…ÁÁ±¥…Ñ¥½¸°€¨©Á˜µ…ÁÀ¨¨¸((ŒŒŒŒÉ•…Ñ”„Í•ÉÙ¥”ÕÍ¥¹œÑ¡”ÁÁÌ5…¹…•È)Q¡”ÁÁÌ5…¹…•È…ÑÌ…Ì„İÉ…ÁÁ•È™½ÈÍ•Ù•É…°˜1$½µµ…¹‘Ì¸%ÑÌİ•ˆU$…¸‰”…•ÍÍ•™É½´Ñ¡”UI0€¨©…ÁÁÌ¹ÍåÌ¹pñå½ÕÈµ‘½µ…¥¹pø¹½´¨¨¸É½´Ñ¡”ÁÁÌ5…¹…•È°å½Ô…¸Ù¥•ÜÉ•Í½ÕÉ”µ•ÑÉ¥Ì°ÕÍ…”ÍÑ…Ñ¥ÍÑ¥Ì°…¹±½Ì™½È…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ½¸Ñ¡”‘•Á±½åµ•¹Ğ¸e½Ô…¸…±Í¼ÕÍ”Ñ¡”ÁÁÌ5…¹…•ÈÑ¼µ…¹…”å½ÕÈÍ•ÉÙ¥•Ì½ÈÉ•…Ñ”„¹•ÜÕÍ•ÈµÁÉ½Ù¥‘•Í•ÉÙ¥”¥¹ÍÑ…¹”…¹‰¥¹¥ĞÑ¼…¸…ÁÁ±¥…Ñ¥½¸¸()íìğ¥µœÍÉŒô‰Á˜µ±½ÌµÁ˜µ…ÁÁÌµµ…¹…•ÈµÉ•ØÈ¹Á¹œˆ…±Ğô‰AÁÁÌ5…¹…•Èˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()™Ñ•Èå½ÔÉ•…Ñ”…¹‰¥¹Ñ¡”Í•ÉÙ¥”Ñ¼Ñ¡”…ÁÁ±¥…Ñ¥½¸°å½ÔµÕÍĞÉ•ÍÑ…”Ñ¡”…ÁÁ±¥…Ñ¥½¸İ¥Ñ Ñ¡”˜1$½µµ…¹è((€€€˜É•ÍÑ…”Á˜µ…ÁÀ((ŒŒŒŒÉ•…Ñ”„Í•ÉÙ¥”ÕÍ¥¹œÑ¡”˜ÕÁÍ€½µµ…¹)Q¡”˜É•…Ñ”µÕÍ•ÈµÁÉ½Ù¥‘•µÍ•ÉÙ¥•€€¡½È˜ÕÁÍ€¤1$½µµ…¹ÁÉ½Ù¥‘•ÌÑ¡”Í…µ”™Õ¹Ñ¥½¹…±¥Ñä…ÌÉ•…Ñ¥¹œ„Í•ÉÙ¥”¥¸Ñ¡”ÁÁÌ5…¹…•È°‰ÕĞ¥Ğ‘½•Ì¹½ĞÉ•ÅÕ¥É”Ñ¡”…‘µ¥¸É•‘•¹Ñ¥…±Ì¹••‘•Ñ¼±½œ½¸Ñ¼Ñ¡”ÁÁÌ5…¹…•È¸Q¡”™½±±½İ¥¹œ½µµ…¹É•…Ñ•ÌÑ¡”Í…µ”ÍåÍ±½œ‘É…¥¸Í•ÉÙ¥”…Ì¥¸Ñ¡”ÁÁÌ5…¹…•È•á…µÁ±”…‰½Ù”°İ¡¥ ™½Éİ…É‘Ì…ÁÁ±¥…Ñ¥½¸±½ÌÑ¼…¸•áÑ•É¹…°ÍåÍ±½œÍ•ÉÙ•È‰ä¥¹‘¥…Ñ¥¹œ¥ÑÌ%@…‘‘É•ÍÌ…¹½Á•¸Q@Á½ÉĞè((€€€˜ÕÁÌ…ÁÁ±¥…Ñ¥½¸µÍåÍ±½œµ‘É…¥¸€µ°ÍåÍ±½œè¼¼ÄÈ¸ÌĞÔ¸ØÜà¸äÀèÔÄĞ()Q¡•¸°İ”…¸‰¥¹Ñ¡”‘É…¥¸Í•ÉÙ¥”Ñ¼½ÕÈ…ÁÁ±¥…Ñ¥½¸°€¨©Á˜µ…ÁÀ¨¨è((€€€˜‰¥¹µÍ•ÉÙ¥”Á˜µ…ÁÀ…ÁÁ±¥…Ñ¥½¸µÍåÍ±½œµ‘É…¥¸()¥¹…±±ä°İ”É•ÍÑ…”Ñ¡”…ÁÁ±¥…Ñ¥½¸Ñ¼½µµ¥ĞÑ¡”¡…¹•Ìè((€€€˜É•ÍÑ…”Á˜µ…ÁÀ()9½Ñ”Ñ¡…Ğå½Ô…¸…±Í¼¥¹ÍÑ…±°Ñ¡”mÉ…¥¸1$Á±Õ¥¹um˜µ‘É…¥¸µÁ±Õ¥¹t°İ¡¥ …½µÁ±¥Í¡•ÌÑ¡”Í…µ”Ñ…Í¬İ¥Ñ „Í¥µÁ±•Èİ½É­™±½Ü¸()=¹”Ñ¡”‘É…¥¸Í•ÉÙ¥”¡…Ì‰••¸‰½Õ¹Ñ¼Ñ¡”…ÁÁ±¥…Ñ¥½¸°å½Ô…¸Ù¥•Ü…ÁÁ±¥…Ñ¥½¸±½Ì½¸Ñ¡”•áÑ•É¹…°•¹‘Á½¥¹Ğ¸½È•á…µÁ±”°¥˜å½ÕÈ•¹‘Á½¥¹Ğ¥Ì„É•µ½Ñ”ÍåÍ±½œÍ•ÉÙ•È°å½ÕÈA…ÁÁ±¥…Ñ¥½¸±½Ìİ¥±°…ÁÁ•…È¥¸Ñ¡”Í•ÉÙ•ÈÌ€¨©ÍåÍ±½œ¨¨™¥±”¸((ŒŒŒMåÍÑ•´±½Ì)MåÍÑ•´±½ÏŠQÑ¡…Ğ¥Ì°±½Ì•µ¥ÑÑ•‰äÑ¡”¥¹Ñ•É¹…°ÁÉ½•ÍÍ•Ì½˜A½µÁ½¹•¹ÑÏŠQ…¸‰”Ù•ÉäÕÍ•™Õ°™½ÈÑÉ½Õ‰±•Í¡½½Ñ¥¹œ‘•Á±½åµ•¹Ğ¥ÍÍÕ•Ì¸A½Á•É…Ñ½ÉÌÕÍ¥¹œÑ¡”=ÁÌ5…¹…•È…¸…•ÍÌ…¹‘½İ¹±½…½µÁ½¹•¹ĞÍåÍ±½Ìİ¥Ñ¡½ÕĞ…¹ä…‘‘¥Ñ¥½¹…°½¹™¥ÕÉ…Ñ¥½¸¸((ŒŒŒŒ½İ¹±½…ÍåÍÑ•´±½Ì)™Ñ•ÈÍ•±•Ñ¥¹œ„Ñ¥±”¥¸Ñ¡”=ÁÌ5…¹…•È°Ñ¡”€¨©MÑ…ÑÕÌ¨¨Ñ…ˆİ¥±°Í¡½Ü¡¥ µ±•Ù•°ÍåÍÑ•´¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”Y5ÌÉÕ¹¹¥¹œÑ¡…ĞÍ•ÉÙ¥”¸É½´Ñ¡•É”°å½Ô…¸‘½İ¹±½…„€¹é¥À™¥±”½˜…±°ÍåÍÑ•´±½Ì™½È„¥Ù•¸Y4¸()íìğ¥µœÍÉŒô‰Á˜µ±½Ìµ½ÁÍµ…¸µÍÑ…ÑÕÌµÉ•ØÈ¹Á¹œˆ…ÁÑ¥½¸ô‰Q¡”=ÁÌ5…¹…•ÈMÑ…ÑÕÌÁ…”™½È„AMµ…±°½½ÑÁÉ¥¹ĞALÑ¥±”¸ˆ…±Ğô‰A=ÁÌ5…¹…•ÈÍÑ…ÑÕÌˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()½İ¹±½…‘•±½Ì™½È„Á…ÉÑ¥Õ±…ÈY4…É”Í•É•…Ñ•‰ä©½ˆ¸Q¡”‰•±½Ü•á…µÁ±”Í¡½İÌ±½Ì™É½´Ñ¡”€¨©½¹ÑÉ½°¨¨Y4°İ¡¥ ¥¸„mAMµ…±°½½ÑÁÉ¥¹ÑumÍµ…±°µ™½½ÑÁÉ¥¹Ñt‘•Á±½åµ•¹Ğ¥¹±Õ‘•Ìµ…¹äÍ•ÉÙ¥•ÌÑ¡…Ğ„ÍÑ…¹‘…É‘•Á±½åµ•¹Ğİ½Õ±ÉÕ¸¥¸Í•Á…É…Ñ”Y5Ì¸%¸Ñ¡¥Ì…Í”İ”…¸Í•”ÍÑ‘½ÕÑ€ÍåÍÑ•´±½Ì™½ÈÑ¡”ÕÑ¥½¹••È©½ˆ¸()íìğ¥µœÍÉŒô‰Á˜µ±½ÌµÍåÍÑ•´µ±½Ì¹Á¹œˆ…±Ğô‰AÍåÍÑ•´±½Ìˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()½İ¹±½…‘¥¹œÍåÍÑ•´±½Ì™É½´Ñ¡”=ÁÌ5…¹…•È¥Ì„Í¥µÁ±”İ…äÑ¼É•ÑÉ¥•Ù”ÑÉ½Õ‰±•Í¡½½Ñ¥¹œ‘…Ñ„°‰ÕĞ¥ÓŠeÌ¥µÁ½ÍÍ¥‰±”Ñ¼Ù¥•ÜÉ•…°µÑ¥µ”±½Ì¥¸Ñ¡¥Ìİ…ä°…¹å½ÔµÕÍĞµ…¹Õ…±±äÍ•±•Ğİ¡¥ ½µÁ½¹•¹ÓŠeÌ±½Ìå½Ôİ…¹ĞÑ¼‘½İ¹±½…¸¹½Ñ¡•È½ÁÑ¥½¸¥ÌÑ¼™½Éİ…ÉÍåÍÑ•´±½ÌÑ¼„Í•Á…É…Ñ”Í•ÉÙ•È½È•¹‘Á½¥¹Ğ°µÕ ±¥­”å½Ô…¸İ¥Ñ m…ÁÁ±¥…Ñ¥½¸±½Ít ‘É…¥¹¥¹œµ…ÁÁ±¥…Ñ¥½¸µ±½Ì¤°…Ì•áÁ±…¥¹•…‰½Ù”¸((ŒŒŒŒMÑÉ•…´ÍåÍÑ•´±½Ì)É½´Ñ¡”A¥Ù½Ñ…°ÁÁ±¥…Ñ¥½¸M•ÉÙ¥”Ñ¥±”¥¸Ñ¡”=ÁÌ5…¹…•È°Ñ¡”€¨©MåÍÑ•´1½¥¹œ¨¨ÍÉ••¸…±±½İÌå½ÔÑ¼ÕÍ”ÉÍåÍ±½œÑ¼m™½Éİ…É½µÁ½¹•¹ĞÍåÍÑ•´±½ÍumÍåÍ±½œµ™½Éİ…É‘•ÉtÑ¼„ÍåÍ±½œ•¹‘Á½¥¹Ğ°ÍÕ …Ì„ÕÍÑ½´ÍåÍ±½œÍ•ÉÙ•È½È…¸•áÑ•É¹…°±½œµ…¹…•µ•¹ĞÍ•ÉÙ¥”¸Q¼½¹™¥ÕÉ”ÍåÍ±½œ™½Éİ…É‘¥¹œ°å½Ô±°¹••Ñ¼ÁÉ½Ù¥‘”Ñ¡”UI0½È%@…‘‘É•ÍÌ…¹Ñ¡”Q@Á½ÉĞ½˜Ñ¡”•¹‘Á½¥¹Ğ¸()íìğ¥µœÍÉŒô‰Á˜µ±½ÌµÍåÍ±½œµ™½Éİ…É‘¥¹œµÉ•Ø¹Á¹œˆ…±Ğô‰AÍåÍ±½œ™½Éİ…É‘¥¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()Q¡•É”…É”„™•Ü…Ù•…ÑÌÑ¼¹½Ñ”…‰½ÕĞ™½Éİ…É‘¥¹œÍåÍÑ•´±½Ì™É½´å½ÕÈ±ÕÍÑ•È¸¥ÉÍĞ°Õ¹±¥­”Í•¹‘¥¹œ…ÁÁ±¥…Ñ¥½¸±½ÌÙ¥„Ñ¡”MåÍ±½œ‘…ÁÑ•È°™½Éİ…É‘¥¹œÁ±…Ñ™½É´ÍåÍ±½ÌÉ•ÅÕ¥É•Ì…¸•¹‘Á½¥¹ĞÑ¡…Ğ¥Ì½¹™¥ÕÉ•Ñ¼ÕÍ”Ñ¡”mI1@ÁÉ½Ñ½½±umÉ•±Át¸()M•½¹°Ñ¡”ÍÑ•ÁÌ‘•ÍÉ¥‰•…‰½Ù”İ¥±°½¹±ä™½Éİ…ÉÍåÍÑ•´±½ÌÁÉ½‘Õ•‰äå½ÕÈA¥Ù½Ñ…°ÁÁ±¥…Ñ¥½¸M•ÉÙ¥”Ñ¥±”¸Q¡…Ğ¥Ì°±½œ™½Éİ…É‘¥¹œİ¥±°½¹±ä…ÁÁ±äÑ¼Ñ¡”½É”Y5Ì½˜å½ÕÈ‘•Á±½åµ•¹Ğ…¹¹½ĞÑ¼…¹ä…‘‘¥Ñ¥½¹…°µ…¹…•Í•ÉÙ¥”Y5Ìå½Ôµ¥¡Ğ¡…Ù”¥¹ÍÑ…±±•¸Q¡•Í”Í•ÉÙ¥•Ìµ…ä¡…Ù”Ñ¡•¥È½İ¸ÍåÍ±½œ™½Éİ…É‘¥¹œÍ•ÑÑ¥¹ÌÑ¡…Ğå½Ôİ¥±°¡…Ù”½¹™¥ÕÉ”Í•Á…É…Ñ•±ä¸½È•á…µÁ±”°‰•±½Ü¥ÌÑ¡”ÍåÍ±½œ½¹™¥ÕÉ…Ñ¥½¸Ñ…ˆ™½ÈÑ¡”A!•…±Ñ¡İ…Ñ Ñ¥±”¸()íìğ¥µœÍÉŒô‰Á˜µ±½Ìµ¡•…±Ñ¡İ…Ñ µÍåÍ±½œ¹Á¹œˆ…±Ğô‰A!•…±Ñ¡İ…Ñ ÍåÍ±½œ™½Éİ…É‘¥¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()=¹”å½Ô…ÁÁ±äÑ¡”±½œ™½Éİ…É‘¥¹œÍ•ÑÑ¥¹Ì°å½Ôİ¥±°Í•”ÍåÍÑ•´±½Ì™½Èå½ÕÈÁ±…Ñ™½É´Y5Ì…¹…¹ä…‘‘¥Ñ¥½¹…°½¹™¥ÕÉ•Í•ÉÙ¥”Y5Ì™±½İ¥¹œÑ¼å½ÕÈ•¹‘Á½¥¹Ğ¸	•±½Ü¥Ì„Í…µÁ±”½˜Ñ¡”±½œÍÑÉ•…´™É½´„½µÁ½¹•¹ĞY4½±±•Ñ•½¸…¸•áÑ•É¹…°ÍåÍ±½œÍ•ÉÙ•È¸Q¡”ÍåÍ±½œÍÑ…¹‘…É™½Éµ…Ğ¥¹±Õ‘•ÌÑ¡”%@…‘‘É•ÍÌ½˜Ñ¡”Y4Ñ¡…Ğ™½Éİ…É‘•Ñ¡”±½œ°…¹•… ±½œ±¥¹”¥¹±Õ‘•Ì„Ñ…œÑ¼¥¹‘¥…Ñ”Ñ¡”©½ˆÑ¡…Ğ½É¥¥¹…Ñ•¥Ğè()€))Õ°€ÌÀ€ÀäèÌÄèĞÄ€ÄÀ¸À¸Ğ¸ÈÌÉ½ÕÑ•}É•¥ÍÑÉ…ÈèlÈÀÄà´ÀÜ´ÌÀ€ÄÌèÌÄèĞÄ¬ÀÀÀÁtì‰Ñ¥µ•ÍÑ…µÀˆèˆÄÔÌÈäÔÜÔÀÄ¸ÌÀÀäÄäÀÔØˆ°‰Í½ÕÉ”ˆè‰I½ÕÑ”I•¥ÍÑÉ…Èˆ°‰µ•ÍÍ…”ˆè‰I½ÕÑ”I•¥ÍÑÉ…È¹I•¥ÍÑ•É•É½ÕÑ•ÌÍÕ•ÍÍ™Õ±±äˆ°‰±½}±•Ù•°ˆèÄ°‰‘…Ñ„ˆéíõô))Õ°€ÌÀ€ÀäèÌÄèĞÄ€ÄÀ¸À¸Ğ¸ÈÌ½¹ÍÕ±}…•¹Ğè€€€€ÈÀÄà¼ÀÜ¼ÌÀ€ÄÌèÌÄèĞÄm]I9t…•¹Ğè¡•¬€Í•ÉÙ¥”éÉ•Ù•ÉÍ”µ±½œµÁÉ½áäœ¥Ì¹½ÜÉ¥Ñ¥…°))Õ°€ÌÀ€ÀäèÌÄèĞÈ€ÄÀ¸À¸Ğ¸ÈÌ½¹ÍÕ±}…•¹Ğè€€€€ÈÀÄà¼ÀÜ¼ÌÀ€ÄÌèÌÄèĞÈm]I9t…•¹Ğè¡•¬€Í•ÉÙ¥”é±½Õµ½¹ÑÉ½±±•Èµ¹œœ¥Ì¹½ÜÉ¥Ñ¥…°))Õ°€ÌÀ€ÀäèÌÄèĞÌ€ÄÀ¸À¸Ğ¸ÈÌÕ…„èlÈÀÄà´ÀÜ´ÌÀ€ÄÌèÌÄèĞÌ¸ÀÀÑtÕ…„€´€ÄÔÔÜÌmÁ½½°´ĞµÑ¡É•…´Åt€¸¸¸¸	U€´´´)‘‰Q•µÁ±…Ñ”èá•ÕÑ¥¹œME0ÅÕ•ÉämÍ•±•Ğ½Õ¹Ğ ¨¤™É½´ÕÍ•ÉÍt))Õ°€ÌÀ€ÀäèÌÄèĞÌ€ÄÀ¸À¸Ğ¸ÈÌÕ…„èlÈÀÄà´ÀÜ´ÌÀ€ÄÌèÌÄèĞÌ¸ÀÀÕtÕ…„€´€ÄÔÔÜÌmÁ½½°´ĞµÑ¡É•…´Åt€¸¸¸¸	U€´´´)‘‰Q•µÁ±…Ñ”èá•ÕÑ¥¹œME0ÅÕ•ÉämÍ•±•Ğ½Õ¹Ğ ¨¤™É½´½…ÕÑ¡}±¥•¹Ñ}‘•Ñ…¥±Ít))Õ°€ÌÀ€ÀäèÌÄèĞÌ€ÄÀ¸À¸Ğ¸ÈÌÉÍåÍ±½´ÈÌÔäè…Ñ¥½¸€…Ñ¥½¸€ÄÜœÉ•ÍÕµ•€¡µ½‘Õ±”€‰Õ¥±Ñ¥¸é½µ™¥±”œ¤mØà¸ÈÈ¸ÀÑÉä¡ÑÑÀè¼½İİÜ¹ÉÍåÍ±½œ¹½´½”¼ÈÌÔät))Õ°€ÌÀ€ÀäèÌÄèĞÌ€ÄÀ¸À¸Ğ¸ÈÌÉÍåÍ±½´ÈÌÔäèµ•ÍÍ…”É•Á•…Ñ•€äÑ¥µ•Ìèm…Ñ¥½¸€…Ñ¥½¸€ÄÜœÉ•ÍÕµ•€¡µ½‘Õ±”€‰Õ¥±Ñ¥¸é½µ™¥±”œ¤mØà¸ÈÈ¸ÀÑÉä¡ÑÑÀè¼½İİÜ¹ÉÍåÍ±½œ¹½´½”¼ÈÌÔäut))Õ°€ÌÀ€ÀäèÌÄèĞÌ€ÄÀ¸À¸Ğ¸ÈÌÉÍåÍ±½´ÈÀÀÜè…Ñ¥½¸€…Ñ¥½¸€ÄÜœÍÕÍÁ•¹‘•°¹•áĞÉ•ÑÉä¥Ì5½¸)Õ°€ÌÀ€ÄÌèÌÈèÄÌ€ÈÀÄàmØà¸ÈÈ¸ÀÑÉä¡ÑÑÀè¼½İİÜ¹ÉÍåÍ±½œ¹½´½”¼ÈÀÀÜt))Õ°€ÌÀ€ÀäèÌÄèĞĞ€ÄÀ¸À¸Ğ¸ÈÌ½¹ÍÕ±}…•¹Ğè€€€€ÈÀÄà¼ÀÜ¼ÌÀ€ÄÌèÌÄèĞĞm]I9t…•¹Ğè¡•¬€Í•ÉÙ¥”éÉ•Ù•ÉÍ”µ±½œµÁÉ½áäœ¥Ì¹½ÜÉ¥Ñ¥…°)€((ŒŒ±°¥¸½¹”Á±…”()Ìİ—ŠeÙ”Í••¸°„A¥Ù½Ñ…°±½Õ½Õ¹‘Éä±ÕÍÑ•È•µ¥ÑÌµ…¹ä‘¥™™•É•¹Ğ­¥¹‘Ì½˜¥¹™½Éµ…Ñ¥½¸°•… ½˜İ¡¥ …¸‰”Ù¥Ñ…°Ñ¼µ½¹¥Ñ½É¥¹œÑ¡”¡•…±Ñ ½˜Ñ¡”‘•Á±½åµ•¹Ğ…¹Ñ¡”…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ½¸¥Ğ¸%¸Ñ¡¥ÌÁ½ÍĞ°İ—ŠeÙ”•áÁ±½É•Í½µ”½˜Ñ¡”İ…åÌÑ¡…Ğå½Ô…¸½±±•Ğ½È…•ÍÌÑ¡”Ù…É¥½ÕÌ±½Ì…¹µ•ÑÉ¥Ì…Ù…¥±…‰±”¥¸A¸()…Ñ…‘½ŸŠeÌA¥Ù½Ñ…°±½Õ½Õ¹‘Éä¥¹Ñ•É…Ñ¥½¸•¹…‰±•Ì½Á•É…Ñ½ÉÌ…¹‘•Ù•±½Á•ÉÌÑ¼½±±•ĞA‘•Á±½åµ•¹Ğµ•ÑÉ¥Ì…¹±½Ì™½ÈÕÍ”İ¥Ñ …Ñ…‘½ŸŠeÌÁ½İ•É™Õ°Ù¥ÍÕ…±¥é…Ñ¥½¸°…¹…±åÑ¥Ì°…¹…±•ÉÑ¥¹œ™•…ÑÕÉ•Ì¸%¸Ñ¡”m™¥¹…°Á…ÉÑumÁ…ÉĞµ™½ÕÉt½˜Ñ¡¥ÌÍ•É¥•Ì°İ—Še±°Í¡½Üå½Ô¡½Üå½Ô…¸¥¹Ñ•É…Ñ”A¥Ù½Ñ…°±½Õ½Õ¹‘Éäİ¥Ñ …Ñ…‘½œÑ¼…É•…Ñ”Ñ¡”™Õ±°É…¹”½˜‘•Á±½åµ•¹Ğ…¹…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ì°…Ìİ•±°…Ì…ÁÁ±¥…Ñ¥½¸…¹ÍåÍÑ•´±½Ì°Í¼Ñ¡…Ğå½Ô…¸•Ğ‘••ÀÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈ•¹Ñ¥É”‘•Á±½åµ•¹Ğ¥¸„Í¥¹±”Á±…Ñ™½É´¸((ŒŒ­¹½İ±•‘µ•¹ÑÌ()]”İ¥Í Ñ¼Ñ¡…¹¬µ‰•È±ÍÑ½¸°-…ÑÉ¥¹„	…­…Ì°5…ÑĞ¡½±¥¬°)…É•IÕ­±”°…¹Ñ¡”É•ÍĞ½˜Ñ¡”A¥Ù½Ñ…°±½Õ½Õ¹‘ÉäÑ•…´™½ÈÑ¡•¥ÈÑ•¡¹¥…°É•Ù¥•Ü…¹™••‘‰…¬™½ÈÑ¡¥ÌÍ•É¥•Ì¸()mÁ…ÉĞµ½¹•tè€½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµ…É¡¥Ñ•ÑÕÉ”)mÁ…ÉĞµÑİ½tè€½‰±½œ½Á¥Ù½Ñ…°µ±½Õµ™½Õ¹‘Éäµµ•ÑÉ¥Ì)mÁ…ÉĞµ™½ÕÉtè€½‰±½œ½Á˜µµ½¹¥Ñ½É¥¹œµİ¥Ñ µ‘…Ñ…‘½œ)m˜µ±¥tè¡ÑÑÁÌè¼½‘½Ì¹ÉÕ¸¹Á¥Ù½Ñ…°¹¥¼½˜µ±¤)mÁ¥Ù½Ñ…°µ¹•Ñİ½É­tè¡ÑÑÁÌè¼½¹•Ñİ½É¬¹Á¥Ù½Ñ…°¹¥¼¼)m±½œµ…¡”µÁ±Õ¥¹tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éä½±½œµ…¡”µ±¤)m‘É½ÁÍ½¹‘•tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éä½‘É½ÁÍ½¹‘”µÁÉ½Ñ½½°½ÑÉ•”½µ…ÍÑ•È½•Ù•¹ÑÌ)mÁ˜µ¥¹ÍÑ…±°µÍ•ÉÙ¥•Ítè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½ÕÍÑ½µ¥é¥¹œ½…‘µ‘•±•Ñ”¹¡Ñµ°)m¹½éé±•Ítè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Ñ¥±•‘•Ø½¹½éé±”¹¡Ñµ°)m™¥É•¡½Í”µÁ±Õ¥¹tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éäµ½µµÕ¹¥Ñä½™¥É•¡½Í”µÁ±Õ¥¸)m¡•…±Ñ¡İ…Ñ µ…±•ÉÑÍtè¡ÑÑÀè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µ¡•…±Ñ¡İ…Ñ ½…Á¤½…±•ÉÑÌ¹¡Ñµ°)m•Ù•¹Ğµ…±•ÉÑÍtè¡ÑÑÀè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½•Ù•¹Ğµ…±•ÉÑÌ½¥¹‘•à¹¡Ñµ°)mÍÁÉ¥¹tè¡ÑÑÁÌè¼½‘½Ì¹ÍÁÉ¥¹œ¹¥¼½ÍÁÉ¥¹œ½‘½Ì¼Ğ¸Ì¸ÄĞ¹I1M½ÍÁÉ¥¹œµ™É…µ•İ½É¬µÉ•™•É•¹”½¡Ñµ°½•áÁÉ•ÍÍ¥½¹Ì¹¡Ñµ°)m•Ù•¹ĞµÑ…É•ÑÍtè¡ÑÑÀè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½•Ù•¹Ğµ…±•ÉÑÌ½ÕÍ¥¹œ¹¡Ñµ°)m±½œµ…¡•tè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½½ÁÍÕ¥‘”½±½¥¹œµ½¹™¥œµ½ÁÍµ…¸¹¡Ñµ°±½œµ…¡”)m¥¹ÍÑ…±°µ¡•…±Ñ¡İ…Ñ¡tè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µ¡•…±Ñ¡İ…Ñ ½¥¹ÍÑ…±±¥¹œ¹¡Ñµ°)m¡•…±Ñ¡İ…Ñ µ…±•ÉÑÍtè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µ¡•…±Ñ¡İ…Ñ ½…Á¤½…±•ÉÑÌ¹¡Ñµ°‘•™…Õ±ÑÌ)mÁ˜µµ•ÑÉ¥Ítè¡ÑÑÀè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µµ•ÑÉ¥Ì½¥¹‘•à¹¡Ñµ°)mÁ˜µÑÉ…•Ítè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µµ•ÑÉ¥Ì½ÕÍ¥¹œ¹¡Ñµ°ÑÉ…”)mÁ˜µµ•ÑÉ¥Ìµ¥¹ÍÑ…±±tè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á˜µµ•ÑÉ¥Ì½¥¹ÍÑ…±±¥¹œ¹¡Ñµ°)mÁ˜µµ•ÑÉ¥Ìµ™½Éİ…É‘•Étè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½µ•ÑÉ¥Ìµ™½Éİ…É‘•È½¥¹‘•à¹¡Ñµ°)mµ•ÑÉ¥Ìµ™½Éİ…É‘•Èµ¥¹ÍÑ…±±tè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½µ•ÑÉ¥Ìµ™½Éİ…É‘•È½¥¹ÍÑ…±±¥¹œ¹¡Ñµ°)mµ•ÑÉ¥Ìµ™½Éİ…É‘•ÈµÁ½ÍÑtè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½µ•ÑÉ¥Ìµ™½Éİ…É‘•È½•µ¥ÑÑ¥¹œ¹¡Ñµ°•µ¥ÑÑ¥¹œµµ•ÑÉ¥Ì)mµ…¹…•µÍ•ÉÙ¥•Ítè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Ñ¥±•‘•Ø½µ…¹…•¹¡Ñµ°)mÕ…„µÑ½­•¹Ítè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½Õ…„½Õ…„µÕÍ•Èµµ…¹…•µ•¹Ğ¹¡Ñµ°)mµ…¹…¥¹œµÍ•ÉÙ¥”µ¥¹ÍÑ…¹•Ítè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½‘•ÙÕ¥‘”½Í•ÉÙ¥•Ì½µ…¹…¥¹œµÍ•ÉÙ¥•Ì¹¡Ñµ°)m˜µ‘É…¥¸µÁ±Õ¥¹tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±½Õ‘™½Õ¹‘Éä½˜µ‘É…¥¸µ±¤)mÍµ…±°µ™½½ÑÁÉ¥¹Ñtè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½ÕÍÑ½µ¥é¥¹œ½Íµ…±°µ™½½ÑÁÉ¥¹Ğ¹¡Ñµ°)mÍåÍ±½œµ™½Éİ…É‘•Étè¡ÑÑÁÌè¼½‘½Ì¹Á¥Ù½Ñ…°¹¥¼½Á¥Ù½Ñ…±˜½½ÁÍÕ¥‘”½±½¥¹œµ½¹™¥œµ½ÁÍµ…¸¹¡Ñµ°ÍåÍ±½œµ™½Éİ…É)mÉ•±Átè¡ÑÑÁÌè¼½‰±½œ¹œÍÉĞ¹¹°½É•µ½Ñ”µ±½¥¹œµÉÍåÍ±½œµÉ•±À¹¡Ñµ°½¹™¥ÕÉ”µÑ¡”µÍ•ÉÙ•È

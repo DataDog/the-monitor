@@ -1,237 +1,3 @@
-
-_This post is part 2 of a 3-part series about monitoring Apache Kafka. [Part 1][part1] is about the key performance metrics available from Kafka, and [Part 3][part3] details how to monitor Kafka with Datadog._
-
-If youâ€™ve already read [our guide][part1] to key Kafka metrics, youâ€™ve seen that Kafka provides a vast array of metrics on performance and resource utilization, which are available in a number of different ways. You've also seen that no Kafka monitoring solution is complete without also monitoring ZooKeeper. This post covers some different options for collecting [Kafka](#jconsole) and [ZooKeeper](#zookeeper) metrics, depending on your needs.
-
-Like Tomcat, [Cassandra], and other [Java applications][jmx-dd], both Kafka and ZooKeeper expose metrics on availability and performance via JMX (Java Management Extensions). 
-
-## Collecting native Kafka metrics
-
-- [JConsole](#jconsole), a GUI that ships with the Java Development Kit (JDK)
-- [JMX/Metrics integrations](#jmx) with external graphing and monitoring tools and services
-- [Burrow](#burrow) for monitoring consumer health
-
-JConsole, and JMX, can collect all of the native Kafka metrics outlined in [part 1 of this series][part1], while Burrow is a more specialized tool focused on collecting consumer metrics. For host-level metrics, you should consider installing a [monitoring agent][agent].
-
-<div class="anchor" id="jconsole" />
-
-### Collecting Kafka metrics with JConsole
-
-JConsole is a simple Java GUI that ships with the Java Development Kit (JDK). It provides an interface for exploring the full range of metrics Kafka emits via JMX. If the JDK was installed to a directory in your system path, you can start JConsole by running: `jconsole`.
-Otherwise, check in `your_JDK_install_dir/bin`
-
-To view metrics in JConsole, you can select the relevant local process or monitor a remote process using the nodeâ€™s IP address (Kafka uses port 9999 for JMX by default),  though it is recommended that you connect remotely, as JConsole can be resource-intensive:
-
-[![JConsole View][jconsole-screen]][jconsole-screen]
-
-The **MBeans** tab brings up all the JMX paths available:
-
-[![MBean Tab][mbean-screen]][mbean-screen]
-
-As you can see in the screenshot above, Kafka aggregates metrics by source. All the JMX paths for Kafka's key metrics can be found in [part 1][part1] of this series.
-
-#### Consumers and producers
-To collect JMX metrics from your consumers and producers, follow the same steps outlined above, replacing port 9999 with the JMX port for your producer or consumer, and  the node's IP address.
-
-<div class="anchor" id="jmx" />
-
-### Collecting Kafka metrics via JMX/Metrics integrations
-
-JConsole is a great lightweight tool that can provide metrics snapshots very quickly, but is not so well-suited to the kinds of big-picture questions that arise in a production environment: What are the long-term trends for my metrics? Are there any large-scale patterns I should be aware of? Do changes in performance metrics tend to correlate with actions or events elsewhere in my environment?
-
-To answer these kinds of questions, you need a more sophisticated monitoring system. The good news is, virtually every major monitoring service and tool can collect JMX metrics from Kafka, whether via [JMX plugins]; via pluggable [metrics reporter libraries][reporter-libraries]; or via [connectors] that write JMX metrics out to StatsD, Graphite, or other systems.
-
-The configuration steps depend greatly on the particular monitoring tools you choose, but JMX is a fast route to your Kafka metrics using the MBean names mentioned in [part 1][part1] of this series.
-
-<div class="anchor" id="burrow" />
-
-### Monitoring consumer health with Burrow
-In addition to the key metrics mentioned in part 1 of this series, you may want more detailed metrics on your consumers and consumer groups. For that, there is Burrow.
-
-[Burrow][what-is-burrow] is a specialized monitoring tool developed by [LinkedIn][burrow-linkedin] specifically for consumer monitoring. Why do you need a separate tool to monitor consumer health when you have [`MaxLag`][consumer-lag]? (MaxLag represents the number of messages by which the consumer lags behind the producer.) Besides the fact that `MaxLag` has been removed in Kafka v0.9.0.0+, Burrow was built to solve the following shortcomings of simply monitoring consumer offset lag: 
-
-- `MaxLag` is insufficient because it lasts only as long as the consumer is alive
-- spot checking topics conceals problems (like if a single thread of a consumer dies, it stops consuming a topic but other consumption continues, so the consumer may still appear to be healthy)
-- measuring lag for wildcard consumers can quickly become overwhelming with more than a handful of consumers
-- lag alone doesn't tell you the whole story
-
-Enter Burrow.  
-
-[![Burrow architecture diagram][burrow-arch]][burrow-arch] 
-<change the "Offset commit" to include an optional (dotted) arrow to ZooKeeper, as Burrow can work with Kafka deployments that use ZooKeeper for offset storage>
-
-By consuming the special, internal Kafka topic __\_consumer\_offsets_, Burrow can act as a centralized service, separate from any single consumer, giving you an objective view of consumers based on both their committed offsets (across topics) and broker state.
-
-#### Installation and configuration
-Before we get started, you will need to [install and configure Go][go-install] (v1.6+). You can either use a dedicated machine to host Burrow or run it on another host in your environment. Next you'll need the [Go Package Manager][gpm] (GPM) to automatically download Burrow's dependencies.
-
-With Go and GPM installed, run the following commands to build and install burrow:
-
-```
-go get github.com/linkedin/burrow
-cd $GOPATH/src/github.com/linkedin/burrow
-gpm install
-go install
-```
-
-Before you can use Burrow, you'll need to write a configuration file. Setting up a configuration is easy enough, but varies depending on your Kafka deployment. Below is a barebones, minimal configuration file for a local Kafka deployment with ZooKeeper as the offset storage backend:
-
-```
-[general]
-logdir=/home/kafka/burrow/log
-
-[zookeeper]
-hostname=localhost
-
-[kafka "local"]
-broker=localhost
-zookeeper=localhost
-zookeeper-path=/kafka-cluster
-zookeeper-offsets=true # Set to false if using Kafka for offset storage
-
-[httpserver]
-server=on
-port=8000
-```
-
-For a complete overview of Burrow configuration options, check the [Burrow wiki][burrow-conf].
-
-With Burrow configured, you can begin tracking consumer health by running: `$GOPATH/bin/burrow --config path/to/burrow.cfg`
-
-If successful, with Burrow running you can begin querying its HTTP endpoints. For example, to see a list of your Kafka clusters, you can hit `/v2/kafka/` and see a JSON response:
- 
-```
-{
-    "error": false,
-    "message": "cluster list returned",
-    "clusters": [
-        "local"
-    ]
-}
-```
-
-We've just scratched the surface of Burrow's functionality, which includes automated notifications via [HTTP][notif-http] or [email][notif-email]. For a complete list of HTTP endpoints, refer to the [documentation][burrow-api].
-
-## Kafka page cache
-Most host-level metrics identified in part 1 can be collected with standard system utilities. Page cache, however, requires more. Linux kernels earlier than 3.13 may require compile-time flags to expose this metric. Also youâ€™ll need to download a utility from [Brendan Gregg][cachestat-doc]:
-
-Start by [downloading][cachestat-dl] the `cachestat` script: `wget https://raw.githubusercontent.com/brendangregg/perf-tools/master/fs/cachestat` and make it executable `chmod +x cachestat`. Then, execute it like so `./cachestat <collection interval in seconds>`:
-
-```
-$ ./cachestat 20
-Counting cache functions... Output every 20 seconds.
-    HITS   MISSES  DIRTIES    RATIO   BUFFERS_MB   CACHE_MB
-    5352        0      234   100.0%          103        165
-    5168        0      260   100.0%          103        165
-    6572        0      259   100.0%          103        165
-    6504        0      253   100.0%          103        165
-[...]
-    
-```
-(In the output above _DIRTIES_ are those pages that have been modified after entering the page cache.)
-
-<div class="anchor" id="zookeeper" />
-
-## Collecting ZooKeeper metrics
-Like Kafka, there are several ways you can collect metrics from ZooKeeper. We will focus on the two most popular, JConsole and the so-called ["four letter words"][4-letter-words]. Though we won't go into it here, the [`zktop` utility][zktop] is also a useful addition to your ZooKeeper monitoring arsenal. It provides a `top`-like interface to ZooKeeper. 
-
-Using only the four-letter words, you can collect all of the native ZooKeeper metrics listed in [part 1 of this series][part1] . If you are using JConsole, you can collect all but ZooKeeper's file descriptor metrics.
-
-<div class="anchor" id="jconsole-zoo" />
-
-### Collecting ZooKeeper metrics with JConsole
-To view ZooKeeper metrics in JConsole, you can select the `org.apache.zookeeper.server.quorum.QuorumPeerMain` process or monitor a remote process using the nodeâ€™s IP address (ZooKeeper randomizes its JMX port by default):
-
-[![JConsole View][zookeeper-screen]][zookeeper-screen]
-
-ZooKeeper's exact JMX path for metrics varies depending on your configuration, but invariably you can find them under the `org.apache.ZooKeeperService` MBean.
-
-Using JMX, you can collect all of the metrics listed in part 1, with the exception of `zk_followers` and `zk_pending_syncs`. For those, you will need the [four letter words](#4-letter-words).
-
-<div class="anchor" id="4-letter-words" />
-
-### The four letter words
-ZooKeeper responds to a small set of commands known as "the four letter words". Each command is composed ofâ€”you guessed itâ€”four letters. You can issue the commands to ZooKeeper via `telnet` or `nc`. 
-
-Though the most-used of the commands are: `stat`, `srvr`,  `cons`, and `mntr`,  the full command list is reproduced below with a short description and availability by version. 
-
-If you are on your ZooKeeper node, you can see all of the ZooKeeper metrics from [part 1][part1], including `zk_pending_syncs` and `zk_followers`, with: `echo mntr | nc localhost 2181`:
-
-```
-zk_version  3.4.5--1, built on 06/10/2013 17:26 GMT
-zk_avg_latency  0
-zk_max_latency  0
-zk_min_latency  0
-zk_packets_received 70
-zk_packets_sent 69
-zk_outstanding_requests 0
-zk_server_state leader
-zk_znode_count   4
-zk_watch_count  0
-zk_ephemerals_count 0
-zk_approximate_data_size    27
-zk_followers    4                   - only exposed by the Leader
-zk_synced_followers 4               - only exposed by the Leader
-zk_pending_syncs    0               - only exposed by the Leader
-zk_open_file_descriptor_count 23    - only available on Unix platforms
-zk_max_file_descriptor_count 1024   - only available on Unix platforms
-```
-
-|Word| Description | Version|
-|:--:|:--:|:--:|
-|conf| Print details about serving configuration.|3.3.0+|
-|cons| List full connection/session details for all clients connected to this server. Includes information on numbers of packets received/sent, session id, operation latencies, last operation performed |3.3.0+|
-|crst| Reset connection/session statistics for all connections.|3.3.0+|
-|dump|Lists the outstanding sessions and ephemeral nodes (Leader only).|pre 3.3.0|
-|envi|Print details about serving environment|pre 3.3.0|
-|ruok|Tests if server is running in a non-error state. The server will respond with `imok` if it is running. |pre 3.3.0|
-|srst|Reset server statistics.|pre 3.3.0|
-|srvr|Lists full details for the server.|pre 3.3.0|
-|stat|Lists brief details for the server and connected clients.| pre 3.3.0|
-|wchs|Lists _brief_ information on [watches] for the server|3.3.0+|
-|wchc|Lists _detailed_ information on [watches] for the server, _by session_.|3.3.0+|
-|wchp|Lists _detailed_ information on [watches] for the server, _by path_. |3.3.0+|
-|mntr|Outputs a list of variables that could be used for monitoring the health of the cluster.|3.4.0+|
-
-*Commands available "pre 3.3.0" work through the latest version.*
-
-## Conclusion
-In this post we have covered a few of the ways to access Kafka and ZooKeeper metrics using simple, lightweight tools. For production-ready monitoring, you will likely want a dynamic monitoring system that ingests Kafka metrics as well as key metrics from every technology in your stack.
-
-At Datadog, we have developed both Kafka and ZooKeeper integrations so that you can start collecting, graphing, and alerting on metrics from your clusters with a minimum of overhead. For more details, check out our guide to [monitoring Kafka metrics with Datadog][part3], or get started right away with a [free trial][signup].
-
-[signup]: https://app.datadoghq.com/signup
-
-[4-letter-words]: https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#The+Four+Letter+Words
-[agent]: http://docs.datadoghq.com/guides/basic_agent_usage/
-[burrow-api]: https://github.com/linkedin/Burrow/wiki/HTTP-Endpoint
-[burrow-conf]: https://github.com/linkedin/Burrow/wiki/Configuration
-[burrow-linkedin]: https://engineering.linkedin.com/apache-kafka/burrow-kafka-consumer-monitoring-reinvented
-[Cassandra]: https://www.datadoghq.com/blog/how-to-monitor-cassandra-performance-metrics/
-[cachestat-dl]: https://github.com/brendangregg/perf-tools/blob/master/fs/cachestat
-[cachestat-doc]: http://www.brendangregg.com/blog/2014-12-31/linux-page-cache-hit-ratio.html
-[connectors]: https://github.com/jmxtrans/jmxtrans
-[go-download]: https://golang.org/dl/
-[go-install]: https://golang.org/doc/install
-[gpm]: https://github.com/pote/gpm
-[jmx-dd]: https://www.datadoghq.com/blog/monitoring-jmx-metrics-with-datadog/
-[JMX plugins]: http://docs.datadoghq.com/integrations/java/
-[notif-email]: https://github.com/linkedin/Burrow/wiki/Email-Notifier
-[notif-http]: https://github.com/linkedin/Burrow/wiki/HTTP-Notifier
-[reporter-libraries]: https://cwiki.apache.org/confluence/display/KAFKA/JMX+Reporters
-[watches]: https://zookeeper.apache.org/doc/trunk/zookeeperProgrammers.html#ch_zkWatches
-[what-is-burrow]: https://github.com/linkedin/Burrow/wiki/What-is-Burrow
-[zktop]: https://github.com/phunt/zktop
-
-<IMAGES>
-
-[burrow-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/burrow-arch3.png
-[jconsole-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/jconsole-remote2.png
-[mbean-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/mbean-screen.png
-[zookeeper-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/zookeeper-jconsole.png
-
-[part1]: https://www.datadoghq.com/blog/how-to-monitor-kafka-performance-metrics/ 
-[part2]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/  
-[part3]: https://www.datadoghq.com/blog/monitor-kafka-with-datadog/  
-
-[consumer-lag]: https://www.datadoghq.com/blog/how-to-monitor-kafka-performance-metrics/#MaxLag
+m½±±•Ñ¥¹œ-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥Ì(((©Q¡¥ÌÁ½ÍĞ¥ÌÁ…ÉĞ€È½˜„€ÌµÁ…ÉĞÍ•É¥•Ì…‰½ÕĞµ½¹¥Ñ½É¥¹œÁ…¡”-…™­„Á•É™½Éµ…¹”¸mA…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤¥Ì…‰½ÕĞÑ¡”­•ä…Ù…¥±…‰±”-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥Ì°…¹mA…ÉĞ€Ít ½‰±½œ½µ½¹¥Ñ½Èµ­…™­„µİ¥Ñ µ‘…Ñ…‘½œ¼¤‘•Ñ…¥±Ì¡½ÜÑ¼µ½¹¥Ñ½È-…™­„İ¥Ñ …Ñ…‘½œ¸¨()%˜å½×ŠeÙ”…±É•…‘äÉ•…m½ÕÈÕ¥‘•t ½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤Ñ¼­•ä-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥Ì°å½×ŠeÙ”Í••¸Ñ¡…Ğ-…™­„ÁÉ½Ù¥‘•Ì„Ù…ÍĞ…ÉÉ…ä½˜µ•ÑÉ¥Ì½¸Á•É™½Éµ…¹”…¹É•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸°İ¡¥ …É”…Ù…¥±…‰±”¥¸„¹Õµ‰•È½˜‘¥™™•É•¹Ğİ…åÌ¸e½ÔÙ”…±Í¼Í••¸Ñ¡…Ğ¹¼-…™­„Á•É™½Éµ…¹”µ½¹¥Ñ½É¥¹œÍ½±ÕÑ¥½¸¥Ì½µÁ±•Ñ”İ¥Ñ¡½ÕĞ…±Í¼µ½¹¥Ñ½É¥¹œi½½-••Á•È¸Q¡¥ÌÁ½ÍĞ½Ù•ÉÌÍ½µ”‘¥™™•É•¹Ğ½ÁÑ¥½¹Ì™½È½±±•Ñ¥¹œm-…™­…t ½±±•Ñ¥¹œµ¹…Ñ¥Ù”µ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤…¹mi½½-••Á•Ét ½±±•Ñ¥¹œµé½½­••Á•Èµµ•ÑÉ¥Ì¤µ•ÑÉ¥Ì°‘•Á•¹‘¥¹œ½¸å½ÕÈ¹••‘Ì¸()1¥­”Q½µ…Ğ°m…ÍÍ…¹‘É…t ½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½Èµ…ÍÍ…¹‘É„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°…¹½Ñ¡•Èm)…Ù„…ÁÁ±¥…Ñ¥½¹Ít ½‰±½œ½µ½¹¥Ñ½É¥¹œµ©µàµµ•ÑÉ¥Ìµİ¥Ñ µ‘…Ñ…‘½œ¼¤°‰½Ñ -…™­„…¹i½½-••Á•È•áÁ½Í”µ•ÑÉ¥Ì½¸…Ù…¥±…‰¥±¥Ñä…¹Á•É™½Éµ…¹”Ù¥„)5`€¡)…Ù„5…¹…•µ•¹ĞáÑ•¹Í¥½¹Ì¤¸()½±±•Ñ¥¹œ¹…Ñ¥Ù”-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥Ì(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´(((((´€€m)½¹Í½±•t ½±±•Ñ¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥Ñ µ©½¹Í½±”¤°„U$Ñ¡…ĞÍ¡¥ÁÌİ¥Ñ Ñ¡”)…Ù„•Ù•±½Áµ•¹Ğ-¥Ğ€¡),¤(´€€m)5`½5•ÑÉ¥Ì¥¹Ñ•É…Ñ¥½¹Ít ½±±•Ñ¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥ÌµÙ¥„µ©µáµ•ÑÉ¥Ìµ¥¹Ñ•É…Ñ¥½¹Ì¤İ¥Ñ •áÑ•É¹…°É…Á¡¥¹œ…¹µ½¹¥Ñ½É¥¹œÑ½½±Ì…¹Í•ÉÙ¥•Ì(´€€m	ÕÉÉ½İt µ½¹¥Ñ½É¥¹œµ½¹ÍÕµ•Èµ¡•…±Ñ µİ¥Ñ µ‰ÕÉÉ½Ü¤™½Èµ½¹¥Ñ½É¥¹œ½¹ÍÕµ•È¡•…±Ñ ((())½¹Í½±”°…¹)5`°…¸½±±•Ğ…±°½˜Ñ¡”¹…Ñ¥Ù”-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥Ì½ÕÑ±¥¹•¥¸mÁ…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ít ½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°İ¡¥±”	ÕÉÉ½Ü¥Ì„µ½É”ÍÁ•¥…±¥é•Ñ½½°™½ÕÍ•½¸½±±•Ñ¥¹œ½¹ÍÕµ•Èµ•ÑÉ¥Ì¸½È¡½ÍĞµ±•Ù•°µ•ÑÉ¥Ì°å½ÔÍ¡½Õ±½¹Í¥‘•È¥¹ÍÑ…±±¥¹œ„mµ½¹¥Ñ½É¥¹œ…•¹Ñt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½‰…Í¥}…•¹Ñ}ÕÍ…”¼ıÑ…ˆõ…•¹ÑØØ¤¸((((ŒŒŒ½±±•Ñ¥¹œ-…™­‡
+Á•É™½Éµ…¹—
+µ•ÑÉ¥Ìİ¥Ñ )½¹Í½±”(())½¹Í½±”¥Ì„Í¥µÁ±”)…Ù„U$Ñ¡…ĞÍ¡¥ÁÌİ¥Ñ Ñ¡”)…Ù„•Ù•±½Áµ•¹Ğ-¥Ğ€¡),¤¸%ĞÁÉ½Ù¥‘•Ì…¸¥¹Ñ•É™…”™½È•áÁ±½É¥¹œÑ¡”™Õ±°É…¹”½˜µ•ÑÉ¥Ì-…™­„•µ¥ÑÌÙ¥„)5`¸%˜Ñ¡”),İ…Ì¥¹ÍÑ…±±•Ñ¼„‘¥É•Ñ½Éä¥¸å½ÕÈÍåÍÑ•´Á…Ñ °å½Ô…¸ÍÑ…ÉĞ)½¹Í½±”‰äÉÕ¹¹¥¹œè©½¹Í½±•€¸()=Ñ¡•Éİ¥Í”°¡•¬¥¸å½ÕÉ})-}¥¹ÍÑ…±±}‘¥È½‰¥¹€()Q¼Ù¥•Üµ•ÑÉ¥Ì¥¸)½¹Í½±”°å½Ô…¸Í•±•ĞÑ¡”É•±•Ù…¹Ğ±½…°ÁÉ½•ÍÌ½Èµ½¹¥Ñ½È„É•µ½Ñ”ÁÉ½•ÍÌÕÍ¥¹œÑ¡”¹½‘—ŠeÌ%@…‘‘É•ÍÌ€¡-…™­„ÕÍ•ÌÁ½ÉĞ€ääää™½È)5`‰ä‘•™…Õ±Ğ¤°Ñ¡½Õ ¥Ğ¥ÌÉ•½µµ•¹‘•Ñ¡…Ğå½Ô½¹¹•ĞÉ•µ½Ñ•±ä°…Ì)½¹Í½±”…¸‰”É•Í½ÕÉ”µ¥¹Ñ•¹Í¥Ù”è()íìğ¥µœÍÉŒô‰©½¹Í½±”µÉ•µ½Ñ”È¹Á¹œˆ…±Ğô‰-…™­„Á•É™½Éµ…¹”€´)½¹Í½±”Y¥•ÜˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()Q¡”€¨©5	•…¹Ì¨¨Ñ…ˆ‰É¥¹ÌÕÀ…±°Ñ¡”)5`Á…Ñ¡Ì…Ù…¥±…‰±”è()íìğ¥µœÍÉŒô‰µ‰•…¸µÍÉ••¸¹Á¹œˆ…±Ğô‰-…™­„Á•É™½Éµ…¹”€´5	•…¸Q…ˆˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()Ìå½Ô…¸Í•”¥¸Ñ¡”ÍÉ••¹Í¡½Ğ…‰½Ù”°-…™­„…É•…Ñ•Ìµ•ÑÉ¥Ì‰äÍ½ÕÉ”¸±°Ñ¡”)5`Á…Ñ¡Ì™½È-…™­„Ì­•äµ•ÑÉ¥Ì…¸‰”™½Õ¹¥¸mÁ…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤½˜Ñ¡¥ÌÍ•É¥•Ì¸((ŒŒŒŒ½¹ÍÕµ•ÉÌ…¹ÁÉ½‘Õ•ÉÌ(()Q¼½±±•Ğ)5`µ•ÑÉ¥Ì™É½´å½ÕÈ½¹ÍÕµ•ÉÌ…¹ÁÉ½‘Õ•ÉÌ°™½±±½ÜÑ¡”Í…µ”ÍÑ•ÁÌ½ÕÑ±¥¹•…‰½Ù”°É•Á±…¥¹œÁ½ÉĞ€ääääİ¥Ñ Ñ¡”)5`Á½ÉĞ™½Èå½ÕÈÁÉ½‘Õ•È½È½¹ÍÕµ•È°…¹Ñ¡”¹½‘”Ì%@…‘‘É•ÍÌ¸((((ŒŒŒ½±±•Ñ¥¹œ-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥ÌÙ¥„)5`½5•ÑÉ¥Ì¥¹Ñ•É…Ñ¥½¹Ì(())½¹Í½±”¥Ì„É•…Ğ±¥¡Ñİ•¥¡ĞÑ½½°Ñ¡…Ğ…¸ÁÉ½Ù¥‘”µ•ÑÉ¥ÌÍ¹…ÁÍ¡½ÑÌÙ•ÉäÅÕ¥­±ä°‰ÕĞ¥Ì¹½ĞÍ¼İ•±°µÍÕ¥Ñ•Ñ¼Ñ¡”­¥¹‘Ì½˜‰¥œµÁ¥ÑÕÉ”ÅÕ•ÍÑ¥½¹ÌÑ¡…Ğ…É¥Í”¥¸„ÁÉ½‘ÕÑ¥½¸•¹Ù¥É½¹µ•¹Ğè]¡…Ğ…É”Ñ¡”±½¹œµÑ•É´ÑÉ•¹‘Ì™½Èµäµ•ÑÉ¥ÌüÉ”Ñ¡•É”…¹ä±…É”µÍ…±”Á…ÑÑ•É¹Ì$Í¡½Õ±‰”…İ…É”½˜ü¼¡…¹•Ì¥¸Á•É™½Éµ…¹”µ•ÑÉ¥ÌÑ•¹Ñ¼½ÉÉ•±…Ñ”İ¥Ñ …Ñ¥½¹Ì½È•Ù•¹ÑÌ•±Í•İ¡•É”¥¸µä•¹Ù¥É½¹µ•¹Ğü()Q¼…¹Íİ•ÈÑ¡•Í”­¥¹‘Ì½˜ÅÕ•ÍÑ¥½¹Ì°å½Ô¹••„µ½É”Í½Á¡¥ÍÑ¥…Ñ•µ½¹¥Ñ½É¥¹œÍåÍÑ•´¸Q¡”½½¹•İÌ¥Ì°Ù¥ÉÑÕ…±±ä•Ù•Éäµ…©½Èµ½¹¥Ñ½É¥¹œÍ•ÉÙ¥”…¹Ñ½½°…¸½±±•Ğ)5`µ•ÑÉ¥Ì™É½´-…™­„°İ¡•Ñ¡•ÈÙ¥„m)5`Á±Õ¥¹Ít¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½©…Ù„¼¤ìÙ¥„Á±Õ…‰±”mµ•ÑÉ¥ÌÉ•Á½ÉÑ•È±¥‰É…É¥•Ít¡¡ÑÑÁÌè¼½İ¥­¤¹…Á…¡”¹½Éœ½½¹™±Õ•¹”½‘¥ÍÁ±…ä½--½)5`­I•Á½ÉÑ•ÉÌ¤ì½ÈÙ¥„m½¹¹•Ñ½ÉÍt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½©µáÑÉ…¹Ì½©µáÑÉ…¹Ì¤Ñ¡…ĞİÉ¥Ñ”)5`µ•ÑÉ¥Ì½ÕĞÑ¼MÑ…ÑÍ°É…Á¡¥Ñ”°½È½Ñ¡•ÈÍåÍÑ•µÌ¸()Q¡”½¹™¥ÕÉ…Ñ¥½¸ÍÑ•ÁÌ‘•Á•¹É•…Ñ±ä½¸Ñ¡”Á…ÉÑ¥Õ±…Èµ½¹¥Ñ½É¥¹œÑ½½±Ìå½Ô¡½½Í”°‰ÕĞ)5`¥Ì„™…ÍĞÉ½ÕÑ”Ñ¼å½ÕÈ-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥ÌÕÍ¥¹œÑ¡”5	•…¸¹…µ•Ìµ•¹Ñ¥½¹•¥¸mÁ…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤½˜Ñ¡¥ÌÍ•É¥•Ì¸((((ŒŒŒ5½¹¥Ñ½É¥¹œ½¹ÍÕµ•È¡•…±Ñ İ¥Ñ 	ÕÉÉ½Ü(()%¸…‘‘¥Ñ¥½¸Ñ¼Ñ¡”­•äµ•ÑÉ¥Ìµ•¹Ñ¥½¹•¥¸Á…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ì°å½Ôµ…äİ…¹Ğµ½É”‘•Ñ…¥±•µ•ÑÉ¥Ì½¸å½ÕÈ½¹ÍÕµ•ÉÌ…¹½¹ÍÕµ•ÈÉ½ÕÁÌ¸½ÈÑ¡…Ğ°Ñ¡•É”¥Ì	ÕÉÉ½Ü¸()m	ÕÉÉ½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±¥¹­•‘¥¸½	ÕÉÉ½Ü½İ¥­¤½]¡…Ğµ¥Ìµ	ÕÉÉ½Ü¤¥Ì„ÍÁ•¥…±¥é•µ½¹¥Ñ½É¥¹œÑ½½°‘•Ù•±½Á•‰äm1¥¹­•‘%¹t¡¡ÑÑÁÌè¼½•¹¥¹••É¥¹œ¹±¥¹­•‘¥¸¹½´½…Á…¡”µ­…™­„½‰ÕÉÉ½Üµ­…™­„µ½¹ÍÕµ•Èµµ½¹¥Ñ½É¥¹œµÉ•¥¹Ù•¹Ñ•¤ÍÁ•¥™¥…±±ä™½È½¹ÍÕµ•Èµ½¹¥Ñ½É¥¹œ¸]¡ä‘¼å½Ô¹••„Í•Á…É…Ñ”Ñ½½°Ñ¼µ½¹¥Ñ½È½¹ÍÕµ•È¡•…±Ñ İ¡•¸å½Ô¡…Ù”m5…á1…t ½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼5…á1…œ¤ü€¡5…á1…œÉ•ÁÉ•Í•¹ÑÌÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•Ì‰äİ¡¥ Ñ¡”½¹ÍÕµ•È±…Ì‰•¡¥¹Ñ¡”ÁÉ½‘Õ•È¸¤	•Í¥‘•ÌÑ¡”™…ĞÑ¡…Ğ5…á1…€¡…Ì‰••¸É•µ½Ù•¥¸-…™­„ØÀ¸ä¸À¸À¬°	ÕÉÉ½Üİ…Ì‰Õ¥±ĞÑ¼Í½±Ù”Ñ¡”™½±±½İ¥¹œÍ¡½ÉÑ½µ¥¹Ì½˜Í¥µÁ±äµ½¹¥Ñ½É¥¹œ½¹ÍÕµ•È½™™Í•Ğ±…œè((((´€€5…á1…€¥Ì¥¹ÍÕ™™¥¥•¹Ğ‰•…ÕÍ”¥Ğ±…ÍÑÌ½¹±ä…Ì±½¹œ…ÌÑ¡”½¹ÍÕµ•È¥Ì…±¥Ù”(´€€ÍÁ½Ğ¡•­¥¹œÑ½Á¥Ì½¹•…±ÌÁÉ½‰±•µÌ€¡±¥­”¥˜„Í¥¹±”Ñ¡É•…½˜„½¹ÍÕµ•È‘¥•Ì°¥ĞÍÑ½ÁÌ½¹ÍÕµ¥¹œ„Ñ½Á¥Œ‰ÕĞ½Ñ¡•È½¹ÍÕµÁÑ¥½¸½¹Ñ¥¹Õ•Ì°Í¼Ñ¡”½¹ÍÕµ•Èµ…äÍÑ¥±°…ÁÁ•…ÈÑ¼‰”¡•…±Ñ¡ä¤(´€€µ•…ÍÕÉ¥¹œ±…œ™½Èİ¥±‘…É½¹ÍÕµ•ÉÌ…¸ÅÕ¥­±ä‰•½µ”½Ù•Éİ¡•±µ¥¹œİ¥Ñ µ½É”Ñ¡…¸„¡…¹‘™Õ°½˜½¹ÍÕµ•ÉÌ(´€€±…œ…±½¹”‘½•Í¸ĞÑ•±°å½ÔÑ¡”İ¡½±”ÍÑ½Éä((()¹Ñ•È	ÕÉÉ½Ü¸()íìğ¥µœÍÉŒô‰‰ÕÉÉ½Üµ…É Ì¹Á¹œˆ…±Ğô‰-…™­„Á•É™½Éµ…¹”€´	ÕÉÉ½Ü…É¡¥Ñ•ÑÕÉ”‘¥…É…´ˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()	ä½¹ÍÕµ¥¹œÑ¡”ÍÁ•¥…°°¥¹Ñ•É¹…°-…™­„Ñ½Á¥Œ€©}}½¹ÍÕµ•É}½™™Í•ÑÌ¨°	ÕÉÉ½Ü…¸…Ğ…Ì„•¹ÑÉ…±¥é•Í•ÉÙ¥”°Í•Á…É…Ñ”™É½´…¹äÍ¥¹±”½¹ÍÕµ•È°¥Ù¥¹œå½Ô…¸½‰©•Ñ¥Ù”Ù¥•Ü½˜½¹ÍÕµ•ÉÌ‰…Í•½¸‰½Ñ Ñ¡•¥È½µµ¥ÑÑ•½™™Í•ÑÌ€¡…É½ÍÌÑ½Á¥Ì¤…¹‰É½­•ÈÍÑ…Ñ”¸((ŒŒŒŒ%¹ÍÑ…±±…Ñ¥½¸…¹½¹™¥ÕÉ…Ñ¥½¸(()	•™½É”İ”•ĞÍÑ…ÉÑ•°å½Ôİ¥±°¹••Ñ¼m¥¹ÍÑ…±°…¹½¹™¥ÕÉ”½t¡¡ÑÑÁÌè¼½½±…¹œ¹½Éœ½‘½Œ½¥¹ÍÑ…±°¤€¡ØÄ¸Ø¬¤¸e½Ô…¸•¥Ñ¡•ÈÕÍ”„‘•‘¥…Ñ•µ…¡¥¹”Ñ¼¡½ÍĞ	ÕÉÉ½Ü½ÈÉÕ¸¥Ğ½¸…¹½Ñ¡•È¡½ÍĞ¥¸å½ÕÈ•¹Ù¥É½¹µ•¹Ğ¸9•áĞå½Ô±°¹••Ñ¡”m¼A…­…”5…¹…•Ét¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Á½Ñ”½Á´¤€¡A4¤Ñ¼…ÕÑ½µ…Ñ¥…±±ä‘½İ¹±½…	ÕÉÉ½ÜÌ‘•Á•¹‘•¹¥•Ì¸()]¥Ñ ¼…¹A4¥¹ÍÑ…±±•°ÉÕ¸Ñ¡”™½±±½İ¥¹œ½µµ…¹‘ÌÑ¼‰Õ¥±…¹¥¹ÍÑ…±°‰ÕÉÉ½Üè(((((€€€¼•Ğ¥Ñ¡Õˆ¹½´½±¥¹­•‘¥¸½‰ÕÉÉ½Ü(€€€€‘=AQ ½ÍÉŒ½¥Ñ¡Õˆ¹½´½±¥¹­•‘¥¸½‰ÕÉÉ½Ü(€€€Á´¥¹ÍÑ…±°(€€€¼¥¹ÍÑ…±°((((()	•™½É”å½Ô…¸ÕÍ”	ÕÉÉ½Ü°å½Ô±°¹••Ñ¼İÉ¥Ñ”„½¹™¥ÕÉ…Ñ¥½¸™¥±”¸M•ÑÑ¥¹œÕÀ„½¹™¥ÕÉ…Ñ¥½¸¥Ì•…Íä•¹½Õ °‰ÕĞÙ…É¥•Ì‘•Á•¹‘¥¹œ½¸å½ÕÈ-…™­„‘•Á±½åµ•¹Ğ¸	•±½Ü¥Ì„‰…É•‰½¹•Ì°µ¥¹¥µ…°½¹™¥ÕÉ…Ñ¥½¸™¥±”™½È„±½…°-…™­„‘•Á±½åµ•¹Ğİ¥Ñ i½½-••Á•È…ÌÑ¡”½™™Í•ĞÍÑ½É…”‰…­•¹è(((%m•¹•É…±t(%±½‘¥Èô½¡½µ”½­…™­„½‰ÕÉÉ½Ü½±½œ((%mé½½­••Á•Ét(%¡½ÍÑ¹…µ”õ±½…±¡½ÍĞ((%m­…™­„€‰±½…°‰t(%‰É½­•Èõ±½…±¡½ÍĞ(%é½½­••Á•Èõ±½…±¡½ÍĞ(%é½½­••Á•ÈµÁ…Ñ ô½­…™­„µ±ÕÍÑ•È(%é½½­••Á•Èµ½™™Í•ÑÌõÑÉÕ”€ŒM•ĞÑ¼™…±Í”¥˜ÕÍ¥¹œ-…™­„™½È½™™Í•ĞÍÑ½É…”((%m¡ÑÑÁÍ•ÉÙ•Ét(%Í•ÉÙ•Èõ½¸(%Á½ÉĞôàÀÀÀ((()½È„½µÁ±•Ñ”½Ù•ÉÙ¥•Ü½˜	ÕÉÉ½Ü½¹™¥ÕÉ…Ñ¥½¸½ÁÑ¥½¹Ì°¡•¬Ñ¡”m	ÕÉÉ½Üİ¥­¥t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±¥¹­•‘¥¸½	ÕÉÉ½Ü½İ¥­¤½½¹™¥ÕÉ…Ñ¥½¸¤¸()]¥Ñ 	ÕÉÉ½Ü½¹™¥ÕÉ•°å½Ô…¸‰•¥¸ÑÉ…­¥¹œ½¹ÍÕµ•È¡•…±Ñ ‰äÉÕ¹¹¥¹œè€‘=AQ ½‰¥¸½‰ÕÉÉ½Ü€´µ½¹™¥œÁ…Ñ ½Ñ¼½‰ÕÉÉ½Ü¹™€()%˜ÍÕ•ÍÍ™Õ°°İ¥Ñ 	ÕÉÉ½ÜÉÕ¹¹¥¹œå½Ô…¸‰•¥¸ÅÕ•Éå¥¹œ¥ÑÌ!QQ@•¹‘Á½¥¹ÑÌ¸½È•á…µÁ±”°Ñ¼Í•”„±¥ÍĞ½˜å½ÕÈ-…™­„±ÕÍÑ•ÉÌ°å½Ô…¸¡¥Ğ€½ØÈ½­…™­„½€…¹Í•”„)M=8É•ÍÁ½¹Í”è(((((€€€ì(€€€€€€€€€€‰•ÉÉ½Èˆè™…±Í”°(€€€€€€€€€€‰µ•ÍÍ…”ˆè€‰±ÕÍÑ•È±¥ÍĞÉ•ÑÕÉ¹•ˆ°(€€€€€€€€€€‰±ÕÍÑ•ÉÌˆèl(€€€€€€€€€€€€€€‰±½…°ˆ(€€€€€€€€€t(€€€€€ô((((()]”Ù”©ÕÍĞÍÉ…Ñ¡•Ñ¡”ÍÕÉ™…”½˜	ÕÉÉ½ÜÌ™Õ¹Ñ¥½¹…±¥Ñä°İ¡¥ ¥¹±Õ‘•Ì…ÕÑ½µ…Ñ•¹½Ñ¥™¥…Ñ¥½¹ÌÙ¥„m!QQAt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±¥¹­•‘¥¸½	ÕÉÉ½Ü½İ¥­¤½!QQ@µ9½Ñ¥™¥•È¤½Èm•µ…¥±t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±¥¹­•‘¥¸½	ÕÉÉ½Ü½İ¥­¤½µ…¥°µ9½Ñ¥™¥•È¤¸½È„½µÁ±•Ñ”±¥ÍĞ½˜!QQ@•¹‘Á½¥¹ÑÌ°É•™•ÈÑ¼Ñ¡”m‘½Õµ•¹Ñ…Ñ¥½¹t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½±¥¹­•‘¥¸½	ÕÉÉ½Ü½İ¥­¤½!QQ@µ¹‘Á½¥¹Ğ¤¸()-…™­„Á…”…¡”(´´´´´´´´´´´´´´´´(()5½ÍĞ¡½ÍĞµ±•Ù•°µ•ÑÉ¥Ì¥‘•¹Ñ¥™¥•¥¸Á…ÉĞ€Ä…¸‰”½±±•Ñ•İ¥Ñ ÍÑ…¹‘…ÉÍåÍÑ•´ÕÑ¥±¥Ñ¥•Ì¸A…”…¡”°¡½İ•Ù•È°É•ÅÕ¥É•Ìµ½É”¸1¥¹Õà­•É¹•±Ì•…É±¥•ÈÑ¡…¸€Ì¸ÄÌµ…äÉ•ÅÕ¥É”½µÁ¥±”µÑ¥µ”™±…ÌÑ¼•áÁ½Í”Ñ¡¥Ìµ•ÑÉ¥Œ¸±Í¼å½×Še±°¹••Ñ¼‘½İ¹±½…„ÕÑ¥±¥Ñä™É½´m	É•¹‘…¸É•t¡¡ÑÑÀè¼½İİÜ¹‰É•¹‘…¹É•œ¹½´½‰±½œ¼ÈÀÄĞ´ÄÈ´ÌÄ½±¥¹ÕàµÁ…”µ…¡”µ¡¥ĞµÉ…Ñ¥¼¹¡Ñµ°¤è()MÑ…ÉĞ‰äm‘½İ¹±½…‘¥¹t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‰É•¹‘…¹É•œ½Á•É˜µÑ½½±Ì½‰±½ˆ½µ…ÍÑ•È½™Ì½…¡•ÍÑ…Ğ¤Ñ¡”…¡•ÍÑ…Ñ€ÍÉ¥ÁĞèİ•Ğ¡ÑÑÁÌè¼½É…Ü¹¥Ñ¡Õ‰ÕÍ•É½¹Ñ•¹Ğ¹½´½‰É•¹‘…¹É•œ½Á•É˜µÑ½½±Ì½µ…ÍÑ•È½™Ì½…¡•ÍÑ…Ñ€…¹µ…­”¥Ğ•á•ÕÑ…‰±”¡µ½€­à…¡•ÍÑ…Ñ€¸Q¡•¸°•á•ÕÑ”¥Ğ±¥­”Í¼€¸½…¡•ÍÑ…Ğ€ñ½±±•Ñ¥½¸¥¹Ñ•ÉÙ…°¥¸Í•½¹‘Ìù€è(((($€¸½…¡•ÍÑ…Ğ€ÈÀ(%½Õ¹Ñ¥¹œ…¡”™Õ¹Ñ¥½¹Ì¸¸¸=ÕÑÁÕĞ•Ù•Éä€ÈÀÍ•½¹‘Ì¸($€€€!%QL€€5%MML€%IQ%L€€€IQ%<€€	UIM}5€€!}5($€€€€ÔÌÔÈ€€€€€€€€À€€€€€€ÈÌĞ€€€ÄÀÀ¸À”€€€€€€€€€€ÄÀÌ€€€€€€€€ÄØÔ($€€€€ÔÄØà€€€€€€€€À€€€€€€ÈØÀ€€€ÄÀÀ¸À”€€€€€€€€€€ÄÀÌ€€€€€€€€ÄØÔ($€€€€ØÔÜÈ€€€€€€€€À€€€€€€ÈÔä€€€ÄÀÀ¸À”€€€€€€€€€€ÄÀÌ€€€€€€€€ÄØÔ($€€€€ØÔÀĞ€€€€€€€€À€€€€€€ÈÔÌ€€€ÄÀÀ¸À”€€€€€€€€€€ÄÀÌ€€€€€€€€ÄØÔ(%l¸¸¹t((((((¡%¸Ñ¡”½ÕÑÁÕĞ…‰½Ù”€©%IQ%L¨…É”Ñ¡½Í”Á…•ÌÑ¡…Ğ¡…Ù”‰••¸µ½‘¥™¥•…™Ñ•È•¹Ñ•É¥¹œÑ¡”Á…”…¡”¸¤((()½±±•Ñ¥¹œi½½-••Á•Èµ•ÑÉ¥Ì(´´´´´´´´´´´´´´´´´´´´´´´´´´´´(()1¥­”-…™­„°Ñ¡•É”…É”Í•Ù•É…°İ…åÌå½Ô…¸½±±•Ğµ•ÑÉ¥Ì™É½´i½½-••Á•È¸]”İ¥±°™½ÕÌ½¸Ñ¡”Ñİ¼µ½ÍĞÁ½ÁÕ±…È°)½¹Í½±”…¹Ñ¡”Í¼µ…±±•l‰™½ÕÈ±•ÑÑ•Èİ½É‘Ì‰t¡¡ÑÑÁÌè¼½é½½­••Á•È¹…Á…¡”¹½Éœ½‘½Œ½ÑÉÕ¹¬½é½½­••Á•É‘µ¥¸¹¡Ñµ°Q¡”­½ÕÈ­1•ÑÑ•È­]½É‘Ì¤¸Q¡½Õ İ”İ½¸Ğ¼¥¹Ñ¼¥Ğ¡•É”°Ñ¡”mé­Ñ½Á€ÕÑ¥±¥Ñåt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½Á¡Õ¹Ğ½é­Ñ½À¤¥Ì…±Í¼„ÕÍ•™Õ°…‘‘¥Ñ¥½¸Ñ¼å½ÕÈi½½-••Á•Èµ½¹¥Ñ½É¥¹œ…ÉÍ•¹…°¸%ĞÁÉ½Ù¥‘•Ì„Ñ½Á€µ±¥­”¥¹Ñ•É™…”Ñ¼i½½-••Á•È¸()UÍ¥¹œ½¹±äÑ¡”™½ÕÈµ±•ÑÑ•Èİ½É‘Ì°å½Ô…¸½±±•Ğ…±°½˜Ñ¡”¹…Ñ¥Ù”i½½-••Á•Èµ•ÑÉ¥Ì±¥ÍÑ•¥¸mÁ…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ít ½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤€¸%˜å½Ô…É”ÕÍ¥¹œ)½¹Í½±”°å½Ô…¸½±±•Ğ…±°‰ÕĞi½½-••Á•ÈÌ™¥±”‘•ÍÉ¥ÁÑ½Èµ•ÑÉ¥Ì¸((((ŒŒŒ½±±•Ñ¥¹œi½½-••Á•Èµ•ÑÉ¥Ìİ¥Ñ )½¹Í½±”(()Q¼Ù¥•Üi½½-••Á•Èµ•ÑÉ¥Ì¥¸)½¹Í½±”°å½Ô…¸Í•±•ĞÑ¡”½Éœ¹…Á…¡”¹é½½­••Á•È¹Í•ÉÙ•È¹ÅÕ½ÉÕ´¹EÕ½ÉÕµA••É5…¥¹€ÁÉ½•ÍÌ½Èµ½¹¥Ñ½È„É•µ½Ñ”ÁÉ½•ÍÌÕÍ¥¹œÑ¡”¹½‘—ŠeÌ%@…‘‘É•ÍÌ€¡i½½-••Á•ÈÉ…¹‘½µ¥é•Ì¥ÑÌ)5`Á½ÉĞ‰ä‘•™…Õ±Ğ¤è()íìğ¥µœÍÉŒô‰é½½­••Á•Èµ©½¹Í½±”¹Á¹œˆ…±Ğô‰-…™­„Á•É™½Éµ…¹”€´)½¹Í½±”Y¥•ÜˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()i½½-••Á•ÈÌ•á…Ğ)5`Á…Ñ ™½Èµ•ÑÉ¥ÌÙ…É¥•Ì‘•Á•¹‘¥¹œ½¸å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸°‰ÕĞ¥¹Ù…É¥…‰±äå½Ô…¸™¥¹Ñ¡•´Õ¹‘•ÈÑ¡”½Éœ¹…Á…¡”¹i½½-••Á•ÉM•ÉÙ¥•€5	•…¸¸()UÍ¥¹œ)5`°å½Ô…¸½±±•Ğ…±°½˜Ñ¡”µ•ÑÉ¥Ì±¥ÍÑ•¥¸Á…ÉĞ€Ä°İ¥Ñ Ñ¡”•á•ÁÑ¥½¸½˜é­}™½±±½İ•ÉÍ€…¹é­}Á•¹‘¥¹}Íå¹Í€¸½ÈÑ¡½Í”°å½Ôİ¥±°¹••Ñ¡”m™½ÕÈ±•ÑÑ•Èİ½É‘Ít Ñ¡”µ™½ÕÈµ±•ÑÑ•Èµİ½É‘Ì¤¸((((ŒŒŒQ¡”™½ÕÈ±•ÑÑ•Èİ½É‘Ì(()i½½-••Á•È•µ¥ÑÌ½Á•É…Ñ¥½¹…°‘…Ñ„¥¸É•ÍÁ½¹Í”Ñ¼„±¥µ¥Ñ•Í•Ğ½˜½µµ…¹‘Ì­¹½İ¸…Ì€‰Ñ¡”™½ÕÈ±•ÑÑ•Èİ½É‘Ìˆ¸e½Ô…¸¥ÍÍÕ”„™½ÕÈ±•ÑÑ•Èİ½ÉÑ¼i½½-••Á•ÈÙ¥„Ñ•±¹•Ñ€½È¹€¸()Q¡½Õ Ñ¡”µ½ÍĞµÕÍ•½˜Ñ¡”½µµ…¹‘Ì…É”èÍÑ…Ñ€°ÍÉÙÉ€°½¹Í€°…¹µ¹ÑÉ€°Ñ¡”™Õ±°½µµ…¹±¥ÍĞ¥ÌÉ•ÁÉ½‘Õ•‰•±½Üİ¥Ñ „Í¡½ÉĞ‘•ÍÉ¥ÁÑ¥½¸…¹…Ù…¥±…‰¥±¥Ñä‰äÙ•ÉÍ¥½¸¸()%˜å½Ô…É”½¸å½ÕÈi½½-••Á•È¹½‘”°å½Ô…¸Í•”…±°½˜Ñ¡”i½½-••Á•Èµ•ÑÉ¥Ì™É½´mÁ…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°¥¹±Õ‘¥¹œé­}Á•¹‘¥¹}Íå¹Í€…¹é­}™½±±½İ•ÉÍ€°İ¥Ñ è•¡¼µ¹ÑÈğ¹Œ±½…±¡½ÍĞ€ÈÄàÅ€è((((%é­}Ù•ÉÍ¥½¸€€Ì¸Ğ¸Ô´´Ä°‰Õ¥±Ğ½¸€ÀØ¼ÄÀ¼ÈÀÄÌ€ÄÜèÈØ5P(%é­}…Ù}±…Ñ•¹ä€€À(%é­}µ…á}±…Ñ•¹ä€€À(%é­}µ¥¹}±…Ñ•¹ä€€À(%é­}Á…­•ÑÍ}É••¥Ù•€ÜÀ(%é­}Á…­•ÑÍ}Í•¹Ğ€Øä(%é­}½ÕÑÍÑ…¹‘¥¹}É•ÅÕ•ÍÑÌ€À(%é­}Í•ÉÙ•É}ÍÑ…Ñ”±•…‘•È(%é­}é¹½‘•}½Õ¹Ğ€€€Ğ(%é­}İ…Ñ¡}½Õ¹Ğ€€À(%é­}•Á¡•µ•É…±Í}½Õ¹Ğ€À(%é­}…ÁÁÉ½á¥µ…Ñ•}‘…Ñ…}Í¥é”€€€€ÈÜ(%é­}™½±±½İ•ÉÌ€€€€Ğ€€€€€€€€€€€€€€€€€€€´½¹±ä•áÁ½Í•‰äÑ¡”1•…‘•È(%é­}Íå¹•‘}™½±±½İ•ÉÌ€Ğ€€€€€€€€€€€€€€€´½¹±ä•áÁ½Í•‰äÑ¡”1•…‘•È(%é­}Á•¹‘¥¹}Íå¹Ì€€€€À€€€€€€€€€€€€€€€´½¹±ä•áÁ½Í•‰äÑ¡”1•…‘•È(%é­}½Á•¹}™¥±•}‘•ÍÉ¥ÁÑ½É}½Õ¹Ğ€ÈÌ€€€€´½¹±ä…Ù…¥±…‰±”½¸U¹¥àÁ±…Ñ™½ÉµÌ(%é­}µ…á}™¥±•}‘•ÍÉ¥ÁÑ½É}½Õ¹Ğ€ÄÀÈĞ€€€´½¹±ä…Ù…¥±…‰±”½¸U¹¥àÁ±…Ñ™½ÉµÌ(((((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ ù]½Éğ½Ñ ø(ñÑ ù•ÍÉ¥ÁÑ¥½¸ğ½Ñ ø(ñÑ ùY•ÉÍ¥½¸ğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù½¹˜ğ½Ñø(ñÑùM¡½Ü½¹™¥ÕÉ…Ñ¥½¸‘•Ñ…¥±Ìğ½Ñø(ñÑøÌ¸Ì¸À¬ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù½¹Ìğ½Ñø(ñÑùM¡½Ü½¹¹•Ñ¥½¸½Í•ÍÍ¥½¸‘•Ñ…¥±Ì™½È…±°½¹¹•Ñ•±¥•¹ÑÌğ½Ñø(ñÑøÌ¸Ì¸À¬ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùÉÍĞğ½Ñø(ñÑùI•Í•ĞÍÑ…Ñ¥ÍÑ¥Ì™½È…±°½¹¹•Ñ¥½¹Ì½Í•ÍÍ¥½¹Ì¸ğ½Ñø(ñÑøÌ¸Ì¸À¬ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù‘ÕµÀğ½Ñø(ñÑùM¡½Ü…±°½ÕÑÍÑ…¹‘¥¹œÍ•ÍÍ¥½¹Ì…¹•Á¡•µ•É…°¹½‘•Ì€¡1•…‘•È½¹±ä¤¸ğ½Ñø(ñÑùÁÉ”€Ì¸Ì¸Àğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù•¹Ù¤ğ½Ñø(ñÑùM¡½Ü¥¹™½Éµ…Ñ¥½¸½¸Í•ÉÙ•È•¹Ù¥É½¹µ•¹Ğğ½Ñø(ñÑùÁÉ”€Ì¸Ì¸Àğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùÉÕ½¬ğ½Ñø(ñÑùM…¹¥Ñä¡•¬¸Q¡”Í•ÉÙ•Èİ¥±°É•ÍÁ½¹İ¥Ñ €ñ½‘”ù¥µ½¬ğ½½‘”ø¥˜¥Ğ¥ÌÉÕ¹¹¥¹œ¸ğ½Ñø(ñÑùÁÉ”€Ì¸Ì¸Àğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùÍÉÍĞğ½Ñø(ñÑùI•Í•Ğ…±°Í•ÉÙ•ÈÍÑ…ÑÌğ½Ñø(ñÑùÁÉ”€Ì¸Ì¸Àğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùÍÉÙÈğ½Ñø(ñÑùM¡½Ü…±°Í•ÉÙ•È‘•Ñ…¥±Ìğ½Ñø(ñÑùÁÉ”€Ì¸Ì¸Àğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùÍÑ…Ğğ½Ñø(ñÑù	É¥•˜±¥ÍĞ½˜Í•ÉÙ•È…¹±¥•¹Ğ‘•Ñ…¥±Ìğ½Ñø(ñÑùÁÉ”€Ì¸Ì¸Àğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùİ¡Ìğ½Ñø(ñÑøñ•´ù	É¥•˜ğ½•´ø¥¹™½Éµ…Ñ¥½¸½¸€ñ„¡É•˜ô‰¡ÑÑÁÌè¼½é½½­••Á•È¹…Á…¡”¹½Éœ½‘½Œ½ÑÉÕ¹¬½é½½­••Á•ÉAÉ½É…µµ•ÉÌ¹¡Ñµ°¡}é­]…Ñ¡•Ìˆùİ…Ñ¡•Ìğ½„ø™½ÈÑ¡”Í•ÉÙ•Èğ½Ñø(ñÑøÌ¸Ì¸À¬ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùİ¡Œğ½Ñø(ñÑøñ•´ù•Ñ…¥±•ğ½•´ø¥¹™½Éµ…Ñ¥½¸½¸€ñ„¡É•˜ô‰¡ÑÑÁÌè¼½é½½­••Á•È¹…Á…¡”¹½Éœ½‘½Œ½ÑÉÕ¹¬½é½½­••Á•ÉAÉ½É…µµ•ÉÌ¹¡Ñµ°¡}é­]…Ñ¡•Ìˆùİ…Ñ¡•Ìğ½„ø™½ÈÑ¡”Í•ÉÙ•È°€ñ•´ù‰äÍ•ÍÍ¥½¸ğ½•´øğ½Ñø(ñÑøÌ¸Ì¸À¬ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùİ¡Àğ½Ñø(ñÑøñ•´ù•Ñ…¥±•ğ½•´ø¥¹™½Éµ…Ñ¥½¸½¸€ñ„¡É•˜ô‰¡ÑÑÁÌè¼½é½½­••Á•È¹…Á…¡”¹½Éœ½‘½Œ½ÑÉÕ¹¬½é½½­••Á•ÉAÉ½É…µµ•ÉÌ¹¡Ñµ°¡}é­]…Ñ¡•Ìˆùİ…Ñ¡•Ìğ½„ø€ñ•´ù‰äÁ…Ñ ğ½•´øğ½Ñø(ñÑøÌ¸Ì¸À¬ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùµ¹ÑÈğ½Ñø(ñÑù¥ÍÁ±…äµ½¹¥Ñ½É¥¹œ¥¹™½Éµ…Ñ¥½¸ğ½Ñø(ñÑøÌ¸Ğ¸À¬ğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((((©½µµ…¹‘Ì…Ù…¥±…‰±”€‰ÁÉ”€Ì¸Ì¸Àˆİ½É¬Ñ¡É½Õ Ñ¡”±…Ñ•ÍĞÙ•ÉÍ¥½¸¸¨()½¹±ÕÍ¥½¸(´´´´´´´´´´(()%¸Ñ¡¥ÌÁ½ÍĞİ”¡…Ù”½Ù•É•„™•Ü½˜Ñ¡”İ…åÌÑ¼…•ÍÌ-…™­„…¹i½½-••Á•Èµ•ÑÉ¥ÌÕÍ¥¹œÍ¥µÁ±”°±¥¡Ñİ•¥¡ĞÑ½½±Ì¸½ÈÁÉ½‘ÕÑ¥½¸µÉ•…‘äµ½¹¥Ñ½É¥¹œ°å½Ôİ¥±°±¥­•±äİ…¹Ğ„‘å¹…µ¥Œµ½¹¥Ñ½É¥¹œÍåÍÑ•´Ñ¡…Ğ¥¹•ÍÑÌ-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥Ì…Ìİ•±°…Ì­•äµ•ÑÉ¥Ì™É½´•Ù•ÉäÑ•¡¹½±½ä¥¸å½ÕÈÍÑ…¬¸()Ğ…Ñ…‘½œ°İ”¡…Ù”‘•Ù•±½Á•‰½Ñ -…™­„…¹i½½-••Á•È¥¹Ñ•É…Ñ¥½¹ÌÍ¼Ñ¡…Ğå½Ô…¸ÍÑ…ÉĞ½±±•Ñ¥¹œ°É…Á¡¥¹œ°…¹…±•ÉÑ¥¹œ½¸µ•ÑÉ¥Ì™É½´å½ÕÈ±ÕÍÑ•ÉÌİ¥Ñ „µ¥¹¥µÕ´½˜½Ù•É¡•…¸½Èµ½É”‘•Ñ…¥±Ì°¡•¬½ÕĞ½ÕÈÕ¥‘”Ñ¼mµ½¹¥Ñ½É¥¹œ-…™­„Á•É™½Éµ…¹”µ•ÑÉ¥Ìİ¥Ñ …Ñ…‘½t ½‰±½œ½µ½¹¥Ñ½Èµ­…™­„µİ¥Ñ µ‘…Ñ…‘½œ¼¤°½È•ĞÍÑ…ÉÑ•É¥¡Ğ…İ…äİ¥Ñ „€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”ÑÉ¥…°ğ½„ø¸((©M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½­…™­„½½±±•Ñ¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¸¨(

@@ -1,287 +1,1 @@
-In [Part 1][part-one-link] of this series, we discussed some key Tomcat and JVM metrics that are exposed through Java Management Extensions (JMX). Now that you are familiar with metrics necessary for monitoring Tomcat, we can look at how to collect and query that data. In this post, we'll walk through:
-
-- [using Tomcat Manager](#using-tomcat-managers-web-interface), a built-in web management interface
-- [enabling remote connections for JMX](#enabling-remote-jmx-connections-for-tomcat-monitoring-tools)
-viewing metrics with other monitoring platforms like [JConsole](#using-jconsole) and [JavaMelody](#using-javamelody)
-- [viewing and customizing Tomcat server and access logs](#customizing-tomcat-access-and-server-logs)
-
-## Tomcat Manager
-[Tomcat Manager](https://tomcat.apache.org/tomcat-9.0-doc/manager-howto.html) gives administrators the ability to manage applications and hosts in one place. The management interface comes with every installation of Tomcat and includes quick-start guides and links to documentation for your version of Tomcat. From this interface you can view Tomcat metrics, and query metric data through a JMX proxy servlet. 
-
-{{< img src="2-tomcat-monitoring-manager.png" popup="true" alt="Tomcat monitoring page" >}}
-
-
-### Tomcat Manager roles and permissions
-Though the management interface is included out of the box, you won't be able to access it or query metrics through its JMX proxy servlet until you set up the appropriate users and roles. Tomcat includes [several roles](https://tomcat.apache.org/tomcat-9.0-doc/manager-howto.html#Configuring_Manager_Application_Access) that offer various levels of permissions needed for accessing various Tomcat Manager components, configuring applications and hosts, and querying metrics via JMX. The two roles that are most relevant for monitoring Tomcat are:  
-
-- **manager-jmx**: provides access to both the JMX proxy servlet and Tomcat's server status page  
-- **manager-gui**: grants access to Tomcat's application manager, where you can run diagnostics and manually trigger garbage collection
-
-In order to access Tomcat metrics from the management interface, you will need to assign the appropriate role(s) to a user. You can do so by updating Tomcat's **conf/tomcat-users.xml** configuration file:
-
-```
-  <role rolename="manager-gui"/>
-  <role rolename="manager-jmx"/>
-  <user username="tomcat-jmx" password="<YOUR_PASSWORD>" roles="manager-jmx,manager-gui"/>
-```
-
-This code snippet first defines the two roles we want to assign to our user. Then it creates a new `tomcat-jmx` user, assigns it those roles, and sets a password for the user. If you are using a fresh install of Tomcat, you will need to create a new user; otherwise, you can assign roles to any existing user. Check out the [Tomcat docs](https://tomcat.apache.org/tomcat-9.0-doc/manager-howto.html#Configuring_Manager_Application_Access) for more information on the roles available for Tomcat Manager. 
-
-### Using Tomcat Manager's web interface
-By default, Tomcat Manager is accessible locally from `http://localhost:8080`, though you can change this in Tomcat's server configuration file. When you access the web interface, you will be prompted to log in. From there, you can navigate to the following areas to view metric data: 
-
-- **Server and application status pages**: display high-level overviews of JVM, connector, and application metrics, including memory usage, thread counts, and request processing time 
-- **Application Manager**: provides diagnostic tools for investigating memory leaks within your applications 
-- **JMX Proxy**: a text-based interface for querying Tomcat metrics
-
-#### Tomcat's server status page
-If you need a high-level [view of application and server metrics](https://tomcat.apache.org/tomcat-9.0-doc/manager-howto.html#Server_Status), you can navigate to the `/manager/status` page or click on the "Server Status" button from the home page. This page includes information about the Tomcat server and its AJP and HTTP connectors, as well as memory usage for the JVM.
-
-{{< img src="3-tomcat-monitoring-page-server-status.png" popup="true" alt="Tomcat monitoring using the manager server status page" >}}
-
-Each connector section displays information about thread usage (e.g., max threads, current thread count, and current number of busy threads) and request throughput and performance (e.g., processing time, error counts, and bytes received), as well as information about each active thread, including its current stage. Each thread progresses through a series of stages as it processes a request:
-
-- **Ready:** The thread is available to process a request.
-- **Parse and Prepare Request:** The thread is parsing request headers or preparing to read the body of the request. 
-- **Service:** The thread is processing and generating a response for an incoming request. 
-- **Finishing:** The thread has finished processing the request and is sending a generated response back to the client.
-- **Keep-Alive:** The thread is keeping the connection open for the same client to send another request. The maximum duration of this stage is determined by the `keepAliveTimeout` value set in the server's configuration file. After the connection times out, the thread goes back to the Ready stage.
-
-Thread stages can help you accurately gauge the number of threads that are ready to accept incoming requests. You can also view the request count for each deployed application within Tomcat's application list on the server status page. 
-
-#### Tomcat application status page
-In order to view the status of all of your deployed applications, you can navigate to the `manager/status/all` page. This page lists all applications, including Tomcat Manager itself, so you can quickly view processing times, active sessions, and the number of JSP servlets loaded for each application, calculated as a cumulative count from the start of the server. 
-
-{{< img src="4-tomcat-monitoring-manager-app-list.png" popup="true" alt="The Tomcat monitoring manager application list" >}}
-
-#### The application manager
-For running diagnostics, you can navigate to Tomcat's application manager interface at  `/manager/html` or by clicking on the "Manager App" button from the Tomcat Manager home page. The application manager provides a simple interface for quickly managing applications, and a _Diagnostics_ section for troubleshooting memory leaks. 
-
-{{< img src="5-tomcat-monitoring-manager-diagnostics.png" popup="true" alt="Diagnostics and Tomcat health check using Tomcat manager" >}}
-
-In this section, you can run a diagnostic check for memory leaks in your application. Memory leaks occur when the garbage collector cannot free up working memory by removing objects that are no longer needed by the application. This causes the application to use more resources until it runs out, generating a fatal memory error. Monitoring [Tomcat memory usage metrics][part-one-memory-link] will help catch problems before they become more serious. Note that this diagnostic check should be used with caution, because it triggers [garbage collection](https://tomcat.apache.org/tomcat-9.0-doc/html-manager-howto.html#Finding_memory_leaks), which can be a memory-intensive process. 
-
-The Tomcat web interface provides easy access to the state of your Tomcat server, enabling you to quickly view high-level metric data. Tomcat also includes an interface for looking at MBean data related to your application, giving you more control over the metrics you need to monitor. In the next section, we'll look at using the JMX proxy servlet for querying these metrics. 
-
-#### Query Tomcat metrics
-Tomcat Manager includes access to a JMX proxy servlet with the `manager-jmx` role, which allows you to query metrics from your web browser. You can find a list of the available MBeans for Tomcat (in plain-text format) at `http://localhost:8080/manager/jmxproxy`.
-
-{{< img src="6-Tomcat-monitoring-JMX-proxy.png" popup="true" alt="Proxy for Tomcat JMX monitoring" >}}
-
-To see data about a specific MBean, you can add parameters to the URL for the MBean's domain, type, name, and attribute in the following format:
-
-```
-http://localhost:8080/manager/jmxproxy/?get=<DOMAIN>:type=<TYPE>,name="<NAME>"&att=<JMX_ATTRIBUTE> 
-```
-
-You can find these parameters in the JMX attribute and MBean columns of the metric tables in [Part 1][link-to-throughput-section]. For example, you can use the following to view data for the HTTP connector's maximum request processing time: 
-
-```
-http://localhost:8080/manager/jmxproxy/?get=Catalina:type=GlobalRequestProcessor,name="http-nio-8080"&att=maxTime
-```
-
-Which will yield the following result:
-
-```
-OK - Attribute get 'Catalina:type=GlobalRequestProcessor,name="http-nio-8080"' - maxTime = 189
-```
-
-The JMX proxy interface is a good way to quickly query and [update](https://tomcat.apache.org/tomcat-9.0-doc/manager-howto.html#JMX_Set_command) metrics within Tomcat Manager, and can be integrated into command line scripts or utilities. However, it doesn't give you an easy way to compare multiple metrics or view how that data changes over time. In order to get deeper insights into Tomcat health and performance, you'll need to use another tool like JConsole or JavaMelody.
-
-## Enabling remote JMX connections for Tomcat monitoring tools
-Before you can use a tool like JConsole or JavaMelody to monitor your Tomcat server, you will need to enable remote connections for JMX. JConsole can consume a lot of system resources, so Oracle [recommends](https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html#gdemy) isolating JConsole from the server you are monitoring by connecting to remote hosts only. Note that enabling remote JMX access demands appropriate security precautions, as JMX provides limited access control. For the sake of demonstration, the simplified configuration in this section disables SSL; see [the Java documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html#gdevo) and Tomcat's [security guide](https://tomcat.apache.org/tomcat-9.0-doc/security-howto.html#JMX) for information on securing remote JMX access for production environments.
-
-First, create a **setenv.sh** file in Tomcat's **/bin** directory and include the following:
-
-```
-export JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote"
-export JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote.port=<PORT>"
-export JAVA_OPTS="${JAVA_OPTS} -Djava.rmi.server.hostname=<TOMCAT_HOST_OR_IP>"
-export JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote.ssl=false"
-export JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote.authenticate=true"
-export JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote.access.file=${CATALINA_BASE}/conf/jmxremote.access
-export JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote.password.file=${CATALINA_BASE}/conf/jmxremote.password
-```
-
-This sets the hostname and port that JConsole can use to connect remotely to your Tomcat server. You can specify any hostname and [unused port](https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html#gdenl). Though this example does not include SSL, it does enable password authentication, and specifies where to find the access (username) and password files; you may need to create them if they don't already exist. You can add new users and give them one of two privileges (`readonly` and `readwrite`) by editing the **${CATALINA_BASE}/conf/jmxremote.access** file:
-
-```
-tomcatUserRead readonly
-tomcatUserWrite readwrite
-```
-
-The first line grants a `tomcatUserRead` user with `readonly` privileges, which means that this user can view MBean attributes and receive notifications. The second line provides a `tomcatUserWrite` user with `readwrite` privileges, allowing that user to add and remove MBeans, set attributes, and run operations.
-
-Next, set a password for those users in the **${CATALINA_BASE}/conf/jmxremote.password** file:
-
-```
-tomcatRead <PASSWORD>
-tomcatWrite <PASSWORD>
-```
-
-Save the file and restart your Tomcat server. Next, open JConsole and run the following command, making sure to include the host and port you defined in your **setenv.sh** file:
-
-```
-jconsole <TOMCAT_HOST_OR_IP>:<PORT>
-``` 
-
-This will bring up the JConsole interface where you can begin viewing data related to your JVM and Tomcat server. 
-
-## Using JConsole
-[JConsole](https://docs.oracle.com/javase/8/docs/technotes/guides/management/jconsole.html) is a graphical interface included with the [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html). JConsole provides a more visual way to monitor key JVM metrics like heap memory usage, thread usage, and CPU usage. And instead of querying data via a limited interface such as the JMX proxy, you can use JConsole to quickly view data across multiple metrics and drill down to a specific MBean type and attribute for Tomcat's **Catalina** and the JVM's **java.lang** domains. You can navigate to six different tabs: Overview, Memory, Threads, Classes, VM Summary, and MBeans. Each tab provides a dropdown menu that enables you to view data scoped to different time ranges, such as the last five minutes, the past month, or from the start of the server (shown as the "All" option in the dropdown).
-
-### Overview
-JConsole's Overview tab graphs information related to the JVM's memory usage, thread counts, Java classes loaded with your application(s), and CPU usage so you can monitor the health of your virtual machine at a glance. 
-
-{{< img src="7-tomcat-monitoring-tools-jconsole-overview.png" popup="true" alt="Tomcat monitoring tool JConsole overview tab" >}}
-
-### VM Summary
-In the VM Summary tab, you can see more detailed information about the JVM architecture and its characteristics. This is useful if you need to quickly view system-level attributes, or JVM configuration settings. This includes any arguments you specify in Tomcat's **/bin/setenv.sh** configuration file.  
-
-{{< img src="8-tomcat-monitoring-tools-jconsole-vm-summary.png" popup="true" alt="Tomcat monitoring tool JConsole VM Summary tab" >}}
-
-### Memory
-Under the Memory tab, you can view more detailed statistics about your virtual machine's heap and non-heap memory usage, along with data about memory pools. From this tab, you can click "Perform GC" to run garbage collection, just as you would in the Tomcat Manager.
-
-{{< img src="9-tomcat-monitoring-tools-jconsole-memory.png" popup="true" alt="Tomcat monitoring tool JConsole memory tab" >}}
-
-If you need to view data related to a specific memory pool, you can select it from the Chart dropdown in the top-left corner of the Memory tab. The official [JConsole docs](https://docs.oracle.com/javase/8/docs/technotes/guides/management/jconsole.html#gddzq) has more information about available memory pools. 
-
-{{< img src="10-tomcat-monitoring-tools-jconsole-memory-pool.png" popup="true" alt="Select memory pool in JConsole for Tomcat JMX monitoring" >}}
-
-### Threads
-JConsole's Threads tab provides more detailed information about available JVM threads along with a check for deadlocked threads. The Threads list shows the thread name, state (similar to the thread "stage" you'd see on Tomcat's server status page), and stack trace for each available thread. The Deadlock check is useful for finding threads that may be causing your application to hang. If any deadlocked threads are found, you will see a new Deadlock tab with more information about what is causing the deadlocks.
-
-{{< img src="11-tomcat-monitoring-tools-jconsole-threads.png" popup="true" alt="JConsole Threads tab for Tomcat JMX monitoring" >}}
-
-### MBeans
-To see real-time data related to the Tomcat metrics you are monitoring, you can view the **Catalina** and **java.lang** domains under the MBeans tab and drill down to specific attributes. Like Tomcat Manager, JConsole collects data from the MBean server, but provides a simpler interface for finding the metrics you need.
-  
-{{< img src="12-tomcat-monitoring-tools-jconsole-mbeans.png" popup="true" alt="JConsole MBeans tab for Tomcat JMX monitoring" >}}
-
-JConsole provides a good summary of your JVM and MBean data, and it enables you to graph JVM data to visualize trends in resource usage. However, it does not include support for graphing Tomcat metrics. In the next section, we'll take a look at JavaMelody, a JConsole alternative that offers more insight into the health of Tomcat, not just the JVM.
-
-## Using JavaMelody
-[JavaMelody](https://github.com/javamelody/javamelody/wiki) is an open source monitoring platform that offers more fine-grained timeseries visualizations for Tomcat and JVM metrics. You can install JavaMelody by copying the [JavaMelody and JRobin JAR files](https://github.com/javamelody/javamelody/wiki/UserGuide#javamelody-setup) into the **WEB-INF/lib** directory of the application you want to monitor. Once you redeploy the application, you'll be able to access the monitoring page at `http://<TOMCAT_HOST_OR_IP>:<PORT>/<YOUR_APP>/monitoring`. 
-
-Much like JConsole, JavaMelody provides timeseries graphs of JVM performance metrics. But unlike JConsole, JavaMelody also allows you to graph Tomcat health and performance metrics, including HTTP requests and database connections. You can change the time period for all graphs, and select an individual graph to get a more detailed look into any server, virtual machine, or database activity metric. 
- 
-{{< img src="13-tomcat-monitoring-tools-javamelody.png" popup="true" alt="Tomcat monitoring tool JavaMelody Overview" >}}
-
-You can track Tomcat request throughput, latency, and error rates with  "HTTP hits per minute", "HTTP mean times" (average processing time), and "% of http errors" graphs (known as "charts" in JavaMelody). If you click on any chart, you will be able to see the mean, maximum, and 95th percentile values for the chosen metric. 
-
-{{< img src="14-tomcat-monitoring-tools-javamelody-http-hits.png" popup="true" alt="Tomcat monitoring tool JavaMelody HTTP hits chart" >}}
-
-It's important to note that JavaMelody charts persist and will not reset even if the Tomcat server restarts, though you will see a gap in chart data. 
-
-The monitoring page also includes information about system and HTTP request errors. The **Statistics of http system errors** section shows the exceptions thrown by an application servlet along with HTTP errors generated from a request, while the **Statistics system errors logs** section shows Catalina server logs written for "WARNING" and "SEVERE" error levels.
-
-{{< img src="15-tomcat-monitoring-tool-javamelody-stats.png" popup="true" alt="Tomcat monitoring tool JavaMelody HTTP stats" >}}
-
-JavaMelody aggregates similar errors together so you can see how many of each type are generated. For the selected time frame, you can see the percentage of CPU time spent generating each type of error. In the example above, the Tomcat server generated errors with a 500 HTTP response code (Internal Server Error) 99 percent of the time it was running over the past week. 
-
-JavaMelody pulls this data from Tomcat's server and access logs, which provide more fine-grained insights for analyzing request processing times and HTTP statuses. In the next section, we'll show you how to customize the information displayed in Tomcat's access and server logs by configuring [valves](https://tomcat.apache.org/tomcat-9.0-doc/config/valve.html#Access_Log_Valve) and [logging properties](https://tomcat.apache.org/tomcat-8.0-doc/logging.html#Using_java.util.logging_(default)). 
-
-## Customizing Tomcat access and server logs
-By default, Tomcat access logs use the [Common Log Format](https://httpd.apache.org/docs/1.3/logs.html#common), and record all requests processed by the server. You can view what is included in your access logs in Tomcat's **conf/server.xml** configuration file: 
-
-```
- <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-               prefix="localhost_access_log" suffix=".txt"
-               pattern="%h %l %u %t "%r" %s %b" />
-```
-
-The `Valve` element's `pattern` attribute specifies the information from each request (and its response) that should be included in each log entry: 
-
-- the host name or IP address of the client that made the request (`%h`)
-- the username from identd service (always returns '-') (`%l`)
-- the authenticated username (returns `-` if not used) (`%u`) 
-- the date and time of the request (`%t`) 
-- the request method and URI (`%r`)
-- the HTTP status code of the response (`%s`)
-- the size of the object returned to the client, in bytes (`%b`)
-
-The pattern used in the example above will log requests in the following format:
-
-```
-192.168.33.1 - - [21/Sep/2018:16:51:59 +0000] "GET /sample/ HTTP/1.1" 403 1145
-```
-
-You can change this format to also include the request processing time by including `%D` in the valve pattern. This pattern code logs the time taken to process the request in millisecondsâ€”an important metric to track for understanding how well Tomcat processes individual requests. You can check out [Tomcat's documentation](https://tomcat.apache.org/tomcat-9.0-doc/config/valve.html#Access_Log_Valve/Attributes) to learn more about customizing your access logs to include other pattern codes.
-
-Tomcat also generates server logs by default, and uses its [own implementation](https://tomcat.apache.org/tomcat-8.0-doc/logging.html#Java_logging_API_%E2%80%94_java.util.logging) of the **java.util.logging** [package](https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-use.html). Server logs show information related to the Tomcat JVM and Catalina server, including out-of-memory (OOM) errors and deployment activity, as seen in the example below:
-
-```
-16-Oct-2018 18:37:08.624 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
-16-Oct-2018 18:37:08.625 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.10
-16-Oct-2018 18:37:08.629 SEVERE [main] org.apache.catalina.startup.HostConfig.beforeStart Unable to create directory for deployment: [/opt/tomcat/conf/Catalina/localhost]
-16-Oct-2018 18:37:08.672 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/opt/tomcat/webapps/sample.war]
-16-Oct-2018 18:37:09.341 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/opt/tomcat/webapps/sample.war] has finished in [667] ms
-```
-
-Tomcat writes server logs to the console and to a Catalina log file (e.g., **catalina.2018-07-03.log**). You can customize what type of information Tomcat should log, such as the minimum [log level](https://docs.oracle.com/javase/8/docs/api/java/util/logging/Level.html), output directory, and output format in Tomcat's logging properties file (**conf/logging.properties**). If you don't want to use the standard logging utility, you can use Apache's [Log4j2 utility](https://logging.apache.org/log4j/2.x/log4j-appserver/index.html) to manage log output by updating the logging handlers. 
-
-Handlers are Java components that process incoming log messages and format their output, with formatters for logging to a file (`FileHandler`) or to your console (`ConsoleHandler`). Tomcat's logging properties file includes configurations for the Catalina server, Tomcat Manager, and deployed web application logs:
-
-```
-############################################################
-# Handler specific properties.
-# Describes specific configuration info for Handlers.
-############################################################
-
-1catalina.org.apache.juli.FileHandler.level = FINE
-1catalina.org.apache.juli.FileHandler.directory = ${catalina.base}/logs
-1catalina.org.apache.juli.FileHandler.prefix = catalina.
-
-2localhost.org.apache.juli.FileHandler.level = FINE
-2localhost.org.apache.juli.FileHandler.directory = ${catalina.base}/logs
-2localhost.org.apache.juli.FileHandler.prefix = localhost.
-
-3manager.org.apache.juli.FileHandler.level = FINE
-3manager.org.apache.juli.FileHandler.directory = ${catalina.base}/logs
-3manager.org.apache.juli.FileHandler.prefix = manager.
-3manager.org.apache.juli.FileHandler.bufferSize = 16384
-
-java.util.logging.ConsoleHandler.level = FINE
-java.util.logging.ConsoleHandler.formatter = org.apache.juli.OneLineFormatter
-
-
-############################################################
-# Facility specific properties.
-# Provides extra control for each logger.
-############################################################
-
-org.apache.catalina.core.ContainerBase.[Catalina].[localhost].level = INFO
-org.apache.catalina.core.ContainerBase.[Catalina].[localhost].handlers = \
-   2localhost.org.apache.juli.FileHandler
-
-org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/manager].level = INFO
-org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/manager].handlers = \
-   3manager.org.apache.juli.FileHandler
-
-```
-
-By default, Tomcat sets two different log levels for its handlers (`FINE`) and facilities (`INFO`). The `FINE` log level includes detailed information about server activity, and the `INFO` level logs higher-level, informational messages. While handler properties manage your Tomcat logs overall, facility properties enable you to manage configurations for each deployed  application, including Tomcat Manager. For example, to adjust the log levels for Tomcat Manager, you can edit the following handler and facility properties:
-
-```
-3manager.org.apache.juli.FileHandler.level = FINE
-3manager.org.apache.juli.FileHandler.directory = ${catalina.base}/logs
-3manager.org.apache.juli.FileHandler.prefix = manager.
-3manager.org.apache.juli.FileHandler.bufferSize = 16384
-
-[...]
-
-org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/manager].level = INFO
-org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/manager].handlers = \
-   3manager.org.apache.juli.FileHandler
-``` 
-
-## Comprehensive Tomcat monitoring
-By setting a few simple permissions, you can immediately begin viewing Tomcat and JVM data with Tomcat Manager. And once you've enabled remote connections for JMX, you can use tools like JConsole and JavaMelody to monitor Tomcat data with simple graphical interfaces. Tomcat also provides low-level diagnostic information about requests and server activity in its access and server logs. 
-
-Each of these platforms offers different capabilities for monitoring Tomcat, but none of them enable you to see the full picture when an issue occurs. And, if you are running Tomcat alongside other technologies like [Apache](https://www.datadoghq.com/blog/monitoring-apache-web-server-performance/) or [MySQL](https://www.datadoghq.com/blog/monitoring-mysql-performance-metrics/), then you'll need a way to monitor all of them in one platform. In the [next part][part-three-link] of this series, we'll show you how to use Datadog for comprehensive Tomcat monitoring.
-
-[part-one-link]: /blog/tomcat-architecture-and-performance
-[part-one-memory-link]: /blog/tomcat-architecture-and-performance/#jvm-memory-usage
-[part-three-link]: /blog/analyzing-tomcat-logs-and-metrics-with-datadog
-[link-to-throughput-section]: /blog/tomcat-architecture-and-performance#request-throughput-and-latency-metrics     
+m½±±•Ñ¥¹œµ•ÑÉ¥Ìİ¥Ñ Q½µ…Ğµ½¹¥Ñ½É¥¹œ™¹‰ÍÀíÑ½½±Ì((()%¸mA…ÉĞ€ÅumÁ…ÉĞµ½¹”µ±¥¹­t½˜Ñ¡¥ÌÍ•É¥•Ì°İ”‘¥ÍÕÍÍ•Í½µ”­•äQ½µ…Ğ…¹)Y4µ•ÑÉ¥ÌÑ¡…Ğ…É”•áÁ½Í•Ñ¡É½Õ )…Ù„5…¹…•µ•¹ĞáÑ•¹Í¥½¹Ì€¡)5`¤¸9½ÜÑ¡…Ğå½Ô…É”™…µ¥±¥…Èİ¥Ñ µ•ÑÉ¥Ì¹••ÍÍ…Éä™½Èµ½¹¥Ñ½É¥¹œQ½µ…Ğ°İ”…¸±½½¬…Ğ¡½ÜÑ¼½±±•Ğ…¹ÅÕ•ÉäÑ¡…Ğ‘…Ñ„¸%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°İ…±¬Ñ¡É½Õ è((´mÕÍ¥¹œQ½µ…Ğ5…¹…•Ét ÕÍ¥¹œµÑ½µ…Ğµµ…¹…•ÉÌµİ•ˆµ¥¹Ñ•É™…”¤°„‰Õ¥±Ğµ¥¸İ•ˆµ…¹…•µ•¹Ğ¥¹Ñ•É™…”(´m•¹…‰±¥¹œÉ•µ½Ñ”½¹¹•Ñ¥½¹Ì™½È)5at •¹…‰±¥¹œµÉ•µ½Ñ”µ©µàµ½¹¹•Ñ¥½¹Ìµ™½ÈµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¤)Ù¥•İ¥¹œµ•ÑÉ¥Ìİ¥Ñ ½Ñ¡•Èµ½¹¥Ñ½É¥¹œÁ±…Ñ™½ÉµÌ±¥­”m)½¹Í½±•t ÕÍ¥¹œµ©½¹Í½±”¤…¹m)…Ù…5•±½‘åt ÕÍ¥¹œµ©…Ù…µ•±½‘ä¤(´mÙ¥•İ¥¹œ…¹ÕÍÑ½µ¥é¥¹œQ½µ…ĞÍ•ÉÙ•È…¹…•ÍÌ±½Ít ÕÍÑ½µ¥é¥¹œµÑ½µ…Ğµ…•ÍÌµ…¹µÍ•ÉÙ•Èµ±½Ì¤((ŒŒQ½µ…Ğ5…¹…•È)mQ½µ…Ğ5…¹…•Ét¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½µ…¹…•Èµ¡½İÑ¼¹¡Ñµ°¤¥Ù•Ì…‘µ¥¹¥ÍÑÉ…Ñ½ÉÌÑ¡”…‰¥±¥ÑäÑ¼µ…¹…”…ÁÁ±¥…Ñ¥½¹Ì…¹¡½ÍÑÌ¥¸½¹”Á±…”¸Q¡”µ…¹…•µ•¹Ğ¥¹Ñ•É™…”½µ•Ìİ¥Ñ •Ù•Éä¥¹ÍÑ…±±…Ñ¥½¸½˜Q½µ…Ğ…¹¥¹±Õ‘•ÌÅÕ¥¬µÍÑ…ÉĞÕ¥‘•Ì…¹±¥¹­ÌÑ¼‘½Õµ•¹Ñ…Ñ¥½¸™½Èå½ÕÈÙ•ÉÍ¥½¸½˜Q½µ…Ğ¸É½´Ñ¡¥Ì¥¹Ñ•É™…”å½Ô…¸Ù¥•ÜQ½µ…Ğµ•ÑÉ¥Ì°…¹ÅÕ•Éäµ•ÑÉ¥Œ‘…Ñ„Ñ¡É½Õ „)5`ÁÉ½áäÍ•ÉÙ±•Ğ¸€()íìğ¥µœÍÉŒôˆÈµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµµ…¹…•È¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğµ½¹¥Ñ½É¥¹œÁ…”ˆ€ùõô(((ŒŒŒQ½µ…Ğ5…¹…•ÈÉ½±•Ì…¹Á•Éµ¥ÍÍ¥½¹Ì)Q¡½Õ Ñ¡”µ…¹…•µ•¹Ğ¥¹Ñ•É™…”¥Ì¥¹±Õ‘•½ÕĞ½˜Ñ¡”‰½à°å½Ôİ½¸Ğ‰”…‰±”Ñ¼…•ÍÌ¥Ğ½ÈÅÕ•Éäµ•ÑÉ¥ÌÑ¡É½Õ ¥ÑÌ)5`ÁÉ½áäÍ•ÉÙ±•ĞÕ¹Ñ¥°å½ÔÍ•ĞÕÀÑ¡”…ÁÁÉ½ÁÉ¥…Ñ”ÕÍ•ÉÌ…¹É½±•Ì¸Q½µ…Ğ¥¹±Õ‘•ÌmÍ•Ù•É…°É½±•Ít¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½µ…¹…•Èµ¡½İÑ¼¹¡Ñµ°½¹™¥ÕÉ¥¹}5…¹…•É}ÁÁ±¥…Ñ¥½¹}•ÍÌ¤Ñ¡…Ğ½™™•ÈÙ…É¥½ÕÌ±•Ù•±Ì½˜Á•Éµ¥ÍÍ¥½¹Ì¹••‘•™½È…•ÍÍ¥¹œÙ…É¥½ÕÌQ½µ…Ğ5…¹…•È½µÁ½¹•¹ÑÌ°½¹™¥ÕÉ¥¹œ…ÁÁ±¥…Ñ¥½¹Ì…¹¡½ÍÑÌ°…¹ÅÕ•Éå¥¹œµ•ÑÉ¥ÌÙ¥„)5`¸Q¡”Ñİ¼É½±•ÌÑ¡…Ğ…É”µ½ÍĞÉ•±•Ù…¹Ğ™½Èµ½¹¥Ñ½É¥¹œQ½µ…Ğ…É”è€€((´€¨©µ…¹…•Èµ©µà¨¨èÁÉ½Ù¥‘•Ì…•ÍÌÑ¼‰½Ñ Ñ¡”)5`ÁÉ½áäÍ•ÉÙ±•Ğ…¹Q½µ…ĞÌÍ•ÉÙ•ÈÍÑ…ÑÕÌÁ…”€€(´€¨©µ…¹…•ÈµÕ¤¨¨èÉ…¹ÑÌ…•ÍÌÑ¼Q½µ…ĞÌ…ÁÁ±¥…Ñ¥½¸µ…¹…•È°İ¡•É”å½Ô…¸ÉÕ¸‘¥…¹½ÍÑ¥Ì…¹µ…¹Õ…±±äÑÉ¥•È…É‰…”½±±•Ñ¥½¸()%¸½É‘•ÈÑ¼…•ÍÌQ½µ…Ğµ•ÑÉ¥Ì™É½´Ñ¡”µ…¹…•µ•¹Ğ¥¹Ñ•É™…”°å½Ôİ¥±°¹••Ñ¼…ÍÍ¥¸Ñ¡”…ÁÁÉ½ÁÉ¥…Ñ”É½±”¡Ì¤Ñ¼„ÕÍ•È¸e½Ô…¸‘¼Í¼‰äÕÁ‘…Ñ¥¹œQ½µ…ĞÌ€¨©½¹˜½Ñ½µ…ĞµÕÍ•ÉÌ¹áµ°¨¨½¹™¥ÕÉ…Ñ¥½¸™¥±”è()€(€€ñÉ½±”É½±•¹…µ”ô‰µ…¹…•ÈµÕ¤ˆ¼ø(€€ñÉ½±”É½±•¹…µ”ô‰µ…¹…•Èµ©µàˆ¼ø(€€ñÕÍ•ÈÕÍ•É¹…µ”ô‰Ñ½µ…Ğµ©µàˆÁ…ÍÍİ½Éôˆñe=UI}AMM]=IøˆÉ½±•Ìô‰µ…¹…•Èµ©µà±µ…¹…•ÈµÕ¤ˆ¼ø)€()Q¡¥Ì½‘”Í¹¥ÁÁ•Ğ™¥ÉÍĞ‘•™¥¹•ÌÑ¡”Ñİ¼É½±•Ìİ”İ…¹ĞÑ¼…ÍÍ¥¸Ñ¼½ÕÈÕÍ•È¸Q¡•¸¥ĞÉ•…Ñ•Ì„¹•ÜÑ½µ…Ğµ©µá€ÕÍ•È°…ÍÍ¥¹Ì¥ĞÑ¡½Í”É½±•Ì°…¹Í•ÑÌ„Á…ÍÍİ½É™½ÈÑ¡”ÕÍ•È¸%˜å½Ô…É”ÕÍ¥¹œ„™É•Í ¥¹ÍÑ…±°½˜Q½µ…Ğ°å½Ôİ¥±°¹••Ñ¼É•…Ñ”„¹•ÜÕÍ•Èì½Ñ¡•Éİ¥Í”°å½Ô…¸…ÍÍ¥¸É½±•ÌÑ¼…¹ä•á¥ÍÑ¥¹œÕÍ•È¸¡•¬½ÕĞÑ¡”mQ½µ…Ğ‘½Ít¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½µ…¹…•Èµ¡½İÑ¼¹¡Ñµ°½¹™¥ÕÉ¥¹}5…¹…•É}ÁÁ±¥…Ñ¥½¹}•ÍÌ¤™½Èµ½É”¥¹™½Éµ…Ñ¥½¸½¸Ñ¡”É½±•Ì…Ù…¥±…‰±”™½ÈQ½µ…Ğ5…¹…•È¸€((ŒŒŒUÍ¥¹œQ½µ…Ğ5…¹…•ÈÌİ•ˆ¥¹Ñ•É™…”)	ä‘•™…Õ±Ğ°Q½µ…Ğ5…¹…•È¥Ì…•ÍÍ¥‰±”±½…±±ä™É½´¡ÑÑÀè¼½±½…±¡½ÍĞèàÀàÁ€°Ñ¡½Õ å½Ô…¸¡…¹”Ñ¡¥Ì¥¸Q½µ…ĞÌÍ•ÉÙ•È½¹™¥ÕÉ…Ñ¥½¸™¥±”¸]¡•¸å½Ô…•ÍÌÑ¡”İ•ˆ¥¹Ñ•É™…”°å½Ôİ¥±°‰”ÁÉ½µÁÑ•Ñ¼±½œ¥¸¸É½´Ñ¡•É”°å½Ô…¸¹…Ù¥…Ñ”Ñ¼Ñ¡”™½±±½İ¥¹œ…É•…ÌÑ¼Ù¥•Üµ•ÑÉ¥Œ‘…Ñ„è€((´€¨©M•ÉÙ•È…¹…ÁÁ±¥…Ñ¥½¸ÍÑ…ÑÕÌÁ…•Ì¨¨è‘¥ÍÁ±…ä¡¥ µ±•Ù•°½Ù•ÉÙ¥•İÌ½˜)Y4°½¹¹•Ñ½È°…¹…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ì°¥¹±Õ‘¥¹œµ•µ½ÉäÕÍ…”°Ñ¡É•…½Õ¹ÑÌ°…¹É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”€(´€¨©ÁÁ±¥…Ñ¥½¸5…¹…•È¨¨èÁÉ½Ù¥‘•Ì‘¥…¹½ÍÑ¥ŒÑ½½±Ì™½È¥¹Ù•ÍÑ¥…Ñ¥¹œµ•µ½Éä±•…­Ìİ¥Ñ¡¥¸å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì€(´€¨©)5`AÉ½áä¨¨è„Ñ•áĞµ‰…Í•¥¹Ñ•É™…”™½ÈÅÕ•Éå¥¹œQ½µ…Ğµ•ÑÉ¥Ì((ŒŒŒŒQ½µ…ĞÌÍ•ÉÙ•ÈÍÑ…ÑÕÌÁ…”)%˜å½Ô¹••„¡¥ µ±•Ù•°mÙ¥•Ü½˜…ÁÁ±¥…Ñ¥½¸…¹Í•ÉÙ•Èµ•ÑÉ¥Ít¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½µ…¹…•Èµ¡½İÑ¼¹¡Ñµ°M•ÉÙ•É}MÑ…ÑÕÌ¤°å½Ô…¸¹…Ù¥…Ñ”Ñ¼Ñ¡”€½µ…¹…•È½ÍÑ…ÑÕÍ€Á…”½È±¥¬½¸Ñ¡”€‰M•ÉÙ•ÈMÑ…ÑÕÌˆ‰ÕÑÑ½¸™É½´Ñ¡”¡½µ”Á…”¸Q¡¥ÌÁ…”¥¹±Õ‘•Ì¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”Q½µ…ĞÍ•ÉÙ•È…¹¥ÑÌ)@…¹!QQ@½¹¹•Ñ½ÉÌ°…Ìİ•±°…Ìµ•µ½ÉäÕÍ…”™½ÈÑ¡”)Y4¸()íìğ¥µœÍÉŒôˆÌµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÁ…”µÍ•ÉÙ•ÈµÍÑ…ÑÕÌ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğµ½¹¥Ñ½É¥¹œÕÍ¥¹œÑ¡”µ…¹…•ÈÍ•ÉÙ•ÈÍÑ…ÑÕÌÁ…”ˆ€ùõô()… ½¹¹•Ñ½ÈÍ•Ñ¥½¸‘¥ÍÁ±…åÌ¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡É•…ÕÍ…”€¡”¹œ¸°µ…àÑ¡É•…‘Ì°ÕÉÉ•¹ĞÑ¡É•…½Õ¹Ğ°…¹ÕÉÉ•¹Ğ¹Õµ‰•È½˜‰ÕÍäÑ¡É•…‘Ì¤…¹É•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ…¹Á•É™½Éµ…¹”€¡”¹œ¸°ÁÉ½•ÍÍ¥¹œÑ¥µ”°•ÉÉ½È½Õ¹ÑÌ°…¹‰åÑ•ÌÉ••¥Ù•¤°…Ìİ•±°…Ì¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ•… …Ñ¥Ù”Ñ¡É•…°¥¹±Õ‘¥¹œ¥ÑÌÕÉÉ•¹ĞÍÑ…”¸… Ñ¡É•…ÁÉ½É•ÍÍ•ÌÑ¡É½Õ „Í•É¥•Ì½˜ÍÑ…•Ì…Ì¥ĞÁÉ½•ÍÍ•Ì„É•ÅÕ•ÍĞè((´€¨©I•…‘äè¨¨Q¡”Ñ¡É•…¥Ì…Ù…¥±…‰±”Ñ¼ÁÉ½•ÍÌ„É•ÅÕ•ÍĞ¸(´€¨©A…ÉÍ”…¹AÉ•Á…É”I•ÅÕ•ÍĞè¨¨Q¡”Ñ¡É•…¥ÌÁ…ÉÍ¥¹œÉ•ÅÕ•ÍĞ¡•…‘•ÉÌ½ÈÁÉ•Á…É¥¹œÑ¼É•…Ñ¡”‰½‘ä½˜Ñ¡”É•ÅÕ•ÍĞ¸€(´€¨©M•ÉÙ¥”è¨¨Q¡”Ñ¡É•…¥ÌÁÉ½•ÍÍ¥¹œ…¹•¹•É…Ñ¥¹œ„É•ÍÁ½¹Í”™½È…¸¥¹½µ¥¹œÉ•ÅÕ•ÍĞ¸€(´€¨©¥¹¥Í¡¥¹œè¨¨Q¡”Ñ¡É•…¡…Ì™¥¹¥Í¡•ÁÉ½•ÍÍ¥¹œÑ¡”É•ÅÕ•ÍĞ…¹¥ÌÍ•¹‘¥¹œ„•¹•É…Ñ•É•ÍÁ½¹Í”‰…¬Ñ¼Ñ¡”±¥•¹Ğ¸(´€¨©-••Àµ±¥Ù”è¨¨Q¡”Ñ¡É•…¥Ì­••Á¥¹œÑ¡”½¹¹•Ñ¥½¸½Á•¸™½ÈÑ¡”Í…µ”±¥•¹ĞÑ¼Í•¹…¹½Ñ¡•ÈÉ•ÅÕ•ÍĞ¸Q¡”µ…á¥µÕ´‘ÕÉ…Ñ¥½¸½˜Ñ¡¥ÌÍÑ…”¥Ì‘•Ñ•Éµ¥¹•‰äÑ¡”­••Á±¥Ù•Q¥µ•½ÕÑ€Ù…±Õ”Í•Ğ¥¸Ñ¡”Í•ÉÙ•ÈÌ½¹™¥ÕÉ…Ñ¥½¸™¥±”¸™Ñ•ÈÑ¡”½¹¹•Ñ¥½¸Ñ¥µ•Ì½ÕĞ°Ñ¡”Ñ¡É•…½•Ì‰…¬Ñ¼Ñ¡”I•…‘äÍÑ…”¸()Q¡É•…ÍÑ…•Ì…¸¡•±Àå½Ô…ÕÉ…Ñ•±ä…Õ”Ñ¡”¹Õµ‰•È½˜Ñ¡É•…‘ÌÑ¡…Ğ…É”É•…‘äÑ¼…•ÁĞ¥¹½µ¥¹œÉ•ÅÕ•ÍÑÌ¸e½Ô…¸…±Í¼Ù¥•ÜÑ¡”É•ÅÕ•ÍĞ½Õ¹Ğ™½È•… ‘•Á±½å•…ÁÁ±¥…Ñ¥½¸İ¥Ñ¡¥¸Q½µ…ĞÌ…ÁÁ±¥…Ñ¥½¸±¥ÍĞ½¸Ñ¡”Í•ÉÙ•ÈÍÑ…ÑÕÌÁ…”¸€((ŒŒŒŒQ½µ…Ğ…ÁÁ±¥…Ñ¥½¸ÍÑ…ÑÕÌÁ…”)%¸½É‘•ÈÑ¼Ù¥•ÜÑ¡”ÍÑ…ÑÕÌ½˜…±°½˜å½ÕÈ‘•Á±½å•…ÁÁ±¥…Ñ¥½¹Ì°å½Ô…¸¹…Ù¥…Ñ”Ñ¼Ñ¡”µ…¹…•È½ÍÑ…ÑÕÌ½…±±€Á…”¸Q¡¥ÌÁ…”±¥ÍÑÌ…±°…ÁÁ±¥…Ñ¥½¹Ì°¥¹±Õ‘¥¹œQ½µ…Ğ5…¹…•È¥ÑÍ•±˜°Í¼å½Ô…¸ÅÕ¥­±äÙ¥•ÜÁÉ½•ÍÍ¥¹œÑ¥µ•Ì°…Ñ¥Ù”Í•ÍÍ¥½¹Ì°…¹Ñ¡”¹Õµ‰•È½˜)M@Í•ÉÙ±•ÑÌ±½…‘•™½È•… …ÁÁ±¥…Ñ¥½¸°…±Õ±…Ñ•…Ì„ÕµÕ±…Ñ¥Ù”½Õ¹Ğ™É½´Ñ¡”ÍÑ…ÉĞ½˜Ñ¡”Í•ÉÙ•È¸€()íìğ¥µœÍÉŒôˆĞµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµµ…¹…•Èµ…ÁÀµ±¥ÍĞ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q¡”Q½µ…Ğµ½¹¥Ñ½É¥¹œµ…¹…•È…ÁÁ±¥…Ñ¥½¸±¥ÍĞˆ€ùõô((ŒŒŒŒQ¡”…ÁÁ±¥…Ñ¥½¸µ…¹…•È)½ÈÉÕ¹¹¥¹œ‘¥…¹½ÍÑ¥Ì°å½Ô…¸¹…Ù¥…Ñ”Ñ¼Q½µ…ĞÌ…ÁÁ±¥…Ñ¥½¸µ…¹…•È¥¹Ñ•É™…”…Ğ€€½µ…¹…•È½¡Ñµ±€½È‰ä±¥­¥¹œ½¸Ñ¡”€‰5…¹…•ÈÁÀˆ‰ÕÑÑ½¸™É½´Ñ¡”Q½µ…Ğ5…¹…•È¡½µ”Á…”¸Q¡”…ÁÁ±¥…Ñ¥½¸µ…¹…•ÈÁÉ½Ù¥‘•Ì„Í¥µÁ±”¥¹Ñ•É™…”™½ÈÅÕ¥­±äµ…¹…¥¹œ…ÁÁ±¥…Ñ¥½¹Ì°…¹„}¥…¹½ÍÑ¥Í|Í•Ñ¥½¸™½ÈÑÉ½Õ‰±•Í¡½½Ñ¥¹œµ•µ½Éä±•…­Ì¸€()íìğ¥µœÍÉŒôˆÔµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµµ…¹…•Èµ‘¥…¹½ÍÑ¥Ì¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰¥…¹½ÍÑ¥Ì…¹Q½µ…Ğ¡•…±Ñ ¡•¬ÕÍ¥¹œQ½µ…Ğµ…¹…•Èˆ€ùõô()%¸Ñ¡¥ÌÍ•Ñ¥½¸°å½Ô…¸ÉÕ¸„‘¥…¹½ÍÑ¥Œ¡•¬™½Èµ•µ½Éä±•…­Ì¥¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸¸5•µ½Éä±•…­Ì½ÕÈİ¡•¸Ñ¡”…É‰…”½±±•Ñ½È…¹¹½Ğ™É•”ÕÀİ½É­¥¹œµ•µ½Éä‰äÉ•µ½Ù¥¹œ½‰©•ÑÌÑ¡…Ğ…É”¹¼±½¹•È¹••‘•‰äÑ¡”…ÁÁ±¥…Ñ¥½¸¸Q¡¥Ì…ÕÍ•ÌÑ¡”…ÁÁ±¥…Ñ¥½¸Ñ¼ÕÍ”µ½É”É•Í½ÕÉ•ÌÕ¹Ñ¥°¥ĞÉÕ¹Ì½ÕĞ°•¹•É…Ñ¥¹œ„™…Ñ…°µ•µ½Éä•ÉÉ½È¸5½¹¥Ñ½É¥¹œmQ½µ…Ğµ•µ½ÉäÕÍ…”µ•ÑÉ¥ÍumÁ…ÉĞµ½¹”µµ•µ½Éäµ±¥¹­tİ¥±°¡•±À…Ñ ÁÉ½‰±•µÌ‰•™½É”Ñ¡•ä‰•½µ”µ½É”Í•É¥½ÕÌ¸9½Ñ”Ñ¡…ĞÑ¡¥Ì‘¥…¹½ÍÑ¥Œ¡•¬Í¡½Õ±‰”ÕÍ•İ¥Ñ …ÕÑ¥½¸°‰•…ÕÍ”¥ĞÑÉ¥•ÉÌm…É‰…”½±±•Ñ¥½¹t¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½¡Ñµ°µµ…¹…•Èµ¡½İÑ¼¹¡Ñµ°¥¹‘¥¹}µ•µ½Éå}±•…­Ì¤°İ¡¥ …¸‰”„µ•µ½Éäµ¥¹Ñ•¹Í¥Ù”ÁÉ½•ÍÌ¸€()Q¡”Q½µ…Ğİ•ˆ¥¹Ñ•É™…”ÁÉ½Ù¥‘•Ì•…Íä…•ÍÌÑ¼Ñ¡”ÍÑ…Ñ”½˜å½ÕÈQ½µ…ĞÍ•ÉÙ•È°•¹…‰±¥¹œå½ÔÑ¼ÅÕ¥­±äÙ¥•Ü¡¥ µ±•Ù•°µ•ÑÉ¥Œ‘…Ñ„¸Q½µ…Ğ…±Í¼¥¹±Õ‘•Ì…¸¥¹Ñ•É™…”™½È±½½­¥¹œ…Ğ5	•…¸‘…Ñ„É•±…Ñ•Ñ¼å½ÕÈ…ÁÁ±¥…Ñ¥½¸°¥Ù¥¹œå½Ôµ½É”½¹ÑÉ½°½Ù•ÈÑ¡”µ•ÑÉ¥Ìå½Ô¹••Ñ¼µ½¹¥Ñ½È¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°±½½¬…ĞÕÍ¥¹œÑ¡”)5`ÁÉ½áäÍ•ÉÙ±•Ğ™½ÈÅÕ•Éå¥¹œÑ¡•Í”µ•ÑÉ¥Ì¸€((ŒŒŒŒEÕ•ÉäQ½µ…Ğµ•ÑÉ¥Ì)Q½µ…Ğ5…¹…•È¥¹±Õ‘•Ì…•ÍÌÑ¼„)5`ÁÉ½áäÍ•ÉÙ±•Ğİ¥Ñ Ñ¡”µ…¹…•Èµ©µá€É½±”°İ¡¥ …±±½İÌå½ÔÑ¼ÅÕ•Éäµ•ÑÉ¥Ì™É½´å½ÕÈİ•ˆ‰É½İÍ•È¸e½Ô…¸™¥¹„±¥ÍĞ½˜Ñ¡”…Ù…¥±…‰±”5	•…¹Ì™½ÈQ½µ…Ğ€¡¥¸Á±…¥¸µÑ•áĞ™½Éµ…Ğ¤…Ğ¡ÑÑÀè¼½±½…±¡½ÍĞèàÀàÀ½µ…¹…•È½©µáÁÉ½áå€¸()íìğ¥µœÍÉŒôˆØµQ½µ…Ğµµ½¹¥Ñ½É¥¹œµ)5`µÁÉ½áä¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰AÉ½áä™½ÈQ½µ…Ğ)5`µ½¹¥Ñ½É¥¹œˆ€ùõô()Q¼Í•”‘…Ñ„…‰½ÕĞ„ÍÁ•¥™¥Œ5	•…¸°å½Ô…¸…‘Á…É…µ•Ñ•ÉÌÑ¼Ñ¡”UI0™½ÈÑ¡”5	•…¸Ì‘½µ…¥¸°ÑåÁ”°¹…µ”°…¹…ÑÑÉ¥‰ÕÑ”¥¸Ñ¡”™½±±½İ¥¹œ™½Éµ…Ğè()€)¡ÑÑÀè¼½±½…±¡½ÍĞèàÀàÀ½µ…¹…•È½©µáÁÉ½áä¼ı•Ğôñ=5%8øéÑåÁ”ôñQeAø±¹…µ”ôˆñ95øˆ™…ÑĞôñ)5a}QQI%	UQø€)€()e½Ô…¸™¥¹Ñ¡•Í”Á…É…µ•Ñ•ÉÌ¥¸Ñ¡”)5`…ÑÑÉ¥‰ÕÑ”…¹5	•…¸½±Õµ¹Ì½˜Ñ¡”µ•ÑÉ¥ŒÑ…‰±•Ì¥¸mA…ÉĞ€Åum±¥¹¬µÑ¼µÑ¡É½Õ¡ÁÕĞµÍ•Ñ¥½¹t¸½È•á…µÁ±”°å½Ô…¸ÕÍ”Ñ¡”™½±±½İ¥¹œÑ¼Ù¥•Ü‘…Ñ„™½ÈÑ¡”!QQ@½¹¹•Ñ½ÈÌµ…á¥µÕ´É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”è€()€)¡ÑÑÀè¼½±½…±¡½ÍĞèàÀàÀ½µ…¹…•È½©µáÁÉ½áä¼ı•Ğõ…Ñ…±¥¹„éÑåÁ”õ±½‰…±I•ÅÕ•ÍÑAÉ½•ÍÍ½È±¹…µ”ô‰¡ÑÑÀµ¹¥¼´àÀàÀˆ™…ÑĞõµ…áQ¥µ”)€()]¡¥ İ¥±°å¥•±Ñ¡”™½±±½İ¥¹œÉ•ÍÕ±Ğè()€)=,€´ÑÑÉ¥‰ÕÑ”•Ğ€…Ñ…±¥¹„éÑåÁ”õ±½‰…±I•ÅÕ•ÍÑAÉ½•ÍÍ½È±¹…µ”ô‰¡ÑÑÀµ¹¥¼´àÀàÀˆœ€´µ…áQ¥µ”€ô€Äàä)€()Q¡”)5`ÁÉ½áä¥¹Ñ•É™…”¥Ì„½½İ…äÑ¼ÅÕ¥­±äÅÕ•Éä…¹mÕÁ‘…Ñ•t¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½µ…¹…•Èµ¡½İÑ¼¹¡Ñµ°)5a}M•Ñ}½µµ…¹¤µ•ÑÉ¥Ìİ¥Ñ¡¥¸Q½µ…Ğ5…¹…•È°…¹…¸‰”¥¹Ñ•É…Ñ•¥¹Ñ¼½µµ…¹±¥¹”ÍÉ¥ÁÑÌ½ÈÕÑ¥±¥Ñ¥•Ì¸!½İ•Ù•È°¥Ğ‘½•Í¸Ğ¥Ù”å½Ô…¸•…Íäİ…äÑ¼½µÁ…É”µÕ±Ñ¥Á±”µ•ÑÉ¥Ì½ÈÙ¥•Ü¡½ÜÑ¡…Ğ‘…Ñ„¡…¹•Ì½Ù•ÈÑ¥µ”¸%¸½É‘•ÈÑ¼•Ğ‘••Á•È¥¹Í¥¡ÑÌ¥¹Ñ¼Q½µ…Ğ¡•…±Ñ …¹Á•É™½Éµ…¹”°å½Ô±°¹••Ñ¼ÕÍ”…¹½Ñ¡•ÈÑ½½°±¥­”)½¹Í½±”½È)…Ù…5•±½‘ä¸((ŒŒ¹…‰±¥¹œÉ•µ½Ñ”)5`½¹¹•Ñ¥½¹Ì™½ÈQ½µ…Ğµ½¹¥Ñ½É¥¹œÑ½½±Ì)	•™½É”å½Ô…¸ÕÍ”„Ñ½½°±¥­”)½¹Í½±”½È)…Ù…5•±½‘äÑ¼µ½¹¥Ñ½Èå½ÕÈQ½µ…ĞÍ•ÉÙ•È°å½Ôİ¥±°¹••Ñ¼•¹…‰±”É•µ½Ñ”½¹¹•Ñ¥½¹Ì™½È)5`¸)½¹Í½±”…¸½¹ÍÕµ”„±½Ğ½˜ÍåÍÑ•´É•Í½ÕÉ•Ì°Í¼=É…±”mÉ•½µµ•¹‘Ít¡¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼à½‘½Ì½Ñ•¡¹½Ñ•Ì½Õ¥‘•Ì½µ…¹…•µ•¹Ğ½…•¹Ğ¹¡Ñµ°‘•µä¤¥Í½±…Ñ¥¹œ)½¹Í½±”™É½´Ñ¡”Í•ÉÙ•Èå½Ô…É”µ½¹¥Ñ½É¥¹œ‰ä½¹¹•Ñ¥¹œÑ¼É•µ½Ñ”¡½ÍÑÌ½¹±ä¸9½Ñ”Ñ¡…Ğ•¹…‰±¥¹œÉ•µ½Ñ”)5`…•ÍÌ‘•µ…¹‘Ì…ÁÁÉ½ÁÉ¥…Ñ”Í•ÕÉ¥ÑäÁÉ•…ÕÑ¥½¹Ì°…Ì)5`ÁÉ½Ù¥‘•Ì±¥µ¥Ñ•…•ÍÌ½¹ÑÉ½°¸½ÈÑ¡”Í…­”½˜‘•µ½¹ÍÑÉ…Ñ¥½¸°Ñ¡”Í¥µÁ±¥™¥•½¹™¥ÕÉ…Ñ¥½¸¥¸Ñ¡¥ÌÍ•Ñ¥½¸‘¥Í…‰±•ÌMM0ìÍ•”mÑ¡”)…Ù„‘½Õµ•¹Ñ…Ñ¥½¹t¡¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼à½‘½Ì½Ñ•¡¹½Ñ•Ì½Õ¥‘•Ì½µ…¹…•µ•¹Ğ½…•¹Ğ¹¡Ñµ°‘•Ù¼¤…¹Q½µ…ĞÌmÍ•ÕÉ¥ÑäÕ¥‘•t¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½Í•ÕÉ¥Ñäµ¡½İÑ¼¹¡Ñµ°)5`¤™½È¥¹™½Éµ…Ñ¥½¸½¸Í•ÕÉ¥¹œÉ•µ½Ñ”)5`…•ÍÌ™½ÈÁÉ½‘ÕÑ¥½¸•¹Ù¥É½¹µ•¹ÑÌ¸()¥ÉÍĞ°É•…Ñ”„€¨©Í•Ñ•¹Ø¹Í ¨¨™¥±”¥¸Q½µ…ĞÌ€¨¨½‰¥¸¨¨‘¥É•Ñ½Éä…¹¥¹±Õ‘”Ñ¡”™½±±½İ¥¹œè()€)•áÁ½ÉĞ)Y}=AQLôˆ‘í)Y}=AQMô€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”ˆ)•áÁ½ÉĞ)Y}=AQLôˆ‘í)Y}=AQMô€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹Á½ÉĞôñA=IPøˆ)•áÁ½ÉĞ)Y}=AQLôˆ‘í)Y}=AQMô€µ©…Ù„¹Éµ¤¹Í•ÉÙ•È¹¡½ÍÑ¹…µ”ôñQ=5Q}!=MQ}=I}%@øˆ)•áÁ½ÉĞ)Y}=AQLôˆ‘í)Y}=AQMô€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹ÍÍ°õ™…±Í”ˆ)•áÁ½ÉĞ)Y}=AQLôˆ‘í)Y}=AQMô€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹…ÕÑ¡•¹Ñ¥…Ñ”õÑÉÕ”ˆ)•áÁ½ÉĞ)Y}=AQLôˆ‘í)Y}=AQMô€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹…•ÍÌ¹™¥±”ô‘íQ1%9}	Mô½½¹˜½©µáÉ•µ½Ñ”¹…•ÍÌ)•áÁ½ÉĞ)Y}=AQLôˆ‘í)Y}=AQMô€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹Á…ÍÍİ½É¹™¥±”ô‘íQ1%9}	Mô½½¹˜½©µáÉ•µ½Ñ”¹Á…ÍÍİ½É)€()Q¡¥ÌÍ•ÑÌÑ¡”¡½ÍÑ¹…µ”…¹Á½ÉĞÑ¡…Ğ)½¹Í½±”…¸ÕÍ”Ñ¼½¹¹•ĞÉ•µ½Ñ•±äÑ¼å½ÕÈQ½µ…ĞÍ•ÉÙ•È¸e½Ô…¸ÍÁ•¥™ä…¹ä¡½ÍÑ¹…µ”…¹mÕ¹ÕÍ•Á½ÉÑt¡¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼à½‘½Ì½Ñ•¡¹½Ñ•Ì½Õ¥‘•Ì½µ…¹…•µ•¹Ğ½…•¹Ğ¹¡Ñµ°‘•¹°¤¸Q¡½Õ Ñ¡¥Ì•á…µÁ±”‘½•Ì¹½Ğ¥¹±Õ‘”MM0°¥Ğ‘½•Ì•¹…‰±”Á…ÍÍİ½É…ÕÑ¡•¹Ñ¥…Ñ¥½¸°…¹ÍÁ•¥™¥•Ìİ¡•É”Ñ¼™¥¹Ñ¡”…•ÍÌ€¡ÕÍ•É¹…µ”¤…¹Á…ÍÍİ½É™¥±•Ììå½Ôµ…ä¹••Ñ¼É•…Ñ”Ñ¡•´¥˜Ñ¡•ä‘½¸Ğ…±É•…‘ä•á¥ÍĞ¸e½Ô…¸…‘¹•ÜÕÍ•ÉÌ…¹¥Ù”Ñ¡•´½¹”½˜Ñİ¼ÁÉ¥Ù¥±••Ì€¡É•…‘½¹±å€…¹É•…‘İÉ¥Ñ•€¤‰ä•‘¥Ñ¥¹œÑ¡”€¨¨‘íQ1%9}	Mô½½¹˜½©µáÉ•µ½Ñ”¹…•ÍÌ¨¨™¥±”è()€)Ñ½µ…ÑUÍ•ÉI•…É•…‘½¹±ä)Ñ½µ…ÑUÍ•É]É¥Ñ”É•…‘İÉ¥Ñ”)€()Q¡”™¥ÉÍĞ±¥¹”É…¹ÑÌ„Ñ½µ…ÑUÍ•ÉI•…‘€ÕÍ•Èİ¥Ñ É•…‘½¹±å€ÁÉ¥Ù¥±••Ì°İ¡¥ µ•…¹ÌÑ¡…ĞÑ¡¥ÌÕÍ•È…¸Ù¥•Ü5	•…¸…ÑÑÉ¥‰ÕÑ•Ì…¹É••¥Ù”¹½Ñ¥™¥…Ñ¥½¹Ì¸Q¡”Í•½¹±¥¹”ÁÉ½Ù¥‘•Ì„Ñ½µ…ÑUÍ•É]É¥Ñ•€ÕÍ•Èİ¥Ñ É•…‘İÉ¥Ñ•€ÁÉ¥Ù¥±••Ì°…±±½İ¥¹œÑ¡…ĞÕÍ•ÈÑ¼…‘…¹É•µ½Ù”5	•…¹Ì°Í•Ğ…ÑÑÉ¥‰ÕÑ•Ì°…¹ÉÕ¸½Á•É…Ñ¥½¹Ì¸()9•áĞ°Í•Ğ„Á…ÍÍİ½É™½ÈÑ¡½Í”ÕÍ•ÉÌ¥¸Ñ¡”€¨¨‘íQ1%9}	Mô½½¹˜½©µáÉ•µ½Ñ”¹Á…ÍÍİ½É¨¨™¥±”è()€)Ñ½µ…ÑI•…€ñAMM]=Iø)Ñ½µ…Ñ]É¥Ñ”€ñAMM]=Iø)€()M…Ù”Ñ¡”™¥±”…¹É•ÍÑ…ÉĞå½ÕÈQ½µ…ĞÍ•ÉÙ•È¸9•áĞ°½Á•¸)½¹Í½±”…¹ÉÕ¸Ñ¡”™½±±½İ¥¹œ½µµ…¹°µ…­¥¹œÍÕÉ”Ñ¼¥¹±Õ‘”Ñ¡”¡½ÍĞ…¹Á½ÉĞå½Ô‘•™¥¹•¥¸å½ÕÈ€¨©Í•Ñ•¹Ø¹Í ¨¨™¥±”è()€)©½¹Í½±”€ñQ=5Q}!=MQ}=I}%@øèñA=IPø)€€()Q¡¥Ìİ¥±°‰É¥¹œÕÀÑ¡”)½¹Í½±”¥¹Ñ•É™…”İ¡•É”å½Ô…¸‰•¥¸Ù¥•İ¥¹œ‘…Ñ„É•±…Ñ•Ñ¼å½ÕÈ)Y4…¹Q½µ…ĞÍ•ÉÙ•È¸€((ŒŒUÍ¥¹œ)½¹Í½±”)m)½¹Í½±•t¡¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼à½‘½Ì½Ñ•¡¹½Ñ•Ì½Õ¥‘•Ì½µ…¹…•µ•¹Ğ½©½¹Í½±”¹¡Ñµ°¤¥Ì„É…Á¡¥…°¥¹Ñ•É™…”¥¹±Õ‘•İ¥Ñ Ñ¡”m)…Ù„M•Ù•±½Áµ•¹Ğ-¥Ñt¡¡ÑÑÀè¼½İİÜ¹½É…±”¹½´½Ñ•¡¹•Ñİ½É¬½©…Ù„½©…Ù…Í”½‘½İ¹±½…‘Ì½¥¹‘•à¹¡Ñµ°¤¸)½¹Í½±”ÁÉ½Ù¥‘•Ì„µ½É”Ù¥ÍÕ…°İ…äÑ¼µ½¹¥Ñ½È­•ä)Y4µ•ÑÉ¥Ì±¥­”¡•…Àµ•µ½ÉäÕÍ…”°Ñ¡É•…ÕÍ…”°…¹ATÕÍ…”¸¹¥¹ÍÑ•…½˜ÅÕ•Éå¥¹œ‘…Ñ„Ù¥„„±¥µ¥Ñ•¥¹Ñ•É™…”ÍÕ …ÌÑ¡”)5`ÁÉ½áä°å½Ô…¸ÕÍ”)½¹Í½±”Ñ¼ÅÕ¥­±äÙ¥•Ü‘…Ñ„…É½ÍÌµÕ±Ñ¥Á±”µ•ÑÉ¥Ì…¹‘É¥±°‘½İ¸Ñ¼„ÍÁ•¥™¥Œ5	•…¸ÑåÁ”…¹…ÑÑÉ¥‰ÕÑ”™½ÈQ½µ…ĞÌ€¨©…Ñ…±¥¹„¨¨…¹Ñ¡”)Y4Ì€¨©©…Ù„¹±…¹œ¨¨‘½µ…¥¹Ì¸e½Ô…¸¹…Ù¥…Ñ”Ñ¼Í¥à‘¥™™•É•¹ĞÑ…‰Ìè=Ù•ÉÙ¥•Ü°5•µ½Éä°Q¡É•…‘Ì°±…ÍÍ•Ì°Y4MÕµµ…Éä°…¹5	•…¹Ì¸… Ñ…ˆÁÉ½Ù¥‘•Ì„‘É½Á‘½İ¸µ•¹ÔÑ¡…Ğ•¹…‰±•Ìå½ÔÑ¼Ù¥•Ü‘…Ñ„Í½Á•Ñ¼‘¥™™•É•¹ĞÑ¥µ”É…¹•Ì°ÍÕ …ÌÑ¡”±…ÍĞ™¥Ù”µ¥¹ÕÑ•Ì°Ñ¡”Á…ÍĞµ½¹Ñ °½È™É½´Ñ¡”ÍÑ…ÉĞ½˜Ñ¡”Í•ÉÙ•È€¡Í¡½İ¸…ÌÑ¡”€‰±°ˆ½ÁÑ¥½¸¥¸Ñ¡”‘É½Á‘½İ¸¤¸((ŒŒŒ=Ù•ÉÙ¥•Ü))½¹Í½±”Ì=Ù•ÉÙ¥•ÜÑ…ˆÉ…Á¡Ì¥¹™½Éµ…Ñ¥½¸É•±…Ñ•Ñ¼Ñ¡”)Y4Ìµ•µ½ÉäÕÍ…”°Ñ¡É•…½Õ¹ÑÌ°)…Ù„±…ÍÍ•Ì±½…‘•İ¥Ñ å½ÕÈ…ÁÁ±¥…Ñ¥½¸¡Ì¤°…¹ATÕÍ…”Í¼å½Ô…¸µ½¹¥Ñ½ÈÑ¡”¡•…±Ñ ½˜å½ÕÈÙ¥ÉÑÕ…°µ…¡¥¹”…Ğ„±…¹”¸€()íìğ¥µœÍÉŒôˆÜµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ©½¹Í½±”µ½Ù•ÉÙ¥•Ü¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğµ½¹¥Ñ½É¥¹œÑ½½°)½¹Í½±”½Ù•ÉÙ¥•ÜÑ…ˆˆ€ùõô((ŒŒŒY4MÕµµ…Éä)%¸Ñ¡”Y4MÕµµ…ÉäÑ…ˆ°å½Ô…¸Í•”µ½É”‘•Ñ…¥±•¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”)Y4…É¡¥Ñ•ÑÕÉ”…¹¥ÑÌ¡…É…Ñ•É¥ÍÑ¥Ì¸Q¡¥Ì¥ÌÕÍ•™Õ°¥˜å½Ô¹••Ñ¼ÅÕ¥­±äÙ¥•ÜÍåÍÑ•´µ±•Ù•°…ÑÑÉ¥‰ÕÑ•Ì°½È)Y4½¹™¥ÕÉ…Ñ¥½¸Í•ÑÑ¥¹Ì¸Q¡¥Ì¥¹±Õ‘•Ì…¹ä…ÉÕµ•¹ÑÌå½ÔÍÁ•¥™ä¥¸Q½µ…ĞÌ€¨¨½‰¥¸½Í•Ñ•¹Ø¹Í ¨¨½¹™¥ÕÉ…Ñ¥½¸™¥±”¸€€()íìğ¥µœÍÉŒôˆàµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ©½¹Í½±”µÙ´µÍÕµµ…Éä¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğµ½¹¥Ñ½É¥¹œÑ½½°)½¹Í½±”Y4MÕµµ…ÉäÑ…ˆˆ€ùõô((ŒŒŒ5•µ½Éä)U¹‘•ÈÑ¡”5•µ½ÉäÑ…ˆ°å½Ô…¸Ù¥•Üµ½É”‘•Ñ…¥±•ÍÑ…Ñ¥ÍÑ¥Ì…‰½ÕĞå½ÕÈÙ¥ÉÑÕ…°µ…¡¥¹”Ì¡•…À…¹¹½¸µ¡•…Àµ•µ½ÉäÕÍ…”°…±½¹œİ¥Ñ ‘…Ñ„…‰½ÕĞµ•µ½ÉäÁ½½±Ì¸É½´Ñ¡¥ÌÑ…ˆ°å½Ô…¸±¥¬€‰A•É™½É´ˆÑ¼ÉÕ¸…É‰…”½±±•Ñ¥½¸°©ÕÍĞ…Ìå½Ôİ½Õ±¥¸Ñ¡”Q½µ…Ğ5…¹…•È¸()íìğ¥µœÍÉŒôˆäµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ©½¹Í½±”µµ•µ½Éä¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğµ½¹¥Ñ½É¥¹œÑ½½°)½¹Í½±”µ•µ½ÉäÑ…ˆˆ€ùõô()%˜å½Ô¹••Ñ¼Ù¥•Ü‘…Ñ„É•±…Ñ•Ñ¼„ÍÁ•¥™¥Œµ•µ½ÉäÁ½½°°å½Ô…¸Í•±•Ğ¥Ğ™É½´Ñ¡”¡…ÉĞ‘É½Á‘½İ¸¥¸Ñ¡”Ñ½Àµ±•™Ğ½É¹•È½˜Ñ¡”5•µ½ÉäÑ…ˆ¸Q¡”½™™¥¥…°m)½¹Í½±”‘½Ít¡¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼à½‘½Ì½Ñ•¡¹½Ñ•Ì½Õ¥‘•Ì½µ…¹…•µ•¹Ğ½©½¹Í½±”¹¡Ñµ°‘‘éÄ¤¡…Ìµ½É”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ…Ù…¥±…‰±”µ•µ½ÉäÁ½½±Ì¸€()íìğ¥µœÍÉŒôˆÄÀµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ©½¹Í½±”µµ•µ½ÉäµÁ½½°¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰M•±•Ğµ•µ½ÉäÁ½½°¥¸)½¹Í½±”™½ÈQ½µ…Ğ)5`µ½¹¥Ñ½É¥¹œˆ€ùõô((ŒŒŒQ¡É•…‘Ì))½¹Í½±”ÌQ¡É•…‘ÌÑ…ˆÁÉ½Ù¥‘•Ìµ½É”‘•Ñ…¥±•¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ…Ù…¥±…‰±”)Y4Ñ¡É•…‘Ì…±½¹œİ¥Ñ „¡•¬™½È‘•…‘±½­•Ñ¡É•…‘Ì¸Q¡”Q¡É•…‘Ì±¥ÍĞÍ¡½İÌÑ¡”Ñ¡É•…¹…µ”°ÍÑ…Ñ”€¡Í¥µ¥±…ÈÑ¼Ñ¡”Ñ¡É•…€‰ÍÑ…”ˆå½ÔÍ•”½¸Q½µ…ĞÌÍ•ÉÙ•ÈÍÑ…ÑÕÌÁ…”¤°…¹ÍÑ…¬ÑÉ…”™½È•… …Ù…¥±…‰±”Ñ¡É•…¸Q¡”•…‘±½¬¡•¬¥ÌÕÍ•™Õ°™½È™¥¹‘¥¹œÑ¡É•…‘ÌÑ¡…Ğµ…ä‰”…ÕÍ¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¸Ñ¼¡…¹œ¸%˜…¹ä‘•…‘±½­•Ñ¡É•…‘Ì…É”™½Õ¹°å½Ôİ¥±°Í•”„¹•Ü•…‘±½¬Ñ…ˆİ¥Ñ µ½É”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞİ¡…Ğ¥Ì…ÕÍ¥¹œÑ¡”‘•…‘±½­Ì¸()íìğ¥µœÍÉŒôˆÄÄµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ©½¹Í½±”µÑ¡É•…‘Ì¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰)½¹Í½±”Q¡É•…‘ÌÑ…ˆ™½ÈQ½µ…Ğ)5`µ½¹¥Ñ½É¥¹œˆ€ùõô((ŒŒŒ5	•…¹Ì)Q¼Í•”É•…°µÑ¥µ”‘…Ñ„É•±…Ñ•Ñ¼Ñ¡”Q½µ…Ğµ•ÑÉ¥Ìå½Ô…É”µ½¹¥Ñ½É¥¹œ°å½Ô…¸Ù¥•ÜÑ¡”€¨©…Ñ…±¥¹„¨¨…¹€¨©©…Ù„¹±…¹œ¨¨‘½µ…¥¹ÌÕ¹‘•ÈÑ¡”5	•…¹ÌÑ…ˆ…¹‘É¥±°‘½İ¸Ñ¼ÍÁ•¥™¥Œ…ÑÑÉ¥‰ÕÑ•Ì¸1¥­”Q½µ…Ğ5…¹…•È°)½¹Í½±”½±±•ÑÌ‘…Ñ„™É½´Ñ¡”5	•…¸Í•ÉÙ•È°‰ÕĞÁÉ½Ù¥‘•Ì„Í¥µÁ±•È¥¹Ñ•É™…”™½È™¥¹‘¥¹œÑ¡”µ•ÑÉ¥Ìå½Ô¹••¸(€€)íìğ¥µœÍÉŒôˆÄÈµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ©½¹Í½±”µµ‰•…¹Ì¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰)½¹Í½±”5	•…¹ÌÑ…ˆ™½ÈQ½µ…Ğ)5`µ½¹¥Ñ½É¥¹œˆ€ùõô())½¹Í½±”ÁÉ½Ù¥‘•Ì„½½ÍÕµµ…Éä½˜å½ÕÈ)Y4…¹5	•…¸‘…Ñ„°…¹¥Ğ•¹…‰±•Ìå½ÔÑ¼É…Á )Y4‘…Ñ„Ñ¼Ù¥ÍÕ…±¥é”ÑÉ•¹‘Ì¥¸É•Í½ÕÉ”ÕÍ…”¸!½İ•Ù•È°¥Ğ‘½•Ì¹½Ğ¥¹±Õ‘”ÍÕÁÁ½ÉĞ™½ÈÉ…Á¡¥¹œQ½µ…Ğµ•ÑÉ¥Ì¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°Ñ…­”„±½½¬…Ğ)…Ù…5•±½‘ä°„)½¹Í½±”…±Ñ•É¹…Ñ¥Ù”Ñ¡…Ğ½™™•ÉÌµ½É”¥¹Í¥¡Ğ¥¹Ñ¼Ñ¡”¡•…±Ñ ½˜Q½µ…Ğ°¹½Ğ©ÕÍĞÑ¡”)Y4¸((ŒŒUÍ¥¹œ)…Ù…5•±½‘ä)m)…Ù…5•±½‘åt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½©…Ù…µ•±½‘ä½©…Ù…µ•±½‘ä½İ¥­¤¤¥Ì…¸½Á•¸Í½ÕÉ”µ½¹¥Ñ½É¥¹œÁ±…Ñ™½É´Ñ¡…Ğ½™™•ÉÌµ½É”™¥¹”µÉ…¥¹•Ñ¥µ•Í•É¥•ÌÙ¥ÍÕ…±¥é…Ñ¥½¹Ì™½ÈQ½µ…Ğ…¹)Y4µ•ÑÉ¥Ì¸e½Ô…¸¥¹ÍÑ…±°)…Ù…5•±½‘ä‰ä½Áå¥¹œÑ¡”m)…Ù…5•±½‘ä…¹)I½‰¥¸)H™¥±•Ít¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½©…Ù…µ•±½‘ä½©…Ù…µ•±½‘ä½İ¥­¤½UÍ•ÉÕ¥‘”©…Ù…µ•±½‘äµÍ•ÑÕÀ¤¥¹Ñ¼Ñ¡”€¨©]µ%9½±¥ˆ¨¨‘¥É•Ñ½Éä½˜Ñ¡”…ÁÁ±¥…Ñ¥½¸å½Ôİ…¹ĞÑ¼µ½¹¥Ñ½È¸=¹”å½ÔÉ•‘•Á±½äÑ¡”…ÁÁ±¥…Ñ¥½¸°å½Ô±°‰”…‰±”Ñ¼…•ÍÌÑ¡”µ½¹¥Ñ½É¥¹œÁ…”…Ğ¡ÑÑÀè¼¼ñQ=5Q}!=MQ}=I}%@øèñA=IPø¼ñe=UI}A@ø½µ½¹¥Ñ½É¥¹€¸€()5Õ ±¥­”)½¹Í½±”°)…Ù…5•±½‘äÁÉ½Ù¥‘•ÌÑ¥µ•Í•É¥•ÌÉ…Á¡Ì½˜)Y4Á•É™½Éµ…¹”µ•ÑÉ¥Ì¸	ÕĞÕ¹±¥­”)½¹Í½±”°)…Ù…5•±½‘ä…±Í¼…±±½İÌå½ÔÑ¼É…Á Q½µ…Ğ¡•…±Ñ …¹Á•É™½Éµ…¹”µ•ÑÉ¥Ì°¥¹±Õ‘¥¹œ!QQ@É•ÅÕ•ÍÑÌ…¹‘…Ñ…‰…Í”½¹¹•Ñ¥½¹Ì¸e½Ô…¸¡…¹”Ñ¡”Ñ¥µ”Á•É¥½™½È…±°É…Á¡Ì°…¹Í•±•Ğ…¸¥¹‘¥Ù¥‘Õ…°É…Á Ñ¼•Ğ„µ½É”‘•Ñ…¥±•±½½¬¥¹Ñ¼…¹äÍ•ÉÙ•È°Ù¥ÉÑÕ…°µ…¡¥¹”°½È‘…Ñ…‰…Í”…Ñ¥Ù¥Ñäµ•ÑÉ¥Œ¸€(€)íìğ¥µœÍÉŒôˆÄÌµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ©…Ù…µ•±½‘ä¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğµ½¹¥Ñ½É¥¹œÑ½½°)…Ù…5•±½‘ä=Ù•ÉÙ¥•Üˆ€ùõô()e½Ô…¸ÑÉ…¬Q½µ…ĞÉ•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ°±…Ñ•¹ä°…¹•ÉÉ½ÈÉ…Ñ•Ìİ¥Ñ €€‰!QQ@¡¥ÑÌÁ•Èµ¥¹ÕÑ”ˆ°€‰!QQ@µ•…¸Ñ¥µ•Ìˆ€¡…Ù•É…”ÁÉ½•ÍÍ¥¹œÑ¥µ”¤°…¹€ˆ”½˜¡ÑÑÀ•ÉÉ½ÉÌˆÉ…Á¡Ì€¡­¹½İ¸…Ì€‰¡…ÉÑÌˆ¥¸)…Ù…5•±½‘ä¤¸%˜å½Ô±¥¬½¸…¹ä¡…ÉĞ°å½Ôİ¥±°‰”…‰±”Ñ¼Í•”Ñ¡”µ•…¸°µ…á¥µÕ´°…¹€äÕÑ Á•É•¹Ñ¥±”Ù…±Õ•Ì™½ÈÑ¡”¡½Í•¸µ•ÑÉ¥Œ¸€()íìğ¥µœÍÉŒôˆÄĞµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ©…Ù…µ•±½‘äµ¡ÑÑÀµ¡¥ÑÌ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğµ½¹¥Ñ½É¥¹œÑ½½°)…Ù…5•±½‘ä!QQ@¡¥ÑÌ¡…ÉĞˆ€ùõô()%ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼¹½Ñ”Ñ¡…Ğ)…Ù…5•±½‘ä¡…ÉÑÌÁ•ÉÍ¥ÍĞ…¹İ¥±°¹½ĞÉ•Í•Ğ•Ù•¸¥˜Ñ¡”Q½µ…ĞÍ•ÉÙ•ÈÉ•ÍÑ…ÉÑÌ°Ñ¡½Õ å½Ôİ¥±°Í•”„…À¥¸¡…ÉĞ‘…Ñ„¸€()Q¡”µ½¹¥Ñ½É¥¹œÁ…”…±Í¼¥¹±Õ‘•Ì¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÍåÍÑ•´…¹!QQ@É•ÅÕ•ÍĞ•ÉÉ½ÉÌ¸Q¡”€¨©MÑ…Ñ¥ÍÑ¥Ì½˜¡ÑÑÀÍåÍÑ•´•ÉÉ½ÉÌ¨¨Í•Ñ¥½¸Í¡½İÌÑ¡”•á•ÁÑ¥½¹ÌÑ¡É½İ¸‰ä…¸…ÁÁ±¥…Ñ¥½¸Í•ÉÙ±•Ğ…±½¹œİ¥Ñ !QQ@•ÉÉ½ÉÌ•¹•É…Ñ•™É½´„É•ÅÕ•ÍĞ°İ¡¥±”Ñ¡”€¨©MÑ…Ñ¥ÍÑ¥ÌÍåÍÑ•´•ÉÉ½ÉÌ±½Ì¨¨Í•Ñ¥½¸Í¡½İÌ…Ñ…±¥¹„Í•ÉÙ•È±½ÌİÉ¥ÑÑ•¸™½È€‰]I9%9ˆ…¹€‰MYIˆ•ÉÉ½È±•Ù•±Ì¸()íìğ¥µœÍÉŒôˆÄÔµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½°µ©…Ù…µ•±½‘äµÍÑ…ÑÌ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğµ½¹¥Ñ½É¥¹œÑ½½°)…Ù…5•±½‘ä!QQ@ÍÑ…ÑÌˆ€ùõô())…Ù…5•±½‘ä…É•…Ñ•ÌÍ¥µ¥±…È•ÉÉ½ÉÌÑ½•Ñ¡•ÈÍ¼å½Ô…¸Í•”¡½Üµ…¹ä½˜•… ÑåÁ”…É”•¹•É…Ñ•¸½ÈÑ¡”Í•±•Ñ•Ñ¥µ”™É…µ”°å½Ô…¸Í•”Ñ¡”Á•É•¹Ñ…”½˜ATÑ¥µ”ÍÁ•¹Ğ•¹•É…Ñ¥¹œ•… ÑåÁ”½˜•ÉÉ½È¸%¸Ñ¡”•á…µÁ±”…‰½Ù”°Ñ¡”Q½µ…ĞÍ•ÉÙ•È•¹•É…Ñ••ÉÉ½ÉÌİ¥Ñ „€ÔÀÀ!QQ@É•ÍÁ½¹Í”½‘”€¡%¹Ñ•É¹…°M•ÉÙ•ÈÉÉ½È¤€ääÁ•É•¹Ğ½˜Ñ¡”Ñ¥µ”¥Ğİ…ÌÉÕ¹¹¥¹œ½Ù•ÈÑ¡”Á…ÍĞİ••¬¸€())…Ù…5•±½‘äÁÕ±±ÌÑ¡¥Ì‘…Ñ„™É½´Q½µ…ĞÌÍ•ÉÙ•È…¹…•ÍÌ±½Ì°İ¡¥ ÁÉ½Ù¥‘”µ½É”™¥¹”µÉ…¥¹•¥¹Í¥¡ÑÌ™½È…¹…±åé¥¹œÉ•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ•Ì…¹!QQ@ÍÑ…ÑÕÍ•Ì¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°Í¡½Üå½Ô¡½ÜÑ¼ÕÍÑ½µ¥é”Ñ¡”¥¹™½Éµ…Ñ¥½¸‘¥ÍÁ±…å•¥¸Q½µ…ĞÌ…•ÍÌ…¹Í•ÉÙ•È±½Ì‰ä½¹™¥ÕÉ¥¹œmÙ…±Ù•Ít¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½½¹™¥œ½Ù…±Ù”¹¡Ñµ°•ÍÍ}1½}Y…±Ù”¤…¹m±½¥¹œÁÉ½Á•ÉÑ¥•Ít¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´à¸Àµ‘½Œ½±½¥¹œ¹¡Ñµ°UÍ¥¹}©…Ù„¹ÕÑ¥°¹±½¥¹|¡‘•™…Õ±Ğ¤¤¸€((ŒŒÕÍÑ½µ¥é¥¹œQ½µ…Ğ…•ÍÌ…¹Í•ÉÙ•È±½Ì)	ä‘•™…Õ±Ğ°Q½µ…Ğ…•ÍÌ±½ÌÕÍ”Ñ¡”m½µµ½¸1½œ½Éµ…Ñt¡¡ÑÑÁÌè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì¼Ä¸Ì½±½Ì¹¡Ñµ°½µµ½¸¤°…¹É•½É…±°É•ÅÕ•ÍÑÌÁÉ½•ÍÍ•‰äÑ¡”Í•ÉÙ•È¸e½Ô…¸Ù¥•Üİ¡…Ğ¥Ì¥¹±Õ‘•¥¸å½ÕÈ…•ÍÌ±½Ì¥¸Q½µ…ĞÌ€¨©½¹˜½Í•ÉÙ•È¹áµ°¨¨½¹™¥ÕÉ…Ñ¥½¸™¥±”è€()€(€ñY…±Ù”±…ÍÍ9…µ”ô‰½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹Ù…±Ù•Ì¹•ÍÍ1½Y…±Ù”ˆ‘¥É•Ñ½Éäô‰±½Ìˆ(€€€€€€€€€€€€€€ÁÉ•™¥àô‰±½…±¡½ÍÑ}…•ÍÍ}±½œˆÍÕ™™¥àôˆ¹ÑáĞˆ(€€€€€€€€€€€€€€Á…ÑÑ•É¸ôˆ• €•°€•Ô€•Ğ€ˆ•Èˆ€•Ì€•ˆˆ€¼ø)€()Q¡”Y…±Ù•€•±•µ•¹ĞÌÁ…ÑÑ•É¹€…ÑÑÉ¥‰ÕÑ”ÍÁ•¥™¥•ÌÑ¡”¥¹™½Éµ…Ñ¥½¸™É½´•… É•ÅÕ•ÍĞ€¡…¹¥ÑÌÉ•ÍÁ½¹Í”¤Ñ¡…ĞÍ¡½Õ±‰”¥¹±Õ‘•¥¸•… ±½œ•¹ÑÉäè€((´Ñ¡”¡½ÍĞ¹…µ”½È%@…‘‘É•ÍÌ½˜Ñ¡”±¥•¹ĞÑ¡…Ğµ…‘”Ñ¡”É•ÅÕ•ÍĞ€¡€•¡€¤(´Ñ¡”ÕÍ•É¹…µ”™É½´¥‘•¹ÑÍ•ÉÙ¥”€¡…±İ…åÌÉ•ÑÕÉ¹Ì€œ´œ¤€¡€•±€¤(´Ñ¡”…ÕÑ¡•¹Ñ¥…Ñ•ÕÍ•É¹…µ”€¡É•ÑÕÉ¹Ì€µ€¥˜¹½ĞÕÍ•¤€¡€•Õ€¤€(´Ñ¡”‘…Ñ”…¹Ñ¥µ”½˜Ñ¡”É•ÅÕ•ÍĞ€¡€•Ñ€¤€(´Ñ¡”É•ÅÕ•ÍĞµ•Ñ¡½…¹UI$€¡€•É€¤(´Ñ¡”!QQ@ÍÑ…ÑÕÌ½‘”½˜Ñ¡”É•ÍÁ½¹Í”€¡€•Í€¤(´Ñ¡”Í¥é”½˜Ñ¡”½‰©•ĞÉ•ÑÕÉ¹•Ñ¼Ñ¡”±¥•¹Ğ°¥¸‰åÑ•Ì€¡€•‰€¤()Q¡”Á…ÑÑ•É¸ÕÍ•¥¸Ñ¡”•á…µÁ±”…‰½Ù”İ¥±°±½œÉ•ÅÕ•ÍÑÌ¥¸Ñ¡”™½±±½İ¥¹œ™½Éµ…Ğè()€(ÄäÈ¸ÄØà¸ÌÌ¸Ä€´€´lÈÄ½M•À¼ÈÀÄàèÄØèÔÄèÔä€¬ÀÀÀÁt€‰P€½Í…µÁ±”¼!QQ@¼Ä¸Äˆ€ĞÀÌ€ÄÄĞÔ)€()e½Ô…¸¡…¹”Ñ¡¥Ì™½Éµ…ĞÑ¼…±Í¼¥¹±Õ‘”Ñ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”‰ä¥¹±Õ‘¥¹œ€•€¥¸Ñ¡”Ù…±Ù”Á…ÑÑ•É¸¸Q¡¥ÌÁ…ÑÑ•É¸½‘”±½ÌÑ¡”Ñ¥µ”Ñ…­•¸Ñ¼ÁÉ½•ÍÌÑ¡”É•ÅÕ•ÍĞ¥¸µ¥±±¥Í•½¹‘ÏŠQ…¸¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥ŒÑ¼ÑÉ…¬™½ÈÕ¹‘•ÉÍÑ…¹‘¥¹œ¡½Üİ•±°Q½µ…ĞÁÉ½•ÍÍ•Ì¥¹‘¥Ù¥‘Õ…°É•ÅÕ•ÍÑÌ¸e½Ô…¸¡•¬½ÕĞmQ½µ…ĞÌ‘½Õµ•¹Ñ…Ñ¥½¹t¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´ä¸Àµ‘½Œ½½¹™¥œ½Ù…±Ù”¹¡Ñµ°•ÍÍ}1½}Y…±Ù”½ÑÑÉ¥‰ÕÑ•Ì¤Ñ¼±•…É¸µ½É”…‰½ÕĞÕÍÑ½µ¥é¥¹œå½ÕÈ…•ÍÌ±½ÌÑ¼¥¹±Õ‘”½Ñ¡•ÈÁ…ÑÑ•É¸½‘•Ì¸()Q½µ…Ğ…±Í¼•¹•É…Ñ•ÌÍ•ÉÙ•È±½Ì‰ä‘•™…Õ±Ğ°…¹ÕÍ•Ì¥ÑÌm½İ¸¥µÁ±•µ•¹Ñ…Ñ¥½¹t¡¡ÑÑÁÌè¼½Ñ½µ…Ğ¹…Á…¡”¹½Éœ½Ñ½µ…Ğ´à¸Àµ‘½Œ½±½¥¹œ¹¡Ñµ°)…Ù…}±½¥¹}A%|•È”àÀ”äÑ}©…Ù„¹ÕÑ¥°¹±½¥¹œ¤½˜Ñ¡”€¨©©…Ù„¹ÕÑ¥°¹±½¥¹œ¨¨mÁ…­…•t¡¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼à½‘½Ì½…Á¤½©…Ù„½ÕÑ¥°½±½¥¹œ½Á…­…”µÕÍ”¹¡Ñµ°¤¸M•ÉÙ•È±½ÌÍ¡½Ü¥¹™½Éµ…Ñ¥½¸É•±…Ñ•Ñ¼Ñ¡”Q½µ…Ğ)Y4…¹…Ñ…±¥¹„Í•ÉÙ•È°¥¹±Õ‘¥¹œ½ÕĞµ½˜µµ•µ½Éä€¡==4¤•ÉÉ½ÉÌ…¹‘•Á±½åµ•¹Ğ…Ñ¥Ù¥Ñä°…ÌÍ••¸¥¸Ñ¡”•á…µÁ±”‰•±½Üè()€(ÄØµ=Ğ´ÈÀÄà€ÄàèÌÜèÀà¸ØÈĞ%9<mµ…¥¹t½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹½É”¹MÑ…¹‘…É‘M•ÉÙ¥”¹ÍÑ…ÉÑ%¹Ñ•É¹…°MÑ…ÉÑ¥¹œÍ•ÉÙ¥”m…Ñ…±¥¹…t(ÄØµ=Ğ´ÈÀÄà€ÄàèÌÜèÀà¸ØÈÔ%9<mµ…¥¹t½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹½É”¹MÑ…¹‘…É‘¹¥¹”¹ÍÑ…ÉÑ%¹Ñ•É¹…°MÑ…ÉÑ¥¹œM•ÉÙ±•Ğ¹¥¹”èÁ…¡”Q½µ…Ğ¼ä¸À¸ÄÀ(ÄØµ=Ğ´ÈÀÄà€ÄàèÌÜèÀà¸ØÈäMYImµ…¥¹t½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹ÍÑ…ÉÑÕÀ¹!½ÍÑ½¹™¥œ¹‰•™½É•MÑ…ÉĞU¹…‰±”Ñ¼É•…Ñ”‘¥É•Ñ½Éä™½È‘•Á±½åµ•¹Ğèl½½ÁĞ½Ñ½µ…Ğ½½¹˜½…Ñ…±¥¹„½±½…±¡½ÍÑt(ÄØµ=Ğ´ÈÀÄà€ÄàèÌÜèÀà¸ØÜÈ%9<mµ…¥¹t½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹ÍÑ…ÉÑÕÀ¹!½ÍÑ½¹™¥œ¹‘•Á±½å]H•Á±½å¥¹œİ•ˆ…ÁÁ±¥…Ñ¥½¸…É¡¥Ù”l½½ÁĞ½Ñ½µ…Ğ½İ•‰…ÁÁÌ½Í…µÁ±”¹İ…Ét(ÄØµ=Ğ´ÈÀÄà€ÄàèÌÜèÀä¸ÌĞÄ%9<mµ…¥¹t½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹ÍÑ…ÉÑÕÀ¹!½ÍÑ½¹™¥œ¹‘•Á±½å]H•Á±½åµ•¹Ğ½˜İ•ˆ…ÁÁ±¥…Ñ¥½¸…É¡¥Ù”l½½ÁĞ½Ñ½µ…Ğ½İ•‰…ÁÁÌ½Í…µÁ±”¹İ…Ét¡…Ì™¥¹¥Í¡•¥¸lØØİtµÌ)€()Q½µ…ĞİÉ¥Ñ•ÌÍ•ÉÙ•È±½ÌÑ¼Ñ¡”½¹Í½±”…¹Ñ¼„…Ñ…±¥¹„±½œ™¥±”€¡”¹œ¸°€¨©…Ñ…±¥¹„¸ÈÀÄà´ÀÜ´ÀÌ¹±½œ¨¨¤¸e½Ô…¸ÕÍÑ½µ¥é”İ¡…ĞÑåÁ”½˜¥¹™½Éµ…Ñ¥½¸Q½µ…ĞÍ¡½Õ±±½œ°ÍÕ …ÌÑ¡”µ¥¹¥µÕ´m±½œ±•Ù•±t¡¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼à½‘½Ì½…Á¤½©…Ù„½ÕÑ¥°½±½¥¹œ½1•Ù•°¹¡Ñµ°¤°½ÕÑÁÕĞ‘¥É•Ñ½Éä°…¹½ÕÑÁÕĞ™½Éµ…Ğ¥¸Q½µ…ĞÌ±½¥¹œÁÉ½Á•ÉÑ¥•Ì™¥±”€ ¨©½¹˜½±½¥¹œ¹ÁÉ½Á•ÉÑ¥•Ì¨¨¤¸%˜å½Ô‘½¸Ğİ…¹ĞÑ¼ÕÍ”Ñ¡”ÍÑ…¹‘…É±½¥¹œÕÑ¥±¥Ñä°å½Ô…¸ÕÍ”Á…¡”Ìm1½œÑ¨ÈÕÑ¥±¥Ñåt¡¡ÑÑÁÌè¼½±½¥¹œ¹…Á…¡”¹½Éœ½±½œÑ¨¼È¹à½±½œÑ¨µ…ÁÁÍ•ÉÙ•È½¥¹‘•à¹¡Ñµ°¤Ñ¼µ…¹…”±½œ½ÕÑÁÕĞ‰äÕÁ‘…Ñ¥¹œÑ¡”±½¥¹œ¡…¹‘±•ÉÌ¸€()!…¹‘±•ÉÌ…É”)…Ù„½µÁ½¹•¹ÑÌÑ¡…ĞÁÉ½•ÍÌ¥¹½µ¥¹œ±½œµ•ÍÍ…•Ì…¹™½Éµ…ĞÑ¡•¥È½ÕÑÁÕĞ°İ¥Ñ ™½Éµ…ÑÑ•ÉÌ™½È±½¥¹œÑ¼„™¥±”€¡¥±•!…¹‘±•É€¤½ÈÑ¼å½ÕÈ½¹Í½±”€¡½¹Í½±•!…¹‘±•É€¤¸Q½µ…ĞÌ±½¥¹œÁÉ½Á•ÉÑ¥•Ì™¥±”¥¹±Õ‘•Ì½¹™¥ÕÉ…Ñ¥½¹Ì™½ÈÑ¡”…Ñ…±¥¹„Í•ÉÙ•È°Q½µ…Ğ5…¹…•È°…¹‘•Á±½å•İ•ˆ…ÁÁ±¥…Ñ¥½¸±½Ìè()€(ŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒ(Œ!…¹‘±•ÈÍÁ•¥™¥ŒÁÉ½Á•ÉÑ¥•Ì¸(Œ•ÍÉ¥‰•ÌÍÁ•¥™¥Œ½¹™¥ÕÉ…Ñ¥½¸¥¹™¼™½È!…¹‘±•ÉÌ¸(ŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒ((Å…Ñ…±¥¹„¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹±•Ù•°€ô%9(Å…Ñ…±¥¹„¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹‘¥É•Ñ½Éä€ô€‘í…Ñ…±¥¹„¹‰…Í•ô½±½Ì(Å…Ñ…±¥¹„¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹ÁÉ•™¥à€ô…Ñ…±¥¹„¸((É±½…±¡½ÍĞ¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹±•Ù•°€ô%9(É±½…±¡½ÍĞ¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹‘¥É•Ñ½Éä€ô€‘í…Ñ…±¥¹„¹‰…Í•ô½±½Ì(É±½…±¡½ÍĞ¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹ÁÉ•™¥à€ô±½…±¡½ÍĞ¸((Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹±•Ù•°€ô%9(Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹‘¥É•Ñ½Éä€ô€‘í…Ñ…±¥¹„¹‰…Í•ô½±½Ì(Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹ÁÉ•™¥à€ôµ…¹…•È¸(Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹‰Õ™™•ÉM¥é”€ô€ÄØÌàĞ()©…Ù„¹ÕÑ¥°¹±½¥¹œ¹½¹Í½±•!…¹‘±•È¹±•Ù•°€ô%9)©…Ù„¹ÕÑ¥°¹±½¥¹œ¹½¹Í½±•!…¹‘±•È¹™½Éµ…ÑÑ•È€ô½Éœ¹…Á…¡”¹©Õ±¤¹=¹•1¥¹•½Éµ…ÑÑ•È(((ŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒ(Œ…¥±¥ÑäÍÁ•¥™¥ŒÁÉ½Á•ÉÑ¥•Ì¸(ŒAÉ½Ù¥‘•Ì•áÑÉ„½¹ÑÉ½°™½È•… ±½•È¸(ŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒŒ()½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹½É”¹½¹Ñ…¥¹•É	…Í”¹m…Ñ…±¥¹…t¹m±½…±¡½ÍÑt¹±•Ù•°€ô%9<)½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹½É”¹½¹Ñ…¥¹•É	…Í”¹m…Ñ…±¥¹…t¹m±½…±¡½ÍÑt¹¡…¹‘±•ÉÌ€ôp(€€€É±½…±¡½ÍĞ¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È()½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹½É”¹½¹Ñ…¥¹•É	…Í”¹m…Ñ…±¥¹…t¹m±½…±¡½ÍÑt¹l½µ…¹…•Ét¹±•Ù•°€ô%9<)½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹½É”¹½¹Ñ…¥¹•É	…Í”¹m…Ñ…±¥¹…t¹m±½…±¡½ÍÑt¹l½µ…¹…•Ét¹¡…¹‘±•ÉÌ€ôp(€€€Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È()€()	ä‘•™…Õ±Ğ°Q½µ…ĞÍ•ÑÌÑİ¼‘¥™™•É•¹Ğ±½œ±•Ù•±Ì™½È¥ÑÌ¡…¹‘±•ÉÌ€¡%9€¤…¹™…¥±¥Ñ¥•Ì€¡%9=€¤¸Q¡”%9€±½œ±•Ù•°¥¹±Õ‘•Ì‘•Ñ…¥±•¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÍ•ÉÙ•È…Ñ¥Ù¥Ñä°…¹Ñ¡”%9=€±•Ù•°±½Ì¡¥¡•Èµ±•Ù•°°¥¹™½Éµ…Ñ¥½¹…°µ•ÍÍ…•Ì¸]¡¥±”¡…¹‘±•ÈÁÉ½Á•ÉÑ¥•Ìµ…¹…”å½ÕÈQ½µ…Ğ±½Ì½Ù•É…±°°™…¥±¥ÑäÁÉ½Á•ÉÑ¥•Ì•¹…‰±”å½ÔÑ¼µ…¹…”½¹™¥ÕÉ…Ñ¥½¹Ì™½È•… ‘•Á±½å•€…ÁÁ±¥…Ñ¥½¸°¥¹±Õ‘¥¹œQ½µ…Ğ5…¹…•È¸½È•á…µÁ±”°Ñ¼…‘©ÕÍĞÑ¡”±½œ±•Ù•±Ì™½ÈQ½µ…Ğ5…¹…•È°å½Ô…¸•‘¥ĞÑ¡”™½±±½İ¥¹œ¡…¹‘±•È…¹™…¥±¥ÑäÁÉ½Á•ÉÑ¥•Ìè()€(Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹±•Ù•°€ô%9(Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹‘¥É•Ñ½Éä€ô€‘í…Ñ…±¥¹„¹‰…Í•ô½±½Ì(Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹ÁÉ•™¥à€ôµ…¹…•È¸(Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È¹‰Õ™™•ÉM¥é”€ô€ÄØÌàĞ()l¸¸¹t()½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹½É”¹½¹Ñ…¥¹•É	…Í”¹m…Ñ…±¥¹…t¹m±½…±¡½ÍÑt¹l½µ…¹…•Ét¹±•Ù•°€ô%9<)½Éœ¹…Á…¡”¹…Ñ…±¥¹„¹½É”¹½¹Ñ…¥¹•É	…Í”¹m…Ñ…±¥¹…t¹m±½…±¡½ÍÑt¹l½µ…¹…•Ét¹¡…¹‘±•ÉÌ€ôp(€€€Íµ…¹…•È¹½Éœ¹…Á…¡”¹©Õ±¤¹¥±•!…¹‘±•È)€€((ŒŒ½µÁÉ•¡•¹Í¥Ù”Q½µ…Ğµ½¹¥Ñ½É¥¹œ)	äÍ•ÑÑ¥¹œ„™•ÜÍ¥µÁ±”Á•Éµ¥ÍÍ¥½¹Ì°å½Ô…¸¥µµ•‘¥…Ñ•±ä‰•¥¸Ù¥•İ¥¹œQ½µ…Ğ…¹)Y4‘…Ñ„İ¥Ñ Q½µ…Ğ5…¹…•È¸¹½¹”å½ÔÙ”•¹…‰±•É•µ½Ñ”½¹¹•Ñ¥½¹Ì™½È)5`°å½Ô…¸ÕÍ”Ñ½½±Ì±¥­”)½¹Í½±”…¹)…Ù…5•±½‘äÑ¼µ½¹¥Ñ½ÈQ½µ…Ğ‘…Ñ„İ¥Ñ Í¥µÁ±”É…Á¡¥…°¥¹Ñ•É™…•Ì¸Q½µ…Ğ…±Í¼ÁÉ½Ù¥‘•Ì±½Üµ±•Ù•°‘¥…¹½ÍÑ¥Œ¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÉ•ÅÕ•ÍÑÌ…¹Í•ÉÙ•È…Ñ¥Ù¥Ñä¥¸¥ÑÌ…•ÍÌ…¹Í•ÉÙ•È±½Ì¸€()… ½˜Ñ¡•Í”Á±…Ñ™½ÉµÌ½™™•ÉÌ‘¥™™•É•¹Ğ…Á…‰¥±¥Ñ¥•Ì™½Èµ½¹¥Ñ½É¥¹œQ½µ…Ğ°‰ÕĞ¹½¹”½˜Ñ¡•´•¹…‰±”å½ÔÑ¼Í•”Ñ¡”™Õ±°Á¥ÑÕÉ”İ¡•¸…¸¥ÍÍÕ”½ÕÉÌ¸¹°¥˜å½Ô…É”ÉÕ¹¹¥¹œQ½µ…Ğ…±½¹Í¥‘”½Ñ¡•ÈÑ•¡¹½±½¥•Ì±¥­”mÁ…¡•t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ…Á…¡”µİ•ˆµÍ•ÉÙ•ÈµÁ•É™½Éµ…¹”¼¤½Èm5åME1t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµµåÍÅ°µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°Ñ¡•¸å½Ô±°¹••„İ…äÑ¼µ½¹¥Ñ½È…±°½˜Ñ¡•´¥¸½¹”Á±…Ñ™½É´¸%¸Ñ¡”m¹•áĞÁ…ÉÑumÁ…ÉĞµÑ¡É•”µ±¥¹­t½˜Ñ¡¥ÌÍ•É¥•Ì°İ”±°Í¡½Üå½Ô¡½ÜÑ¼ÕÍ”…Ñ…‘½œ™½È½µÁÉ•¡•¹Í¥Ù”Q½µ…Ğµ½¹¥Ñ½É¥¹œ¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½Ñ½µ…Ğ½Ñ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|(()mÁ…ÉĞµ½¹”µ±¥¹­tè€½‰±½œ½Ñ½µ…Ğµ…É¡¥Ñ•ÑÕÉ”µ…¹µÁ•É™½Éµ…¹”)mÁ…ÉĞµ½¹”µµ•µ½Éäµ±¥¹­tè€½‰±½œ½Ñ½µ…Ğµ…É¡¥Ñ•ÑÕÉ”µ…¹µÁ•É™½Éµ…¹”¼©Ù´µµ•µ½ÉäµÕÍ…”)mÁ…ÉĞµÑ¡É•”µ±¥¹­tè€½‰±½œ½…¹…±åé¥¹œµÑ½µ…Ğµ±½Ìµ…¹µµ•ÑÉ¥Ìµİ¥Ñ µ‘…Ñ…‘½œ)m±¥¹¬µÑ¼µÑ¡É½Õ¡ÁÕĞµÍ•Ñ¥½¹tè€½‰±½œ½Ñ½µ…Ğµ…É¡¥Ñ•ÑÕÉ”µ…¹µÁ•É™½Éµ…¹”É•ÅÕ•ÍĞµÑ¡É½Õ¡ÁÕĞµ…¹µ±…Ñ•¹äµµ•ÑÉ¥Ì€€€€€(

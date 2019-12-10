@@ -1,75 +1,5 @@
-#How to monitor MongoDB performance with Datadog
-
-*This post is the last of a 3-part series about how to best monitor MongoDB performance. Part 1 presents the key performance metrics available from MongoDB: there is [one post for the WiredTiger](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) storage engine and [one for MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap). [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB metrics.*
-
-If youâ€™ve already read our first two parts in this series, you know that monitoring MongoDB gives you a range of metrics that allow you to explore its health and performance in great depth. But for databases running in production, you need a robust monitoring system that collects, aggregates, and visualizes MongoDB metrics along with metrics from the other parts of your infrastructure. Advanced alert mechanisms are also essential to be able to quickly react when things go awry. In this post, weâ€™ll show you how to start monitoring MongoDB in a few minutes with Datadog.
- [![MongoDB graphs on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-performance-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-performance-metrics.png)
-
-## Monitor MongoDB performance in 3 easy steps
-
-### Step 1: install the Datadog Agent
-
-The Datadog Agent is [the open-source software](https://github.com/DataDog/dd-agent) that collects and reports metrics from your hosts so that you can visualize and monitor them in Datadog. Installing the agent usually takes just a single command.
-
-Installation instructions for a variety of platforms are available [here](https://app.datadoghq.com/account/settings#agent).
-
-MongoDB also requires a user with â€œ[read](https://docs.mongodb.com/manual/reference/built-in-roles/#read)â€ and â€œ[clusterMonitor](https://docs.mongodb.com/manual/reference/built-in-roles/#clusterMonitor)â€ client [roles](https://docs.mongodb.com/manual/reference/built-in-roles/#database-user-roles) for Datadog so the Agent can collect all the server statistics. The commands to run in the mongo shell differs between MongoDB versions 2.x and 3.x. They are detailed in the â€œconfigurationâ€ tab of the [MongoDBâ€™s integration tile on the integrations page on Datadog](https://app.datadoghq.com/account/settings#integrations/mongodb).
- [![MongoDB graphs on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-integration.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-integration.png)
-
-As soon as your Agent is up and running, you should see your host reporting metrics [on your Datadog account](https://app.datadoghq.com/infrastructure).
- [![MongoDB Datadog Agent reporting metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-agent-setup.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-agent-setup.png)
-
-### Step 2: configure the Agent
-
-Then youâ€™ll need to create a simple MongoDB configuration file for the Agent. For Linux hosts, configuration files are typically located **in/etc/dd-agent/conf.d/**, but you can find OS-specific config information [here](http://docs.datadoghq.com/guides/basic_agent_usage/).
-
-The Agent configuration file **mongo.yaml** is where you provide instances informations. You can also apply tags to your MongoDB instances so you can filter and aggregate your metrics later.
-
-The Agent ships with a **mongo.yaml.example** template, but to access all of the metrics described in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) of this series, you should use the modified YAML template available [here](https://github.com/DataDog/dd-agent/blob/master/conf.d/mongo.yaml.example).
-
-### Step 3: verify the configuration settings
-
-Restart the Agent using the [right command](http://docs.datadoghq.com/guides/basic_agent_usage/) for your platform, then check that Datadog and MongoDB are properly integrated by running the Datadog **info** command.
- If the configuration is correct, you should see a section like this in the info output:
-
-    Checks
-    ======
-
-    [...]
-
-    mongo
-    -----
-    - instance #0 [OK]
-    - Collected 8 metrics & 0 events
-
-### Thatâ€™s it! You can now turn on the integration
-
-You can now switch on the MongoDB integration inside your Datadog account. Itâ€™s as simple as clicking the â€œInstall Integrationâ€ button under the Configuration tab in the [MongoDB integration tile](https://app.datadoghq.com/account/settings#integrations/mongodb) on your Datadog account.
-
-## Metrics! Metrics everywhere!
-
-Now that the Agent is properly configured, you will see all the MongoDB metrics available for monitoring, graphing, and correlation on Datadog.
-
-You can immediately see your metrics populating a default dashboard for MongoDB containing the essential MongoDB metrics presented in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger). It should be a great starting point for your monitoring. You can clone this dashboard and customize it as you wish, even adding metrics from other parts of your infrastructure so that you can easily correlate whatâ€™s happening in MongoDB with whatâ€™s happening throughout your stack.
-
-[![MongoDB Dashboard on Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/new-datadog-mongodb-dashboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/new-datadog-mongodb-dashboard.png)
-
-*MongoDB default dashboard on Datadog*
-
-## Alerting
-
-Once Datadog is capturing and graphing your metrics, you will likely want to set up some [alerts](https://www.datadoghq.com/blog/monitoring-101-alerting/) to keep watch over your metrics and to notify your teams about any issues.
-
-Datadog allows you to alert on individual hosts, services, processes, and metricsâ€”or virtually any combination thereof. For instance, you can monitor all of your hosts in a certain availability zone, or you can monitor a single key metric being reported by each of your MongoDB hosts.
- For example, as explained in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger), the number of current connections is limited to 65,536 simultaneous connections by default since v3.0. So you might want to set up an alert whenever the corresponding metric is getting close to this maximum.
- [![MongoDB Datadog alert](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-datadog-alert.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/3-datadog/mongodb-datadog-alert.png)
-
-Datadog also integrates with many communication tools such as Slack, PagerDuty or HipChat so you can notify your teams via the channels you already use.
-
-## You are now a MongoDB pro!
-
-This concludes the series on how to monitor MongoDB performance. In this post weâ€™ve walked you through integrating MongoDB with Datadog to visualize your key metrics and notify your team whenever your database shows signs of trouble.
-
-If youâ€™ve followed along using your own Datadog account, you should now have unparalleled visibility into MongoDBâ€™s activity and performance. You are also aware of the ability to create automated alerts tailored to your environment, usage patterns, and the metrics that are most valuable to your teams.
-
-If you donâ€™t yet have a Datadog account, you can sign up for [a free trial](https://app.datadoghq.com/signup) and begin to monitor MongoDB performance alongside the rest of your infrastructure, your applications, and your services today.
+m!½ÜÑ¼µ½¹¥Ñ½È5½¹½Á•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œ(((©Q¡¥ÌÁ½ÍĞ¥ÌÑ¡”±…ÍĞ½˜„€ÌµÁ…ÉĞÍ•É¥•Ì…‰½ÕĞµ½¹¥Ñ½É¥¹œ5½¹½¸A…ÉĞ€ÄÁÉ•Í•¹ÑÌÑ¡”­•äÁ•É™½Éµ…¹”µ•ÑÉ¥Ì…Ù…¥±…‰±”™É½´5½¹½èÑ¡•É”¥Ìm½¹”Á½ÍĞ™½ÈÑ¡”]¥É•‘Q¥•Ét ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤ÍÑ½É…”•¹¥¹”…¹m½¹”™½È55AØÅt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµµµ…À¤¸mA…ÉĞ€Ét ½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥Ì¤•áÁ±…¥¹ÌÑ¡”‘¥™™•É•¹Ğİ…åÌÑ¼½±±•Ğ5½¹½µ•ÑÉ¥Ì¸¨()%˜å½×ŠeÙ”…±É•…‘äÉ•…½ÕÈ™¥ÉÍĞÑİ¿
+Á…ÉÑÌ¥¸Ñ¡¥ÌÍ•É¥•Ì°å½Ô­¹½ÜÑ¡…Ğµ½¹¥Ñ½É¥¹œ5½¹½¥Ù•Ìå½Ô„É…¹”½˜µ•ÑÉ¥ÌÑ¡…Ğ…±±½Üå½ÔÑ¼•áÁ±½É”¥ÑÌ¡•…±Ñ …¹Á•É™½Éµ…¹”¥¸É•…Ğ‘•ÁÑ ¸	ÕĞ™½È‘…Ñ…‰…Í•ÌÉÕ¹¹¥¹œ¥¸ÁÉ½‘ÕÑ¥½¸°å½Ô¹••„É½‰ÕÍĞµ½¹¥Ñ½É¥¹œÍåÍÑ•´Ñ¡…Ğ½±±•ÑÌ°…É•…Ñ•Ì°…¹Ù¥ÍÕ…±¥é•Ì5½¹½µ•ÑÉ¥Ì…±½¹œİ¥Ñ µ•ÑÉ¥Ì™É½´Ñ¡”½Ñ¡•ÈÁ…ÉÑÌ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¸‘Ù…¹•…±•ÉĞµ•¡…¹¥ÍµÌ…É”…±Í¼•ÍÍ•¹Ñ¥…°Ñ¼‰”…‰±”Ñ¼ÅÕ¥­±äÉ•…Ğİ¡•¸Ñ¡¥¹Ì¼…İÉä¸%¸Ñ¡¥ÌÁ½ÍĞ°İ—Še±°Í¡½Üå½Ô¡½ÜÑ¼ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œ5½¹½¥¸„™•Üµ¥¹ÕÑ•Ìİ¥Ñ …Ñ…‘½œ¸()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¹Á¹œˆ…±Ğô‰5½¹¥Ñ½È5½¹½É…Á¡Ì½¸…Ñ…‘½œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()5½¹¥Ñ½Ë
+5½¹½Á•É™½Éµ…¹”¥¸€Ì•…ÍäÍÑ•ÁÌ(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´((((ŒŒŒMÑ•À€Äè¥¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ğ(()Q¡”…Ñ…‘½œ•¹Ğ¥ÌmÑ¡”½Á•¸µÍ½ÕÉ”Í½™Ñİ…É•t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½‘µ…•¹Ğ¤Ñ¡…Ğ½±±•ÑÌ…¹É•Á½ÉÑÌµ•ÑÉ¥Ì™É½´å½ÕÈ¡½ÍÑÌÍ¼Ñ¡…Ğå½Ô…¸Ù¥ÍÕ…±¥é”…¹µ½¹¥Ñ½ÈÑ¡•´¥¸…Ñ…‘½œ¸%¹ÍÑ…±±¥¹œÑ¡”m…•¹Ñt ½‰±½œ½‘½¹Ğµ™•…ÈµÑ¡”µ…•¹Ğ¼¥ÕÍÕ…±±äÑ…­•Ì©ÕÍĞ„Í¥¹±”½µµ…¹¸()%¹ÍÑ…±±…Ñ¥½¸¥¹ÍÑÉÕÑ¥½¹Ì™½È„Ù…É¥•Ñä½˜Á±…Ñ™½ÉµÌ…É”…Ù…¥±…‰±”m¡•É•t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ¤¸()5½¹½…±Í¼É•ÅÕ¥É•Ì„ÕÍ•Èİ¥Ñ ƒŠqmÉ•…‘t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½‰Õ¥±Ğµ¥¸µÉ½±•Ì¼É•…§Št…¹ƒŠqm±ÕÍÑ•É5½¹¥Ñ½Ét¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½‰Õ¥±Ğµ¥¸µÉ½±•Ì¼±ÕÍÑ•É5½¹¥Ñ½È§Št±¥•¹ĞmÉ½±•Ít¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½‰Õ¥±Ğµ¥¸µÉ½±•Ì¼‘…Ñ…‰…Í”µÕÍ•ÈµÉ½±•Ì¤™½È…Ñ…‘½œÍ¼Ñ¡”•¹Ğ…¸½±±•Ğ…±°Ñ¡”Í•ÉÙ•ÈÍÑ…Ñ¥ÍÑ¥Ì¸Q¡”½µµ…¹‘ÌÑ¼ÉÕ¸¥¸Ñ¡”µ½¹¼Í¡•±°‘¥™™•ÉÌ‰•Ñİ••¸5½¹½Ù•ÉÍ¥½¹Ì€È¹à…¹€Ì¹à¸Q¡•ä…É”‘•Ñ…¥±•¥¸Ñ¡”ƒŠq½¹™¥ÕÉ…Ñ¥½»ŠtÑ…ˆ½˜Ñ¡”m5½¹½ŠeÌ¥¹Ñ•É…Ñ¥½¸Ñ¥±”½¸Ñ¡”¥¹Ñ•É…Ñ¥½¹ÌÁ…”½¸…Ñ…‘½t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì¥¹Ñ•É…Ñ¥½¹Ì½µ½¹½‘ˆ¤¸()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµ¥¹Ñ•É…Ñ¥½¸¹Á¹œˆ…±Ğô‰5½¹¥Ñ½È5½¹½É…Á¡Ì½¸…Ñ…‘½œˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()ÌÍ½½¸…Ìå½ÕÈ•¹Ğ¥ÌÕÀ…¹ÉÕ¹¹¥¹œ°å½ÔÍ¡½Õ±Í•”å½ÕÈ¡½ÍĞÉ•Á½ÉÑ¥¹œµ•ÑÉ¥Ìm½¸å½ÕÈ…Ñ…‘½œ…½Õ¹Ñt¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½¥¹™É…ÍÑÉÕÑÕÉ”¤¸()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµ…•¹ĞµÍ•ÑÕÀ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½È5½¹½…Ñ…‘½œ•¹ĞÉ•Á½ÉÑ¥¹œµ•ÑÉ¥ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒŒMÑ•À€Èè½¹™¥ÕÉ”Ñ¡”•¹Ğ(()Q¡•¸å½×Še±°¹••Ñ¼É•…Ñ”„Í¥µÁ±”5½¹½½¹™¥ÕÉ…Ñ¥½¸™¥±”™½ÈÑ¡”•¹Ğ¸½È1¥¹Õà¡½ÍÑÌ°½¹™¥ÕÉ…Ñ¥½¸™¥±•Ì…É”ÑåÁ¥…±±ä±½…Ñ•€¨©¥¸½•ÑŒ½‘µ…•¹Ğ½½¹˜¹¼¨¨°‰ÕĞå½Ô…¸™¥¹=LµÍÁ•¥™¥Œ½¹™¥œ¥¹™½Éµ…Ñ¥½¸m¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼¤¸()Q¡”•¹Ğ½¹™¥ÕÉ…Ñ¥½¸™¥±”€¨©µ½¹¼¹å…µ°¨¨¥Ìİ¡•É”å½ÔÁÉ½Ù¥‘”¥¹ÍÑ…¹•Ì¥¹™½Éµ…Ñ¥½¹Ì¸e½Ô…¸…±Í¼…ÁÁ±äÑ…ÌÑ¼å½ÕÈ5½¹½¥¹ÍÑ…¹•ÌÍ¼å½Ô…¸™¥±Ñ•È…¹…É•…Ñ”å½ÕÈµ•ÑÉ¥Ì±…Ñ•È¸()Q¡”•¹ĞÍ¡¥ÁÌİ¥Ñ „€¨©µ½¹¼¹å…µ°¹•á…µÁ±”¨¨Ñ•µÁ±…Ñ”°‰ÕĞÑ¼…•ÍÌ…±°½˜Ñ¡”µ•ÑÉ¥Ì‘•ÍÉ¥‰•¥¸mA…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤½˜Ñ¡¥ÌÍ•É¥•Ì°å½ÔÍ¡½Õ±ÕÍ”Ñ¡”µ½‘¥™¥•e50Ñ•µÁ±…Ñ”…Ù…¥±…‰±”m¡•É•t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½µ½¹¼½‘…Ñ…‘½}¡•­Ì½µ½¹¼½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”¤¸((ŒŒŒMÑ•À€ÌèÙ•É¥™äÑ¡”½¹™¥ÕÉ…Ñ¥½¸Í•ÑÑ¥¹Ì(()I•ÍÑ…ÉĞÑ¡”•¹ĞÕÍ¥¹œÑ¡”mÉ¥¡Ğ½µµ…¹‘t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼¤™½Èå½ÕÈÁ±…Ñ™½É´°Ñ¡•¸¡•¬Ñ¡…Ğ…Ñ…‘½œ…¹5½¹½…É”ÁÉ½Á•É±ä¥¹Ñ•É…Ñ•‰äÉÕ¹¹¥¹œÑ¡”…Ñ…‘½œ€¨©¥¹™¼¨¨½µµ…¹¸()%˜Ñ¡”½¹™¥ÕÉ…Ñ¥½¸¥Ì½ÉÉ•Ğ°å½ÔÍ¡½Õ±Í•”„Í•Ñ¥½¸±¥­”Ñ¡¥Ì¥¸Ñ¡”¥¹™¼½ÕÑÁÕĞè(()íìğ½‘”€ùõô)¡•­Ì(ôôôôôô()l¸¸¹t()µ½¹¼(´´´´´(´¥¹ÍÑ…¹”€ŒÀm=-t(´½±±•Ñ•€àµ•ÑÉ¥Ì€˜€À•Ù•¹ÑÌ()íìğ€½½‘”€ùõô(((ŒŒŒQ¡…ÓŠeÌ¥Ğ„e½Ô…¸¹½ÜÑÕÉ¸½¸Ñ¡”¥¹Ñ•É…Ñ¥½¸(()e½Ô…¸¹½ÜÍİ¥Ñ ½¸Ñ¡”5½¹½¥¹Ñ•É…Ñ¥½¸¥¹Í¥‘”å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸%ÓŠeÌ…ÌÍ¥µÁ±”…Ì±¥­¥¹œÑ¡”ƒŠq%¹ÍÑ…±°%¹Ñ•É…Ñ¥½»Št‰ÕÑÑ½¸Õ¹‘•ÈÑ¡”½¹™¥ÕÉ…Ñ¥½¸Ñ…ˆ¥¸Ñ¡”m5½¹½¥¹Ñ•É…Ñ¥½¸Ñ¥±•t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì¥¹Ñ•É…Ñ¥½¹Ì½µ½¹½‘ˆ¤½¸å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸()5•ÑÉ¥Ì„5•ÑÉ¥Ì•Ù•Éåİ¡•É”„(´´´´´´´´´´´´´´´´´´´´´´´´´´´´(()9½ÜÑ¡…ĞÑ¡”•¹Ğ¥ÌÁÉ½Á•É±ä½¹™¥ÕÉ•°å½Ôİ¥±°Í•”…±°Ñ¡”5½¹½µ•ÑÉ¥Ì…Ù…¥±…‰±”™½Èµ½¹¥Ñ½É¥¹œ°É…Á¡¥¹œ°…¹½ÉÉ•±…Ñ¥½¸½¸…Ñ…‘½œ¸()e½Ô…¸¥µµ•‘¥…Ñ•±äÍ•”å½ÕÈµ•ÑÉ¥ÌÁ½ÁÕ±…Ñ¥¹œ„‘•™…Õ±Ğ‘…Í¡‰½…É™½È5½¹½½¹Ñ…¥¹¥¹œÑ¡”•ÍÍ•¹Ñ¥…°5½¹½µ•ÑÉ¥ÌÁÉ•Í•¹Ñ•¥¸mA…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤¸%ĞÍ¡½Õ±‰”„É•…ĞÍÑ…ÉÑ¥¹œÁ½¥¹Ğ™½Èå½ÕÈµ½¹¥Ñ½É¥¹œ¸e½Ô…¸±½¹”Ñ¡¥Ì‘…Í¡‰½…É…¹ÕÍÑ½µ¥é”¥Ğ…Ìå½Ôİ¥Í °•Ù•¸…‘‘¥¹œµ•ÑÉ¥Ì™É½´½Ñ¡•ÈÁ…ÉÑÌ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”Í¼Ñ¡…Ğå½Ô…¸•…Í¥±ä½ÉÉ•±…Ñ”İ¡…ÓŠeÌ¡…ÁÁ•¹¥¹œ¥¸5½¹½İ¥Ñ İ¡…ÓŠeÌ¡…ÁÁ•¹¥¹œÑ¡É½Õ¡½ÕĞå½ÕÈÍÑ…¬¸(()íìğ¥µœÍÉŒô‰‘…Ñ…‘½œµµ½¹½‘ˆµ‘…Í¡‰½…É¹Á¹œˆ…±Ğô‰5½¹¥Ñ½È5½¹½…Í¡‰½…É½¸…Ñ…‘½œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…ÁÑ¥½¸ô‰5½¹½‘•™…Õ±Ğ‘…Í¡‰½…É½¸…Ñ…‘½œˆùõô(((()±•ÉÑ¥¹œ(´´´´´´´´(()=¹”…Ñ…‘½œ¥Ì…ÁÑÕÉ¥¹œ…¹É…Á¡¥¹œå½ÕÈµ•ÑÉ¥Ì°å½Ôİ¥±°±¥­•±äİ…¹ĞÑ¼Í•ĞÕÀÍ½µ”m…±•ÉÑÍt ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ…±•ÉÑ¥¹œ¼¤Ñ¼­••Àİ…Ñ ½Ù•Èå½ÕÈµ•ÑÉ¥Ì…¹Ñ¼¹½Ñ¥™äå½ÕÈÑ•…µÌ…‰½ÕĞ…¹ä¥ÍÍÕ•Ì¸()…Ñ…‘½œ…±±½İÌå½ÔÑ¼…±•ÉĞ½¸¥¹‘¥Ù¥‘Õ…°¡½ÍÑÌ°Í•ÉÙ¥•Ì°ÁÉ½•ÍÍ•Ì°…¹µ•ÑÉ¥ÏŠQ½ÈÙ¥ÉÑÕ…±±ä…¹ä½µ‰¥¹…Ñ¥½¸Ñ¡•É•½˜¸½È¥¹ÍÑ…¹”°å½Ô…¸µ½¹¥Ñ½È…±°½˜å½ÕÈ¡½ÍÑÌ¥¸„•ÉÑ…¥¸…Ù…¥±…‰¥±¥Ñäé½¹”°½Èå½Ô…¸µ½¹¥Ñ½È„Í¥¹±”­•äµ•ÑÉ¥Œ‰•¥¹œÉ•Á½ÉÑ•‰ä•… ½˜å½ÕÈ5½¹½¡½ÍÑÌ¸()½È•á…µÁ±”°…Ì•áÁ±…¥¹•¥¸mA…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤°Ñ¡”¹Õµ‰•È½˜ÕÉÉ•¹Ğ½¹¹•Ñ¥½¹Ì¥Ì±¥µ¥Ñ•Ñ¼€ØÔ°ÔÌØÍ¥µÕ±Ñ…¹•½ÕÌ½¹¹•Ñ¥½¹Ì‰ä‘•™…Õ±ĞÍ¥¹”ØÌ¸À¸M¼å½Ôµ¥¡Ğİ…¹ĞÑ¼Í•ĞÕÀ…¸…±•ÉĞİ¡•¹•Ù•ÈÑ¡”½ÉÉ•ÍÁ½¹‘¥¹œµ•ÑÉ¥Œ¥Ì•ÑÑ¥¹œ±½Í”Ñ¼Ñ¡¥Ìµ…á¥µÕ´¸()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµ‘…Ñ…‘½œµ…±•ÉĞ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½È5½¹½…Ñ…‘½œ…±•ÉĞˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()…Ñ…‘½œ…±Í¼¥¹Ñ•É…Ñ•Ìİ¥Ñ µ…¹ä½µµÕ¹¥…Ñ¥½¸Ñ½½±ÌÍÕ …ÌM±…¬°A…•ÉÕÑä½È!¥Á¡…ĞÍ¼å½Ô…¸¹½Ñ¥™äå½ÕÈÑ•…µÌÙ¥„Ñ¡”¡…¹¹•±Ìå½Ô…±É•…‘äÕÍ”¸()e½Ô…É”¹½Ü„5½¹½ÁÉ¼„(´´´´´´´´´´´´´´´´´´´´´´´´´´(()Q¡¥Ì½¹±Õ‘•ÌÑ¡”Í•É¥•Ì½¸¡½ÜÑ¼µ½¹¥Ñ½Ë
+5½¹½¸%¸Ñ¡¥ÌÁ½ÍĞİ—ŠeÙ”İ…±­•å½ÔÑ¡É½Õ ¥¹Ñ•É…Ñ¥¹œ5½¹½İ¥Ñ …Ñ…‘½œÑ¼Ù¥ÍÕ…±¥é”å½ÕÈ­•äµ•ÑÉ¥Ì…¹¹½Ñ¥™äå½ÕÈÑ•…´İ¡•¹•Ù•Èå½ÕÈ‘…Ñ…‰…Í”Í¡½İÌÍ¥¹Ì½˜ÑÉ½Õ‰±”¸()%˜å½×ŠeÙ”™½±±½İ•…±½¹œÕÍ¥¹œå½ÕÈ½İ¸…Ñ…‘½œ…½Õ¹Ğ°å½ÔÍ¡½Õ±¹½Ü¡…Ù”Õ¹Á…É…±±•±•Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼5½¹½ŠeÌ…Ñ¥Ù¥Ñä…¹Á•É™½Éµ…¹”¸e½Ô…É”…±Í¼…İ…É”½˜Ñ¡”…‰¥±¥ÑäÑ¼É•…Ñ”…ÕÑ½µ…Ñ•…±•ÉÑÌÑ…¥±½É•Ñ¼å½ÕÈ•¹Ù¥É½¹µ•¹Ğ°ÕÍ…”Á…ÑÑ•É¹Ì°…¹Ñ¡”µ•ÑÉ¥ÌÑ¡…Ğ…É”µ½ÍĞÙ…±Õ…‰±”Ñ¼å½ÕÈÑ•…µÌ¸()%˜å½Ô‘½»ŠeĞå•Ğ¡…Ù”„…Ñ…‘½œ…½Õ¹Ğ°å½Ô…¸Í¥¸ÕÀ™½È€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù„™É•”ÑÉ¥…°ğ½„ø…¹ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œ5½¹½…±½¹Í¥‘”Ñ¡”É•ÍĞ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì°…¹å½ÕÈÍ•ÉÙ¥•ÌÑ½‘…ä¸(+
+€((©M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½µ½¹½‘ˆ½µ½¹¥Ñ½Èµµ½¹½‘ˆµÁ•É™½Éµ…¹”µİ¥Ñ µ‘…Ñ…‘½œ¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¸¨

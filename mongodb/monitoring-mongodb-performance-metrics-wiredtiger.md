@@ -1,350 +1,7 @@
-#Monitoring MongoDB performance metrics (WiredTiger)
-
-*This post is part 1 of a 3-part series about monitoring MongoDB performance with the WiredTiger storage engine. [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) explains the different ways to collect MongoDB metrics, and [Part 3](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog) details how to start monitoring MongoDB performance with Datadog.*
-
-If you are using the MMAPv1 storage engine, visit the companion article â€œ[Monitoring MongoDB performance metrics (MMAP)](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap)â€.
-
-## What is MongoDB?
-
-There are different types of NoSQL databases:
-
--   Key-value stores like [Redis](https://www.datadoghq.com/blog/how-to-monitor-redis-performance-metrics/) where each item is stored and retrieved with its name (key)
--   Wide column stores such as [Cassandra](https://www.datadoghq.com/blog/how-to-monitor-cassandra-performance-metrics/) used to quickly aggregate large datasets, and for which columns can vary from one row to another
--   Graph databases, like Neo4j or Titan, which use graph structures to store networks of data
--   Document-oriented databases which store data as documents thus offering a more flexible structure than other databases: fields can store arrays, or two records can have different fields for example. [MongoDB](https://www.mongodb.com/) is a document-oriented database, as are CouchDB and [Amazon DynamoDB](https://www.datadoghq.com/blog/top-dynamodb-performance-metrics/).
-
-MongoDB is cross-platform and represents its documents in a binary-encoded JSON format called [BSON](https://www.mongodb.com/json-and-bson) (Binary JSON). The lightweight binary format adds speed to the flexibility of the JSON format, along with more data types. Fields inside MongoDB documents can be indexed.
-
-MongoDB ensures high availability thanks to its replication mechanisms, horizontal scalability allowed by sharding, and is currently [the most widely adopted](http://db-engines.com/en/ranking) document store. It is used by companies such as Facebook, eBay, Foursquare, Squarespace, Expedia, and Electronic Arts.
-
-## Key MongoDB performance metrics to monitor
-
-[![monitoring MongoDB dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)
- By properly monitoring MongoDB you can quickly spot slowdowns, hiccups, or pressing resource limitations, and know which actions to take to correct these issues before there are user-facing consequences. Here are the key areas you will want to track and analyze metrics.
-
--   [Throughput metrics](#throughput)
--   [Database performance](#dbperf)
--   [Resource utilization](#resource-util)
--   [Resource saturation](#resource-saturation)
--   [Errors](#errors) (asserts)
-
-In this article, we focus on the metrics available in MongoDB when using [WiredTiger](https://docs.mongodb.com/manual/core/wiredtiger/), which was introduced with MongoDB 3.0 and is now the default storage engine. All the metric names correspond to the one available in MongoDB 3.2.
-
-However, many companies still run earlier versions of MongoDB which use the [MMAPv1 storage engine](https://docs.mongodb.com/manual/core/mmapv1/). If thatâ€™s your case, [here is the companion article](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap) you should read.
-
-This article references metric types terminology introduced in [our Monitoring 101 series](https://www.datadoghq.com/blog/monitoring-101-collecting-data/), which provides a framework for metric collection and alerting.
-
-All these metrics are accessible using a variety of tools, including MongoDBâ€™s utilities, commands (indicated in this article for each metric presented), or dedicated monitoring tools. For details on metrics collection using any of these methods, see [Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) of this series.
-
-### Throughput metrics
-
-![Monitoring MongoDB Throughput metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-throughput-metrics.png)
- Throughput metrics are crucial and most of your alerts should be set on these metrics in order to avoid any [performance](#dbperf) issue, [resource saturation](#resource-saturation), or [errors](#errors). The majority of the metrics presented in the other sections are typically used to investigate problems.
-
-#### Read and Write operations
-
-To get a high-level view of your clusterâ€™s activity levels, the most important metrics to monitor are the number of clients making read and write requests to MongoDB, and the number of operations they are generating. Understanding how, and how much, your cluster is being used will help you optimize MongoDBâ€™s performance and avoid overloading your database. For instance, your strategy to scale up or out (see [corresponding section](#scaling) at the end of this article) should take into account the type of workload your database is receiving.
-
-| **Metric Description**                                                                     | **Name**                         | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|--------------------------------------------------------------------------------------------|----------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Number of read requests received during the selected time period (query, getmore)          | opcounters.query, opcounters.getmore               | Work: Throughput                                                                  | serverStatus                                                                                 |
-| Number of write requests received during the selected time period (insert, delete, update) | opcounters.insert, opcounters.update, opcounters.delete                | Work: Throughput                                                                  | serverStatus                                                                                 |
-| Number of clients with read operations in progress or queued                               | globalLock.activeClients.readers | Work: Throughput                                                                  | serverStatus                                                                                 |
-| Number of clients with write operations in progress or queued                              | globalLock.activeClients.writers | Work: Throughput                                                                  | serverStatus                                                                                 |
-
-NOTE: A *getmore* is the operation the [cursor](#cursors) executes to get additional data from a query.
-
-##### Metrics to alert on:
-
-By properly monitoring the **number of read and write requests** you can prevent resource saturation, spot bottlenecks, quickly find the cause of potential overloads, and know when to scale [up or out](#scaling). The `currentQueue` metrics (presented in the section about [Resource Saturation](#resource-saturation)) will confirm if requests are accumulating faster than they are being processed. Look also at `activeClients.readers` or `activeClients.writers` to check if the number of active clients explains the requests load. These two activeClients metrics are reported under â€œ[globalLock](https://docs.mongodb.com/manual/reference/command/serverStatus/#server-status-global-lock)â€ even if they are not really related to global lock.
-
-In order to be able to quickly spot the potential causes of abnormal changes in traffic, you should break down your graphs by operation type: *query* and *getmore* for read requests, *insert*, *update*, and *delete* for write requests.
-
-### Database performance
-
-![Monitoring MongoDB database performance metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-database-performance.png)
-
-#### Replication and Oplog
-
-The metrics presented in this paragraph matter only if you use a replica set, which you should do if you run MongoDB in production in order to ensure high data availability.
-
-The oplog (operations log) constitutes the basis of MongoDBâ€™s replication mechanism. Itâ€™s a limited-size collection stored on primary and secondary nodes that keeps track of all the write operations. Write operations are applied on the primary node itself and then recorded on its oplog. Right after secondary nodes copy and apply these changes asynchronously. But if the primary node fails before the copy to the secondary is made, data might not be replicated.
- Each replica contains its own oplog, corresponding to its view of the data at this point in time based on what it saw the most recently from the primary.
-
-| **Metric Description**                                                                                                      | **Name**                                                    | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|-----------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Size of the oplog (MB)                                                                                                      | logSizeMB                                                   | Other                                                                             | getReplicationInfo                                                                           |
-| Oplog window (seconds)                                                                                                      | timeDiff                                                    | Other                                                                             | getReplicationInfo                                                                           |
-| Replication Lag: delay between a write operation on the primary and its copy to a secondary (milliseconds)                  | members.optimeDate\[primary\] â€“ members.optimeDate\[secondary member\] \*\*               | Work: Performance                                                                 | replSetGetStatus                                                                             |
-| Replication headroom: difference between the primaryâ€™s oplog window and the replication lag of the secondary (milliseconds) | getReplicationInfo.timeDiff x 1000 â€“ (replSetGetStatus.members.optimeDate\[primary\] â€“ replSetGetStatus.members.optimeDate\[secondary member\])  | Work: Performance                                                                 | getReplicationInfo and replSetGetStatus                                                                         |
-| Replica set member state                                                                                                    | members.state                                               | Resource: Availability                                                            | replSetGetStatus                                                                             |
-
-\*\* For the calculation of Replication Lag, **optimeDate** values are provided with the [isoDate](https://docs.mongodb.com/manual/reference/glossary/#term-isodate) format (YYYY-MM-DD HH:MM.SS.ms) so the difference will be in milliseconds.
-
-##### Metrics to alert on:
-
-**Replication lag** represents how far a secondary is behind the primary. Obviously you want to keep a replication lag as small as possible. Itâ€™s especially true if yours is the rare case where your secondary nodes address reads (usually not advised, see [sections about scaling MongoDB](#scaling)) since you want to avoid serving stale data. Ideally, replication lag is equal to zero, which should be the case if you donâ€™t have load issues. If it gets too high for all secondary nodes, the integrity of your data set might be compromised in case of failover (secondary member taking over as the new primary because the current primary is unavailable). Indeed write operations happening during the delay are not immediately propagated to secondaries and related changes might be lost if the primary fails.
- You might want to set up a warning notification for any lag higher than 60 seconds. A high priority alert can be set for lags exceeding 240 seconds. With a healthy replica set, you shouldnâ€™t get false positive with this threshold.
-
-A high replication lag can be due to:
-
--   Networking issue between the primary and secondary making nodes unreachable: check `members.state` to spot unreachable nodes
--   A secondary node applying data slower than the primary
--   Insufficient write capacity in which case you should add more shards: check queued write requests (see [section about resource saturation](#resource-saturation))
--   Slow operations on the primary node blocking replication. You can [spot slow queries](https://docs.mongodb.com/manual/tutorial/manage-the-database-profiler/#profiling-levels) with the [db.getProfilingStatus()](https://docs.mongodb.com/manual/reference/method/db.getProfilingStatus/#db.getProfilingStatus) command or through the *Visual Query Profiler* in [MongoDB Ops Manager](https://www.mongodb.com/products/ops-manager) if you are using it: level 1 corresponds to slow operations (taking longer than the threshold defined by the `operationProfiling.slowOpThresholdMs` parameter set to 100 ms by default). It can be due to heavy write operations on the primary node or an under-provisioned secondary. You can prevent the latter by scaling up the secondary to match the primary capacity. You can use *â€œmajorityâ€* [*write concern*](https://docs.mongodb.com/manual/reference/write-concern/) to make sure writes are not getting ahead of replication.
-
-[![Monitoring MongoDB replication lag by replica set](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/replication-lag-grouped-by-replica-set.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/replication-lag-grouped-by-replica-set.png)
-
-The **oplog window** represents the interval of time between the oldest and the latest entries in the oplog, which usually corresponds to the approximate amount of time available in the primaryâ€™s replication oplog. So if a secondary is down longer than this oplog window, it wonâ€™t be able to catch up unless it completely resyncs all data from the primary. The amount of time it takes to fill the oplog varies: during heavy traffic times, it will shrink since the oplog will receive more operations per second. If the oplog window for a primary node is getting too short you should consider [increasing the **size of your oplog**](https://docs.mongodb.com/manual/tutorial/change-oplog-size/). MongoDB advises to send a warning notification if the oplog windows is 25% below its usual value during traffic peaks, and a high priority alert under 50%.
-
-If the **replication headroom** is rapidly shrinking and is about to become negative, that means that the replication lag is getting higher than the oplog window. In that case, write operations recorded in the oplog will be overwritten before secondary nodes have time to replicate them. MongoDB will constantly have to resync the entire data set on this secondary which takes much longer than just fetching new changes from the oplog. Properly monitoring and alerting on **Replication Lag** and **oplog window** should allow you to prevent this.
-
-The **replica set member state** is an integer indicating the current status of a node in a replica set. You should alert on error state changes so you can quickly react if a host is having issues. Here are potentially problematic states:
-
--   ***Recovering*** (state = 3): the members is performing startup self-checks, or just completed a [rollback](https://docs.mongodb.com/manual/core/replica-set-rollbacks/) or a [resync](https://docs.mongodb.com/manual/tutorial/resync-replica-set-member/). A *Recovering* state can be fine if itâ€™s intentional (for example when resyncing a secondary) but if itâ€™s unexpected, you should find the root cause of this issue in order to maintain a healthy replica set.
--   ***Unknown*** (state = 6): the member doesnâ€™t communicate any status information to the replica set.
--   ***Down*** (state = 8): the member lost its connection with the replica set. This is critical if there is no replica to address requests to the node that went down.
--   ***Rollback*** (state = 9): when a secondary member takes over as the new primary before writes were totally replicated to it, the old primary reverts these changes. If you donâ€™t use â€œmajorityâ€ [write concern](https://docs.mongodb.com/manual/reference/write-concern/), you should trigger a paging alert in case a node shows a *Rollback* state since you might lose data changes from write operations. Rollbacks of acknowledged data [should be avoided](https://docs.mongodb.com/manual/core/replica-set-rollbacks/#avoid-replica-set-rollbacks).
--   ***Removed*** (state = 10): the member has been removed from the replica set.
-
-You can find all the member states [here](https://docs.mongodb.com/manual/reference/replica-states/).
-
-#### Journaling
-
-While oplog stores recent write operations for replication, journaling is a write-ahead process. It is enabled by default since v2.0 and you shouldnâ€™t turn it off, especially when using MongoDB in production.
- The purpose and underlying mechanisms of journaling with the [MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap) storage engine are different than with WiredTiger, and available metrics wonâ€™t be the same.
-
-With WiredTiger, data integrity is not impacted if the process stops unexpectedly like it can be with MMAPv1. So the journaling purpose is mainly to ensure maximum data recovery after an unclean shutdown.
- To understand journaling with the WiredTiger engine, we need to first discuss *checkpoints* which are database snapshots that are persisted to disk. Checkpoints can act as recovery points even if journaling is disabled. MongoDB creates a checkpoint only every 60 seconds, which means that, without journaling turned on, a failure may cause data loss of up to 60 seconds of history. With journaling enabled, MongoDB can replay the journal and recover the transactions that occurred during the missing seconds. Among other purposes, Journaling essentially narrows the interval of time between the moment when data is applied to memory and when data is made durable on the node. Thatâ€™s why you shouldnâ€™t turn off journaling, especially in production.
-
-For both storage engines, the frequency of committing/syncing the journal to disk is defined by the parameter [storage.journal.commitIntervalMs](https://docs.mongodb.com/manual/reference/configuration-options/#storage.journal.commitIntervalMs) (100 ms by default with WiredTiger) which can be tuned. Decreasing its value reduce the chances of data loss since writes will be recorded more frequently but may increase the latency of write operations.
-
-| **Metric Description**                                                                      | **Name**        | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|---------------------------------------------------------------------------------------------|-----------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Number of transactions written to the journal during the last journal group commit interval | dur.commits     | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Amount of data written to the journal during the last journal group commit interval (MB)    | dur.journaledMB | Resource: Utilization                                                             | serverStatus                                                                                 |
-
-Tracking the number of transactions and the amount of data written to the journal provides insights on load. This can be useful when troubleshooting.
-
-#### Concurrent operations management: Locking performance
-
-In order to support simultaneous queries while avoiding write conflicts and inconsistent reads, MongoDB has an internal locking system. Suboptimal indexes, and poor schema design patterns can lead to locks being held longer than necessary.
-
-Compared to MMAPv1, you are significantly less likely to experience locking issue with WiredTiger. Indeed this storage engine uses document-level concurrency which drastically improved concurrent operations compared to the MMAPv1 engine. Now simultaneous writes to a same collection will only block each other if they are made to the same document, which explains why locking shouldnâ€™t be an issue anymore.
- The WiredTiger engine uses a ticketing system that aims to control the number of threads in use since they can starve each other of CPU. Tickets are an internal representation for thread management. They correspond to the number of concurrent read / write operations allowed into the WiredTiger storage engine.
-
-| **Metric Description**                      | **Name**                                          | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|---------------------------------------------|---------------------------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Number of read tickets in use               | wiredTiger.concurrentTransactions.read.out        | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Number of write tickets in use              | wiredTiger.concurrentTransactions.write.out       | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Number of available read tickets remaining  | wiredTiger.concurrentTransactions.read.available  | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Number of available write tickets remaining | wiredTiger.concurrentTransactions.write.available | Resource: Utilization                                                             | serverStatus                                                                                 |
-
-##### Metrics to alert on:
-
-When the **number of available read or write tickets remaining** reaches zero, new read or write requests will be queued until a new read or write ticket is available. The maximums of concurrent read and write operations are respectively defined by the parameters `wiredTigerConcurrentReadTransactions` and `wiredTigerConcurrentWriteTransactions`. Both are equal to 128 by default. However be careful when increasing it: if the number of simultaneous operations gets too high, you might run out of system resource (CPU in particular). Scaling horizontally by adding more shards can help to support high throughputs (see [section about scaling MongoDB](#scaling)).
-
-#### Cursors
-
-When a read query is received, MongoDB returns a cursor which represents a pointer to the data set of the answer. To access all the documents resulted by the query, clients can then iterate over the cursor.
-
-| **Metric Description**                                                | **Name**                      | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|-----------------------------------------------------------------------|-------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Number of cursors currently opened by MongoDB for clients             | metrics.cursor.open.total     | Work: Throughput                                                                  | serverStatus                                                                                 |
-| Number of cursors that have timed out during the selected time period | metrics.cursor.timedOut       | Work: Throughput                                                                  | serverStatus                                                                                 |
-| The number of open cursors with timeout disabled                      | metrics.cursor.open.noTimeout | Other                                                                             | serverStatus                                                                                 |
-
-##### Metrics to alert on:
-
-A gradual increase in the **number of open cursors** without a corresponding growth of traffic is often symptomatic of poorly indexed queries. It can also be the result of long running queries due to large result sets. You should take a look to see how you could optimize them.
-
-`cursor.timedOut` is incremented when a client connection has died without having gracefully closed the cursor. This cursor remains open on the server, consuming memory. By default MongoDB reaps these cursors after 10 minutes of inactivity. You should check if you have a large amount of memory being consumed from non-active cursors. A high number of timed out cursors can be related to application issues.
-
-This also explains why cursors with no timeout should be avoided: they can prevent resources to be freed as it should and slow down internal system processes. Indeed the [DBQuery.Option.noTimeout](https://docs.mongodb.com/v3.0/reference/method/cursor.addOption/#DBQuery.Option.noTimeout) flag (until v3.0) or the [cursor.noCursorTimeout()](https://docs.mongodb.com/manual/reference/method/cursor.noCursorTimeout/#cursor.noCursorTimeout) method can be used to prevent the server to timeout cursors after a period of inactivity (idle cursors). You can make sure that there is no cursors with no timeout by checking if the `cursor.open.noTimeout` metric which count their number is always equal to zero.
-
-### Resource Utilization
-
-![Monitoring MongoDB resource utilization metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-resource-utilization.png)
-
-#### Connections
-
-Abnormal traffic loads can lead to performance issues. Thatâ€™s why the number of client connections should be closely monitored.
-
-| **Metric Description**                                       | **Name**              | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|--------------------------------------------------------------|-----------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Number of clients currently connected to the database server | connections.current   | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Number of unused connections available for new clients       | connections.available | Resource: Utilization                                                             | serverStatus                                                                                 |
-
-##### Metric to alert on:
-
-Unexpected changes in the **current number of client connections** can be due to errors on your application or driver. All the officially supported MongoDB drivers use pools of connections in order to efficiently re-use them. If the number of client connections is getting very high, it should be related to a rise in the number of real client requests in which case you can [scale](#scaling) to support this increasing load. If this growth is not expected, it often indicates a driver or configuration issue. Knowing how many connections you should expect under low, normal, and peak traffics allows you to appropriately set your alerts. You might want to send a warning notification if there the number of connections is 50% higher than the number you usually see at peak, and a high priority alert if it exceeds twice this usual number at peak.
-
-If MongoDB runs low on connections, in may not be able to handle incoming requests in a timely manner. Thatâ€™s why you should also alert on the **percentage of connections used**: 100 x *current / (current + available)*.
-
-This number of incoming connections is constrained but the limit can be changed except on older versions prior to 2.6. Since MongoDB 2.6, on Unix-based systems, the limit is simply defined by the [maxIncomingConnections](https://docs.mongodb.com/manual/reference/configuration-options/#net.maxIncomingConnections) parameter, set by default to 1 million connections on v2.6 and 65,536 connections since v3.0. This value [is configurable](https://docs.mongodb.com/manual/reference/ulimit/). `connections.current` should never get too close to this limit.
-
-NOTE: the `connections.current` metrics also counts connections from shell and from other hosts like replicas or mongos instances.
-
-#### Storage metrics
-
-##### Understanding MongoDBâ€™s storage structure and statistics
-
-In MongoDB, data is stored in **documents** using the [BSON](https://docs.mongodb.com/manual/reference/glossary/#term-bson) format.
-
-Documents (usually with similar or related purpose) are grouped into **collections**. A collection can be seen as the equivalent of a table in a relational database. For example, the database â€œusersâ€ can contain the two collections â€œpurchaseâ€ and â€œprofileâ€. In that case, you could access those collections with the namespaces *users.purchase* and *user.profile.*
-
-With WiredTiger, there is one **data file** per collection (data) and one data file per index.
-
-##### Storage size metrics (from dbStats) for WiredTiger:
-
-With the WiredTiger engine, for every update, MongoDB rewrites the whole document. Thus there is no concept of â€œpaddingâ€ like with [MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap).
-
-Here are the different storage metrics you should know:
-
--   `dataSize` measures the space taken by all the documents (data) in the database.
--   `indexSize` returns the size of all indexes created on the database.
--   `storageSize` measures the size of all the data extents in the database. WiredTiger has compression enabled by default, so storageSize can be lower than dataSize for large collections, but it can also sometimes be higher than dataSize for very small collections.
-
-[![Monitoring MongoDB dbStats storage metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-dbstats-storage-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-dbstats-storage-metrics.png)
-
-##### Metrics to monitor
-
-| **Metric Description**                                  | **Name**    | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|---------------------------------------------------------|-------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Number of objects (documents) among all the collections | objects     | Resource: Utilization                                                             | dbStats                                                                                      |
-| Size of all documents (bytes)                           | dataSize    | Resource: Utilization                                                             | dbStats                                                                                      |
-| Size of all indexes (bytes)                             | indexSize   | Resource: Utilization                                                             | dbStats                                                                                      |
-| Size of all extents (bytes)                             | storageSize | Resource: Utilization                                                             | dbStats                                                                                      |
-
-##### Metrics to alert on:
-
-If **memory space metrics** (dataSize, indexSize, or storageSize) or the **number of objects** show a significant unexpected change while the database traffic remained within ordinary ranges, it can indicate a problem. A sudden drop of dataSize can be due to a large amount of data deletion, which should be quickly investigated if it was not expected.
-
-#### Memory metrics
-
-| **Metric Description**                                        | **Name**                 | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|---------------------------------------------------------------|--------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Virtual memory usage (MB)                                     | mem.virtual              | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Amount of memory used by the database process (MB)            | mem.resident             | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Number of times MongoDB had to request from disk (per second) | extra\_info.page\_faults | Other                                                                             | serverStatus                                                                                 |
-
-The **resident memory** usage usually approaches the amount of physical RAM available to the MongoDB server.
-
-##### Metric to notify on:
-
-**Page faults** indicate operations which required the MongoDB to fetch data from disk because it wasnâ€™t available in active memory (â€œhardâ€ page fault), or when the operation required in-memory page relocation (â€œsoftâ€ page fault). Requests which trigger page faults take more time to execute than requests that do not. Frequent page faults may indicate that your data set is too large for the allocated memory. However thatâ€™s not a big issue if the throughput remains healthy. Limited and occasional page faults do not necessarily indicate serious problems. In order to reduce the frequency of page faults, you can increase the size of your RAM or consider adding more shards to your deployments in order to better distribute incoming requests. Page faults can also be a sign of inefficient schema design, redundant or unnecessary indexes, or anything using available RAM unnecessarily.
- [![Monitoring MongoDB page faults](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-page-faults.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-page-faults.png)
-
-#### Cache metrics
-
-With WiredTiger, MongoDB uses both the storage engineâ€™s cache and the filesystem cache. You want your working set to fit in memory, which includes uncompressed data in the WiredTiger cache and compressed data in the filesystem cache (more info [here](https://docs.mongodb.com/manual/faq/storage/#to-what-size-should-i-set-the-wiredtiger-cache)). If your working set outgrows the available cache, page faults (see previous section) might cause performance issues.
-
-| **Metric Description**                                   | **Name**                                          | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|----------------------------------------------------------|---------------------------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Amount of space taken by cached data (bytes)             | wiredTiger.cache.bytes currently in the cache     | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Maximum cache size configured (bytes)                    | wiredTiger.cache.maximum bytes configured         | Other                                                                             | serverStatus                                                                                 |
-| Amount of space taken by dirty data in the cache (bytes) | wiredTiger.cache.tracked dirty bytes in the cache | Resource: Utilization                                                             | serverStatus                                                                                 |
-| Number of pages evicted from the cache                   | wiredTiger.cache.unmodified pages evicted + wiredTiger.cache.modified pages evicted         | Resource: Saturation                                                              | serverStatus                                                                                 |
-
-NOTE: WiredTigerâ€™s cache metrics names are string values with spaces inside.
-
-**Dirty data** designates data in the cache that has been modified but not yet applied (flushed) to disk. Growing amounts of dirty data could represent a bottleneck where data isnâ€™t being written to disk fast enough. Scaling out by adding more shard will help you reduce the amount of dirty data. Note that the amount of dirty data is expected to grow until the next checkpoint.
-
-The **size limit of the WiredTiger cache** defined by the [engineConfig.cacheSizeGB](https://docs.mongodb.com/manual/reference/configuration-options/#storage.wiredTiger.engineConfig.cacheSizeGB) parameter shouldnâ€™t be increased above its default value. Indeed the remaining memory is used by the mongod process for its data processing and by the OS for filesystem cache which MongoDB benefits from.
-
-In versions 3.2+, the **cacheSizeGB** parameter it is set by default to the greater of:
-
--   1 GB
--   60% of the RAM ***minus*** 1 GB
-
-#### Other host-level metrics
-
-Youâ€™ll also want to monitor system metrics of machines running MongoDB in order to investigate performance issues.
-
-**Disk space** is one of the most important host-level metrics to alert on. You should trigger a high priority alert if it is getting close to full (for example a warning if 80% full, and an alert at 90% full).
-
-If **CPU utilization** is increasing too much, it can lead to bottlenecks and may indirectly indicate inefficient queries, perhaps due to poor indexing.
-
-When **I/O utilization** is getting close to 100% for lengthy periods of time, it means you are hitting the limit of the physical diskâ€™s capacity. If itâ€™s constantly high, you should upgrade your disk or add more shards in order to avoid performance issues such as slow queries or slow replication.
-
-**I/O wait** limits throughput so a high value indicates high throughput. In that case you should consider scaling up by adding more shards (see section about [scaling MongoDB](#scaling)), or increasing your disk I/O capacity (after verifying optimal schema and index design). RAM saturation might also be a cause of low I/O per second, especially if your system is not write-heavy. It can be due to the size of your working set being larger than the available memory for example.
-
-### Resource Saturation
-
-![Monitoring MongoDB resource saturation metrics](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-resource-saturation-metrics.png)
-
-| **Metric Description**                    | **Name**                        | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|-------------------------------------------|---------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Number of read requests currently queued  | globalLock.currentQueue.readers | Resource: Saturation                                                              | serverStatus                                                                                 |
-| Number of write requests currently queued | globalLock.currentQueue.writers | Resource: Saturation                                                              | serverStatus                                                                                 |
-
-##### Metrics to notify on:
-
-**Queued read and writes requests** are reported under â€œ[globalLock](https://docs.mongodb.com/manual/reference/command/serverStatus/#server-status-global-lock)â€ even if they are not really related to global lock. If you see that the number of queued requests keeps growing during heavy read/write traffic, that means MongoDB is not addressing requests as fast as they are arriving. In order to avoid performance issues and make sure your database is able to keep up with the demand, you should increase your deployment capacity (see [section about scaling MongoDB](#scaling)).
- NOTE: Scaling up vertically by adding more capacity (CPU, memory, faster disks, more disks on each instance) is also an option, but this strategy can become cost-prohibitive, and the size of your instances might be limited by your IT departmentâ€™s inventory, or by your cloud-infrastructure provider.
-
-### Errors: asserts
-
-![Monitoring MongoDB asserts errors](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-asserts-errors.png)
-
-Asserts typically represent errors. MongoDB generates [a document](https://docs.mongodb.com/manual/reference/command/serverStatus/#asserts) reporting on the number of each type of assertions that have been raised: message, warning, regular, and user. Assertions donâ€™t occur often but should be investigated when they do.
-
-| **Metric Description**                                                                          | **Name**        | [**Metric Type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) | [**Availability**](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) |
-|-------------------------------------------------------------------------------------------------|-----------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Number of message assertions raised during the selected time period                             | asserts.msg     | Resource: Error                                                                   | serverStatus                                                                                 |
-| Number of warning assertions raised during the selected time period                             | asserts.warning | Resource: Error                                                                   | serverStatus                                                                                 |
-| Number of regular assertions raised during the selected time period                             | asserts.regular | Resource: Error                                                                   | serverStatus                                                                                 |
-| Number of assertions corresponding to errors generated by users during the selected time period | asserts.user    | Resource: Error                                                                   | serverStatus                                                                                 |
-
-NOTE: These counters will rollover to zero if the MongoDBâ€™s process is restarted or after 2^30 assertions.
-
-The MongoDB log files will give you more details about assert exception returned, which will help you find possible causes.
-
-##### Metrics to notify on:
-
-**Message asserts** indicate internal server exceptions.
-
-**Warning asserts** are not as serious as errors. They just indicate things that might be worth checking like too low [ulimit](https://docs.mongodb.com/manual/reference/ulimit/) or readahead.
-
-**Regular asserts** are per-operation invariants (e.g. â€œunexpected failure while reading a BSON documentâ€).
-
-**User asserts** are triggered as the result of user operations or commands generating an error like a full disk space, a duplicate key exception, or write errors (e.g. insert not properly formatted, or no access right). These errors are returned to the client so most of them wonâ€™t be logged into the mongod logs. However you should investigate potential problems with your application or deployment.
-
-Both regular and user asserts will result in the corresponding operation failing.
-
-## Scaling MongoDB: sharding vs replication
-
-A replica set represents multiple servers running MongoDB, each one containing the exact same data. There is one primary node and the rest are secondary nodes. Replica sets provide fault-tolerance and high data availability. If the primary node becomes unavailable, one of the secondary nodes will be elected to take over as the new primary.
- [![Monitoring MongoDB sharding vs replication](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-replication-sharding.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-replication-sharding.png)
-
-In order to increase your throughput capacity, you can scale horizontally by adding more shards to your cluster. Sharding splits data and distributes it among the shards (mongod instances) of a cluster according to a *[shard key](https://docs.mongodb.com/manual/core/sharding-shard-key/)* defined for your collections. Incoming requests will be addressed by the corresponding shard(s) containing the requested data. Thus it allows to support more **read and write** throughputs. You can also upgrade the hardware on the cluster.
-
-NOTE: For rare very specific cases where reads on secondaries can be acceptable (reads querying all the data for example), you can also consider adding more secondaries to your replica set and using them to support more **read** requests. But this is definitely not a general scaling tactic. Replica set members main purpose is to ensure high data availability, not to support read-heavy throughputs. The MongoDBâ€™s documentation [gives more details](https://docs.mongodb.com/manual/core/read-preference/#counter-indications) on why using more secondaries to provide extra read capacity shouldnâ€™t be a scaling tactic most of the time.
-
-Since write operations can only be directed to the primary node (they are then applied to secondaries), additional secondaries will not increase write-throughput capacity. If you need to support higher write throughput, you should use more shards instead.
- [![Monitoring MongoDB sharding](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-sharding.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-sharding.png)
-
-*Sharding in MongoDB*
-
-Adding more shards to a cluster increases read and write throughput capacities. In order to ensure high availability of all of your data even when a shard is down, each shard should be a replica set (especially [in production](https://docs.mongodb.com/manual/core/sharded-cluster-architectures-production/)).
-
-## Recap
-
-In this post weâ€™ve explored the metrics you should keep tabs on when monitoring MongoDB. If you are just getting started with MongoDB, monitoring the metrics in the list below will provide visibility into your databaseâ€™s health, performance, resource usage, and may help identify areas where tuning could provide significant benefits:
-
--   [Throughput metrics](#throughput)
--   [Database performance](#dbperf)
--   [Resource utilization](#resource-util)
--   [Resource saturation](#resource-saturation)
--   [Errors](#errors) (asserts)
-
-[![Monitoring MongoDB metrics categories](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-metrics-categories.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/1-monitor/mongodb-metrics-categories.png)
- Closely tracking throughput metrics should give you a great overview of your database activity. Database performance, errors, resource utilization and resource saturation metrics will help you investigate issues and understand what to do to maintain good performance.
-
-Eventually you will recognize additional, more specialized metrics that are particularly relevant to your own usage of MongoDB.
-
-[Part 2](https://www.datadoghq.com/blog/collecting-mongodb-metrics-and-statistics) will give you a comprehensive guide to collecting any of the metrics described in this article, or any other metric exposed by MongoDB.
-
-## Acknowledgments
-
-Many thanks to the engineering team at [MongoDB](https://www.mongodb.com/) for reviewing this publication and suggesting improvements.
+m5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”µ•ÑÉ¥Ì€¡]¥É•‘Q¥•È¤(((©Q¡¥ÌÁ½ÍĞ¥ÌÁ…ÉĞ€Ä½˜„€ÌµÁ…ÉĞÍ•É¥•Ì…‰½ÕĞµ½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”İ¥Ñ Ñ¡”]¥É•‘Q¥•ÈÍÑ½É…”•¹¥¹”¸mA…ÉĞ€Ét ½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥Ì¤•áÁ±…¥¹ÌÑ¡”‘¥™™•É•¹Ğİ…åÌÑ¼½±±•Ğ5½¹½µ•ÑÉ¥Ì°…¹mA…ÉĞ€Ít ½‰±½œ½µ½¹¥Ñ½Èµµ½¹½‘ˆµÁ•É™½Éµ…¹”µİ¥Ñ µ‘…Ñ…‘½œ¤‘•Ñ…¥±Ì¡½ÜÑ¼µ½¹¥Ñ½È¥ÑÌÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œ¸¨()%˜å½Ô…É”ÕÍ¥¹œÑ¡”55AØÄÍÑ½É…”•¹¥¹”°Ù¥Í¥ĞÑ¡”½µÁ…¹¥½¸…ÉÑ¥±”€‰m5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”µ•ÑÉ¥Ì€¡55@¥t ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµµµ…À¤ˆ¸((ŒŒ]¡…Ğ¥Ì5½¹½ü()Q¡•É”…É”‘¥™™•É•¹ĞÑåÁ•Ì½˜9½ME0‘…Ñ…‰…Í•Ìè((((´€€-•äµÙ…±Õ”ÍÑ½É•Ì±¥­”mI•‘¥Ít ½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½ÈµÉ•‘¥ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤İ¡•É”•… ¥Ñ•´¥ÌÍÑ½É•…¹É•ÑÉ¥•Ù•İ¥Ñ ¥ÑÌ¹…µ”€¡­•ä¤(´€€]¥‘”½±Õµ¸ÍÑ½É•ÌÍÕ …Ìm…ÍÍ…¹‘É…t ½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½Èµ…ÍÍ…¹‘É„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤ÕÍ•Ñ¼ÅÕ¥­±ä…É•…Ñ”±…É”‘…Ñ…Í•ÑÌ°…¹™½Èİ¡¥ ½±Õµ¹Ì…¸Ù…Éä™É½´½¹”É½ÜÑ¼…¹½Ñ¡•È(´€€É…Á ‘…Ñ…‰…Í•Ì°±¥­”9•¼Ñ¨½ÈQ¥Ñ…¸°İ¡¥ ÕÍ”É…Á ÍÑÉÕÑÕÉ•ÌÑ¼ÍÑ½É”¹•Ñİ½É­Ì½˜‘…Ñ„(´€€½Õµ•¹Ğµ½É¥•¹Ñ•‘…Ñ…‰…Í•Ìİ¡¥ ÍÑ½É”‘…Ñ„…Ì‘½Õµ•¹ÑÌÑ¡ÕÌ½™™•É¥¹œ„µ½É”™±•á¥‰±”ÍÑÉÕÑÕÉ”Ñ¡…¸½Ñ¡•È‘…Ñ…‰…Í•Ìè™¥•±‘Ì…¸ÍÑ½É”…ÉÉ…åÌ°½ÈÑİ¼É•½É‘Ì…¸¡…Ù”‘¥™™•É•¹Ğ™¥•±‘Ì™½È•á…µÁ±”¸m5½¹½	t¡¡ÑÑÁÌè¼½İİÜ¹µ½¹½‘ˆ¹½´¼¤¥Ì„‘½Õµ•¹Ğµ½É¥•¹Ñ•‘…Ñ…‰…Í”°…Ì…É”½Õ¡…¹mµ…é½¸å¹…µ½	t ½‰±½œ½Ñ½Àµ‘å¹…µ½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤¸((()5½¹½¥ÌÉ½ÍÌµÁ±…Ñ™½É´…¹É•ÁÉ•Í•¹ÑÌ¥ÑÌ‘½Õµ•¹ÑÌ¥¸„‰¥¹…Éäµ•¹½‘•)M=8™½Éµ…Ğ…±±•m	M=9t¡¡ÑÑÁÌè¼½İİÜ¹µ½¹½‘ˆ¹½´½©Í½¸µ…¹µ‰Í½¸¤€¡	¥¹…Éä)M=8¤¸Q¡”±¥¡Ñİ•¥¡Ğ‰¥¹…Éä™½Éµ…Ğ…‘‘ÌÍÁ••Ñ¼Ñ¡”™±•á¥‰¥±¥Ñä½˜Ñ¡”)M=8™½Éµ…Ğ°…±½¹œİ¥Ñ µ½É”‘…Ñ„ÑåÁ•Ì¸¥•±‘Ì¥¹Í¥‘”5½¹½‘½Õµ•¹ÑÌ…¸‰”¥¹‘•á•¸()5½¹½•¹ÍÕÉ•Ì¡¥ …Ù…¥±…‰¥±¥ÑäÑ¡…¹­ÌÑ¼¥ÑÌÉ•Á±¥…Ñ¥½¸µ•¡…¹¥ÍµÌ°¡½É¥é½¹Ñ…°Í…±…‰¥±¥Ñä…±±½İ•‰äÍ¡…É‘¥¹œ°…¹¥ÌÕÉÉ•¹Ñ±ämÑ¡”µ½ÍĞİ¥‘•±ä…‘½ÁÑ•‘t¡¡ÑÑÀè¼½‘ˆµ•¹¥¹•Ì¹½´½•¸½É…¹­¥¹œ¤‘½Õµ•¹ĞÍÑ½É”¸%Ğ¥ÌÕÍ•‰ä½µÁ…¹¥•ÌÍÕ …Ì…•‰½½¬°•	…ä°½ÕÉÍÅÕ…É”°MÅÕ…É•ÍÁ…”°áÁ•‘¥„°…¹±•ÑÉ½¹¥ŒÉÑÌ¸((ŒŒ-•ä5½¹½Á•É™½Éµ…¹”µ•ÑÉ¥ÌÑ¼µ½¹¥Ñ½È()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµµ•ÑÉ¥Ì¹Á¹œˆ…±Ğô‰µ½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”‘…Í¡‰½…ÉˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()	äÁÉ½Á•É±äµ½¹¥Ñ½É¥¹œ5½¹½å½Ô…¸ÅÕ¥­±äÍÁ½ĞÍ±½İ‘½İ¹Ì°¡¥ÕÁÌ°½ÈÁÉ•ÍÍ¥¹œÉ•Í½ÕÉ”±¥µ¥Ñ…Ñ¥½¹Ì°…¹­¹½Üİ¡¥ …Ñ¥½¹ÌÑ¼Ñ…­”Ñ¼½ÉÉ•ĞÑ¡•Í”¥ÍÍÕ•Ì‰•™½É”Ñ¡•É”…É”ÕÍ•Èµ™…¥¹œ½¹Í•ÅÕ•¹•Ì¸!•É”…É”Ñ¡”­•ä…É•…Ìå½Ôİ¥±°İ…¹ĞÑ¼ÑÉ…¬…¹…¹…±åé”µ•ÑÉ¥Ì¸((((´€€mQ¡É½Õ¡ÁÕĞµ•ÑÉ¥Ít Ñ¡É½Õ¡ÁÕĞµµ•ÑÉ¥Ì¤(´€€m…Ñ…‰…Í”Á•É™½Éµ…¹•t ‘…Ñ…‰…Í”µÁ•É™½Éµ…¹”¤(´€€mI•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¹t É•Í½ÕÉ”µÕÑ¥±¥é…Ñ¥½¸¤(´€€mI•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¹t É•Í½ÕÉ”µÍ…ÑÕÉ…Ñ¥½¸¤(´€€mÉÉ½ÉÍt •ÉÉ½ÉÌµ…ÍÍ•ÉÑÌ¤€¡…ÍÍ•ÉÑÌ¤((()%¸Ñ¡¥Ì…ÉÑ¥±”°İ”™½ÕÌ½¸Ñ¡”µ•ÑÉ¥Ì…Ù…¥±…‰±”¥¸5½¹½İ¡•¸ÕÍ¥¹œm]¥É•‘Q¥•Ét¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½½É”½İ¥É•‘Ñ¥•È¼¤°İ¡¥ İ…Ì¥¹ÑÉ½‘Õ•İ¥Ñ 5½¹½€Ì¸À…¹¥Ì¹½ÜÑ¡”‘•™…Õ±ĞÍÑ½É…”•¹¥¹”¸±°Ñ¡”µ•ÑÉ¥Œ¹…µ•Ì½ÉÉ•ÍÁ½¹Ñ¼Ñ¡”½¹”…Ù…¥±…‰±”¥¸5½¹½€Ì¸È¸()!½İ•Ù•È°µ…¹ä½µÁ…¹¥•ÌÍÑ¥±°ÉÕ¸•…É±¥•ÈÙ•ÉÍ¥½¹Ì½˜5½¹½İ¡¥ ÕÍ”Ñ¡”m55AØÄÍÑ½É…”•¹¥¹•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½½É”½µµ…ÁØÄ¼¤¸%˜Ñ¡…ÓŠeÌå½ÕÈ…Í”°m¡•É”¥ÌÑ¡”½µÁ…¹¥½¸…ÉÑ¥±•t ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµµµ…À¤å½ÔÍ¡½Õ±É•…¸()Q¡¥Ì…ÉÑ¥±”É•™•É•¹•Ìµ•ÑÉ¥ŒÑåÁ•ÌÑ•Éµ¥¹½±½ä¥¹ÑÉ½‘Õ•¥¸m½ÕÈ5½¹¥Ñ½É¥¹œ€ÄÀÄÍ•É¥•Ít ½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼¤°İ¡¥ ÁÉ½Ù¥‘•Ì„™É…µ•İ½É¬™½Èµ•ÑÉ¥Œ½±±•Ñ¥½¸…¹…±•ÉÑ¥¹œ¸()±°Ñ¡•Í”µ•ÑÉ¥Ì…É”…•ÍÍ¥‰±”ÕÍ¥¹œ„Ù…É¥•Ñä½˜Ñ½½±Ì°¥¹±Õ‘¥¹œ5½¹½ŠeÌÕÑ¥±¥Ñ¥•Ì°½µµ…¹‘Ì€¡¥¹‘¥…Ñ•¥¸Ñ¡¥Ì…ÉÑ¥±”™½È•… µ•ÑÉ¥ŒÁÉ•Í•¹Ñ•¤°½È‘•‘¥…Ñ•µ½¹¥Ñ½É¥¹œÑ½½±Ì¸½È‘•Ñ…¥±Ì½¸µ•ÑÉ¥Ì½±±•Ñ¥½¸ÕÍ¥¹œ…¹ä½˜Ñ¡•Í”µ•Ñ¡½‘Ì°Í•”mA…ÉĞ€Ét ½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥Ì¤½˜Ñ¡¥ÌÍ•É¥•Ì¸((ŒŒŒQ¡É½Õ¡ÁÕĞµ•ÑÉ¥Ì(()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµÑ¡É½Õ¡ÁÕĞµµ•ÑÉ¥Ì¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”Q¡É½Õ¡ÁÕĞµ•ÑÉ¥ÌˆÍ¥é”ôˆÅàˆ€ùõô()Q¡É½Õ¡ÁÕĞµ•ÑÉ¥Ì…É”ÉÕ¥…°…¹µ½ÍĞ½˜å½ÕÈ…±•ÉÑÌÍ¡½Õ±‰”Í•Ğ½¸Ñ¡•Í”µ•ÑÉ¥Ì¥¸½É‘•ÈÑ¼…Ù½¥…¹ämÁ•É™½Éµ…¹•t ‘…Ñ…‰…Í”µÁ•É™½Éµ…¹”¤¥ÍÍÕ”°mÉ•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¹t É•Í½ÕÉ”µÍ…ÑÕÉ…Ñ¥½¸¤°½Èm•ÉÉ½ÉÍt •ÉÉ½ÉÌµ…ÍÍ•ÉÑÌ¤¸Q¡”µ…©½É¥Ñä½˜Ñ¡”µ•ÑÉ¥ÌÁÉ•Í•¹Ñ•¥¸Ñ¡”½Ñ¡•ÈÍ•Ñ¥½¹Ì…É”ÑåÁ¥…±±äÕÍ•Ñ¼¥¹Ù•ÍÑ¥…Ñ”ÁÉ½‰±•µÌ¸((ŒŒŒŒI•……¹]É¥Ñ”½Á•É…Ñ¥½¹Ì(()Q¼•Ğ„¡¥ µ±•Ù•°Ù¥•Ü½˜å½ÕÈ±ÕÍÑ•ËŠeÌ…Ñ¥Ù¥Ñä±•Ù•±Ì°Ñ¡”µ½ÍĞ¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥ÌÑ¼µ½¹¥Ñ½È…É”Ñ¡”¹Õµ‰•È½˜±¥•¹ÑÌµ…­¥¹œÉ•……¹İÉ¥Ñ”É•ÅÕ•ÍÑÌÑ¼5½¹½°…¹Ñ¡”¹Õµ‰•È½˜½Á•É…Ñ¥½¹ÌÑ¡•ä…É”•¹•É…Ñ¥¹œ¸U¹‘•ÉÍÑ…¹‘¥¹œ¡½Ü°…¹¡½ÜµÕ °å½ÕÈ±ÕÍÑ•È¥Ì‰•¥¹œÕÍ•İ¥±°¡•±Àå½Ô½ÁÑ¥µ¥é”5½¹½ŠeÌÁ•É™½Éµ…¹”…¹…Ù½¥½Ù•É±½…‘¥¹œå½ÕÈ‘…Ñ…‰…Í”¸½È¥¹ÍÑ…¹”°å½ÕÈÍÑÉ…Ñ•äÑ¼Í…±”ÕÀ½È½ÕĞ€¡Í•”m½ÉÉ•ÍÁ½¹‘¥¹œÍ•Ñ¥½¹t Í…±¥¹œµµ½¹½‘ˆµÍ¡…É‘¥¹œµÙÌµÉ•Á±¥…Ñ¥½¸¤…ĞÑ¡”•¹½˜Ñ¡¥Ì…ÉÑ¥±”¤Í¡½Õ±Ñ…­”¥¹Ñ¼…½Õ¹ĞÑ¡”ÑåÁ”½˜İ½É­±½…å½ÕÈ‘…Ñ…‰…Í”¥ÌÉ••¥Ù¥¹œ¸((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜É•…É•ÅÕ•ÍÑÌÉ••¥Ù•‘ÕÉ¥¹œÑ¡”Í•±•Ñ•Ñ¥µ”Á•É¥½€¡ÅÕ•Éä°•Ñµ½É”¤ğ½Ñø(ñÑù½Á½Õ¹Ñ•ÉÌ¹ÅÕ•Éä°½Á½Õ¹Ñ•ÉÌ¹•Ñµ½É”ğ½Ñø(ñÑù]½É¬èQ¡É½Õ¡ÁÕĞğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜İÉ¥Ñ”É•ÅÕ•ÍÑÌÉ••¥Ù•‘ÕÉ¥¹œÑ¡”Í•±•Ñ•Ñ¥µ”Á•É¥½€¡¥¹Í•ÉĞ°‘•±•Ñ”°ÕÁ‘…Ñ”¤ğ½Ñø(ñÑù½Á½Õ¹Ñ•ÉÌ¹¥¹Í•ÉĞ°½Á½Õ¹Ñ•ÉÌ¹ÕÁ‘…Ñ”°½Á½Õ¹Ñ•ÉÌ¹‘•±•Ñ”ğ½Ñø(ñÑù]½É¬èQ¡É½Õ¡ÁÕĞğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜±¥•¹ÑÌİ¥Ñ É•…½Á•É…Ñ¥½¹Ì¥¸ÁÉ½É•ÍÌ½ÈÅÕ•Õ•ğ½Ñø(ñÑù±½‰…±1½¬¹…Ñ¥Ù•±¥•¹ÑÌ¹É•…‘•ÉÌğ½Ñø(ñÑù]½É¬èQ¡É½Õ¡ÁÕĞğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜±¥•¹ÑÌİ¥Ñ İÉ¥Ñ”½Á•É…Ñ¥½¹Ì¥¸ÁÉ½É•ÍÌ½ÈÅÕ•Õ•ğ½Ñø(ñÑù±½‰…±1½¬¹…Ñ¥Ù•±¥•¹ÑÌ¹İÉ¥Ñ•ÉÌğ½Ñø(ñÑù]½É¬èQ¡É½Õ¡ÁÕĞğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((()9=Qè€©•Ñµ½É”¨¥ÌÑ¡”½Á•É…Ñ¥½¸Ñ¡”mÕÉÍ½Ét ÕÉÍ½ÉÌ¤•á•ÕÑ•ÌÑ¼•Ğ…‘‘¥Ñ¥½¹…°‘…Ñ„™É½´„ÅÕ•Éä¸((ŒŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è(()	äÁÉ½Á•É±äµ½¹¥Ñ½É¥¹œÑ¡”€¨©¹Õµ‰•È½˜É•……¹İÉ¥Ñ”É•ÅÕ•ÍÑÌ¨¨å½Ô…¸ÁÉ•Ù•¹ĞÉ•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¸°ÍÁ½Ğ‰½ÑÑ±•¹•­Ì°ÅÕ¥­±ä™¥¹Ñ¡”…ÕÍ”½˜Á½Ñ•¹Ñ¥…°½Ù•É±½…‘Ì°…¹­¹½Üİ¡•¸Ñ¼Í…±”mÕÀ½È½ÕÑt Í…±¥¹œµµ½¹½‘ˆµÍ¡…É‘¥¹œµÙÌµÉ•Á±¥…Ñ¥½¸¤¸Q¡”ÕÉÉ•¹ÑEÕ•Õ•€µ•ÑÉ¥Ì€¡ÁÉ•Í•¹Ñ•¥¸Ñ¡”Í•Ñ¥½¸…‰½ÕĞmI•Í½ÕÉ”M…ÑÕÉ…Ñ¥½¹t É•Í½ÕÉ”µÍ…ÑÕÉ…Ñ¥½¸¤¤İ¥±°½¹™¥É´¥˜É•ÅÕ•ÍÑÌ…É”…ÕµÕ±…Ñ¥¹œ™…ÍÑ•ÈÑ¡…¸Ñ¡•ä…É”‰•¥¹œÁÉ½•ÍÍ•¸1½½¬…±Í¼…Ğ…Ñ¥Ù•±¥•¹ÑÌ¹É•…‘•ÉÍ€½È…Ñ¥Ù•±¥•¹ÑÌ¹İÉ¥Ñ•ÉÍ€Ñ¼¡•¬¥˜Ñ¡”¹Õµ‰•È½˜…Ñ¥Ù”±¥•¹ÑÌ•áÁ±…¥¹ÌÑ¡”É•ÅÕ•ÍÑÌ±½…¸Q¡•Í”Ñİ¼…Ñ¥Ù•±¥•¹ÑÌµ•ÑÉ¥Ì…É”É•Á½ÉÑ•Õ¹‘•ÈƒŠqm±½‰…±1½­t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½µµ…¹½Í•ÉÙ•ÉMÑ…ÑÕÌ¼Í•ÉÙ•ÈµÍÑ…ÑÕÌµ±½‰…°µ±½¬§Št•Ù•¸¥˜Ñ¡•ä…É”¹½ĞÉ•…±±äÉ•±…Ñ•Ñ¼±½‰…°±½¬¸()%¸½É‘•ÈÑ¼‰”…‰±”Ñ¼ÅÕ¥­±äÍÁ½ĞÑ¡”Á½Ñ•¹Ñ¥…°…ÕÍ•Ì½˜…‰¹½Éµ…°¡…¹•Ì¥¸ÑÉ…™™¥Œ°å½ÔÍ¡½Õ±‰É•…¬‘½İ¸å½ÕÈÉ…Á¡Ì‰ä½Á•É…Ñ¥½¸ÑåÁ”è€©ÅÕ•Éä¨…¹€©•Ñµ½É”¨™½ÈÉ•…É•ÅÕ•ÍÑÌ°€©¥¹Í•ÉĞ¨°€©ÕÁ‘…Ñ”¨°…¹€©‘•±•Ñ”¨™½ÈİÉ¥Ñ”É•ÅÕ•ÍÑÌ¸((ŒŒŒ…Ñ…‰…Í”Á•É™½Éµ…¹”(()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµ‘…Ñ…‰…Í”µÁ•É™½Éµ…¹”¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”µ•ÑÉ¥ÌˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒŒŒI•Á±¥…Ñ¥½¸…¹=Á±½œ(()Q¡”µ•ÑÉ¥ÌÁÉ•Í•¹Ñ•¥¸Ñ¡¥ÌÁ…É…É…Á µ…ÑÑ•È½¹±ä¥˜å½ÔÕÍ”„É•Á±¥„Í•Ğ°İ¡¥ å½ÔÍ¡½Õ±‘¼¥˜å½ÔÉÕ¸5½¹½¥¸ÁÉ½‘ÕÑ¥½¸¥¸½É‘•ÈÑ¼•¹ÍÕÉ”¡¥ ‘…Ñ„…Ù…¥±…‰¥±¥Ñä¸()Q¡”½Á±½œ€¡½Á•É…Ñ¥½¹Ì±½œ¤½¹ÍÑ¥ÑÕÑ•ÌÑ¡”‰…Í¥Ì½˜5½¹½ŠeÌÉ•Á±¥…Ñ¥½¸µ•¡…¹¥Í´¸%ÓŠeÌ„±¥µ¥Ñ•µÍ¥é”½±±•Ñ¥½¸ÍÑ½É•½¸ÁÉ¥µ…Éä…¹Í•½¹‘…Éä¹½‘•ÌÑ¡…Ğ­••ÁÌÑÉ…¬½˜…±°Ñ¡”İÉ¥Ñ”½Á•É…Ñ¥½¹Ì¸]É¥Ñ”½Á•É…Ñ¥½¹Ì…É”…ÁÁ±¥•½¸Ñ¡”ÁÉ¥µ…Éä¹½‘”¥ÑÍ•±˜…¹Ñ¡•¸É•½É‘•½¸¥ÑÌ½Á±½œ¸I¥¡Ğ…™Ñ•ÈÍ•½¹‘…Éä¹½‘•Ì½Áä…¹…ÁÁ±äÑ¡•Í”¡…¹•Ì…Íå¹¡É½¹½ÕÍ±ä¸	ÕĞ¥˜Ñ¡”ÁÉ¥µ…Éä¹½‘”™…¥±Ì‰•™½É”Ñ¡”½ÁäÑ¼Ñ¡”Í•½¹‘…Éä¥Ìµ…‘”°‘…Ñ„µ¥¡Ğ¹½Ğ‰”É•Á±¥…Ñ•¸()… É•Á±¥„½¹Ñ…¥¹Ì¥ÑÌ½İ¸½Á±½œ°½ÉÉ•ÍÁ½¹‘¥¹œÑ¼¥ÑÌÙ¥•Ü½˜Ñ¡”‘…Ñ„…ĞÑ¡¥ÌÁ½¥¹Ğ¥¸Ñ¥µ”‰…Í•½¸İ¡…Ğ¥ĞÍ…ÜÑ¡”µ½ÍĞÉ••¹Ñ±ä™É½´Ñ¡”ÁÉ¥µ…Éä¸((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùM¥é”½˜Ñ¡”½Á±½œ€¡5¤ğ½Ñø(ñÑù±½M¥é•5ğ½Ñø(ñÑù=Ñ¡•Èğ½Ñø(ñÑù•ÑI•Á±¥…Ñ¥½¹%¹™¼ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù=Á±½œİ¥¹‘½Ü€¡Í•½¹‘Ì¤ğ½Ñø(ñÑùÑ¥µ•¥™˜ğ½Ñø(ñÑù=Ñ¡•Èğ½Ñø(ñÑù•ÑI•Á±¥…Ñ¥½¹%¹™¼ğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùI•Á±¥…Ñ¥½¸1…œè‘•±…ä‰•Ñİ••¸„İÉ¥Ñ”½Á•É…Ñ¥½¸½¸Ñ¡”ÁÉ¥µ…Éä…¹¥ÑÌ½ÁäÑ¼„Í•½¹‘…Éä€¡µ¥±±¥Í•½¹‘Ì¤ğ½Ñø(ñÑùµ•µ‰•ÉÌ¹½ÁÑ¥µ•…Ñ•mÁÉ¥µ…Éåt€´µ•µ‰•ÉÌ¹½ÁÑ¥µ•…Ñ•mÍ•½¹‘…Éäµ•µ‰•Ét€¨¨ğ½Ñø(ñÑù]½É¬èA•É™½Éµ…¹”ğ½Ñø(ñÑùÉ•Á±M•Ñ•ÑMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùI•Á±¥…Ñ¥½¸¡•…‘É½½´è‘¥™™•É•¹”‰•Ñİ••¸Ñ¡”ÁÉ¥µ…ÉçŠeÌ½Á±½œİ¥¹‘½Ü…¹Ñ¡”É•Á±¥…Ñ¥½¸±…œ½˜Ñ¡”Í•½¹‘…Éä€¡µ¥±±¥Í•½¹‘Ì¤ğ½Ñø(ñÑù•ÑI•Á±¥…Ñ¥½¹%¹™¼¹Ñ¥µ•¥™˜à€ÄÀÀÀ€·
+€¡É•Á±M•Ñ•ÑMÑ…ÑÕÌ¹µ•µ‰•ÉÌ¹½ÁÑ¥µ•…Ñ•mÁÉ¥µ…Éåt€´É•Á±M•Ñ•ÑMÑ…ÑÕÌ¹µ•µ‰•ÉÌ¹½ÁÑ¥µ•…Ñ•mÍ•½¹‘…Éäµ•µ‰•Ét¤ğ½Ñø(ñÑù]½É¬èA•É™½Éµ…¹”ğ½Ñø(ñÑù•ÑI•Á±¥…Ñ¥½¹%¹™¼…¹“
+É•Á±M•Ñ•ÑMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùI•Á±¥„Í•Ğµ•µ‰•ÈÍÑ…Ñ”ğ½Ñø(ñÑùµ•µ‰•ÉÌ¹ÍÑ…Ñ”ğ½Ñø(ñÑùI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğ½Ñø(ñÑùÉ•Á±M•Ñ•ÑMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((()p©p¨½ÈÑ¡”…±Õ±…Ñ¥½¸½˜I•Á±¥…Ñ¥½¸1…œ°€¨©½ÁÑ¥µ•…Ñ”¨¨Ù…±Õ•Ì…É”ÁÉ½Ù¥‘•İ¥Ñ Ñ¡”m¥Í½…Ñ•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½±½ÍÍ…Éä¼Ñ•É´µ¥Í½‘…Ñ”¤™½Éµ…Ğ€¡eeedµ54µ! é54¹ML¹µÌ¤Í¼Ñ¡”‘¥™™•É•¹”İ¥±°‰”¥¸µ¥±±¥Í•½¹‘Ì¸((ŒŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è(((¨©I•Á±¥…Ñ¥½¸±…œ¨¨É•ÁÉ•Í•¹ÑÌ¡½Ü™…È„Í•½¹‘…Éä¥Ì‰•¡¥¹Ñ¡”ÁÉ¥µ…Éä¸=‰Ù¥½ÕÍ±äå½Ôİ…¹ĞÑ¼­••À„É•Á±¥…Ñ¥½¸±…œ…ÌÍµ…±°…ÌÁ½ÍÍ¥‰±”¸%ĞÌ•ÍÁ•¥…±±äÑÉÕ”¥˜å½ÕÉÌ¥ÌÑ¡”É…É”…Í”İ¡•É”å½ÕÈÍ•½¹‘…Éä¹½‘•Ì…‘‘É•ÍÌÉ•…‘Ì€¡ÕÍÕ…±±ä¹½Ğ…‘Ù¥Í•°Í•”mÍ•Ñ¥½¹Ì…‰½ÕĞÍ…±¥¹œ5½¹½	t Í…±¥¹œµµ½¹½‘ˆµÍ¡…É‘¥¹œµÙÌµÉ•Á±¥…Ñ¥½¸¤¤Í¥¹”å½Ôİ…¹ĞÑ¼…Ù½¥Í•ÉÙ¥¹œÍÑ…±”‘…Ñ„¸%‘•…±±ä°É•Á±¥…Ñ¥½¸±…œ¥Ì•ÅÕ…°Ñ¼é•É¼°İ¡¥ Í¡½Õ±‰”Ñ¡”…Í”¥˜å½Ô‘½»ŠeĞ¡…Ù”±½…¥ÍÍÕ•Ì¸%˜¥Ğ•ÑÌÑ½¼¡¥ ™½È…±°Í•½¹‘…Éä¹½‘•Ì°Ñ¡”¥¹Ñ•É¥Ñä½˜å½ÕÈ‘…Ñ„Í•Ğµ¥¡Ğ‰”½µÁÉ½µ¥Í•¥¸…Í”½˜™…¥±½Ù•È€¡Í•½¹‘…Éäµ•µ‰•ÈÑ…­¥¹œ½Ù•È…ÌÑ¡”¹•ÜÁÉ¥µ…Éä‰•…ÕÍ”Ñ¡”ÕÉÉ•¹ĞÁÉ¥µ…Éä¥ÌÕ¹…Ù…¥±…‰±”¤¸%¹‘••İÉ¥Ñ”½Á•É…Ñ¥½¹Ì¡…ÁÁ•¹¥¹œ‘ÕÉ¥¹œÑ¡”‘•±…ä…É”¹½Ğ¥µµ•‘¥…Ñ•±äÁÉ½Á……Ñ•Ñ¼Í•½¹‘…É¥•Ì…¹É•±…Ñ•¡…¹•Ìµ¥¡Ğ‰”±½ÍĞ¥˜Ñ¡”ÁÉ¥µ…Éä™…¥±Ì¸()e½Ôµ¥¡Ğİ…¹ĞÑ¼Í•ĞÕÀ„İ…É¹¥¹œ¹½Ñ¥™¥…Ñ¥½¸™½È…¹ä±…œ¡¥¡•ÈÑ¡…¸€ØÀÍ•½¹‘Ì¸¡¥ ÁÉ¥½É¥Ñä…±•ÉĞ…¸‰”Í•Ğ™½È±…Ì•á••‘¥¹œ€ÈĞÀÍ•½¹‘Ì¸]¥Ñ „¡•…±Ñ¡äÉ•Á±¥„Í•Ğ°å½ÔÍ¡½Õ±‘»ŠeĞ•Ğ™…±Í”Á½Í¥Ñ¥Ù”İ¥Ñ Ñ¡¥ÌÑ¡É•Í¡½±¸()¡¥ É•Á±¥…Ñ¥½¸±…œ…¸‰”‘Õ”Ñ¼è((((´€€9•Ñİ½É­¥¹œ¥ÍÍÕ”‰•Ñİ••¸Ñ¡”ÁÉ¥µ…Éä…¹Í•½¹‘…Éäµ…­¥¹œ¹½‘•ÌÕ¹É•…¡…‰±”è¡•¬µ•µ‰•ÉÌ¹ÍÑ…Ñ•€Ñ¼ÍÁ½ĞÕ¹É•…¡…‰±”¹½‘•Ì(´€€Í•½¹‘…Éä¹½‘”…ÁÁ±å¥¹œ‘…Ñ„Í±½İ•ÈÑ¡…¸Ñ¡”ÁÉ¥µ…Éä(´€€%¹ÍÕ™™¥¥•¹ĞİÉ¥Ñ”…Á…¥Ñä¥¸İ¡¥ …Í”å½ÔÍ¡½Õ±…‘µ½É”Í¡…É‘Ìè¡•¬ÅÕ•Õ•İÉ¥Ñ”É•ÅÕ•ÍÑÌ€¡Í•”mÍ•Ñ¥½¸…‰½ÕĞÉ•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¹t É•Í½ÕÉ”µÍ…ÑÕÉ…Ñ¥½¸¤¤(´€€M±½Ü½Á•É…Ñ¥½¹Ì½¸Ñ¡”ÁÉ¥µ…Éä¹½‘”‰±½­¥¹œÉ•Á±¥…Ñ¥½¸¸e½Ô…¸mÍÁ½ĞÍ±½ÜÅÕ•É¥•Ít¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½ÑÕÑ½É¥…°½µ…¹…”µÑ¡”µ‘…Ñ…‰…Í”µÁÉ½™¥±•È¼ÁÉ½™¥±¥¹œµ±•Ù•±Ì¤İ¥Ñ Ñ¡”m‘ˆ¹•ÑAÉ½™¥±¥¹MÑ…ÑÕÌ ¥t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½µ•Ñ¡½½‘ˆ¹•ÑAÉ½™¥±¥¹MÑ…ÑÕÌ¼‘ˆ¹•ÑAÉ½™¥±¥¹MÑ…ÑÕÌ¤½µµ…¹½ÈÑ¡É½Õ Ñ¡”€©Y¥ÍÕ…°EÕ•ÉäAÉ½™¥±•È¨¥¸m5½¹½=ÁÌ5…¹…•Ét¡¡ÑÑÁÌè¼½İİÜ¹µ½¹½‘ˆ¹½´½ÁÉ½‘ÕÑÌ½½ÁÌµµ…¹…•È¤¥˜å½Ô…É”ÕÍ¥¹œ¥Ğè±•Ù•°€Ä½ÉÉ•ÍÁ½¹‘ÌÑ¼Í±½Ü½Á•É…Ñ¥½¹Ì€¡Ñ…­¥¹œ±½¹•ÈÑ¡…¸Ñ¡”Ñ¡É•Í¡½±‘•™¥¹•‰äÑ¡”½Á•É…Ñ¥½¹AÉ½™¥±¥¹œ¹Í±½İ=ÁQ¡É•Í¡½±‘5Í€Á…É…µ•Ñ•ÈÍ•ĞÑ¼€ÄÀÀµÌ‰ä‘•™…Õ±Ğ¤¸%Ğ…¸‰”‘Õ”Ñ¼¡•…ÙäİÉ¥Ñ”½Á•É…Ñ¥½¹Ì½¸Ñ¡”ÁÉ¥µ…Éä¹½‘”½È…¸Õ¹‘•ÈµÁÉ½Ù¥Í¥½¹•Í•½¹‘…Éä¸e½Ô…¸ÁÉ•Ù•¹ĞÑ¡”±…ÑÑ•È‰äÍ…±¥¹œÕÀÑ¡”Í•½¹‘…ÉäÑ¼µ…Ñ Ñ¡”ÁÉ¥µ…Éä…Á…¥Ñä¸e½Ô…¸ÕÍ”€«Šqµ…©½É¥ÑçŠt¨l©İÉ¥Ñ”½¹•É¸©t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½İÉ¥Ñ”µ½¹•É¸¼¤Ñ¼µ…­”ÍÕÉ”İÉ¥Ñ•Ì…É”¹½Ğ•ÑÑ¥¹œ…¡•…½˜É•Á±¥…Ñ¥½¸¸((()íìğ¥µœÍÉŒô‰É•Á±¥…Ñ¥½¸µ±…œµÉ½ÕÁ•µ‰äµÉ•Á±¥„µÍ•Ğ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”€´É•Á±¥…Ñ¥½¸±…œ‰äÉ•Á±¥„Í•ĞˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()Q¡”€¨©½Á±½œİ¥¹‘½Ü¨¨É•ÁÉ•Í•¹ÑÌÑ¡”¥¹Ñ•ÉÙ…°½˜Ñ¥µ”‰•Ñİ••¸Ñ¡”½±‘•ÍĞ…¹Ñ¡”±…Ñ•ÍĞ•¹ÑÉ¥•Ì¥¸Ñ¡”½Á±½œ°İ¡¥ ÕÍÕ…±±ä½ÉÉ•ÍÁ½¹‘ÌÑ¼Ñ¡”…ÁÁÉ½á¥µ…Ñ”…µ½Õ¹Ğ½˜Ñ¥µ”…Ù…¥±…‰±”¥¸Ñ¡”ÁÉ¥µ…ÉäÌÉ•Á±¥…Ñ¥½¸½Á±½œ¸M¼¥˜„Í•½¹‘…Éä¥Ì‘½İ¸±½¹•ÈÑ¡…¸Ñ¡¥Ì½Á±½œİ¥¹‘½Ü°¥Ğİ½»ŠeĞ‰”…‰±”Ñ¼…Ñ ÕÀÕ¹±•ÍÌ¥Ğ½µÁ±•Ñ•±äÉ•Íå¹Ì…±°‘…Ñ„™É½´Ñ¡”ÁÉ¥µ…Éä¸Q¡”…µ½Õ¹Ğ½˜Ñ¥µ”¥ĞÑ…­•ÌÑ¼™¥±°Ñ¡”½Á±½œÙ…É¥•Ìè‘ÕÉ¥¹œ¡•…ÙäÑÉ…™™¥ŒÑ¥µ•Ì°¥Ğİ¥±°Í¡É¥¹¬Í¥¹”Ñ¡”½Á±½œİ¥±°É••¥Ù”µ½É”½Á•É…Ñ¥½¹ÌÁ•ÈÍ•½¹¸%˜Ñ¡”½Á±½œİ¥¹‘½Ü™½È„ÁÉ¥µ…Éä¹½‘”¥Ì•ÑÑ¥¹œÑ½¼Í¡½ÉĞå½ÔÍ¡½Õ±½¹Í¥‘•Èm¥¹É•…Í¥¹œÑ¡”€¨©Í¥é”½˜å½ÕÈ½Á±½œ¨©t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½ÑÕÑ½É¥…°½¡…¹”µ½Á±½œµÍ¥é”¼¤¸5½¹½…‘Ù¥Í•ÌÑ¼Í•¹„İ…É¹¥¹œ¹½Ñ¥™¥…Ñ¥½¸¥˜Ñ¡”½Á±½œİ¥¹‘½İÌ¥Ì€ÈÔ”‰•±½Ü¥ÑÌÕÍÕ…°Ù…±Õ”‘ÕÉ¥¹œÑÉ…™™¥ŒÁ•…­Ì°…¹„¡¥ ÁÉ¥½É¥Ñä…±•ÉĞÕ¹‘•È€ÔÀ”¸()%˜Ñ¡”€¨©É•Á±¥…Ñ¥½¸¡•…‘É½½´¨¨¥ÌÉ…Á¥‘±äÍ¡É¥¹­¥¹œ…¹¥Ì…‰½ÕĞÑ¼‰•½µ”¹•…Ñ¥Ù”°Ñ¡…Ğµ•…¹ÌÑ¡…ĞÑ¡”É•Á±¥…Ñ¥½¸±…œ¥Ì•ÑÑ¥¹œ¡¥¡•ÈÑ¡…¸Ñ¡”½Á±½œİ¥¹‘½Ü¸%¸Ñ¡…Ğ…Í”°İÉ¥Ñ”½Á•É…Ñ¥½¹ÌÉ•½É‘•¥¸Ñ¡”½Á±½œİ¥±°‰”½Ù•ÉİÉ¥ÑÑ•¸‰•™½É”Í•½¹‘…Éä¹½‘•Ì¡…Ù”Ñ¥µ”Ñ¼É•Á±¥…Ñ”Ñ¡•´¸5½¹½İ¥±°½¹ÍÑ…¹Ñ±ä¡…Ù”Ñ¼É•Íå¹ŒÑ¡”•¹Ñ¥É”‘…Ñ„Í•Ğ½¸Ñ¡¥ÌÍ•½¹‘…Éäİ¡¥ Ñ…­•ÌµÕ ±½¹•ÈÑ¡…¸©ÕÍĞ™•Ñ¡¥¹œ¹•Ü¡…¹•Ì™É½´Ñ¡”½Á±½œ¸AÉ½Á•É±äµ½¹¥Ñ½É¥¹œ…¹…±•ÉÑ¥¹œ½¸€¨©I•Á±¥…Ñ¥½¸1…œ¨¨…¹€¨©½Á±½œİ¥¹‘½Ü¨¨Í¡½Õ±…±±½Üå½ÔÑ¼ÁÉ•Ù•¹ĞÑ¡¥Ì¸()Q¡”€¨©É•Á±¥„Í•Ğµ•µ‰•ÈÍÑ…Ñ”¨¨¥Ì…¸¥¹Ñ••È¥¹‘¥…Ñ¥¹œÑ¡”ÕÉÉ•¹ĞÍÑ…ÑÕÌ½˜„¹½‘”¥¸„É•Á±¥„Í•Ğ¸e½ÔÍ¡½Õ±…±•ÉĞ½¸•ÉÉ½ÈÍÑ…Ñ”¡…¹•ÌÍ¼å½Ô…¸ÅÕ¥­±äÉ•…Ğ¥˜„¡½ÍĞ¥Ì¡…Ù¥¹œ¥ÍÍÕ•Ì¸!•É”…É”Á½Ñ•¹Ñ¥…±±äÁÉ½‰±•µ…Ñ¥ŒÍÑ…Ñ•Ìè((((´€€€¨¨©I•½Ù•É¥¹œ¨¨¨€¡ÍÑ…Ñ”€ô€Ì¤èÑ¡”µ•µ‰•ÉÌ¥ÌÁ•É™½Éµ¥¹œÍÑ…ÉÑÕÀÍ•±˜µ¡•­Ì°½È©ÕÍĞ½µÁ±•Ñ•„mÉ½±±‰…­t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½½É”½É•Á±¥„µÍ•ĞµÉ½±±‰…­Ì¼¤½È„mÉ•Íå¹t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½ÑÕÑ½É¥…°½É•Íå¹ŒµÉ•Á±¥„µÍ•Ğµµ•µ‰•È¼¤¸€©I•½Ù•É¥¹œ¨ÍÑ…Ñ”…¸‰”™¥¹”¥˜¥ÓŠeÌ¥¹Ñ•¹Ñ¥½¹…°€¡™½È•á…µÁ±”İ¡•¸É•Íå¹¥¹œ„Í•½¹‘…Éä¤‰ÕĞ¥˜¥ÓŠeÌÕ¹•áÁ•Ñ•°å½ÔÍ¡½Õ±™¥¹Ñ¡”É½½Ğ…ÕÍ”½˜Ñ¡¥Ì¥ÍÍÕ”¥¸½É‘•ÈÑ¼µ…¥¹Ñ…¥¸„¡•…±Ñ¡äÉ•Á±¥„Í•Ğ¸(´€€€¨¨©U¹­¹½İ¸¨¨¨€¡ÍÑ…Ñ”€ô€Ø¤èÑ¡”µ•µ‰•È‘½•Í»ŠeĞ½µµÕ¹¥…Ñ”…¹äÍÑ…ÑÕÌ¥¹™½Éµ…Ñ¥½¸Ñ¼Ñ¡”É•Á±¥„Í•Ğ¸(´€€€¨¨©½İ¸¨¨¨€¡ÍÑ…Ñ”€ô€à¤èÑ¡”µ•µ‰•È±½ÍĞ¥ÑÌ½¹¹•Ñ¥½¸İ¥Ñ Ñ¡”É•Á±¥„Í•Ğ¸Q¡¥Ì¥ÌÉ¥Ñ¥…°¥˜Ñ¡•É”¥Ì¹¼É•Á±¥„Ñ¼…‘‘É•ÍÌÉ•ÅÕ•ÍÑÌÑ¼Ñ¡”¹½‘”Ñ¡…Ğİ•¹Ğ‘½İ¸¸(´€€€¨¨©I½±±‰…¬¨¨¨€¡ÍÑ…Ñ”€ô€ä¤èİ¡•¸„Í•½¹‘…Éäµ•µ‰•ÈÑ…­•Ì½Ù•È…ÌÑ¡”¹•ÜÁÉ¥µ…Éä‰•™½É”İÉ¥Ñ•Ìİ•É”Ñ½Ñ…±±äÉ•Á±¥…Ñ•Ñ¼¥Ğ°Ñ¡”½±ÁÉ¥µ…ÉäÉ•Ù•ÉÑÌÑ¡•Í”¡…¹•Ì¸%˜å½Ô‘½¸ĞÕÍ”€‰µ…©½É¥ÑäˆmİÉ¥Ñ”½¹•É¹t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½İÉ¥Ñ”µ½¹•É¸¼¤°å½ÔÍ¡½Õ±ÑÉ¥•È„Á…¥¹œ…±•ÉĞ¥¸…Í”„¹½‘”Í¡½İÌ„€©I½±±‰…¬¨ÍÑ…Ñ”Í¥¹”å½Ôµ¥¡Ğ±½Í”‘…Ñ„¡…¹•Ì™É½´İÉ¥Ñ”½Á•É…Ñ¥½¹Ì¸I½±±‰…­Ì½˜…­¹½İ±•‘•‘…Ñ„mÍ¡½Õ±‰”…Ù½¥‘•‘t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½½É”½É•Á±¥„µÍ•ĞµÉ½±±‰…­Ì¼…Ù½¥µÉ•Á±¥„µÍ•ĞµÉ½±±‰…­Ì¤¸(´€€€¨¨©I•µ½Ù•¨¨¨€¡ÍÑ…Ñ”€ô€ÄÀ¤èÑ¡”µ•µ‰•È¡…Ì‰••¸É•µ½Ù•™É½´Ñ¡”É•Á±¥„Í•Ğ¸((()e½Ô…¸™¥¹…±°Ñ¡”µ•µ‰•ÈÍÑ…Ñ•Ìm¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½É•Á±¥„µÍÑ…Ñ•Ì¼¤¸((ŒŒŒŒ)½ÕÉ¹…±¥¹œ(()]¡¥±”½Á±½œÍÑ½É•ÌÉ••¹ĞİÉ¥Ñ”½Á•É…Ñ¥½¹Ì™½ÈÉ•Á±¥…Ñ¥½¸°©½ÕÉ¹…±¥¹œ¥Ì„İÉ¥Ñ”µ…¡•…ÁÉ½•ÍÌ¸%Ğ¥Ì•¹…‰±•‰ä‘•™…Õ±ĞÍ¥¹”ØÈ¸À…¹å½ÔÍ¡½Õ±‘»ŠeĞÑÕÉ¸¥Ğ½™˜°•ÍÁ•¥…±±äİ¡•¸ÕÍ¥¹œ5½¹½¥¸ÁÉ½‘ÕÑ¥½¸¸()Q¡”ÁÕÉÁ½Í”…¹Õ¹‘•É±å¥¹œµ•¡…¹¥ÍµÌ½˜©½ÕÉ¹…±¥¹œİ¥Ñ Ñ¡”m55AØÅt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµµµ…À¤ÍÑ½É…”•¹¥¹”…É”‘¥™™•É•¹ĞÑ¡…¸İ¥Ñ ]¥É•‘Q¥•È°…¹…Ù…¥±…‰±”µ•ÑÉ¥Ìİ½»ŠeĞ‰”Ñ¡”Í…µ”¸()]¥Ñ ]¥É•‘Q¥•È°‘…Ñ„¥¹Ñ•É¥Ñä¥Ì¹½Ğ¥µÁ…Ñ•¥˜Ñ¡”ÁÉ½•ÍÌÍÑ½ÁÌÕ¹•áÁ•Ñ•‘±ä±¥­”¥Ğ…¸‰”İ¥Ñ 55AØÄ¸M¼Ñ¡”©½ÕÉ¹…±¥¹œÁÕÉÁ½Í”¥Ìµ…¥¹±äÑ¼•¹ÍÕÉ”µ…á¥µÕ´‘…Ñ„É•½Ù•Éä…™Ñ•È…¸Õ¹±•…¸Í¡ÕÑ‘½İ¸¸()Q¼Õ¹‘•ÉÍÑ…¹©½ÕÉ¹…±¥¹œİ¥Ñ Ñ¡”]¥É•‘Q¥•È•¹¥¹”°İ”¹••Ñ¼™¥ÉÍĞ‘¥ÍÕÍÌ€©¡•­Á½¥¹ÑÌ¨İ¡¥ …É”‘…Ñ…‰…Í”Í¹…ÁÍ¡½ÑÌÑ¡…Ğ…É”Á•ÉÍ¥ÍÑ•Ñ¼‘¥Í¬¸¡•­Á½¥¹ÑÌ…¸…Ğ…ÌÉ•½Ù•ÉäÁ½¥¹ÑÌ•Ù•¸¥˜©½ÕÉ¹…±¥¹œ¥Ì‘¥Í…‰±•¸5½¹½É•…Ñ•Ì„¡•­Á½¥¹Ğ½¹±ä•Ù•Éä€ØÀÍ•½¹‘Ì°İ¡¥ µ•…¹ÌÑ¡…Ğ°İ¥Ñ¡½ÕĞ©½ÕÉ¹…±¥¹œÑÕÉ¹•½¸°„™…¥±ÕÉ”µ…ä…ÕÍ”‘…Ñ„±½ÍÌ½˜ÕÀÑ¼€ØÀÍ•½¹‘Ì½˜¡¥ÍÑ½Éä¸]¥Ñ ©½ÕÉ¹…±¥¹œ•¹…‰±•°5½¹½…¸É•Á±…äÑ¡”©½ÕÉ¹…°…¹É•½Ù•ÈÑ¡”ÑÉ…¹Í…Ñ¥½¹ÌÑ¡…Ğ½ÕÉÉ•‘ÕÉ¥¹œÑ¡”µ¥ÍÍ¥¹œÍ•½¹‘Ì¸µ½¹œ½Ñ¡•ÈÁÕÉÁ½Í•Ì°)½ÕÉ¹…±¥¹œ•ÍÍ•¹Ñ¥…±±ä¹…ÉÉ½İÌÑ¡”¥¹Ñ•ÉÙ…°½˜Ñ¥µ”‰•Ñİ••¸Ñ¡”µ½µ•¹Ğİ¡•¸‘…Ñ„¥Ì…ÁÁ±¥•Ñ¼µ•µ½Éä…¹İ¡•¸‘…Ñ„¥Ìµ…‘”‘ÕÉ…‰±”½¸Ñ¡”¹½‘”¸Q¡…ÓŠeÌİ¡äå½ÔÍ¡½Õ±‘»ŠeĞÑÕÉ¸½™˜©½ÕÉ¹…±¥¹œ°•ÍÁ•¥…±±ä¥¸ÁÉ½‘ÕÑ¥½¸¸()½È‰½Ñ ÍÑ½É…”•¹¥¹•Ì°Ñ¡”™É•ÅÕ•¹ä½˜½µµ¥ÑÑ¥¹œ½Íå¹¥¹œÑ¡”©½ÕÉ¹…°Ñ¼‘¥Í¬¥Ì‘•™¥¹•‰äÑ¡”Á…É…µ•Ñ•ÈmÍÑ½É…”¹©½ÕÉ¹…°¹½µµ¥Ñ%¹Ñ•ÉÙ…±5Ít¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½¹™¥ÕÉ…Ñ¥½¸µ½ÁÑ¥½¹Ì¼ÍÑ½É…”¹©½ÕÉ¹…°¹½µµ¥Ñ%¹Ñ•ÉÙ…±5Ì¤€ ÄÀÀµÌ‰ä‘•™…Õ±Ğİ¥Ñ ]¥É•‘Q¥•È¤İ¡¥ …¸‰”ÑÕ¹•¸•É•…Í¥¹œ¥ÑÌÙ…±Õ”É•‘Õ•ÌÑ¡”¡…¹•Ì½˜‘…Ñ„±½ÍÌÍ¥¹”İÉ¥Ñ•Ìİ¥±°‰”É•½É‘•µ½É”™É•ÅÕ•¹Ñ±ä‰ÕĞµ…ä¥¹É•…Í”Ñ¡”±…Ñ•¹ä½˜İÉ¥Ñ”½Á•É…Ñ¥½¹Ì¸((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù½Õ¹Ğ½˜ÑÉ…¹Í…Ñ¥½¹ÌÑ¡…Ğ¡…Ù”‰••¸İÉ¥ÑÑ•¸Ñ¼Ñ¡”©½ÕÉ¹…°¥¸Ñ¡”±…ÍĞ©½ÕÉ¹…°É½ÕÀ½µµ¥Ğ¥¹Ñ•ÉÙ…°¸ğ½Ñø(ñÑù‘ÕÈ¹½µµ¥ÑÌğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùY½±Õµ”½˜‘…Ñ„İÉ¥ÑÑ•¸Ñ¼Ñ¡”©½ÕÉ¹…°…ÌÁ…ÉĞ½˜Ñ¡”±…ÍĞ©½ÕÉ¹…°É½ÕÀ½µµ¥Ğ¥¹Ñ•ÉÙ…°€¡5¤ğ½Ñø(ñÑù‘ÕÈ¹©½ÕÉ¹…±•‘5ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((()QÉ…­¥¹œÑ¡”¹Õµ‰•È½˜ÑÉ…¹Í…Ñ¥½¹Ì…¹Ñ¡”…µ½Õ¹Ğ½˜‘…Ñ„İÉ¥ÑÑ•¸Ñ¼Ñ¡”©½ÕÉ¹…°ÁÉ½Ù¥‘•Ì¥¹Í¥¡ÑÌ½¸±½…¸Q¡¥Ì…¸‰”ÕÍ•™Õ°İ¡•¸ÑÉ½Õ‰±•Í¡½½Ñ¥¹œ¸((ŒŒŒŒ½¹ÕÉÉ•¹Ğ½Á•É…Ñ¥½¹Ìµ…¹…•µ•¹Ğè1½­¥¹œÁ•É™½Éµ…¹”(()%¸½É‘•ÈÑ¼ÍÕÁÁ½ÉĞÍ¥µÕ±Ñ…¹•½ÕÌÅÕ•É¥•Ìİ¡¥±”…Ù½¥‘¥¹œİÉ¥Ñ”½¹™±¥ÑÌ…¹¥¹½¹Í¥ÍÑ•¹ĞÉ•…‘Ì°5½¹½¡…Ì…¸¥¹Ñ•É¹…°±½­¥¹œÍåÍÑ•´¸MÕ‰½ÁÑ¥µ…°¥¹‘•á•Ì°…¹Á½½ÈÍ¡•µ„‘•Í¥¸Á…ÑÑ•É¹Ì…¸±•…Ñ¼±½­Ì‰•¥¹œ¡•±±½¹•ÈÑ¡…¸¹••ÍÍ…Éä¸()½µÁ…É•Ñ¼55AØÄ°å½Ô…É”Í¥¹¥™¥…¹Ñ±ä±•ÍÌ±¥­•±äÑ¼•áÁ•É¥•¹”±½­¥¹œ¥ÍÍÕ”İ¥Ñ ]¥É•‘Q¥•È¸%¹‘••Ñ¡¥ÌÍÑ½É…”•¹¥¹”ÕÍ•Ì‘½Õµ•¹Ğµ±•Ù•°½¹ÕÉÉ•¹äİ¡¥ ‘É…ÍÑ¥…±±ä¥µÁÉ½Ù•½¹ÕÉÉ•¹Ğ½Á•É…Ñ¥½¹Ì½µÁ…É•Ñ¼Ñ¡”55AØÄ•¹¥¹”¸9½ÜÍ¥µÕ±Ñ…¹•½ÕÌİÉ¥Ñ•ÌÑ¼„Í…µ”½±±•Ñ¥½¸İ¥±°½¹±ä‰±½¬•… ½Ñ¡•È¥˜Ñ¡•ä…É”µ…‘”Ñ¼Ñ¡”Í…µ”‘½Õµ•¹Ğ°İ¡¥ •áÁ±…¥¹Ìİ¡ä±½­¥¹œÍ¡½Õ±‘»ŠeĞ‰”…¸¥ÍÍÕ”…¹åµ½É”¸()Q¡”]¥É•‘Q¥•È•¹¥¹”ÕÍ•Ì„Ñ¥­•Ñ¥¹œÍåÍÑ•´Ñ¡…Ğ…¥µÌÑ¼½¹ÑÉ½°Ñ¡”¹Õµ‰•È½˜Ñ¡É•…‘Ì¥¸ÕÍ”Í¥¹”Ñ¡•ä…¸ÍÑ…ÉÙ”•… ½Ñ¡•È½˜AT¸Q¥­•ÑÌ…É”…¸¥¹Ñ•É¹…°É•ÁÉ•Í•¹Ñ…Ñ¥½¸™½ÈÑ¡É•…µ…¹…•µ•¹Ğ¸Q¡•ä½ÉÉ•ÍÁ½¹Ñ¼Ñ¡”¹Õµ‰•È½˜½¹ÕÉÉ•¹ĞÉ•…€¼İÉ¥Ñ”½Á•É…Ñ¥½¹Ì…±±½İ•¥¹Ñ¼Ñ¡”]¥É•‘Q¥•ÈÍÑ½É…”•¹¥¹”¸((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜É•…Ñ¥­•ÑÌ¥¸ÕÍ”ğ½Ñø(ñÑùİ¥É•‘Q¥•È¹½¹ÕÉÉ•¹ÑQÉ…¹Í…Ñ¥½¹Ì¹É•…¹½ÕĞğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜İÉ¥Ñ”Ñ¥­•ÑÌ¥¸ÕÍ”ğ½Ñø(ñÑùİ¥É•‘Q¥•È¹½¹ÕÉÉ•¹ÑQÉ…¹Í…Ñ¥½¹Ì¹İÉ¥Ñ”¹½ÕĞğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜…Ù…¥±…‰±”É•…Ñ¥­•ÑÌÉ•µ…¥¹¥¹œğ½Ñø(ñÑùİ¥É•‘Q¥•È¹½¹ÕÉÉ•¹ÑQÉ…¹Í…Ñ¥½¹Ì¹É•…¹…Ù…¥±…‰±”ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜…Ù…¥±…‰±”İÉ¥Ñ”Ñ¥­•ÑÌÉ•µ…¥¹¥¹œğ½Ñø(ñÑùİ¥É•‘Q¥•È¹½¹ÕÉÉ•¹ÑQÉ…¹Í…Ñ¥½¹Ì¹İÉ¥Ñ”¹…Ù…¥±…‰±”ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((((ŒŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è(()]¡•¸Ñ¡”€¨©¹Õµ‰•È½˜…Ù…¥±…‰±”É•…½ÈİÉ¥Ñ”Ñ¥­•ÑÌÉ•µ…¥¹¥¹œ¨¨É•…¡•Ìé•É¼°¹•ÜÉ•…½ÈİÉ¥Ñ”É•ÅÕ•ÍÑÌİ¥±°‰”ÅÕ•Õ•Õ¹Ñ¥°„¹•ÜÉ•…½ÈİÉ¥Ñ”Ñ¥­•Ğ¥Ì…Ù…¥±…‰±”¸Q¡”µ…á¥µÕµÌ½˜½¹ÕÉÉ•¹ĞÉ•……¹İÉ¥Ñ”½Á•É…Ñ¥½¹Ì…É”É•ÍÁ•Ñ¥Ù•±ä‘•™¥¹•‰äÑ¡”Á…É…µ•Ñ•ÉÌİ¥É•‘Q¥•É½¹ÕÉÉ•¹ÑI•…‘QÉ…¹Í…Ñ¥½¹Í€…¹İ¥É•‘Q¥•É½¹ÕÉÉ•¹Ñ]É¥Ñ•QÉ…¹Í…Ñ¥½¹Í€¸	½Ñ …É”•ÅÕ…°Ñ¼€ÄÈà‰ä‘•™…Õ±Ğ¸!½İ•Ù•È‰”…É•™Õ°İ¡•¸¥¹É•…Í¥¹œ¥Ğè¥˜Ñ¡”¹Õµ‰•È½˜Í¥µÕ±Ñ…¹•½ÕÌ½Á•É…Ñ¥½¹Ì•ÑÌÑ½¼¡¥ °å½Ôµ¥¡ĞÉÕ¸½ÕĞ½˜ÍåÍÑ•´É•Í½ÕÉ•Ì€¡AT¥¸Á…ÉÑ¥Õ±…È¤¸M…±¥¹œ¡½É¥é½¹Ñ…±±ä‰ä…‘‘¥¹œµ½É”Í¡…É‘Ì…¸¡•±ÀÑ¼ÍÕÁÁ½ÉĞ¡¥ Ñ¡É½Õ¡ÁÕÑÌ€¡Í•”mÍ•Ñ¥½¸…‰½ÕĞÍ…±¥¹œ5½¹½	t Í…±¥¹œµµ½¹½‘ˆµÍ¡…É‘¥¹œµÙÌµÉ•Á±¥…Ñ¥½¸¤¤¸((ŒŒŒŒÕÉÍ½ÉÌ(()]¡•¸„É•…ÅÕ•Éä¥ÌÉ••¥Ù•°5½¹½É•ÑÕÉ¹Ì„ÕÉÍ½Èİ¡¥ É•ÁÉ•Í•¹ÑÌ„Á½¥¹Ñ•ÈÑ¼Ñ¡”‘…Ñ„Í•Ğ½˜Ñ¡”…¹Íİ•È¸Q¼…•ÍÌ…±°Ñ¡”‘½Õµ•¹ÑÌÉ•ÍÕ±Ñ•‰äÑ¡”ÅÕ•Éä°±¥•¹ÑÌ…¸Ñ¡•¸¥Ñ•É…Ñ”½Ù•ÈÑ¡”ÕÉÍ½È¸((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜ÕÉÍ½ÉÌÕÉÉ•¹Ñ±ä½Á•¹•‰ä5½¹½™½È±¥•¹ÑÌğ½Ñø(ñÑùµ•ÑÉ¥Ì¹ÕÉÍ½È¹½Á•¸¹Ñ½Ñ…°ğ½Ñø(ñÑù]½É¬èQ¡É½Õ¡ÁÕĞğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜ÕÉÍ½ÉÌÑ¡…Ğ¡…Ù”Ñ¥µ•½ÕĞ‘ÕÉ¥¹œÑ¡”Í•±•Ñ•Ñ¥µ”Á•É¥½ğ½Ñø(ñÑùµ•ÑÉ¥Ì¹ÕÉÍ½È¹Ñ¥µ•‘=ÕĞğ½Ñø(ñÑù]½É¬èQ¡É½Õ¡ÁÕĞğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùQ¡”¹Õµ‰•È½˜½Á•¸ÕÉÍ½ÉÌİ¥Ñ Ñ¥µ•½ÕĞ‘¥Í…‰±•ğ½Ñø(ñÑùµ•ÑÉ¥Ì¹ÕÉÍ½È¹½Á•¸¹¹½Q¥µ•½ÕĞğ½Ñø(ñÑù=Ñ¡•Èğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((((ŒŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è(()É…‘Õ…°¥¹É•…Í”¥¸Ñ¡”€¨©¹Õµ‰•È½˜½Á•¸ÕÉÍ½ÉÌ¨¨İ¥Ñ¡½ÕĞ„½ÉÉ•ÍÁ½¹‘¥¹œÉ½İÑ ½˜ÑÉ…™™¥Œ¥Ì½™Ñ•¸ÍåµÁÑ½µ…Ñ¥Œ½˜Á½½É±ä¥¹‘•á•ÅÕ•É¥•Ì¸%Ğ…¸…±Í¼‰”Ñ¡”É•ÍÕ±Ğ½˜±½¹œÉÕ¹¹¥¹œÅÕ•É¥•Ì‘Õ”Ñ¼±…É”É•ÍÕ±ĞÍ•ÑÌ¸e½ÔÍ¡½Õ±Ñ…­”„±½½¬Ñ¼Í•”¡½Üå½Ô½Õ±½ÁÑ¥µ¥é”Ñ¡•´¸()ÕÉÍ½È¹Ñ¥µ•‘=ÕÑ€¥Ì¥¹É•µ•¹Ñ•İ¡•¸„±¥•¹Ğ½¹¹•Ñ¥½¸¡…Ì‘¥•İ¥Ñ¡½ÕĞ¡…Ù¥¹œÉ…•™Õ±±ä±½Í•Ñ¡”ÕÉÍ½È¸Q¡¥ÌÕÉÍ½ÈÉ•µ…¥¹Ì½Á•¸½¸Ñ¡”Í•ÉÙ•È°½¹ÍÕµ¥¹œµ•µ½Éä¸	ä‘•™…Õ±Ğ5½¹½É•…ÁÌÑ¡•Í”ÕÉÍ½ÉÌ…™Ñ•È€ÄÀµ¥¹ÕÑ•Ì½˜¥¹…Ñ¥Ù¥Ñä¸e½ÔÍ¡½Õ±¡•¬¥˜å½Ô¡…Ù”„±…É”…µ½Õ¹Ğ½˜µ•µ½Éä‰•¥¹œ½¹ÍÕµ•™É½´¹½¸µ…Ñ¥Ù”ÕÉÍ½ÉÌ¸¡¥ ¹Õµ‰•È½˜Ñ¥µ•½ÕĞÕÉÍ½ÉÌ…¸‰”É•±…Ñ•Ñ¼…ÁÁ±¥…Ñ¥½¸¥ÍÍÕ•Ì¸()Q¡¥Ì…±Í¼•áÁ±…¥¹Ìİ¡äÕÉÍ½ÉÌİ¥Ñ ¹¼Ñ¥µ•½ÕĞÍ¡½Õ±‰”…Ù½¥‘•èÑ¡•ä…¸ÁÉ•Ù•¹ĞÉ•Í½ÕÉ•ÌÑ¼‰”™É••…Ì¥ĞÍ¡½Õ±…¹Í±½Ü‘½İ¸¥¹Ñ•É¹…°ÍåÍÑ•´ÁÉ½•ÍÍ•Ì¸%¹‘••Ñ¡”m	EÕ•Éä¹=ÁÑ¥½¸¹¹½Q¥µ•½ÕÑt¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½ØÌ¸À½É•™•É•¹”½µ•Ñ¡½½ÕÉÍ½È¹…‘‘=ÁÑ¥½¸¼	EÕ•Éä¹=ÁÑ¥½¸¹¹½Q¥µ•½ÕĞ¤™±…œ€¡Õ¹Ñ¥°ØÌ¸À¤½ÈÑ¡”mÕÉÍ½È¹¹½ÕÉÍ½ÉQ¥µ•½ÕĞ ¥t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½µ•Ñ¡½½ÕÉÍ½È¹¹½ÕÉÍ½ÉQ¥µ•½ÕĞ¼ÕÉÍ½È¹¹½ÕÉÍ½ÉQ¥µ•½ÕĞ¤µ•Ñ¡½…»
+‰”ÕÍ•Ñ¼ÁÉ•Ù•¹ĞÑ¡”Í•ÉÙ•ÈÑ¼Ñ¥µ•½ÕĞÕÉÍ½ÉÌ…™Ñ•È„Á•É¥½½˜¥¹…Ñ¥Ù¥Ñä€¡¥‘±”ÕÉÍ½ÉÌ¤»
+e½Ô…¸µ…­”ÍÕÉ”Ñ¡…ĞÑ¡•É”…É”¹¼ÕÉÍ½ÉÌİ¥Ñ ¹¼Ñ¥µ•½ÕĞ‰ä¡•­¥¹œ¥˜Ñ¡”ÕÉÍ½È¹½Á•¸¹¹½Q¥µ•½ÕÑ€µ•ÑÉ¥Œİ¡¥ ½Õ¹ĞÑ¡•¥È¹Õµ‰•È¥Ì…±İ…åÌ•ÅÕ…°Ñ¼é•É¼¸((ŒŒŒI•Í½ÕÉ”UÑ¥±¥é…Ñ¥½¸(()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµÉ•Í½ÕÉ”µÕÑ¥±¥é…Ñ¥½¸¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”€´É•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸µ•ÑÉ¥ÌˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒŒŒ½¹¹•Ñ¥½¹Ì(()‰¹½Éµ…°ÑÉ…™™¥Œ±½…‘Ì…¸±•…Ñ¼Á•É™½Éµ…¹”¥ÍÍÕ•Ì¸Q¡…ÓŠeÌİ¡äÑ¡”¹Õµ‰•È½˜±¥•¹Ğ½¹¹•Ñ¥½¹ÌÍ¡½Õ±‰”±½Í•±äµ½¹¥Ñ½É•¸((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜±¥•¹ÑÌÕÉÉ•¹Ñ±ä½¹¹•Ñ•Ñ¼Ñ¡”‘…Ñ…‰…Í”Í•ÉÙ•Èğ½Ñø(ñÑù½¹¹•Ñ¥½¹Ì¹ÕÉÉ•¹Ğğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜Õ¹ÕÍ•½¹¹•Ñ¥½¹Ì…Ù…¥±…‰±”™½È¹•Ü±¥•¹ÑÌğ½Ñø(ñÑù½¹¹•Ñ¥½¹Ì¹…Ù…¥±…‰±”ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((((ŒŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è(()U¹•áÁ•Ñ•¡…¹•Ì¥¸Ñ¡”€¨©ÕÉÉ•¹Ğ¹Õµ‰•È½˜±¥•¹Ğ½¹¹•Ñ¥½¹Ì¨¨…¸‰”‘Õ”Ñ¼•ÉÉ½ÉÌ½¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸½È‘É¥Ù•È¸±°Ñ¡”½™™¥¥…±±äÍÕÁÁ½ÉÑ•5½¹½‘É¥Ù•ÉÌÕÍ”Á½½±Ì½˜½¹¹•Ñ¥½¹Ì¥¸½É‘•ÈÑ¼•™™¥¥•¹Ñ±äÉ”µÕÍ”Ñ¡•´¸%˜Ñ¡”¹Õµ‰•È½˜±¥•¹Ğ½¹¹•Ñ¥½¹Ì¥Ì•ÑÑ¥¹œÙ•Éä¡¥ °¥ĞÍ¡½Õ±‰”É•±…Ñ•Ñ¼„É¥Í”¥¸Ñ¡”¹Õµ‰•È½˜É•…°±¥•¹ĞÉ•ÅÕ•ÍÑÌ¥¸İ¡¥ …Í”å½Ô…¸mÍ…±•t Í…±¥¹œµµ½¹½‘ˆµÍ¡…É‘¥¹œµÙÌµÉ•Á±¥…Ñ¥½¸¤Ñ¼ÍÕÁÁ½ÉĞÑ¡¥Ì¥¹É•…Í¥¹œ±½…¸%˜Ñ¡¥ÌÉ½İÑ ¥Ì¹½Ğ•áÁ•Ñ•°¥Ğ½™Ñ•¸¥¹‘¥…Ñ•Ì„‘É¥Ù•È½È½¹™¥ÕÉ…Ñ¥½¸¥ÍÍÕ”¸-¹½İ¥¹œ¡½Üµ…¹ä½¹¹•Ñ¥½¹Ìå½ÔÍ¡½Õ±•áÁ•ĞÕ¹‘•È±½Ü°¹½Éµ…°°…¹Á•…¬ÑÉ…™™¥Ì…±±½İÌå½ÔÑ¼…ÁÁÉ½ÁÉ¥…Ñ•±äÍ•Ğå½ÕÈ…±•ÉÑÌ¸e½Ôµ¥¡Ğİ…¹ĞÑ¼Í•¹„İ…É¹¥¹œ¹½Ñ¥™¥…Ñ¥½¸¥˜Ñ¡•É”Ñ¡”¹Õµ‰•È½˜½¹¹•Ñ¥½¹Ì¥Ì€ÔÀ”¡¥¡•ÈÑ¡…¸Ñ¡”¹Õµ‰•Èå½ÔÕÍÕ…±±äÍ•”…ĞÁ•…¬°…¹„¡¥ ÁÉ¥½É¥Ñä…±•ÉĞ¥˜¥Ğ•á••‘ÌÑİ¥”Ñ¡¥ÌÕÍÕ…°¹Õµ‰•È…ĞÁ•…¬¸()%˜5½¹½ÉÕ¹Ì±½Ü½¸½¹¹•Ñ¥½¹Ì°¥¸µ…ä¹½Ğ‰”…‰±”Ñ¼¡…¹‘±”¥¹½µ¥¹œÉ•ÅÕ•ÍÑÌ¥¸„Ñ¥µ•±äµ…¹¹•È¸Q¡…ÓŠeÌİ¡äå½ÔÍ¡½Õ±…±Í¼…±•ÉĞ½¸Ñ¡”€¨©Á•É•¹Ñ…”½˜½¹¹•Ñ¥½¹ÌÕÍ•¨¨è€ÄÀÀà€©ÕÉÉ•¹Ğ€¼€¡ÕÉÉ•¹Ğ€¬…Ù…¥±…‰±”¤¨¸()Q¡¥Ì¹Õµ‰•È½˜¥¹½µ¥¹œ½¹¹•Ñ¥½¹Ì¥Ì½¹ÍÑÉ…¥¹•‰ÕĞÑ¡”±¥µ¥Ğ…¸‰”¡…¹••á•ÁĞ½¸½±‘•ÈÙ•ÉÍ¥½¹ÌÁÉ¥½ÈÑ¼€È¸Ø¸M¥¹”5½¹½€È¸Ø°½¸U¹¥àµ‰…Í•ÍåÍÑ•µÌ°Ñ¡”±¥µ¥Ğ¥ÌÍ¥µÁ±ä‘•™¥¹•‰äÑ¡”mµ…á%¹½µ¥¹½¹¹•Ñ¥½¹Ít¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½¹™¥ÕÉ…Ñ¥½¸µ½ÁÑ¥½¹Ì¼¹•Ğ¹µ…á%¹½µ¥¹½¹¹•Ñ¥½¹Ì¤Á…É…µ•Ñ•È°Í•Ğ‰ä‘•™…Õ±ĞÑ¼€Äµ¥±±¥½¸½¹¹•Ñ¥½¹Ì½¸ØÈ¸Ø…¹€ØÔ°ÔÌØ½¹¹•Ñ¥½¹ÌÍ¥¹”ØÌ¸À¸Q¡¥ÌÙ…±Õ”m¥Ì½¹™¥ÕÉ…‰±•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½Õ±¥µ¥Ğ¼¤¸½¹¹•Ñ¥½¹Ì¹ÕÉÉ•¹Ñ€Í¡½Õ±¹•Ù•È•ĞÑ½¼±½Í”Ñ¼Ñ¡¥Ì±¥µ¥Ğ¸()9=QèÑ¡”½¹¹•Ñ¥½¹Ì¹ÕÉÉ•¹Ñ€µ•ÑÉ¥Ì…±Í¼½Õ¹ÑÌ½¹¹•Ñ¥½¹Ì™É½´Í¡•±°…¹™É½´½Ñ¡•È¡½ÍÑÌ±¥­”É•Á±¥…Ì½Èµ½¹½Ì¥¹ÍÑ…¹•Ì¸((ŒŒŒŒMÑ½É…”µ•ÑÉ¥Ì((((ŒŒŒŒŒU¹‘•ÉÍÑ…¹‘¥¹œ5½¹½ŠeÌÍÑ½É…”ÍÑÉÕÑÕÉ”…¹ÍÑ…Ñ¥ÍÑ¥Ì(()%¸5½¹½°‘…Ñ„¥ÌÍÑ½É•¥¸€¨©‘½Õµ•¹ÑÌ¨¨ÕÍ¥¹œÑ¡”m	M=9t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½±½ÍÍ…Éä¼Ñ•É´µ‰Í½¸¤™½Éµ…Ğ¸()½Õµ•¹ÑÌ€¡ÕÍÕ…±±äİ¥Ñ Í¥µ¥±…È½ÈÉ•±…Ñ•ÁÕÉÁ½Í”¤…É”É½ÕÁ•¥¹Ñ¼€¨©½±±•Ñ¥½¹Ì¨¨¸½±±•Ñ¥½¸…¸‰”Í••¸…ÌÑ¡”•ÅÕ¥Ù…±•¹Ğ½˜„Ñ…‰±”¥¸„É•±…Ñ¥½¹…°‘…Ñ…‰…Í”¸½È•á…µÁ±”°Ñ¡”‘…Ñ…‰…Í”ƒŠqÕÍ•ÉÏŠt…¸½¹Ñ…¥¸Ñ¡”Ñİ¼½±±•Ñ¥½¹ÌƒŠqÁÕÉ¡…Í—Št…¹ƒŠqÁÉ½™¥±—Št¸%¸Ñ¡…Ğ…Í”°å½Ô½Õ±…•ÍÌÑ¡½Í”½±±•Ñ¥½¹Ìİ¥Ñ Ñ¡”¹…µ•ÍÁ…•Ì€©ÕÍ•ÉÌ¹ÁÕÉ¡…Í”¨…¹€©ÕÍ•ÉÌ¹ÁÉ½™¥±”¸¨()]¥Ñ ]¥É•‘Q¥•È°Ñ¡•É”¥Ì½¹”€¨©‘…Ñ„™¥±”¨¨Á•È½±±•Ñ¥½¸€¡‘…Ñ„¤…¹½¹”‘…Ñ„™¥±”Á•È¥¹‘•à¸((ŒŒŒŒŒMÑ½É…”Í¥é”µ•ÑÉ¥Ì€¡™É½´‘‰MÑ…ÑÌ¤™½È]¥É•‘Q¥•Èè(()]¥Ñ Ñ¡”]¥É•‘Q¥•È•¹¥¹”°™½È•Ù•ÉäÕÁ‘…Ñ”°5½¹½É•İÉ¥Ñ•ÌÑ¡”İ¡½±”‘½Õµ•¹Ğ¸Q¡ÕÌÑ¡•É”¥Ì¹¼½¹•ÁĞ½˜ƒŠqÁ…‘‘¥¹ŸŠt±¥­”İ¥Ñ m55AØÅt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµµµ…À¤¸()!•É”…É”Ñ¡”‘¥™™•É•¹ĞÍÑ½É…”µ•ÑÉ¥Ìå½ÔÍ¡½Õ±­¹½Üè((((´€€‘…Ñ…M¥é•€µ•…ÍÕÉ•ÌÑ¡”ÍÁ…”Ñ…­•¸‰ä…±°Ñ¡”‘½Õµ•¹ÑÌ€¡‘…Ñ„¤¥¸Ñ¡”‘…Ñ…‰…Í”¸(´€€¥¹‘•áM¥é•€É•ÑÕÉ¹ÌÑ¡”Í¥é”½˜…±°¥¹‘•á•ÌÉ•…Ñ•½¸Ñ¡”‘…Ñ…‰…Í”¸(´€€ÍÑ½É…•M¥é•€µ•…ÍÕÉ•ÌÑ¡”Í¥é”½˜…±°Ñ¡”‘…Ñ„•áÑ•¹ÑÌ¥¸Ñ¡”‘…Ñ…‰…Í”¸]¥É•‘Q¥•È¡…Ì½µÁÉ•ÍÍ¥½¸•¹…‰±•‰ä‘•™…Õ±Ğ°Í¼ÍÑ½É…•M¥é”…¸‰”±½İ•ÈÑ¡…¸‘…Ñ…M¥é”™½È±…É”½±±•Ñ¥½¹Ì°‰ÕĞ¥Ğ…¸…±Í¼Í½µ•Ñ¥µ•Ì‰”¡¥¡•ÈÑ¡…¸‘…Ñ…M¥é”™½ÈÙ•ÉäÍµ…±°½±±•Ñ¥½¹Ì¸((()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµ‘‰ÍÑ…ÑÌµÍÑ½É…”µµ•ÑÉ¥Ì¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”€´‘‰MÑ…ÑÌÍÑ½É…”µ•ÑÉ¥ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒŒŒŒ5•ÑÉ¥ÌÑ¼µ½¹¥Ñ½È(((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜½‰©•ÑÌ€¡‘½Õµ•¹ÑÌ¤…µ½¹œ…±°Ñ¡”½±±•Ñ¥½¹Ìğ½Ñø(ñÑù½‰©•ÑÌğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑù‘‰MÑ…ÑÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùM¥é”½˜…±°‘½Õµ•¹ÑÌ€¡‰åÑ•Ì¤ğ½Ñø(ñÑù‘…Ñ…M¥é”ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑù‘‰MÑ…ÑÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùM¥é”½˜…±°¥¹‘•á•Ì€¡‰åÑ•Ì¤ğ½Ñø(ñÑù¥¹‘•áM¥é”ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑù‘‰MÑ…ÑÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùM¥é”½˜…±°•áÑ•¹ÑÌ€¡‰åÑ•Ì¤ğ½Ñø(ñÑùÍÑ½É…•M¥é”ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑù‘‰MÑ…ÑÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((((ŒŒŒŒŒ5•ÑÉ¥ÌÑ¼…±•ÉĞ½¸è(()%˜€¨©µ•µ½ÉäÍÁ…”µ•ÑÉ¥Ì¨¨€¡‘…Ñ…M¥é”°¥¹‘•áM¥é”°½ÈÍÑ½É…•M¥é”¤½ÈÑ¡”€¨©¹Õµ‰•È½˜½‰©•ÑÌ¨¨Í¡½Ü„Í¥¹¥™¥…¹ĞÕ¹•áÁ•Ñ•¡…¹”İ¡¥±”Ñ¡”‘…Ñ…‰…Í”ÑÉ…™™¥ŒÉ•µ…¥¹•İ¥Ñ¡¥¸½É‘¥¹…ÉäÉ…¹•Ì°¥Ğ…¸¥¹‘¥…Ñ”„ÁÉ½‰±•´¸ÍÕ‘‘•¸‘É½À½˜‘…Ñ…M¥é”…¸‰”‘Õ”Ñ¼„±…É”…µ½Õ¹Ğ½˜‘…Ñ„‘•±•Ñ¥½¸°İ¡¥ Í¡½Õ±‰”ÅÕ¥­±ä¥¹Ù•ÍÑ¥…Ñ•¥˜¥Ğİ…Ì¹½Ğ•áÁ•Ñ•¸((ŒŒŒŒ5•µ½Éäµ•ÑÉ¥Ì(((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùY¥ÉÑÕ…°µ•µ½ÉäÕÍ…”€¡5¤ğ½Ñø(ñÑùµ•´¹Ù¥ÉÑÕ…°ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùµ½Õ¹Ğ½˜µ•µ½ÉäÕÍ•‰äÑ¡”‘…Ñ…‰…Í”ÁÉ½•ÍÌ€¡5¤ğ½Ñø(ñÑùµ•´¹É•Í¥‘•¹Ğğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜Ñ¥µ•Ì5½¹½¡…Ñ¼É•ÅÕ•ÍĞ™É½´‘¥Í¬€¡Á•ÈÍ•½¹¤ğ½Ñø(ñÑù•áÑÉ…}¥¹™¼¹Á…•}™…Õ±ÑÌğ½Ñø(ñÑù=Ñ¡•Èğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((()Q¡”€¨©É•Í¥‘•¹Ğµ•µ½Éä¨¨ÕÍ…”ÕÍÕ…±±ä…ÁÁÉ½…¡•ÌÑ¡”…µ½Õ¹Ğ½˜Á¡åÍ¥…°I4…Ù…¥±…‰±”Ñ¼Ñ¡”5½¹½Í•ÉÙ•È¸((ŒŒŒŒŒ5•ÑÉ¥ŒÑ¼¹½Ñ¥™ä½¸è(((¨©A…”™…Õ±ÑÌ¨¨¥¹‘¥…Ñ”½Á•É…Ñ¥½¹Ìİ¡¥ É•ÅÕ¥É•Ñ¡”5½¹½Ñ¼™•Ñ ‘…Ñ„™É½´‘¥Í¬‰•…ÕÍ”¥Ğİ…Í»ŠeĞ…Ù…¥±…‰±”¥¸…Ñ¥Ù”µ•µ½Éä€£Šq¡…É“ŠtÁ…”™…Õ±Ğ¤°½Èİ¡•¸Ñ¡”½Á•É…Ñ¥½¸É•ÅÕ¥É•¥¸µµ•µ½ÉäÁ…”É•±½…Ñ¥½¸€£ŠqÍ½™ÓŠtÁ…”™…Õ±Ğ¤¸I•ÅÕ•ÍÑÌİ¡¥ ÑÉ¥•ÈÁ…”™…Õ±ÑÌÑ…­”µ½É”Ñ¥µ”Ñ¼•á•ÕÑ”Ñ¡…¸É•ÅÕ•ÍÑÌÑ¡…Ğ‘¼¹½Ğ¸É•ÅÕ•¹ĞÁ…”™…Õ±ÑÌµ…ä¥¹‘¥…Ñ”Ñ¡…Ğå½ÕÈ‘…Ñ„Í•Ğ¥ÌÑ½¼±…É”™½ÈÑ¡”…±±½…Ñ•µ•µ½Éä¸!½İ•Ù•ÈÑ¡…ÓŠeÌ¹½Ğ„‰¥œ¥ÍÍÕ”¥˜Ñ¡”Ñ¡É½Õ¡ÁÕĞÉ•µ…¥¹Ì¡•…±Ñ¡ä¸1¥µ¥Ñ•…¹½…Í¥½¹…°Á…”™…Õ±ÑÌ‘¼¹½Ğ¹••ÍÍ…É¥±ä¥¹‘¥…Ñ”Í•É¥½ÕÌÁÉ½‰±•µÌ¸%¸½É‘•ÈÑ¼É•‘Õ”Ñ¡”™É•ÅÕ•¹ä½˜Á…”™…Õ±ÑÌ°å½Ô…¸¥¹É•…Í”Ñ¡”Í¥é”½˜å½ÕÈI4½È½¹Í¥‘•È…‘‘¥¹œµ½É”Í¡…É‘ÌÑ¼å½ÕÈ‘•Á±½åµ•¹ÑÌ¥¸½É‘•ÈÑ¼‰•ÑÑ•È‘¥ÍÑÉ¥‰ÕÑ”¥¹½µ¥¹œÉ•ÅÕ•ÍÑÌ¸A…”™…Õ±ÑÌ…¸…±Í¼‰”„Í¥¸½˜¥¹•™™¥¥•¹ĞÍ¡•µ„‘•Í¥¸°É•‘Õ¹‘…¹Ğ½ÈÕ¹¹••ÍÍ…Éä¥¹‘•á•Ì°½È…¹åÑ¡¥¹œÕÍ¥¹œ…Ù…¥±…‰±”I4Õ¹¹••ÍÍ…É¥±ä¸()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµÁ…”µ™…Õ±ÑÌ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”€´Á…”™…Õ±ÑÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒŒŒ…¡”µ•ÑÉ¥Ì(()]¥Ñ ]¥É•‘Q¥•È°5½¹½ÕÍ•Ì‰½Ñ Ñ¡”ÍÑ½É…”•¹¥¹—ŠeÌ…¡”…¹Ñ¡”™¥±•ÍåÍÑ•´…¡”¸e½Ôİ…¹Ğå½ÕÈİ½É­¥¹œÍ•ĞÑ¼™¥Ğ¥¸µ•µ½Éä°İ¡¥ ¥¹±Õ‘•ÌÕ¹½µÁÉ•ÍÍ•‘…Ñ„¥¸Ñ¡”]¥É•‘Q¥•È…¡”…¹½µÁÉ•ÍÍ•‘…Ñ„¥¸Ñ¡”™¥±•ÍåÍÑ•´…¡”€¡µ½É”¥¹™¼m¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½™…Ä½ÍÑ½É…”¼Ñ¼µİ¡…ĞµÍ¥é”µÍ¡½Õ±µ¤µÍ•ĞµÑ¡”µİ¥É•‘Ñ¥•Èµ…¡”¤¤¸%˜å½ÕÈİ½É­¥¹œÍ•Ğ½ÕÑÉ½İÌÑ¡”…Ù…¥±…‰±”…¡”°Á…”™…Õ±ÑÌ€¡Í•”ÁÉ•Ù¥½ÕÌÍ•Ñ¥½¸¤µ¥¡Ğ…ÕÍ”Á•É™½Éµ…¹”¥ÍÍÕ•Ì¸((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùµ½Õ¹Ğ½˜ÍÁ…”Ñ…­•¸‰ä…¡•‘…Ñ„€¡‰åÑ•Ì¤ğ½Ñø(ñÑùİ¥É•‘Q¥•È¹…¡”¹‰åÑ•ÌÕÉÉ•¹Ñ±ä¥¸Ñ¡”…¡”ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù5…á¥µÕ´…¡”Í¥é”½¹™¥ÕÉ•€¡‰åÑ•Ì¤ğ½Ñø(ñÑùİ¥É•‘Q¥•È¹…¡”¹µ…á¥µÕ´‰åÑ•Ì½¹™¥ÕÉ•ğ½Ñø(ñÑù=Ñ¡•Èğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑùµ½Õ¹Ğ½˜ÍÁ…”Ñ…­•¸‰ä‘¥ÉÑä‘…Ñ„¥¸Ñ¡”…¡”€¡‰åÑ•Ì¤ğ½Ñø(ñÑùİ¥É•‘Q¥•È¹…¡”¹ÑÉ…­•ƒ
+‘¥ÉÑä‰åÑ•Ì¥¸Ñ¡”…¡”ğ½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜Á…•Ì•Ù¥Ñ•™É½´Ñ¡”…¡”ğ½Ñø(ñÑùİ¥É•‘Q¥•È¹…¡”¹Õ¹µ½‘¥™¥•Á…•Ì•Ù¥Ñ•€¬İ¥É•‘Q¥•È¹…¡”¹µ½‘¥™¥•Á…•Ì•Ù¥Ñ•ğ½Ñø(ñÑùI•Í½ÕÉ”èM…ÑÕÉ…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((()9=Qè]¥É•‘Q¥•ËŠeÌ…¡”µ•ÑÉ¥Ì¹…µ•Ì…É”ÍÑÉ¥¹œÙ…±Õ•Ìİ¥Ñ ÍÁ…•Ì¥¹Í¥‘”¸((¨©¥ÉÑä‘…Ñ„¨¨‘•Í¥¹…Ñ•Ì‘…Ñ„¥¸Ñ¡”…¡”Ñ¡…Ğ¡…Ì‰••¸µ½‘¥™¥•‰ÕĞ¹½Ğå•Ğ…ÁÁ±¥•€¡™±ÕÍ¡•¤Ñ¼‘¥Í¬¸É½İ¥¹œ…µ½Õ¹ÑÌ½˜‘¥ÉÑä‘…Ñ„½Õ±É•ÁÉ•Í•¹Ğ„‰½ÑÑ±•¹•¬İ¡•É”‘…Ñ„¥Í»ŠeĞ‰•¥¹œİÉ¥ÑÑ•¸Ñ¼‘¥Í¬™…ÍĞ•¹½Õ ¸M…±¥¹œ½ÕĞ‰ä…‘‘¥¹œµ½É”Í¡…Éİ¥±°¡•±Àå½ÔÉ•‘Õ”Ñ¡”…µ½Õ¹Ğ½˜‘¥ÉÑä‘…Ñ„¸9½Ñ”Ñ¡…ĞÑ¡”…µ½Õ¹Ğ½˜‘¥ÉÑä‘…Ñ„¥Ì•áÁ•Ñ•Ñ¼É½ÜÕ¹Ñ¥°Ñ¡”¹•áĞ¡•­Á½¥¹Ğ¸()Q¡”€¨©Í¥é”±¥µ¥Ğ½˜Ñ¡”]¥É•‘Q¥•È…¡”¨¨‘•™¥¹•‰äÑ¡”m•¹¥¹•½¹™¥œ¹…¡•M¥é•	t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½¹™¥ÕÉ…Ñ¥½¸µ½ÁÑ¥½¹Ì¼ÍÑ½É…”¹İ¥É•‘Q¥•È¹•¹¥¹•½¹™¥œ¹…¡•M¥é•¤Á…É…µ•Ñ•ÈÍ¡½Õ±‘»ŠeĞ‰”¥¹É•…Í•…‰½Ù”¥ÑÌ‘•™…Õ±ĞÙ…±Õ”¸%¹‘••Ñ¡”É•µ…¥¹¥¹œµ•µ½Éä¥ÌÕÍ•‰äÑ¡”µ½¹½ÁÉ½•ÍÌ™½È¥ÑÌ‘…Ñ„ÁÉ½•ÍÍ¥¹œ…¹‰äÑ¡”=L™½È™¥±•ÍåÍÑ•´…¡”İ¡¥ 5½¹½‰•¹•™¥ÑÌ™É½´¸()%¸Ù•ÉÍ¥½¹Ì€Ì¸È¬°Ñ¡”€¨©…¡•M¥é•¨¨Á…É…µ•Ñ•È¥Ğ¥ÌÍ•Ğ‰ä‘•™…Õ±ĞÑ¼Ñ¡”É•…Ñ•È½˜è((((´€€€Ä(´€€€ØÀ”½˜Ñ¡”I4€¨¨©µ¥¹ÕÌ¨¨¨€Ä((((ŒŒŒŒ=Ñ¡•È¡½ÍĞµ±•Ù•°µ•ÑÉ¥Ì(()e½×Še±°…±Í¼İ…¹ĞÑ¼µ½¹¥Ñ½ÈÍåÍÑ•´µ•ÑÉ¥Ì½˜µ…¡¥¹•ÌÉÕ¹¹¥¹œ5½¹½¥¸½É‘•ÈÑ¼¥¹Ù•ÍÑ¥…Ñ”Á•É™½Éµ…¹”¥ÍÍÕ•Ì¸((¨©¥Í¬ÍÁ…”¨¨¥Ì½¹”½˜Ñ¡”µ½ÍĞ¥µÁ½ÉÑ…¹Ğ¡½ÍĞµ±•Ù•°µ•ÑÉ¥ÌÑ¼…±•ÉĞ½¸¸e½ÔÍ¡½Õ±ÑÉ¥•È„¡¥ ÁÉ¥½É¥Ñä…±•ÉĞ¥˜¥Ğ¥Ì•ÑÑ¥¹œ±½Í”Ñ¼™Õ±°€¡™½È•á…µÁ±”„İ…É¹¥¹œ¥˜€àÀ”™Õ±°°…¹…¸…±•ÉĞ…Ğ€äÀ”™Õ±°¤¸()%˜€¨©ATÕÑ¥±¥é…Ñ¥½¸¨¨¥Ì¥¹É•…Í¥¹œÑ½¼µÕ °¥Ğ…¸±•…Ñ¼‰½ÑÑ±•¹•­Ì…¹µ…ä¥¹‘¥É•Ñ±ä¥¹‘¥…Ñ”¥¹•™™¥¥•¹ĞÅÕ•É¥•Ì°Á•É¡…ÁÌ‘Õ”Ñ¼Á½½È¥¹‘•á¥¹œ¸()]¡•¸€¨©$½<ÕÑ¥±¥é…Ñ¥½¸¨¨¥Ì•ÑÑ¥¹œ±½Í”Ñ¼€ÄÀÀ”™½È±•¹Ñ¡äÁ•É¥½‘Ì½˜Ñ¥µ”°¥Ğµ•…¹Ìå½Ô…É”¡¥ÑÑ¥¹œÑ¡”±¥µ¥Ğ½˜Ñ¡”Á¡åÍ¥…°‘¥Í¯ŠeÌ…Á…¥Ñä¸%˜¥ÓŠeÌ½¹ÍÑ…¹Ñ±ä¡¥ °å½ÔÍ¡½Õ±ÕÁÉ…‘”å½ÕÈ‘¥Í¬½È…‘µ½É”Í¡…É‘Ì¥¸½É‘•ÈÑ¼…Ù½¥Á•É™½Éµ…¹”¥ÍÍÕ•ÌÍÕ …ÌÍ±½ÜÅÕ•É¥•Ì½ÈÍ±½ÜÉ•Á±¥…Ñ¥½¸¸((¨©$½<İ…¥Ğ¨¨±¥µ¥ÑÌÑ¡É½Õ¡ÁÕĞÍ¼„¡¥ Ù…±Õ”¥¹‘¥…Ñ•Ì¡¥ Ñ¡É½Õ¡ÁÕĞ¸%¸Ñ¡…Ğ…Í”å½ÔÍ¡½Õ±½¹Í¥‘•ÈÍ…±¥¹œÕÀ‰ä…‘‘¥¹œµ½É”Í¡…É‘Ì€¡Í•”Í•Ñ¥½¸…‰½ÕĞmÍ…±¥¹œ5½¹½	t Í…±¥¹œµµ½¹½‘ˆµÍ¡…É‘¥¹œµÙÌµÉ•Á±¥…Ñ¥½¸¤¤°½È¥¹É•…Í¥¹œå½ÕÈ‘¥Í¬$½<…Á…¥Ñä€¡…™Ñ•ÈÙ•É¥™å¥¹œ½ÁÑ¥µ…°Í¡•µ„…¹¥¹‘•à‘•Í¥¸¤¸I4Í…ÑÕÉ…Ñ¥½¸µ¥¡Ğ…±Í¼‰”„…ÕÍ”½˜±½Ü$½<Á•ÈÍ•½¹°•ÍÁ•¥…±±ä¥˜å½ÕÈÍåÍÑ•´¥Ì¹½ĞİÉ¥Ñ”µ¡•…Ùä¸%Ğ…¸‰”‘Õ”Ñ¼Ñ¡”Í¥é”½˜å½ÕÈİ½É­¥¹œÍ•Ğ‰•¥¹œ±…É•ÈÑ¡…¸Ñ¡”…Ù…¥±…‰±”µ•µ½Éä™½È•á…µÁ±”¸((ŒŒŒI•Í½ÕÉ”M…ÑÕÉ…Ñ¥½¸(()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµÉ•Í½ÕÉ”µÍ…ÑÕÉ…Ñ¥½¸µµ•ÑÉ¥Ì¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”€´É•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¸µ•ÑÉ¥ÌˆÍ¥é”ôˆÅàˆ€ùõô((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜É•…É•ÅÕ•ÍÑÌÕÉÉ•¹Ñ±äÅÕ•Õ•ğ½Ñø(ñÑù±½‰…±1½¬¹ÕÉÉ•¹ÑEÕ•Õ”¹É•…‘•ÉÌğ½Ñø(ñÑùI•Í½ÕÉ”èM…ÑÕÉ…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜İÉ¥Ñ”É•ÅÕ•ÍÑÌÕÉÉ•¹Ñ±äÅÕ•Õ•ğ½Ñø(ñÑù±½‰…±1½¬¹ÕÉÉ•¹ÑEÕ•Õ”¹İÉ¥Ñ•ÉÌğ½Ñø(ñÑùI•Í½ÕÉ”èM…ÑÕÉ…Ñ¥½¸ğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((((ŒŒŒŒŒ5•ÑÉ¥ÌÑ¼¹½Ñ¥™ä½¸è(((¨©EÕ•Õ•É•……¹İÉ¥Ñ•ÌÉ•ÅÕ•ÍÑÌ¨¨…É”É•Á½ÉÑ•Õ¹‘•ÈƒŠqm±½‰…±1½­t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½µµ…¹½Í•ÉÙ•ÉMÑ…ÑÕÌ¼Í•ÉÙ•ÈµÍÑ…ÑÕÌµ±½‰…°µ±½¬§Št•Ù•¸¥˜Ñ¡•ä…É”¹½ĞÉ•…±±äÉ•±…Ñ•Ñ¼±½‰…°±½¬¸%˜å½ÔÍ•”Ñ¡…ĞÑ¡”¹Õµ‰•È½˜ÅÕ•Õ•É•ÅÕ•ÍÑÌ­••ÁÌÉ½İ¥¹œ‘ÕÉ¥¹œ¡•…ÙäÉ•…½İÉ¥Ñ”ÑÉ…™™¥Œ°Ñ¡…Ğµ•…¹Ì5½¹½¥Ì¹½Ğ…‘‘É•ÍÍ¥¹œÉ•ÅÕ•ÍÑÌ…Ì™…ÍĞ…ÌÑ¡•ä…É”…ÉÉ¥Ù¥¹œ¸%¸½É‘•ÈÑ¼…Ù½¥Á•É™½Éµ…¹”¥ÍÍÕ•Ì…¹µ…­”ÍÕÉ”å½ÕÈ‘…Ñ…‰…Í”¥Ì…‰±”Ñ¼­••ÀÕÀİ¥Ñ Ñ¡”‘•µ…¹°å½ÔÍ¡½Õ±¥¹É•…Í”å½ÕÈ‘•Á±½åµ•¹Ğ…Á…¥Ñä€¡Í•”mÍ•Ñ¥½¸…‰½ÕĞÍ…±¥¹œ5½¹½	t Í…±¥¹œµµ½¹½‘ˆµÍ¡…É‘¥¹œµÙÌµÉ•Á±¥…Ñ¥½¸¤¤¸()9=QèM…±¥¹œÕÀÙ•ÉÑ¥…±±ä‰ä…‘‘¥¹œµ½É”…Á…¥Ñä€¡AT°µ•µ½Éä°™…ÍÑ•È‘¥Í­Ì°µ½É”‘¥Í­Ì½¸•… ¥¹ÍÑ…¹”¤¥Ì…±Í¼…¸½ÁÑ¥½¸°‰ÕĞÑ¡¥ÌÍÑÉ…Ñ•ä…¸‰•½µ”½ÍĞµÁÉ½¡¥‰¥Ñ¥Ù”°…¹Ñ¡”Í¥é”½˜å½ÕÈ¥¹ÍÑ…¹•Ìµ¥¡Ğ‰”±¥µ¥Ñ•‰äå½ÕÈ%P‘•Á…ÉÑµ•¹ÓŠeÌ¥¹Ù•¹Ñ½Éä°½È‰äå½ÕÈ±½Õµ¥¹™É…ÍÑÉÕÑÕÉ”ÁÉ½Ù¥‘•È¸((ŒŒŒÉÉ½ÉÌè…ÍÍ•ÉÑÌ(()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµ…ÍÍ•ÉÑÌµ•ÉÉ½ÉÌ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”€´…ÍÍ•ÉÑÌ•ÉÉ½ÉÌˆÍ¥é”ôˆÅàˆ€ùõô()ÍÍ•ÉÑÌÑåÁ¥…±±äÉ•ÁÉ•Í•¹Ğ•ÉÉ½ÉÌ¸5½¹½•¹•É…Ñ•Ìm„‘½Õµ•¹Ñt¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½µµ…¹½Í•ÉÙ•ÉMÑ…ÑÕÌ¼…ÍÍ•ÉÑÌ¤É•Á½ÉÑ¥¹œ½¸Ñ¡”¹Õµ‰•È½˜•… ÑåÁ”½˜…ÍÍ•ÉÑ¥½¹ÌÑ¡…Ğ¡…Ù”‰••¸É…¥Í•èµ•ÍÍ…”°İ…É¹¥¹œ°É•Õ±…È°…¹ÕÍ•È¸ÍÍ•ÉÑ¥½¹Ì‘½»ŠeĞ½ÕÈ½™Ñ•¸‰ÕĞÍ¡½Õ±‰”¥¹Ù•ÍÑ¥…Ñ•İ¡•¸Ñ¡•ä‘¼¸((((ñÑ…‰±”ø(ñÑ¡•…ø(ñÑÈ±…ÍÌô‰¡•…‘•Èˆø(ñÑ øñÍÑÉ½¹œù5•ÑÉ¥Œ•ÍÉ¥ÁÑ¥½¸ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñÍÑÉ½¹œù9…µ”ğ½ÍÑÉ½¹œøğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒQåÁ”ğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ñÑ øñ„¡É•˜ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥ÌˆøñÍÑÉ½¹œùÙ…¥±…‰¥±¥Ñäğ½ÍÑÉ½¹œøğ½„øğ½Ñ ø(ğ½ÑÈø(ğ½Ñ¡•…ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜µ•ÍÍ…”…ÍÍ•ÉÑ¥½¹ÌÉ…¥Í•‘ÕÉ¥¹œÑ¡”Í•±•Ñ•Ñ¥µ”Á•É¥½ğ½Ñø(ñÑù…ÍÍ•ÉÑÌ¹µÍœğ½Ñø(ñÑùI•Í½ÕÉ”èÉÉ½Èğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜İ…É¹¥¹œ…ÍÍ•ÉÑ¥½¹ÌÉ…¥Í•‘ÕÉ¥¹œÑ¡”Í•±•Ñ•Ñ¥µ”Á•É¥½ğ½Ñø(ñÑù…ÍÍ•ÉÑÌ¹İ…É¹¥¹œğ½Ñø(ñÑùI•Í½ÕÉ”èÉÉ½Èğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9Õµ‰•È½˜É•Õ±…È…ÍÍ•ÉÑ¥½¹ÌÉ…¥Í•‘ÕÉ¥¹œÑ¡”Í•±•Ñ•Ñ¥µ”Á•É¥½ğ½Ñø(ñÑù…ÍÍ•ÉÑÌ¹É•Õ±…Èğ½Ñø(ñÑùI•Í½ÕÉ”èÉÉ½Èğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9Õµ‰•È½˜…ÍÍ•ÉÑ¥½¹Ì½ÉÉ•ÍÁ½¹‘¥¹œÑ¼•ÉÉ½ÉÌ•¹•É…Ñ•‰äÕÍ•ÉÌ‘ÕÉ¥¹œÑ¡”Í•±•Ñ•Ñ¥µ”Á•É¥½ğ½Ñø(ñÑù…ÍÍ•ÉÑÌ¹ÕÍ•Èğ½Ñø(ñÑùI•Í½ÕÉ”èÉÉ½Èğ½Ñø(ñÑùÍ•ÉÙ•ÉMÑ…ÑÕÌğ½Ñø(ğ½ÑÈø(ğ½Ñ‰½‘äø(ğ½Ñ…‰±”ø((()9=QèQ¡•Í”½Õ¹Ñ•ÉÌİ¥±°É½±±½Ù•ÈÑ¼é•É¼¥˜Ñ¡”5½¹½ŠeÌÁÉ½•ÍÌ¥ÌÉ•ÍÑ…ÉÑ•½È…™Ñ•È€ÉxÌÀ…ÍÍ•ÉÑ¥½¹Ì¸()Q¡”5½¹½±½œ™¥±•Ìİ¥±°¥Ù”å½Ôµ½É”‘•Ñ…¥±Ì…‰½ÕĞ…ÍÍ•ÉĞ•á•ÁÑ¥½¸É•ÑÕÉ¹•°İ¡¥ İ¥±°¡•±Àå½Ô™¥¹Á½ÍÍ¥‰±”…ÕÍ•Ì¸((ŒŒŒŒŒ5•ÑÉ¥ÌÑ¼¹½Ñ¥™ä½¸è(((¨©5•ÍÍ…”…ÍÍ•ÉÑÌ¨¨¥¹‘¥…Ñ”¥¹Ñ•É¹…°Í•ÉÙ•È•á•ÁÑ¥½¹Ì¸((¨©]…É¹¥¹œ…ÍÍ•ÉÑÌ¨¨…É”¹½Ğ…ÌÍ•É¥½ÕÌ…Ì•ÉÉ½ÉÌ¸Q¡•ä©ÕÍĞ¥¹‘¥…Ñ”Ñ¡¥¹ÌÑ¡…Ğµ¥¡Ğ‰”İ½ÉÑ ¡•­¥¹œ±¥­”Ñ½¼±½ÜmÕ±¥µ¥Ñt¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½Õ±¥µ¥Ğ¼¤½ÈÉ•…‘…¡•…¸((¨©I•Õ±…È…ÍÍ•ÉÑÌ¨¨…É”Á•Èµ½Á•É…Ñ¥½¸¥¹Ù…É¥…¹ÑÌ€¡”¹œ¸ƒŠqÕ¹•áÁ•Ñ•™…¥±ÕÉ”İ¡¥±”É•…‘¥¹œ„	M=8‘½Õµ•¹ÓŠt¤¸((¨©UÍ•È…ÍÍ•ÉÑÌ¨¨…É”ÑÉ¥•É•…ÌÑ¡”É•ÍÕ±Ğ½˜ÕÍ•È½Á•É…Ñ¥½¹Ì½È½µµ…¹‘Ì•¹•É…Ñ¥¹œ…¸•ÉÉ½È±¥­”„™Õ±°‘¥Í¬ÍÁ…”°„‘ÕÁ±¥…Ñ”­•ä•á•ÁÑ¥½¸°½ÈİÉ¥Ñ”•ÉÉ½ÉÌ€¡”¹œ¸¥¹Í•ÉĞ¹½ĞÁÉ½Á•É±ä™½Éµ…ÑÑ•°½È¹¼…•ÍÌÉ¥¡Ğ¤¸Q¡•Í”•ÉÉ½ÉÌ…É”É•ÑÕÉ¹•Ñ¼Ñ¡”±¥•¹ĞÍ¼µ½ÍĞ½˜Ñ¡•´İ½»ŠeĞ‰”±½•¥¹Ñ¼Ñ¡”µ½¹½±½Ì¸!½İ•Ù•Èå½ÔÍ¡½Õ±¥¹Ù•ÍÑ¥…Ñ”Á½Ñ•¹Ñ¥…°ÁÉ½‰±•µÌİ¥Ñ å½ÕÈ…ÁÁ±¥…Ñ¥½¸½È‘•Á±½åµ•¹Ğ¸()	½Ñ É•Õ±…È…¹ÕÍ•È…ÍÍ•ÉÑÌİ¥±°É•ÍÕ±Ğ¥¸Ñ¡”½ÉÉ•ÍÁ½¹‘¥¹œ½Á•É…Ñ¥½¸™…¥±¥¹œ¸((ŒŒM…±¥¹œ5½¹½èÍ¡…É‘¥¹œÙÌÉ•Á±¥…Ñ¥½¸()É•Á±¥„Í•ĞÉ•ÁÉ•Í•¹ÑÌµÕ±Ñ¥Á±”Í•ÉÙ•ÉÌÉÕ¹¹¥¹œ5½¹½°•… ½¹”½¹Ñ…¥¹¥¹œÑ¡”•á…ĞÍ…µ”‘…Ñ„¸Q¡•É”¥Ì½¹”ÁÉ¥µ…Éä¹½‘”…¹Ñ¡”É•ÍĞ…É”Í•½¹‘…Éä¹½‘•Ì¸I•Á±¥„Í•ÑÌÁÉ½Ù¥‘”™…Õ±ĞµÑ½±•É…¹”…¹¡¥ ‘…Ñ„…Ù…¥±…‰¥±¥Ñä¸%˜Ñ¡”ÁÉ¥µ…Éä¹½‘”‰•½µ•ÌÕ¹…Ù…¥±…‰±”°½¹”½˜Ñ¡”Í•½¹‘…Éä¹½‘•Ìİ¥±°‰”•±•Ñ•Ñ¼Ñ…­”½Ù•È…ÌÑ¡”¹•ÜÁÉ¥µ…Éä¸()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµÉ•Á±¥…Ñ¥½¸µÍ¡…É‘¥¹œ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”€´Í¡…É‘¥¹œÙÌÉ•Á±¥…Ñ¥½¸ˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()%¸½É‘•ÈÑ¼¥¹É•…Í”å½ÕÈÑ¡É½Õ¡ÁÕĞ…Á…¥Ñä°å½Ô…¸Í…±”¡½É¥é½¹Ñ…±±ä‰ä…‘‘¥¹œµ½É”Í¡…É‘ÌÑ¼å½ÕÈ±ÕÍÑ•È¸M¡…É‘¥¹œÍÁ±¥ÑÌ‘…Ñ„…¹‘¥ÍÑÉ¥‰ÕÑ•Ì¥Ğ…µ½¹œÑ¡”Í¡…É‘Ì€¡µ½¹½¥¹ÍÑ…¹•Ì¤½˜„±ÕÍÑ•È…½É‘¥¹œÑ¼„€©mÍ¡…É­•åt¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½½É”½Í¡…É‘¥¹œµÍ¡…Éµ­•ä¼¤¨‘•™¥¹•™½Èå½ÕÈ½±±•Ñ¥½¹Ì¸%¹½µ¥¹œÉ•ÅÕ•ÍÑÌİ¥±°‰”…‘‘É•ÍÍ•‰äÑ¡”½ÉÉ•ÍÁ½¹‘¥¹œÍ¡…É¡Ì¤½¹Ñ…¥¹¥¹œÑ¡”É•ÅÕ•ÍÑ•‘…Ñ„¸Q¡ÕÌ¥Ğ…±±½İÌÑ¼ÍÕÁÁ½ÉĞµ½É”€¨©É•……¹İÉ¥Ñ”¨¨Ñ¡É½Õ¡ÁÕÑÌ¸e½Ô…¸…±Í¼ÕÁÉ…‘”Ñ¡”¡…É‘İ…É”½¸Ñ¡”±ÕÍÑ•È¸()9=Qè½ÈÉ…É”Ù•ÉäÍÁ•¥™¥Œ…Í•Ìİ¡•É”É•…‘Ì½¸Í•½¹‘…É¥•Ì…¸‰”…•ÁÑ…‰±”€¡É•…‘ÌÅÕ•Éå¥¹œ…±°Ñ¡”‘…Ñ„™½È•á…µÁ±”¤°å½Ô…¸…±Í¼½¹Í¥‘•È…‘‘¥¹œµ½É”Í•½¹‘…É¥•ÌÑ¼å½ÕÈÉ•Á±¥„Í•Ğ…¹ÕÍ¥¹œÑ¡•´Ñ¼ÍÕÁÁ½ÉĞµ½É”€¨©É•…¨¨É•ÅÕ•ÍÑÌ¸	ÕĞÑ¡¥Ì¥Ì‘•™¥¹¥Ñ•±ä¹½Ğ„•¹•É…°Í…±¥¹œÑ…Ñ¥Œ¸I•Á±¥„Í•Ğµ•µ‰•ÉÌœµ…¥¸ÁÕÉÁ½Í”¥ÌÑ¼•¹ÍÕÉ”¡¥ ‘…Ñ„…Ù…¥±…‰¥±¥Ñä°¹½ĞÑ¼ÍÕÁÁ½ÉĞÉ•…µ¡•…ÙäÑ¡É½Õ¡ÁÕÑÌ¸Q¡”5½¹½ŠeÌ‘½Õµ•¹Ñ…Ñ¥½¸m¥Ù•Ìµ½É”‘•Ñ…¥±Ít¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½½É”½É•…µÁÉ•™•É•¹”¼½Õ¹Ñ•Èµ¥¹‘¥…Ñ¥½¹Ì¤½¸İ¡äÕÍ¥¹œµ½É”Í•½¹‘…É¥•ÌÑ¼ÁÉ½Ù¥‘”•áÑÉ„É•……Á…¥ÑäÍ¡½Õ±‘»ŠeĞ‰”„Í…±¥¹œÑ…Ñ¥Œµ½ÍĞ½˜Ñ¡”Ñ¥µ”¸()M¥¹”İÉ¥Ñ”½Á•É…Ñ¥½¹Ì…¸½¹±ä‰”‘¥É•Ñ•Ñ¼Ñ¡”ÁÉ¥µ…Éä¹½‘”€¡Ñ¡•ä…É”Ñ¡•¸…ÁÁ±¥•Ñ¼Í•½¹‘…É¥•Ì¤°…‘‘¥Ñ¥½¹…°Í•½¹‘…É¥•Ìİ¥±°¹½Ğ¥¹É•…Í”İÉ¥Ñ”µÑ¡É½Õ¡ÁÕĞ…Á…¥Ñä¸%˜å½Ô¹••Ñ¼ÍÕÁÁ½ÉĞ¡¥¡•ÈİÉ¥Ñ”Ñ¡É½Õ¡ÁÕĞ°å½ÔÍ¡½Õ±ÕÍ”µ½É”Í¡…É‘Ì¥¹ÍÑ•…¸()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµÍ¡…É‘¥¹œ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”€´Í¡…É‘¥¹œˆ…ÁÑ¥½¸ô‰M¡…É‘¥¹œ¥¸5½¹½ˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()‘‘¥¹œµ½É”Í¡…É‘ÌÑ¼„±ÕÍÑ•È¥¹É•…Í•ÌÉ•……¹İÉ¥Ñ”Ñ¡É½Õ¡ÁÕĞ…Á…¥Ñ¥•Ì¸%¸½É‘•ÈÑ¼•¹ÍÕÉ”¡¥ …Ù…¥±…‰¥±¥Ñä½˜…±°½˜å½ÕÈ‘…Ñ„•Ù•¸İ¡•¸„Í¡…É¥Ì‘½İ¸°•… Í¡…ÉÍ¡½Õ±‰”„É•Á±¥„Í•Ğ€¡•ÍÁ•¥…±±äm¥¸ÁÉ½‘ÕÑ¥½¹t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½½É”½Í¡…É‘•µ±ÕÍÑ•Èµ…É¡¥Ñ•ÑÕÉ•ÌµÁÉ½‘ÕÑ¥½¸¼¤¤¸((ŒŒI•…À()%¸Ñ¡¥ÌÁ½ÍĞİ—ŠeÙ”•áÁ±½É•Ñ¡”µ•ÑÉ¥Ìå½ÔÍ¡½Õ±µ½¹¥Ñ½ÈÑ¼­••ÀÑ…‰Ì½¸å½ÕÈ5½¹½±ÕÍÑ•È¸%˜å½Ô…É”©ÕÍĞ•ÑÑ¥¹œÍÑ…ÉÑ•İ¥Ñ 5½¹½°µ½¹¥Ñ½É¥¹œÑ¡”µ•ÑÉ¥Ì¥¸Ñ¡”±¥ÍĞ‰•±½Üİ¥±°ÁÉ½Ù¥‘”Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈ‘…Ñ…‰…Í—ŠeÌ¡•…±Ñ °Á•É™½Éµ…¹”°É•Í½ÕÉ”ÕÍ…”°…¹µ…ä¡•±À¥‘•¹Ñ¥™ä…É•…Ìİ¡•É”ÑÕ¹¥¹œ½Õ±ÁÉ½Ù¥‘”Í¥¹¥™¥…¹Ğ‰•¹•™¥ÑÌè((((´€€mQ¡É½Õ¡ÁÕĞµ•ÑÉ¥Ít Ñ¡É½Õ¡ÁÕĞµµ•ÑÉ¥Ì¤(´€€m…Ñ…‰…Í”Á•É™½Éµ…¹•t ‘…Ñ…‰…Í”µÁ•É™½Éµ…¹”¤(´€€mI•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¹t É•Í½ÕÉ”µÕÑ¥±¥é…Ñ¥½¸¤(´€€mI•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¹t É•Í½ÕÉ”µÍ…ÑÕÉ…Ñ¥½¸¤(´€€mÉÉ½ÉÍt •ÉÉ½ÉÌµ…ÍÍ•ÉÑÌ¤€¡…ÍÍ•ÉÑÌ¤((()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµµ•ÑÉ¥Ìµ…Ñ•½É¥•Ì¹Á¹œˆ…±Ğô‰5½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”µ•ÑÉ¥Ì…Ñ•½É¥•ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()±½Í•±äÑÉ…­¥¹œÑ¡É½Õ¡ÁÕĞµ•ÑÉ¥ÌÍ¡½Õ±¥Ù”å½Ô„É•…Ğ½Ù•ÉÙ¥•Ü½˜å½ÕÈ‘…Ñ…‰…Í”…Ñ¥Ù¥Ñä¸…Ñ…‰…Í”Á•É™½Éµ…¹”°•ÉÉ½ÉÌ°É•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸…¹É•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¸µ•ÑÉ¥Ìİ¥±°¡•±Àå½Ô¥¹Ù•ÍÑ¥…Ñ”¥ÍÍÕ•Ì…¹Õ¹‘•ÉÍÑ…¹İ¡…ĞÑ¼‘¼Ñ¼µ…¥¹Ñ…¥¸½½Á•É™½Éµ…¹”¸()Ù•¹ÑÕ…±±äå½Ôİ¥±°É•½¹¥é”…‘‘¥Ñ¥½¹…°°µ½É”ÍÁ•¥…±¥é•µ•ÑÉ¥ÌÑ¡…Ğ…É”Á…ÉÑ¥Õ±…É±äÉ•±•Ù…¹ĞÑ¼å½ÕÈ½İ¸ÕÍ…”½˜5½¹½¸()mA…ÉĞ€Ét ½‰±½œ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥Ì¤İ¥±°¥Ù”å½Ô„½µÁÉ•¡•¹Í¥Ù”Õ¥‘”Ñ¼½±±•Ñ¥¹œ…¹ä½˜Ñ¡”µ•ÑÉ¥Ì‘•ÍÉ¥‰•¥¸Ñ¡¥Ì…ÉÑ¥±”°½È…¹ä½Ñ¡•Èµ•ÑÉ¥Œ•áÁ½Í•‰ä5½¹½¸((ŒŒ­¹½İ±•‘µ•¹ÑÌ()5…¹äÑ¡…¹­ÌÑ¼Ñ¡”•¹¥¹••É¥¹œÑ•…´…Ğm5½¹½	t¡¡ÑÑÁÌè¼½İİÜ¹µ½¹½‘ˆ¹½´¼¤™½ÈÉ•Ù¥•İ¥¹œÑ¡¥ÌÁÕ‰±¥…Ñ¥½¸…¹ÍÕ•ÍÑ¥¹œ¥µÁÉ½Ù•µ•¹ÑÌ¸(+
+€((©M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½µ½¹½‘ˆ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¸¨(
