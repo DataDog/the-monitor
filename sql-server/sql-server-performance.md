@@ -1,1 +1,276 @@
-m5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œ()%¸mA…ÉĞ€È½˜Ñ¡¥ÌÍ•É¥•ÍumÁ…ÉĞÉt°İ”ÍÕÉÙ•å•Ñ½½±Ì™½Èµ½¹¥Ñ½É¥¹œME0M•ÉÙ•ÈÁ•É™½Éµ…¹”¸%˜å½ÕÈME0M•ÉÙ•È¥¹ÍÑ…¹•Ì…É”Á…ÉĞ½˜„½µÁ±•àİ•ˆ…ÁÁ±¥…Ñ¥½¸°¡…¹‘±¥¹œÅÕ•É¥•Ì™É½´!QQ@Í•ÉÙ•ÉÌ°ÉÕ¹¹¥¹œ¥¸„±ÕÍÑ•È°½È½Ñ¡•Éİ¥Í”½¹¹•Ñ¥¹œÑ¼½Ñ¡•ÈÍ•ÉÙ¥•Ì°å½Ô±°¹••„µ½¹¥Ñ½É¥¹œÍ½±ÕÑ¥½¸Ñ¡…Ğ…¸Á••È¥¹Ñ¼å½ÕÈ‘…Ñ…‰…Í•Ìİ¡¥±”­••Á¥¹œÑ¡•¥È¥¹Ñ•É…Ñ¥½¹Ìİ¥Ñ å½ÕÈÍÑ…¬¥¸Ñ¡”Á¥ÑÕÉ”¸…Ñ…‘½œÁÉ½Ù¥‘•Ì•¹µÑ¼µ•¹Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜å½ÕÈME0M•ÉÙ•È¥¹ÍÑ…¹•ÏŠQ…±½¹œİ¥Ñ íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô¬½Ñ¡•ÈÑ•¡¹½±½¥•ÌÉÕ¹¹¥¹œ…±½¹Í¥‘”Ñ¡•´¸()%¸Ñ¡¥ÌÁ½ÍĞ°İ”İ¥±°İ…±¬å½ÔÑ¡É½Õ Ñ¡”ÁÉ½•ÍÌ½˜Í•ÑÑ¥¹œÕÀ…Ñ…‘½œÌME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸Ñ¼µ½¹¥Ñ½Èµ•ÑÉ¥Ì°‘¥ÍÑÉ¥‰ÕÑ•É•ÅÕ•ÍĞÑÉ…•Ì°…¹±½Ì¥¸„Í¥¹±”Á±…Ñ™½É·ŠQ…¹¡½ÜÑ¼Á¥Ù½Ğ‰•Ñİ••¸Ñ¡•Í”Í½ÕÉ•ÌÑ¼•Ğ¥¹Í¥¡ÑÌ¥¹Ñ¼å½ÕÈÍåÍÑ•´¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µÍÉ••¹‰½…É¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œèME0M•ÉÙ•È½ÕĞµ½˜µÑ¡”µ‰½àÍÉ••¹‰½…ÉˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒ%¹ÍÑ…±±¥¹œ…¹½¹™¥ÕÉ¥¹œÑ¡”•¹Ğ)Q¡”…Ñ…‘½œ•¹Ğ¥Ìm½Á•¸Í½ÕÉ”Í½™Ñİ…É•um…•¹ĞµÉ•Á½tÑ¡…Ğ…Ñ¡•ÉÌ‘…Ñ„™É½´å½ÕÈ¡½ÍÑÌ…¹Í•¹‘Ì¥ĞÑ¼…Ñ…‘½œ™½È…É•…Ñ¥½¸°Ù¥ÍÕ…±¥é…Ñ¥½¸°…¹…±•ÉÑ¥¹œ¸Ìİ”±°Í•”°Ñ¡”•¹Ğ…¸É•Á½ÉĞµ•ÑÉ¥Ì°‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…•Ì°…¹±½Ì¸()%˜å½ÔÉ”ÉÕ¹¹¥¹œME0M•ÉÙ•È½¸]¥¹‘½İÌ°¥¹ÍÑ…±°Ñ¡”•¹Ğ‰ä±½¥¹œ¥¹Ñ¼…Ñ…‘½œ…¹™½±±½İ¥¹œ½ÕÈm‘½Õµ•¹Ñ…Ñ¥½¹um¥¹ÍÑ…±°µ…•¹Ğµİ¥¹‘½İÍt¸Ì½˜Ñ¡”Ñ¥µ”½˜Ñ¡¥ÌİÉ¥Ñ¥¹œ°Ñ¡”ME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸¥Ì…Ù…¥±…‰±”½¹±ä™½È]¥¹‘½İÌ¸%˜å½ÔÉ”ÕÍ¥¹œ1¥¹Õà°å½Ô…¸¥¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ğ½¸„]¥¹‘½İÌ¡½ÍĞ…¹½¹™¥ÕÉ”¥ĞÑ¼µ½¹¥Ñ½Èå½ÕÈ1¥¹Õà¥¹ÍÑ…¹•ÌÉ•µ½Ñ•±ä¸()Q¼m¥¹ÍÑ…±°Ñ¡”ME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¹um¥¹ÍÑ…±°µ¥¹Ñ•É…Ñ¥½¹t°½Áä½ÕÈm•á…µÁ±”e50™¥±•umå…µ°µ•á…µÁ±•tÑ¼Ñ¡”¥¹Ñ•É…Ñ¥½¸m‘¥É•Ñ½Éåum½¹™¥œµ¥¹Ñ•É…Ñ¥½¸µ‘¥Ét°€¨©éqAÉ½É…µ…Ñ…q…Ñ…‘½q½¹˜¹‘qÍÅ±Í•ÉÙ•È¹¨¨¸Q¡”•¹Ğ±½…Ñ•Ìå½ÕÈME0M•ÉÙ•È¥¹ÍÑ…¹•Ì™É½´Ñ¡”¥¹ÍÑ…¹•Í€Í•Ñ¥½¸è()¹¼µµ¥¹¥µ¥é”)¥¹¥Ñ}½¹™¥œè()¥¹ÍÑ…¹•Ìè(€€´¡½ÍĞè€ñ¡½ÍĞø°ñÁ½ÉĞø(€€€ÕÍ•É¹…µ”è€ñ…‘µ¥¸ÕÍ•Èø(€€€Á…ÍÍİ½Éè€ñ…‘µ¥¸Á…ÍÍİ½Éø)€()½È•… ¥¹ÍÑ…¹”å½Ôİ…¹ĞÑ¼µ½¹¥Ñ½È°™¥±°¥¸Ñ¡”¡½ÍĞ…‘‘É•ÍÌ€¡½È¹…µ”°”¹œ¸°±½…±¡½ÍÑ€¤…¹Á½ÉĞ°Á±ÕÌÑ¡”±½¥¸‘•Ñ…¥±Ì™½È„ÕÍ•Èİ¥Ñ M1Q€ÁÉ¥Ù¥±••Ì™½ÈÑ¡”ÍåÌ¹‘µ}½Í}Á•É™½Éµ…¹•}½Õ¹Ñ•ÉÍ€‘å¹…µ¥Œµ…¹…•µ•¹ĞÙ¥•Ü¸!½ÍÑÌ¥¸Ñ¡”¥¹ÍÑ…¹•Í€Í•Ñ¥½¸…¸‰”É•µ½Ñ”1¥¹Õàµ…¡¥¹•Ì°‰ÕĞ…¹äÉ•µ½Ñ”¡½ÍĞİ¥±°É•Á½ÉĞµ•ÑÉ¥ÌÕ¹‘•ÈÑ¡”m¡½ÍÑ¹…µ•um‘µ¡½ÍÑ¹…µ•tå½ÔÍ•Ğ¥¸Ñ¡”•¹Ğ½¹™¥ÕÉ…Ñ¥½¸™¥±”½˜å½ÕÈ±½…°µ½¹¥Ñ½É¥¹œµ…¡¥¹”¸()9•áĞ°ÉÕ¸Ñ¡¥Ì½µµ…¹Ñ¼mÉ•ÍÑ…ÉĞÑ¡”•¹Ñumİ¥¹‘½İÌµ…•¹Ñtè((€€€éqAÉ½É…´¥±•Íq…Ñ…‘½q…Ñ…‘½œ•¹Ñq•µ‰•‘‘•‘q…•¹Ğ¹•á”É•ÍÑ…ÉĞµÍ•ÉÙ¥”()e½Ô…¸Í•”¥˜Ñ¡”•¹Ğ¥ÌÉ•Á½ÉÑ¥¹œ‰äÉÕ¹¹¥¹œÑ¡”m•¹Ğ¥¹™½Éµ…Ñ¥½¸½µµ…¹‘um…•¹Ğµ¥¹™½t…¹±½½­¥¹œ™½ÈÑ¡”ÍÅ±Í•ÉÙ•É€Í•Ñ¥½¸è()¹¼µµ¥¹¥µ¥é”(€ÍÅ±Í•ÉÙ•È(€€´´´´´´´´´(€€€Q½Ñ…°IÕ¹Ìè€ÄÀÔ(€€€5•ÑÉ¥Ìè€ÄÀ°Q½Ñ…°5•ÑÉ¥Ìè€ÄÀÔÀ(€€€Ù•¹ÑÌè€À°Q½Ñ…°Ù•¹ÑÌè€À(€€€M•ÉÙ¥”¡•­Ìè€Ä°Q½Ñ…°M•ÉÙ¥”¡•­Ìè€ÄÀÔ)€()Q¡”ME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸…Ñ¡•ÉÌµ•ÑÉ¥Ì‰äÅÕ•Éå¥¹œÑ¡”ÍåÌ¹‘µ}½Í}Á•É™½Éµ…¹•}½Õ¹Ñ•ÉÍ€m‘å¹…µ¥Œµ…¹…•µ•¹ĞÙ¥•İumÁ…ÉĞÈµ‘µÙÍt™½È­•äµ•ÑÉ¥Ì±¥­”µ•µ½ÉäÕÍ…”…¹Ñ¡”‰Õ™™•È…¡”¡¥ĞÉ…Ñ¥¼¸Ìİ”±°Í•”¥¸mA…ÉĞ€ÑumÁ…ÉĞÑt°å½Ô…¸½µÁ±•µ•¹ĞÑ¡¥Ì‘…Ñ„İ¥Ñ ÕÍÑ½´µ•ÑÉ¥Ì‰ä•‘¥Ñ¥¹œÑ¡”¥¹Ñ•É…Ñ¥½¸Ìe50™¥±”¸((ŒŒY¥ÍÕ…±¥é”ME0M•ÉÙ•ÈÁ•É™½Éµ…¹”µ•ÑÉ¥Ì)=¹”å½ÔÙ”Í•ĞÕÀ…Ñ…‘½œÌME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸°å½Ô±°Í•”Ñİ¼m½ÕĞµ½˜µÑ¡”µ‰½à‘…Í¡‰½…É‘Íum¥¹Ñ•É…Ñ¥½¸µ‘…Í¡‰½…É‘Ít™½ÈME0M•ÉÙ•Èè„ÍÉ••¹‰½…ÉÑ¡…Ğ¥Ù•Ìå½Ô„É•…°µÑ¥µ”½Ù•ÉÙ¥•Ü½˜å½ÕÈME0M•ÉÙ•È¥¹ÍÑ…¹•Ì…¹„Ñ¥µ•‰½…ÉÑ¡…ĞÌİ•±°ÍÕ¥Ñ•™½È½ÉÉ•±…Ñ¥¹œME0M•ÉÙ•Èµ•ÑÉ¥Ìİ¥Ñ ÍåÍÑ•´µ•ÑÉ¥Ì…¹•Ù•¹ÑÌ¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µÑ¥µ•‰½…É¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œèME0M•ÉÙ•È½ÕĞµ½˜µÑ¡”µ‰½àÑ¥µ•‰½…ÉˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()e½Ô…¸±½¹”…¹ÕÍÑ½µ¥é”Ñ¡•Í”‘…Í¡‰½…É‘ÌÑ¼Ù¥ÍÕ…±¥é”‘…Ñ„™É½´ME0M•ÉÙ•È…±½¹Í¥‘”µ•ÑÉ¥Ì™É½´É•±…Ñ•ÍåÍÑ•µÌ¸ÕÍÑ½´‘…Í¡‰½…É‘Ì…¸Ñ•±°å½Ô…Ğ„±…¹”İ¡•¸Í½µ•Ñ¡¥¹œ¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¹••‘Ì…ÑÑ•¹Ñ¥½¸¸!•É”İ”Ù”É•…Ñ•„ÍÉ••¹‰½…ÉÑ¡…Ğ½µÁ…É•ÌÑİ¼Ñ¥µ•Í•É¥•ÌÉ…Á¡Ì™½È„Í¥¹±”¡½ÍĞè‰…Ñ É•ÅÕ•ÍÑÌÁ•ÈÍ•½¹…¹PµME0½µÁ¥±…Ñ¥½¹ÌÁ•ÈÍ•½¹¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µ‰…Ñ µ…¹µÑÍÅ°¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œèÑ¥µ•Í•É¥•ÌÉ…Á¡Ì™½È„Í¥¹±”¡½ÍĞˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()]”…¸…±É•…‘äÍ•”…¸¥ÍÍÕ”èPµME0‰…Ñ ½µÁ¥±…Ñ¥½¹ÌÉ•Õ±…É±ä…ÁÁÉ½… Ñ¡”¹Õµ‰•È½˜‰…Ñ É•ÅÕ•ÍÑÌ°İ¡¥ İ”­¹½Ü™É½´mA…ÉĞ€ÅumÁ…ÉĞÄµÑÍÅ±tÍÕ•ÍÑÌÑ¡…Ğ½ÕÈ‰…Ñ¡•Ì…É”¹½Ğ‰•¹•™¥Ñ¥¹œ™É½´…¡¥¹œ¸]”±°İ…¹ĞÑ¼½¹Í¥‘•ÈÑ…­¥¹œÍÑ•ÁÌ±¥­”mÍÁ•¥™å¥¹œÁ…É…µ•Ñ•ÉÍumĞµÍÅ°µÁ…É…µÍtÑ¼µ…­”•á•ÕÑ¥½¸Á±…¹Ìİ¥Ñ¡¥¸Ñ¡”…¡”µ½É”É•ÕÍ…‰±”¸((ŒŒEÕ•Éäµ±•Ù•°‘…Ñ„İ¥Ñ ‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…¥¹œ)e½Ô…¸ÕÍ”…Ñ…‘½œ‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…¥¹œ…¹…ÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”µ½¹¥Ñ½É¥¹œ€¡mA5um…Áµt¤Ñ¼Ù¥ÍÕ…±¥é”É•ÅÕ•ÍÑÌ¥¸‘•Ñ…¥±•™±…µ”É…Á¡Ì…¹•¹•É…Ñ”±…Ñ•¹ä°•ÉÉ½È°…¹Ñ¡É½Õ¡ÁÕĞÍÑ…Ñ¥ÍÑ¥Ì™½Èå½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì¸Q¡”•¹Ğ¡…Ì‰Õ¥±Ğµ¥¸ÑÉ…¥¹œÍÕÁÁ½ÉĞ™½È½µµ½¸İ•ˆ™É…µ•İ½É­Ì…¹±¥‰É…É¥•Ì¥¸„mÉ½İ¥¹œ¹Õµ‰•È½˜±…¹Õ…•Íum…Áµ}±…¹Õ…•Ít°¥¹±Õ‘¥¹œÁ½ÁÕ±…È=I5Ì™½ÈME0M•ÉÙ•È¸()%¸Ñ¡¥Ì•á…µÁ±”°İ”±°‰”ÑÉ…¥¹œÉ•ÅÕ•ÍÑÌÑ¼ME0M•ÉÙ•Èİ¥Ñ¡¥¸„mIÕ‰ä½¸I…¥±ÍumÉÕ‰äµ™É…µ•İ½É¬µÑÉ…¥¹t…ÁÁ±¥…Ñ¥½¸ÕÍ¥¹œ…Ñ…‘½œÌmÑÉ…¥¹œ±¥‰É…Éåum‘‘ÑÉ…”µÉ…¥±Ít¸1¥¹­ÌÑ¼Í¥µ¥±…È±¥‰É…É¥•Ì™½È½Ñ¡•È±…¹Õ…•Ì…É”…Ù…¥±…‰±”¥¸Ñ¡”…Ñ…‘½œm‘½Õµ•¹Ñ…Ñ¥½¹umÑÉ…¥¹œµÍ•ÑÕÁt¸((ŒŒŒÕÑ¼µ¥¹ÍÑÉÕµ•¹Ğå½ÕÈ…ÁÁ±¥…Ñ¥½¸™½ÈÑÉ…¥¹œ()Q¼ÍÑ…ÉĞÑÉ…¥¹œÉ•ÅÕ•ÍÑÌÑ¼ME0M•ÉÙ•È°µ…­”ÍÕÉ”Ñ¡”…Ñ…‘½œ•¹Ğ¥Ì¥¹ÍÑ…±±•½¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸Ì¡½ÍĞ¸%¸Ñ¡”…Áµ}½¹™¥€Í•Ñ¥½¸½˜å½ÕÈ…Ñ…‘½œm½¹™¥ÕÉ…Ñ¥½¸™¥±•um…•¹Ğµ½¹™¥œµ™¥±•t°±½…Ñ•…Ğ€¨©éqAÉ½É…µ…Ñ…q…Ñ…‘½q‘…Ñ…‘½œ¹å…µ°¨¨°Í•Ğ…Áµ}•¹…‰±•‘€Ñ¼ÑÉÕ•€¸½±±½ÜÑ¡”ÍÑ•ÁÌ¥¸½ÕÈm‘½Õµ•¹Ñ…Ñ¥½¹umÉ…¥±ÌµÅÕ¥­ÍÑ…ÉÑtÑ¼¥¹ÍÑ…±°Ñ¡”‘‘ÑÉ…•€•´°É•ÅÕ¥É”¥Ğİ¥Ñ¡¥¸å½ÕÈI…¥±Ì…ÁÁ±¥…Ñ¥½¸°…¹…‘„I…¥±Ì¥¹¥Ñ¥…±¥é•ÈÑ¡…Ğİ¥±°…ÕÑ¼µ¥¹ÍÑÉÕµ•¹Ğå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸Q¡”•¹Ğİ¥±°Í•¹ÑÉ…•ÌÑ¼…Ñ…‘½œİ¥Ñ¡½ÕĞ…¹ä¹••Ñ¼…‘¥¹‘¥Ù¥‘Õ…°½±±•Ñ¥½¸Á½¥¹ÑÌİ¥Ñ¡¥¸å½ÕÈ½‘”¸()Q¡”É•µ…¥¹¥¹œÍÑ•ÁÌÕÍÑ½µ¥é”Ñ¡”İ…äÑÉ…•Ì…ÁÁ•…Èİ¥Ñ¡¥¸…Ñ…‘½œ¸=ÕÈI…¥±Ì•á…µÁ±”¥¹±Õ‘•ÌÑ¡”™½±±½İ¥¹œ¥¸€¨©½¹™¥œ½¥¹¥Ñ¥…±¥é•ÉÌ½‘…Ñ…‘½œµÑÉ…•È¹Éˆ¨¨è()¹¼µµ¥¹¥µ¥é”)…Ñ…‘½œ¹½¹™¥ÕÉ”‘¼ñğ(€Œ¹ÕÍ”€éÉ…¥±Ì°Í•ÉÙ¥•}¹…µ”è€ÁœµÍÅ±Í•ÉÙ•Èµ‘•µ¼œ°‘…Ñ…‰…Í•}Í•ÉÙ¥”è€ÁœµÍÅ±Í•ÉÙ•Èµ‘•µ¼µ‘ˆœ(€Œ¹ÑÉ…•È•¹Øè€‘•µ¼œ)•¹)€)%¸…Ñ…‘½œ°ÑÉ…•Ì…¹Í•ÉÙ¥•Ì…É”½É…¹¥é•‰äm•¹Ù¥É½¹µ•¹Ñum½¹™¥œµ•¹Ùt°‘•™…Õ±Ñ¥¹œÑ¼•¹Øé¹½¹•€¸e½Ô…¸•…Í¥±ämÍ•Ğ„‘¥™™•É•¹Ğ•¹Ù¥É½¹µ•¹Ñum•¹Ùt¥˜å½ÔÁÉ•™•ËŠQÑ¡”•á…µÁ±”…‰½Ù”Ñ…ÌÍ•ÉÙ¥”µ±•Ù•°µ•ÑÉ¥Ì…¹ÑÉ…•Ì™É½´½ÕÈ…ÁÁ±¥…Ñ¥½¸İ¥Ñ •¹Øé‘•µ½€¸()Q¡”½¹™¥ÕÉ•€‰±½¬Ñ•±±ÌÑ¡”•¹ĞÑ¼¥¹ÍÑÉÕµ•¹Ğå½ÕÈI…¥±Ì…ÁÁ±¥…Ñ¥½¸…ÕÑ½µ…Ñ¥…±±ä°…¹¹…µ•ÌÑİ¼Í•ÉÙ¥•ÌÑ¡…Ğİ¥±°…ÁÁ•…È¥¸…Ñ…‘½œè„Í•ÉÙ¥•}¹…µ•€™½ÈÑ¡”µ…¥¸I…¥±Ì…ÁÁ±¥…Ñ¥½¸…Ìİ•±°…Ì„‘…Ñ…‰…Í•}Í•ÉÙ¥•€¸%˜å½Ô±•…Ù”Ñ¡•Í”Õ¹ÍÁ•¥™¥•°mÑ¡”•¹Ğİ¥±°‘•É¥Ù•um‘‘ÑÉ…”µÉ…¥±ÍtÑ¡”Í•ÉÙ¥•}¹…µ•€™É½´Ñ¡”…ÁÁ±¥…Ñ¥½¸¥ÑÍ•±˜°…¹Ñ¡”‘…Ñ…‰…Í•}Í•ÉÙ¥•€™É½´Ñ¡”Í•ÉÙ¥•}¹…µ•€Á±ÕÌÑ¡”…‘…ÁÑ•È™½ÈÑ¡”‘…Ñ…‰…Í”€¡”¹œ¸°ÍÅ±Í•ÉÙ•É€¤¸((ŒŒŒY¥•ÜPµME0ÅÕ•ÉäÍÑ…Ñ¥ÍÑ¥Ì()=¹”å½ÔÙ”…‘‘•å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸‘•Ñ…¥±Ì°É•ÍÑ…ÉĞÑ¡”•¹Ğ¸%¸Ñ¡”…Ñ…‘½œA4Ù¥•Ü°å½Ô±°Í•”„ÍÕµµ…Éä½˜É•ÅÕ•ÍÑÌÑ¼Ñ¡”Ñİ¼Í•ÉÙ¥•Ì¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µ™¥¹µÍ•ÉÙ¥”¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œè±¥ÍĞ½˜Í•ÉÙ¥•Ì¥¸Ñ¡”‘•µ¼•¹Ù¥É½¹µ•¹Ğˆ€ùõô()%˜İ”¹…Ù¥…Ñ”Ñ¼Ñ¡”Í•ÉÙ¥”µ±•Ù•°‘…Í¡‰½…É™½ÈÁœµÍÅ±Í•ÉÙ•Èµ‘•µ¼µ‘‰€°İ”…¸Í•”Ñ¡…Ğ…Ñ…‘½œ¡…ÌÉ½ÕÁ•½ÕÈME0M•ÉÙ•ÈÅÕ•É¥•Ì‰äPµME0ÍÑ…Ñ•µ•¹Ğ¸e½Ô…¸Í½ÉĞÍÑ…Ñ•µ•¹ÑÌ‰äÉ•ÅÕ•ÍĞ½Õ¹Ğ°…Ù•É…”±…Ñ•¹ä°…¹Ñ½Ñ…°Ñ¥µ”¸%¸½ÕÈ…Í”°İ”…¸Í•”Ñ¡…ĞM1Q€ÅÕ•É¥•ÌÑ¼Ñ¡”ÕÍÑ½µ•ÉÍ€Ñ…‰±”…Ù•É…”Ñİ¥”…Ì±½¹œ…ÌM1Q€ÅÕ•É¥•ÌÑ¼Ñ¡”½É‘•ÉÍ€Ñ…‰±”¸Y¥•İ¥¹œÁ•É™½Éµ…¹”µ•ÑÉ¥Ì‰äPµME0ÍÑ…Ñ•µ•¹Ğ¥Ì„ÅÕ¥¬İ…äÑ¼‘•Ñ•Éµ¥¹”İ¡¥ ÅÕ•É¥•Ì½ÈÑ…‰±•ÌÑ¼½ÁÑ¥µ¥é”¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µ±…Ñ•¹äµ‘¥ÍÑÉ¥‰ÕÑ¥½¸¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œè1…Ñ•¹ä‘¥ÍÑÉ¥‰ÕÑ¥½¸…¹É•Í½ÕÉ”ÍÑ…ÑÌ™½ÈME0M•ÉÙ•Èˆ€ùõô((ŒŒŒÕÍÑ½´Ñ¥µ•‰½…É‘Ì™É½´ÑÉ…”µ•ÑÉ¥Ì()]”…¸µ½¹¥Ñ½È‘…Ñ„™É½´½ÕÈPµME0ÅÕ•É¥•Ì…±½¹Í¥‘”½Ñ¡•ÈME0M•ÉÙ•Èµ•ÑÉ¥Ì‰ä¹…Ù¥…Ñ¥¹œÑ¼Ñ¡”Á…”™½È½¹”½˜½ÕÈPµME0ÍÑ…Ñ•µ•¹ÑÌ°±¥­¥¹œÑ¡”µ•¹Ô¥½¸™½ÈÑ¡”€‰Q½Ñ…°I•ÅÕ•ÍÑÌˆ½È€‰1…Ñ•¹äˆÉ…Á¡Ì°…¹…‘‘¥¹œÑ¡”É…Á¡ÌÑ¼„…Ñ…‘½œÑ¥µ•‰½…É¸e½Ô…¸…‘É…Á¡ÌÑ¼„Ñ¥µ•‰½…É™É½´…¹äÍ•ÉÙ¥”‘…Í¡‰½…Éİ¥Ñ¡¥¸Ñ¡”…Ñ…‘½œA4Ù¥•Ü¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µA4µÑ¼µÑ¥µ•‰½…É¹µÀĞˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œè‘‘¥¹œ„É…Á ™É½´Ñ¡”A4‘…Í¡‰½…ÉÑ¼„Ñ¥µ•‰½…ÉˆÙ¥‘•¼ô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()e½Ô…¸…‘Ñ¥µ•Í•É¥•ÌÉ…Á¡Ì½˜Í•ÉÙ¥”µ±•Ù•°µ•ÑÉ¥ÌÑ¼„ÕÍÑ½´Ñ¥µ•‰½…É°É•…Ñ”Ù¥•İÌÑ¡…Ğ½µÁ…É”Ñ¡”Á•É™½Éµ…¹”½˜Ù…É¥½ÕÌÅÕ•É¥•ÌÑ¼å½ÕÈ‘…Ñ…‰…Í”Í•ÉÙ¥”°…¹ÕÍ”Ñ¡•Í”Ñ¼¡•±Àå½Ô¥¹Ù•ÍÑ¥…Ñ”¥ÍÍÕ•Ì¸½È¥¹ÍÑ…¹”°å½Ô…¸É•…Ñ”„‘…Í¡‰½…ÉÑ¼ÑÉ…¬ÅÕ•É¥•ÌÑ¼Ñ¡”ÕÍÑ½µ•ÉÍ€…¹½É‘•ÉÍ€Ñ…‰±•Ì…¹½µÁ…É”Ñ¡•´½Ù•ÈÑ¥µ”¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µ±…Ñ•¹äµ½µÁ…É¥Í½¸¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œèQ¥µ•‰½…ÉÍ¡½İ¥¹œ±…Ñ•¹ä…¹Ñ½Ñ…°É•ÅÕ•ÍÑÌ™½ÈÑİ¼ÅÕ•É¥•ÌÑ¼ME0M•ÉÙ•ÈˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒÉ½´µ•ÑÉ¥ÌÑ¼µ•ÍÍ…•Ìİ¥Ñ …Ñ…‘½œ±½Ì)m…Ñ…‘½œÌ±½œµ…¹…•µ•¹Ñum‘µ±½Ít™•…ÑÕÉ•Ì…É”¥¹Ñ•Éİ½Ù•¸İ¥Ñ µ•ÑÉ¥Ì…¹ÑÉ…¥¹œèå½Ô…¸½ÉÉ•±…Ñ”ÑÉ…•Ìİ¥Ñ ÍåÍÑ•´µ•ÑÉ¥ÌÑ¼‘•Ñ•Éµ¥¹”İ¡¥ Í•ÉÙ¥•Ì¥¸å½ÕÈÍÑ…¬…É”½¹ÑÉ¥‰ÕÑ¥¹œÑ¼¥ÍÍÕ•Ì°Ñ¡•¸•á…µ¥¹”Ñ¡”±½Ì™É½´Ñ¡½Í”Í•ÉÙ¥•ÌÑ¼•Ğ½¹Ñ•áĞ¸((ŒŒŒ½¹™¥ÕÉ”±½œ½±±•Ñ¥½¸™½ÈME0M•ÉÙ•È)mÕÍÑ½´±½œ½±±•Ñ¥½¹umÕÍÑ½´µ±½Ít‘¥É•ÑÌÑ¡”•¹ĞÑ¼±¥ÍÑ•¸½¸„Á½ÉĞ½ÈÑ…¥°„™¥±”°…¹Í•¹±½ÌÑ¼…Ñ…‘½œ…ÌÑ¡•ä…ÉÉ¥Ù”¸e½Ô±°Á½¥¹ĞÑ¡”•¹ĞÑ¼…¸•á¥ÍÑ¥¹œ¥¹ÁÕĞÍ½ÕÉ”™½È±½Ì°…¹‘•Ñ•Éµ¥¹”¡½ÜÑ¡”±½Ìİ¥±°‰”Á…ÉÍ•…¹•¹É¥¡•¸%¸Ñ¡¥Ì•á…µÁ±”°½ÕÈI…¥±Ì…ÁÁ±¥…Ñ¥½¸…±É•…‘ä±½Ì¥ÑÌ‘…Ñ…‰…Í”ÑÉ…¹Í…Ñ¥½¹Ì‰ä‘•™…Õ±Ğ°…¹İ”±°Ñ…­”…‘Ù…¹Ñ…”½˜Ñ¡¥Ì‰•¡…Ù¥½Èİ¡•¸Í•ÑÑ¥¹œÕÀÕÍÑ½´±½œ½±±•Ñ¥½¸¸e½Ôµ¥¡Ğ¡½½Í”„‘¥™™•É•¹ĞÍ½ÕÉ”Ñ¼…½µµ½‘…Ñ”å½ÕÈ½İ¸½¹™¥ÕÉ…Ñ¥½¸°ÍÕ …ÌÑ¡”ME0M•ÉÙ•Èm•ÉÉ½È±½um•ÉÉ½Èµ±½œµ±½…Ñ¥½¹t¸()1½œµ…¹…•µ•¹Ğ¥Ì‰Õ¹‘±•İ¥Ñ Ñ¡”•¹Ğ…Ì½˜Ù•ÉÍ¥½¸€Ø¹à°…¹Ñ¡•É”Ì¹¼¹••Ñ¼¥¹ÍÑ…±°…‘‘¥Ñ¥½¹…°±½œ½±±•Ñ¥½¸Í½™Ñİ…É”¸M•¹‘¥¹œME0M•ÉÙ•È±½Ì™É½´½ÕÈI…¥±Ì…ÁÁ±¥…Ñ¥½¸Ñ¼…Ñ…‘½œÑ…­•Ì½¹±ä„™•ÜÍÑ•ÁÌè((€€Ä¸‘¥ĞÑ¡”…Ñ…‘½œ•¹Ğ½¹™¥ÕÉ…Ñ¥½¸™¥±”(€€È¸‘„½¹™¥ÕÉ…Ñ¥½¸™¥±”™½È±½Ì(€€Ì¸M•ĞÕÀ±½œÁÉ½•ÍÍ¥¹œÉÕ±•Ì€¡½ÁÑ¥½¹…°¤((¨©‘¥ĞÑ¡”…Ñ…‘½œ½¹™¥ÕÉ…Ñ¥½¸™¥±”¸¨¨¹…‰±”±½¥¹œ‰ä¡…¹¥¹œ±½Í}•¹…‰±•‘€Ñ¼ÑÉÕ•€İ¥Ñ¡¥¸Ñ¡”•¹Ğm½¹™¥ÕÉ…Ñ¥½¸™¥±•um…•¹Ğµ½¹™¥œµ™¥±•t¸((¨©‘„½¹™¥ÕÉ…Ñ¥½¸™¥±”™½È±½Ì¸¨¨%¸½É‘•ÈÑ¼Í•ĞÕÀÕÍÑ½´±½œ½±±•Ñ¥½¸°å½Ôİ¥±°¹••Ñ¼…‘„¹•Ü™½±‘•Èİ¥Ñ¡¥¸Ñ¡”•¹ĞÌ¥¹Ñ•É…Ñ¥½¸m½¹™¥ÕÉ…Ñ¥½¸‘¥É•Ñ½Éåum½¹™¥œµ¥¹Ñ•É…Ñ¥½¸µ‘¥Ét°Ñ¡•¸…‘„me50™¥±•umÕÍÑ½´µ±½ÍtÑ¼Ñ¡…Ğ™½±‘•È¸…Ñ…‘½œÉ•½µµ•¹‘Ì¹…µ¥¹œÑ¡”¹•Ü™½±‘•È…™Ñ•ÈÑ¡”Í½ÕÉ”½˜å½ÕÈ±½Ì…¹Ñ¡”e50™¥±”€¨©½¹˜¹å…µ°¨¨¸½È¥¹ÍÑ…¹”°¥¸Ñ¡¥Ì…Í”å½Ôİ½Õ±É•…Ñ”„¹•Ü½¹™¥œ™¥±”…Ğ€¨©½¹˜¹½ÉÕ‰ä¹½½¹˜¹å…µ°¨¨è()¹¼µµ¥¹¥µ¥é”)±½Ìè(€€´ÑåÁ”è™¥±”(€€€Á…Ñ è€½Í¡…É•½±½œ½‘•Ù•±½Áµ•¹Ğ¹±½œ(€€€Í•ÉÙ¥”èÁœµÍÅ±Í•ÉÙ•Èµ‘•µ¼(€€€Í½ÕÉ”èÉÕ‰ä(€€€Ñ…Ìè•¹Øé‘•µ¼)€()%¸Ñ¡¥Ì•á…µÁ±”°İ”Ù”…ÍÍ¥¹•Ù…±Õ•Ì™½È™½ÕÈµ…¹‘…Ñ½Éä­•åÌè)ÑåÁ•€°Á…Ñ¡€°Í•ÉÙ¥•€°…¹Í½ÕÉ•€¸=ÕÈÍ•ÑÑ¥¹Ì½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼Ñ…¥°Ñ¡”™¥±”€¡ÑåÁ•€¤Ñ¡…Ğ•á¥ÍÑÌ…Ğ„•ÉÑ…¥¸Á…Ñ¡€°½¹¹•ĞÑ¡”±½œÑ¼Ñ¡”Í•ÉÙ¥”ÁœµÍÅ±Í•ÉÙ•Èµ‘•µ½€°…¹…ÍÍ½¥…Ñ”¥Ğİ¥Ñ Ñ¡”ÉÕ‰å€¥¹Ñ•É…Ñ¥½¸¸e½Ô…¸É•……‰½ÕĞµ…¹‘…Ñ½Éä­•åÌİ¥Ñ¡¥¸Ñ¡”±½œµ…¹…•µ•¹Ğ½¹™¥ÕÉ…Ñ¥½¸™¥±”¥¸Ñ¡”…Ñ…‘½œm‘½Õµ•¹Ñ…Ñ¥½¹umÕÍÑ½´µ±½Ít¸()e½Ô±°¹½Ñ¥”Ñ¡…ĞÑ¡”Í•ÉÙ¥•€…¹•¹Ù€½˜½ÕÈ±½Ì¥ÌÑ¡”Í…µ”…ÌÑ¡½Í”½˜½ÕÈÑÉ…•Ì¸=ÕÈ±½Ìİ¥±°‰”Ñ…•…ÕÑ½µ…Ñ¥…±±ä‰…Í•½¸Ñ¡”½¹™¥ÕÉ…Ñ¥½¸İ”Ù”ÍÁ•¥™¥•¸]”…¸ÕÍ”Ñ¡•Í”Ñ…Ì™½È™¥±Ñ•É¥¹œ¥¸Ñ¡”±½ÌÙ¥•Ü°…Ìİ•±°…Ì™½È¹…Ù¥…Ñ¥¹œ‰•Ñİ••¸µ•ÑÉ¥Ì°ÑÉ…•Ì°…¹±½Ì™½ÈÑ¡”Í…µ”Í•ÉÙ¥•€…¹•¹Ù€¸((¨©M•ĞÕÀ±½œÁÉ½•ÍÍ¥¹œÉÕ±•Ì¸¨¨e½Ôµ…äİ…¹ĞÑ¼¥Ù”Ñ¡”•¹Ğ…‘‘¥Ñ¥½¹…°¥¹ÍÑÉÕÑ¥½¹Ì™½È½±±•Ñ¥¹œ…¹ÁÉ”µÁÉ½•ÍÍ¥¹œ±½Ì‰•™½É”Ñ¡•äÉ”Í•¹ĞÑ¼…Ñ…‘½œ¸	ä‘•™…Õ±Ğ°Ñ¡”•¹Ğİ¥±°Í•¹±½ÌÑ¼…Ñ…‘½œ½¹”±¥¹”…Ğ„Ñ¥µ”¸•Á•¹‘¥¹œ½¸Ñ¡”™½Éµ…Ğ½˜å½ÕÈ±½Ì°å½Ôµ…ä¹••Ñ¼É•Á½ÉĞ±½Ìm…ÌµÕ±Ñ¤µ±¥¹”¡Õ¹­ÍumµÕ±Ñ¤µ±¥¹•t¸()…Ñ…‘½œ¥‘•¹Ñ¥™¥•Ì„±ÕÍÑ•È½˜±¥¹•Ì‰äµ…Ñ¡¥¹œ„Á…ÑÑ•É¸¸%¸Ñ¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”™½È…Ñ…‘½œ±½œµ…¹…•µ•¹Ğ°İ”Ù”…‘‘•„±½œÁÉ½•ÍÍ¥¹œÉÕ±”İ¥Ñ¡¥¸Ñ¡”™¥ÉÍĞ¥Ñ•´Õ¹‘•È±½Í€¸]”Ù”‘•™¥¹•„µÕ±Ñ¤µ±¥¹”…É•…Ñ¥½¸ÉÕ±”‰…Í•½¸„Á…ÉÑ¥Õ±…ÈÍÑÉ¥¹ŸŠQÍ¼•Ù•ÉäÑ¥µ”Ñ¡”•¹Ğ•¹½Õ¹Ñ•ÉÌÑ¡”ÍÑÉ¥¹œ€˜ø˜ø™€İ¥Ñ¡¥¸Ñ¡”±½œ™¥±”°¥Ğİ¥±°¥‘•¹Ñ¥™ä„¹•Ü±½œ•¹ÑÉä¸()¹¼µµ¥¹¥µ¥é”(€€´ÑåÁ”è™¥±”(Œ€¸¸¸(€€€±½}ÁÉ½•ÍÍ¥¹}ÉÕ±•Ìè(€€€€€€´ÑåÁ”èµÕ±Ñ¥}±¥¹”(€€€€€€€¹…µ”è¹•İ}±½}ÍÑ…ÉÑ}İ¥Ñ¡}‘…Ñ”(€€€€€€€Á…ÑÑ•É¸èp™pùp™pùp˜)€()]”Ù”…±Í¼…‘‘•„±¥¹”Ñ¼½¹”½˜I…¥±Ìœm½¹™¥ÕÉ…Ñ¥½¸™¥±•ÍumÉ…¥±Ìµ½¹™¥œµ±½tè()€(€½¹™¥œ¹±½}Ñ…Ì€ôlˆ˜ø˜ø˜‰t)€()Q¡¥Ì±¥¹”¥¹ÍÑÉÕÑÌI…¥±ÌÑ¼mÑ…umÉ…¥±Ìµ½¹™¥t•… ±½œİ¥Ñ €˜ø˜ø™€€¡Ñ¡”ÍÑÉ¥¹œİ”ÍÁ•¥™¥•¥¸Ñ¡”±½}ÁÉ½•ÍÍ¥¹}ÉÕ±•Í€Í•Ñ¥½¸½˜½ÕÈ½¹™¥ÕÉ…Ñ¥½¸™¥±”¤¸()e½Ôµ…ä…±Í¼İ…¹ĞÑ¼ÁÉ½‘Õ”±½Ìm…Ì)M=9um©Í½¸µ±½Ít°„™½Éµ…ĞÑ¡…ĞÑ¡”…Ñ…‘½œ•¹Ğİ¥±°Á…ÉÍ”…ÕÑ½µ…Ñ¥…±±ä°İ¥Ñ¡½ÕĞÑ¡”¹••Ñ¼‘•™¥¹”•áÁ±¥¥ĞÁ…ÉÍ¥¹œÉÕ±•Ì¸()9½ÜÑ¡…Ğå½ÔÙ”½¹™¥ÕÉ•±½œµ…¹…•µ•¹Ğ°É•ÍÑ…ÉĞÑ¡”•¹ĞÑ¼ÍÑ…ÉĞÍ••¥¹œå½ÕÈ±½Ìİ¥Ñ¡¥¸…Ñ…‘½œ¸((ŒŒŒ½¹Ñ•áĞ¥¸Ñ¡É•”‘¥µ•¹Í¥½¹Ì)…Ñ…‘½œ±•ÑÌå½Ôµ½Ù”İ¥Ñ •…Í”‰•Ñİ••¸Í•ÉÙ¥”µ±•Ù•°‘…Í¡‰½…É‘Ì™½Èå½ÕÈ‘…Ñ…‰…Í”°É…Á¡Ì½˜ÍåÍÑ•´µ•ÑÉ¥Ì°…¹±½Ì™É½´µ½µ•¹ÑÌ½˜¥¹Ñ•É•ÍĞ¸%˜å½ÕÈME0M•ÉÙ•È¥¹ÍÑ…¹•ÌÉÕ¸¥¹Ñ¼¥ÍÍÕ•Ì°å½Ô…¸¹…Ù¥…Ñ”‰•Ñİ••¸µ•ÑÉ¥Ì°±½Ì°…¹ÑÉ…•ÌÑ¼•ĞÑ¡”½¹Ñ•áĞå½Ô¹••™½ÈÑÉ½Õ‰±•Í¡½½Ñ¥¹œ¸()%¸Ñ¡”•á…µÁ±”‰•±½Ü°Ñ¡”ÑÉ…¥¹œ‘…Í¡‰½…É™½È„I…¥±Ì…ÁÁ±¥…Ñ¥½¸‘¥ÍÁ±…åÌ„İ…Ù”½˜•ÉÉ½ÉÌ°…¹Ñ¡”‘…Ñ…‰…Í”Í•ÉÙ¥”‘¥Í…ÁÁ•…ÉÌ™É½´Ñ¡”É…Á €‰Q½Ñ…°Q¥µ”MÁ•¹Ğ‰äM•ÉÙ¥”¸ˆ()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µ¥ÍÍÕ”¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œè…Í¡‰½…ÉÍ¡½İ¥¹œ…¸¥ÍÍÕ”İ¥Ñ ½ÕÈME0M•ÉÙ•È…ÁÁ±¥…Ñ¥½¸Í•ÑÕÀˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()=¹”İ…äÑ¼±•…É¸µ½É”…‰½ÕĞÑ¡”¥ÍÍÕ”¥ÌÑ¼¹…Ù¥…Ñ”™É½´½ÕÈÑÉ…¥¹œ‘…Í¡‰½…ÉÑ¼É…Á¡Ì½˜ÍåÍÑ•´µ•ÑÉ¥Ì¸e½Ô…¸‘¼Ñ¡¥Ì‰ä±¥­¥¹œ„ÑÉ…”°Ñ¡•¸±¥­¥¹œÑ¡”l‰!½ÍĞ%¹™¼‰um¡½ÍĞµ¥¹™½tÑ…ˆ°İ¡¥ ¥Ù•Ìå½Ô„Í•±•Ñ¥½¸½˜‘…Í¡‰½…É‘ÌÉ¥¡Ğİ¥Ñ¡¥¸Ñ¡”ÑÉ…¥¹œÙ¥•Ü¸=Èå½Ô…¸¹…Ù¥…Ñ”Ñ¼„‘•‘¥…Ñ•‘…Í¡‰½…É™½Èå½ÕÈ¡½ÍĞ¸±¥¬Ñ¡”¹…µ”½˜„¡½ÍĞİ¥Ñ¡¥¸Ñ¡”±¥ÍĞ½˜ÑÉ…•Ì°Ñ¡•¸±¥¬€‰!½ÍĞ‘…Í¡‰½…Éˆ€¡…Ì‰•±½Ü¤¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µ¡½ÍĞµ‘…Í¡‰½…É¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œè±¥¹¬Ñ¼„¡½ÍĞ‘…Í¡‰½…Éˆ€ùõô()Q¡”¡½ÍĞ‘…Í¡‰½…ÉÍ¡½İÌÕÌÍåÍÑ•´µ±•Ù•°µ•ÑÉ¥Ì™É½´½ÕÈ…ÁÁ±¥…Ñ¥½¸Í•ÉÙ•È°İ¡¥ ¡•±ÁÌÕÌ‘•Ñ•Éµ¥¹”¥˜½ÕÈ¥ÍÍÕ”½ÉÉ•ÍÁ½¹‘Ìİ¥Ñ …¹äÉ•Ù•…±¥¹œÑÉ•¹‘Ì¸%¸Ñ¡¥Ì•á…µÁ±”°İ”Ù”¹…Ù¥…Ñ•Ñ¼„É…Á Ñ¡…ĞÍ¡½İÌ°…Ğ…É½Õ¹Ñ¡”Í…µ”Ñ¥µ”İ”ÍÑ…ÉÑ•É••¥Ù¥¹œ•ÉÉ½ÉÌ¥¸Ñ¡”ÑÉ…¥¹œ‘…Í¡‰½…É°„ÍÕ‘‘•¸±•Ù•±¥¹œ½˜¹•Ñİ½É¬ÑÉ…™™¥Œ¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µ¡½ÍĞµ¹•Ñİ½É¬¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œèÉ…Á ½˜¹•Ñİ½É¬ÑÉ…™™¥Œ½¸½ÕÈ…ÁÁ±¥…Ñ¥½¸Í•ÉÙ•ÈˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()Q¼…¥¸…‘‘¥Ñ¥½¹…°½¹Ñ•áĞ°İ”…¸±¥¬½¸Ñ¡”É…Á …ĞÑ¡…ĞÁ½¥¹Ğ¥¸Ñ¥µ”°Ñ¡•¸±¥¬€‰Y¥•ÜÉ•±…Ñ•±½Ì¸ˆQ¡¥Ìİ¥±°Ñ…­”å½ÔÑ¼Ñ¡”1½œáÁ±½É•È…¹™¥±Ñ•ÈÑ¡”±½ÌÑ¼Ñ¡”Ñ¥µ”Á•É¥½…¹¡½ÍĞå½ÔÙ”Í•±•Ñ•İ¥Ñ¡¥¸Ñ¡”É…Á ¸%¸Ñ¡¥Ì…Í”°İ”™¥¹„±½œÑ¡…ĞÍ¡•‘Ì±¥¡Ğ½¸‰½Ñ Ñ¡”•ÉÉ½ÉÌİ¥Ñ¡¥¸½ÕÈÑÉ…•Ì…¹Ñ¡”±½ÍÌ½˜¹•Ñİ½É¬ÑÉ…™™¥ŒèI…¥±Ì…¹¹½Ğ½¹¹•ĞÑ¼Ñ¡”‘…Ñ…‰…Í”Í•ÉÙ•È¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•ÈµÁ•É™½Éµ…¹”µ¥ÍÍÕ”µ±½Ì¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈME0M•ÉÙ•ÈÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œè¥…¹½Í¥¹œ¥ÍÍÕ•Ìİ¥Ñ ±½ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()…Ñ…‘½œµ…­•Ì¥ĞÍÑÉ…¥¡Ñ™½Éİ…ÉÑ¼µ½¹¥Ñ½ÈME0M•ÉÙ•ÈÌ¥¹Ñ•É…Ñ¥½¹Ìİ¥Ñ Ñ¡”É•ÍĞ½˜å½ÕÈİ•ˆ…ÁÁ±¥…Ñ¥½¸¸e½Ô…¸…Ñ¡•È±½Ì™É½´„™¥±”½È¹•Ñİ½É¬Á½ÉĞ°…¹Í•¹ÑÉ…•Ì‰ä…ÕÑ¼µ¥¹ÍÑÉÕµ•¹Ñ¥¹œ„İ•ˆ™É…µ•İ½É¬Ñ¡…ĞME0M•ÉÙ•È¥¹Ñ•É…Ñ•Ìİ¥Ñ ¸¹İ¥Ñ •…Íä¹…Ù¥…Ñ¥½¸‰•Ñİ••¸µ•ÑÉ¥Ì°ÑÉ…•Ì°…¹±½Ì°å½Ô…¸ÅÕ¥­±äÁ¥¸‘½İ¸İ¡¥ Á…ÉÑÌ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”…É”…ÕÍ¥¹œ…¸¥ÍÍÕ”¸((ŒŒME0M•ÉÙ•ÈèEÕ•É¥•Ì¥¸Ñ¡”ÍÁ½Ñ±¥¡Ğ)%¸Ñ¡¥ÌÁ½ÍĞ°İ”Ù”Í¡½İ¸å½Ô¡½ÜÑ¼ÕÍ”…Ñ…‘½œİ¥Ñ ME0M•ÉÙ•ÈÑ¼½±±•Ğµ•ÑÉ¥Ì°ÑÉ…•Ì°…¹±½Ì¸]¥Ñ …±°½˜Ñ¡¥Ì‘…Ñ„½¸Ñ¡”Í…µ”Á±…Ñ™½É´°å½Ô…¸•…Í¥±äÍİ¥Ñ ‰•Ñİ••¸Ù¥•İÌ…¹ÑÉ½Õ‰±•Í¡½½Ğ¥ÍÍÕ•Ì¥¸å½ÕÈME0M•ÉÙ•ËŠM‰…Í•…ÁÁ±¥…Ñ¥½¹Ì¸()e½Ô…¸…¥¸•Ù•¸µ½É”Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼ME0M•ÉÙ•È‰ä½¹™¥ÕÉ¥¹œÑ¡”•¹ĞÑ¼½±±•ĞÕÍÑ½´µ•ÑÉ¥Ì¸I•…Ñ¡”m¹•áĞÁ…ÉÑumÁ…ÉĞÑt½˜Ñ¡¥ÌÍ•É¥•ÌÑ¼±•…É¸Ñ¡É•”İ…åÌÑ¼‘¼Í¼¸()%˜å½ÔÉ”…±É•…‘äÕÍ¥¹œ…Ñ…‘½œ°å½Ô…¸™½±±½ÜÑ¡”ÍÑ•ÁÌ…‰½Ù”Ñ¼•¹…‰±”Ñ¡”ME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸°…Ìİ•±°…ÌA4…¹±½œ½±±•Ñ¥½¸°Ñ¼¥Ù”å½Ô„™Õ±°Ù¥•Ü½˜å½ÕÈÍåÍÑ•´¸%˜å½ÔÉ”¹•ÜÑ¼…Ñ…‘½œ°å½Ô…¸•ĞÍÑ…ÉÑ•µ½¹¥Ñ½É¥¹œME0M•ÉÙ•ÈÁ•É™½Éµ…¹”‰äÍ¥¹¥¹œÕÀ™½È„€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”ÑÉ¥…°ğ½„ø¸(()m…•¹Ğµ½¹™¥œµ™¥±•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•Ì¼()m…•¹ĞµÉ•Á½tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘…Ñ…‘½œ½‘…Ñ…‘½œµ…•¹Ğ()m…•¹Ğµ¥¹™½tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½µµ…¹‘Ì¼…•¹Ğµ¥¹™½Éµ…Ñ¥½¸()m…Áµtè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½…Á´¼()m…Áµ}±…¹Õ…•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½±…¹Õ…•Ì¼()m‰…Í¥Œµ…•¹ĞµÕÍ…•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½‰…Í¥}…•¹Ñ}ÕÍ…”¼()m½¹™¥œµ•¹Ùtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½•¹Ù¥É½¹µ•¹Ğ¼()m½¹™¥œµ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½ÍÅ±Í•ÉÙ•È¼½¹™¥ÕÉ…Ñ¥½¸()m½¹™¥œµ¥¹Ñ•É…Ñ¥½¸µ‘¥Étè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½‰…Í¥}…•¹Ñ}ÕÍ…”½İ¥¹‘½İÌ¼…•¹Ğµ¡•¬µ‘¥É•Ñ½ÉäµÍÑÉÕÑÕÉ”()m‘µ±½Ítè€½‰±½œ½…¹¹½Õ¹¥¹œµ±½Ì¼()mÕÍÑ½´µ±½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì¼ÕÍÑ½´µ±½œµ½±±•Ñ¥½¸()m‘µ¡½ÍÑ¹…µ•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½™…Ä½¡½Üµ‘…Ñ…‘½œµ…•¹Ğµ‘•Ñ•Éµ¥¹•ÌµÑ¡”µ¡½ÍÑ¹…µ”¼()m‘‘ÑÉ…”µÉ…¥±Ítè¡ÑÑÀè¼½İİÜ¹ÉÕ‰å‘½Œ¹¥¹™¼½•µÌ½‘‘ÑÉ…”¼IÕ‰å}½¹}I…¥±Ì()m‘…Ñ…‘½œµÑÉ…¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ¼()m•¹Ùtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½•¹Ù¥É½¹µ•¹Ğ¼()m•ÉÉ½Èµ±½œµ±½…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½É•±…Ñ¥½¹…°µ‘…Ñ…‰…Í•Ì½Á•É™½Éµ…¹”½Ù¥•ÜµÑ¡”µÍÅ°µÍ•ÉÙ•Èµ•ÉÉ½Èµ±½œµÍÅ°µÍ•ÉÙ•Èµµ…¹…•µ•¹ĞµÍÑÕ‘¥¼()m¡½ÍĞµ¥¹™½tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÍĞµ¥¹™¼µÁ…¹•°¼()m¥¹ÍÑ…±°µ…•¹Ğµİ¥¹‘½İÍtè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ½İ¥¹‘½İÌ()m¥¹ÍÑ…±°µ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½ÍÅ±Í•ÉÙ•È¼()m¥¹Ñ•É…Ñ¥½¸µ‘…Í¡‰½…É‘Ítè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½‘…Í¡‰½…É½±¥ÍÑÌ½ÁÉ•Í•Ğ¼Ì()m©Í½¸µ±½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì¼Ñ¡”µ…‘Ù…¹Ñ…”µ½˜µ½±±•Ñ¥¹œµ©Í½¸µ™½Éµ…ÑÑ•µ±½Ì()m±½Ìµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì¼()mµÕ±Ñ¤µ±¥¹•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì¼µÕ±Ñ¤µ±¥¹”µ…É•…Ñ¥½¸()mÁ…ÉĞÄµÑÍÅ±tè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ½¹¥Ñ½É¥¹œÑÍÅ°µµ•ÑÉ¥Ì()mÁ…ÉĞÉtè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¼()mÁ…ÉĞÈµ…Ñ¥Ù¥Ñäµµ½¹¥Ñ½Étè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ½¹¥Ñ½É¥¹œµÑ½½±Ì…Ñ¥Ù¥Ñäµµ½¹¥Ñ½È()mÁ…ÉĞÈµ‘µÙÍtè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¼‘å¹…µ¥Œµµ…¹…•µ•¹ĞµÙ¥•İÌ()mÁ…ÉĞÑtè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ•ÑÉ¥Ì()mÉ…¥±Ìµ½¹™¥tè¡ÑÑÀè¼½Õ¥‘•Ì¹ÉÕ‰å½¹É…¥±Ì¹½Éœ½½¹™¥ÕÉ¥¹œ¹¡Ñµ°É…¥±Ìµ•¹•É…°µ½¹™¥ÕÉ…Ñ¥½¸()mÉ…¥±Ìµ½¹™¥œµ±½tè¡ÑÑÀè¼½Õ¥‘•Ì¹ÉÕ‰å½¹É…¥±Ì¹½Éœ½½¹™¥ÕÉ¥¹œ¹¡Ñµ°±½…Ñ¥½¹Ìµ™½Èµ¥¹¥Ñ¥…±¥é…Ñ¥½¸µ½‘”()mÉ…¥±ÌµÅÕ¥­ÍÑ…ÉÑtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½ÉÕ‰ä¼ÅÕ¥­ÍÑ…ÉĞµ™½ÈµÉ…¥±Ìµ…ÁÁ±¥…Ñ¥½¹Ì()mÉÕ‰äµ™É…µ•İ½É¬µÑÉ…¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½±…¹Õ…•Ì½ÉÕ‰ä¼™É…µ•İ½É¬µ½µÁ…Ñ¥‰¥±¥Ñä()mĞµÍÅ°µÁ…É…µÍtè¡ÑÑÁÌè¼½Ñ•¡¹•Ğ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌÄÜÔÔàÀ¡ØõÍÅ°¸ÄÀÔ¤¹…ÍÁà()mÑÉ…¥¹œµÍ•ÑÕÁtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ¼Í•ÑÕÀµÁÉ½•ÍÌ()mİ¥¹‘½İÌµ…•¹Ñtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½‰…Í¥}…•¹Ñ}ÕÍ…”½İ¥¹‘½İÌ¼™½ÈµÙ•ÉÍ¥½¸´Ø´À´À()mİ¥¹‘½İÌµ½¹±åtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ¼ÈİˆĞÜÙˆÕÙ„ÌÙ‘™ŒØÙˆÄØÍ•‰”àÔÀÀÕŒÕ‰”Øå„½ÍÅ±Í•ÉÙ•È½µ…¹¥™•ÍĞ¹©Í½¸()må…µ°µ•á…µÁ±•tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½ÍÅ±Í•ÉÙ•È½‘…Ñ…‘½}¡•­Ì½ÍÅ±Í•ÉÙ•È½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”
+---
+authors:
+- email: paul.gottschling@datadoghq.com
+  image: paulgottschling.jpg
+  name: Paul Gottschling
+blog/category:
+- series metrics
+blog/tag:
+- sql-server
+- alerts
+- dbms
+- sql
+- microsoft
+date: 2018-05-04T17:00:01Z
+description: "Spot SQL Server performance issues using metrics, tracing, and log management."
+draft: false
+image: SQL-Server-performance-hero.png
+preview_image: SQL-Server-performance-hero.png
+slug: sql-server-performance
+technology: sql-server
+title: Monitor SQL Server performance with Datadog
+series: sql-server-monitoring
+header_video:
+    mp4: superheroes_microsoftsq03_v02.mp4
+    no_loop: false
+    no_autoplay: false
+    stop_time: 0
+---
+In [Part 2 of this series][part2], we surveyed tools for monitoring SQL Server performance. If your SQL Server instances are part of a complex web application, handling queries from HTTP servers, running in a cluster, or otherwise connecting to other services, you'll need a monitoring solution that can peer into your databases while keeping their interactions with your stack in the picture. Datadog provides end-to-end visibility into the health and performance of your SQL Server instancesâ€”along with {{< translate key="integration_count" >}}+ other technologies running alongside them. 
+
+In this post, we will walk you through the process of setting up Datadog's SQL Server integration to monitor metrics, distributed request traces, and logs in a single platformâ€”and how to pivot between these sources to get insights into your system.
+
+{{< img src="SQL-Server-performance-screenboard.png" alt="Monitor SQL Server performance with Datadog: SQL Server out-of-the-box screenboard" popup="true" >}}
+
+## Installing and configuring the Agent
+The Datadog Agent is [open source software][agent-repo] that gathers data from your hosts and sends it to Datadog for aggregation, visualization, and alerting. As we'll see, the Agent can report metrics, distributed traces, and logs.
+
+If you're running SQL Server on Windows, install the Agent by logging into Datadog and following our [documentation][install-agent-windows]. As of the time of this writing, the SQL Server integration is available only for Windows. If you're using Linux, you can install the Datadog Agent on a Windows host and configure it to monitor your Linux instances remotely.  
+
+To [install the SQL Server integration][install-integration], copy our [example YAML file][yaml-example] to the integration [directory][config-integration-dir], **C:\ProgramData\Datadog\conf.d\sqlserver.d**. The Agent locates your SQL Server instances from the `instances` section:
+
+```no-minimize
+init_config:
+
+instances:
+  - host: <host>,<port>
+    username: <admin user>
+    password: <admin password>
+```
+
+For each instance you want to monitor, fill in the host address (or name, e.g., `localhost`) and port, plus the login details for a user with `SELECT` privileges for the `sys.dm_os_performance_counters` dynamic management view. Hosts in the `instances` section can be remote Linux machines, but any remote host will report metrics under the [`hostname`][dd-hostname] you set in the Agent configuration file of your local monitoring machine.
+
+Next, run this command to [restart the Agent][windows-agent]:
+
+    C:\Program Files\Datadog\Datadog Agent\embedded\agent.exe restart-service
+
+You can see if the Agent is reporting by running the [Agent information command][agent-info] and looking for the `sqlserver` section: 
+
+```no-minimize
+  sqlserver
+  ---------
+    Total Runs: 105
+    Metrics: 10, Total Metrics: 1050
+    Events: 0, Total Events: 0
+    Service Checks: 1, Total Service Checks: 105
+```
+
+The SQL Server integration gathers metrics by querying the `sys.dm_os_performance_counters` [dynamic management view][part2-dmvs] for key metrics like memory usage and the buffer cache hit ratio. As we'll see in [Part 4][part4], you can complement this data with custom metrics by editing the integration's YAML file.
+
+## Visualize SQL Server performance metrics
+Once you've set up Datadog's SQL Server integration, you'll see two [out-of-the-box dashboards][integration-dashboards] for SQL Server: a screenboard that gives you a real-time overview of your SQL Server instances and a timeboard that's well suited for correlating SQL Server metrics with system metrics and events. 
+
+{{< img src="SQL-Server-performance-timeboard.png" alt="Monitor SQL Server performance with Datadog: SQL Server out-of-the-box timeboard" popup="true" wide="true" >}}
+
+You can clone and customize these dashboards to visualize data from SQL Server alongside metrics from related systems. Custom dashboards can tell you at a glance when something in your infrastructure needs attention. Here we've created a screenboard that compares two timeseries graphs for a single host: batch requests per second and T-SQL compilations per second.
+
+{{< img src="SQL-Server-performance-batch-and-tsql.png" alt="Monitor SQL Server performance with Datadog: timeseries graphs for a single host" popup="true" wide="true" >}}
+
+We can already see an issue: T-SQL batch compilations regularly approach the number of batch requests, which we know from [Part 1][part1-tsql] suggests that our batches are not benefiting from caching. We'll want to consider taking steps like [specifying parameters][t-sql-params] to make execution plans within the cache more reusable. 
+
+## Query-level data with distributed tracing
+You can use Datadog distributed tracing and application performance monitoring ([APM][apm]) to visualize requests in detailed flame graphs and generate latency, error, and throughput statistics for your applications. The Agent has built-in tracing support for common web frameworks and libraries in {{< translate key="apm_languages" >}}, including popular ORMs for SQL Server. 
+
+In this example, we'll be tracing requests to SQL Server within a [Ruby on Rails][ruby-framework-tracing] application using Datadog's [tracing library][ddtrace-rails]. Links to similar libraries for other languages are available in the Datadog [documentation][tracing-setup].
+
+### Auto-instrument your application for tracing
+
+To start tracing requests to SQL Server, make sure the Datadog Agent is installed on your application's host. In the `apm_config` section of your Datadog [configuration file][agent-config-file], located at **C:\ProgramData\Datadog\datadog.yaml**, set `apm_enabled` to `true`. Follow the steps in our [documentation][rails-quickstart] to install the `ddtrace` gem, require it within your Rails application, and add a Rails initializer that will auto-instrument your application. The Agent will send traces to Datadog without any need to add individual collection points within your code.
+
+The remaining steps customize the way traces appear within Datadog. Our Rails example includes the following in **config/initializers/datadog-tracer.rb**:
+
+```no-minimize
+Datadog.configure do |c|
+  c.use :rails, service_name: 'pg-sqlserver-demo', database_service: 'pg-sqlserver-demo-db'
+  c.tracer env: 'demo'
+end
+```
+In Datadog, traces and services are organized by [environment][config-env], defaulting to `env:none`. You can easily [set a different environment][env] if you preferâ€”the example above tags service-level metrics and traces from our application with `env:demo`. 
+
+The `configure` block tells the Agent to instrument your Rails application automatically, and names two services that will appear in Datadog: a `service_name` for the main Rails application as well as a `database_service`. If you leave these unspecified, [the Agent will derive][ddtrace-rails] the `service_name` from the application itself, and the `database_service` from the `service_name` plus the adapter for the database (e.g., `sqlserver`).
+
+### View T-SQL query statistics
+
+Once you've added your configuration details, restart the Agent. In the Datadog APM view, you'll see a summary of requests to the two services.
+
+{{< img src="SQL-Server-performance-find-service.png" alt="Monitor SQL Server performance with Datadog: A list of services in the demo environment" >}}
+
+If we navigate to the service-level dashboard for `pg-sqlserver-demo-db`, we can see that Datadog has grouped our SQL Server queries by T-SQL statement. You can sort statements by request count, average latency, and total time. In our case, we can see that `SELECT` queries to the `customers` table average twice as long as `SELECT` queries to the `orders` table. Viewing performance metrics by T-SQL statement is a quick way to determine which queries or tables to optimize.
+
+{{< img src="SQL-Server-performance-latency-distribution.png" popup="true" alt="Monitor SQL Server performance with Datadog: Latency distribution and resource stats for SQL Server" >}}
+
+### Custom timeboards from trace metrics
+
+We can monitor data from our T-SQL queries alongside other SQL Server metrics by navigating to the page for one of our T-SQL statements, clicking the menu icon for the "Total Requests" or "Latency" graphs, and adding the graphs to a Datadog timeboard. You can add graphs to a timeboard from any service dashboard within the Datadog APM view.
+
+{{< img src="SQL-Server-performance-APM-to-timeboard.mp4" alt="Monitor SQL Server performance with Datadog: Adding a graph from the APM dashboard to a timeboard" video="true" wide="true" >}}
+
+You can add timeseries graphs of service-level metrics to a custom timeboard, create views that compare the performance of various queries to your database service, and use these to help you investigate issues. For instance, you can create a dashboard to track queries to the `customers` and `orders` tables and compare them over time. 
+
+{{< img src="SQL-Server-performance-latency-comparison.png" alt="Monitor SQL Server performance with Datadog: Timeboard showing latency and total requests for two queries to SQL Server" popup="true" >}}
+
+## From metrics to messages with Datadog logs
+[Datadog's log management][dd-logs] features are interwoven with metrics and tracing: you can correlate traces with system metrics to determine which services in your stack are contributing to issues, then examine the logs from those services to get context.
+
+### Configure log collection for SQL Server
+[Custom log collection][custom-logs] directs the Agent to listen on a port or tail a file, and send logs to Datadog as they arrive. You'll point the Agent to an existing input source for logs, and determine how the logs will be parsed and enriched. In this example, our Rails application already logs its database transactions by default, and we'll take advantage of this behavior when setting up custom log collection. You might choose a different source to accommodate your own configuration, such as the SQL Server [error log][error-log-location].
+
+Log management is bundled with the Agent as of version 6.x, and there's no need to install additional log collection software. Sending SQL Server logs from our Rails application to Datadog takes only a few steps:
+
+  1. Edit the Datadog Agent configuration file
+  2. Add a configuration file for logs
+  3. Set up log processing rules (optional)
+
+**Edit the Datadog configuration file.** Enable logging by changing `logs_enabled` to `true` within the Agent [configuration file][agent-config-file].
+
+**Add a configuration file for logs.** In order to set up custom log collection, you will need to add a new folder within the Agent's integration [configuration directory][config-integration-dir], then add a [YAML file][custom-logs] to that folder. Datadog recommends naming the new folder after the source of your logs and the YAML file **conf.yaml**. For instance, in this case you would create a new config file at **conf.d/ruby.d/conf.yaml**:
+
+```no-minimize
+logs:
+  - type: file
+    path: /shared/log/development.log
+    service: pg-sqlserver-demo
+    source: ruby
+    tags: env:demo
+```
+
+In this example, we've assigned values for four mandatory keys: 
+`type`, `path`, `service`, and `source`. Our settings configure the Agent to tail the file (`type`) that exists at a certain `path`, connect the log to the service `pg-sqlserver-demo`, and associate it with the `ruby` integration. You can read about mandatory keys within the log management configuration file in the Datadog [documentation][custom-logs]. 
+
+You'll notice that the `service` and `env` of our logs is the same as those of our traces. Our logs will be tagged automatically based on the configuration we've specified. We can use these tags for filtering in the logs view, as well as for navigating between metrics, traces, and logs for the same `service` and `env`.
+
+**Set up log processing rules.** You may want to give the Agent additional instructions for collecting and pre-processing logs before they're sent to Datadog. By default, the Agent will send logs to Datadog one line at a time. Depending on the format of your logs, you may need to report logs [as multi-line chunks][multi-line]. 
+
+Datadog identifies a cluster of lines by matching a pattern. In the configuration file for Datadog log management, we've added a log processing rule within the first item under `logs`. We've defined a multi-line aggregation rule based on a particular stringâ€”so every time the Agent encounters the string `&>&>&` within the log file, it will identify a new log entry. 
+
+```no-minimize
+  - type: file
+# ...
+    log_processing_rules:
+      - type: multi_line
+        name: new_log_start_with_date
+        pattern: \&\>\&\>\&
+```
+
+We've also added a line to one of Rails' [configuration files][rails-config-loc]:
+
+```
+  config.log_tags = ["&>&>&"]
+```
+
+This line instructs Rails to [tag][rails-config] each log with `&>&>&` (the string we specified in the `log_processing_rules` section of our configuration file).
+
+You may also want to produce logs [as JSON][json-logs], a format that the Datadog Agent will parse automatically, without the need to define explicit parsing rules.
+
+Now that you've configured log management, restart the Agent to start seeing your logs within Datadog. 
+
+### Context in three dimensions
+Datadog lets you move with ease between service-level dashboards for your database, graphs of system metrics, and logs from moments of interest. If your SQL Server instances run into issues, you can navigate between metrics, logs, and traces to get the context you need for troubleshooting.
+
+In the example below, the tracing dashboard for a Rails application displays a wave of errors, and the database service disappears from the graph "Total Time Spent by Service."
+
+{{< img src="SQL-Server-performance-issue.png" alt="Monitor SQL Server performance with Datadog: Dashboard showing an issue with our SQL Server application setup" popup="true" >}}
+
+One way to learn more about the issue is to navigate from our tracing dashboard to graphs of system metrics. You can do this by clicking a trace, then clicking the ["Host Info"][host-info] tab, which gives you a selection of dashboards right within the tracing view. Or you can navigate to a dedicated dashboard for your host. Click the name of a host within the list of traces, then click "Host dashboard" (as below). 
+
+{{< img src="SQL-Server-performance-host-dashboard.png" alt="Monitor SQL Server performance with Datadog: A link to a host dashboard" >}}
+
+The host dashboard shows us system-level metrics from our application server, which helps us determine if our issue corresponds with any revealing trends. In this example, we've navigated to a graph that shows, at around the same time we started receiving errors in the tracing dashboard, a sudden leveling of network traffic.  
+
+{{< img src="SQL-Server-performance-host-network.png" alt="Monitor SQL Server performance with Datadog: Graph of network traffic on our application server" popup="true" >}}
+
+To gain additional context, we can click on the graph at that point in time, then click "View related logs." This will take you to the Log Explorer and filter the logs to the time period and host you've selected within the graph. In this case, we find a log that sheds light on both the errors within our traces and the loss of network traffic: Rails cannot connect to the database server.
+
+{{< img src="SQL-Server-performance-issue-logs.png" alt="Monitor SQL Server performance with Datadog: Diagnosing issues with logs" popup="true" wide="true" >}}
+
+Datadog makes it straightforward to monitor SQL Server's interactions with the rest of your web application. You can gather logs from a file or network port, and send traces by auto-instrumenting a web framework that SQL Server integrates with. And with easy navigation between metrics, traces, and logs, you can quickly pin down which parts of your infrastructure are causing an issue. 
+
+## SQL Server: Queries in the spotlight
+In this post, we've shown you how to use Datadog with SQL Server to collect metrics, traces, and logs. With all of this data on the same platform, you can easily switch between views and troubleshoot issues in your SQL Serverâ€“based applications. 
+
+You can gain even more visibility into SQL Server by configuring the Agent to collect custom metrics. Read the [next part][part4] of this series to learn three ways to do so.
+
+If you're already using Datadog, you can follow the steps above to enable the SQL Server integration, as well as APM and log collection, to give you a full view of your system. If you're new to Datadog, you can get started monitoring SQL Server performance by signing up for a <a href="#" class="sign-up-trigger">free trial</a>.
+
+
+[agent-config-file]: https://docs.datadoghq.com/agent/basic_agent_usage/#configuration-file
+
+[agent-repo]: https://github.com/datadog/datadog-agent
+
+[agent-info]: https://docs.datadoghq.com/agent/faq/agent-commands/#agent-information
+
+[apm]: https://www.datadoghq.com/apm/
+
+[basic-agent-usage]: https://docs.datadoghq.com/agent/basic_agent_usage/
+
+[config-env]: https://docs.datadoghq.com/tracing/setup/environment/
+
+[config-integration]: https://docs.datadoghq.com/integrations/sqlserver/#configuration
+
+[config-integration-dir]: https://docs.datadoghq.com/agent/basic_agent_usage/windows/#agent-check-directory-structure
+
+[dd-logs]: /blog/announcing-logs/
+
+[custom-logs]: https://docs.datadoghq.com/logs/#custom-log-collection
+
+[dd-hostname]: https://help.datadoghq.com/hc/en-us/articles/203764655-How-can-I-change-the-hostname-
+
+[ddtrace-rails]: http://www.rubydoc.info/gems/ddtrace/#Ruby_on_Rails
+
+[datadog-tracing]: https://docs.datadoghq.com/tracing/
+
+[env]: https://docs.datadoghq.com/tracing/setup/environment/
+
+[error-log-location]: https://docs.microsoft.com/en-us/sql/relational-databases/performance/view-the-sql-server-error-log-sql-server-management-studio
+
+[host-info]: https://www.datadoghq.com/blog/host-info-panel/
+
+[install-agent-windows]: https://app.datadoghq.com/account/settings#agent/windows
+
+[install-integration]: https://docs.datadoghq.com/integrations/sqlserver/
+
+[integration-dashboards]: https://app.datadoghq.com/dashboard/lists/preset/3
+
+[json-logs]: https://docs.datadoghq.com/logs/#the-advantage-of-collecting-json-formatted-logs
+
+[logs-docs]: https://docs.datadoghq.com/logs/
+
+[multi-line]: https://docs.datadoghq.com/logs/#multi-line-aggregation
+
+[part1-tsql]: /blog/sql-server-monitoring#tsql-metrics
+
+[part2]: /blog/sql-server-monitoring-tools/
+
+[part2-activity-monitor]: /blog/sql-server-monitoring-tools#activity-monitor
+
+[part2-dmvs]: /blog/sql-server-monitoring-tools/#dynamic-management-views
+
+[part4]: /blog/sql-server-metrics
+
+[rails-config]: http://guides.rubyonrails.org/configuring.html#rails-general-configuration
+
+[rails-config-loc]: http://guides.rubyonrails.org/configuring.html#locations-for-initialization-code
+
+[rails-quickstart]: https://docs.datadoghq.com/tracing/setup/ruby/#quickstart-for-rails-applications
+
+[ruby-framework-tracing]: https://docs.datadoghq.com/tracing/languages/ruby/#framework-compatibility
+
+[t-sql-params]: https://technet.microsoft.com/en-us/library/ms175580(v=sql.105).aspx
+
+[tracing-setup]: https://docs.datadoghq.com/tracing/setup/#setup-process
+
+[windows-agent]: https://docs.datadoghq.com/agent/basic_agent_usage/windows/#for-version-6-0-0
+
+[windows-only]: https://github.com/DataDog/integrations-core/blob/27b476b5cd6a36dfc66b163cebce85005c5be69a/sqlserver/manifest.json
+
+[yaml-example]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/conf.yaml.example

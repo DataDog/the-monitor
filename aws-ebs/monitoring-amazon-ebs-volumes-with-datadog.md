@@ -1,1 +1,126 @@
-m5½¹¥Ñ½É¥¹œµ…é½¸	LÙ½±Õµ•Ìİ¥Ñ …Ñ…‘½œ(()…Ñ…‘½ŸŠeÌ]L¥¹Ñ•É…Ñ¥½¸±•ÑÌå½Ô½¹¹•Ğ±½Õ‘]…Ñ Ñ¼…Ñ…‘½œ¥¸½É‘•ÈÑ¼…ÕÑ½µ…Ñ¥…±±ä½±±•Ğµ•ÑÉ¥Ì™É½´µÕ±Ñ¥Á±”]LÍ•ÉÙ¥•ÏŠQ¥¹±Õ‘¥¹œ	L¸…Ñ…‘½ŸŠeÌµ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô¥¹Ñ•É…Ñ¥½¹Ì±•Ğå½Ô½ÉÉ•±…Ñ”]Lµ•ÑÉ¥Ìİ¥Ñ Ñ¡½Í”™É½´½Ñ¡•ÈÍ•ÉÙ¥•Ì¥¸å½ÕÈ•¹Ù¥É½¹µ•¹Ğ¸¹å½ÕÈ‘…Ñ„İ¥±°‰”…•ÍÍ¥‰±”™½ÈíìğÑÉ…¹Í±…Ñ”­•äô‰É•Ñ•¹Ñ¥½¸ˆ€ùõô…Ğ™Õ±°É…¹Õ±…É¥Ñä¸()½È•Ù•¸É•…Ñ•ÈÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈµ…é½¸	LÙ½±Õµ•Ì…¹å½ÕÈ•¹Ñ¥É”¥¹™É…ÍÑÉÕÑÕÉ”°å½Ô…¸¥¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ğ½¸å½ÕÈ¥¹ÍÑ…¹•Ì¸Q¡¥Ì•¹…‰±•Ìå½ÔÑ¼…Ñ¡•ÈÍåÍÑ•´µ±•Ù•°µ•ÑÉ¥Ì™É½´å½ÕÈÙ½±Õµ•Ì°¥¹±Õ‘¥¹œ‘¥Í¬ÕÍ…”°…Ğ€ÄÔµÍ•½¹É•Í½±ÕÑ¥½¸¸¹İ¥Ñ m…Ñ…‘½œA5t ½‰±½œ½…¹¹½Õ¹¥¹œµ…Á´¼¤…¹Ñ¡”…‘‘¥Ñ¥½¸½˜m±½¥¹t ½‰±½œ½…¹¹½Õ¹¥¹œµ±½Ì¼¤°¥¹ÍÑ…±±¥¹œÑ¡”…Ñ…‘½œ•¹ĞÁÉ½Ù¥‘•Ì„™Õ±±äÕ¹¥™¥•µ½¹¥Ñ½É¥¹œÁ±…Ñ™½É´¸((ŒŒ5½¹¥Ñ½É¥¹œµ…é½¸	LÙ½±Õµ•Ìİ¥Ñ …Ñ…‘½œ()Q¡•É”…É”Ñİ¼İ…åÌÑ¼ÍÑ…ÉĞÕÍ¥¹œ…Ñ…‘½œÑ¼µ½¹¥Ñ½Èå½ÕÈ	LÙ½±Õµ•Ì¸e½Ô…¸m•¹…‰±”Ñ¡”]L¥¹Ñ•É…Ñ¥½¹t •¹…‰±”µÑ¡”µ…İÌµ¥¹Ñ•É…Ñ¥½¸¤Ñ¼…ÕÑ½µ…Ñ¥…±±äÁÕ±°¥¸…±°µ•ÑÉ¥Ì½ÕÑ±¥¹•¥¸Ñ¡”m™¥ÉÍĞÁ…ÉÑumÁ…ÉĞµ½¹•t½˜Ñ¡¥ÌÍ•É¥•Ì°½Èå½Ô…¸m¥¹ÍÑ…±°…Ñ…‘½ŸŠeÌ•¹Ñt ‘•Á±½å¥¹œµÑ¡”µ…•¹Ğ¤½¸å½ÕÈmÈ¥¹ÍÑ…¹•Ít ½‰±½œ½µ½¹¥Ñ½É¥¹œµ•ŒÈµ¥¹ÍÑ…¹•Ìµİ¥Ñ µ‘…Ñ…‘½œ¼¤Ñ¼½±±•Ğ‘•Ñ…¥±•µ•ÑÉ¥Ì™É½´å½ÕÈÙ½±Õµ•Ì°…ÁÁ±¥…Ñ¥½¹Ì°…¹¥¹™É…ÍÑÉÕÑÕÉ”¸()Q¡•Í”…ÁÁÉ½…¡•Ì…¸‰”ÕÍ•¥¸„½µÁ±•µ•¹Ñ…Éä™…Í¡¥½¸¸Q¡”]L¥¹Ñ•É…Ñ¥½¸…±±½İÌå½ÔÑ¼ÁÕ±°Ñ¡”™Õ±°ÍÕ¥Ñ”½˜]Lµ•ÑÉ¥Ì¥¹Ñ¼…Ñ…‘½œ¥µµ•‘¥…Ñ•±ä°İ¡•É•…ÌÑ¡”•¹Ğ…±±½İÌå½ÔÑ¼µ½¹¥Ñ½Èå½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì…¹¥¹™É…ÍÑÉÕÑÕÉ”İ¥Ñ É•…Ñ•È‘•Ñ…¥°…¹‘•ÁÑ ¸((ŒŒŒ¹…‰±”Ñ¡”]L¥¹Ñ•É…Ñ¥½¸()Q¡”™…ÍÑ•ÍĞİ…äÑ¼ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œ	Lµ•ÑÉ¥Ì¥¸…Ñ…‘½œ¥ÌÑ¼m•¹…‰±”Ñ¡”]L¥¹Ñ•É…Ñ¥½¹um…İÌµ¥¹Ñ•É…Ñ¥½¹t¸Q¡¥Ì±•ÑÌ…Ñ…‘½œ½±±•Ğµ•ÑÉ¥Ì™É½´	L…¹Ñ¡”É•ÍĞ½˜Ñ¡”]LÁ±…Ñ™½É´Ù¥„Ñ¡”±½Õ‘]…Ñ A$İ¥Ñ¡½ÕĞ¹••‘¥¹œÑ¼¥¹ÍÑ…±°…¹åÑ¡¥¹œ½¸å½ÕÈ¥¹ÍÑ…¹•Ì¸()Ñ¥Ù…Ñ¥¹œÑ¡”¥¹Ñ•É…Ñ¥½¸É•ÅÕ¥É•Ì½ÉÉ•Ñ±äm‘•±•…Ñ¥¹œ]L%4É½±•Íum¥…´µÉ½±•Ít…¹m¥Ù¥¹œÑ¡”…Ñ…‘½œÉ½±”É•…µ½¹±ä…•ÍÍum‘…Ñ…‘½œµ…İÌµ¥¹ÍÑ…±±t¸=¹”å½×ŠeÙ”Í•ĞÕÀÑ¡”…Ñ…‘½œÉ½±”İ¥Ñ¡¥¸]L…¹½¹¹•Ñ•¥ĞÑ¼å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ°å½Ôİ¥±°ÍÑ…ÉĞÑ¼Í•”	Lµ•ÑÉ¥Ì€¡…Ìİ•±°…Ìµ•ÑÉ¥Ì™½ÈÈ…¹…¹ä½Ñ¡•È]LÍ•ÉÙ¥•Ìå½Ô…É”µ½¹¥Ñ½É¥¹œİ¥Ñ …Ñ…‘½œ¤™±½İ¥¹œ¥¹Ñ¼…Ñ…‘½œ¸e½Ô…¸Ñ¡•¸Ù¥ÍÕ…±¥é”…¹µ½¹¥Ñ½ÈÑ¡•´½¸å½ÕÈ‘…Í¡‰½…É‘Ì¸()íìğ¥µœÍÉŒô‰…µ…é½¸µ•‰ÌµÙ½±Õµ•Ìµ‘…Í¡‰½…ÉµÉ•Ø¹Á¹œˆ…±Ğô‰¸µ…é½¸	LÙ½±Õµ•Ì‘…Í¡‰½…É¥¸…Ñ…‘½œˆ…ÁÑ¥½¸ô‰‘…Í¡‰½…ÉÍ¡½İ¥¹œµ…é½¸	LÙ½±Õµ”µ•ÑÉ¥Ì¥¸…Ñ…‘½œˆİ¥‘”ô‰ÑÉÕ”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()e½Ô…¸É•…Ñ”™Õ±±äÕÍÑ½µ¥é•‘…Í¡‰½…É‘ÌÑ¡…Ğµ••Ğå½ÕÈÍÁ•¥™¥Œµ½¹¥Ñ½É¥¹œ¹••‘Ì¸½È¥¹ÍÑ…¹”°å½Ô…¸Ù¥•Üå½ÕÈ	Lµ•ÑÉ¥Ì…±½¹Í¥‘”‘…Ñ„™É½´È½È½Ñ¡•È]LÍ•ÉÙ¥•Ì¸e½Ô…¸…±Í¼‰É¥¹œ¥¸…ÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”µ•ÑÉ¥ÌÑ¼½ÉÉ•±…Ñ”Ñ¡É½Õ¡ÁÕĞ°•ÉÉ½ÉÌ°…¹±…Ñ•¹äİ¥Ñ ­•äÉ•Í½ÕÉ”µ•ÑÉ¥Ì™É½´Ñ¡”Ù½±Õµ•ÌÑ¡½Í”…ÁÁ±¥…Ñ¥½¹ÌÉ•±ä½¸¸((ŒŒŒ•Á±½å¥¹œÑ¡”•¹Ğ()Q¡”m…Ñ…‘½œ•¹Ñt ½‰±½œ½‘½¹Ğµ™•…ÈµÑ¡”µ…•¹Ğ¼¤¥Ìm½Á•¸Í½ÕÉ”Í½™Ñİ…É•um‘µ…•¹ÑtÑ¡…Ğ…¸½±±•Ğ…¹™½Éİ…Éµ•ÑÉ¥Ì°±½Ì°…¹É•ÅÕ•ÍĞÑÉ…•Ì™É½´å½ÕÈ¥¹ÍÑ…¹•Ì¸()íìğ¥¹±¥¹”µÑ„Ñ•áĞô‰Y¥ÍÕ…±¥é”…¹…±•ÉĞ½¸­•äµ•ÑÉ¥Ì™É½´…±°å½ÕÈ	LÙ½±Õµ•Ìİ¥Ñ …Ñ…‘½œ¸ˆ‰Ñ¸µÑ•áĞô‰•ĞÍÑ…ÉÑ•ˆ‘…Ñ„µ•Ù•¹Ğµ…Ñ•½Éäô‰M¥¹ÕÀˆÍ¥¹ÕÀô‰ÑÉÕ”ˆ€ùõô()=¹”Ñ¡”•¹Ğ¥Ì¥¹ÍÑ…±±•½¸…¸¥¹ÍÑ…¹”°¥Ğİ¥±°…ÕÑ½µ…Ñ¥…±±äÉ•Á½ÉĞÍåÍÑ•´µ±•Ù•°µ•ÑÉ¥Ì™½ÈÑ¡…Ğ¥¹ÍÑ…¹”…¹…¹ä	LÙ½±Õµ•ÌÑ¡…Ğ…É”mµ½Õ¹Ñ•Ñ¼¥Ñum•‰ÌµÕÍ¥¹œµÙ½±Õµ•Ít¸e½Ô…¸…±Í¼•¹…‰±”m¥¹Ñ•É…Ñ¥½¹Íum¥¹Ñ•É…Ñ¥½¹Ít™½È…¹äÍÕÁÁ½ÉÑ•…ÁÁ±¥…Ñ¥½¹Ì…¹Í•ÉÙ¥•ÌÑ¡…Ğ…É”ÉÕ¹¹¥¹œ½¸å½ÕÈ¥¹ÍÑ…¹•ÌÑ¼‰•¥¸½±±•Ñ¥¹œµ•ÑÉ¥ÌÍÁ•¥™¥ŒÑ¼Ñ¡½Í”Ñ•¡¹½±½¥•Ì¸((ŒŒŒŒ%¹ÍÑ…±±¥¹œÑ¡”•¹Ğ()Q¡”•¹Ğ¥Ì¥¹ÍÑ…±±•½¸Ñ¡”É½½ĞÙ½±Õµ”½˜…¸¥¹ÍÑ…¹”¸=¸µ½ÍĞÁ±…Ñ™½ÉµÌÑ¡¥Ì…¸‰”‘½¹”İ¥Ñ ©ÕÍĞ„m½¹”µ±¥¹”½µµ…¹‘um…•¹Ğµ¥¹ÍÑ…±±t¸½È•á…µÁ±”°Ñ¼¥¹ÍÑ…±°Ñ¡”•¹Ğ½¸…¸¥¹ÍÑ…¹”ÉÕ¹¹¥¹œµ…é½¸1¥¹Õà°Í¥µÁ±äÕÍ”Ñ¡”™½±±½İ¥¹œè()€)}A%}-dôñÕÍ•É}…Á¥}­•äø‰…Í €µŒ€ˆ¡ÕÉ°€µ0¡ÑÑÁÌè¼½É…Ü¹¥Ñ¡Õ‰ÕÍ•É½¹Ñ•¹Ğ¹½´½…Ñ…½œ½‘µ…•¹Ğ½µ…ÍÑ•È½Á…­…¥¹œ½‘…Ñ…‘½œµ…•¹Ğ½Í½ÕÉ”½¥¹ÍÑ…±±}…•¹Ğ¹Í ¤ˆ)€()e½ÔÍ¡½Õ±Ñ¡•¸Í•”å½ÕÈ¥¹ÍÑ…¹”É•Á½ÉÑ¥¹œµ•ÑÉ¥Ì¥¸å½ÕÈm…Ñ…‘½œ…½Õ¹Ñum¥¹™É…ÍÑÉÕÑÕÉ•t¸e½Ô…¸…±Í¼ÅÕ¥­±ä…¹•…Í¥±ä…ÕÑ½µ…Ñ”‘•Á±½åµ•¹Ğ½˜Ñ¡”•¹Ğ…É½ÍÌå½ÕÈ•¹Ñ¥É”¥¹™É…ÍÑÉÕÑÕÉ”İ¥Ñ Á½ÁÕ±…È½¹™¥ÕÉ…Ñ¥½¸µ…¹…•µ•¹ĞÑ½½±Ì±¥­”m¡•™um¡•™t°mAÕÁÁ•ÑumÁÕÁÁ•Ñt°…¹m¹Í¥‰±•um…¹Í¥‰±•t°½ÈÑ¼å½ÕÈ½¹Ñ…¥¹•È™±••ĞÙ¥„m½­•Éum‘½­•Ét½Èm-Õ‰•É¹•Ñ•Íum­Õ‰•É¹•Ñ•Ít¸M•”Ñ¡”m…Ñ…‘½œ•¹Ğ‘½Õµ•¹Ñ…Ñ¥½¹um…•¹Ğµ‘½Ít™½Èµ½É”¥¹™½Éµ…Ñ¥½¸¸()Q¡”ÍÉ••¹Í¡½Ğ‰•±½ÜÍ¡½İÌ„‘•™…Õ±Ğ¡½ÍĞ‘…Í¡‰½…É™½È…¸È¥¹ÍÑ…¹”İ¥Ñ Ñ¡”•¹Ğ¥¹ÍÑ…±±•¸e½Ô…¸Í•”Ñ¡…Ğ‰½Ñ ±½Õ‘]…Ñ È…¹	Lµ•ÑÉ¥Ì…É”…ÕÑ½µ…Ñ¥…±±ä…Ñ¡•É•¸%¸…‘‘¥Ñ¥½¸°…Ñ…‘½ŸŠeÌÍåÍÑ•´¡•¬½±±•ÑÌ¥¹ÍÑ…¹”´…¹Ù½±Õµ”µ±•Ù•°µ•ÑÉ¥ÌÑ¡…Ğ…É”¹½Ğ…ÕÑ½µ…Ñ¥…±±ä…Ù…¥±…‰±”Ñ¡É½Õ ±½Õ‘]…Ñ °ÍÕ …Ì‘¥Í¬ÕÍ…”¸()íìğ¥µœÍÉŒô‰…µ…é½¸µ•‰ÌµÙ½±Õµ•Ìµ¥¹ÍÑ…¹”µÍåÍÑ•´µ‘…Í¡‰½…É¹Á¹œˆ…±Ğô‰MåÍÑ•´‘…Í¡‰½…É½˜È¥¹ÍÑ…¹”İ¥Ñ •¹Ğ¥¹±Õ‘¥¹œ	LÙ½±Õµ”µ•ÑÉ¥Ìˆİ¥‘”ô‰ÑÉÕ”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()½µÁ…É•Ñ¼µ½¹¥Ñ½É¥¹œ½¹±äÑ¡”µ•ÑÉ¥ÌÑ¡…Ğ±½Õ‘]…Ñ É•Á½ÉÑÌ°¥¹ÍÑ…±±¥¹œÑ¡”•¹ĞÁÉ½Ù¥‘•Ì„¹Õµ‰•È½˜‰•¹•™¥ÑÌ¸e½Ô…¸Ù¥•Üµ…¹ä½˜Ñ¡”Í…µ”‘¥Í¬$½<µ•ÑÉ¥ÌÑ¡…Ğ…É”½±±•Ñ•‰ä±½Õ‘]…Ñ °‰ÕĞÑ¡”•¹Ğ½±±•ÑÌÑ¡•´…Ğ€ÄÔµÍ•½¹¥¹Ñ•ÉÙ…±Ì°ÁÉ½Ù¥‘¥¹œµÕ ¡¥¡•ÈÉ•Í½±ÕÑ¥½¸¸½È•á…µÁ±”°Ñ¡”ÍÉ••¹Í¡½Ğ‰•±½Ü½µÁ…É•ÌÑ¡”¹Õµ‰•È½˜É•…½Á•É…Ñ¥½¹ÌÉ•Á½ÉÑ•‰äÑ¡”•¹ÓŠeÌÍåÍÑ•´¡•¬€¡Ñ½À¤İ¥Ñ Ñ¡…ĞÉ•Á½ÉÑ•‰äÑ¡”	L¥¹Ñ•É…Ñ¥½¸€¡‰½ÑÑ½´¤™½ÈÑ¡”Í…µ”Ù½±Õµ”¸()íìğ¥µœÍÉŒô‰…µ…é½¸µ•‰ÌµÙ½±Õµ•Ìµ±½Õ‘İ…Ñ µÙÌµÍåÍÑ•´µÉ•Ø¹Á¹œˆ…±Ğô‰±½Õ‘]…Ñ Ù•ÉÍÕÌÍåÍÑ•´µ•ÑÉ¥ÌÉ…¹Õ±…É¥Ñä™½Èµ…é½¸	LÙ½±Õµ•Ìˆİ¥‘”ô‰ÑÉÕ”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()	•Í¥‘•ÌÑ¡”‘¥™™•É•¹”¥¸É…¹Õ±…É¥Ñä°¹½Ñ”Ñ¡…ĞÑ¡”Ù½±Õµ”½È‘•Ù¥”¹…µ”¥Ì‘¥™™•É•¹Ğ¸Q¡¥Ì¥Ì‰•…ÕÍ”Ñ¡”•¹Ğ¥ÌÉ•Á½ÉÑ¥¹œ™É½´İ¥Ñ¡¥¸Ñ¡”¥¹ÍÑ…¹”…¹İ¥±°É•Á½ÉĞ…¹äµ½Õ¹Ñ•Ù½±Õµ”¹…µ•Ì…ÌÑ¡•ä…É”¥‘•¹Ñ¥™¥•‰äÑ¡”­•É¹•³ŠeÌ‰±½¬‘•Ù¥”‘É¥Ù•È°İ¡¥ µ…ä‰”‘¥™™•É•¹ĞÑ¡…¸¡½Ü±½Õ‘]…Ñ ±¥ÍÑÌÑ¡•´¸%¸Ñ¡¥Ì…Í”°Ñ¡”‘•Ù¥”¹…µ”Í‘™€É•Á½ÉÑ•‰ä±½Õ‘]…Ñ ¥Ì±…‰•±•…ÌáÙ‘™€‰äÑ¡”ÍåÍÑ•´¡•¬¸M•”µ½É”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ‘•Ù¥”¹…µ¥¹œm¡•É•um‘•Ù¥”µ¹…µ¥¹t¸%¸…Ñ…‘½œ°Ñ…Ìµ…­”¥Ğ•…ÍäÑ¼Í•”Ñ¡…Ğ•… ‘•Ù¥”¹…µ”½µ•Ì™É½´Ñ¡”Í…µ”Í½ÕÉ”¸!•É”°‰½Ñ …É”¥‘•¹Ñ¥™¥•‰äÑ¡”Í…µ”¡½ÍĞ¹…µ”¸((ŒŒŒŒ•ÑÑ¥¹œÑ¡”•¹ĞÑ¼İ½É¬™½Èå½Ô()%¹ÍÑ…±±¥¹œÑ¡”•¹Ğ…±Í¼•¹…‰±•Ìå½ÔÑ¼‰•¥¸ÑÉ…¥¹œÉ•ÅÕ•ÍÑÌİ¥Ñ …Ñ…‘½œA4…™Ñ•Èm¥¹ÍÑÉÕµ•¹Ñ¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¹ÍumÑÉ…¥¹t¸]¥Ñ …Ñ…‘½œ•¹ĞÙ•ÉÍ¥½¹Ì€Ø…¹±…Ñ•È°å½Ô…¸Ñ…­”…‘Ù…¹Ñ…”½˜m…Ñ…‘½œ±½œµ…¹…•µ•¹Ñt ½‰±½œ½…¹¹½Õ¹¥¹œµ±½Ì¼¤Ñ¼½±±•Ğ±½Ì™É½´Ñ¡”…ÁÁ±¥…Ñ¥½¹Ì…¹Ñ•¡¹½±½¥•ÌÉÕ¹¹¥¹œ½¸å½ÕÈÈ¥¹ÍÑ…¹•Ì…¹…ÑÑ…¡•Ù½±Õµ•Ì¸Q¡¥Ì¥¹±Õ‘•ÌÕÍÑ½´±½œ½±±•Ñ¥½¸…Ìİ•±°…Ì±½Ì™É½´…Ñ…‘½ŸŠeÌ¥¹Ñ•É…Ñ¥½¹Ìİ¥Ñ Á½ÁÕ±…ÈÑ•¡¹½±½¥•Ì±¥­”Á…¡”°9%9`°!AÉ½áä°%%L°)…Ù„°…¹5½¹½¸]¥Ñ ½µ‰¥¹•…É•…Ñ¥½¸½˜µ•ÑÉ¥Ì°‘¥ÍÑÉ¥‰ÕÑ•É•ÅÕ•ÍĞÑÉ…•Ì°…¹±½Ì°…Ñ…‘½œÁÉ½Ù¥‘•Ì„Õ¹¥™¥•Á±…Ñ™½É´™½È™Õ±°Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¸()%˜å½Ô…É”ÉÕ¹¹¥¹œ½¹Ñ…¥¹•ÉÌ½¸å½ÕÈ¥¹ÍÑ…¹•Ì°…Ñ…‘½œÌm1¥Ù”½¹Ñ…¥¹•ÈÙ¥•İt ½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ±¥Ù”µ½¹Ñ…¥¹•Èµµ½¹¥Ñ½É¥¹œ¼¤¥Ù•Ìå½Ô½µÁ±•Ñ”½Ù•É…”½˜å½ÕÈ™±••Ğ°İ¥Ñ µ•ÑÉ¥ÌÉ•Á½ÉÑ•…ĞÑİ¼µÍ•½¹É•Í½±ÕÑ¥½¸¸¹m1¥Ù”AÉ½•ÍÌµ½¹¥Ñ½É¥¹t ½‰±½œ½±¥Ù”µÁÉ½•ÍÌµµ½¹¥Ñ½É¥¹œ¼¤µ•…¹Ìå½Ô¡…Ù”Ñ¡”Í…µ”±•Ù•°½˜Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼…±°ÁÉ½•ÍÍ•ÌÉÕ¹¹¥¹œ…É½ÍÌå½ÕÈ•¹Ñ¥É”‘¥ÍÑÉ¥‰ÕÑ•…É¡¥Ñ•ÑÕÉ”¸(((ŒŒŒM±¥¥¹œ…¹‘¥¥¹œµ…é½¸	LÙ½±Õµ•Ìİ¥Ñ Ñ…Ì()±°½˜å½ÕÈµ½¹¥Ñ½É•	LÙ½±Õµ•Ìİ¥±°‰”…ÑÑ…¡•Ñ¼…¸È¥¹ÍÑ…¹”…Ì•¥Ñ¡•È„É½½ĞÙ½±Õµ”½È„µ½Õ¹Ñ•‘•Ù¥”¸M¼‰•¥¹œ…‰±”Ñ¼™¥±Ñ•ÈÑ¼Í¡½ÜÑ¡”	Lµ•ÑÉ¥Ì™½È„Á…ÉÑ¥Õ±…ÈÍ•Ğ½˜¥¹ÍÑ…¹•Ì…¸¡•±À¥Í½±…Ñ”Ñ¡”Í½ÕÉ”½˜„ÁÉ½‰±•´¸mQ…ÍumÑ…¥¹t•¹…‰±”å½ÔÑ¼•…Í¥±äÍ±¥”å½ÕÈ¡½ÍÑÌ…¹m‘É¥±°‘½İ¹t ½‰±½œ½Ñ¡”µÁ½İ•Èµ½˜µÑ…•µµ•ÑÉ¥Ì¼¤¥¹Ñ¼Á…ÉÑ¥Õ±…ÈÁÉ½‰±•´…É•…Ì¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¸()%¸…‘‘¥Ñ¥½¸Ñ¼…¹äÕÍÑ½´Ñ…Ìå½Ô…‘Ñ¼Ñ¡”¥¹ÍÑ…¹”°…Ñ…‘½œ¥µÁ½ÉÑÌ…±°½˜±½Õ‘]…Ñ£ŠeÌÈµÍÁ•¥™¥Œm‘¥µ•¹Í¥½¹Ít ½‰±½œ½½±±•Ñ¥¹œµ•ŒÈµµ•ÑÉ¥Ì¼‘¥µ•¹Í¥½¹Ì§ŠQÍÕ …Ì%¹ÍÑ…¹•QåÁ•€…¹%µ…•%‘ƒŠQ…Ì‘•™…Õ±ĞÑ…Ì¸…Ñ…‘½œ…ÕÑ½µ…Ñ¥…±±ä½±±•ÑÌµ•ÑÉ¥Ì™É½´¥¹ÍÑ…¹•Ì…É½ÍÌ…±°É•¥½¹Ì°Í¼É•¥½¹€…¹…Ù…¥±…‰¥±¥Ñäµé½¹•€…É”…±Í¼¥µÁ½ÉÑ•…ÌÑ…Ì…ÑÑ…¡•Ñ¼…±°½˜å½ÕÈ¥¹ÍÑ…¹•Ì°…±½¹œİ¥Ñ ½Ñ¡•ÈÈµ•Ñ…‘…Ñ„ÍÕ …Ì¹…µ•€°Í•ÕÉ¥ÑäµÉ½ÕÁ€°…¹°¥˜Ñ¡”¥¹ÍÑ…¹”¥ÌÁ…ÉĞ½˜…¸LÉ½ÕÀ°Ñ¡”L±ÕÍÑ•È¹…µ”¸((ŒŒŒ‘Ù…¹•…±•ÉÑ¥¹œ()=¹”…Ñ…‘½œ¥Ì…Ñ¡•É¥¹œå½ÕÈ	Lµ•ÑÉ¥Ì…¹•Ù•¹ÑÌ°å½Ô…¸•…Í¥±äÍ•ĞÕÀ…±•ÉÑÌ™½È…¹äÁ½Ñ•¹Ñ¥…°¥ÍÍÕ•Ì¸Q…œµ‰…Í•…±•ÉÑ¥¹œ…±±½İÌå½ÔÑ¼µ½¹¥Ñ½È±…É”É½ÕÁÌ½˜È¥¹ÍÑ…¹•Ì…¹Ñ¡•¥È…ÑÑ…¡•	LÙ½±Õµ•Ì°İ¥Ñ¡½ÕĞ¡…Ù¥¹œÑ¼ÕÁ‘…Ñ”å½ÕÈ…±•ÉÑ¥¹œÉÕ±•Ì…Ìå½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¡…¹•Ì¸Q…Ì±•Ğå½Ô™¥±Ñ•È½ÈÍ½Á”å½ÕÈ…±•ÉÑÌÑ¼ÍÁ•¥™¥Œ¥¹ÍÑ…¹”É½ÕÁÌ…¹…ÕÑ½µ…Ñ¥…±±äµ½¹¥Ñ½È¹•Ü¥¹ÍÑ…¹•ÌÑ¡…Ğ¥¹±Õ‘”Ñ¡”Ñ…œ¸½È•á…µÁ±”°å½Ôµ…äİ…¹ĞÑ¼É•…Ñ”…¸…±•ÉĞÑ¡…Ğµ½¹¥Ñ½ÉÌ‘¥Í¬É•…½Á•É…Ñ¥½¹Ì…Ù•É…•‰ä‘•Ù¥”™½È…±°	LÙ½±Õµ•Ì…ÑÑ…¡•Ñ¼¥¹ÍÑ…¹•Ìİ¥Ñ „•ÉÑ…¥¸É½±”¸%˜‘¥Í¬É•…±•Ù•±Ì¥¹É•…Í”…¹ÑÉ¥•ÈÑ¡”…±•ÉĞ°å½Ô…¸‰”¹½Ñ¥™¥•…¹Ñ…­”…Ñ¥½¸°±¥­”‰½½Ñ¥¹œÕÀ¹•Ü¥¹ÍÑ…¹•ÌÑ¼Í¡½Õ±‘•ÈÑ¡”±½…¸()e½Ô…¸…±Í¼É•…Ñ”…±•ÉÑÌ‰…Í•½¸•Ù•¹ÑÌ™É½´]L¸Ì‘¥ÍÕÍÍ•¥¸mÁ…ÉĞ½¹•t ½‰±½œ½…µ…é½¸µ•‰Ìµµ½¹¥Ñ½É¥¹œ¼•Ù•¹ÑÌ¤°¥Ğ¥Ì¥µÁ½ÉÑ…¹ĞÑ¼µ½¹¥Ñ½È•Ù•¹ÑÌÑ¼¡•…½™˜Á½Ñ•¹Ñ¥…°…Ù…¥±…‰¥±¥Ñä½ÈÁ•É™½Éµ…¹”¥ÍÍÕ•Ì°½ÈÑ¼‰”¹½Ñ¥™¥•¥˜å½Ô¹••Ñ¼µ¥É…Ñ”¥µÁ½ÉÑ…¹Ğ‘…Ñ„™É½´„Í½½¸µÑ¼µ‰”µÑ•Éµ¥¹…Ñ•¥¹ÍÑ…¹”¸…Ñ…‘½œ…¸…±•ÉĞå½ÕÈÑ•…´°™½È•á…µÁ±”°¥˜µ½É”Ñ¡…¸„Í•Ğ¹Õµ‰•È½˜¥¹ÍÑ…¹•Ì¥¸„Í¥¹±”…Ù…¥±…‰¥±¥Ñäé½¹”…É”Í¡•‘Õ±•™½Èµ…¥¹Ñ•¹…¹”¸()…Ñ…‘½œ…±•ÉÑÌ…±±½Üå½ÔÑ¼µ½Ù”‰•å½¹µ½¹¥Ñ½É¥¹œ‰…Í•½¸™¥á•Ñ¡É•Í¡½±‘ÌÑ¼•™™•Ñ¥Ù•±ä¥‘•¹Ñ¥™ä¥ÍÍÕ•Ì¥¸‘å¹…µ¥Œ•¹Ù¥É½¹µ•¹ÑÌ¸]¥Ñ Í½Á¡¥ÍÑ¥…Ñ•…±•ÉÑ¥¹œ™•…ÑÕÉ•Ì±¥­”m…¹½µ…±åt ½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ…¹½µ…±äµ‘•Ñ•Ñ¥½¸µ‘…Ñ…‘½œ¼¤…¹m½ÕÑ±¥•Ét ½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ½ÕÑ±¥•Èµ‘•Ñ•Ñ¥½¸µ¥¸µ‘…Ñ…‘½œ¼¤‘•Ñ•Ñ¥½¸°…Ñ…‘½œ…¸…ÕÑ½µ…Ñ¥…±±ä¹½Ñ¥™äå½Ô½˜Õ¹•áÁ•Ñ•¥¹ÍÑ…¹”‰•¡…Ù¥½È¸¹m™½É•…ÍÑ¥¹t ½‰±½œ½™½É•…ÍÑÌµ‘…Ñ…‘½œ¼¤±•ÑÌå½ÔÍÑ…ä…¡•…½˜™ÕÑÕÉ”ÁÉ½‰±•µÌ¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”…¹…ÁÁ±¥…Ñ¥½¹Ì¸½È•á…µÁ±”°å½Ôµ¥¡Ğİ…¹ĞÑ¼É•…Ñ”„™½É•…ÍĞ…±•ÉĞ™½È„Ù½±Õµ”Ìm‰ÕÉÍĞ‰…±…¹•t ½‰±½œ½…µ…é½¸µ•‰Ìµµ½¹¥Ñ½É¥¹œ¼µ•ÑÉ¥ŒµÑ¼µ…±•ÉĞµ½¸µ‰ÕÉÍĞµ‰…±…¹”¤Ñ¡…Ğİ¥±°¹½Ñ¥™äå½Ô…¡•…½˜Ñ¥µ”¥˜Ñ¡”‰…±…¹”¥ÌÁÉ•‘¥Ñ•Ñ¼É½ÍÌ„•ÉÑ…¥¸Ñ¡É•Í¡½±¸Q¡¥Ì…¸¥Ù”å½ÔÑ¥µ”Ñ¼¥¹Ù•ÍÑ¥…Ñ”¥˜Ñ¡•É”¥ÌÍ½µ”­¥¹½˜ÁÉ½‰±•´°½ÈÑ¼Í…±”å½ÕÈÙ½±Õµ•ÌÕÀÑ¼…½µ½‘…Ñ”„É¥Í”¥¸É•Í½ÕÉ”‘•µ…¹‰•™½É”å½Ô•áÁ•É¥•¹”…¹äÍ½ÉĞ½˜Á•É™½Éµ…¹”Ñ¡É½ÑÑ±¥¹œ™É½´…¸•á¡…ÕÍÑ•‰ÕÉÍĞ‰Õ­•Ğ¸()íìğ¥µœÍÉŒô‰…µ…é½¸µ•‰ÌµÙ½±Õµ•Ìµ‰ÕÉÍĞµ‰…±…¹”µ™½É•…ÍĞ¹Á¹œˆ…±Ğô‰µ…é½¸	LÙ½±Õµ•Ì‰ÕÉÍĞ‰…±…¹”™½É•…ÍĞˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒ•ÑÑ¥¹œÍÑ…ÉÑ•()%¸Ñ¡¥ÌÁ½ÍĞ°İ—ŠeÙ”İ…±­•å½ÔÑ¡É½Õ ¥¹Ñ•É…Ñ¥¹œµ…é½¸È…¹	Lİ¥Ñ …Ñ…‘½œÍ¼å½Ô…¸Ù¥ÍÕ…±¥é”…¹…±•ÉĞ½¸­•äµ•ÑÉ¥Ì™É½´…±°å½ÕÈÙ½±Õµ•Ì¸5½¹¥Ñ½É¥¹œå½ÕÈ¥¹ÍÑ…¹•Ì…¹…¹ä…ÑÑ…¡•	LÙ½±Õµ•Ìİ¥Ñ …Ñ…‘½œ¥Ù•Ìå½ÔÉ¥Ñ¥…°Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼İ¡…ÓŠeÌ¡…ÁÁ•¹¥¹œ¥¸å½ÕÈ½É”…ÁÁ±¥…Ñ¥½¸¥¹™É…ÍÑÉÕÑÕÉ”°…¹Ñ¡”É¥ ÍÕ¥Ñ”½˜…Ñ…‘½œ¥¹Ñ•É…Ñ¥½¹Ìİ¥Ñ ½Ñ¡•È…ÁÁ±¥…Ñ¥½¹Ì…¹Í•ÉÙ¥•Ìµ•…¹Ìå½Ô…¸•Ğ„½µÁ±•Ñ”Ù¥•Ü½˜å½ÕÈ•¹Ñ¥É”•¹Ù¥É½¹µ•¹Ğ¸()%˜å½Ô‘½»ŠeĞå•Ğ¡…Ù”„…Ñ…‘½œ…½Õ¹Ğ°å½Ô…¸Í¥¸ÕÀ™½È„€ñ„±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆ¡É•˜ôˆŒˆù™É•”€ÄĞµ‘…äÑÉ¥…°ğ½„ø…¹ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œå½ÕÈ±½Õ¥¹™É…ÍÑÉÕÑÕÉ”°å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì°…¹å½ÕÈÍ•ÉÙ¥•ÌÑ½‘…ä¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½…İÌµ•‰Ì½µ½¹¥Ñ½É¥¹œµ…µ…é½¸µ•‰ÌµÙ½±Õµ•Ìµİ¥Ñ µ‘…Ñ…‘½œ¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|()mÁ…ÉĞµ½¹•tè€½‰±½œ½…µ…é½¸µ•‰Ìµµ½¹¥Ñ½É¥¹œ¼)m…İÌµ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…İÌ¼)m¥…´µÉ½±•Ítè¡ÑÑÀè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½%4½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½‰•ÍĞµÁÉ…Ñ¥•Ì¹¡Ñµ°‘•±•…Ñ”µÕÍ¥¹œµÉ½±•Ì)m‘…Ñ…‘½œµ…İÌµ¥¹ÍÑ…±±tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…İÌ¼¥¹ÍÑ…±±…Ñ¥½¸)m‘µ…•¹Ñtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½‘µ…•¹Ğ)m•‰ÌµÕÍ¥¹œµÙ½±Õµ•Ítè¡ÑÑÁÌè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½•‰ÌµÕÍ¥¹œµÙ½±Õµ•Ì¹¡Ñµ°)m¥¹Ñ•É…Ñ¥½¹Ítè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì)m…•¹Ğµ¥¹ÍÑ…±±tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ)m¥¹™É…ÍÑÉÕÑÕÉ•tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½¥¹™É…ÍÑÉÕÑÕÉ”)m¡•™tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½¡•˜¼)mÁÕÁÁ•Ñtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½ÁÕÁÁ•Ğ¼)m…¹Í¥‰±•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…¹Í¥‰±”¼)m‘½­•Étè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½‘½­•É}‘…•µ½¸¼)m­Õ‰•É¹•Ñ•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½­Õ‰•É¹•Ñ•Ì¼)m…•¹Ğµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼)m‘•Ù¥”µ¹…µ¥¹tè¡ÑÑÁÌè¼½‘½Ì¹…İÌ¹…µ…é½¸¹½´½]MÈ½±…Ñ•ÍĞ½UÍ•ÉÕ¥‘”½‘•Ù¥•}¹…µ¥¹œ¹¡Ñµ°)mÑÉ…¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ¼)m‘…Ñ…‘½œµ…İÌµ±½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…µ…é½¹}İ•‰}Í•ÉÙ¥•Ì¼±½œµ½±±•Ñ¥½¸)mÑ…¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½Ñ…¥¹œ¼(
+---
+authors:
+- email: maxim.brown@datadoghq.com
+  image: brown-maxim.jpg
+  name: Maxim Brown
+  twitter: maximybrown
+blog/category:
+- series datadog
+blog/tag:
+- monitoring
+- AWS
+- alerts
+- performance
+date: 2018-04-06
+description: "Learn how to use Datadog to monitor Amazon EBS metrics."
+draft: false
+image: ebs-hero-three.png
+meta_title: Monitoring Amazon EBS volumes with Datadog
+preview_image: ebs-hero-three.png
+header_video:
+    mp4: superhero_EBS_prores_25.mp4
+    no_loop: false
+    no_autoplay: false
+    stop_time: 0
+slug: monitoring-amazon-ebs-volumes-with-datadog
+technology: aws ebs
+title: Monitoring Amazon EBS volumes with Datadog
+series: amazon-ebs-monitoring
+---
+
+Datadogâ€™s AWS integration lets you connect CloudWatch to Datadog in order to automatically collect metrics from multiple AWS servicesâ€”including EBS. Datadogâ€™s more than {{< translate key="integration_count" >}} integrations let you correlate AWS metrics with those from other services in your environment. And your data will be accessible for {{< translate key="retention" >}} at full granularity.
+
+For even greater visibility into your Amazon EBS volumes and your entire infrastructure, you can install the Datadog Agent on your instances. This enables you to gather system-level metrics from your volumes, including disk usage, at 15-second resolution. And with [Datadog APM](/blog/announcing-apm/) and the addition of [logging](/blog/announcing-logs/), installing the Datadog Agent provides a fully unified monitoring platform.
+
+## Monitoring Amazon EBS volumes with Datadog
+
+There are two ways to start using Datadog to monitor your EBS volumes. You can [enable the AWS integration](#enable-the-aws-integration) to automatically pull in all metrics outlined in the [first part][part-one] of this series, or you can [install Datadogâ€™s Agent](#deploying-the-agent) on your [EC2 instances](/blog/monitoring-ec2-instances-with-datadog/) to collect detailed metrics from your volumes, applications, and infrastructure.
+
+These approaches can be used in a complementary fashion. The AWS integration allows you to pull the full suite of AWS metrics into Datadog immediately, whereas the Agent allows you to monitor your applications and infrastructure with greater detail and depth.
+
+### Enable the AWS integration
+
+The fastest way to start monitoring EBS metrics in Datadog is to [enable the AWS integration][aws-integration]. This lets Datadog collect metrics from EBS and the rest of the AWS platform via the CloudWatch API without needing to install anything on your instances.
+
+Activating the integration requires correctly [delegating AWS IAM roles][iam-roles] and [giving the Datadog role read-only access][datadog-aws-install]. Once youâ€™ve set up the Datadog role within AWS and connected it to your Datadog account, you will start to see EBS metrics (as well as metrics for EC2 and any other AWS services you are monitoring with Datadog) flowing into Datadog. You can then visualize and monitor them on your dashboards. 
+
+{{< img src="amazon-ebs-volumes-dashboard-rev.png" alt="An Amazon EBS volumes dashboard in Datadog" caption="A dashboard showing Amazon EBS volume metrics in Datadog" wide="true" popup="true" >}}
+
+You can create fully customized dashboards that meet your specific monitoring needs. For instance, you can view your EBS metrics alongside data from EC2 or other AWS services. You can also bring in application performance metrics to correlate throughput, errors, and latency with key resource metrics from the volumes those applications rely on.
+
+### Deploying the Agent
+
+The [Datadog Agent](/blog/dont-fear-the-agent/) is [open source software][dd-agent] that can collect and forward metrics, logs, and request traces from your instances. 
+
+Once the Agent is installed on an instance, it will automatically report system-level metrics for that instance and any EBS volumes that are [mounted to it][ebs-using-volumes]. You can also enable [integrations][integrations] for any supported applications and services that are running on your instances to begin collecting metrics specific to those technologies.
+
+#### Installing the Agent
+
+The Agent is installed on the root volume of an instance. On most platforms this can be done with just a [one-line command][agent-install]. For example, to install the Agent on an instance running Amazon Linux, simply use the following:
+
+```
+DD_API_KEY=<user_api_key> bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
+```
+
+You should then see your instance reporting metrics in your [Datadog account][infrastructure]. You can also quickly and easily automate deployment of the Agent across your entire infrastructure with popular configuration management tools like [Chef][chef], [Puppet][puppet], and [Ansible][ansible], or to your container fleet via [Docker][docker] or [Kubernetes][kubernetes]. See the [Datadog Agent documentation][agent-docs] for more information. 
+
+The screenshot below shows a default host dashboard for an EC2 instance with the Agent installed. You can see that both CloudWatch EC2 and EBS metrics are automatically gathered. In addition, Datadogâ€™s system check collects instance- and volume-level metrics that are not automatically available through CloudWatch, such as disk usage.
+
+{{< img src="amazon-ebs-volumes-instance-system-dashboard.png" alt="System dashboard of EC2 instance with Agent including EBS volume metrics" wide="true" popup="true" >}}
+
+Compared to monitoring only the metrics that CloudWatch reports, installing the Agent provides a number of benefits. You can view many of the same disk I/O metrics that are collected by CloudWatch, but the Agent collects them at 15-second intervals, providing much higher resolution. For example, the screenshot below compares the number of read operations reported by the Agentâ€™s system check (top) with that reported by the EBS integration (bottom) for the same volume. 
+
+{{< img src="amazon-ebs-volumes-cloudwatch-vs-system-rev.png" alt="CloudWatch versus system metrics granularity for Amazon EBS volumes" wide="true" popup="true" >}}
+
+Besides the difference in granularity, note that the volume or device name is different. This is because the Agent is reporting from within the instance and will report any mounted volume names as they are identified by the kernelâ€™s block device driver, which may be different than how CloudWatch lists them. In this case, the device name `sdf` reported by CloudWatch is labeled as `xvdf` by the system check. See more information about device naming [here][device-naming]. In Datadog, tags make it easy to see that each device name comes from the same source. Here, both are identified by the same host name.
+
+#### Getting the Agent to work for you
+
+Installing the Agent also enables you to begin tracing requests with Datadog APM after [instrumenting your applications][tracing]. With Datadog Agent versions 6 and later, you can take advantage of [Datadog log management](/blog/announcing-logs/) to collect logs from the applications and technologies running on your EC2 instances and attached volumes. This includes custom log collection as well as logs from Datadogâ€™s integrations with popular technologies like Apache, NGINX, HAProxy, IIS, Java, and MongoDB. With combined aggregation of metrics, distributed request traces, and logs, Datadog provides a unified platform for full visibility into your infrastructure.
+
+If you are running containers on your instances, Datadog's [Live Container view](/blog/introducing-live-container-monitoring/) gives you complete coverage of your fleet, with metrics reported at two-second resolution. And [Live Process monitoring](/blog/live-process-monitoring/) means you have the same level of visibility into all processes running across your entire distributed architecture.
+
+
+### Slicing and dicing Amazon EBS volumes with tags
+
+All of your monitored EBS volumes will be attached to an EC2 instance as either a root volume or a mounted device. So being able to filter to show the EBS metrics for a particular set of instances can help isolate the source of a problem. [Tags][tagging] enable you to easily slice your hosts and [drill down](/blog/the-power-of-tagged-metrics/) into particular problem areas in your infrastructure.
+
+In addition to any custom tags you add to the instance, Datadog imports all of CloudWatchâ€™s EC2-specific [dimensions](/blog/collecting-ec2-metrics/#dimensions)â€”such as `InstanceType` and `ImageId`â€”as default tags. Datadog automatically collects metrics from instances across all regions, so `region` and `availability-zone` are also imported as tags attached to all of your instances, along with other EC2 metadata such as `name`, `security-group`, and, if the instance is part of an ECS group, the ECS cluster name.
+
+### Advanced alerting
+
+Once Datadog is gathering your EBS metrics and events, you can easily set up alerts for any potential issues. Tag-based alerting allows you to monitor large groups of EC2 instances and their attached EBS volumes, without having to update your alerting rules as your infrastructure changes. Tags let you filter or scope your alerts to specific instance groups and automatically monitor new instances that include the tag. For example, you may want to create an alert that monitors disk read operations averaged by device for all EBS volumes attached to instances with a certain role. If disk read levels increase and trigger the alert, you can be notified and take action, like booting up new instances to shoulder the load.
+
+You can also create alerts based on events from AWS. As discussed in [part one](/blog/amazon-ebs-monitoring/#events), it is important to monitor events to head off potential availability or performance issues, or to be notified if you need to migrate important data from a soon-to-be-terminated instance. Datadog can alert your team, for example, if more than a set number of instances in a single availability zone are scheduled for maintenance.
+
+Datadog alerts allow you to move beyond monitoring based on fixed thresholds to effectively identify issues in dynamic environments. With sophisticated alerting features like [anomaly](/blog/introducing-anomaly-detection-datadog/) and [outlier](/blog/introducing-outlier-detection-in-datadog/) detection, Datadog can automatically notify you of unexpected instance behavior. And [forecasting](/blog/forecasts-datadog/) lets you stay ahead of future problems in your infrastructure and applications. For example, you might want to create a forecast alert for a volume's [burst balance](/blog/amazon-ebs-monitoring/#metric-to-alert-on-burst-balance) that will notify you ahead of time if the balance is predicted to cross a certain threshold. This can give you time to investigate if there is some kind of problem, or to scale your volumes up to accomodate a rise in resource demand before you experience any sort of performance throttling from an exhausted burst bucket.
+
+{{< img src="amazon-ebs-volumes-burst-balance-forecast.png" alt="Amazon EBS volumes burst balance forecast" wide="true" >}}
+
+## Getting started
+
+In this post, weâ€™ve walked you through integrating Amazon EC2 and EBS with Datadog so you can visualize and alert on key metrics from all your volumes. Monitoring your instances and any attached EBS volumes with Datadog gives you critical visibility into whatâ€™s happening in your core application infrastructure, and the rich suite of Datadog integrations with other applications and services means you can get a complete view of your entire environment.
+
+If you donâ€™t yet have a Datadog account, you can sign up for a <a class="sign-up-trigger" href="#">free 14-day trial</a> and start monitoring your cloud infrastructure, your applications, and your services today.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/aws-ebs/monitoring-amazon-ebs-volumes-with-datadog.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
+
+[part-one]: /blog/amazon-ebs-monitoring/
+[aws-integration]: https://docs.datadoghq.com/integrations/aws/
+[iam-roles]: http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#delegate-using-roles
+[datadog-aws-install]: https://docs.datadoghq.com/integrations/aws/#installation
+[dd-agent]: https://github.com/DataDog/dd-agent
+[ebs-using-volumes]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
+[integrations]: https://app.datadoghq.com/account/settings
+[agent-install]: https://app.datadoghq.com/account/settings#agent
+[infrastructure]: https://app.datadoghq.com/infrastructure
+[chef]: https://docs.datadoghq.com/integrations/chef/
+[puppet]: https://docs.datadoghq.com/integrations/puppet/
+[ansible]: https://docs.datadoghq.com/integrations/ansible/
+[docker]: https://docs.datadoghq.com/integrations/docker_daemon/
+[kubernetes]: https://docs.datadoghq.com/integrations/kubernetes/
+[agent-docs]: https://docs.datadoghq.com/agent/
+[device-naming]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html
+[tracing]: https://docs.datadoghq.com/tracing/
+[datadog-aws-logs]: https://docs.datadoghq.com/integrations/amazon_web_services/#log-collection
+[tagging]: https://docs.datadoghq.com/guides/tagging/

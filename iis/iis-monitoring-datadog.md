@@ -1,1 +1,372 @@
-m%%Lµ½¹¥Ñ½É¥¹œİ¥Ñ …Ñ…‘½œ(()%¸mA…ÉĞ€ÉumÁ…ÉĞÉt½˜Ñ¡¥ÌÍ•É¥•Ì°İ”±•…É¹•¡½ÜÑ¼…•ÍÌ%%Lµ•ÑÉ¥Ì…¹±½ÌÕÍ¥¹œ]¥¹‘½İÌÑ½½±Ì¸%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°Í¡½Üå½Ô„µ½É”½µÁÉ•¡•¹Í¥Ù”…ÁÁÉ½… Ñ¼%%Lµ½¹¥Ñ½É¥¹œ°½¹”Ñ¡…Ğ‰É¥¹ÌÑ½•Ñ¡•È½ÕĞµ½˜µÑ¡”µ‰½à‘…Í¡‰½…É‘Ì°…ÕÑ½µ…Ñ•…±•ÉÑÌ°…¹±½œ…¹…±åÑ¥Ì°…±°¥¸„Í¥¹±”Á±…Ñ™½É´¸(()…Ñ…‘½œÌ%%L…¹]5$¥¹Ñ•É…Ñ¥½¹Ì±•Ğå½Ô½±±•Ğµ½ÍĞ½˜Ñ¡”­•äµ•ÑÉ¥Ìµ•¹Ñ¥½¹•¥¸mA…ÉĞ€ÅumÁ…ÉĞÅt…ÕÑ½µ…Ñ¥…±±ä¸½È…¹äµ•ÑÉ¥ÌÑ¡…Ğ%%LÍÕÉ™…•ÌÑ¡É½Õ ±½Ì°ÍÕ …ÌÑ¡”‘ÕÉ…Ñ¥½¸½˜„É•ÅÕ•ÍĞ°…Ñ…‘½œ…¸Ñ…¥°%%L±½œ™¥±•Ì…¹ÁÉ½•ÍÌ±½œ™¥•±‘Ì¥¹Ñ¼‘…Ñ„İ¥Ñ¡½ÕĞÑ¡”¹••™½Èµ…¹Õ…°ÅÕ•Éå¥¹œ¸(()…Ñ…‘½œ¥¹Ñ•É…Ñ•Ìİ¥Ñ Ñ•¡¹½±½¥•ÌÑ¡…Ğå½Ôµ…ä‰”ÕÍ¥¹œ…±½¹Í¥‘”%%L°±¥­”méÕÉ•um‘µ…éÕÉ•t…¹mME0M•ÉÙ•Éum‘µÍÅ°µÍ•ÉÙ•Ét°¥Ù¥¹œå½Ô™Õ±°Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈİ¡½±”ÍÑ…¬¸(()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œµ½½ˆµÍÉ••¹‰½…É¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´=ÕĞµ½˜µÑ¡”µ‰½àÍÉ••¹‰½…É™½È%%Lˆ€ùõô((ŒŒM•ĞÕÀÑ¡”•¹Ğ(()Q¡”…Ñ…‘½œ•¹Ğ¥Ì½Á•¸Í½ÕÉ”Í½™Ñİ…É”Ñ¡…Ğ½±±•ÑÌµ•ÑÉ¥Ì…¹±½Ì™É½´å½ÕÈ%%L¡½ÍÑÌ°Í¼å½Ô…¸Ù¥ÍÕ…±¥é”…¹…±•ÉĞ½¸Ñ¡¥Ì‘…Ñ„¥¸½¹”•¹ÑÉ…°Á±…Ñ™½É´¸Q¼¥¹ÍÑ…±°Ñ¡”•¹Ğ°¹…Ù¥…Ñ”Ñ¼Ñ¡”m•¹Ğ%¹ÍÑ…±±…Ñ¥½¹um‘µ…•¹Ğµ¥¹Ñ•É…Ñ¥½¸µ±¥¹­tÁ…”½˜å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ…¹‘½İ¹±½…Ñ¡”¥¹ÍÑ…±±•È™½ÈÑ¡”±…Ñ•ÍĞ]¥¹‘½İÌÙ•ÉÍ¥½¸€ ñ„±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆ¡É•˜ôˆŒˆùÍ¥¸ÕÀ™½È„™É•”ÑÉ¥…°ğ½„ø¥˜å½Ô±¥­”Ñ¼™½±±½Ü…±½¹œİ¥Ñ Ñ¡”É•ÍĞ½˜Ñ¡¥ÌÁ½ÍĞ¤¸(()%˜å½ÔÁÉ•™•È„É…Á¡¥…°¥¹Ñ•É™…”°å½Ô…¸•á•ÕÑ”Ñ¡”€¨©‘…Ñ…‘½œµ…•¹Ğ´Øµ±…Ñ•ÍĞ¹…µØĞ¹µÍ¤¨¨™¥±”…¹™½±±½ÜÑ¡”¥¹ÍÑÉÕÑ¥½¹ÌÑ¼ÍÑ…ÉĞÕÍÑ½µ¥é¥¹œå½ÕÈ•¹Ğ¸¹¥˜å½ÔÁÉ•™•ÈÑ¼¥¹ÍÑ…±°Ñ¡”•¹Ğ™É½´„Ñ•Éµ¥¹…°İ¥¹‘½Ü°Ñ¡”¥¹ÍÑ…±±…Ñ¥½¸Á…”¥¹±Õ‘•Ì„½µµ…¹å½Ô…¸½Áä°Á…ÍÑ”°…¹•á•ÕÑ”¸(()Q¡”•¹Ğ±½½­Ì™½Èm½¹™¥ÕÉ…Ñ¥½¸½ÁÑ¥½¹Íum‘µ…•¹Ğµ½¹™¥œµİ¥¹‘½İÍtİ¥Ñ¡¥¸Í•Ù•É…°e50™¥±•Ì¸e½Ô…¸•‘¥ĞÑ¡•Í”™¥±•Ì•¥Ñ¡•ÈÑ¡É½Õ „±½…°‰É½İÍ•Èµ‰…Í•U$…Ğ¡ÑÑÀè¼¼ÄÈÜ¸À¸À¸ÄèÔÀÀÉ€°½È‰ä•‘¥Ñ¥¹œÑ¡”½¹™¥ÕÉ…Ñ¥½¸™¥±•Ì‘¥É•Ñ±ä¸Q¼mÍÑ…ÉĞ°ÍÑ½À°½ÈÉ•ÍÑ…ÉĞÑ¡”•¹Ñum‘µİ¥¹‘½İÌµ…•¹ĞµÕÍ”µ±¥¹­t°½ÈÑ¼Í¡½Ü¥ÑÌÍÑ…ÑÕÌ°å½Ô…¸ÕÍ”•¥Ñ¡•ÈÑ¡”U$½ÈÑ¡”½µµ…¹±¥¹”¸(((ŒŒ½¹™¥ÕÉ”%%Lµ½¹¥Ñ½É¥¹œ(()…Ñ…‘½œÌ%%L¥¹Ñ•É…Ñ¥½¸ÅÕ•É¥•ÌÑ¡”]•ˆM•ÉÙ¥”Á•É™½Éµ…¹”½Õ¹Ñ•ÉÌ…ÕÑ½µ…Ñ¥…±±ä…¹Í•¹‘ÌÑ¡”É•ÍÕ±ÑÌÑ¼…Ñ…‘½œ¸Q¡”]•ˆM•ÉÙ¥”€¡m]¥¸ÌÉ}A•É™½Éµ…ÑÑ•‘…Ñ…}\ÍMY}]•‰M•ÉÙ¥•umİ•ˆµÍ•ÉÙ¥”µ±…ÍÍt¤Á•É™½Éµ…¹”½Õ¹Ñ•È±…ÍÌ½±±•ÑÌ¥¹™½Éµ…Ñ¥½¸™É½´Ñ¡”]½É±]¥‘”]•ˆAÕ‰±¥Í¡¥¹œM•ÉÙ¥”€¡…Ì‘¥ÍÕÍÍ•¥¸mA…ÉĞ€ÅumÁ…ÉĞÅt¤¸M•”mA…ÉĞ€ÉumÁ…ÉĞÉt™½È¥¹ÍÑÉÕÑ¥½¹Ì½¸¡½ÜÑ¼µ…­”ÍÕÉ”Ñ¡”±…ÍÌ¥Ì¥¹ÍÑ…±±•½¸å½ÕÈ¡½ÍĞ¸(()e½Ô…¸•¹…‰±”Ñ¡”%%L¥¹Ñ•É…Ñ¥½¸‰äÉ•…Ñ¥¹œ„½¹™¥ÕÉ…Ñ¥½¸™¥±”•¥Ñ¡•Èµ…¹Õ…±±ä½ÈÑ¡É½Õ Ñ¡”…Ñ…‘½œ•¹ĞU$¸Q¼É•…Ñ”„½¹™¥ÕÉ…Ñ¥½¸™¥±”Ñ¡É½Õ Ñ¡”U$°¹…Ù¥…Ñ”Ñ¼Ñ¡”€‰¡•­ÌˆÑ…ˆ°¡½½Í”€‰5…¹…”¡•­Ì°ˆ…¹Í•±•ĞÑ¡”¥¥Í€¡•¬™É½´Ñ¡”€‰‘„¡•¬ˆµ•¹Ô¸e½Ô…¸…±Í¼µ…¹Õ…±±äÉ•…Ñ”„€¨©½¹˜¹å…µ°¨¨™¥±”¥¸€¨©éqAÉ½É…µ…Ñ…q…Ñ…‘½q½¹˜¹‘q¥¥Ì¹¨¨°ÕÍ¥¹œm½ÕÈ•á…µÁ±•um¥¥Ìµå…µ°µ•á…µÁ±•t…Ì„É•™•É•¹”¸(()Q¡”½¹Ñ•¹Ğ½˜€¨©¥¥Ì¹‘q½¹˜¹å…µ°¨¨İ¥±°É•Í•µ‰±”Ñ¡”™½±±½İ¥¹œ¸(()¹¼µµ¥¹¥µ¥é”)¥¹¥Ñ}½¹™¥œè(()¥¹ÍÑ…¹•Ìè(€€´¡½ÍĞè€¸(€€€Ñ…Ìè(€€€€€€´Í•ÉÙ¥”èñe=UI}MIY%}95ø(€€€Í¥Ñ•Ìè(€€€€€€´€ñe=UI}M%Q}UI0ø)€(()%¸Ñ¡¥Ì•á…µÁ±”°Ñ¡”¡½ÍÑ€Ñ…œ¥ÌÍ•ĞÑ¼€¹€°İ¡¥ ¥¹ÍÑÉÕÑÌÑ¡”•¹ĞÑ¼ÅÕ•Éäµ•ÑÉ¥Ì±½…±±ä¸e½Ô…¸ÍÁ•¥™ä„É•µ½Ñ”¡½ÍĞ‰ä¥¹‘¥…Ñ¥¹œÑ¡”¹…µ”½˜„Í•ÉÙ•È…ÌÑ¡”Ù…±Õ”½˜¡½ÍÑ€…¹Í•ÑÑ¥¹œ„ÕÍ•É¹…µ•€…¹Á…ÍÍİ½É‘€€¡Í•”½ÕÈm‘½Õµ•¹Ñ…Ñ¥½¹um¥¥Ìµ¥¹Ñ•É…Ñ¥½¸µ½¹™¥t¤¸(()%˜å½Ôİ½Õ±±¥­”Ñ¼µ½¹¥Ñ½ÈµÕ±Ñ¥Á±”%%LÍ¥Ñ•Ì°å½Ô…¸±¥ÍĞÑ¡”‰…Í”UI0½˜•… Í¥Ñ”Õ¹‘•ÈÑ¡”Í¥Ñ•Í€­•ä€¡É•…±°™É½´mA…ÉĞ€ÅumÁ…ÉĞÅtÑ¡…ĞÑ¡”]•ˆM•ÉÙ¥”½Õ¹Ñ•ÈÍ•Ğ•¹•É…Ñ•Ì¥ÑÌµ•ÑÉ¥Ì‰äÍ¥Ñ”¤¸e½Ô…¸…±Í¼±¥ÍĞÑ¡”¹…µ”½˜Ñ¡”Í¥Ñ”°ÍÕ …ÌµäµÍ¥Ñ•€°¥¸Á±…”½˜Ñ¡”UI0¸Q¡”•¹Ğİ¥±°…ÕÑ½µ…Ñ¥…±±äÑ…œ•… Í¥Ñ”å½Ô…É”µ½¹¥Ñ½É¥¹œİ¥Ñ „Í¥Ñ”èñe=UI}M%Q}UI0ù€Ñ…œ¸(()9½Ñ”Ñ¡…Ğ¥˜å½Ô…É”ÕÍ¥¹œ%%L€Ø½È€Ü°å½Ôİ¥±°¡…Ù”Ñ¼Í•ĞÑ¡”¥Í|ÈÀÀá€Á…É…µ•Ñ•ÈÑ¼ÑÉÕ•€¥¸½É‘•ÈÑ¼½±±•ĞÑ¡”Q½Ñ…±	åÑ•ÍQÉ…¹Í™•ÉÉ•‘€µ•ÑÉ¥Œ°…ÌÑ¡•Í”•…É±¥•ÈÙ•ÉÍ¥½¹Ì½˜%%LÉ•Á½ÉĞÑ¡”µ•ÑÉ¥Œ…ÌQ½Ñ…±	åÑ•ÍQÉ…¹Í™•É•‘€İ¥Ñ „Í¥¹±”É€¸(()Q¼ÁÕĞÑ¡”¹•Ü½¹™¥ÕÉ…Ñ¥½¸¥¹Ñ¼•™™•Ğ°mÉ•ÍÑ…ÉĞÑ¡”•¹Ñum‘µİ¥¹‘½İÌµ…•¹ĞµÕÍ”µ±¥¹­tÕÍ¥¹œÑ¡”½µµ…¹è(()€(‰éqAÉ½É…´¥±•Íq…Ñ…‘½q…Ñ…‘½œ•¹Ñq•µ‰•‘‘•‘q…•¹Ğ¹•á”ˆÉ•ÍÑ…ÉĞµÍ•ÉÙ¥”)€(()e½Ô…¸½¹™¥É´Ñ¡…ĞÑ¡”•¹Ğ¥ÌÉ•Á½ÉÑ¥¹œµ•ÑÉ¥Ì‰ä½Á•¹¥¹œÑ¡”…Ñ…‘½œ•¹ĞU$°±¥­¥¹œ€‰MÑ…ÑÕÌˆ½¸Ñ¡”Í¥‘•‰…È°…¹Í•±•Ñ¥¹œ€‰½±±•Ñ½È¸ˆe½Ô…¸…±Í¼ÉÕ¸Ñ¡”™½±±½İ¥¹œ½µµ…¹è(()€(‰éqAÉ½É…´¥±•Íq…Ñ…‘½q…Ñ…‘½œ•¹Ñq•µ‰•‘‘•‘q…•¹Ğ¹•á”ˆÍÑ…ÑÕÌ)€(()e½ÔÍ¡½Õ±Í•”Í½µ•Ñ¡¥¹œÍ¥µ¥±…ÈÑ¼Ñ¡”™½±±½İ¥¹œÕ¹‘•ÈÑ¡”IÕ¹¹¥¹œ¡•­Í€¡•…‘•Èè(()¹¼µµ¥¹¥µ¥é”)¥¥Ì)Q½Ñ…°IÕ¹Ìè€È)5•ÑÉ¥Ìè€ÈÄ°Q½Ñ…°5•ÑÉ¥Ìè€ĞÈ)Ù•¹ÑÌè€À°Q½Ñ…°Ù•¹ÑÌè€À)M•ÉÙ¥”¡•­Ìè€È°Q½Ñ…°M•ÉÙ¥”¡•­Ìè€Ğ)€(((ŒŒM•ĞÕÀÑ¡”]5$¥¹Ñ•É…Ñ¥½¸(()…Ñ…‘½œ¥¹Ñ•É…Ñ•Ìİ¥Ñ µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô½Ñ¡•ÈÁ½ÁÕ±…ÈÑ•¡¹½±½¥•Ì°µ•…¹¥¹œå½Ô…¸µ½¹¥Ñ½Èå½ÕÈ•¹Ñ¥É”İ•ˆÍÑ…¬¥¸½¹”Á±…”¸Q¡”m]5$¥¹Ñ•É…Ñ¥½¹umİµ¤µ¥¹Ñ•É…Ñ¥½¹t…±±½İÌå½ÔÑ¼ÁÕ±°‘…Ñ„™É½´…¹äm™½Éµ…ÑÑ•‘um™½Éµ…ÑÑ•µ½Õ¹Ñ•ÉÍtÁ•É™½Éµ…¹”½Õ¹Ñ•ÉÌ°¥¹±Õ‘¥¹œ½Õ¹Ñ•ÉÌ™½È%%Lİ½É­•ÈÁÉ½•ÍÍ•Ì¸(()Q¼•¹…‰±”Ñ¡”]5$¡•¬½¸Ñ¡”…Ñ…‘½œ•¹Ğ°É•…Ñ”„½¹™¥ÕÉ…Ñ¥½¸™¥±”€¡•¥Ñ¡•ÈÑ¡É½Õ Ñ¡”U$½È…Ğ€¨©éqAÉ½É…µ…Ñ…q…Ñ…‘½q½¹˜¹‘qİµ¥}¡•¬¹‘q½¹˜¹å…µ°¨¨¤°…¹…‘Ñ¡”Á•É™½Éµ…¹”½Õ¹Ñ•È…ÑÑÉ¥‰ÕÑ•ÌÑ¡…Ğå½Ô±¥­”Ñ¡”•¹ĞÑ¼ÅÕ•Éä¸Q¡”½¹™¥ÕÉ…Ñ¥½¸e50‰•±½Ü¹…µ•ÌÑ¡É•”ÕÍÑ½´µ•ÑÉ¥Ì°•… ½˜İ¡¥ ÅÕ•É¥•Ì…¸¥¹ÍÑ…¹”½˜Ñ¡”½‰©•Ğ€]¥¸ÌÉ}A•É™½Éµ…ÑÑ•‘…Ñ…}A•É™AÉ½}AÉ½•ÍÍ€™½È•… %%Lİ½É­•ÈÁÉ½•ÍÌ¸(()¹¼µµ¥¹¥µ¥é”)¥¹¥Ñ}½¹™¥œè()l¸¸¹t()¥¹ÍÑ…¹•Ìè((€€´±…ÍÌè]¥¸ÌÉ}A•É™½Éµ…ÑÑ•‘…Ñ…}A•É™AÉ½}AÉ½•ÍÌ(€€€µ•ÑÉ¥Ìè(€€€€€€´mA•É•¹ÑAÉ½•ÍÍ½ÉQ¥µ”°ÁÉ½Œ¹ÁÕ}ÁĞ°…Õ•t(€€€€€€´m]½É­¥¹M•Ğ°ÁÉ½Œ¹İ½É­¥¹}Í•Ğ°…Õ•t(€€€€€€´m±…ÁÍ•‘Q¥µ”°ÁÉ½Œ¹•±…ÁÍ•‘}Ñ¥µ”°…Õ•t(€€€Ñ…}‰äè9…µ”(€€€™¥±Ñ•ÉÌè(€€€€€€´9…µ”èÜÍİÀ”)€(()Q¡”Ù…±Õ”½˜±…ÍÍ€¥ÌÑ¡”¹…µ”½˜„]5$±…ÍÌ°İ¡¥ å½Ô…¸½‰Ñ…¥¸Ñ¡É½Õ A½İ•ÉM¡•±°€¡…Ì•áÁ±…¥¹•¥¸mA…ÉĞ€ÉumÁ…ÉĞÈµÁ•É™½¹t¤¸… ÕÍÑ½´µ•ÑÉ¥Œ¥Ì…¸…ÉÉ…äİ¥Ñ Ñ¡É•”•±•µ•¹ÑÌèÑ¡”¹…µ”½˜Ñ¡”Á•É™½Éµ…¹”½Õ¹Ñ•È°Ñ¡”ÕÍÑ½´¹…µ”å½Ô±¥­”…Ñ…‘½œÑ¼É•Á½ÉĞ™½ÈÑ¡”µ•ÑÉ¥Œ°…¹Ñ¡”µ•ÑÉ¥ŒÌmÑåÁ•um‘µµ•ÑÉ¥ŒµÑåÁ•Ít¸Q¡”Ñ…}‰å€­•ä±•ÑÌÕÌ¡½½Í”„ÁÉ½Á•ÉÑä™É½´Ñ¡”]5$±…ÍÌÑ¼ÕÍ”…Ì„Ñ…¥¹œÁÉ•™¥à¸Q¡”•á…µÁ±”…‰½Ù”İ¥±°Ñ…œ•… µ•ÑÉ¥Œİ¥Ñ ¹…µ”èñ]=I-I}AI=MM}95ù€¸]”…¸Ñ¡•¸ÕÍ”Ù…±Õ•Ìİ¥Ñ¡¥¸Ñ¡”™¥±Ñ•ÉÍ€Í•Ñ¥½¸Ñ¼Ñ…É•Ğ•ÉÑ…¥¸¥¹ÍÑ…¹•Ì½˜Ñ¡”]5$±…ÍÌ¸%¸Ñ¡”•á…µÁ±”…‰½Ù”°Ñ¡”•¹Ğİ¥±°½¹±äÅÕ•Éä¥¹ÍÑ…¹•Ìİ¥Ñ „9…µ•€ÁÉ½Á•ÉÑäÑ¡…Ğ¥¹±Õ‘•ÌÑ¡”¡…É…Ñ•ÉÌ°ÜÍİÁƒŠQ½ÕÈ%%Lİ½É­•ÈÁÉ½•ÍÍ•Ì¸€¡Q¡”€•€¥Ì„İ¥±‘…É¥¹‘¥…Ñ¥¹œ…¹ä¹Õµ‰•È½˜¡…É…Ñ•ÉÌ¸¤(((ŒŒÉ…Á å½ÕÈİ¡½±”%%L‘•Á±½åµ•¹Ğ¥¸½¹”Á±…”(()=¹”å½×ŠeÙ”½¹™¥ÕÉ•Ñ¡”%%L¥¹Ñ•É…Ñ¥½¸°å½Ô…¸ÅÕ¥­±äÙ¥ÍÕ…±¥é”Ñ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜%%LÕÍ¥¹œ…¸½ÕĞµ½˜µÑ¡”µ‰½à‘…Í¡‰½…É¸±½¹”Ñ¡”m‘•™…Õ±Ğ%%L‘…Í¡‰½…É‘um‘µ‘•™…Õ±Ğµ¥¥Ìµ‘…Í¡‰½…Éµ±¥¹­tÑ¼ÕÍ”…Ì„Ñ•µÁ±…Ñ”°½ÈÉ•…Ñ”„¹•Ü‘…Í¡‰½…É™É½´ÍÉ…Ñ ¸(()m%%LÉÕ¹Ì…É½ÍÌµÕ±Ñ¥Á±”Á…ÉÑÍumÁ…ÉĞÅt½˜å½ÕÈ]¥¹‘½İÌÍåÍÑ•´°™É½´İ½É­•ÈÁÉ½•ÍÍ•ÌÑ¼!QQ@¹ÍåÌ…¹Ñ¡”]]\M•ÉÙ¥”°Í¼¥ÓŠeÌ¥µÁ½ÉÑ…¹ĞÑ¼­••À…¸•å”½¸µ•ÑÉ¥Ì…ĞÑ¡”±•Ù•°½˜Í¥Ñ•Ì°ÁÉ½•ÍÍ•Ì°…¹ÍåÍÑ•´µ±•Ù•°É•Í½ÕÉ”ÕÍ”¸…Ñ…‘½œ‘…Í¡‰½…É‘Ìµ…­”¥ĞÁ½ÍÍ¥‰±”Ñ¼Ù¥ÍÕ…±¥é”°½µÁ…É”°…¹½ÉÉ•±…Ñ”µ•ÑÉ¥Ì™É½´…±°½˜Ñ¡•Í”½µÁ½¹•¹ÑÌ¥¸½¹”Á±…”¸¹‰•…ÕÍ”m±½œµ…¹…•µ•¹Ñt ¥¥Ìµ±½œµµ…¹…•µ•¹Ğµİ¥Ñ µ‘…Ñ…‘½œ¤¥Ì‰Õ¥±Ğ¥¹Ñ¼Ñ¡”Í…µ”Á±…Ñ™½É´°å½Ô…¸ÅÕ¥­±ä•Ğµ½É”½¹Ñ•áĞ…É½Õ¹Á½Ñ•¹Ñ¥…°¥ÍÍÕ•Ì‰ä¹…Ù¥…Ñ¥¹œ™É½´…¹äÑ¥µ•Í•É¥•ÌÉ…Á Ñ¼Ù¥•Üm±½Ì™É½´Ñ¡”Í…µ”Á½¥¹Ğ¥¸Ñ¥µ•um‘µµ•ÑÉ¥ŒµÑ¼µ±½Ít¸(()]¥Ñ Ñ¡”]5$¥¹Ñ•É…Ñ¥½¸°å½Ô…¸µ½¹¥Ñ½Èå½ÕÈ%%Lİ½É­•ÈÁÉ½•ÍÍ•Ì¥¹‘¥Ù¥‘Õ…±±ä¸Q¡¥Ì¥Ì¡•±Á™Õ°İ¡•¸å½Ôİ…¹ĞÑ¼½µÁ…É”•ÉÑ…¥¸µ•ÑÉ¥Ì…É½ÍÌ•… ½˜å½ÕÈİ½É­•ÈÁÉ½•ÍÌ°…ÌÍ¡½İ¸‰•±½Üİ¥Ñ •… ½˜Ñ¡É•”ÕÍÑ½´µ•ÑÉ¥Ì¸e½Ô…¸Í•”İ¡•Ñ¡•È…¹ä½¹”İ½É­•È¥ÌÕÍ¥¹œ…¸Õ¹ÕÍÕ…°Á•É•¹Ñ…”½˜AT½Èµ•µ½Éä°…¹İ¡•Ñ¡•È…¹äİ½É­•ÈÁÉ½•ÍÌ¡…Ì‰••¸­¥±±•½ÈÍÁ…İ¹•É••¹Ñ±ä¸¹İ¥Ñ m½ÕÑ±¥•È‘•Ñ•Ñ¥½¹um‘µ½ÕÑ±¥•Èµ‘•Ñ•Ñ¥½¹t°…Ñ…‘½œ…¸…±•ÉĞå½Ô…ÕÑ½µ…Ñ¥…±±äİ¡•¸„Í¥¹±”İ½É­•ÈÁÉ½•ÍÌÍÑ…ÉÑÌÑ¼‰•¡…Ù”‘¥™™•É•¹Ñ±ä™É½´Ñ¡”½Ñ¡•ÉÌ°™½È¥¹ÍÑ…¹”¥˜¥Ğ¡…¹Ì°É…Í¡•Ì°½ÈÍÑ…ÉÑÌÑ¼±•…¬µ•µ½Éä¸()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµÜÍİÀµ½µÁ…É¥Í½¸¹Á¹œˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´½µÁ…É¥Í½¸½˜İ½É­•ÈÁÉ½•ÍÍ•Ìİ¥Ñ¡¥¸„Í¥¹±”ÍÉ••¹‰½…ÉˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô(()Q¡”ÕÍÑ½´‘…Í¡‰½…É‰•±½Ü‘¥ÍÁ±…åÌµ•ÑÉ¥Ì™É½´Ñ¡É•”‘¥™™•É•¹ĞÍ½ÕÉ•Ì°…±°½˜İ¡¥ Í¥Ğ…ĞÑ¡”™½Õ¹‘…Ñ¥½¸½˜…¸%%L•¹Ù¥É½¹µ•¹Ğ¸Qİ¼½˜Ñ¡•Í”Í½ÕÉ•Ì°Ñ¡”!QQ@¹ÍåÌÉ•ÅÕ•ÍĞÅÕ•Õ”…¹„Í•Ğ½˜]¥¹‘½İÌÁÉ½•ÍÍ•Ì°É•Á½ÉĞµ•ÑÉ¥ÌÑ¡É½Õ Ñ¡”]5$¥¹Ñ•É…Ñ¥½¸¸Q¡”Ñ¡¥ÉÍ½ÕÉ”¥ÌÑ¡”]•ˆM•ÉÙ¥”Á•É™½Éµ…¹”½Õ¹Ñ•È°İ¡¥ ÁÉ½Ù¥‘•Ìµ•ÑÉ¥Ì™½ÈÑ¡”%%L¥¹Ñ•É…Ñ¥½¸¸Q¡¥Ì‘…Í¡‰½…Éµ…­•Ì¥Ğ•…ÍäÑ¼Í•”¡½Ü¥¹½µ¥¹œÉ•ÅÕ•ÍĞÑÉ…™™¥Œ½ÉÉ•±…Ñ•Ìİ¥Ñ ÅÕ•Õ”Ù½±Õµ”…¹Ñ¡”¡•…±Ñ ½˜%%Lİ½É­•ÉÌ°…¹¡•±ÁÌå½Ô¥‘•¹Ñ¥™ä‰½ÑÑ±•¹•­Ì¸(()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµİµ¤µÍÉ••¹‰½…É¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´ÕÍÑ½´ÍÉ••¹‰½…Éˆ€ùõô(((ŒŒ€%%L±½œµ…¹…•µ•¹Ğİ¥Ñ …Ñ…‘½œ(()M¥¹”Í•Ù•É…°­•ä%%Lµ•ÑÉ¥Ì…É”½¹±ä…Ù…¥±…‰±”™É½´±½Ì°¥ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼½±±•Ğ…¹…¹…±åé”å½ÕÈ±½Ì¥¸½É‘•ÈÑ¼•Ğ™Õ±°Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈ‘•Á±½åµ•¹Ğ¸e½Ô…¸½¹™¥ÕÉ”Ñ¡”…Ñ…‘½œ•¹ĞÑ¼½±±•Ğ±½Ì™É½´%%L°Á…ÉÍ”Ñ¡•´°…¹Í•¹Ñ¡•´Ñ¼…Ñ…‘½œ¸=¹”…Ñ…‘½œ¥Ì¥¹•ÍÑ¥¹œå½ÕÈ±½Ì°å½Ô…¸ÕÍ”Ñ¡…Ğ‘…Ñ„Ñ¼¥‘•¹Ñ¥™äÑÉ•¹‘Ì…¹•Ğ…±•ÉÑ•Ñ¼%%LÁ•É™½Éµ…¹”¥ÍÍÕ•Ì¸(((ŒŒŒ½¹™¥ÕÉ”%%L±½œ½±±•Ñ¥½¸(()Q¼ÍÑ…ÉĞ½±±•Ñ¥¹œ%%L±½Ì°å½Ô¹••Ñ¼m•¹…‰±”±½œ½±±•Ñ¥½¹um‘µ±½œµ½±±•Ñ¥½¹tİ¥Ñ¡¥¸Ñ¡”•¹Ğ¸¥¹Ñ¡”•¹Ğ½¹™¥ÕÉ…Ñ¥½¸™¥±”°•¥Ñ¡•È‰ä½Á•¹¥¹œÑ¡”•¹ĞU$…¹±¥­¥¹œ€‰M•ÑÑ¥¹Ì°ˆ½È‰ä½Á•¹¥¹œÑ¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”…Ğ€¨©éqAÉ½É…µ…Ñ…q…Ñ…‘½q‘…Ñ…‘½œ¹å…µ°¨¨°…¹Í•Ğ±½Í}•¹…‰±•‘€Ñ¼ÑÉÕ•€¸(()Q¡•¸¥¹ÍÑÉÕĞÑ¡”•¹Ğİ¡•É”…¹¡½ÜÑ¼½±±•Ğ%%L±½Ì¸U¹½µµ•¹ĞÑ¡”±½Í€Í•Ñ¥½¸½˜Ñ¡”%%L¥¹Ñ•É…Ñ¥½¸½¹™¥ÕÉ…Ñ¥½¸™¥±”å½ÔÉ•…Ñ•…‰½Ù”…Ğ€¨©éqAÉ½É…µ…Ñ…q…Ñ…‘½q½¹˜¹‘q¥¥Ì¹‘q½¹˜¹å…µ°¨¨è(()¹¼µµ¥¹¥µ¥é”)±½Ìè(€€´ÑåÁ”è™¥±”(€€€Á…Ñ èéq¥¹•ÑÁÕ‰q±½Íq1½¥±•Íq\ÍMYÅqÕ}•à¨(€€€Í•ÉÙ¥”è€ñe=UI}MIY%}95ø(€€€Í½ÕÉ”è¥¥Ì)€(()¡…¹”Ñ¡”Ù…±Õ”½˜Á…Ñ¡€¥˜å½ÕÈ±½Ì…É”İÉ¥ÑÑ•¸Ñ¼„‘¥™™•É•¹Ğ‘¥É•Ñ½Éäİ¥Ñ¡¥¸å½ÕÈÍåÍÑ•´¸e½×Še±°…±Í¼İ…¹ĞÑ¼¡…¹”Ñ¡”Ù…±Õ”½˜Í•ÉÙ¥•€Ñ¼Ñ¡”½¹”å½ÔÍÁ•¥™¥•İ¡•¸½¹™¥ÕÉ¥¹œÑ¡”¥¹ÍÑ…¹•Í€Í•Ñ¥½¸½˜€¨©½¹˜¹å…µ°¨¨¸€Q¡”Í•ÉÙ¥•€Ñ…œ…±±½İÌå½ÔÑ¼…ÍÍ½¥…Ñ”µ•ÑÉ¥Ì°±½Ì°…¹É•ÅÕ•ÍĞÑÉ…•Ìµ½É”•…Í¥±ä¸M•ĞÍ½ÕÉ•€Ñ¼¥¥Í€Ñ¼•¹…‰±”Ñ¡”ÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹”…¹™…•ÑÌÑ¡…Ğ…É”‰Õ¥±Ğ¥¹Ñ¼…Ñ…‘½œÌ%%L±½œ¥¹Ñ•É…Ñ¥½¸¸(()mI•ÍÑ…ÉĞÑ¡”•¹Ñum‘µİ¥¹‘½İÌµ…•¹ĞµÕÍ”µ±¥¹­tÑ¼…ÁÁ±äÑ¡”¹•Ü½¹™¥ÕÉ…Ñ¥½¸è(()€(‰éqAÉ½É…´¥±•Íq…Ñ…‘½q…Ñ…‘½œ•¹Ñq•µ‰•‘‘•‘q…•¹Ğ¹•á”ˆÉ•ÍÑ…ÉĞµÍ•ÉÙ¥”)€(()]¡•¸å½Ô¡•¬Ñ¡”•¹ĞÍÑ…ÑÕÌ€¡Ñ¡¥ÌÑ¥µ”Õ¹‘•ÈÑ¡”€‰•¹•É…°ˆÑ…ˆ¥˜å½Ô…É”ÕÍ¥¹œÑ¡”U$°½Èİ¥Ñ Ñ¡”ÍÑ…ÑÕÍ€½µµ…¹İ”ÕÍ••…É±¥•È¤°å½ÔÍ¡½Õ±Í•”Í½µ•Ñ¡¥¹œ±¥­”Ñ¡”™½±±½İ¥¹œè(()¹¼µµ¥¹¥µ¥é”)1½Ì•¹Ğ(()¥¥Ì(€€€€€€€QåÁ”è™¥±”(€€€€€€€A…Ñ è€ñe=UI}1=}%1}AQ ø(€€€€€€€MÑ…ÑÕÌè=,(€€€€€€€%¹ÁÕÑÌè€ñe=UI}1=}%1Lø)€(((ŒŒŒÕÍÑ½µ¥é”Ñ¡”%%L±½œÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹”(()]¡•¸Ñ¡”•¹ĞÍ•¹‘Ì%%L±½ÌÑ¼…Ñ…‘½œ°„‰Õ¥±Ğµ¥¸ÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹”Á…ÉÍ•Ì…¹•¹É¥¡•ÌÑ¡•´¥¹Ñ¼ÍÑÉÕÑÕÉ•‘…Ñ„°İ¡¥ å½Ô…¸ÕÍ”™½ÈÉ…Á¡¥¹œ…¹…¹…±åÍ¥Ì¸e½Ô±°İ…¹ĞÑ¼µ…­”ÍÕÉ”Ñ¡”Á¥Á•±¥¹”¥Ì•¹…‰±•¸%¸…Ñ…‘½œ°¹…Ù¥…Ñ”Ñ¼Ñ¡”mA¥Á•±¥¹•ÌÙ¥•İum‘µÁ¥Á•±¥¹•Ít°™¥¹Ñ¡”%%LÁ¥Á•±¥¹”°…¹±¥¬Ñ¡”Íİ¥Ñ ¸(((()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµÁ¥Á•±¥¹”¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´Q¡”‘•™…Õ±Ğ%%L±½œÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹”ˆ€ùõô(()e½ÔÍ¡½Õ±ÍÑ…ÉĞÑ¼Í•”å½ÕÈ%%L±½ÌÁ½ÁÕ±…Ñ¥¹œ…Ñ…‘½œÌm1½œáÁ±½É•Éum‘µ±½œµ•áÁ±½É•Èµ±¥¹­tÙ¥•Ü¸!•É”°å½Ô…¸Í•ĞÑ¡”1½œáÁ±½É•ÈÑ¼‘¥ÍÁ±…ä½¹±ä%%L±½Ì™½Èå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸UÍ”Ñ¡”Í¥‘•‰…È½È•¹Ñ•È„ÅÕ•Éä¥¸Ñ¡”Í•…É ‰…ÈÑ¼™¥±Ñ•È‰äÍ½ÕÉ”é¥¥Í€…¹Í•ÉÙ¥”èñe=UI}MIY%}95ù€¸(()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµ±½œµ•áÁ±½É•È¹Á¹œˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´1½œáÁ±½É•ÈÙ¥•ÜˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((()M¥¹”%%L¥Ù•Ìå½Ô±••İ…äÑ¼m…‘…¹É•µ½Ù•umÁ…ÉĞÈµ±½œµ½¹™¥t™¥•±‘Ì™É½´å½ÕÈİ•ˆÍ•ÉÙ¥”±½Ì°å½Ô…¸±½¹”…¹ÕÍÑ½µ¥é”…Ñ…‘½œÌ%%L±½œÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹”Ñ¼•¹ÍÕÉ”Ñ¡…Ğ¥ĞÁÉ½•ÍÍ•Ìå½ÕÈ±½Ì½ÉÉ•Ñ±ä¸±¥¬Ñ¡”‘É½Á‘½İ¸…ÉÉ½Ü¹•áĞÑ¼Ñ¡”¹…µ”½˜å½ÕÈ±½¹•Á¥Á•±¥¹”°…¹±¥¬Ñ¡”•‘¥Ñ¥¹œ¥½¸™½È½¹”½˜Ñ¡”ÍÑ•ÁÌ¸(()%¸Ñ¡”•á…µÁ±”‰•±½Ü°İ”É”É•…Ñ¥¹œ„mÉ½¬A…ÉÍ•Éum‘µ±½œµÉ½¬µÁ…ÉÍ•ÉtÑ¼ÁÉ½•ÍÌÑ¡”\ÍáÑ•¹‘•±½œ™½Éµ…Ğ…¹•áÑÉ…Ğ­•ä…ÑÑÉ¥‰ÕÑ•Ì¸%˜å½ÔÁ…ÍÑ”…¸…É‰¥ÑÉ…Éä±½œ±¥¹”™É½´½¹”½˜å½ÕÈ±½œ™¥±•Ì¥¹Ñ¼ÍÑ•À½¹”°å½Ô…¸Í•”Ñ¡”½ÕÑÁÕĞ½˜å½ÕÈÁ…ÉÍ¥¹œÉÕ±•Ì…ĞÑ¡”‰½ÑÑ½´½˜ÍÑ•ÀÑİ¼¸A…ÉÍ¥¹œ±½Ì¥¹Ñ¼ÍÑÉÕÑÕÉ•…ÑÑÉ¥‰ÕÑ•Ìµ…­•Ì¥ĞÁ½ÍÍ¥‰±”Ñ¼Á•É™½É´…¹…±åÑ¥Ì°…Ìİ”±°Í¡½Ü¹•áĞ¸()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµÉ½¬µÁ…ÉÍ•È¹Á¹œˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´É•…Ñ¥¹œ„É½¬A…ÉÍ•ÈˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô(((((ŒŒŒÉ…Á …¹…¹…±åé”%%L±½œ‘…Ñ„(()]¥Ñ …Ñ…‘½œ°å½Ô…¸…¹…±åé”±½œ‘…Ñ„Ñ¡…Ğå½Ô½±±•Ğ°É…Á ¥Ğ½Ù•ÈÑ¥µ”°…¹…É•…Ñ”¥Ğ‰ä…¹ä™…•Ğ°İ¡•Ñ¡•È¥ĞÌUI$ÍÑ•´°!QQ@É•ÅÕ•ÍĞµ•Ñ¡½°½È…¹ä½Ñ¡•È±½œµ‰…Í•µ•ÑÉ¥Œİ”¥¹ÑÉ½‘Õ•¥¸mA…ÉĞ€ÅumÁ…ÉĞÅt¸(()]¡•¸å½Ô±¥¬½¸„±½œİ¥Ñ¡¥¸Ñ¡”1½œáÁ±½É•È°å½Ô±°Í•”…±°½˜Ñ¡”…ÑÑÉ¥‰ÕÑ•ÌÑ¡…Ğ…Ñ…‘½œ¡…Ì•áÑÉ…Ñ•™É½´Ñ¡”É…Ü±½œ‘…Ñ„¸(((()%˜å½Ôİ…¹ĞÑ¼É…Á …¹ÅÕ•Éä±½œ…ÑÑÉ¥‰ÕÑ•Ì°å½Ô…¸ÑÕÉ¸Ñ¡•´¥¹Ñ¼mµ•…ÍÕÉ•Íum‘µ±½œµµ•…ÍÕÉ•Ít½Èm™…•ÑÍum‘µ±½œµ™…•ÑÍt¸±¥¬…¹ä­•ä¥¸Ñ¡”±¥ÍĞ½˜…ÑÑÉ¥‰ÕÑ•Ì°…¹å½Ô±°Í•”Ñ¡”½ÁÑ¥½¸Ñ¼ÑÕÉ¸Ñ¡…Ğ­•ä¥¹Ñ¼•¥Ñ¡•È„™…•Ğ½È„µ•…ÍÕÉ”¸…•ÑÌ±•Ğå½Ô…É•…Ñ”°Í•…É °…¹™¥±Ñ•È±½œ‘…Ñ„€¡ÍÕ …ÌUI0•¹‘Á½¥¹Ğ½È!QQ@ÍÑ…ÑÕÌ½‘”¤¸5•…ÍÕÉ•Ì…É”¹Õµ•É¥…°Ù…±Õ•ÌÑ¡…Ğ…É”Í¥µ¥±…ÈÑ¼€…Ñ…‘½œµ•ÑÉ¥Ì€¡ÍÕ …ÌÉ•ÍÁ½¹Í”±…Ñ•¹ä¤¸%¸Ñ¡¥Ì•á…µÁ±”€¡‰•±½Ü¤°İ”…¸É•…Ñ”„™…•Ğ™½ÈÕÉ¥}ÍÑ•µ€°…¹„µ•…ÍÕÉ”™½ÈÑ¥µ•}Ñ…­•¹€¸(()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµÁ…ÉÍ•µ±½œµ…ÑÑÉ¥‰ÕÑ•Ì¹Á¹œˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´Y¥•İ¥¹œ…ÑÑÉ¥‰ÕÑ•Ì™½È%%L±½ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((()]”…¸Ñ¡•¸ÕÍ”Ñ¡•Í”µ•…ÍÕÉ•Ì…¹™…•ÑÌÑ¼Á•É™½É´…¹…±åÑ¥Ì¸Q¡”•á…µÁ±”‰•±½ÜÉ…Á¡ÌÑ¡”…Ù•É…”Ù…±Õ”½˜€‰Q¥µ”Q…­•¸ˆ‰äUI$•¹‘Á½¥¹Ğ…É½ÍÌ…±°±½Ì½±±•Ñ•™É½´Ñ¡”©½­”µÉ…Ñ•É€Í•ÉÙ¥”¸]”…¸Í•”Ñ¡…ĞÉ•ÅÕ•ÍÑÌÑ¼Ñ¡”UI$Á…Ñ €¨¨½©½­•Ì½É…Ñ¥¹œ¼¨¨€¡É•ÁÉ•Í•¹Ñ•‰äÑ¡”å•±±½Ü±¥¹”¤¡…Ù”•á¡¥‰¥Ñ•Ñ¡”¡¥¡•ÍĞ±…Ñ•¹ä½Ù•ÈÑ¡”Á…ÍĞ€ÄÔµ¥¹ÕÑ•Ì¸()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµ±½œµ…¹…±åÑ¥Ì¹Á¹œˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´1½œ…¹…±åÑ¥ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô(()e½Ô…¸•…Í¥±ä…‘…¹ä1½œ¹…±åÑ¥ÌÉ…Á Ñ¼„Ñ¥µ•‰½…É‰ä±¥­¥¹œ€‰áÁ½ÉĞˆ…¹¡½½Í¥¹œ„Ñ¥µ•‰½…É°…ÌÍ¡½İ¸‰•±½Ü¸9½Ñ”Ñ¡…Ğ…ĞÑ¡”Ñ¥µ”½˜ÁÕ‰±¥…Ñ¥½¸°Ñ¡¥Ì™Õ¹Ñ¥½¹…±¥Ñä¥ÌmÍÑ¥±°¥¸‰•Ñ…um±½ÌµÑ¥µ•‰½…Éµ‰•Ñ…t¸(()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµ±½ÌµÑ¼µÑˆµÉ½Àµ½µÁÉ•ÍÍ•¹µÀĞˆÙ¥‘•¼ô‰ÑÉÕ”ˆ€ùõô(()¹¥˜å½ÔÙ”¹½Ñ¥•Í½µ•Ñ¡¥¹œÕ¹ÕÍÕ…°½¸„Ñ¥µ•‰½…É“ŠQ™½È•á…µÁ±”°¥˜Ñ¡”±…ÁÍ•‘Q¥µ•€½˜…¸%%Lİ½É­•ÈÁÉ½•ÍÌ¡…ÌÍÑ½ÁÁ•¥¹É•µ•¹Ñ¥¹ŸŠQå½Ô…¸±¥¬Ñ¡”Ñ¥µ•Í•É¥•ÌÉ…Á Ñ¼Ù¥•ÜÉ•±…Ñ•±½Ì½±±•Ñ•™É½´Ñ¡…Ğ¡½ÍĞ…¹ÁÉ½•ÍÌ°Í½Á•Ñ¼Ñ¡…ĞÁ…ÉÑ¥Õ±…ÈÑ¥µ”Á•É¥½¸((()íìğ¥µœÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµÙ¥•ÜµÉ•±…Ñ•µ±½Ì¹Á¹œˆ€ùõô(((ŒŒÕÑ½µ…Ñ•…±•ÉÑÌ™½È%%Lµ½¹¥Ñ½É¥¹œ(()Q¡É½Õ¡½ÕĞÑ¡¥ÌÁ½ÍĞ°İ”Ù”Í¡½İ¸¡½Ü…Ñ…‘½œ…¸¡•±Àå½Ôµ½¹¥Ñ½Èµ•ÑÉ¥Ì…¹±½Ì™É½´å½ÕÈ%%L‘•Á±½åµ•¹Ğ¥¸½¹”Á±…”°•Ù•¸¥˜¥ĞÍÁ…¹ÌµÕ±Ñ¥Á±”Í¥Ñ•Ì…¹İ½É­•ÈÁÉ½•ÍÍ•Ì¸e½Ô…¸…±Í¼½¹™¥ÕÉ”…Ñ…‘½œÑ¼…±•ÉĞå½Ô…ÕÑ½µ…Ñ¥…±±äİ¡•¸%%LÉÕ¹Ì¥¹Ñ¼¡•…±Ñ …¹Á•É™½Éµ…¹”¥ÍÍÕ•Ì¸½È•á…µÁ±”°…Ñ…‘½œ…¸¹½Ñ¥™äå½Ôİ¡•¸%%L¡…ÌÉ•å±•…¸…ÁÁ±¥…Ñ¥½¸Á½½°°¥ÌÍ•¹‘¥¹œ„¡¥ ¹Õµ‰•È½˜É•ÅÕ•ÍÑÌÑ¼Ñ¡”ÅÕ•Õ”°½È¥Ì½Ñ¡•Éİ¥Í”‰•¡…Ù¥¹œÕ¹•áÁ•Ñ•‘±ä¸()¸¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥ŒÑ¼…±•ÉĞ½¸¥ÌÑ¡”¹Õµ‰•È½˜…Ñ¥Ù”½¹¹•Ñ¥½¹Ì°…Ì…¸Õ¹ÕÍÕ…±±ä¡¥ ¹Õµ‰•È…¸Í…ÑÕÉ…Ñ”É•ÅÕ•ÍĞÅÕ•Õ•Ì…¹¥¹ÑÉ½‘Õ”µ½É”AT±½…½¸å½ÕÈİ½É­•ÈÁÉ½•ÍÍ•Ì¸ÍÁ¥­”¥¸½¹¹•Ñ¥½¹Ìµ…ä•Ù•¸¥¹‘¥…Ñ”„Á½Ñ•¹Ñ¥…°Í•ÕÉ¥ÑäÑ¡É•…Ğ¸e½Ô…¸mÉ•…Ñ”…¸…±•ÉÑum‘µ…ÁÀµÉ•…Ñ”µµ½¹¥Ñ½ÉtÑ¼•Ğ¹½Ñ¥™¥•İ¡•¸Ñ¡”¹Õµ‰•È½˜…Ñ¥Ù”%%L½¹¹•Ñ¥½¹Ì€¡¥¥Ì¹¹•Ğ¹¹Õµ}½¹¹•Ñ¥½¹Í€¤Ñ¼…¹äÁ…ÉÑ¥Õ±…ÈÍ¥Ñ”•á••‘Ì„Ñ¡É•Í¡½±°…ÌÍ¡½İ¸¥¸Ñ¡”•á…µÁ±”‰•±½Ü¸()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµ½¹¹•Ñ¥½¸µÑ¡É•Í µ…±•ÉĞ¹Á¹œˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´M•ÑÑ¥¹œ„Ñ¡É•Í¡½±…±•ÉĞˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô(()e½Ô…¸…±Í¼…±•ÉĞ½¸‘…Ñ„™É½´å½ÕÈ%%L±½Ì°ÍÕ …ÌÑ¡”±…Ñ•¹ä€¡Ñ¥µ”µÑ…­•¹€¤½˜„É•ÅÕ•ÍĞ¸%¸Ñ¡”•á…µÁ±”‰•±½Ü°İ”mÍ•ĞÕÀ„±½œ…±•ÉÑum±½œµ…±•ÉÑtÑ¼¹½Ñ¥™äÕÌİ¡•¸µ½É”Ñ¡…¸€Ä°àÀÀÉ•ÅÕ•ÍÑÌÉ•½É„Ñ¥µ”µÑ…­•¹€½˜µ½É”Ñ¡…¸€ÄÀµ¥±±¥Í•½¹‘Ì½Ù•È„™¥Ù”µµ¥¹ÕÑ”¥¹Ñ•ÉÙ…°¸()íìğ¥µœİ¥‘”ô‰ÑÉÕ”ˆÍÉŒô‰¥¥Ìµµ½¹¥Ñ½É¥¹œµ±½œµ…±•ÉĞ¹Á¹œˆ…±Ğô‰%%Lµ½¹¥Ñ½É¥¹œ€´M•ÑÑ¥¹œ…¸…±•ÉĞ‰…Í•½¸±½ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô(((ŒŒ•ĞÍÑ…ÉÑ•İ¥Ñ %%Lµ½¹¥Ñ½É¥¹œ(()%¸Ñ¡¥ÌÁ½ÍĞ°İ”Ù”Í¡½İ¸å½Ô¡½ÜÑ¼•Ğ™Õ±°Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈ%%L‘•Á±½åµ•¹Ğİ¥Ñ …Ñ…‘½œ¸=¹”å½ÔÙ”Í•ĞÕÀ%%Lµ½¹¥Ñ½É¥¹œİ¥Ñ …Ñ…‘½œ°å½Ô±°‰”…‰±”Ñ¼Ù¥ÍÕ…±¥é”Ñ¡”m­•äµ•ÑÉ¥Ì‘¥ÍÕÍÍ•¥¸A…ÉĞ€ÅumÁ…ÉĞÅt…±½¹Í¥‘”‘…Ñ„™É½´µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô½Ñ¡•ÈÑ•¡¹½±½¥•Ì°…±°¥¸½¹”Á±…”¸]”Ù”…±Í¼Í¡½İ¸å½Ô¡½ÜÑ¼ÕÍ”…Ñ…‘½œÑ¼Á…ÉÍ”å½ÕÈ%%L±½Ìİ¥Ñ¡½ÕĞ…¹ä¹••™½Èµ…¹Õ…°ÅÕ•Éå¥¹œ°…¹¡½ÜÑ¼É…Á …¹…¹…±åé”å½ÕÈ%%L±½ÌÑ¼…Ñ¡•È¥¹Í¥¡ÑÌ¸¥¹…±±ä°İ”Ù”•áÁ±…¥¹•¡½ÜÑ¼Í•ĞÕÀ…±•ÉÑÌÑ¼¹½Ñ¥™äå½ÕÈÑ•…´…ÕÑ½µ…Ñ¥…±±äİ¡•¸Ñ¡•É”Ì…¸¥ÍÍÕ”İ¥Ñ %%L¸(()%˜å½ÔÉ”¹•ÜÑ¼…Ñ…‘½œ…¹İ…¹ĞÑ¼‰É¥¹œå½ÕÈ%%L±½Ì…¹µ•ÑÉ¥Ì¥¹Ñ¼„•¹ÑÉ…±¥é•Á±…Ñ™½É´™½ÈÉ…Á¡¥¹œ°…¹…±åÍ¥Ì°…¹…±•ÉÑ¥¹œ°¡•É”Ì„€ñ„±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆ¡É•˜ôˆŒˆù™É•”ÑÉ¥…°ğ½„øÑ¼•Ğå½ÔÍÑ…ÉÑ•¸(()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½¥¥Ì½¥¥Ìµµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œ¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|((()m‘µ…•¹Ğµ½¹™¥œµİ¥¹‘½İÍtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½‰…Í¥}…•¹Ñ}ÕÍ…”½İ¥¹‘½İÌ¼½¹™¥ÕÉ…Ñ¥½¸(()m‘µ…•¹Ğµ¥¹Ñ•É…Ñ¥½¸µ±¥¹­tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ½İ¥¹‘½İÌ(()m‘µ…ÁÀµÉ•…Ñ”µµ½¹¥Ñ½Étè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌÉ•…Ñ”½µ•ÑÉ¥Œ(()m‘µ…ÁÀµ¥¹Ñ•É…Ñ¥½¸µµ½¹¥Ñ½Étè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌÉ•…Ñ”½¥¹Ñ•É…Ñ¥½¸(()m‘µ…éÕÉ•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…éÕÉ”¼(()m‘µ‘•™…Õ±Ğµ¥¥Ìµ‘…Í¡‰½…Éµ±¥¹­tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½‘…Í ½¥¹Ñ•É…Ñ¥½¸¼ÌĞ(()m‘µ±½œµ½±±•Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½±½}½±±•Ñ¥½¸¼(()m‘µ±½œµ½±±•Ñ¥½¸µÕÍÑ½µtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½±½}½±±•Ñ¥½¸¼ÕÍÑ½´µ±½œµ½±±•Ñ¥½¸(()m‘µ±½œµ•áÁ±½É•Èµ±¥¹­tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½±½Ì(()m‘µ±½œµ™…•ÑÍtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É”¼™…•ÑÌ(()m‘µ±½œµÉ½¬µÁ…ÉÍ•Étè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½Á…ÉÍ¥¹œ¼(()m‘µ±½œµµ•…ÍÕÉ•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É”¼µ•…ÍÕÉ•Ì(()m‘µ±½œµÁ¥Á•±¥¹•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì¼±½œµÁÉ½•ÍÍ¥¹œ(()m‘µµ•ÑÉ¥ŒµÑ¼µ±½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½É…Á¡¥¹œ½‘…Í¡‰½…É‘Ì¼©ÕµÀµ™É½´µ„µµ•ÑÉ¥ŒµÑ¼µ¥ÑÌµ±½Ì(()m‘µµ•ÑÉ¥ŒµÑåÁ•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½‘•Ù•±½Á•ÉÌ½µ•ÑÉ¥Ì¼µ•ÑÉ¥ŒµÑåÁ•Ì(()m‘µ½ÕÑ±¥•Èµ‘•Ñ•Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½µ½¹¥Ñ½É}ÑåÁ•Ì½½ÕÑ±¥•È¼(()m‘µÁ¥Á•±¥¹•Ítè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½±½Ì½Á¥Á•±¥¹•Ì(()m‘µÍÉ••¹‰½…É‘tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½É…Á¡¥¹œ½‘…Í¡‰½…É‘Ì½ÍÉ••¹‰½…É¼(()m‘µÍÅ°µÍ•ÉÙ•Étè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½ÍÅ±Í•ÉÙ•È¼(()m‘µÑ¥µ•‰½…É‘tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½É…Á¡¥¹œ½‘…Í¡‰½…É‘Ì½Ñ¥µ•‰½…É¼(()m‘µİ¥¹‘½İÌµ…•¹ĞµÕÍ”µ±¥¹­tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½µµ…¹‘Ì¼É•ÍÑ…ÉĞµÑ¡”µ…•¹Ğ(()m™½Éµ…ÑÑ•µ½Õ¹Ñ•ÉÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½İ¥¹‘½İÌ½‘•Í­Ñ½À½%5]¥¸ÌÉAÉ½Ø½İ¥¸ÌÈµÁ•É™™½Éµ…ÑÑ•‘‘…Ñ„(()m¥¥Ìµ¥¹Ñ•É…Ñ¥½¸µ½¹™¥tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½¥¥Ì¼µ•ÑÉ¥Œµ½±±•Ñ¥½¸(()m¥¥Ìµå…µ°µ•á…µÁ±•tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½¥¥Ì½‘…Ñ…‘½}¡•­Ì½¥¥Ì½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”(()m±½œµ…±•ÉÑtè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌÉ•…Ñ”½±½œ(()m±½ÌµÑ¥µ•‰½…Éµ‰•Ñ…tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½…¹…±åÑ¥Ì¼±½Ìµ¥¸µ‘…Í¡‰½…É(()mÁ…ÉĞÅtè€½‰±½œ½¥¥Ìµµ•ÑÉ¥Ì(()mÁ…ÉĞÉtè€½‰±½œ½¥¥Ìµµ½¹¥Ñ½É¥¹œµÑ½½±Ì()mÁ…ÉĞÈµÁ•É™½¹tè€½‰±½œ½¥¥Ìµµ½¹¥Ñ½É¥¹œµÑ½½±ÌÁ•É™½Éµ…¹”µ½Õ¹Ñ•ÉÌ(()mÁ…ÉĞÈµ±½œµ½¹™¥tè€½‰±½œ½¥¥Ìµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¼½¹™¥ÕÉ¥¹œµİ•ˆµÍ•ÉÙ¥”µ±½Ì(()mİ•ˆµÍ•ÉÙ¥”µ±…ÍÍtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½…„ÌäĞÈäà¡ØõÙÌ¸àÔ¤¹…ÍÁà(()mİµ¤µ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½İµ¥}¡•¬¼(
+# IIS monitoring with Datadog
+
+In [Part 2][part2] of this series, we learned how to access IIS metrics and logs using Windows tools. In this post, we'll show you a more comprehensive approach to IIS monitoring, one that brings together out-of-the-box dashboards, automated alerts, and log analytics, all in a single platform. 
+
+
+Datadog's IIS and WMI integrations let you collect most of the key metrics mentioned in [Part 1][part1] automatically. For any metrics that IIS surfaces through logs, such as the duration of a request, Datadog can tail IIS log files and process log fields into data without the need for manual querying. 
+
+
+Datadog integrates with technologies that you may be using alongside IIS, like [Azure][dd-azure] and [SQL Server][dd-sql-server], giving you full visibility into your whole stack.
+  
+
+{{< img wide="true" src="iis-monitoring-datadog-oob-screenboard.png" popup="true" alt="IIS monitoring - Out-of-the-box screenboard for IIS" >}}
+ 
+## Set up the Agent
+
+
+The Datadog Agent is open source software that collects metrics and logs from your IIS hosts, so you can visualize and alert on this data in one central platform. To install the Agent, navigate to the [Agent Installation][dd-agent-integration-link] page of your Datadog account and download the installer for the latest Windows version (<a class="sign-up-trigger" href="#">sign up for a free trial</a> if you'd like to follow along with the rest of this post).
+
+
+If you prefer a graphical interface, you can execute the **datadog-agent-6-latest.amd64.msi** file and follow the instructions to start customizing your Agent. And if you prefer to install the Agent from a terminal window, the installation page includes a command you can copy, paste, and execute.
+
+
+The Agent looks for [configuration options][dd-agent-config-windows] within several YAML files. You can edit these files either through a local browser-based GUI at `http://127.0.0.1:5002`, or by editing the configuration files directly. To [start, stop, or restart the Agent][dd-windows-agent-use-link], or to show its status, you can use either the GUI or the command line.
+
+
+## Configure IIS monitoring 
+
+
+Datadog's IIS integration queries the Web Service performance counters automatically and sends the results to Datadog. The Web Service ([`Win32_PerfFormattedData_W3SVC_WebService`][web-service-class]) performance counter class collects information from the World Wide Web Publishing Service (as discussed in [Part 1][part1]). See [Part 2][part2] for instructions on how to make sure the class is installed on your host.
+
+
+You can enable the IIS integration by creating a configuration file either manually or through the Datadog Agent GUI. To create a configuration file through the GUI, navigate to the "Checks" tab, choose "Manage Checks," and select the `iis` check from the "Add a Check" menu. You can also manually create a **conf.yaml** file in **C:\ProgramData\Datadog\conf.d\iis.d**, using [our example][iis-yaml-example] as a reference.
+
+
+The content of **iis.d\conf.yaml** will resemble the following.
+
+
+```no-minimize
+init_config:
+
+
+instances:
+  - host: .
+    tags:
+      - service:<YOUR_SERVICE_NAME>
+    sites:
+      - <YOUR_SITE_URL>
+```
+
+
+In this example, the `host` tag is set to `.`, which instructs the Agent to query metrics locally. You can specify a remote host by indicating the name of a server as the value of `host` and setting a `username` and `password` (see our [documentation][iis-integration-config]). 
+
+
+If you would like to monitor multiple IIS sites, you can list the base URL of each site under the `sites` key (recall from [Part 1][part1] that the Web Service counter set generates its metrics by site). You can also list the name of the site, such as `my-site`, in place of the URL. The Agent will automatically tag each site you are monitoring with a `site:<YOUR_SITE_URL>` tag.
+
+
+Note that if you are using IIS 6 or 7, you will have to set the `is_2008` parameter to `true` in order to collect the `TotalBytesTransferred` metric, as these earlier versions of IIS report the metric as `TotalBytesTransfered` with a single `r`.
+
+
+To put the new configuration into effect, [restart the Agent][dd-windows-agent-use-link] using the command:
+
+
+```
+"C:\Program Files\Datadog\Datadog Agent\embedded\agent.exe" restart-service
+```
+
+
+You can confirm that the Agent is reporting metrics by opening the Datadog Agent GUI, clicking "Status" on the sidebar, and selecting "Collector." You can also run the following command:
+
+
+```
+"C:\Program Files\Datadog\Datadog Agent\embedded\agent.exe" status
+```
+
+
+You should see something similar to the following under the `Running Checks` header:
+
+
+```no-minimize
+iis
+Total Runs: 2
+Metrics: 21, Total Metrics: 42
+Events: 0, Total Events: 0
+Service Checks: 2, Total Service Checks: 4
+```
+
+
+## Set up the WMI integration
+
+
+Datadog integrates with more than {{< translate key="integration_count" >}} other popular technologies, meaning you can monitor your entire web stack in one place. The [WMI integration][wmi-integration] allows you to pull data from any [formatted][formatted-counters] performance counters, including counters for IIS worker processes. 
+
+
+To enable the WMI check on the Datadog Agent, create a configuration file (either through the GUI or at **C:\ProgramData\Datadog\conf.d\wmi_check.d\conf.yaml**), and add the performance counter attributes that you'd like the Agent to query. The configuration YAML below names three custom metrics, each of which queries an instance of the object  `Win32_PerfFormattedData_PerfProc_Process` for each IIS worker process.
+
+
+```no-minimize
+init_config:
+
+[...]
+
+instances:
+
+  - class: Win32_PerfFormattedData_PerfProc_Process
+    metrics:
+      - [PercentProcessorTime, proc.cpu_pct, gauge]
+      - [WorkingSet, proc.working_set, gauge]
+      - [ElapsedTime, proc.elapsed_time, gauge]
+    tag_by: Name
+    filters:
+      - Name: w3wp%
+```
+
+
+The value of `class` is the name of a WMI class, which you can obtain through PowerShell (as explained in [Part 2][part2-perfcon]). Each custom metric is an array with three elements: the name of the performance counter, the custom name you'd like Datadog to report for the metric, and the metric's [type][dd-metric-types]. The `tag_by` key lets us choose a property from the WMI class to use as a tagging prefix. The example above will tag each metric with `name:<WORKER_PROCESS_NAME>`. We can then use values within the `filters` section to target certain instances of the WMI class. In the example above, the Agent will only query instances with a `Name` property that includes the characters, `w3wp`â€”our IIS worker processes. (The `%` is a wildcard indicating any number of characters.)
+
+
+## Graph your whole IIS deployment in one place
+
+
+Once youâ€™ve configured the IIS integration, you can quickly visualize the health and performance of IIS using an out-of-the-box dashboard. Clone the [default IIS dashboard][dd-default-iis-dashboard-link] to use as a template, or create a new dashboard from scratch.
+
+
+[IIS runs across multiple parts][part1] of your Windows system, from worker processes to HTTP.sys and the WWW Service, so itâ€™s important to keep an eye on metrics at the level of sites, processes, and system-level resource use. Datadog dashboards make it possible to visualize, compare, and correlate metrics from all of these components in one place. And because [log management](#iis-log-management-with-datadog) is built into the same platform, you can quickly get more context around potential issues by navigating from any timeseries graph to view [logs from the same point in time][dd-metric-to-logs]. 
+
+
+With the WMI integration, you can monitor your IIS worker processes individually. This is helpful when you want to compare certain metrics across each of your worker process, as shown below with each of three custom metrics. You can see whether any one worker is using an unusual percentage of CPU or memory, and whether any worker process has been killed or spawned recently. And with [outlier detection][dd-outlier-detection], Datadog can alert you automatically when a single worker process starts to behave differently from the others, for instance if it hangs, crashes, or starts to leak memory.  
+  
+{{< img wide="true" src="iis-monitoring-w3wp-comparison.png" alt="IIS monitoring - Comparison of worker processes within a single screenboard" popup="true" >}}
+
+
+The custom dashboard below displays metrics from three different sources, all of which sit at the foundation of an IIS environment. Two of these sources, the HTTP.sys request queue and a set of Windows processes, report metrics through the WMI integration. The third source is the Web Service performance counter, which provides metrics for the IIS integration. This dashboard makes it easy to see how incoming request traffic correlates with queue volume and the health of IIS workers, and helps you identify bottlenecks.
+  
+
+{{< img wide="true" src="iis-monitoring-wmi-screenboard.png" popup="true" alt="IIS monitoring - Custom screenboard" >}}
+
+
+##  IIS log management with Datadog
+
+
+Since several key IIS metrics are only available from logs, it's important to collect and analyze your logs in order to get full visibility into your deployment. You can configure the Datadog Agent to collect logs from IIS, parse them, and send them to Datadog. Once Datadog is ingesting your logs, you can use that data to identify trends and get alerted to IIS performance issues. 
+
+
+### Configure IIS log collection
+
+
+To start collecting IIS logs, you need to [enable log collection][dd-log-collection] within the Agent. Find the Agent configuration file, either by opening the Agent GUI and clicking "Settings," or by opening the configuration file at **C:\ProgramData\Datadog\datadog.yaml**, and set `logs_enabled` to `true`.
+
+
+Then instruct the Agent where and how to collect IIS logs. Uncomment the `logs` section of the IIS integration configuration file you created above at **C:\ProgramData\Datadog\conf.d\iis.d\conf.yaml**:
+
+
+```no-minimize
+logs:   
+  - type: file
+    path: C:\inetpub\logs\LogFiles\W3SVC1\u_ex*
+    service: <YOUR_SERVICE_NAME>
+    source: iis
+```
+
+
+Change the value of `path` if your logs are written to a different directory within your system. Youâ€™ll also want to change the value of `service` to the one you specified when configuring the `instances` section of **conf.yaml**.  The `service` tag allows you to associate metrics, logs, and request traces more easily. Set `source` to `iis` to enable the processing pipeline and facets that are built into Datadog's IIS log integration. 
+
+
+[Restart the Agent][dd-windows-agent-use-link] to apply the new configuration:
+
+
+```
+"C:\Program Files\Datadog\Datadog Agent\embedded\agent.exe" restart-service
+```
+
+
+When you check the Agent status (this time under the "General" tab if you are using the GUI, or with the `status` command we used earlier), you should see something like the following:
+
+
+```no-minimize
+Logs Agent
+
+
+iis
+        Type: file
+        Path: <YOUR_LOG_FILE_PATH>
+        Status: OK
+        Inputs: <YOUR_LOG_FILES>
+```
+
+
+### Customize the IIS log processing pipeline
+
+
+When the Agent sends IIS logs to Datadog, a built-in processing pipeline parses and enriches them into structured data, which you can use for graphing and analysis. You'll want to make sure the pipeline is enabled. In Datadog, navigate to the [Pipelines view][dd-pipelines], find the IIS pipeline, and click the switch.
+
+
+  
+
+{{< img wide="true" src="iis-monitoring-pipeline.png" popup="true" alt="IIS monitoring - The default IIS log processing pipeline" >}}
+
+
+You should start to see your IIS logs populating Datadog's [Log Explorer][dd-log-explorer-link] view. Here, you can set the Log Explorer to display only IIS logs for your application. Use the sidebar or enter a query in the search bar to filter by `source:iis` and `service:<YOUR_SERVICE_NAME>`.
+
+
+{{< img wide="true" src="iis-monitoring-log-explorer.png" alt="IIS monitoring - Log Explorer view" popup="true" >}}
+
+  
+
+Since IIS gives you leeway to [add and remove][part2-log-config] fields from your web service logs, you can clone and customize Datadog's IIS log processing pipeline to ensure that it processes your logs correctly. Click the dropdown arrow next to the name of your cloned pipeline, and click the editing icon for one of the steps.
+
+
+In the example below, we're creating a [Grok Parser][dd-log-grok-parser] to process the W3C Extended log format and extract key attributes. If you paste an arbitrary log line from one of your log files into step one, you can see the output of your parsing rules at the bottom of step two. Parsing logs into structured attributes makes it possible to perform analytics, as we'll show next.
+
+{{< img wide="true" src="iis-monitoring-grok-parser.png" alt="IIS monitoring - Creating a Grok Parser" popup="true" >}}
+
+
+
+
+### Graph and analyze IIS log data
+
+
+With Datadog, you can analyze log data that you collect, graph it over time, and aggregate it by any facet, whether it's URI stem, HTTP request method, or any other log-based metric we introduced in [Part 1][part1].
+
+
+When you click on a log within the Log Explorer, you'll see all of the attributes that Datadog has extracted from the raw log data. 
+
+
+
+
+If you want to graph and query log attributes, you can turn them into [measures][dd-log-measures] or [facets][dd-log-facets]. Click any key in the list of attributes, and you'll see the option to turn that key into either a facet or a measure. Facets let you aggregate, search, and filter log data (such as URL endpoint or HTTP status code). Measures are numerical values that are similar to  Datadog metrics (such as response latency). In this example (below), we can create a facet for `uri_stem`, and a measure for `time_taken`.
+
+
+{{< img wide="true" src="iis-monitoring-parsed-log-attributes.png" alt="IIS monitoring - Viewing attributes for IIS logs" popup="true" >}}  
+
+
+
+We can then use these measures and facets to perform analytics. The example below graphs the average value of "Time Taken" by URI endpoint across all logs collected from the `joke-rater` service. We can see that requests to the URI path **/jokes/rating/** (represented by the yellow line) have exhibited the highest latency over the past 15 minutes.
+
+{{< img wide="true" src="iis-monitoring-log-analytics.png" alt="IIS monitoring - Log analytics" popup="true" >}}
+  
+
+You can easily add any Log Analytics graph to a timeboard by clicking "Export" and choosing a timeboard, as shown below. Note that at the time of publication, this functionality is [still in beta][logs-timeboard-beta]. 
+
+
+{{< img wide="true" src="iis-monitoring-logs-to-tb-crop-compressed.mp4" video="true" >}}
+
+
+And if you've noticed something unusual on a timeboardâ€”for example, if the `ElapsedTime` of an IIS worker process has stopped incrementingâ€”you can click the timeseries graph to view related logs collected from that host and process, scoped to that particular time period.
+
+
+
+{{< img src="iis-monitoring-view-related-logs.png" >}}
+
+
+## Automated alerts for IIS monitoring
+
+
+Throughout this post, we've shown how Datadog can help you monitor metrics and logs from your IIS deployment in one place, even if it spans multiple sites and worker processes. You can also configure Datadog to alert you automatically when IIS runs into health and performance issues. For example, Datadog can notify you when IIS has recycled an application pool, is sending a high number of requests to the queue, or is otherwise behaving unexpectedly.
+
+An important metric to alert on is the number of active connections, as an unusually high number can saturate request queues and introduce more CPU load on your worker processes. A spike in connections may even indicate a potential security threat. You can [create an alert][dd-app-create-monitor] to get notified when the number of active IIS connections (`iis.net.num_connections`) to any particular site exceeds a threshold, as shown in the example below. 
+
+{{< img wide="true" src="iis-monitoring-connection-thresh-alert.png" alt="IIS monitoring - Setting a threshold alert" popup="true" >}}
+  
+
+You can also alert on data from your IIS logs, such as the latency (`time-taken`) of a request. In the example below, we [set up a log alert][log-alert] to notify us when more than 1,800 requests record a `time-taken` of more than 10 milliseconds over a five-minute interval. 
+
+{{< img wide="true" src="iis-monitoring-log-alert.png" alt="IIS monitoring - Setting an alert based on logs" popup="true" >}}
+  
+
+## Get started with IIS monitoring 
+
+
+In this post, we've shown you how to get full visibility into your IIS deployment with Datadog. Once you've set up IIS monitoring with Datadog, you'll be able to visualize the [key metrics discussed in Part 1][part1] alongside data from more than {{< translate key="integration_count" >}} other technologies, all in one place. We've also shown you how to use Datadog to parse your IIS logs without any need for manual querying, and how to graph and analyze your IIS logs to gather insights. Finally, we've explained how to set up alerts to notify your team automatically when there's an issue with IIS. 
+
+
+If you're new to Datadog and want to bring your IIS logs and metrics into a centralized platform for graphing, analysis, and alerting, here's a <a class="sign-up-trigger" href="#">free trial</a> to get you started.
+
+
+
+
+
+
+[dd-agent-config-windows]: https://docs.datadoghq.com/agent/basic_agent_usage/windows/#configuration
+
+
+[dd-agent-integration-link]: https://app.datadoghq.com/account/settings#agent/windows
+
+
+[dd-app-create-monitor]: https://app.datadoghq.com/monitors#create/metric
+
+
+[dd-app-integration-monitor]: https://app.datadoghq.com/monitors#create/integration
+
+
+[dd-azure]: https://docs.datadoghq.com/integrations/azure/
+
+
+[dd-default-iis-dashboard-link]: https://app.datadoghq.com/dash/integration/34
+
+
+[dd-log-collection]: https://docs.datadoghq.com/logs/log_collection/
+
+
+[dd-log-collection-custom]: https://docs.datadoghq.com/logs/log_collection/#custom-log-collection
+
+
+[dd-log-explorer-link]: https://app.datadoghq.com/logs
+
+
+[dd-log-facets]: https://docs.datadoghq.com/logs/explore/#facets
+
+
+[dd-log-grok-parser]: https://docs.datadoghq.com/logs/parsing/
+
+
+[dd-log-measures]: https://docs.datadoghq.com/logs/explore/#measures
+
+
+[dd-log-pipelines]: https://docs.datadoghq.com/logs/#log-processing
+
+
+[dd-metric-to-logs]: https://docs.datadoghq.com/graphing/dashboards/#jump-from-a-metric-to-its-logs
+
+
+[dd-metric-types]: https://docs.datadoghq.com/developers/metrics/#metric-types
+
+
+[dd-outlier-detection]: https://docs.datadoghq.com/monitors/monitor_types/outlier/
+
+
+[dd-pipelines]: https://app.datadoghq.com/logs/pipelines
+
+
+[dd-screenboard]: https://docs.datadoghq.com/graphing/dashboards/screenboard/
+
+
+[dd-sql-server]: https://docs.datadoghq.com/integrations/sqlserver/
+
+
+[dd-timeboard]: https://docs.datadoghq.com/graphing/dashboards/timeboard/
+
+
+[dd-windows-agent-use-link]: https://docs.datadoghq.com/agent/basic_agent_usage/windows/
+
+
+[formatted-counters]: https://docs.microsoft.com/en-us/windows/desktop/CIMWin32Prov/win32-perfformatteddata
+
+
+[iis-integration-config]: https://docs.datadoghq.com/integrations/iis/#metric-collection
+
+
+[iis-yaml-example]: https://github.com/DataDog/integrations-core/blob/master/iis/datadog_checks/iis/data/conf.yaml.example
+
+
+[log-alert]: https://app.datadoghq.com/monitors#create/log
+
+
+[logs-timeboard-beta]: https://docs.datadoghq.com/logs/analytics/#logs-in-dashboard
+
+
+[part1]: /blog/iis-metrics
+
+
+[part2]: /blog/iis-monitoring-tools
+
+[part2-perfcon]: /blog/iis-monitoring-tools#performance-counters
+
+
+[part2-log-config]: /blog/iis-monitoring-tools/#configuring-web-service-logs
+
+
+[web-service-class]: https://msdn.microsoft.com/en-us/library/aa394298(v=vs.85).aspx
+
+
+[wmi-integration]: https://docs.datadoghq.com/integrations/wmi_check/

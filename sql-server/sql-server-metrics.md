@@ -1,1 +1,312 @@
-mÕÍÑ½´ME0M•ÉÙ•Èµ•ÑÉ¥Ì™½È‘•Ñ…¥±•µ½¹¥Ñ½É¥¹œ(()]”Ù”Í¡½İ¸¥¸mA…ÉĞ€ÍumÁ…ÉĞÍt½˜Ñ¡¥ÌÍ•É¥•Ì¡½Ü…Ñ…‘½œ…¸¡•±Àå½Ôµ½¹¥Ñ½Èå½ÕÈME0M•ÉÙ•È‘…Ñ…‰…Í•Ìİ¥Ñ¡¥¸Ñ¡”½¹Ñ•áĞ½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¸¸%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°Í¡½Üå½Ô¡½ÜÑ¼¼½¹”ÍÑ•À™ÕÉÑ¡•È‰ä½±±•Ñ¥¹œÕÍÑ½´ME0M•ÉÙ•Èµ•ÑÉ¥ÌÑ¡…Ğ±•Ğå½Ô¡½½Í”Ñ¡”•á…Ğ™Õ¹Ñ¥½¹…±¥Ñäå½Ôİ…¹ĞÑ¼µ½¹¥Ñ½È…¹¥µÁÉ½Ù”¸e½Ô…¸½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼½±±•ĞÕÍÑ½´µ•ÑÉ¥Ì…¹É•Á½ÉĞÑ¡•´•Ù•ÉäÑ¥µ”¥ĞÉÕ¹Ì¥ÑÌ‰Õ¥±Ğµ¥¸ME0M•ÉÙ•È¡•¬¸()]”±°Í¡½Üå½ÔÑ¡É•”İ…åÌÑ¼½±±•Ğ…¹µ½¹¥Ñ½ÈÕÍÑ½´µ•ÑÉ¥Ìè((Ä¸MÁ•¥™å¥¹œmÁ•É™½Éµ…¹”½Õ¹Ñ•ÉÍt ÕÍÑ½´µ‘…Ñ…‘½œµµ•ÑÉ¥Ìµİ¥Ñ µÑ¡”µÁ•É™½Éµ…¹”µ½Õ¹Ñ•ÉÌµÙ¥•Ü¤‰•å½¹Ñ¡½Í”Ñ¡”ME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸ÅÕ•É¥•Ì‰ä‘•™…Õ±Ğ(È¸á•ÕÑ¥¹œ„ÕÍ•Èµ‘•™¥¹•mÍÑ½É•ÁÉ½•‘ÕÉ•t ÕÍÑ½´µ‘…Ñ…‘½œµµ•ÑÉ¥Ìµ™É½´µÍÑ½É•µÁÉ½•‘ÕÉ•Ì¤(Ì¸UÍ¥¹œÑ¡”m]¥¹‘½İÌ5…¹…•µ•¹Ğ%¹ÍÑÉÕµ•¹Ñ…Ñ¥½¹t ÕÍÑ½´µ‘…Ñ…‘½œµµ•ÑÉ¥Ìµ™É½´µİ¥¹‘½İÌµµ…¹…•µ•¹Ğµ¥¹ÍÑÉÕµ•¹Ñ…Ñ¥½¸¤€¡]5$¤¥¹Ñ•É…Ñ¥½¸((ŒŒÕÍÑ½´…Ñ…‘½œµ•ÑÉ¥Ìİ¥Ñ Ñ¡”Á•É™½Éµ…¹”½Õ¹Ñ•ÉÌÙ¥•Ü()±Ñ¡½Õ Ñ¡”•¹Ğ…±É•…‘ä½±±•ÑÌ„¹Õµ‰•È½˜m¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥Íum‘µµÍÍÅ°µ¥¹Ñ•É…Ñ¥½¹t™É½´Ñ¡”mÁ•É™½Éµ…¹”½Õ¹Ñ•ÉÌ‘å¹…µ¥Œµ…¹…•µ•¹ĞÙ¥•İumÁ…ÉĞÈµ‘µÙÍt°å½Ôµ¥¡Ğ‰”¥¹Ñ•É•ÍÑ•¥¸µ½¹¥Ñ½É¥¹œ…‘‘¥Ñ¥½¹…°mÁ•É™½Éµ…¹”½‰©•ÑÍumÁ•É™½Éµ…¹”µ½‰©•ÑÍtÍÕ …ÌÁ…”±½½­ÕÁÌÁ•ÈÍ•½¹°±½œ™±ÕÍ¡•ÌÁ•ÈÍ•½¹°½ÈÅÕ•Õ•É•ÅÕ•ÍÑÌ¸e½Ô…¸Í•”„±¥ÍĞ½˜…±°Ñ¡”Á•É™½Éµ…¹”½Õ¹Ñ•ÉÌå½Ô…¸µ½¹¥Ñ½È‰äÉÕ¹¹¥¹œÑ¡”™½±±½İ¥¹œÅÕ•Éäè()€)M1P½Õ¹Ñ•É}¹…µ”°¥¹ÍÑ…¹•}¹…µ”°¹ÑÉ}Ù…±Õ”I=4ÍåÌ¹‘µ}½Í}Á•É™½Éµ…¹•}½Õ¹Ñ•ÉÌì)€()e½Ô±°Í•”Í½µ•Ñ¡¥¹œÉ•Í•µ‰±¥¹œÑ¡”™½±±½İ¥¹œè()¹¼µµ¥¹¥µ¥é”)½Õ¹Ñ•É}¹…µ”€€€€€€€€¥¹ÍÑ…¹•}¹…µ”€€€€€€€€¹ÑÉ}Ù…±Õ”(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´)A…”±½½­ÕÁÌ½Í•Œ€€€€€€€€€€€€€€€€€€€€€€€€€€€ÌÀØÄÜĞÌä)1½œ±ÕÍ¡•Ì½Í•Œ€€€€€Ñ•µÁ‘ˆ€€€€€€€€€€€€€€€€ÔØØĞ)1½œ±ÕÍ¡•Ì½Í•Œ€€€€€µ½‘•°€€€€€€€€€€€€€€€€€Ü)1½œ±ÕÍ¡•Ì½Í•Œ€€€€€‘•µ½}‘ˆ€€€€€€€€€€€€€€€ÄÔÄÔÈ)EÕ•Õ•É•ÅÕ•ÍÑÌ€€€€€¥¹Ñ•É¹…°€€€€€€€€€€€€€€À)€()Q¼½±±•Ğµ•ÑÉ¥Ì…ÕÑ½µ…Ñ¥…±±ä™É½´ÍÁ•¥™¥ŒÁ•É™½Éµ…¹”½Õ¹Ñ•ÉÌ°•‘¥ĞÑ¡”ME0M•ÉÙ•Èm½¹™¥ÕÉ…Ñ¥½¸™¥±•um‘µµÍÍÅ°µ½¹™¥t°İ¡¥ Ñ¡”•¹Ğ±½½­Ì™½Èİ¥Ñ¡¥¸€¨©éqAÉ½É…µ…Ñ…q…Ñ…‘½q½¹˜¹‘qÍÅ±Í•ÉÙ•È¹¨¨¸mÉ•…Ñ”…¸•¹ÑÉåum‘µÕÍÑ½´µµ•ÑÉ¥ÍtÕ¹‘•ÈÕÍÑ½µ}µ•ÑÉ¥Í€™½È•… µ•ÑÉ¥Œå½Ôİ…¹ĞÑ¼½±±•Ğ¸½È•á…µÁ±”°İ”…¸½±±•ĞÑ¡”µ•ÑÉ¥Ì€‰A…”±½½­ÕÁÌ½Í•Œ°ˆ€‰EÕ•Õ•I•ÅÕ•ÍÑÌ°ˆ…¹€‰1½œ±ÕÍ¡•Ì½Í•Œ°ˆÁ±ÕÌ€‰%¹‘•àM•…É¡•Ì½Í•Œ°ˆ‰ä…‘‘¥¹œÑ¡”½¹™¥ÕÉ…Ñ¥½¸‰•±½Üè()¹¼µµ¥¹¥µ¥é”(€€€€Œ€¸¸¸(€€€ÕÍÑ½µ}µ•ÑÉ¥Ìè(€€€€€€€€´¹…µ”èÍÅ±Í•ÉÙ•È¹‰Õ™™•È¹Á…•}±½½­ÕÁÌ(€€€€€€€€€½Õ¹Ñ•É}¹…µ”èA…”±½½­ÕÁÌ½Í•Œ((€€€€€€€€´¹…µ”èÍÅ±Í•ÉÙ•È¹İ½É­±½…¹ÅÕ•Õ•‘}É•ÅÕ•ÍÑÌ(€€€€€€€€€½Õ¹Ñ•É}¹…µ”èEÕ•Õ•I•ÅÕ•ÍÑÌ(€€€€€€€€€¥¹ÍÑ…¹•}¹…µ”è¥¹Ñ•É¹…°((€€€€€€€€´¹…µ”èÍÅ±Í•ÉÙ•È¹‘…Ñ…‰…Í•Ì¹±½}™±ÕÍ¡•Ì(€€€€€€€€€½Õ¹Ñ•É}¹…µ”è1½œ±ÕÍ¡•Ì½Í•Œ(€€€€€€€€€¥¹ÍÑ…¹•}¹…µ”è10(€€€€€€€€€Ñ…}‰äè‘ˆ((€€€€€€€€´¹…µ”èÍÅ±Í•ÉÙ•È¹¥¹‘•á}Í•…É¡•Ì(€€€€€€€€€½Õ¹Ñ•É}¹…µ”è%¹‘•àM•…É¡•Ì½Í•Œ(€€€€Œ€¸¸¸)€()½È•… •¹ÑÉä°å½ÔµÕÍĞÍÁ•¥™äÙ…±Õ•Ì™½È¹…µ•€…¹½Õ¹Ñ•É}¹…µ•€¸Q¡”¹…µ•€Ù…±Õ”İ¥±°‰”Ñ¡”¹…µ”½˜Ñ¡”µ•ÑÉ¥Œ…Ìå½Ôİ…¹Ğ¥ĞÑ¼…ÁÁ•…È¥¸…Ñ…‘½œ°İ¡•É•…ÌÑ¡”½Õ¹Ñ•É}¹…µ•€µ…ÁÌÑ¼Ñ¡”½Õ¹Ñ•É}¹…µ•€½±Õµ¸½˜ÍåÌ¹‘µ}½Í}Á•É™½Éµ…¹•}½Õ¹Ñ•ÉÍ€¸%¸Ñ¡”…Í”½˜€‰A…”±½½­ÕÁÌ½Í•Œ°ˆÑ¡”½¹™¥ÕÉ…Ñ¥½¸…‰½Ù”İ¥±°…ÕÍ”Ñ¡”µ•ÑÉ¥ŒÑ¼…ÁÁ•…È¥¸…Ñ…‘½œ…ÌÍÅ±Í•ÉÙ•È¹‰Õ™™•È¹Á…•}±½½­ÕÁÍ€¸()M½µ”Á•É™½Éµ…¹”½‰©•ÑÌ…É”…ÍÍ½¥…Ñ•İ¥Ñ µÕ±Ñ¥Á±”¥¹ÍÑ…¹•Ìİ¥Ñ¡¥¸ME0M•ÉÙ•È°…¹å½Ô…¸¥‘•¹Ñ¥™äÑ¡•Í”İ¥Ñ Ñ¡”¥¹ÍÑ…¹•}¹…µ•€½±Õµ¸½˜ÍåÌ¹‘µ}½Í}Á•É™½Éµ…¹•}½Õ¹Ñ•ÉÍ€¸e½Ô±°İ…¹ĞÑ¼¡•¬Ñ¡”m‘½Õµ•¹Ñ…Ñ¥½¹umÁ•É™½Éµ…¹”µ½‰©•ÑÍt™½ÈÑ¡”Á•É™½Éµ…¹”½‰©•ÑÌå½ÔÉ”¥¹Ñ•É•ÍÑ•¥¸Ñ¼Í•”İ¡…Ğ¥¹ÍÑ…¹•}¹…µ•€µ•…¹Ì¥¸Ñ¡…Ğ½¹Ñ•áĞ¸%¸½ÕÈ•á…µÁ±”…‰½Ù”°1½œ±ÕÍ¡•Ì½Í•€¥Ì„½Õ¹Ñ•Èİ¥Ñ¡¥¸Ñ¡”½‰©•ĞmME1M•ÉÙ•Èé…Ñ…‰…Í•ÍumÁ•É™½Éµ…¹”µ½‰©•ÑÌµ‘‰t¸Q¡•É”Ì„Í•Á…É…Ñ”¥¹ÍÑ…¹”½˜Ñ¡”½‰©•Ğ€¡…¹¥ÑÌ½Õ¹Ñ•ÉÌ¤™½È•… ‘…Ñ…‰…Í”¸Q¡”mÉ•Í½ÕÉ”Á½½°Á•É™½Éµ…¹”½‰©•ÑumÁ•É™½Éµ…¹”µ½‰©•ÑÌµÁ½½±t¡…Ì„Í•Á…É…Ñ”¥¹ÍÑ…¹”™½È•… É•Í½ÕÉ”Á½½°¸=Ñ¡•ÈÁ•É™½Éµ…¹”½‰©•ÑÌ°±¥­”Ñ¡”	Õ™™•È5…¹…•È½‰©•Ğİ¡•É”å½Ô±°™¥¹A…”±½½­ÕÁÌ½Í•€°…±İ…åÌ¡…Ù”„Í¥¹±”¥¹ÍÑ…¹”¸()%˜„Á•É™½Éµ…¹”½Õ¹Ñ•È¡…ÌµÕ±Ñ¥Á±”¥¹ÍÑ…¹•Ì°å½Ô¡…Ù”Ñİ¼½ÁÑ¥½¹Ì™½ÈÍ•¹‘¥¹œµ•ÑÉ¥ÌÑ¼…Ñ…‘½œ¸=¹”¥ÌÑ¼½±±•Ğµ•ÑÉ¥Ì™É½´„Í¥¹±”¥¹ÍÑ…¹”°‰äÍÁ•¥™å¥¹œ¥¹ÍÑ…¹•}¹…µ•€¥¸Ñ¡”ÕÍÑ½µ}µ•ÑÉ¥Í€Í•Ñ¥½¸¸%¸½ÕÈ•á…µÁ±”…‰½Ù”°İ”Ù”•‘¥Ñ•Ñ¡”¥Ñ•´™½ÈEÕ•Õ•I•ÅÕ•ÍÑÍ€Ñ¼…Ñ¡•Èµ•ÑÉ¥Ì½¹±ä™É½´Ñ¡”¥¹Ñ•É¹…±€¥¹ÍÑ…¹”¸()%˜å½Ôİ…¹ĞÑ¼½±±•Ğµ•ÑÉ¥Ì…ÍÍ½¥…Ñ•İ¥Ñ }•Ù•Éå|¥¹ÍÑ…¹”°Í•ĞÑ¡”Ù…±Õ”½˜¥¹ÍÑ…¹•}¹…µ•€Ñ¼11€¸Q¡•¸…‘„Ñ…}‰å€±¥¹”°İ¡¥ É•…Ñ•Ì„­•äµÙ…±Õ”Ñ…œÁ…¥È™½È•… ¥¹ÍÑ…¹”½˜„Á•É™½Éµ…¹”½Õ¹Ñ•È¸%˜Ñ¡”µ•ÑÉ¥Œ1½œ±ÕÍ¡•Ì½Í•€¥ÌÉ•Á½ÉÑ•™½È¥¹ÍÑ…¹•ÌÑ•µÁ‘‰€°µ½‘•±€°…¹‘•µ½}‘‰€°™½È•á…µÁ±”°„Ñ…}‰å€ÁÉ•™¥à½˜‘‰€İ¥±°É•…Ñ”Ñ¡”Ñ…Ì‘ˆéÑ•µÁ‘‰€°‘ˆéµ½‘•±€°…¹‘ˆé‘•µ½}‘‰€¸]¡¥±”å½Ô…¸¹…µ”Ñ¡”ÁÉ•™¥à…¹åÑ¡¥¹œå½Ô±¥­”°å½Ôµ…äİ…¹ĞÑ¼¹…µ”¥Ğ…™Ñ•ÈÑ¡”½‰©•ĞÑ¡…Ğ•… ¥¹ÍÑ…¹”É•ÁÉ•Í•¹ÑÌ€¡„‘…Ñ…‰…Í”°„É•Í½ÕÉ”Á½½°°•ÑŒ¸¤¸()™Ñ•ÈÉ•ÍÑ…ÉÑ¥¹œÑ¡”•¹Ğ°å½Ô±°‰”…‰±”Ñ¼…‘å½ÕÈÕÍÑ½´µ•ÑÉ¥ÌÑ¼‘…Í¡‰½…É‘Ì…¹…±•ÉÑÌ°©ÕÍĞ±¥­”…¹ä½Ñ¡•Èµ•ÑÉ¥Œ¥¸…Ñ…‘½œ¸	•±½Ü°İ”É”É…Á¡¥¹œÑ¡”ÕÍÑ½´µ•ÑÉ¥ŒÍÅ±Í•ÉÙ•È¹¥¹‘•á}Í•…É¡•Í€°İ¡¥ İ”Ù”¹…µ•™É½´Ñ¡”½Õ¹Ñ•È%¹‘•àM•…É¡•Ì½Í•€İ¥Ñ¡¥¸Ñ¡”m•ÍÌ5•Ñ¡½‘Íum…•ÍÌµµ•Ñ¡½‘ÍtÁ•É™½Éµ…¹”½‰©•Ğ€¡Í•”m…‰½Ù•t ÕÍÑ½´µ‘…Ñ…‘½œµµ•ÑÉ¥Ìµİ¥Ñ µÑ¡”µÁ•É™½Éµ…¹”µ½Õ¹Ñ•ÉÌµÙ¥•Ü¤¤¸()íìğ¥µœÍÉŒô‰ME0µM•ÉÙ•Èµ5•ÑÉ¥Ìµ¥¹‘•àµÍ•…É¡•Ìµ½Õ¹Ñ•È¹Á¹œˆ…±Ğô‰M•±•Ñ¥¹œÁ•É™½Éµ…¹”½Õ¹Ñ•ÉÌ™½ÈÕÍÑ½´ME0M•ÉÙ•Èµ•ÑÉ¥ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒÕÍÑ½´…Ñ…‘½œµ•ÑÉ¥Ì™É½´ÍÑ½É•ÁÉ½•‘ÕÉ•Ì)]¡¥±”µ•ÑÉ¥Ì™É½´Ñ¡”Á•É™½Éµ…¹”½Õ¹Ñ•ÉÌÙ¥•Ü…É”ÕÍ•™Õ°™½È…Õ¥¹œÑ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜å½ÕÈ‘…Ñ…‰…Í•Ì°å½Ô…¸ÕÍ”ME0M•ÉÙ•ÈÌİ•…±Ñ ½˜Ù¥•İÌ°ÍÑ½É•ÁÉ½•‘ÕÉ•Ì°…¹™Õ¹Ñ¥½¹ÌÑ¼…¥¸•Ù•¸µ½É”¥¹Í¥¡ÑÌ¸½È•á…µÁ±”°å½Ôµ…äİ…¹ĞÑ¼­••ÀÑÉ…¬½˜Ñ¡”Í¥é”½˜ÍÁ•¥™¥ŒÑ…‰±•Ì¥¸‘¥Í¬…¹µ•µ½ÉçŠQÙ…±Õ…‰±”‘…Ñ„Ñ¡…Ğ¥Ì¹½Ğ…Ù…¥±…‰±”…Ì„Á•É™½Éµ…¹”½Õ¹Ñ•È¸()Q¼É•…Ñ”…¹µ½¹¥Ñ½Èå½ÕÈ½İ¸ÕÍÑ½´µ•ÑÉ¥Ì°å½Ôİ¥±°¹••Ñ¼è((Ä¸É•…Ñ”„mÍÑ½É•ÁÉ½•‘ÕÉ•umÍÑ½É•µÁÉ½•‘ÕÉ•tÑ¡…ĞÉ•ÑÕÉ¹Ì„Ñ•µÁ½É…ÉäÑ…‰±”İ¥Ñ Ñ¡”µ•ÑÉ¥Ìå½Ôİ…¹ĞÑ¼É•Á½ÉĞ¸(È¸‘¥ĞÑ¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”™½ÈÑ¡”ME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸…¹¥¹±Õ‘”…¸•¹ÑÉä™½ÈÑ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”å½ÔÙ”É•…Ñ•¸()Q¡”•¹Ğİ¥±°Ñ¡•¸•á•ÕÑ”Ñ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”•Ù•Éä™•ÜÍ•½¹‘Ì…¹Í•¹Ñ¡”É•ÍÕ±ÑÌÑ¼…Ñ…‘½œ¸()%¸Ñ¡”•á…µÁ±”Ñ¡…Ğ™½±±½İÌ°İ”±°ÅÕ•Éäµ•ÑÉ¥Ì™½È„‘…Ñ…‰…Í—ŠeÌ‘¥Í¬ÕÍ…”İ¥Ñ Ñ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”mÍÁ}ÍÁ…•ÕÍ•‘umÍÁ}ÍÁ…•ÕÍ•‘t€¡…Ù…¥±…‰±”Í¥¹”ME0M•ÉÙ•È€ÈÀÄÈ¤¸]”±°İÉ…À½ÕÈ…±°Ñ¼ÍÁ}ÍÁ…•ÕÍ•‘€İ¥Ñ¡¥¸„ÍÑ½É•ÁÉ½•‘ÕÉ”Ñ¡…ĞÉ•ÑÕÉ¹ÌÉ•ÍÕ±ÑÌ¥¸„™½Éµ…Ğ…Ñ…‘½œ…¸Á…ÉÍ”¥¹Ñ¼Ñ¡É•”µ•ÑÉ¥ÌèÑ¡”Í¥é”½¸‘¥Í¬½˜Ñ¡”‘…Ñ„İ¥Ñ¡¥¸Ñ¡”‘…Ñ…‰…Í”°Ñ¡”Í¥é”½˜¥¹‘•á•Ì°…¹Ñ¡”Ñ½Ñ…°Í¥é”½˜‘…Ñ„…¹ÑÉ…¹Í…Ñ¥½¸±½Ì¸Q¡¥Ì¥Ì©ÕÍĞ½¹”•á…µÁ±”½˜Ñ¡”µ…¹äİ…åÌ¥¸İ¡¥ å½Ô…¸ÕÍ”ÍÑ½É•ÁÉ½•‘ÕÉ•ÌÑ¼É•Á½ÉĞÕÍÑ½´µ•ÑÉ¥ÌÑ¼…Ñ…‘½œ¸((ŒŒŒÉ•…Ñ”„ÍÑ½É•ÁÉ½•‘ÕÉ”Ñ¼•¹•É…Ñ”…¹½±±•Ğµ•ÑÉ¥Ì)ÍÑ½É•ÁÉ½•‘ÕÉ”™½ÈÉ•Á½ÉÑ¥¹œÕÍÑ½´µ•ÑÉ¥Ì…¸ÕÍ”…¹äPµME0ÅÕ•É¥•Ìå½Ô±¥­”°…Ì±½¹œ…Ì¥ĞÕ±µ¥¹…Ñ•Ì¥¸„Ñ…‰±”İ¥Ñ „•ÉÑ…¥¸ÍÑÉÕÑÕÉ”¸Ìå½Ô±°Í•”¥¸Ñ¡”ME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸Ìm•á…µÁ±”e50™¥±•um•á…µÁ±”µå…µ±t°Ñ¡”•¹Ğ•áÁ•ÑÌÕÍÑ½´µ•ÑÉ¥Ì™É½´„ÍÑ½É•ÁÉ½•‘ÕÉ”Ñ¼Ñ…­”Ñ¡”™½É´½˜„Ñ•µÁ½É…ÉäÑ…‰±”…±±•€…Ñ…‘½€¸Q¡”Ñ…‰±”µÕÍĞ¡…Ù”Ñ¡”™½±±½İ¥¹œ½±Õµ¹Ìè((´µ•ÑÉ¥€èÑ¡”¹…µ”½˜Ñ¡”µ•ÑÉ¥Œ…Ì¥Ğ…ÁÁ•…ÉÌ¥¸…Ñ…‘½œ(´ÑåÁ•€èÑ¡”µ•ÑÉ¥ŒÑåÁ”è…Õ”°É…Ñ”°½È½Õ¹Ğ€¡Í•”½ÕÈm‘½Õµ•¹Ñ…Ñ¥½¹umµ•ÑÉ¥ŒµÑåÁ•Ít½¸µ•ÑÉ¥ŒÑåÁ•Ì¤(´Ù…±Õ•€èÑ¡”Ù…±Õ”½˜Ñ¡”µ•ÑÉ¥Œ(´Ñ…Í€èÑ¡”Ñ…ÌÑ¡…Ğİ¥±°…ÁÁ•…È¥¸…Ñ…‘½œ¸e½Ô…¸ÍÁ•¥™ä…¹ä¹Õµ‰•È½˜Ñ…Ì°Í•Á…É…Ñ¥¹œÑ¡•´İ¥Ñ „½µµ„°”¹œ¸°‘ˆéµ…ÍÑ•È°É½±”éÁÉ¥µ…Éå€()%¸Ñ¡¥Ì…Í”°İ”Ù”É•…Ñ”„ÍÑ½É•ÁÉ½•‘ÕÉ”¹…µ••Ñ¥Í­5•ÑÉ¥Í€¸Q¡¥ÌÍÑ½É•ÁÉ½•‘ÕÉ”‰•¥¹Ì‰ä•á•ÕÑ¥¹œÍÁ}ÍÁ…•ÕÍ•‘€…¹¥¹Í•ÉÑ¥¹œÑ¡”É•ÍÕ±ÑÌ¥¹Ñ¼„Ñ•µÁ½É…ÉäÑ…‰±”¸Q¡¥Ì…±±½İÌÕÌÑ¼Í•±•ĞÍÁ•¥™¥Œµ•ÑÉ¥Ì™É½´Ñ¡”É•ÍÕ±ÑÌ¸()ÍÁ}ÍÁ…•ÕÍ•‘€É•ÑÕÉ¹ÌÍÑÉ¥¹Ì½˜¹Õµ‰•ÉÌ…¹Ñ¡•¥ÈÕ¹¥ÑÌ°ÍÑ…Ñ¥¹œ¥¹‘•á}Í¥é•€…¹‘…Ñ…€¥¸­¥±½‰åÑ•Ì€¡”¹œ¸°€ÄÔÈà-	€¤°…¹‘…Ñ…‰…Í•}Í¥é•€¥¸µ•…‰åÑ•Ì€¡”¹œ¸°€àÀ5	€¤¸]—Še±°‘•±…É”„™Õ¹Ñ¥½¸Ñ¡…ĞÉ•µ½Ù•ÌÑ¡”Õ¹¥ÑÌ°½¹Ù•ÉÑÌÑ¡”ÍÑÉ¥¹Ì¥¹Ñ¼™±½…ÑÌ°…¹ÍÑ½É•ÌÑ¡”É•ÍÕ±ÑÌ¥¸Ñ¡”Ñ…‰±”€…Ñ…‘½€¸()]¡•¸İÉ¥Ñ¥¹œå½ÕÈ½İ¸ÍÑ½É•ÁÉ½•‘ÕÉ”°µ…­”ÍÕÉ”Ñ¡…ĞÑ¡”Ù…±Õ•Ìå½ÔÉ”ÍÑ½É¥¹œ¥¸Ñ¡”Ñ…‰±”€…Ñ…‘½€…É”½¹Ù•ÉÑ¥‰±”Ñ¼™±½…ÑÌ¸ME0M•ÉÙ•Èİ¥±°…ÑÑ•µÁĞÑ¼½¹Ù•ÉĞ•ÉÑ…¥¸‘…Ñ„ÑåÁ•Ì…ÕÑ½µ…Ñ¥…±±ä°‰ÕĞ™½È½Ñ¡•ÈÑåÁ•Ì¥Ğİ¥±°Ñ¡É½Ü…¸•ÉÉ½È€¡Í•”mÑ¡¥Ì¡…ÉÑum½¹Ù•ÉÍ¥½¸µ¡…ÉÑt™½È„‰É•…­‘½İ¸½˜İ¡…ĞME0M•ÉÙ•È…¸½¹Ù•ÉĞ¤¸½È•á…µÁ±”°Ñ¡”áÑÉ…Ñ±½…Ñ€™Õ¹Ñ¥½¸‰•±½ÜÉ•ÑÕÉ¹Ì„ÍÑÉ¥¹œÑ¡…ĞME0M•ÉÙ•Èİ¥±°½¹Ù•ÉĞÑ¼„™±½…Ğ‰•™½É”¥¹Í•ÉÑ¥¹œ¸()¹¼µµ¥¹¥µ¥é”)UMlñ‘…Ñ…‰…Í”¹…µ”ùtì)<((´´I•µ½Ù”Õ¹¥ÑÌ™É½´Ñ¡”É•ÍÕ±ÑÌ½˜ÍÁ}ÍÁ…•ÕÍ•()IQU9Q%=8m‘‰½t¹máÑÉ…Ñ±½…Ñt€ (€MÑÉ¥¹]¥Ñ¡±½…Ğ¹Ù…É¡…È ÔÀ¤(¤)IQUI9L™±½…Ğ)	%8(€IQUI8€¡M1PMU	MQI%9 (€€€MÑÉ¥¹]¥Ñ¡±½…Ğ°(€€€€À°(€€€€¡Í•±•ĞAQ%9` œ”€”œ°€¡MÑÉ¥¹]¥Ñ¡±½…Ğ¤¤¤(€€¤¤)9)<((´´É•…Ñ”„ÍÑ½É•ÁÉ½•‘ÕÉ”İ¥Ñ Ñ¡”¹…µ”•Ñ¥Í­5•ÑÉ¥Ì()IQAI=UIm‘‰½t¹m•Ñ¥Í­5•ÑÉ¥Ít)L)	%8((€€´´I•µ½Ù”É½Ü½Õ¹ÑÌ™É½´É•ÍÕ±ĞÍ•ÑÌ(€MP9==U9P=8ì((€€´´É•…Ñ”„Ñ•µÁ½É…ÉäÑ…‰±”Á•È¥¹Ñ•É…Ñ¥½¸¥¹ÍÑÉÕÑ¥½¹Ì((€IQQ	1€…Ñ…‘½œ(€€ (€€€mµ•ÑÉ¥tYI!H ÈÔÔ¤9=P9U10°(€€€mÑåÁ•tYI!H ÔÀ¤9=P9U10°(€€€mÙ…±Õ•t1=P9=P9U10°(€€€mÑ…ÍtYI!H ÈÔÔ¤(€€¤ì((€€´´•±…É”„Ñ•µÁ½É…ÉäÑ…‰±”Ñ¼ÍÑ½É”Ñ¡”É•ÍÕ±ÑÌ½˜ÍÁ}ÍÁ…•ÕÍ•((€1I‘¥Í­}ÕÍ•}Ñ…‰±”Ñ…‰±” (€€€‘…Ñ…‰…Í•}¹…µ”Ù…É¡…È ÄÈà¤°(€€€‘…Ñ…‰…Í•}Í¥é”Ù…É¡…È Äà¤°(€€€Õ¹…±±½…Ñ•‘}ÍÁ…”Ù…É¡…È Äà¤°(€€€É•Í•ÉÙ•Ù…É¡…È Äà¤°(€€€‘…Ñ„Ù…É¡…È Äà¤°(€€€¥¹‘•á}Í¥é”Ù…É¡…È Äà¤°(€€€Õ¹ÕÍ•Ù…É¡…È Äà¤(€€¤ì((€%9MIP%9Q<‘¥Í­}ÕÍ•}Ñ…‰±”aÍÁ}ÍÁ…•ÕÍ•½¹•É•ÍÕ±ÑÍ•ĞôÄì((€€´´I•µ½Ù”Ñ¡”Õ¹¥ÑÌ™É½´½ÕÈÕÍÑ½´µ•ÑÉ¥Ì…¹¥¹Í•ÉĞÑ¡•´¥¹Ñ¼Ñ¡”Ñ…‰±”€…Ñ…‘½œ((€%9MIP%9Q<€…Ñ…‘½œ¡µ•ÑÉ¥Œ°ÑåÁ”°Ù…±Õ”°Ñ…Ì¤Y1UL(€€€€ ÍÅ±Í•ÉÙ•È¹‘¥Í¬¹‘…Ñ…‰…Í•}Í¥é•}µˆœ°€…Õ”œ°€¡M1P‘‰¼¹áÑÉ…Ñ±½…Ğ ¡M1Pm‘…Ñ…‰…Í•}Í¥é•tI=4‘¥Í­}ÕÍ•}Ñ…‰±”¤¤¤°€‘ˆéµ…ÍÑ•È±É½±”éÁÉ¥µ…Éäœ¤°(€€€€ ÍÅ±Í•ÉÙ•È¹‘¥Í¬¹¥¹‘•á}Í¥é•}­ˆœ°€…Õ”œ°€¡M1P‘‰¼¹áÑÉ…Ñ±½…Ğ ¡M1Pm¥¹‘•á}Í¥é•tI=4‘¥Í­}ÕÍ•}Ñ…‰±”¤¤¤°€‘ˆéµ…ÍÑ•È±É½±”éÁÉ¥µ…Éäœ¤°(€€€€ ÍÅ±Í•ÉÙ•È¹‘¥Í¬¹‘…Ñ…}Í¥é•}­ˆœ°€…Õ”œ°€¡M1P‘‰¼¹áÑÉ…Ñ±½…Ğ ¡M1Pm‘…Ñ…tI=4‘¥Í­}ÕÍ•}Ñ…‰±”¤¤¤°€‘ˆéµ…ÍÑ•È±É½±”éÁÉ¥µ…Éäœ¤ì(($´´I•ÑÕÉ¸Ñ¡”Ñ…‰±”(%M1P€¨I=4€…Ñ…‘½œì()9)€()Q¡”ÍÑ½É•ÁÉ½•‘ÕÉ”½ÕÑÁÕÑÌÑ¡É•”ÕÍÑ½´µ•ÑÉ¥Ìè((´ÍÅ±Í•ÉÙ•È¹‘¥Í¬¹‘…Ñ…‰…Í•}Í¥é•}µ‰€èM¥é”½˜Ñ¡”‘…Ñ…‰…Í”°¥¹±Õ‘¥¹œ‰½Ñ ‘…Ñ„…¹mÑÉ…¹Í…Ñ¥½¸±½œ™¥±•ÍumÁ…ÉĞÄµÍÑ½É…•t(´ÍÅ±Í•ÉÙ•È¹‘¥Í¬¹¥¹‘•á}Í¥é•}­‰€èM¥é”½˜…±°¥¹‘•á•ÌÕÍ•‰äÑ¡”‘…Ñ…‰…Í”(´ÍÅ±Í•ÉÙ•È¹‘¥Í¬¹‘…Ñ…}Í¥é•}­‰€èM¥é”½˜…±°‘…Ñ„İ¥Ñ¡¥¸Ñ¡”‘…Ñ…‰…Í”()Q¡”µ•ÑÉ¥Ìİ¥±°‰”Ñ…•…ÕÑ½µ…Ñ¥…±±äİ¥Ñ Ñ¡”Ù…±Õ•Ì½˜Ñ¡”Ñ…Í€½±Õµ¸¥¸Ñ¡”Ñ…‰±”€…Ñ…‘½€°¥¸Ñ¡¥Ì…Í”É½±”éÁÉ¥µ…Éå€…¹‘ˆéµ…ÍÑ•É€¸]—ŠeÉ”…±Í¼½±±•Ñ¥¹œ•… ÕÍÑ½´µ•ÑÉ¥Œ…Ì„…Õ”°İ¡¥ É•Á½ÉÑÌÑ¡”ÕÉÉ•¹ĞÙ…±Õ”½˜„µ•ÑÉ¥Œ…Ğ•… ¡•¬¸M•”m½ÕÈ‘½Õµ•¹Ñ…Ñ¥½¹umµ•ÑÉ¥ŒµÑåÁ•Ít™½Èµ½É”‘•Ñ…¥±Ì…‰½ÕĞ…Ñ…‘½œÌµ•ÑÉ¥ŒÑåÁ•Ì°…Õ•Ì°É…Ñ•Ì°…¹½Õ¹ÑÌ¸()Q¡”½‘”…‰½Ù”‘•±…É•ÌÑ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”•Ñ¥Í­5•ÑÉ¥Í€…¹Ñ¡”™Õ¹Ñ¥½¸áÑÉ…Ñ±½…Ñ€¸	•™½É”å½Ô½¹™¥ÕÉ”…Ñ…‘½œÑ¼…±°•Ñ¥Í­5•ÑÉ¥Í€°å½Ôµ…äİ…¹ĞÑ¼µ…­”ÍÕÉ”¥ĞÌ‰••¸‘•±…É•ÍÕ•ÍÍ™Õ±±äİ¥Ñ¡¥¸ME0M•ÉÙ•È¸e½Ô…¸ÉÕ¸Ñ¡¥ÌÅÕ•ÉäÑ¼Ù•É¥™äÑ¡…Ğå½ÔÙ”…‘‘•Ñ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”¸()¹¼µµ¥¹¥µ¥é”)M1P¹…µ”I=4ÍåÌ¹ÁÉ½•‘ÕÉ•Ì]!I¹…µ”€ô€‰•Ñ¥Í­5•ÑÉ¥Ìˆì)€()Q¡”½ÕÑÁÕĞÍ¡½Õ±É•Í•µ‰±”Ñ¡”™½±±½İ¥¹œ¸()¹¼µµ¥¹¥µ¥é”)¹…µ”(´´´´´´´´´´´´´´)•Ñ¥Í­5•ÑÉ¥Ì)€((ŒŒŒ½¹™¥ÕÉ”Ñ¡”…Ñ…‘½œ•¹ĞÑ¼•á•ÕÑ”Ñ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”()9•áĞ°½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼•á•ÕÑ”Ñ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”É•…Ñ•…‰½Ù”°İ¡¥ É•Á½ÉÑÌÕÍÑ½´µ•ÑÉ¥ÌÑ¼…Ñ…‘½œ¸e½Ô±°¹••Ñ¼•‘¥ĞÑ¡”•á¥ÍÑ¥¹œ¡½ÍÑ€Í•Ñ¥½¸½˜Ñ¡”ME0M•ÉÙ•È¥¹Ñ•É…Ñ¥½¸Ìe50™¥±”€¡±½…Ñ•İ¥Ñ¡¥¸€¨©éqAÉ½É…µ…Ñ…q…Ñ…‘½q½¹˜¹‘qÍÅ±Í•ÉÙ•È¹¨¨¤Ñ¼ÍÁ•¥™äÑ¡”¹…µ”½˜Ñ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”Ñ¡”•¹Ğİ¥±°…±°°Á±ÕÌÑ¡”¹…µ”½˜Ñ¡”‘…Ñ…‰…Í•€Ñ¡”•¹Ğİ¥±°ÕÍ”İ¡•¸…±±¥¹œ¥Ğ¸()¹¼µµ¥¹¥µ¥é”(Œ€¸¸¸(€€´¡½ÍĞè€ÄÈÜ¸À¸À¸Ä°ÄĞÌÌ(€€€ÕÍ•É¹…µ”è‘…Ñ…‘½œ(€€€Á…ÍÍİ½Éè€ñÁ…ÍÍİ½Éø(€€€ÍÑ½É•‘}ÁÉ½•‘ÕÉ”è•Ñ¥Í­5•ÑÉ¥Ì(€€€‘…Ñ…‰…Í”èµ…ÍÑ•È(Œ€¸¸¸)€()Q¡•É”…É”Ñ¡É•”…Ù•…ÑÌÑ¼¹½Ñ”…‰½ÕĞÕÍ¥¹œÍÑ½É•ÁÉ½•‘ÕÉ•Ì™½ÈÕÍÑ½´µ•ÑÉ¥Ì¸¥ÉÍĞ°å½Ô…¸ÍÁ•¥™äÑ¡”½¹¹•Ñ½É€°Ñ¡”¥¹Ñ•É™…”‰•Ñİ••¸Ñ¡”•¹Ğ…¹ME0M•ÉÙ•È°¥¸Ñ¡”¥¹Ñ•É…Ñ¥½¸Ìe50™¥±”¸%˜å½ÔÁ±…¸Ñ¼ÍÁ•¥™ä½‘‰€…ÌÑ¡”½¹¹•Ñ½È°É…Ñ¡•ÈÑ¡…¸Ñ¡”‘•™…Õ±Ğ½˜…‘½‘‰…Á¥€°å½Ôİ¥±°¹½Ğ…‰±”Ñ¼½±±•ĞÕÍÑ½´µ•ÑÉ¥Ìİ¥Ñ „ÍÑ½É•ÁÉ½•‘ÕÉ”¸M•½¹°Í¥¹”Ñ¡”•¹Ğİ¥±°‰”ÉÕ¹¹¥¹œÑ¡”ÍÑ½É•ÁÉ½•‘ÕÉ”İ¥Ñ •Ù•Éä¡•¬°½‰Ñ…¥¹¥¹œÕÍÑ½´µ•ÑÉ¥ÌÑ¡¥Ìİ…äİ¥±°…ÕÍ”ME0M•ÉÙ•ÈÑ¼½¹ÍÕµ”µ½É”É•Í½ÕÉ•Ì¸Q¡¥É°Ñ¡”ÕÍÑ½´µ•ÑÉ¥Ìå½ÔÉ•Á½ÉĞÑ¼Ñ¡”Ñ…‰±”€…Ñ…‘½€…É”ÍÕ‰©•ĞÑ¼Ñ¡”Í…µ”±¥µ¥ÑÌ…Ì…¹ä½Ñ¡•ÈÕÍÑ½´µ•ÑÉ¥Œ¥¸…Ñ…‘½œ¸m½¹ÍÕ±Ğ½ÕÈ‘½Õµ•¹Ñ…Ñ¥½¹umÕÍÑ½´µµ•ÑÉ¥Ít™½È‘•Ñ…¥±Ì¸((ŒŒÕÍÑ½´…Ñ…‘½œµ•ÑÉ¥Ì™É½´]¥¹‘½İÌ5…¹…•µ•¹Ğ%¹ÍÑÉÕµ•¹Ñ…Ñ¥½¸()%˜å½×ŠeÉ”ÉÕ¹¹¥¹œME0M•ÉÙ•È½¸]¥¹‘½İÌ°å½Ô…¸…±Í¼½±±•ĞÕÍÑ½´µ•ÑÉ¥Ì‰äÕÍ¥¹œm]¥¹‘½İÌ5…¹…•µ•¹Ğ%¹ÍÑÉÕµ•¹Ñ…Ñ¥½¹umİµ¤µ¥¹ÑÉ½t€¡]5$¤¸]5$¥Ì„½É”™•…ÑÕÉ”½˜Ñ¡”5¥É½Í½™Ğ]¥¹‘½İÌ½Á•É…Ñ¥¹œÍåÍÑ•´Ñ¡…Ğ…±±½İÌ…ÁÁ±¥…Ñ¥½¹ÌÑ¼‰É½…‘…ÍĞ…¹É••¥Ù”‘…Ñ„¸ÁÁ±¥…Ñ¥½¹Ì½µµ½¹±äÕÍ”]5$Ñ¼½µµÕ¹¥…Ñ”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÉ•Í½ÕÉ•Ì°ÍÕ …Ì‘É¥Ù•ÉÌ°‘¥Í­Ì°½ÈÁÉ½•ÍÍ•Ì°¥¹±Õ‘¥¹œME0M•ÉÙ•È¸…Ñ…‘½œÌm]5$¥¹Ñ•É…Ñ¥½¹umİµ¤µ¡•¬µ‘½Ít…¸µ½¹¥Ñ½ÈÑ¡”m¡Õ¹‘É•‘Ì½˜]5$±…ÍÍ•Íumİµ¤µ‘µ±…ÍÍ•Ítå½Ô±°™¥¹¥¸„]¥¹‘½İÌ•¹Ù¥É½¹µ•¹Ğ°µ…­¥¹œÑ¡¥Ì¥Ì„½¹Ù•¹¥•¹Ğİ…äÑ¼…‘ÕÍÑ½´µ•ÑÉ¥Ì™½ÈME0M•ÉÙ•È¸()Q¼½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼Í•¹µ•ÑÉ¥Ì™É½´]5$°å½Ô±°¹••Ñ¼•‘¥ĞÑ¡”]5$¥¹Ñ•É…Ñ¥½¸Ìm½¹™¥ÕÉ…Ñ¥½¸™¥±•umİµ¤µ¡•¬µ½¹™¥t¸U¹‘•È¥¹ÍÑ…¹•Í€°±¥ÍĞÑ¡”¹…µ•Ì½˜Ñ¡”m]5$±…ÍÍ•Íumİµ¤µ±…ÍÍ•Ít™É½´İ¡¥ å½Ôİ…¹ĞÑ¼…Ñ¡•Èµ•ÑÉ¥Ì¸U¹‘•ÈÑ¡”¥Ñ•´™½È•… ±…ÍÌ°å½Ô±°±¥ÍĞµ•ÑÉ¥Ì…Ì…ÉÉ…åÌİ¥Ñ Ñ¡É•”•±•µ•¹ÑÌèÑ¡”¹…µ”½˜„ÁÉ½Á•ÉÑä½˜Ñ¡”]5$±…ÍÌ°Ñ¡”¹…µ”½˜Ñ¡”µ•ÑÉ¥Œå½Ô±¥­”Ñ¼É•Á½ÉĞÑ¼…Ñ…‘½œ°…¹Ñ¡”µ•ÑÉ¥ŒmÑåÁ•umµ•ÑÉ¥ŒµÑåÁ•Ít¸()e½Ô…¸½±±•ĞÑ¡”¹Õµ‰•È½˜™…¥±•ME0M•ÉÙ•È©½‰Ìİ¥Ñ Ñ¡”™½±±½İ¥¹œ½¹™¥ÕÉ…Ñ¥½¸°™½È•á…µÁ±”è()¹¼µµ¥¹¥µ¥é”)¥¹ÍÑ…¹•Ìè(€€€€´±…ÍÌè]¥¸ÌÉ}A•É™I…İ…Ñ…}ME1MIYI9Q}ME1•¹Ñ)½‰Ì(€€€€€µ•ÑÉ¥Ìè(€€€€€€€€´m…¥±•‘©½‰Ì°ÍÅ±Í•ÉÙ•È¹©½‰Ì¹™…¥±•‘}©½‰Ì°…Õ•t(€€€€Œ€¸¸¸)€()Q¡•¸•¹…‰±”Ñ¡”]5$¥¹Ñ•É…Ñ¥½¸‰äÉ•ÍÑ…ÉÑ¥¹œÑ¡”•¹Ğ¸()m±¥¬¡•É•umİµ¤µ±…ÍÍ•ÌµµÍÍÅ±tÑ¼Í•”…±°½˜Ñ¡”]5$±…ÍÍ•ÌÑ¡…ĞÉ•Á½ÉĞ‘…Ñ„™É½´ME0M•ÉÙ•È¸((ŒŒME0M•ÉÙ•Èµ•ÑÉ¥Ì™½ÈÑ…¥±½É•µ½¹¥Ñ½É¥¹œ)%¸Ñ¡¥ÌÍ•É¥•Ì°İ”Ù”mÍÕÉÙ•å•µ•ÑÉ¥ÍumÁ…ÉĞÅtÑ¡…Ğ…¸•áÁ½Í”ME0M•ÉÙ•ÈÌ½É”™Õ¹Ñ¥½¹…±¥Ñä°…¹¡…Ù”Í¡½İ¸å½Ô¡½ÜÑ¼ÕÍ”„¹Õµ‰•È½˜mµ½¹¥Ñ½É¥¹œÑ½½±ÍumÁ…ÉĞÉtÑ¼•ĞÉ•…°µÑ¥µ”Ù¥•İÌ…¹‘•Ñ…¥±•É•Á½ÉÑÌ¸]”Ù”‘•µ½¹ÍÑÉ…Ñ•¡½Üå½Ô…¸½µ‰¥¹”±¥Ù”½‰Í•ÉÙ…Ñ¥½¸…¹½¸µ‘•µ…¹¥¹Í¥¡ÑÌ‰ä…‘‘¥¹œ‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…¥¹œ…¹±½œµ…¹…•µ•¹Ğ°…±°İ¥Ñ m…Ñ…‘½umÁ…ÉĞÍt¸()]¥Ñ ÕÍÑ½´µ•ÑÉ¥Ì°¥ĞÌÁ½ÍÍ¥‰±”Ñ¼µ½¹¥Ñ½È•Ù•Éäµ•ÑÉ¥ŒME0M•ÉÙ•È½±±•ÑÌ¥¹Ñ•É¹…±±ä°…¹Ñ¼ÕÍ”Ñ¡¥Ì…Ì„‰…Í¥Ì™½È½ÁÑ¥µ¥é¥¹œå½ÕÈ‘…Ñ…‰…Í•Ì¸]¥Ñ …Ñ…‘½œ°å½Ô…¸½ÉÉ•±…Ñ”Ñ¡•Í”µ•ÑÉ¥Ìİ¥Ñ ½Ñ¡•ÉÌ™É½´ME0M•ÉÙ•È…¹Ñ¡”É•ÍĞ½˜å½ÕÈÍÑ…¬°µ…­¥¹œ¥Ğ±•…Èİ¡•É”Á•É™½Éµ…¹”¥ÍÍÕ•Ì…É”½É¥¥¹…Ñ¥¹œ½Èİ¡•É”å½ÔÍ¡½Õ±™½ÕÌå½ÕÈ½ÁÑ¥µ¥é…Ñ¥½¸•™™½ÉÑÌ¸()%˜å½Ô…É”¹½ĞÕÍ¥¹œ…Ñ…‘½œ…¹İ…¹ĞÑ¼…¥¸Ù¥Í¥‰±¥Ñä¥¹Ñ¼Ñ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜ME0M•ÉÙ•È…¹µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô½Ñ¡•ÈÍÕÁÁ½ÉÑ•Ñ•¡¹½±½¥•Ì°å½Ô…¸•ĞÍÑ…ÉÑ•‰äÍ¥¹¥¹œÕÀ™½È„€ñ„±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆ¡É•˜ôˆŒˆøÄĞµ‘…ä™É•”ÑÉ¥…°ğ½„ø¸()m…•ÍÌµµ•Ñ¡½‘Ítè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½É•±…Ñ¥½¹…°µ‘…Ñ…‰…Í•Ì½Á•É™½Éµ…¹”µµ½¹¥Ñ½È½ÍÅ°µÍ•ÉÙ•Èµ…•ÍÌµµ•Ñ¡½‘Ìµ½‰©•ĞıÙ¥•ÜõÍÅ°µÍ•ÉÙ•È´ÈÀÄÜ()m½¹Ù•ÉÍ¥½¸µ¡…ÉÑtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½ĞµÍÅ°½™Õ¹Ñ¥½¹Ì½…ÍĞµ…¹µ½¹Ù•ÉĞµÑÉ…¹Í…ĞµÍÅ°ıÙ¥•ÜõÍÅ°µÍ•ÉÙ•È´ÈÀÄÜ¥µÁ±¥¥Ğµ½¹Ù•ÉÍ¥½¹Ì()mÕÍÑ½´µµ•ÑÉ¥Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½•ÑÑ¥¹}ÍÑ…ÉÑ•½ÕÍÑ½µ}µ•ÑÉ¥Ì¼()m‘…Ñ…‘½œµ…•¹Ñtè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ½İ¥¹‘½İÌ()m‘ˆµÁÉ½Á•ÉÑ¥•Ítè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½ĞµÍÅ°½™Õ¹Ñ¥½¹Ì½‘…Ñ…‰…Í•ÁÉ½Á•ÉÑå•àµÑÉ…¹Í…ĞµÍÅ°()m‘µ½¹˜µ™¥±•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•Ì¼()m‘µÕÍÑ½´µµ•ÑÉ¥Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½™…Ä½¡½Üµ…¸µ¤µ½±±•Ğµµ½É”µµ•ÑÉ¥Ìµ™É½´µµäµÍÅ°µÍ•ÉÙ•Èµ¥¹Ñ•É…Ñ¥½¸¼()m‘µµÍÍÅ°µ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½ÍÅ±Í•ÉÙ•È¼()m‘µµÍÍÅ°µ½¹™¥tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½ÍÅ±Í•ÉÙ•È¼½¹™¥ÕÉ…Ñ¥½¸()m•á…µÁ±”µå…µ±tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½ÍÅ±Í•ÉÙ•È½‘…Ñ…‘½}¡•­Ì½ÍÅ±Í•ÉÙ•È½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”()m…Õ•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½‘•Ù•±½Á•ÉÌ½µ•ÑÉ¥Ì¼…Õ•Ì()mÁ…ÉĞÅtè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ½¹¥Ñ½É¥¹œ()mÁ…ÉĞÄµÍÑ½É…•tè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ½¹¥Ñ½É¥¹œÍÑ½É…”µ…¡¥¹œµ…¹µÉ•±¥…‰¥±¥Ñä()mÁ…ÉĞÉtè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ½¹¥Ñ½É¥¹œµÑ½½±Ì()mÁ…ÉĞÈµ‘µÙÍtè€½‰±½œ½ÍÅ°µÍ•ÉÙ•Èµµ½¹¥Ñ½É¥¹œµÑ½½±Ì‘å¹…µ¥Œµµ…¹…•µ•¹ĞµÙ¥•İÌ()mÁ…ÉĞÍtè€½‰±½œ½ÍÅ°µÍ•ÉÙ•ÈµÁ•É™½Éµ…¹”()mÁ•É™½Éµ…¹”µ½Õ¹Ñ•ÉÌµÙ¥•İtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½É•±…Ñ¥½¹…°µ‘…Ñ…‰…Í•Ì½ÍåÍÑ•´µ‘å¹…µ¥Œµµ…¹…•µ•¹ĞµÙ¥•İÌ½ÍåÌµ‘´µ½ÌµÁ•É™½Éµ…¹”µ½Õ¹Ñ•ÉÌµÑÉ…¹Í…ĞµÍÅ°()mÁ•É™½Éµ…¹”µ½‰©•ÑÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½É•±…Ñ¥½¹…°µ‘…Ñ…‰…Í•Ì½Á•É™½Éµ…¹”µµ½¹¥Ñ½È½ÕÍ”µÍÅ°µÍ•ÉÙ•Èµ½‰©•ÑÌ()mÁ•É™½Éµ…¹”µ½‰©•ÑÌµ‘‰tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½É•±…Ñ¥½¹…°µ‘…Ñ…‰…Í•Ì½Á•É™½Éµ…¹”µµ½¹¥Ñ½È½ÍÅ°µÍ•ÉÙ•Èµ‘…Ñ…‰…Í•Ìµ½‰©•ĞıÙ¥•ÜõÍÅ°µÍ•ÉÙ•È´ÈÀÄÜ()mÁ•É™½Éµ…¹”µ½‰©•ÑÌµÁ½½±tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½É•±…Ñ¥½¹…°µ‘…Ñ…‰…Í•Ì½Á•É™½Éµ…¹”µµ½¹¥Ñ½È½ÍÅ°µÍ•ÉÙ•ÈµÉ•Í½ÕÉ”µÁ½½°µÍÑ…ÑÌµ½‰©•ĞıÙ¥•ÜõÍÅ°µÍ•ÉÙ•È´ÈÀÄÜ()mµ•ÑÉ¥ŒµÑåÁ•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½‘•Ù•±½Á•ÉÌ½µ•ÑÉ¥Ì¼µ•ÑÉ¥ŒµÑåÁ•Ì()mÍÁ}ÍÁ…•ÕÍ•‘tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½É•±…Ñ¥½¹…°µ‘…Ñ…‰…Í•Ì½ÍåÍÑ•´µÍÑ½É•µÁÉ½•‘ÕÉ•Ì½ÍÀµÍÁ…•ÕÍ•µÑÉ…¹Í…ĞµÍÅ°()mÍÑ½É•µÁÉ½•‘ÕÉ•tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½É•±…Ñ¥½¹…°µ‘…Ñ…‰…Í•Ì½ÍÑ½É•µÁÉ½•‘ÕÉ•Ì½ÍÑ½É•µÁÉ½•‘ÕÉ•Ìµ‘…Ñ…‰…Í”µ•¹¥¹”()mÉ•ÍÕ±ĞµÍ•Ñtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÍÅ°½ĞµÍÅ°½ÅÕ•É¥•Ì½İ¥Ñ µ½µµ½¸µÑ…‰±”µ•áÁÉ•ÍÍ¥½¸µÑÉ…¹Í…ĞµÍÅ°()mİµ¤µ¡•¬µ½¹™¥tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½İµ¥}¡•¬¼½¹™¥ÕÉ…Ñ¥½¸()mİµ¤µ¡•¬µ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½İµ¥}¡•¬¼()mİµ¤µ±…ÍÍ•Ítè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½İ¥¹‘½İÌ½‘•Í­Ñ½À½…„ÌäĞÔÔĞ¹…ÍÁà()mİµ¤µ±…ÍÍ•ÌµµÍÍÅ±tè¡ÑÑÀè¼½İÕÑ¥±Ì¹½´½İµ¤½É½½Ğ½¥µØÈ½İ¥¸ÌÉ}Á•É™É…İ‘…Ñ„¼()mİµ¤µ‘µ±…ÍÍ•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½™…Ä½¡½ÜµÑ¼µÉ•ÑÉ¥•Ù”µİµ¤µµ•ÑÉ¥Ì¼()mİµ¤µ¥¹ÑÉ½tè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½…„ÌäĞÔàÈ¡ØõÙÌ¸àÔ¤¹…ÍÁà(
+---
+authors:
+- email: rishabh.moudgil@datadoghq.com
+  image: rish-static.jpg
+  name: Rishabh Moudgil
+- email: paul.gottschling@datadoghq.com
+  name: Paul Gottschling
+  image: paulgottschling.jpg
+blog/category:
+- integration
+blog/tag:
+- sql-server
+- alerts
+- dbms
+- sql
+- microsoft
+date: 2018-05-04T17:00:00Z
+description: Gather custom SQL Server metrics with performance counters, stored procedures, and the WMI integration
+draft: false
+featured: false
+image: "SQL-Server-Metrics-hero.png"
+preview_image: "SQL-Server-Metrics-hero.png"
+meta_title: Monitor Microsoft SQL Server
+slug: sql-server-metrics
+technology: sql-server
+title: "Custom SQL Server metrics for detailed monitoring"
+series: sql-server-monitoring
+header_video:
+    mp4: superheroes_microsoftsq04_v17.mp4
+    no_loop: false
+    no_autoplay: false
+    stop_time: 0
+
+---
+
+We've shown in [Part 3][part3] of this series how Datadog can help you monitor your SQL Server databases within the context of your application. In this post, we'll show you how to go one step further by collecting custom SQL Server metrics that let you choose the exact functionality you want to monitor and improve. You can configure the Agent to collect custom metrics and report them every time it runs its built-in SQL Server check.
+
+We'll show you three ways to collect and monitor custom metrics:
+
+1. Specifying [performance counters](#custom-datadog-metrics-with-the-performance-counters-view) beyond those the SQL Server integration queries by default
+2. Executing a user-defined [stored procedure](#custom-datadog-metrics-from-stored-procedures)
+3. Using the [Windows Management Instrumentation](#custom-datadog-metrics-from-windows-management-instrumentation) (WMI) integration
+
+## Custom Datadog metrics with the performance counters view
+
+Although the Agent already collects a number of [important metrics][dd-mssql-integration] from the [performance counters dynamic management view][part2-dmvs], you might be interested in monitoring additional [performance objects][performance-objects] such as page lookups per second, log flushes per second, or queued requests. You can see a list of all the performance counters you can monitor by running the following query:
+
+```
+SELECT counter_name, instance_name, cntr_value FROM sys.dm_os_performance_counters;
+```
+
+You'll see something resembling the following:
+
+```no-minimize
+counter_name         instance_name         cntr_value
+--------------------------------------------------------
+Page lookups/sec                           30617439
+Log Flushes/sec      tempdb                5664
+Log Flushes/sec      model                 7
+Log Flushes/sec      demo_db               15152
+Queued requests      internal              0
+```
+
+To collect metrics automatically from specific performance counters, edit the SQL Server [configuration file][dd-mssql-config], which the Agent looks for within **C:\ProgramData\Datadog\conf.d\sqlserver.d**. [Create an entry][dd-custom-metrics] under `custom_metrics` for each metric you want to collect. For example, we can collect the metrics "Page lookups/sec," "Queued Requests," and "Log Flushes/sec," plus "Index Searches/sec," by adding the configuration below:
+
+```no-minimize
+    # ...
+    custom_metrics:
+        - name: sqlserver.buffer.page_lookups
+          counter_name: Page lookups/sec
+        
+        - name: sqlserver.workload.queued_requests
+          counter_name: Queued Requests
+          instance: internal                  
+
+        - name: sqlserver.databases.log_flushes
+          counter_name: Log Flushes/sec
+          instance: ALL
+          tag_by: db        
+
+        - name: sqlserver.index_searches
+          counter_name: Index Searches/sec             
+    # ...
+```
+
+For each entry, you must specify values for `name` and `counter_name`. The `name` value will be the name of the metric as you want it to appear in Datadog, whereas the `counter_name` maps to the `counter_name` column of `sys.dm_os_performance_counters`. In the case of "Page lookups/sec," the configuration above will cause the metric to appear in Datadog as `sqlserver.buffer.page_lookups`. 
+
+Some performance objects are associated with multiple instances within SQL Server, and you can identify these with the `instance_name` column of `sys.dm_os_performance_counters`. You'll want to check the [documentation][performance-objects] for the performance objects you're interested in to see what `instance` means in that context. In our example above, `Log Flushes/sec` is a counter within the object [`SQLServer:Databases`][performance-objects-db]. There's a separate instance of the object (and its counters) for each database. The [resource pool performance object][performance-objects-pool] has a separate instance for each resource pool. Other performance objects, like the Buffer Manager object where you'll find `Page lookups/sec`, always have a single instance.
+
+If a performance counter has multiple instances, you have two options for sending metrics to Datadog. One is to collect metrics from a single instance, by specifying the `instance` in the `custom_metrics` section. In our example above, we've edited the item for `Queued Requests` to gather metrics only from the `internal` instance. 
+
+If you want to collect metrics associated with _every_ instance, set the `instance` value to `ALL`. Then add a `tag_by` line, which creates a key-value tag pair for each instance of a performance counter. If the metric `Log Flushes/sec` is reported for instances `tempdb`, `model`, and `demo_db`, for example, a `tag_by` prefix of `db` will create the tags `db:tempdb`, `db:model`, and `db:demo_db`. While you can name the prefix anything you'd like, you may want to name it after the object that each instance represents (a database, a resource pool, etc.).
+
+After restarting the Agent, you'll be able to add your custom metrics to dashboards and alerts, just like any other metric in Datadog. Below, we're graphing the custom metric `sqlserver.index_searches`, which we've named from the counter `Index Searches/sec` within the [`Access Methods`][access-methods] performance object (see [above](#custom-datadog-metrics-with-the-performance-counters-view)).
+
+{{< img src="SQL-Server-Metrics-index-searches-counter.png" alt="Selecting performance counters for custom SQL Server metrics" popup="true" >}}
+
+## Custom Datadog metrics from stored procedures
+While metrics from the performance counters view are useful for gauging the health and performance of your databases, you can use SQL Server's wealth of views, stored procedures, and functions to gain even more insights. For example, you may want to keep track of the size of specific tables in disk and memoryâ€”valuable data that is not available as a performance counter.
+
+To create and monitor your own custom metrics, you will need to:
+
+1. Create a [stored procedure][stored-procedure] that returns a temporary table with the metrics you want to report.
+2. Edit the configuration file for the SQL Server integration and include an entry for the stored procedure you've created.
+
+The Agent will then execute the stored procedure every few seconds and send the results to Datadog.
+
+In the example that follows, we'll query metrics for a databaseâ€™s disk usage with the stored procedure [`sp_spaceused`][sp_spaceused] (available since SQL Server 2012). We'll wrap our call to `sp_spaceused` within a stored procedure that returns results in a format Datadog can parse into three metrics: the size on disk of the data within the database, the size of indexes, and the total size of data and transaction logs. This is just one example of the many ways in which you can use stored procedures to report custom metrics to Datadog.
+
+### Create a stored procedure to generate and collect metrics
+A stored procedure for reporting custom metrics can use any T-SQL queries you'd like, as long as it culminates in a table with a certain structure. As you'll see in the SQL Server integration's [example YAML file][example-yaml], the Agent expects custom metrics from a stored procedure to take the form of a temporary table called `#Datadog`. The table must have the following columns:
+
+- `metric`: the name of the metric as it appears in Datadog
+- `type`: the metric type: gauge, rate, or count (see our [documentation][metric-types] on metric types)
+- `value`: the value of the metric
+- `tags`: the tags that will appear in Datadog. You can specify any number of tags, separating them with a comma, e.g., `db:master, role:primary`
+
+In this case, we've create a stored procedure named `GetDiskMetrics`. This stored procedure begins by executing `sp_spaceused` and inserting the results into a temporary table. This allows us to select specific metrics from the results. 
+
+`sp_spaceused` returns strings of numbers and their units, stating `index_size` and `data` in kilobytes (e.g., `1528 KB`), and `database_size` in megabytes (e.g., `80 MB`). Weâ€™ll declare a function that removes the units, converts the strings into floats, and stores the results in the table `#Datadog`. 
+
+When writing your own stored procedure, make sure that the values you're storing in the table `#Datadog` are convertible to floats. SQL Server will attempt to convert certain data types automatically, but for other types it will throw an error (see [this chart][conversion-chart] for a breakdown of what SQL Server can convert). For example, the `ExtractFloat` function below returns a string that SQL Server will convert to a float before inserting.
+
+```no-minimize
+USE [<database name>];
+GO
+
+-- Remove units from the results of sp_spaceused
+
+CREATE FUNCTION [dbo].[ExtractFloat] (
+  @StringWithFloat nvarchar(50)
+)
+RETURNS float
+BEGIN
+  RETURN (SELECT SUBSTRING(
+    @StringWithFloat,
+    0,
+    (select PATINDEX('% %', (@StringWithFloat)))
+  ))
+END
+GO
+
+-- Create a stored procedure with the name GetDiskMetrics
+
+CREATE PROCEDURE [dbo].[GetDiskMetrics]
+AS
+BEGIN
+
+  -- Remove row counts from result sets
+  SET NOCOUNT ON;
+
+  -- Create a temporary table per integration instructions
+
+  CREATE TABLE #Datadog
+  (
+    [metric] VARCHAR(255) NOT NULL,
+    [type] VARCHAR(50) NOT NULL,
+    [value] FLOAT NOT NULL,
+    [tags] VARCHAR(255)
+  );
+
+  -- Declare a temporary table to store the results of sp_spaceused
+
+  DECLARE @disk_use_table table(
+    database_name varchar(128),
+    database_size varchar(18),
+    unallocated_space varchar(18),
+    reserved varchar(18),
+    data varchar(18), 
+    index_size varchar(18),
+    unused varchar(18)
+  );
+
+  INSERT INTO @disk_use_table EXEC sp_spaceused @oneresultset=1;
+	
+  -- Remove the units from our custom metrics and insert them into the table #Datadog 
+
+  INSERT INTO #Datadog(metric, type, value, tags) VALUES
+    ('sqlserver.disk.database_size_mb', 'gauge', (SELECT dbo.ExtractFloat((SELECT [database_size] FROM @disk_use_table))), 'db:master,role:primary'),
+    ('sqlserver.disk.index_size_kb', 'gauge', (SELECT dbo.ExtractFloat((SELECT [index_size] FROM @disk_use_table))), 'db:master,role:primary'),
+    ('sqlserver.disk.data_size_kb', 'gauge', (SELECT dbo.ExtractFloat((SELECT [data] FROM @disk_use_table))), 'db:master,role:primary');
+
+	-- Return the table
+	SELECT * FROM #Datadog;
+
+END
+```
+
+The stored procedure outputs three custom metrics:
+
+- `sqlserver.disk.database_size_mb`: Size of the database, including both data and [transaction log files][part1-storage]
+- `sqlserver.disk.index_size_kb`: Size of all indexes used by the database
+- `sqlserver.disk.data_size_kb`: Size of all data within the database
+
+The metrics will be tagged automatically with the values of the `tags` column in the table `#Datadog`, in this case `role:primary` and `db:master`. Weâ€™re also collecting each custom metric as a gauge, which reports the current value of a metric at each check. See [our documentation][metric-types] for more details about Datadog's metric types, gauges, rates, and counts.
+
+The code above declares the stored procedure `GetDiskMetrics` and the function `ExtractFloat`. Before you configure Datadog to call `GetDiskMetrics`, you may want to make sure it's been declared successfully within SQL Server. You can run this query to verify that you've added the stored procedure.
+
+```no-minimize
+SELECT name FROM sys.procedures WHERE name = "GetDiskMetrics";
+```
+
+The output should resemble the following.
+
+```no-minimize
+name
+--------------
+GetDiskMetrics
+```
+
+### Configure the Datadog Agent to execute the stored procedure
+
+Next, configure the Agent to execute the stored procedure created above, which reports custom metrics to Datadog. You'll need to edit the existing `host` section of the SQL Server integration's YAML file (located within **C:\ProgramData\Datadog\conf.d\sqlserver.d**) to specify the name of the stored procedure the Agent will call, plus the name of the `database` the Agent will use when calling it.
+
+```no-minimize
+# ...
+  - host: 127.0.0.1,1433
+    username: datadog
+    password: <password>
+    stored_procedure: GetDiskMetrics
+    database: master
+# ...
+```
+
+There are three caveats to note about using stored procedures for custom metrics. First, you can specify the `connector`, the interface between the Agent and SQL Server, in the integration's YAML file. If you plan to specify `odbc` as the connector, rather than the default of `adodbapi`, you will not able to collect custom metrics with a stored procedure. Second, since the Agent will be running the stored procedure with every check, obtaining custom metrics this way will cause SQL Server to consume more resources. Third, the custom metrics you report to the table `#Datadog` are subject to the same limits as any other custom metric in Datadog. [Consult our documentation][custom-metrics] for details.
+
+## Custom Datadog metrics from Windows Management Instrumentation
+
+If youâ€™re running SQL Server on Windows, you can also collect custom metrics by using [Windows Management Instrumentation][wmi-intro] (WMI). WMI is a core feature of the Microsoft Windows operating system that allows applications to broadcast and receive data. Applications commonly use WMI to communicate information about resources, such as drivers, disks, or processes, including SQL Server. Datadog's [WMI integration][wmi-check-docs] can monitor the [hundreds of WMI classes][wmi-dd-classes] you'll find in a Windows environment, making this is a convenient way to add custom metrics for SQL Server.
+
+To configure the Agent to send metrics from WMI, you'll need to edit the WMI integration's [configuration file][wmi-check-config]. Under `instances`, list the names of the [WMI classes][wmi-classes] from which you want to gather metrics. Under the item for each class, you'll list metrics as arrays with three elements: the name of a property of the WMI class, the name of the metric you'd like to report to Datadog, and the metric [type][metric-types].
+
+You can collect the number of failed SQL Server jobs with the following configuration, for example:
+
+```no-minimize
+instances: 
+    - class: Win32_PerfRawData_SQLSERVERAGENT_SQLAgentJobs
+      metrics:
+        - [Failedjobs, sqlserver.jobs.failed_jobs, gauge]
+    # ...
+```
+
+Then enable the WMI integration by restarting the Agent.
+
+[Click here][wmi-classes-mssql] to see all of the WMI classes that report data from SQL Server.
+
+## SQL Server metrics for tailored monitoring 
+In this series, we've [surveyed metrics][part1] that can expose SQL Server's core functionality, and have shown you how to use a number of [monitoring tools][part2] to get real-time views and detailed reports. We've demonstrated how you can combine live observation and on-demand insights by adding distributed tracing and log management, all with [Datadog][part3]. 
+
+With custom metrics, it's possible to monitor every metric SQL Server collects internally, and to use this as a basis for optimizing your databases. With Datadog, you can correlate these metrics with others from SQL Server and the rest of your stack, making it clear where performance issues are originating or where you should focus your optimization efforts.
+
+If you are not using Datadog and want to gain visiblity into the health and performance of SQL Server and more than {{< translate key="integration_count" >}} other supported technologies, you can get started by signing up for a <a class="sign-up-trigger" href="#">14-day free trial</a>.
+
+[access-methods]: https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/sql-server-access-methods-object?view=sql-server-2017
+
+[conversion-chart]: https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-2017#implicit-conversions
+
+[custom-metrics]: https://docs.datadoghq.com/getting_started/custom_metrics/
+
+[datadog-agent]: https://app.datadoghq.com/account/settings#agent/windows
+
+[db-properties]: https://docs.microsoft.com/en-us/sql/t-sql/functions/databasepropertyex-transact-sql
+
+[dd-conf-file]: https://help.datadoghq.com/hc/en-us/articles/203037169-Where-is-the-configuration-file-for-the-Agent-
+
+[dd-custom-metrics]: https://help.datadoghq.com/hc/en-us/articles/209280186-How-can-I-collect-more-metrics-from-my-SQL-Server-integration-
+
+[dd-mssql-integration]: https://docs.datadoghq.com/integrations/sqlserver/
+
+[dd-mssql-config]: https://docs.datadoghq.com/integrations/sqlserver/#configuration
+
+[example-yaml]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/conf.yaml.example
+
+[gauges]: https://docs.datadoghq.com/developers/metrics/#gauges
+
+[part1]: /blog/sql-server-monitoring
+
+[part1-storage]: /blog/sql-server-monitoring#storage-caching-and-reliability
+
+[part2]: /blog/sql-server-monitoring-tools
+
+[part2-dmvs]: /blog/sql-server-monitoring-tools#dynamic-management-views
+
+[part3]: /blog/sql-server-performance
+
+[performance-counters-view]: https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql
+
+[performance-objects]: https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/use-sql-server-objects
+
+[performance-objects-db]: https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/sql-server-databases-object?view=sql-server-2017
+
+[performance-objects-pool]: https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/sql-server-resource-pool-stats-object?view=sql-server-2017
+
+[metric-types]: https://docs.datadoghq.com/developers/metrics/#metric-types
+
+[sp_spaceused]: https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-spaceused-transact-sql
+
+[stored-procedure]: https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/stored-procedures-database-engine
+
+[result-set]: https://docs.microsoft.com/en-us/sql/t-sql/queries/with-common-table-expression-transact-sql
+
+[wmi-check-config]: https://docs.datadoghq.com/integrations/wmi_check/#configuration
+
+[wmi-check-docs]: https://docs.datadoghq.com/integrations/wmi_check/
+
+[wmi-classes]: https://msdn.microsoft.com/en-us/library/windows/desktop/aa394554.aspx
+
+[wmi-classes-mssql]: http://wutils.com/wmi/root/cimv2/win32_perfrawdata/
+
+[wmi-dd-classes]: https://help.datadoghq.com/hc/en-us/articles/205016075-How-to-retrieve-WMI-metrics
+
+[wmi-intro]: https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx

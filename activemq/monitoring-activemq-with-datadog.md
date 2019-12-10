@@ -1,1 +1,394 @@
-m5½¹¥Ñ½É¥¹œÑ¥Ù•5Dİ¥Ñ ™¹‰ÍÀí…Ñ…‘½œ(()Ìå½Ô½Á•É…Ñ”…¹Í…±”Ñ¥Ù•5D°½µÁÉ•¡•¹Í¥Ù”µ½¹¥Ñ½É¥¹œİ¥±°•¹…‰±”å½ÔÑ¼É…Á¥‘±ä¥‘•¹Ñ¥™ä…¹ä‰½ÑÑ±•¹•­Ì…¹µ…¥¹Ñ…¥¸Ñ¡”™±½Ü½˜‘…Ñ„Ñ¡É½Õ å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì¸…É±¥•È¥¸Ñ¡¥ÌÍ•É¥•Ì°İ”¥¹ÑÉ½‘Õ•Í½µ”m­•äÑ¥Ù•5Dµ•ÑÉ¥ÌÑ¼İ…Ñ¡umÁ…ÉĞ´Åt°…¹±½½­•…ĞÍ½µ”mÑ½½±Ìå½Ô…¸ÕÍ”Ñ¼µ½¹¥Ñ½ÈÑ¥Ù•5EumÁ…ÉĞ´Ét¸	ÕĞÑ¼•Ğ„½µÁ±•Ñ”Õ¹‘•ÉÍÑ…¹‘¥¹œ½˜Ñ¥Ù•5DÌÁ•É™½Éµ…¹”°å½ÔÍ¡½Õ±µ½¹¥Ñ½Èå½ÕÈ‰É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¹Ì…±½¹Í¥‘”Ñ¡”±¥•¹Ğ…ÁÁ±¥…Ñ¥½¹ÌÑ¡…ĞÍ•¹…¹É••¥Ù”µ•ÍÍ…•Ì°…¹Ñ¡”¥¹™É…ÍÑÉÕÑÕÉ”Ñ¡…ĞÉÕ¹Ì¥Ğ…±°¸%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°Í¡½Üå½Ô¡½Üå½Ô…¸µ½¹¥Ñ½ÈÑ¥Ù•5D…¹…±°¥ÑÌÉ•±…Ñ•ÍåÍÑ•µÌÕÍ¥¹œ…Ñ…‘½œ¸()Q¡¥ÌÁ½ÍĞİ¥±°Í¡½Üå½Ô¡½ÜÑ¼è((¨m½¹™¥ÕÉ”Ñ¥Ù•5Et ½¹¹•Ñ¥¹œµ…Ñ¥Ù•µÄµİ¥Ñ µ‘…Ñ…‘½œ¤Ñ¼Í•¹µ•ÑÉ¥ÌÑ¼…Ñ…‘½œ(¨Y¥•ÜÑ¥Ù•5Dµ•ÑÉ¥Ì¥¸„mÕÍÑ½µ¥é…‰±”‘…Í¡‰½…É‘t Ù¥•İ¥¹œµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ìµ¥¸µ‘…Ñ…‘½œ¤(¨½±±•Ğ…¹…¹…±åé”mÑ¥Ù•5D±½Ì¥¸…Ñ…‘½t ‰É¥¹¥¹œµ¥¸µ…Ñ¥Ù•µÄµ±½Ì¤(¨mQ…t Ñ…¥¹œµå½ÕÈµµ•ÑÉ¥Ì¤å½ÕÈÑ¥Ù•5Dµ•ÑÉ¥Ì(¨mÉ•…Ñ”…±•ÉÑÍt ÕÍ¥¹œµ…±•ÉÑÌµÑ¼µÍÑ…äµ¥¹™½Éµ•¤¥¸…Ñ…‘½œÑ¼­••Àå½Ô¥¹™½Éµ•()¥ÉÍĞİ”±°İ…±¬Ñ¡É½Õ ¡½ÜÑ¼½¹¹•Ğå½ÕÈÑ¥Ù•5D¥¹™É…ÍÑÉÕÑÕÉ”Ñ¼å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸%˜å½ÔÉ”¹•ÜÑ¼…Ñ…‘½œ°‰ÕĞå½Ô±¥­”Ñ¼™½±±½Ü…±½¹œ°¡•É”Ì„€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”ÑÉ¥…°ğ½„ø¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í Ğ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰…Ñ…‘½œÌ½ÕĞµ½˜µÑ¡”µ‰½àÑ¥Ù•5D‘…Í¡‰½…ÉÉ…Á¡Ìµ…¹ä­•äµ•ÑÉ¥Ì¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒ½¹¹•Ñ¥¹œÑ¥Ù•5Dİ¥Ñ …Ñ…‘½œ)Q¡¥ÌÍ•Ñ¥½¸İ¥±°‘•ÍÉ¥‰”¡½ÜÑ¼½¹™¥ÕÉ”Ñ¥Ù•5DÑ¼Í•¹µ•ÑÉ¥ÌÑ¼…Ñ…‘½œ¸)Q¼‘¼Ñ¡¥Ì°å½Ô±°¹••Ñ¼•¹…‰±”)5`É•µ½Ñ”µ½¹¥Ñ½É¥¹œ°¥¹ÍÑ…±°…¹½¹™¥ÕÉ”Ñ¡”•¹Ğ°…¹•¹…‰±”Ñ¡”…Ñ…‘½œ¥¹Ñ•É…Ñ¥½¸¸((ŒŒŒ5½¹¥Ñ½É¥¹œ)5`É•µ½Ñ•±ä)Ñ¥Ù•5D•áÁ½Í•Ìµ•ÑÉ¥ÌmÙ¥„)5aumÁ…ÉĞ´Èµ©µàµ…¹µ©½¹Í½±•t¸Q¼µ…­”Ñ¡½Í”µ•ÑÉ¥Ì…Ù…¥±…‰±”Ñ¼Ñ¡”•¹Ğ°å½Ô¹••Ñ¼½¹™¥ÕÉ”å½ÕÈÑ¥Ù•5D¡½ÍĞÑ¼…±±½ÜÍ•ÕÉ”É•µ½Ñ”…•ÍÌÑ¼¥ÑÌ5	•…¸Í•ÉÙ•È°…ÌÍ¡½İ¸¥¸Ñ¡•Í”‘½Õµ•¹ÑÌ‰äm=É…±•um½É…±”µµ½¹¥Ñ½É¥¹t…¹mÁ…¡•um…Á…¡”µ©µàµÍÍ±t¸9•áĞ°å½ÔÉ”É•…‘äÑ¼¥¹ÍÑ…±°Ñ¡”•¹Ğ…¹¥¹Ñ•É…Ñ”Ñ¥Ù•5Dİ¥Ñ å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸((ŒŒŒ%¹ÍÑ…±±¥¹œÑ¡”•¹Ğ)Q¡”…Ñ…‘½œ•¹Ğ¥Ì½Á•¸Í½ÕÉ”Í½™Ñİ…É”Ñ¡…ĞÉÕ¹Ì½¸å½ÕÈ¡½ÍĞ…¹Í•¹‘Ìµ•ÑÉ¥Ì°ÑÉ…•Ì°…¹±½ÌÑ¼å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸e½Ô…¸½™Ñ•¸¥¹ÍÑ…±°Ñ¡”•¹Ğİ¥Ñ ©ÕÍĞ„Í¥¹±”½µµ…¹“ŠQÍ•”Ñ¡”m•¹Ğ¥¹ÍÑ…±±…Ñ¥½¸¥¹ÍÑÉÕÑ¥½¹Ì™½Èå½ÕÈ¡½ÍĞÌ=Mum‘…Ñ…‘½œµ…•¹Ğµ¥¹ÍÑÉÕÑ¥½¹Ít™½Èµ½É”¥¹™½Éµ…Ñ¥½¸¸()]¡•¸å½ÔÙ”½µÁ±•Ñ•Ñ¡”¥¹ÍÑ…±±…Ñ¥½¸°å½ÔÍ¡½Õ±‰”…‰±”Ñ¼Í•”å½ÕÈÑ¥Ù•5D¡½ÍĞ¥¸Ñ¡”m¡½ÍĞµ…Áum‘…Ñ…‘½œµ¡½ÍĞµµ…Át¸%˜å½ÔÉ”…±É•…‘äµ½¹¥Ñ½É¥¹œ½Ñ¡•È¡½ÍÑÌ¥¸…Ñ…‘½œ°ÑåÁ”å½ÕÈ¡½ÍÑ¹…µ”¥¸Ñ¡”€¨©¥±Ñ•È‰ä¨¨™¥•±Ñ¼±¥µ¥ĞÑ¡”Ù¥•ÜÑ¼©ÕÍĞå½ÕÈÑ¥Ù•5D¡½ÍĞ¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í Õˆ¹Á¹œˆ…±Ğô‰Q¡¥ÌÍÉ••¹Í¡½ĞÍ¡½İÌ¡½Üå½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”±¥ÍĞ±½½­Ìİ¡•¸å½ÔÙ”ÕÍ•Ñ¡”™¥±Ñ•È™¥•±Ñ¼¥‘•¹Ñ¥™äå½ÕÈÑ¥Ù•5D¡½ÍĞ¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()e½ÕÈÑ¥Ù•5D¡½ÍĞ¥Ì¹½ÜÍ•¹‘¥¹œAT°µ•µ½Éä°…¹½Ñ¡•ÈÍåÍÑ•´µ±•Ù•°µ•ÑÉ¥ÌÑ¼å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸9•áĞİ”±°Í¡½Üå½Ô¡½ÜÑ¼½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼½±±•Ğ…¹Í•¹)…Ù„…¹Ñ¥Ù•5Dµ•ÑÉ¥Ì¸((ŒŒŒ½¹™¥ÕÉ¥¹œ…Ñ…‘½œÌÑ¥Ù•5D¥¹Ñ•É…Ñ¥½¸)%¸…‘‘¥Ñ¥½¸Ñ¼•áÁ½Í¥¹œµ•ÑÉ¥ÌÙ¥„)5`°Ñ¥Ù•5Dµ…­•Ìµ•ÑÉ¥Ì…Ù…¥±…‰±”¥¸a50Á…•Ìİ¥Ñ¡¥¸Ñ¡”]•ˆ½¹Í½±”¸Q¡”…Ñ…‘½œ•¹Ğ½±±•ÑÌµ•ÑÉ¥Ì™É½´Ñ¡”]•ˆ½¹Í½±”¥¹ÍÑ•…½˜)5`İ¡•¸Á½ÍÍ¥‰±”¸M•”m½ÕÈ‘½Õµ•¹Ñ…Ñ¥½¹um‘…Ñ…‘½œµ…Ñ¥Ù•µÄµ‘½Ít™½È„±¥ÍĞ½˜µ•ÑÉ¥ÌÑ¡”•¹Ğ½±±•ÑÌ™É½´•… ½˜Ñ¡•Í”Ñİ¼‘…Ñ„Í½ÕÉ•Ì°)5`…¹Ñ¡”]•ˆ½¹Í½±”¸()	ä‘•™…Õ±Ğ°½ÕÈ¥¹Ñ•É…Ñ¥½¸½±±•ÑÌÑ¡”µ½ÍĞ¥µÁ½ÉÑ…¹Ğ­•äµ•ÑÉ¥Ìµ•¹Ñ¥½¹•¥¸A…ÉĞ€Ä°‰ÕĞå½Ô…¸…±Í¼½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼½±±•Ğ½Ñ¡•Èµ•ÑÉ¥Ì™É½´)5`°‘•Á•¹‘¥¹œ½¸å½ÕÈÍ•ÑÕÀ…¹ÁÉ¥½É¥Ñ¥•Ì¸()Q¡”•¹Ğ¥¹±Õ‘•ÌÑİ¼Í…µÁ±”Ñ¥Ù•5D½¹™¥ÕÉ…Ñ¥½¸™¥±•Ì°½¹”™½ÈÑ¡”)5`‘…Ñ„Í½ÕÉ”…¹½¹”™½ÈÑ¡”]•ˆ½¹Í½±”‘…Ñ„Í½ÕÉ”¸%ĞÌ•…ÍäÑ¼µ½‘¥™äÑ¡”Ñ¥Ù•5D½¹™¥ÕÉ…Ñ¥½¸Ñ¼½±±•Ğ)5`µ•ÑÉ¥ÌÑ¡…Ğ…É•¸Ğ½±±•Ñ•‰ä‘•™…Õ±Ğ°…¹Ñ¼…Ù½¥½±±•Ñ¥¹œÑ¡½Í”Ñ¡…Ğå½Ô‘½¸Ğ¹••¸()%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°Í¡½Üå½Ô¡½ÜÑ¼ÕÍ”Ñ¡”)5`½¹™¥ÕÉ…Ñ¥½¸™¥±”Ñ¼‘•Í¥¹…Ñ”İ¡¥ µ•ÑÉ¥ÌÑ¼½±±•Ğ°…¹¡½ÜÑ¼É•…Ñ”…‘‘¥Ñ¥½¹…°½¹™¥ÕÉ…Ñ¥½¸™¥±•ÌÑ¼½±±•Ğ…‘‘¥Ñ¥½¹…°µ•ÑÉ¥Ì¸]”±°…±Í¼İ…±¬Ñ¡É½Õ ¡½ÜÑ¼ÕÁ‘…Ñ”Ñ¡”]•ˆ½¹Í½±”Ì½¹™¥ÕÉ…Ñ¥½¸™¥±”Í¼Ñ¡”•¹Ğ…¸…•ÍÌÑ¡…Ğ‘…Ñ„Í½ÕÉ”¸((ŒŒŒŒ…Ñ„Í½ÕÉ”è)5`)Q¡”•¹ĞÍÑ½É•Ì½¹™¥ÕÉ…Ñ¥½¸™¥±•Ì™½È…±°¥¹Ñ•É…Ñ¥½¹ÌÕ¹‘•È¥ÑÌ€¨©½¹˜¹¼¨¨ÍÕ‰‘¥É•Ñ½Éä¸Q¡”±½…Ñ¥½¸½˜Ñ¡¥Ì‘¥É•Ñ½Éä‘•Á•¹‘Ì½¸å½ÕÈ¡½ÍĞÌÁ±…Ñ™½É´¸M•”Ñ¡”m•¹Ğ‘½Õµ•¹Ñ…Ñ¥½¹um‘…Ñ…‘½œµ…•¹Ğµ‘½ÍtÑ¼™¥¹å½ÕÈ€¨©½¹˜¹¼¨¨‘¥É•Ñ½Éä¸()Q¼½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼½±±•Ğ)5`µ•ÑÉ¥Ì™É½´Ñ¥Ù•5D°…¹™É½´Ñ¡”)Y4¥¸İ¡¥ ¥ĞÉÕ¹Ì°å½Ô±°¹••Ñ¼•‘¥ĞÑ¡”½¹™¥œ™¥±”¥¸Ñ¡”€¨©½¹˜¹½…Ñ¥Ù•µÄ¹¼¨¨‘¥É•Ñ½Éä¸½ÁäÑ¡”l¨©½¹˜¹å…µ°¹•á…µÁ±”¨©um¥Ñ¡Õˆµ…Ñ¥Ù•µÄµ½¹˜µå…µ±t™¥±”¥¸Ñ¡…Ğ‘¥É•Ñ½ÉäÑ¼€¨©½¹˜¹å…µ°¨¨¸€Q¡¥Ì™¥±”‘•™¥¹•Ìİ¡¥ Ñ¥Ù•5Dµ•ÑÉ¥ÌÑ¡”•¹Ğİ¥±°É•ÑÉ¥•Ù”Ù¥„)5`¸()… µ•ÑÉ¥ŒÑ¼‰”½±±•Ñ•¥Ì±¥ÍÑ•¥¸Ñ¡¥Ì™¥±”…Ì…¸…ÑÑÉ¥‰ÕÑ•€¸Q¡”…ÑÑÉ¥‰ÕÑ”¹…µ•Ìµ…Ñ Ñ¡½Í”±¥ÍÑ•¥¸Ñ¡”€‰)5`…ÑÑÉ¥‰ÕÑ”ˆ½±Õµ¸½˜Ñ¡”m­•äµ•ÑÉ¥ÌÑ…‰±•ÍumÁ…ÉĞ´Äµ­•äµµ•ÑÉ¥Ít¥¸A…ÉĞ€Ä¸… …ÑÑÉ¥‰ÕÑ•€¹…µ”¥Ì™½±±½İ•‰ä…¸…±¥…Í€±¥¹”€¡İ¡¥ ÍÁ•¥™¥•Ì¡½ÜÑ¡”µ•ÑÉ¥Œİ¥±°‰”±…‰•±•¥¸…Ñ…‘½œ¤…¹„mµ•ÑÉ¥}ÑåÁ•um‘…Ñ…‘½œµµ•ÑÉ¥ŒµÑåÁ•Ít±¥¹”€¡İ¡¥ ‘•Ñ•Éµ¥¹•Ì¡½ÜÑ¡”µ•ÑÉ¥Œİ¥±°‰”¥¹Ñ•ÉÁÉ•Ñ•…¹Ù¥ÍÕ…±¥é•¥¸…Ñ…‘½œ¤¸()e½Ô…¸½µµ•¹Ğ½ÕĞ½È‘•±•Ñ”…¹ä…ÑÑÉ¥‰ÕÑ•ƒŠQ¥¹±Õ‘¥¹œ¥ÑÌ…±¥…Í€…¹µ•ÑÉ¥}ÑåÁ•€±¥¹•ÏŠQ¥˜å½Ôİ…¹ĞÑ¡”•¹ĞÑ¼ÍÑ½À½±±•Ñ¥¹œÑ¡…Ğµ•ÑÉ¥Œ¸%¸Ñ¡”•á…µÁ±”‰•±½Ü°İ”¡…Ù”µ½‘¥™¥•€¨©½¹˜¹å…µ°¨¨Í¼Ñ¡…ĞÑ¡”Ù•É…•¹ÅÕ•Õ•Q¥µ•€µ•ÑÉ¥Œİ½¸Ğ‰”½±±•Ñ•Ù¥„)5`¸()€(Œ…Ñ¥Ù•µÄ¹½½¹˜¹å…µ°)¥¹ÍÑ…¹•Ìè((€€ŒŒÁ…É…´¡½ÍĞ€´ÍÑÉ¥¹œ€´É•ÅÕ¥É•(€€ŒŒÑ¥Ù•5D¡½ÍĞÑ¼½¹¹•ĞÑ¼¸(€€Œ(€€´¡½ÍĞè±½…±¡½ÍĞ((€€ŒŒÁ…É…´Á½ÉĞ€´¥¹Ñ••È€´É•ÅÕ¥É•(€€ŒŒÑ¥Ù•5DÁ½ÉĞÑ¼½¹¹•ĞÑ¼¸(€€Œ(€€€Á½ÉĞè€ÄÀää)¥¹¥Ñ}½¹™¥œè)l¸¸¹t(€½¹˜è(€€€€´¥¹±Õ‘”è(€€€€€€€‘•ÍÑ¥¹…Ñ¥½¹QåÁ”èEÕ•Õ”(€€€€€€€…ÑÑÉ¥‰ÕÑ”è(Œ€€€€€€€€€Ù•É…•¹ÅÕ•Õ•Q¥µ”è(Œ€€€€€€€€€€€…±¥…Ìè…Ñ¥Ù•µÄ¹ÅÕ•Õ”¹…Ù}•¹ÅÕ•Õ•}Ñ¥µ”(Œ€€€€€€€€€€€µ•ÑÉ¥}ÑåÁ”è…Õ”(€€€€€€€€€½¹ÍÕµ•É½Õ¹Ğè(€€€€€€€€€€€…±¥…Ìè…Ñ¥Ù•µÄ¹ÅÕ•Õ”¹½¹ÍÕµ•É}½Õ¹Ğ(€€€€€€€€€€€µ•ÑÉ¥}ÑåÁ”è…Õ”(€€€€€€€€€AÉ½‘Õ•É½Õ¹Ğè(€€€€€€€€€€€…±¥…Ìè…Ñ¥Ù•µÄ¹ÅÕ•Õ”¹ÁÉ½‘Õ•É}½Õ¹Ğ(€€€€€€€€€€€µ•ÑÉ¥}ÑåÁ”è…Õ”()€()Q¼…‘„¹•Üµ•ÑÉ¥ŒÑ¼‰”½±±•Ñ•°å½Ô…¸…‘¥ÑÌ¥¹™½Éµ…Ñ¥½¸Ñ¼€¨©½¹˜¹å…µ°¸¨¨Q¡”Í…µÁ±”½‘”‰•±½Ü°İ¡•¸…‘‘•Ñ¼€¨©½¹˜¹å…µ°¨¨°½¹™¥ÕÉ•ÌÑ¡”•¹ĞÑ¼…±Í¼½±±•Ğ„AÉ½‘Õ•É±½İ½¹ÑÉ½±€µ•ÑÉ¥Œ™½ÈÑ¡”Ñ½Á¥Ì…ÍÍ½¥…Ñ•İ¥Ñ Ñ¡¥Ì‰É½­•È¸()€)l¸¸¹t(€€€€´¥¹±Õ‘”è(€€€€€€€‘•ÍÑ¥¹…Ñ¥½¹QåÁ”èQ½Á¥Œ(€€€€€€€…ÑÑÉ¥‰ÕÑ”è(€€€€€€€€€AÉ½‘Õ•É±½İ½¹ÑÉ½°è(€€€€€€€€€€€…±¥…Ìè…Ñ¥Ù•µÄ¹Ñ½Á¥Œ¹ÁÉ½‘Õ•É}™±½İ}½¹ÑÉ½°(€€€€€€€€€€€µ•ÑÉ¥}ÑåÁ”è…Õ”)€()±Ñ•É¹…Ñ¥Ù•±ä°å½Ô…¸É•…Ñ”¹•Ü½¹™¥ÕÉ…Ñ¥½¸™¥±•ÌÑ¼ÍÁ•¥™ä…¹ä…‘‘¥Ñ¥½¹…°µ•ÑÉ¥ÌÑ¼‰”½±±•Ñ•¸e½Ô…¸m¹…µ”„¹•Ü½¹™¥ÕÉ…Ñ¥½¸™¥±•um‘…Ñ…‘½œµ¡•­Ìµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•Ít…¹åÑ¡¥¹œå½Ô±¥­”°…¹…Ì±½¹œ…Ì¥ĞÌ„Ù…±¥e50™¥±”¥¸Ñ¡”€¨©½¹˜¹½…Ñ¥Ù•µÄ¹¼¨¨‘¥É•Ñ½Éä°Ñ¡”•¹Ğİ¥±°É•…¥ÑÌ½¹Ñ•¹ÑÌ¸Q¡”Í…µÁ±”½‘”‰•±½Ü°Í…Ù•…Ì€¨©½¹˜¹½…Ñ¥Ù•µÄ¹½‰É½­•É}µ•ÑÉ¥Ì¹å…µ°¨¨°½¹™¥ÕÉ•ÌÑ¡”•¹ĞÑ¼½±±•ĞÑ¡”‰É½­•ÈÌQ½Ñ…±•ÅÕ•Õ•½Õ¹Ñ€…¹Q½Ñ…±¹ÅÕ•Õ•½Õ¹Ñ€µ•ÑÉ¥Ìİ”¥¹ÑÉ½‘Õ•¥¸mA…ÉĞ€ÅumÁ…ÉĞ´Äµ‰É½­•Èµµ•ÑÉ¥Ít½˜Ñ¡¥ÌÍ•É¥•Ì¸()€(Œ…Ñ¥Ù•µÄ¹½‰É½­•É}µ•ÑÉ¥Ì¹å…µ°()¥¹¥Ñ}½¹™¥œè(€¥Í}©µàèÑÉÕ”((€½¹˜è(€€€€´¥¹±Õ‘”è(€€€€€€€‘•ÍÑ¥¹…Ñ¥½¹QåÁ”è	É½­•È(€€€€€€€…ÑÑÉ¥‰ÕÑ”è(€€€€€€€€€Q½Ñ…±•ÅÕ•Õ•½Õ¹Ğè(€€€€€€€€€€€…±¥…Ìè…Ñ¥Ù•µÄ¹‰É½­•È¹‘•ÅÕ•Õ•}½Õ¹Ğ(€€€€€€€€€€€µ•ÑÉ¥}ÑåÁ”è…Õ”(€€€€€€€€€Q½Ñ…±¹ÅÕ•Õ•½Õ¹Ğè(€€€€€€€€€€€…±¥…Ìè…Ñ¥Ù•µÄ¹‰É½­•È¹•¹ÅÕ•Õ•}½Õ¹Ğ(€€€€€€€€€€€µ•ÑÉ¥}ÑåÁ”è…Õ”)€()mI•ÍÑ…ÉĞÑ¡”•¹Ñum‘…Ñ…‘½œµÉ•ÍÑ…ÉÑtÑ¼…ÁÁ±äå½ÕÈ½¹™¥ÕÉ…Ñ¥½¸¡…¹•Ì°Ñ¡•¸•á•ÕÑ”Ñ¡”mÍÑ…ÑÕÍ€½µµ…¹‘um‘…Ñ…‘½œµÍÑ…ÑÕÍtÑ¼½¹™¥É´å½ÕÈ¡…¹•Ì¸1½½¬™½ÈÑ¡”…Ñ¥Ù•µÅ€Í•Ñ¥½¸¥¸Ñ¡”ÍÑ…ÑÕÌ½ÕÑÁÕĞ°…ÌÍ¡½İ¸‰•±½Ü¸)€(€€€…Ñ¥Ù•µÄ(€€€€€¥¹ÍÑ…¹•}¹…µ”€è…Ñ¥Ù•µÄµ±½…±¡½ÍĞ´ÄÀää(€€€€€µ•ÍÍ…”€è(€€€€€µ•ÑÉ¥}½Õ¹Ğ€è€äÌ(€€€€€Í•ÉÙ¥•}¡•­}½Õ¹Ğ€è€À(€€€€€ÍÑ…ÑÕÌ€è=,)€((ŒŒŒŒ…Ñ„Í½ÕÉ”è]•ˆ½¹Í½±”)Ñ¥Ù•5DÌ‰Õ¥±Ğµ¥¸]•ˆ½¹Í½±”¥¹±Õ‘•ÌÑ¡É•”Á…•Ì½˜a50‘…Ñ„™••‘ÏŠQ½¹”•… Ñ¼Í¡½Üµ•ÑÉ¥Ì™É½´ÅÕ•Õ•Ì°Ñ½Á¥Ì°…¹ÍÕ‰ÍÉ¥‰•ÉÏŠQİ¡¥ Ñ¡”•¹ĞÕÍ•Ì…Ì„‘…Ñ„Í½ÕÉ”™½ÈÍ½µ”µ•ÑÉ¥Ì¸Q¡”ÍÉ••¹Í¡½Ğ‰•±½ÜÍ¡½İÌ„]•ˆ½¹Í½±”Á…”Ñ¡…ĞÍ•ÉÙ•Ì…Ì„‘…Ñ„Í½ÕÉ”™½ÈÑ¥Ù•5DÑ½Á¥Ì¸()íìğ¥µœÍÉŒô‰İ•‰}½¹Í½±”Ğ¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½Ğ™É½´Ñ¡”İ•ˆ½¹Í½±”Í¡½İ¥¹œ…¸a50‘…Ñ„™••½˜Ñ½Á¥Ìµ•ÑÉ¥Ì¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()e½Ô±°¹••Ñ¼½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼…•ÍÌÑ¡•Í”Á…•ÌÍ¼¥Ğ…¸½±±•Ğµ•ÑÉ¥Ì™É½´Ñ¡•´¸€%¹Í¥‘”€¨©½¹˜¹¼¨¨¥Ì…¸€¨©…Ñ¥Ù•µÅ}áµ°¹¼¨¨ÍÕ‰‘¥É•Ñ½Éä°İ¡¥ ¥¹±Õ‘•Ì„m½¹™¥ÕÉ…Ñ¥½¸™¥±•um‘…Ñ…‘½œµ¡•­Ìµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•ÍtÑ¡…ĞÑ•±±ÌÑ¡”•¹Ğ¡½ÜÑ¼™¥¹Ñ¡”Ñ¥Ù•5D]•ˆ½¹Í½±”Ñ¼ÕÍ”…Ì„Í½ÕÉ”™½Èµ•ÑÉ¥Œ‘…Ñ„¸½ÁäÑ¡”l¨©½¹˜¹å…µ°¹•á…µÁ±”¨©um¥Ñ¡Õˆµ…Ñ¥Ù•µÄµáµ°µ½¹˜µå…µ±t™¥±”¥¸Ñ¡…Ğ‘¥É•Ñ½ÉäÑ¼„¹•Ü™¥±”¹…µ•€¨©½¹˜¹å…µ°¨¨¸U¹½µµ•¹ĞÑ¡”ÕÍ•É¹…µ•€…¹Á…ÍÍİ½É‘€±¥¹•Ì¸M•ĞÕÍ•É¹…µ•€Ñ¼€¨©…‘µ¥¸¨¨°…¹ÕÁ‘…Ñ”Ñ¡”Á…ÍÍİ½ÉÑ¼µ…Ñ Ñ¡”½¹”å½ÔÉ•…Ñ•İ¡•¸mÍ•ÑÑ¥¹œÕÀÑ¡”Ñ¥Ù•5D]•ˆ½¹Í½±•umÁ…ÉĞ´Èµ…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±•t¥¸A…ÉĞ€È½˜Ñ¡¥ÌÍ•É¥•Ì¸%˜å½ÔÙ”mÕÁ‘…Ñ•å½ÕÈÑ¥Ù•5D½¹™¥ÕÉ…Ñ¥½¹um…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±•tÑ¼ÕÍ”„Á½ÉĞ½Ñ¡•ÈÑ¡…¸€àÄØÄ°¡…¹”Ñ¡”Á½ÉĞ½¸Ñ¡”ÕÉ±€±¥¹”Ñ¼É•™±•ĞÑ¡…Ğ¸e½ÕÈ€¨©½¹˜¹å…µ°¨¨Í¡½Õ±±½½¬±¥­”Ñ¡”•á…µÁ±”‰•±½Üè()€(Œ…Ñ¥Ù•µÅ}áµ°¹½½¹˜¹å…µ°()¥¹¥Ñ}½¹™¥œè()¥¹ÍÑ…¹•Ìè(€€´ÕÉ°è¡ÑÑÀè¼½±½…±¡½ÍĞèàÄØÄ(€€€ÕÍ•É¹…µ”è…‘µ¥¸(€€€Á…ÍÍİ½Éè€ñ5e}AMM]=Iø)€()mI•ÍÑ…ÉĞÑ¡”•¹Ñum‘…Ñ…‘½œµÉ•ÍÑ…ÉÑtÍ¼å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸¡…¹•ÌÑ…­”•™™•Ğ¸9½Üå½ÕÈ•¹Ğ¥Ì½±±•Ñ¥¹œµ•ÑÉ¥Ì™É½´Ñ¡”Ñ¥Ù•5D]•ˆ½¹Í½±”…¹™½Éİ…É‘¥¹œÑ¡•´Ñ¼å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸()á•ÕÑ”Ñ¡”•¹ĞÌmÍÑ…ÑÕÍ€½µµ…¹‘um‘…Ñ…‘½œµÍÑ…ÑÕÍtÑ¼½¹™¥É´Ñ¡…Ğå½ÕÈ½¹™¥ÕÉ…Ñ¥½¸¡…¹•Ìİ•É”ÍÕ•ÍÍ™Õ°¸1½½¬™½È…¸…Ñ¥Ù•µÅ}áµ±€Í•Ñ¥½¸¥¸Ñ¡”ÍÑ…ÑÕÍ€½ÕÑÁÕĞ°…ÌÍ¡½İ¸‰•±½Ü¸()€(€€…Ñ¥Ù•µÅ}áµ°€ Ä¸À¸À¤(€€€€´´´´´´´´´´´´´´´´´´´´(€€€€€Q½Ñ…°IÕ¹Ìè€ÄÔØĞÀ(€€€€€5•ÑÉ¥ŒM…µÁ±•Ìè€ÄÄĞ°Q½Ñ…°è½Ù•È€Å4(€€€€€Ù•¹ÑÌè€À°Q½Ñ…°è€À(€€€€€M•ÉÙ¥”¡•­Ìè€À°Q½Ñ…°è€À(€€€€€Ù•É…”á•ÕÑ¥½¸Q¥µ”€è€ÄÕµÌ)€()%˜å½Ô¡…Ù”µ½É”Ñ¡…¸½¹”Ñ¥Ù•5D¡½ÍĞÑ¼µ½¹¥Ñ½È°É•Á•…ĞÑ¡”•¹Ğ¥¹ÍÑ…±±…Ñ¥½¸…¹½¹™¥ÕÉ…Ñ¥½¸ÍÑ•ÁÌ½¸…±°å½ÕÈ¡½ÍÑÌ¸e½Ô…¸…±Í¼ÕÍ”„½¹™¥ÕÉ…Ñ¥½¸µ…¹…•µ•¹ĞÑ½½°±¥­”m¹Í¥‰±•um‘…Ñ…‘½œµ…¹Í¥‰±•t½Èm¡•™um‘…Ñ…‘½œµ¡•™tÑ¼…ÕÑ½µ…Ñ”Ñ¡”‘•Á±½åµ•¹Ğ…¹½¹™¥ÕÉ…Ñ¥½¸½˜Ñ¡”…Ñ…‘½œ•¹Ğ¸((ŒŒŒ%¹ÍÑ…±±¥¹œÑ¡”Ñ¥Ù•5D¥¹Ñ•É…Ñ¥½¸)e½ÔÙ”¹½Ü½¹™¥ÕÉ•Ñ¡”•¹ĞÑ¼½±±•ĞÑ¥Ù•5Dµ•ÑÉ¥Ì™É½´)5`…¹™É½´Ñ¡”]•ˆ½¹Í½±”Ìa50Á…•Ì¸e½ÔÙ”…±Í¼½¹™¥ÕÉ•Ñ¡”•¹ĞÑ¼½±±•Ğµ•ÑÉ¥Ì…‰½ÕĞÑ¡”)Y4ÌÉ•Í½ÕÉ”ÕÍ…”…¹…É‰…”½±±•Ñ¥½¸…Ñ¥Ù¥Ñä¸9•áĞ°å½ÔÍ¥µÁ±ä¹••Ñ¼•¹…‰±”Ñ¡”Ñ¥Ù•5D…¹)…Ù„¥¹Ñ•É…Ñ¥½¹ÌÍ¼å½Ô…¸Ù¥ÍÕ…±¥é”…¹µ½¹¥Ñ½ÈÑ¡•Í”µ•ÑÉ¥Ì¸()Y¥Í¥ĞÑ¡”mÑ¥Ù•5D¥¹Ñ•É…Ñ¥½¸Ñ¥±•um‘…Ñ…‘½œµ…Ñ¥Ù•µÄµ¥¹Ñ•É…Ñ¥½¹t¥¸å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸±¥¬Ñ¡”€¨©½¹™¥ÕÉ…Ñ¥½¸¨¨Ñ…ˆ°Ñ¡•¸ÍÉ½±°‘½İ¸…¹±¥¬Ñ¡”€¨©%¹ÍÑ…±°%¹Ñ•É…Ñ¥½¸¨¨‰ÕÑÑ½¸¸I•Á•…ĞÑ¡•Í”ÍÑ•ÁÌ™½ÈÑ¡”m)…Ù„¥¹Ñ•É…Ñ¥½¹um‘…Ñ…‘½œµ©…Ù„µ¥¹Ñ•É…Ñ¥½¹t¸)9½ÜÑ¡…Ğå½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¥Ì½¹™¥ÕÉ•Ñ¼½±±•Ğ…¹‘¥ÍÁ±…äÑ¥Ù•5Dµ•ÑÉ¥Ì°å½ÔÉ”É•…‘äÑ¼Ù¥ÍÕ…±¥é”…¹…±•ÉĞ½¸Ñ¡•´¸Q¡”¹•áĞÍ•Ñ¥½¸İ¥±°Í¡½Üå½Ô¡½ÜÑ¼ÍÑ…ÉĞÕÍ¥¹œ‘…Í¡‰½…É‘Ì¥¸…Ñ…‘½œÑ¼Ù¥•Üå½ÕÈÑ¥Ù•5Dµ•ÑÉ¥Ì¸(ŒŒY¥•İ¥¹œÑ¥Ù•5Dµ•ÑÉ¥Ì¥¸…Ñ…‘½œ()ÌÍ½½¸…Ìå½ÔÙ”¥¹ÍÑ…±±•Ñ¡”•¹Ğ…¹•¹…‰±•Ñ¡”Ñ¥Ù•5D¥¹Ñ•É…Ñ¥½¸½¸å½ÕÈ…½Õ¹Ğ°å½Ô±°Í•”€¨©Ñ¥Ù•5D€´=Ù•ÉÙ¥•Ü¨¨½¸å½ÕÈm‘…Í¡‰½…É±¥ÍÑum‘…Ñ…‘½œµ…Ñ¥Ù•µÄµ‘…Í¡‰½…É‘t¸Q¡¥Ì‘…Í¡‰½…É‘¥ÍÁ±…åÌÑ¡”¥µÁ½ÉÑ…¹Ğm‰É½­•ÉumÁ…ÉĞ´Äµ‰É½­•Èµµ•ÑÉ¥Ít…¹m‘•ÍÑ¥¹…Ñ¥½¹umÁ…ÉĞ´Äµ‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ítµ•ÑÉ¥Ìİ”±½½­•…Ğ¥¸A…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ì¸()Q¡”€¨©Ñ¥Ù•5D€´=Ù•ÉÙ¥•Ü¨¨‘…Í¡‰½…É‘¥ÍÁ±…åÌÍÑ…Ñ¥ÍÑ¥Ì…¹ÑÉ•¹‘ÌÑ¡…Ğ¡•±Àå½ÔÑÉ…¬Ñ¡”Á•É™½Éµ…¹”½˜å½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”¸… É…Á ½¸Ñ¡”‘…Í¡‰½…ÉÁÉ½Ù¥‘•Ì¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ½¹”½Èµ½É”¥µÁ½ÉÑ…¹ĞÑ¥Ù•5Dµ•ÑÉ¥Ì°…¹¥Ù•Ìå½Ô„ÍÑ…ÉÑ¥¹œÁ½¥¹ĞÑ¼¥¹Ù•ÍÑ¥…Ñ”Á½Ñ•¹Ñ¥…°ÁÉ½‰±•µÌ¸()Q¼•Ğ•Ù•¸µ½É”½ÕĞ½˜å½ÕÈÑ¥Ù•5D‘…Í¡‰½…É°å½Ô…¸ÕÍÑ½µ¥é”¥ĞÑ¼‘¥ÍÁ±…äµ•ÑÉ¥Ì™É½´É•±…Ñ••±•µ•¹ÑÌ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°ÍÕ …ÌÑ¡”)Y4Ìµ•µ½ÉäÕÍ…”…¹Ñ¡É•…½Õ¹Ğ¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í Ø¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜„ÕÍÑ½µ¥é•Ñ¥Ù•5D‘…Í¡‰½…ÉÍ¡½İ¥¹œÅÕ•Õ”Í¥é”°ÅÕ•Õ”µ•µ½ÉäÕÍ…”°¡•…Àµ•µ½ÉäÕÍ…”°…¹)Y4Ñ¡É•…½Õ¹Ğ¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()Q¼É•…Ñ”„ÕÍÑ½´‘…Í¡‰½…É°™¥ÉÍĞ±½¹”Ñ¡”€¨©Ñ¥Ù•5D€´=Ù•ÉÙ¥•Ü¨¨‘…Í¡‰½…É‰ä±¥­¥¹œÑ¡”•…È¥¸Ñ¡”Ñ½ÀÉ¥¡Ğ…¹Í•±•Ñ¥¹œ€¨©±½¹”…Í¡‰½…É¨¨¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í İ¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜Ñ¡”½ÕĞµ½˜µÑ¡”µ‰½àÑ¥Ù•5D‘…Í¡‰½…É°¡¥¡±¥¡Ñ¥¹œÑ¡”±½¹”…Í ‰ÕÑÑ½¸¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()±¥¬Ñ¡”€¨©‘¥Ğ	½…É¨¨‰ÕÑÑ½¸…ĞÑ¡”Ñ½À½˜Ñ¡”Á…”Ñ¼ÍÑ…ÉĞ…‘‘¥¹œÑ¡”İ¥‘•ÑÌå½Ô¹••Ñ¼mÉ…Á Ñ¡”‘…Ñ…um‘…Ñ…‘½œµÉ…Á¡¥¹tÑ¡…ÓŠeÌ¥µÁ½ÉÑ…¹ĞÑ¼å½Ô¸e½Ô…¸ÕÍÑ½µ¥é”å½ÕÈ‘…Í¡‰½…Éİ¥Ñ µ•ÑÉ¥Ì°±½Ì°…¹ÑÉ…•Ì™É½´…¹ä½˜…Ñ…‘½œÌíìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô¬¥¹Ñ•É…Ñ¥½¹ÌÑ¼•Ğ„Õ¹¥™¥•Ù¥•Ü½˜å½ÕÈ•¹Ñ¥É”µ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”¥¸„Í¥¹±”Á…¹”½˜±…ÍÌ¸()Q¡”ÍÉ••¹Í¡½Ğ‰•±½ÜÍ¡½İÌ¡½Üå½Ô…¸…‘„É…Á Ñ¼å½ÕÈÕÍÑ½´‘…Í¡‰½…ÉÑ¡…Ğ‘¥ÍÁ±…åÌ¡•…Àµ•µ½ÉäÕÍ…”½¸Ñ¡”¡½ÍĞ¹…µ•€¨©µäµ…Ñ¥Ù•µÄµ¡½ÍĞ¨¨¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í à¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜Ñ¡”É…Á •‘¥Ñ½È°Í¡½İ¥¹œ„)Y4¡•…Àµ•µ½Éäµ•ÑÉ¥Œ¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()%˜Ñ¡”µ•ÑÉ¥Œ‘…Ñ„Ù¥ÍÕ…±¥é•½¸å½ÕÈ‘…Í¡‰½…É¥¹‘¥…Ñ•Ì„Á½Ñ•¹Ñ¥…°ÁÉ½‰±•´°å½ÕÈ±½Ì…¸‰”„¡•±Á™Õ°Í½ÕÉ”½˜™ÕÉÑ¡•È¥¹™½Éµ…Ñ¥½¸¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°İ…±¬Ñ¡É½Õ ¡½ÜÑ¼½±±•Ğ…¹Ù¥•ÜÑ¥Ù•5D±½Ì¸((ŒŒ	É¥¹¥¹œ¥¸Ñ¥Ù•5D±½Ì()e½Ô…¸½ÉÉ•±…Ñ”±½Ìİ¥Ñ µ•ÑÉ¥ÌÑ¼É•Ù•…°½¹Ñ•áĞ…É½Õ¹…¹½µ…±¥•Ìå½ÔÍ•”½¸å½ÕÈ‘…Í¡‰½…É‘Ì¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°Í¡½Üå½Ô¡½ÜÑ¼ÕÍ”…Ñ…‘½œÑ¼½±±•Ğ…¹ÁÉ½•ÍÌå½ÕÈÑ¥Ù•5D±½Ì°Í¼å½Ô…¸Í•…É °É…Á °…¹…±åé”°…¹…±•ÉĞ½¸Ñ¡•´¸((ŒŒŒ¹…‰±¥¹œ±½œ½±±•Ñ¥½¸()¥ÉÍĞ°å½Ô±°¹••Ñ¼½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼½±±•Ğ±½Ì™É½´å½ÕÈÑ¥Ù•5D¡½ÍĞ¸1½œ½±±•Ñ¥½¸¥Ì‘¥Í…‰±•¥¸Ñ¡”•¹Ğ‰ä‘•™…Õ±Ğ°Í¼å½Ô±°¹••Ñ¼•¹…‰±”¥Ğ‰ä•‘¥Ñ¥¹œÑ¡”•¹ÓŠeÌ½¹™¥ÕÉ…Ñ¥½¸™¥±”€ ¨©‘…Ñ…‘½œ¹å…µ°¨¨¤¸Q¡”Á…Ñ Ñ¼Ñ¡¥Ì™¥±”‘¥™™•ÉÌ…É½ÍÌÁ±…Ñ™½ÉµÌ°Í¼½¹ÍÕ±ĞÑ¡”m•¹ĞÌ‘½Õµ•¹Ñ…Ñ¥½¹um‘…Ñ…‘½œµ…•¹Ğµ‘½Ít™½È¥¹™½Éµ…Ñ¥½¸ÍÁ•¥™¥ŒÑ¼å½ÕÈ=L¸=Á•¸Ñ¡”™¥±”°Ñ¡•¸Õ¹½µµ•¹Ğ…¹ÕÁ‘…Ñ”Ñ¡”±½Í}•¹…‰±•‘€±¥¹”Ñ¼É•…è()€)±½Í}•¹…‰±•èÑÉÕ”)€()9•áĞ°mÉ•ÍÑ…ÉĞÑ¡”•¹Ñum‘…Ñ…‘½œµÉ•ÍÑ…ÉÑtÑ¼‰•¥¸™½Éİ…É‘¥¹œå½ÕÈ¡½ÍĞÌ±½ÌÑ¼å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸((ŒŒŒ½¹™¥ÕÉ¥¹œÑ¡”¥¹Ñ•É…Ñ¥½¸()Q¡”•¹Ğ¹••‘ÌÑ¼‰”…‰±”Ñ¼™¥¹…¹…•ÍÌå½ÕÈÑ¥Ù•5D±½Ì¸	ä‘•™…Õ±Ğ°Ñ¥Ù•5DÍÑ½É•Ì±½Ì¥¸Ñ¡”€¨©‘…Ñ„¼¨¨ÍÕ‰‘¥É•Ñ½Éä½˜å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸e½Ô…¸™¥¹Ñ¡”Á…Ñ Ñ¼Ñ¡¥Ì‘¥É•Ñ½Éä¥¸Ñ¡”€‰5	•…¹ÌˆÑ…ˆ½˜m)½¹Í½±•umÁ…ÉĞ´Èµ©µàµ…¹µ©½¹Í½±•t¸e½Ô±°Í•”¥Ğ±¥ÍÑ•…ÌÑ¡”Ù…±Õ”½˜Ñ¡”‰É½­•ÈÌ…Ñ…¥É•Ñ½Éå€)5`…ÑÑÉ¥‰ÕÑ”¸()íìğ¥µœÍÉŒô‰©½¹Í½±”Ğ¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜)½¹Í½±”Ì5	•…¹ÌÑ…ˆ°¡¥¡±¥¡Ñ¥¹œÑ¡”…Ñ…¥É•Ñ½Éä…ÑÑÉ¥‰ÕÑ”¸ˆùõô()5…­”ÍÕÉ”Ñ¡”‘µ…•¹Ñ€ÕÍ•È¡…ÌÉ•……•ÍÌÑ¼Ñ¡”…Ñ…¥É•Ñ½Éå€‘¥É•Ñ½Éä°Í¼Ñ¡…ĞÑ¡”•¹Ğ…¸…•ÍÌÑ¡”Ñ¥Ù•5D±½Ì¸()Ñ¥Ù•5D¥Ì‰Õ¥±Ğ½¸)…Ù„°Í¼å½Ô…¸ÕÍ”…Ñ…‘½œÌ)…Ù„¥¹Ñ•É…Ñ¥½¸Ñ¼½±±•Ğ…¹ÁÉ½•ÍÌå½ÕÈÑ¥Ù•5D±½Ì¸É•…Ñ”„)…Ù„½¹™¥ÕÉ…Ñ¥½¸™¥±”¹…µ•€¨©©…Ù„¹å…µ°¨¨¥¸Ñ¡”•¹ĞÌ€¨©½¹˜¹¼¨¨ÍÕ‰‘¥É•Ñ½Éä…¹…‘Ñ¡”™½±±½İ¥¹œ½¹Ñ•¹Ğ°µ…­¥¹œÍÕÉ”Ñ¼É•Á±…”€ñ…Ñ…¥É•Ñ½Éäù€İ¥Ñ Ñ¡”½ÉÉ•ĞÁ…Ñ è()€(Œ½¹˜¹½©…Ù„¹å…µ°()±½Ìè(€€´ÑåÁ”è™¥±”(€€€Á…Ñ è€ñ…Ñ…¥É•Ñ½Éäø½…Ñ¥Ù•µÄ¹±½œ(€€€Í•ÉÙ¥”è…Ñ¥Ù•µÄ(€€€Í½ÕÉ”è©…Ù„(()€()Q¡”Í•ÉÙ¥”è…Ñ¥Ù•µÅ€±¥¹”¥¸€¨©©…Ù„¹å…µ°¨¨…±±½İÌå½ÔÑ¼‘¥ÍÑ¥¹Õ¥Í …¹‘¥Í…É•…Ñ”Ñ¡•Í”±½Ì™É½´…¹ä½Ñ¡•È)…Ù„±½Ìå½Ôµ…ä‰”½±±•Ñ¥¹œ€¡…¹…ÕÑ½µ…Ñ¥…±±ä…ÍÍ½¥…Ñ•Ìå½ÕÈ±½Ìİ¥Ñ mA4µ•ÑÉ¥Ì…¹ÑÉ…•Íum‘…Ñ…‘½œµ©…Ù„µ…Áµt™É½´Ñ¡”Í…µ”Í•ÉÙ¥”¤¸e½Ô…¸…±Í¼½¹™¥ÕÉ”…Ñ…‘½œÑ¼½±±•Ğ±½Ì™É½´½Ñ¡•È)…Ù„…ÁÁ±¥…Ñ¥½¹Ì½¸Ñ¡¥Ì¡½ÍĞİ¥Ñ¡¥¸Ñ¡”Í…µ”€¨©©…Ù„¹å…µ°¨¨™¥±—ŠQÍ¥µÁ±äÉ•…Ñ”…‘‘¥Ñ¥½¹…°€´ÑåÁ”é€‰±½­Ì…Ì¹••ÍÍ…Éä°…¹‘¥™™•É•¹Ñ¥…Ñ”•… …ÁÁ±¥…Ñ¥½¸‰ä¥Ù¥¹œ¥Ğ„Õ¹¥ÅÕ”Í•ÉÙ¥•€Ù…±Õ”¸()9½Ñ”Ñ¡…Ğ€¨©©…Ù„¹å…µ°¨¨…ÍÍ¥¹Ì„Í½ÕÉ•€Ù…±Õ”½˜©…Ù…€Ñ¼Ñ¡”Ñ¥Ù•5D±½Ì°İ¡¥ İ¥±°…ÕÑ½µ…Ñ¥…±±äÑÉ¥•È…Ñ…‘½œÌ)…Ù„±½œÁÉ½•ÍÍ¥¹œmÁ¥Á•±¥¹•um‘…Ñ…‘½œµÁ¥Á•±¥¹”µ‘½ÍtÑ¼ÁÉ½•ÍÌÑ¡•´¸Q¡”Á¥Á•±¥¹”…ÁÁ±¥•ÌÁ…ÉÍ¥¹œÉÕ±•ÌÑ¡…Ğ•áÑÉ…Ğ±½œ™…•ÑÌ…¹…ÑÑÉ¥‰ÕÑ•Ì¸Q¡¥ÌÕ±Ñ¥µ…Ñ•±ä‘•Ñ•Éµ¥¹•Ì¡½Ü•… ±½œİ¥±°‰”‘¥ÍÁ±…å•°…¹¥Ù•Ìå½ÔÁ½İ•É™Õ°İ…åÌÑ¼mÍ•…É …¹™¥±Ñ•Èå½ÕÈ±½Ì¥¸…Ñ…‘½um‘…Ñ…‘½œµ±½œµÍ•…É¡t¸Q¡”)…Ù„±½œÁ¥Á•±¥¹”İ¥±°É•ÅÕ¥É”å½ÕÈÑ¥Ù•5D±½ÌÑ¼‰”İÉ¥ÑÑ•¸¥¸„Á…ÉÑ¥Õ±…È™½Éµ…Ğ¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°½¹™¥ÕÉ”Ñ¥Ù•5DÑ¼™½Éµ…Ğ¥ÑÌ±½ÌÑ¼µ…Ñ Ñ¡”Á…ÑÑ•É¸•áÁ•Ñ•‰äÑ¡”)…Ù„±½œÁ¥Á•±¥¹”¸(()…Ñ…‘½œİ¥±°…ÕÑ½µ…Ñ¥…±±äÑ…œå½ÕÈÑ¥Ù•5D±½Ìİ¥Ñ Ñ¡”Á…É…µ•Ñ•ÉÌ±¥ÍÑ•¥¸å½ÕÈe50™¥±”€¡”¹œ¸°Í•ÉÙ¥”é…Ñ¥Ù•µÅ€…¹Í½ÕÉ”é©…Ù…€¤°…¹å½Ô…¸•…Í¥±ä¥¹±Õ‘”…¹ä…‘‘¥Ñ¥½¹…°Ñ…ÌÑ¡…Ğ…É”ÕÍ•™Õ°Ñ¼å½Ô¸Q¡”•á…µÁ±”‰•±½Ü•áÑ•¹‘ÌÑ¡”©…Ù„¹å…µ±€™¥±”™É½´…‰½Ù”Ñ¼¥¹±Õ‘”Ñİ¼ÕÍÑ½´Ñ…Ì°Ñ•…µ€…¹…Ñ•½Éå€¸()€(Œ½¹˜¹½©…Ù„¹å…µ°()±½Ìè(€€´ÑåÁ”è™¥±”(€€€Á…Ñ è€ñ…Ñ…¥É•Ñ½Éäø½…Ñ¥Ù•µÄ¹±½œ(€€€Í•ÉÙ¥”è…Ñ¥Ù•µÄ(€€€Í½ÕÉ”è©…Ù„(€€€Ñ…Ìè(€€€€€€´€Ñ•…´é‘•Ù•±½Áµ•¹Ğœ(€€€€€€´€…Ñ•½Éäéµ•ÍÍ…¥¹œœ)€()Q¼±½…å½ÕÈÕÁ‘…Ñ•½¹™¥ÕÉ…Ñ¥½¸°É•ÍÑ…ÉĞÑ¡”•¹Ğ‰äÕÍ¥¹œÑ¡”…ÁÁÉ½ÁÉ¥…Ñ”m½µµ…¹‘um‘…Ñ…‘½œµÉ•ÍÑ…ÉÑt™½Èå½ÕÈ=L¸((ŒŒŒ½Éµ…ÑÑ¥¹œ±½Ì()…Ñ…‘½œÌ±½œÁÉ½•ÍÍ¥¹œmÁ¥Á•±¥¹•Íum‘…Ñ…‘½œµÁ¥Á•±¥¹”µ‘½ÍtÁ…ÉÍ”¥¹½µ¥¹œ±½ÌÑ¼•áÑÉ…Ğ…ÑÑÉ¥‰ÕÑ•Ìå½Ô…¸ÕÍ”…Ì™…•ÑÌÑ¼Í•…É å½ÕÈ±½Ì¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°İ…±¬Ñ¡É½Õ ÕÁ‘…Ñ¥¹œå½ÕÈÑ¥Ù•5D±½œ™½Éµ…ĞÑ¼µ…­”ÕÍ”½˜Ñ¡”)…Ù„±½œÁ¥Á•±¥¹”¸()	ä‘•™…Õ±Ğ°Ñ¥Ù•5D±½Ì™½±±½Ü„™½Éµ…ĞÑ¡…Ğ±½½­ÌÍ¥µ¥±…ÈÑ¼Ñ¡”½¹”Í¡½İ¸¡•É”è()€(ÈÀÄà´ÄÀ´ÈÈ€ÈÀèÔÄèÔÄ°ÔäÄğ]I8€ğ5•µ½ÉäUÍ…”™½ÈÑ¡”	É½­•È€ ÄÀÈÑµˆ¤¥Ìµ½É”Ñ¡…¸Ñ¡”µ…á¥µÕ´…Ù…¥±…‰±”™½ÈÑ¡”)Y4è€äàäµˆ€´É•Í•ÑÑ¥¹œÑ¼€ÜÀ”½˜µ…á¥µÕ´…Ù…¥±…‰±”è€ØäÈµˆğ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄ¹‰É½­•È¹	É½­•ÉM•ÉÙ¥”ğµ…¥¸)€()Q¼™½Éµ…ĞÑ¡”±½Ì™½ÈÑ¡”)…Ù„±½œÁ¥Á•±¥¹”°•‘¥Ğ€¨©±½œÑ¨¹ÁÉ½Á•ÉÑ¥•Ì¨¨¥¸Ñ¡”€¨©½¹˜¼¨¨ÍÕ‰‘¥É•Ñ½Éä½˜å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸I•Á±…”Ñ¡”±¥¹”Ñ¡…Ğ‰•¥¹Ìİ¥Ñ ±½œÑ¨¹…ÁÁ•¹‘•È¹±½™¥±”¹±…å½ÕĞ¹½¹Ù•ÉÍ¥½¹A…ÑÑ•É¸õ€Ñ¼É•……Ì™½±±½İÌè()€)±½œÑ¨¹…ÁÁ•¹‘•È¹±½™¥±”¹±…å½ÕĞ¹½¹Ù•ÉÍ¥½¹A…ÑÑ•É¸ô•‘íåååäµ54µ‘! éµ´éÍÍô€”´ÕÀ€•ìÅôè•0€´€•´•¸)€()Q¡¥Ì¹•ÜÁ…ÑÑ•É¸Ñ•±±ÌÑ¥Ù•5DÑ¼™½Éµ…Ğ•… ±½œÍ¥µ¥±…ÈÑ¼Ñ¡”½¹”Í¡½İ¸¡•É”è()€(ÈÀÄà´ÄÀ´ÈÈ€ÈÀèÔÄèÔÄ]I8€	É½­•ÉM•ÉÙ¥”èÈÄàà€´5•µ½ÉäUÍ…”™½ÈÑ¡”	É½­•È€ ÄÀÈÑµˆ¤¥Ìµ½É”Ñ¡…¸Ñ¡”µ…á¥µÕ´…Ù…¥±…‰±”™½ÈÑ¡”)Y4è€äàäµˆ€´É•Í•ÑÑ¥¹œÑ¼€ÜÀ”½˜µ…á¥µÕ´…Ù…¥±…‰±”è€ØäÈµˆ)€()…Ñ…‘½œÌ±½œÁ¥Á•±¥¹”™½È)…Ù„İ¥±°É•½¹¥é”Ñ¡¥Ì™½Éµ…Ğ…¹…ÕÑ½µ…Ñ¥…±±äÁÉ½•ÍÌÑ¡”±½Ì¸()Q¼…ÁÁ±äÑ¡¥Ì¡…¹”°É•ÍÑ…ÉĞÑ¥Ù•5D¸M•”Ñ¡”mÑ¥Ù•5D‘½Õµ•¹Ñ…Ñ¥½¹um…Á…¡”µ…Ñ¥Ù•µÄµ•ÑÑ¥¹œµÍÑ…ÉÑ•‘t™½Èå½ÕÈÁ±…Ñ™½É´ÌÍÑ½À…¹ÍÑ…ÉĞ½µµ…¹‘Ì¸((ŒŒŒY¥•İ¥¹œ±½Ì()Q¼Í•”…±°å½ÕÈÑ¥Ù•5D±½Ì°Ù¥Í¥ĞÑ¡”m1½œáÁ±½É•Éum‘…Ñ…‘½œµ±½œµ•áÁ±½É•Èµ…Ñ¥Ù•µÅtÁ…”¥¸å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸±¥¬½¸…¹äÉ½ÜÑ¼Í•”™Õ±°¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ„±½œ¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í åˆ¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜Ñ¡”±½œ•áÁ±½É•È°Í¡½İ¥¹œ‘•Ñ…¥°½˜…¸Ñ¥Ù•5D±½œ¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()Q¡¥ÌÍ¡½İÌÑ¡”™Õ±°±½œÑ•áĞ°…¹…±Í¼¡¥¡±¥¡ÑÌÑ¡”¥¹™½Éµ…Ñ¥½¸Ñ¡…Ğİ…Ì•áÑÉ…Ñ•‰äÑ¡”)…Ù„±½œÁ¥Á•±¥¹”°¥¹±Õ‘¥¹œÑ¡”¡½ÍĞ°Í•ÉÙ¥”°Ñ¥µ•ÍÑ…µÀ°…¹Í•Ù•É¥Ñä±•Ù•°¸()=¹”å½ÕÈÑ¥Ù•5D±½Ì…É”½±±•Ñ•…¹ÁÉ½•ÍÍ•°å½Ô…¸ÕÍ”m±½œ…¹…±åÑ¥Íum‘…Ñ…‘½œµ±½œµ…¹…±åÑ¥ÍtÑ¼É•Ù•…°Á…ÑÑ•É¹Ì…¹ÑÉ•¹‘ÌÑ¡…Ğ…¸¡•±Àå½ÔÑÉ½Õ‰±•Í¡½½Ğ¥ÍÍÕ•Ì¥¸å½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”¸e½Ô…¸ÅÕ•Éä…¹‘¥ÍÁ±…ä¥µÁ½ÉÑ…¹Ğ±½œ‘…Ñ„…Ì„Ñ½Á±¥ÍĞ½È„Ñ¥µ•Í•É¥•ÌÉ…Á ¸%¸Ñ¡”ÍÉ••¹Í¡½Ğ‰•±½Ü°İ”Ù”ÕÍ•Ñ¡”Í•Ù•É¥Ñä±•Ù•°…¹Í•ÉÙ¥”™…•ÑÌÑ¼Í•”„Ñ½Á±¥ÍĞ½˜Ñ¡”Ñ¥Ù•5D¡½ÍÑÌÑ¡…Ğ•¹•É…Ñ•Ñ¡”µ½ÍĞ]I9€±½Ì½Ù•ÈÑ¡”Á…ÍĞ€ÄÔµ¥¹ÕÑ•Ì¸Q¡•Í”]I9€±½Ì½Õ±¥¹‘¥…Ñ”°™½È•á…µÁ±”°„5•µ½ÉåUÍ…•€•ÉÉ½È±¥­”Ñ¡”½¹”¥¸Ñ¡”ÍÉ••¹Í¡½Ğ…‰½Ù”¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í ÄÁ„¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜Ñ¡”±½œ…¹…±åÑ¥ÌÙ¥•Ü¥¸±½œ•áÁ±½É•È¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()%ĞÌ•…ÍäÑ¼…‘…¹ä±½œ…¹…±åÑ¥ÌÉ…Á Ñ¼„‘…Í¡‰½…ÉÍ¼Ñ¡…Ğå½Ô…¸Ù¥•Ü¥Ğ…±½¹Í¥‘”½Ñ¡•Èµ•ÑÉ¥Ì¸)ÕÍĞ±¥¬Ñ¡”€¨©áÁ½ÉĞ¨¨‰ÕÑÑ½¸¥¸Ñ¡”Ñ½ÀµÉ¥¡Ğ½É¹•ÈÑ¼…‘¥ĞÑ¼„¹•Ü½È•á¥ÍÑ¥¹œ‘…Í¡‰½…É¸()1½œ…¹…±åÑ¥Ì…±±½İÌå½ÔÑ¼•áÁ±½É”…¹Ù¥ÍÕ…±¥é”å½ÕÈÑ¥Ù•5D±½Ì¥¸Á½İ•É™Õ°¹•Üİ…åÌ¸½ÈÕ¥‘…¹”½¸ÕÍ¥¹œ…±°½˜…Ñ…‘½œÌ±½œµ…¹…•µ•¹Ğ™•…ÑÕÉ•Ì°Í•”Ñ¡”m‘½Õµ•¹Ñ…Ñ¥½¹um‘…Ñ…‘½œµ±½œµ•áÁ±½É•Ét¸((ŒŒQ…¥¹œå½ÕÈµ•ÑÉ¥Ì()!½Á•™Õ±±äå½ÔÙ”…±É•…‘ä‰•Õ¸mÕÍ¥¹œÑ…Íum‘…Ñ…‘½œµÑ…¥¹tÑ¼µ½¹¥Ñ½Èå½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”…¹…ÁÁ±¥…Ñ¥½¹Ì¥¸…Ñ…‘½œ¸e½Ô…¸mÍÑÉ…Ñ•¥…±±äÕÍ”Ñ…Íum‘…Ñ…‘½œµÑ¡”µÁ½İ•Èµ½˜µÑ…•µµ•ÑÉ¥ÍtÑ¼É•…Ñ”¡¥¡±ä™½ÕÍ•‘…Í¡‰½…É‘Ì…¹…±•ÉÑÌÑ¡…ĞÁÉ½Ù¥‘”™¥¹”µÉ…¥¹•¥¹Í¥¡ÑÌ¥¹Ñ¼•Ù•Éä±…å•È½˜å½ÕÈÑ¥Ù•5D•¹Ù¥É½¹µ•¹Ğ¸()…Ñ…‘½œ…ÕÑ½µ…Ñ¥…±±äÑ…Ìå½ÕÈÑ¥Ù•5Dµ•ÑÉ¥Ìİ¥Ñ Ñ¡”¹…µ”½˜Ñ¡”¡½ÍĞ°…¹…ÁÁ±¥•Ì½Ñ¡•ÈÕÍ•™Õ°Ñ…ÌÑ¡…ĞÙ…Éä‘•Á•¹‘¥¹œ½¸Ñ¡”Í½ÕÉ”½˜Ñ¡”µ•ÑÉ¥Œ¸½È•á…µÁ±”°•… …Ñ¥Ù•µÄ¹ÅÕ•Õ”¹Í¥é•€µ•ÑÉ¥Œ¥ÌÑ…•İ¥Ñ Ñ¡”ÅÕ•Õ•€¥Ğ…µ”™É½´°…¹…Ñ¥Ù•µÄ¹Ñ½Á¥Œ¹Í¥é•€µ•ÑÉ¥Ì…ÕÑ½µ…Ñ¥…±±ä•ĞÑ…•İ¥Ñ Ñ¡”Ñ½Á¥€¸()%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°İ…±¬Ñ¡É½Õ ¡½ÜÑ¼ÕÍ”ÕÍÑ½´Ñ…ÌÑ¼…‘µ½É”‘¥µ•¹Í¥½¹ÌÑ¼å½ÕÈµ•ÑÉ¥ÌÍ¼å½Ô…¸™¥±Ñ•È…¹…É•…Ñ”Ñ¡•´Ñ¼ÍÕ¥Ğå½ÕÈµ½¹¥Ñ½É¥¹œ¹••‘Ì¸	•…ÕÍ”Ñ¡”…Ñ…‘½œ•¹Ğ…•ÍÍ•ÌÑ¥Ù•5Dµ•ÑÉ¥Ì™É½´)5`…¹Ñ¡”]•ˆ½¹Í½±”°İ”±°Í¡½Üå½Ô¡½ÜÑ¼Ñ…œµ•ÑÉ¥Ì™É½´‰½Ñ Í½ÕÉ•Ì¸	ÕĞ™¥ÉÍĞİ”±°‘•µ½¹ÍÑÉ…Ñ”¡½Ü…ÁÁ±å¥¹œÕÍÑ½´Ñ…Ì…¸¡•±Àå½Ô‰•ÑÑ•ÈÕ¹‘•ÉÍÑ…¹Ñ¡”Á•É™½Éµ…¹”½˜å½ÕÈÑ¥Ù•5D¥¹™É…ÍÑÉÕÑÕÉ”¸((ŒŒŒUÍ¥¹œÕÍÑ½´Ñ…Ì()%˜‘•™…Õ±ĞÑ…Ì±¥­”¡½ÍÑ€½ÈÑ½Á¥€‘½¸Ğ¥Ù”å½Ô•¹½Õ ¥¹™½Éµ…Ñ¥½¸Ñ¼µ½¹¥Ñ½Èİ¡…ĞÌ¥µÁ½ÉÑ…¹Ğ¥¸å½ÕÈÑ¥Ù•5D¥¹™É…ÍÑÉÕÑÕÉ”°å½Ô…¸…ÁÁ±äÕÍÑ½´Ñ…ÌÑ¼…‘‘¥µ•¹Í¥½¹ÌÑ¼å½ÕÈµ•ÑÉ¥Ì¸ÕÍÑ½´Ñ…Ì¥Ù”å½ÔÉ•…Ñ•È½¹ÑÉ½°½Ù•Èİ¡…Ğå½Ô…¸Ù¥ÍÕ…±¥é”…¹µ½¹¥Ñ½È¸()½È•á…µÁ±”°¥˜å½Ôİ•É”½Á•É…Ñ¥¹œÑİ¼Ñ¥Ù•5D‰É½­•ÉÏŠQ½¹”Ñ¼ÁÉ½•ÍÌ½É‘•ÉÌ™½È„ÁÉ½‘ÕĞ¹…µ•€…¹…¹½Ñ¡•È™½È„ÁÉ½‘ÕĞ¹…µ•	ƒŠQå½Ô½Õ±Ñ…œÑ¡”‰É½­•ÉÌ…½É‘¥¹œÑ¼ÁÉ½‘ÕĞ¸Ìå½ÕÈ½Á•É…Ñ¥½¸Í…±•Ì°Ñ¡”½É‘•É¥¹œÁÉ½•ÍÌ™½È•… ÁÉ½‘ÕĞ½Õ±É•ÅÕ¥É”µÕ±Ñ¥Á±”¡½ÍÑÌ°Á•É¡…ÁÌ•Ù•¸™É½´µÕ±Ñ¥Á±”±½ÕÁÉ½Ù¥‘•ÉÌ¸	ÕĞå½ÕÈÁÉ½‘ÕÑ€Ñ…œİ½Õ±ÍÑ¥±°…±±½Üå½ÔÑ¼Ù¥ÍÕ…±¥é”µ•ÑÉ¥ÌÁ•ÈÁÉ½‘ÕĞ¸e½Ô½Õ±Ñ¡•¸ÕÍÑ½µ¥é”å½ÕÈÑ¥Ù•5D‘…Í¡‰½…ÉÑ¼É…Á Ñ¡”ÅÕ•Õ”Í¥é”½˜•… ÁÉ½‘ÕĞ¥¸„Í¥¹±”Ù¥•Ü¸Q¡”™½±±½İ¥¹œÍÉ••¹Í¡½Ğ¥±±ÕÍÑÉ…Ñ•ÌÑ¡¥Ì•á…µÁ±”¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í ÄÄ¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜„Ñ¥µ•Í•É¥•ÌÉ…Á Í¡½İ¥¹œÅÕ•Õ”½Õ¹ÑÌ™½È‰½Ñ ÁÉ½‘ÕĞ…¹ÁÉ½‘ÕĞ¸ˆİ¥‘”ô‰ÑÉÕ”ˆ…ÁÑ¥½¸ô‰%¸„ÍåÍÑ•´Ñ¡…ĞÕÍ•ÌµÕ±Ñ¥Á±”‰É½­•ÉÌÑ¼ÁÉ½•ÍÌ½É‘•ÉÌ™½ÈÑİ¼‘¥™™•É•¹ĞÁÉ½‘ÕÑÌ°å½Ô…¸ÕÍ”ÕÍÑ½´Ñ…ÌÑ¼…ÍÍ½¥…Ñ”•… ‰É½­•ËŠeÌÑÉ…™™¥Œİ¥Ñ „ÍÁ•¥™¥ŒÁÉ½‘ÕĞ¸Q¡¥ÌÑ¡•¸…±±½İÌå½ÔÑ¼ÑÉ…¬ÑÉ•¹‘Ì¥¸Ñ¡”ÅÕ•Õ”Ù½±Õµ”Á•ÈÁÉ½‘ÕĞ°…É½ÍÌ…¹ä¹Õµ‰•È½˜¡½ÍÑÌ¸ˆ€ùõô()UÍ¥¹œ½¹Í¥ÍÑ•¹ĞÑ…Ì…É½ÍÌå½ÕÈÑ¥Ù•5D±½Ì…¹µ•ÑÉ¥Ìµ…­•Ì¥Ğ•…ÍäÑ¼½ÉÉ•±…Ñ”Ñ¡•´¥¸å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ¸%¸Ñ¡”ÍÉ••¹Í¡½Ğ‰•±½Ü°Ñ¡”É…Á Á±½ÑÌÑ¡”Í¥é”½˜ÅÕ•Õ•ÌÑ…•Í•ÉÙ¥”é…Ñ¥Ù•µÅ€¸e½Ô…¸±¥¬½¸…¹äÁ½¥¹Ğ¥¸Ñ¡”Ñ¥µ•Í•É¥•ÌÉ…Á Ñ¼•…Í¥±ä¹…Ù¥…Ñ”Ñ¼±½ÌÑ¡…ĞÍ¡…É”Ñ¡”Í…µ”Í•ÉÙ¥•€Ñ…œ…¹İ•É”•¹•É…Ñ•…É½Õ¹Ñ¡”Í…µ”Ñ¥µ”¸%¸Ñ¡”ÕÁ½µ¥¹œÍ•Ñ¥½¹Ì°İ”±°Í¡½Üå½Ô¡½ÜÑ¼…ÁÁ±äÑ¡”Í•ÉÙ¥”é…Ñ¥Ù•µÅ€Ñ…œÑ¼Ñ¥Ù•5DÌ]•ˆ½¹Í½±”…¹)5`µ•ÑÉ¥Ì¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}‘…Í ÄÉˆ¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜„É…Á Ñ¡…Ğ¥¹±Õ‘•Ì„½¹Ñ•áĞµ•¹Ôå½Ô…¸ÕÍ”Ñ¼¹…Ù¥…Ñ”Ñ¼Ù¥•ÜÉ•±…Ñ•±½Ì¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒQ…¥¹œµ•ÑÉ¥Ì™É½´Ñ¡”]•ˆ½¹Í½±”()Q¼…‘ÕÍÑ½´Ñ…ÌÑ¼µ•ÑÉ¥ÌÑ¡…Ğ½µ”™É½´Ñ¡”Ñ¥Ù•5D]•ˆ½¹Í½±”°å½Ô±°¹••Ñ¼•‘¥ĞÑ¡”€¨©…Ñ¥Ù•µÅ}áµ°¹½½¹˜¹å…µ°¨¨™¥±”å½ÔÉ•…Ñ••…É±¥•È¸Q¡”Í…µÁ±”½‘”‰•±½Ü…‘‘ÌÑ¡”Í…µ”Í•ÉÙ¥”é…Ñ¥Ù•µÅ€Ñ…œİ”ÕÍ•¥¸Ñ¡”±½œ½¹™¥ÕÉ…Ñ¥½¸Í•Ñ¥½¸•…É±¥•È¸()€(Œ…Ñ¥Ù•µÅ}áµ°¹½½¹˜¹å…µ°()¥¹ÍÑ…¹•Ìè(€€´ÕÉ°è¡ÑÑÀè¼½±½…±¡½ÍĞèàÄØÄ(€€€ÕÍ•É¹…µ”è…‘µ¥¸(€€€Á…ÍÍİ½Éè€ñ5e}AMM]=Iø(€€€Ñ…Ìè(€€€€€€´€Í•ÉÙ¥”é…Ñ¥Ù•µÄœ)€()Q¡”ÁÉ½•ÍÌ™½È…‘‘¥¹œÕÍÑ½´Ñ…ÌÑ¼Ñ¥Ù•5DÌ)5`µ•ÑÉ¥Ì¥ÌÍ¥µ¥±…È°…Ìİ”±°‘•µ½¹ÍÑÉ…Ñ”¥¸Ñ¡”¹•áĞÍ•Ñ¥½¸¸((ŒŒŒQ…¥¹œµ•ÑÉ¥Ì™É½´)5`()Q¼…‘ÕÍÑ½´Ñ…ÌÑ¼Ñ¡”µ•ÑÉ¥ÌÑ¡…Ğ½µ”™É½´)5`°•‘¥ĞÑ¡”€¨©½¹˜¹å…µ°¨¨™¥±”¥¸Ñ¡”€¨©…Ñ¥Ù•µÄ¹¼¨¨ÍÕ‰‘¥É•Ñ½ÉäÕ¹‘•È€¨©½¹˜¹¼¨¨¸Q¡”•á…µÁ±”‰•±½Ü…‘‘ÌÑ¡”Í…µ”Í•ÉÙ¥•€Ñ…œİ”ÕÍ••…É±¥•È¸()€(Œ…Ñ¥Ù•µÄ¹½½¹˜¹å…µ°()¥¹ÍÑ…¹•Ìè(€€´¡½ÍĞè±½…±¡½ÍĞ(€€€Á½ÉĞè€ÄÀää(€€€Ñ…Ìè(€€€€€€´€Í•ÉÙ¥”é…Ñ¥Ù•µÄœ)€()mI•ÍÑ…ÉĞÑ¡”•¹Ñum‘…Ñ…‘½œµÉ•ÍÑ…ÉÑtÑ¼…ÁÁ±äÑ¡”É•Ù¥Í•½¹™¥ÕÉ…Ñ¥½¸¸()=¹”å½ÔÙ”…ÁÁ±¥•ÕÍÑ½´Ñ…ÌÑ¼å½ÕÈµ•ÑÉ¥Ì°å½Ô…¸ÍÑ…ÉĞÕÍ¥¹œÑ¡•´Ñ¼É•…Ñ”µ½É”Ñ…É•Ñ•É…Á¡Ì…¹…±•ÉÑÌ¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°İ…±¬Ñ¡É½Õ ¡½ÜÑ¼Í•ĞÕÀ…±•ÉÑÌ¥¸…Ñ…‘½œ¸((ŒŒUÍ¥¹œ…±•ÉÑÌÑ¼ÍÑ…ä¥¹™½Éµ•()±•ÉÑÌ­••Àå½Ô¥¹™½Éµ•½˜Á½Ñ•¹Ñ¥…°¥ÍÍÕ•Ì¥¸å½ÕÈÑ¥Ù•5D¥¹™É…ÍÑÉÕÑÕÉ”¸e½Ô…¸ÕÍ”Ñ…Ì¥¸å½ÕÈ…±•ÉĞ‘•™¥¹¥Ñ¥½¹ÌÑ¼É•…Ñ”µ½É”™½ÕÍ•…¹…Ñ¥½¹…‰±”…±•ÉÑÌ¸UÍ¥¹œ½ÕÈÕÍÑ½´ÁÉ½‘ÕÑ€Ñ…œ™É½´Ñ¡”•á…µÁ±”¥¸Ñ¡”ÁÉ•Ù¥½ÕÌÍ•Ñ¥½¸°Ñ¡”ÍÉ••¹Í¡½Ğ‰•±½Ü¥±±ÕÍÑÉ…Ñ•Ì¡½Üå½Ô½Õ±Í•ĞÕÀ…¸…±•ÉĞÑ¡…Ğİ¥±°ÑÉ¥•È¥˜Ñ¡”EÕ•Õ•M¥é•€µ•ÑÉ¥ŒÉ¥Í•Ì…‰½Ù”€ÄÀ°ÀÀÀ½¹±ä½¸ÅÕ•Õ•ÌÑ…•İ¥Ñ ÁÉ½‘ÕĞé…€¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}…±•ÉĞÄ¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½ĞÍ¡½İ¥¹œÑ¡”½¹ÑÉ½±Ìå½ÔÕÍ”Ñ¼É•…Ñ”„¹•Ü…±•ÉĞ¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()e½Ô…¸Í•ĞÕÀ…±•ÉÑÌÑ¼…ÕÑ½µ…Ñ¥…±±äµ½¹¥Ñ½È…¹ä½˜Ñ¡”­•äÑ¥Ù•5Dµ•ÑÉ¥Ìİ”¥‘•¹Ñ¥™¥•¥¸A…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ì¸Q¡”•á…µÁ±”‰•±½ÜÍ¡½İÌ„m™½É•…ÍĞ…±•ÉÑum‘…Ñ…‘½œµ™½É•…ÍĞµµ½¹¥Ñ½É¥¹tÑ¡…Ğİ¥±°ÑÉ¥•È¥˜Ñ¡”‰É½­•ÈÌQ•µÁA•É•¹ÑUÍ…•€Ù…±Õ”¥Ì•áÁ•Ñ•Ñ¼É¥Í”…‰½Ù”€àÀ”¥¸Ñ¡”¹•áĞİ••¬¸%˜Ñ¡¥Ì…±•ÉĞÑÉ¥•ÉÌ°å½Ôµ…ä¹••Ñ¼Í…±”½ÕĞå½ÕÈ™±••Ğ½˜½¹ÍÕµ•ÉÌÑ¼É•‘Õ”Ñ¡”¹Õµ‰•È½˜µ•ÍÍ…•Ì¥¸Ñ¡”ÅÕ•Õ”°½ÈÉ•Ù¥Í”å½ÕÈ‰É½­•È½¹™¥ÕÉ…Ñ¥½¸Ñ¼¥¹É•…Í”Ñ¡”…Ù…¥±…‰±”ÍÑ½É…”ÍÁ…”€¡Ñ•µÁUÍ…•€¤¸()íìğ¥µœÍÉŒô‰…Ñ¥Ù•µÅ}…±•ÉĞÉ”¹Á¹œˆ…±Ğô‰MÉ••¹Í¡½ĞÍ¡½İ¥¹œÑ¡”½¹ÑÉ½±Ìå½ÔÕÍ”Ñ¼É•…Ñ”„¹•Ü…±•ÉĞ¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()e½Ô…¸¥¹Ñ•É…Ñ”å½ÕÈ…Ñ…‘½œ…½Õ¹Ğİ¥Ñ A…•ÉÕÑä°M±…¬°…¹µ…¹ä½Ñ¡•Èm¹½Ñ¥™¥…Ñ¥½¹um‘…Ñ…‘½œµ¥¹Ñ•É…Ñ¥½¸µ¹½Ñ¥™¥…Ñ¥½¹t…¹m½±±…‰½É…Ñ¥½¹um‘…Ñ…‘½œµ¥¹Ñ•É…Ñ¥½¸µ½±±…‰½É…Ñ¥½¹tÍ•ÉÙ¥•ÌÑ¼µ…­”Ñ¡•Í”…±•ÉÑÌÙ¥Í¥‰±”Ñ¼å½ÕÈÑ•…´¸((ŒŒMÑ…ÉĞµ½¹¥Ñ½É¥¹œ()5½¹¥Ñ½É¥¹œÑ¥Ù•5D¥¸¥Í½±…Ñ¥½¸¥Ù•Ìå½Ô½¹±äÁ…ÉĞ½˜Ñ¡”¥¹™½Éµ…Ñ¥½¸å½Ô¹••Ñ¼­••Àå½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”Á•É™½Éµ¥¹œİ•±°¸e½Ô…¸ÕÍ”…Ñ…‘½œÌ‘…Í¡‰½…É‘Ì°…±•ÉÑÌ°…¹±½œµ…¹…•µ•¹Ğ™•…ÑÕÉ•ÌÑ¼µ½¹¥Ñ½Èå½ÕÈİ¡½±”µ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ—ŠQ‰É½­•ÉÌ°‘•ÍÑ¥¹…Ñ¥½¹Ì°±¥•¹ÑÌ°…¹Ñ¡”¡½ÍÑÌÑ¡…ĞÉÕ¸¥Ğ…±°¸%˜å½ÔÉ”¹½Ğ…±É•…‘äÕÍ¥¹œ…Ñ…‘½œ°•ĞÍÑ…ÉÑ•İ¥Ñ „€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”€ÄĞµ‘…äÑÉ¥…°ğ½„ø¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½…Ñ¥Ù•µÄ½µ½¹¥Ñ½É¥¹œµ…Ñ¥Ù•µÄµİ¥Ñ µ‘…Ñ…‘½œ¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|()m…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±•tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½İ•ˆµ½¹Í½±”¹¡Ñµ°)m…Á…¡”µ…Ñ¥Ù•µÄµ•ÑÑ¥¹œµÍÑ…ÉÑ•‘tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Ù•ÉÍ¥½¸´Ôµ•ÑÑ¥¹œµÍÑ…ÉÑ•¹¡Ñµ°Y•ÉÍ¥½¸Õ•ÑÑ¥¹MÑ…ÉÑ•µMÑ…ÉÑ¥¹Ñ¥Ù•5EMÑ…ÉÑ¥¹Ñ¥Ù•5D)m…Á…¡”µ©µàµÍÍ±tè¡ÑÑÁÌè¼½‘ˆ¹…Á…¡”¹½Éœ½‘•É‰ä½‘½Ì¼ÄÀ¸ä½…‘µ¥¹Õ¥‘”½É…‘µ¥¹©µá•¹…‰±•Áİ‘ÍÍ°¹¡Ñµ°)m‘…Ñ…‘½œµ…Ñ¥Ù•µÄµ‘…Í¡‰½…É‘tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½‘…Í¡‰½…É½±¥ÍÑÌıÄõ…Ñ¥Ù•µÄ)m‘…Ñ…‘½œµ…Ñ¥Ù•µÄµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…Ñ¥Ù•µÄ¼)m‘…Ñ…‘½œµ…Ñ¥Ù•µÄµ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì¥¹Ñ•É…Ñ¥½¹Ì½…Ñ¥Ù•µÄ)m‘…Ñ…‘½œµ…•¹Ğµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½‰…Í¥}…•¹Ñ}ÕÍ…”¼)m‘…Ñ…‘½œµ…•¹Ğµ¥¹ÍÑÉÕÑ¥½¹Ítè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ)m‘…Ñ…‘½œµ…¹Í¥‰±•tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½‘•Á±½äµ‘…Ñ…‘½œµ…¹Í¥‰±”µÉ•Á½ÉÑ¥¹œ¼)m‘…Ñ…‘½œµ¡•­Ìµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•Ì¼ıÑ…ˆõ…•¹ÑØØ¡•­Ìµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•Ìµ™½Èµ…•¹Ğ´Ø)m‘…Ñ…‘½œµ¡•™tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½‘•Á±½å¥¹œµ‘…Ñ…‘½œµİ¥Ñ µ¡•˜µÉ½±•Ì¼)m‘…Ñ…‘½œµ™½É•…ÍĞµµ½¹¥Ñ½É¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½µ½¹¥Ñ½É}ÑåÁ•Ì½™½É•…ÍÑÌ¼)m‘…Ñ…‘½œµÉ…Á¡¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½É…Á¡¥¹œ¼)m‘…Ñ…‘½œµ¡½ÍĞµµ…Átè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½¥¹™É…ÍÑÉÕÑÕÉ”½µ…À)m‘…Ñ…‘½œµ¥¹Ñ•É…Ñ¥½¸µ½±±…‰½É…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì¼…Ğµ½±±…‰½É…Ñ¥½¸)m‘…Ñ…‘½œµ¥¹Ñ•É…Ñ¥½¸µ¹½Ñ¥™¥…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì¼…Ğµ¹½Ñ¥™¥…Ñ¥½¸)m‘…Ñ…‘½œµ©…Ù„µ…Áµtè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½©…Ù„µµ½¹¥Ñ½É¥¹œµ…Á´¼)m‘…Ñ…‘½œµ©…Ù„µ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì¥¹Ñ•É…Ñ¥½¹Ì½©…Ù„)m‘…Ñ…‘½œµ±½œµ…¹…±åÑ¥Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É•È½…¹…±åÑ¥Ì¼)m‘…Ñ…‘½œµ±½œµ•áÁ±½É•Étè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É•È¼)m‘…Ñ…‘½œµ±½œµ•áÁ±½É•Èµ…Ñ¥Ù•µÅtè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½±½ÌıÅÕ•ÉäõÍ•ÉÙ¥””Í…Ñ¥Ù•µÄ)m‘…Ñ…‘½œµ±½œµÍ•…É¡tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É•È½Í•…É ¼)m‘…Ñ…‘½œµµ•ÑÉ¥ŒµÑåÁ•Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½‘•Ù•±½Á•ÉÌ½µ•ÑÉ¥Ì¼µ•ÑÉ¥ŒµÑåÁ•Ì)m‘…Ñ…‘½œµÁ¥Á•±¥¹”µ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ½Á¥Á•±¥¹•Ì¼)m‘…Ñ…‘½œµÉ•ÍÑ…ÉÑtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½µµ…¹‘Ì¼ıÑ…ˆõ…•¹ÑØØÍÑ…ÉĞµÍÑ½ÀµÉ•ÍÑ…ÉĞµÑ¡”µ…•¹Ğ)m‘…Ñ…‘½œµÍÑ…ÑÕÍtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½µµ…¹‘Ì¼ıÑ…ˆõ…•¹ÑØØ…•¹ĞµÍÑ…ÑÕÌµ…¹µ¥¹™½Éµ…Ñ¥½¸)m‘…Ñ…‘½œµÑ…¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½Ñ…¥¹œ¼)m‘…Ñ…‘½œµÑ¡”µÁ½İ•Èµ½˜µÑ…•µµ•ÑÉ¥Ítè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½Ñ¡”µÁ½İ•Èµ½˜µÑ…•µµ•ÑÉ¥Ì¼)m¥Ñ¡Õˆµ…Ñ¥Ù•µÄµ½¹˜µå…µ±tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½…Ñ¥Ù•µÄ½‘…Ñ…‘½}¡•­Ì½…Ñ¥Ù•µÄ½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”)m¥Ñ¡Õˆµ…Ñ¥Ù•µÄµáµ°µ½¹˜µå…µ±tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½…Ñ¥Ù•µÅ}áµ°½‘…Ñ…‘½}¡•­Ì½…Ñ¥Ù•µÅ}áµ°½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”)m½É…±”µµ½¹¥Ñ½É¥¹tè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼ÄÀ½µ…¹…•µ•¹Ğ½µ½¹¥Ñ½É¥¹œµ…¹µµ…¹…•µ•¹ĞµÕÍ¥¹œµ©µàµÑ•¡¹½±½ä¹¡Ñ´)mÁ…ÉĞ´Åtè€½‰±½œ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¼)mÁ…ÉĞ´Étè€½‰±½œ½½±±•Ñ¥¹œµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ì¼)mÁ…ÉĞ´Äµ‰É½­•Èµµ•ÑÉ¥Ítè€½‰±½œ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¼‰É½­•Èµµ•ÑÉ¥Ì)mÁ…ÉĞ´Äµ‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ítè€½‰±½œ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¼‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ì)mÁ…ÉĞ´Äµ­•äµµ•ÑÉ¥Ítè€½‰±½œ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¼­•äµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ì)mÁ…ÉĞ´Èµ©µàµ…¹µ©½¹Í½±•tè€½‰±½œ½½±±•Ñ¥¹œµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ì¼½±±•Ñ¥¹œµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ìµİ¥Ñ µ©µàµ…¹µ©½¹Í½±”)mÁ…ÉĞ´Èµ…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±•tè€½‰±½œ½½±±•Ñ¥¹œµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ì¼…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±”)må…µ°µ‘½Õµ•¹Ñ…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹…¹Í¥‰±”¹½´½…¹Í¥‰±”½±…Ñ•ÍĞ½É•™•É•¹•}…ÁÁ•¹‘¥•Ì½e51Må¹Ñ…à¹¡Ñµ°
+# Monitoring ActiveMQ with Datadog
+
+As you operate and scale ActiveMQ, comprehensive monitoring will enable you to rapidly identify any bottlenecks and maintain the flow of data through your applications. Earlier in this series, we introduced some [key ActiveMQ metrics to watch][part-1], and looked at some [tools you can use to monitor ActiveMQ][part-2]. But to get a complete understanding of ActiveMQ's performance, you should monitor your broker and destinations alongside the client applications that send and receive messages, and the infrastructure that runs it all. In this post, we'll show you how you can monitor ActiveMQ and all its related systems using Datadog.
+
+This post will show you how to: 
+
+* [Configure ActiveMQ](#connecting-activemq-with-datadog) to send metrics to Datadog
+* View ActiveMQ metrics in a [customizable dashboard](#viewing-activemq-metrics-in-datadog)
+* Collect and analyze [ActiveMQ logs in Datadog](#bringing-in-activemq-logs)
+* [Tag](#tagging-your-metrics) your ActiveMQ metrics
+* [Create alerts](#using-alerts-to-stay-informed) in Datadog to keep you informed
+
+First we'll walk through how to connect your ActiveMQ infrastructure to your Datadog account. If you're new to Datadog, but you'd like to follow along, here's a <a href="#" class="sign-up-trigger">free trial</a>.
+
+{{< img src="activemq_dash4.png" alt="Datadog's out-of-the-box ActiveMQ dashboard graphs many key metrics." wide="true" >}}
+
+## Connecting ActiveMQ with Datadog
+This section will describe how to configure ActiveMQ to send metrics to Datadog.
+To do this, you'll need to enable JMX remote monitoring, install and configure the Agent, and enable the Datadog integration.
+
+### Monitoring JMX remotely
+ActiveMQ exposes metrics [via JMX][part-2-jmx-and-jconsole]. To make those metrics available to the Agent, you need to configure your ActiveMQ host to allow secure remote access to its MBean server, as shown in these documents by [Oracle][oracle-monitoring] and [Apache][apache-jmx-ssl]. Next, you're ready to install the Agent and integrate ActiveMQ with your Datadog account.
+
+### Installing the Agent
+The Datadog Agent is open source software that runs on your host and sends metrics, traces, and logs to your Datadog account. You can often install the Agent with just a single commandâ€”see the [Agent installation instructions for your host's OS][datadog-agent-instructions] for more information. 
+
+When you've completed the installation, you should be able to see your ActiveMQ host in the [host map][datadog-host-map]. If you're already monitoring other hosts in Datadog, type your hostname in the **Filter by** field to limit the view to just your ActiveMQ host. 
+
+{{< img src="activemq_dash5b.png" alt="This screenshot shows how your infrastructure list looks when you've used the filter field to identify your ActiveMQ host." wide="true" >}}
+
+Your ActiveMQ host is now sending CPU, memory, and other system-level metrics to your Datadog account. Next we'll show you how to configure the Agent to collect and send Java and ActiveMQ metrics.
+
+### Configuring Datadog's ActiveMQ integration
+In addition to exposing metrics via JMX, ActiveMQ makes metrics available in XML pages within the Web Console. The Datadog Agent collects metrics from the Web Console instead of JMX when possible. See [our documentation][datadog-activemq-docs] for a list of metrics the Agent collects from each of these two data sources, JMX and the Web Console.
+
+By default, our integration collects the most important key metrics mentioned in Part 1, but you can also configure the Agent to collect other metrics from JMX, depending on your setup and priorities.
+
+The Agent includes two sample ActiveMQ configuration files, one for the JMX data source and one for the Web Console data source. It's easy to modify the ActiveMQ configuration to collect JMX metrics that aren't collected by default, and to avoid collecting those that you don't need. 
+
+In this section, we'll show you how to use the JMX configuration file to designate which metrics to collect, and how to create additional configuration files to collect additional metrics. We'll also walk through how to update the Web Console's configuration file so the Agent can access that data source.
+
+#### Data source: JMX
+The Agent stores configuration files for all integrations under its **conf.d/** subdirectory. The location of this directory depends on your host's platform. See the [Agent documentation][datadog-agent-docs] to find your **conf.d/** directory.
+
+To configure the Agent to collect JMX metrics from ActiveMQ, and from the JVM in which it runs, you'll need to edit the config file in the **conf.d/activemq.d/** directory. Copy the [**conf.yaml.example**][github-activemq-conf-yaml] file in that directory to **conf.yaml**.  This file defines which ActiveMQ metrics the Agent will retrieve via JMX.
+
+Each metric to be collected is listed in this file as an `attribute`. The attribute names match those listed in the "JMX attribute" column of the [key metrics tables][part-1-key-metrics] in Part 1. Each `attribute` name is followed by an `alias` line (which specifies how the metric will be labeled in Datadog) and a [`metric_type`][datadog-metric-types] line (which determines how the metric will be interpreted and visualized in Datadog). 
+
+You can comment out or delete any `attribute`â€”including its `alias` and `metric_type` linesâ€”if you want the Agent to stop collecting that metric. In the example below, we have modified **conf.yaml** so that the `AverageEnqueueTime` metric won't be collected via JMX.
+
+```
+# activemq.d/conf.yaml
+instances:
+
+  ## @param host - string - required
+  ## ActiveMQ host to connect to.
+  #
+  - host: localhost
+
+  ## @param port - integer - required
+  ## ActiveMQ port to connect to.
+  #
+    port: 1099
+init_config:
+[...]
+  conf:
+    - include:
+        destinationType: Queue
+        attribute:
+#          AverageEnqueueTime:
+#            alias: activemq.queue.avg_enqueue_time
+#            metric_type: gauge
+          ConsumerCount:
+            alias: activemq.queue.consumer_count
+            metric_type: gauge
+          ProducerCount:
+            alias: activemq.queue.producer_count
+            metric_type: gauge
+
+```
+
+To add a new metric to be collected, you can add its information to **conf.yaml.** The sample code below, when added to **conf.yaml**, configures the Agent to also collect a `ProducerFlowControl` metric for the topics associated with this broker.
+
+```
+[...]
+    - include:
+        destinationType: Topic
+        attribute:
+          ProducerFlowControl:
+            alias: activemq.topic.producer_flow_control
+            metric_type: gauge
+```
+
+Alternatively, you can create new configuration files to specify any additional metrics to be collected. You can [name a new configuration file][datadog-checks-configuration-files] anything you like, and as long as it's a valid YAML file in the **conf.d/activemq.d/** directory, the Agent will read its contents. The sample code below, saved as **conf.d/activemq.d/broker_metrics.yaml**, configures the Agent to collect the broker's `TotalDequeueCount` and `TotalEnqueueCount` metrics we introduced in [Part 1][part-1-broker-metrics] of this series.
+
+```
+# activemq.d/broker_metrics.yaml
+
+init_config:
+  is_jmx: true
+
+  conf:
+    - include:
+        destinationType: Broker
+        attribute:
+          TotalDequeueCount:
+            alias: activemq.broker.dequeue_count
+            metric_type: gauge
+          TotalEnqueueCount:
+            alias: activemq.broker.enqueue_count
+            metric_type: gauge
+```
+
+[Restart the Agent][datadog-restart] to apply your configuration changes, then execute the [`status` command][datadog-status] to confirm your changes. Look for the `activemq` section in the status output, as shown below.
+```
+    activemq
+      instance_name : activemq-localhost-1099
+      message : 
+      metric_count : 93
+      service_check_count : 0
+      status : OK
+```
+
+#### Data source: Web Console
+ActiveMQ's built-in Web Console includes three pages of XML data feedsâ€”one each to show metrics from queues, topics, and subscribersâ€”which the Agent uses as a data source for some metrics. The screenshot below shows a Web Console page that serves as a data source for ActiveMQ topics.
+
+{{< img src="web_console4.png" alt="Screenshot from the web console showing an XML data feed of topics metrics." wide="true" >}}
+
+You'll need to configure the Agent to access these pages so it can collect metrics from them.  Inside **conf.d/** is an **activemq_xml.d/** subdirectory, which includes a [configuration file][datadog-checks-configuration-files] that tells the Agent how to find the ActiveMQ Web Console to use as a source for metric data. Copy the [**conf.yaml.example**][github-activemq-xml-conf-yaml] file in that directory to a new file named **conf.yaml**. Uncomment the `username` and `password` lines. Set `username` to **admin**, and update the password to match the one you created when [setting up the ActiveMQ Web Console][part-2-activemq-web-console] in Part 2 of this series. If you've [updated your ActiveMQ configuration][activemq-web-console] to use a port other than 8161, change the port on the `url` line to reflect that. Your **conf.yaml** should look like the example below:
+
+```
+# activemq_xml.d/conf.yaml
+
+init_config:
+
+instances:
+  - url: http://localhost:8161
+    username: admin
+    password: <MY_PASSWORD>
+```
+
+[Restart the Agent][datadog-restart] so your configuration changes take effect. Now your Agent is collecting metrics from the ActiveMQ Web Console and forwarding them to your Datadog account.
+
+Execute the Agent's [`status` command][datadog-status] to confirm that your configuration changes were successful. Look for an `activemq_xml` section in the `status` output, as shown below.
+
+```
+   activemq_xml (1.0.0)
+    --------------------
+      Total Runs: 15640
+      Metric Samples: 114, Total: over 1M
+      Events: 0, Total: 0
+      Service Checks: 0, Total: 0
+      Average Execution Time : 15ms
+```
+
+If you have more than one ActiveMQ host to monitor, repeat the Agent installation and configuration steps on all your hosts. You can also use a configuration management tool like [Ansible][datadog-ansible] or [Chef][datadog-chef] to automate the deployment and configuration of the Datadog Agent.
+
+### Installing the ActiveMQ integration
+You've now configured the Agent to collect ActiveMQ metrics from JMX and from the Web Console's XML pages. You've also configured the Agent to collect metrics about the JVM's resource usage and garbage collection activity. Next, you simply need to enable the ActiveMQ and Java integrations so you can visualize and monitor these metrics. 
+
+Visit the [ActiveMQ integration tile][datadog-activemq-integration] in your Datadog account. Click the **Configuration** tab, then scroll down and click the **Install Integration** button. Repeat these steps for the [Java integration][datadog-java-integration]. 
+Now that your Datadog account is configured to collect and display ActiveMQ metrics, you're ready to visualize and alert on them. The next section will show you how to start using dashboards in Datadog to view your ActiveMQ metrics.
+## Viewing ActiveMQ metrics in Datadog
+
+As soon as you've installed the Agent and enabled the ActiveMQ integration on your account, you'll see **ActiveMQ - Overview** on your [dashboard list][datadog-activemq-dashboard]. This dashboard displays the important [broker][part-1-broker-metrics] and [destination][part-1-destination-metrics] metrics we looked at in Part 1 of this series.
+
+The **ActiveMQ - Overview** dashboard displays statistics and trends that help you track the performance of your messaging infrastructure. Each graph on the dashboard provides information about one or more important ActiveMQ metrics, and gives you a starting point to investigate potential problems.
+
+To get even more out of your ActiveMQ dashboard, you can customize it to display metrics from related elements of your infrastructure, such as the JVM's memory usage and thread count.
+
+{{< img src="activemq_dash6.png" alt="Screenshot of a customized ActiveMQ dashboard showing queue size, queue memory usage, heap memory usage, and JVM thread count." wide="true" >}}
+
+To create a custom dashboard, first clone the **ActiveMQ - Overview** dashboard by clicking the gear in the top right and selecting **Clone Dashboard**.
+
+{{< img src="activemq_dash7d.png" alt="Screenshot of the out-of-the-box ActiveMQ dashboard, highlighting the Clone Dash button." wide="true" >}}
+
+Click the **Edit Board** button at the top of the page to start adding the widgets you need to [graph the data][datadog-graphing] thatâ€™s important to you. You can customize your dashboard with metrics, logs, and traces from any of Datadog's {{< translate key="integration_count" >}}+ integrations to get a unified view of your entire messaging infrastructure in a single pane of glass. 
+
+The screenshot below shows how you can add a graph to your custom dashboard that displays heap memory usage on the host named **my-activemq-host**.
+
+{{< img src="activemq_dash8.png" alt="Screenshot of the graph editor, showing a JVM heap memory metric." wide="true" >}}
+
+If the metric data visualized on your dashboard indicates a potential problem, your logs can be a helpful source of further information. In the next section, we'll walk through how to collect and view ActiveMQ logs.
+
+## Bringing in ActiveMQ logs
+
+You can correlate logs with metrics to reveal context around anomalies you see on your dashboards. In this section, we'll show you how to use Datadog to collect and process your ActiveMQ logs, so you can search, graph, analyze, and alert on them.
+
+### Enabling log collection
+
+First, you'll need to configure the Agent to collect logs from your ActiveMQ host. Log collection is disabled in the Agent by default, so you'll need to enable it by editing the Agentâ€™s configuration file (**datadog.yaml**). The path to this file differs across platforms, so consult the [Agent's documentation][datadog-agent-docs] for information specific to your OS. Open the file, then uncomment and update the `logs_enabled` line to read:
+
+```
+logs_enabled: true
+```
+
+Next, [restart the Agent][datadog-restart] to begin forwarding your host's logs to your Datadog account. 
+
+### Configuring the integration
+
+The Agent needs to be able to find and access your ActiveMQ logs. By default, ActiveMQ stores logs in the **data/** subdirectory of your ActiveMQ installation. You can find the path to this directory in the "MBeans" tab of [JConsole][part-2-jmx-and-jconsole]. You'll see it listed as the value of the broker's `DataDirectory` JMX attribute. 
+
+{{< img src="jconsole4.png" wide="true" alt="Screenshot of JConsole's MBeans tab, highlighting the DataDirectory attribute.">}}
+
+Make sure the `dd-agent` user has read access to the `DataDirectory` directory, so that the Agent can access the ActiveMQ logs. 
+
+ActiveMQ is built on Java, so you can use Datadog's Java integration to collect and process your ActiveMQ logs. Create a Java configuration file named **java.yaml** in the Agent's **conf.d/** subdirectory and add the following content, making sure to replace `<DataDirectory>` with the correct path:
+
+```
+# conf.d/java.yaml
+
+logs:
+  - type: file
+    path: <DataDirectory>/activemq.log 
+    service: activemq
+    source: java
+
+
+```
+
+The `service: activemq` line in **java.yaml** allows you to distinguish and disaggregate these logs from any other Java logs you may be collecting (and automatically associates your logs with [APM metrics and traces][datadog-java-apm] from the same service). You can also configure Datadog to collect logs from other Java applications on this host within the same **java.yaml** fileâ€”simply create additional `- type:` blocks as necessary, and differentiate each application by giving it a unique `service` value.
+
+Note that **java.yaml** assigns a `source` value of `java` to the ActiveMQ logs, which will automatically trigger Datadog's Java log processing [pipeline][datadog-pipeline-docs] to process them. The pipeline applies parsing rules that extract log facets and attributes. This ultimately determines how each log will be displayed, and gives you powerful ways to [search and filter your logs in Datadog][datadog-log-search]. The Java log pipeline will require your ActiveMQ logs to be written in a particular format. In the next section, we'll configure ActiveMQ to format its logs to match the pattern expected by the Java log pipeline.
+
+
+Datadog will automatically tag your ActiveMQ logs with the parameters listed in your YAML file (e.g., `service:activemq` and `source:java`), and you can easily include any additional tags that are useful to you. The example below extends the `java.yaml` file from above to include two custom tags, `team` and `category`.
+
+```
+# conf.d/java.yaml
+
+logs:
+  - type: file
+    path: <DataDirectory>/activemq.log 
+    service: activemq
+    source: java
+    tags:
+      - 'team:development'
+      - 'category:messaging'
+```
+
+To load your updated configuration, restart the Agent by using the appropriate [command][datadog-restart] for your OS.
+
+### Formatting logs
+
+Datadog's log processing [pipelines][datadog-pipeline-docs] parse incoming logs to extract attributes you can use as facets to search your logs. In this section, we'll walk through updating your ActiveMQ log format to make use of the Java log pipeline.
+
+By default, ActiveMQ logs follow a format that looks similar to the one shown here:
+
+```
+2018-10-22 20:51:51,591 | WARN  | Memory Usage for the Broker (1024mb) is more than the maximum available for the JVM: 989 mb - resetting to 70% of maximum available: 692 mb | org.apache.activemq.broker.BrokerService | main
+```
+
+To format the logs for the Java log pipeline, edit **log4j.properties** in the **conf/** subdirectory of your ActiveMQ installation. Replace the line that begins with `log4j.appender.logfile.layout.ConversionPattern=` to read as follows:
+
+```
+log4j.appender.logfile.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+```
+
+This new pattern tells ActiveMQ to format each log similar to the one shown here:
+
+```
+2018-10-22 20:51:51 WARN  BrokerService:2188 - Memory Usage for the Broker (1024mb) is more than the maximum available for the JVM: 989 mb - resetting to 70% of maximum available: 692 mb
+```
+
+Datadog's log pipeline for Java will recognize this format and automatically process the logs.
+
+To apply this change, restart ActiveMQ. See the [ActiveMQ documentation][apache-activemq-getting-started] for your platform's stop and start commands.
+
+### Viewing logs
+
+To see all your ActiveMQ logs, visit the [Log Explorer][datadog-log-explorer-activemq] page in your Datadog account. Click on any row to see full information about a log. 
+
+{{< img src="activemq_dash9b.png" alt="Screenshot of the log explorer, showing detail of an ActiveMQ log." wide="true" >}}
+
+This shows the full log text, and also highlights the information that was extracted by the Java log pipeline, including the host, service, timestamp, and severity level. 
+
+Once your ActiveMQ logs are collected and processed, you can use [log analytics][datadog-log-analytics] to reveal patterns and trends that can help you troubleshoot issues in your messaging infrastructure. You can query and display important log data as a toplist or a timeseries graph. In the screenshot below, we've used the severity level and service facets to see a toplist of the ActiveMQ hosts that generated the most `WARN` logs over the past 15 minutes. These `WARN` logs could indicate, for example, a `MemoryUsage` error like the one in the screenshot above.
+
+{{< img src="activemq_dash10a.png" alt="Screenshot of the log analytics view in log explorer." wide="true" >}}
+
+It's easy to add any log analytics graph to a dashboard so that you can view it alongside other metrics. Just click the **Export** button in the top-right corner to add it to a new or existing dashboard.
+
+Log analytics allows you to explore and visualize your ActiveMQ logs in powerful new ways. For guidance on using all of Datadog's log management features, see the [documentation][datadog-log-explorer].
+
+## Tagging your metrics
+
+Hopefully you've already begun [using tags][datadog-tagging] to monitor your infrastructure and applications in Datadog. You can [strategically use tags][datadog-the-power-of-tagged-metrics] to create highly focused dashboards and alerts that provide fine-grained insights into every layer of your ActiveMQ environment. 
+
+Datadog automatically tags your ActiveMQ metrics with the name of the host, and applies other useful tags that vary depending on the source of the metric. For example, each `activemq.queue.size` metric is tagged with the `queue` it came from, and `activemq.topic.size` metrics automatically get tagged with the `topic`. 
+
+In this section, we'll walk through how to use custom tags to add more dimensions to your metrics so you can filter and aggregate them to suit your monitoring needs. Because the Datadog Agent accesses ActiveMQ metrics from JMX and the Web Console, we'll show you how to tag metrics from both sources. But first we'll demonstrate how applying custom tags can help you better understand the performance of your ActiveMQ infrastructure.
+
+### Using custom tags
+
+If default tags like `host` or `topic` don't give you enough information to monitor what's important in your ActiveMQ infrastructure, you can apply custom tags to add dimensions to your metrics. Custom tags give you greater control over what you can visualize and monitor.
+
+For example, if you were operating two ActiveMQ brokersâ€”one to process orders for a product named `A` and another for a product named `B`â€”you could tag the brokers according to product. As your operation scales, the ordering process for each product could require multiple hosts, perhaps even from multiple cloud providers. But your `product` tag would still allow you to visualize metrics per product. You could then customize your ActiveMQ dashboard to graph the queue size of each product in a single view. The following screenshot illustrates this example.
+
+{{< img src="activemq_dash11.png" alt="Screenshot of a timeseries graph showing queue counts for both product A and product B." wide="true" caption="In a system that uses multiple brokers to process orders for two different products, you can use custom tags to associate each brokerâ€™s traffic with a specific product. This then allows you to track trends in the queue volume per product, across any number of hosts." >}}
+
+Using consistent tags across your ActiveMQ logs and metrics makes it easy to correlate them in your Datadog account. In the screenshot below, the graph plots the size of queues tagged `service:activemq`. You can click on any point in the timeseries graph to easily navigate to logs that share the same `service` tag and were generated around the same time. In the upcoming sections, we'll show you how to apply the `service:activemq` tag to ActiveMQ's Web Console and JMX metrics.
+
+{{< img src="activemq_dash12b.png" alt="Screenshot of a graph that includes a context menu you can use to navigate to view related logs." wide="true" >}}
+
+### Tagging metrics from the Web Console
+
+To add custom tags to metrics that come from the ActiveMQ Web Console, you'll need to edit the **activemq_xml.d/conf.yaml** file you created earlier. The sample code below adds the same `service:activemq` tag we used in the log configuration section earlier. 
+
+```
+# activemq_xml.d/conf.yaml
+
+instances:
+  - url: http://localhost:8161
+    username: admin
+    password: <MY_PASSWORD>
+    tags:
+      - 'service:activemq'
+```
+
+The process for adding custom tags to ActiveMQ's JMX metrics is similar, as we'll demonstrate in the next section.
+
+### Tagging metrics from JMX
+
+To add custom tags to the metrics that come from JMX, edit the **conf.yaml** file in the **activemq.d/** subdirectory under **conf.d/**. The example below adds the same `service` tag we used earlier.
+
+```
+# activemq.d/conf.yaml
+
+instances:
+  - host: localhost
+    port: 1099
+    tags:
+      - 'service:activemq'
+```
+
+[Restart the Agent][datadog-restart] to apply the revised configuration.
+ 
+Once you've applied custom tags to your metrics, you can start using them to create more targeted graphs and alerts. In the next section, we'll walk through how to set up alerts in Datadog.
+
+## Using alerts to stay informed
+
+Alerts keep you informed of potential issues in your ActiveMQ infrastructure. You can use tags in your alert definitions to create more focused and actionable alerts. Using our custom `product` tag from the example in the previous section, the screenshot below illustrates how you could set up an alert that will trigger if the `QueueSize` metric rises above 10,000 only on queues tagged with `product:a`.
+
+{{< img src="activemq_alert1.png" alt="Screenshot showing the controls you use to create a new alert." wide="true" >}}
+
+You can set up alerts to automatically monitor any of the key ActiveMQ metrics we identified in Part 1 of this series. The example below shows a [forecast alert][datadog-forecast-monitoring] that will trigger if the broker's `TempPercentUsage` value is expected to rise above 80% in the next week. If this alert triggers, you may need to scale out your fleet of consumers to reduce the number of messages in the queue, or revise your broker configuration to increase the available storage space (`tempUsage`).
+
+{{< img src="activemq_alert2e.png" alt="Screenshot showing the controls you use to create a new alert." wide="true" >}}
+
+You can integrate your Datadog account with PagerDuty, Slack, and many other [notification][datadog-integration-notification] and [collaboration][datadog-integration-collaboration] services to make these alerts visible to your team. 
+
+## Start monitoring
+
+Monitoring ActiveMQ in isolation gives you only part of the information you need to keep your infrastructure performing well. You can use Datadog's dashboards, alerts, and log management features to monitor your whole messaging infrastructureâ€”brokers, destinations, clients, and the hosts that run it all. If you're not already using Datadog, get started with a <a href="#" class="sign-up-trigger">free 14-day trial</a>.
+
+[activemq-web-console]: http://activemq.apache.org/web-console.html
+[apache-activemq-getting-started]: http://activemq.apache.org/version-5-getting-started.html#Version5GettingStarted-StartingActiveMQStartingActiveMQ
+[apache-jmx-ssl]: https://db.apache.org/derby/docs/10.9/adminguide/radminjmxenablepwdssl.html
+[datadog-activemq-dashboard]: https://app.datadoghq.com/dashboard/lists?q=activemq
+[datadog-activemq-docs]: https://docs.datadoghq.com/integrations/activemq/
+[datadog-activemq-integration]: https://app.datadoghq.com/account/settings#integrations/activemq
+[datadog-agent-docs]: https://docs.datadoghq.com/agent/basic_agent_usage/
+[datadog-agent-instructions]: https://app.datadoghq.com/account/settings#agent
+[datadog-ansible]: https://www.datadoghq.com/blog/deploy-datadog-ansible-reporting/
+[datadog-checks-configuration-files]: https://docs.datadoghq.com/agent/faq/agent-configuration-files/?tab=agentv6#checks-configuration-files-for-agent-6
+[datadog-chef]: https://www.datadoghq.com/blog/deploying-datadog-with-chef-roles/
+[datadog-forecast-monitoring]: https://docs.datadoghq.com/monitors/monitor_types/forecasts/
+[datadog-graphing]: https://docs.datadoghq.com/graphing/
+[datadog-host-map]: https://app.datadoghq.com/infrastructure/map
+[datadog-integration-collaboration]: https://docs.datadoghq.com/integrations/#cat-collaboration
+[datadog-integration-notification]: https://docs.datadoghq.com/integrations/#cat-notification
+[datadog-java-apm]: https://www.datadoghq.com/blog/java-monitoring-apm/
+[datadog-java-integration]: https://app.datadoghq.com/account/settings#integrations/java
+[datadog-log-analytics]: https://docs.datadoghq.com/logs/explorer/analytics/
+[datadog-log-explorer]: https://docs.datadoghq.com/logs/explorer/
+[datadog-log-explorer-activemq]: https://app.datadoghq.com/logs?query=service%3Aactivemq
+[datadog-log-search]: https://docs.datadoghq.com/logs/explorer/search/
+[datadog-metric-types]: https://docs.datadoghq.com/developers/metrics/#metric-types
+[datadog-pipeline-docs]: https://docs.datadoghq.com/logs/processing/pipelines/
+[datadog-restart]: https://docs.datadoghq.com/agent/faq/agent-commands/?tab=agentv6#start-stop-restart-the-agent
+[datadog-status]: https://docs.datadoghq.com/agent/faq/agent-commands/?tab=agentv6#agent-status-and-information
+[datadog-tagging]: https://docs.datadoghq.com/tagging/
+[datadog-the-power-of-tagged-metrics]: https://www.datadoghq.com/blog/the-power-of-tagged-metrics/ 
+[github-activemq-conf-yaml]: https://github.com/DataDog/integrations-core/blob/master/activemq/datadog_checks/activemq/data/conf.yaml.example
+[github-activemq-xml-conf-yaml]: https://github.com/DataDog/integrations-core/blob/master/activemq_xml/datadog_checks/activemq_xml/data/conf.yaml.example
+[oracle-monitoring]: https://docs.oracle.com/javase/10/management/monitoring-and-management-using-jmx-technology.htm
+[part-1]: /blog/activemq-architecture-and-metrics/
+[part-2]: /blog/collecting-activemq-metrics/
+[part-1-broker-metrics]: /blog/activemq-architecture-and-metrics/#broker-metrics
+[part-1-destination-metrics]: /blog/activemq-architecture-and-metrics/#destination-metrics
+[part-1-key-metrics]: /blog/activemq-architecture-and-metrics/#key-activemq-metrics
+[part-2-jmx-and-jconsole]: /blog/collecting-activemq-metrics/#collecting-activemq-metrics-with-jmx-and-jconsole
+[part-2-activemq-web-console]: /blog/collecting-activemq-metrics/#activemq-web-console
+[yaml-documentation]: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html

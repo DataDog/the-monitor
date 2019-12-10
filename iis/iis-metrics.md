@@ -1,1 +1,555 @@
-m-•ä%%Lµ•ÑÉ¥ÌÑ¼µ½¹¥Ñ½È((()5¥É½Í½™ĞÌm%¹Ñ•É¹•Ğ%¹™½Éµ…Ñ¥½¸M•ÉÙ¥•Íum¥¥Ìµ¡½µ•Á…”µ±¥¹­t€¡%%L¤¥Ì„İ•ˆÍ•ÉÙ•ÈÑ¡…Ğ¡…ÌÑÉ…‘¥Ñ¥½¹…±±ä½µ”‰Õ¹‘±•İ¥Ñ ]¥¹‘½İÌ€¡”¹œ¸°Ù•ÉÍ¥½¹ÌlÔ¸À°€Ø¸Áum¥¹ÍÑ…±°µ¥¥Ì´Ô´Ùt°…¹m‰•å½¹‘um¥¹ÍÑ…±°µ¥¥ÌµÉ••¹Ñt¤¸%%L¡…Ì¹Õµ•É½ÕÌ•áÑ•¹Í¥‰¥±¥Ñä™•…ÑÕÉ•Ì¸Mİ…ÁÁ…‰±”¥¹Ñ•É™…•Ì±¥­”m%MA%um¥Í…Á¥t…¹m…ÍÑ%um™…ÍÑ¥tµ…­”¥ĞÁ½ÍÍ¥‰±”Ñ¼ÕÍ”%%Lİ¥Ñ „Ù…É¥•Ñä½˜‰…­•¹Ñ•¡¹½±½¥•Ì°™É½´µ¥É¼µ™É…µ•İ½É­Ì±¥­”m±…Í­um¥¥Ìµİ¥Ñ µ™±…Í­tÑ¼ÉÕ¹Ñ¥µ•Ì±¥­”m9½‘”¹©Íum¥¥Ìµİ¥Ñ µ¹½‘•t°…±½¹œİ¥Ñ Ñ•¡¹½±½¥•Ìå½Ô•áÁ•ĞÑ¼™¥¹İ¥Ñ¡¥¸„]¥¹‘½İÌµ‰…Í•ÁÉ½‘ÕÑ¥½¸•¹Ù¥É½¹µ•¹Ğ€¡”¹œ¸°mM@¹9Qum¥¥Ìµİ¥Ñ µ…ÍÁt¤¸¹Ñ¡É½Õ …¸•½ÍåÍÑ•´½˜%%L•áÑ•¹Í¥½¹Ì°…±±•µ½‘Õ±•Ì°å½Ô…¸•ÅÕ¥Àå½ÕÈÍ•ÉÙ•ÈÑ¼Á•É™½É´Ñ…Í­Ì±¥­”mÉ•İÉ¥Ñ¥¹œUI1Íum¥¥ÌµÕÉ°µÉ•İÉ¥Ñ”µ±¥¹­t…¹mÁÉ½É…µµ…Ñ¥…±±ä±½…‰…±…¹¥¹œÉ•ÅÕ•ÍÑÍum¥¥Ìµ…ÁÁ±¥…Ñ¥½¸µÉ•ÅÕ•ÍĞµÉ½ÕÑ¥¹t¸%%L±•ÑÌå½Ô½ÁÑ¥µ¥é”Á•É™½Éµ…¹”İ¥Ñ ‰Õ¥±Ğµ¥¸½¹Ñ•¹Ğ…¡¥¹œ…¹½µÁÉ•ÍÍ¥½¸™•…ÑÕÉ•Ì°…¹¥µÁÉ½Ù”Ñ¡”É•±¥…‰¥±¥Ñä½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì‰ä¥Í½±…Ñ¥¹œÑ¡•´¥¸Í•Á…É…Ñ”…ÁÁ±¥…Ñ¥½¸Á½½±Ì¸€(€)%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°ÍÕÉÙ•ä%%Lµ•ÑÉ¥ÌÑ¡…Ğ…¸¡•±Àå½Ô•¹ÍÕÉ”Ñ¡”…Ù…¥±…‰¥±¥Ñä…¹Á•É™½Éµ…¹”½˜å½ÕÈİ•ˆÍ•ÉÙ•È¸]¡¥±”İ”É”™½ÕÍ¥¹œ½¸%%L€ÄÀ°İ¡¥ ¥Ì‰Õ¹‘±•İ¥Ñ ]¥¹‘½İÌM•ÉÙ•È€ÈÀÄØ…¹]¥¹‘½İÌ€ÄÀ°å½Ô…¸½¹ÍÕ±ĞÑ¡”m‘½Õµ•¹Ñ…Ñ¥½¹um¥¥Ìµ¡…¹•±½t¥˜å½ÔÉ”ÕÍ¥¹œ…¸•…É±¥•ÈÙ•ÉÍ¥½¸…¹İ…¹ĞÑ¼Í•”¥˜Í½µ•Ñ¡¥¹œİ”‘¥ÍÕÍÌ¥Ì…Ù…¥±…‰±”Ñ¼å½Ô¸¹İ¡¥±”%%L…¸¥µÁ±•µ•¹Ğ„¹Õµ‰•È½˜Q@µ‰…Í•ÁÉ½Ñ½½±Ì°¥¹±Õ‘¥¹œmQAum¥¥Ìµ™ÑÁt°İ”±°‰”½¹•¹ÑÉ…Ñ¥¹œ½¸%%LÌ‘•™…Õ±Ğ½¹™¥ÕÉ…Ñ¥½¸…Ì„Í•ÉÙ•È™½Èm!QQ@½È!QQAMum¥¥ÌµÁÉ½Ñ½½°µ±¥ÍÑ•¹•ÉÍt¸(€)íìğ¥µœÍÉŒô‰¥¥Ìµµ•ÑÉ¥Ìµ‘¥…É…´¹Á¹œˆ…±Ğô‰%%L5•ÑÉ¥Ì€´Q¡”ÍÑÉÕÑÕÉ”½˜…¸%%LÍ•ÉÙ•Èˆ€ùõô((ŒŒQ¡”ÍÑÉÕÑÕÉ”½˜…¸%%LÍ•ÉÙ•È()e½Ô±°İ…¹ĞÑ¼½É…¹¥é”å½ÕÈµ½¹¥Ñ½É¥¹œÍÑÉ…Ñ•ä…É½Õ¹Ñ¡”™…ĞÑ¡…Ğ%%LÌ½µÁ½¹•¹ÑÌ…É”ÍÁÉ•…½ÕĞ…É½ÍÌ„¹Õµ‰•È½˜]¥¹‘½İÌÁÉ½•ÍÍ•Ì…¹‘É¥Ù•ÉÌ¸]”±°Ñ…­”„±½½¬…ĞÑ¡•Í”½µÁ½¹•¹ÑÌ°Ñ¡•¸¥¹ÑÉ½‘Õ”Ñ¡”%%Lµ•ÑÉ¥Ìå½Ô±°İ…¹ĞÑ¼ÕÍ”Ñ¼µ½¹¥Ñ½ÈÑ¡•´¸((((ŒŒŒ!QQ@¹ÍåÌ…¹İ½É­•ÈÁÉ½•ÍÍ•Ì(()Q¡”€¨©İ½É­•ÈÁÉ½•ÍÌ¨¨½¹‘ÕÑÌÑ¡”µ…¥¸İ½É¬½˜„İ•ˆÍ•ÉÙ•Èè¡…¹‘±¥¹œ±¥•¹ĞÉ•ÅÕ•ÍÑÌ…¹Í•ÉÙ¥¹œÉ•ÍÁ½¹Í•Ì¸%%L…¸¡…¹‘±”É•ÅÕ•ÍÑÌİ¥Ñ µÕ±Ñ¥Á±”İ½É­•ÈÁÉ½•ÍÍ•Ì…Ğ„Ñ¥µ”€¡‘•Á•¹‘¥¹œ½¸å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸¤°•… ½˜İ¡¥ ÉÕ¹Ì…ÌÑ¡”•á•ÕÑ…‰±”mÜÍİÀ¹•á•um…ÁÀµÁ½½±Ìµ•á•t¸€(()]¡•¸„É•ÅÕ•ÍĞÉ•…¡•Ìå½ÕÈ]¥¹‘½İÌÍ•ÉÙ•È°¥ĞÁ…ÍÍ•ÌÑ¡É½Õ €¨©!QQ@¹ÍåÌ¨¨°„m­•É¹•°µµ½‘”‘•Ù¥”‘É¥Ù•Éumİ¥¹‘½İÌµ‘É¥Ù•ÉÍt¸!QQ@¹ÍåÌ±¥ÍÑ•¹Ì™½È!QQ@…¹!QQALÉ•ÅÕ•ÍÑÌ°…¹mÙ…±¥‘…Ñ•Ì•… ½¹•um¡ÑÑÀµÍåÍt‰•™½É”mÁ…ÍÍ¥¹œ¥Ñum¡ÑÑÀµÍåÍtÑ¼„İ½É­•ÈÁÉ½•ÍÌ¸%˜¹¼İ½É­•ÈÁÉ½•ÍÌ¥Ì…Ù…¥±…‰±”Ñ¼¡…¹‘±”„É•ÅÕ•ÍĞ°!QQ@¹ÍåÌÁ±…•ÌÑ¡”É•ÅÕ•ÍĞ¥¸„­•É¹•°µµ½‘”ÅÕ•Õ”¸€(()]¡•¸µ½¹¥Ñ½É¥¹œÑÉ…™™¥ŒÑ¼!QQ@¹ÍåÌ°å½Ôİ¥±°±¥­•±ä‰”ÕÍ¥¹œÁ•É™½Éµ…¹”½Õ¹Ñ•ÉÌ½±±•Ñ•‰äÑ¡”m]½É±]¥‘”]•ˆAÕ‰±¥Í¡¥¹œM•ÉÙ¥•umİİÜµÍ•ÉÙ¥•t€¡]]\M•ÉÙ¥”¤°İ¡¥ ÉÕ¹Ì…ÌÁ…ÉĞ½˜…¸¥¹ÍÑ…¹”½˜Ñ¡”ÁÉ½•ÍÌ°ÍÙ¡½ÍĞ¹•á•€¸Q¡”]]\M•ÉÙ¥”Á…ÍÍ•ÌÍÑ½É•%%L½¹™¥ÕÉ…Ñ¥½¸Í•ÑÑ¥¹ÌÑ¼!QQ@¹ÍåÌ°…¹½±±•ÑÌÁ•É™½Éµ…¹”½Õ¹Ñ•ÉÌ™½È•… %%LÍ¥Ñ”¸€(()Ù•Éäİ½É­•ÈÁÉ½•ÍÌ‰•±½¹ÌÑ¼…¸€¨©m…ÁÁ±¥…Ñ¥½¸Á½½±um…ÁÀµÁ½½±Ít¨¨°İ¡¥ ­••ÁÌ…ÁÁ±¥…Ñ¥½¹ÌµÕÑÕ…±±ä¥Í½±…Ñ•Ñ¼¥µÁÉ½Ù”Ñ¡•¥È…Ù…¥±…‰¥±¥ÑçŠQ¥˜…¸…ÁÁ±¥…Ñ¥½¸É…Í¡•Ì°¥Ğİ½¸Ğ…™™•Ğ½Ñ¡•È…ÁÁ±¥…Ñ¥½¸Á½½±Ì¸]½É­•ÈÁÉ½•ÍÍ•Ì¥¸½¹”Á½½°‘¼¹½ĞÍ¡…É”É•Í½ÕÉ•Ìİ¥Ñ ½Ñ¡•ÈÁ½½±Ì¸e½Ô…¸Á…ÍÌ½¹™¥ÕÉ…Ñ¥½¸Í•ÑÑ¥¹ÌÑ¼„Í¥¹±”Á½½°Ñ¼°™½È¥¹ÍÑ…¹”°mÑ¡É½ÑÑ±”Ñ¡”ATÕÑ¥±¥é…Ñ¥½¹t ¡ÑÑÀµÉ•ÅÕ•ÍĞµµ•ÑÉ¥Ì¤½˜¥ÑÌİ½É­•ÉÌ¸… …ÁÁ±¥…Ñ¥½¸Á½½°‘•™…Õ±ÑÌÑ¼„Í¥¹±”İ½É­•ÈÁÉ½•ÍÌ°…¹å½Ô…¸½¹™¥ÕÉ”å½ÕÈÁ½½±ÌÑ¼¥¹±Õ‘”µ½É”¸€(€(ŒŒŒUI%Ì…¹É•Í½ÕÉ•Ì(()!QQ@¹ÍåÌÉ½ÕÑ•Ì„É•ÅÕ•ÍĞÑ¼Ñ¡”½ÉÉ•Ğİ½É­•ÈÁÉ½•ÍÌ‰äÕÍ¥¹œÑ¡”É•ÅÕ•ÍÓŠeÌUI$¸e½Ô…¸µ…Ñ UI%Ìİ¥Ñ …ÁÁ±¥…Ñ¥½¸Á½½±Ì…¹™¥±•Ì‰ä½¹™¥ÕÉ¥¹œ€¨©Í¥Ñ•Ì°…ÁÁ±¥…Ñ¥½¹Ì°¨¨…¹€¨©Ù¥ÉÑÕ…°‘¥É•Ñ½É¥•Ì¨¨¸… ½˜Ñ¡•Í”ÍÁ•¥™¥•ÌÁ…ÉĞ½˜„UI$¸Y¥ÉÑÕ…°‘¥É•Ñ½É¥•Ì…É”¹•ÍÑ•İ¥Ñ¡¥¸…ÁÁ±¥…Ñ¥½¹Ì°İ¡¥ …É”¹•ÍÑ•İ¥Ñ¡¥¸Í¥Ñ•Ì°µ…­¥¹œ¥ĞÁ½ÍÍ¥‰±”Ñ¼‘•™¥¹”„É•Í½ÕÉ”İ¥Ñ Ñ¡”UI$°€ñÍ¥Ñ”ø¼ñ…ÁÁ±¥…Ñ¥½¸ø¼ñÙ¥ÉÑÕ…°‘¥É•Ñ½Éäù€¸€(()%¸%%L°Ñ¡”‘½µ…¥¸¹…µ”½˜„UI$‰•±½¹ÌÑ¼„l¨©Í¥Ñ”¨©um¥¥ÌµÍ¥Ñ•Ìµ¥¹ÑÉ½t¸Í¥Ñ”ÍÁ•¥™¥•Ì•ÉÑ…¥¸Ñ½Àµ±•Ù•°½¹™¥ÕÉ…Ñ¥½¸‘•Ñ…¥±Ì°ÍÕ …ÌÑ¡”ÁÉ½Ñ½½°€¡!QQ@…¹!QQAL™½È%%LÙ•ÉÍ¥½¹Ì€Ø…¹•…É±¥•È°…¹•áÑ•¹Í¥‰±”Ñ¼…½µµ½‘…Ñ”…¹äÁÉ½Ñ½½°¥¸%%L€Ü…¹…‰½Ù”¤°½ÈÑ¡”Í¥Ñ”Ì%@…‘‘É•ÍÌ°Á½ÉĞ°…¹m¡½ÍĞ¡•…‘•Éum¡½ÍĞµ¡•…‘•Ét¸=Ñ¡•ÈÍ•ÑÑ¥¹Ì‘•Ñ•Éµ¥¹”¡½Ü„Í¥Ñ”Í¡½Õ±ÁÉ½•ÍÌ½ÈÉ½ÕÑ”É•ÅÕ•ÍÑÌ¸e½Ô…¸m…ÁÁ±ä½¹™¥ÕÉ…Ñ¥½¸Í•ÑÑ¥¹Íum¥¥ÌµÍ¥Ñ”µ±¥µ¥ÑÍt™½È¡½Ü±½¹œ%%LÍ¡½Õ±­••À…¸¥¹…Ñ¥Ù”½¹¹•Ñ¥½¸…±¥Ù”…¹¡½Üµ…¹ä½¹ÕÉÉ•¹Ğ½¹¹•Ñ¥½¹Ì„Í¥Ñ”…¸…•ÁĞ¸(()¸€¨©m…ÁÁ±¥…Ñ¥½¹um¥¥Ìµ…ÁÁ±¥…Ñ¥½¹Ít¨¨…ÍÍ½¥…Ñ•Ì„UI$Á…Ñ İ¥Ñ …¸…ÁÁ±¥…Ñ¥½¸Á½½°…¹„Á¡åÍ¥…°‘¥É•Ñ½Éäİ¥Ñ¡¥¸Ñ¡”¡½ÍĞ¸Ù•ÉäÍ¥Ñ”¡…Ì…Ğ±•…ÍĞ½¹”‘•™…Õ±Ğ…ÁÁ±¥…Ñ¥½¸°İ¡¥ ‰¥¹‘ÌÑ¼Ñ¡”É½½ĞUI$¸]¡•¸å½ÔÉ•…Ñ”…¸…ÁÁ±¥…Ñ¥½¸°å½ÔÁ½¥¹Ğ¥ĞÑ¼…¸…ÁÁ±¥…Ñ¥½¸Á½½°€¡İ¡¥ µÕ±Ñ¥Á±”…ÁÁ±¥…Ñ¥½¹Ì…¸Í¡…É”¤¸ÁÁ±¥…Ñ¥½¹Ì…¹Í¥Ñ•Ì…¸•… Á½¥¹ĞÑ¼„‘¥™™•É•¹Ğ…ÁÁ±¥…Ñ¥½¸Á½½³ŠQ%%Lİ¥±°É½ÕÑ”„É•ÅÕ•ÍĞÑ¼Ñ¡”…ÁÁ±¥…Ñ¥½¸Á½½°™½È•¥Ñ¡•ÈÑ¡”Í¥Ñ”½ÈÑ¡”…ÁÁ±¥…Ñ¥½¸°‰…Í•½¸Ñ¡”UI$¸¸…ÁÁ±¥…Ñ¥½¸ÌÁ¡åÍ¥…°‘¥É•Ñ½Éä…¸½¹Ñ…¥¸ÍÕ‰‘¥É•Ñ½É¥•ÌÑ¡…Ğµ…ÀÑ¼…‘‘¥Ñ¥½¹…°UI%Ì°­¹½İ¸…Ìl¨©Ù¥ÉÑÕ…°‘¥É•Ñ½É¥•Ì¨©umÍ¥Ñ•Ìµ…ÁÁÌµ‘¥ÉÍt¸]¡•¸å½Ô…ÍÍ¥¸…¸…ÁÁ±¥…Ñ¥½¸Ñ¼„Á¡åÍ¥…°‘¥É•Ñ½Éä°%%Lİ¥±°‘•Í¥¹…Ñ”•… ½˜Ñ¡”ÍÕ‰‘¥É•Ñ½É¥•Ì…Ì„Ù¥ÉÑÕ…°‘¥É•Ñ½Éä…¹¥Ù”¥Ğ„UI$¸€(()Í¥¹±”…ÁÁ±¥…Ñ¥½¸…¸Á½¥¹ĞÑ¼mµÕ±Ñ¥Á±”Ù¥ÉÑÕ…°‘¥É•Ñ½É¥•ÍumÙ¥ÉÑÕ…°µ‘¥Èµ½Ù•ÉÙ¥•İt°±•ÑÑ¥¹œå½Ô…ÍÍ¥¸½¹”ÍÕ‰‘¥É•Ñ½ÉäÑ¼¥µ…•Ì…¹…¹½Ñ¡•ÈÑ¼ÍÑå±•Í¡••ÑÌ°½È½Ñ¡•Éİ¥Í”½É…¹¥é”…ÍÍ•ÑÌİ¥Ñ¡¥¸å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì¸Ù¥ÉÑÕ…°‘¥É•Ñ½Éä…¸…±Í¼¡…Ù”„‘¥™™•É•¹Ğ¹…µ”Ñ¡…¸¥ÑÌ½ÉÉ•ÍÁ½¹‘¥¹œ™¥±”Á…Ñ ¸€(((ŒŒ-•ä%%Lµ•ÑÉ¥Ì(()]¡•¸µ½¹¥Ñ½É¥¹œ%%L°å½Ô±°İ…¹ĞÑ¼™½ÕÌ½¸…Ğ±•…ÍĞ™½ÕÈ…Ñ•½É¥•Ì½˜µ•ÑÉ¥Ìè(((´m!QQ@É•ÅÕ•ÍĞµ•ÑÉ¥Ít ¡ÑÑÀµÉ•ÅÕ•ÍĞµµ•ÑÉ¥Ì¤(´m!QQ@É•ÍÁ½¹Í”µ•ÑÉ¥Ít ¡ÑÑÀµÉ•ÍÁ½¹Í”µµ•ÑÉ¥Ì¤(´mÙ…¥±…‰¥±¥Ñäµ•ÑÉ¥Ít …Ù…¥±…‰¥±¥Ñäµµ•ÑÉ¥Ì¤(´mI•Í½ÕÉ”µ•ÑÉ¥Ít É•Í½ÕÉ”µµ•ÑÉ¥Ì¤(()Q¡”€‰Ù…¥±…‰¥±¥Ñäˆ½±Õµ¸½˜•… Ñ…‰±”¥¹‘¥…Ñ•Ìİ¡•É”å½Ô…¸…•ÍÌ•… µ•ÑÉ¥Œ¸%¸mA…ÉĞ€ÉumÁ…ÉĞ´Èµ±¥¹­t°İ”±°Í¡½Üå½Ô¡½ÜÑ¼…•ÍÌÑ¡•Í”µ•ÑÉ¥Ì™É½´Ñ¡•Í”Í½ÕÉ•ÌèmÁ•É™½Éµ…¹”½Õ¹Ñ•ÉÍumÁ•É™½Éµ…¹”µ½Õ¹Ñ•Èµ±¥¹­t€¡½‰©•ÑÌÑ¡…Ğ…±Õ±…Ñ”µ•ÑÉ¥Ì¥¹Ñ•É¹…±±äÑ¡É½Õ¡½ÕĞÑ¡”]¥¹‘½İÌ½Á•É…Ñ¥¹œÍåÍÑ•´¤…¹m%%L±½Íum¥¥Ìµ±½¥¹œµ±¥¹­t¸€(()Q¡¥Ì…ÉÑ¥±”É•™•ÉÌÑ¼µ•ÑÉ¥ŒÑ•Éµ¥¹½±½ä™É½´½ÕÈm5½¹¥Ñ½É¥¹œ€ÄÀÄÍ•É¥•Íum‘µµ½¹¥Ñ½É¥¹œ´ÄÀÄµ±¥¹­t°İ¡¥ ÁÉ½Ù¥‘•Ì„™É…µ•İ½É¬™½Èµ•ÑÉ¥Œ½±±•Ñ¥½¸…¹…±•ÉÑ¥¹œ¸((()íìğ¥µœÍÉŒô‰¥¥Ìµµ•ÑÉ¥Ìµµ…¥¸µÍÉ••¹‰½…É¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰%%L5•ÑÉ¥Ì€´ÍÉ••¹‰½…ÉÍ¡½İ¥¹œ­•ä%%Lµ•ÑÉ¥ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô(((€(ŒŒŒ!QQ@É•ÅÕ•ÍĞµ•ÑÉ¥Ì(€)QÉ…­¥¹œÑ¡”Ù½±Õµ”½˜É•ÅÕ•ÍÑÌ¥Ù•Ìå½Ô…¸¥‘•„½˜¡½Ü‰ÕÍäå½ÕÈÍ•ÉÙ•È¥Ì°…¹Í•ÉÙ•Ì…Ì„ÍÑ…ÉÑ¥¹œÁ½¥¹Ğ™½ÈÕ¹‘•ÉÍÑ…¹‘¥¹œ¡½Üİ•±°å½ÕÈ%%L½¹™¥ÕÉ…Ñ¥½¸¥Ìİ½É­¥¹œ¸!QQ@É•ÅÕ•ÍĞµ•ÑÉ¥Ì…¸…±Í¼¡•±Àå½Ô¥‘•¹Ñ¥™ä‰½ÑÑ±•¹•­Ì°Í•”İ¡¥ UI$Á…Ñ¡ÌÉ••¥Ù”Ñ¡”µ½ÍĞÑÉ…™™¥Œ°…¹‘•Ñ•Éµ¥¹”İ¡…ĞÍ½ÉĞ½˜‘•µ…¹‘Ìå½ÕÈ…ÁÁ±¥…Ñ¥½¸½‘”Á±…•Ì½¸å½ÕÈÍåÍÑ•´É•Í½ÕÉ•Ì¸(()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒQåÁ•um‘µµ½¹¥Ñ½É¥¹œ´ÄÀÄµ±¥¹­tğmÙ…¥±…‰¥±¥ÑåumÁ…ÉĞ´Èµ±¥¹­tğ)ğè´´´´µğè´´´´´´´´´´´µğè´´´´´´´´´´´µğè´´´´´´´´´´´´µğ)ğQ½Ñ…±5•Ñ¡½‘I•ÅÕ•ÍÑÍA•ÉM•€ğI…Ñ”½˜É•ÅÕ•ÍÑÌÉ••¥Ù•Á•ÈÍ•½¹‰äÑ¡”]]\M•ÉÙ¥”°Á•ÈÍ¥Ñ”€ğ]½É¬èQ¡É½Õ¡ÁÕĞğm]•ˆM•ÉÙ¥”½Õ¹Ñ•ÈÍ•Ñumİ•ˆµÍ•ÉÙ¥”µ±…ÍÍtğ)ğI•ÅÕ•ÍÑÌ€¼M•€ğI…Ñ”½˜É•ÅÕ•ÍÑÌÉ••¥Ù•‰ä„¥Ù•¸İ½É­•ÈÁÉ½•ÍÌğ]½É¬èQ¡É½Õ¡ÁÕĞğm\ÍMY}\Í]AumÜÍİÀµ½Õ¹Ñ•ÉÍtÁ•É™½Éµ…¹”½Õ¹Ñ•ÈÍ•Ğğ)ğÕÉÉ•¹ÑEÕ•Õ•M¥é•€ğ9Õµ‰•È½˜É•ÅÕ•ÍÑÌ¥¸Ñ¡”!QQ@¹ÍåÌÅÕ•Õ”°Á•È…ÁÁ±¥…Ñ¥½¸Á½½°ğI•Í½ÕÉ”èM…ÑÕÉ…Ñ¥½¸ğm!QQ@M•ÉÙ¥”I•ÅÕ•ÍĞEÕ•Õ•Ì½Õ¹Ñ•ÈÍ•Ñum¡ÑÑÀµÍåÌµÁ•É™µ½¹uğ)ğÌµÕÉ¤µÍÑ•µ€ğI…Ñ”½˜É•ÅÕ•ÍÑÌÑ¼„ÍÁ•¥™¥ŒUI$Á…Ñ ğ]½É¬èQ¡É½Õ¡ÁÕĞğ%%L±½Ìğ)ğÌµµ•Ñ¡½‘€ğI…Ñ”½˜É•ÅÕ•ÍÑÌÍ•¹ĞÑ¡É½Õ „ÍÁ•¥™¥Œ!QQ@µ•Ñ¡½ğ]½É¬èQ¡É½Õ¡ÁÕĞğ%%L±½Ì°m]•ˆM•ÉÙ¥”½Õ¹Ñ•ÈÍ•Ñumİ•ˆµÍ•ÉÙ¥”µ±…ÍÍtğ(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èQ½Ñ…±5•Ñ¡½‘I•ÅÕ•ÍÑÍA•ÉM•Œ(()mQ½Ñ…±5•Ñ¡½‘I•ÅÕ•ÍÑÍA•ÉM•umİ•ˆµÍ•ÉÙ¥”µ±…ÍÍtÑÉ…­ÌÑ¡”É…Ñ”½˜…±°!QQ@É•ÅÕ•ÍÑÌÉ••¥Ù•Á•ÈÍ•½¹‰äÑ¡”Í•ÉÙ•È¸Q¡¥Ì¥Ì„‰…Í¥Œµ•…ÍÕÉ”½˜Ñ¡É½Õ¡ÁÕĞ™½È!QQ@É•ÅÕ•ÍÑÌ°…¹„ÍÑ…ÉÑ¥¹œÁ½¥¹Ğ™½ÈÕ¹½Ù•É¥¹œ¥ÍÍÕ•Ì¸(()É…Á¥‘•É•…Í”¥¸Ñ¡”É…Ñ”½˜É•ÅÕ•ÍÑÌ…¸¥¹‘¥…Ñ”ÁÉ½‰±•µÌİ¥Ñ¡¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°ÍÕ …ÌÁ•É¥½‘Ì½˜Í•ÉÙ•ÈÕ¹…Ù…¥±…‰¥±¥Ñä¸e½Ô±°İ…¹ĞÑ¼Í•Ğ…¸…±•ÉĞÑ¼¹½Ñ¥™äå½Ô½˜…¹äÍÕ‘‘•¸¡…¹•ÌÑ¼å½ÕÈ‰…Í•±¥¹”É•ÅÕ•ÍĞÉ…Ñ”°…¹µ½¹¥Ñ½ÈÑ¡¥Ìµ•ÑÉ¥Œ…±½¹Í¥‘”lÕáà•ÉÉ½ÉÍt ¡ÑÑÀµÉ•ÍÁ½¹Í”µµ•ÑÉ¥Ì¤…¹Í•ÉÙ¥”ÕÁÑ¥µ”€¡İ¡¥ İ”±°‘¥ÍÕÍÌm±…Ñ•Ét …Ù…¥±…‰¥±¥Ñäµµ•ÑÉ¥Ì¤¤¸(()-••Á¥¹œ„±½Í”•å”½¸%%L…Ñ¥Ù¥Ñä…¸¡•±Àå½Ô‘¥ÍÑ¥¹Õ¥Í ‰•Ñİ••¸±•¥Ñ¥µ…Ñ”…¹¥±±•¥Ñ¥µ…Ñ”ÑÉ…™™¥Œ¸9•Ñİ½É¬Í•ÕÉ¥Ñä¥Ì„‘¥Í¥Á±¥¹”Õ¹Ñ¼¥ÑÍ•±˜…¹½ÕÑÍ¥‘”Ñ¡”Í½Á”½˜Ñ¡¥Ì…ÉÑ¥±”°‰ÕĞ¥¸•¹•É…°°¥ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼¡…Ù”„‘••ÀÕ¹‘•ÉÍÑ…¹‘¥¹œ½˜å½ÕÈ!QQ@…Ñ¥Ù¥Ñä¸5½¹¥Ñ½É¥¹œÑ¡”¹Õµ‰•È½˜É•ÅÕ•ÍÑÌÁ•ÈÍ•½¹¥Ì„½½™¥ÉÍĞÍÑ•À¸%˜å½Ô¹½Ñ¥”„ÍÁ¥­”¥¸É•ÅÕ•ÍÑÌÁ•ÈÍ•½¹°å½Ô…¸Ñ…­”™ÕÉÑ¡•ÈÍÑ•ÁÌÑ¼‘•Ñ•Éµ¥¹”¥˜Ñ¡”…ÕÍ”¥Ì°™½È¥¹ÍÑ…¹”°„‘•¹¥…°½˜Í•ÉÙ¥”€¡½L¤…ÑÑ…¬½È„ÍÕÉ”½˜É•™•ÉÉ…±Ì™É½´„Á½ÁÕ±…ÈÍ½ÕÉ”€¡Ñ¡”Í¼µ…±±•m¡Õœ½˜‘•…Ñ¡um¡Õœµ½˜µ‘•…Ñ¡t¤¸€€(()5¥É½Í½™ĞÉ•½µµ•¹‘Ìmµ½¹¥Ñ½É¥¹œå½ÕÈ%%L±½Íum‘‘½Ìµ±½Ít™½ÈÍÁ¥­•Ì¥¸Q¥µ•É}½¹¹•Ñ¥½¹%‘±•€µ•ÍÍ…•Ì°İ¡¥ …ÁÁ•…Èİ¡•¸„±¥•¹ĞÌ½¹¹•Ñ¥½¸¡…ÌÉ•…¡•¥ÑÌ­••Àµ…±¥Ù”Ñ¥µ•½ÕĞ¸©ÕµÀ¥¸Ñ¡”¹Õµ‰•È½˜Q¥µ•É}½¹¹•Ñ¥½¹%‘±•€±½Ìµ…ä¥¹‘¥…Ñ”Ñ¡…Ğ½L…ÑÑ…­•ÉÌ…É”ÑÉå¥¹œÑ¼µ…à½ÕĞÑ¡”…Ù…¥±…‰±”½¹¹•Ñ¥½¹ÌÑ¼å½ÕÈÍ•ÉÙ•È¸	ÕĞ¥Ğ…¸…±Í¼¡…ÁÁ•¸İ¡•¸ÕÍ•ÉÌ…É”¡…Ù¥¹œ¥ÍÍÕ•Ìİ¥Ñ ½¹¹•Ñ¥Ù¥Ñä¸(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è€¨©ÕÉÉ•¹ÑEÕ•Õ•M¥é”¨¨(()]—ŠeÙ”µ•¹Ñ¥½¹••…É±¥•ÈÑ¡…Ğ¥˜¹¼İ½É­•ÈÁÉ½•ÍÍ•Ì…É”…Ù…¥±…‰±”Ñ¼¡…¹‘±”„É•ÅÕ•ÍĞ°!QQ@¹ÍåÌÁ±…•ÌÑ¡”É•ÅÕ•ÍĞ¥¸„ÅÕ•Õ”¸ÕÉÉ•¹ÑEÕ•Õ•M¥é•€µ•…ÍÕÉ•ÌÑ¡”‘•ÁÑ ½˜Ñ¡”!QQ@¹ÍåÌÉ•ÅÕ•ÍĞÅÕ•Õ”Á•È…ÁÁ±¥…Ñ¥½¸Á½½°¸%˜Ñ¡”ÕÉÉ•¹ÑEÕ•Õ•M¥é•€½˜„Á½½°¥Ì½¹Í¥ÍÑ•¹Ñ±ä…ÁÁÉ½…¡¥¹œÑ¡”Á½½°Ìµ…á¥µÕ´É•ÅÕ•ÍĞÅÕ•Õ”±•¹Ñ € Ä°ÀÀÀ°‰ä‘•™…Õ±Ğ°…¹½¹™¥ÕÉ…‰±”İ¥Ñ¡¥¸m%%L5…¹…•Éum¥¥Ìµµ…¹…•Ét¤°å½Ô±°İ…¹ĞÑ¼™¥ÕÉ”½ÕĞÑ¡”Í½ÕÉ”½˜Ñ¡”‰…­±½œ¸€(()e½Ô±°İ…¹ĞÑ¼İ…Ñ ™½ÈÍÕÍÑ…¥¹•¥¹É•…Í•Ì¥¸ÕÉÉ•¹ÑEÕ•Õ•M¥é•€¸M¥¹”Ñ¡”AT¥Ìİ¡…Ğ¡…¹‘±•ÌÉ•ÅÕ•ÍÑÌİ¥Ñ¡¥¸…¸…ÁÁ±¥…Ñ¥½¸Á½½°°„™Õ±°ÅÕ•Õ”ÁÉ½‰…‰±äµ•…¹Ì•¥Ñ¡•ÈÑ¡…Ğå½ÔÙ”µ¥Í½¹™¥ÕÉ•Ñ¡”AT±¥µ¥Ğ™½Èå½ÕÈ…ÁÁ±¥…Ñ¥½¸Á½½°½ÈÑ¡…ĞÑ¡”Á½½°¡…Ì‰••¸ÍÑÕ¬Á•É™½Éµ¥¹œ„ATµ¥¹Ñ•¹Í¥Ù”½Á•É…Ñ¥½¸½¸„Í¥¹±”É•ÅÕ•ÍĞ¸Q¡”É…Á¡Ì‰•±½ÜÍ¡½ÜÕÉÉ•¹ÑEÕ•Õ•M¥é•€€¡É•¤…±½¹Í¥‘”Ñ¡”€”AÉ½•ÍÍ½ÈQ¥µ•€€¡‰±Õ”¤™½È„Í¥¹±”İ½É­•ÈÁÉ½•ÍÌ‰•™½É”…¹…™Ñ•Èİ”Ñ¡É½ÑÑ±•…¸…ÁÁ±¥…Ñ¥½¸Á½½°ÌATÕÑ¥±¥é…Ñ¥½¸Ñ¼Ñİ¼Á•É•¹Ğ¸e½Ô…¸Í•”Ñ¡”•™™•Ğ½¸ÕÉÉ•¹ÑEÕ•Õ•M¥é•€¸%¸Ñ¡”™¥ÉÍĞ¡…±˜½˜Ñ¡”É…Á °ATÕÑ¥±¥é…Ñ¥½¸¡…Ì„Ù•Éä±½Ü‰…Í•±¥¹”İ¥Ñ Á•É¥½‘¥ŒÍÁ¥­•Ì¸™Ñ•ÈÑ¡É½ÑÑ±¥¹œ°Ñ¡•É”…É”¹¼µ½É”ATÍÁ¥­•Ì°…¹ÕÉÉ•¹ÑEÕ•Õ•M¥é•€¥¹É•…Í•Ì¸()íìğ¥µœÍÉŒô‰¥¥Ìµµ•ÑÉ¥ÌµÑ¡É½ÑÑ±¥¹œµİ½É­•È¹Á¹œˆ…±Ğô‰%%L5•ÑÉ¥Ì€´É…Á¡ÌÍ¡½İ¥¹œÑ¡”•™™•ÑÌ½˜Ñ¡É½ÑÑ±¥¹œ…¸%%Lİ½É­•ÈÁÉ½•ÍÌˆ€ùõô((()Q¼•¹ÍÕÉ”Ñ¡…Ğå½ÕÈİ•ˆ…ÁÁ±¥…Ñ¥½¹Ì…É”…Ù…¥±…‰±”™½ÈÕÍ•ÉÌ°å½×Še±°İ…¹ĞÑ¼Í•ĞÕÀ…¸…±•ÉĞÑ¼¹½Ñ¥™äå½Ôİ¡•¸Ñ¡”ÕÉÉ•¹ÑEÕ•Õ•M¥é•€™½È„¥Ù•¸…ÁÁ±¥…Ñ¥½¸Á½½°¥Ì…ÁÁÉ½…¡¥¹œ¥ÑÌµ…á¥µÕ´¸™Ñ•È…¸…ÁÁ±¥…Ñ¥½¸Á½½°¡¥ÑÌÑ¡”µ…á¥µÕ´mÅÕ•Õ”±•¹Ñ¡umÅÕ•Õ”µÍ¥é•t°¥¹½µ¥¹œÉ•ÅÕ•ÍÑÌİ¥±°‰”‘É½ÁÁ•…¹Ñ¡”Í•ÉÙ•Èİ¥±°É•ÑÕÉ¸Ñ¡”•ÉÉ½È½‘”€ÔÀÌ€¡M•ÉÙ•ÈQ½¼	ÕÍä¤¸]—Še±°‘¥ÍÕÍÌÑ¡¥Ì…¹½Ñ¡•È!QQ@•ÉÉ½ÉÌ¥¸„m±…Ñ•ÈÍ•Ñ¥½¹t ¡ÑÑÀµÉ•ÍÁ½¹Í”µµ•ÑÉ¥Ì¤¸(()•Á•¹‘¥¹œ½¸Ñ¡”Í½ÕÉ”½˜å½ÕÈÅÕ•Õ¥¹œ¥ÍÍÕ•Ì°Ñ¡•É”…É”Í•Ù•É…°ÍÑ•ÁÌå½Ô…¸Ñ…­”¸%˜…¸…ÁÁ±¥…Ñ¥½¸Á½½°¥Ì½¹Í¥ÍÑ•¹Ñ±äÕÍ¥¹œ„Ù•Éä¡¥ Á•É•¹Ñ…”½˜AT°mÑ¡É½ÑÑ±¥¹umÍ•Ğµ…ÁÀµÁ½½°µÁÕtÑ¡…ĞÁ½½°Ì½¹ÍÕµÁÑ¥½¸Ñ¼„ÍÁ•¥™¥Œ±¥µ¥ĞÁÉ•Ù•¹ÑÌ¥Ğ™É½´…™™•Ñ¥¹œÑ¡”É•ÍĞ½˜å½ÕÈÍåÍÑ•´Õ¹Ñ¥°å½Ô…¸É•Í½±Ù”Ñ¡”ÁÉ½‰±•´¸Ì½˜%%L€à¸À°å½Ô…¸…±Í¼Í•ĞÑ¡”mQ¡É½ÑÑ±•U¹‘•É1½…‘umÑ¡É½ÑÑ±”µÕ¹‘•É±½…‘tÁÉ½Á•ÉÑä™½È…¸…ÁÁ±¥…Ñ¥½¸Á½½°°İ¡¥ …±±½İÌ…¸…ÁÁ±¥…Ñ¥½¸Á½½°Ñ¼•á••¥ÑÌAT±¥µ¥Ğ¥˜Ñ¡•É”¥Ì¹¼½¹Ñ•¹Ñ¥½¸™½ÈAT¸e½Ôµ…ä…±Í¼İ…¹ĞÑ¼…±±½…Ñ”µ½É”AT½É•ÌÑ¼å½ÕÈ%%L¡½ÍÑÌ¸(€)=¹”İ…äÑ¼É•‘Õ”Ñ¡”¹Õµ‰•È½˜€ÔÀÌÉ•ÍÁ½¹Í•Ì¥ÌÑ¼É…¹ĞµÕ±Ñ¥Á±”İ½É­•ÈÁÉ½•ÍÍ•ÌÑ¼…¸…ÁÁ±¥…Ñ¥½¸Á½½°°…¸…ÉÉ…¹•µ•¹Ğ­¹½İ¸…Ì„€¨©mİ•ˆ…É‘•¹umİ•ˆµ…É‘•¹t¨¨¸]•ˆ…É‘•¹Ì…¸•¹ÍÕÉ”Ñ¡…Ğİ½É­•ÈÁÉ½•ÍÍ•Ì…É”…±İ…åÌ…Ù…¥±…‰±”Ñ¼¡…¹‘±”É•ÅÕ•ÍÑÌ¸(()]•ˆ…É‘•¹Ì…É”¹½Ğ…±İ…åÌÍÕ¥Ñ…‰±”™½È•Ù•Éä…ÁÁ±¥…Ñ¥½¸°…¹¥¸Í½µ”…Í•Ì°Ñ¡•äµ…ä¹•…Ñ¥Ù•±ä¥µÁ…Ğ%%LÁ•É™½Éµ…¹”¸¥ÉÍĞ°¥˜„İ½É­•ÈÁÉ½•ÍÌ¹••‘Ì•á±ÕÍ¥Ù”…•ÍÌÑ¼„™¥±”İ¥Ñ¡¥¸Ñ¡”¡½ÍĞ°¥¹É•…Í¥¹œÑ¡”¹Õµ‰•È½˜İ½É­•ÈÁÉ½•ÍÍ•ÌÙå¥¹œ™½ÈÑ¡”™¥±”İ¥±°½¹±äÉ•…Ñ”„‰½ÑÑ±•¹•¬¸M•½¹°…¹ä…‘‘¥Ñ¥½¹…°İ½É­•ÈÁÉ½•ÍÌ…±Í¼µ…¥¹Ñ…¥¹Ì¥ÑÌ½İ¸m…¡•umİ•ˆµ…É‘•¸µ‘…Ñ…t…¹ATÑ¡É•…‘Ì°…¹İ¥±°¥¹É•…Í”Ñ¡”É•Í½ÕÉ”ÕÍ…”½˜…¸…ÁÁ±¥…Ñ¥½¸Á½½°¸•Á•¹‘¥¹œ½¸å½ÕÈÕÍ”…Í”°„µ½É”É•±¥…‰±”…±Ñ•É¹…Ñ¥Ù”Ñ¼İ•ˆ…É‘•¹Ìµ…ä‰”ÍÁ±¥ÑÑ¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¸¥¹Ñ¼µ¥É½Í•ÉÙ¥•Ì…¹‘•‘¥…Ñ¥¹œ…¸…ÁÁ±¥…Ñ¥½¸Á½½°Ñ¼•… ¸e½Ô…¸½‰Í•ÉÙ”Ñ¡”•áÑ•¹ĞÑ¼İ¡¥ İ•ˆ…É‘•¹Ì…É”¥µÁ…Ñ¥¹œÁ•É™½Éµ…¹”¥¸å½ÕÈÁ…ÉÑ¥Õ±…È…Í”‰äµ½¹¥Ñ½É¥¹œÑ¡”AT…¹µ•µ½ÉäÕÍ…”½˜•… İ½É­•ÈÁÉ½•ÍÌ¸(()e½Ô…¸…±Í¼¥¹É•…Í”½È‘•É•…Í”Ñ¡”µ…á¥µÕ´É•ÅÕ•ÍĞÅÕ•Õ”±•¹Ñ ½˜•… …ÁÁ±¥…Ñ¥½¸Á½½°¸]¥Ñ „¡¥¡•Èµ…á¥µÕ´ÅÕ•Õ”±•¹Ñ °%%L…¸Í•ÉÙ”„±…É•È¹Õµ‰•È½˜½¹ÕÉÉ•¹ĞÉ•ÅÕ•ÍÑÌ‰•™½É”¥ĞÍÑ…ÉÑÌÉ•ÑÕÉ¹¥¹œ€ÔÀÌ•ÉÉ½ÉÌÑ¼±¥•¹ÑÌ¸!½İ•Ù•È°¥˜å½ÔÍ•Ğå½ÕÈµ…á¥µÕ´ÅÕ•Õ”±•¹Ñ Ñ½¼¡¥ °å½ÕÈÍ•ÉÙ•Èµ…äÍ••´Õ¹É•ÍÁ½¹Í¥Ù”Ñ¼±¥•¹ÑÌİ¡¥±”Ñ¡•¥ÈÉ•ÅÕ•ÍÑÌ…É”İ…¥Ñ¥¹œ¥¸Ñ¡”ÅÕ•Õ”¸¹¥˜„É•ÅÕ•ÍĞÉ•µ…¥¹Ì¥¸…¸…ÁÁ±¥…Ñ¥½¸Á½½°ÌÅÕ•Õ”™½È±½¹•ÈÑ¡…¸Ñ¡”m½¹¹•Ñ¥½¹Q¥µ•½ÕÑumİ•‰Í¥Ñ”µ±¥µ¥ÑÍt±¥µ¥Ğå½×ŠeÙ”ÍÁ•¥™¥•™½Èå½ÕÈÍ¥Ñ”°Ñ¡”É•ÅÕ•ÍĞİ¥±°Ñ¥µ”½ÕĞ…¹É•½É„mQ¥µ•É}ÁÁA½½±um¡ÑÑÀµ…Á¤µ±½Ít•ÉÉ½È¥¸Ñ¡”!QQAII€±½Ì°İ¡¥ ±½œÑ¡”½ÕÑÁÕĞ½˜!QQ@¹ÍåÌ¸e½Ô…¸™¥¹Ñ¡•Í”±½Ì…Ğ€¨©éq]¥¹‘½İÍqMåÍÑ•´ÌÉq1½¥±•Íq!QQAIIq¡ÑÑÁ•ÉÈ¹±½œ¨¨¸5¥É½Í½™ĞÉ•½µµ•¹‘ÌÍ•ÑÑ¥¹œÑ¡”µ…á¥µÕ´ÅÕ•Õ”±•¹Ñ m¹¼¡¥¡•ÈÑ¡…¸€ÄÀ°ÀÀÁumÅÕ•Õ”µÍ¥é•t¸€(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èI•ÅÕ•ÍÑÌ€¼M•Œ(()]¡¥±”Q½Ñ…±5•Ñ¡½‘I•ÅÕ•ÍÑÍA•ÉM•€½Õ¹ÑÌ…±°É•ÅÕ•ÍÑÌÉ••¥Ù•‰ä!QQ@¹ÍåÌ°I•ÅÕ•ÍÑÌ€¼M•€ÑÉ…­Ì•Ù•ÉäÉ•ÅÕ•ÍĞÑ¡…Ğ!QQ@¹ÍåÌÉ½ÕÑ•ÌÑ¼•… İ½É­•ÈÁÉ½•ÍÌ¸e½ÔÍ¡½Õ±µ½¹¥Ñ½È‰½Ñ I•ÅÕ•ÍÑÌ€¼M•€€¡Á•Èİ½É­•ÈÁÉ½•ÍÌ¤…¹Q½Ñ…±5•Ñ¡½‘I•ÅÕ•ÍÑÍA•ÉM•€Ñ¼•Ğ„µ½É”½µÁ±•Ñ”Á¥ÑÕÉ”½˜%%LÉ•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞ°Í¥¹”Ñ¡”‰•¡…Ù¥½È½˜Ñ¡•Í”Ñİ¼µ•ÑÉ¥Ì‘½•Ì¹½Ğ…±İ…åÌ½¥¹¥‘”¸Ìİ”m•áÁ±…¥¹•‘t ¡ÑÑÀµÍåÌµ…¹µİ½É­•ÈµÁÉ½•ÍÍ•Ì¤°É•ÅÕ•ÍÑÌÑ¼%%L™¥ÉÍĞÉ•… !QQ@¹ÍåÌ°…¹µ…ä•¹Ñ•È„ÅÕ•Õ”‰•™½É”Í¡¥™Ñ¥¹œÑ¼Ñ¡”…ÁÁÉ½ÁÉ¥…Ñ”İ½É­•ÈÁÉ½•ÍÌ¸5½¹¥Ñ½É¥¹œQ½Ñ…±5•Ñ¡½‘I•ÅÕ•ÍÑÍA•ÉM•€…±½¹Í¥‘”Ñ¡”I•ÅÕ•ÍÑÌ€¼M•€½˜•… İ½É­•ÈÁÉ½•ÍÌµ…­•Ì¥Ğ±•…È¡½Ü€¡…¹¡½ÜµÕ ¤!QQ@ÑÉ…™™¥Œ¥Ìµ½Ù¥¹œÑ¡É½Õ å½ÕÈÍ•ÉÙ•È¸(((ŒŒŒŒ5•ÑÉ¥ÌÑ¼İ…Ñ èÌµµ•Ñ¡½°ÌµÕÉ¤µÍÑ•´(()e½Ô±°İ…¹ĞÑ¼­••À…¸•å”½¸Ñ¡”UI$Á…Ñ¡Ì…¹!QQ@µ•Ñ¡½‘Ì½˜É•ÅÕ•ÍÑÌÑ¼å½ÕÈ%%L¥¹ÍÑ…¹•Ì°…ÌÑ¡•Í”…É”Ñ¡”µ½ÍĞ‘¥É•Ğİ…åÌ½˜‘•Ñ•Éµ¥¹¥¹œİ¡¥ Á…ÉÑÌ½˜å½ÕÈİ•ˆ…ÁÁ±¥…Ñ¥½¹Ì…É”É•ÍÁ½¹Í¥‰±”™½ÈÁ½½ÈÁ•É™½Éµ…¹”¸m	ä‘•™…Õ±Ñum¥¥Ìµ±½œµ‘•™…Õ±ÑÍt°%%Lİ¥±°±½œÑ¡”Ìµµ•Ñ¡½‘€€¡!QQ@É•ÅÕ•ÍĞµ•Ñ¡½ÍÕ …ÌP½ÈA=MP¤…¹Ñ¡”ÌµÕÉ¤µÍÑ•µ€°Ñ¡”UI$Ñ…É•Ğ½˜Ñ¡”É•ÅÕ•ÍĞ€¡”¹œ¸°€ˆ¼ˆ¤¸Q¡”Í€¥¸Ñ¡”¹…µ•Ì½˜Ñ¡•Í”µ•ÑÉ¥ÌÍÑ…¹‘Ì™½Èl‰±¥•¹ĞµÑ¼µÍ•ÉÙ•È‰umÜÍŒµ±½œµ‘•™Ít¸€(()e½Ô…¸Á…ÉÍ”å½ÕÈ±½ÌÑ¼½±±•ĞÑ¡”Ìµµ•Ñ¡½‘€…¹ÌµÕÉ¤µÍÑ•µ€½˜•… É•ÅÕ•ÍĞ°…¹ÕÍ”Ñ¡¥Ì‘…Ñ„Ñ¼…¹…±åé”Ñ¡”Ñ¡É½Õ¡ÁÕĞ°±…Ñ•¹ä°…¹¥µÁ…Ğ½¸É•Í½ÕÉ”ÕÍ…”½˜É•ÅÕ•ÍÑÌÑ¼ÍÁ•¥™¥ŒÉ½ÕÑ•Ìİ¥Ñ¡¥¸å½ÕÈİ•ˆ…ÁÁ±¥…Ñ¥½¹Ì¸%˜Ñ¡”…Ù•É…”mÑ¥µ”µÑ…­•¹t ¡ÑÑÀµÉ•ÍÁ½¹Í”µµ•ÑÉ¥Ì¤¥Ì¡¥¡•ÈÑ¡…¸•áÁ•Ñ•°™½È•á…µÁ±”°å½Ô…¸ÕÍ”Ìµµ•Ñ¡½‘€…¹ÌµÕÉ¤µÍÑ•µ€Ñ¼Í•”¥˜Ñ¡”±…Ñ•¹ä¥ÍÍÕ•Ì½µ”™É½´„ÍÁ•¥™¥ŒÁ…”¸((()íìğ¥µœÍÉŒô‰¥¥Ìµµ•ÑÉ¥Ìµ±½Ì¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰%%L5•ÑÉ¥Ì€´¸%%L±½œÍÑÉ•…´Í¡½İ¥¹œÌµµ•Ñ¡½¥¸Ñ¡”5Q!=½±Õµ¸…¹ÌµÕÉ¤µÍÑ•´¥¸Ñ¡”UI0AQ ½±Õµ¸¸ˆ…ÁÑ¥½¸ô‰¸%%L±½œÍÑÉ•…´Í¡½İ¥¹œÌµµ•Ñ¡½¥¸Ñ¡”5Q!=½±Õµ¸…¹ÌµÕÉ¤µÍÑ•´¥¸Ñ¡”UI0AQ ½±Õµ¸¸ˆ€ùõô(((ŒŒŒ!QQ@É•ÍÁ½¹Í”µ•ÑÉ¥Ì(()5½¹¥Ñ½É¥¹œ!QQ@É•ÍÁ½¹Í•Ì¥ÌÑ¡”µ½ÍĞ‘¥É•Ğİ…äÑ¼Í•”¡½Üå½ÕÈ%%LÍ¥Ñ•Ì…É”Í•ÉÙ¥¹œÕÍ•ÉÌ¸e½Ô±°İ…¹ĞÑ¼­¹½Ü…‰½ÕĞÕÁÑ¥­Ì¥¸É•ÍÁ½¹Í”±…Ñ•¹ä‰•™½É”å½ÕÈÕÍ•ÉÌÑ•±°å½Ô¸¹„ÍÁ¥­”¥¸€Ñáà½È€Õáà•ÉÉ½ÉÌ…¸Í¥¹…°„ÁÉ½‰±•´İ¥Ñ „½¹™¥ÕÉ…Ñ¥½¸Í•ÑÑ¥¹œ½È„‰É•…­¥¹œ¡…¹”¥¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸¸e½Ô…¸Á…ÉÍ”…¹…¹…±åé”å½ÕÈ%%L±½ÌÑ¼ÑÉ…¬Ñ¡”ÑåÁ•Ì½˜É•ÅÕ•ÍÑÌÑ¡…Ğ¡…Ù”É•ÑÕÉ¹••ÉÉ½ÈÉ•ÍÁ½¹Í•Ì¸Ì½˜Ù•ÉÍ¥½¸€Ü¸À¬°%%LÉ•Á½ÉÑÌÍÕ‰Í•ÑÌ½˜€Ñáà…¹€ÕáàÍÑ…ÑÕÌ½‘•ÌÑ¡…ĞÁÉ½Ù¥‘”µ½É”‘•Ñ…¥±•‘•ÍÉ¥ÁÑ¥½¹Ì¸e½Ô…¸™¥¹„±¥ÍĞ½˜!QQ@ÍÑ…ÑÕÌ…¹ÍÕ‰ÍÑ…ÑÕÌ½‘•Ìm¡•É•umÍÑ…ÑÕÌµ½‘”µ­•åt¸€(()%¸mA…ÉĞ€ÉumÁ…ÉĞ´Èµ±¥¹­t°İ”±°Í¡½Üå½Ô¡½ÜÑ¼ÕÍ”Ñ¡”%%Lm±½¥¹œµ½‘Õ±•um¥¥Ìµ±½¥¹œµ±¥¹­tÑ¼±½œ­•ä¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ•… É•ÅÕ•ÍĞ°¥¹±Õ‘¥¹œÑ¡”!QQ@É•ÅÕ•ÍĞµ•Ñ¡½€¡P°A=MP°•ÑŒ¸¤°ÌµÕÉ¤µÍÑ•µ€€¡UI0Á…Ñ ¤°…¹Ñ¥µ”µÑ…­•¹€€¡É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¤¸(()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒQåÁ•um‘µµ½¹¥Ñ½É¥¹œ´ÄÀÄµ±¥¹­tğmÙ…¥±…‰¥±¥ÑåumÁ…ÉĞ´Èµ±¥¹­tğ)ğè´´´´µğè´´´´´´´´´´´µğè´´´´´´´´´´´µğè´´´´´´´´´´´´µğ)ğ€Ñáà•ÉÉ½ÉÌğ½Õ¹Ğ½ÈÉ…Ñ”½˜€Ñáà±¥•¹Ğ•ÉÉ½ÉÌğ]½É¬èÉÉ½Èğ%%L±½Ì°m\ÍMY}\Í]AumÜÍİÀµ½Õ¹Ñ•ÉÍtÁ•É™½Éµ…¹”½Õ¹Ñ•ÈÍ•Ğ€¡™½È•ÉÑ…¥¸•ÉÉ½È½‘•Ì¤ğ)ğ€Õáà•ÉÉ½ÉÌğ½Õ¹Ğ½ÈÉ…Ñ”½˜€ÕáàÍ•ÉÙ•È•ÉÉ½ÉÌğ]½É¬èÉÉ½Èğ%%L±½Ì°m\ÍMY}\Í]AumÜÍİÀµ½Õ¹Ñ•ÉÍtÁ•É™½Éµ…¹”½Õ¹Ñ•ÈÍ•Ğ€¡™½È€ÔÀÀ•ÉÉ½È½‘•Ì¤ğ)ğÑ¥µ”µÑ…­•¹€ğQ¥µ”•±…ÁÍ•‰•Ñİ••¸Ñ¡”™¥ÉÍĞ‰åÑ”½˜„É•ÅÕ•ÍĞ…¹Ñ¡”™¥¹…°‰åÑ”½˜„É•ÍÁ½¹Í”ğ]½É¬èA•É™½Éµ…¹”ğ%%L±½Ì(((€(ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸è€ÕáàÍ•ÉÙ•È•ÉÉ½ÉÌ(()%%LÍ•¹‘Ì„€ÕáàÍÑ…ÑÕÌ½‘”İ¡•¸Ñ¡”Í•ÉÙ•È¥ÌÕ¹…‰±”Ñ¼É•ÍÁ½¹Ñ¼„Ù…±¥É•ÅÕ•ÍĞ¸½µµ½¸€Õáà•ÉÉ½È½‘•Ì¥¹±Õ‘”€ÔÀÌ€¡M•ÉÙ•ÈQ½¼	ÕÍä¤…¹€ÔÀÀ€¡%¹Ñ•É¹…°M•ÉÙ•ÈÉÉ½È¤¸€(()%%Lİ¥±°ÍÑ…ÉĞÍ•¹‘¥¹œ€ÔÀÌ•ÉÉ½ÈÉ•ÍÁ½¹Í•Ì…™Ñ•È¥Ğ¡…ÌÉ•…¡•¥ÑÌµ…á¥µÕ´É•ÅÕ•ÍĞÅÕ•Õ”±•¹Ñ …¹…¹¹½ĞÁÉ½•ÍÌ…¹ä…‘‘¥Ñ¥½¹…°É•ÅÕ•ÍÑÌ¸]”Ù”m‘¥ÍÕÍÍ•‘t ¡ÑÑÀµÉ•ÅÕ•ÍĞµµ•ÑÉ¥Ì¤¡½Üå½Ô…¸ÁÉ•Ù•¹Ğ½¹”Í½ÕÉ”½˜€ÔÀÍÌ‰äÍ•ÑÑ¥¹œÕÀİ•ˆ…É‘•¹Ì½È¥¹É•…Í¥¹œÑ¡”µ…á¥µÕ´ÅÕ•Õ”±•¹Ñ ¸€(()e•ĞÑ¡•É”µ…ä…±Í¼‰”…±Ñ•É¹…Ñ¥Ù”…ÕÍ•Ì½˜€ÔÀÍÌ¸%˜å½ÔÍÑ…ÉĞÍ••¥¹œ„¡¥ É…Ñ”½˜€ÔÀÌ•ÉÉ½ÉÌİ¥Ñ¡½ÕĞ„½ÉÉ•ÍÁ½¹‘¥¹œ¥¹É•…Í”¥¸ATÕÍ…”€¡İ¡¥ ¥ÌÕÍÕ…±±ä„­•ä¥¹‘¥…Ñ½ÈÑ¡…Ğİ½É­•ÈÁÉ½•ÍÍ•Ì…É”½Ù•É±½…‘•¤°å½Ôµ…äİ…¹ĞÑ¼½¹ÍÕ±ĞÑ¡”!QQAII€±½Ì°…Ì!QQ@¹ÍåÌµ…äÉ•ÑÕÉ¸„€ÔÀÌ‰•™½É”„É•ÅÕ•ÍĞÉ•…¡•Ì„İ½É­•ÈÁÉ½•ÍÌ€¡”¹œ¸°¥˜…¸…ÁÁ±¥…Ñ¥½¸Á½½°m½•Ì½™™±¥¹•um½‘”´ÔÀÌµ¡ÑÑÁ•ÉÈµ•á…µÁ±•t¤¸(()%˜å½ÔÉ”ÉÕ¹¹¥¹œ…¸M@¹9P…ÁÁ±¥…Ñ¥½¸°å½Ôµ…ä…±Í¼Í•”€ÔÀÍÌÑ¡…Ğ¡…Ù”Ñ¼‘¼İ¥Ñ m…ÁÁ½¹ÕÉÉ•¹ÑI•ÅÕ•ÍÑ1¥µ¥Ñum½¹ÕÉÉ•¹ĞµÉ•ÅÕ•ÍĞµÍ•ÑÑ¥¹t°Ñ¡”mµ…á¥µÕ´ÅÕ•Õ”Í¥é•umÅÕ•Õ”µÍ¥é”µ…ÍÁt™½È½¹ÕÉÉ•¹ĞÉ•ÅÕ•ÍÑÌÁ¥Á•™É½´%%L¸)ÕÍĞ±¥­”İ¡•¸…¸…ÁÁ±¥…Ñ¥½¸Á½½°É•…¡•Ì¥ÑÌµ…á¥µÕ´ÅÕ•Õ”±•¹Ñ °…¸M@¹9P…ÁÁ±¥…Ñ¥½¸İ¥±°‰•¥¸É•ÍÁ½¹‘¥¹œÑ¼É•ÅÕ•ÍÑÌİ¥Ñ €ÔÀÌ•ÉÉ½ÉÌ…™Ñ•È¡¥ÑÑ¥¹œ¥ÑÌ…ÁÁ½¹ÕÉÉ•¹ÑI•ÅÕ•ÍÑ1¥µ¥Ñ€€¡‰ä‘•™…Õ±Ğ°€Ô°ÀÀÀ¤¸(()]¥Ñ¡½ÕĞ‘••Á•È¥¹Ù•ÍÑ¥…Ñ¥½¸°¥Ğ…¸‰”¡…ÉÑ¼‘•Ñ•Éµ¥¹”Ñ¡”Í½ÕÉ”½˜„€ÔÀÀ•ÉÉ½È°‰ÕĞÑ¡”%%LÍÕ‰ÍÑ…ÑÕÌ½‘”µ…ä½™™•È±Õ•Ì¸½È•á…µÁ±”°lÔÀÀ¸ÄÍumÍÑ…ÑÕÌµ½‘”µ­•åt¥¹‘¥…Ñ•Ì°€‰]•ˆÍ•ÉÙ•È¥ÌÑ½¼‰ÕÍä°ˆİ¡¥ µ•…¹ÌÑ¡…Ğ°‰•…ÕÍ”½˜É•Í½ÕÉ”½¹ÍÑÉ…¥¹ÑÌ°Ñ¡”Í•ÉÙ•È¡…Ì•á••‘•Ñ¡”¹Õµ‰•È½˜½¹ÕÉÉ•¹ĞÉ•ÅÕ•ÍÑÌ¥Ğ…¸ÁÉ½•ÍÌ€¡¥ÉÉ•ÍÁ•Ñ¥Ù”½˜Ñ¡”…ÁÁ½¹ÕÉÉ•¹ÑI•ÅÕ•ÍÑ1¥µ¥Ñ€å½×ŠeÙ”½¹™¥ÕÉ•¤¸%˜å½ÔÉ”ÕÍ¥¹œÑ¡”M@İ•ˆ™É…µ•İ½É¬°Ñ¡”€ÔÀÀ¸ÄÀÀÍÕ‰ÍÑ…ÑÕÌ½‘”¥¹‘¥…Ñ•Ì…¸€‰%¹Ñ•É¹…°M@•ÉÉ½È¸ˆ%¸Ñ¡¥Ì…Í”°å½Ô±°İ…¹ĞÑ¼¡•¬å½ÕÈM@•ÉÉ½È±½Ì™½È„mµ½É”ÍÁ•¥™¥Œ•ÉÉ½Èµ•ÍÍ…•um…ÍÀµ•ÉÉ½Èµ½‘•Ít¸(()e½Ôµ…äİ…¹ĞÑ¼½ÉÉ•±…Ñ”€Õáà•ÉÉ½ÉÌİ¥Ñ Ñ¡”É…Ñ”½È½Õ¹Ğ½˜É•ÅÕ•ÍÑ•UI$Á…Ñ¡Ì€¡ÌµÕÉ¤µÍÑ•µ€¤…¹!QQ@É•ÅÕ•ÍĞµ•Ñ¡½‘Ì€¡Ìµµ•Ñ¡½‘€¤¸%˜É•ÅÕ•ÍÑÌÑ¼•ÉÑ…¥¸UI$Á…Ñ¡Ì…É”É•ÑÕÉ¹¥¹œ€ÔÀÀÍÑ…ÑÕÌ½‘•Ì…Ğ„µÕ ¡¥¡•ÈÉ…Ñ”°å½Ôµ…äİ…¹ĞÑ¼¥¹Ù•ÍÑ¥…Ñ”İ¡•Ñ¡•È¥ĞÌÉ•±…Ñ•Ñ¼É••¹Ğ¡…¹•Ì¥¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸½‘”¸(()¥¹…±±ä°å½Ô…¸ÕÍ”Ñ¡”m\ÍMY}\Í]AumÜÍİÀµ½Õ¹Ñ•ÉÍt½Õ¹Ñ•È°€”€ÔÀÀ!QQ@I•ÍÁ½¹Í”M•¹Ñ€°Ñ¼ÑÉ…¬Ñ¡”Á•É•¹Ñ…”½˜É•ÍÁ½¹Í•ÌÑ¡…Ğ¡…Ù”É•ÑÕÉ¹•„€ÔÀÀ•ÉÉ½È¸1¥­”Ñ¡”½Ñ¡•È•ÉÉ½ÈµÉ•±…Ñ•½Õ¹Ñ•ÉÌ¥¸Ñ¡¥ÌÍ•Ğ°Ñ¡¥Ì½Õ¹Ñ•Èİ½¸ĞÑ•±°å½Ô„ÍÕ‰ÍÑ…ÑÕÌ½‘—ŠQå½Ô…¸½¹±ä±•…¸Ñ¡…Ğ¥¹™½Éµ…Ñ¥½¸™É½´Ñ¡”±½Ì¸%ĞÌ•¹•É…±±ä„‰•ÑÑ•È¥‘•„Ñ¼µ½¹¥Ñ½ÈÑ¡”É…Ñ”½˜€Õáà•ÉÉ½ÉÌÕÍ¥¹œ±½Ì°Í¥¹”Ñ¡•ä…¸ÁÉ½Ù¥‘”µ½É”½¹Ñ•áĞ…É½Õ¹Ñ¡”•á…Ğ…ÕÍ”½˜•… •ÉÉ½È¸(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼…±•ÉĞ½¸èÑ¥µ”µÑ…­•¸()e½Ô…¸m½¹™¥ÕÉ”%%Mum±½¥¹œµ™¥•±‘ÍtÑ¼±½œÑ¥µ”µÑ…­•¹€°mÑ¡”Ñ¥µ”¥ĞÑ…­•Ì™½È%%LÑ¼ÁÉ½•ÍÌ„É•ÅÕ•ÍÑumÑ¥µ”µÑ…­•¸µ‘•™t¸Q¡¥Ìµ•ÑÉ¥ŒÉ•ÁÉ•Í•¹ÑÌÑ¡”‘¥™™•É•¹”°¥¸µ¥±±¥Í•½¹‘Ì°‰•Ñİ••¸Ñİ¼Ñ¥µ•ÍÑ…µÁÌèİ¡•¸!QQ@¹ÍåÌÉ••¥Ù•ÌÑ¡”™¥ÉÍĞ‰åÑ”½˜„É•ÅÕ•ÍĞ°…¹İ¡•¸%%L™¥¹¥Í¡•ÌÍ•¹‘¥¹œÑ¡”™¥¹…°‰åÑ”½˜Ñ¡”É•ÍÁ½¹Í”Ñ¼Ñ¡”±¥•¹Ğ°¥¹±Õ‘¥¹œ¹•Ñİ½É¬±…Ñ•¹ä¸!¥ É•ÍÁ½¹Í”±…Ñ•¹ä…¸…™™•ĞÕÍ•È•áÁ•É¥•¹”°Í¼å½Ô±°İ…¹ĞÑ¼‰”…±•ÉÑ•¥˜¥Ğ½¹Í¥ÍÑ•¹Ñ±ä•á••‘Ì…¸Õ¹‘•Í¥É…‰±”Ñ¡É•Í¡½±¸(()Qİ¼İ…åÌå½Ô…¸¥µÁÉ½Ù”É•ÍÁ½¹Í”±…Ñ•¹ä¥¹±Õ‘”ÕÍ¥¹œm!QQ@½µÁÉ•ÍÍ¥½¹um¡ÑÑÀµ½µÁÉ•ÍÍ¥½¹tÑ¼É•‘Õ”Ñ¡”Í¥é”½˜Ñ¡”™¥±•ÌÑ¡…Ğ%%LÉ•ÑÕÉ¹Ì°…¹mÕÍ¥¹œ½ÕÑÁÕĞ…¡¥¹um½ÕÑÁÕĞµ…¡¥¹tÑ¼ÍÑ½É”m½µµ½¹±ä•¹•É…Ñ•Ù•ÉÍ¥½¹Íum½ÕÑÁÕĞµ…¡¥¹œµ‘•Ñ…¥±t½˜‘å¹…µ¥Œ½¹Ñ•¹Ğ¥¸µ•µ½Éä¸€(()Q¡”•™™•Ñ¥Ù•¹•ÍÌ½˜Ñ¡•Í”Í½±ÕÑ¥½¹Ì‘•Á•¹‘Ì½¸å½ÕÈÕÍ”…Í”¸=ÕÑÁÕĞ…¡¥¹œİ½¸Ğ¡…Ù”…¹ä¥µÁ…Ğ¥˜å½ÕÈİ•ˆÍ•ÉÙ•È½¹±äÍ•¹‘ÌÍÑ…Ñ¥Œ™¥±•Ì¸¹¥˜å½ÕÈ½¹Ñ•¹Ğ¡…¹•Ì™É•ÅÕ•¹Ñ±ä°Ñ¡”É•Í½ÕÉ”ÕÍ”½˜…¡¥¹œµ…ä½™™Í•Ğ…¹ä‘É½À¥¸É•ÍÁ½¹Í”±…Ñ•¹ä¸¥±”½µÁÉ•ÍÍ¥½¸½¹±ä¥µÁÉ½Ù•ÌÑ¡”±…Ñ•¹ä½˜•ÉÑ…¥¸!QQ@É•ÅÕ•ÍÑÏŠQÑ¡½Í”Ñ¡…Ğ¥¹±Õ‘”…¸•ÁĞµ•¹½‘¥¹€¡•…‘•ÈÑ¡…Ğµ…Ñ¡•ÌÑ¡”½µÁÉ•ÍÍ¥½¸ÍÑÉ…Ñ•äå½ÔÙ”ÍÁ•¥™¥•¥¸å½ÕÈ%%L½¹™¥ÕÉ…Ñ¥½¸€¡”¹œ¸°€‰•™±…Ñ”ˆ½È€‰i%@ˆ¤¸%˜å½ÔÉ”±½½­¥¹œÑ¼¥µÁ±•µ•¹Ğ™¥±”½µÁÉ•ÍÍ¥½¸°å½Ôµ…äİ…¹ĞÑ¼µ½¹¥Ñ½ÈÑ¡”•ÁĞµ•¹½‘¥¹€¡•…‘•È‰ä±½¥¹œ¥Ğ…Ì„mÕÍÑ½´™¥•±‘um±½œµÕÍÑ½´µ™¥•±‘t¸()íìğ¥µœÍÉŒô‰¥¥Ìµµ•ÑÉ¥Ìµ¥¥Ìµµ…¹…•È¹Á¹œˆ…±Ğô‰%%L5•ÑÉ¥Ì€´%%L5…¹…•Èˆ…ÁÑ¥½¸ô‰e½Ô…¸•¹…‰±”½µÁÉ•ÍÍ¥½¸…¹½ÕÑÁÕĞ…¡¥¹œİ¥Ñ¡¥¸%%L5…¹…•È¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è€Ñáà±¥•¹Ğ•ÉÉ½ÉÌ(()e½Ô¡…Ù”…Ì±¥ÑÑ±”½¹ÑÉ½°½Ù•ÈÍ½µ”€Ñáà•ÉÉ½ÉÌ…Ìå½Ô‘¼½Ù•ÈÑ¡”É•ÅÕ•ÍÑÌå½ÕÈÕÍ•ÉÌÍ•¹¸	ÕĞ„İ…Ù”½˜ÍÁ•¥™¥Œµ•ÍÍ…•Ìµ…ä‰”İ½ÉÑ ¥¹Ù•ÍÑ¥…Ñ¥¹œ¸%˜!QQ@¹ÍåÌ‘½•Í¸ĞÉ•½¹¥é”…¸!QQ@É•ÅÕ•ÍĞ…ÌÙ…±¥°%%Lİ¥±°É•ÑÕÉ¸m„€ĞÀÀÍÑ…ÑÕÌ½‘•um½‘”´ĞÀÁt€¡	…I•ÅÕ•ÍĞ¤¸Á…ÑÑ•É¸½˜€ĞÀÀÍÑ…ÑÕÌ½‘•Ì…¸¥¹‘¥…Ñ”Ñ¡…Ğ!QQ@¹ÍåÌ¥ÌÍ¡ÕÑÑ¥¹œ½ÕĞÉ•ÅÕ•ÍÑÌÑ¡…Ğå½Ôİ…¹Ğ¥ĞÑ¼…•ÁĞ¸½È•á…µÁ±”°Ñ¡”5…á¥•±‘1•¹Ñ¡€ÁÉ½Á•ÉÑäÍÁ•¥™¥•ÌÑ¡”±¥µ¥Ğ°¥¸‰åÑ•Ì°™½È•… ¡•…‘•È¥¸„É•ÅÕ•ÍĞ°…¹µ¥¡Ğ‰”É•©•Ñ¥¹œ•ÉÑ…¥¸¡•…‘•ÉÌ¸e½Ô…¸™¥¹Ñ¡”É•…Í½¸™½È„€ĞÀÀ•ÉÉ½È¥¸Ñ¡”m!QQAII€±½Íum½‘”´ĞÀÀµ¡ÑÑÁ•ÉÉt¸%¸Ñ¡”•á…µÁ±”½˜5…á¥•±‘1•¹Ñ¡€°å½Ô±°Í•”Ñ¡”Ù…±Õ”½˜Ñ¡”™¥•±ÌµÉ•…Í½¹€…Ì¥•±‘1•¹Ñ¡€¥¸Ñ¡”!QQAII€±½Ì¸e½Ô…¸•‘¥Ğ5…á¥•±‘1•¹Ñ¡€…¹½Ñ¡•ÈÁÉ½Á•ÉÑ¥•Ìm¥¸Ñ¡”É•¥ÍÑÉåum¡ÑÑÀµÍåÌµ½¹™¥t¸(()]¡¥±”Ñ¡”½…Í¥½¹…°lĞÀĞ€¡9½Ğ½Õ¹¤ÍÑ…ÑÕÌ½‘•um½‘”´ĞÀÑt¥ÌÑ¼‰”•áÁ•Ñ•°„ÍÕÍÑ…¥¹•¥¹É•…Í”µ…ä¥¹‘¥…Ñ”‘¥Í½É…¹¥é•½Èµ¥ÍÍ¥¹œ…ÍÍ•ÑÌ¸M½µ”€ĞÀÑÌµ…ä¥¹‘¥…Ñ”…¸¥ÍÍÕ”İ¥Ñ m¡…¹‘±•ÉÍum¥¥Ìµ¡…¹‘±•Ét°%%L•áÑ•¹Í¥½¹ÌÑ¡…ĞÁÉ½•ÍÌÉ•ÅÕ•ÍÑÌÑ¼Á…ÉÑ¥Õ±…ÈUI$Á…Ñ¡Ì€¡”¹œ¸°‰ä™¥±”ÑåÁ”¤¸%%Lİ¥±°É•ÑÕÉ¸„€ĞÀĞ•ÉÉ½Èİ¡•¸„¡…¹‘±•È¥Ì±½½­¥¹œ™½È¥ÑÌ½İ¸‘•Á•¹‘•¹¥•Ì…Ğ™¥±”Á…Ñ¡ÌÑ¡…Ğ‘½¸Ğ•á¥ÍĞ€¡Á•É¡…ÁÌ‰•…ÕÍ”å½Ô¡…Ù”¹½Ğ¥¹ÍÑ…±±•Ñ¡•´¤¸€(()]¡¥±”É•½É‘Ì½˜µ½ÍĞ!QQ@•ÉÉ½ÉÌ…É”½¹±ä…Ù…¥±…‰±”Ñ¡É½Õ ±½Ì°¥ĞÌİ½ÉÑ ¹½Ñ¥¹œÑ¡…Ğå½Ô…¸µ•…ÍÕÉ”Ñ¡”É…Ñ•Ì½˜•ÉÑ…¥¸€Ñáà•ÉÉ½ÉÏŠPĞÀÄ€¡U¹…ÕÑ¡½É¥é•¤°€ĞÀÌ€¡½É‰¥‘‘•¸¤°…¹€ĞÀÓŠQ‰äÅÕ•Éå¥¹œÑ¡”m\ÍMY}\Í]AumÜÍİÀµ½Õ¹Ñ•ÉÍtÁ•É™½Éµ…¹”½Õ¹Ñ•ÈÍ•Ğ¸(((ŒŒŒÙ…¥±…‰¥±¥Ñäµ•ÑÉ¥Ì(()Q¼•¹ÍÕÉ”Ñ¡…Ğå½ÕÈÕÍ•ÉÌ…¸…•ÍÌå½ÕÈ½¹Ñ•¹Ğ°å½Ô±°¹••Ñ¼µ½¹¥Ñ½ÈÑ¡”…Ù…¥±…‰¥±¥Ñä½˜Í•Ù•É…°½µÁ½¹•¹ÑÌ½˜%%L¸e½Ô±°İ…¹ĞÑ¼­¹½Üİ¡•¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸Á½½±Ì¡…Ù”É••¹Ñ±äÉ•ÍÑ…ÉÑ•½ÈÍÑ½ÁÁ•ÉÕ¹¹¥¹œ•¹Ñ¥É•±ä¸e½Ô±°…±Í¼İ…¹ĞÑ¼•Ğ…±•ÉÑ•¥˜%%L¥Ì¹¼±½¹•È±¥ÍÑ•¹¥¹œ™½È!QQ@É•ÅÕ•ÍÑÌ¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°‘¥ÍÕÍÌÑİ¼%%Lµ•ÑÉ¥ÌÑ¡…Ğ…¸¥Ù”å½Ô¥¹Í¥¡Ğ¥¹Ñ¼Ñ¡”…Ù…¥±…‰¥±¥Ñä½˜å½ÕÈÍ•ÉÙ•È¸(€€)ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒQåÁ•um‘µµ½¹¥Ñ½É¥¹œ´ÄÀÄµ±¥¹­tğmÙ…¥±…‰¥±¥ÑåumÁ…ÉĞ´Èµ±¥¹­tğ)ğè´´´´µğè´´´´´´´´´´´µğè´´´´´´´´´´´µğè´´´´´´´´´´´´µğ)ğ±…ÁÍ•‘Q¥µ•€ğ9Õµ‰•È½˜Í•½¹‘Ì„ÁÉ½•ÍÌ¡…Ì‰••¸ÉÕ¹¹¥¹œğI•Í½ÕÉ”èÙ…¥±…‰¥±¥ÑäğmAÉ½•ÍÌÁ•É™½Éµ…¹”½Õ¹Ñ•ÈÍ•ÑumÁ•É™ÁÉ½Œµ±…ÍÍtğ)ğM•ÉÙ¥•UÁÑ¥µ•€ğ9Õµ‰•È½˜Í•½¹‘ÌÑ¡”]]\M•ÉÙ¥”¡…Ì‰••¸ÉÕ¹¹¥¹œ€¡Á•ÈÍ¥Ñ”½È…É½ÍÌ…±°Í¥Ñ•Ì¤ğI•Í½ÕÉ”èÙ…¥±…‰¥±¥Ñäğm]•ˆM•ÉÙ¥”½Õ¹Ñ•ÈÍ•Ñumİ•ˆµÍ•ÉÙ¥”µ±…ÍÍtğ(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è±…ÁÍ•‘Q¥µ”(()m±…ÁÍ•‘Q¥µ•umÁ•É˜µ•±…ÁÍ•µÑ¥µ•tÉ•½É‘ÌÑ¡”¹Õµ‰•È½˜Í•½¹‘Ì„]¥¹‘½İÌÁÉ½•ÍÌ¡…Ì‰••¸ÉÕ¹¹¥¹œ°…¹¥ÌÁ…ÉÑ¥Õ±…É±äÕÍ•™Õ°™½Èµ½¹¥Ñ½É¥¹œ%%Lİ½É­•ÈÁÉ½•ÍÍ•Ì¸]¡•¸…¸…ÁÁ±¥…Ñ¥½¸Á½½°É•ÍÑ…ÉÑÌ€¡½È€‰É•å±•Ìˆ¤°±…ÁÍ•‘Q¥µ•€É•Í•ÑÌÑ¼é•É¼¸I•å±”•Ù•¹ÑÌµ…äm•É…Í”…ÁÁ±¥…Ñ¥½¸ÍÑ…Ñ•um¥¥ÌµÉ•å±”µ¥µÁ…ÑÍt…¹…ÕÍ”‰É¥•˜Á•É¥½‘Ì½˜Õ¹…Ù…¥±…‰¥±¥Ñä¸%˜É•å±¥¹œ•Ù•¹ÑÌ…É”…ÕÍ¥¹œ¥ÍÍÕ•Ì™½Èå½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°Ñ¡”Ñ¡É•Í¡½±‘Ìå½ÔÙ”½¹™¥ÕÉ•™½ÈÉ•å±¥¹œµ…ä‰”½ÕĞ½˜ÍÑ•Àİ¥Ñ Ñ¡”…ÑÕ…°É•Í½ÕÉ”ÕÍ”½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¸Á½½±Ì¸(()e½Ô…¸m½¹™¥ÕÉ”å½ÕÈÁ½½±ÌÑ¼É•å±•umÉ•å±¥¹œµ½¹™¥t½¹”Ñ¡•äÙ”¡¥ĞÑİ¼­¥¹‘Ì½˜µ•µ½ÉäÑ¡É•Í¡½±‘ÌèÁÉ¥Ù…Ñ”µ•µ½Éä°İ¡¥ ¥Ìm¹½ĞÍ¡…É•‘umµ•µ½ÉäµÉ•å±¥¹tİ¥Ñ ½Ñ¡•ÈÁ½½±Ì°…Ìİ•±°…ÌÙ¥ÉÑÕ…°µ•µ½Éä°Ñ¡”É•Í•ÉÙ•µ•µ½Éä…‘‘É•ÍÍ•Ì½˜•… …ÁÁ±¥…Ñ¥½¸Á½½°¸%ĞÌ…±Í¼Á½ÍÍ¥‰±”Ñ¼É•å±”…¸…ÁÁ±¥…Ñ¥½¸Á½½°‰…Í•½¸É•Õ±…È°Ñ¥µ”µ‰…Í•¥¹Ñ•ÉÙ…±Ì°½È½¹”¥Ğ¡…ÌÍ•ÉÙ•„•ÉÑ…¥¸¹Õµ‰•È½˜É•ÅÕ•ÍÑÌ¸(()	ä‘•™…Õ±Ğ°É•å±¥¹œ‰…Í•½¸É•ÅÕ•ÍĞ½Õ¹Ğ…¹µ•µ½ÉäÕÍ…”¥Ì‘¥Í…‰±•°…¹…ÁÁ±¥…Ñ¥½¸Á½½±Ìİ¥±°É•ÍÑ…ÉĞ•Ù•Éä€Èä¡½ÕÉÌ¸Q¡•Í”Í•ÑÑ¥¹Ì…É”m½¹™¥ÕÉ…‰±•umÁ•É¥½‘¥ŒµÉ•ÍÑ…ÉĞµ½¹™¥t°…Ì¥ÌÑ¡”½ÁÑ¥½¸™½È%%LÑ¼ÍÁ¥¸ÕÀ„¹•Ü…ÁÁ±¥…Ñ¥½¸Á½½°…ÕÑ½µ…Ñ¥…±±äİ¡•¹•Ù•È…¹½Ñ¡•È½¹”‰•¥¹ÌÑ¼Í¡ÕĞ‘½İ¸¸(()%˜å½ÔÙ”¹½Ñ¥•Ñ¡…ĞÑ¡”±…ÁÍ•‘Q¥µ•€½˜„İ½É­•ÈÁÉ½•ÍÌ¡…ÌÉ•Í•ĞÉ••¹Ñ±ä°å½Ô…¸É•™•ÈÑ¼Ñ¡”±½ÌÑ¼m™¥¹½ÕÑum±½œµÉ•ÍÑ…ÉÑÍtİ¡•Ñ¡•È…¸…ÁÁ±¥…Ñ¥½¸Á½½°µ…ä¡…Ù”É•å±•°…¹İ¡…ĞÑ¡”É•…Í½¸İ…Ì¸%¸Ñ¡”€‰‘Ù…¹•M•ÑÑ¥¹Ìˆİ¥¹‘½Ü™½È…¸…ÁÁ±¥…Ñ¥½¸Á½½°İ¥Ñ¡¥¸%%L5…¹…•È°å½Ô±°™¥¹„Í•Ñ¥½¸…±±•°€‰•¹•É…Ñ”I•å±”Ù•¹Ğ1½œ¹ÑÉä°ˆİ¡¥ ±¥ÍÑÌÑ¡”¹…µ•Ì½˜É•å±”•Ù•¹ÑÌ…¹¥Ù•Ìå½ÔÑ¡”¡½¥”½˜İ¡•Ñ¡•È½È¹½ĞÑ¼±½œÑ¡•´¸€(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èM•ÉÙ¥•UÁÑ¥µ”(()mM•ÉÙ¥•UÁÑ¥µ•umİ•ˆµÍ•ÉÙ¥”µ±…ÍÍtÑÉ…­ÌÑ¡”¹Õµ‰•È½˜Í•½¹‘ÌÑ¡”]]\M•ÉÙ¥”€¡½È„ÍÁ•¥™¥Œ%%LÍ¥Ñ”¤¡…Ì‰••¸ÉÕ¹¹¥¹œÍ¥¹”¥Ğ±…ÍĞÉ•ÍÑ…ÉÑ•¸	•…ÕÍ”Ñ¡”]]\M•ÉÙ¥”½Á•É…Ñ•Ì…Ñ½À…¸•¹Ñ¥É”%%L¥¹ÍÑ…¹”°M•ÉÙ¥•UÁÑ¥µ•€¥ÌÑ¡”½¹±äµ•ÑÉ¥ŒÑ¡…Ğ…¸Ñ…­”„ÁÕ±Í”™É½´Ñ¡”%%LÍ½™Ñİ…É”…Ì„İ¡½±”¸Q¡¥Ì¥Ì¥µÁ½ÉÑ…¹Ğ‰•…ÕÍ”„Í¥¹±”İ½É­•ÈÁÉ½•ÍÌ…¸‰•½µ”Õ¹…Ù…¥±…‰±”İ¡¥±”Ñ¡”]]\M•ÉÙ¥—ŠQ…¹å½ÕÈ%%LÍ¥Ñ•ÏŠQİ¥±°½¹Ñ¥¹Õ”Ñ¼ÉÕ¸€¡…¹É•ÑÕÉ¸€ÔÀÌ•ÉÉ½ÉÌÑ¼ÕÍ•ÉÌ¤°Í¼å½×Še±°İ…¹ĞÑ¼µ½¹¥Ñ½È‰½Ñ ±…ÁÍ•‘Q¥µ•€…¹M•ÉÙ¥•UÁÑ¥µ•€Í•Á…É…Ñ•±ä¸(()%¸Ñ¡”•á…µÁ±”‰•±½Ü°İ”É•å±•…¸…ÁÁ±¥…Ñ¥½¸Á½½°…Ğ…É½Õ¹€ÌèÌÈÀ¹´¸Q¡”±…ÁÍ•‘Q¥µ•€½˜•… İ½É­•ÈÁÉ½•ÍÌÉ•Í•Ğ°İ¡¥±”M•ÉÙ¥•UÁÑ¥µ•€½¹Ñ¥¹Õ•Ñ¼¥¹É•µ•¹Ğ¸]¡•¸İ”É•ÍÑ…ÉÑ•Ñ¡”%%LÍ•ÉÙ•È…Ğ…É½Õ¹€ÌèĞÈÀ¹´¸°‰½Ñ µ•ÑÉ¥ÌÉ•Í•Ğ¸€()íìğ¥µœÍÉŒô‰¥¥Ìµµ•ÑÉ¥Ìµ•±…ÁÍ•‘Ñ¥µ”¹Á¹œˆ…±Ğô‰%%L5•ÑÉ¥Ì€´É…Á¡ÌÍ¡½İ¥¹œÑ¡”•±…ÁÍ•Ñ¥µ”½˜%%Lİ½É­•ÈÁÉ½•ÍÍ•Ì…¹Ñ¡”ÕÁÑ¥µ”½˜Ñ¡”%%LÍ•ÉÙ•Èˆ€ùõô(€€((ŒŒŒI•Í½ÕÉ”µ•ÑÉ¥Ì(()M¥¹”…ÁÁ±¥…Ñ¥½¸Á½½±Ì…É”¥Í½±…Ñ•™É½´½¹”…¹½Ñ¡•È°İ¥Ñ Ñ¡•¥È½İ¸İ½É­•ÈÁÉ½•ÍÍ•Ì°¥ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼µ½¹¥Ñ½ÈÑ¡•´¥¹‘¥Ù¥‘Õ…±±ä¸¸…ÁÁ±¥…Ñ¥½¸Á½½°½Õ±™…”É•Í½ÕÉ”½¹Ñ•¹Ñ¥½¸½È•Ù•¸É…Í °İ¡¥±”%%L…Ì„İ¡½±”…ÁÁ•…ÉÌÑ¼‰”™Õ¹Ñ¥½¹¥¹œ¸€(()ğ9…µ”ğ•ÍÉ¥ÁÑ¥½¸ğm5•ÑÉ¥ŒQåÁ•um‘µµ½¹¥Ñ½É¥¹œ´ÄÀÄµ±¥¹­tğmÙ…¥±…‰¥±¥ÑåumÁ…ÉĞ´Èµ±¥¹­tğ)ğè´´´´µğè´´´´´´´´´´´µğè´´´´´´´´´´´µğè´´´´´´´´´´´´µğ)ğA•É•¹ÑAÉ½•ÍÍ½ÉQ¥µ•€ğA•É•¹Ñ…”½˜ATÕÑ¥±¥é…Ñ¥½¸Á•ÈÁÉ½•ÍÌ€¡İ¥Ñ¡¥¸„ÕÍ•Èµ½¹™¥ÕÉ•Í…µÁ±”¥¹Ñ•ÉÙ…°¤ğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ğmAÉ½•ÍÌÁ•É™½Éµ…¹”½Õ¹Ñ•ÈÍ•ÑumÁ•É™ÁÉ½Œµ±…ÍÍtğ)ğ]½É­¥¹M•Ñ€ğ9Õµ‰•È½˜‰åÑ•Ìİ¥Ñ¡¥¸„ÁÉ½•ÍÌÌÙ¥ÉÑÕ…°…‘‘É•ÍÌÍÁ…”ÍÑ½É•¥¸Á¡åÍ¥…°µ•µ½ÉäğI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ñmAÉ½•ÍÌÁ•É™½Éµ…¹”½Õ¹Ñ•ÈÍ•ÑumÁ•É™ÁÉ½Œµ±…ÍÍt€ğ(((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ èA•É•¹ÑAÉ½•ÍÍ½ÉQ¥µ”(()=¹”É•Í½ÕÉ”µ•ÑÉ¥Œå½Ô±°İ…¹ĞÑ¼µ½¹¥Ñ½È¥ÌA•É•¹ÑAÉ½•ÍÍ½ÉQ¥µ•€°Ñ¡”Á•É•¹Ñ…”½˜Ñ¥µ”„¥Ù•¸ÁÉ½•ÍÌ¡…ÌÕÍ•Ñ¡”AT¸5½¹¥Ñ½É¥¹œÑ¡”ATÕÑ¥±¥é…Ñ¥½¸½˜ÉÕ¹¹¥¹œİ½É­•ÈÁÉ½•ÍÍ•Ì±•ÑÌå½Ô…±±½…Ñ”å½ÕÈÍ•ÉÙ•ÈÉ•Í½ÕÉ•Ì•™™•Ñ¥Ù•±çŠQ™½È¥¹ÍÑ…¹”°å½Ôµ…äİ…¹ĞÑ¼Ñ¡É½ÑÑ±”Ñ¡”AT½¹ÍÕµÁÑ¥½¸½˜…ÁÁ±¥…Ñ¥½¸Á½½±Ìİ¡•¸Ñ¡•äÉ•… „ÍÁ•¥™¥Œ±¥µ¥Ğ¸e½Ô±°…±Í¼İ…¹ĞÑ¼¥¹Ù•ÍÑ¥…Ñ”Ñ¡”…ÕÍ”½˜¡¥ ATÕÍ…”…¹Í•”¥˜å½Ô…¸µ¥Ñ¥…Ñ”¥Ğ¸€(()%˜„Í¥¹±”…ÁÁ±¥…Ñ¥½¸Á½½°¥Ì½¹Í¥ÍÑ•¹Ñ±äÕÍ¥¹œµ½É”Ñ¡…¸¥ÑÌ•áÁ•Ñ•AT°¥ĞÌ±¥­•±äÑ¡…Ğå½Ôİ¥±°¹••Ñ¼™¥¹„İ…äÑ¼½ÁÑ¥µ¥é”å½ÕÈ…ÁÁ±¥…Ñ¥½¸½‘”¸e½Ô±°İ…¹ĞÑ¼¥‘•¹Ñ¥™äÑ¡”…ÁÁ±¥…Ñ¥½¸Á½½°Ñ¡…ĞÌ…ÕÍ¥¹œÑ¡”¥ÍÍÕ”°…¹‰•å½¹Ñ¡…Ğ°…¹äÁÉ½‰±•µ…Ñ¥Œ½‘”¸]¡¥±”å½Ô…¹¹½ĞÕÍ”%%L5…¹…•ÈÑ¼¥‘•¹Ñ¥™äÑ¡”…ÁÁ±¥…Ñ¥½¸Á½½°Ñ¡…Ğ„ÍÁ•¥™¥Œİ½É­•ÈÁÉ½•ÍÌ‰•±½¹ÌÑ¼°Ñ¡•É”…É”mÑ½½±Ìå½Ô…¸‘½İ¹±½…‘umÜÍİÀµÁ¥‘t™½ÈÑ¡¥ÌÁÕÉÁ½Í”¸(()e½Ôµ…ä…±Í¼İ…¹ĞÑ¼…ÁÁÉ½… Ñ¡”ÁÉ½‰±•´…¹½Ñ¡•Èİ…ä°‰ä½ÉÉ•±…Ñ¥¹œÁ•É¥½‘Ì½˜¡¥ ATÕÍ…”İ¥Ñ Ñ¡”™É•ÅÕ•¹ä½˜É•ÅÕ•ÍÑÌ°‰É½­•¸‘½İ¸‰äUI$Á…Ñ …¹!QQ@µ•Ñ¡½¸%˜ÍÁ¥­•Ì¥¸É•ÅÕ•ÍÑÌİ¥Ñ „ÍÁ•¥™¥Œ½µ‰¥¹…Ñ¥½¸½˜!QQ@µ•Ñ¡½…¹UI$Á…Ñ ½ÉÉ•ÍÁ½¹İ¥Ñ ÍÁ¥­•Ì¥¸ATÕÑ¥±¥é…Ñ¥½¸°å½Ô±°İ…¹ĞÑ¼±½½¬¥¹Ñ¼‰…­•¹½‘”Ñ¡…Ğ¡…¹‘±•ÌÑ¡•Í”¡•…‘•ÉÌ¸e½Ôµ…ä…±Í¼İ…¹ĞÑ¼É•…Ñ”„µ•µ½Éä‘ÕµÀ…¹ÕÍ”„Í•Á…É…Ñ”Í½™Ñİ…É”ÁÉ½É…´Ñ¼Á•É™½É´„mÍÑ…¬ÑÉ…•um‘•‰Õ‘¥…œµµ•´µ‘ÕµÁt¸€(((((ŒŒŒŒ5•ÑÉ¥ŒÑ¼İ…Ñ è]½É­¥¹M•Ğ(()]¥¹‘½İÌÁÉ½•ÍÍ•Ì¡…Ù”…•ÍÌÑ¼„mÙ¥ÉÑÕ…°…‘‘É•ÍÌÍÁ…•umÙ¥ÉÑÕ…°µ…‘‘É•ÍÌµÍÁ…•t°İ¡•É”Ñ¡•äÍÑ½É”Á…•ÌÑ¡…Ğµ…ÀÑ¼±½…Ñ¥½¹Ìİ¡•É”‘…Ñ„¥Ì…±Í¼ÍÑ½É•½¸Á¡åÍ¥…°I4¸]½É­¥¹M•Ñ€ÑÉ…­ÌÑ¡”¹Õµ‰•È½˜‰åÑ•ÌÕÉÉ•¹Ñ±äİ¥Ñ¡¥¸„İ½É­•ÈÁÉ½•ÍÌÌmİ½É­¥¹œÍ•Ñumİ½É­¥¹œµÍ•Ñt°Ñ¡”Á…•Ìİ¥Ñ¡¥¸„ÁÉ½•ÍÌÌÙ¥ÉÑÕ…°…‘‘É•ÍÌÍÁ…”Ñ¡…Ğ…É”ÍÑ½É•¥¸Á¡åÍ¥…°µ•µ½Éä¸€(()e½Ô±°İ…¹ĞÑ¼µ½¹¥Ñ½Èµ•µ½Éä½¹ÍÕµÁÑ¥½¸°‰½Ñ ‰ä…ÁÁ±¥…Ñ¥½¸Á½½°…¹…É½ÍÌå½ÕÈÍåÍÑ•´¸Q½¼µÕ µ•µ½ÉäÕÍ…”…É½ÍÌå½ÕÈÍåÍÑ•´…¸…ÕÍ”…¸m½ÕĞµ½˜µµ•µ½Éä•á•ÁÑ¥½¹um½ÕĞµ½˜µµ•´µ•á•ÁÑ¥½¹t¸¹¥˜å½×ŠeÙ”½¹™¥ÕÉ•…¸…ÁÁ±¥…Ñ¥½¸Á½½°Ñ¼É•å±”İ¡•¸¥Ğ¡¥ÑÌ„•ÉÑ…¥¸µ•µ½ÉäÑ¡É•Í¡½±°‰ÕĞÑ¡”½‘”Ñ¡…Ğ¡…¹‘±•ÌÉ•ÅÕ•ÍÑÌÑ¼Ñ¡”Á½½°½¹Ñ¥¹Õ•ÌÑ¼½¹ÍÕµ”„±½Ğ½˜µ•µ½Éä°É•å±¥¹œÑ¡”Á½½°İ¥±°½¹±äÁ½ÍÑÁ½¹”Ñ¡”ÁÉ½‰±•´¸€(()%ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼İ…Ñ ™½Èmµ•µ½Éä±•…­Íumµ•µ½Éäµ±•…­Ít¥¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸Á½½±Ì°…Ìİ•±°…Ìİ¡•Ñ¡•Èå½Ô…¸ÑÉ…”Ñ¡•´Ñ¼…¸%%Lµ½‘Õ±”½Èå½ÕÈ…ÁÁ±¥…Ñ¥½¸½‘”¸%Ğ½Õ±…±Í¼‰”Ñ¡”…Í”Ñ¡…Ğå½ÕÈ…ÁÁ±¥…Ñ¥½¸Í¥µÁ±ä½¹ÍÕµ•Ì„±½Ğ½˜µ•µ½Éä°™½È•á…µÁ±”°‰äÕÍ¥¹œmÍÑÉ¥¹œ½¹…Ñ•¹…Ñ¥½¹umÍÑÉ¥¹œµ½¹…Ğµµ•µtÑ¼É•ÑÕÉ¸!Q50¸(()Ìİ¥Ñ ATÕÑ¥±¥é…Ñ¥½¸°å½Ô…¸™¥¹Ñ¡”Í½ÕÉ”½˜¡¥ µ•µ½Éä½¹ÍÕµÁÑ¥½¸‰ä…¹…±åé¥¹œ„µ•µ½Éä‘ÕµÀİ¥Ñ „Ñ½½°±¥­”m•‰Õ¥…um‘•‰Õ‘¥…t€¡Í•”mA…ÉĞ€ÉumÁ…ÉĞÈµ‘•‰Õ‘¥…t¤°½ÉÉ•±…Ñ¥¹œµ•µ½Éä½¹ÍÕµÁÑ¥½¸İ¥Ñ Ñ¡”Á…Ñ¡Ì…¹µ•Ñ¡½‘Ì½˜!QQ@É•ÅÕ•ÍÑÌ°…¹¥‘•¹Ñ¥™å¥¹œİ¡¥ ÜÍİÀ¹•á•€¥¹ÍÑ…¹”‰•±½¹ÌÑ¼İ¡¥ İ½É­•ÈÁÉ½•ÍÌ¸(()	•±½Ü°İ”Í•”„‰ÕµÀ¥¸µ•µ½Éä½¹ÍÕµÁÑ¥½¸Á•Èİ½É­•ÈÁÉ½•ÍÌ¥¸„ÍÁ•¥™¥Œ…ÁÁ±¥…Ñ¥½¸Á½½°°…™Ñ•ÈÑ¡”Á½½°É•å±•…É½Õ¹€ÄèÈÈÀ¹´¸€(€€)íìğ¥µœÍÉŒô‰¥¥Ìµµ•ÑÉ¥Ìµµ•´µÉ•ÅÌ¹Á¹œˆ…±Ğô‰%%L5•ÑÉ¥Ì€´É…Á¡ÌÍ¡½İ¥¹œµ•µ½Éä½¹ÍÕµÁÑ¥½¸…¹É•ÅÕ•ÍÑÌÁ•ÈÍ•½¹‰ä%%Lİ½É­•ÈÁÉ½•ÍÌˆ€ùõô(((ŒŒ9•áĞÍÑ•Àè½±±•Ğ%%Lµ•ÑÉ¥Ì(()Q¡¥ÌÁ½ÍĞ¡…Ì½Ù•É•Í½µ”­•ä%%Lµ•ÑÉ¥Ì™½ÈÑÉ…­¥¹œÑ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜%%L¸%¸Á…ÉÑ¥Õ±…È°İ”Ù”¥±±ÕÍÑÉ…Ñ•Ñ¡”¥µÁ½ÉÑ…¹”½˜µ½¹¥Ñ½É¥¹œÑ¡”ÑÉ…™™¥Œ…¹É•Í½ÕÉ”ÕÍ…”½˜%%L…ÁÁ±¥…Ñ¥½¸Á½½±Ì…±½¹Í¥‘”µ•ÑÉ¥Ì…É•…Ñ•™É½´!QQ@É•ÅÕ•ÍÑÌ¸%¸mA…ÉĞ€ÉumÁ…ÉĞ´Èµ±¥¹­t½˜Ñ¡¥ÌÍ•É¥•Ì°İ”İ¥±°Í¡½Üå½Ô¡½ÜÑ¼½±±•ĞÑ¡•Í”µ•ÑÉ¥Ì™É½´]¥¹‘½İÌA•É™½Éµ…¹”½Õ¹Ñ•ÉÌ°%%L±½Ì°…¹Ñ¡”%%L!QQ@A$¸(()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½¥¥Ì½¥¥Ìµµ•ÑÉ¥Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|(()m…ÁÀµÁ½½±Ítè¡ÑÑÁÌè¼½‰±½Ì¹µÍ‘¸¹µ¥É½Í½™Ğ¹½´½É½¡¥Ñ¡É…©…¸¼ÈÀÄÜ¼ÄÀ¼Àà½ÅÕ¥¬µÉ•™•É•¹”µ¥¥Ìµ…ÁÁ±¥…Ñ¥½¸µÁ½½°¼(()m…ÁÀµÁ½½±Ìµ•á•tè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌÔÈĞääÀ¡ØõÙÌ¸äÀ¤¹…ÍÁà¹¡½É|Ä(()m…ÁÀµÁ½½±ÌµÁÉ½‰±•µÍtè¡ÑÑÁÌè¼½‰±½Ì¹µÍ‘¸¹µ¥É½Í½™Ğ¹½´½‰•¹©…µ¥¹Á•É­¥¹Ì¼ÈÀÄÌ¼ÀÌ¼ÀÄ½Í½µ”µÑ¥ÁÌµ™½ÈµÑÉ½Õ‰±•Í¡½½Ñ¥¹œ´ÔÀÌµ¡ÑÑÀµÍÑ…ÑÕÌµ½‘•Ì¼(()m…ÍÀµ•ÉÉ½Èµ½‘•Ítè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼ÈäĞÈÜÄ½¥¹™¼µ…ÍÀµ•ÉÉ½Èµ½‘•Ì(()m½‘”´ĞÀÁtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½ÑÉ½Õ‰±•Í¡½½Ğ½‘¥…¹½Í¥¹œµ¡ÑÑÀµ•ÉÉ½ÉÌ½ÑÉ½Õ‰±•Í¡½½Ñ¥¹œµ¡ÑÑÀ´ĞÀÀµ•ÉÉ½ÉÌµ¥¸µ¥¥Ì(()m½‘”´ĞÀÀµ¡ÑÑÁ•ÉÉtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½ÑÉ½Õ‰±•Í¡½½Ğ½‘¥…¹½Í¥¹œµ¡ÑÑÀµ•ÉÉ½ÉÌ½ÑÉ½Õ‰±•Í¡½½Ñ¥¹œµ¡ÑÑÀ´ĞÀÀµ•ÉÉ½ÉÌµ¥¸µ¥¥ÌÑÉ½Õ‰±•Í¡½½Ñ¥¹œµµ•Ñ¡½‘Ì(()m½‘”´ĞÀÑtè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼äĞÈÀĞÄ½¡ÑÑÀµ•ÉÉ½È´ĞÀĞ´Àµ¹½Ğµ™½Õ¹µ•ÉÉ½Èµİ¡•¸µå½Ôµ½Á•¸µ…¸µ¥¥Ì´Ü´Àµİ•‰Á…”(()m½‘”´ÔÀÌµ¡ÑÑÁ•ÉÈµ•á…µÁ±•tè¡ÑÑÁÌè¼½‰±½Ì¹µÍ‘¸¹µ¥É½Í½™Ğ¹½´½ÙÁ…¹‘•ä¼ÈÀÀä¼Àà¼ÀĞ½¡ÑÑÀµ•ÉÉ½È´ÔÀÌµÑ¡”µÍ•ÉÙ¥”µ¥ÌµÕ¹…Ù…¥±…‰±”¼(()m½¹ÕÉÉ•¹ĞµÉ•ÅÕ•ÍĞµÍ•ÑÑ¥¹tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹İ•‰Í•ÉÙ•È½Í•ÉÙ•ÉÉÕ¹Ñ¥µ”(()m½Õ¹Ñ•ÈµÑåÁ”µÅÕ…±¥™¥•Étè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½…„ÌàäÌàÌ¡ØõÙÌ¸àÔ¤¹…ÍÁà(()m‘µµ½¹¥Ñ½É¥¹œ´ÄÀÄµ±¥¹­tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼(()m‘‘½Ìµ±½Ítè¡ÑÑÁÌè¼½‰±½Ì¹µÍ‘¸¹µ¥É½Í½™Ğ¹½´½™É¥¥Ì¼ÈÀÄĞ¼ÄÈ¼ÌÀ½Í•ÕÉ¥ÑäµÕ¥‘•±¥¹•ÌµÑ¼µ‘•Ñ•Ğµ…¹µÁÉ•Ù•¹Ğµ‘½Ìµ…ÑÑ…­ÌµÑ…É•Ñ¥¹œµ¥¥Í…éÕÉ”µİ•ˆµÉ½±”µÁ……Ì¼(()m‘•‰Õ‘¥…tè¡ÑÑÁÌè¼½İİÜ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½‘½İ¹±½…½‘•Ñ…¥±Ì¹…ÍÁàı¥ôĞääÈĞ(()m‘•‰Õ‘¥…œµµ•´µ‘ÕµÁtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½ÑÉ½Õ‰±•Í¡½½Ğ½Á•É™½Éµ…¹”µ¥ÍÍÕ•Ì½ÑÉ½Õ‰±•Í¡½½Ñ¥¹œµ¡¥ µÁÔµ¥¸µ…¸µ¥¥Ì´İàµ…ÁÁ±¥…Ñ¥½¸µÁ½½°(()m™…ÍÑ¥tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹İ•‰Í•ÉÙ•È½™…ÍÑ¤¼(()m•Ğµ½Õ¹Ñ•Étè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½Á½İ•ÉÍ¡•±°½µ½‘Õ±”½µ¥É½Í½™Ğ¹Á½İ•ÉÍ¡•±°¹‘¥…¹½ÍÑ¥Ì½•Ğµ½Õ¹Ñ•ÈıÙ¥•ÜõÁ½İ•ÉÍ¡•±°´Ô¸Ä(()m¡½ÍĞµ¡•…‘•Étè¡ÑÑÁÌè¼½‘•Ù•±½Á•È¹µ½é¥±±„¹½Éœ½•¸µUL½‘½Ì½]•ˆ½!QQ@½!•…‘•ÉÌ½!½ÍĞ(()m¡ÑÑÀµ…Á¤µ±½Ítè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼àÈÀÜÈä½•ÉÉ½Èµ±½¥¹œµ¥¸µ¡ÑÑÀµ…Á¥Ì(()m¡ÑÑÀµ½µÁÉ•ÍÍ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹İ•‰Í•ÉÙ•È½¡ÑÑÁ½µÁÉ•ÍÍ¥½¸¼(()m¡ÑÑÀµÍåÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½¥¹ÑÉ½‘ÕÑ¥½¸µÑ¼µ¥¥Ì½¥¹ÑÉ½‘ÕÑ¥½¸µÑ¼µ¥¥Ìµ…É¡¥Ñ•ÑÕÉ”¡åÁ•ÉÑ•áĞµÑÉ…¹Í™•ÈµÁÉ½Ñ½½°µÍÑ…¬µ¡ÑÑÁÍåÌ(()m¡ÑÑÀµÍåÌµ½¹™¥tè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼àÈÀÄÈä½¡ÑÑÀµÍåÌµÉ•¥ÍÑÉäµÍ•ÑÑ¥¹Ìµ™½Èµİ¥¹‘½İÌ(()m¡ÑÑÀµÍåÌµÁ•É™µ½¹tè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½İ¥¹‘½İÌ½‘•Í­Ñ½À½ŒÌÀÜÈÌä¡ØõÙÌ¸àÔ¤¹…ÍÁà(()m¡Õœµ½˜µ‘•…Ñ¡tè¡ÑÑÁÌè¼½•¸¹İ¥­¥Á•‘¥„¹½Éœ½İ¥­¤½M±…Í¡‘½Ñ}•™™•Ğ(()m¥¥Ìµ…ÁÁ±¥…Ñ¥½¹Ítè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹…ÁÁ±¥…Ñ¥½¹¡½ÍĞ½Í¥Ñ•Ì½Í¥Ñ”½…ÁÁ±¥…Ñ¥½¸¼(()m¥¥Ìµ…ÁÁ±¥…Ñ¥½¸µÉ•ÅÕ•ÍĞµÉ½ÕÑ¥¹tè¡ÑÑÁÌè¼½İİÜ¹¥¥Ì¹¹•Ğ½‘½İ¹±½…‘Ì½µ¥É½Í½™Ğ½…ÁÁ±¥…Ñ¥½¸µÉ•ÅÕ•ÍĞµÉ½ÕÑ¥¹œ(()m¥¥Ìµ¡…¹•±½tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½İ¡…ÑÌµ¹•Üµ¥¸µ¥¥Ì´ÄÀµÙ•ÉÍ¥½¸´ÄÜÀä½¹•Üµ™•…ÑÕÉ•Ìµ¥¹ÑÉ½‘Õ•µ¥¸µ¥¥Ì´ÄÀ´ÄÜÀä(()m¥¥Ìµ™ÑÁtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹…ÁÁ±¥…Ñ¥½¹¡½ÍĞ½Í¥Ñ•Ì½Í¥Ñ”½™ÑÁÍ•ÉÙ•È½½¹¹•Ñ¥½¹Ì(()m¥¥Ìµ¡…¹‘±•Étè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹İ•‰Í•ÉÙ•È½¡…¹‘±•ÉÌ¼(()m¥¥Ìµ¡½µ•Á…”µ±¥¹­tè¡ÑÑÁÌè¼½İİÜ¹¥¥Ì¹¹•Ğ¼(()m¥¥Ìµ±½œµ‘•™…Õ±ÑÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹…ÁÁ±¥…Ñ¥½¹¡½ÍĞ½Í¥Ñ•Ì½Í¥Ñ•‘•™…Õ±ÑÌ½±½™¥±”¼(()m¥¥Ìµ±½¥¹œµ±¥¹­tè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌÔÈÔĞÄÀ¡ØõÙÌ¸äÀ¤¹…ÍÁà(()m¥¥Ìµµ…¹…•Étè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½‰ˆÜØÌÄÜÀ¹…ÍÁà(()m¥¥ÌµÁÉ½Ñ½½°µ±¥ÍÑ•¹•ÉÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½¥¹ÑÉ½‘ÕÑ¥½¸µÑ¼µ¥¥Ì½¥¹ÑÉ½‘ÕÑ¥½¸µÑ¼µ¥¥Ìµ…É¡¥Ñ•ÑÕÉ”ÁÉ½Ñ½½°µ±¥ÍÑ•¹•ÉÌ(()m¥¥ÌµÉ•å±”µ¥µÁ…ÑÍtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌÔÈÔàÀÌ¡ØõÙÌ¸äÀ¤¹…ÍÁà¹¡½É|È(()m¥¥ÌµÍ¥Ñ”µ±¥µ¥ÑÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹…ÁÁ±¥…Ñ¥½¹¡½ÍĞ½Í¥Ñ•Ì½Í¥Ñ”½±¥µ¥ÑÌ(()m¥¥ÌµÍ¥Ñ•Ìµ¥¹ÑÉ½tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½Á±…¹¹¥¹œµå½ÕÈµ¥¥Ìµ…É¡¥Ñ•ÑÕÉ”½Õ¹‘•ÉÍÑ…¹‘¥¹œµÍ¥Ñ•Ìµ…ÁÁ±¥…Ñ¥½¹Ìµ…¹µÙ¥ÉÑÕ…°µ‘¥É•Ñ½É¥•Ìµ½¸µ¥¥ÌÍ¥Ñ•Ì(()m¥¥ÌµÕÉ°µÉ•İÉ¥Ñ”µ±¥¹­tè¡ÑÑÁÌè¼½İİÜ¹¥¥Ì¹¹•Ğ½‘½İ¹±½…‘Ì½µ¥É½Í½™Ğ½ÕÉ°µÉ•İÉ¥Ñ”(()m¥¥Ìµİ¥Ñ µ…ÍÁtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌÄÜàĞÜÜ¹…ÍÁà(()m¥¥Ìµİ¥Ñ µ™±…Í­tè¡ÑÑÀè¼½¹•Ñ‘½Ğ¹¼¼ÈÀÄÔ¼ÀÌ¼Àä½™±…Í¬µ½¸µ¥¥Ì¼(()m¥¥Ìµİ¥Ñ µ¹½‘•tè¡ÑÑÁÌè¼½İİÜ¹¡…¹Í•±µ…¸¹½´½‰±½œ½%¹ÍÑ…±±¥¹¹‘IÕ¹¹¥¹9½‘•©ÍÁÁ±¥…Ñ¥½¹Í]¥Ñ¡¥¹%%M=¹]¥¹‘½İÍÉ•e½Õ5…¹…ÍÁà(()m¥¹ÍÑ…±°µ¥¥Ì´Ô´Ùtè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼ÌÈÔààä½¡½ÜµÑ¼µÉ•µ½Ù”µ…¹µÉ•¥¹ÍÑ…±°µ¥¥Ì´Ô´À´Ô´Äµ…¹´Ø´À(()m¥¹ÍÑ…±°µ¥¥ÌµÉ••¹Ñtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌÄàÄÀÔÈ¡ØõÙÌ¸àÀ¤¹…ÍÁà(()m¥Í…Á¥tè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌÔÈÔÄÜÈ¡ØõÙÌ¸äÀ¤¹…ÍÁà(()m±½¥¹œµ™¥•±‘Ítè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÁÉ•Ù¥½ÕÌµÙ•ÉÍ¥½¹Ì½½ÉÁ¡…¸µÑ½Á¥Ì½İÌ¸ÄÄ½¡ àÌÄÜÜÔ¡ØõİÌ¸ÄÄ¤Ñ¼µÍ•±•ĞµÜÍŒµ™¥•±‘ÌµÑ¼µ±½œµ‰äµÕÍ¥¹œµÑ¡”µÕ¤(()m±½œµÕÍÑ½´µ™¥•±‘té¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•áÑ•¹Í¥½¹Ì½…‘Ù…¹•µ±½¥¹œµµ½‘Õ±”½…‘Ù…¹•µ±½¥¹œµ™½Èµ¥¥ÌµÕÍÑ½´µ±½¥¹œ(()m±½œµÉ•ÍÑ…ÉÑÍtè¡ÑÑÁÌè¼½‰±½Ì¹µÍ‘¸¹µ¥É½Í½™Ğ¹½´½‰•¹©…µ¥¹Á•É­¥¹Ì¼ÈÀÄÌ¼ÀÜ¼ÀÄ½ÑÉ½Õ‰±•Í¡½½Ñ¥¹œµ‰…‘±äµ‰•¡…Ù¥¹œµ¥¥Ìµ…ÁÁ±¥…Ñ¥½¸µÁ½½±Ì¼(()mµ…àµÁÉ½•ÍÍ•Ítè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹…ÁÁ±¥…Ñ¥½¹¡½ÍĞ½…ÁÁ±¥…Ñ¥½¹Á½½±Ì½…‘½ÁÉ½•ÍÍµ½‘•°(()mµ•µ½Éäµ±•…­Ítè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½ÑÉ½Õ‰±•Í¡½½Ğ½Á•É™½Éµ…¹”µ¥ÍÍÕ•Ì½ÑÉ½Õ‰±•Í¡½½Ñ¥¹œµ¹…Ñ¥Ù”µµ•µ½Éäµ±•…¬µ¥¸µ…¸µ¥¥Ì´İàµ…ÁÁ±¥…Ñ¥½¸µÁ½½°(()mµ•µ½ÉäµÉ•å±¥¹tè¡ÑÑÁÌè¼½‰±½Ì¹µÍ‘¸¹µ¥É½Í½™Ğ¹½´½Á™•‘•Ø¼ÈÀÀä¼ÀÄ¼ÈÈ½µ•µ½Éäµ‰…Í•µÉ•å±¥¹œµ¥¸µ¥¥Ì´Ø´À¼(((()mµ½‘Õ±•Ìµ½Ù•ÉÙ¥•İtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹İ•‰Í•ÉÙ•È½µ½‘Õ±•Ì½¥¹‘•à(()m½ÕĞµ½˜µµ•´µ•á•ÁÑ¥½¹tè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼ÈÀÈÀÀÀØ½¡½ÜµÑ¼µÑÉ½Õ‰±•Í¡½½Ğµ½ÕĞµ½˜µµ•µ½Éäµ¥ÍÍÕ•ÌµÍåÍÑ•´µ½ÕÑ½™µ•µ½Éå•á•ÁÑ¥½¸µ¤(()m½ÕÑÁÕĞµ…¡¥¹tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹İ•‰Í•ÉÙ•È½…¡¥¹œ¼(()m½ÕÑÁÕĞµ…¡¥¹œµ‘•Ñ…¥±tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½µ…¹…”½µ…¹…¥¹œµÁ•É™½Éµ…¹”µÍ•ÑÑ¥¹Ì½İ…±­Ñ¡É½Õ µ¥¥Ìµ½ÕÑÁÕĞµ…¡¥¹œ(()mÁ•É˜µ½Õ¹Ñ•ÈµÉ…İ½Õ¹Ñtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌàÀÌäÜĞ¹…ÍÁà(()mÁ•É˜µ•±…ÁÍ•µÑ¥µ•tè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½µÌàÀĞÀÄÌ¹…ÍÁà(()mÁ•É™½Éµ…¹”µ½Õ¹Ñ•Èµ±¥¹­tè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½İ¥¹‘½İÌ½‘•Í­Ñ½À½…„ÌÜÌÀàÌ¡ØõÙÌ¸àÔ¤¹…ÍÁà(((()mÁ•É™ÁÉ½Œµ±…ÍÍtè¡ÑÑÁÌè¼½Ñ•¡¹•Ğ¹µ¥É½Í½™Ğ¹½´½•¸µ„½…„ÌäĞÈÜÜ¡ØõÙÌ¸ÜÄ¤(()mÁ•É¥½‘¥ŒµÉ•ÍÑ…ÉĞµ½¹™¥tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹…ÁÁ±¥…Ñ¥½¹¡½ÍĞ½…ÁÁ±¥…Ñ¥½¹Á½½±Ì½…‘½É•å±¥¹œ½Á•É¥½‘¥É•ÍÑ…ÉĞ¼(()mÅÕ•Õ”µÍ¥é•tè¡ÑÑÁÌè¼½‰±½Ì¹Ñ•¡¹•Ğ¹µ¥É½Í½™Ğ¹½´½‰É•¹±”¼ÈÀÄÔ¼ÀÌ¼ÀØ½µ½‘¥™å¥¹œµÑ¡”µÅÕ•Õ”µ±•¹Ñ µ™½Èµ•á¡…¹”µ…ÁÀµÁ½½±Ìµ¥¸µ¥¥Ì¼(()mÅÕ•Õ”µÍ¥é”µ…ÍÁtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÁÉ•Ù¥½ÕÌµÙ•ÉÍ¥½¹Ì½½™™¥”½½µµÕ¹¥…Ñ¥½¹ÌµÍ•ÉÙ•È½‘ĞÈÔÈäĞ¡Øõ½™™¥”¸ÄÌ¤(()mÉ•å±¥¹œµ½¹™¥tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹…ÁÁ±¥…Ñ¥½¹¡½ÍĞ½…ÁÁ±¥…Ñ¥½¹Á½½±Ì½…‘½É•å±¥¹œ¼(()mÍ•Ğµ…ÁÀµÁ½½°µÁÕtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½İ¡…ÑÌµ¹•Üµ¥¸µ¥¥Ì´à½¥¥Ì´àÀµÁÔµÑ¡É½ÑÑ±¥¹œµÍ…¹µ‰½á¥¹œµÍ¥Ñ•Ìµ…¹µ…ÁÁ±¥…Ñ¥½¹Ì(()mÍ¥Ñ•Ìµ…ÁÁÌµ‘¥ÉÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½Á±…¹¹¥¹œµå½ÕÈµ¥¥Ìµ…É¡¥Ñ•ÑÕÉ”½Õ¹‘•ÉÍÑ…¹‘¥¹œµÍ¥Ñ•Ìµ…ÁÁ±¥…Ñ¥½¹Ìµ…¹µÙ¥ÉÑÕ…°µ‘¥É•Ñ½É¥•Ìµ½¸µ¥¥Ì(()mÍÑ…ÑÕÌµ½‘”µ­•åtè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼äĞÌàäÄ½Ñ¡”µ¡ÑÑÀµÍÑ…ÑÕÌµ½‘”µ¥¸µ¥¥Ì´Ü´Àµ¥¥Ì´Ü´Ôµ…¹µ¥¥Ì´à´À(()mÍÑÉ¥¹œµ½¹…Ğµµ•µtè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼àäÌØØÀ½ÅÕ¥¬µÑ¡¥¹ÌµÑ¼µ¡•¬µİ¡•¸µå½Ôµ•áÁ•É¥•¹”µ¡¥ µµ•µ½Éäµ±•Ù•±Ìµ¥¸µ…ÍÀµ¹”(()mÑ¡É½ÑÑ±”µÕ¹‘•É±½…‘tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½İ¡…ÑÌµ¹•Üµ¥¸µ¥¥Ì´à½¥¥Ì´àÀµÁÔµÑ¡É½ÑÑ±¥¹œµÍ…¹µ‰½á¥¹œµÍ¥Ñ•Ìµ…¹µ…ÁÁ±¥…Ñ¥½¹Ì(()mÑ¥µ”µÑ…­•¸µ‘•™tè¡ÑÑÁÌè¼½ÍÕÁÁ½ÉĞ¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¡•±À¼äĞĞààĞ½‘•ÍÉ¥ÁÑ¥½¸µ½˜µÑ¡”µÑ¥µ”µÑ…­•¸µ™¥•±µ¥¸µ¥¥Ì´Ø´Àµ…¹µ¥¥Ì´Ü´Àµ¡ÑÑÀµ±½¥¸(()mÙ¥ÉÑÕ…°µ…‘‘É•ÍÌµÍÁ…•tè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½İ¥¹‘½İÌ½‘•Í­Ñ½À½…„ÌØØäÄÈ¡ØõÙÌ¸àÔ¤¹…ÍÁà(()mÙ¥ÉÑÕ…°µ‘¥Èµ½Ù•ÉÙ¥•İtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½Á±…¹¹¥¹œµå½ÕÈµ¥¥Ìµ…É¡¥Ñ•ÑÕÉ”½Õ¹‘•ÉÍÑ…¹‘¥¹œµÍ¥Ñ•Ìµ…ÁÁ±¥…Ñ¥½¹Ìµ…¹µÙ¥ÉÑÕ…°µ‘¥É•Ñ½É¥•Ìµ½¸µ¥¥ÌÙ¥ÉÑÕ…°µ‘¥É•Ñ½É¥•Ì(()mİ•ˆµ…É‘•¹tè¡ÑÑÁÌè¼½‰±½Ì¹Ñ•¡¹•Ğ¹µ¥É½Í½™Ğ¹½´½µÍ½´¼ÈÀÀÜ¼ÀÜ¼ÄÀ½…É‘•¹¥¹œµ½¸µÑ¡”µİ•ˆµÍ•ÉÙ•È¼(()mİ•ˆµ…É‘•¸µ‘…Ñ…tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½ÁÉ•Ù¥½ÕÌµÙ•ÉÍ¥½¹Ì½‘½Ñ¹•Ğ½¹•Ñ™É…µ•İ½É¬´Ä¸Ä½…„ÜÈÀÌäÄ¡ØõÙÌ¸ÜÄ¤(()mİ•ˆµÍ•ÉÙ¥”µ±…ÍÍtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½…„ÌäĞÈäà¡ØõÙÌ¸àÔ¤¹…ÍÁà(()mİ•‰Í¥Ñ”µ±¥µ¥ÑÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½½¹™¥ÕÉ…Ñ¥½¸½ÍåÍÑ•´¹…ÁÁ±¥…Ñ¥½¹¡½ÍĞ½Í¥Ñ•Ì½Í¥Ñ”½±¥µ¥ÑÌ(()mİ•ˆµÍ•ÉÙ¥”µ±…ÍÍtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½…„ÌäĞÈäà¡ØõÙÌ¸àÔ¤¹…ÍÁà(()mİ½É­¥¹œµÍ•Ñtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½İ¥¹‘½İÌ½‘•Í­Ñ½À½ŒĞĞÄàÀĞ¡ØõÙÌ¸àÔ¤¹…ÍÁà(()mİ¡•¸µÜÍİÀµÍÑ…ÉÑÍtè¡ÑÑÁÌè¼½‰±½Ì¹µÍ‘¸¹µ¥É½Í½™Ğ¹½´½…µˆ¼ÈÀÄÈ¼ÀÌ¼Àà½±…Õ¹ µİ½É­•ÈµÁÉ½•ÍÌµÜÍİÀµ•á”µ…ÕÑ½µ…Ñ¥…±±äµ…ÌµÍ½½¸µ…Ìµ…ÁÁ±¥…Ñ¥½¸µÁ½½°µÍÑ…ÉÑÌ¼(()mİ¥¹‘½İÌµ‘É¥Ù•ÉÍtè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½İ¥¹‘½İÌµ¡…É‘İ…É”½‘É¥Ù•ÉÌ½­•É¹•°½ÑåÁ•Ìµ½˜µİ¥¹‘½İÌµ‘É¥Ù•ÉÌ(()mİµ¤µ…‰½ÕÑtè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½…„ÌàĞØĞÈ¡ØõÙÌ¸àÔ¤¹…ÍÁà(()mİİÜµÍ•ÉÙ¥•tè¡ÑÑÁÌè¼½‘½Ì¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½¥¥Ì½•ĞµÍÑ…ÉÑ•½¥¹ÑÉ½‘ÕÑ¥½¸µÑ¼µ¥¥Ì½¥¹ÑÉ½‘ÕÑ¥½¸µÑ¼µ¥¥Ìµ…É¡¥Ñ•ÑÕÉ”İ½É±µİ¥‘”µİ•ˆµÁÕ‰±¥Í¡¥¹œµÍ•ÉÙ¥”µİİÜµÍ•ÉÙ¥”(()mÜÍŒµ±½œµ‘•™Ítè¡ÑÑÁÌè¼½µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•¸µÕÌ½±¥‰É…Éä½İ¥¹‘½İÌ½‘•Í­Ñ½À½…„àÄĞÌàÔ¡ØõÙÌ¸àÔ¤¹…ÍÁà(()mÜÍİÀµ½Õ¹Ñ•ÉÍtè¡ÑÑÁÌè¼½‰±½Ì¹¥¥Ì¹¹•Ğ½µ…¥±…¹Ğ½¹•Üµİ½É­•ÈµÁÉ½•ÍÌµÁ•É™½Éµ…¹”µ½Õ¹Ñ•ÉÌµ¥¸µ¥¥ÌÜ(()mÜÍİÀµÁ¥‘tè¡ÑÑÁÌè¼½‰±½Ì¹µÍ‘¸¹µ¥É½Í½™Ğ¹½´½•É¥Á…ÉÙ¥¸¼ÈÀÄĞ¼ÀĞ¼Èä½™¥¹µÁ¥µ™½Èµ¥¥Ìµ…ÁÁ±¥…Ñ¥½¸µÁ½½±Ìµİ½É­•ÈµÁÉ½•ÍÌ¼(()mÁ…ÉĞ´Èµ±¥¹­tè€½‰±½œ½¥¥Ìµµ½¹¥Ñ½É¥¹œµÑ½½±Ì(()mÁ…ÉĞ´Ìµ±¥¹­tè€½‰±½œ½¥¥Ìµµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œ(()mÁ…ÉĞÈµ‘•‰Õ‘¥…tè€½‰±½œ½¥¥Ìµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¼‘•‰Õ‘¥…œ(
+ï»¿# Key IIS metrics to monitor
+
+Microsoft's [Internet Information Services][iis-homepage-link] (IIS) is a web server that has traditionally come bundled with Windows (e.g., versions [5.0, 6.0][install-iis-5-6], and [beyond][install-iis-recent]). IIS has numerous extensibility features. Swappable interfaces like [ISAPI][isapi] and [FastCGI][fastcgi] make it possible to use IIS with a variety of backend technologies, from micro-frameworks like [Flask][iis-with-flask] to runtimes like [Node.js][iis-with-node], along with technologies you'd expect to find within a Windows-based production environment (e.g., [ASP.NET][iis-with-asp]). And through an ecosystem of IIS extensions, called modules, you can equip your server to perform tasks like [rewriting URLs][iis-url-rewrite-link] and [programmatically load balancing requests][iis-application-request-routing]. IIS lets you optimize performance with built-in content caching and compression features, and improve the reliability of your applications by isolating them in separate application pools. 
+ 
+In this post, we'll survey IIS metrics that can help you ensure the availability and performance of your web server. While we're focusing on IIS 10, which is bundled with Windows Server 2016 and Windows 10, you can consult the [documentation][iis-changelog] if you're using an earlier version and want to see if something we discuss is available to you. And while IIS can implement a number of TCP-based protocols, including [FTP][iis-ftp], we'll be concentrating on IIS's default configuration as a server for [HTTP or HTTPS][iis-protocol-listeners].
+ 
+{{< img src="iis-metrics-diagram.png" alt="IIS Metrics - The structure of an IIS server" >}}
+
+## The structure of an IIS server
+
+You'll want to organize your monitoring strategy around the fact that IIS's components are spread out across a number of Windows processes and drivers. We'll take a look at these components, then introduce the IIS metrics you'll want to use to monitor them.
+
+
+
+### HTTP.sys and worker processes
+
+
+The **worker process** conducts the main work of a web server: handling client requests and serving responses. IIS can handle requests with multiple worker processes at a time (depending on your configuration), each of which runs as the executable [`w3wp.exe`][app-pools-exe]. 
+
+
+When a request reaches your Windows server, it passes through **HTTP.sys**, a [kernel-mode device driver][windows-drivers]. HTTP.sys listens for HTTP and HTTPS requests, and [validates each one][http-sys] before [passing it][http-sys] to a worker process. If no worker process is available to handle a request, HTTP.sys places the request in a kernel-mode queue. 
+
+
+When monitoring traffic to HTTP.sys, you will likely be using performance counters collected by the [World Wide Web Publishing Service][www-service] (WWW Service), which runs as part of an instance of the process, `svchost.exe`. The WWW Service passes stored IIS configuration settings to HTTP.sys, and collects performance counters for each IIS site. 
+
+
+Every worker process belongs to an **[application pool][app-pools]**, which keeps applications mutually isolated to improve their availabilityâ€”if an application crashes, it won't affect other application pools. Worker processes in one pool do not share resources with other pools. You can pass configuration settings to a single pool to, for instance, [throttle the CPU utilization](#http-request-metrics) of its workers. Each application pool defaults to a single worker process, and you can configure your pools to include more. 
+ 
+### URIs and resources
+
+
+HTTP.sys routes a request to the correct worker process by using the requestâ€™s URI. You can match URIs with application pools and files by configuring **sites, applications,** and **virtual directories**. Each of these specifies part of a URI. Virtual directories are nested within applications, which are nested within sites, making it possible to define a resource with the URI, `<site>/<application>/<virtual directory>`. 
+
+
+In IIS, the domain name of a URI belongs to a [**site**][iis-sites-intro]. A site specifies certain top-level configuration details, such as the protocol (HTTP and HTTPS for IIS versions 6 and earlier, and extensible to accommodate any protocol in IIS 7 and above), or the site's IP address, port, and [host header][host-header]. Other settings determine how a site should process or route requests. You can [apply configuration settings][iis-site-limits] for how long IIS should keep an inactive connection alive and how many concurrent connections a site can accept.
+
+
+An **[application][iis-applications]** associates a URI path with an application pool and a physical directory within the host. Every site has at least one default application, which binds to the root URI. When you create an application, you point it to an application pool (which multiple applications can share). Applications and sites can each point to a different application poolâ€”IIS will route a request to the application pool for either the site or the application, based on the URI. An application's physical directory can contain subdirectories that map to additional URIs, known as [**virtual directories**][sites-apps-dirs]. When you assign an application to a physical directory, IIS will designate each of the subdirectories as a virtual directory and give it a URI. 
+
+
+A single application can point to [multiple virtual directories][virtual-dir-overview], letting you assign one subdirectory to images and another to stylesheets, or otherwise organize assets within your applications. A virtual directory can also have a different name than its corresponding file path. 
+
+
+## Key IIS metrics
+
+
+When monitoring IIS, you'll want to focus on at least four categories of metrics:
+
+
+- [HTTP request metrics](#http-request-metrics)
+- [HTTP response metrics](#http-response-metrics)
+- [Availability metrics](#availability-metrics)
+- [Resource metrics](#resource-metrics)
+
+
+The "Availability" column of each table indicates where you can access each metric. In [Part 2][part-2-link], we'll show you how to access these metrics from these sources: [performance counters][performance-counter-link] (objects that calculate metrics internally throughout the Windows operating system) and [IIS logs][iis-logging-link]. 
+
+
+This article refers to metric terminology from our [Monitoring 101 series][dd-monitoring-101-link], which provides a framework for metric collection and alerting.
+
+
+
+{{< img src="iis-metrics-main-screenboard.png" wide="true" alt="IIS Metrics - A screenboard showing key IIS metrics" popup="true" >}}
+
+
+ 
+### HTTP request metrics
+ 
+Tracking the volume of requests gives you an idea of how busy your server is, and serves as a starting point for understanding how well your IIS configuration is working. HTTP request metrics can also help you identify bottlenecks, see which URI paths receive the most traffic, and determine what sort of demands your application code places on your system resources.
+
+
+| Name | Description | [Metric Type][dd-monitoring-101-link] | [Availability][part-2-link] |
+|:-----|:------------|:------------|:-------------|
+| `TotalMethodRequestsPerSec` | Rate of requests received per second by the WWW Service, per site  | Work: Throughput | [Web Service counter set][web-service-class] |
+| `Requests / Sec` | Rate of requests received by a given worker process | Work: Throughput | [`W3SVC_W3WP`][w3wp-counters] performance counter set |
+| `CurrentQueueSize` | Number of requests in the HTTP.sys queue, per application pool | Resource: Saturation | [HTTP Service Request Queues counter set][http-sys-perfmon]|
+| `cs-uri-stem` | Rate of requests to a specific URI path | Work: Throughput | IIS logs |
+| `cs-method` | Rate of requests sent through a specific HTTP method | Work: Throughput | IIS logs, [Web Service counter set][web-service-class] |
+
+
+#### Metric to alert on: TotalMethodRequestsPerSec
+
+
+[`TotalMethodRequestsPerSec`][web-service-class] tracks the rate of all HTTP requests received per second by the server. This is a basic measure of throughput for HTTP requests, and a starting point for uncovering issues.
+
+
+A rapid decrease in the rate of requests can indicate problems within your infrastructure, such as periods of server unavailability. You'll want to set an alert to notify you of any sudden changes to your baseline request rate, and monitor this metric alongside [5xx errors](#http-response-metrics) and service uptime (which we'll discuss [later](#availability-metrics)).
+
+
+Keeping a close eye on IIS activity can help you distinguish between legitimate and illegitimate traffic. Network security is a discipline unto itself and outside the scope of this article, but in general, it's important to have a deep understanding of your HTTP activity. Monitoring the number of requests per second is a good first step. If you notice a spike in requests per second, you can take further steps to determine if the cause is, for instance, a denial of service (DoS) attack or a surge of referrals from a popular source (the so-called [hug of death][hug-of-death]).  
+
+
+Microsoft recommends [monitoring your IIS logs][ddos-logs] for spikes in `Timer_ConnectionIdle` messages, which appear when a client's connection has reached its keep-alive timeout. A jump in the number of `Timer_ConnectionIdle` logs may indicate that DoS attackers are trying to max out the available connections to your server. But it can also happen when users are having issues with connectivity.
+
+
+#### Metric to alert on: **CurrentQueueSize**
+
+
+Weâ€™ve mentioned earlier that if no worker processes are available to handle a request, HTTP.sys places the request in a queue. `CurrentQueueSize` measures the depth of the HTTP.sys request queue per application pool. If the `CurrentQueueSize` of a pool is consistently approaching the pool's maximum request queue length (1,000, by default, and configurable within [IIS Manager][iis-manager]), you'll want to figure out the source of the backlog. 
+
+
+You'll want to watch for sustained increases in `CurrentQueueSize`. Since the CPU is what handles requests within an application pool, a full queue probably means either that you've misconfigured the CPU limit for your application pool or that the pool has been stuck performing a CPU-intensive operation on a single request. The graphs below show `CurrentQueueSize` (red) alongside the `% Processor Time` (blue) for a single worker process before and after we throttled an application pool's CPU utilization to two percent. You can see the effect on `CurrentQueueSize`. In the first half of the graph, CPU utilization has a very low baseline with periodic spikes. After throttling, there are no more CPU spikes, and `CurrentQueueSize` increases.
+
+{{< img src="iis-metrics-throttling-worker.png" alt="IIS Metrics - Graphs showing the effects of throttling an IIS worker process" >}}
+
+
+
+To ensure that your web applications are available for users, youâ€™ll want to set up an alert to notify you when the `CurrentQueueSize` for a given application pool is approaching its maximum. After an application pool hits the maximum [queue length][queue-size], incoming requests will be dropped and the server will return the error code 503 (Server Too Busy). Weâ€™ll discuss this and other HTTP errors in a [later section](#http-response-metrics).
+
+
+Depending on the source of your queuing issues, there are several steps you can take. If an application pool is consistently using a very high percentage of CPU, [throttling][set-app-pool-cpu] that pool's consumption to a specific limit prevents it from affecting the rest of your system until you can resolve the problem. As of IIS 8.0, you can also set the [`ThrottleUnderLoad`][throttle-underload] property for an application pool, which allows an application pool to exceed its CPU limit if there is no contention for CPU. You may also want to allocate more CPU cores to your IIS hosts.
+ 
+One way to reduce the number of 503 responses is to grant multiple worker processes to an application pool, an arrangement known as a **[web garden][web-garden]**. Web gardens can ensure that worker processes are always available to handle requests.
+
+
+Web gardens are not always suitable for every application, and in some cases, they may negatively impact IIS performance. First, if a worker process needs exclusive access to a file within the host, increasing the number of worker processes vying for the file will only create a bottleneck. Second, any additional worker process also maintains its own [cache][web-garden-data] and CPU threads, and will increase the resource usage of an application pool. Depending on your use case, a more reliable alternative to web gardens may be splitting your application into microservices and dedicating an application pool to each. You can observe the extent to which web gardens are impacting performance in your particular case by monitoring the CPU and memory usage of each worker process.
+
+
+You can also increase or decrease the maximum request queue length of each application pool. With a higher maximum queue length, IIS can serve a larger number of concurrent requests before it starts returning 503 errors to clients. However, if you set your maximum queue length too high, your server may seem unresponsive to clients while their requests are waiting in the queue. And if a request remains in an application pool's queue for longer than the [`connectionTimeout`][website-limits] limit youâ€™ve specified for your site, the request will time out and record a [`Timer_AppPool`][http-api-logs] error in the `HTTPERR` logs, which log the output of HTTP.sys. You can find these logs at **C:\Windows\System32\LogFiles\HTTPERR\httperr.log**. Microsoft recommends setting the maximum queue length [no higher than 10,000][queue-size]. 
+
+
+#### Metric to watch: Requests / Sec
+
+
+While `TotalMethodRequestsPerSec` counts all requests received by HTTP.sys, `Requests / Sec` tracks every request that HTTP.sys routes to each worker process. You should monitor both `Requests / Sec` (per worker process) and `TotalMethodRequestsPerSec` to get a more complete picture of IIS request throughput, since the behavior of these two metrics does not always coincide. As we [explained](#http-sys-and-worker-processes), requests to IIS first reach HTTP.sys, and may enter a queue before shifting to the appropriate worker process. Monitoring `TotalMethodRequestsPerSec` alongside the `Requests / Sec` of each worker process makes it clear how (and how much) HTTP traffic is moving through your server.
+
+
+#### Metrics to watch: cs-method, cs-uri-stem
+
+
+You'll want to keep an eye on the URI paths and HTTP methods of requests to your IIS instances, as these are the most direct ways of determining which parts of your web applications are responsible for poor performance. [By default][iis-log-defaults], IIS will log the `cs-method` (HTTP request method such as GET or POST) and the `cs-uri-stem`, the URI target of the request (e.g., "/"). The `cs` in the names of these metrics stands for ["client-to-server"][w3c-log-defs]. 
+
+
+You can parse your logs to collect the `cs-method` and `cs-uri-stem` of each request, and use this data to analyze the throughput, latency, and impact on resource usage of requests to specific routes within your web applications. If the average [`time-taken`](#http-response-metrics) is higher than expected, for example, you can use `cs-method` and `cs-uri-stem` to see if the latency issues come from a specific page.
+
+
+
+{{< img src="iis-metrics-logs.png" wide="true" alt="IIS Metrics - An IIS log stream showing cs-method in the METHOD column and cs-uri-stem in the URL PATH column." caption="An IIS log stream showing cs-method in the METHOD column and cs-uri-stem in the URL PATH column." >}}
+
+
+### HTTP response metrics
+
+
+Monitoring HTTP responses is the most direct way to see how your IIS sites are serving users. You'll want to know about upticks in response latency before your users tell you. And a spike in 4xx or 5xx errors can signal a problem with a configuration setting or a breaking change in your application. You can parse and analyze your IIS logs to track the types of requests that have returned error responses. As of version 7.0+, IIS reports subsets of 4xx and 5xx status codes that provide more detailed descriptions. You can find a list of HTTP status and substatus codes [here][status-code-key]. 
+
+
+In [Part 2][part-2-link], we'll show you how to use the IIS [logging module][iis-logging-link] to log key information about each request, including the HTTP request method (GET, POST, etc.), `cs-uri-stem` (URL path), and `time-taken` (request processing time).
+
+
+| Name | Description | [Metric Type][dd-monitoring-101-link] | [Availability][part-2-link] |
+|:-----|:------------|:------------|:-------------|
+| 4xx errors | Count or rate of 4xx client errors | Work: Error | IIS logs, [`W3SVC_W3WP`][w3wp-counters] performance counter set (for certain error codes) |
+| 5xx errors | Count or rate of 5xx server errors | Work: Error | IIS logs, [`W3SVC_W3WP`][w3wp-counters] performance counter set (for 500 error codes) |
+| `time-taken` | Time elapsed between the first byte of a request and the final byte of a response | Work: Performance | IIS logs
+
+
+ 
+#### Metric to alert on: 5xx server errors
+
+
+IIS sends a 5xx status code when the server is unable to respond to a valid request. Common 5xx error codes include 503 (Server Too Busy) and 500 (Internal Server Error). 
+
+
+IIS will start sending 503 error responses after it has reached its maximum request queue length and cannot process any additional requests. We've [discussed](#http-request-metrics) how you can prevent one source of 503s by setting up web gardens or increasing the maximum queue length. 
+
+
+Yet there may also be alternative causes of 503s. If you start seeing a high rate of 503 errors without a corresponding increase in CPU usage (which is usually a key indicator that worker processes are overloaded), you may want to consult the `HTTPERR` logs, as HTTP.sys may return a 503 before a request reaches a worker process (e.g., if an application pool [goes offline][code-503-httperr-example]).
+
+
+If you're running an ASP.NET application, you may also see 503s that have to do with [`appConcurrentRequestLimit`][concurrent-request-setting], the [maximum queue size][queue-size-asp] for concurrent requests piped from IIS. Just like when an application pool reaches its maximum queue length, an ASP.NET application will begin responding to requests with 503 errors after hitting its `appConcurrentRequestLimit` (by default, 5,000).
+
+
+Without deeper investigation, it can be hard to determine the source of a 500 error, but the IIS substatus code may offer clues. For example, [500.13][status-code-key] indicates, "Web server is too busy," which means that, because of resource constraints, the server has exceeded the number of concurrent requests it can process (irrespective of the `appConcurrentRequestLimit` youâ€™ve configured). If you're using the ASP web framework, the 500.100 substatus code indicates an "Internal ASP error." In this case, you'll want to check your ASP error logs for a [more specific error message][asp-error-codes].
+
+
+You may want to correlate 5xx errors with the rate or count of requested URI paths (`cs-uri-stem`) and HTTP request methods (`cs-method`). If requests to certain URI paths are returning 500 status codes at a much higher rate, you may want to investigate whether it's related to recent changes in your application code.
+
+
+Finally, you can use the [`W3SVC_W3WP`][w3wp-counters] counter, `% 500 HTTP Response Sent`, to track the percentage of responses that have returned a 500 error. Like the other error-related counters in this set, this counter won't tell you a substatus codeâ€”you can only glean that information from the logs. It's generally a better idea to monitor the rate of 5xx errors using logs, since they can provide more context around the exact cause of each error.
+
+
+#### Metric to alert on: time-taken
+
+You can [configure IIS][logging-fields] to log `time-taken`, [the time it takes for IIS to process a request][time-taken-def]. This metric represents the difference, in milliseconds, between two timestamps: when HTTP.sys receives the first byte of a request, and when IIS finishes sending the final byte of the response to the client, including network latency. High response latency can affect user experience, so you'll want to be alerted if it consistently exceeds an undesirable threshold.
+
+
+Two ways you can improve response latency include using [HTTP compression][http-compression] to reduce the size of the files that IIS returns, and [using output caching][output-caching] to store [commonly generated versions][output-caching-detail] of dynamic content in memory. 
+
+
+The effectiveness of these solutions depends on your use case. Output caching won't have any impact if your web server only sends static files. And if your content changes frequently, the resource use of caching may offset any drop in response latency. File compression only improves the latency of certain HTTP requestsâ€”those that include an `Accept-encoding` header that matches the compression strategy you've specified in your IIS configuration (e.g., "Deflate" or "GZIP"). If you're looking to implement file compression, you may want to monitor the `Accept-encoding` header by logging it as a [custom field][log-custom-field].
+
+{{< img src="iis-metrics-iis-manager.png" alt="IIS Metrics - IIS Manager" caption="You can enable compression and output caching within IIS Manager." wide="true" >}}
+
+
+
+#### Metric to watch: 4xx client errors
+
+
+You have as little control over some 4xx errors as you do over the requests your users send. But a wave of specific messages may be worth investigating. If HTTP.sys doesn't recognize an HTTP request as valid, IIS will return [a 400 status code][code-400] (Bad Request). A pattern of 400 status codes can indicate that HTTP.sys is shutting out requests that you want it to accept. For example, the `MaxFieldLength` property specifies the limit, in bytes, for each header in a request, and might be rejecting certain headers. You can find the reason for a 400 error in the [`HTTPERR` logs][code-400-httperr]. In the example of `MaxFieldLength`, you'll see the value of the field `s-reason` as `FieldLength` in the `HTTPERR` logs. You can edit `MaxFieldLength` and other properties [in the registry][http-sys-config].
+
+
+While the occasional [404 (Not Found) status code][code-404] is to be expected, a sustained increase may indicate disorganized or missing assets. Some 404s may indicate an issue with [handlers][iis-handler], IIS extensions that process requests to particular URI paths (e.g., by file type). IIS will return a 404 error when a handler is looking for its own dependencies at file paths that don't exist (perhaps because you have not installed them). 
+
+
+While records of most HTTP errors are only available through logs, it's worth noting that you can measure the rates of certain 4xx errorsâ€”401 (Unauthorized), 403 (Forbidden), and 404â€”by querying the [`W3SVC_W3WP`][w3wp-counters] performance counter set.
+
+
+### Availability metrics
+
+
+To ensure that your users can access your content, you'll need to monitor the availability of several components of IIS. You'll want to know when your application pools have recently restarted or stopped running entirely. You'll also want to get alerted if IIS is no longer listening for HTTP requests. In this section, we'll discuss two IIS metrics that can give you insight into the availability of your server.
+  
+| Name | Description | [Metric Type][dd-monitoring-101-link] | [Availability][part-2-link] |
+|:-----|:------------|:------------|:-------------|
+| `ElapsedTime` | Number of seconds a process has been running | Resource: Availability | [Process performance counter set][perfproc-class] |
+| `ServiceUptime` | Number of seconds the WWW Service has been running (per site or across all sites) | Resource: Availability | [Web Service counter set][web-service-class] |
+
+
+#### Metric to watch: ElapsedTime
+
+
+[`ElapsedTime`][perf-elapsed-time] records the number of seconds a Windows process has been running, and is particularly useful for monitoring IIS worker processes. When an application pool restarts (or "recycles"), `ElapsedTime` resets to zero. Recycle events may [erase application state][iis-recycle-impacts] and cause brief periods of unavailability. If recycling events are causing issues for your infrastructure, the thresholds you've configured for recycling may be out of step with the actual resource use of your application pools.
+
+
+You can [configure your pools to recycle][recycling-config] once they've hit two kinds of memory thresholds: private memory, which is [not shared][memory-recycling] with other pools, as well as virtual memory, the reserved memory addresses of each application pool. It's also possible to recycle an application pool based on regular, time-based intervals, or once it has served a certain number of requests.
+
+
+By default, recycling based on request count and memory usage is disabled, and application pools will restart every 29 hours. These settings are [configurable][periodic-restart-config], as is the option for IIS to spin up a new application pool automatically whenever another one begins to shut down.
+
+
+If you've noticed that the `ElapsedTime` of a worker process has reset recently, you can refer to the logs to [find out][log-restarts] whether an application pool may have recycled, and what the reason was. In the "Advanced Settings" window for an application pool within IIS Manager, you'll find a section called, "Generate Recycle Event Log Entry," which lists the names of recycle events and gives you the choice of whether or not to log them. 
+
+
+#### Metric to watch: ServiceUptime
+
+
+[`ServiceUptime`][web-service-class] tracks the number of seconds the WWW Service (or a specific IIS site) has been running since it last restarted. Because the WWW Service operates atop an entire IIS instance, `ServiceUptime` is the only metric that can take a pulse from the IIS software as a whole. This is important because a single worker process can become unavailable while the WWW Serviceâ€”and your IIS sitesâ€”will continue to run (and return 503 errors to users), so youâ€™ll want to monitor both `ElapsedTime` and `ServiceUptime` separately.
+
+
+In the example below, we recycled an application pool at around 3:32 p.m. The `ElapsedTime` of each worker process reset, while `ServiceUptime` continued to increment. When we restarted the IIS server at around 3:42 p.m., both metrics reset. 
+
+{{< img src="iis-metrics-elapsedtime.png" alt="IIS Metrics - Graphs showing the elapsed time of IIS worker processes and the uptime of the IIS server" >}}
+  
+
+### Resource metrics
+
+
+Since application pools are isolated from one another, with their own worker processes, it's important to monitor them individually. An application pool could face resource contention or even crash, while IIS as a whole appears to be functioning. 
+
+
+| Name | Description | [Metric Type][dd-monitoring-101-link] | [Availability][part-2-link] |
+|:-----|:------------|:------------|:-------------|
+| `PercentProcessorTime` | Percentage of CPU utilization per process (within a user-configured sample interval) | Resource: Utilization | [Process performance counter set][perfproc-class] |
+| `WorkingSet` | Number of bytes within a process's virtual address space stored in physical memory | Resource: Utilization |[Process performance counter set][perfproc-class]  |
+
+
+#### Metric to watch: PercentProcessorTime
+
+
+One resource metric you'll want to monitor is `PercentProcessorTime`, the percentage of time a given process has used the CPU. Monitoring the CPU utilization of running worker processes lets you allocate your server resources effectivelyâ€”for instance, you may want to throttle the CPU consumption of application pools when they reach a specific limit. You'll also want to investigate the cause of high CPU usage and see if you can mitigate it. 
+
+
+If a single application pool is consistently using more than its expected CPU, it's likely that you will need to find a way to optimize your application code. You'll want to identify the application pool that's causing the issue, and beyond that, any problematic code. While you cannot use IIS Manager to identify the application pool that a specific worker process belongs to, there are [tools you can download][w3wp-pid] for this purpose.
+
+
+You may also want to approach the problem another way, by correlating periods of high CPU usage with the frequency of requests, broken down by URI path and HTTP method. If spikes in requests with a specific combination of HTTP method and URI path correspond with spikes in CPU utilization, you'll want to look into backend code that handles these headers. You may also want to create a memory dump and use a separate software program to perform a [stack trace][debugdiag-mem-dump]. 
+
+
+
+
+#### Metric to watch: WorkingSet
+
+
+Windows processes have access to a [virtual address space][virtual-address-space], where they store pages that map to locations where data is also stored on physical RAM. `WorkingSet` tracks the number of bytes currently within a worker process's [working set][working-set], the pages within a process's virtual address space that are stored in physical memory. 
+
+
+You'll want to monitor memory consumption, both by application pool and across your system. Too much memory usage across your system can cause an [out-of-memory exception][out-of-mem-exception]. And if youâ€™ve configured an application pool to recycle when it hits a certain memory threshold, but the code that handles requests to the pool continues to consume a lot of memory, recycling the pool will only postpone the problem. 
+
+
+It's important to watch for [memory leaks][memory-leaks] in your application pools, as well as whether you can trace them to an IIS module or your application code. It could also be the case that your application simply consumes a lot of memory, for example, by using [string concatenation][string-concat-mem] to return HTML.
+
+
+As with CPU utilization, you can find the source of high memory consumption by analyzing a memory dump with a tool like [DebugDiag][debugdiag] (see [Part 2][part2-debugdiag]), correlating memory consumption with the paths and methods of HTTP requests, and identifying which `w3wp.exe` instance belongs to which worker process.
+
+
+Below, we see a bump in memory consumption per worker process in a specific application pool, after the pool recycled around 1:22 p.m. 
+  
+{{< img src="iis-metrics-mem-reqs.png" alt="IIS Metrics - Graphs showing memory consumption and requests per second by IIS worker process" >}}
+
+
+## Next step: Collect IIS metrics
+
+
+This post has covered some key IIS metrics for tracking the health and performance of IIS. In particular, we've illustrated the importance of monitoring the traffic and resource usage of IIS application pools alongside metrics aggregated from HTTP requests. In [Part 2][part-2-link] of this series, we will show you how to collect these metrics from Windows Performance Counters, IIS logs, and the IIS HTTP API.
+
+
+
+
+[app-pools]: https://blogs.msdn.microsoft.com/rohithrajan/2017/10/08/quick-reference-iis-application-pool/
+
+
+[app-pools-exe]: https://msdn.microsoft.com/en-us/library/ms524990(v=vs.90).aspx#Anchor_1
+
+
+[app-pools-problems]: https://blogs.msdn.microsoft.com/benjaminperkins/2013/03/01/some-tips-for-troubleshooting-503-http-status-codes/
+
+
+[asp-error-codes]: https://support.microsoft.com/en-us/help/294271/info-asp-error-codes
+
+
+[code-400]: https://docs.microsoft.com/en-us/iis/troubleshoot/diagnosing-http-errors/troubleshooting-http-400-errors-in-iis
+
+
+[code-400-httperr]: https://docs.microsoft.com/en-us/iis/troubleshoot/diagnosing-http-errors/troubleshooting-http-400-errors-in-iis#troubleshooting-methods
+
+
+[code-404]: https://support.microsoft.com/en-us/help/942041/http-error-404-0-not-found-error-when-you-open-an-iis-7-0-webpage
+
+
+[code-503-httperr-example]: https://blogs.msdn.microsoft.com/vpandey/2009/08/04/http-error-503-the-service-is-unavailable/
+
+
+[concurrent-request-setting]: https://docs.microsoft.com/en-us/iis/configuration/system.webserver/serverruntime
+
+
+[counter-type-qualifier]: https://msdn.microsoft.com/en-us/library/aa389383(v=vs.85).aspx
+
+
+[dd-monitoring-101-link]: https://www.datadoghq.com/blog/monitoring-101-collecting-data/
+
+
+[ddos-logs]: https://blogs.msdn.microsoft.com/friis/2014/12/30/security-guidelines-to-detect-and-prevent-dos-attacks-targeting-iisazure-web-role-paas/
+
+
+[debugdiag]: https://www.microsoft.com/en-us/download/details.aspx?id=49924
+
+
+[debugdiag-mem-dump]: https://docs.microsoft.com/en-us/iis/troubleshoot/performance-issues/troubleshooting-high-cpu-in-an-iis-7x-application-pool
+
+
+[fastcgi]: https://docs.microsoft.com/en-us/iis/configuration/system.webserver/fastcgi/
+
+
+[get-counter]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-5.1
+
+
+[host-header]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Host
+
+
+[http-api-logs]: https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis
+
+
+[http-compression]: https://docs.microsoft.com/en-us/iis/configuration/system.webserver/httpcompression/
+
+
+[http-sys]: https://docs.microsoft.com/en-us/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#hypertext-transfer-protocol-stack-httpsys
+
+
+[http-sys-config]: https://support.microsoft.com/en-us/help/820129/http-sys-registry-settings-for-windows
+
+
+[http-sys-perfmon]: https://msdn.microsoft.com/en-us/library/windows/desktop/cc307239(v=vs.85).aspx
+
+
+[hug-of-death]: https://en.wikipedia.org/wiki/Slashdot_effect
+
+
+[iis-applications]: https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/application/
+
+
+[iis-application-request-routing]: https://www.iis.net/downloads/microsoft/application-request-routing
+
+
+[iis-changelog]: https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10-version-1709/new-features-introduced-in-iis-10-1709
+
+
+[iis-ftp]: https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/ftpserver/connections
+
+
+[iis-handler]: https://docs.microsoft.com/en-us/iis/configuration/system.webserver/handlers/
+
+
+[iis-homepage-link]: https://www.iis.net/
+
+
+[iis-log-defaults]: https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/sitedefaults/logfile/
+
+
+[iis-logging-link]: https://msdn.microsoft.com/en-us/library/ms525410(v=vs.90).aspx
+
+
+[iis-manager]: https://msdn.microsoft.com/en-us/library/bb763170.aspx
+
+
+[iis-protocol-listeners]: https://docs.microsoft.com/en-us/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#protocol-listeners
+
+
+[iis-recycle-impacts]: https://msdn.microsoft.com/en-us/library/ms525803(v=vs.90).aspx#Anchor_2
+
+
+[iis-site-limits]: https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/limits
+
+
+[iis-sites-intro]: https://docs.microsoft.com/en-us/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#sites
+
+
+[iis-url-rewrite-link]: https://www.iis.net/downloads/microsoft/url-rewrite
+
+
+[iis-with-asp]: https://msdn.microsoft.com/en-us/library/ms178477.aspx
+
+
+[iis-with-flask]: http://netdot.co/2015/03/09/flask-on-iis/
+
+
+[iis-with-node]: https://www.hanselman.com/blog/InstallingAndRunningNodejsApplicationsWithinIISOnWindowsAreYouMad.aspx
+
+
+[install-iis-5-6]: https://support.microsoft.com/en-us/help/325889/how-to-remove-and-reinstall-iis-5-0-5-1-and-6-0
+
+
+[install-iis-recent]: https://msdn.microsoft.com/en-us/library/ms181052(v=vs.80).aspx
+
+
+[isapi]: https://msdn.microsoft.com/en-us/library/ms525172(v=vs.90).aspx
+
+
+[logging-fields]: https://docs.microsoft.com/en-us/previous-versions/orphan-topics/ws.11/hh831775(v=ws.11)#to-select-w3c-fields-to-log-by-using-the-ui
+
+
+[log-custom-field]:https://docs.microsoft.com/en-us/iis/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging
+
+
+[log-restarts]: https://blogs.msdn.microsoft.com/benjaminperkins/2013/07/01/troubleshooting-badly-behaving-iis-application-pools/
+
+
+[max-processes]: https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/applicationpools/add/processmodel
+
+
+[memory-leaks]: https://docs.microsoft.com/en-us/iis/troubleshoot/performance-issues/troubleshooting-native-memory-leak-in-an-iis-7x-application-pool
+
+
+[memory-recycling]: https://blogs.msdn.microsoft.com/pfedev/2009/01/22/memory-based-recycling-in-iis-6-0/
+
+
+
+
+[modules-overview]: https://docs.microsoft.com/en-us/iis/configuration/system.webserver/modules/index
+
+
+[out-of-mem-exception]: https://support.microsoft.com/en-us/help/2020006/how-to-troubleshoot-out-of-memory-issues-system-outofmemoryexception-i
+
+
+[output-caching]: https://docs.microsoft.com/en-us/iis/configuration/system.webserver/caching/
+
+
+[output-caching-detail]: https://docs.microsoft.com/en-us/iis/manage/managing-performance-settings/walkthrough-iis-output-caching
+
+
+[perf-counter-rawcount]: https://msdn.microsoft.com/en-us/library/ms803974.aspx
+
+
+[perf-elapsed-time]: https://msdn.microsoft.com/en-us/library/ms804013.aspx
+
+
+[performance-counter-link]: https://msdn.microsoft.com/en-us/library/windows/desktop/aa373083(v=vs.85).aspx
+
+
+
+
+[perfproc-class]: https://technet.microsoft.com/en-ca/aa394277(v=vs.71)
+
+
+[periodic-restart-config]: https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/applicationpools/add/recycling/periodicrestart/
+
+
+[queue-size]: https://blogs.technet.microsoft.com/brenle/2015/03/06/modifying-the-queue-length-for-exchange-app-pools-in-iis/
+
+
+[queue-size-asp]: https://docs.microsoft.com/en-us/previous-versions/office/communications-server/dd425294(v=office.13)
+
+
+[recycling-config]: https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/applicationpools/add/recycling/
+
+
+[set-app-pool-cpu]: https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/iis-80-cpu-throttling-sand-boxing-sites-and-applications
+
+
+[sites-apps-dirs]: https://docs.microsoft.com/en-us/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis
+
+
+[status-code-key]: https://support.microsoft.com/en-us/help/943891/the-http-status-code-in-iis-7-0-iis-7-5-and-iis-8-0
+
+
+[string-concat-mem]: https://support.microsoft.com/en-us/help/893660/quick-things-to-check-when-you-experience-high-memory-levels-in-asp-ne
+
+
+[throttle-underload]: https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/iis-80-cpu-throttling-sand-boxing-sites-and-applications
+
+
+[time-taken-def]: https://support.microsoft.com/en-us/help/944884/description-of-the-time-taken-field-in-iis-6-0-and-iis-7-0-http-loggin
+
+
+[virtual-address-space]: https://msdn.microsoft.com/en-us/library/windows/desktop/aa366912(v=vs.85).aspx
+
+
+[virtual-dir-overview]: https://docs.microsoft.com/en-us/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis#virtual-directories
+
+
+[web-garden]: https://blogs.technet.microsoft.com/mscom/2007/07/10/gardening-on-the-web-server/
+
+
+[web-garden-data]: https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-1.1/aa720391(v=vs.71)
+
+
+[web-service-class]: https://msdn.microsoft.com/en-us/library/aa394298(v=vs.85).aspx
+
+
+[website-limits]: https://docs.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/limits
+
+
+[web-service-class]: https://msdn.microsoft.com/en-us/library/aa394298(v=vs.85).aspx
+
+
+[working-set]: https://msdn.microsoft.com/en-us/library/windows/desktop/cc441804(v=vs.85).aspx
+
+
+[when-w3wp-starts]: https://blogs.msdn.microsoft.com/amb/2012/03/08/launch-worker-process-w3wp-exe-automatically-as-soon-as-application-pool-starts/
+
+
+[windows-drivers]: https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/types-of-windows-drivers
+
+
+[wmi-about]: https://msdn.microsoft.com/en-us/library/aa384642(v=vs.85).aspx
+
+
+[www-service]: https://docs.microsoft.com/en-us/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#world-wide-web-publishing-service-www-service
+
+
+[w3c-log-defs]: https://msdn.microsoft.com/en-us/library/windows/desktop/aa814385(v=vs.85).aspx
+
+
+[w3wp-counters]: https://blogs.iis.net/mailant/new-worker-process-performance-counters-in-iis7
+
+
+[w3wp-pid]: https://blogs.msdn.microsoft.com/ericparvin/2014/04/29/find-pid-for-iis-application-pools-worker-process/
+
+
+[part-2-link]: /blog/iis-monitoring-tools
+
+
+[part-3-link]: /blog/iis-monitoring-datadog
+
+
+[part2-debugdiag]: /blog/iis-monitoring-tools/#debugdiag

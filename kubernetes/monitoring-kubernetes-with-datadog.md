@@ -1,5 +1,127 @@
-m5½¹¥Ñ½É¥¹œ-Õ‰•É¹•Ñ•Ìİ¥Ñ …Ñ…‘½œ(((©Q¡¥Ì¥ÌÑ¡”±…ÍĞÁ½ÍĞ¥¸„€ĞµÁ…ÉĞÍ•É¥•Ì…‰½ÕĞ-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œ¸mA…ÉĞ€Åt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼¤‘¥ÍÕÍÍ•Ì¡½Ü-Õ‰•É¹•Ñ•Ì¡…¹•Ìå½ÕÈµ½¹¥Ñ½É¥¹œÍÑÉ…Ñ•¥•Ì°mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤•áÁ±½É•Ì-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì…¹•Ù•¹ÑÌå½ÔÍ¡½Õ±µ½¹¥Ñ½È°mA…ÉĞ€Ít¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ğµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¤½Ù•ÉÌÑ¡”‘¥™™•É•¹Ğİ…åÌÑ¼½±±•ĞÑ¡…Ğ‘…Ñ„°…¹Ñ¡¥ÌÁ½ÍĞ‘•Ñ…¥±Ì¡½ÜÑ¼µ½¹¥Ñ½È-Õ‰•É¹•Ñ•ÌÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œ¸¨()%˜å½×ŠeÙ”É•…mA…ÉĞ€Ít¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ğµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¤½¸½±±•Ñ¥¹œµ•ÑÉ¥Ì°å½Ô…±É•…‘ä­¹½ÜÑ¡…ĞÁÉ½Á•É±äµ½¹¥Ñ½É¥¹œå½ÕÈ½­•É¥é•¥¹™É…ÍÑÉÕÑÕÉ”½É¡•ÍÑÉ…Ñ•İ¥Ñ -Õ‰•É¹•Ñ•ÌÉ•ÅÕ¥É•Ì„Ñ½½°…Á…‰±”½˜è((((´€€%¹•ÍÑ¥¹œµ•ÑÉ¥Ì™É½´…±°Ñ¡”‘¥™™•É•¹Ğ±…å•ÉÌ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°•Ù•¸¥˜å½ÕÈ±ÕÍÑ•ÉÌ…É”‘¥ÍÑÉ¥‰ÕÑ•…É½ÍÌµÕ±Ñ¥Á±”‘…Ñ„•¹Ñ•ÉÌ½È±½ÕÁÉ½Ù¥‘•ÉÌ(´€€É•…Ñ¥¹œµ•ÑÉ¥Ì…É½Õ¹-Õ‰•É¹•Ñ•Ì±…‰•±Ì™½È‰•ÑÑ•È½¹Ñ•áĞ(´€€QÉ…­¥¹œå½ÕÈÉÕ¹¹¥¹œ…ÁÁ±¥…Ñ¥½¹ÌÙ¥„ÕÑ½‘¥Í½Ù•Éä…ÌÑ¡•äµ½Ù”…É½ÍÌ¡½ÍÑÌ(´€€±°Ñ¡”…‘Ù…¹•É…Á¡¥¹œ…¹…±•ÉÑ¥¹œ™•…ÑÕÉ•Ìå½Ô¹••™½ÈÁÉ½‘ÕÑ¥½¸µÉ•…‘ä¥¹™É…ÍÑÉÕÑÕÉ”((()…Ñ…‘½œ½™™•ÉÌ…±°Ñ¡”•ÍÍ•¹Ñ¥…°™Õ¹Ñ¥½¹…±¥Ñ¥•Ì™½Èµ½¹¥Ñ½É¥¹œ-Õ‰•É¹•Ñ•Ì¸=ÕÈ-Õ‰•É¹•Ñ•Ì…¹½­•È¥¹Ñ•É…Ñ¥½¹Ì¡…Ù”‰••¸‘•Í¥¹•Ñ¼Ñ…­±”Ñ¡”½¹Í¥‘•É…‰±”¡…±±•¹•Ì½˜µ½¹¥Ñ½É¥¹œ½É¡•ÍÑÉ…Ñ•½¹Ñ…¥¹•ÉÌ°…Ì•áÁ±…¥¹•¥¸mA…ÉĞ€Åt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼¤¸()Q¡¥ÌÁ½ÍĞİ¥±°Í¡½Üå½Ô¡½ÜÑ¼Í•ĞÕÀ…Ñ…‘½œÑ¼…ÕÑ½µ…Ñ¥…±±ä½±±•ĞÑ¡”­•äµ•ÑÉ¥Ì‘¥ÍÕÍÍ•¥¸mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤½˜Ñ¡¥ÌÍ•É¥•Ì¸()íìğ¥µœÍÉŒô‰­Õ‰•É¹•Ñ•Ìµ‘…Í¡‰½…ÉµÍµ…±°¹Á¹œˆ…±Ğô‰­Õ‰•É¹•Ñ•Ì‘…Í¡‰½…ÉˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()Õ±°½‰Í•ÉÙ…‰¥±¥Ñä™½Èå½ÕÈ½¹Ñ…¥¹•É¥é•¥¹™É…ÍÑÉÕÑÕÉ”(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´((ŒŒŒ…Í¥±äµ½¹¥Ñ½È•… ±…å•È()™Ñ•ÈÉ•…‘¥¹œÑ¡”ÁÉ•Ù¥½ÕÌÁ…ÉÑÌ½˜Ñ¡¥ÌÍ•É¥•Ì°å½Ô­¹½ÜÑ¡…Ğ¥ÓŠeÌ•ÍÍ•¹Ñ¥…°Ñ¼µ½¹¥Ñ½ÈÑ¡”‘¥™™•É•¹Ğ½µÁ½¹•¹ÑÌ½˜å½ÕÈ-Õ‰•É¹•Ñ•Ìµ½É¡•ÍÑÉ…Ñ•¥¹™É…ÍÑÉÕÑÕÉ”¸…Ñ…‘½œ¥¹Ñ•É…Ñ•Ìİ¥Ñ …±°½˜Ñ¡•´Ñ¼ÁÉ½Ù¥‘”å½Ôİ¥Ñ „½µÁ±•Ñ”Á¥ÑÕÉ”½˜±ÕÍÑ•È¡•…±Ñ …¹Á•É™½Éµ…¹”è((((´€€…Ñ…‘½ŸŠeÌl¨©-Õ‰•É¹•Ñ•Ì¨¨¥¹Ñ•É…Ñ¥½¹t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½­Õ‰•É¹•Ñ•Ì¼¤…É•…Ñ•Ìµ•ÑÉ¥Ì°•Ù•¹ÑÌ…¹±…‰•±Ì™É½´-Õ‰•É¹•Ñ•Ì(´€€Q¡”m½­•È¥¹Ñ•É…Ñ¥½¹t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½Èµ‘½­•Èµ‘…Ñ…‘½œ¼¤¹…Ñ¥Ù•±ä½±±•ÑÌ…±°Ñ¡”€¨©½¹Ñ…¥¹•È¨¨µ•ÑÉ¥Ìå½Ô¹••™½È‰•ÑÑ•È…ÕÉ…äİ¡•¸µ½¹¥Ñ½É¥¹œ-Õ‰•É¹•Ñ•Ì(´€€9¼µ…ÑÑ•Èİ¡•É”å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌ…É”ÉÕ¹¹¥¹ŸŠM]L°m½½±”±½ÕA±…Ñ™½Éµt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½Èµ½½±”µ½µÁÕÑ”µ•¹¥¹”µÁ•É™½Éµ…¹”µİ¥Ñ µ‘…Ñ…‘½œ¼¤°½ÈméÕÉ•t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½Èµ…éÕÉ”µÙµÌµÕÍ¥¹œµ‘…Ñ…‘½œ¼§ŠLå½Ô…¸µ½¹¥Ñ½ÈÑ¡”€¨©Õ¹‘•É±å¥¹œ¡½ÍÑÌ¨¨½˜å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌİ¥Ñ …Ñ…‘½œ(´€€]¥Ñ míìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô¬¥¹Ñ•É…Ñ¥½¹Ít¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½ÁÉ½‘ÕĞ½¥¹Ñ•É…Ñ¥½¹Ì¼§
-…¹™Õ±°ÍÕÁÁ½ÉĞ™½Ë
-mÕÍÑ½´µ•ÑÉ¥Ít¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½‘•Ù•±½Á•ÉÌ½µ•ÑÉ¥Ì½ÕÍÑ½µ}µ•ÑÉ¥Ì¼¤°…Ñ…‘½œ…±±½İÌå½ÔÑ¼µ½¹¥Ñ½È…±°Ñ¡”€¨©…ÁÁ±¥…Ñ¥½¹Ì¨¨ÉÕ¹¹¥¹œ½¸å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌ((((ŒŒŒÕÑ½‘¥Í½Ù•Éäè¡•¬()Q¡…¹­ÌÑ¼…Ñ…‘½ŸŠeÌÕÑ½‘¥Í½Ù•Éä™•…ÑÕÉ”°å½Ô…¸½¹Ñ¥¹Õ½ÕÍ±äµ½¹¥Ñ½Èå½ÕÈ½­•É¥é•…ÁÁ±¥…Ñ¥½¹Ìİ¥Ñ¡½ÕĞ¥¹Ñ•ÉÉÕÁÑ¥½¸•Ù•¸…ÌÑ¡•ä•áÁ…¹°½¹ÑÉ…Ğ°…¹Í¡¥™Ğ…É½ÍÌ½¹Ñ…¥¹•ÉÌ…¹¡½ÍÑÌ¸()íìğ…¹Ù…Ìµ…¹¥µ…Ñ¥½¸¹…µ”ô‰Í•ÉÙ¥•}‘¥Í½Ù•Éäˆİ¥‘Ñ ôˆˆ¡•¥¡Ğôˆˆ€ùõô()ÕÑ½‘¥Í½Ù•Éä½¹Ñ¥¹Õ½ÕÍ±ä±¥ÍÑ•¹ÌÑ¼½­•È•Ù•¹ÑÌ¸]¡•¹•Ù•È„½¹Ñ…¥¹•È¥ÌÉ•…Ñ•½ÈÍÑ…ÉÑ•°Ñ¡”•¹Ğ¥‘•¹Ñ¥™¥•Ìİ¡¥ …ÁÁ±¥…Ñ¥½¸¥ÌÉÕ¹¹¥¹œ¥¸Ñ¡”¹•Ü½¹Ñ…¥¹•È°±½…‘Ìå½ÕÈÕÍÑ½´µ½¹¥Ñ½É¥¹œ½¹™¥ÕÉ…Ñ¥½¸™½ÈÑ¡…Ğ…ÁÁ±¥…Ñ¥½¸°…¹ÍÑ…ÉÑÌ½±±•Ñ¥¹œ…¹É•Á½ÉÑ¥¹œµ•ÑÉ¥Ì¸]¡•¹•Ù•È„½¹Ñ…¥¹•È¥ÌÍÑ½ÁÁ•½È‘•ÍÑÉ½å•°Ñ¡”•¹ĞÕ¹‘•ÉÍÑ…¹‘ÌÑ¡…ĞÑ½¼¸()…Ñ…‘½ŸŠeÌÕÑ½‘¥Í½Ù•Éä…ÁÁ±¥•Ì-Õ‰•É¹•Ñ•Ì±…‰•±ÌÑ¼…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥ÌÍ¼å½Ô…¸­••Àµ½¹¥Ñ½É¥¹œÑ¡•´‰…Í•½¸±…‰•±Ì°…Ìå½Ô‘¼™½È-Õ‰•É¹•Ñ•Ì…¹½­•È‘…Ñ„¸()Q¼±•…É¸µ½É”…‰½ÕĞ¡½ÜÕÑ½‘¥Í½Ù•Éäİ½É­Ì…¹¡½ÜÑ¼Í•Ğ¥ĞÕÀ°¡•¬½ÕĞ½ÕÈm‰±½œÁ½ÍÑt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½…ÕÑ½‘¥Í½Ù•Éäµ‘½­•Èµµ½¹¥Ñ½É¥¹œ¼¤…¹m‘½Õµ•¹Ñ…Ñ¥½¹t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½…ÕÑ½‘¥Í½Ù•Éä¼¤¸()íìğ¥¹±¥¹”µÑ„Ñ•áĞô‰½±±•Ğ°Ù¥ÍÕ…±¥é”°…¹…±•ÉĞ½¸-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì¥¸µ¥¹ÕÑ•Ìİ¥Ñ …Ñ…‘½œ¸ˆ‰Ñ¸µÑ•áĞô‰QÉä¥Ğ™É•”ˆ‘…Ñ„µ•Ù•¹Ğµ…Ñ•½Éäô‰M¥¹ÕÀˆÍ¥¹ÕÀô‰ÑÉÕ”ˆ€ùõô()U¹±•…Í …Ñ…‘½œ™½È-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œ(´´´´´´´´´´´´´´´()¥ÉÍĞ°å½Ô¹••Ñ¼•ĞÑ¡”…Ñ…‘½œ•¹ĞÉÕ¹¹¥¹œ½¸å½ÕÈ-Õ‰•É¹•Ñ•Ì¹½‘•Ì¸((ŒŒŒ%¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ğ()Q¡”m…Ñ…‘½œ•¹Ñt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼¤¥Ì½Á•¸Í½ÕÉ”Í½™Ñİ…É”Ñ¡…Ğ½±±•ÑÌ…¹É•Á½ÉÑÌµ•ÑÉ¥Ì™É½´•… ½˜å½ÕÈ¹½‘•Ì°Í¼å½Ô…¸Ù¥•Ü…¹µ½¹¥Ñ½Èå½ÕÈ•¹Ñ¥É”¥¹™É…ÍÑÉÕÑÕÉ”¥¸½¹”Á±…”¸%¹ÍÑ…±±¥¹œÑ¡”•¹ĞÕÍÕ…±±ä½¹±äÑ…­•Ì„™•Ü½µµ…¹‘Ì¸()]¡•¸µ½¹¥Ñ½É¥¹œ-Õ‰•É¹•Ñ•Ì°¥ÓŠeÌÉ•½µµ•¹‘•Ñ¼ÉÕ¸Ñ¡”•¹Ğ¥¸„½¹Ñ…¥¹•È¸]”¡…Ù”É•…Ñ•„½­•È¥µ…”İ¥Ñ ‰½Ñ Ñ¡”½­•È…¹Ñ¡”-Õ‰•É¹•Ñ•Ì¥¹Ñ•É…Ñ¥½¹Ì•¹…‰±•¸()Q¡…¹­ÌÑ¼-Õ‰•É¹•Ñ•Ì°å½Ô…¸Ñ…­”…‘Ù…¹Ñ…”½˜m…•µ½¹M•ÑÍt¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½…‘µ¥¸½‘…•µ½¹Ì¼¤Ñ¼…ÕÑ½µ…Ñ¥…±±ä‘•Á±½äÑ¡”…Ñ…‘½œ•¹Ğ½¸…±°å½ÕÈ¹½‘•Ì€¡½È½¸ÍÁ•¥™¥Œ¹½‘•Ì‰äÕÍ¥¹œm¹½‘•M•±•Ñ½ÉÍt¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½¹½‘”µÍ•±•Ñ¥½¸¼¹½‘•Í•±•Ñ½È¤¤¸e½Ô©ÕÍĞ¹••Ñ¼É•…Ñ”„µ…¹¥™•ÍĞ€¹å…µ±€™¥±”°Á…ÍÑ¥¹œ¥¸Ñ¡”Ñ•áĞå½Ô±°™¥¹İ¥Ñ¡¥¸Ñ¡”…Ñ…‘½œ•¹Ğm¥¹ÍÑ…±±…Ñ¥½¸Á…•t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ½­Õ‰•É¹•Ñ•Ì¤¸()Q¡•¸Í¥µÁ±ä‘•Á±½äÑ¡”…•µ½¹M•Ğİ¥Ñ Ñ¡”½µµ…¹“
-€()€)­Õ‰•Ñ°É•…Ñ”€µ˜€½Á…Ñ ½Ñ¼½Ñ¡”½µ…¹¥™•ÍĞ¼¹å…µ°)€()9½ÜÑ¡…ĞÑ¡”•¹Ğ¥ÌÉÕ¹¹¥¹œ½¸¹½‘•Ì…É½ÍÌå½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•È°Ñ¡”¹•áĞÍÑ•À¥ÌÑ¼½¹™¥ÕÉ”¥Ğ¸((ŒŒŒ½¹™¥ÕÉ”Ñ¡”•¹Ğ()Q¡”…Ñ…‘½œ•¹Ğ…¸‰”½¹™¥ÕÉ•‰ä•‘¥Ñ¥¹œÑ¡”m½¹˜¹å…µ°™¥±•t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½­Õ‰•É¹•Ñ•Ì½‘…Ñ…‘½}¡•­Ì½­Õ‰•É¹•Ñ•Ì½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”¤¥¸Ñ¡”€¨©½¹˜¹¨¨‘¥É•Ñ½Éä¸%Ğ¥Ì¹••ÍÍ…ÉäÍ¼½ÕÈ-Õ‰•É¹•Ñ•Ì¡•¬…¸½±±•Ğµ•ÑÉ¥Ì™É½´‘Ù¥Í½Èİ¡¥ ¥ÌÉÕ¹¹¥¹œ¥¸Ñ¡”-Õ‰•±•Ğ¸()¥ÉÍĞ°½Ù•ÉÉ¥‘”Ñ¡”¥¹ÍÑ…¹•Ì¸%¸Ñ¡”…Í”½˜„ÍÑ…¹‘…±½¹”‘Ù¥Í½È¥¹ÍÑ…¹”°ÕÍ”è()€)¥¹ÍÑ…¹•Ìè(€€€¡½ÍĞè±½…±¡½ÍĞ(€€€Á½ÉĞè€ĞÄäĞ(€€€µ•Ñ¡½è¡ÑÑÀ)€()±Í¼…‘Ñ¡”­Õ‰•±•ĞÁ½ÉĞ¹Õµ‰•È°ÍÕ …Ìè()­Õ‰•±•Ñ}Á½ÉĞè€ÄÀÈÔÕ€()Q¡•¸¥˜å½Ôİ…¹ĞÑ¡”•¹ĞÑ¼½±±•Ğ•Ù•¹ÑÌ™É½´Ñ¡”-Õ‰•É¹•Ñ•ÌA$°å½Ô¡…Ù”Ñ¼Í•ĞÑ¡”½±±•Ñ}•Ù•¹ÑÌèQÉÕ•€½¸€¨©½¹±ä½¹”•¹Ğ¨¨…É½ÍÌÑ¡”•¹Ñ¥É”-Õ‰•É¹•Ñ•Ì±ÕÍÑ•È¸=Ñ¡•È•¹ÑÌÍ¡½Õ±¡…Ù”Ñ¡¥ÌÁ…É…µ•Ñ•ÈÍ•ĞÑ¼…±Í”¥¸½É‘•ÈÑ¼…Ù½¥‘ÕÁ±¥…Ñ”•Ù•¹ÑÌ¸e½Ô…±Í¼¡…Ù”Ñ¼ÍÁ•¥™äÑ¡”¹…µ•ÍÁ…”™É½´İ¡¥ •Ù•¹ÑÌİ¥±°‰”½±±•Ñ•€¡¥˜¹½ĞÍÁ•¥™¥•°Ñ¡”‘•™…Õ±Ğ¹…µ•ÍÁ…”İ¥±°‰”ÕÍ•¤è()¹…µ•ÍÁ…”è‘•™…Õ±Ñ€()Q¡•¸å½Ô…¸½¹ÑÉ½°¥˜Ñ¡”µ•ÑÉ¥ÌÍ¡½Õ±‰”…É•…Ñ•Á•È½¹Ñ…¥¹•È¥µ…”€¡ÕÍ•}¡¥ÍÑ½É…´èQÉÕ•€¤½ÈÁ•È½¹Ñ…¥¹•È€¡ÕÍ•}¡¥ÍÑ½É…´è…±Í•€¤¸()¥¹…±±äå½Ô…¸…‘ÕÍÑ½´Ñ…ÌÕÍ¥¹œè()€)¥¹¥Ñ}½¹™¥œè(€€€Ñ…Ìè(€€€€€€´½ÁÑ¥½¹…±}Ñ…œÄ(€€€€€€´½ÁÑ¥½¹…±}Ñ…œÈ)€()e½Ô…¸…±Í¼‘•™¥¹”„İ¡¥Ñ•±¥ÍĞ½˜Á…ÑÑ•É¹ÌÑ¼½±±•ĞÉ…Üµ•ÑÉ¥Ì¸½È•á…µÁ±”è()€)•¹…‰±•‘}É…Ñ•Ìè(€€€€´ÁÔ¸¨(€€€€´¹•Ñİ½É¬¸¨()•¹…‰±•‘}…Õ•Ìè(€€€€´™¥±•ÍåÍÑ•´¸¨)€()½È…‘‘¥Ñ¥½¹…°¥¹™½Éµ…Ñ¥½¸°å½Ô…¸É•™•ÈÑ¼Ñ¡”m…Ñ…‘½œ•¹Ğ½­•È½¹Ñ…¥¹•È‘½Õµ•¹Ñ…Ñ¥½¹t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½‘½­•Èµ‘µ…•¹Ğ¤¸((ŒŒŒ¡•¬Ñ¡…ĞÑ¡”•¹Ğ¥ÌÉÕ¹¹¥¹œ()e½Ô…¸µ…­”ÍÕÉ”Ñ¡”…Ñ…‘½œ•¹Ğ¥ÌÉÕ¹¹¥¹œ‰ä•á•ÕÑ¥¹œ((€€€­Õ‰•Ñ°•Ğ‘…•µ½¹Í•Ğ()%˜Ñ¡”…•¹Ğ¥Ì½ÉÉ•Ñ±ä‘•Á±½å•°Ñ¡”½ÕÑÁÕĞÍ¡½Õ±¡…Ù”Ñ¡¥Ì™½É´è(()€)95€€€€€€M%I€€UII9P€€9=µM1Q=H€€)‘µ…•¹Ğ€€€Ì€€€€€€€€€Ì€€€€€€€€€ñ¹½¹”ø€€€€€€€€€€ÄÅ )€()Q¡”¹Õµ‰•È½˜€¨¨©‘•Í¥É•¨¨¨…¹€¨¨©ÕÉÉ•¹Ğ¨¨¨Á½‘ÌÍ¡½Õ±‰”•ÅÕ…°Ñ¼Ñ¡”¹Õµ‰•È½˜ÉÕ¹¹¥¹œ¹½‘•Ì¥¸å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•È€¡å½Ô…¸¡•¬Ñ¡¥Ì¹Õµ‰•È‰äÉÕ¹¹¥¹œ­Õ‰•Ñ°•Ğ¹½‘•Í€¤¸()¥Ù”¥¹Ñ¼Ñ¡”µ•ÑÉ¥Ì„(´´´´´´´´´´´´´´´´´´´´´´()=¹”Ñ¡”•¹Ğ¥Ì½¹™¥ÕÉ•½¸å½ÕÈ-Õ‰•É¹•Ñ•Ì¹½‘•Ì°å½Ôİ¥±°¡…Ù”…•ÍÌÑ¼½ÕÈm‘•™…Õ±Ğ-Õ‰•É¹•Ñ•ÌÍÉ••¹‰½…É‘t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½ÍÉ••¸½¥¹Ñ•É…Ñ¥½¸½­Õ‰•É¹•Ñ•Ì¤…µ½¹œå½ÕÈm±¥ÍĞ½˜…Ù…¥±…‰±”‘…Í¡‰½…É‘Ít¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½‘…Í ½±¥ÍĞ¤¸%Ğ‘¥ÍÁ±…åÌÑ¡”µ½ÍĞ¥µÁ½ÉÑ…¹Ğµ•ÑÉ¥ÌÁÉ•Í•¹Ñ•¥¸mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤…¹Í¡½Õ±‰”„É•…ĞÍÑ…ÉÑ¥¹œÁ½¥¹Ğ™½Èµ½¹¥Ñ½É¥¹œ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌ¸()íìğ¥µœÍÉŒô‰­Õ‰•É¹•Ñ•Ìµ‘…Í¡‰½…É¹Á¹œˆ…±Ğô‰­Õ‰•É¹•Ñ•Ì‘•™…Õ±Ğ‘…Í¡‰½…É¥¸…Ñ…‘½œˆ…ÁÑ¥½¸ô‰-Õ‰•É¹•Ñ•Ì‘•™…Õ±Ğ‘…Í¡‰½…É¥¸…Ñ…‘½œ¸ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()e½Ô…¸…±Í¼±½¹”Ñ¡”Ñ•µÁ±…Ñ”‘…Í¡‰½…É…¹ÕÍÑ½µ¥é”¥Ğ‘•Á•¹‘¥¹œ½¸å½ÕÈ¹••‘Ì¸e½Ô…¸™½È•á…µÁ±”…‘µ•ÑÉ¥Ì™É½´å½ÕÈ½¹Ñ…¥¹•É¥é•…ÁÁ±¥…Ñ¥½¹ÌÑ¼‰”…‰±”Ñ¼•…Í¥±ä½ÉÉ•±…Ñ”Ñ¡•´İ¥Ñ -Õ‰•É¹•Ñ•Ì…¹½­•Èµ•ÑÉ¥Ì¸()Ìå½Ô‰Õ¥±½ÕĞå½ÕÈ‘…Í¡‰½…É‘Ì°‘½»ŠeĞ™½É•ĞÑ¼m½É¥•¹Ğå½ÕÈ-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œ…É½Õ¹±…‰•±Ít¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼Ñ½ŒµÑ…Ìµ…¹µ±…‰•±Ìµİ•É”µ¥µÁ½ÉÑ…¹Ğµ¹½ÜµÑ¡•äµÉ”µ•ÍÍ•¹Ñ¥…°Ô¤•Ù•¸İ¡•¸İ½É­¥¹œİ¥Ñ ½­•È½È…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ì¸((ŒŒŒUÍ”…±°Ñ¡”Á½İ•È½˜…Ñ…‘½œ()…Ñ…‘½œ½™™•ÉÌ…±°Ñ¡”…‘Ù…¹•™Õ¹Ñ¥½¹…±¥Ñ¥•Ìå½Ô¹••™½Èµ½¹¥Ñ½É¥¹œ-Õ‰•É¹•Ñ•Ì°¥¹±Õ‘¥¹œ™±•á¥‰±”m…±•ÉÑ¥¹t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ…±•ÉÑ¥¹œ¼¤°m½ÕÑ±¥•Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ½ÕÑ±¥•Èµ‘•Ñ•Ñ¥½¸µ¥¸µ‘…Ñ…‘½œ¼¤…¹m…¹½µ…±åt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ…¹½µ…±äµ‘•Ñ•Ñ¥½¸µ‘…Ñ…‘½œ¼¤‘•Ñ•Ñ¥½¸°‘å¹…µ¥Œm…É•…Ñ¥½¸ÕÍ¥¹œ±…‰•±Ì…¹Ñ…Ít¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½Ñ¡”µÁ½İ•Èµ½˜µÑ…•µµ•ÑÉ¥Ì¼¤°…¹½ÉÉ•±…Ñ¥½¸½˜µ•ÑÉ¥Ì…¹•Ù•¹ÑÌ‰•Ñİ••¸ÍåÍÑ•µÌ¸()MÑ…ÉĞµ½¹¥Ñ½É¥¹œå½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌ(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´()%¸Ñ¡¥ÌÁ½ÍĞ°İ—ŠeÙ”İ…±­•Ñ¡É½Õ ¡½ÜÑ¼ÕÍ”…Ñ…‘½œÑ¼½±±•Ğ°Ù¥ÍÕ…±¥é”°…¹…±•ÉĞ½¸µ•ÑÉ¥Ì™É½´å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”½É¡•ÍÑÉ…Ñ•‰ä-Õ‰•É¹•Ñ•Ì¸%˜å½×ŠeÙ”™½±±½İ•…±½¹œİ¥Ñ å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ°å½ÔÍ¡½Õ±¹½Ü¡…Ù”É•…Ñ•ÈÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜å½ÕÈ±ÕÍÑ•ÉÌ…¹‰”‰•ÑÑ•ÈÁÉ•Á…É•Ñ¼…‘‘É•ÍÌÁ½Ñ•¹Ñ¥…°¥ÍÍÕ•Ì¸()%˜å½Ô‘½»ŠeĞå•Ğ¡…Ù”„…Ñ…‘½œ…½Õ¹Ğ°å½Ô…¸ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌİ¥Ñ ‡
-€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”ÑÉ¥…°ğ½„ø¸)}}|(©M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½­Õ‰•É¹•Ñ•Ì½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµİ¥Ñ µ‘…Ñ…‘½œ¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¸¨(
+# Monitoring Kubernetes with Datadog
+*This is the last post in a 4-part series about Kubernetes monitoring. [Part 1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/) discusses how Kubernetes changes your monitoring strategies, [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics) explores Kubernetes metrics and events you should monitor, [Part 3](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics) covers the different ways to collect that data, and this post details how to monitor Kubernetes performance with Datadog.*
+
+If youâ€™ve read [Part 3](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics) on collecting metrics, you already know that properly monitoring your Dockerized infrastructure orchestrated with Kubernetes requires a tool capable of:
+
+-   Ingesting metrics from all the different layers of your infrastructure, even if your clusters are distributed across multiple data centers or cloud providers
+-   Aggregating metrics around Kubernetes labels for better context
+-   Tracking your running applications via autodiscovery as they move across hosts
+-   All the advanced graphing and alerting features you need for production-ready infrastructure
+
+Datadog is built to monitor modern infrastructure and offers all these essential functionalities. Our Kubernetes and Docker integrations have been designed to tackle the considerable challenges of monitoring orchestrated containers, as explained in [Part 1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/).
+
+This post will show you how to set up Datadog to automatically collect the key metrics discussed in [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics) of this series.
+ [![kubernetes dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/4/kubernetes-dashboard-small.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/4/kubernetes-dashboard-small.png)
+
+## Full observability for your containerized infrastructure
+
+### Easily monitor each layer
+
+After reading the previous parts of this series, you know that itâ€™s essential to monitor the different components of your Kubernetes-orchestrated infrastructure. Datadog integrates with all of them to provide you with a complete picture of cluster health and performance:
+
+-   Datadogâ€™s [**Kubernetes** integration](http://docs.datadoghq.com/integrations/kubernetes/) aggregates metrics, events and labels from Kubernetes
+-   The [Docker integration](https://www.datadoghq.com/blog/monitor-docker-datadog/) natively collects all the **container** metrics you need for better accuracy in your monitoring
+-   No matter where your Kubernetes clusters are runningâ€“AWS, [Google Cloud Platform](https://www.datadoghq.com/blog/monitor-google-compute-engine-performance-with-datadog/), or [Azure](https://www.datadoghq.com/blog/monitor-azure-vms-using-datadog/)â€“ you can monitor the **underlying hosts** of your Kubernetes clusters with Datadog
+-   With [150+ integrations](https://www.datadoghq.com/product/integrations/) and full support for [custom metrics](http://docs.datadoghq.com/guides/metrics/), Datadog allows you to monitor all the **applications** running on your Kubernetes clusters
+
+### Autodiscovery: check
+
+Thanks to Datadogâ€™s autodiscovery feature, you can continuously monitor your Dockerized applications without interruption even as they expand, contract, and shift across containers and hosts.
+
+Autodiscovery continuously listens to Docker events. Whenever a container is created or started, the Agent identifies which application is running in the new container, loads your custom monitoring configuration for that application, and starts collecting and reporting metrics. Whenever a container is stopped or destroyed, the Agent understands that too.
+
+Datadogâ€™s autodiscovery applies Kubernetes labels to application metrics so you can keep monitoring them based on labels, as you do for Kubernetes and Docker data.
+
+To learn more about how autodiscovery works and how to set it up, check out our [blog post](https://www.datadoghq.com/blog/autodiscovery-docker-monitoring/) and [documentation](https://docs.datadoghq.com/guides/autodiscovery/).
+
+## Unleash Datadog
+
+First, you need to get the Datadog Agent running on your Kubernetes nodes.
+
+### Install the Datadog Agent
+
+The [Datadog Agent](https://docs.datadoghq.com/guides/basic_agent_usage/) is open source software that collects and reports metrics from each of your nodes, so you can view and monitor your entire infrastructure in one place. Installing the Agent usually only takes a few commands.
+
+For Kubernetes, itâ€™s recommended to run the Agent in a container. We have created a Docker image with both the Docker and the Kubernetes integrations enabled.
+
+Thanks to Kubernetes, you can take advantage of [DaemonSets](http://kubernetes.io/docs/admin/daemons/) to automatically deploy the Datadog Agent on all your nodes (or on specific nodes by using [nodeSelectors](http://kubernetes.io/docs/user-guide/node-selection/#nodeselector)). You just need to create a manifest `.yaml` file, pasting in the text you'll find within the Datadog Agent [installation page](https://app.datadoghq.com/account/settings#agent/kubernetes).
+
+Then simply deploy the DaemonSet with the commandÂ 
+
+```
+kubectl create -f /path/to/the/manifest/.yaml
+```
+
+Now that the Agent is running on nodes across your Kubernetes cluster, the next step is to configure it.
+
+### Configure the Agent
+
+The Datadog Agent can be configured by editing the [kubernetes.yaml file](https://github.com/DataDog/dd-agent/blob/master/conf.d/kubernetes.yaml.example) in the **conf.d** directory. It is necessary so our Kubernetes check can collect metrics from cAdvisor which is running in the Kubelet.
+
+First, override the instances. In the case of a standalone cadvisor instance, use:
+
+    instances:
+        host: localhost
+        port: 4194
+        method: http
+
+Also add the kubelet port number, such as:
+
+`kubelet_port: 10255`
+
+Then if you want the Agent to collect events from the Kubernetes API, you have to set the `collect_events: True` on **only one Agent** across the entire Kubernetes cluster. Other Agents should have this parameter set to False in order to avoid duplicate events. You also have to specify the namespace from which events will be collected (if not specified, the default namespace will be used):
+ `namespace: default`
+
+Then you can control if the metrics should be aggregated per container image (`use_histogram: True`) or per container (`use_histogram: False`).
+
+Finally you can add custom tags using:
+
+    init_config:
+        tags:
+          - optional_tag1
+          - optional_tag2
+
+You can also define a whitelist of patterns to collect raw metrics. For example:
+
+    enabled_rates:
+        - cpu.*
+        - network.*
+
+    enabled_gauges:
+        - filesystem.*
+
+For additional information, you can refer to the [Datadog Agent Docker container documentation](https://github.com/DataDog/docker-dd-agent).
+
+### Check that the Agent is running
+
+You can make sure the Datadog Agent is running by executing
+
+`kubectl get daemonset`
+
+If the agent is correctly deployed, the output should have this form:
+
+    NAME       DESIRED   CURRENT   NODE-SELECTOR   AGE
+    dd-agent   3         3         <none>          11h
+
+The number of ***desired*** and ***current*** pods should be equal to the number of running nodes in your Kubernetes cluster (you can check this number by running `kubectl get nodes`).
+
+## Dive into the metrics!
+
+Once the Agent is configured on your Kubernetes nodes, you will have access to our [default Kubernetes screenboard](https://app.datadoghq.com/screen/integration/kubernetes) among your [list of available dashboards](https://app.datadoghq.com/dash/list). It displays the most important metrics presented in [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics) and should be a great starting point for monitoring your Kubernetes clusters.
+ [![kubernetes default dashboard in Datadog](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/4/kubernetes-dashboard.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/4/kubernetes-dashboard.png)
+
+*Kubernetes default dashboard in Datadog*
+
+You can also clone the template dashboard and customize it depending on your needs. You can for example add metrics from your containerized applications to be able to easily correlate them with Kubernetes and Docker metrics.
+
+As you build out your dashboards, donâ€™t forget to [orient your monitoring around Kubernetes labels](https://www.datadoghq.com/blog/monitoring-kubernetes-era/#toc-tags-and-labels-were-important-now-they-re-essential5) even when working with Docker or application metrics.
+
+### Use all the power of Datadog
+
+Datadog offers all the advanced functionalities you need to properly monitor your containerized infrastructure including flexible [alerting](https://www.datadoghq.com/blog/monitoring-101-alerting/), [outlier](https://www.datadoghq.com/blog/introducing-outlier-detection-in-datadog/) and [anomaly](https://www.datadoghq.com/blog/introducing-anomaly-detection-datadog/) detection, dynamic [aggregation using labels and tags](https://www.datadoghq.com/blog/the-power-of-tagged-metrics/), and correlation of metrics and events between systems.
+
+## Start monitoring your Kubernetes clusters
+
+In this post, weâ€™ve walked through how to use Datadog to collect, visualize, and alert on metrics from your infrastructure orchestrated by Kubernetes. If youâ€™ve followed along with your Datadog account, you should now have greater visibility into the health and performance of your clusters and be better prepared to address potential issues.
+
+If you donâ€™t yet have a Datadog account, you can start monitoring your Kubernetes clusters with a [free trial](#).

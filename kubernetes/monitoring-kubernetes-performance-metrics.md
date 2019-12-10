@@ -1,11 +1,229 @@
-m5½¹¥Ñ½É¥¹œ-Õ‰•É¹•Ñ•ÌÁ•É™½Éµ…¹”µ•ÑÉ¥Ì(((©Q¡¥ÌÁ½ÍÐ¡¥¡±¥¡ÑÌ­•ä-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì°…¹¥ÌA…ÉÐ€È½˜„€ÐµÁ…ÉÐÍ•É¥•Ì…‰½ÕÐ-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œ¸mA…ÉÐ€Åt¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼¤‘¥ÍÕÍÍ•Ì¡½Ü-Õ‰•É¹•Ñ•Ì¡…¹•Ìå½ÕÈµ½¹¥Ñ½É¥¹œÍÑÉ…Ñ•¥•Ì°Ñ¡¥ÌÁ½ÍÐ‰É•…­Ì‘½Ý¸Ñ¡”­•äµ•ÑÉ¥ÌÑ¼µ½¹¥Ñ½È°mA…ÉÐ€Ít¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ðµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¤½Ù•ÉÌÑ¡”‘¥™™•É•¹ÐÝ…åÌÑ¼½±±•ÐÑ¡…Ð‘…Ñ„°…¹mA…ÉÐ€Ñt¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÝ¥Ñ µ‘…Ñ…‘½œ¼¤‘•Ñ…¥±Ì¡½ÜÑ¼µ½¹¥Ñ½È-Õ‰•É¹•Ñ•ÌÁ•É™½Éµ…¹”Ý¥Ñ …Ñ…‘½œ¸¨()Ì•áÁ±…¥¹•¥¸mA…ÉÐ€Åt¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼¤°ÕÍ¥¹œ-Õ‰•É¹•Ñ•Ì™½È½¹Ñ…¥¹•È½É¡•ÍÑÉ…Ñ¥½¸É•ÅÕ¥É•Ì„É•Ñ¡¥¹­¥¹œ½˜å½ÕÈµ½¹¥Ñ½É¥¹œÍÑÉ…Ñ•ä¸	ÕÐ¥˜å½ÔÕÍ”Ñ¡”ÁÉ½Á•ÈÑ½½±Ì°­¹½ÜÝ¡¥ µ•ÑÉ¥ÌÑ¼ÑÉ…¬°…¹­¹½Ü¡½ÜÑ¼¥¹Ñ•ÉÁÉ•ÐÁ•É™½Éµ…¹”‘…Ñ„°å½ÔÝ¥±°¡…Ù”½½Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼å½ÕÈ½¹Ñ…¥¹•É¥é•¥¹™É…ÍÑÉÕÑÕÉ”…¹¥ÑÌ½É¡•ÍÑÉ…Ñ¥½¸¸Q¡¥ÌÁ…ÉÐ½˜Ñ¡”Í•É¥•Ì‘¥Ì¥¹Ñ¼Ñ¡”‘¥™™•É•¹Ð-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ìå½ÔÍ¡½Õ±µ½¹¥Ñ½È¸()]¡•É”-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì½µ”™É½´(´´´´´´´´´´´´´´´´´´´´´´´((((ŒŒŒ!•…ÁÍÑ•Èè-Õ‰•É¹•Ñ•ÏŠd½Ý¸µ•ÑÉ¥Ì½±±•Ñ½È(()]”…¹¹½ÐÑ…±¬…‰½ÕÐ-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥ÌÝ¥Ñ¡½ÕÐ¥¹ÑÉ½‘Õ¥¹œm!•…ÁÍÑ•Ét¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•È¤è¥Ð¥Ì™½È¹½ÜÑ¡”¼µÑ¼Í½ÕÉ”™½È‰…Í¥ŒÉ•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸µ•ÑÉ¥Ì…¹•Ù•¹ÑÌ™É½´å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌ¸=¸•… ¹½‘”°m‘Ù¥Í½Ét¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½½½±”½…‘Ù¥Í½È¤½±±•ÑÌ‘…Ñ„…‰½ÕÐÉÕ¹¹¥¹œ½¹Ñ…¥¹•ÉÌÑ¡…Ð!•…ÁÍÑ•ÈÑ¡•¸ÅÕ•É¥•ÌÑ¡É½Õ Ñ¡”m­Õ‰•±•Ñt¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½…‘µ¥¸½­Õ‰•±•Ð¼¤½˜Ñ¡”¹½‘”¸mA…ÉÐ€Ít¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ðµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì§
-½˜Ñ¡¥ÌÍ•É¥•Ì°Ý¡¥ ‘•ÍÉ¥‰•ÌÑ¡”‘¥™™•É•¹ÐÍ½±ÕÑ¥½¹ÌÑ¼½±±•Ð-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì°Ý¥±°¥Ù”å½Ôµ½É”‘•Ñ…¥±Ì½¸¡½Ü!•…ÁÍÑ•ÈÝ½É­Ì…¹¡½ÜÑ¼½¹™¥ÕÉ”¥Ð™½ÈÑ¡…ÐÁÕÉÁ½Í”¸((ŒŒŒ!•…ÁÍÑ•ÈÙÌ¸¹…Ñ¥Ù”½¹Ñ…¥¹•Èµ•ÑÉ¥Ì(()%ÓŠeÌ¥µÁ½ÉÑ…¹ÐÑ¼Õ¹‘•ÉÍÑ…¹Ñ¡…Ðµ•ÑÉ¥ÌÉ•Á½ÉÑ•‰äå½ÕÈ½¹Ñ…¥¹•È•¹¥¹”€¡½­•È½ÈÉ­Ð¤…¸¡…Ù”‘¥™™•É•¹ÐÙ…±Õ•ÌÑ¡…¸Ñ¡”•ÅÕ¥Ù…±•¹Ðµ•ÑÉ¥Ì™É½´-Õ‰•É¹•Ñ•Ì¸Ìµ•¹Ñ¥½¹•…‰½Ù”°-Õ‰•É¹•Ñ•ÌÉ•±¥•Ì½¸!•…ÁÍÑ•ÈÑ¼É•Á½ÉÐµ•ÑÉ¥Ì¥¹ÍÑ•…½˜Ñ¡”mÉ½ÕÁt¡¡ÑÑÁÌè¼½•¸¹Ý¥­¥Á•‘¥„¹½Éœ½Ý¥­¤½É½ÕÁÌ¤™¥±”‘¥É•Ñ±ä¸¹½¹”½˜!•…ÁÍÑ•ËŠeÌ±¥µ¥Ñ…Ñ¥½¹Ì¥ÌÑ¡…Ð¥Ð½±±•ÑÌ-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì…Ð„‘¥™™•É•¹Ð™É•ÅÕ•¹ä€¡…­„ƒŠq¡½ÕÍ•­••Á¥¹œ¥¹Ñ•ÉÙ…³Št¤Ñ¡…¸‘Ù¥Í½È°Ý¡¥ µ…­•ÌÑ¡”½Ù•É…±°µ•ÑÉ¥Œ½±±•Ñ¥½¸™É•ÅÕ•¹ä™½Èµ•ÑÉ¥ÌÉ•Á½ÉÑ•‰ä!•…ÁÍÑ•ÈÑÉ¥­äÑ¼•Ù…±Õ…Ñ”¸Q¡¥Ì…¸±•…Ñ¼¥¹…ÕÉ…¥•Ì‘Õ”Ñ¼µ¥Íµ…Ñ¡•Í…µÁ±¥¹œ¥¹Ñ•ÉÙ…±Ì°•ÍÁ•¥…±±ä™½Èµ•ÑÉ¥ÌÝ¡•É”Í…µÁ±¥¹œ¥ÌÉÕ¥…°Ñ¼Ñ¡”Ù…±Õ”½˜Ñ¡”µ•ÑÉ¥Œ°ÍÕ …Ì½Õ¹ÑÌ½˜ATÑ¥µ”¸Q¡…ÓŠeÌÝ¡äå½ÔÍ¡½Õ±É•…±±ä½¹Í¥‘•ÈÑÉ…­¥¹œµ•ÑÉ¥Ì™É½´å½ÕÈ½¹Ñ…¥¹•ÉÌ¥¹ÍÑ•…½˜™É½´-Õ‰•É¹•Ñ•Ì¸Q¡É½Õ¡½ÕÐÑ¡¥ÌÁ½ÍÐ°Ý—Še±°¡¥¡±¥¡ÐÑ¡”µ•ÑÉ¥ÌÑ¡…Ðå½ÔÍ¡½Õ±µ½¹¥Ñ½È¸Ù•¸Ý¡•¸å½Ô…É”ÕÍ¥¹œ½­•Èµ•ÑÉ¥Ì°¡½Ý•Ù•È°å½ÔÍ¡½Õ±ÍÑ¥±°…É•…Ñ”Ñ¡•´ÕÍ¥¹œÑ¡”l©±…‰•±Ì¨™É½´-Õ‰•É¹•Ñ•Ít¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼Ñ½ŒµÑ…Ìµ…¹µ±…‰•±ÌµÝ•É”µ¥µÁ½ÉÑ…¹Ðµ¹½ÜµÑ¡•äµÉ”µ•ÍÍ•¹Ñ¥…°Ô¤¸()9½ÜÑ¡…ÐÝ—ŠeÙ”µ…‘”Ñ¡¥Ì±•…È°±•ÓŠeÌ‘¥œ¥¹Ñ¼Ñ¡”µ•ÑÉ¥Ìå½ÔÍ¡½Õ±µ½¹¥Ñ½È¸()-•ä-Õ‰•É¹•Ñ•ÌÁ•É™½Éµ…¹”µ•ÑÉ¥ÌÑ¼µ½¹¥Ñ½È(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´(()M¥¹”-Õ‰•É¹•Ñ•ÌÁ±…åÌ„•¹ÑÉ…°É½±”¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°¥Ð¡…ÌÑ¼‰”±½Í•±äµ½¹¥Ñ½É•¸e½×Še±°Ý…¹ÐÑ¼‰”ÍÕÉ”Ñ¡…ÐÁ½‘Ì…É”¡•…±Ñ¡ä…¹½ÉÉ•Ñ±ä‘•Á±½å•°…¹Ñ¡…ÐÉ•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸¥Ì½ÁÑ¥µ¥é•¸((ŒŒŒA½‘•Á±½åµ•¹ÑÌ(()%¸½É‘•ÈÑ¼µ…­”ÍÕÉ”-Õ‰•É¹•Ñ•Ì‘½•Ì¥ÑÌ©½ˆÁÉ½Á•É±ä°å½ÔÝ…¹ÐÑ¼‰”…‰±”Ñ¼¡•¬Ñ¡”¡•…±Ñ ½˜Á½m‘•Á±½åµ•¹ÑÍt¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½‘•Á±½åµ•¹ÑÌ¼¤¸()ÕÉ¥¹œ„‘•Á±½åµ•¹ÐÉ½±±½ÕÐ°-Õ‰•É¹•Ñ•Ì™¥ÉÍÐ‘•Ñ•Éµ¥¹•ÌÑ¡”¹Õµ‰•È½˜‘•Í¥É•Á½‘ÌÉ•ÅÕ¥É•Ñ¼ÉÕ¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸¡Ì¤¸Q¡•¸¥Ð‘•Á±½åÌÑ¡”¹••‘•Á½‘ÌìÑ¡”¹•Ý±äÉ•…Ñ•Á½‘Ì…É”ÕÀ…¹½Õ¹Ñ•…Ì€¨¨©ÕÉÉ•¹Ð¨¨¨¸	ÕÐ€¨¨©ÕÉÉ•¹Ð¨¨¨Á½‘Ì…É”¹½Ð¹••ÍÍ…É¥±ä€¨¨©…Ù…¥±…‰±”¨¨¨¥µµ•‘¥…Ñ•±ä™½ÈÑ¡•¥È¥¹Ñ•¹‘•ÕÍ”¸((((€€€€­Õ‰•Ñ°•Ð‘•Á±½åµ•¹ÑÌ((€€€€€95€€€€€€€€€€€€€€M%I€€UII9P€€U@µQ<µQ€€Y%1	1€€(€€€€€¹¥¹àµ‘•Á±½åµ•¹Ð€€€Ì€€€€€€€€€Ì€€€€€€€€€Ì€€€€€€€€€€€€Ì€€€€€€€€€€€ÄáÌ(((()%¹‘••™½ÈÍ½µ”ÑåÁ•Ì½˜‘•Á±½åµ•¹ÑÌ°å½Ôµ¥¡ÐÝ…¹ÐÑ¼•¹™½É”„Ý…¥Ñ¥¹œÁ•É¥½‰•™½É”µ…­¥¹œÑ¡•´…Ù…¥±…‰±”¸1•ÐÌÍ…äå½Ô¡…Ù”„)•¹­¥¹Ì±ÕÍÑ•ÈÝ¡•É”Í±…Ù•Ì…É”Á½‘Ì¥¸-Õ‰•É¹•Ñ•Ì¸Q¡•ä¹••Í½µ”Ñ¥µ”Ñ¼ÍÑ…ÉÐÍ¼å½ÔÝ…¹ÐÑ¼±•…Ù”Ñ¡•´Õ¹…Ù…¥±…‰±”‘ÕÉ¥¹œÑ¡…Ð¥¹¥Ñ¥…Ñ¥½¸Ñ¥µ”…¹¹½Ð¡…Ù”Ñ¡•´¡…¹‘±”…¹ä¥¹½µ¥¹œÉ•ÅÕ•ÍÑÌ¸e½Ô…¸ÍÁ•¥™ä„‘•±…ä¥¸å½ÕÈA½‘MÁ•ŒÕÍ¥¹œ€¹ÍÁ•Œ¹µ¥¹I•…‘åM•½¹‘Ì±€Ý¡¥ Ý¥±°Ñ•µÁ½É…É¥±äÁÉ•Ù•¹Ðå½ÕÈÁ½‘Ì™É½´‰•½µ¥¹œ€¨¨©…Ù…¥±…‰±”¨¨¨¸9½Ñ”Ñ¡…ÐmÉ•…‘¥¹•ÍÌ¡•­Ít¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½ÁÉ½‘ÕÑ¥½¸µÁ½‘Ì¼±¥Ù•¹•ÍÌµ…¹µÉ•…‘¥¹•ÍÌµÁÉ½‰•Ìµ…­„µ¡•…±Ñ µ¡•­Ì¤…¸‰”„‰•ÑÑ•ÈÍ½±ÕÑ¥½¸¥¸Í½µ”…Í•ÌÑ¼µ…­”ÍÕÉ”å½ÕÈÁ½‘Ì…É”¡•…±Ñ¡ä‰•™½É”Ñ¡•äÉ••¥Ù”É•ÅÕ•ÍÑÌ€¡Í•”mÍ•Ñ¥½¸…‰½ÕÐ¡•…±Ñ ¡•­Ít ½¹Ñ…¥¹•Èµ¡•…±Ñ µ¡•­Ì¤‰•±½Ü¤¸()ÕÉ¥¹œ„mÉ½±±¥¹œÕÁ‘…Ñ•t¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½É½±±¥¹œµÕÁ‘…Ñ•Ì¼¤°å½Ô…¸…±Í¼ÍÁ•¥™ä¥¸Ñ¡”A½‘MÁ•Œm€¹ÍÁ•Œ¹ÍÑÉ…Ñ•ä¹É½±±¥¹UÁ‘…Ñ”¹µ…áU¹…Ù…¥±…‰±•t¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½‘•Á±½åµ•¹ÑÌ¼µ…àµÕ¹…Ù…¥±…‰±”¤Ñ¼µ…­”ÍÕÉ”å½Ô…±Ý…åÌ¡…Ù”…Ð±•…ÍÐ„•ÉÑ…¥¸¹Õµ‰•È€¡½ÈÁ•É•¹Ñ…”¤½˜Á½‘Ì€¨¨©…Ù…¥±…‰±”¨¨¨Ñ¡É½Õ¡½ÕÐÑ¡”ÁÉ½•ÍÌ¸e½Ô…¸…±Í¼ÕÍ”m€¹ÍÁ•Œ¹ÍÑÉ…Ñ•ä¹É½±±¥¹UÁ‘…Ñ”¹µ…áMÕÉ•t¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½‘•Á±½åµ•¹ÑÌ¼µ…àµÍÕÉ”¤Ñ¼ÍÁ•¥™ä„…À½¸Ñ¡”¹Õµ‰•È€¡½ÈÁ•É•¹Ñ…”¤½˜•áÑÉ„Á½‘ÌÑ¡…Ð…¸‰”É•…Ñ•‰•å½¹Ñ¡”€¨¨©‘•Í¥É•¨¨¨Á½‘Ì¸((((ñÑ…‰±”ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑøñÍÑÉ½¹œù5•ÑÉ¥Œð½ÍÑÉ½¹œøð½Ñø(ñÑøñÍÑÉ½¹œù5•ÑÉ¥Œ¹…µ”¥¸ð½ÍÑÉ½¹œø€ñ„¡É•˜ô‰¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ðµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¼Ñ½Œµ…‘‘¥¹œµ­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥ÌÈˆøñÍÑÉ½¹œù­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ìð½ÍÑÉ½¹œøð½„øð½Ñø(ñÑøñÍÑÉ½¹œù•ÍÉ¥ÁÑ¥½¸ð½ÍÑÉ½¹œøð½Ñø(ñÑøñ„¡É•˜ô‰¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒÑåÁ”ð½ÍÑÉ½¹œøð½„øð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑøñ•´ù•Í¥É•ð½•´øÁ½‘Ìð½Ñø(ñÑù­Õ‰•}‘•Á±½åµ•¹Ñ}ÍÁ•}É•Á±¥…Ìð½Ñø(ñÑù9Õµ‰•È½˜Á½‘Ì‘•Í¥É•Ý¡•¸Ñ¡”‘•Á±½åµ•¹ÐÍÑ…ÉÑ•ð½Ñø(ñÑù=Ñ¡•Èð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑøñ•´ùÙ…¥±…‰±”ð½•´øÁ½‘Ìð½Ñø(ñÑù­Õ‰•}‘•Á±½åµ•¹Ñ}ÍÑ…ÑÕÍ}É•Á±¥…Í}…Ù…¥±…‰±”ð½Ñø(ñÑù9Õµ‰•È½˜Á½‘ÌÕÉÉ•¹Ñ±ä…Ù…¥±…‰±”ð½Ñø(ñÑù=Ñ¡•Èð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑøñ•´ùU¹…Ù…¥±…‰±”ð½•´øÁ½‘Ìð½Ñø(ñÑù­Õ‰•}‘•Á±½åµ•¹Ñ}ÍÑ…ÑÕÍ}É•Á±¥…Í}Õ¹…Ù…¥±…‰±”ð½Ñø(ñÑù9Õµ‰•È½˜Á½‘ÌÕÉÉ•¹Ñ±ä•á¥ÍÑ¥¹œ‰ÕÐ¹½Ð…Ù…¥±…‰±”ð½Ñø(ñÑù=Ñ¡•Èð½Ñø(ð½ÑÈø(ð½Ñ‰½‘äø(ð½Ñ…‰±”ø((()e½ÔÍ¡½Õ±µ…­”ÍÕÉ”Ñ¡”¹Õµ‰•È½˜€¨¨©…Ù…¥±…‰±”¨¨¨Á½‘Ì…±Ý…åÌµ…Ñ¡•ÌÑ¡”€¨¨©‘•Í¥É•¨¨¨¹Õµ‰•È½˜Á½‘Ì½ÕÑÍ¥‘”½˜•áÁ•Ñ•‘•Á±½åµ•¹ÐÑÉ…¹Í¥Ñ¥½¸Á¡…Í•Ì¸((ŒŒŒIÕ¹¹¥¹œÁ½‘Ì(((((ñÑ…‰±”ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑøñÍÑÉ½¹œù5•ÑÉ¥Œð½ÍÑÉ½¹œøð½Ñø(ñÑøñÍÑÉ½¹œù•ÍÉ¥ÁÑ¥½¸ð½ÍÑÉ½¹œøð½Ñø(ñÑøñ„¡É•˜ô‰¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒÑåÁ”ð½ÍÑÉ½¹œøð½„øð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑøñ•´ùÕÉÉ•¹Ðð½•´øÁ½‘Ìð½Ñø(ñÑù9Õµ‰•È½˜Á½‘ÌÕÉÉ•¹Ñ±äÉÕ¹¹¥¹œð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ð½Ñ‰½‘äø(ð½Ñ…‰±”ø((()-••Á¥¹œ…¸•å”½¸Ñ¡”¹Õµ‰•È½˜Á½‘ÌÕÉÉ•¹Ñ±äÉÕ¹¹¥¹œ€¡‰ä¹½‘”½ÈÉ•Á±¥„Í•Ð°™½È•á…µÁ±”¤Ý¥±°¥Ù”å½Ô…¸½Ù•ÉÙ¥•Ü½˜Ñ¡”•Ù½±ÕÑ¥½¸½˜å½ÕÈ‘å¹…µ¥Œ¥¹™É…ÍÑÉÕÑÕÉ”¸()Q¼Õ¹‘•ÉÍÑ…¹¡½ÜÑ¡”¹Õµ‰•È½˜ÉÕ¹¹¥¹œÁ½‘Ì¥µÁ…ÑÌÉ•Í½ÕÉ”ÕÍ…”€¡AT°µ•µ½Éä°•ÑŒ¸¤¥¸å½ÕÈ±ÕÍÑ•È°å½ÔÍ¡½Õ±½ÉÉ•±…Ñ”Ñ¡¥Ì-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥ŒÝ¥Ñ Ñ¡”É•Í½ÕÉ”µ•ÑÉ¥Ì‘•ÍÉ¥‰•¥¸Ñ¡”¹•áÐÍ•Ñ¥½¸¸()íìð¥µœÍÉŒô‰­Õ‰•É¹•Ñ•ÌµÁ½‘Ìµ¹½‘•Ì¹Á¹œˆ…±Ðô‰Á½‘ÌÁ•È¹½‘”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒŒI•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸(()5½¹¥Ñ½É¥¹œÍåÍÑ•´É•Í½ÕÉ•Ì¡•±ÁÌ•¹ÍÕÉ”Ñ¡…Ðå½ÕÈ±ÕÍÑ•ÉÌ…¹…ÁÁ±¥…Ñ¥½¹ÌÉ•µ…¥¸¡•…±Ñ¡ä¸((((ñÑ…‰±”ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑøñÍÑÉ½¹œù5•ÑÉ¥Œð½ÍÑÉ½¹œøð½Ñø(ñÑøñÍÑÉ½¹œù5•ÑÉ¥Œ¹…µ”¥¸ð½ÍÑÉ½¹œø€ñ„¡É•˜ô‰¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ðµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¼Ñ½Œµ…‘‘¥¹œµ­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥ÌÈˆøñÍÑÉ½¹œù­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ìð½ÍÑÉ½¹œøð½„øð½Ñø(ñÑøñÍÑÉ½¹œù•ÍÉ¥ÁÑ¥½¸ð½ÍÑÉ½¹œøð½Ñø(ñÑøñ„¡É•˜ô‰¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒÑåÁ”ð½ÍÑÉ½¹œøð½„øð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùATÕÍ…”ð½Ñø(ñÑø´ð½Ñø(ñÑùA•É•¹Ñ…”½˜…±±½…Ñ•ATÕÉÉ•¹Ñ±ä¥¸ÕÍ”ð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9½‘”AT…Á…¥Ñäð½Ñø(ñÑù­Õ‰•}¹½‘•}ÍÑ…ÑÕÍ}…Á…¥Ñå}ÁÕ}½É•Ìð½Ñø(ñÑùQ½Ñ…°AT…Á…¥Ñä½˜å½ÕÈ±ÕÍÑ•ËŠeÌ¹½‘•Ìð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù5•µ½ÉäÕÍ…”ð½Ñø(ñÑø´ð½Ñø(ñÑùA•É•¹Ñ…”½˜Ñ½Ñ…°µ•µ½Éä¥¸ÕÍ”ð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9½‘”5•µ½Éä…Á…¥Ñäð½Ñø(ñÑù­Õ‰•}¹½‘•}ÍÑ…ÑÕÍ}…Á…¥Ñå}µ•µ½Éå}‰åÑ•Ìð½Ñø(ñÑùQ½Ñ…°µ•µ½Éä…Á…¥Ñä½˜å½ÕÈ±ÕÍÑ•ËŠeÌ¹½‘•Ìð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑùI•ÅÕ•ÍÑÌð½Ñø(ñÑø´ð½Ñø(ñÑù5¥¹¥µÕ´…µ½Õ¹Ð½˜„¥Ù•¸É•Í½ÕÉ”É•ÅÕ¥É•™½È½¹Ñ…¥¹•ÉÌÑ¼ÉÕ¸€¡Í¡½Õ±‰”ÍÕµµ•½Ù•È„¹½‘”¤ð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù1¥µ¥ÑÌð½Ñø(ñÑø´ð½Ñø(ñÑù5…á¥µÕ´…µ½Õ¹Ð½˜„¥Ù•¸É•Í½ÕÉ”…±±½Ý•Ñ¼½¹Ñ…¥¹•ÉÌ€¡Í¡½Õ±‰”ÍÕµµ•½Ù•È„¹½‘”¤ð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù¥±•ÍåÍÑ•´ÕÍ…”ð½Ñø(ñÑø´ð½Ñø(ñÑùY½±Õµ”½˜‘¥Í¬‰•¥¹œÕÍ•€¡‰åÑ•Ì¤ð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù¥Í¬$½<ð½Ñø(ñÑø´ð½Ñø(ñÑù	åÑ•ÌÉ•…™É½´½ÈÝÉ¥ÑÑ•¸Ñ¼‘¥Í¬ð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ð½Ñ‰½‘äø(ð½Ñ…‰±”ø((((ŒŒŒŒAT…¹µ•µ½Éä(()%ÐÁÉ½‰…‰±ä½•ÌÝ¥Ñ¡½ÕÐÍ…å¥¹œÑ¡…ÐÝ¡•¸Á•É™½Éµ…¹”¥ÍÍÕ•Ì…É¥Í”°AT…¹µ•µ½ÉäÕÍ…”…É”±¥­•±äÑ¡”™¥ÉÍÐÉ•Í½ÕÉ”µ•ÑÉ¥Ìå½ÔÝ¥±°Ý…¹ÐÑ¼É•Ù¥•Ü¸()!½Ý•Ù•È°…Ì•áÁ±…¥¹•¥¸Ñ¡”™¥ÉÍÐÍ•Ñ¥½¸½˜Ñ¡¥ÌÁ½ÍÐ°Ñ¼ÑÉ…¬µ•µ½Éä…¹ATÕÍ…”å½ÔÍ¡½Õ±™…Ù½ÈÑ¡”µ•ÑÉ¥ÌÉ•Á½ÉÑ•‰äå½ÕÈ½¹Ñ…¥¹•ÈÑ•¡¹½±½ä°ÍÕ …Ì½­•È°É…Ñ¡•ÈÑ¡…¸Ñ¡”-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥ÌÉ•Á½ÉÑ•‰ä!•…ÁÍÑ•È¸()Q¼…•ÍÌå½ÕÈ¹½‘•ÏŠdAT…¹µ•µ½Éä…Á…¥Ñä°l¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨©t¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ðµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¼Ñ½Œµ…‘‘¥¹œµ­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥ÌÈ¤€¡ÁÉ•Í•¹Ñ•¥¸mA…ÉÐ€Ít¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ðµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¤¤•áÁ½Í•ÌÑ¡•Í”ÑÝ¼µ•ÑÉ¥Ìè­Õ‰•}¹½‘•}ÍÑ…ÑÕÍ}…Á…¥Ñå}ÁÕ}½É•Í€…¹­Õ‰•}¹½‘•}ÍÑ…ÑÕÍ}…Á…¥Ñå}µ•µ½Éå}‰åÑ•Í€É•ÍÁ•Ñ¥Ù•±ä¸((¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨¨…±Í¼É•Á½ÉÑÌ­Õ‰•}¹½‘•}ÍÑ…ÑÕÍ}…±±½…Ñ…‰±•}ÁÕ}½É•Í€…¹­Õ‰•}¹½‘•}ÍÑ…ÑÕÍ}…±±½…Ñ…‰±•}µ•µ½Éå}‰åÑ•Í€ÑÉ…­¥¹œÉ•ÍÁ•Ñ¥Ù•±äÑ¡”AT…¹µ•µ½ÉäÉ•Í½ÕÉ•Ì½˜•… ¹½‘”Ñ¡…Ð…É”…Ù…¥±…‰±”™½ÈÍ¡•‘Õ±¥¹œ¸9½Ñ”Ñ¡…ÐÑ¡•Í”µ•ÑÉ¥Ì‘½»ŠeÐÑÉ…¬…ÑÕ…°É•Í•ÉÙ…Ñ¥½¸…¹…É”¹½Ð¥µÁ…Ñ•‰äÕÉÉ•¹ÐÍ¡•‘Õ±¥¹œ½Á•É…Ñ¥½¹Ì¸Q¡•ä…É”•ÅÕ…°Ñ¼Ñ¡”É•µ…¥¹¥¹œÉ•Í½ÕÉ”…Ù…¥±…‰±”¥¸Ñ¡”¹½‘”…Á…¥Ñä½¹”å½ÔÉ•µ½Ù”Ñ¡”…µ½Õ¹Ð½˜É•Í½ÕÉ”‘•‘¥…Ñ•Ñ¼ÍåÍÑ•´ÁÉ½•ÍÍ•Ì€¡©½ÕÉ¹…±°ÍÍ¡°­Õ‰•±•Ð°­Õ‰”µÁÉ½áä°•ÑŠ˜¤¸((ŒŒŒŒŒI•ÅÕ•ÍÑÌÙÌ¸±¥µ¥ÑÌ(()½ÈÁ½Í¡•‘Õ±¥¹œ°-Õ‰•É¹•Ñ•Ì…±±½ÝÌå½ÔÑ¼ÍÁ•¥™ä¡½ÜµÕ AT…¹µ•µ½Éä•… ½¹Ñ…¥¹•È…¸½¹ÍÕµ”Ñ¡É½Õ ÑÝ¼ÑåÁ•Ì½˜Ñ¡É•Í¡½±‘Ìè((((´€€€¨©I•ÅÕ•ÍÐ¨¨É•ÁÉ•Í•¹ÑÌÑ¡”€¨©µ¥¹¥µÕ´¨¨…µ½Õ¹Ð½˜AT½Èµ•µ½ÉäÑ¡”½¹Ñ…¥¹•È¹••‘ÌÑ¼ÉÕ¸°Ý¡¥ ¹••‘ÌÑ¼‰”Õ…É…¹Ñ••‰äÑ¡”ÍåÍÑ•´¸(´€€€¨©1¥µ¥Ð¨¨¥ÌÑ¡”€¨©µ…á¥µÕ´¨¨…µ½Õ¹Ð½˜Ñ¡”É•Í½ÕÉ”Ñ¡…ÐÑ¡”½¹Ñ…¥¹•ÈÝ¥±°‰”…±±½Ý•Ñ¼½¹ÍÕµ”¸%ÓŠeÌÕ¹‰½Õ¹‘•‰ä‘•™…Õ±Ð¸((((ŒŒŒŒŒ	•Ý…É”½˜Ñ¡”ÑÉ…À(()]¥Ñ ½Ñ¡•ÈÑ•¡¹½±½¥•Ì°å½Ô…É”ÁÉ½‰…‰±äÕÍ•Ñ¼µ½¹¥Ñ½É¥¹œ…ÑÕ…°É•Í½ÕÉ”½¹ÍÕµÁÑ¥½¸…¹½µÁ…É¥¹œÑ¡…ÐÝ¥Ñ å½ÕÈ¹½‘”…Á…¥Ñä¸]¥Ñ -Õ‰•É¹•Ñ•Ì°¥˜Ñ¡”ÍÕ´½˜½¹Ñ…¥¹•È€¨©±¥µ¥ÑÌ¨¨½¸„¹½‘”¥ÌÍÑÉ¥Ñ±äÉ•…Ñ•ÈÑ¡…¸Ñ¡”ÍÕ´½˜€¨©É•ÅÕ•ÍÑÌ¨¨€¡µ¥¹¥µÕ´É•Í½ÕÉ•ÌÉ•ÅÕ¥É•¤°Ñ¡”¹½‘”…¸‰”€©½Ù•ÉÍÕ‰ÍÉ¥‰•¨…¹½¹Ñ…¥¹•ÉÌµ¥¡ÐÕÍ”µ½É”É•Í½ÕÉ•ÌÑ¡…¸Ñ¡•ä…ÑÕ…±±ä¹••°Ý¡¥ ¥Ì™¥¹”¸Ù•¸¥˜Ñ¡•äÕÍ”€ÄÀÀÁ•É•¹Ð½˜Ñ¡”…Ù…¥±…‰±”ATÉ•Í½ÕÉ•Ì½¸„¹½‘”°™½È•á…µÁ±”°-Õ‰•É¹•Ñ•Ì…¸ÍÑ¥±°µ…­”É½½´Ñ¼Í¡•‘Õ±”…¹½Ñ¡•ÈÁ½½¸Ñ¡”¹½‘”¸-Õ‰•É¹•Ñ•ÌÝ½Õ±Í¥µÁ±ä±½Ý•ÈÑ¡”AT…Ù…¥±…‰±”Ñ¼•á¥ÍÑ¥¹œÁ½‘ÌÑ¼™É•”ÕÀÉ•Í½ÕÉ•Ì™½ÈÑ¡”¹•Ü½¹”°…Ì±½¹œ…Ì…±°½¹Ñ…¥¹•ÉÌ¡…Ù”•¹½Õ É•Í½ÕÉ•ÌÑ¼µ••ÐÑ¡•¥È€¨©É•ÅÕ•ÍÐ¨¨¸Q¡…ÓŠeÌÝ¡äµ½¹¥Ñ½É¥¹œÑ¡”ÍÕ´½˜É•ÅÕ•ÍÑÌ½¸Ñ¡”¹½‘”…¹µ…­¥¹œÍÕÉ”¥Ð¹•Ù•È•á••‘Ìå½ÕÈ¹½‘—ŠeÌ…Á…¥Ñä¥ÌµÕ µ½É”¥µÁ½ÉÑ…¹ÐÑ¡…¸µ½¹¥Ñ½É¥¹œÍ¥µÁ±”AT½Èµ•µ½ÉäÕÍ…”¸%˜å½Ô‘½»ŠeÐ¡…Ù”•¹½Õ …Á…¥ÑäÑ¼µ••ÐÑ¡”µ¥¹¥µÕ´É•Í½ÕÉ”É•ÅÕ¥É•µ•¹ÑÌ½˜…±°å½ÕÈ½¹Ñ…¥¹•ÉÌ°å½ÔÍ¡½Õ±Í…±”ÕÀå½ÕÈ¹½‘•ÏŠd…Á…¥Ñä½È…‘µ½É”¹½‘•ÌÑ¼‘¥ÍÑÉ¥‰ÕÑ”Ñ¡”Ý½É­±½…¸()íìð¥µœÍÉŒô‰­Õ‰•É¹•Ñ•ÌµÉ•Í½ÕÉ”µµ•ÑÉ¥Ì¹Á¹œˆ…±Ðô‰-Õ‰•É¹•Ñ•Ìµ•µ½Éä…¹ATÁ•È¡½ÍÐˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()!…Ù¥¹œÍ½µ”½Ù•ÉÍÕ‰ÍÉ¥ÁÑ¥½¸½¸å½ÕÈ¹½‘•Ì…¸‰”½½¥¸µ…¹ä…Í•ÌÍ¥¹”¥Ð…¸¡•±ÀÉ•‘Õ”Ñ¡”¹Õµ‰•È½˜¹½‘•Ì¥¸å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•È¸e½Ô…¸ÑÕ¹”Ñ¡”É•ÅÕ•ÍÐ½±¥µ¥ÐÉ…Ñ¥¼‰äµ½¹¥Ñ½É¥¹œ¥Ð½Ù•ÈÑ¥µ”…¹ÑÉ…­¥¹œ¡½Ü¥Ð¥µÁ…ÑÌå½ÕÈ½¹Ñ…¥¹•ÈÉ•Í½ÕÉ”ÕÍ…”¸()9½Ñ”Ñ¡…ÐÍ¥¹”Ù•ÉÍ¥½¸€Ä¸Ì-Õ‰•É¹•Ñ•Ì½™™•ÉÌ…ÕÑ¼µÍ…±¥¹œ…Á…‰¥±¥Ñ¥•Ì™½È½½±”½µÁÕÑ”¹¥¹”…¹½½±”½¹Ñ…¥¹•È¹¥¹”€¡m]LÍÕÁÁ½ÉÐÍ¡½Õ±½µ”Í½½¹t¡¡ÑÑÀè¼½‰±½œ¹­Õ‰•É¹•Ñ•Ì¹¥¼¼ÈÀÄØ¼ÀÜ½…ÕÑ½Í…±¥¹œµ¥¸µ­Õ‰•É¹•Ñ•Ì¹¡Ñµ°¤¤¸M¼½¸Ñ¡½Í”Á±…Ñ™½ÉµÌ-Õ‰•É¹•Ñ•Ì…¸¹½Ü…‘©ÕÍÐÑ¡”¹Õµ‰•ÈÁ½‘Ì¥¸„‘•Á±½åµ•¹Ð°É•Á±¥„Í•Ð°½ÈÉ•Á±¥…Ñ¥½¸½¹ÑÉ½±±•È‰…Í•½¸ATÕÑ¥±¥é…Ñ¥½¸€¡ÍÕÁÁ½ÉÐ™½È½Ñ¡•È…ÕÑ¼µÍ…±¥¹œÑÉ¥•ÉÌ¥Ì¥¸…±Á¡„¤¸((ŒŒŒŒŒ½¹Ñ…¥¹•ÈÉ•Í½ÕÉ”µ•ÑÉ¥Ì(()Ì•áÁ±…¥¹•¥¸Ñ¡”mÍ•Ñ¥½¸…‰½ÕÐ½¹Ñ…¥¹•Èµ•ÑÉ¥Ít µ½¹¥Ñ½É¥¹œµ½¹Ñ…¥¹•ÉÌµÕÍ¥¹œµ¹…Ñ¥Ù”µµ•ÑÉ¥Ì¤°Í½µ”ÍÑ…Ñ¥ÍÑ¥ÌÉ•Á½ÉÑ•‰ä½­•ÈÍ¡½Õ±‰”…±Í¼µ½¹¥Ñ½É•…ÌÑ¡•äÁÉ½Ù¥‘”‘••Á•È€¡…¹µ½É”…ÕÉ…Ñ”¤¥¹Í¥¡ÑÌ¸Q¡”ATÑ¡É½ÑÑ±¥¹œµ•ÑÉ¥Œ¥Ì„É•…Ð•á…µÁ±”°…Ì¥ÐÉ•ÁÉ•Í•¹ÑÌÑ¡”¹Õµ‰•È½˜Ñ¥µ•Ì„½¹Ñ…¥¹•È¡¥Ð¥ÑÌÍÁ•¥™¥•€¨©±¥µ¥Ð¨¨¸((ŒŒŒŒ¥Í¬ÕÍ…”…¹$½<(()Q¡”Á•É•¹Ñ…”½˜‘¥Í¬¥¸ÕÍ”¥Ì•¹•É…±±äµ½É”ÕÍ•™Õ°Ñ¡…¸Ñ¡”€©Ù½±Õµ”¨½˜‘¥Í¬ÕÍ…”°Í¥¹”Ñ¡”Ñ¡É•Í¡½±‘Ì½˜½¹•É¸Ý½»ŠeÐ‘•Á•¹½¸Ñ¡”Í¥é”½˜å½ÕÈ±ÕÍÑ•ÉÌ¸e½ÔÍ¡½Õ±É…Á ¥ÑÌ•Ù½±ÕÑ¥½¸½Ù•ÈÑ¥µ”…¹ÑÉ¥•È…¸…±•ÉÐ¥˜¥Ð•á••‘Ì€àÀ”™½È•á…µÁ±”¸()É…Á¡¥¹œÑ¡”¹Õµ‰•È½˜‰åÑ•ÌÉ•…™É½´½ÈÝÉ¥ÑÑ•¸Ñ¼‘¥Í¬ÁÉ½Ù¥‘•ÌÉ¥Ñ¥…°½¹Ñ•áÐ™½È¡¥¡•Èµ±•Ù•°µ•ÑÉ¥Ì¸½È•á…µÁ±”°å½Ô…¸ÅÕ¥­±ä¡•¬Ý¡•Ñ¡•È„±…Ñ•¹äÍÁ¥­”¥Ì‘Õ”Ñ¼¥¹É•…Í•$½<…Ñ¥Ù¥Ñä¸()íìð¥µœÍÉŒô‰­Õ‰•É¹•Ñ•Ìµ‘¥Í¬µ¥¼¹Á¹œˆ…±Ðô‰-Õ‰•É¹•Ñ•Ì‘¥Í¬$½<ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ9•ÑÝ½É¬(())ÕÍÐ…ÌÝ¥Ñ ½É‘¥¹…Éä¡½ÍÑÌ°å½ÔÍ¡½Õ±µ½¹¥Ñ½È¹•ÑÝ½É¬µ•ÑÉ¥Ì™É½´-Õ‰•É¹•Ñ•ÌÁ½‘Ì…¹½¹Ñ…¥¹•ÉÌ¸((((ñÑ…‰±”ø(ñÑ‰½‘äø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑøñÍÑÉ½¹œù5•ÑÉ¥Œð½ÍÑÉ½¹œøð½Ñø(ñÑøñÍÑÉ½¹œù•ÍÉ¥ÁÑ¥½¸ð½ÍÑÉ½¹œøð½Ñø(ñÑøñ„¡É•˜ô‰¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ½±±•Ñ¥¹œµ‘…Ñ„¼ˆøñÍÑÉ½¹œù5•ÑÉ¥ŒÑåÁ”ð½ÍÑÉ½¹œøð½„øð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9•ÑÝ½É¬¥¸ð½Ñø(ñÑù	åÑ•ÌÁ•ÈÍ•½¹É••¥Ù•Ñ¡É½Õ ¹•ÑÝ½É¬ð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰½‘ˆø(ñÑù9•ÑÝ½É¬½ÕÐð½Ñø(ñÑù	åÑ•ÌÁ•ÈÍ•½¹Í•¹ÐÑ¡É½Õ ¹•ÑÝ½É¬ð½Ñø(ñÑùI•Í½ÕÉ”èUÑ¥±¥é…Ñ¥½¸ð½Ñø(ð½ÑÈø(ñÑÈ±…ÍÌô‰•Ù•¸ˆø(ñÑù9•ÑÝ½É¬•ÉÉ½ÉÌð½Ñø(ñÑù9Õµ‰•È½˜¹•ÑÝ½É¬•ÉÉ½ÉÌÁ•ÈÍ•½¹ð½Ñø(ñÑùI•Í½ÕÉ”èÉÉ½Èð½Ñø(ð½ÑÈø(ð½Ñ‰½‘äø(ð½Ñ…‰±”ø((()9•ÑÝ½É¬µ•ÑÉ¥Ì…¸Í¡•±¥¡Ð½¸ÑÉ…™™¥Œ±½…¸e½ÔÍ¡½Õ±¥¹Ù•ÍÑ¥…Ñ”¥˜å½ÔÍ•”…¸¥¹É•…Í¥¹œ¹Õµ‰•È½˜¹•ÑÝ½É¬•ÉÉ½ÉÌÁ•ÈÍ•½¹°Ý¡¥ ½Õ±¥¹‘¥…Ñ”„±½Üµ±•Ù•°¥ÍÍÕ”½È„¹•ÑÝ½É­¥¹œµ¥Í½¹™¥ÕÉ…Ñ¥½¸¸((((ŒŒŒ½¹Ñ…¥¹•È¡•…±Ñ ¡•­Ì(()%¸…‘‘¥Ñ¥½¸Ñ¼ÍÑ…¹‘…ÉÉ•Í½ÕÉ”µ•ÑÉ¥Ì°-Õ‰•É¹•Ñ•Ì…±Í¼ÁÉ½Ù¥‘•Ì½¹™¥ÕÉ…‰±”¡•…±Ñ ¡•­Ì¸e½Ô…¸½¹™¥ÕÉ”°Ù¥„Ñ¡”A½‘MÁ•Œ°m¡•­Ít¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½ÁÉ½‘ÕÑ¥½¸µÁ½‘Ì¼±¥Ù•¹•ÍÌµ…¹µÉ•…‘¥¹•ÍÌµÁÉ½‰•Ìµ…­„µ¡•…±Ñ µ¡•­Ì¤Ñ¼‘•Ñ•Ðè((((´€€]¡•¸ÉÕ¹¹¥¹œ…ÁÁ±¥…Ñ¥½¹Ì•¹Ñ•È„‰É½­•¸ÍÑ…Ñ”€¡±¥Ù•¹•ÍÌÁÉ½‰”™…¥±Ì¤°¥¸Ý¡¥ …Í”Ñ¡”­Õ‰•±•ÐÝ¥±°­¥±°Ñ¡”½¹Ñ…¥¹•È¸(´€€]¡•¸…ÁÁ±¥…Ñ¥½¹Ì…É”Ñ•µÁ½É…É¥±äÕ¹…‰±”Ñ¼ÁÉ½Á•É±ä…‘‘É•ÍÌÉ•ÅÕ•ÍÑÌ€¡É•…‘¥¹•ÍÌÁÉ½‰”™…¥±Ì¤°¥¸Ý¡¥ …Í”Ñ¡”-Õ‰•É¹•Ñ•Ì•¹‘Á½¥¹Ð½¹ÑÉ½±±•ÈÝ¥±°É•µ½Ù”Ñ¡”Á½“ŠeÌ%@…‘‘É•ÍÌ™É½´Ñ¡”•¹‘Á½¥¹ÑÌ½˜…±°Í•ÉÙ¥•ÌÑ¡…Ðµ…Ñ Ñ¡”Á½°Í¼Ñ¡…Ð¹¼ÑÉ…™™¥Œ¥ÌÍ•¹ÐÑ¼Ñ¡”…™™•Ñ•½¹Ñ…¥¹•ÉÌ¸((()Q¡”­Õ‰•±•Ð…¸ÉÕ¸‘¥…¹½ÍÑ¥Œ±¥Ù•¹•ÍÌ…¹É•…‘¥¹•ÍÌÁÉ½‰•Ì……¥¹ÍÐ½¹Ñ…¥¹•ÉÌÑ¡É½Õ …¸!QQ@¡•¬€¡Ñ¡”µ½ÍÐ½µµ½¸¡½¥”¤°…¸•á•Œ¡•¬°½È„Q@¡•¬¸Q¡”-Õ‰•É¹•Ñ•Ì‘½Õµ•¹Ñ…Ñ¥½¸ÁÉ½Ù¥‘•Ìmµ½É”‘•Ñ…¥±Ì…‰½ÕÐ½¹Ñ…¥¹•ÈÁÉ½‰•Ít¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½Á½µÍÑ…Ñ•Ì¼½¹Ñ…¥¹•ÈµÁÉ½‰•Ì¤…¹Ñ¥ÁÌ½¸mÝ¡•¸å½ÔÍ¡½Õ±ÕÍ”Ñ¡•µt¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½Á½µÍÑ…Ñ•Ì¼Ý¡•¸µÍ¡½Õ±µ¤µÕÍ”µ±¥Ù•¹•ÍÌµ½ÈµÉ•…‘¥¹•ÍÌµÁÉ½‰•Ì¤¸((((ŒŒŒ5½¹¥Ñ½É¥¹œ½¹Ñ…¥¹•ÉÌÕÍ¥¹œ¹…Ñ¥Ù”µ•ÑÉ¥Ì(()ÌÝ”Í…¥°½¹Ñ…¥¹•Èµ•ÑÉ¥ÌÍ¡½Õ±‰”ÕÍÕ…±±äÁÉ•™•ÉÉ•Ñ¼-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì¸½¹Ñ…¥¹•ÉÌ…¸É¥¡Ñ±ä‰”Í••¸…Ìµ¥¹¤µ¡½ÍÑÌ¸)ÕÍÐ±¥­”Ù¥ÉÑÕ…°µ…¡¥¹•Ì°Ñ¡•äÉÕ¸½¸‰•¡…±˜½˜É•Í¥‘•¹ÐÍ½™ÑÝ…É”°Ý¡¥ ½¹ÍÕµ•ÌAT°µ•µ½Éä°$½<°…¹¹•ÑÝ½É¬É•Í½ÕÉ•Ì¸()%˜å½Ô…É”ÕÍ¥¹œ½­•È°¡•¬½ÕÐm½ÕÈ½­•Èµ½¹¥Ñ½É¥¹œÕ¥‘•t¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½Èµ‘½­•ÈµÉ•Í½ÕÉ”µµ•ÑÉ¥Ì¼¤°Ý¡¥ ‘¥ÍÕÍÍ•Ì…±°Ñ¡”É•Í½ÕÉ”µ•ÑÉ¥Ì…Ù…¥±…‰±”™É½´½­•ÈÑ¡…Ðå½ÔÍ¡½Õ±½±±•Ð…¹µ½¹¥Ñ½È¸()UÍ¥¹œ½­•È¥¸Ñ¡”™É…µ•Ý½É¬ÁÉ½Ù¥‘•‰ä-Õ‰•É¹•Ñ•Ì±…‰•±ÌÝ¥±°¥Ù”å½Ô¥¹Í¥¡ÑÌ…‰½ÕÐå½ÕÈ½¹Ñ…¥¹•ÉÏŠd¡•…±Ñ …¹Á•É™½Éµ…¹”¸-Õ‰•É¹•Ñ•Ì±…‰•±Ì…É”…±É•…‘ä…ÁÁ±¥•Ñ¼½­•Èµ•ÑÉ¥Ì¸e½Ô½Õ±ÑÉ…¬™½È•á…µÁ±”Ñ¡”¹Õµ‰•È½˜ÉÕ¹¹¥¹œ½¹Ñ…¥¹•ÉÌ‰äÁ½°½ÈÑ¡”µ½ÍÐI4µ¥¹Ñ•¹Í¥Ù”Á½‘Ì‰äÉ…Á¡¥¹œÑ¡”mIML¹½¸µ…¡”µ•µ½Éåt¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½Èµ‘½­•ÈµÉ•Í½ÕÉ”µµ•ÑÉ¥Ì¼Ñ½Œµµ•µ½ÉäÌ¤‰É½­•¸‘½Ý¸‰ä€©Á½¹…µ”¨¸()íìð¥µœÍÉŒô‰½¹Ñ…¥¹•ÉÌµÁ•ÈµÁ½¹Á¹œˆ…±Ðô‰½¹Ñ…¥¹•ÉÌÁ•ÈÁ½ˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒŒÁÁ±¥…Ñ¥½¸µÍÁ•¥™¥Œµ•ÑÉ¥Ì(()%¸½É‘•ÈÑ¼ÁÉ½Á•É±äµ½¹¥Ñ½Èå½ÕÈ½¹Ñ…¥¹•É¥é•¥¹™É…ÍÑÉÕÑÕÉ”°å½ÔÍ¡½Õ±½±±•Ð-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì…±½¹œÝ¥Ñ ½­•È½¹Ñ…¥¹•ÈÉ•Í½ÕÉ”µ•ÑÉ¥Ì°…¹½ÉÉ•±…Ñ”Ñ¡•´Ý¥Ñ Ñ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜Ñ¡”‘¥™™•É•¹Ðm…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ½¸Ñ½À½˜Ñ¡•µt¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‘½­•Èµ…‘½ÁÑ¥½¸¼ŒØ¤¸… ¥µ…”½µ•ÌÝ¥Ñ ¥ÑÌÍÁ•¥™¥¥Ñ¥•Ì°…¹Ñ¡”ÑåÁ•Ì½˜µ•ÑÉ¥Ìå½ÔÍ¡½Õ±ÑÉ…¬…¹…±•ÉÐ½¸Ý¥±°Ù…Éä™É½´½¹”Ñ¼…¹½Ñ¡•È¸!½Ý•Ù•ÈÑ¡É½Õ¡ÁÕÐ°±…Ñ•¹ä°…¹•ÉÉ½ÉÌ…É”ÕÍÕ…±±äÑ¡”µ½ÍÐ¥µÁ½ÉÑ…¹Ðµ•ÑÉ¥Ì¸()]”¡…Ù”ÁÕ‰±¥Í¡•µ½¹¥Ñ½É¥¹œÕ¥‘•ÌÑ¼¡•±Àå½Ô¥‘•¹Ñ¥™ä­•äµ•ÑÉ¥Ì™½Èµ…¹äÁ½ÁÕ±…ÈÑ•¡¹½±½¥•Ì°¥¹±Õ‘¥¹œm9%9at¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½Èµ¹¥¹à¼¤°mI•‘¥Ít¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½ÈµÉ•‘¥ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°m5½¹½	t¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥ÌµÝ¥É•‘Ñ¥•È¼¤°m5åME1t¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµµåÍÅ°µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°m±…ÍÑ¥Í•…É¡t¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½Èµ•±…ÍÑ¥Í•…É µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°…¹mY…É¹¥Í¡t¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½Ñ½ÀµÙ…É¹¥Í µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤¸()!•…ÁÍÑ•È¥Ì¹½Ð‘•Í¥¹•Ñ¼½±±•Ð‰ä‘•™…Õ±Ðµ•ÑÉ¥Ì™É½´Ñ¡”…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ¥¸å½ÕÈ½¹Ñ…¥¹•ÉÌ¸%˜å½ÔÝ…¹Ð‘••Á•È½¹Ñ•áÐÑ¡…¸©ÕÍÐÍåÍÑ•´µ•ÑÉ¥Ì°å½Ô¡…Ù”Ñ¼¥¹ÍÑÉÕµ•¹Ðå½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì¥¸½É‘•ÈÑ¼½±±•Ðµ•ÑÉ¥Ì™É½´Ñ¡•´…ÌÝ•±°¸()M¥¹”-Õ‰•É¹•Ñ•Ì€Ä¸È„¹•Ü™•…ÑÕÉ”€¡ÍÑ¥±°¥¸±Á¡„¤…±±½ÝÌ‘Ù¥Í½ÈÑ¼m½±±•ÐÕÍÑ½´µ•ÑÉ¥Ít¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½½½±”½…‘Ù¥Í½È½‰±½ˆ½µ…ÍÑ•È½‘½Ì½…ÁÁ±¥…Ñ¥½¹}µ•ÑÉ¥Ì¹µ¤™É½´…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ¥¸½¹Ñ…¥¹•ÉÌ°¥˜Ñ¡•Í”µ•ÑÉ¥Ì…É”•áÁ½Í•¥¸Ñ¡”mAÉ½µ•Ñ¡•ÕÌ™½Éµ…Ñt¡¡ÑÑÁÌè¼½ÁÉ½µ•Ñ¡•ÕÌ¹¥¼½‘½Ì½¥¹ÍÑÉÕµ•¹Ñ¥¹œ½•áÁ½Í¥Ñ¥½¹}™½Éµ…ÑÌ¼¤¹…Ñ¥Ù•±ä°Ý¡¥ ¥ÌÑ¡”…Í”™½È½¹±äm„™•Ü…ÁÁ±¥…Ñ¥½¹Ít¡¡ÑÑÁÌè¼½ÁÉ½µ•Ñ¡•ÕÌ¹¥¼½‘½Ì½¥¹ÍÑÉÕµ•¹Ñ¥¹œ½•áÁ½ÉÑ•ÉÌ¼‘¥É•Ñ±äµ¥¹ÍÑÉÕµ•¹Ñ•µÍ½™ÑÝ…É”¤Ñ½‘…ä¸Q¡•Í”ÕÍÑ½´µ•ÑÉ¥Ì…¸‰”mÕÍ•Ñ¼ÑÉ¥•È¡½É¥é½¹Ñ…°Á½…ÕÑ¼µÍ…±¥¹t¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½¡½É¥é½¹Ñ…°µÁ½µ…ÕÑ½Í…±¥¹œ¼ÍÕÁÁ½ÉÐµ™½ÈµÕÍÑ½´µµ•ÑÉ¥Ì¤€¡!A¤Ý¡•¸„µ•ÑÉ¥Œ•á••‘Ì„ÍÁ•¥™¥•Ñ¡É•Í¡½±¸9½Ñ”Ñ¡…Ð!•…ÁÍÑ•ÈÉ”µ•áÁ½Í•ÌÑ¡•Í”ÕÍÑ½´µ•ÑÉ¥ÌÑ¡É½Õ ¥ÑÌm5½‘•°A%t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•È½‰±½ˆ½µ…ÍÑ•È½‘½Ì½µ½‘•°¹µ¤Ý¡¥ ¥Ì¹½Ð…¸½™™¥¥…°-Õ‰•É¹•Ñ•ÌA$¸()½ÉÉ•±…Ñ”-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥ÌÝ¥Ñ •Ù•¹ÑÌ(´´´´´´´´´´´´´´´´´´´´´(()½±±•Ñ¥¹œ•Ù•¹ÑÌ™É½´½­•È…¹-Õ‰•É¹•Ñ•Ì…±±½ÝÌå½ÔÑ¼Í•”¡½ÜÁ½É•…Ñ¥½¸°‘•ÍÑÉÕÑ¥½¸°ÍÑ…ÉÑ¥¹œ°½ÈÍÑ½ÁÁ¥¹œ¥µÁ…ÑÌÑ¡”Á•É™½Éµ…¹”½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”€¡…¹…±Í¼Ñ¡”¥¹Ù•ÉÍ”¤¸()]¡¥±”½­•È•Ù•¹ÑÌÑÉ…”½¹Ñ…¥¹•È±¥™•å±•Ì°-Õ‰•É¹•Ñ•Ì•Ù•¹ÑÌÉ•Á½ÉÐ½¸€©Á½¨±¥™•å±•Ì…¹‘•Á±½åµ•¹ÑÌ¸QÉ…­¥¹œÁ½‘Ì™…¥±ÕÉ•Ì™½È•á…µÁ±”…¸¥¹‘¥…Ñ”„µ¥Í½¹™¥ÕÉ…Ñ¥½¸½ÈÉ•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¸¸Q¡…ÓŠeÌÝ¡äå½ÔÍ¡½Õ±½ÉÉ•±…Ñ”•Ù•¹ÑÌÝ¥Ñ -Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì™½È•…Í¥•È¥¹Ù•ÍÑ¥…Ñ¥½¹Ì¸((ŒŒŒA½Í¡•‘Õ±¥¹œ•Ù•¹ÑÌ(()e½Ô…¸µ…­”ÍÕÉ”Á½Í¡•‘Õ±¥¹œÝ½É­ÌÁÉ½Á•É±ä‰äÑÉ…­¥¹œ-Õ‰•É¹•Ñ•Ì•Ù•¹ÑÌ¸%˜Í¡•‘Õ±¥¹œ™…¥±ÌÉ•Á•…Ñ•‘±ä°å½ÔÍ¡½Õ±¥¹Ù•ÍÑ¥…Ñ”¸%¹ÍÕ™™¥¥•¹ÐÉ•Í½ÕÉ•Ì¥¸å½ÕÈ±ÕÍÑ•ÈÍÕ …ÌAT½Èµ•µ½Éä…¸‰”Ñ¡”É½½Ð…ÕÍ”½˜Í¡•‘Õ±¥¹œ¥ÍÍÕ•Ì°¥¸Ý¡¥ …Í”å½ÔÍ¡½Õ±½¹Í¥‘•Èm…‘‘¥¹œµ½É”¹½‘•Ít¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½…‘µ¥¸½±ÕÍÑ•Èµµ…¹…•µ•¹Ð¼É•Í¥é¥¹œµ„µ±ÕÍÑ•È¤Ñ¼Ñ¡”±ÕÍÑ•È°½Èm‘•±•Ñ¥¹t¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½Á½‘Ì½Í¥¹±”µ½¹Ñ…¥¹•È¼‘•±•Ñ¥¹œµ„µÁ½¤Õ¹ÕÍ•Á½‘ÌÑ¼µ…­”É½½´™½Èl¨¨©Á•¹‘¥¹œ¨¨©t¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½Á½µÍÑ…Ñ•Ì¼Á½µÁ¡…Í”¤½¹•Ì¸()9½‘”Á½ÉÑÌ…¸…±Í¼‰”„…ÕÍ”½˜Í¡•‘Õ±¥¹œ½¹Ñ•¹Ñ¥½¸¸%˜l©9½‘•A½ÉÐ©t¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½Í•ÉÙ¥•Ì¼ÑåÁ”µ¹½‘•Á½ÉÐ¤¥ÌÕÍ•Ñ¼…ÍÍ¥¸ÍÁ•¥™¥ŒÁ½ÉÐ¹Õµ‰•ÉÌ°Ñ¡•¸-Õ‰•É¹•Ñ•ÌÝ½»ŠeÐ‰”…‰±”Ñ¼Í¡•‘Õ±”„Á½Ñ¼„¹½‘”Ý¡•É”Ñ¡…ÐÁ½ÉÐ¥Ì…±É•…‘äÑ…­•¸¸Q¡¥Ì…¸±•…Ñ¼Í¡•‘Õ±¥¹œ¥ÍÍÕ•Ì‘Õ”Ñ¼è((((´€€A½½È½¹™¥ÕÉ…Ñ¥½¸°™½È•á…µÁ±”¥˜ÑÝ¼½¹™±¥Ñ¥¹œÁ½‘ÌÑÉäÑ¼±…¥´Ñ¡”Í…µ”Á½ÉÐ¸(´€€I•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¸°™½È•á…µÁ±”¥˜Ñ¡”€©9½‘•A½ÉÐ¨¥ÌÍ•Ð‰ÕÐÑ¡”mÉ•Á±¥„Í•Ñt¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½É•Á±¥…Í•ÑÌ¼¤É•ÅÕ¥É•Ìµ½É”Á½É•Á±¥…ÌÑ¡…¸Ñ¡•É”…É”¹½‘•Ì¸%¸Ñ¡…Ð…Í”å½ÔÍ¡½Õ±Í…±”ÕÀÑ¡”¹Õµ‰•È½˜¹½‘•Ì½ÈÕÍ”„-Õ‰•É¹•Ñ•ÌmÍ•ÉÙ¥•t¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½Í•ÉÙ¥•Ì¼¤Í¼µÕ±Ñ¥Á±”Á½‘Ì‰•¡¥¹¥Ð…¸±¥Ù”¥¸½¹”¹½‘”¸((()±•ÉÑ¥¹œÁÉ½Á•É±ä(´´´´´´´´´´´´´´´´´(()M¥¹”å½ÕÈÁ½‘Ì…É”½¹ÍÑ…¹Ñ±äµ½Ù¥¹œ°…±•ÉÑÌ½¸Ñ¡”µ•ÑÉ¥ÌÑ¡•äÉ•Á½ÉÐ€¡AT°µ•µ½Éä°$½<°¹•ÑÝ½É¯Š˜¤¡…Ù”Ñ¼™½±±½Ü¸Q¡…ÓŠeÌÝ¡äÑ¡•äÍ¡½Õ±‰”Í•ÐÕÀÕÍ¥¹œÝ¡…ÐÉ•µ…¥¹ÌÍÑ…‰±”…ÌÁ½‘Ì½µ”…¹¼èÕÍÑ½´±…‰•±Ì°Í•ÉÙ¥”¹…µ•Ì°…¹¹…µ•Ì½˜É•Á±¥…Ñ¥½¸½¹ÑÉ½±±•ÉÌ½ÈÉ•Á±¥„Í•ÑÌ¸()½¹É•Ñ”ÕÍ”…Í”(´´´´´´´´´´´´´´´´´´´(()Ì‘¥ÍÕÍÍ•¥¸A…ÉÐ€Ä°µ½¹¥Ñ½É¥¹œ½É¡•ÍÑÉ…Ñ•°½¹Ñ…¥¹•É¥é•¥¹™É…ÍÑÉÕÑÕÉ”µ•…¹Ì½±±•Ñ¥¹œµ•ÑÉ¥Ì™É½´•Ù•Éä±…å•È½˜å½ÕÈÍÑ…¬è™É½´½­•È…¹-Õ‰•É¹•Ñ•Ì…ÌÝ•±°…Ì™É½´å½ÕÈ¡½ÍÑÌ…¹½¹Ñ…¥¹•É¥é•…ÁÁ±¥…Ñ¥½¹Ì¸1•ÓŠeÌÍ•”¡½ÜÑ¡”‘¥™™•É•¹Ð‘…Ñ„™É½´…±°Ñ¡”½µÁ½¹•¹ÑÌ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”…¸‰”ÕÍ•Ñ¼¥¹Ù•ÍÑ¥…Ñ”„Á•É™½Éµ…¹”¥ÍÍÕ”¸()1•ÓŠeÌÍ…äÝ”…É”ÉÕ¹¹¥¹œm9%9at¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½Èµ¹¥¹à¼¤™½È½ÕÈÝ•ˆ…ÁÀ¥¸½­•È½¹Ñ…¥¹•ÉÌ°Ý¡¥ …É”½É¡•ÍÑÉ…Ñ•‰ä-Õ‰•É¹•Ñ•Ì¸((ŒŒŒŒ€Ä¸ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥ŒÍ¡½Ý¥¹œÁ•É™½Éµ…¹”¥ÍÍÕ”(()]”É••¥Ù”…¸m…±•ÉÑt¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œ´ÄÀÄµ…±•ÉÑ¥¹œ¼¤ÑÉ¥•É•…™Ñ•ÈÑ¡”¹Õµ‰•È½˜9%9`€Õáà•ÉÉ½ÉÌÍÕ‘‘•¹±äÍ­åÉ½­•Ñ•½Ù•È„Í•ÐÑ¡É•Í¡½±¸()íìð¥µœÍÉŒô‰¹¥¹àµ•ÉÉ½ÉÌ¹Á¹œˆ…±Ðô‰9%9`€Õáà•ÉÉ½ÉÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒ€È¸½ÉÉ•ÍÁ½¹‘¥¹œ-Õ‰•É¹•Ñ•Ì±…‰•±Ì…¹•Ù•¹ÑÌ(()%˜Ý”±½½¬…ÐÝ¡¥ Á½‘Ì½ÕÈÝ•ˆ…ÁÀÝ…ÌÉÕ¹¹¥¹œ½¸°Ý”…¸Í•”Ñ¡…ÐÑ¡”-Õ‰•É¹•Ñ•Ì±…‰•°…ÑÑ…¡•Ñ¼Ñ¡•´°Ý¡¥ ‘•™¥¹•ÌÑ¡”É•Á±¥…Ñ¥½¸½¹ÑÉ½±±•È¥¹Ù½±Ù•°¥Ì€¨¨©ÉŒµ¹¥¹à¨¨¨¸¹Ý¡•¸±½½­¥¹œ…Ð-Õ‰•É¹•Ñ•Ì•Ù•¹ÑÌ°„mÉ½±±¥¹œÕÁ‘…Ñ”‘•Á±½åµ•¹Ñt¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½‘•Á±½åµ•¹ÑÌ¼É½±±¥¹œµÕÁ‘…Ñ”µ‘•Á±½åµ•¹Ð¤¡…ÁÁ•¹•½¸Ñ¡½Í”Á½‘Ì•á…Ñ±ä…ÐÑ¡”µ½µ•¹ÐÑ¡…ÐÑ¡”Ý•ˆ…ÁÀÍÑ…ÉÑ•É•ÑÕÉ¹¥¹œ€Õáà•ÉÉ½ÉÌ¸()1•ÓŠeÌ¥¹Ù•ÍÑ¥…Ñ”Ñ¡”½¹Ñ…¥¹•ÉÌ¥µÁ…Ñ•‰äÑ¡¥ÌÉ½±±¥¹œÕÁ‘…Ñ”Ñ¼Õ¹‘•ÉÍÑ…¹Ý¡…Ð¡…ÁÁ•¹•¸((ŒŒŒŒ€Ì¸]¡…Ð¡…ÁÁ•¹•…ÐÑ¡”½¹Ñ…¥¹•È±•Ù•°(()Q¡”™¥ÉÍÐÁ±…”Ñ¼±½½¬¥ÌÕÍÕ…±±äÉ•Í½ÕÉ”µ•ÑÉ¥Ì¸I•µ•µ‰•ÈÑ¡…Ð½­•Èµ•ÑÉ¥ÌÍ¡½Õ±‰”ÁÉ•™•ÉÉ•Ñ¼-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì™½ÈÑ¥µ”µÍ…µÁ±•‘…Ñ„¸M¼±•ÓŠeÌÉ…Á Ñ¡”ATÕÑ¥±¥é…Ñ¥½¸‰ä½­•È½¹Ñ…¥¹•ÉÌ°‰É½­•¸‘½Ý¸‰äÁ½€¡½È½¹Ñ…¥¹•È¤…¹™¥±Ñ•É•Ñ¼É•Ñ…¥¸½¹±äÑ¡”Á½‘ÌÝ¥Ñ Ñ¡”±…‰•°€¨¨©ÉŒµ¹¥¹à¨¨¨¸()íìð¥µœÍÉŒô‰ÁÔµÁ½‘Ì¹Á¹œˆ…±Ðô‰ATÁ•ÈÁ½ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()%¹Ñ•É•ÍÑ¥¹œ„%Ð±½½­Ì±¥­”ATÕÍ…”¥¸Í½µ”Á½‘Ì‘É…ÍÑ¥…±±ä¥¹É•…Í•…ÐÑ¡”µ½µ•¹ÐÑ¡…ÐÑ¡”€Õáà•ÉÉ½ÈÁ•…­•¸]½Õ±¥Ð‰”Á½ÍÍ¥‰±”Ñ¡…ÐÑ¡”Õ¹‘•É±å¥¹œ¡½ÍÑÌÉÕ¹¹¥¹œÑ¡¥ÌÁ½É•Á±¥‡
-Í…ÑÕÉ…Ñ•Ñ¡•¥Ë
-AT…Á…¥Ñäü((ŒŒŒŒ€Ð¸!½ÍÐµ•ÑÉ¥ÌÑ¼½¹™¥É´Ñ¡”¡åÁ½Ñ¡•Í¥Ì(()	äÉ…Á¡¥¹œÑ¡”ATÕÍ…”‰É½­•¸‘½Ý¸‰ä¡½ÍÐ°Ý”…¸Í•”Ñ¡…Ð¥¹‘••Ñ¡É•—
-¡½ÍÑÌµ…á•½ÕÐÑ¡•¥Ë
-AT…ÐÑ¡…Ðµ½µ•¹Ð¸()íìð¥µœÍÉŒô‰¡½ÍÑÌµ™Õ±°µÁÔ¹Á¹œˆ…±Ðô‰ATÁ•È¡½ÍÐˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒŒŒI•Í½±Ù¥¹œÑ¡”¥ÍÍÕ”…¹Á½ÍÑµ½ÉÑ•´(()Í¡½ÉÐµÑ•É´Í½±ÕÑ¥½¸…¸‰”Ñ¼É½±°‰…¬Ñ¡”ÕÁ‘…Ñ”Ñ¼½ÕÈÝ•ˆ…ÁÀ½‘”¥˜Ý”Ñ¡¥¹¬Ñ¡…Ð…¸ÕÁ‘…Ñ”±•Ñ¼Ñ¡¥Ì¥ÍÍÕ”¸M…±¥¹œÕÀ½ÕÈ¡½ÍÑÏŠdAT…Á…¥Ñä…¸…±Í¼¡•±ÀÍÕÁÁ½ÉÐ¡¥¡•ÈÉ•Í½ÕÉ”½¹ÍÕµÁÑ¥½¸¸()%˜…ÁÁÉ½ÁÉ¥…Ñ”°Ý”½Õ±…±Í¼µ…­”ÕÍ”½˜mÑ¡”Õ¹‘•É±å¥¹œµ•¡…¹¥Í´¥¸-Õ‰•É¹•Ñ•ÌÑ¡…Ð¥µÁ½Í•ÌÉ•ÍÑÉ¥Ñ¥½¹Ít¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½…‘µ¥¸½±¥µ¥ÑÉ…¹”¼¤½¸Ñ¡”É•Í½ÕÉ•Ì€¡AT…¹µ•µ½Éä¤„Í¥¹±”Á½…¸½¹ÍÕµ”¸%¸Ñ¡¥Ì…Í”°Ý”Í¡½Õ±½¹Í¥‘•È±½Ý•É¥¹œÑ¡”AT±¥µ¥Ð™½È„¥Ù•¸Á½¸()!•É”Ý”¡…Ù”½µ‰¥¹•‘…Ñ„™É½´…É½ÍÌ½ÕÈ½¹Ñ…¥¹•È¥¹™É…ÍÑÉÕÑÕÉ”Ñ¼™¥¹Ñ¡”É½½Ð…ÕÍ”½˜„-Õ‰•É¹•Ñ•ÌÁ•É™½Éµ…¹”¥ÍÍÕ”è((((´€€ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ì™½È…±•ÉÑ¥¹œ(´€€-Õ‰•É¹•Ñ•Ì±…‰•±ÌÑ¼¥‘•¹Ñ¥™ä…™™•Ñ•Á½‘Ì(´€€-Õ‰•É¹•Ñ•Ì•Ù•¹ÑÌÑ¼±½½¬™½ÈÁ½Ñ•¹Ñ¥…°…ÕÍ•Ì(´€€½­•Èµ•ÑÉ¥Ì…É•…Ñ•‰ä-Õ‰•É¹•Ñ•Ì±…‰•±ÌÑ¼¥¹Ù•ÍÑ¥…Ñ”¡åÁ½Ñ¡•Í¥é•…ÕÍ”(´€€!½ÍÐµ±•Ù•°µ•ÑÉ¥ÌÑ¼½¹™¥É´É•Í½ÕÉ”½¹ÍÑÉ…¥¹Ð((()íìð¥µœÍÉŒô‰¬áÌµÕÍ”µ…Í”¹Á¹œˆ…±Ðô‰-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÕÍ”…Í”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…ÁÑ¥½¸ô‰UÍ¥¹Ÿ
-‘…Ñ„™É½´…É½ÍÌå½ÕÈ½É¡•ÍÑÉ…Ñ•½¹Ñ…¥¹•É¥é•¥¹™É…ÍÑÉÕÑÕÉ”Ñ¼™¥¹Ñ¡”É½½Ð…ÕÍ”½˜„Á•É™½Éµ…¹”¥ÍÍÕ”ˆùõô(((ñ‘¥Ø±…ÍÌô‰Ñ•áÐµ•¹Ñ•Èˆø(((ñ„±…ÍÌô‰‰ÕÑÑ½¸µÑÝ••Ð‰ÕÑÑ½¸µÉ½å…°µ‰±Õ”ˆ¡É•˜ô‰¡ÑÑÁÌè¼½ÑÝ¥ÑÑ•È¹½´½¥¹Ñ•¹Ð½ÑÝ••ÐýÑ•áÐõ½µ‰¥¹”­‘…Ñ„­™É½´¬”ÈÍ-Õ‰•É¹•Ñ•Ì”É¬”ÈÍ½­•È”É­…¹­¡½ÍÑÌ­Ñ¼­Í½±Ù”­Á•É™½Éµ…¹”­¥ÍÍÕ•Ì­¡ÑÑÀ”Í”É”É‘Ñ‘œ¹¼”É¬áÌµµ½¹¥Ñ½É¥¹œ­‰ä¬”ÐÁ‘…Ñ…‘½¡Ä­¡ÑÑÁÌ”Í”É”ÉÑÝ¥ÑÑ•È¹½´”É‘‘}‘½­•È”ÉÍÑ…ÑÕÌ”ÉÜäØÀÜàÌÜÌÜÄàÄÔäÌØÐ”ÉÁ¡½Ñ¼”ÉÄˆÑ…É•Ðô‰}‰±…¹¬ˆøñ¤±…ÍÌô‰¥½¸¥½¸µÑÝ¥ÑÑ•Èˆøð½¤øQ]Pð½„ø((ð½‘¥Øø(()]…Ñ¡¥¹œÑ¡”½¹‘ÕÑ½È…¹Ñ¡”½É¡•ÍÑÉ„(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´(()-Õ‰•É¹•Ñ•Ìµ…­•ÌÝ½É­¥¹œÝ¥Ñ ½¹Ñ…¥¹•ÉÌµÕ •…Í¥•È¸!½Ý•Ù•È¥ÐÉ•ÅÕ¥É•Ìå½ÔÑ¼½µÁ±•Ñ•±äÉ•Ñ¡¥¹¬¡½Üå½Ôµ½¹¥Ñ½Èå½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”…¹…ÁÁ±¥…Ñ¥½¹Ì¸½È•á…µÁ±”°¡…Ù¥¹œ„Íµ…ÉÐ±…‰•±¥¹œÍÑÉ…Ñ•ä¥Ì¹½Ü•ÍÍ•¹Ñ¥…°°…Ì¥ÌÍµ…ÉÑ±ä½µ‰¥¹¥¹œ‘…Ñ„™É½´-Õ‰•É¹•Ñ•Ì°å½ÕÈ½¹Ñ…¥¹•ÈÑ•¡¹½±½ä°…¹å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì™½È™Õ±°½‰Í•ÉÙ…‰¥±¥Ñä¸()Q¡”µ•Ñ¡½‘Ì…¹Ñ½½±ÌÕÍ•Ñ¼½±±•ÐÉ•Í½ÕÉ”µ•ÑÉ¥Ì™É½´-Õ‰•É¹•Ñ•Ì…É”‘¥™™•É•¹Ð™É½´Ñ¡”½µµ…¹‘ÌÕÍ•½¸„ÑÉ…‘¥Ñ¥½¹…°¡½ÍÐ¸A…ÉÐ€Ì½˜Ñ¡¥ÌÍ•É¥•Ì½Ù•ÉÌ¡½ÜÑ¼½±±•ÐÑ¡”-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ìå½Ô¹••Ñ¼ÁÉ½Á•É±äµ½¹¥Ñ½Èå½ÕÈ½¹Ñ…¥¹•É¥é•…ÁÁÌ…¹¥¹™É…ÍÑÉÕÑÕÉ”°…ÌÝ•±°…ÌÑ¡•¥È½É¡•ÍÑÉ…Ñ¥½¸¸mI•…½»Š™t¡¡ÑÑÁÌè¼½ÝÝÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ðµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¤()­¹½Ý±•‘µ•¹Ð(´´´´´´´´´´´´´´(()5…¹äÑ¡…¹­ÌÑ¼1…¡±…¸Ù•¹Í½¸™É½·
-m•¥Ít¡¡ÑÑÀè¼½‘•¥Ì¹¥¼¼¤°¡…É±•Ì	ÕÑ±•È™É½·
-m…¹½¹¥…±t¡¡ÑÑÀè¼½ÝÝÜ¹…¹½¹¥…°¹½´¼¤°5¥­”-…Á±¥¹Í­ä™É½·
-m1…‘‘•Ét¡¡ÑÑÁÌè¼½ÝÝÜ¹±…‘‘•É±¥™”¹½´¼¤°IÕ‘¤¡¥…É¥Ñ¼™É½·
-m±…É¥™…¥t¡¡ÑÑÁÌè¼½ÝÝÜ¹±…É¥™…¤¹½´¼¤°…¹Ñ¡”-Õ‰•É¹•Ñ•ÌM±…¬½µµÕ¹¥Ñ¥•Ì™½ÈÉ•Ù¥•Ý¥¹œÑ¡¥ÌÁÕ‰±¥…Ñ¥½¸…¹ÍÕ•ÍÑ¥¹œ¥µÁÉ½Ù•µ•¹ÑÌ¸()}}|(©M½ÕÉ”5…É­‘½Ý¸™½ÈÑ¡¥ÌÁ½ÍÐ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½­Õ‰•É¹•Ñ•Ì½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ÐÕÌ­¹½Ýt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¸¨((
+# Monitoring Kubernetes performance metrics
+*This post is Part 2 of a 4-part series about Kubernetes monitoring. [Part 1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/) discusses how Kubernetes changes your monitoring strategies, this post breaks down the key metrics to monitor, [Part 3](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics) covers the different ways to collect that data, and [Part 4](https://www.datadoghq.com/blog/monitoring-kubernetes-with-datadog/) details how to monitor Kubernetes performance with Datadog.*
+
+As explained in [Part 1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/), using Kubernetes for container orchestration requires a rethinking of your monitoring strategy. But if you use the proper tools, know which metrics to track, and know how to interpret performance data, you will have good visibility into your containerized infrastructure and its orchestration. This part of the series digs into the different metrics you should monitor.
+
+## Where metrics come from
+
+### Heapster: Kubernetesâ€™ own metrics collector
+
+We cannot talk about Kubernetes metrics without introducing [Heapster](https://github.com/kubernetes/heapster): it is for now the go-to source for basic resource utilization metrics and events from your Kubernetes clusters. On each node, [cAdvisor](https://github.com/google/cadvisor) collects data about running containers that Heapster then queries through the [kubelet](http://kubernetes.io/docs/admin/kubelet/) of the node. [Part 3](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics) of this series, which describes the different solutions to collect Kubernetes metrics, will give you more details on how Heapster works and how to configure it for that purpose.
+
+### Heapster vs. native container metrics
+
+Itâ€™s important to understand that metrics reported by your container engine (Docker or rkt) can have different values than the equivalent metrics from Kubernetes. As mentioned above, Kubernetes relies on Heapster to report metrics instead of the [cgroup](https://en.wikipedia.org/wiki/Cgroups) file directly. And one of Heapsterâ€™s limitations is that it collects Kubernetes metrics at a different frequency (aka â€œhousekeeping intervalâ€) than cAdvisor, which makes the overall metric collection frequency for metrics reported by Heapster tricky to evaluate. This can lead to inaccuracies due to mismatched sampling intervals, especially for metrics where sampling is crucial to the value of the metric, such as counts of CPU time. Thatâ€™s why you should really consider tracking metrics from your containers instead of from Kubernetes. Throughout this post, weâ€™ll highlight the metrics that you should monitor. Even when you are using Docker metrics, however, you should still aggregate them using the [*labels* from Kubernetes](https://www.datadoghq.com/blog/monitoring-kubernetes-era/#toc-tags-and-labels-were-important-now-they-re-essential5).
+
+Now that weâ€™ve made this clear, letâ€™s dig into the metrics you should monitor.
+
+## Key performance metrics to monitor
+
+Since Kubernetes plays a central role in your infrastructure, it has to be closely monitored. Youâ€™ll want to be sure that pods are healthy and correctly deployed, and that resource utilization is optimized.
+
+### Pod deployments
+
+In order to make sure Kubernetes does its job properly, you want to be able to check the health of pod [deployments](http://kubernetes.io/docs/user-guide/deployments/).
+
+During a deployment rollout, Kubernetes first determines the number of desired pods required to run your application(s). Then it deploys the needed pods; the newly created pods are up and counted as ***current***. But ***current*** pods are not necessarily ***available*** immediately for their intended use.
+
+    $ kubectl get deployments
+    NAME               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+    nginx-deployment   3         3         3            3           18s
+
+Indeed for some types of deployments, you might want to enforce a waiting period before making them available. Letâ€™s say you have a Jenkins cluster where slaves are pods in Kubernetes. They need some time to start so you want to leave them unavailable during that initiation time and not have them handle any incoming requests. You can specify a delay in your PodSpec using `.spec.minReadySeconds,` which will temporarily prevent your pods from becoming ***available***. Note that [readiness checks](http://kubernetes.io/docs/user-guide/production-pods/#liveness-and-readiness-probes-aka-health-checks) can be a better solution in some cases to make sure your pods are healthy before they receive requests (see [section about health checks](#health-checks) below).
+
+During a [rolling update](http://kubernetes.io/docs/user-guide/rolling-updates/), you can also specify in the PodSpec [`.spec.strategy.rollingUpdate.maxUnavailable`](http://kubernetes.io/docs/user-guide/deployments/#max-unavailable) to make sure you always have at least a certain number (or percentage) of pods ***available*** throughout the process. You can also use [`.spec.strategy.rollingUpdate.maxSurge`](http://kubernetes.io/docs/user-guide/deployments/#max-surge) to specify a cap on the number (or percentage) of extra pods that can be created beyond the ***desired*** pods.
+
+|                    |                                                                                                                                                         |                                                     |                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------|
+| **Metric**         | **Metric name in** [**kube-state-metrics**](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics/#toc-adding-kube-state-metrics2) | **Description**                                     | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
+| *Desired* pods     | kube\_deployment\_spec\_replicas                                                                                                                        | Number of pods desired when the deployment started  | Other                                                                             |
+| *Available* pods   | kube\_deployment\_status\_replicas\_available                                                                                                           | Number of pods currently available                  | Other                                                                             |
+| *Unavailable* pods | kube\_deployment\_status\_replicas\_unavailable                                                                                                         | Number of pods currently existing but not available | Other                                                                             |
+
+You should make sure the number of ***available*** pods always matches the ***desired*** number of pods outside of expected deployment transition phases.
+
+### Running pods
+
+|                |                                  |                                                                                   |
+|----------------|----------------------------------|-----------------------------------------------------------------------------------|
+| **Metric**     | **Description**                  | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
+| *Current* pods | Number of pods currently running | Resource: Utilization                                                             |
+
+Keeping an eye on the number of pods currently running (by node or replica set, for example) will give you an overview of the evolution of your dynamic infrastructure.
+
+To understand how the number of running pods impacts resource usage (CPU, memory, etc.) in your cluster, you should correlate this metric with the resource metrics described in the next section.
+
+[![pods per node](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-pods-nodes.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-pods-nodes.png)
+
+### Resource utilization
+
+Monitoring system resources helps ensure that your clusters and applications remain healthy.
+
+|                      |                                                                                                                                                         |                                                                                                  |                                                                                   |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| **Metric**           | **Metric name in** [**kube-state-metrics**](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics/#toc-adding-kube-state-metrics2) | **Description**                                                                                  | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
+| CPU usage            | â€“                                                                                                                                                       | Percentage of allocated CPU currently in use                                                     | Resource: Utilization                                                             |
+| Node CPU capacity    | **kube\_node\_status\_capacity\_cpu\_cores**                                                                                                            | Total CPU capacity of your clusterâ€™s nodes                                                       | Resource: Utilization                                                             |
+| Memory usage         | â€“                                                                                                                                                       | Percentage of total memory in use                                                                | Resource: Utilization                                                             |
+| Node Memory capacity | **kube\_node\_status\_capacity\_memory\_bytes**                                                                                                         | Total memory capacity of your clusterâ€™s nodes                                                    | Resource: Utilization                                                             |
+| Requests             | â€“                                                                                                                                                       | Minimum amount of a given resource required for containers to run (should be summed over a node) | Resource: Utilization                                                             |
+| Limits               | â€“                                                                                                                                                       | Maximum amount of a given resource allowed to containers (should be summed over a node)          | Resource: Utilization                                                             |
+| Filesystem usage     | â€“                                                                                                                                                       | Volume of disk being used (bytes)                                                                | Resource: Utilization                                                             |
+| Disk I/O             | â€“                                                                                                                                                       | Bytes read from or written to disk                                                               | Resource: Utilization                                                             |
+
+#### CPU and memory
+
+It probably goes without saying that when performance issues arise, CPU and memory usage are likely the first resource metrics you will want to review.
+
+However, as explained in the first section of this post, to track memory and CPU usage you should favor the metrics reported by your container technology, such as Docker, rather than the Kubernetes statistics reported by Heapster.
+
+To access your nodesâ€™ CPU and memory capacity, [**kube-state-metrics**](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics/#toc-adding-kube-state-metrics2) (presented in [Part 3](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics)) exposes these two metrics: `kube_node_status_capacity_cpu_cores` and `kube_node_status_capacity_memory_bytes` respectively.
+
+**kube-state-metrics** also reports `kube_node_status_allocatable_cpu_cores` and `kube_node_status_allocatable_memory_bytes` tracking respectively the CPU and memory resources of each node that are available for scheduling. Note that these metrics donâ€™t track actual reservation and are not impacted by current scheduling operations. They are equal to the remaining resource available in the node capacity once you remove the amount of resource dedicated to system processes (journald, sshd, kubelet, kube-proxy, etcâ€¦).
+
+##### Requests vs. limits
+
+For pod scheduling, Kubernetes allows you to specify how much CPU and memory each container can consume through two types of thresholds:
+
+-   **Request** represents the **minimum** amount of CPU or memory the container needs to run, which needs to be guaranteed by the system.
+-   **Limit** is the **maximum** amount of the resource that the container will be allowed to consume. Itâ€™s unbounded by default.
+
+##### Beware of the trap
+
+With other technologies, you are probably used to monitoring actual resource consumption and comparing that with your node capacity. With Kubernetes, if the sum of container **limits** on a node is strictly greater than the sum of **requests** (minimum resources required), the node can be *oversubscribed* and containers might use more resources than they actually need, which is fine. Even if they use 100 percent of the available CPU resources on a node, for example, Kubernetes can still make room to schedule another pod on the node. Kubernetes would simply lower the CPU available to existing pods to free up resources for the new one, as long as all containers have enough resources to meet their **request**. Thatâ€™s why monitoring the sum of requests on the node and making sure it never exceeds your nodeâ€™s capacity is much more important than monitoring simple CPU or memory usage. If you donâ€™t have enough capacity to meet the minimum resource requirements of all your containers, you should scale up your nodesâ€™ capacity or add more nodes to distribute the workload.
+ [![Kubernetes memory and CPU per host](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-resource-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-resource-metrics.png)
+
+Having some oversubscription on your nodes can be good in many cases since it can help reduce the number of nodes in your Kubernetes cluster. You can tune the request/limit ratio by monitoring it over time and tracking how it impacts your container resource usage.
+
+Note that since version 1.3 Kubernetes offers auto-scaling capabilities for Google Compute Engine and Google Container Engine ([AWS support should come soon](http://blog.kubernetes.io/2016/07/autoscaling-in-kubernetes.html)). So on those platforms Kubernetes can now adjust the number pods in a deployment, replica set, or replication controller based on CPU utilization (support for other auto-scaling triggers is in alpha).
+
+##### Container resource metrics
+
+As explained in the [section about container metrics](#container-metrics), some statistics reported by Docker should be also monitored as they provide deeper (and more accurate) insights. The CPU throttling metric is a great example, as it represents the number of times a container hit its specified **limit**.
+
+#### Disk usage and I/O
+
+The percentage of disk in use is generally more useful than the *volume* of disk usage, since the thresholds of concern wonâ€™t depend on the size of your clusters. You should graph its evolution over time and trigger an alert if it exceeds 80% for example.
+
+Graphing the number of bytes read from or written to disk provides critical context for higher-level metrics. For example, you can quickly check whether a latency spike is due to increased I/O activity.
+ [![Kubernetes disk I/O](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-disk-io.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/kubernetes-disk-io.png)
+
+#### Network
+
+Just as with ordinary hosts, you should monitor network metrics from your pods and containers.
+
+|                |                                           |                                                                                   |
+|----------------|-------------------------------------------|-----------------------------------------------------------------------------------|
+| **Metric**     | **Description**                           | [**Metric type**](https://www.datadoghq.com/blog/monitoring-101-collecting-data/) |
+| Network in     | Bytes per second received through network | Resource: Utilization                                                             |
+| Network out    | Bytes per second sent through network     | Resource: Utilization                                                             |
+| Network errors | Number of network errors per second       | Resource: Error                                                                   |
+
+Network metrics can shed light on traffic load. You should investigate if you see an increasing number of network errors per second, which could indicate a low-level issue or a networking misconfiguration.
+
+### Container health checks
+
+In addition to standard resource metrics, Kubernetes also provides configurable health checks. You can configure, via the PodSpec, [checks](http://kubernetes.io/docs/user-guide/production-pods/#liveness-and-readiness-probes-aka-health-checks) to detect:
+
+-   When running applications enter a broken state (liveness probe fails), in which case the kubelet will kill the container.
+-   When applications are temporarily unable to properly address requests (readiness probe fails), in which case the Kubernetes endpoint controller will remove the podâ€™s IP address from the endpoints of all services that match the pod, so that no traffic is sent to the affected containers.
+
+The kubelet can run diagnostic liveness and readiness probes against containers through an HTTP check (the most common choice), an exec check, or a TCP check. The Kubernetes documentation provides [more details about container probes](http://kubernetes.io/docs/user-guide/pod-states/#container-probes) and tips on [when you should use them](http://kubernetes.io/docs/user-guide/pod-states/#when-should-i-use-liveness-or-readiness-probes).
+
+### Monitoring containers using native metrics
+
+As we said, container metrics should be usually preferred to Kubernetes metrics. Containers can rightly be seen as mini-hosts. Just like virtual machines, they run on behalf of resident software, which consumes CPU, memory, I/O, and network resources.
+
+If you are using Docker, check out [our Docker monitoring guide](https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/), which discusses all the resource metrics available from Docker that you should collect and monitor.
+
+Using Docker in the framework provided by Kubernetes labels will give you insights about your containersâ€™ health and performance. Kubernetes labels are already applied to Docker metrics. You could track for example the number of running containers by pod, or the most RAM-intensive pods by graphing the [RSS non-cache memory](https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/#toc-memory3) broken down by *pod name*.
+
+[![containers per pod](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/containers-per-pod.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/containers-per-pod.png)
+
+### Application-specific metrics
+
+In order to properly monitor your containerized infrastructure, you should collect Kubernetes data along with Docker container resource metrics, and correlate them with the health and performance of the different [applications running on top of them](https://www.datadoghq.com/docker-adoption/#6). Each image comes with its specificities, and the types of metrics you should track and alert on will vary from one to another. However throughput, latency, and errors are usually the most important metrics.
+
+We have published monitoring guides to help you identify key metrics for many popular technologies, including [NGINX](https://www.datadoghq.com/blog/how-to-monitor-nginx/), [Redis](https://www.datadoghq.com/blog/how-to-monitor-redis-performance-metrics/), [MongoDB](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger/), [MySQL](https://www.datadoghq.com/blog/monitoring-mysql-performance-metrics/), [Elasticsearch](https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/), and [Varnish](https://www.datadoghq.com/blog/top-varnish-performance-metrics/).
+
+Heapster is not designed to collect by default metrics from the applications running in your containers. If you want deeper context than just system metrics, you have to instrument your applications in order to collect metrics from them as well.
+
+Since Kubernetes 1.2 a new feature (still in Alpha) allows cAdvisor to [collect custom metrics](https://github.com/google/cadvisor/blob/master/docs/application_metrics.md) from applications running in containers, if these metrics are exposed in the [Prometheus format](https://prometheus.io/docs/instrumenting/exposition_formats/) natively, which is the case for only [a few applications](https://prometheus.io/docs/instrumenting/exporters/#directly-instrumented-software) today. These custom metrics can be [used to trigger horizontal pod auto-scaling](http://kubernetes.io/docs/user-guide/horizontal-pod-autoscaling/#support-for-custom-metrics) (HPA) when a metric exceeds a specified threshold. Note that Heapster re-exposes these custom metrics through its [Model API](https://github.com/kubernetes/heapster/blob/master/docs/model.md) which is not an official Kubernetes API.
+
+## Correlate with events
+
+Collecting events from Docker and Kubernetes allows you to see how pod creation, destruction, starting, or stopping impacts the performance of your infrastructure (and also the inverse).
+
+While Docker events trace container lifecycles, Kubernetes events report on *pod* lifecycles and deployments. Tracking pods failures for example can indicate a misconfiguration or resource saturation. Thatâ€™s why you should correlate events with resource metrics for easier investigations.
+
+### Pod scheduling events
+
+You can make sure pod scheduling works properly by tracking Kubernetes events. If scheduling fails repeatedly, you should investigate. Insufficient resources in your cluster such as CPU or memory can be the root cause of scheduling issues, in which case you should consider [adding more nodes](http://kubernetes.io/docs/admin/cluster-management/#resizing-a-cluster) to the cluster, or [deleting](http://kubernetes.io/docs/user-guide/pods/single-container/#deleting-a-pod) unused pods to make room for [***pending***](http://kubernetes.io/docs/user-guide/pod-states/#pod-phase) ones.
+
+Node ports can also be a cause of scheduling contention. If [*NodePort*](http://kubernetes.io/docs/user-guide/services/#type-nodeport) is used to assign specific port numbers, then Kubernetes wonâ€™t be able to schedule a pod to a node where that port is already taken. This can lead to scheduling issues due to:
+
+-   Poor configuration, for example if two conflicting pods try to claim the same port.
+-   Resource saturation, for example if the *NodePort* is set but the [replica set](http://kubernetes.io/docs/user-guide/replicasets/) requires more pod replicas than there are nodes. In that case you should scale up the number of nodes or use a Kubernetes [service](http://kubernetes.io/docs/user-guide/services/) so multiple pods behind it can live in one node.
+
+## Alerting properly
+
+Since your pods are constantly moving, alerts on the metrics they report (CPU, memory, I/O, networkâ€¦) have to follow. Thatâ€™s why they should be set up using what remains stable as pods come and go: custom labels, service names, and names of replication controllers or replica sets.
+
+## A concrete use case
+
+As discussed in Part 1, monitoring orchestrated, containerized infrastructure means collecting metrics from every layer of your stack: from Docker and Kubernetes as well as from your hosts and containerized applications. Letâ€™s see how the different data from all the components of your infrastructure can be used to investigate a performance issue.
+
+Letâ€™s say we are running [NGINX](https://www.datadoghq.com/blog/how-to-monitor-nginx/) for our web app in Docker containers, which are orchestrated by Kubernetes.
+
+#### 1. Application metric showing performance issue
+
+We receive an [alert](https://www.datadoghq.com/blog/monitoring-101-alerting/) triggered after the number of NGINX 5xx errors suddenly skyrocketed over a set threshold.
+
+[![NGINX 5xx errors](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/nginx-errors.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/nginx-errors.png)
+
+#### 2. Corresponding Kubernetes labels and events
+
+If we look at which pods our web app was running on, we can see that the Kubernetes label attached to them, which defines the replication controller involved, is ***rc-nginx***. And when looking at Kubernetes events, a [rolling update deployment](http://kubernetes.io/docs/user-guide/deployments/#rolling-update-deployment) happened on those pods exactly at the moment that the web app started returning 5xx errors.
+
+Letâ€™s investigate the containers impacted by this rolling update to understand what happened.
+
+#### 3. What happened at the container level
+
+The first place to look is usually resource metrics. Remember that Docker metrics should be preferred to Kubernetes for time-sampled data. So letâ€™s graph the CPU utilization by Docker containers, broken down by pod (or container) and filtered to retain only the pods with the label ***rc-nginx***.
+
+[![CPU per pod](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/cpu-pods.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/cpu-pods.png)
+
+Interesting! It looks like CPU usage in some pods drastically increased at the moment that the 5xx error peaked. Would it be possible that the underlying hosts running this pod replica saturated their CPU capacity?
+
+#### 4. Host metrics to confirm the hypothesis
+
+By graphing the CPU usage broken down by host, we can see that indeed three hosts maxed out their CPU at that moment.
+
+[![CPU per host](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/hosts-full-cpu.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/hosts-full-cpu.png)
+
+#### Resolving the issue and postmortem
+
+A short-term solution can be to roll back the update to our web app code if we think that an update led to this issue. Scaling up our hostsâ€™ CPU capacity can also help support higher resource consumption.
+
+If appropriate, we could also make use of [the underlying mechanism in Kubernetes that imposes restrictions](http://kubernetes.io/docs/admin/limitrange/) on the resources (CPU and memory) a single pod can consume. In this case, we should consider lowering the CPU limit for a given pod.
+
+Here we have combined data from across our container infrastructure to find the root cause of a performance issue:
+
+-   Application metrics for alerting
+-   Kubernetes labels to identify affected pods
+-   Kubernetes events to look for potential causes
+-   Docker metrics aggregated by Kubernetes labels to investigate hypothesized cause
+-   Host-level metrics to confirm resource constraint
+
+[![Kubernetes monitoring use case](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/k8s-use-case.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/2/k8s-use-case.png)
+
+*Using data from across your orchestrated containerized infrastructure
+ to find the root cause of a performance issue*
+
+ [** TWEET](https://twitter.com/intent/tweet?text=Combine+data+from+%23Kubernetes%2C+%23Docker%2C+and+hosts+to+solve+performance+issues+http%3A%2F%2Fdtdg.co%2Fk8s-monitoring+by+%40datadoghq+https%3A%2F%2Ftwitter.com%2Fdd_docker%2Fstatus%2F796078373718159364%2Fphoto%2F1)
+
+## Watching the conductor and the orchestra
+
+Kubernetes makes working with containers much easier. However it requires you to completely rethink how you monitor your infrastructure. For example, having a smart labeling strategy is now essential, as is smartly combining data from Kubernetes, your container technology, and your applications for full observability.
+
+The methods and tools used to collect resource metrics from Kubernetes are different from the commands used on a traditional host. Part 3 of this series covers how to collect the performance metrics you need to properly monitor your containerized infrastructure and its orchestration by Kubernetes. [Read onâ€¦](https://www.datadoghq.com/blog/how-to-collect-and-graph-kubernetes-metrics)

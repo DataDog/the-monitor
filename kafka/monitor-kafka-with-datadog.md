@@ -1,1 +1,125 @@
-m5½¹¥Ñ½É¥¹œ-…™­„İ¥Ñ …Ñ…‘½œ(((©Q¡¥ÌÁ½ÍĞ¥ÌÑ¡”™¥¹…°Á…ÉĞ½˜„€ÌµÁ…ÉĞÍ•É¥•Ì½¸¡½ÜÑ¼µ½¹¥Ñ½È-…™­„¸mA…ÉĞ€Åt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤•áÁ±½É•ÌÑ¡”­•äµ•ÑÉ¥Ì…Ù…¥±…‰±”™É½´-…™­„°…¹mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤¥Ì…‰½ÕĞ½±±•Ñ¥¹œÑ¡½Í”µ•ÑÉ¥Ì½¸…¸…¡½Œ‰…Í¥Ì¸¨()Q¼¥µÁ±•µ•¹Ğ½¹½¥¹œ°µ•…¹¥¹™Õ°µ½¹¥Ñ½É¥¹œ°å½Ôİ¥±°¹••„‘•‘¥…Ñ•ÍåÍÑ•´Ñ¡…Ğ…±±½İÌå½ÔÑ¼ÍÑ½É”°Ù¥ÍÕ…±¥é”°…¹½ÉÉ•±…Ñ”å½ÕÈ-…™­„µ•ÑÉ¥Ìİ¥Ñ Ñ¡”É•ÍĞ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¸()-…™­„‘•Á±½åµ•¹ÑÌ½™Ñ•¸É•±ä½¸…‘‘¥Ñ¥½¹…°Í½™Ñİ…É”Á…­…•Ì¹½Ğ¥¹±Õ‘•¥¸Ñ¡”-…™­„½‘•‰…Í”¥ÑÍ•±˜°¥¸Á…ÉÑ¥Õ±…ÈÁ…¡”i½½-••Á•È¸½µÁÉ•¡•¹Í¥Ù”µ½¹¥Ñ½É¥¹œ¥µÁ±•µ•¹Ñ…Ñ¥½¸¥¹±Õ‘•Ì…±°Ñ¡”±…å•ÉÌ½˜å½ÕÈ‘•Á±½åµ•¹Ğ°¥¹±Õ‘¥¹œ¡½ÍĞµ±•Ù•°µ•ÑÉ¥Ìİ¡•¸…ÁÁÉ½ÁÉ¥…Ñ”°…¹¹½Ğ©ÕÍĞÑ¡”µ•ÑÉ¥Ì•µ¥ÑÑ•‰ä-…™­„¥ÑÍ•±˜¸()íìğ¥µœÍÉŒô‰‘…Í Ä¹Á¹œˆ…±Ğô‰5½¹¥Ñ½È-…™­„€´-…™­„‘…Í¡‰½…ÉˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()]¥Ñ …Ñ…‘½œ°å½Ô…¸½±±•Ğ-…™­„µ•ÑÉ¥Ì™½ÈÙ¥ÍÕ…±¥é…Ñ¥½¸°…±•ÉÑ¥¹œ°…¹™Õ±°µ¥¹™É…ÍÑÉÕÑÕÉ”½ÉÉ•±…Ñ¥½¸¸…Ñ…‘½œİ¥±°…ÕÑ½µ…Ñ¥…±±ä½±±•ĞÑ¡”­•äµ•ÑÉ¥Ì‘¥ÍÕÍÍ•¥¸Á…ÉÑÌm½¹•t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤…¹mÑİ½t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤½˜Ñ¡¥ÌÍ•É¥•Ì°…¹µ…­”Ñ¡•´…Ù…¥±…‰±”¥¸„Ñ•µÁ±…Ñ”‘…Í¡‰½…É°…ÌÍ••¸…‰½Ù”¸()%¹Ñ•É…Ñ¥¹œ…Ñ…‘½œ°-…™­„…¹i½½-••Á•È(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´((((ŒŒŒY•É¥™ä-…™­„…¹i½½-••Á•È(()	•™½É”å½Ô‰•¥¸°å½ÔµÕÍĞÙ•É¥™äÑ¡…Ğ-…™­„¥Ì½¹™¥ÕÉ•Ñ¼É•Á½ÉĞµ•ÑÉ¥ÌÙ¥„)5`°…¹Ñ¡…Ğå½Ô…¸½µµÕ¹¥…Ñ”İ¥Ñ i½½-••Á•È°ÕÍÕ…±±ä½¸Á½ÉĞ€ÈÄàÄ¸½È-…™­„°Ñ¡…Ğµ•…¹Ì½¹™¥Éµ¥¹œÑ¡…ĞÑ¡”)5a}A=IQ€•¹Ù¥É½¹µ•¹ĞÙ…É¥…‰±”¥ÌÍ•Ğ‰•™½É”ÍÑ…ÉÑ¥¹œå½ÕÈ‰É½­•È€¡½È½¹ÍÕµ•È½ÈÁÉ½‘Õ•È¤°…¹Ñ¡•¸½¹™¥Éµ¥¹œÑ¡…Ğå½Ô…¸½¹¹•Ñ¥¹œÑ¼Ñ¡…ĞÁ½ÉĞİ¥Ñ m)½¹Í½±•t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼©½¹Í½±”¤¸()½Èi½½-••Á•È°å½Ô…¸ÉÕ¸Ñ¡¥Ì½¹”µ±¥¹•Èİ¡¥ ÕÍ•ÌÑ¡”lĞµ±•ÑÑ•Èİ½É‘t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½±±•Ñ¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼ŒĞµ±•ÑÑ•Èµİ½É‘Ì¤ÉÕ½­€è•¡¼ÉÕ½¬ğ¹Œ€ñi½½-••Á•É!½ÍĞø€ÈÄàÅ€¸%˜i½½-••Á•ÈÉ•ÍÁ½¹‘Ìİ¥Ñ ¥µ½­€°å½Ô…É”É•…‘äÑ¼¥¹ÍÑ…±°Ñ¡”•¹Ğ¸((ŒŒŒ%¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ğ(()Q¡”…Ñ…‘½œ•¹Ğ¥ÌÑ¡”m½Á•¸Í½ÕÉ”Í½™Ñİ…É•t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½‘µ…•¹Ğ¤Ñ¡…Ğ½±±•ÑÌ…¹É•Á½ÉÑÌµ•ÑÉ¥Ì™É½´å½ÕÈ¡½ÍÑÌÍ¼Ñ¡…Ğå½Ô…¸Ù¥•Ü…¹µ½¹¥Ñ½ÈÑ¡•´¥¸…Ñ…‘½œ¸%¹ÍÑ…±±¥¹œÑ¡”…•¹ĞÕÍÕ…±±äÑ…­•Ì©ÕÍĞ„Í¥¹±”½µµ…¹¸()%¹ÍÑ…±±…Ñ¥½¸¥¹ÍÑÉÕÑ¥½¹Ì™½È„Ù…É¥•Ñä½˜Á±…Ñ™½ÉµÌ…É”…Ù…¥±…‰±”m¡•É•t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ¤¸()ÌÍ½½¸…ÌÑ¡”•¹Ğ¥ÌÕÀ…¹ÉÕ¹¹¥¹œ°å½ÔÍ¡½Õ±Í•”å½ÕÈ¡½ÍĞÉ•Á½ÉÑ¥¹œµ•ÑÉ¥Ì¥¸å½ÕÈm…Ñ…‘½œ…½Õ¹Ñt¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½¥¹™É…ÍÑÉÕÑÕÉ”¤¸()íìğ¥µœÍÉŒô‰‘•™…Õ±Ğµ¡½ÍĞ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½È-…™­„€´!½ÍĞÉ•Á½ÉÑ¥¹œ¥¸ˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒŒ½¹™¥ÕÉ”Ñ¡”•¹Ğ(()9•áĞå½Ôİ¥±°¹••Ñ¼É•…Ñ”…¸•¹Ğ½¹™¥ÕÉ…Ñ¥½¸™¥±”™½È‰½Ñ i½½-••Á•È…¹-…™­„¸e½Ô…¸™¥¹Ñ¡”±½…Ñ¥½¸½˜Ñ¡”•¹Ğ½¹™¥ÕÉ…Ñ¥½¸‘¥É•Ñ½Éä™½Èå½ÕÈ=Lm¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼¤¸%¸Ñ¡…Ğ‘¥É•Ñ½Éä°å½Ôİ¥±°™¥¹Í…µÁ±”½¹™¥ÕÉ…Ñ¥½¸™¥±•Ì™½È‰½Ñ m-…™­…t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½­…™­„½‘…Ñ…‘½}¡•­Ì½­…™­„½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”¤€ ¨©­…™­„¹å…µ°¹•á…µÁ±”¨¨°€¨©­…™­…}½¹ÍÕµ•È¹å…µ°¹•á…µÁ±”¨¨¤…¹mi½½-••Á•Ét¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½é¬½‘…Ñ…‘½}¡•­Ì½é¬½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”¤€ ¨©é¬¹å…µ°¹•á…µÁ±”¨¨¤¸()=¸å½ÕÈ‰É½­•ÉÌ°½ÁäÑ¡•Í”™¥±•ÌÑ¼€¨©­…™­„¹å…µ°¨¨°€¨©­…™­…}½¹ÍÕµ•È¹å…µ°¨¨°É•ÍÁ•Ñ¥Ù•±ä¸()=¸ÁÉ½‘Õ•ÉÌ…¹½¹ÍÕµ•ÉÌ°½Áä½¹±ä€¨©­…™­„¹å…µ°¨¨¸=¸å½ÕÈi½½-••Á•È¹½‘•Ì°€¨©é¬¹å…µ°¨¨¸()%˜å½Ô…É”ÕÍ¥¹œi½½-••Á•ÈÌ‘•™…Õ±Ğ½¹™¥ÕÉ…Ñ¥½¸°å½ÔÍ¡½Õ±‘¸Ğ¹••Ñ¼¡…¹”…¹åÑ¡¥¹œ¥¸€¨©é¬¹å…µ°¨¨¸((ŒŒŒŒ­…™­„¹å…µ°(()Q¡”‘•™…Õ±Ğ­…™­„¹å…µ±€™¥±”¥¹±Õ‘•ÌÍ•ÑÑ¥¹ÌÑ¼½±±•Ğ…±°½˜Ñ¡”µ•ÑÉ¥Ìµ•¹Ñ¥½¹•¥¸mÁ…ÉĞ½¹•t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤½˜Ñ¡¥ÌÍ•É¥•Ì¸%˜å½Ô±¥­”Ñ¼½±±•Ğµ½É”5	•…¹Ì°¡•¬½ÕĞ½ÕÈm)5`‘½Õµ•¹Ñ…Ñ¥½¹t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½©…Ù„¼¤™½Èµ½É”¥¹™½Éµ…Ñ¥½¸½¸…‘‘¥¹œå½ÕÈ½İ¸¸()e½Ô…¸ÕÍ”Ñ¡”•á…µÁ±”½¹™¥ÕÉ…Ñ¥½¸ÁÉ½Ù¥‘•İ¡•Ñ¡•Èå½Ô…É”µ½¹¥Ñ½É¥¹œå½ÕÈ‰É½­•ÉÌ°ÁÉ½‘Õ•ÉÌ°½¹ÍÕµ•ÉÌ°½È…±°Ñ¡É•”¸)ÕÍĞ¡…¹”Ñ¡”¡½ÍĞ…¹Á½ÉĞ…ÁÁÉ½ÁÉ¥…Ñ•±ä¸()Q¡½Õ å½Ô€©½Õ±¨µ½¹¥Ñ½ÈÑ¡”•¹Ñ¥É•Ñä½˜å½ÕÈ‘•Á±½åµ•¹Ğ™É½´½¹”¡½ÍĞ°¥Ğ¥ÌÉ•½µµ•¹‘•Ñ¡…Ğå½Ô¥¹ÍÑ…±°Ñ¡”•¹Ğ½¸•… ½˜å½ÕÈÁÉ½‘Õ•ÉÌ°½¹ÍÕµ•ÉÌ…¹‰É½­•ÉÌ°…¹½¹™¥ÕÉ”•… Í•Á…É…Ñ•±ä¸()	•Í¥‘•Ì½¹™¥ÕÉ¥¹œå½ÕÈ¡½ÍÑÌ°å½Ôµ…ä…±Í¼¹••Ñ¼µ½‘¥™äèÁ½ÉÑ€°ÕÍ•É€°…¹Á…ÍÍİ½É‘€¸ĞÑ¡¥ÌÁ½¥¹Ğå½Ô…¸…±Í¼…‘Ñ…ÌÑ¼Ñ¡”¡½ÍĞ€¡±¥­”½¹ÍÕµ•ÈÁ€°‰É½­•ÈÈÀÅ€°•ÑŒ¸¤°…¹…±°½˜Ñ¡”µ•ÑÉ¥Ì¥ĞÉ•Á½ÉÑÌİ¥±°‰•…ÈÑ¡…ĞÑ…œ¸™Ñ•Èµ…­¥¹œå½ÕÈ¡…¹•Ì°Í…Ù”…¹±½Í”Ñ¡”™¥±”¸((ŒŒŒŒ­…™­…}½¹ÍÕµ•È¹å…µ°(()%¸½É‘•ÈÑ¼•Ğ‰É½­•È…¹½¹ÍÕµ•È½™™Í•Ğ¥¹™½Éµ…Ñ¥½¸¥¹Ñ¼…Ñ…‘½œ°å½ÔµÕÍĞµ½‘¥™ä€¨©­…™­…}½¹ÍÕµ•È¹å…µ°¨¨½¸„€©‰É½­•È¨€¡‘•ÍÁ¥Ñ”Ñ¡”¹…µ”€©­…™­…}½¹ÍÕµ•È¨¤Ñ¼µ…Ñ å½ÕÈÍ•ÑÕÀ¸MÁ•¥™¥…±±ä°å½ÔÍ¡½Õ±Õ¹½µµ•¹Ğ…¹¡…¹”­…™­…}½¹¹•Ñ}ÍÑÉ€Ñ¼Á½¥¹ĞÑ¼„-…™­„‰É½­•È€¡½™Ñ•¸±½…±¡½ÍĞ¤°…¹é­}½¹¹•Ñ}ÍÑÉ€Ñ¼Á½¥¹ĞÑ¼i½½-••Á•È¸()Q¡”¹•áĞÍÑ•À¥ÌÑ¼½¹™¥ÕÉ”Ñ¡”½¹ÍÕµ•ÈÉ½ÕÁÌ™½Èİ¡¥ å½Ô±¥­”Ñ¼½±±•Ğµ•ÑÉ¥Ì¸MÑ…ÉĞ‰ä¡…¹¥¹œµå}½¹ÍÕµ•É€Ñ¼Ñ¡”¹…µ”½˜å½ÕÈ½¹ÍÕµ•ÈÉ½ÕÀ¸Q¡•¸½¹™¥ÕÉ”Ñ¡”Ñ½Á¥Ì…¹Á…ÉÑ¥Ñ¥½¹ÌÑ¼İ…Ñ °‰ä¡…¹¥¹œµå}Ñ½Á¥€Ñ¼Ñ¡”¹…µ”½˜å½ÕÈÑ½Á¥Œ°…¹Á±…¥¹œÑ¡”Á…ÉÑ¥Ñ¥½¹ÌÑ¼İ…Ñ ¥¸Ñ¡”…‘©…•¹Ğ…ÉÉ…ä°Í•Á…É…Ñ•‰ä½µµ…Ì¸e½Ô…¸Ñ¡•¸…‘µ½É”½¹ÍÕµ•ÈÉ½ÕÁÌ½ÈÑ½Á¥Ì°…Ì¹••‘•¸	”µ¥¹‘™Õ°½˜å½ÕÈİ¡¥Ñ•ÍÁ…”°…Ìe50™¥±•Ì…É”İ¡¥Ñ•ÍÁ…”µÍ•¹Í¥Ñ¥Ù”¸™Ñ•È½¹™¥ÕÉ¥¹œå½ÕÈ½¹ÍÕµ•ÈÉ½ÕÁÌ°Í…Ù”…¹±½Í”Ñ¡”™¥±”¸((ŒŒŒY•É¥™ä½¹™¥ÕÉ…Ñ¥½¸Í•ÑÑ¥¹Ì(()Q¼¡•¬Ñ¡…Ğ…Ñ…‘½œ°-…™­„°…¹i½½-••Á•È…É”ÁÉ½Á•É±ä¥¹Ñ•É…Ñ•°™¥ÉÍĞmÉ•ÍÑ…ÉĞÑ¡”•¹Ñt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼¤°…¹Ñ¡•¸ÉÕ¸Ñ¡”…Ñ…‘½œ¥¹™½€½µµ…¹¸Q¡”½µµ…¹™½È•… Á±…Ñ™½É´¥Ì…Ù…¥±…‰±”m¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼¤¸%˜Ñ¡”½¹™¥ÕÉ…Ñ¥½¸¥Ì½ÉÉ•Ğ°å½Ôİ¥±°Í•”„Í•Ñ¥½¸É•Í•µ‰±¥¹œÑ¡”½¹”‰•±½Ü¥¸Ñ¡”¥¹™½€½ÕÑÁÕĞè(((%¡•­Ì($ôôôôôô(($€l¸¸¹t(($€€€­…™­„($€€€€´´´´´($€€€€€€´¥¹ÍÑ…¹”€­…™­„µ±½…±¡½ÍĞ´ääääm=-t½±±•Ñ•€ÌĞµ•ÑÉ¥Ì($€€€€€€´½±±•Ñ•€ÌĞµ•ÑÉ¥Ì°€À•Ù•¹ÑÌ€˜€ÀÍ•ÉÙ¥”¡•­Ì(($€€€­…™­…}½¹ÍÕµ•È($€€€€´´´´´´´´´´´´´´($€€€€€€´¥¹ÍÑ…¹”€ŒÀm=-t($€€€€€€´½±±•Ñ•€Äµ•ÑÉ¥Œ°€À•Ù•¹ÑÌ€˜€ÄÍ•ÉÙ¥”¡•¬(($€€€é¬($€€€€´´($€€€€€€´¥¹ÍÑ…¹”€ŒÀm=-t($€€€€€€´½±±•Ñ•€ÈÌµ•ÑÉ¥Ì°€À•Ù•¹ÑÌ€˜€ÈÍ•ÉÙ¥”¡•­Ì(((ŒŒŒ¹…‰±”Ñ¡”¥¹Ñ•É…Ñ¥½¸(()9•áĞ°±¥¬Ñ¡”-…™­„…¹i½½-••Á•È€¨©%¹ÍÑ…±°%¹Ñ•É…Ñ¥½¸¨¨‰ÕÑÑ½¹Ì¥¹Í¥‘”å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ°Õ¹‘•ÈÑ¡”€©½¹™¥ÕÉ…Ñ¥½¸¨Ñ…ˆ¥¸Ñ¡”m-…™­„¥¹Ñ•É…Ñ¥½¸Í•ÑÑ¥¹Ít¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì¥¹Ñ•É…Ñ¥½¹Ì½­…™­„¤…¹mi½½-••Á•È¥¹Ñ•É…Ñ¥½¸Í•ÑÑ¥¹Ít¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì¥¹Ñ•É…Ñ¥½¹Ì½é½½­••Á•È¤¸()íìğ¥¹±¥¹”µÑ„Ñ•áĞô‰¹…±åé”-…™­„µ•ÑÉ¥Ì…±½¹Í¥‘”‘…Ñ„™É½´Ñ¡”É•ÍĞ½˜å½ÕÈÍÑ…¬İ¥Ñ …Ñ…‘½œ¸ˆ‰Ñ¸µÑ•áĞô‰QÉä¥Ğ™É•”ˆ‘…Ñ„µ•Ù•¹Ğµ…Ñ•½Éäô‰M¥¹ÕÀˆÍ¥¹ÕÀô‰ÑÉÕ”ˆ€ùõô()5•ÑÉ¥Ì„(´´´´´´´´(()=¹”Ñ¡”•¹Ğ‰•¥¹ÌÉ•Á½ÉÑ¥¹œµ•ÑÉ¥Ì°å½Ôİ¥±°Í•”„½µÁÉ•¡•¹Í¥Ù”-…™­„‘…Í¡‰½…É…µ½¹œå½ÕÈm±¥ÍĞ½˜…Ù…¥±…‰±”‘…Í¡‰½…É‘Ì¥¸…Ñ…‘½t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½‘…Í ½±¥ÍĞ¤¸()Q¡”‘•™…Õ±Ğ-…™­„‘…Í¡‰½…É°…ÌÍ••¸…ĞÑ¡”Ñ½À½˜Ñ¡¥Ì…ÉÑ¥±”°‘¥ÍÁ±…åÌÑ¡”­•äµ•ÑÉ¥Ì¡¥¡±¥¡Ñ•¥¸½ÕÈm¥¹ÑÉ½‘ÕÑ¥½¸½¸¡½ÜÑ¼µ½¹¥Ñ½È-…™­…t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤¸()e½Ô…¸•…Í¥±äÉ•…Ñ”„µ½É”½µÁÉ•¡•¹Í¥Ù”‘…Í¡‰½…ÉÑ¼µ½¹¥Ñ½Èå½ÕÈ•¹Ñ¥É”İ•ˆÍÑ…¬‰ä…‘‘¥¹œ…‘‘¥Ñ¥½¹…°É…Á¡Ì…¹µ•ÑÉ¥Ì™É½´å½ÕÈ½Ñ¡•ÈÍåÍÑ•µÌ¸½È•á…µÁ±”°å½Ôµ¥¡Ğİ…¹ĞÑ¼É…Á -…™­„µ•ÑÉ¥Ì…±½¹Í¥‘”mµ•ÑÉ¥Ì™É½´!AÉ½áåt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ¡…ÁÉ½áäµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤°½È…±½¹Í¥‘”¡½ÍĞµ±•Ù•°µ•ÑÉ¥ÌÍÕ …Ìµ•µ½ÉäÕÍ…”½¸…ÁÁ±¥…Ñ¥½¸Í•ÉÙ•ÉÌ¸Q¼ÍÑ…ÉĞ‰Õ¥±‘¥¹œ„ÕÍÑ½´‘…Í¡‰½…É°±½¹”Ñ¡”‘•™…Õ±Ğ-…™­„‘…Í¡‰½…É‰ä±¥­¥¹œ½¸Ñ¡”•…È½¸Ñ¡”ÕÁÁ•ÈÉ¥¡Ğ½˜Ñ¡”‘…Í¡‰½…É…¹Í•±•Ñ¥¹œ€¨©±½¹”…Í ¨¨¸()íìğ¥µœÍÉŒô‰±½¹”µ‘…Í ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½È-…™­„€´±½¹”‘…Í ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()±•ÉÑ¥¹œ(´´´´´´´´(()=¹”…Ñ…‘½œ¥Ì…ÁÑÕÉ¥¹œ…¹Ù¥ÍÕ…±¥é¥¹œå½ÕÈµ•ÑÉ¥Ì°å½Ôİ¥±°±¥­•±äİ…¹ĞÑ¼mÍ•ĞÕÀÍ½µ”…±•ÉÑÍt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ¼¤Ñ¼‰”…ÕÑ½µ…Ñ¥…±±ä¹½Ñ¥™¥•½˜Á½Ñ•¹Ñ¥…°¥ÍÍÕ•Ì¸()]¥Ñ ½ÕÈÁ½İ•É™Õ°m½ÕÑ±¥•È‘•Ñ•Ñ¥½¹t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ½ÕÑ±¥•Èµ‘•Ñ•Ñ¥½¸µ¥¸µ‘…Ñ…‘½œ¼¤™•…ÑÕÉ”°å½Ô…¸•Ğ…±•ÉÑ•½¸Ñ¡”Ñ¡¥¹ÌÑ¡…Ğµ…ÑÑ•È¸½È•á…µÁ±”°å½Ô…¸Í•Ğ…¸…±•ÉĞ¥˜„Á…ÉÑ¥Õ±…ÈÁÉ½‘Õ•È¥Ì•áÁ•É¥•¹¥¹œ…¸¥¹É•…Í”¥¸±…Ñ•¹äİ¡¥±”Ñ¡”½Ñ¡•ÉÌ…É”½Á•É…Ñ¥¹œ¹½Éµ…±±ä¸()…Ñ…‘½œ…¸µ½¹¥Ñ½È¥¹‘¥Ù¥‘Õ…°¡½ÍÑÌ°½¹Ñ…¥¹•ÉÌ°Í•ÉÙ¥•Ì°ÁÉ½•ÍÍ•ÏŠQ½ÈÙ¥ÉÑÕ…±±ä…¹ä½µ‰¥¹…Ñ¥½¸Ñ¡•É•½˜¸½È¥¹ÍÑ…¹”°å½Ô…¸Ù¥•Ü…±°½˜å½ÕÈ-…™­„‰É½­•ÉÌ°½¹ÍÕµ•ÉÌ°ÁÉ½‘Õ•ÉÌ°½È…±°¡½ÍÑÌ¥¸„•ÉÑ…¥¸…Ù…¥±…‰¥±¥Ñäé½¹”°½È•Ù•¸„Í¥¹±”µ•ÑÉ¥Œ‰•¥¹œÉ•Á½ÉÑ•‰ä…±°¡½ÍÑÌİ¥Ñ „ÍÁ•¥™¥ŒÑ…œ¸()½¹±ÕÍ¥½¸(´´´´´´´´´´(()%¸Ñ¡¥ÌÁ½ÍĞİ—ŠeÙ”İ…±­•å½ÔÑ¡É½Õ ¥¹Ñ•É…Ñ¥¹œ-…™­„İ¥Ñ …Ñ…‘½œÑ¼Ù¥ÍÕ…±¥é”å½ÕÈm­•äµ•ÑÉ¥Ít¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤…¹m¹½Ñ¥™äÑ¡”É¥¡ĞÑ•…µt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½¹½Ñ¥™¥…Ñ¥½¹Ì¼¤İ¡•¹•Ù•Èå½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”Í¡½İÌÍ¥¹Ì½˜ÑÉ½Õ‰±”¸()%˜å½×ŠeÙ”™½±±½İ•…±½¹œÕÍ¥¹œå½ÕÈ½İ¸…Ñ…‘½œ…½Õ¹Ğ°å½ÔÍ¡½Õ±¹½Ü¡…Ù”¥µÁÉ½Ù•Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼İ¡…ÓŠeÌ¡…ÁÁ•¹¥¹œ¥¸å½ÕÈ•¹Ù¥É½¹µ•¹Ğ°…Ìİ•±°…ÌÑ¡”…‰¥±¥ÑäÑ¼É•…Ñ”…ÕÑ½µ…Ñ•…±•ÉÑÌÑ…¥±½É•Ñ¼å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°å½ÕÈÕÍ…”Á…ÑÑ•É¹Ì°…¹Ñ¡”µ•ÑÉ¥ÌÑ¡…Ğ…É”µ½ÍĞÙ…±Õ…‰±”Ñ¼å½ÕÈ½É…¹¥é…Ñ¥½¸¸()%˜å½Ô‘½»ŠeĞå•Ğ¡…Ù”„…Ñ…‘½œ…½Õ¹Ğ°å½Ô…¸€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•ÈˆùÍ¥¸ÕÀ™½È„™É•”ÑÉ¥…°ğ½„ø…¹ÍÑ…ÉĞÑ¼µ½¹¥Ñ½È-…™­„É¥¡Ğ…İ…ä¸)}}|(©M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½­…™­„½µ½¹¥Ñ½Èµ­…™­„µİ¥Ñ µ‘…Ñ…‘½œ¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¸¨(
+_This post is the final part of a 3-part series on Kafka monitoring. [Part 1][part1] explores the key metrics available from Kafka, and [Part 2][part2] is about collecting those metrics on an ad hoc basis._
+
+To implement ongoing, meaningful monitoring, you will need a dedicated system that allows you to store, visualize, and correlate your Kafka metrics with the rest of your infrastructure. 
+
+Kafka deployments often rely on additional software packages not included in the Kafka codebase itself, in particular Apache ZooKeeper. A comprehensive monitoring implementation includes all the layers of your deployment, including host-level metrics when appropriate, and not just the metrics emitted by Kafka itself.
+
+[![Kafka dashboard][dash]][dash]
+
+With Datadog, you can collect Kafka metrics for visualization, alerting, and full-infrastructure correlation. Datadog will automatically collect the key metrics discussed in parts [one][part1] and [two][part2] of this series, and make them available in a template dashboard, as seen above.
+
+## Integrating Datadog, Kafka and ZooKeeper
+
+### Verify Kafka and ZooKeeper
+Before you begin, you must verify that Kafka is configured to report metrics via JMX, and that you can communicate with ZooKeeper, usually on port 2181. For Kafka, that means confirming that the `JMX_PORT` environment variable is set before starting your broker (or consumer or producer), and then confirming that you can connecting to that port with [JConsole][kafka-jconsole]. For ZooKeeper, you can run this one-liner which uses the [4-letter word][4-letter-word] `ruok`: `echo ruok | nc <ZooKeeperHost> 2181`. If ZooKeeper responds with `imok`, you are ready to install the Agent.
+
+### Install the Datadog Agent
+The Datadog Agent is the [open source software][agent-source] that collects and reports metrics from your hosts so that you can view and monitor them in Datadog. Installing the agent usually takes just a single command.
+
+Installation instructions for a variety of platforms are available [here][install].
+
+As soon as the Agent is up and running, you should see your host reporting metrics in your [Datadog account][infra].
+
+[![Host reporting in][default-host]][default-host]
+
+### Configure the Agent
+Next you will need to create an Agent configuration file for both ZooKeeper and Kafka. You can find the location of the Agent configuration directory for your OS [here][agent-config-dir]. In that directory, you will find sample configuration files for both [Kafka][kafka-yaml] (**kafka.yaml.example**, **kafka_consumer.yaml.example**) and [ZooKeeper][zookeeper-yaml] (**zk.yaml.example**). On your brokers, copy these files to **kafka.yaml**, **kafka_consumer.yaml**, respectively. On producers and consumers, copy only **kafka.yaml**. On your ZooKeeper nodes, **zk.yaml**. If you are using ZooKeeper's default configuration, you shouldn't need to change anything in **zk.yaml**.
+
+#### kafka.yaml
+The default `kafka.yaml` file includes settings to collect all of the metrics mentioned in [part one][part1] of this series. If you'd like to collect more MBeans, check out our [JMX documentation][jmx-doc] for more information on adding your own. 
+
+You can use the example configuration provided whether you are monitoring your brokers, producers, consumers, or all three. Just change the host and port appropriately.
+
+Though you _could_ monitor the entirety of your deployment from one host, it is recommended that you install the Agent on each of your producers, consumers and brokers, and configure each separately.
+
+Besides configuring your hosts, you may also need to modify: `port`, `user`, and `password`.  At this point you can also add tags to the host (like `consumer0`, `broker201`, etc.), and all of the metrics it reports will bear that tag. After making your changes, save and close the file.
+
+#### kafka_consumer.yaml
+In order to get broker and consumer offset information into Datadog, you must modify **kafka_consumer.yaml** on a _broker_ (despite the name _kafka\_consumer_) to match your setup. Specifically, you should uncomment and change `kafka_connect_str` to point to a Kafka broker (often localhost), and `zk_connect_str` to point to ZooKeeper. 
+
+The next step is to configure the consumer groups for which you'd like to collect metrics. Start by changing `my_consumer` to the name of your consumer group. Then configure the topics and partitions to watch, by changing `my_topic` to the name of your topic, and placing the partitions to watch in the adjacent array, separated by commas. You can then add more consumer groups or topics, as needed. Be mindful of your whitespace, as YAML files are whitespace-sensitive. After configuring your consumer groups, save and close the file.
+
+### Verify configuration settings
+To check that Datadog, Kafka, and ZooKeeper are properly integrated, first [restart the Agent][restart-agent], and then run the Datadog `info` command. The command for each platform is available [here][info-com]. If the configuration is correct, you will see a section resembling the one below in the `info` output:
+
+```
+Checks
+======
+
+  [...]
+  
+    kafka
+    -----
+      - instance #kafka-localhost-9999 [OK] collected 34 metrics
+      - Collected 34 metrics, 0 events & 0 service checks
+
+    kafka_consumer
+    --------------
+      - instance #0 [OK]
+      - Collected 1 metric, 0 events & 1 service check
+
+    zk
+    --
+      - instance #0 [OK]
+      - Collected 23 metrics, 0 events & 2 service checks
+```
+
+### Enable the integration
+Next, click the Kafka and ZooKeeper **Install Integration** buttons inside your Datadog account, under the _Configuration_ tab in the [Kafka integration settings][kafka-integration] and [ZooKeeper integration settings][zookeeper-integration].
+
+## Metrics!
+Once the Agent begins reporting metrics, you will see a comprehensive Kafka dashboard among your [list of available dashboards in Datadog][dash-list].
+
+The default Kafka dashboard, as seen at the top of this article, displays the key metrics highlighted in our [introduction to Kafka monitoring][part1].
+
+You can easily create a more comprehensive dashboard to monitor your entire web stack by adding additional graphs and metrics from your other systems. For example, you might want to graph Kafka metrics alongside [metrics from HAProxy][haproxy-metrics], or alongside host-level metrics such as memory usage on application servers. To start building a custom dashboard, clone the default Kafka dashboard by clicking on the gear on the upper right of the dashboard and selecting **Clone Dash**.
+
+[![Clone dash][clone-dash]][clone-dash]
+
+## Alerting
+Once Datadog is capturing and visualizing your metrics, you will likely want to [set up some alerts][alerting] to be automatically notified of potential issues.
+
+With our powerful [outlier detection][outlier-detection] feature, you can get alerted on the things that matter. For example, you can set an alert if a particular producer is experiencing an increase in latency while the others are operating normally.
+
+Datadog can monitor individual hosts, containers, services, processesâ€”or virtually any combination thereof. For instance, you can view all of your Kafka brokers, consumers, producers, or all hosts in a certain availability zone, or even a single metric being reported by all hosts with a specific tag.
+
+## Conclusion
+In this post weâ€™ve walked you through integrating Kafka with Datadog to visualize your [key metrics][part1] and [notify the right team][alerting] whenever your infrastructure shows signs of trouble.
+
+If youâ€™ve followed along using your own Datadog account, you should now have improved visibility into whatâ€™s happening in your environment, as well as the ability to create automated alerts tailored to your infrastructure, your usage patterns, and the metrics that are most valuable to your organization.
+
+If you donâ€™t yet have a Datadog account, you can [sign up for a free trial][signup] and start monitoring Kafka right away.
+
+[part1]: https://www.datadoghq.com/blog/how-to-monitor-kafka-performance-metrics/ 
+[part2]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/  
+[part3]: https://www.datadoghq.com/blog/monitor-kafka-with-datadog/  
+
+[agent-config-dir]: https://docs.datadoghq.com/guides/basic_agent_usage/
+[agent-source]: https://github.com/DataDog/dd-agent
+[alerting]: https://docs.datadoghq.com/guides/monitoring/
+[dash-list]: https://app.datadoghq.com/dash/list
+[haproxy-metrics]: https://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics
+[info-com]: https://docs.datadoghq.com/guides/basic_agent_usage/
+[infra]: https://app.datadoghq.com/infrastructure
+[install]: https://app.datadoghq.com/account/settings#agent
+[jmx-doc]: https://docs.datadoghq.com/integrations/java/
+[kafka-integration]: https://app.datadoghq.com/account/settings#integrations/kafka
+
+[kafka-yaml]: https://github.com/DataDog/dd-agent/blob/master/conf.d/kafka.yaml.example
+[outlier-detection]: https://www.datadoghq.com/blog/introducing-outlier-detection-in-datadog/
+[restart-agent]: https://docs.datadoghq.com/guides/basic_agent_usage/
+[signup]: https://app.datadoghq.com/signup
+[zookeeper-integration]: https://app.datadoghq.com/account/settings#integrations/zookeeper
+[zookeeper-yaml]: https://github.com/DataDog/dd-agent/blob/master/conf.d/zk.yaml.example
+
+[4-letter-word]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/#4-letter-words
+
+[kafka-jconsole]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/#jconsole
+
+<IMAGES>
+
+[clone-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/clone-dash.png
+[dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/dash1.png
+[default-host]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/default-host.png
+[kafka-integration-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/kafka-enable-integration.png
+[zookeeper-integration-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/zookeeper-integration.png

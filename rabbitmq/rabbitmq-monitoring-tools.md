@@ -1,1 +1,362 @@
-m½±±•Ñ¥¹œµ•ÑÉ¥Ìİ¥Ñ I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì()]¡•¸½±±•Ñ¥¹œmI…‰‰¥Ñ5Dµ•ÑÉ¥ÍumÁ…ÉĞÅt°å½Ô…¸Ñ…­”…‘Ù…¹Ñ…”½˜I…‰‰¥Ñ5DÌ‰Õ¥±Ğµ¥¸µ½¹¥Ñ½É¥¹œÑ½½±Ì…¹•½ÍåÍÑ•´½˜Á±Õ¥¹Ì¸%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°¥¹ÑÉ½‘Õ”Ñ¡•Í”I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì…¹Í¡½Üå½Ô¡½Üå½Ô…¸ÕÍ”Ñ¡•´¥¸å½ÕÈ½İ¸µ•ÍÍ…¥¹œÍ•ÑÕÀ¸()ğQ½½°ğ]¡…Ğå½Ô•Ğğ5•ÑÉ¥Ì¥Ğ½±±•ÑÌğ)ğè´´´´´µğè´´´´µğè´´´´µğ)ğm	Õ¥±Ğµ¥¸1%t Ñ¡”µ‰Õ¥±Ñ¥¸µ±¤¤ğMÑ…ÑÕÌÍ¹…ÁÍ¡½ÑÌ½˜I…‰‰¥Ñ5DÌ½É”…ÁÁ±¥…Ñ¥½¸½‰©•ÑÌğm9½‘”É•Í½ÕÉ”ÕÍ•umÁ…ÉĞÅ¹½‘•Ít°mEÕ•Õ”Á•É™½Éµ…¹•umÁ…ÉĞÅÅÁ•É™½Éµ…¹•tğ)ğm5…¹…•µ•¹ĞÁ±Õ¥¹t Ñ¡”µµ…¹…•µ•¹ĞµÁ±Õ¥¸¤ğ‰Õ¥±Ğµ¥¸İ•ˆÍ•ÉÙ•ÈÑ¡…ĞÉ•Á½ÉÑÌµ•ÑÉ¥ÌÙ¥„U$…¹A$ğmá¡…¹”µ•ÑÉ¥ÍumÁ…ÉĞÅ•á¡…¹•Ít°m9½‘”É•Í½ÕÉ”ÕÍ•umÁ…ÉĞÅ¹½‘•Ít°m½¹¹•Ñ¥½¸Á•É™½Éµ…¹•umÁ…ÉĞÅ½¹¹•Ñ¥½¹t°mEÕ•Õ”Á•É™½Éµ…¹•umÁ…ÉĞÅÅÁ•É™½Éµ…¹•tğ)ğmQÉ…¥¹œÑ½½±Ít •Ù•¹ÑÌµ…¹µÑÉ…¥¹œ¤ğá¡…¹•ÌÑ¡…ĞÉ•Á½ÉĞ•Ù•¹ÑÌ™É½´µ•ÍÍ…•Ì…¹…ÁÁ±¥…Ñ¥½¸½‰©•ÑÌğÙ•¹ÑÌğ(((ŒŒQ¡”‰Õ¥±Ğµ¥¸1$)½È„ÅÕ¥¬Í…¸½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¸ÌÙ¥Ñ…°Í¥¹Ì°å½Ô…¸ÑÕÉ¸Ñ¼mI…‰‰¥Ñ5DÌ1%umÉ…‰‰¥ÑµÅÑ±tèÉ…‰‰¥ÑµÅÑ±€¸Q¡¥ÌÑ½½°°İ¡¥ ½µ•Ì¥¹ÍÑ…±±•İ¥Ñ I…‰‰¥Ñ5D°±•ÑÌå½ÔÁ•É™½É´µ…¹…•µ•¹ĞÑ…Í­Ì€¡¡•¬Í•ÉÙ•ÈÍÑ…ÑÕÌ°…‘¹½‘•ÌÑ¼„±ÕÍÑ•È°•ÑŒ¸¤…¹•áÁ½Í•Ìµ•ÑÉ¥Ì…‰½ÕĞI…‰‰¥Ñ5D½‰©•ÑÌÍÕ …ÌÅÕ•Õ•Ì°•á¡…¹•Ì°…¹¹½‘•Ì¸Y…±Õ•Ì½˜I…‰‰¥Ñ5Dµ•ÑÉ¥Ì…É”Í¹…ÁÍ¡½ÑÌ™É½´Ñ¡”µ½µ•¹Ğå½ÔÉÕ¸Ñ¡”½µµ…¹¸M¥¹”Ñ¡”½¹±ä½¹™¥ÕÉ…Ñ¥½¸É…‰‰¥ÑµÅÑ±€É•ÅÕ¥É•Ì¥Ì„Í•Ğ½˜½µµ…¹±¥¹”½ÁÑ¥½¹Ì°Ñ¡”Ñ½½°¥Ì„ÅÕ¥¬İ…äÑ¼•Ğ„¡¥ µ±•Ù•°Ù¥•Ü¥¹Ñ¼­•äµ•ÑÉ¥Ì¸()É…‰‰¥ÑµÅÑ±€±•ÑÌå½Ô…•ÍÌµ…¹ä½˜Ñ¡”µ•ÑÉ¥Ìİ”½Ù•È¥¸mA…ÉĞ€ÅumÁ…ÉĞÅt°¥¹±Õ‘¥¹œ¹½‘”µ±•Ù•°É•Í½ÕÉ”µ•ÑÉ¥Ì°½¹¹•Ñ¥½¸Á•É™½Éµ…¹”µ•ÑÉ¥Ì°…¹‘•Ñ…¥±•‰É•…­‘½İ¹Ì½˜µ•ÍÍ…”½Õ¹ÑÌİ¥Ñ¡¥¸ÅÕ•Õ•Ì¸™Õ±°±¥ÍĞ½˜É…‰‰¥ÑµÅÑ±€µ•ÑÉ¥Ì¥Ìm¡•É•umÉ…‰‰¥ÑµÅÑ°µµ…¹t¸()e½Ô…¸½±±•Ğµ½ÍĞµ•ÑÉ¥Ì™É½´Ñ¡”1$‰äÉÕ¹¹¥¹œ()€)É…‰‰¥ÑµÅÑ°±¥ÍÑ|ñ¥Ñ•´ø)€()Q¡”€ñ¥Ñ•´ù€µ¥¡Ğ‰”„­¥¹½˜…ÁÁ±¥…Ñ¥½¸½‰©•Ğ°ÍÕ …ÌÅÕ•Õ•Í€½È•á¡…¹•Í€°½È½Ñ¡•ÈÍ½ÕÉ•Ì½˜‘…Ñ„±¥­”ÕÍ•ÉÍ€½ÈÁ•Éµ¥ÍÍ¥½¹Í€¸e½Ô…¸ÍÁ•¥™äİ¡¥ I…‰‰¥Ñ5Dµ•ÑÉ¥ÌÑ¼½±±•Ğ°…¹É…‰‰¥ÑµÅÑ±€É•ÑÕÉ¹ÌÑ¡•´…Ì„Í•É¥•Ì½˜½±Õµ¹Ì¸()½È¥¹ÍÑ…¹”°İ”µ¥¡ĞÕÍ”É…‰‰¥ÑµÅÑ±€Ñ¼¡•¬™½È‰½ÑÑ±•¹•­Ì¥¸…¸…ÁÁ±¥…Ñ¥½¸Ñ¡…ĞÅÕ•É¥•Ì…¸A$™½È‘…Ñ„…‰½ÕĞ9•Üe½É¬¥Ñä¸Q¡”…ÁÁ±¥…Ñ¥½¸É•ÑÉ¥•Ù•ÌÉ…Ü‘…Ñ„™É½´Ñ¡”A$…¹Á…ÍÍ•Ì¥ĞÑ¼„ÅÕ•Õ”¸Q¡”ÅÕ•Õ”Ì½¹ÍÕµ•ÈÁÉ½•ÍÍ•ÌÑ¡”‘…Ñ„°…É•…Ñ•Ì¥Ğ‰ä‰½É½Õ °…¹Í•¹‘Ì¥ĞÑ¼…¹½Ñ¡•ÈÅÕ•Õ”¸Q¼ÅÕ•ÉäI…‰‰¥Ñ5D™½ÈÅÕ•Õ”¹…µ•Ì°Ñ½Ñ…°µ•ÍÍ…•Ì°µ•ÍÍ…•ÌÉ•…‘ä™½È½¹ÍÕµÁÑ¥½¸°ÍÑ…Ñ”€¡ÉÕ¹¹¥¹œ°¥‘±”¸¸¸¤°…¹½¹ÍÕµ•ÈÕÑ¥±¥é…Ñ¥½¸°İ”…¸ÉÕ¸è()€)ÍÕ‘¼É…‰‰¥ÑµÅÑ°±¥ÍÑ}ÅÕ•Õ•Ì¹…µ”µ•ÍÍ…•Ìµ•ÍÍ…•Í}É•…‘äÍÑ…Ñ”½¹ÍÕµ•É}ÕÑ¥±¥Í…Ñ¥½¸)€()™Õ±°±¥ÍĞ½˜½±Õµ¹Ì™½ÈÅÕ•Õ•Ì¥Ìm¡•É•umÅÕ•Õ”µ½±Õµ¹Ít¸€‰UÑ¥±¥Í…Ñ¥½¸ˆÕÍ•ÌÑ¡”	É¥Ñ¥Í ÍÁ•±±¥¹œ¸Q¡”É•ÍÕ±Ñ¥¹œ‘…Ñ„±½½­Ì±¥­”Ñ¡¥Ìè()€)1¥ÍÑ¥¹œÅÕ•Õ•Ì)ÍÑ…Ñ•¹}¥Í±…¹‘}ÅÕ•Õ”€€€€€ĞÈØ€€€€€ĞÈØ€€€€ÉÕ¹¹¥¹œ)‰É½¹á}ÅÕ•Õ”€€€€€€€€€€€€€À€€€€€€€À€€€€€€ÉÕ¹¹¥¹œ€€€€€€€Ä¸À)‰É½½­±å¹}ÅÕ•Õ”€€€€€€€€€€À€€€€€€€À€€€€€€ÉÕ¹¹¥¹œ€€€€€€€Ä¸À)ÅÕ••¹Í}ÅÕ•Õ”€€€€€€€€€€€€À€€€€€€€À€€€€€€ÉÕ¹¹¥¹œ€€€€€€€Ä¸À)µ…¹¡…ÑÑ…¹}ÅÕ•Õ”€€€€€€€€€À€€€€€€€À€€€€€€ÉÕ¹¹¥¹œ€€€€€€€Ä¸À)É…İ}‘…Ñ„€€€€€€€€€€€€€€€€Ä€€€€€€€À€€€€€€ÉÕ¹¹¥¹œ€€€€€€€Ä¸À)…±±}•Ù•¹ÑÌ€€€€€€€€€€€€€€À€€€€€€€À€€€€€€ÉÕ¹¹¥¹œ€€€€€€€Ä¸À)ÑÉ…•È€€€€€€€€€€€€€€€€€€À€€€€€€€À€€€€€€ÉÕ¹¹¥¹œ€€€€€€€Ä¸À)€()Q¡½Õ •… ÅÕ•Õ”¥ÌÉÕ¹¹¥¹œ°ÍÑ…Ñ•¹}¥Í±…¹‘}ÅÕ•Õ•€¡…ÌÑİ¼µ•ÑÉ¥Ìİ¥Ñ •ÍÁ•¥…±±ä¡¥ Ù…±Õ•Ìèµ•ÍÍ…•Í}É•…‘å€…¹µ•ÍÍ…•Í€¸5•ÍÍ…•Ì…É”•¹Ñ•É¥¹œÑ¡”ÅÕ•Õ”…¹¹½Ğ±•…Ù¥¹œ¸Ì¥ĞÑÕÉ¹Ì½ÕĞ°ÍÑ…Ñ•¹}¥Í±…¹‘}ÅÕ•Õ•€¡…Ì¹¼½¹ÍÕµ•É}ÕÑ¥±¥Í…Ñ¥½¹€¸]¡¥±”Ñ¡”½Ñ¡•ÈÅÕ•Õ•ÌÉ•Á½ÉĞÑ¡”µ…á¥µÕ´Ù…±Õ”½˜€Ä¸À°Ñ¡¥Ì½¹”Í¡½İÌ„‰±…¹¬¸Q¡”ÅÕ•Õ”Ì½¹ÍÕµ•ÉÌ…É”¹½Ğ…Ù…¥±…‰±”Ñ¼É••¥Ù”µ•ÍÍ…•Ì¸=¹”¹•áĞÍÑ•À½Õ±‰”Ñ¼¥¹Ù•ÍÑ¥…Ñ”½ÕÈ½¹ÍÕµ•ÉÌ™½È•á•ÁÑ¥½¹Ì¸()¹½Ñ¡•ÈÕÍ”½˜É…‰‰¥ÑµÅÑ±€¥ÌÑ¼•Ğ„ÅÕ¥¬Í•Ğ½˜µ•ÑÉ¥Ì…‰½ÕĞå½ÕÈI…‰‰¥Ñ5D•¹Ù¥É½¹µ•¹Ğ¸Q¡”½µµ…¹É…‰‰¥ÑµÅÑ°ÍÑ…ÑÕÍ€±¥ÍÑÌÍÑ…Ñ¥ÍÑ¥Ì…‰½ÕĞÑ¡”ÉÕ¹Ñ¥µ”½˜å½ÕÈI…‰‰¥Ñ5DÍ•ÉÙ•È¸!•É”å½Ô±°™¥¹„¹Õµ‰•È½˜¹½‘”µ±•Ù•°É•Í½ÕÉ”µ•ÑÉ¥Ì°¥¹±Õ‘¥¹œÕÍ…”™½È™¥±”‘•ÍÉ¥ÁÑ½ÉÌ°Í½­•ÑÌ°…¹‘¥Í¬ÍÁ…”¸e½Ô±°…±Í¼™¥¹°…ÌÍ¡½İ¸¡•É”°„‰É•…­‘½İ¸½˜µ•µ½ÉäÕÍ…”¥¸‰åÑ•Ìè()€)íµ•µ½Éä°(€€€€mí½¹¹•Ñ¥½¹}É•…‘•ÉÌ°ÈÔÔÀÀáô°(€€€€€í½¹¹•Ñ¥½¹}İÉ¥Ñ•ÉÌ°àÄĞÀÁô°(€€€€€í½¹¹•Ñ¥½¹}¡…¹¹•±Ì°ÄàäÈÜÉô°(€€€€€í½¹¹•Ñ¥½¹}½Ñ¡•È°ØäĞäÈÁô°(€€€€€íÅÕ•Õ•}ÁÉ½Ì°ÌàÈÀĞáô°(€€€€€íÅÕ•Õ•}Í±…Ù•}ÁÉ½Ì°Áô°(€€€€€íÁ±Õ¥¹Ì°ÌÈÌØĞàáô°(€€€€€í½Ñ¡•É}ÁÉ½Œ°ÄäÔÜÔÔäÉô°(€€€€€íµ•ÑÉ¥Ì°ÈØÀÈÈÑô°(€€€€€íµµÑ}‘ˆ°ÈÀàÀØÀÁô°(€€€€€íµ¹•Í¥„°ÜäàÌÉô°(€€€€€í½Ñ¡•É}•ÑÌ°ÄäÜÀØÀÁô°(€€€€€í‰¥¹…Éä°ÈäÔØØØÄÙô°(€€€€€íµÍ}¥¹‘•à°ĞĞÌØÁô°(€€€€€í½‘”°ÈĞäÄàÌÌİô°(€€€€€í…Ñ½´°ÄÀĞÄÔäÍô°(€€€€€í½Ñ¡•É}ÍåÍÑ•´°äÜÄØÜÈÙô°(€€€€€í…±±½…Ñ•‘}Õ¹ÕÍ•°ÈĞĞÈĞÄĞÑô°(€€€€€íÉ•Í•ÉÙ•‘}Õ¹…±±½…Ñ•°ÄÌĞÜÔàÑô°(€€€€€íÑ½Ñ…°°ÄÄäàØÔÌĞÑõuô)€((ŒŒQ¡”µ…¹…•µ•¹ĞÁ±Õ¥¸)Q¡”I…‰‰¥Ñ5Dmµ…¹…•µ•¹ĞÁ±Õ¥¹umµ…¹…•µ•¹ĞµÁ±Õ¥¹t•áÑ•¹‘Ì¥ÑÌ¡½ÍĞ¹½‘”İ¥Ñ „İ•ˆÍ•ÉÙ•È°İ¡¥ É•Á½ÉÑÌµ•ÑÉ¥Ì™É½´Ñ¡”¡½ÍĞ¹½‘”…¹…¹ä¹½‘•Ì¥¸¥ÑÌ±ÕÍÑ•È¸%Ğ½µ•Ìİ¥Ñ …¸!QQ@A$°…¸¥¹Ñ•É…Ñ¥Ù”İ•ˆU$°…¹…¸•áÑ•¹‘•Í•Ğ½˜½µµ…¹±¥¹”Ñ½½±Ì¸Q¡”A$…¹İ•ˆ¥¹Ñ•É™…”É•Á½ÉĞÑ¡”Í…µ”µ•ÑÉ¥Ì…ÌÉ…‰‰¥ÑµÅÑ±€°…¹…‘mÍÑ…Ñ¥ÍÑ¥Ì½˜Ñ¡•¥È½İ¹um¡ÑÑÀµÍÑ…ÑÍt¸()½È•á…µÁ±”°Ñ¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸•áÁ½Í•ÌÑ¡”µ•ÍÍ…•}ÍÑ…ÑÍ€½‰©•Ğ°İ¡¥ ¥Ù•Ìå½Ô½Õ¹ÑÌ…¹É…Ñ•Ì½˜ÑÉ…™™¥ŒÑ¡É½Õ å½ÕÈµ•ÍÍ…¥¹œÍ•ÑÕÀ¸Q¡¥Ì¥Ìİ¡•É”å½Ô±°™¥¹Ñ¡”µ•ÑÉ¥ÌÉ•±…Ñ•Ñ¼•á¡…¹•Ì…¹µ•ÍÍ…”É…Ñ•Ì¥¸mA…ÉĞ€ÅumÁ…ÉĞÅt¸¼¹½Ñ”Ñ¡…ĞÑ¡”µ…¹…•µ•¹ĞÁ±Õ¥¸½¹±äÍÑ½É•ÌÕÀÑ¼m½¹”‘…åumµ½¹¥Ñ½É¥¹t½˜µ•ÑÉ¥Ì¸•Á•¹‘¥¹œ½¸å½ÕÈ¹••‘Ì°å½Ôµ…ä½ÁĞÑ¼ÅÕ•ÉäÑ¡”A$…¹ÍÑ½É”Ñ¡”É•ÑÕÉ¸Ù…±Õ•Ìå½ÕÉÍ•±˜¸€()1¥­”É…‰‰¥ÑµÅÑ±€°Ñ¡”µ…¹…•µ•¹ĞÁ±Õ¥¸Í¡¥ÁÌİ¥Ñ …¸¥¹ÍÑ…±±…Ñ¥½¸½˜I…‰‰¥Ñ5D¸Q¼Í•Ğ¥ĞÕÀ°ÉÕ¸Ñ¡”™½±±½İ¥¹œ½µµ…¹è()€)É…‰‰¥ÑµÄµÁ±Õ¥¹Ì•¹…‰±”É…‰‰¥ÑµÅ}µ…¹…•µ•¹Ğ)€(((ŒŒŒ!QQ@A$)Q¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸É•Á½ÉÑÌµ•ÑÉ¥Ì™É½´„İ•ˆÍ•ÉÙ•È¸=¹”İ…äÑ¼…Ñ¡•ÈÑ¡”µ•ÑÉ¥Ì¥ÌÑ¡É½Õ …¸A$¸€Q¡”A$¥ÌÕÍ•™Õ°™½ÈÑ¡É•”É•…Í½¹Ì¸¥ÉÍĞ°¥ĞÉ•ÑÕÉ¹Ì)M=8°±•ÑÑ¥¹œå½Ôİ½É¬İ¥Ñ I…‰‰¥Ñ5Dµ•ÑÉ¥Ì¥¸å½ÕÈ½İ¸ÍÉ¥ÁÑÌ¸M•½¹°¥ĞÁÉ½Ù¥‘•Ì‘…Ñ„…ÌÉ…Ñ•Ì°½µÁ±•µ•¹Ñ¥¹œÑ¡”Í¹…ÁÍ¡½ÑÌå½Ô•Ğ¥¸É…‰‰¥ÑµÅÑ±€¸Q¡¥É°¥Ğ¥Ù•Ìå½Ô‘•Ñ…¥±•¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”½µÁ½¹•¹ÑÌ½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¸€¡Í•”„±¥ÍĞ½˜ÍÑ…ÑÌm¡•É•um¡ÑÑÀµÍÑ…ÑÍt¤¸€()Q¼…•ÍÌÑ¡”A$°‘¥É•Ğ…¸!QQ@PÉ•ÅÕ•ÍĞÑ¼±½…±¡½ÍĞèÄÔØÜÈ½…Á¤¼ñ•¹‘Á½¥¹Ğù€€¡½È€ÔÔØÜÈ™½ÈÙ•ÉÍ¥½¹Ì‰•™½É”€Ì¸À¤¸A$•¹‘Á½¥¹ÑÌ…É”½É…¹¥é•…É½Õ¹I…‰‰¥Ñ5D…‰ÍÑÉ…Ñ¥½¹Ìè¹½‘•Ì°½¹¹•Ñ¥½¹Ì°¡…¹¹•±Ì°½¹ÍÕµ•ÉÌ°•á¡…¹•Ì°ÅÕ•Õ•Ì°m…¹Í¼½¹umÉ…‰‰¥Ğµ…Á¥t¸e½Ô…¸¹…ÉÉ½Üå½ÕÈÅÕ•ÉäÑ¼„ÍÁ•¥™¥ŒÙ¥ÉÑÕ…°¡½ÍĞ½È½µÁ½¹•¹Ğ½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¸¸Q¼¡½½Í”Ñ¡”‘•™…Õ±ĞÙ¥ÉÑÕ…°¡½ÍĞ°€½€°å½Ô¹••Ñ¼¥¹±Õ‘”Ñ¡”•¹½‘¥¹œ€”É€¥¸Ñ¡”A$•¹‘Á½¥¹Ğ¸()5•ÍÍ…”É…Ñ•Ì…É”ÕÍ•™Õ°¥˜å½Ôİ…¹ĞÑ¼­¹½Ü¡½ÜÍµ½½Ñ¡±äÑÉ…™™¥Œµ½Ù•ÌÑ¡É½Õ „¥Ù•¸Á…ÉĞ½˜å½ÕÈÍåÍÑ•´¸½È•á…µÁ±”°å½Ô…¸Í•”İ¡•Ñ¡•Èµ•ÍÍ…•Ì±•…Ù”„ÅÕ•Õ”…ÌÅÕ¥­±ä…ÌÑ¡•ä…ÉÉ¥Ù”¸%¸½ÕÈ‘•µ¼…ÁÁ±¥…Ñ¥½¸°İ”±°½µÁ…É”É…Ñ•Ì™½Èµ•ÍÍ…•Ìİ¥Ñ Ñİ¼ÍÑ…ÑÕÍ•ÌèÑ¡½Í”ÁÕ‰±¥Í¡•¥¹Ñ¼…¸•á¡…¹”…¹É½ÕÑ•Ñ¼Ñ¡”É…İ}‘…Ñ…€ÅÕ•Õ”°…¹Ñ¡½Í”‘•±¥Ù•É•Ñ¼½¹ÍÕµ•ÉÌ¸Q¼ÍÑ…ÉĞ°Ñ¡¥ÌÅÕ•ÉäÉ•ÑÕÉ¹Ì¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”ÅÕ•Õ”É…İ}‘…Ñ…€è()€)¡ÑÑÀè¼½±½…±¡½ÍĞèÄÔØÜÈ½…Á¤½ÅÕ•Õ•Ì¼”É½É…İ}‘…Ñ„ıµÍ}É…Ñ•Í}…”ôÌÀÀ™µÍ}É…Ñ•Í}¥¹ÈôÄÀÀ)€€()]”Ù”Í•ĞµÍ}É…Ñ•Í}…”ôÌÀÁ€Ñ¼½¹ÍÑÉ…¥¸½ÕÈ‘…Ñ„Ñ¼Ñ¡”±…ÍĞ™¥Ù”µ¥¹ÕÑ•Ì°…¹µÍ}É…Ñ•Í}¥¹ÈôÄÀÁ€Ñ¼¡•¬½ÕÈÅÕ•Õ”™½ÈÍ…µÁ±•Ì•Ù•Éä€ÄÀÀÍ•½¹‘Ì¸	½Ñ ÅÕ•ÉäÁ…É…µ•Ñ•ÉÌ…É”¹••ÍÍ…Éä™½È½‰Ñ…¥¹¥¹œ…Ù•É…•Ì°İ¡¥ Ñ¡”İ•ˆÍ•ÉÙ•È…±Õ±…Ñ•Ì™É½´Ñ¡”Í…µÁ±•Ì¸e½Ô±°™¥¹…Ù•É…•Ì°Í…µÁ±•Ì°…¹É…Ñ•Ì¥¸ÁÕ‰±¥Í¡}‘•Ñ…¥±Í€¸€()€(‰ÁÕ‰±¥Í¡}‘•Ñ…¥±Ìˆéì(€€€€‰…ÙœˆèÈÜÌÀ¸Ô°(€€€€‰…Ù}É…Ñ”ˆèÄ¸ÌàÌÌÌÌÌÌÌÌÌÌÌÌÌÌ°(€€€€‰Í…µÁ±•Ìˆél(€€€€€€€ì‰Ñ¥µ•ÍÑ…µÀˆèÄÔÄÌÈÜØäÀÀÀÀÀ°‰Í…µÁ±”ˆèÈäÌåô°(€€€€€€€ì‰Ñ¥µ•ÍÑ…µÀˆèÄÔÄÌÈÜØàÀÀÀÀÀ°‰Í…µÁ±”ˆèÈÜäÕô°(€€€€€€€ì‰Ñ¥µ•ÍÑ…µÀˆèÄÔÄÌÈÜØÜÀÀÀÀÀ°‰Í…µÁ±”ˆèÈØØÑô°(€€€€€€€ì‰Ñ¥µ•ÍÑ…µÀˆèÄÔÄÌÈÜØØÀÀÀÀÀ°‰Í…µÁ±”ˆèÈÔÈÑõt°(€€€€‰É…Ñ”ˆèÄ¸ĞÑô)€()%¸Ñ¡¥Ì½‰©•Ğ°…Ù€¥ÌÑ¡”…Ù•É…”½Õ¹Ğ½˜µ•ÍÍ…•Ì…É½ÍÌÑ¡”Í…µÁ±•Ì¸M¥¹”µ•ÍÍ…”½Õ¹ÑÌ…É”ÕµÕ±…Ñ¥Ù”°Ñ¡”…Ù•É…”¥¹±Õ‘•Ì…±°µ•ÍÍ…•Ì½˜Ñ¡¥ÌÑåÁ”½Ù•ÈÑ¡”±¥™•Ñ¥µ”½˜Ñ¡”ÅÕ•Õ”¸Í…µÁ±•Í€…É”½±±•Ñ•…ĞÑ¡”¥¹Ñ•ÉÙ…°İ”ÍÁ•¥™ä°å¥•±‘¥¹œ…¸…Ù}É…Ñ•€¸É…Ñ•€¥ÌÁ•ÈÍ•½¹°Í¡½İ¥¹œÑ¡”¡…¹”Í¥¹”Ñ¡”±…ÍĞÍ…µÁ±”¸()Q¡•É”Ì„Í¥µ¥±…ÈÍ•Ğ½˜ÍÑ…Ñ¥ÍÑ¥Ì¥¸‘•±¥Ù•É}•Ñ}‘•Ñ…¥±Í€°……¥¸Ñ…­¥¹œÍ…µÁ±•Ì•Ù•Éä€ÄÀÀÍ•½¹‘Ì…É½ÍÌ½ÕÈ™¥Ù”µµ¥¹ÕÑ”¥¹Ñ•ÉÙ…°¸()€(‰‘•±¥Ù•É}•Ñ}‘•Ñ…¥±Ìˆéì(€€€€‰…ÙœˆèÈÜÌÄ¸À°(€€€€‰…Ù}É…Ñ”ˆèÄ¸ÌàØØØØØØØØØØØØØÜ°(€€€€‰Í…µÁ±•Ìˆél(€€€€€€€ì‰Ñ¥µ•ÍÑ…µÀˆèÄÔÄÌÈÜØäÀÀÀÀÀ°‰Í…µÁ±”ˆèÈäĞÁô°(€€€€€€€ì‰Ñ¥µ•ÍÑ…µÀˆèÄÔÄÌÈÜØàÀÀÀÀÀ°‰Í…µÁ±”ˆèÈÜäÙô°(€€€€€€€ì‰Ñ¥µ•ÍÑ…µÀˆèÄÔÄÌÈÜØÜÀÀÀÀÀ°‰Í…µÁ±”ˆèÈØØÑô°(€€€€€€€ì‰Ñ¥µ•ÍÑ…µÀˆèÄÔÄÌÈÜØØÀÀÀÀÀ°‰Í…µÁ±”ˆèÈÔÈÑõt°(€€€€‰É…Ñ”ˆèÄ¸ĞÑô)€()%¸Ñ¡”±…ÍĞ™¥Ù”µ¥¹ÕÑ•Ì°ÁÕ‰±¥Í¡•µ•ÍÍ…•Ì¡…Ù”É½Õ¡±ä­•ÁĞÁ…”İ¥Ñ ‘•±¥Ù•É¥•Ì¸5•ÍÍ…•Ì…É”µ½Ù¥¹œÑ¡É½Õ Ñ¡”ÅÕ•Õ”İ¥Ñ ¹¼‰½ÑÑ±•¹•­Ì¸()%˜å½ÔÁ±…¸Ñ¼ÅÕ•ÉäÑ¡”A$™É½´İ¥Ñ¡¥¸å½ÕÈ…ÁÁ±¥…Ñ¥½¸°å½Ô±°¹••Ñ¼µ…­”ÍÕÉ”Ñ¡…Ğå½ÔÙ”m½¹™¥ÕÉ•‘umµ…¹…•µ•¹ĞµÁ±Õ¥¹tÑ¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸¸e½Ô±°İ…¹ĞÑ¼…‘©ÕÍĞÑ¡”½ÉÍ}…±±½İ}½É¥¥¹Í€Í•ÑÑ¥¹œÑ¼Á•Éµ¥ĞÉ•ÅÕ•ÍÑÌ™É½´å½ÕÈ…ÁÁ±¥…Ñ¥½¸Ì‘½µ…¥¸¸¹¥˜å½ÕÈ…ÁÁ±¥…Ñ¥½¸ÕÍ•Ì!QQAL°å½Ô±°İ…¹ĞÑ¼µ…­”ÍÕÉ”Ñ¡…ĞÑ¡”A$‘½•ÌÍ¼Ñ½¼€¡‰ä‘•™…Õ±Ğ¥Ğ‘½•Ì¹½Ğ¤¸€((ŒŒŒQ¡”İ•ˆU$)=¹”å½ÔÙ”ÍÑ…ÉÑ•Ñ¡”‰É½­•È…¹¥¹ÍÑ…±±•Ñ¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸°å½Ô±°¡…Ù”…•ÍÌÑ¼„‰Õ¥±Ğµ¥¸µ•ÑÉ¥ÌU$¸A½¥¹Ğ„‰É½İÍ•ÈÑ¼Ñ¡”É½½Ğ½˜Ñ¡”İ•ˆÍ•ÉÙ•È°”¹œ¸±½…±¡½ÍĞèÄÔØÜÉ€°Ñ¼Í•”„¹Õµ‰•È½˜‘…Í¡‰½…É‘Ì¸Q¡•Í”½ÉÉ•ÍÁ½¹É½Õ¡±äÑ¼Ñ¡”•¹‘Á½¥¹ÑÌ½˜Ñ¡”!QQ@A$¸Q¡•É”Ì…¸½Ù•ÉÙ¥•ÜÁ…”…Ìİ•±°…Ì±¥¹­ÌÑ¼Á…•Ì™½È½¹¹•Ñ¥½¹Ì°¡…¹¹•±Ì°•á¡…¹•Ì°…¹ÅÕ•Õ•Ì¸()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±ÌµµµÑ}Õ¥}¡½µ”¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì€´!½µ”Á…”™½ÈÑ¡”5…¹…•µ•¹ĞA±Õ¥¸İ•ˆU$ˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()Q¡”U$ÕÁ‘…Ñ•Ì¥¸É•…°Ñ¥µ”…¹‘¥ÍÁ±…åÌ‘…Ñ„™É½´Í•Ù•É…°Í½ÕÉ•Ì…Ğ½¹”¸Q¡”½Ù•ÉÙ¥•ÜÑ…ˆ¥¹±Õ‘•ÌÑ¥µ•Í•É¥•ÌÉ…Á¡Ì½˜ÅÕ•Õ”‘•ÁÑ¡Ì…¹µ•ÍÍ…”É…Ñ•Ì¸A…•Ì™½È¥¹‘¥Ù¥‘Õ…°½¹¹•Ñ¥½¹Ì°¡…¹¹•±Ì°•á¡…¹•Ì…¹ÅÕ•Õ•Ì¥¹±Õ‘”Ñ¡•¥È½İ¸Ñ¥µ•Í•É¥•ÌÉ…Á¡Ì¸e½Ô…¸¡•¬Ñ¡”İ•ˆ¥¹Ñ•É™…”…¹­¹½Ü…Ğ„±…¹”İ¡•Ñ¡•È…¹äÁ…ÉĞ½˜å½ÕÈI…‰‰¥Ñ5D…ÁÁ±¥…Ñ¥½¸¡…Ì‰•½µ”Õ¹…Ù…¥±…‰±”¸¹‰ä±¥­¥¹œ„Ñ…ˆ™½È½¹¹•Ñ¥½¹Ì°¡…¹¹•±Ì°•á¡…¹•Ì°…¹ÅÕ•Õ•Ì°å½Ô…¸½µÁ…É”­•äİ½É¬µ•ÑÉ¥Ì™½Èµ•ÍÍ…”…¹‘…Ñ„ÑÉ…™™¥ŒÑ¡É½Õ¡½ÕĞå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸()Q¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞU$…¸…±Í¼É…Á å½ÕÈµ•µ½ÉäÕÍ…”¸e½Ô±°™¥¹Ñ¡¥ÌÉ…Á Õ¹‘•ÈÑ¡”€‰5•µ½Éä‘•Ñ…¥±ÌˆÍ•Ñ¥½¸½˜Ñ¡”Á…”™½È„¥Ù•¸¹½‘”¸áÁ±…¹…Ñ¥½¹Ì™½È…Ñ•½É¥•Ìİ¥Ñ¡¥¸Ñ¡”É…Á …É”m¡•É•umµ•µ½ÉäµÕÍ•t¸()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµµ•µ½ÉäµÕ¤¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì€´U$½µÁ½¹•¹ĞÍ¡½İ¥¹œµ•µ½ÉäÕÍ…”‰ä½¹”¹½‘”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()]¡¥±”±•ÍÌÕÍÑ½µ¥é…‰±”Ñ¡…¸É…‰‰¥ÑµÅÑ±€½ÈÑ¡”!QQ@A$°Ñ¡”İ•ˆU$¥Ù•Ìå½ÔÅÕ¥¬Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡”¡•…±Ñ ½˜å½ÕÈI…‰‰¥Ñ5DÍ•ÑÕÀ¸((ŒŒŒÉ…‰‰¥ÑµÅ}Ñ½Á€)½Èµ½¹¥Ñ½É¥¹œÑ¡”µ•µ½ÉäÕÍ”½˜å½ÕÈI…‰‰¥Ñ5D…ÁÁ±¥…Ñ¥½¸°É…‰‰¥ÑµÅÑ±€…¹Ñ¡”µ…¹…•µ•¹ĞÁ±Õ¥¸¥Ù”å½Ô„‰É•…­‘½İ¸‰ä…ÁÁ±¥…Ñ¥½¸½µÁ½¹•¹Ğè½¹¹•Ñ¥½¹}É•…‘•ÉÍ€°ÅÕ•Õ•}ÁÉ½Í€°‰¥¹…Éå€°…¹Í¼½¸¸½È„‰É•…­‘½İ¸‰äI…‰‰¥Ñ5DÁÉ½•ÍÌ°å½Ô…¸ÕÍ”m…¹½Ñ¡•ÈÁ±Õ¥¹umÉ…‰‰¥ÑµÄµÑ½Át°É…‰‰¥ÑµÅ}Ñ½Á€°İ¡¥ •áÑ•¹‘ÌÑ¡”µ…¹…•µ•¹Ğİ•ˆÍ•ÉÙ•Èİ¥Ñ „Ñ½Á€µ±¥­”±¥ÍĞ¸Ìİ¥Ñ Ñ¡”µ…¹…•µ•¹ĞÁ±Õ¥¸°¥ĞÌ‰Õ¥±Ğ¥¹Ñ¼I…‰‰¥Ñ5D€¡…Ì½˜Ù•ÉÍ¥½¸€Ì¸Ø¸Ì…¹±…Ñ•È¤¸M¥¹”É…‰‰¥ÑµÅ}Ñ½Á€¥ÌÉ•Í½ÕÉ”¥¹Ñ•¹Í¥Ù”°A¥Ù½Ñ…°…‘Ù¥Í•ÌÑ¡…Ğå½ÔÉÕ¸¥Ğ½¹±äİ¡•¸¹••‘•¸()Q¼•¹…‰±”É…‰‰¥ÑµÅ}Ñ½Á€°ÉÕ¸Ñ¡¥Ì½µµ…¹è()€)É…‰‰¥ÑµÄµÁ±Õ¥¹Ì•¹…‰±”É…‰‰¥ÑµÅ}Ñ½À)€()™Ñ•Èå½Ô•¹…‰±”Ñ¡”µ…¹…•µ•¹ĞÁ±Õ¥¸…¹É…‰‰¥ÑµÅ}Ñ½Á€°å½Ô±°™¥¹…¹½Ñ¡•ÈÑ…ˆ¥¸Ñ¡”µ…¹…•µ•¹ĞU$…¹…¹½Ñ¡•È•¹‘Á½¥¹Ğ¥¸Ñ¡”A$¸	½Ñ É•Á½ÉĞµ•µ½Éä½¹ÍÕµÁÑ¥½¸‰äÁÉ½•ÍÌ¸%¸Ñ¡”€‰‘µ¥¸ˆÑ…ˆ½˜Ñ¡”µ…¹…•µ•¹ĞU$°™¥¹Ñ¡”Í¥‘•‰…È½¸Ñ¡”É¥¡Ğ…¹±¥¬€‰Q½ÀAÉ½•ÍÍ•Ì¸ˆ()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±ÌµÑ½ÀµÁÉ½•ÍÍ•ÌµÕ¤¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì€´U$Ù¥•Ü½˜Ñ½ÀÁÉ½•ÍÍ•ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()Q¼…•ÍÌ„Í¥µ¥±…È‰É•…­‘½İ¸Ñ¡É½Õ Ñ¡”A$°Í•¹„Q€É•ÅÕ•ÍĞÑ¼€½…Á¤½Ñ½À¼ñ¹½‘”µ¹…µ”ù€°ÍÕ …Ì¡ÑÑÀè¼½±½…±¡½ÍĞèÄÔØÜÈ½…Á¤½Ñ½À½É…‰‰¥Ñ…ÁÁ€¸()%˜„ÁÉ½•ÍÌ±½½­Ì¥¹Ñ•É•ÍÑ¥¹œ°å½Ô…¸™¥¹½ÕĞµ½É”İ¥Ñ¡¥¸„‘•‘¥…Ñ•İ•ˆÁ…”¸¥Ñ¡•È±¥¬Ñ¡”A%¥¸Ñ¡”€‰Q½ÀAÉ½•ÍÍ•ÌˆÁ…”½È…•ÍÌÑ¡”A$•¹‘Á½¥¹Ğ€½…Á¤½ÁÉ½•ÍÌ¼ñÁ¥ù€¸€ñÁ¥ù€¥¹±Õ‘•Ì±•…‘¥¹œ…¹ÑÉ…¥±¥¹œé•É½•Ì…Ìİ•±°…Ì…¹±”‰É…­•ÑÌ°…Ì¥¸€ğÀ¸ÔÄÌ¸Àù€¸]¡•Ñ¡•Èå½ÔÕÍ”Ñ¡”U$½ÈA$°É…‰‰¥ÑµÅ}Ñ½Á€É•Á½ÉÑÌÑ¡”Í…µ”µ•ÑÉ¥Ì°±•ÑÑ¥¹œå½Ô¡½½Í”Ñ¡”™½Éµ…ĞÑ¡…Ğ™¥ÑÌå½ÕÈ¹••‘Ì¸()U¹±¥­”½Ñ¡•ÈÁ…ÉÑÌ½˜Ñ¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞU$°Ñ¡”€‰Q½ÀAÉ½•ÍÍ•ÌˆÁ…”‘½•Ì¹½Ğ¥¹±Õ‘”„Ñ¥µ•Í•É¥•ÌÉ…Á °‰ÕĞÉ•Á½ÉÑÌ„ÍÑ…Ñ¥Œ½Õ¹Ğ½˜µ•µ½Éä½¹ÍÕµÁÑ¥½¸İ¥Ñ •… É•™É•Í ¸((ŒŒŒÉ…‰‰¥ÑµÅ…‘µ¥¹€)Q¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸…±Í¼Í¡¥ÁÌİ¥Ñ É…‰‰¥ÑµÅ…‘µ¥¹€°„m1%umµ…¹…•µ•¹Ğµ±¥tÑ¡…Ğ½µ‰¥¹•ÌÑ¡”Ù¥ÍÕ…°Í¥µÁ±¥¥Ñä½˜„U$İ¥Ñ Ñ¡”…‰¥±¥ÑäÑ¼•¹Ñ•È½µµ…¹‘Ì¥¸„Ñ•Éµ¥¹…°¸Q¼‘½İ¹±½…¥Ğ°•¹…‰±”Ñ¡”µ…¹…•µ•¹ĞÁ±Õ¥¸…¹Ù¥Í¥Ğ¡ÑÑÀè¼½±½…±¡½ÍĞèÄÔØÜÈ½±¤½€€¡…‘©ÕÍĞÑ¡”¡½ÍĞÁÉ½Ñ½½°°‘½µ…¥¸°…¹Á½ÉĞ‰…Í•½¸å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸Í•ÑÑ¥¹Ì¤¸]¡¥±”É…‰‰¥ÑµÅ…‘µ¥¹€‘½•Ìµ…­”‘…Ñ„…Ù…¥±…‰±”½¸Ñ¡”½µµ…¹±¥¹”°Ñ¡”I…‰‰¥Ñ5D‘½Õµ•¹Ñ…Ñ¥½¸m…‘Ù¥Í•Íumµ…¹…•µ•¹Ğµ±¥tÕÍ¥¹œÑ¡”µ½É”™Õ±±ä™•…ÑÕÉ•!QQ@A$¥˜å½Ô±¥­”Ñ¼…ÕÑ½µ…Ñ”å½ÕÈµ½¹¥Ñ½É¥¹œ¸((ŒŒÙ•¹ÑÌ…¹QÉ…¥¹œ)Q¼½¹¹•ĞÑ¡”Íİ¥¹Ì½˜å½ÕÈÁ•É™½Éµ…¹”µ•ÑÉ¥Ìİ¥Ñ •Ù•¹ÑÌ¥¸Ñ¡”±¥™”½˜Ñ¡”µ•ÍÍ…”‰É½­•È°I…‰‰¥Ñ5D½™™•ÉÌÑİ¼Á±Õ¥¹Ì…¹½¹”‰Õ¥±Ğµ¥¸Ñ½½°¸((´Q¡”•Ù•¹Ğ•á¡…¹”€¡mµ½É”¥¹™½t •Ù•¹Ğµ•á¡…¹”¤¤èI••¥Ù•Ìµ•ÍÍ…•Ìİ¡•¸…ÁÁ±¥…Ñ¥½¸½‰©•ÑÌ…É”É•…Ñ•…¹‘•ÍÑÉ½å•°Á½±¥¥•Ì…É”Í•Ğ°…¹ÕÍ•È½¹™¥ÕÉ…Ñ¥½¹Ì…É”¡…¹•¸(´Q¡”™¥É•¡½Í”€¡mµ½É”¥¹™½t Ñ¡”µ™¥É•¡½Í”¤¤èI”µÁÕ‰±¥Í¡•Ì•Ù•Éäµ•ÍÍ…”¥¸å½ÕÈI…‰‰¥Ñ5DÍ•ÑÕÀÑ¼„Í¥¹±”•á¡…¹”™½È™¥¹”µÉ…¥¹•‘•‰Õ¥¹œ½˜å½ÕÈµ•ÍÍ…¥¹œ…Ñ¥Ù¥Ñä¸€(´É…‰‰¥ÑµÅ}ÑÉ…¥¹€€¡mµ½É”¥¹™½t É…‰‰¥ÑµÄµÑÉ…¥¹œ¤¤è1•ÑÌå½Ô‘•½ÕÁ±”ÑÉ…¥¹œ™É½´å½ÕÈ…ÁÁ±¥…Ñ¥½¸½‘”‰ä½¹ÑÉ½±±¥¹œÑ¡”™¥É•¡½Í”Ñ¡É½Õ Ñ¡”µ…¹…•µ•¹ĞU$¸((ŒŒŒÙ•¹Ğ•á¡…¹”)]¡•¸Ñ¡”I…‰‰¥Ñ5DÍ•ÉÙ•ÈÕ¹‘•É½•Ì¡…¹•Ì°Ñ¡•Í”…É”Í¥±•¹Ğ‰ä‘•™…Õ±Ğ¸á¡…¹•Ì…É”É•…Ñ•¸A•Éµ¥ÍÍ¥½¹Ì…É”É…¹Ñ•¸½¹ÍÕµ•ÉÌ¼½™™±¥¹”¸Q¼½‰Í•ÉÙ”Ñ¡•Í”•Ù•¹ÑÌ°å½Ô…¸ÕÍ”„Á±Õ¥¸¸Q¡”•Ù•¹Ğ•á¡…¹”mÍ¡¥ÁÌİ¥Ñ¡um•Ù•¹Ğµ•á¡…¹•tI…‰‰¥Ñ5DÙ•ÉÍ¥½¸€Ì¸Ø¸À…¹±…Ñ•È¸Q¼•¹…‰±”¥Ğ°ÉÕ¸Ñ¡”™½±±½İ¥¹œ½µµ…¹è()€)É…‰‰¥ÑµÄµÁ±Õ¥¹Ì•¹…‰±”É…‰‰¥ÑµÅ}•Ù•¹Ñ}•á¡…¹”)€()]¥Ñ Ñ¡”•Ù•¹Ğ•á¡…¹”°•Ù•¹ÑÌ…É”ÁÕ‰±¥Í¡•…Ìµ•ÍÍ…•Ì°İ¥Ñ Ñ¡”‰½‘¥•Ì•µÁÑä…¹Ñ¡”É½ÕÑ¥¹œ­•åÌ½¹Ù•å¥¹œ‘…Ñ„èÅÕ•Õ”¹‘•±•Ñ•‘€°½¹ÍÕµ•È¹É•…Ñ•‘€°ÕÍ•È¹…ÕÑ¡•¹Ñ¥…Ñ¥½¸¹ÍÕ•ÍÍ€°m…¹Í¼½¹um•Ù•¹Ğµ•á¡…¹•t¸Ù•¹ÑÌ…É”É½ÕÑ•Ñ¼„Í¥¹±”•á¡…¹”±…µÄ¹É…‰‰¥ÑµÄ¹•Ù•¹Ñ€°±•…Ù¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¸Ñ¼Á…ÍÌÑ¡•´¥¹Ñ¼ÅÕ•Õ•Ì¸()	•…ÕÍ”•Ù•¹ÑÌ…É”‰É½…‘…ÍĞ…Ìµ•ÍÍ…•Ì°İ½É­¥¹œİ¥Ñ •Ù•¹ÑÌ¥Ì„µ…ÑÑ•È½˜¡…¹‘±¥¹œÑ¡”•á¡…¹”…Ìå½Ôİ½Õ±…¹ä½Ñ¡•È¸Q¡¥Ì•á…µÁ±”ÕÍ•ÌIÕ‰äÌ5E@±¥•¹Ğ°m‰Õ¹¹åumÉÕ‰äµ‰Õ¹¹åt°Ñ¼‘•±…É”Ñ¡”•Ù•¹Ğ•á¡…¹”…¹¥ÑÌÅÕ•Õ•Ì°‰¥¹‘¥¹Ì…¹½¹ÍÕµ•ÉÌ¸()€)É•ÅÕ¥É”€‰Õ¹¹äœ()½¹¸€ô	Õ¹¹ä¹¹•Ü)½¹¸¹ÍÑ…ÉĞ) €ô½¹¸¹É•…Ñ•}¡…¹¹•°()Ä€ô ¹ÅÕ•Õ” …±±}•Ù•¹ÑÌœ¤()à€ô ¹Ñ½Á¥Œ €(€€€€…µÄ¹É…‰‰¥ÑµÄ¹•Ù•¹Ğœ°€(€€€€é‘ÕÉ…‰±”€ôøÑÉÕ”°(€€€€é¥¹Ñ•É¹…°€ôøÑÉÕ”(¤()Ä¹‰¥¹¡à°€éÉ½ÕÑ¥¹}­•ä€ôø€ˆŒˆ¤()Ä¹ÍÕ‰ÍÉ¥‰”‘¼ñ‘•±¥Ù•Éå}¥¹™¼°ÁÉ½Á•ÉÑ¥•Ì°‰½‘åğ(€€€€ŒAÉ½•ÍÌÑ¡”µ•ÍÍ…•Ì€¡¹½ĞÍ¡½İ¸¤)•¹)€()Q¡”É½ÕÑ¥¹œ­•åÌ¥¸Ñ¡”•Ù•¹Ğ•á¡…¹”¥¹±Õ‘”Ñİ¼½ÈÑ¡É•”İ½É‘Ì¸e½Ô…¸É½ÕÑ”…±°•Ù•¹ÑÌÑ¼„Í¥¹±”ÅÕ•Õ”İ¥Ñ Ñ¡”É½ÕÑ¥¹œ­•ä€€€¡…Ì…‰½Ù”¤¸e½Ô…¸…±Í¼‘•±…É”Í•Á…É…Ñ”ÅÕ•Õ•Ì™½È•Ù•¹ÑÌÑ¡…Ğ‰•±½¹œÑ¼‘¥™™•É•¹Ğ­¥¹‘Ì½˜½‰©•ÑÌ°™½È¥¹ÍÑ…¹”ÅÕ•Õ”¸€½È…±…É´¸€¸]¡•¸‘•±…É¥¹œÑ¡”•á¡…¹”¥¹Í¥‘”å½ÕÈ…ÁÁ±¥…Ñ¥½¸°å½Ô±°¹••Ñ¼µ…­”ÍÕÉ”Ñ¡…ĞÑ¡”½ÁÑ¥½¹Ì‘ÕÉ…‰±•€…¹¥¹Ñ•É¹…±€…É”Í•ĞÑ¼ÑÉÕ•€°µ…Ñ¡¥¹œÑ¡”Á±Õ¥¸Ì‰Õ¥±Ğµ¥¸½¹™¥ÕÉ…Ñ¥½¸¸((ŒŒŒQ¡”™¥É•¡½Í”)]¡¥±”Ñ¡”•Ù•¹Ğ•á¡…¹”™½±±½İÌ¡…¹•Ì¥¸å½ÕÈµ•ÍÍ…¥¹œÍ•ÑÕÀ°å½Ô±°¹••…¹½Ñ¡•ÈÑ½½°™½È•Ù•¹ÑÌÉ•±…Ñ•Ñ¼µ•ÍÍ…•ÌÑ¡•µÍ•±Ù•Ì¸Q¡¥Ì¥ÌÑ¡”m™¥É•¡½Í•um™¥É•¡½Í•t°İ¡¥ É½ÕÑ•Ì„½Áä½˜•Ù•Éäµ•ÍÍ…”ÁÕ‰±¥Í¡•¥¸I…‰‰¥Ñ5D¥¹Ñ¼„Í¥¹±”•á¡…¹”¸Q¡”Ñ½½°¥Ì‰Õ¥±Ğ¥¹Ñ¼Ñ¡”I…‰‰¥Ñ5DÍ•ÉÙ•È°…¹‘½•Ì¹½ĞÉ•ÅÕ¥É”…¹äI…‰‰¥Ñ5DÁ±Õ¥¹Ì¸Q¡”™¥É•¡½Í”¥Ì½¹”İ…ä½˜‘•‰Õ¥¹œå½ÕÈµ•ÍÍ…¥¹œÍ•ÑÕÀ‰ä…¡¥•Ù¥¹œÙ¥Í¥‰¥±¥Ñä…Ğ„™¥¹”É…¥¸¸%ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼¹½Ñ”Ñ¡…ĞÍ¥¹”Ñ¡”™¥É•¡½Í”ÁÕ‰±¥Í¡•Ì…‘‘¥Ñ¥½¹…°µ•ÍÍ…•ÌÑ¼„¹•Ü•á¡…¹”°Ñ¡”‰ÕµÀ¥¸…Ñ¥Ù¥Ñäİ¥±°¥µÁ…ĞÁ•É™½Éµ…¹”¸()Q¼•¹…‰±”Ñ¡”™¥É•¡½Í”°ÉÕ¸Ñ¡¥Ì½µµ…¹è()€)ÍÕ‘¼É…‰‰¥ÑµÅÑ°ÑÉ…•}½¸)€€()e½Ôİ¥±°¹••Ñ¼ÉÕ¸Ñ¡¥Ì½µµ…¹•Ù•ÉäÑ¥µ”å½ÔÍÑ…ÉĞÑ¡”I…‰‰¥Ñ5DÍ•ÉÙ•È¸€()=¹”…‘Ù…¹Ñ…”½˜Ñ¡”™¥É•¡½Í”¥ÌÑ¡”…‰¥±¥ÑäÑ¼±½œµ•ÍÍ…•Ìİ¥Ñ¡½ÕĞÑ½Õ¡¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¸½‘”¸I…Ñ¡•ÈÑ¡…¸¥¹ÍÑÉÕµ•¹Ğ•… ÁÉ½‘Õ•ÈÑ¼ÁÕ‰±¥Í Ñ¼…¸•á¡…¹”™½È±½¥¹œ°å½Ô…¸Í¥µÁ±ä¡…¹‘±”µ•ÍÍ…•Ì™É½´Ñ¡”™¥É•¡½Í”°İ¡¥ …É”É”µÁÕ‰±¥Í¡•Ñ¼Ñ¡…Ğ•á¡…¹”…ÕÑ½µ…Ñ¥…±±ä¸)ÕÍĞ‘•±…É”Ñ¡”•á¡…¹”…µÄ¹É…‰‰¥ÑµÄ¹ÑÉ…•€°…±½¹œİ¥Ñ ¥ÑÌÅÕ•Õ•Ì°‰¥¹‘¥¹Ì°…¹½¹ÍÕµ•ÉÌ°…¹Í•ĞÑ¡”•á¡…¹”Ì‘ÕÉ…‰±•€…¹¥¹Ñ•É¹…±€ÁÉ½Á•ÉÑ¥•ÌÑ¼ÑÉÕ”¸€()e½Ô…¸¥‘•¹Ñ¥™äÑ¡”Á½Í¥Ñ¥½¸½˜„µ•ÍÍ…”¥¹Í¥‘”å½ÕÈ…ÁÁ±¥…Ñ¥½¸‰ä¥ÑÌÉ½ÕÑ¥¹œ­•äİ¥Ñ¡¥¸Ñ¡”™¥É•¡½Í”èÁÕ‰±¥Í ¸ñ•á¡…¹”¹…µ”ù€İ¡•¸¥Ğ•¹Ñ•ÉÌÑ¡”‰É½­•È°‘•±¥Ù•È¸ñÅÕ•Õ”¹…µ”ù€İ¡•¸¥Ğ±•…Ù•Ì¸5•ÍÍ…•Ì¥¸Ñ¡”™¥É•¡½Í”¡…Ù”Ñ¡”Í…µ”‰½‘¥•Ì…ÌÑ¡•¥È½Õ¹Ñ•ÉÁ…ÉÑÌ•±Í•İ¡•É”¸€((ŒŒŒÉ…‰‰¥ÑµÅ}ÑÉ…¥¹€)I…‰‰¥Ñ5Dµ…­•Ì¥ĞÁ½ÍÍ¥‰±”Ñ¼±½œå½ÕÈµ•ÍÍ…•Ì…Ğ…¸•Ù•¸É•…Ñ•ÈÉ•µ½Ù”™É½´å½ÕÈ…ÁÁ±¥…Ñ¥½¸½‘”Ñ¡…¸Ñ¡”ÍÑ…¹‘…É™¥É•¡½Í”¸I…Ñ¡•ÈÑ¡…¸¡…¹‘±¥¹œµ•ÍÍ…•Ì™É½´Ñ¡”™¥É•¡½Í”‰ä‘•±…É¥¹œ•á¡…¹•Ì°ÅÕ•Õ•Ì°…¹½¹ÍÕµ•ÉÌİ¥Ñ¡¥¸å½ÕÈ½‘”°å½Ô¥¹ÍÑ•…ÕÍ”Ñ¡”µ…¹…•µ•¹ĞU$Ñ¼É½ÕÑ”Ñ¡”™¥É•¡½Í”¥¹Ñ¼„±½œ™¥±”¸Q¡”Ñ½½°™½ÈÑ¡¥Ì¥Ì„Á±Õ¥¸°É…‰‰¥ÑµÅ}ÑÉ…¥¹€°İ¡¥ •áÑ•¹‘ÌÑ¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸Ìİ•ˆÍ•ÉÙ•È¸É…‰‰¥ÑµÅ}ÑÉ…¥¹€¥Ì•ÍÁ•¥…±±äÕÍ•™Õ°™½È½‰Ñ…¥¹¥¹œÑÉ…•ÌÅÕ¥­±ä°…Ù½¥‘¥¹œÑ¡”¹••Ñ¼¥¹ÍÑÉÕµ•¹Ğ…¹ä…ÁÁ±¥…Ñ¥½¸½‘”…Ğ…±°¸()e½Ô…¸•¹…‰±”Ñ¡”É…‰‰¥ÑµÅ}ÑÉ…¥¹€Á±Õ¥¸İ¥Ñ Ñ¡¥Ì½µµ…¹è()€)É…‰‰¥ÑµÄµÁ±Õ¥¹Ì•¹…‰±”É…‰‰¥ÑµÅ}ÑÉ…¥¹œ)€()Q¡•¸°İ¡•¸å½ÔÍÑ…ÉĞÑ¡”I…‰‰¥Ñ5DÍ•ÉÙ•È°ÉÕ¸€()€)ÍÕ‘¼É…‰‰¥ÑµÅÑ°ÑÉ…•}½¸)€()%¸Ñ¡”µ…¹…•µ•¹ĞU$°±¥¬Ñ¡”€‰‘µ¥¸ˆ±¥¹¬½¸Ñ¡”Ñ½Àµ•¹Ô°Ñ¡•¸±¥¬€‰QÉ…¥¹œˆ½¸Ñ¡”É¥¡ĞÑ¼Ù¥•Üå½ÕÈ‘…Ñ„¸()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±ÌµÑÉ…¥¹œµ¡½µ”¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì€´Q¡”QÉ…¥¹œÁ…”İ¥Ñ¡¥¸Ñ¡”µ…¹…•µ•¹ĞU$ˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()5…­¥¹œ„±½œ™¥±”…Ù…¥±…‰±”Ñ¼Ñ¡”™¥É•¡½Í”µ…äÑ…­”Í½µ”•áÑÉ„½¹™¥ÕÉ…Ñ¥½¸¸]¥Ñ¡¥¸Ñ¡”€‰=Ù•ÉÙ¥•ÜˆÁ…”°±¥¬Ñ¡”¹…µ”½˜„¹½‘”¸%¸Ñ¡”Á…”Ñ¡…Ğ™½±±½İÌ°±½½¬™½ÈÑ¡”±½…Ñ¥½¸½˜Ñ¡”I…‰‰¥Ñ5D½¹™¥ÕÉ…Ñ¥½¸™¥±”°É…‰‰¥ÑµÄ¹½¹™¥€¸()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±Ìµ¹½‘”µ½¹™¥œµ™¥±”¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì€´Q¡”±½…Ñ¥½¸½˜„¹½‘”Ì‘•™…Õ±Ğ½¹™¥ÕÉ…Ñ¥½¸™¥±”İ¥Ñ¡¥¸Ñ¡”µ…¹…•µ•¹ĞU$ˆ€ùõô()%˜Ñ¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”‘½•Ì¹½Ğ•á¥ÍĞ°É•…Ñ”¥Ğ…ĞÑ¡¥Ì±½…Ñ¥½¸¸=¹”å½ÔÙ”‘½¹”Ñ¡¥Ì°å½Ô…¸½¹™¥ÕÉ”Ñ¡”ÑÉ…•È°Í•ÑÑ¥¹œÑ¡”‘¥É•Ñ½Éå€°ÕÍ•É¹…µ•€…¹Á…ÍÍİ½É‘€ÁÉ½Á•ÉÑ¥•Ì½˜Ñ¡”É…‰‰¥ÑµÅ}ÑÉ…¥¹€Í•Ñ¥½¸¸Q¡”™¥±”ÕÍ•ÌÉ±…¹œÌm½¹™¥ÕÉ…Ñ¥½¸Íå¹Ñ…áum•É±…¹œµ½¹™¥t¸()€)l(€€€íÉ…‰‰¥ÑµÅ}ÑÉ…¥¹œ°l(€€€€€í‘¥É•Ñ½Éä°€ˆ½Í¡…É•½ÍÉŒ½±½œ‰ô°(€€€€€íÕÍ•É¹…µ”°€‰ÕÍ•É¹…µ”‰ô°(€€€€€íÁ…ÍÍİ½É°€‰Á…ÍÍİ½É‰ô(€€€uô)t¸)€()e½Ôİ¥±°¹••Ñ¼É•…Ñ”Ñ¡”™¥±•Ì¥¸İ¡¥ I…‰‰¥Ñ5D½ÕÑÁÕÑÌÑ¡”™¥É•¡½Í”¸%¸É…‰‰¥ÑµÄ¹½¹™¥€°å½Ôİ¥±°¡…Ù”…ÍÍ¥¹•„™½±‘•È±½…Ñ¥½¸Ñ¼Ñ¡”‘¥É•Ñ½Éå€ÁÉ½Á•ÉÑä¸A±…”™¥±•Ìİ¥Ñ Ñ¡”€¹±½€•áÑ•¹Í¥½¸¡•É”°…¹µ…­”ÍÕÉ”Ñ¡…ĞI…‰‰¥Ñ5D¡…ÌÁ•Éµ¥ÍÍ¥½¸Ñ¼É•…Ñ¡•´¸%¸Ñ¡”QÉ…¥¹œÁ…”İ¥Ñ¡¥¸Ñ¡”µ…¹…•µ•¹ĞU$°å½Ô…¸¹½ÜÁ½¥¹ĞÑ¡”™¥É•¡½Í”Ñ¼½¹”½˜å½ÕÈ±½œ™¥±•Ì¸M•ĞÑ¡”€‰9…µ”ˆ½˜Ñ¡”ÑÉ…”Ñ¼½¹”½˜å½ÕÈ™¥±•Ì}İ¥Ñ¡½ÕĞÑ¡”•áÑ•¹Í¥½¹|€¹±½€¸Q¡”Í•ÉÙ•Èİ¥±°…‘Ñ¡”•áÑ•¹Í¥½¸¸()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±ÌµÉ•…Ñ•}ÑÉ…•É}Õ¤¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì€´É•…Ñ”„ÑÉ…”¥¸Ñ¡”µ…¹…•µ•¹ĞU$ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()]¡•¸Í•ÑÑ¥¹œÑ¡”Á…ÑÑ•É¹€™½Èå½ÕÈ±½œ°å½Ô…¸¹…µ”„É½ÕÑ¥¹œ­•äÕÍ¥¹œÑ¡”mÍ…µ”Íå¹Ñ…áumÑ½Á¥Ítå½ÔÕÍ”Ñ¼‰¥¹ÅÕ•Õ•Ì…¹•á¡…¹•Ì¸¸•á…µÁ±”±½œµ¥¡Ğ±½½¬±¥­”Ñ¡¥Ìè()€(ÈÀÄÜ´ÄÈ´ÄĞ€ÄäèÌØèÈÀèÄØÈè5•ÍÍ…”É••¥Ù•()9½‘”è€€€€€€€€É…‰‰¥Ñ…ÁÀ)½¹¹•Ñ¥½¸è€€€ÄÈÜ¸À¸À¸ÄèÔÔÀàà€´ø€ÄÈÜ¸À¸À¸ÄèÔØÜÈ)Y¥ÉÑÕ…°¡½ÍĞè€¼)UÍ•Èè€€€€€€€€Õ•ÍĞ)¡…¹¹•°è€€€€€€Ä)á¡…¹”è€€€€‰½É½Õ )I½ÕÑ¥¹œ­•åÌèlğğ‰µ…¹¡…ÑÑ…¸ˆøùt)EÕ•Õ”è€€€€€€€µ…¹¡…ÑÑ…¹}ÅÕ•Õ”)AÉ½Á•ÉÑ¥•Ìè€€mìğğ‰ÁÉ¥½É¥Ñäˆøø±Í¥¹•‘¥¹Ğ°Áô°(€€€€€€€€€€€€€€ìğğ‰‘•±¥Ù•Éå}µ½‘”ˆøø±Í¥¹•‘¥¹Ğ°Éô°(€€€€€€€€€€€€€€ìğğ‰½¹Ñ•¹Ñ}ÑåÁ”ˆøø±±½¹ÍÑÈ°ğğ‰…ÁÁ±¥…Ñ¥½¸½½Ñ•ĞµÍÑÉ•…´ˆøùõt)A…å±½…è€(ñµ•ÍÍ…”‘…Ñ„İ½Õ±‰”¡•É”ø)€)e½Ô…¸…±Í¼™½Éµ…ĞÑ¡”±½œ™¥±”…Ì)M=8¸%¸Ñ¡”€‰‘„¹•ÜÑÉ…”ˆ™½É´°Í•ĞÑ¡”Ù…±Õ”½˜Ñ¡”€‰½Éµ…Ğˆ‘É½Á‘½İ¸¸Q¡”™¥•±‘Ì‘¥ÍÁ±…å•İ¥±°É•µ…¥¸Ñ¡”Í…µ”¸()Q¡”¹…µ”½˜å½ÕÈ±½œ™¥±”‰•½µ•Ì…¸•¹‘Á½¥¹Ğ™½ÈÑ¡”µ…¹…•µ•¹ĞA$¸%¸½ÕÈ•á…µÁ±”°Ñ¡¥Ìİ½Õ±‰”¡ÑÑÀè¼½±½…±¡½ÍĞèÄÔØÜÈ½…Á¤½ÑÉ…”µ™¥±•Ì½ÑÉ…•È¹±½€¸()%ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼­¹½ÜÑ¡…ĞÉ…‰‰¥ÑµÅ}ÑÉ…¥¹€¡…Ì„mÁ•É™½Éµ…¹”½ÍÑumÉ…‰‰¥ĞµÑÉ…¥¹t°ÕÍ¥¹œ‰½Ñ µ•µ½Éä…¹AT°…¹¥Í¸ĞÉ•½µµ•¹‘•™½ÈÍåÍÑ•µÌÑ¡…Ğ±½œµ½É”Ñ¡…¸€È°ÀÀÀµ•ÍÍ…•ÌÁ•ÈÍ•½¹¸1¥­”Ñ¡”™¥É•¡½Í”°É…‰‰¥ÑµÅ}ÑÉ…¥¹€¥Ì„‘•‰Õ¥¹œÑ½½°Ñ¼ÉÕ¸½¹±äİ¡•¸¹••‘•¸((ŒŒI…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ìè	•å½¹½¹”µ…Ğµ„µÑ¥µ”)%¸Ñ¡¥ÌÁ½ÍĞ°İ”Ù”½Ù•É•„¹Õµ‰•È½˜I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì¸… µ•…ÍÕÉ•Ì¥ÑÌ½İ¸Í±¥”½˜Á•É™½Éµ…¹”¸É…‰‰¥ÑµÅÑ±€¥Ù•Ìå½Ôµ•ÑÉ¥Ì…Ì…ĞµÑ¡”µµ½µ•¹Ğ½Õ¹ÑÌ¸Q¡”µ…¹…•µ•¹ĞÁ±Õ¥¸½•Ì½¹”ÍÑ•À™ÕÉÑ¡•È°…‘‘¥¹œÉ…Ñ•Ì¸]¥Ñ Ñ¡”•Ù•¹Ğ•á¡…¹”…¹™¥É•¡½Í”°å½Ô•Ğ±½Ì°‰½Ñ ™½Èµ•ÍÍ…•Ì…¹•Ù•¹ÑÌ¸€()e½Ô…¸¼Ñ½½°‰äÑ½½°°µ½¹¥Ñ½É¥¹œ•… ±•Ù•°½¸¥ÑÌ½İ¸¸Q¡”ÁÉ½•ÍÌ¥Ì„µ…¹Õ…°½¹”°É•ÅÕ¥É¥¹œ‘•±¥‰•É…Ñ”½µµ…¹‘Ì…¹A$…±±Ì¸¹Ñ¡•É”¥Ì¹¼‰Õ¥±Ğµ¥¸°…ÕÑ½µ…Ñ¥Œµ•Ñ¡½™½È½µÁ…É¥¹œ‘…Ñ„‰•Ñİ••¸Ñ½½±Ì¸Ìå½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”Í…±•Ì°å½Ô±°İ…¹Ğ„µ½¹¥Ñ½É¥¹œÍ½±ÕÑ¥½¸Ñ¡…Ğ‘½•Ìµ½É”İ½É¬™½Èå½Ô¸()]¥Ñ …Ñ…‘½œÌI…‰‰¥Ñ5D¥¹Ñ•É…Ñ¥½¸°å½Ô…¸•Ğ„Õ¹¥™¥•Ù¥•Ü½˜‘…Ñ„Ñ¡…Ğ°İ¥Ñ å½ÕÈÍÕ¥Ñ”½˜I…‰‰¥Ñ5Dµ½¹¥Ñ½É¥¹œÑ½½±Ì°å½Ôİ½Õ±¹••Ñ¼Á¥•”Ñ½•Ñ¡•È½¸å½ÕÈ½İ¸¸e½Ô…¸É••¥Ù”…±•ÉÑÌ°ÑÉ…•Ì°…¹±½Ì¥¸„Í¥¹±”Á±…”¸]”±°Í¡½Üå½Ô¡½ÜÑ¡¥Ìİ½É­Ì¥¸mA…ÉĞ€ÍumÁ…ÉĞÍt¸%˜å½Ô±¥­”Ñ¼©ÕµÀÍÑÉ…¥¡Ğ¥¹Ñ¼…Ñ…‘½œ°•ĞÍÑ…ÉÑ•É¥¡Ğ…İ…äİ¥Ñ „€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”ÑÉ¥…°ğ½„ø¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½É…‰‰¥ÑµÄ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|(()m•É±…¹œµ½¹™¥tè¡ÑÑÀè¼½•É±…¹œ¹½Éœ½‘½Œ½µ…¸½½¹™¥œ¹¡Ñµ°()m•Ù•¹Ğµ•á¡…¹•tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½É…‰‰¥ÑµÄ½É…‰‰¥ÑµÄµ•Ù•¹Ğµ•á¡…¹”()m™¥É•¡½Í•tè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½™¥É•¡½Í”¹¡Ñµ°()m¡ÑÑÀµÍÑ…ÑÍtè¡ÑÑÁÌè¼½É…Ü¹¥Ñ¡…¬¹½´½É…‰‰¥ÑµÄ½É…‰‰¥ÑµÄµµ…¹…•µ•¹Ğ½µ…ÍÑ•È½ÁÉ¥Ø½İİÜ½‘½Œ½ÍÑ…ÑÌ¹¡Ñµ°()mµ…¹…•µ•¹Ğµ±¥tè¡ÑÑÀè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½µ…¹…•µ•¹Ğµ±¤¹¡Ñµ°()mµ…¹…•µ•¹ĞµÁ±Õ¥¹tè¡ÑÑÀè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½µ…¹…•µ•¹Ğ¹¡Ñµ°()mµ•µ½ÉäµÕÍ•tè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½µ•µ½ÉäµÕÍ”¹¡Ñµ°()mµ½¹¥Ñ½É¥¹tè¡ÑÑÀè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½µ½¹¥Ñ½É¥¹œ¹¡Ñµ°()mÁ…ÉĞÅtè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œ()mÁ…ÉĞÅ½¹¹•Ñ¥½¹tè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œ¼½¹¹•Ñ¥½¸µÁ•É™½Éµ…¹”()mÁ…ÉĞÅ•á¡…¹•Ítè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œ¼•á¡…¹”µÁ•É™½Éµ…¹”()mÁ…ÉĞÅ¹½‘•Ítè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œ¼¹½‘•Ì()mÁ…ÉĞÅÅÁ•É™½Éµ…¹•tè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œ¼ÅÕ•Õ”µÁ•É™½Éµ…¹”()mÁ…ÉĞÍtè€½‰±½œ½µ½¹¥Ñ½É¥¹œµÉ…‰‰¥ÑµÄµÁ•É™½Éµ…¹”µİ¥Ñ µ‘…Ñ…‘½œ()mÁÉ½Ñ½½±Ítè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½ÁÉ½Ñ½½±Ì¹¡Ñµ°()mÅÕ•Õ”µ½±Õµ¹Ítè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½É…‰‰¥ÑµÅÑ°¸à¹¡Ñµ°±¥ÍÑ}ÅÕ•Õ•Ì()mÉ…‰‰¥Ğµ…Á¥tè¡ÑÑÁÌè¼½É…Ü¹¥Ñ¡…¬¹½´½É…‰‰¥ÑµÄ½É…‰‰¥ÑµÄµµ…¹…•µ•¹Ğ½µ…ÍÑ•È½ÁÉ¥Ø½İİÜ½…Á¤½¥¹‘•à¹¡Ñµ°()mÉ…‰‰¥ÑµÅÑ±tè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½É…‰‰¥ÑµÅÑ°¸à¹¡Ñµ°()mÉ…‰‰¥ÑµÄµÑ½Átè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½É…‰‰¥ÑµÄ½É…‰‰¥ÑµÄµÑ½À()mÉ…‰‰¥ĞµÑÉ…¥¹tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½É…‰‰¥ÑµÄ½É…‰‰¥ÑµÄµÑÉ…¥¹œ()mÉ…‰‰¥ÑµÅÑ°µµ…¹tè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½µ…¸½É…‰‰¥ÑµÅÑ°¸Ä¹µ…¸¹¡Ñµ°()mÉ…‰‰¥Ğµ¹•Ñİ½É­¥¹té¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½¹•Ñİ½É­¥¹œ¹¡Ñµ°()mÉÕ‰äµ‰Õ¹¹åtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÉÕ‰äµ…µÅÀ½‰Õ¹¹ä()mÑÀµÍÑÉÕÑÕÉ•tém¡ÑÑÁÌè¼½•¸¹İ¥­¥Á•‘¥„¹½Éœ½İ¥­¤½QÉ…¹Íµ¥ÍÍ¥½¹}½¹ÑÉ½±}AÉ½Ñ½½°QA}Í•µ•¹Ñ}ÍÑÉÕÑÕÉ•t()mÑ½Á¥Ítè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½ÑÕÑ½É¥…±Ì½ÑÕÑ½É¥…°µ™¥Ù”µÁåÑ¡½¸¹¡Ñµ°
+---
+authors:
+- email: paul.gottschling@datadoghq.com
+  image: paulgottschling.jpg
+  name: Paul Gottschling
+blog/category:
+- series collection
+blog/tag:
+- rabbitmq
+- amqp
+- message broker
+- performance
+date: 2018-01-24T00:00:01Z
+date_last_updated: 2018-01-31
+description: For tracking the performance of your messaging setup, check out these RabbitMQ monitoring tools.
+draft: false
+image: 160509_RabbitMQ-02.png
+preview_image: 160509_RabbitMQ-02.png
+slug: rabbitmq-monitoring-tools
+technology: rabbitmq
+title: Collecting metrics with RabbitMQ monitoring tools
+series: rabbitmq-monitoring
+---
+When collecting [RabbitMQ metrics][part1], you can take advantage of RabbitMQ's built-in monitoring tools and ecosystem of plugins. In this post, we'll introduce these RabbitMQ monitoring tools and show you how you can use them in your own messaging setup.
+
+| Tool | What you get | Metrics it collects |
+|:------|:-----|:-----|
+| [Built-in CLI](the-built-in-cli) | Status snapshots of RabbitMQ's core application objects | [Node resource use][part1nodes], [Queue performance][part1qperformance] |
+| [Management plugin](#the-management-plugin) | A built-in web server that reports metrics via UI and API | [Exchange metrics][part1exchanges], [Node resource use][part1nodes], [Connection performance][part1connection], [Queue performance][part1qperformance] |
+| [Tracing tools](#events-and-tracing) | Exchanges that report events from messages and application objects | Events |
+
+
+## The built-in CLI
+For a quick scan of your application's vital signs, you can turn to [RabbitMQ's CLI][rabbitmqctl]: `rabbitmqctl`. This tool, which comes installed with RabbitMQ, lets you perform management tasks (check server status, add nodes to a cluster, etc.) and exposes metrics about RabbitMQ objects such as queues, exchanges, and nodes. Values of RabbitMQ metrics are snapshots from the moment you run the command. Since the only configuration `rabbitmqctl` requires is a set of command line options, the tool is a quick way to get a high-level view into key metrics.
+
+`rabbitmqctl` lets you access many of the metrics we cover in [Part 1][part1], including node-level resource metrics, connection performance metrics, and detailed breakdowns of message counts within queues. A full list of `rabbitmqctl` metrics is [here][rabbitmqctl-man].
+
+You can collect most metrics from the CLI by running
+
+```
+rabbitmqctl list_<item>
+```
+
+The `<item>` might be a kind of application object, such as `queues` or `exchanges`, or other sources of data like `users` or `permissions`. You can specify which RabbitMQ metrics to collect, and `rabbitmqctl` returns them as a series of columns.
+
+For instance, we might use `rabbitmqctl` to check for bottlenecks in an application that queries an API for data about New York City. The application retrieves raw data from the API and passes it to a queue. The queue's consumer processes the data, aggregates it by borough, and sends it to another queue. To query RabbitMQ for queue names, total messages, messages ready for consumption, state (running, idle...), and consumer utilization, we can run:
+
+```
+sudo rabbitmqctl list_queues name messages messages_ready state consumer_utilisation
+```
+
+A full list of columns for queues is [here][queue-columns]. "Utilisation" uses the British spelling. The resulting data looks like this:
+
+```
+Listing queues
+staten_island_queue     426     426     running
+bronx_queue             0       0       running       1.0
+brooklyn_queue          0       0       running       1.0
+queens_queue            0       0       running       1.0
+manhattan_queue         0       0       running       1.0
+raw_data                1       0       running       1.0
+all_events              0       0       running       1.0
+tracer                  0       0       running       1.0
+```
+
+Though each queue is running, `staten_island_queue` has two metrics with especially high values: `messages_ready` and `messages`. Messages are entering the queue and not leaving. As it turns out, `staten_island_queue` has no `consumer_utilisation`. While the other queues report the maximum value of 1.0, this one shows a blank. The queue's consumers are not available to receive messages. One next step could be to investigate our consumers for exceptions.
+
+Another use of `rabbitmqctl` is to get a quick set of metrics about your RabbitMQ environment. The command `rabbitmqctl status` lists statistics about the runtime of your RabbitMQ server. Here you'll find a number of node-level resource metrics, including usage for file descriptors, sockets, and disk space. You'll also find, as shown here, a breakdown of memory usage in bytes:
+
+```
+{memory,
+     [{connection_readers,255008},
+      {connection_writers,81400},
+      {connection_channels,189272},
+      {connection_other,694920},
+      {queue_procs,382048},
+      {queue_slave_procs,0},
+      {plugins,3236488},
+      {other_proc,19575592},
+      {metrics,260224},
+      {mgmt_db,2080600},
+      {mnesia,79832},
+      {other_ets,1970600},
+      {binary,29566616},
+      {msg_index,44360},
+      {code,24918337},
+      {atom,1041593},
+      {other_system,9716726},
+      {allocated_unused,24424144},
+      {reserved_unallocated,1347584},
+      {total,119865344}]}
+```
+
+## The management plugin
+The RabbitMQ [management plugin][management-plugin] extends its host node with a web server, which reports metrics from the host node and any nodes in its cluster. It comes with an HTTP API, an interactive web UI, and an extended set of command line tools. The API and web interface report the same metrics as `rabbitmqctl`, and add [statistics of their own][http-stats].
+
+For example, the RabbitMQ management plugin exposes the `message_stats` object, which gives you counts and rates of traffic through your messaging setup. This is where you'll find the metrics related to exchanges and message rates in [Part 1][part1]. Do note that the management plugin only stores up to [one day][monitoring] of metrics. Depending on your needs, you may opt to query the API and store the return values yourself. 
+
+Like `rabbitmqctl`, the management plugin ships with an installation of RabbitMQ. To set it up, run the following command:
+
+```
+rabbitmq-plugins enable rabbitmq_management
+```
+
+
+### HTTP API
+The RabbitMQ management plugin reports metrics from a web server. One way to gather the metrics is through an API.  The API is useful for three reasons. First, it returns JSON, letting you work with RabbitMQ metrics in your own scripts. Second, it provides data as rates, complementing the snapshots you get in `rabbitmqctl`. Third, it gives you detailed information about the components of your application (see a list of stats [here][http-stats]). 
+
+To access the API, direct an HTTP GET request to `localhost:15672/api/<endpoint>` (or 55672 for versions before 3.0). API endpoints are organized around RabbitMQ abstractions: nodes, connections, channels, consumers, exchanges, queues, [and so on][rabbit-api]. You can narrow your query to a specific virtual host or component of your application. To choose the default virtual host, `/`, you need to include the encoding `%2F` in the API endpoint.
+
+Message rates are useful if you want to know how smoothly traffic moves through a given part of your system. For example, you can see whether messages leave a queue as quickly as they arrive. In our demo application, we'll compare rates for messages with two statuses: those published into an exchange and routed to the `raw_data` queue, and those delivered to consumers. To start, this query returns information about the queue `raw_data`:
+
+```
+http://localhost:15672/api/queues/%2F/raw_data?msg_rates_age=300&msg_rates_incr=100
+``` 
+
+We've set `msg_rates_age=300` to constrain our data to the last five minutes, and `msg_rates_incr=100` to check our queue for samples every 100 seconds. Both query parameters are necessary for obtaining averages, which the web server calculates from the samples. You'll find averages, samples, and rates in `publish_details`. 
+
+```
+"publish_details":{
+    "avg":2730.5,
+    "avg_rate":1.3833333333333333,
+    "samples":[
+        {"timestamp":1513276900000,"sample":2939},
+        {"timestamp":1513276800000,"sample":2795},
+        {"timestamp":1513276700000,"sample":2664},
+        {"timestamp":1513276600000,"sample":2524}],
+    "rate":1.44}
+```
+
+In this object, `avg` is the average count of messages across the samples. Since message counts are cumulative, the average includes all messages of this type over the lifetime of the queue. `samples` are collected at the interval we specify, yielding an `avg_rate`. `rate` is per second, showing the change since the last sample.
+
+There's a similar set of statistics in `deliver_get_details`, again taking samples every 100 seconds across our five-minute interval.
+
+```
+"deliver_get_details":{
+    "avg":2731.0,
+    "avg_rate":1.3866666666666667,
+    "samples":[
+        {"timestamp":1513276900000,"sample":2940},
+        {"timestamp":1513276800000,"sample":2796},
+        {"timestamp":1513276700000,"sample":2664},
+        {"timestamp":1513276600000,"sample":2524}],
+    "rate":1.44}
+```
+
+In the last five minutes, published messages have roughly kept pace with deliveries. Messages are moving through the queue with no bottlenecks.
+
+If you plan to query the API from within your application, you'll need to make sure that you've [configured][management-plugin] the RabbitMQ management plugin. You'll want to adjust the `cors_allow_origins` setting to permit requests from your application's domain. And if your application uses HTTPS, you'll want to make sure that the API does so too (by default it does not). 
+
+### The web UI
+Once you've started the broker and installed the RabbitMQ management plugin, you'll have access to a built-in metrics UI. Point a browser to the root of the web server, e.g. `localhost:15672`, to see a number of dashboards. These correspond roughly to the endpoints of the HTTP API. There's an overview page as well as links to pages for connections, channels, exchanges, and queues.
+
+{{< img src="rabbitmq-monitoring-tools-mgmt_ui_home.png" alt="RabbitMQ monitoring tools - Home page for the Management Plugin web UI" popup="true" wide="true" >}}
+
+The UI updates in real time and displays data from several sources at once. The overview tab includes timeseries graphs of queue depths and message rates. Pages for individual connections, channels, exchanges and queues include their own timeseries graphs. You can check the web interface and know at a glance whether any part of your RabbitMQ application has become unavailable. And by clicking a tab for connections, channels, exchanges, and queues, you can compare key work metrics for message and data traffic throughout your application.
+
+The RabbitMQ management UI can also graph your memory usage. You'll find this graph under the "Memory details" section of the page for a given node. Explanations for categories within the graph are [here][memory-use].
+
+{{< img src="rabbitmq-monitoring-tools-memory-ui.png" alt="RabbitMQ monitoring tools - UI component showing memory usage by one node" popup="true" wide="true" >}}
+
+While less customizable than `rabbitmqctl` or the HTTP API, the web UI gives you quick visibility into the health of your RabbitMQ setup.
+
+### `rabbitmq_top`
+For monitoring the memory use of your RabbitMQ application, `rabbitmqctl` and the management plugin give you a breakdown by application component: `connection_readers`, `queue_procs`, `binary`, and so on. For a breakdown by RabbitMQ process, you can use [another plugin][rabbitmq-top], `rabbitmq_top`, which extends the management web server with a `top`-like list. As with the management plugin, it's built into RabbitMQ (as of version 3.6.3 and later). Since `rabbitmq_top` is resource intensive, Pivotal advises that you run it only when needed.
+
+To enable `rabbitmq_top`, run this command:
+
+```
+rabbitmq-plugins enable rabbitmq_top
+```
+
+After you enable the management plugin and `rabbitmq_top`, you'll find another tab in the management UI and another endpoint in the API. Both report memory consumption by process. In the "Admin" tab of the management UI, find the sidebar on the right and click "Top Processes."
+
+{{< img src="rabbitmq-monitoring-tools-top-processes-ui.png" alt="RabbitMQ monitoring tools - UI view of top processes" popup="true" wide="true" >}}
+
+To access a similar breakdown through the API, send a `GET` request to `/api/top/<node-name>`, such as `http://localhost:15672/api/top/rabbit@app`.
+
+If a process looks interesting, you can find out more within a dedicated web page. Either click the PID in the "Top Processes" page or access the API endpoint `/api/process/<pid>`. `<pid>` includes leading and trailing zeroes as well as angle brackets, as in `<0.513.0>`. Whether you use the UI or API, `rabbitmq_top` reports the same metrics, letting you choose the format that fits your needs.
+
+Unlike other parts of the RabbitMQ management UI, the "Top Processes" page does not include a timeseries graph, but reports a static count of memory consumption with each refresh.
+
+### `rabbitmqadmin`
+The RabbitMQ management plugin also ships with `rabbitmqadmin`, a [CLI][management-cli] that combines the visual simplicity of a UI with the ability to enter commands in a terminal. To download it, enable the management plugin and visit `http://localhost:15672/cli/` (adjust the host protocol, domain, and port based on your configuration settings). While `rabbitmqadmin` does make data available on the command line, the RabbitMQ documentation [advises][management-cli] using the more fully featured HTTP API if you'd like to automate your monitoring.
+
+## Events and Tracing
+To connect the swings of your performance metrics with events in the life of the message broker, RabbitMQ offers two plugins and one built-in tool.
+
+- The event exchange ([more info](#event-exchange)): Receives messages when application objects are created and destroyed, policies are set, and user configurations are changed.
+- The firehose ([more info](#the-firehose)): Re-publishes every message in your RabbitMQ setup to a single exchange for fine-grained debugging of your messaging activity. 
+- `rabbitmq_tracing` ([more info](#rabbitmq-tracing)): Lets you decouple tracing from your application code by controlling the firehose through the management UI.
+
+### Event exchange
+When the RabbitMQ server undergoes changes, these are silent by default. Exchanges are created. Permissions are granted. Consumers go offline. To observe these events, you can use a plugin. The event exchange [ships with][event-exchange] RabbitMQ version 3.6.0 and later. To enable it, run the following command:
+
+```
+rabbitmq-plugins enable rabbitmq_event_exchange
+```
+
+With the event exchange, events are published as messages, with the bodies empty and the routing keys conveying data: `queue.deleted`, `consumer.created`, `user.authentication.success`, [and so on][event-exchange]. Events are routed to a single exchange,`amq.rabbitmq.event`, leaving your application to pass them into queues.
+
+Because events are broadcast as messages, working with events is a matter of handling the exchange as you would any other. This example uses Ruby's AMQP client, [bunny][ruby-bunny], to declare the event exchange and its queues, bindings and consumers.
+
+```
+require 'bunny'
+
+conn = Bunny.new
+conn.start
+ch = conn.create_channel
+
+q = ch.queue('all_events')
+
+x = ch.topic( 
+    'amq.rabbitmq.event', 
+    :durable => true,
+    :internal => true
+)
+
+q.bind(x, :routing_key => "#")
+
+q.subscribe do |delivery_info, properties, body|
+    # Process the messages (not shown)
+end
+```
+
+The routing keys in the event exchange include two or three words. You can route all events to a single queue with the routing key `#` (as above). You can also declare separate queues for events that belong to different kinds of objects, for instance `queue.#` or `alarm.#`. When declaring the exchange inside your application, you'll need to make sure that the options `durable` and `internal` are set to `true`, matching the plugin's built-in configuration.
+
+### The firehose
+While the event exchange follows changes in your messaging setup, you'll need another tool for events related to messages themselves. This is the [firehose][firehose], which routes a copy of every message published in RabbitMQ into a single exchange. The tool is built into the RabbitMQ server, and does not require any RabbitMQ plugins. The firehose is one way of debugging your messaging setup by achieving visibility at a fine grain. It's important to note that since the firehose publishes additional messages to a new exchange, the bump in activity will impact performance.
+
+To enable the firehose, run this command:
+
+```
+sudo rabbitmqctl trace_on
+``` 
+
+You will need to run this command every time you start the RabbitMQ server. 
+
+One advantage of the firehose is the ability to log messages without touching your application code. Rather than instrument each producer to publish to an exchange for logging, you can simply handle messages from the firehose, which are re-published to that exchange automatically. Just declare the exchange `amq.rabbitmq.trace`, along with its queues, bindings, and consumers, and set the exchange's `durable` and `internal` properties to true. 
+
+You can identify the position of a message inside your application by its routing key within the firehose: `publish.<exchange name>` when it enters the broker, `deliver.<queue name>` when it leaves. Messages in the firehose have the same bodies as their counterparts elsewhere. 
+
+### `rabbitmq_tracing`
+RabbitMQ makes it possible to log your messages at an even greater remove from your application code than the standard firehose. Rather than handling messages from the firehose by declaring exchanges, queues, and consumers within your code, you instead use the management UI to route the firehose into a log file. The tool for this is a plugin, `rabbitmq_tracing`, which extends the RabbitMQ management plugin's web server. `rabbitmq_tracing` is especially useful for obtaining traces quickly, avoiding the need to instrument any application code at all.
+
+You can enable the `rabbitmq_tracing` plugin with this command:
+
+```
+rabbitmq-plugins enable rabbitmq_tracing
+```
+
+Then, when you start the RabbitMQ server, run 
+
+```
+sudo rabbitmqctl trace_on
+```
+
+In the management UI, click the "Admin" link on the top menu, then click "Tracing" on the right to view your data.
+
+{{< img src="rabbitmq-monitoring-tools-tracing-home.png" alt="RabbitMQ monitoring tools - The Tracing page within the management UI" popup="true" wide="true" >}}
+
+Making a log file available to the firehose may take some extra configuration. Within the "Overview" page, click the name of a node. In the page that follows, look for the location of the RabbitMQ configuration file, `rabbitmq.config`.
+
+{{< img src="rabbitmq-monitoring-tools-node-config-file.png" alt="RabbitMQ monitoring tools - The location of a node's default configuration file within the management UI" >}}
+
+If the configuration file does not exist, create it at this location. Once you've done this, you can configure the tracer, setting the `directory`, `username` and `password` properties of the `rabbitmq_tracing` section. The file uses Erlang's [configuration syntax][erlang-config].
+
+```
+[
+    {rabbitmq_tracing, [
+      {directory, "/shared/src/log"},
+      {username, "username"},
+      {password, "password"}
+    ]}
+].
+```
+
+You will need to create the files in which RabbitMQ outputs the firehose. In `rabbitmq.config`, you will have assigned a folder location to the `directory` property. Place files with the `.log` extension here, and make sure that RabbitMQ has permission to read them. In the Tracing page within the management UI, you can now point the firehose to one of your log files. Set the "Name" of the trace to one of your files _without the extension_ `.log`. The server will add the extension.
+
+{{< img src="rabbitmq-monitoring-tools-create_tracer_ui.png" alt="RabbitMQ monitoring tools - Create a trace in the management UI" popup="true" >}}
+
+When setting the `pattern` for your log, you can name a routing key using the [same syntax][topics] you use to bind queues and exchanges. An example log might look like this:
+
+```
+2017-12-14 19:36:20:162: Message received
+
+Node:         rabbit@app
+Connection:   127.0.0.1:55088 -> 127.0.0.1:5672
+Virtual host: /
+User:         guest
+Channel:      1
+Exchange:     borough
+Routing keys: [<<"manhattan">>]
+Queue:        manhattan_queue
+Properties:   [{<<"priority">>,signedint,0},
+               {<<"delivery_mode">>,signedint,2},
+               {<<"content_type">>,longstr,<<"application/octet-stream">>}]
+Payload: 
+<message data would be here>
+```
+You can also format the log file as JSON. In the "Add a new trace" form, set the value of the "Format" dropdown. The fields displayed will remain the same.
+
+The name of your log file becomes an endpoint for the management API. In our example, this would be `http://localhost:15672/api/trace-files/tracer.log`.
+
+It's important to know that `rabbitmq_tracing` has a [performance cost][rabbit-tracing], using both memory and CPU, and isn't recommended for systems that log more than 2,000 messages per second. Like the firehose, `rabbitmq_tracing` is a debugging tool to run only when needed.
+
+## RabbitMQ monitoring tools: Beyond one-at-a-time
+In this post, we've covered a number of RabbitMQ monitoring tools. Each measures its own slice of performance. `rabbitmqctl` gives you metrics as at-the-moment counts. The management plugin goes one step further, adding rates. With the event exchange and firehose, you get logs, both for messages and events. 
+
+You can go tool by tool, monitoring each level on its own. The process is a manual one, requiring deliberate commands and API calls. And there is no built-in, automatic method for comparing data between tools. As your messaging infrastructure scales, you'll want a monitoring solution that does more work for you.
+
+With Datadog's RabbitMQ integration, you can get a unified view of data that, with your suite of RabbitMQ monitoring tools, you would need to piece together on your own. You can receive alerts, traces, and logs in a single place. We'll show you how this works in [Part 3][part3]. If you'd like to jump straight into Datadog, get started right away with a <a href="#" class="sign-up-trigger">free trial</a>.
+
+[erlang-config]: http://erlang.org/doc/man/config.html
+
+[event-exchange]: https://github.com/rabbitmq/rabbitmq-event-exchange
+
+[firehose]: https://www.rabbitmq.com/firehose.html
+
+[http-stats]: https://raw.githack.com/rabbitmq/rabbitmq-management/master/priv/www/doc/stats.html
+
+[management-cli]: http://www.rabbitmq.com/management-cli.html
+
+[management-plugin]: http://www.rabbitmq.com/management.html
+
+[memory-use]: https://www.rabbitmq.com/memory-use.html
+
+[monitoring]: http://www.rabbitmq.com/monitoring.html
+
+[part1]: /blog/rabbitmq-monitoring
+
+[part1connection]: /blog/rabbitmq-monitoring/#connection-performance
+
+[part1exchanges]: /blog/rabbitmq-monitoring/#exchange-performance
+
+[part1nodes]: /blog/rabbitmq-monitoring/#nodes
+
+[part1qperformance]: /blog/rabbitmq-monitoring/#queue-performance
+
+[part3]: /blog/monitoring-rabbitmq-performance-with-datadog
+
+[protocols]: https://www.rabbitmq.com/protocols.html
+
+[queue-columns]: https://www.rabbitmq.com/rabbitmqctl.8.html#list_queues
+
+[rabbit-api]: https://raw.githack.com/rabbitmq/rabbitmq-management/master/priv/www/api/index.html
+
+[rabbitmqctl]: https://www.rabbitmq.com/rabbitmqctl.8.html
+
+[rabbitmq-top]: https://github.com/rabbitmq/rabbitmq-top
+
+[rabbit-tracing]: https://github.com/rabbitmq/rabbitmq-tracing
+
+[rabbitmqctl-man]: https://www.rabbitmq.com/man/rabbitmqctl.1.man.html
+
+[rabbit-networking]:https://www.rabbitmq.com/networking.html
+
+[ruby-bunny]: https://github.com/ruby-amqp/bunny
+
+[tcp-structure]:[https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure]
+
+[topics]: https://www.rabbitmq.com/tutorials/tutorial-five-python.html

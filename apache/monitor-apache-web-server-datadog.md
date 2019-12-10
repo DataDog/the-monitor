@@ -1,1 +1,277 @@
-m!½ÜÑ¼µ½¹¥Ñ½ÈÁ…¡”İ•ˆÍ•ÉÙ•Èİ¥Ñ …Ñ…‘½œ(((©Q¡¥ÌÁ½ÍĞ¥ÌÑ¡”±…ÍĞ½˜„€ÌµÁ…ÉĞÍ•É¥•Ì…‰½ÕĞµ½¹¥Ñ½É¥¹œÁ…¡”Á•É™½Éµ…¹”¸mA…ÉĞ€ÅumÁ…ÉĞ´ÅtÁÉ½Ù¥‘•Ì…¸½Ù•ÉÙ¥•Ü½˜Ñ¡”Á…¡”İ•ˆÍ•ÉÙ•È…¹¥ÑÌ­•äÁ•É™½Éµ…¹”µ•ÑÉ¥Ì°…¹mÁ…ÉĞ€ÉumÁ…ÉĞ´Ét‘•ÍÉ¥‰•Ì¡½ÜÑ¼½±±•Ğ…¹µ½¹¥Ñ½ÈÁ…¡”µ•ÑÉ¥ÌÕÍ¥¹œ¹…Ñ¥Ù”…¹½Á•¸Í½ÕÉ”Ñ½½±Ì¸¨()%˜å½ÔÙ”É•…mA…ÉĞ€ÉumÁ…ÉĞ´Ét½˜Ñ¡¥ÌÍ•É¥•Ì°å½Ô­¹½ÜÑ¡…ĞÑ¡•É”…É”„Ù…É¥•Ñä½˜İ…åÌÑ¼½±±•Ğµ•ÑÉ¥Ì™É½´å½ÕÈÁ…¡”İ•ˆÍ•ÉÙ•ÉÌ°‰½Ñ ¹…Ñ¥Ù•±ä…¹ÕÍ¥¹œ½Á•¸Í½ÕÉ”Ñ½½±Ì¸±Ñ¡½Õ Ñ¡•Í”µ•Ñ¡½‘Ì…É”ÕÍ•™Õ°™½È¡•­¥¹œÁ…¡”µ•ÑÉ¥Ì¥¸É•…°Ñ¥µ”°Ñ¡•ä‘¼¹½ĞÉ•…‘¥±äÉ•Ù•…°±½¹œµÑ•É´ÑÉ•¹‘Ì…¹Á…ÑÑ•É¹Ì°¹½È‘¼Ñ¡•ä½™™•È…¹ä½¹Ñ•áĞ…‰½ÕĞÑ¡”É•ÍĞ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”…¹…ÁÁ±¥…Ñ¥½¹Ì¸…Ñ…‘½œ…±±½İÌå½ÔÑ¼é½½´½ÕĞÑ¼Í•”±½¹œµÑ•É´Á•É™½Éµ…¹”ÑÉ•¹‘Ì…É½ÍÌå½ÕÈÁ…¡”Í•ÉÙ•ÉÌ°½ÈÑ¼é½½´¥¸Ñ¼Í•”å½ÕÈÉ•…°µÑ¥µ”…¹¡¥ÍÑ½É¥…°µ•ÑÉ¥Ì…Ğ™Õ±°É…¹Õ±…É¥Ñä¸¹İ¥Ñ µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô¥¹Ñ•É…Ñ¥½¹Ìİ¥Ñ Á½ÁÕ±…È¥¹™É…ÍÑÉÕÑÕÉ”Ñ•¡¹½±½¥•Ì°Á±ÕÌm‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…¥¹œ…¹A5um…Áµt°…Ñ…‘½œ•¹…‰±•Ìå½ÔÑ¼µ½¹¥Ñ½ÈÁ…¡”¥¸½¹Ñ•áĞİ¥Ñ Ñ¡”É•ÍĞ½˜å½ÕÈÍÑ…¬¸()%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°Í¡½Üå½Ô¡½ÜÑ¼è((´mÍ•ĞÕÀ…Ñ…‘½œÌÁ…¡”¥¹Ñ•É…Ñ¥½¹t Í•ĞµÕÀµ‘…Ñ…‘½Ìµ…Á…¡”µ¥¹Ñ•É…Ñ¥½¸¤Ñ¼…ÕÑ½µ…Ñ¥…±±ä½±±•Ğµ½ÍĞ½˜Ñ¡”µ•ÑÉ¥Ì‘¥ÍÕÍÍ•¥¸mA…ÉĞ€ÅumÁ…ÉĞ´Åt½˜Ñ¡¥ÌÍ•É¥•Ì(´m½±±•Ğ…¹µ½¹¥Ñ½È‘…Ñ„™É½´å½ÕÈÁ…¡”…•ÍÌ±½Ít ¡½ÜµÑ¼µÍ•¹µ…Á…¡”µ±½ÌµÑ¼µ‘…Ñ…‘½œ¤(´mÍ•ĞÕÀ…ÕÑ½µ…Ñ•…±•ÉÑÍt …±•ÉÑ¥¹œµ½¸µ…Á…¡”µ¥ÍÍÕ•Ì¤Ñ¼•Ğ¥¹™½Éµ•½˜Á•É™½Éµ…¹”¥ÍÍÕ•Ì¥¸É•…°Ñ¥µ”()íìğ¥µœÍÉŒô‰…Á…¡”µ™¥¹…°µÍÉ••¸µØÌ¹Á¹œˆ…±Ğô‰Á…¡”‘•™…Õ±Ğ‘…Í¡‰½…É¥¸…Ñ…‘½œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒM•ĞÕÀ…Ñ…‘½œÌÁ…¡”¥¹Ñ•É…Ñ¥½¸(ŒŒŒ€Ä¸½¹™¥ÕÉ”Á…¡”Ñ¼Í•¹µ•ÑÉ¥Ì)%¸½É‘•ÈÑ¼½±±•Ğµ•ÑÉ¥Ì™É½´Á…¡”°å½Ô¹••Ñ¼•¹…‰±”Ñ¡”ÍÑ…ÑÕÌµ½‘Õ±”…¹µ…­”ÍÕÉ”Ñ¡…ĞáÑ•¹‘•‘MÑ…ÑÕÌ¥Ì½¸°…Ì½ÕÑ±¥¹•¥¸mA…ÉĞ€ÉumÁ…ÉĞ´Èµ•¹…‰±•µ½‘ÍÑ…ÑÕÍt¸((ŒŒŒ€È¸%¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ğ)Q¡”m…Ñ…‘½œ•¹Ñum…•¹Ğµ‘½Ít¥Ì½Á•¸Í½ÕÉ”Í½™Ñİ…É”Ñ¡…Ğ½±±•ÑÌµ•ÑÉ¥Ì…¹•Ù•¹ÑÌ™É½´å½ÕÈ¡½ÍÑÌ…¹™½Éİ…É‘ÌÑ¡•´Ñ¼…Ñ…‘½œÍ¼Ñ¡…Ğå½Ô…¸Ù¥ÍÕ…±¥é”°…¹…±åé”°…¹…±•ÉĞ½¸Á•É™½Éµ…¹”‘…Ñ„°…±°¥¸½¹”Á±…”¸%¹ÍÑ…±±¥¹œÑ¡”•¹ĞÕÍÕ…±±ä©ÕÍĞÑ…­•Ì„Í¥¹±”½µµ…¹ìÍ•”¥¹ÍÑÉÕÑ¥½¹Ì™½ÈÙ…É¥½ÕÌÁ±…Ñ™½ÉµÌm¡•É•um…•¹Ğµ¥¹ÍÑ…±°µ‘½t¸%˜å½ÔÁÉ•™•È°å½Ô…¸…±Í¼¥¹ÍÑ…±°Ñ¡”•¹ĞÕÍ¥¹œÑ½½±Ì±¥­”m¡•™um¡•˜µ‰±½t°mAÕÁÁ•ÑumÁÕÁÁ•Ğµ‰±½t°½Èm¹Í¥‰±•um…¹Í¥‰±”µ‰±½t¸((ŒŒŒ€Ì¸½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼½±±•ĞÁ…¡”µ•ÑÉ¥Ì)=¹”å½ÔÙ”¥¹ÍÑ…±±•Ñ¡”•¹Ğ°å½Ôİ¥±°¹••Ñ¼É•…Ñ”…¸Á…¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”Í¼Ñ¡…ĞÑ¡”•¹Ğİ¥±°­¹½Üİ¡•É”Ñ¼™•Ñ å½ÕÈÁ…¡”µ•ÑÉ¥Ì¸Q¡”±½…Ñ¥½¸½˜Ñ¡”•¹ĞÌ‘¥É•Ñ½Éä™½È¥¹Ñ•É…Ñ¥½¸µÍÁ•¥™¥Œ½¹™¥ÕÉ…Ñ¥½¸™¥±•ÌÙ…É¥•Ì™É½´Á±…Ñ™½É´Ñ¼Á±…Ñ™½É·ŠQ½¹ÍÕ±ĞmÑ¡”‘½Õµ•¹Ñ…Ñ¥½¹um…•¹Ğµ‘½Ít™½È‘•Ñ…¥±Ì¸()%¸Ñ¡…Ğ‘¥É•Ñ½Éä°å½ÔÍ¡½Õ±Í•”…¸€¨©…Á…¡”¹¨¨ÍÕ‰‘¥É•Ñ½Éä°İ¡¥ ½¹Ñ…¥¹Ì€¨©½¹˜¹å…µ°¹•á…µÁ±”¨¨°…¸m•á…µÁ±”½¹™¥ÕÉ…Ñ¥½¸™¥±”™½ÈÁ…¡•um…Á…¡”µ½¹™¥œµ•á…µÁ±•t¸½ÁäÑ¡…Ğ™¥±”°Í…Ù”¥Ğ…Ì€¨©½¹˜¹å…µ°¨¨°…¹ÕÁ‘…Ñ”¥Ğİ¥Ñ Ñ¡”µ½‘}ÍÑ…ÑÕÌUI0½˜å½ÕÈÁ…¡”¥¹ÍÑ…¹”€¡É•Á±…¥¹œ€‰±½…±¡½ÍĞˆİ¥Ñ Ñ¡”%@½¡½ÍÑ¹…µ”½˜å½ÕÈÁ…¡”¥¹ÍÑ…¹”°¥˜å½Ô¥¹ÍÑ…±±•Ñ¡”•¹Ğ½¸„‘¥™™•É•¹Ğ¡½ÍĞ¤¸Q¡”•á…µÁ±”‰•±½ÜÍ¡½İÌÑ¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”™½È„ÕÍ•Èİ¡¼¥ÌÉÕ¹¹¥¹œÁ…¡”½¸Ñ¡”Í…µ”¡½ÍĞ…ÌÑ¡”•¹Ğ¸()¹¼µµ¥¹¥µ¥é”)¥¹¥Ñ}½¹™¥œè()¥¹ÍÑ…¹•Ìè(€€´…Á…¡•}ÍÑ…ÑÕÍ}ÕÉ°è¡ÑÑÀè¼½±½…±¡½ÍĞ½Í•ÉÙ•ÈµÍÑ…ÑÕÌı…ÕÑ¼(€€€€Œ…Á…¡•}ÕÍ•Èè•á…µÁ±•}ÕÍ•È(€€€€Œ…Á…¡•}Á…ÍÍİ½Éè•á…µÁ±•}Á…ÍÍİ½É(€€€€ŒÑ…Ìè(€€€€Œ€€€´½ÁÑ¥½¹…±}Ñ…œ)€()%˜å½ÕÈÁ…¡”¥¹ÍÑ…¹”¥Ì¹½Ğ‰•¥¹œ…•ÍÍ•‰ä±½…±¡½ÍĞ°µ…­”ÍÕÉ”Ñ¼•¹…‰±”…•ÍÌÑ¼å½ÕÈ•¹ĞÌ%@…‘‘É•ÍÌ¥¸å½ÕÈmÁ…¡”ÍÑ…ÑÕÌµ½‘Õ±”Ì½¹™¥ÕÉ…Ñ¥½¸™¥±•umÁ…ÉĞ´Èµ½¹™¥œµ™¥±•t°…¹É•Á±…”€‰±½…±¡½ÍĞˆ¥¸Ñ¡”UI0İ¥Ñ Ñ¡”%@½˜å½ÕÈÁ…¡”Í•ÉÙ•È¸e½Ô…±Í¼¡…Ù”Ñ¡”½ÁÑ¥½¸Ñ¼…‘„ÕÍ•È…¹Á…ÍÍİ½É¥˜å½Ô½¹™¥ÕÉ•½¹”€¡Í•”mA…ÉĞ€ÉumÁ…ÉĞ´Ét™½È‘•Ñ…¥±Ì½¸¡½ÜÑ¼½¹±ä…±±½Ü…ÕÑ¡•¹Ñ¥…Ñ•ÕÍ•ÉÌÑ¼…•ÍÌÑ¡”µ½‘}ÍÑ…ÑÕÌÁ…”¤¸()M…Ù”å½ÕÈ¡…¹•Ì…¹•á¥ĞÑ¡”™¥±”¸mI•ÍÑ…ÉĞÑ¡”•¹Ñum…•¹Ğµ‘½ÍtÑ¼±½…å½ÕÈ¹•ÜÁ…¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”¸((ŒŒŒ€Ğ¸¹…‰±”Ñ¡”Á…¡”¥¹Ñ•É…Ñ¥½¸)Q¼ÍÑ…ÉĞÍ••¥¹œå½ÕÈÁ…¡”µ•ÑÉ¥Ì¥¸…Ñ…‘½œ°¹…Ù¥…Ñ”Ñ¼Ñ¡”%¹Ñ•É…Ñ¥½¹ÌÁ…”½˜Ñ¡”…Ñ…‘½œÁÀ°…¹±¥¬½¸Ñ¡”mÁ…¡”¥¹Ñ•É…Ñ¥½¸Ñ¥±•um…Á…¡”µÑ¥±•t¸%¸Ñ¡”½¹™¥ÕÉ…Ñ¥½¸Ñ…ˆ°±¥¬½¸€‰%¹ÍÑ…±°%¹Ñ•É…Ñ¥½¸ˆ¸e½ÔÍ¡½Õ±¹½Ü‰”…‰±”Ñ¼Í•”å½ÕÈ¡½ÍĞÉ•Á½ÉÑ¥¹œµ•ÑÉ¥Ì¥¸…Ñ…‘½œÌ¥¹™É…ÍÑÉÕÑÕÉ”±¥ÍĞ°…ÌÍ¡½İ¸‰•±½Üè()íìğ¥µœÍÉŒô‰¥¹™É„µ…Á…¡”µ±¥ÍĞ¹Á¹œˆ…±Ğô‰Á…¡”Í•ÉÙ•È¥¸…Ñ…‘½œ…ÁÀˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒÕÍÑ½µ¥é”å½ÕÈÁ…¡”‘…Í¡‰½…É)¸mÁ…¡”‘…Í¡‰½…É‘um…Á…¡”µ‘…Ñ…‘½œµ‘…Í¡‰½…É‘tÍ¡½Õ±¹½Ü…ÁÁ•…È¥¸å½ÕÈ±¥ÍĞ½˜¥¹Ñ•É…Ñ¥½¸‘…Í¡‰½…É‘Ì¸Q¡¥Ì½ÕĞµ½˜µÑ¡”µ‰½à‘…Í¡‰½…É‘¥ÍÁ±…åÌµ½ÍĞ½˜Ñ¡”­•äµ•ÑÉ¥Ì½Ù•É•¥¸mA…ÉĞ€ÅumÁ…ÉĞ´Åt½˜Ñ¡¥ÌÍ•É¥•Ì°…±½¹œİ¥Ñ ¡•±Á™Õ°ÁÉ”µ½µÁÕÑ•µ•ÑÉ¥ÌÑ¡…Ğµ…­”¥Ğ•…Í¥•ÈÑ¼Õ¹‘•ÉÍÑ…¹É•…°µÑ¥µ”ÕÍ…”…¹Á•É™½Éµ…¹”¸½È•á…µÁ±”°Ñ¡”µ•ÑÉ¥Ì…Á…¡”¹¹•Ğ¹¡¥ÑÍ€…¹…Á…¡”¹¹•Ğ¹‰åÑ•Í€…É”Ñ…­•¸‘¥É•Ñ±ä™É½´µ½‘}ÍÑ…ÑÕÌ…¹É•ÁÉ•Í•¹Ğ•Ù•Èµ¥¹É•…Í¥¹œ½Õ¹Ñ•ÉÌ½˜Ñ¡”Ñ½Ñ…°¹Õµ‰•È½˜É•ÅÕ•ÍÑÌ…¹‰åÑ•ÌÑ¡…Ğ¡…Ù”‰••¸Í•ÉÙ•½Ù•ÈÑ¡”±¥™•Ñ¥µ”½˜Ñ¡”Í•ÉÙ•È¸Q¡”…Ñ…‘½œ•¹ĞÁÉ½Ù¥‘•ÌÑ¡•Í”µ•ÑÉ¥Ì°‰ÕĞ…±Í¼ÁÉ½Ù¥‘•ÌÁ•ÈµÍ•½¹É…Ñ•Ì€¡…Á…¡”¹¹•Ğ¹É•ÅÕ•ÍÑ}Á•É}Í€…¹…Á…¡”¹¹•Ğ¹‰åÑ•Í}Á•É}Í€¤°İ¡¥ …É”…±Õ±…Ñ•‰ä…Ù•É…¥¹œÑ¡”¡…¹”¥¸Ñ¡”¹Õµ‰•È½˜É•ÅÕ•ÍÑÌ…¹‰åÑ•ÌÍ•ÉÙ•½Ù•È•… øÄ×ŠLÈÀÍ•½¹½±±•Ñ¥½¸Á•É¥½¸((¡M¥µ¥±…É±ä°å½ÔÍ¡½Õ±™…Ù½ÈÑ¡”É•…°µÑ¥µ”ATµ•ÑÉ¥ÌÉ•Á½ÉÑ•‰äÑ¡”…Ñ…‘½œ•¹Ğ½Ù•ÈÑ¡”ATµ•ÑÉ¥Ì½±±•Ñ•™É½´Á…¡”Ìµ½‘q}ÍÑ…ÑÕÌÁ…”°İ¡¥ …É”…É•…Ñ•½Ù•ÈÑ¡”±¥™•Ñ¥µ”½˜Ñ¡”Í•ÉÙ•È¸¤()e½Ô…¸±½¹”Ñ¡¥Ì‘…Í¡‰½…É…¹ÕÍÑ½µ¥é”¥Ğİ¥Ñ ÍåÍÑ•´µ±•Ù•°µ•ÑÉ¥ÌÑ¡…Ğ…É”¹½Ğ…Ù…¥±…‰±”™É½´Á…¡”ÌÍÑ…ÑÕÌµ½‘Õ±”°±¥­”µ•µ½ÉäÕÍ…”…¹¹•Ñİ½É¬ÑÉ…™™¥Œµ•ÑÉ¥Ì°Ñ¼…‘µ½É”½¹Ñ•áĞÑ¼å½ÕÈÉ•ÅÕ•ÍĞÑ¡É½Õ¡ÁÕĞÉ…Á¡Ì¸¹‰•…ÕÍ”å½Ô…¸µ¥à…¹µ…Ñ µ•ÑÉ¥Ì™É½´…¹äÍ½ÕÉ”¥¸…Ñ…‘½œ°å½Ô…¸…‘µ•ÑÉ¥Ì™É½´‘…Ñ…‰…Í•Ì°±½…‰…±…¹•ÉÌ°½È½Ñ¡•ÈÍ•ÉÙ¥•Ìå½Ô…É”ÉÕ¹¹¥¹œ…±½¹Í¥‘”Á…¡”°ÍÕ …ÌmQ½µ…ÑumÑ½µ…Ğµ‰±½t½Èm9%9aum¹¥¹àµ‰±½t¸((ŒŒ!½ÜÑ¼Í•¹Á…¡”±½ÌÑ¼…Ñ…‘½œ)Ìµ•¹Ñ¥½¹•¥¸mA…ÉĞ€ÅumÁ…ÉĞ´Åt°•ÉÑ…¥¸µ•ÑÉ¥Ì€¡¥¹±Õ‘¥¹œ€Õáà•ÉÉ½ÈÉ…Ñ”…¹É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¤…É”½¹±ä…Ù…¥±…‰±”Ñ¡É½Õ mÁ…¡”Ì…•ÍÌ±½Íum…Á…¡”µ…•ÍÌµ±½t¸]¥Ñ …Ñ…‘½œ±½œµ…¹…•µ•¹Ğ°å½Ô…¸Á…ÉÍ”°™¥±Ñ•È°…¹…¹…±åé”å½ÕÈÁ…¡”±½Ì‰äÕÍ¥¹œ™…•ÑÌ±¥­”!QQ@É•ÍÁ½¹Í”½‘”…¹UI0Á…Ñ °…¹µ½¹¥Ñ½ÈÑ¡•´…±½¹Í¥‘”Ñ¡”µ½‘}ÍÑ…ÑÕÌµ•ÑÉ¥Ìå½ÔÉ”…±É•…‘ä½±±•Ñ¥¹œ¸()…Ñ…‘½œÌÁ…¡”±½¥¹œ¥¹Ñ•É…Ñ¥½¸ÍÕÁÁ½ÉÑÌÑİ¼±½œ™½Éµ…ÑÌ‰ä‘•™…Õ±ÓŠP¨©½µµ½¸¨¨…¹€¨©½µ‰¥¹•¨«ŠQ…¹ÁÉ½•ÍÍ•ÌÑ¡”±½œÙ…É¥…‰±•Ì¥¸Ñ¡½Í”±½œ™½Éµ…ÑÌ¥¹Ñ¼™…•ÑÌÑ¡…Ğå½Ô…¸Í•…É °Ù¥ÍÕ…±¥é”°…¹µ½¹¥Ñ½È¥¸…Ñ…‘½œ¸%˜å½ÔÉ”ÕÍ¥¹œ„ÕÍÑ½´±½œ™½Éµ…Ğ°mÍ­¥À…¡•…‘t ‘½¥¹œµµ½É”µİ¥Ñ µÕÍÑ½´µ…Á…¡”µ±½Ì¤Ñ¼Í•”¡½Üå½Ô…¸Í•ĞÕÀ…Ñ…‘½œÑ¼ÁÉ½•ÍÌå½ÕÈÁ…¡”±½Ì¸()1•ĞÌÑ…­”„±½Í•È±½½¬…ĞÑ¡”Ù…É¥…‰±•ÌÑ¡…Ğ…ÁÁ•…È¥¸Ñ¡”€¨©½µ‰¥¹•¨¨±½œ™½Éµ…Ğè()€)1½½Éµ…Ğ€ˆ• €•°€•Ô€•Ğpˆ•Épˆ€”ùÌ€•<pˆ•íI•™•É•Éõ¥pˆpˆ•íUÍ•Èµ•¹Ñõ¥pˆ½µ‰¥¹•)€()Q¡”½µ‰¥¹•±½œ™½Éµ…Ğ¥¹±Õ‘•ÌÑ¡”™½±±½İ¥¹œÙ…É¥…‰±•Ìè((´É•µ½Ñ”¡½ÍÑ¹…µ”€¡€•¡€¤(´É•µ½Ñ”±½¹…µ”€¡€•±€¤(´É•µ½Ñ”ÕÍ•È€¡€•Õ€¤(´Ñ¡”Ñ¥µ”Á…¡”É••¥Ù•Ñ¡”É•ÅÕ•ÍĞ€¡€•Ñ€¤(´Ñ¡”™¥ÉÍĞ±¥¹”½˜Ñ¡”É•ÅÕ•ÍĞ¥¸ÅÕ½Ñ•Ì€¡pˆ•Ép‰€¤(´Ñ¡”™¥¹…°!QQ@ÍÑ…ÑÕÌ½˜Ñ¡”É•ÍÁ½¹Í”€¡€”ùÍ€¤(´Ñ¡”Í¥é”½˜Ñ¡”É•ÍÁ½¹Í”¥¸‰åÑ•Ì€¡€•=€¤(´Ñ¡”É•™•É•È€¡pˆ•íI•™•É•Éõ¥p‰€¤(´Ñ¡”ÕÍ•È…•¹Ğ€¡pˆ•íUÍ•Èµ•¹Ñõ¥p‰€¤()… ½˜Ñ¡•Í”±½œÙ…É¥…‰±•Ìİ¥±°‰”ÁÉ½•ÍÍ•…Ì„±½œ…ÑÑÉ¥‰ÕÑ”¥¸…Ñ…‘½œ¸9½Ñ”Ñ¡…ĞÑ¡”™¥ÉÍĞ±¥¹”½˜Ñ¡”É•ÅÕ•ÍĞ€¡pˆ•Ép‰€¤İ¥±°…ÁÁ•…È…ÌÑİ¼±½œ…ÑÑÉ¥‰ÕÑ•ÌèÑ¡”!QQ@É•ÅÕ•ÍĞµ•Ñ¡½€¡”¹œ¸°P¤…¹Ñ¡”UI0Á…Ñ É•ÅÕ•ÍÑ•€¡”¹œ¸°€½¥¹‘•à¹¡Ñµ±€¤¸((ŒŒŒ¹…‰±”Ñ¡”•¹ĞÑ¼½±±•Ğ±½Ì)1½œ½±±•Ñ¥½¸¥Ì‘¥Í…‰±•‰ä‘•™…Õ±Ğ¥¸Ñ¡”…Ñ…‘½œ•¹Ğ°‰ÕĞå½Ô…¸•¹…‰±”¥Ğ‰äµ…­¥¹œ„ÅÕ¥¬ÕÁ‘…Ñ”Ñ¼Ñ¡”•¹Ğ½¹™¥ÕÉ…Ñ¥½¸™¥±”°€¨©‘…Ñ…‘½œ¹å…µ°¨¨¸Q¡”±½…Ñ¥½¸½˜Ñ¡”™¥±”İ¥±°Ù…Éä…½É‘¥¹œÑ¼å½ÕÈÁ±…Ñ™½É´ìÍ•”Ñ¡”m‘½Õµ•¹Ñ…Ñ¥½¹um…•¹Ğµ‘½Ít™½È‘•Ñ…¥±Ì¸e½Ô±°¹••Ñ¼Õ¹½µµ•¹ĞÑ¡”±¥¹”Ñ¡…ĞÍÑ…ÉÑÌİ¥Ñ ±½Í}•¹…‰±•‘€…¹Í•Ğ¥ĞÑ¼ÑÉÕ•€è()€(Œ1½Ì…•¹Ğ¥Ì‘¥Í…‰±•‰ä‘•™…Õ±Ğ)±½Í}•¹…‰±•èÑÉÕ”)€((ŒŒŒUÁ‘…Ñ”Ñ¡”•¹ĞÌÁ…¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”)9½Üå½Ô±°¹••Ñ¼•‘¥ĞÑ¡”…Ñ…‘½œ•¹ĞÌ½¹™¥ÕÉ…Ñ¥½¸™¥±”™½ÈÑ¡”Á…¡”¥¹Ñ•É…Ñ¥½¸€ ¨©½¹˜¹½…Á…¡”¹½½¹˜¹å…µ°¨¨¤¸UÁ‘…Ñ”Ñ¡”±½Í€Í•Ñ¥½¸Ñ¼ÍÁ•¥™äÑ¡”½ÉÉ•ĞÁ…Ñ Ñ¼å½ÕÈ…•ÍÌ±½œè()¹¼µµ¥¹¥µ¥é”)±½Ìè((€€€€Œ€´ÑåÁ”€è€¡µ…¹‘…Ñ½Éä¤ÑåÁ”½˜±½œ¥¹ÁÕĞÍ½ÕÉ”€¡ÑÀ€¼Õ‘À€¼™¥±”¤(€€€€Œ€€Á½ÉĞ€¼Á…Ñ €è€¡µ…¹‘…Ñ½Éä¤M•ĞÁ½ÉĞ¥˜ÑåÁ”¥ÌÑÀ½ÈÕ‘À¸M•ĞÁ…Ñ ¥˜ÑåÁ”¥Ì™¥±”(€€€€Œ€€Í•ÉÙ¥”€è€¡µ…¹‘…Ñ½Éä¤¹…µ”½˜Ñ¡”Í•ÉÙ¥”½İ¹¥¹œÑ¡”±½œ(€€€€Œ€€Í½ÕÉ”€è€¡µ…¹‘…Ñ½Éä¤…ÑÑÉ¥‰ÕÑ”Ñ¡…Ğ‘•™¥¹•Ìİ¡¥ ¥¹Ñ•É…Ñ¥½¸¥ÌÍ•¹‘¥¹œÑ¡”±½Ì(€€€€Œ€€Í½ÕÉ•…Ñ•½Éä€è€¡½ÁÑ¥½¹…°¤5Õ±Ñ¥Á±”Ù…±Õ”…ÑÑÉ¥‰ÕÑ”¸…¸‰”ÕÍ•Ñ¼É•™¥¹”Ñ¡”Í½ÕÉ”…ÑÑÉ¥‰ÕÑ”(€€€€Œ€€Ñ…Ìè€¡½ÁÑ¥½¹…°¤…‘Ñ…ÌÑ¼•… ±½Ì½±±•Ñ•((€€€€´ÑåÁ”è™¥±”(€€€€€Á…Ñ è€½Ù…È½±½œ½…Á…¡”È½…•ÍÌ¹±½œ(€€€€€Í•ÉÙ¥”è…Á…¡•}½‰}Ñ•ÍĞ(€€€€€Í½ÕÉ”è…Á…¡”(€€€€€Í½ÕÉ•…Ñ•½Éäè¡ÑÑÁ}İ•‰}…•ÍÌ(€()Q¡¥Ì½¹™¥ÕÉ…Ñ¥½¸İ¥±°Ñ…œ…±°½˜å½ÕÈÁ…¡”±½Ìİ¥Ñ Ñ¡”¹…µ”½˜Ñ¡”Í•ÉÙ¥”ÍÁ•¥™¥•…‰½Ù”€¡Í•ÉÙ¥”é…Á…¡•}½‰}Ñ•ÍÑ€¤°İ¡¥ İ¥±°¡•±Àå½Ô•…Í¥±ä±¥¹¬±½ÌÑ¼…¹äÉ•ÅÕ•ÍĞÑÉ…•Ì…¹…ÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”µ•ÑÉ¥Ì™É½´Ñ¡…ĞÍ…µ”Í•ÉÙ¥”¸M…Ù”…¹•á¥ĞÑ¡”™¥±”°…¹É•ÍÑ…ÉĞÑ¡”•¹Ğ‰äÕÍ¥¹œÑ¡”½ÉÉ•ĞÉ•ÍÑ…ÉĞ½µµ…¹™½Èå½ÕÈÁ±…Ñ™½É´°…½É‘¥¹œÑ¼Ñ¡”m‘½Õµ•¹Ñ…Ñ¥½¹um…•¹Ğµ‘½Ít¸()íìğ¥¹±¥¹”µÑ„Ñ•áĞô‰EÕ¥­±äÉ•™•É•¹”­•äµ•ÑÉ¥Ì…¹½µµ…¹‘Ì¥¸½ÕÈÁ…¡”!QQ@M•ÉÙ•È¡•…ÑÍ¡••Ğ¸ˆ‰Ñ¸µÑ•áĞô‰½İ¹±½…¹½Üˆ‘…Ñ„µ•Ù•¹Ğµ…Ñ•½Éäô‰½¹Ñ•¹Ğˆ‰Ñ¸µ±¥¹¬ô‰¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½É•Í½ÕÉ•Ì½‘…Ñ…‘½œµ…Á…¡”µ¡•…ÑÍ¡••Ğ¼ıÕÑµ}Í½ÕÉ”õ½¹Ñ•¹Ğ™ÕÑµ}µ•‘¥Õ´õ¡•…ÑÍ¡••Ğ™ÕÑµ}…µÁ…¥¸õ%¹±¥¹•	±½QµÁ…¡•M•ÉÙ•Èˆ€ùõô((ŒŒŒ%¹ÍÁ•Ğå½ÕÈÁ…¡”…•ÍÌ±½Ì¥¸…Ñ…‘½œ)%˜å½Ô¹…Ù¥…Ñ”Ñ¼å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ°å½ÔÍ¡½Õ±Í•”å½ÕÈÁ…¡”±½Ì¥¸Ñ¡”m1½œáÁ±½É•Éum‘…Ñ…‘½œµ±½œµ•áÁ±½É•ÉtÙ¥•Ü¸%¸Ñ¡”Í¥‘•‰…È°å½Ô…¸±¥¬Ñ¼™¥±Ñ•ÈÑ¡”±½Ì‰ä½¹”½Èµ½É”™…•ÑÌ°ÍÕ …ÌÑ¡”¡½ÍĞ°Í•ÉÙ¥”°½ÈÍ½ÕÉ”å½ÔÉ”¥¹Ñ•É•ÍÑ•¥¸Ù¥•İ¥¹œ¸()…Ñ…‘½œÌÁ…¡”¥¹Ñ•É…Ñ¥½¸¥¹±Õ‘•Ì„m±½œÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹•um‘…Ñ…‘½œµ±½œµÁ¥Á•±¥¹•tÑ¡…Ğ…ÕÑ½µ…Ñ¥…±±äÁ…ÉÍ•ÌÁ…¡”±½ÌÑ¡…Ğ…‘¡•É”Ñ¼•¥Ñ¡•ÈÑ¡”½µ‰¥¹•½È½µµ½¸±½œ™½Éµ…Ğ¸Q¡¥Ìµ•…¹ÌÑ¡…Ğ¥Ğ…¸Á…ÉÍ”…¹•áÑÉ…Ğ­•ä¥¹™½Éµ…Ñ¥½¸™É½´Ñ¡”±½œµ•ÍÍ…”°İ¡¥ ¥ÌÕÍ•™Õ°™½ÈÉ…Á¡¥¹œ…¹…±•ÉÑ¥¹œ¸%¸Ñ¡”]•ˆ•ÍÌÍ•Ñ¥½¸½˜Ñ¡”Í¥‘•‰…È°å½Ô…¸™¥±Ñ•È‰ä½¹”½Èµ½É”½˜Ñ¡•Í”™…•ÑÌ°ÍÕ …ÌUI0Á…Ñ ½È!QQ@ÍÑ…ÑÕÌ½‘”¸()%¸Ñ¡”•á…µÁ±”±½œ•¹ÑÉä‰•±½Ü°å½Ô…¸Í•”Ñ¡…ĞÁ…¡”É••¥Ù•„PÉ•ÅÕ•ÍĞ™½ÈÑ¡”UI0Á…Ñ €½½¹Ñ…Ñ€°…¹Ñ¡…Ğ¥ĞÉ•ÑÕÉ¹•„ÍÑ…ÑÕÌ½‘”½˜€ĞÀĞ¸±°½˜Ñ¡¥Ì¥¹™½Éµ…Ñ¥½¸İ…Ì…ÕÑ½µ…Ñ¥…±±äÁ…ÉÍ•™É½´Ñ¡”±½œµ•ÍÍ…”¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµ±½œµ¥¹ÍÁ•ĞµØÌ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œ±½œ€ĞÀĞÍÑ…ÑÕÌ½‘”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()Ìå½Ô…É”¥¹ÍÁ•Ñ¥¹œ„±½œ°å½Ô…¸¹…Ù¥…Ñ”Ñ¼½Ñ¡•ÈÍ½ÕÉ•Ì½˜µ½¹¥Ñ½É¥¹œ‘…Ñ„Ñ¼•Ğ„‰•ÑÑ•ÈÍ•¹Í”½˜İ¡…Ğİ…Ì¡…ÁÁ•¹¥¹œ¸e½Ô…¸±¥¬½¸Ñ¡”¡½ÍÑ€Ñ¼Ù¥•Ü„‘…Í¡‰½…É½˜ÍåÍÑ•´µ±•Ù•°µ•ÑÉ¥Ì™É½´Ñ¡”¡½ÍĞÑ¡…Ğ•¹•É…Ñ•Ñ¡¥Ì±½œ°½È±¥¬½¸Ñ¡”Í•ÉÙ¥•€Ñ¼Ù¥•Ü…ÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”µ•ÑÉ¥Ì…¹É•ÅÕ•ÍĞÑÉ…•Ì½±±•Ñ•½Ù•ÈÑ¡”Ñ¥µ”Á•É¥½¥¸ÅÕ•ÍÑ¥½¸¸()M¥µ¥±…É±ä°å½Ô…¸•…Í¥±äÁ¥Ù½Ğ™É½´…¹äµ•ÑÉ¥ŒÉ…Á Ñ¼Ù¥•Ü±½ÌÑ¡…Ğ¡•±ÀÁÉ½Ù¥‘”µ½É”½¹Ñ•áĞ…‰½ÕĞÑ¡”Í¥ÑÕ…Ñ¥½¸¸½È•á…µÁ±”°¥˜å½ÔÍ•”„ÍÁ¥­”¥¸…¹äÍ•ÉÙ•ÈÌÉ…Ñ”½˜Á…¡”É•ÅÕ•ÍÑÌ°å½Ô…¸¥¹Ù•ÍÑ¥…Ñ”‰ä±¥­¥¹œÑ¡”É…Á Ñ¼Ù¥•ÜÉ•±…Ñ•±½Ì½±±•Ñ•™É½´Ñ¡”Í•ÉÙ•È‘ÕÉ¥¹œÑ¡…ĞÑ¥µ”Á•É¥½¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµ©ÕµÀµÑ¼µ±½ÌÔ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œ¹…Ù¥…Ñ”™É½´µ•ÑÉ¥ŒÉ…Á Ñ¼±½Ìˆ€ùõô()¹°‰•…ÕÍ”å½Ô¡…Ù”…•ÍÌÑ¼…±°½˜Ñ¡•Í”Í½ÕÉ•Ì½˜‘…Ñ„¥¸½¹”Á±…”°å½Ô…¸É•…Ñ”ÕÍÑ½´‘…Í¡‰½…É‘ÌÑ¡…ĞÁÉ½Ù¥‘”‘••ÀÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜å½ÕÈÁ…¡”İ•ˆÍ•ÉÙ•ÉÌ°İ¡•Ñ¡•ÈÑ¡…Ğ‘…Ñ„½µ•Ì™É½´µ½‘}ÍÑ…ÑÕÌ½ÈÑ¡”…•ÍÌ±½Ì¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµÕÍÑ½´µ‘…Í Ì¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œÕÍÑ½´‘…Í¡‰½…Éİ¥Ñ µ•ÑÉ¥Ì°…Á´°±½ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô(((ŒŒ½¥¹œµ½É”İ¥Ñ ÕÍÑ½´Á…¡”±½Ì)]”Ù”Í••¸¡½Ü…Ñ…‘½œÌÁ…¡”¥¹Ñ•É…Ñ¥½¸…ÕÑ½µ…Ñ¥…±±äÁ…ÉÍ•ÌÕÍ•™Õ°¥¹™½Éµ…Ñ¥½¸™É½´å½ÕÈ±½Ì¥˜Ñ¡•äÉ”™½±±½İ¥¹œÑ¡”½µµ½¸½È½µ‰¥¹•±½œ™½Éµ…Ğ¸!½İ•Ù•È°¥˜å½Ô±¥­”Ñ¼ÕÍ”„ÕÍÑ½´±½œ™½Éµ…Ğ°å½Ô…¸µ½‘¥™äÑ¡”Á¥Á•±¥¹”Í¼Ñ¡…ĞÑ¡”•¹Ğ…¸Á…ÉÍ”å½ÕÈ±½Ì™½È…¹ä‘…Ñ„å½Ôİ…¹ĞÑ¼‰”…‰±”Ñ¼µ½¹¥Ñ½È…¹…¹…±åé”¥¸…Ñ…‘½œ¸()%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”İ¥±°Í¡½Üå½Ô¡½ÜÑ¼½±±•ĞÉ•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”…Ì„µ•ÑÉ¥Œ™É½´å½ÕÈÁ…¡”±½Ì°…¹…¹…±åé”Ñ¡¥Ì‘…Ñ„¥¸…Ñ…‘½œ¸((ŒŒŒÉ•…Ñ”„ÕÍÑ½´±½œ™½Éµ…Ğ™½Èå½ÕÈÁ…¡”…•ÍÌ±½œ)Á…¡”ÁÉ½Ù¥‘•Ìµ…¹ä½ÁÑ¥½¹ÌÑ¡…Ğ…±±½Üå½ÔÑ¼ÕÍÑ½µ¥é”Ñ¡”ÑåÁ”½˜‘…Ñ„å½Ôİ½Õ±±¥­”Ñ¼¥¹±Õ‘”¥¸Ñ¡”…•ÍÌ±½œ¸½¹ÍÕ±ĞÑ¡”mÁ…¡”‘½Õµ•¹Ñ…Ñ¥½¹um…Á…¡”µ±½œµÙ…É¥…‰±•Ìµ‘½Ít™½È„±¥ÍĞ½˜…±°½˜Ñ¡”Ù…É¥…‰±•ÌÑ¡…Ğå½Ô…¸ÕÍ”¸()½È•á…µÁ±”°±•ĞÌÍ…äÑ¡…Ğå½Ôİ…¹ĞÑ¼É•…Ñ”„ÕÍÑ½´±½œ™½Éµ…ĞÑ¡…Ğ¥Ì¥‘•¹Ñ¥…°Ñ¼Ñ¡”½µ‰¥¹•™½Éµ…Ğ°•á•ÁĞÑ¡…Ğ¥Ğ…±Í¼±½ÌÑ¡”…µ½Õ¹Ğ½˜Ñ¥µ”Ñ¡…Ğ¥ĞÑ½½¬Ñ¼ÁÉ½•ÍÌÑ¡”É•ÅÕ•ÍĞ€¡€•€¤è()€)1½½Éµ…Ğ€ˆ• €•°€•Ô€•Ğpˆ•Épˆ€”ùÌ€•<pˆ•íI•™•É•Éõ¥pˆpˆ•íUÍ•Èµ•¹Ñõ¥pˆ€•ˆÉ•ÅÑ¥µ”()€)‘Ñ¡¥Ì±¥¹”Ñ¼å½ÕÈÁ…¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”€ ¨©…Á…¡”È¹½¹˜¨¨¤¸Q¡”±…ÍĞİ½ÉÍ¡½Õ±‰”İ¡…Ñ•Ù•È€‰¹¥­¹…µ”ˆå½Ôİ…¹ĞÑ¼…ÁÁ±äÑ¼å½ÕÈÕÍÑ½´1½½Éµ…Ğ€¡¥¸Ñ¡¥Ì•á…µÁ±”°É•ÅÑ¥µ•€¤¸e½Ô±°¹••Ñ¼ÕÍ”Ñ¡¥Ì¹¥­¹…µ”¥¸Ñ¡”¹•áĞÍÑ•À¸((ŒŒŒÁÁ±äå½ÕÈÕÍÑ½´±½œ™½Éµ…Ğ)Q¼…ÁÁ±äÑ¡¥ÌÕÍÑ½´±½œ™½Éµ…Ğ°å½Ô±°¹••Ñ¼ÕÁ‘…Ñ”å½ÕÈY¥ÉÑÕ…°!½ÍĞÌ½¹™¥ÕÉ…Ñ¥½¸™¥±”¸1½…Ñ”Ñ¡”±¥¹”Ñ¡…ĞÍÑ…ÉÑÌİ¥Ñ ÕÍÑ½µ1½œ€½Á…Ñ ½Ñ¼½…Á…¡”½…•ÍÌ¹±½€¸Q¡”±…ÍĞİ½É¥¸Ñ¡”±¥¹”ÍÁ•¥™¥•Ìİ¡¥ 1½½Éµ…ĞÑ¡”…•ÍÌ±½œÍ¡½Õ±ÕÍ”°Í¼å½Ô¹••Ñ¼•‘¥Ğ¥ĞÑ¼Á½¥¹ĞÑ¼å½ÕÈ¹•İ±äÉ•…Ñ•É•ÅÑ¥µ•€±½œ™½Éµ…Ğ€¡…±½¹œİ¥Ñ Ñ¡”½ÉÉ•ĞÁ…Ñ Ñ¼å½ÕÈÁ…¡”…•ÍÌ±½œ¤è()€)ÕÍÑ½µ1½œ€½Á…Ñ ½Ñ¼½…Á…¡”½…•ÍÌ¹±½œÉ•ÅÑ¥µ”)€)M…Ù”…¹•á¥ĞÑ¡”™¥±”°…¹É•ÍÑ…ÉĞÁ…¡”Í¼Ñ¡…ĞÑ¡”¡…¹•Ìİ¥±°Ñ…­”•™™•Ğ¸e½ÕÈÁ…¡”Í•ÉÙ•ÈÍ¡½Õ±¹½ÜÍÑ…ÉĞ¥¹±Õ‘¥¹œÑ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¥¸•… …•ÍÌ±½œ•¹ÑÉä¸((ŒŒŒ±½¹”…¹ÕÍÑ½µ¥é”Ñ¡”…Ñ…‘½œÁ…¡”±½œÁÉ½•ÍÍ¥¹œÁ¥Á•±¥¹”)Q¼É•…Ñ”„¹•ÜÁ¥Á•±¥¹”Ñ¼Á…ÉÍ”å½ÕÈÕÍÑ½´±½œ™½Éµ…Ğ°±½…Ñ”Ñ¡”Á…¡”¥¹Ñ•É…Ñ¥½¸Á¥Á•±¥¹”½¸Ñ¡”m1½œA¥Á•±¥¹•Íum‘…Ñ…‘½œµ±½œµÁ¥Á•±¥¹•tÁ…”½˜å½ÕÈ…Ñ…‘½œ…½Õ¹Ğ°…¹±¥¬€‰±½¹”¸ˆ()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµ±½¹”µ±½œµÁ¥Á•±¥¹”µØÈ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œè±½¹”Á¥Á•±¥¹”Ñ¼…‘É•ÅÕ•ÍĞÑ¥µ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()%˜å½Ô¥¹ÍÁ•ĞÑ¡”É½¬A…ÉÍ•ÈÍÑ•À½˜Ñ¡”±½¹•Á…¡”¥¹Ñ•É…Ñ¥½¸Á¥Á•±¥¹”°å½Ô…¸Í•”Ñ¡…Ğ¥Ğ¥¹±Õ‘•ÌÑİ¼Á…ÉÍ¥¹œÉÕ±•ÌÑ¡…Ğ…É”‘•Í¥¹•Ñ¼•áÑÉ…ĞÁ…¡”±½œÙ…É¥…‰±•Ì…Ì…ÑÑÉ¥‰ÕÑ•Ì™É½´Ñ¡”½µµ½¸…¹½µ‰¥¹•±½œ™½Éµ…ÑÌ¥¸Á…¡”è()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµ±½œµÁ…ÉÍ¥¹œµÉÕ±•ÌµØÈ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œè±½œÁ…ÉÍ¥¹œÁ¥Á•±¥¹”ÉÕ±•Ìˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô(()%¸Ñ¡¥Ì•á…µÁ±”°İ”Ù”…‘‘•„¹•ÜÁ…ÉÍ¥¹œÉÕ±”°…•ÍÌ¹É•ÅÑ¥µ•€°İ¡¥ ‰Õ¥±‘Ì½¸Ñ¡”•á¥ÍÑ¥¹œ…•ÍÌ¹½µ‰¥¹•‘€ÉÕ±”¸Q¡”¹•ÜÉÕ±”İ¥±°Á…ÉÍ”Ñ¡”Ù…É¥…‰±”Ñ¡…Ğ…ÁÁ•…ÉÌ…Ì…¸¥¹Ñ••È…ĞÑ¡”•¹½˜½ÕÈÕÍÑ½´±½œ™½Éµ…Ğ€¡É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¤°…¹•áÑÉ…Ğ¥Ğ…Ì…¸…ÑÑÉ¥‰ÕÑ”…±±•É•ÅÕ•ÍÑ}Ñ¥µ•€è()€)…•ÍÌ¹É•ÅÑ¥µ”€•í…•ÍÌ¹½µ‰¥¹•‘ô€•í¥¹Ñ••ÈéÉ•ÅÕ•ÍÑ}Ñ¥µ•ô)€()™Ñ•Èå½ÔÍ…Ù”…¹•¹…‰±”Ñ¡”Á¥Á•±¥¹”°…Ñ…‘½œİ¥±°ÍÑ…ÉĞÁÉ½•ÍÍ¥¹œå½ÕÈ¥¹½µ¥¹œÁ…¡”…•ÍÌ±½Ì½ÉÉ•Ñ±ä¸Q¡¥Ì¥Ì©ÕÍĞ½¹”•á…µÁ±”½˜¡½Üå½Ôµ¥¡ĞÁ…ÉÍ”„ÕÍÑ½´±½œ™½Éµ…Ğ™½È¥¹™½Éµ…Ñ¥½¸å½Ô±¥­”Ñ¼½±±•ÓŠQm½¹ÍÕ±ĞÑ¡”‘½Õµ•¹Ñ…Ñ¥½¹um±½Ìµ‘½ÌµÁ…ÉÍ¥¹t™½Èµ½É”‘•Ñ…¥±Ì…‰½ÕĞÁ…ÉÍ¥¹œå½ÕÈ±½Ì¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµ±½œµ¥¹ÍÁ•ĞµÉ•ÅÑ¥µ”µØÈ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œèÍ•”¹•ÜÁ…ÉÍ•É•ÅÕ•ÍĞÑ¥µ”ˆ…ÁÑ¥½¸ô‰…Ñ…‘½œ…¸Á…ÉÍ”å½ÕÈÕÍÑ½´Á…¡”±½œ™½Éµ…ÑÌ™½È­•ä¥¹™½Éµ…Ñ¥½¸€¡ÍÕ …ÌÉ•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¤°Í¼å½Ô…¸Ù¥ÍÕ…±¥é”…¹…±•ÉĞ½¸Ñ¡¥Ì‘…Ñ„¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒŒÉ•…Ñ”„µ•…ÍÕÉ”™½ÈÑ¡”±½œÙ…É¥…‰±”)9½ÜÑ¡…Ğ…Ñ…‘½œ¥ÌÁ…ÉÍ¥¹œÑ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”™É½´å½ÕÈÕÍÑ½´Á…¡”±½œ™½Éµ…Ğ°å½Ô…¸É•…Ñ”„mµ•…ÍÕÉ•um‘…Ñ…‘½œµ±½Ìµµ•…ÍÕÉ”µ‘½Ít™½ÈÑ¡¥Ì…ÑÑÉ¥‰ÕÑ”°¥¸½É‘•ÈÑ¼ÕÍ”¥Ğ±¥­”„µ•ÑÉ¥Œ¥¸É…Á¡Ì…¹…±•ÉÑÌ¸]¡•¸å½ÔÉ”¥¹ÍÁ•Ñ¥¹œ„±½œ•¹ÑÉä°å½Ô…¸É•…Ñ”„µ•…ÍÕÉ”™½È…¹ä¹Õµ•É¥…°±½œ…ÑÑÉ¥‰ÕÑ”‰ä±¥­¥¹œ½¸¥Ğ…¹Í•±•Ñ¥¹œ€‰É•…Ñ”µ•…ÍÕÉ”™½È ñ1=}QQI%	UQ}95ù€°ˆ…ÌÍ¡½İ¸‰•±½Ü¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµ±½œµÉ•…Ñ”µµ•…ÍÕÉ”µØÌ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œèÍ•”¹•ÜÁ…ÉÍ•É•ÅÕ•ÍĞÑ¥µ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()e½Ô…¸¥Ù”Ñ¡”µ•…ÍÕÉ”„‘•ÍÉ¥ÁÑ¥Ù”¹…µ”€¡”¹œ¸°€‰Á…¡”I•ÅÕ•ÍĞQ¥µ”ˆ¤…¹¥¹‘¥…Ñ”Ñ¡”½ÉÉ•ĞÕ¹¥Ğ™½ÈÑ¡”µ•…ÍÕÉ”¸%¸Ñ¡¥Ì…Í”°Í¥¹”Á…¡”µ•…ÍÕÉ•ÌÑ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”€¡€•€¤¥¸µ¥É½Í•½¹‘Ì°İ”Ù”ÍÁ•¥™¥•Ñ¡”Õ¹¥Ğ…½É‘¥¹±ä¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµÉ•…Ñ”µ¹•Üµ±½œµµ•…ÍÕÉ”µØÈ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œè…‘¹•Üµ•…ÍÕÉ”™½ÈÉ•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¥¸µ¥É½Í•½¹‘Ìˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()9½Üİ”Í¡½Õ±‰”…‰±”Ñ¼Ù¥ÍÕ…±¥é”…¹…±•ÉĞ½¸½ÕÈ±½œµ•…ÍÕÉ”°Á…¡”I•ÅÕ•ÍĞQ¥µ•€°©ÕÍĞ±¥­”…¹ä½Ñ¡•Èµ•ÑÉ¥Œ¥¸…Ñ…‘½œ¸((ŒŒY¥ÍÕ…±¥é¥¹œå½ÕÈ±½Ì¥¸…Ñ…‘½œ)=¹”å½ÕÈ±½Ì…É”‰•¥¹œÁ…ÉÍ•…¹ÁÉ½•ÍÍ•¥¸…Ñ…‘½œ°å½Ô…¸•áÁ±½É”…¹™¥±Ñ•È…±°½˜Ñ¡…Ğ±½œ‘…Ñ„Ñ¼‘•É¥Ù”ÍÁ•¥™¥Œ¥¹Í¥¡ÑÌ™É½´É•…°µÑ¥µ”Á…¡”Í•ÉÙ•È…Ñ¥Ù¥Ñä¸Q¼É•…Ñ”ÕÍÑ½´Ù¥•İÌ½˜å½ÕÈ±½œ‘…Ñ„°å½Ô…¸™¥±Ñ•È…¹…É•…Ñ”‰ä™…•ÑÌ±¥­”UI0Á…Ñ °!QQ@É•ÍÁ½¹Í”½‘”°…¹½Ñ¡•È­•ä¥¹™½Éµ…Ñ¥½¸™É½´å½ÕÈ…•ÍÌ±½Ì¸½È•á…µÁ±”°¥¸Ñ¡”1½œáÁ±½É•ÈÌ¹…±åÑ¥ÌÙ¥•Ü°¥ĞÌ•…ÍäÑ¼Ù¥ÍÕ…±¥é”İ¡¥ UI0Á…Ñ¡Ìİ•É”…ÍÍ½¥…Ñ•İ¥Ñ Ñ¡”Í±½İ•ÍĞÉ•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ•Ì¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµ±½œµÁÉ½•ÍÍ¥¹œµÑ¥µ”µÑ½Á±¥ÍĞÌ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œèÑ½Á±¥ÍĞ½˜É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()=Èå½Ô…¸Ù¥ÍÕ…±¥é”Ñ¡”Í…µ”‘…Ñ„¥¸„Ñ¥µ•Í•É¥•ÌÉ…Á ¥˜å½ÔÁÉ•™•ÈÑ¼…¹…±åé”ÑÉ•¹‘Ì½Ù•È„ÍÁ•¥™¥ŒÁ•É¥½½˜Ñ¥µ”¸e½Ôµ…ä…±Í¼İ¥Í Ñ¼•áÁ½ÉĞÑ¡¥ÌÉ…Á Ñ¼„‘…Í¡‰½…ÉÍ¼Ñ¡…Ğå½Ô…¸½ÉÉ•±…Ñ”¥Ğİ¥Ñ ½Ñ¡•Èµ•ÑÉ¥Ì…É½ÍÌÑ¡”É•ÍĞ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”…¹…ÁÁ±¥…Ñ¥½¹Ì¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµÉ•ÅÕ•ÍĞµÑ¥µ”µÑ¥µ•Í•É¥•ÌÌ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œèÑ½Á±¥ÍĞ½˜É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()9½ÜÑ¡…Ğå½ÔÉ”½±±•Ñ¥¹œµ•ÑÉ¥Ì™É½´Á…¡”µ½‘}ÍÑ…ÑÕÌ…¹å½ÕÈ…•ÍÌ±½Ì°å½Ô…¸Í•ĞÕÀ…±•ÉÑÌÑ¼…ÕÑ½µ…Ñ¥…±±ä‘•Ñ•Ğ¥ÍÍÕ•ÌÑ¡…Ğ…™™•ĞÑ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜å½ÕÈÁ…¡”Í•ÉÙ•ÉÌ¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”İ¥±°•áÁ±½É”Í•Ù•É…°ÑåÁ•Ì½˜…±•ÉÑÌÑ¡…Ğ…¸¹½Ñ¥™äå½Ô…‰½ÕĞÁ½Ñ•¹Ñ¥…°¥ÍÍÕ•Ìİ¥Ñ å½ÕÈÁ…¡”Í•ÉÙ•ÉÌ¸((ŒŒ±•ÉÑ¥¹œ½¸Á…¡”¥ÍÍÕ•Ì)±•ÉÑÌ…¸¡•±À¹½Ñ¥™äå½Ôİ¡•¸¥µÁ½ÉÑ…¹Ğ¥ÍÍÕ•Ì½ÕÈ½¸å½ÕÈÁ…¡”Í•ÉÙ•ÉÌ¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”İ¥±°İ…±¬Ñ¡É½Õ Í½µ”•á…µÁ±•Ì½˜Í•ÑÑ¥¹œÕÀ…Ñ…‘½œÑ¼‘•Ñ•ĞÁ½Ñ•¹Ñ¥…°¥ÍÍÕ•Ì…¹¹½Ñ¥™äå½Ô‰…Í•½¸Á…¡”µ•ÑÉ¥Ì…¹±½Ì¸((ŒŒŒMÑ…ÑÕÌ¡•¬)Q¡”Á…¡”¥¹Ñ•É…Ñ¥½¸¥¹±Õ‘•Ì„ÍÑ…ÑÕÌ¡•¬Ñ¡…Ğ…¸¡•±Àå½Ô™¥¹½ÕĞİ¡•¸½¹”½Èµ½É”½˜å½ÕÈÁ…¡”Í•ÉÙ•ÉÌ¥Ì‘½İ»ŠQ¥‘•…±±ä‰•™½É”å½Ô¡•…È…‰½ÕĞ¥Ğ™É½´å½ÕÈÕÍ•ÉÌ¸()e½Ô…¸Í•ĞÕÀ…Ñ…‘½œÑ¼…ÕÑ½µ…Ñ¥…±±ä¹½Ñ¥™äå½Ô¥˜Ñ¡”•¹Ğ™…¥±ÌÑ¼½¹¹•ĞÑ¼½¹”½Èµ½É”½˜å½ÕÈÁ…¡”Í•ÉÙ•ÉÌ}á|½¹Í•ÕÑ¥Ù”Ñ¥µ•Ì¸M•ÑÑ¥¹œÕÀ…¸…±•ÉĞ¥Ì•…Íäìİ¥Ñ¡¥¸Ñ¡”…Ñ…‘½œ…ÁÀ°¹…Ù¥…Ñ”Ñ¼m5½¹¥Ñ½ÉÌ€ø9•Ü5½¹¥Ñ½È€ø%¹Ñ•É…Ñ¥½¹um¥¹Ñ•É…Ñ¥½¸µµ½¹¥Ñ½Ét¸™Ñ•È±¥­¥¹œ½¸Ñ¡”Á…¡”Ñ¥±”°¹…Ù¥…Ñ”Ñ¼Ñ¡”€‰%¹Ñ•É…Ñ¥½¸MÑ…ÑÕÌˆÑ…ˆ¸()	•±½Ü°İ”Í•ĞÕÀÑ¡”…±•ÉĞÑ¼¹½Ñ¥™äÕÌ•… Ñ¥µ”…¹äÁ…ÉÑ¥Õ±…ÈÁ…¡”¡½ÍĞ™…¥±ÌÑ¡”¡•¬Ñİ¼½¹Í•ÕÑ¥Ù”Ñ¥µ•Ì¸Q¡”…±•ÉĞİ¥±°É•Í½±Ù”½¸¥ÑÌ½İ¸½¹”Ñ¡”•¹Ğ¥Ì…‰±”Ñ¼½¹¹•ĞÍÕ•ÍÍ™Õ±±ä¸()íìğ¥µœÍÉŒô‰…Á…¡”µ…±•ÉĞµ¡•¬µ‘…Ñ…‘½œµØÈ¹Á¹œˆ…±Ğô‰…Ñ…‘½œ…±•ÉĞÑ¼‘•Ñ•Ğİ¡•¸Á…¡”¡½ÍĞ™…¥±ÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô((ŒŒŒQ¡É•Í¡½±…±•ÉĞ)e½Ô…¸…±Í¼É•…Ñ”…±•ÉÑÌÑ¼•Ğ¹½Ñ¥™¥•İ¡•¸µ•ÑÉ¥ÌÉ½ÍÌ™¥á•½Èm‘å¹…µ¥ŒÑ¡É•Í¡½±‘Íum…¹½µ…±¥•Ít¸%˜±½…Ñ•ÍÑ¥¹œ¡…ÌÍ¡½İ¸å½ÔÑ¡…Ğå½ÕÈÍ•ÉÙ•ÉÌœÁ•É™½Éµ…¹”ÍÑ…ÉÑÌÑ¼‘•É…‘”İ¡•¸Ñ¡•äÁÉ½•ÍÌµ½É”Ñ¡…¸„•ÉÑ…¥¸¹Õµ‰•È½˜É•ÅÕ•ÍÑÌÁ•ÈÍ•½¹°å½Ô…¸Í•Ğ…¸…±•ÉĞÑ¼™¥¹½ÕĞİ¡•¸å½ÔÉ”¹•…É¥¹œÑ¡…ĞÑ¡É•Í¡½±°…ÌÍ¡½İ¸‰•±½Ü¸()íìğ¥µœÍÉŒô‰É•…Ñ”µ…Á…¡”µµ½¹¥Ñ½È¹Á¹œˆ…±Ğô‰…Ñ…‘½œ…±•ÉĞÑ¼‘•Ñ•Ğ¡¥ ¹Õµ‰•È½˜Á…¡”¡¥ÑÌˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()%˜å½Ô•Ğ¹½Ñ¥™¥•Ñ¡…ĞÑ¡¥Ì…±•ÉĞ¡…ÌÑÉ¥•É•°å½Ôµ…ä¹••Ñ¼Í…±”ÕÀ½È½ÕĞÑ¼¡…¹‘±”Ñ¡”¥¹É•…Í•±½…°İ¥Ñ Í½µ”Õ¥‘…¹”™É½´Ñ¡”Á…¡”m‘½Õµ•¹Ñ…Ñ¥½¸ÌÁ•É™½Éµ…¹”ÑÕ¹¥¹œÑ¥ÁÍumÁ•É™½Éµ…¹”µÑÕ¹¥¹œµ‘½Ít¸((ŒŒŒ1½œ…±•ÉĞ)%˜å½ÔÍ•ĞÕÀ…Ñ…‘½œÑ¼½±±•Ğ…¹ÁÉ½•ÍÌå½ÕÈÁ…¡”±½Ì°å½Ô…¸mÉ•…Ñ”„±½œ…±•ÉÑum±½œµ…±•ÉĞµ…ÁÁt‰…Í•½¸ÍÁ•¥™¥Œ™…•ÑÌ…¹µ•…ÍÕÉ•Ì°±¥­”!QQ@ÍÑ…ÑÕÌ½‘”½ÈÑ¡”Á…¡”I•ÅÕ•ÍĞQ¥µ•€µ•…ÍÕÉ”İ”É•…Ñ••…É±¥•È¸Q¡”•á…µÁ±”‰•±½ÜÍ¡½İÌ¡½Üå½Ô…¸ÕÍ”Ñ¡”M•ÉÙ¥•€…¹MÑ…ÑÕÌ½‘•€™…•ÑÌÑ¼É•…Ñ”…¸…±•ÉĞÑ¡…Ğ¹½Ñ¥™¥•Ìå½Ô¥˜å½ÕÈÁ…¡”Í•ÉÙ¥”É•ÑÕÉ¹Ì„±…É”¹Õµ‰•È½˜€Õáà!QQ@É•ÍÁ½¹Í•Ì¸()íìğ¥µœÍÉŒô‰µ½¹¥Ñ½Èµ…Á…¡”µ‘…Ñ…‘½œµ±½œµ…±•ÉĞÈ¹Á¹œˆ…±Ğô‰5½¹¥Ñ½ÈÁ…¡”…Ñ…‘½œ±½œ…±•ÉĞÑ¼‘•Ñ•Ğ¡¥ €Õáà•ÉÉ½ÈÉ…Ñ”™É½´Á…¡”±½Ìˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒMÑ…ÉĞÑ¡”µ½¹¥Ñ½É¥¹œÁÉ½•ÍÌ)]”Ù”Í¡½İ¸å½Ô„™•Ü½˜Ñ¡”İ…åÌå½Ô…¸ÕÍ”…Ñ…‘½œÑ¼½±±•Ğ°Ù¥ÍÕ…±¥é”°…¹…±•ÉĞ½¸Á…¡”µ•ÑÉ¥Ì…¹±½Ì¸%¸©ÕÍĞ„™•Üµ¥¹ÕÑ•Ìå½Ô…¸ÍÑ…ÉĞ…ÁÑÕÉ¥¹œÁ…¡”µ•ÑÉ¥Ì…¹±½Ì°‰Õ¥±‘¥¹œÕÍÑ½´‘…Í¡‰½…É‘Ì°…¹Í•ÑÑ¥¹œÕÀ…±•ÉÑÌ¸	•…ÕÍ”…Ñ…‘½œ…±Í¼¥¹Ñ•É…Ñ•Ìİ¥Ñ µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô½Ñ¡•ÈÍ•ÉÙ¥•Ì…¹Ñ½½±Ì°å½Ô…¸ÅÕ¥­±äÉ•…Ñ”„½µÁÉ•¡•¹Í¥Ù”Ù¥•Ü½˜å½ÕÈÍ•ÉÙ•ÉÌ…±½¹œİ¥Ñ …±°Ñ¡”½Ñ¡•È½µÁ½¹•¹ÑÌ½˜å½ÕÈÍÑ…¬¸()%˜å½Ô‘½¸Ğå•Ğ¡…Ù”„…Ñ…‘½œ…½Õ¹Ğ°ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œÁ…¡”Ñ½‘…äİ¥Ñ „€ñ„±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆ¡É•˜ôˆŒˆù™É•”ÑÉ¥…°ğ½„ø¸()m…Áµtè€½‰±½œ½…¹¹½Õ¹¥¹œµ…Á´¼)m…•¹Ğµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼)m…•¹Ğµ¥¹ÍÑ…±°µ‘½tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ)m¡•˜µ‰±½tè€½‰±½œ½µ½¹¥Ñ½Èµ¡•˜µİ¥Ñ µ‘…Ñ…‘½œ¼)mÁÕÁÁ•Ğµ‰±½tè€½‰±½œ½µ½¹¥Ñ½ÈµÁÕÁÁ•Ğµ‘…Ñ…‘½œ¼)m…¹Í¥‰±”µ‰±½tè€½‰±½œ½…¹Í¥‰±”µ‘…Ñ…‘½œµµ½¹¥Ñ½Èµå½ÕÈµ…ÕÑ½µ…Ñ¥½¸µ…ÕÑ½µ…Ñ”µå½ÕÈµµ½¹¥Ñ½É¥¹œ¼)mÁ…ÉĞ´Åtè€½‰±½œ½µ½¹¥Ñ½É¥¹œµ…Á…¡”µİ•ˆµÍ•ÉÙ•ÈµÁ•É™½Éµ…¹”¼)mÁ…ÉĞ´Étè€½‰±½œ½½±±•Ğµ…Á…¡”µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì)m…Á…¡”µ…•¹Ğµ½¹™tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½…Á…¡”½‘…Ñ…‘½}¡•­Ì½…Á…¡”½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”)mÁ…ÉĞ´Èµ•¹…‰±•µ½‘ÍÑ…ÑÕÍtè€½‰±½œ½½±±•Ğµ…Á…¡”µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼…Á…¡•ÌµÍÑ…ÑÕÌµµ½‘Õ±”)m…Á…¡”µÑ¥±•tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì¥¹Ñ•É…Ñ¥½¹Ì½…Á…¡”)m…Á…¡”µ½¹™¥œµ•á…µÁ±•tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½…Á…¡”½‘…Ñ…‘½}¡•­Ì½…Á…¡”½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”)mÑ½µ…Ğµ‰±½tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½ÈµÑ½µ…Ğµµ•ÑÉ¥Ì¼)m¹¥¹àµ‰±½tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µµ½¹¥Ñ½Èµ¹¥¹à¼)mÁ•É™½Éµ…¹”µÑÕ¹¥¹œµ‘½Ítè¡ÑÑÀè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì¼È¸Ğ½µ¥ÍŒ½Á•É˜µÑÕ¹¥¹œ¹¡Ñµ°)m…Á…¡”µ…•ÍÌµ±½tè¡ÑÑÀè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÕÉÉ•¹Ğ½±½Ì¹¡Ñµ°…•ÍÍ±½œ)m™±Õ•¹Ñ‘tè¡ÑÑÀè¼½İİÜ¹™±Õ•¹Ñ¹½Éœ¼)m…¹½µ…±¥•Ítè€½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ…¹½µ…±äµ‘•Ñ•Ñ¥½¸µ‘…Ñ…‘½œ¼)m…Á…¡”µ‘…Ñ…‘½œµ‘…Í¡‰½…É‘tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½ÍÉ••¸½¥¹Ñ•É…Ñ¥½¸½…Á…¡”)m¥¹Ñ•É…Ñ¥½¸µµ½¹¥Ñ½Étè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌÉ•…Ñ”½¥¹Ñ•É…Ñ¥½¸)mÁ…ÉĞ´Èµ½¹™¥œµ™¥±•tè€½‰±½œ½½±±•Ğµ…Á…¡”µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼…Á…¡•ÌµÍÑ…ÑÕÌµµ½‘Õ±”)m…Á…¡”µ±½œµÙ…ÉÍtè¡ÑÑÀè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÕÉÉ•¹Ğ½µ½½µ½‘}±½}½¹™¥œ¹¡Ñµ°)m‘…Ñ…‘½œµ±½œµ•áÁ±½É•Étè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½±½Ì)m±½œµÁÉ½•ÍÍ¥¹œµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½±½}½±±•Ñ¥½¸¼…‘Ù…¹•µ±½œµ½±±•Ñ¥½¸µ™Õ¹Ñ¥½¹Ì)m‘…Ñ…‘½œµ±½œµÁ¥Á•±¥¹•tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½±½Ì½Á¥Á•±¥¹•Ì)m…Á…¡”µ±½œµÙ…É¥…‰±•Ìµ‘½Ítè¡ÑÑÁÌè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÑÉÕ¹¬½µ½½µ½‘}±½}½¹™¥œ¹¡Ñµ°)m‘…Ñ…‘½œµ±½œµµ•…ÍÕÉ•Ìµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É”¼µ•…ÍÕÉ•Ì)m‘…Ñ…‘½œµ±½œµÁ¥Á•±¥¹•Ìµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ¼ÁÉ½•ÍÍ¥¹œµÁ¥Á•±¥¹•Ì)m‘…Ñ…‘½œµ±½Ìµµ•…ÍÕÉ”µ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É”¼µ•…ÍÕÉ•Ì)m‘…Ñ…‘½œµ±½Ítè€½‰±½œ½…¹¹½Õ¹¥¹œµ±½Ì¼)m±½Ìµ‘½ÌµÁ…ÉÍ¥¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½Á…ÉÍ¥¹œ¼)m±½œµ…±•ÉĞµ…ÁÁtè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌÉ•…Ñ”½±½œ
+---
+blog/category: ["series datadog"]
+blog/tag: ["Apache", "http server", "web server", "performance"]
+date: 2017-03-16T00:00:03Z
+description: "Learn how to use Datadog to monitor Apache web server metrics."
+draft: false
+toc_cta_text: "Start monitoring Apache"
+email: emily.chang@datadoghq.com
+featured: false
+image: apache-hero3.png
+meta_title: null
+preview_image: apache-hero3.png
+scribbler: "Emily Chang"
+scribbler_image: img-0791.jpg
+slug: monitor-apache-web-server-datadog
+sub_featured: true
+title: "How to monitor Apache web server with Datadog"
+twitter_handle: 
+---
+
+*This post is the last of a 3-part series about monitoring Apache performance. [Part 1][part-1] provides an overview of the Apache web server and its key performance metrics, and [part 2][part-2] describes how to collect and monitor Apache metrics using native and open source tools.* 
+
+If you've read [Part 2][part-2] of this series, you know that there are a variety of ways to collect metrics from your Apache web servers, both natively and using open source tools. Although these methods are useful for checking Apache metrics in real time, they only provide one piece of the puzzle, since they do not readily reveal long-term trends and patterns, nor do they offer any context about the rest of your infrastructure and applications. 
+
+In this post we'll show you how to integrate Datadog with Apache to automatically collect most of the metrics discussed in [Part 1][part-1] of this series, and visualize them in a dashboard like the one shown below. Datadog allows you to zoom out to see long-term performance trends, or to zoom in to see your real-time and historical metrics at full granularity. And with more than 150 integrations with popular infrastructure technologies, plus [end-to-end request tracing][apm], Datadog enables you to monitor Apache in context with the rest of your stack.
+
+{{< img src="apache-final-screen.png" alt="Apache default dashboard in Datadog" popup="true" >}}
+
+We will also show you how to [use FluentD to send Apache access log data to Datadog](#how-to-send-apache-logs-to-datadog-using-fluentd), and [set up useful alerts](#set-up-apache-alerts) to get informed of performance issues in real time.  
+
+## Set up Datadog's Apache integration
+### 1. Configure Apache to send metrics 
+In order to collect metrics from Apache, you need to enable the status module and make sure that ExtendedStatus is on, as outlined in [Part 2][part-2-enablemodstatus].  
+
+### 2. Install the Datadog Agent
+The [Datadog Agent][agent-docs] is open source software that collects metrics and events from your hosts and forwards them to Datadog so that you can visualize, analyze, and alert on performance data, all in one place. Installing the Agent usually just takes a single command; see instructions for various platforms [here][agent-install-doc]. If you prefer, you can also install the Agent using tools like [Chef][chef-blog], [Puppet][puppet-blog], or [Ansible][ansible-blog].
+
+### 3. Update the Agent configuration file
+Once you've installed the Agent, you will need to create an Apache configuration file so that the Agent will know where to fetch your Apache metrics. Find the location of your example configuration file (`apache.yaml.example`) [here][agent-docs], which varies from platform to platform.  
+
+Make a copy of the [example file][apache-config-example] and save it as `apache.yaml`. Update `apache.yaml` with the mod_status URL of your Apache instance (replacing "localhost" with the IP/hostname of your Apache instance, if you installed the Agent on a different host). The example below shows the configuration file for a user who is running Apache on the same host as the Agent. 
+
+```
+init_config:
+
+instances:
+  - apache_status_url: http://localhost/server-status?auto
+    # apache_user: example_user
+    # apache_password: example_password
+    # tags:
+    #   - optional_tag
+
+    # The (optional) disable_ssl_validation will instruct the check
+    # to skip the validation of the SSL certificate of the URL being tested.
+    # Defaults to false, set to true if you want to disable SSL certificate validation.
+    #
+    # disable_ssl_validation: false
+
+    # The (optional) connect_timeout will override the default value, and fail
+    # the check if the time to establish the (TCP) connection exceeds the
+    # connect_timeout value (in seconds)
+    # connect_timeout: 5
+    
+    # The (optional) receive_timeout will override the default value, and fail
+    # the check if the time to receive the server status from the Apache server
+    # exceeds the receive_timeout value (in seconds)
+    # receive_timeout: 15
+```
+
+If your Apache instance is not being accessed by localhost, make sure to enable access to your Agent's IP address in your [Apache status module's configuration file][part-2-config-file], and replace "localhost" in the URL with the IP of your Apache server. You also have the option to add a user and password if you configured one (see [Part 2][part-2] for details on how to only allow authenticated users to access the mod_status page).  
+
+Save your changes and exit the file. [Restart the Agent and run the `info` command][agent-docs] to verify that the Apache check is configured correctly. If everything is working, you should see a snippet like this in the info output:
+
+```
+    apache
+    ------
+      - instance #0 [OK]
+      - Collected 12 metrics, 0 events & 1 service check
+```
+
+### 4. Enable the Apache integration in the Datadog App
+To start seeing your Apache metrics in Datadog, navigate to the Integrations page of the Datadog App, and click on the [Apache integration tile][apache-tile]. In the Configuration tab, click on "Install Integration". You should now be able to see your host reporting metrics in Datadog's infrastructure list, as shown below:
+
+{{< img src="infra-apache-list.png" alt="Apache server in Datadog app" popup="true" >}}
+
+## Customize your Apache dashboard
+An [Apache dashboard][apache-datadog-dashboard] should now appear in your list of integration dashboards. This out-of-the-box dashboard displays most of the key metrics covered in [Part 1][part-1] of this series, along with helpful pre-computed metrics that make it easier to understand real-time usage and performance. For example, the metrics `apache.net.hits` and `apache.net.bytes` are taken directly from mod_status and represent ever-increasing counters of the total number of requests and bytes that have been served over the lifetime of the server. The Datadog Agent provides these metrics, but also provides per-second rates (`apache.net.request_per_s` and `apache.net.bytes_per_s`), which are calculated by averaging the change in the number of requests and bytes served over each ~15â€“20 second collection period. 
+
+(Similarly, you should favor the real-time CPU metrics reported by the Datadog Agent over the CPU metrics collected from Apache's mod\_status page, which are aggregated over the lifetime of the server.)
+
+{{< img src="clone-apache-dash.png" alt="Cloning your Apache screenboard in Datadog" popup="true" >}}
+
+You can clone this dashboard and customize it with system-level metrics that are not available from Apache's status module, like memory usage and network traffic metrics, to add more context to your request throughput graphs. And because you can mix and match metrics from any source in Datadog, you can add metrics from databases, load balancers, or other services you are running alongside Apache, such as [Tomcat][tomcat-blog] or [NGINX][nginx-blog].
+
+## How to send Apache logs to Datadog using FluentD 
+As mentioned in [Part 1][part-1], certain metrics (including error rates and request latency) are only available in [Apache's access logs][apache-access-log]. Many log parsing and aggregation tools can help you collect, filter, and analyze your Apache logs to garner useful insights. FluentD is one such open source tool that can help you forward Apache log data to your monitoring platform. 
+
+In this section, we will walk through an example of setting up the [DogStatsD FluentD plugin][fluentd-dogstatsd] to send Apache error metrics to Datadog.
+
+### Install FluentD on your Apache server
+If you're not already using FluentD, follow the [pre-installation steps][fluentd-preinstall] and [install FluentD][fluentd-install] on your Apache server. 
+
+### Install the plugin
+The FluentD DogStatsD plugin is available as a Ruby gem. Install it:
+
+```
+gem install fluent-plugin-dogstatsd
+```
+
+### Update the FluentD config file in 3 steps
+Now it's time to update the [FluentD configuration file][fluentd-config]. Make sure to save a backup copy of this file in case you want to revert back to it at some point. To learn more about FluentD's configuration file syntax, consult the full [documentation here][fluentd-config]. 
+
+In our basic example, we will add three directives to the configuration file: source, filter, and match. Make sure to add these three directives in the order stated below (e.g. do not place the match directive before the source directive).
+
+#### 1. Define the source as your Apache access log
+We need to add a **source** that uses the [in_tail input plugin][fluentd-tail] (which is already included in FluentD) to tail your access log.
+
+In this example, we will assume that you are using the combined LogFormat:
+
+```
+LogFormat "%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\" combined
+```
+
+This also assumes that you have specified in your Apache config that you want to use this LogFormat ([consult Part 2][part-2] for more detailed instructions).
+
+In your `td-agent.conf` file, you should see a section that starts with `## Source descriptions`. [Consult the docs][fluentd-config-docs] if you need help locating the file. This is where we will add in information about the source we want to parse: the Apache access log. FluentD's in_tail plugin has a [built-in Apache parsing format][fluentd-apache2] that automatically parses the combined log format, called `apache2`. 
+
+Add this snippet to your config file somewhere in the source descriptions section:
+
+```
+<source>
+  @type tail
+  format apache2
+  time_format %d/%b/%Y:%H:%M:%S %z
+  path /var/log/apache2/access.log
+  tag apache.status
+</source>
+```
+
+This snippet continuously tails the Apache access log, parses each line, and adds the FluentD tag "apache.status". You can customize the name of this tag as you wish.  
+
+Remember to replace the path with the correct location of your access log. Now it's time to filter/reformat the information before forwarding it to Datadog, by using one of [FluentD's filter plugins][fluentd-filter].
+
+#### 2. Filter the access log info
+The [record-transformer **filter** plugin][fluentd-record-transformer] (also already included in FluentD) helps transform Apache access log data into a format that is suitable for ingesting into Datadog.
+
+You can use this filter plugin to update each record with a key that will appear as your Datadog metric name once it is forwarded to Datadog.
+
+Make sure to specify the same tag that you specified in the source directive (`apache.status`) in the previous step.
+
+```
+<filter apache.status>
+  @type record_transformer
+  <record>
+    key apache.status.${record["code"]}
+  </record>
+</filter>
+```
+
+This section adds a key field called `apache.status.${record["code"]}`, to each record that is tagged with "apache.status". The value of `${record["code"]}` is equal to the request's final HTTP status code (the [combined log format's `%>s` variable][apache-log-vars]).  
+
+#### 3. Match the filtered info to the DogStatsD plugin.
+Now it's time to add a **match** section to tell FluentD where to send our filtered Apache log data. The section below shows an example of how to direct FluentD to send the data to the [DogStatsD output plugin][fluentd-dogstatsd].
+
+```
+<match apache.status>
+  @type dogstatsd
+  host localhost
+  port 8125
+  use_tag_as_key false
+  flat_tags false
+  metric_type increment
+  value_key Value
+</match>
+```
+Each Apache request will increment the **apache.status.${record["code"]}** metric and send it to DogStatsD via port 8125, which will forward it to Datadog. You can learn more about the available configuration settings [here][fluentd-dogstatsd].
+
+For example, any request that results in a 502 status code will increment a counter for the `apache.status.502` metric in Datadog.
+
+### Restart FluentD with the new configuration file
+Once you've saved your changes, exit the configuration file and [start the FluentD daemon][fluentd-launch-docs]. To indicate which configuration file to use, [run the following command][fluentd-startup-docs] from the directory that contains your FluentD configuration file (replacing `td-agent.conf` with the name of your config file): 
+
+    fluentd -c td-agent.conf
+
+Within minutes, you should start to see metrics appearing under the name `apache.status.<HTTP_RESPONSE_CODE>` (e.g. `apache.status.200`, `apache.status.404`, etc.). 
+
+Just like any other metric in Datadog, you can use these metrics to set alerts or to create rich, custom dashboards. For example, you can find out which Apache servers are generating the most 5xx error codes, and correlate their performance with metrics from other parts of your infrastructure. 
+
+In the screenshot below, we've included Apache HTTP error counts on the same dashboard as system-level information (e.g. CPU and network traffic) from our Apache servers.
+
+{{< img src="apache-timeboard-fluentd.png" alt="Use FluentD and Datadog to graph HTTP status code error count per Apache host" popup="true" >}}
+
+### A note about other Apache log formats
+According to the [FluentD in_tail plugin documentation][apache-fluentd-format-docs], specifying the `apache2` log format is the equivalent of writing out this configuration: 
+
+```
+/^(?<host>[^ ]*) [^ ]* (?<user>[^ ]*) \[(?<time>[^\]]*)\] "(?<method>\S+)(?: +(?<path>[^ ]*) +\S*)?" (?<code>[^ ]*) (?<size>[^ ]*)(?: "(?<referer>[^\"]*)" "(?<agent>[^\"]*)")?$/
+```
+
+In the configuration above, the in_tail plugin parses each log line to generate a FluentD record with the following fields: host, user, time, method, path, code, size, referer, and agent.
+
+If you are using a custom LogFormat, you can write your own regular expression to parse information from your access log. [Fluentular][fluentular] is a great tool for testing out your FluentD regular expression.
+
+### Do more with FluentD + Datadog
+We just covered one example of the many ways you could use FluentD to send Apache access log metrics to Datadog. If you configured Apache to log the processing time (log variable `%D`) of each request (see [Part 2][part-2] for instructions), you might also want to use the DogStatsD output plugin to send that value to Datadog as a [histogram metric][dogstatsd-guide] (average, median, min, max, and 95th percentile). 
+
+Apache's `%D` variable logs the processing time in microseconds, but you can use Datadog's graph editor to convert the value to milliseconds when graphing the metric, as shown below.
+
+{{< img src="apache-responsetime.png" alt="Datadog graph Apache request processing time in milliseconds" popup="true" >}}
+
+You can also experiment with other output plugins that forward metrics and events to Datadog, such as the [dd][dd-fluentd-plugin] and [datadog_event][dd-event-plugin] plugins.  
+
+## Create Apache alerts
+Next, we'll walk through two examples of alerts that can notify you when important issues occur on your Apache servers. 
+
+### Status check
+A status check can help you find out when one or more of your Apache servers is downâ€”ideally before you hear about it from your users. 
+
+The check automatically tries to connect to your Apache servers, and notifies you if it fails _x_ consecutive times. Setting up a check is easy; within the Datadog app, navigate to [Monitors > New Monitor > Integration][integration-monitor] and click on the Apache tile. 
+
+Below, we set up the alert to notify us each time any particular Apache host fails the check two consecutive times. The alert will resolve on its own once the Agent is able to connect successfully.
+
+{{< img src="apache-alert-check-datadog.png" alt="Datadog alert to detect when Apache host fails" popup="true" >}}
+
+### Threshold alert
+You can also create alerts to get notified when metrics cross fixed or [dynamic thresholds][anomalies]. If load testing has shown you that your servers' performance starts to degrade when they process more than a certain number of requests per second, you can set an alert to find out when you're nearing that threshold, as shown below.
+
+{{< img src="create-apache-monitor.png" alt="Datadog alert to detect high number of Apache hits" popup="true" >}}
+
+If you get notified about this alert, you may need to scale up or out to handle the increased load, with some guidance from the Apache [documentation's performance tuning tips][performance-tuning-docs].
+
+## Start the monitoring process
+You've now seen a few of the ways you can use Datadog to collect, visualize, and alert on Apache metrics and logs. In just a few minutes you can start capturing Apache metrics, building custom dashboards, and setting up alerts. Because Datadog also integrates with 150+ other services and tools, you can quickly create a comprehensive view of your servers along with all the other components of your stack. 
+
+If you don't yet have a Datadog account, start monitoring Apache today with a <a class="sign-up-trigger" href="#">free trial</a>.
+
+[apm]: /blog/announcing-apm/
+[agent-docs]: http://docs.datadoghq.com/guides/basic_agent_usage/
+[agent-install-doc]: https://app.datadoghq.com/account/settings#agent
+[chef-blog]: /blog/monitor-chef-with-datadog/
+[puppet-blog]: /blog/monitor-puppet-datadog/
+[ansible-blog]: /blog/ansible-datadog-monitor-your-automation-automate-your-monitoring/
+[part-1]: /blog/monitoring-apache-web-server-performance/
+[part-2]: /blog/collect-apache-performance-metrics
+[apache-agent-conf]: https://github.com/DataDog/integrations-core/blob/master/apache/conf.yaml.example
+[part-2-enablemodstatus]: /blog/collect-apache-performance-metrics/#apaches-status-module
+[apache-tile]: https://app.datadoghq.com/account/settings#integrations/apache
+[apache-config-example]: https://github.com/DataDog/integrations-core/blob/master/apache/conf.yaml.example
+[tomcat-blog]: https://www.datadoghq.com/blog/monitor-tomcat-metrics/
+[nginx-blog]: https://www.datadoghq.com/blog/how-to-monitor-nginx/
+[performance-tuning-docs]: http://httpd.apache.org/docs/2.4/misc/perf-tuning.html
+[apache-access-log]: http://httpd.apache.org/docs/current/logs.html#accesslog
+[fluentd]: http://www.fluentd.org/
+[fluentd-preinstall]: http://docs.fluentd.org/v0.12/categories/installation
+[fluentd-install]: http://docs.fluentd.org/v0.12/categories/installation
+[fluentd-dogstatsd]: https://github.com/ryotarai/fluent-plugin-dogstatsd
+[fluentd-apache2]: http://docs.fluentd.org/v0.12/articles/in_tail
+[fluentd-filter]: http://docs.fluentd.org/v0.12/articles/filter-plugin-overview
+[fluentd-record-transformer]: http://docs.fluentd.org/v0.12/articles/filter_record_transformer
+[fluentd-config]: http://docs.fluentd.org/v0.12/articles/config-file
+[fluentd-tail]: http://docs.fluentd.org/v0.12/articles/in_tail
+[fluentd-grep]: http://docs.fluentd.org/v0.12/articles/filter_grep
+[fluentd-startup-docs]: http://docs.fluentd.org/v0.12/articles/command-line-option
+[dogstatsd-docs]: http://docs.datadoghq.com/guides/dogstatsd/
+[dd-event-plugin]: https://github.com/inokappa/fluent-plugin-datadog_event
+[dd-fluentd-plugin]: https://github.com/winebarrel/fluent-plugin-dd
+[datadog-toplist]: /blog/easy-ranking-new-top-lists/
+[anomalies]: /blog/introducing-anomaly-detection-datadog/
+[apache-datadog-dashboard]: https://app.datadoghq.com/screen/integration/apache
+[fluentd-launch-docs]: http://docs.fluentd.org/v0.12/articles/install-by-deb#step2-launch-daemon
+[fluentd-config-docs]: http://docs.fluentd.org/v0.12/articles/config-file#config-file-location
+[integration-monitor]: https://app.datadoghq.com/monitors#create/integration
+[part-2-config-file]: /blog/collect-apache-performance-metrics/#apaches-status-module
+[apache-log-vars]: http://httpd.apache.org/docs/current/mod/mod_log_config.html
+[apache-fluentd-format-docs]: http://docs.fluentd.org/v0.12/articles/in_tail
+[fluentular]: http://fluentular.herokuapp.com/
+[dogstatsd-guide]: http://docs.datadoghq.com/guides/metrics/

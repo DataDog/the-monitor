@@ -1,1 +1,314 @@
-m½±±•Ñ¥¹œÑ¥Ù•5D™¹‰ÍÀíµ•ÑÉ¥Ì(()%¸mA…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•ÍumÁ…ÉĞ´Åt°İ”±½½­•…Ğ¡½ÜÑ¥Ù•5Dİ½É­Ì°…¹Ñ¡”­•äµ•ÑÉ¥Ìå½Ô…¸µ½¹¥Ñ½ÈÑ¼•¹ÍÕÉ”ÁÉ½Á•ÈÁ•É™½Éµ…¹”½˜å½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”¸%¸Ñ¡¥ÌÁ½ÍĞ°İ”±°Í¡½Üå½ÔÍ½µ”½˜Ñ¡”Ñ½½±ÌÑ¡…Ğå½Ô…¸ÕÍ”Ñ¼½±±•ĞÑ¥Ù•5Dµ•ÑÉ¥Ì¸Q¡¥Ì¥¹±Õ‘•ÌÑ½½±ÌÑ¡…ĞÍ¡¥Àİ¥Ñ Ñ¥Ù•5D°…¹Í½µ”½Ñ¡•ÈÑ½½±ÌÑ¡…Ğµ…­”ÕÍ”½˜)…Ù„5…¹…•µ•¹ĞáÑ•¹Í¥½¹Ì€¡)5`¤Ñ¼µ½¹¥Ñ½ÈÑ¥Ù•5D‰É½­•ÉÌ…¹‘•ÍÑ¥¹…Ñ¥½¹Ì¸()ñQ½½±ñ•ÍÉ¥ÁÑ¥½¹ñ5•ÑÉ¥Ì¥Ğ½±±•ÑÍğ)ğ´´µğ´´µğ´´µğ)ñmÑ¥Ù•5D½µµ…¹±¥¹”Ñ½½±Ít …Ñ¥Ù•µÄµ½µµ…¹µ±¥¹”µÑ½½±Ì¥ñMÉ¥ÁÑÌÑ¡…Ğ…É”¥¹±Õ‘•İ¥Ñ Ñ¥Ù•5Eñ1¥µ¥Ñ•‰É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Íğ)ñmÑ¥Ù•5D]•ˆ½¹Í½±•t …Ñ¥Ù•µÄµİ•ˆµ½¹Í½±”¥ñU$µ‰…Í•Ñ½½°Ñ¡…ĞÌ¥¹±Õ‘•İ¥Ñ Ñ¥Ù•5Eñ1¥µ¥Ñ•‰É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Íğ)ñm)½¹Í½±•t ½±±•Ñ¥¹œµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ìµİ¥Ñ µ©µàµ…¹µ©½¹Í½±”¥ñU$µ‰…Í•Ñ½½°Ñ¡…ĞÌ¥¹±Õ‘•İ¥Ñ Ñ¡”),…¹ÕÍ•Ì)5`Ñ¼™•Ñ µ•ÑÉ¥Íñ	É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Ì°)Y4µ•ÑÉ¥Íğ)ñm!…İÑ¥½t ¡…İÑ¥¼¥ñU$µ‰…Í•Ñ½½°Ñ¡…ĞÕÍ•Ì)5`Ñ¼™•Ñ µ•ÑÉ¥Íñ	É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Ì°)Y4µ•ÑÉ¥Íğ)ñmMÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¹t ÍÑ…Ñ¥ÍÑ¥ÌµÁ±Õ¥¸¥ñ¸Ñ¥Ù•5DÁ±Õ¥¸Ñ¡…ĞÍ•¹‘Ìµ•ÑÉ¥Ì…Ì)5Lµ•ÍÍ…•Íñ	É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Íğ((ŒŒÑ¥Ù•5D½µµ…¹±¥¹”Ñ½½±Ì)Ñ¥Ù•5D½µ•Ìİ¥Ñ ÍÉ¥ÁÑÌå½Ô…¸•á•ÕÑ”™É½´„m]¥¹‘½İÍum…Ñ¥Ù•µÄµ±¤µİ¥¹‘½İÍt½ÈmU¹¥àµ±¥­”½µµ…¹±¥¹•um…Ñ¥Ù•µÄµ±¤µ±¥¹ÕátÑ¼É•ÑÉ¥•Ù”‰…Í¥Œµ•ÑÉ¥Ì…‰½ÕĞå½ÕÈ‰É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¹Ì€¡ÅÕ•Õ•Ì…¹Ñ½Á¥Ì¤¸Q¡”½µµ…¹‘Ì‘¥™™•È…É½ÍÌÁ±…Ñ™½ÉµÌ°…¹Ñ¡”Ñ¥Ù•5D‘½Õµ•¹Ñ…Ñ¥½¸‘•ÍÉ¥‰•ÌÑ¡”Íå¹Ñ…à½˜Ñ¡”½µµ…¹‘Ì…¹Ñ¡•¥È…ÉÕµ•¹ÑÌ¸€()Q¡”‰ÍÑ…Ñ€½µµ…¹Í¡½İÌå½ÔÑ¡”¹Õµ‰•È½˜µ•ÍÍ…•Ì•¹ÅÕ•Õ•…¹‘•ÅÕ•Õ•‰ä•… ‘•ÍÑ¥¹…Ñ¥½¸°…Ìİ•±°…ÌÑ¡”Q½Ñ…±¹ÅÕ•Õ•½Õ¹Ñ€…¹Q½Ñ…±•ÅÕ•Õ•½Õ¹Ñ€m‰É½­•Èµ•ÑÉ¥ÍumÁ…ÉĞ´Äµ‰É½­•Èµµ•ÑÉ¥Ítİ”±½½­•…Ğ¥¸A…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ì¸Q¡”•á…µÁ±”‰•±½ÜÍ¡½İÌ…¸•á•ÉÁĞ½˜Ñ¡”½ÕÑÁÕĞ½˜Ñ¡”‰ÍÑ…Ñ€½µµ…¹½¸…¸U‰Õ¹ÑÔ¡½ÍĞ¸()€)l¸¸¹t)	É½­•É9…µ”€ô±½…±¡½ÍĞ)Q½Ñ…±¹ÅÕ•Õ•½Õ¹Ğ€ô€ÔÜÄÀÀ)Q½Ñ…±•ÅÕ•Õ•½Õ¹Ğ€ô€À)Q½Ñ…±5•ÍÍ…•½Õ¹Ğ€ô€ÔÜÄÀÀ)Q½Ñ…±½¹ÍÕµ•É½Õ¹Ğ€ô€À)UÁÑ¥µ”€ô€Ä¡½ÕÈ€Øµ¥¹ÕÑ•Ì()9…µ”€ôQMQ}EUU)‘•ÍÑ¥¹…Ñ¥½¹9…µ”€ôQMQ}EUU)‘•ÍÑ¥¹…Ñ¥½¹QåÁ”€ôEÕ•Õ”)¹ÅÕ•Õ•½Õ¹Ğ€ô€ÔÜÄÀÀ)•ÅÕ•Õ•½Õ¹Ğ€ô€À)½¹ÍÕµ•É½Õ¹Ğ€ô€À)¥ÍÁ…Ñ¡½Õ¹Ğ€ô€À)l¸¸¹t)€()e½Ô…¸ÕÍ”Ñ¡”‘ÍÑ…Ñ€½µµ…¹Ñ¼Ù¥•ÜÑ¡”m‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥ÍumÁ…ÉĞ´Äµ‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ít™É½´A…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ì°µ¥¹ÕÌÑ¡”áÁ¥É•‘½Õ¹Ñ€µ•ÑÉ¥Œ¸Q¡”½ÕÑÁÕĞ‰•±½ÜÍ¡½İÌ„Í…µÁ±”½˜Ñ¡”ÍÑ…Ñ¥ÍÑ¥ÌÉ•ÑÕÉ¹•‰äÑ¡”‘ÍÑ…Ñ€½µµ…¹½¸…¸U‰Õ¹ÑÔ¡½ÍĞ¸Ìå½Ô…¸Í•”°Ñ¡”‘ÍÑ…Ñ€½ÕÑÁÕĞ¹…µ•ÌÑ¡•Í”µ•ÑÉ¥Ì‘¥™™•É•¹Ñ±äÑ¡…¸Ñ¡•¥È)5`…ÑÑÉ¥‰ÕÑ”¹…µ•ÌèAÉ½‘Õ•É½Õ¹Ñ€…ÁÁ•…ÉÌ¥¸Ñ¡”AÉ½‘Õ•È€€½±Õµ¸°½¹ÍÕµ•É½Õ¹Ñ€…ÁÁ•…ÉÌ…Ì½¹ÍÕµ•È€€°EÕ•Õ•M¥é•€…ÌEÕ•Õ”M¥é•€°…¹5•µ½ÉåA•É•¹ÑUÍ…•€…Ì5•µ½Éä€•€¸()€)l¸¸¹t)9…µ”$%EÕ•Õ”M¥é”%AÉ½‘Õ•È€Œ%½¹ÍÕµ•È€Œ%¹ÅÕ•Õ”€Œ%•ÅÕ•Õ”€Œ%½Éİ…É€Œ%5•µ½Éä€”%%¹™±¥¡Ğ€Œ)QMQ}EUU$ÔÜÄÀÀ$€€€€€€€€Ä$$À€€€€€€€€€€€€€€€ÔÜÄÀÀ€€€€€€€€€€€À$$À€€€€€€€€€€€€€€€ÜÀ€€€€€€€€€€€€€€À()€)e½Ô…¸ÕÍ”Ñ¡•Í”½µµ…¹‘ÌÑ¼Ù¥•ÜÍ½µ”½˜Ñ¡”­•äµ•ÑÉ¥Ìİ”¥¹ÑÉ½‘Õ•¥¸A…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ì°‰ÕĞå½Ôİ½¸ĞÍ•”‘…Ñ„½¸­•äµ•ÑÉ¥Ì±¥­”áÁ¥É•‘½Õ¹Ñ€°MÑ½É•A•É•¹ÑUÍ…•€°½ÈQ•µÁA•É•¹ÑUÍ…•€¸%¸Ñ¡”™½±±½İ¥¹œÍ•Ñ¥½¹Ì°İ”±°‘•ÍÉ¥‰”Í•Ù•É…°½Ñ¡•ÈÑ½½±ÌÑ¡…ĞÁÉ½Ù¥‘”µ½É”½µÁ±•Ñ”Ù¥Í¥‰¥±¥Ñä¥¹Ñ¼Ñ¡”Á•É™½Éµ…¹”½˜å½ÕÈ‰É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¹Ì¸((ŒŒÑ¥Ù•5D]•ˆ½¹Í½±”)Q¡”Ñ¥Ù•5Dm]•ˆ½¹Í½±•um…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±•t¥Ì…¸¥¹Ñ•É…Ñ¥Ù”°U$µ‰…Í•Ñ½½°Ñ¡…Ğ¥Ù•Ìå½Ô…¸•…Íäİ…äÑ¼Ù¥•Üµ•ÑÉ¥Ì¸M¥¹”¥ĞÍ¡¥ÁÌİ¥Ñ Ñ¥Ù•5D°å½Ô‘½¸Ğ¹••Ñ¼¥¹ÍÑ…±°…¹åÑ¡¥¹œÑ¼ÍÑ…ÉĞÕÍ¥¹œ¥Ğ¸Q¡”]•ˆ½¹Í½±”½Á•É…Ñ•Ì½¸Á½ÉĞ€àÄØÄ‰ä‘•™…Õ±Ğ°Í¼å½ÕÈÑ¥Ù•5D¡½ÍĞİ¥±°¹••Ñ¼‰”½¹™¥ÕÉ•Ñ¼…•ÁĞ½¹¹•Ñ¥½¹Ì½¸Ñ¡…ĞÁ½ÉĞ€¡½Èå½Ô…¸mÕÁ‘…Ñ”å½ÕÈÑ¥Ù•5D½¹™¥ÕÉ…Ñ¥½¹um…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±”µÁ½ÉÑtÑ¼ÕÍ”„‘¥™™•É•¹ĞÁ½ÉĞ¤¸Q¼ÕÍ”Ñ¡”]•ˆ½¹Í½±”°‰É½İÍ”Ñ¼¡ÑÑÀè¼¼ñe=UI}Q%Y5E}!=MQ}%@øèàÄØÄ½…‘µ¥¹€…¹±½œ¥¸İ¥Ñ Ñ¡”ÕÍ•É¹…µ”€¨©…‘µ¥¸¨¨…¹Ñ¡”Á…ÍÍİ½É€¨©…‘µ¥¸¨¨¸€()Q¼¡…¹”Ñ¡”‘•™…Õ±ĞÁ…ÍÍİ½É°•‘¥ĞÑ¡”€¨©©•ÑÑäµÉ•…±´¹ÁÉ½Á•ÉÑ¥•Ì¨¨™¥±”¥¸Ñ¡”€¨©½¹˜¼¨¨ÍÕ‰‘¥É•Ñ½Éä½˜å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸1½…Ñ”Ñ¡”™½±±½İ¥¹œ±¥¹”è()€)…‘µ¥¸è…‘µ¥¸°…‘µ¥¸)€)Q¡¥Ì±¥¹”™½±±½İÌÑ¡”™½Éµ…Ğ€ñUMI95øè€ñAMM]=Iø°€ñI=1ù€°µ•…¹¥¹œÑ¡…Ğ¥ĞÉ•…Ñ•Ì…¸€¨©…‘µ¥¸¨¨ÕÍ•È°¥Ù•ÌÑ¡¥ÌÕÍ•È„Á…ÍÍİ½É½˜€¨©…‘µ¥¸¨¨°…¹…ÍÍ¥¹Ì¥ĞÑ¼Ñ¡”€¨©…‘µ¥¸¨¨É½±”¸Q¼ÕÁ‘…Ñ”Ñ¡”Á…ÍÍİ½É™½ÈÑ¡”€¨©…‘µ¥¸¨¨ÕÍ•È°•‘¥ĞÑ¡”Í•½¹¥¹ÍÑ…¹”½˜€€¨©…‘µ¥¸¨¨°…ÌÍ¡½İ¸‰•±½Ü¸()€)…‘µ¥¸è€ñ5e}9]}AMM]=Iø°…‘µ¥¸)€()1½…Ñ”Ñ¡¥Ì±¥¹”…¹½µµ•¹Ğ¥Ğ½ÕĞÑ¼±¥µ¥Ğ]•ˆ½¹Í½±”…•ÍÌÑ¼€¨©…‘µ¥¸¨¨ÕÍ•ÉÌè()€(ŒÕÍ•ÈèÕÍ•È°ÕÍ•È)€()mMÑ½À°Ñ¡•¸É•ÍÑ…ÉĞÑ¥Ù•5Eum…Ñ¥Ù•µÄµÍÑ½ÀµÍÑ…ÉÑt¸e½Ô…¸¹½Ü±½œ¥¸İ¥Ñ Ñ¡”ÕÍ•É¹…µ”€¨©…‘µ¥¸¨¨…¹Ñ¡”Á…ÍÍİ½É€¨©pñ5e}9]}AMM]=Ipø¨¨Ñ¼…•ÍÌÑ¡”]•ˆ½¹Í½±”…Ì…¸…‘µ¥¸µ±•Ù•°ÕÍ•È¸()íìğ¥µœÍÉŒô‰İ•‰}½¹Í½±”Ä¹Á¹œˆ…±Ğô‰Ñ¥Ù•5DÌ]•ˆ½¹Í½±”‘¥ÍÁ±…åÌ‰…Í¥Œ¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”‰É½­•È¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()Q¡”µ…¥¸Á…”½˜Ñ¡”]•ˆ½¹Í½±”‘¥ÍÁ±…åÌ¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”m‰É½­•ÈÌµ•µ½ÉäÕÍ…•umÁ…ÉĞ´Äµ‰É½­•Èµµ•ÑÉ¥Ít€¡5•µ½ÉåA•É•¹ÑUÍ…•€¤°…Ìİ•±°…ÌÍÑ½É”ÕÍ…”€¡MÑ½É•A•É•¹ÑUÍ…•€¤…¹Ñ•µÀÕÍ…”€¡Q•µÁA•É•¹ÑUÍ…•€¤¸e½Ô…¸ÕÍ”Ñ¡”Ñ½À¹…Ù¥…Ñ¥½¸‰…ÈÑ¼Ù¥•ÜÁ…•ÌÑ¡…Ğ±¥ÍĞ‘…Ñ„™É½´å½ÕÈÅÕ•Õ•Ì…¹Ñ½Á¥Ì¸Q¡•Í”±¥ÍÑÌ‘¥ÍÁ±…ä•… ‘•ÍÑ¥¹…Ñ¥½¸Ìmµ•ÑÉ¥ÍumÁ…ÉĞ´Äµ‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ít°¥¹±Õ‘¥¹œÑ¡”¹Õµ‰•È½˜Á•¹‘¥¹œµ•ÍÍ…•Ì€€¡EÕ•Õ•M¥é•€¤…¹Ñ¡”¹Õµ‰•È½˜½¹ÍÕµ•ÉÌ€¡½¹ÍÕµ•É½Õ¹Ñ€¤¸()íìğ¥µœÍÉŒô‰İ•‰}½¹Í½±”È¹Á¹œˆ…±Ğô‰Q¡”EÕ•Õ•ÌÁ…”½˜Ñ¡”]•ˆ½¹Í½±”±¥ÍÑÌÍ½µ”µ•ÑÉ¥Ì™É½´•… ÅÕ•Õ”°¥¹±Õ‘¥¹œÑ¡”¹Õµ‰•È½˜•¹ÅÕ•Õ•µ•ÍÍ…•Ì¸ˆ…ÁÑ¥½¸ô‰Q¡”EÕ•Õ•ÌÁ…”½˜Ñ¡”]•ˆ½¹Í½±”±¥ÍÑÌÍ½µ”µ•ÑÉ¥Ì™É½´•… ÅÕ•Õ”°¥¹±Õ‘¥¹œÑ¡”¹Õµ‰•È½˜•¹ÅÕ•Õ•µ•ÍÍ…•Ì¸ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()Q¡”]•ˆ½¹Í½±”Í¡½İÌµ½ÍĞ€¡‰ÕĞ¹½Ğ…±°¤½˜Ñ¡”‰É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Ìİ”¡¥¡±¥¡Ñ•¥¸m½ÕÈÕ¥‘”Ñ¼­•äÑ¥Ù•5Dµ•ÑÉ¥ÍumÁ…ÉĞ´Åt°Á±ÕÌ¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÍ½µ”½ÁÑ¥½¹…°™•…ÑÕÉ•Ì±¥­”m‰É½­•È¹•Ñİ½É­Íum…Ñ¥Ù•µÄµ¹•Ñİ½É­Ìµ½˜µ‰É½­•ÉÍt…¹mÍ¡•‘Õ±•µ•ÍÍ…•Íum…Ñ¥Ù•µÄµÍ¡•‘Õ±•µµ•ÍÍ…•Ít¸Q¼•Ğ…•ÍÌÑ¼…±°½˜Ñ¡”µ•ÑÉ¥Ìİ”½Ù•É•¥¸A…ÉĞ€Ä°…¹Ñ¼Ù¥•Ü¡¥ÍÑ½É¥…°‘…Ñ„…‰½ÕĞå½ÕÈ)Y4ÌÉ•Í½ÕÉ”ÕÍ…”°å½Ô±°¹••Ñ¼‘¥É•Ñ±äÅÕ•Éä)…Ù„5…¹…•µ•¹ĞáÑ•¹Í¥½¹Ì€¡)5`¤‰äÕÍ¥¹œ„Ñ½½°±¥­”)½¹Í½±”¸((ŒŒ½±±•Ñ¥¹œÑ¥Ù•5Dµ•ÑÉ¥Ìİ¥Ñ )5`…¹)½¹Í½±”)1¥­”½Ñ¡•È)…Ù„…ÁÁ±¥…Ñ¥½¹Ì°Ñ¥Ù•5D•áÁ½Í•Ìµ•ÑÉ¥ÌÑ¡É½Õ m)5aum½É…±”µ©µát¸m)½¹Í½±•um½É…±”µ©½¹Í½±•t¥Ì…¸…ÁÁ±¥…Ñ¥½¸å½Ô…¸ÕÍ”Ñ¼µ½¹¥Ñ½È…¹ä)…Ù„…ÁÀÑ¡…Ğ¥µÁ±•µ•¹ÑÌ)5`°m¥¹±Õ‘¥¹œÑ¥Ù•5Eum…Ñ¥Ù•µÄµ©µát¸)½¹Í½±”¥Ì¥¹±Õ‘•¥¸Ñ¡”)…Ù„•Ù•±½Áµ•¹Ğ-¥Ğ€¡),¤°…¹¥Ğ…¸½µµÕ¹¥…Ñ”İ¥Ñ …¹ä)…Ù„…ÁÁ±¥…Ñ¥½¸Ñ¡…ĞÁÉ½Ù¥‘•Ì5	•…¹Ìè)5`µ½µÁ±¥…¹Ğ½‰©•ÑÌÑ¡…Ğ•áÁ½Í”Ñ¡”…ÁÀÌ…ÑÑÉ¥‰ÕÑ•Ì…¹½Á•É…Ñ¥½¹Ì¸()%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°Í¡½Üå½Ô¡½ÜÑ¼½¹™¥ÕÉ”…¹±…Õ¹ )½¹Í½±”°Ñ¡•¸İ”±°±½½¬…Ğ¡½ÜÑ¼Ù¥•ÜÑ¥Ù•5Dµ•ÑÉ¥Ì¥¸)½¹Í½±”¸((ŒŒŒ½¹™¥ÕÉ¥¹œÑ¥Ù•5DÑ¼…±±½ÜÉ•µ½Ñ”µ½¹¥Ñ½É¥¹œÙ¥„)½¹Í½±”))½¹Í½±”¥Ì„U$µ‰…Í•Ñ½½°°Í¼¥ĞÉ•ÅÕ¥É•Ì„Á±…Ñ™½É´Ñ¡…ĞÁÉ½Ù¥‘•Ì„U$•¹Ù¥É½¹µ•¹Ğ¥¸İ¡¥ ¥Ğ…¸ÉÕ¸¸	•…ÕÍ”å½ÕÈÑ¥Ù•5D¥¹™É…ÍÑÉÕÑÕÉ”µ…ä¹½ĞÁÉ½Ù¥‘”„U$•¹Ù¥É½¹µ•¹Ğ°…¹‰•…ÕÍ”)½¹Í½±”¥Ì™…¥É±äÉ•Í½ÕÉ”¥¹Ñ•¹Í¥Ù”°å½Ô±°½™Ñ•¸¹••Ñ¼ÉÕ¸)½¹Í½±”½¸„µ…¡¥¹”½Ñ¡•ÈÑ¡…¸å½ÕÈÑ¥Ù•5D¡½ÍĞ¸Q¼‘¼Í¼°å½×Še±°¹••Ñ¼½¹™¥ÕÉ”å½ÕÈÑ¥Ù•5D¡½ÍĞÑ¼…±±½ÜÉ•µ½Ñ”…•ÍÌ°İ¡¥ ‘•µ…¹‘Ì€…ÁÁÉ½ÁÉ¥…Ñ”Í•ÕÉ¥Ñä½¹Í¥‘•É…Ñ¥½¹Ì¸½ÈÑ¡”Í…­”½˜‘•µ½¹ÍÑÉ…Ñ¥½¸°Ñ¡”Í¥µÁ±¥™¥•½¹™¥ÕÉ…Ñ¥½¸¥¸Ñ¡¥ÌÍ•Ñ¥½¸‘¥Í…‰±•ÌMM0ìÍ•”Ñ¡”m=É…±•um½É…±”µµ½¹¥Ñ½É¥¹t½ÈmÁ…¡•um…Á…¡”µ©µàµÍÍ±t‘½Õµ•¹Ñ…Ñ¥½¸™½ÈÕ¥‘…¹”½¸½¹™¥ÕÉ¥¹œÍ•ÕÉ”É•µ½Ñ”)5`…•ÍÌ™½ÈÁÉ½‘ÕÑ¥½¸•¹Ù¥É½¹µ•¹ÑÌ¸€()Q¼½¹™¥ÕÉ”å½ÕÈÑ¥Ù•5D¡½ÍĞÑ¼…±±½ÜÉ•µ½Ñ”µ½¹¥Ñ½É¥¹œ°½Á•¸å½ÕÈ¡½ÍÑÌ™¥±”€ ¨¨½•ÑŒ½¡½ÍÑÌ¨¨½¸1¥¹ÕàÍåÍÑ•µÌ¤…¹™¥¹Ñ¡”±¥¹”Ñ¡…ĞÉ•…‘Ì€ÄÈÜ¸À¸À¸Ä€ñ5e}!=MQ95ù€¸I•Á±…”€ÄÈÜ¸À¸À¸Å€İ¥Ñ å½ÕÈÑ¥Ù•5D¡½ÍĞÌÁÕ‰±¥Œ%@…‘‘É•ÍÌ¸€¡•Á•¹‘¥¹œ½¸å½ÕÈ‘¥ÍÑÉ¥‰ÕÑ¥½¸°Ñ¡¥Ì±¥¹”µ¥¡ĞÉ•…€ÄÈÜ¸À¸Ä¸Å€¥¹ÍÑ•…½˜€ÄÈÜ¸À¸À¸Å€¸¤()Q¡•¸°•‘¥ĞmÑ¥Ù•5DÌ€¨©•¹Ø¨¨™¥±•um…Ñ¥Ù•µÄµ•¹Ùt°İ¡¥ ¥Ì¹½Éµ…±±ä±½…Ñ•¥¸Ñ¡”€¨©‰¥¸¼¨¨ÍÕ‰‘¥É•Ñ½Éä½˜å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸€¡…¹”Ñ¡”Q%Y5E}MU9)5a}MQIQ€±¥¹”Ñ¼É•…è)€€)Q%Y5E}MU9)5a}MQIPôˆµ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹Á½ÉĞôÄÀää€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹ÍÍ°õ™…±Í”€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹…•ÍÌ¹™¥±”ô‘íQ%Y5E}	Mô½½¹˜½©µà¹…•ÍÌ€µ½´¹ÍÕ¸¹µ…¹…•µ•¹Ğ¹©µáÉ•µ½Ñ”¹Á…ÍÍİ½É¹™¥±”ô‘íQ%Y5E}	Mô½½¹˜½©µà¹Á…ÍÍİ½Éˆ)€()Q¡¥Ì¡…¹”‘•Í¥¹…Ñ•ÌÑ¡”Á…Ñ¡ÌÑ¼Ñİ¼½¹™¥ÕÉ…Ñ¥½¸™¥±•Ìå½Ô…¸ÕÍ”Ñ¼µ…¹…”…•ÍÌÑ¼å½ÕÈ)5`µ½¹¥Ñ½É¥¹œ°€¨©©µà¹…•ÍÌ¨¨…¹€¨©©µà¹Á…ÍÍİ½É¨¨¸Q¡•Í”™¥±•Ì…É”É•…Ñ•İ¡•¸å½Ô¥¹ÍÑ…±°Ñ¥Ù•5D°…¹å½Ô…¸™¥¹Ñ¡•´¥¸Ñ¡”€¨©½¹˜¼¨¨ÍÕ‰‘¥É•Ñ½Éä½˜å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸	ä‘•™…Õ±Ğ°€¨©©µà¹…•ÍÌ¨¨‘•Í¥¹…Ñ•Ì…¸…‘µ¥¹€ÕÍ•ÈÑ¡…Ğ¡…Ì…¸…•ÍÌ±•Ù•°½˜É•…‘İÉ¥Ñ•€¸e½Ô…¸…‘½Ñ¡•ÈÕÍ•ÉÌ‰ä…‘‘¥¹œ±¥¹•ÌÑ¼Ñ¡¥Ì™¥±”¸½È•á…µÁ±”°Ñ¼É•…Ñ”„ÕÍ•È¹…µ•ÕÍ•ÈÅ€İ¥Ñ É•…µ½¹±äÁÉ¥Ù¥±••Ì°å½Ôİ½Õ±…‘Ñ¡¥Ì±¥¹”Ñ¼€¨©©µà¹…•ÍÌ¨¨è()€)ÕÍ•ÈÄÉ•…‘½¹±ä)€()Q¡”€¨©©µà¹Á…ÍÍİ½É¨¨™¥±”½¹Ñ…¥¹Ì„±¥¹”™½È•… ÕÍ•È¹…µ•¥¸€¨©©µà¹…•ÍÌ¨¨¸… ±¥¹”¥Ì¥¸Ñ¡”™½Éµ…Ğ€ñÕÍ•É¹…µ”ø€ñÁ…ÍÍİ½Éù€¸Q¼ÕÁ‘…Ñ”Ñ¡”…‘µ¥¹€ÕÍ•ÈÌÁ…ÍÍİ½É°ÕÁ‘…Ñ”€¨©©µà¹Á…ÍÍİ½É¨¨Ñ¼É•™±•ĞÑ¡”¹•ÜÁ…ÍÍİ½É°…ÌÍ¡½İ¸¥¸Ñ¡¥Ì•á…µÁ±”è()€)…‘µ¥¸€ñ5e}AMM]=Iø)€()5…­”ÍÕÉ”€¨©©µà¹…•ÍÌ¨¨…¹€¨©©µà¹Á…ÍÍİ½É¨¨…É”½İ¹•‰äÑ¡”ÕÍ•ÈÑ¡…ĞÉÕ¹ÌÑ¡”Ñ¥Ù•5DÁÉ½•ÍÌ°…¹…É”É•…‘…‰±”½¹±ä‰äÑ¡…ĞÕÍ•È¸()Q¡”Q%Y5E}MU9)5a}MQIQ€±¥¹”Í¡½İ¸…‰½Ù”İ¥±°…±Í¼½¹™¥ÕÉ”Ñ¥Ù•5DÑ¼µ…­”)5`¥¹™½Éµ…Ñ¥½¸…Ù…¥±…‰±”Ù¥„Á½ÉĞ€ÄÀää°İ¡¥ ¥ÌÑ¡”‘•™…Õ±ĞÁ½ÉĞ™½ÈÑ¡”)Y4Ì)5`½¹¹•Ñ½È¸€¡M•”Ñ¥Ù•5DÌm)5`‘½Õµ•¹Ñ…Ñ¥½¹um…Ñ¥Ù•µÄµ©µát™½Èµ½É”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÉ•µ½Ñ•±ä…•ÍÍ¥¹œÑ¥Ù•5DÌ5	•…¹Ì¸¤Q¼Í•ÕÉ”Ñ¡”)5`½¹¹•Ñ¥½¸™½ÈÁÉ½‘ÕÑ¥½¸ÕÍ”°™½±±½ÜÑ¡”¥¹ÍÑÉÕÑ¥½¹Ìm¡•É•um…Á…¡”µ©µàµÍÍ±t¸()I•ÍÑ…ÉĞÑ¥Ù•5DÑ¼…ÁÁ±äÑ¡”½¹™¥ÕÉ…Ñ¥½¸¡…¹”¸I•™•ÈÑ¼Ñ¡”mÑ¥Ù•5D‘½Õµ•¹Ñ…Ñ¥½¹um…Ñ¥Ù•µÄµÍÑ½ÀµÍÑ…ÉÑtÑ¼Í•”Ñ¡”½µµ…¹‘Ì™½ÈÍÑ½ÁÁ¥¹œ…¹ÍÑ…ÉÑ¥¹œÑ¥Ù•5D½¸å½ÕÈÁ±…Ñ™½É´¸()e½ÕÈÑ¥Ù•5D¡½ÍĞ¥Ì¹½Ü½¹™¥ÕÉ•Ñ¼…•ÁĞÉ•µ½Ñ”½¹¹•Ñ¥½¹Ì™½È)5`µ½¹¥Ñ½É¥¹œ¸9•áĞİ”±°Í¡½Üå½Ô¡½ÜÑ¼•Ğ)½¹Í½±”ÉÕ¹¹¥¹œ½¸å½ÕÈ±¥•¹Ğµ…¡¥¹”¸((ŒŒŒ1…Õ¹¡¥¹œ)½¹Í½±”))½¹Í½±”¥Ì¥¹±Õ‘•¥¸Ñ¡”),°Í¼å½Ô±°¹••Ñ¼m¥¹ÍÑ…±°Ñ¡…Ñum½É…±”µ©‘­t½¸å½ÕÈ±¥•¹Ğµ…¡¥¹”¥˜å½Ô¡…Ù•¸Ğ…±É•…‘ä¸1…Õ¹ )½¹Í½±”™É½´„½µµ…¹±¥¹”‰äÑåÁ¥¹œÑ¡”™Õ±°Á…Ñ Ñ¼Ñ¡”)½¹Í½±”ÁÉ½É…´¸%¸Ñ¡”•á…µÁ±”‰•±½Ü°)½¹Í½±”¥Ì¥¹ÍÑ…±±•¥¸Ñ¡”€¨¨½ÕÍÈ½‰¥¸¼¨¨‘¥É•Ñ½Éä¸€¡M•”=É…±”Ìm)½¹Í½±”‘½Õµ•¹Ñ…Ñ¥½¹um½É…±”µÕÍ¥¹œµ©½¹Í½±•t™½Èµ½É”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ±…Õ¹¡¥¹œ)½¹Í½±”¸¤()€(½ÕÍÈ½‰¥¸½©½¹Í½±”)€()M•±•Ğ€¨©I•µ½Ñ”AÉ½•ÍÌ¨¨¥¸Ñ¡”)½¹Í½±”U$…¹•¹Ñ•Èå½ÕÈÑ¥Ù•5D¡½ÍĞÌ%@…‘‘É•ÍÌ°™½±±½İ•‰äÑ¡”Á½ÉĞ¹Õµ‰•È°€ÄÀää¸¹Ñ•ÈÑ¡”ÕÍ•É¹…µ”…¹Á…ÍÍİ½Éå½ÔÉ•…Ñ••…É±¥•È°Ñ¡•¸±¥¬€¨©½¹¹•Ğ¸¨¨()íìğ¥µœÍÉŒô‰©½¹Í½±”Ô¹Á¹œˆ…±Ğô‰]¡•¸)½¹Í½±”½Á•¹Ì°å½Ô…¸•¹Ñ•È½¹¹•Ñ¥½¸¥¹™½Éµ…Ñ¥½¸™½Èå½ÕÈÑ¥Ù•5D¡½ÍĞ¸ˆ€ùõô((ŒŒŒY¥•İ¥¹œÑ¥Ù•5Dµ•ÑÉ¥Ì¥¸)½¹Í½±”))½¹Í½±”Ì€¨©5	•…¹Ì¨¨Ñ…ˆÍ¡½İÌ…±°Ñ¡”)5`Í½ÕÉ•Ì…Ù…¥±…‰±”¥¸Ñ¡”)Y4°™½Éµ…ÑÑ•…Ì„ÑÉ•”¸Q¡”Ñ½À±•Ù•°½˜•… )5`Í½ÕÉ”¥Ì¥ÑÌ‘½µ…¥¸°…¹‰•±½ÜÑ¡…Ğ…É”Ñ¡”5	•…¹ÌÑ¡…Ğ‰•±½¹œÑ¼Ñ¡…Ğ‘½µ…¥¸¸Ñ¥Ù•5DÌ)5`‘½µ…¥¸¥Ì½Éœ¹…Á…¡”¹…Ñ¥Ù•µÅ€¸U¹‘•ÈÑ¡…Ğ¥Ì„	É½­•É€5	•…¸İ¡¥ ½¹Ñ…¥¹Ì5	•…¹Ì™½È…±°Ñ¡”ÅÕ•Õ•Ì…¹Ñ½Á¥Ì…ÍÍ½¥…Ñ•İ¥Ñ Ñ¡…Ğ‰É½­•È¸A…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ì±¥ÍÑÌÑ¥Ù•5DÌm‰É½­•ÉumÁ…ÉĞ´Äµ‰É½­•Èµµ•ÑÉ¥Ítµ•ÑÉ¥Ì…¹m‘•ÍÑ¥¹…Ñ¥½¹umÁ…ÉĞ´Äµ‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ítµ•ÑÉ¥Ì°…¹±¥ÍÑÌÑ¡”¹…µ”½˜Ñ¡”)5`…ÑÑÉ¥‰ÕÑ”Ñ¡…Ğ¡½±‘ÌÑ¡”Ù…±Õ”½˜•… µ•ÑÉ¥Œ¸e½Ô±°Í•”…±°Ñ¡½Í”…ÑÑÉ¥‰ÕÑ•Ì±¥ÍÑ•İ¥Ñ¡¥¸Ñ¡”5	•…¹ÌÍ¡½İ¸¥¸)½¹Í½±”¸()íìğ¥µœÍÉŒô‰©½¹Í½±”Ä¹Á¹œˆ…ÁÑ¥½¸ô‰)½¹Í½±”Í¡½İÌÑ¥Ù•5D…Ì½¹”½˜Ñ¡”…ÁÁ±¥…Ñ¥½¹Ì…Ù…¥±…‰±”Ñ¼¥Ğ…Ì…¸5	•…¸¸ˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰)½¹Í½±”ÍÉ••¹Í¡½ĞÍ¡½İ¥¹œÑ¡”Ñ¥Ù•5D5	•…¸¸ˆ€ùõô()Q¡”‰É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¸‘…Ñ„å½ÔÍ•”¥¸)½¹Í½±”¥ÌÕÉÉ•¹Ğ…Ì½˜İ¡•¸å½Ô±½…Ñ¡”Á…”°‰ÕĞ¥Ğ‘½•Í¸ĞÕÁ‘…Ñ”…ÕÑ½µ…Ñ¥…±±ä¸UÍ”Ñ¡”€¨©I•™É•Í ¨¨‰ÕÑÑ½¸Ñ¼•¹ÍÕÉ”å½ÕÈ‘…Ñ„¥ÌÕÀÑ¼‘…Ñ”¸€()%¸…‘‘¥Ñ¥½¸Ñ¼‘¥ÍÁ±…å¥¹œµ•ÑÉ¥Ì…‰½ÕĞÑ¥Ù•5D°)½¹Í½±”Í¡½İÌå½Ô½Á•É…Ñ¥¹œ¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡”)Y4¥¸İ¡¥ Ñ¥Ù•5D¥ÌÉÕ¹¹¥¹œ¸U¹‘•ÈÑ¡”€¨©Y4MÕµµ…Éä¨¨Ñ…ˆ°å½Ô…¸Í•”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÑ¡É•…‘Ì…¹µ•µ½ÉäÕÍ…”Ñ¡…Ğ…¸ÁÉ½Ù¥‘”ÕÍ•™Õ°½¹Ñ•áĞİ¡•¸å½ÔÉ”¥¹Ù•ÍÑ¥…Ñ¥¹œÑ¥Ù•5DÁ•É™½Éµ…¹”¥ÍÍÕ•Ì¸()íìğ¥µœÍÉŒô‰©½¹Í½±”È¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰MÉ••¹Í¡½Ğ½˜Ñ¡”)½¹Í½±”Y4MÕµµ…ÉäÑ…ˆİ¡¥ Í¡½İÌ„ÍÕµµ…Éä½˜Ñ¡”)Y4ÌÑ¡É•…½Õ¹Ğ°±…ÍÍ•Ì±½…‘•°…¹µ•µ½Éä¥¸ÕÍ”¸ˆ…ÁÑ¥½¸ô‰UÍ”)½¹Í½±”ÌY4MÕµµ…ÉäÑ¼µ½¹¥Ñ½ÈÉ•Í½ÕÉ”µ•ÑÉ¥Ì™É½´Ñ¡”)Y4¥¸İ¡¥ Ñ¥Ù•5D¥ÌÉÕ¹¹¥¹œ°±¥­”Ñ¡É•…½Õ¹Ğ…¹µ•µ½ÉäÕÍ…”¸ˆ€ùõô()1¥­”Ñ¡”]•ˆ½¹Í½±”°)½¹Í½±”¥Ì„É…Á¡¥…°ÕÍ•È¥¹Ñ•É™…”¸U¹±¥­”Ñ¡”]•ˆ½¹Í½±”°)½¹Í½±”…±±½İÌå½ÔÑ¼Í•”Í½µ”¡¥ÍÑ½É¥…°‘…Ñ„¸±Ñ¡½Õ )½¹Í½±”‘½•Í¸ĞÍ¡½Ü¡¥ÍÑ½É¥…°‘…Ñ„…‰½ÕĞÑ¥Ù•5DÌµ•ÑÉ¥Ì°å½Ô…¸Ù¥•ÜÑ¥µ•Í•É¥•Ì‘…Ñ„…‰½ÕĞ)Y4É•Í½ÕÉ”ÕÍ…”¸e½Ô…¸É…Á Ñ¡”)Y4Ìµ•µ½Éä…¹ATÕÍ…”µ•ÑÉ¥Ì°…¹…±Í¼Ñ¡”½Õ¹Ğ½˜±…ÍÍ•Ì…¹Ñ¡É•…‘ÌÕÍ•‰äÑ¡”)Y4¸Q¡•Í”Ù¥ÍÕ…±¥é…Ñ¥½¹Ì…¸¡•±Àå½ÔÍÁ½ĞÑÉ•¹‘Ì¥¸å½ÕÈ)Y4ÌÁ•É™½Éµ…¹”¸UÍ”Ñ¡”€¨©Q¥µ”I…¹”¨¨‘É½Á‘½İ¸Ñ¼Í•±•Ğå½ÕÈ‘•Í¥É•É…¹—ŠQÍ…±•‘½İ¸Ñ¼Ñ¡”Á…ÍĞµ¥¹ÕÑ”°½Èé½½µ•½ÕĞÑ¼Ñ¡”•¹Ñ¥É”Ñ¥µ”)½¹Í½±”¡…Ì‰••¸ÉÕ¹¹¥¹œ¸()íìğ¥µœÍÉŒô‰©½¹Í½±”Ì¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰)½¹Í½±”Ì½Ù•ÉÙ¥•ÜÑ…ˆÍ¡½İÌÉ…Á¡Ì½˜ATÕÍ…”°¡•…Àµ•µ½ÉäÕÍ…”°…¹±…ÍÍ•Ì±½…‘•¸ˆ€ùõô()]”Ù”Í¡½İ¸¡½ÜÑ¼ÕÍ”)½¹Í½±”Ñ¼É•µ½Ñ•±äÙ¥•ÜÑ¥Ù•5Dµ•ÑÉ¥ÌÕÍ¥¹œ)5`¸	ÕĞ)½¹Í½±”‘½•Í¸ĞÁÉ½Ù¥‘”É…Á¡Ì½˜å½ÕÈÑ¥Ù•5Dµ•ÑÉ¥Ì°…¹¥ĞÉ•ÅÕ¥É•Ìå½ÔÑ¼½Á•¸„Á½ÉĞÑ¼…±±½ÜÑÉ…™™¥ŒÍÁ•¥™¥…±±ä™½È)5`É•ÅÕ•ÍÑÌ¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”±°±½½¬…Ğ!…İÑ¥¼°„)5`µ½¹¥Ñ½É¥¹œÑ½½°Ñ¡…Ğİ½É­Ì½Ù•È!QQ@…¹¡•±ÁÌå½ÔÙ¥ÍÕ…±¥é”Ñ¥Ù•5Dµ•ÑÉ¥Ìİ¥Ñ Ñ¥µ•Í•É¥•ÌÉ…Á¡Ì¸((ŒŒ!…İÑ¥¼)m!…İÑ¥½um¡…İÑ¥½t¥Ì…¸½Á•¸Í½ÕÉ”°U$µ‰…Í•Ñ½½°Ñ¡…Ğå½Ô…¸ÕÍ”Ñ¼µ½¹¥Ñ½È)…Ù„…ÁÁ±¥…Ñ¥½¹ÌÑ¡…Ğ•áÁ½Í”µ•ÑÉ¥ÌÙ¥„)5`¸!…İÑ¥¼¡…Ì‰Õ¥±Ğµ¥¸ÍÕÁÁ½ÉĞ™½ÈÑ¥Ù•5D°…¹¥Ğİ½É­Ì…Ì„İ•ˆ…ÁÀ¥¹Í¥‘”å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸°Í¥µ¥±…ÈÑ¼Ñ¡”]•ˆ½¹Í½±”¸!…İÑ¥¼‘¥ÍÁ±…åÌ‰É½­•È…¹‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Ì…Ì¹Õµ•É¥…°‘…Ñ„°…¹…ÌÑ¥µ•Í•É¥•ÌÉ…Á¡Ì°İ¡¥ !…İÑ¥¼…±±Ì€¨©¡…ÉÑÌ¨¨¸€()íìğ¥µœÍÉŒô‰¡…İÑ¥¼Ä¹Á¹œˆ…ÁÑ¥½¸ô‰=¹”½˜Ñ¡”Ù¥•İÌ¥¸!…İÑ¥¼Í¡½İÌÅÕ•Õ”µ•ÑÉ¥Ì…Ì„Ñ¥µ•Í•É¥•ÌÉ…Á ¸ˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰Q¡¥Ì!…İÑ¥¼ÍÉ••¹Í¡½ĞÍ¡½İÌÑ•¸‘¥™™•É•¹ĞÑ¥Ù•5Dµ•ÑÉ¥ÌÙ¥ÍÕ…±¥é•…ÌÑ¥µ•Í•É¥•ÌÉ…Á¡Ì¥¸½¹”Ù¥•Ü¸ˆ€ùõô()!…İÑ¥¼ÕÍ•Ìm¡½É¥é½¸É…Á¡Íum¡½É¥é½¸µÉ…Á¡ÍtÑ¼Ù¥ÍÕ…±¥é”µ•ÑÉ¥Ì¸Q¡¥Ì™½Éµ…ĞÕÍ•Ì½±½ÈÑ¼µ…¥¹Ñ…¥¸„½¹Í¥ÍÑ•¹Ğ¡•¥¡Ğ•Ù•¸¥˜Ñ¡”µ…á¥µÕ´äµ…á¥ÌÙ…±Õ”¡…¹•Ì½Ù•ÈÑ¥µ”¸Q¡”‘…É­•ÍĞÉ•¥½¹ÌÉ•ÁÉ•Í•¹ĞÑ¡”¡¥¡•ÍĞÙ…±Õ•Ì¸¹•ÜÙ…±Õ”Ñ¡…Ğİ½Õ±™…±°…‰½Ù”Ñ¡”É…Á ÌÁÉ••á¥ÍÑ¥¹œÕÁÁ•È±¥µ¥Ğ¥ÌÉ•ÁÉ•Í•¹Ñ•¥¸„‘…É­•ÈÍ¡…‘”…¹¥ÌÁ±½ÑÑ•İ¥Ñ¡¥¸Ñ¡”É…Á Ì•á¥ÍÑ¥¹œ¡•¥¡Ğ¸()íìğ¥µœÍÉŒô‰¡…İÑ¥¼È¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…ÁÑ¥½¸ô‰%¹ÍÑ•…½˜¥¹É•…Í¥¹œÑ¡”¡•¥¡Ğ½˜Ñ¡”É…Á …ÌÙ…±Õ•ÌÉ¥Í”°„¡½É¥é½¸É…Á …ÁÁ±¥•Ì‘…É­•ÈÍ¡…‘•ÌÑ¼¡¥¡•ÈÙ…±Õ•Ì°…±±½İ¥¹œ¥ĞÑ¼Á±½Ğ„‘å¹…µ¥ŒÉ…¹”½˜äµ…á¥ÌÙ…±Õ•Ì¥¸Ñ¡”Í…µ”Ù•ÉÑ¥…°ÍÁ…”¸ˆ…±Ğô‰Í¥µÁ±”¡½É¥é½¸É…Á Í¡½İÌ¡¥¡•ÈÙ…±Õ•Ì¥¸‘…É­•È½±½ÉÌ¸ˆ€ùõô((ŒŒŒU¹¥ÅÕ”™•…ÑÕÉ•Ì½˜!…İÑ¥¼)Q¡”Ñ¥µ•Í•É¥•ÌÉ…Á¡Ì…Ù…¥±…‰±”¥¸!…İÑ¥¼Ì€¨©¡…ÉÑÌ¨¨Ñ…ˆ‘¥™™•É•¹Ñ¥…Ñ”¥Ğ™É½´)½¹Í½±”…¹Ñ¡”Ñ¥Ù•5D]•ˆ½¹Í½±”¸Q¡•Í”É…Á¡Ì…±±½Üå½ÔÑ¼¥‘•¹Ñ¥™äÑÉ•¹‘Ì¥¸Ñ¡”Á•É™½Éµ…¹”½˜å½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”°…¹…¸‰”¡•±Á™Õ°™½ÈÑÉ½Õ‰±•Í¡½½Ñ¥¹œ¥ÍÍÕ•Ì¸()!…İÑ¥¼İ½É­Ì½Ù•ÈÑ¡”İ•ˆ°İ¡¥ ¥Ù•Ì¥ĞÍ½µ”…‘Ù…¹Ñ…•Ì½Ù•ÈÑ½½±Ì±¥­”)½¹Í½±”…¹Ñ¡”]•ˆ½¹Í½±”¸Q¡”!…İÑ¥¼™É½¹Ñ•¹µ…­•Ì!QQ@…±±ÌÑ¼„)½±½­¥„Í•ÉÙ•ÈÑ¡…ĞÌ¥¹±Õ‘•¥¸å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸)½±½­¥„ÌÉ½±”¥ÌÑ¼Í•ÉÙ”)5`‘…Ñ„Ù¥„IMP•¹‘Á½¥¹ÑÌ¸Q¡”!…İÑ¥¼U$Í•¹‘ÌÉ•ÅÕ•ÍÑÌ…¹É••¥Ù•Ì)M=8É•ÍÁ½¹Í•Ì½Ù•È!QQ@°İ¡¥ ½Õ±µ…­”¥Ğ•…Í¥•ÈÑ¼ÕÍ”¥¸å½ÕÈ•¹Ù¥É½¹µ•¹Ğ°Í¥¹”!QQ@Á½ÉÑÌ…É”±¥­•±ä…±É•…‘ä¥¸ÕÍ”…¹¹½Ğ‰±½­•‰ä„™¥É•İ…±°¸€((ŒŒŒ%¹ÍÑ…±±¥¹œ!…İÑ¥¼)Q¡”m!…İÑ¥¼‘½Õµ•¹Ñ…Ñ¥½¹um¡…İÑ¥¼µ‘½Ít‘•ÍÉ¥‰•ÌÍ•Ù•É…°İ…åÌÑ¼¥¹ÍÑ…±°…¹ÉÕ¸!…İÑ¥¼¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°ÁÉ½Ù¥‘”•á…µÁ±”½µµ…¹‘Ì™½È¥¹ÍÑ…±±¥¹œ!…İÑ¥¼½¸…¸U‰Õ¹ÑÔ¡½ÍĞÑ¡…ĞÌ…±É•…‘äÉÕ¹¹¥¹œÑ¥Ù•5D¸()Q¼¥¹ÍÑ…±°…¹½¹™¥ÕÉ”!…İÑ¥¼°™¥ÉÍĞ‘½İ¹±½……¹Õ¹é¥À¥Ğè()€)İ•Ğ€µŒ¡ÑÑÁÌè¼½½ÍÌ¹Í½¹…ÑåÁ”¹½Éœ½½¹Ñ•¹Ğ½É•Á½Í¥Ñ½É¥•Ì½ÁÕ‰±¥Œ½¥¼½¡…İĞ½¡…İÑ¥¼µ‘•™…Õ±Ğ¼È¸Ì¸À½¡…İÑ¥¼µ‘•™…Õ±Ğ´È¸Ì¸À¹İ…È)Õ¹é¥À¡…İÑ¥¼µ‘•™…Õ±Ğ´È¸Ì¸À¹İ…È€µ¡…İÑ¥¼)€()9½Ñ”Ñ¡…ĞÑ¡”½µµ…¹‘Ì…‰½Ù”É•™•É•¹”Ù•ÉÍ¥½¸€È¸Ì¸Á€¸Q¼•¹ÍÕÉ”å½ÔÉ”¥¹ÍÑ…±±¥¹œÑ¡”±…Ñ•ÍĞÙ•ÉÍ¥½¸°Ù¥Í¥ĞÑ¡”m!…İÑ¥¼‘½Õµ•¹Ñ…Ñ¥½¹um¡…İÑ¥¼µ‘½Ít…¹™¥¹Ñ¡”€¨©½İ¹±½…¡…İÑ¥¼µ‘•™…Õ±Ğ¹İ…È¨¨‰ÕÑÑ½¸¸()9•áĞ°µ½Ù”Ñ¡”Õ¹é¥ÁÁ•!…İÑ¥¼‘¥É•Ñ½Éä¥¹Ñ¼Ñ¡”€¨©İ•‰…ÁÁÌ¼¨¨ÍÕ‰‘¥É•Ñ½Éä½˜å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸è()€)µØ¡…İÑ¥¼€ñAQ!}Q=}Q%Y5E}%9MQ11Q%=8ø½İ•‰…ÁÁÌ)€()Q¡•¸°•‘¥ĞÑ¡”€¨©•¹Ø¨¨™¥±”¥¸Ñ¡”€¨©‰¥¸¨¨‘¥É•Ñ½Éä½˜å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸‘Ñ¡”™½±±½İ¥¹œ±¥¹”…ĞÑ¡”•¹½˜Ñ¡”™¥±”è)€)Q%Y5E}=AQLôˆ‘Q%Y5E}=AQL€µ¡…İÑ¥¼¹É•…±´õ…Ñ¥Ù•µÄ€µ¡…İÑ¥¼¹É½±”õ…‘µ¥¹Ì€µ¡…İÑ¥¼¹É½±•AÉ¥¹¥Á…±±…ÍÍ•Ìõ½Éœ¹…Á…¡”¹…Ñ¥Ù•µÄ¹©……Ì¹É½ÕÁAÉ¥¹¥Á…°ˆ)€()Ñ¥Ù•5DÉ•±¥•Ì½¸m)•ÑÑåum©•ÑÑåtÑ¼Í•ÉÙ”¥ÑÌİ•ˆ…ÁÁ±¥…Ñ¥½¹Ì°ÍÕ …Ì!…İÑ¥¼…¹Ñ¡”]•ˆ½¹Í½±”¸)•ÑÑä¥Ì¥¹±Õ‘•¥¸Ñ¡”Ñ¥Ù•5D‘½İ¹±½…¸Q¼½¹™¥ÕÉ”)•ÑÑä™½È!…İÑ¥¼°•‘¥Ğ€¨©©•ÑÑä¹áµ°¨¨¥¸Ñ¡”€¨©½¹˜¼¨¨ÍÕ‰‘¥É•Ñ½ÉäÕ¹‘•Èå½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸‘¥É•Ñ½ÉäÑ¼…‘!…İÑ¥¼…Ì„İ•ˆ½µÁ½¹•¹Ğ½˜å½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸¥¹Ñ¡”€ñÉ•˜‰•…¸ô‰É•İÉ¥Ñ•!…¹‘±•Èˆ¼ù€Ñ…œ…¹…‘Ñ¡¥Ì‰±½¬¥µµ•‘¥…Ñ•±ä…™Ñ•È¥Ğè()€(ñ‰•…¸±…ÍÌô‰½Éœ¹•±¥ÁÍ”¹©•ÑÑä¹İ•‰…ÁÀ¹]•‰ÁÁ½¹Ñ•áĞˆø(ñÁÉ½Á•ÉÑä¹…µ”ô‰½¹Ñ•áÑA…Ñ ˆÙ…±Õ”ôˆ½¡…İÑ¥¼ˆ€¼ø(ñÁÉ½Á•ÉÑä¹…µ”ô‰É•Í½ÕÉ•	…Í”ˆÙ…±Õ”ôˆ‘í…Ñ¥Ù•µÄ¹¡½µ•ô½İ•‰…ÁÁÌ½¡…İÑ¥¼ˆ€¼ø(ñÁÉ½Á•ÉÑä¹…µ”ô‰±½UÉ±=¹MÑ…ÉĞˆÙ…±Õ”ô‰ÑÉÕ”ˆ€¼ø(ğ½‰•…¸ø)€()!…İÑ¥¼Ì€¨©…‘µ¥¸¨¨ÕÍ•È½µ•Ìİ¥Ñ „‘•™…Õ±ĞÁ…ÍÍİ½É½˜€¨©…‘µ¥¸¨¨¸Q¼ÕÍÑ½µ¥é”å½ÕÈ!…İÑ¥¼¥¹ÍÑ…±±…Ñ¥½¸İ¥Ñ „Í•ÕÉ”Á…ÍÍİ½É°•‘¥ĞÑ¡”€¨©½¹˜½ÕÍ•ÉÌ¹ÁÉ½Á•ÉÑ¥•Ì¨¨™¥±”¸1½…Ñ”€Ñ¡”±¥¹”Ñ¡…ĞÉ•…‘Ìè()€)…‘µ¥¸õ…‘µ¥¸)€()‘¥Ğ¥Ğ‰äÍÁ•¥™å¥¹œå½ÕÈ‘•Í¥É•Á…ÍÍİ½Éè()€)…‘µ¥¸ôñ5e}9]}AMM]=Iø)€()I•ÍÑ…ÉĞÑ¥Ù•5D…¹‰É½İÍ”Ñ¼¡ÑÑÀè¼¼ñe=UI}Q%Y5E}!=MQ}%@øèàÄØÄ½¡…İÑ¥½€¸e½Ô…¸¹½Ü±½œ¥¸İ¥Ñ Ñ¡”ÕÍ•É¹…µ”€¨©…‘µ¥¸¨¨…¹Ñ¡”Á…ÍÍİ½É€¨©pñ5e}9]}AMM]=Ipø¨¨¸€((ŒŒŒUÍ¥¹œ!…İÑ¥¼)™Ñ•Èå½ÔÙ”±½•¥¸Ñ¼!…İÑ¥¼°±¥¬Ñ¡”€¨©Ñ¥Ù•5D¨¨±¥¹¬¥¸Ñ¡”±•™Ğ¹…Ù¥…Ñ¥½¸¸%˜å½Ô¡…Ù”½¹”½Èµ½É”ÅÕ•Õ•Ì°å½Ô±°Í•”„€¨©EÕ•Õ”¨¨¥Ñ•´‰•¹•…Ñ Ñ¡”‰É½­•È¹…µ”€¡İ¡¥ ¥Ì±½…±¡½ÍÑ€¥¸Ñ¡”ÍÉ••¹Í¡½Ğ‰•±½Ü¤¸±¥¬Ñ¡”Á½¥¹Ñ•È¹•áĞÑ¼€¨©EÕ•Õ”¨¨Ñ¼É•Ù•…°„±¥ÍĞ½˜ÅÕ•Õ•Ìå½ÔÉ”µ½¹¥Ñ½É¥¹œ¸€¡Q¡”€¨©Q½Á¥Œ¨¨¥Ñ•´‰•±½ÜÑ¡¥Ì½¹”İ½É­ÌÑ¡”Í…µ”İ…ä¸¤±¥¬Ñ¡”¹…µ”½˜„ÅÕ•Õ”Ñ¼Ù¥•Ü„Ñ…‰±”½˜¥ÑÌ…ÑÑÉ¥‰ÕÑ•Ì¸()íìğ¥µœÍÉŒô‰¡…İÑ¥¼Ì¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰!…İÑ¥¼Ì…ÑÑÉ¥‰ÕÑ•ÌÑ…ˆÍ¡½İÌ„¹Õµ‰•È½˜ÅÕ•Õ”µ•ÑÉ¥Ì…Ì¹Õµ•É¥…°Ù…±Õ•Ì¸ˆ€ùõô()±¥¬Ñ¡”€¨©¡…ÉĞ¨¨Ñ…ˆÑ¼±½…„Ù¥ÍÕ…±¥é…Ñ¥½¸Í¡½İ¥¹œ…±°½˜Ñ¡”ÅÕ•Õ”Ìµ•ÑÉ¥Ì¸	ä‘•™…Õ±Ğ°Ñ¡”¡…ÉĞ‘¥ÍÁ±…åÌ…±°µ•ÑÉ¥Ì…Ù…¥±…‰±”™É½´Ñ¡¥ÌÅÕ•Õ”¸±¥¬Ñ¡”€¨©‘¥Ğ¨¨‰ÕÑÑ½¸Ñ¼Í•±•Ğ„ÍÕ‰Í•Ğ½˜…ÑÑÉ¥‰ÕÑ•ÌÑ¼Ù¥•Ü¸()íìğ¥µœÍÉŒô‰¡…İÑ¥¼Ğ¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰!…İÑ¥¼Ì¡…ÉĞÑ…ˆ¥¹±Õ‘•Ì„½¹ÑÉ½°Ñ¡…Ğ…±±½İÌå½ÔÑ¼Í•±•ĞÑ¡”)5`…ÑÑÉ¥‰ÕÑ•ÌÑ¼‰”¥¹±Õ‘•¥¸Ñ¡”¡…ÉĞ¸ˆ€ùõô()ÌÑ¡”¡½É¥é½¸É…Á ½¹Ñ¥¹Õ•ÌÑ¼½±±•Ğµ•ÑÉ¥Œ‘…Ñ„°¥ĞÉ•™±•ÑÌÑ¡”¡…¹¥¹œÙ…±Õ•Ì½˜Ñ¡”…ÑÑÉ¥‰ÕÑ•Ìå½ÔÉ”µ½¹¥Ñ½É¥¹œ¸()íìğ¥µœÍÉŒô‰¡…İÑ¥¼Ô¹Á¹œˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰!…İÑ¥¼Ì¡…ÉĞÑ…ˆÍ¡½İÌÉ…Á¡Ì½˜„ÍÕ‰Í•Ğ½˜Ñ¡”…Ù…¥±…‰±”)5`µ•ÑÉ¥Ì¸ˆ€ùõô()!…İÑ¥¼°)½¹Í½±”°…¹Ñ¡”Ñ¥Ù•5D]•ˆ½¹Í½±”…É”U$µ‰…Í•Ñ½½±ÌÑ¡…Ğ‘½¸Ğ…±±½Üå½ÔÑ¼ÁÉ½É…µµ…Ñ¥…±±ä™•Ñ Ñ¥Ù•5Dµ•ÑÉ¥Ì¸	ÕĞ™½È„µ½É”Ñ¡½É½Õ …ÁÁÉ½… Ñ¼µ½¹¥Ñ½É¥¹œå½ÕÈÑ¥Ù•5DÍ•ÑÕÀ°å½Ô…¸ÕÍ”Ñ½½±ÌÑ¡…Ğ…±±½Üå½ÔÑ¼İÉ¥Ñ”½‘”Ñ¼…ÕÑ½µ…Ñ”å½ÕÈµ½¹¥Ñ½É¥¹œ¸()9•áĞ°İ”±°±½½¬…ĞÑ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸°İ¡¥ …±±½İÌå½ÔÑ¼½±±•Ğµ•ÑÉ¥Ì‰äÍ•¹‘¥¹œ…¹É••¥Ù¥¹œ)5Lµ•ÍÍ…•Ì¸((ŒŒMÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸)Ì½˜Ù•ÉÍ¥½¸€Ô¸Ì¬°Ñ¥Ù•5D¥¹±Õ‘•Ì„mÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¹um…Ñ¥Ù•µÄµÍÑ…Ñ¥ÍÑ¥ÌµÁ±Õ¥¹tÑ¡…ĞÕÍ•Ì¥ÑÌ¹…Ñ¥Ù”µ•ÍÍ…¥¹œ™Õ¹Ñ¥½¹…±¥ÑäÑ¼Í•¹µ•ÑÉ¥Ì¸Q¡”…Ñ•İ…ä™½È½µµÕ¹¥…Ñ¥¹œİ¥Ñ Ñ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸¥Ì„Í•Ğ½˜‘•ÍÑ¥¹…Ñ¥½¹ÌÉ•…Ñ•…ÕÑ½µ…Ñ¥…±±ä‰äÑ¥Ù•5D¸]¡•¸å½ÔÍ•¹…¸•µÁÑäµ•ÍÍ…”Ñ¼½¹”½˜Ñ¡”ÍÑ…Ñ¥ÍÑ¥Ì‘•ÍÑ¥¹…Ñ¥½¹Ì°Ñ¥Ù•5Dİ¥±°É•ÍÁ½¹‰äÍ•¹‘¥¹œ‰É½­•È½È‘•ÍÑ¥¹…Ñ¥½¸µ•ÑÉ¥Ì¥¸„)5Lµ•ÍÍ…”Ñ¼„‘•ÍÑ¥¹…Ñ¥½¸å½ÔÍÁ•¥™ä¸()½È•á…µÁ±”°Ñ¼•¹•É…Ñ”„)5Lµ•ÍÍ…”½¹Ñ…¥¹¥¹œ‰É½­•Èµ•ÑÉ¥Ì°å½Ô…¸Í•¹…¸•µÁÑäµ•ÍÍ…”Ñ¼Ñ¡”‰É½­•ÈÍÑ…Ñ¥ÍÑ¥Ì‘•ÍÑ¥¹…Ñ¥½¸€¡¹…µ•Ñ¥Ù•5D¹MÑ…Ñ¥ÍÑ¥Ì¹	É½­•É€¤¸Q¼™•Ñ µ•ÑÉ¥Ì™½È„‘•ÍÑ¥¹…Ñ¥½¸¹…µ•5e}MQ%9Q%=9€°Í•¹…¸•µÁÑäµ•ÍÍ…”Ñ¼Ñ¥Ù•5D¹MÑ…Ñ¥ÍÑ¥Ì¹•ÍÑ¥¹…Ñ¥½¸¹5e}MQ%9Q%=9€¸e½Ô…¸…±Í¼ÕÍ”İ¥±‘…É‘Ì¥¸Ñ¡”¹…µ•Ì½˜ÍÑ…Ñ¥ÍÑ¥Ì‘•ÍÑ¥¹…Ñ¥½¹ÌèÑ¼•¹•É…Ñ”ÍÑ…Ñ¥ÍÑ¥Ìµ•ÍÍ…•Ì™½È…±°‘•ÍÑ¥¹…Ñ¥½¹Ì°Í•¹„µ•ÍÍ…”Ñ¼Ñ¥Ù•5D¹MÑ…Ñ¥ÍÑ¥Ì¹•ÍÑ¥¹…Ñ¥½¸¸ù€¸M•”Ñ¡”mÑ¥Ù•5D‘½Õµ•¹Ñ…Ñ¥½¹um…Ñ¥Ù•µÄµİ¥±‘…É‘Ít™½Èµ½É”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞİ¥±‘…É‘Ì¸((ŒŒŒ¹…‰±¥¹œÑ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸)Q¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸¥Í¸Ğ•¹…‰±•‰ä‘•™…Õ±Ğ¸Q¼•¹…‰±”¥Ğ°•‘¥ĞÑ¡”€¨©…Ñ¥Ù•µÄ¹áµ°¨¨™¥±”¥¸Ñ¡”€¨©½¹˜¼¨¨ÍÕ‰‘¥É•Ñ½ÉäÕ¹‘•Èå½ÕÈÑ¥Ù•5D¥¹ÍÑ…±±…Ñ¥½¸¸áÑ•¹Ñ¡”€ñ‰É½­•Èù€•±•µ•¹ĞÑ¼¥¹±Õ‘”„€ñÁ±Õ¥¹Ìù€¡¥±•±•µ•¹Ğ¥˜Ñ¡•É”¥Í¸Ğ½¹”°…¹…‘Ñ¡”€ñÍÑ…Ñ¥ÍÑ¥Í	É½­•ÉA±Õ¥¸¼ù€•±•µ•¹Ğ¥¹Í¥‘”¥Ğ°…ÌÍ¡½İ¸¥¸Ñ¡”Á…ÉÑ¥…°€¨©…Ñ¥Ù•µÄ¹áµ°¨¨™¥±”‰•±½Ü¸9½Ñ”Ñ¡…Ğå½ÕÈ€ñ‰É½­•Èù€…¹€ñÁ±Õ¥¹Ìù€•±•µ•¹ÑÌµ¥¡Ğ±½½¬‘¥™™•É•¹Ğ°‘•Á•¹‘¥¹œ½¸å½ÕÈ‰É½­•È½¹™¥ÕÉ…Ñ¥½¸è()€(ñ‰É½­•Èáµ±¹Ìô‰¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Í¡•µ„½½É”ˆ‰É½­•É9…µ”ô‰µå	É½­•Èˆø)l¸¸¹t(€€€€ñÁ±Õ¥¹Ìø(€€€€€€€€ñÍÑ…Ñ¥ÍÑ¥Í	É½­•ÉA±Õ¥¸¼ø(€€€€ğ½Á±Õ¥¹Ìø)l¸¸¹t(ğ½‰É½­•Èø)€(ŒŒŒ½±±•Ñ¥¹œµ•ÑÉ¥ÌÙ¥„Ñ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸)Q¡½Õ å½ÔÉ”µ½ÍĞ±¥­•±äÑ¼‰•¹•™¥Ğ‰ä¥¹Ñ•É…Ñ¥¹œÁÉ½É…µµ…Ñ¥…±±äİ¥Ñ Ñ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸°Ñ¡”ÍÉ••¹Í¡½Ğ‰•±½Ü¥±±ÕÍÑÉ…Ñ•ÌÕÍ¥¹œÑ¡”]•ˆ½¹Í½±”Ñ¼Í•¹…¸•µÁÑäµ•ÍÍ…”Ñ¼Ñ¡”Ñ¥Ù•5D¹MÑ…Ñ¥ÍÑ¥Ì¹	É½­•É€‘•ÍÑ¥¹…Ñ¥½¸°İ¡¥ İ¥±°ÑÉ¥•ÈÑ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸Ñ¼É•ÑÉ¥•Ù”‰É½­•ÈÍÑ…Ñ¥ÍÑ¥Ì¸()íìğ¥µœÍÉŒô‰İ•‰}½¹Í½±”Í„¹Á¹œˆ…ÁÑ¥½¸ô‰M•¹…¸•µÁÑäµ•ÍÍ…”Ñ¼Ñ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸Ñ¼É••¥Ù”µ•ÑÉ¥ÌÙ¥„)5Lµ•ÍÍ…•Ì¸ˆİ¥‘”ô‰ÑÉÕ”ˆ…±Ğô‰Ñ¥Ù•5Dİ•ˆ½¹Í½±”ÍÉ••¹Í¡½ĞÍ¡½İÌÑ¡”™½É´Ñ¼Í•¹…¸•µÁÑäµ•ÍÍ…”Ñ¼½¹”½˜Ñ¡”‘•ÍÑ¥¹…Ñ¥½¹Ìµ½¹¥Ñ½É•‰äÑ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸¸ˆ€ùõô()Q¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸İ¥±°É•ÍÁ½¹‰äÍ•¹‘¥¹œ„µ•ÍÍ…”Ñ¼Ñ¡”ÅÕ•Õ”ÍÁ•¥™¥•¥¸Ñ¡”€¨©I•Á±äÑ¼¨¨™¥•±€¡¥¸Ñ¡¥Ì•á…µÁ±”°5e}IA1e}EUU€¤¸Q¡…Ğµ•ÍÍ…”½¹Ñ…¥¹ÌÕÉÉ•¹ĞÙ…±Õ•Ì½˜‰É½­•Èµ•ÑÉ¥Ì°™½Éµ…ÑÑ•…Ì)M=8°…Ì¥¸Ñ¡”•á…µÁ±”‰•±½Ü¸€()€)ì€€(€€…Ù•É…•5•ÍÍ…•M¥é”ôÄÀÈĞ°(€€µ¥¹¹ÅÕ•Õ•Q¥µ”ôĞÀÈä¸À°(€€•áÁ¥É•‘½Õ¹ĞôÀ°(€€ÍÑ½µÀ­ÍÍ°ô°(€€¥¹™±¥¡Ñ½Õ¹ĞôÀ°(€€ÍÍ°ô°(€€Ñ•µÁUÍ…”ôÀ°(€€Ñ•µÁ1¥µ¥ĞôÈÌàÈäÀĞÔÈĞà°(€€ÍÑ½µÀõÍÑ½µÀè¼½…Ñ¥Ù•µÄµÑ•ÍĞµİ•ÔèØÄØÄÌıµ…á¥µÕµ½¹¹•Ñ¥½¹ÌôÄÀÀÀ™İ¥É•½Éµ…Ğ¹µ…áÉ…µ•M¥é”ôÄÀĞàÔÜØÀÀ°(€€ÍÑ½É•A•É•¹ÑUÍ…”ôÀ°(€€‘•ÅÕ•Õ•½Õ¹ĞôÀ°(€€‰É½­•É%õ%é…Ñ¥Ù•µÄµÑ•ÍĞµİ•Ô´ĞÔĞÄÜ´ÄÔÌÌàĞØÜĞÔÜÔĞ´ÀèÄ°(€€µ•µ½ÉåUÍ…”ôÄÀÈĞ°(€€½¹ÍÕµ•É½Õ¹ĞôÀ°(€€ÍÑ½É•UÍ…”ôĞÈØÜàØ°(€€‘…Ñ…¥É•Ñ½Éäô½É½½Ğ½…Ñ¥Ù•µÄ½‘…Ñ„°(€€µ•µ½ÉåA•É•¹ÑUÍ…”ôÀ°(€€…Ù•É…•¹ÅÕ•Õ•Q¥µ”ôÔÌĞØ¸À°(€€µ•ÍÍ…•Í…¡•ôÀ°(€€µ…á¹ÅÕ•Õ•Q¥µ”ôØØØÌ¸À°(€€‘¥ÍÁ…Ñ¡½Õ¹ĞôÈ°(€€Í¥é”ôÄ°(€€½Á•¹İ¥É”õÑÀè¼½…Ñ¥Ù•µÄµÑ•ÍĞµİ•ÔèØÄØÄØıµ…á¥µÕµ½¹¹•Ñ¥½¹ÌôÄÀÀÀ™İ¥É•½Éµ…Ğ¹µ…áÉ…µ•M¥é”ôÄÀĞàÔÜØÀÀ°(€€Ù´õÙ´è¼½±½…±¡½ÍĞ°(€€ÍÑ½É•1¥µ¥ĞôÈÌàÈäĞĞÔÜäØ°(€€ÁÉ½‘Õ•É½Õ¹ĞôÀ°(€€µ•µ½Éå1¥µ¥ĞôÜÈØÔÜÄĞÄà°(€€‰É½­•É9…µ”õ±½…±¡½ÍĞ°(€€•¹ÅÕ•Õ•½Õ¹ĞôÄÀ°(€€Ñ•µÁA•É•¹ÑUÍ…”ôÀ)ô(€()Q¼…ÕÑ½µ…Ñ”å½ÕÈÑ¥Ù•5Dµ½¹¥Ñ½É¥¹œ°å½Ô…¸İÉ¥Ñ”„ÁÉ½‘Õ•ÈÑ¼ÁÉ½µÁĞÑ¡”ÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸™½Èµ•ÑÉ¥Ì°…¹„½¹ÍÕµ•ÈÑ¼É••¥Ù”…¹ÁÉ½•ÍÌÑ¡•´¸e½Ô…¸•ĞÍÑ…ÉÑ•İ¥Ñ Ñ¡”Í…µÁ±”½‘”Ñ¡…ĞÌ¥¹±Õ‘•¥¸Ñ¡”mÍÑ…Ñ¥ÍÑ¥ÌÁ±Õ¥¸‘½Õµ•¹Ñ…Ñ¥½¹um…Ñ¥Ù•µÄµÍÑ…Ñ¥ÍÑ¥ÌµÁ±Õ¥¹t¸((ŒŒ½µÁÉ•¡•¹Í¥Ù”Ñ¥Ù•5Dµ½¹¥Ñ½É¥¹œ)Ñ¥Ù•5Dİ½É­Ì¥¸½¹©Õ¹Ñ¥½¸İ¥Ñ ½Ñ¡•È…ÁÁ±¥…Ñ¥½¹Ì€¡ÍÕ …ÌÁÉ½‘Õ•ÉÌ…¹½¹ÍÕµ•ÉÌå½ÔÙ”İÉ¥ÑÑ•¸¤Ñ¼Í•¹…¹É••¥Ù”µ•ÍÍ…•Ì¸Q¡”Ñ½½±Ì½Ù•É•¥¸Ñ¡¥ÌÁ½ÍĞ…¸ÁÉ½Ù¥‘”å½Ôİ¥Ñ µ•ÑÉ¥Ì™É½´Í½µ”½˜å½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”€¡‰É½­•ÉÌ°‘•ÍÑ¥¹…Ñ¥½¹Ì°…¹Ñ¡”)Y4¤‰ÕĞ‘½¸Ğ¡•±Àå½Ôµ½¹¥Ñ½ÈÑ¡”É•ÍĞ€¡ÁÉ½‘Õ•ÉÌ°½¹ÍÕµ•ÉÌ°…¹¥¹™É…ÍÑÉÕÑÕÉ”¤¸]¥Ñ „½µÁ±•Ñ”Ñ¥Ù•5Dµ½¹¥Ñ½É¥¹œÍÑÉ…Ñ•ä°å½Ô…¸½ÉÉ•±…Ñ”µ•ÑÉ¥Ì…¹±½Ì™É½´Ñ¥Ù•5Dİ¥Ñ mA5um©…Ù„µµ½¹¥Ñ½É¥¹œµ…Áµt…¹¥¹™É…ÍÑÉÕÑÕÉ”µ•ÑÉ¥Ì™É½´å½ÕÈÁÉ½‘Õ•ÉÌ…¹½¹ÍÕµ•ÉÌÑ¼¥‘•¹Ñ¥™ä‰½ÑÑ±•¹•­Ì…¹ÑÉ½Õ‰±•Í¡½½ĞÁ•É™½Éµ…¹”¥ÍÍÕ•Ì¸€()…Ñ…‘½œ…±±½İÌå½ÔÑ¼½±±•Ğ°Ù¥ÍÕ…±¥é”°…¹…±•ÉĞ½¸‘…Ñ„™É½´µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõôÑ•¡¹½±½¥•Ì…É½ÍÌå½ÕÈµ•ÍÍ…¥¹œ¥¹™É…ÍÑÉÕÑÕÉ”¸½µ¥¹œÕÀ¥¸mÁ…ÉĞ€ÍumÁ…ÉĞ´Ít½˜Ñ¡¥ÌÍ•É¥•Ì°İ”±°±½½¬…Ğ¡½Ü…Ñ…‘½œ…¸¡•±Àå½Ôµ½¹¥Ñ½È…±°Ñ¡”Á¥••Ì½˜å½ÕÈÑ¥Ù•5DÍ•ÑÕÀ¸((ŒŒ­¹½İ±•‘µ•¹ÑÌ)]”±¥­”Ñ¼Ñ¡…¹¬…ÉäQÕ±±ä½˜mI•!…ÑumÉ•µ¡…Ñt™½È¡¥ÌÑ•¡¹¥…°É•Ù¥•Ü½˜Ñ¡¥ÌÍ•É¥•Ì¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½…Ñ¥Ù•µÄ½½±±•Ñ¥¹œµ…Ñ¥Ù•µÄµµ•ÑÉ¥Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|()m…Ñ¥Ù•µÄµ±¤µ±¥¹Õátè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Õ¹¥àµÍ¡•±°µÍÉ¥ÁĞ¹¡Ñµ°)m…Ñ¥Ù•µÄµ±¤µİ¥¹‘½İÍtè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½…Ñ¥Ù•µÄµ½µµ…¹µ±¥¹”µÑ½½±ÌµÉ•™•É•¹”¹¡Ñµ°)m…Ñ¥Ù•µÄµ•¹Ùtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Á…¡”½…Ñ¥Ù•µÄ½‰±½ˆ½µ…ÍÑ•È½…ÍÍ•µ‰±ä½ÍÉŒ½É•±•…Í”½‰¥¸½•¹Ø)m…Ñ¥Ù•µÄµ©µátè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½©µà¹¡Ñµ°)m…Ñ¥Ù•µÄµ¹•Ñİ½É­Ìµ½˜µ‰É½­•ÉÍtè¡ÑÑÁÌè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½¹•Ñİ½É­Ìµ½˜µ‰É½­•ÉÌ¹¡Ñµ°)m…Ñ¥Ù•µÄµÍ¡•‘Õ±•µµ•ÍÍ…•Ítè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½‘•±…äµ…¹µÍ¡•‘Õ±”µµ•ÍÍ…”µ‘•±¥Ù•Éä¹¡Ñµ°)m…Ñ¥Ù•µÄµÍÑ…Ñ¥ÍÑ¥ÌµÁ±Õ¥¹tè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½ÍÑ…Ñ¥ÍÑ¥ÍÁ±Õ¥¸¹¡Ñµ°)m…Ñ¥Ù•µÄµÍÑ½ÀµÍÑ…ÉÑtè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½Ù•ÉÍ¥½¸´Ôµ•ÑÑ¥¹œµÍÑ…ÉÑ•¹¡Ñµ°Y•ÉÍ¥½¸Õ•ÑÑ¥¹MÑ…ÉÑ•µMÑ…ÉÑ¥¹Ñ¥Ù•5EMÑ…ÉÑ¥¹Ñ¥Ù•5D)m…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±•tè¡ÑÑÁÌè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½İ•ˆµ½¹Í½±”¹¡Ñµ°)m…Ñ¥Ù•µÄµİ•ˆµ½¹Í½±”µÁ½ÉÑtè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½İ•ˆµ½¹Í½±”¹¡Ñµ°]•‰½¹Í½±”µ¡…¹¥¹Ñ¡•Á½ÉĞ)m…Ñ¥Ù•µÄµİ¥±‘…É‘Ítè¡ÑÑÀè¼½…Ñ¥Ù•µÄ¹…Á…¡”¹½Éœ½İ¥±‘…É‘Ì¹¡Ñµ°)m…Á…¡”µ©µàµÍÍ±tè¡ÑÑÁÌè¼½‘ˆ¹…Á…¡”¹½Éœ½‘•É‰ä½‘½Ì¼ÄÀ¸ä½…‘µ¥¹Õ¥‘”½É…‘µ¥¹©µá•¹…‰±•Áİ‘ÍÍ°¹¡Ñµ°)m¡…İÑ¥½tè¡ÑÑÀè¼½¡…İĞ¹¥¼¼)m¡…İÑ¥¼µ‘½Ítè¡ÑÑÀè¼½¡…İĞ¹¥¼½‘½Ì½•ĞµÍÑ…ÉÑ•¼)m¡½É¥é½¸µÉ…Á¡Ítè¡ÑÑÀè¼½İİÜ¹ÍÑ½¹•ÍŒ¹½´½Y¥ÌÀá}]½É­Í¡½À½Y½I•¥©¹•É}ÍÕ‰µ¥ÍÍ¥½¸¹Á‘˜)m©…Ù„µµ½¹¥Ñ½É¥¹œµ…Áµtè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½©…Ù„µµ½¹¥Ñ½É¥¹œµ…Á´¼)m©•ÑÑåtè¡ÑÑÁÌè¼½İİÜ¹•±¥ÁÍ”¹½Éœ½©•ÑÑä¼)m½É…±”µ©½¹Í½±•tè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼ÄÀ½µ…¹…•µ•¹Ğ½ÕÍ¥¹œµ©½¹Í½±”¹¡Ñ´)m½É…±”µµ½¹¥Ñ½É¥¹tè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼ÄÀ½µ…¹…•µ•¹Ğ½µ½¹¥Ñ½É¥¹œµ…¹µµ…¹…•µ•¹ĞµÕÍ¥¹œµ©µàµÑ•¡¹½±½ä¹¡Ñ´)m½É…±”µ©‘­tè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼ÄÀ½¥¹ÍÑ…±°½½Ù•ÉÙ¥•Üµ©‘¬´ÄÀµ…¹µ©É”´ÄÀµ¥¹ÍÑ…±±…Ñ¥½¸¹¡Ñ´)m½É…±”µ©µátè¡ÑÑÀè¼½İİÜ¹½É…±”¹½´½Ñ•¡¹•Ñİ½É¬½©…Ù„½©…Ù…Í”½Ñ• ½©…Ù…µ…¹…•µ•¹Ğ´ÄĞÀÔÈÔ¹¡Ñµ°)m½É…±”µÕÍ¥¹œµ©½¹Í½±•tè¡ÑÑÁÌè¼½‘½Ì¹½É…±”¹½´½©…Ù…Í”¼ÄÀ½µ…¹…•µ•¹Ğ½ÕÍ¥¹œµ©½¹Í½±”¹¡Ñ´)mÁ…ÉĞ´Åtè€½‰±½œ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¼)mÁ…ÉĞ´Äµ‰É½­•Èµµ•ÑÉ¥Ítè€½‰±½œ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¼‰É½­•Èµµ•ÑÉ¥Ì)mÁ…ÉĞ´Äµ‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ítè€½‰±½œ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¼‘•ÍÑ¥¹…Ñ¥½¸µµ•ÑÉ¥Ì)mÁ…ÉĞ´Äµİ¡…Ğµ¥Ìµ…Ñ¥Ù•µÅtè€½‰±½œ½…Ñ¥Ù•µÄµ…É¡¥Ñ•ÑÕÉ”µ…¹µµ•ÑÉ¥Ì¼İ¡…Ğµ¥Ìµ…Ñ¥Ù•µÄ)mÁ…ÉĞ´Ítè€½‰±½œ½µ½¹¥Ñ½É¥¹œµ…Ñ¥Ù•µÄµİ¥Ñ µ‘…Ñ…‘½œ¼)mÉ•µ¡…Ñtè¡ÑÑÁÌè¼½İİÜ¹É•‘¡…Ğ¹½´¼
+# Collecting ActiveMQ metrics
+
+In [Part 1 of this series][part-1], we looked at how ActiveMQ works, and the key metrics you can monitor to ensure proper performance of your messaging infrastructure. In this post, we'll show you some of the tools that you can use to collect ActiveMQ metrics. This includes tools that ship with ActiveMQ, and some other tools that make use of Java Management Extensions (JMX) to monitor ActiveMQ brokers and destinations.
+
+|Tool|Description|Metrics it collects|
+|---|---|---|
+|[ActiveMQ command line tools](#activemq-command-line-tools)|Scripts that are included with ActiveMQ|Limited broker and destination metrics|
+|[ActiveMQ Web Console](#activemq-web-console)|A GUI-based tool that's included with ActiveMQ|Limited broker and destination metrics|
+|[JConsole](#collecting-activemq-metrics-with-jmx-and-jconsole)|A GUI-based tool that's included with the JDK and uses JMX to fetch metrics|Broker and destination metrics, JVM metrics|
+|[Hawtio](#hawtio)|A GUI-based tool that uses JMX to fetch metrics|Broker and destination metrics, JVM metrics|
+|[Statistics plugin](#statistics-plugin)|An ActiveMQ plugin that sends metrics as JMS messages|Broker and destination metrics|
+
+## ActiveMQ command line tools
+ActiveMQ comes with scripts you can execute from a [Windows][activemq-cli-windows] or [Unix-like command line][activemq-cli-linux] to retrieve basic metrics about your broker and destinations (queues and topics). The commands differ across platforms, and the ActiveMQ documentation describes the syntax of the commands and their arguments. 
+
+The `bstat` command shows you the number of messages enqueued and dequeued by each destination, as well as the `TotalEnqueueCount` and `TotalDequeueCount` [broker metrics][part-1-broker-metrics] we looked at in Part 1 of this series. The example below shows an excerpt of the output of the `bstat` command on an Ubuntu host.
+
+```
+[...]
+BrokerName = localhost
+TotalEnqueueCount = 57100
+TotalDequeueCount = 0
+TotalMessageCount = 57100
+TotalConsumerCount = 0
+Uptime = 1 hour 6 minutes
+
+Name = TEST_QUEUE
+destinationName = TEST_QUEUE
+destinationType = Queue
+EnqueueCount = 57100
+DequeueCount = 0
+ConsumerCount = 0
+DispatchCount = 0
+[...]
+```
+
+You can use the `dstat` command to view the [destination metrics][part-1-destination-metrics] from Part 1 of this series, minus the `ExpiredCount` metric. The output below shows a sample of the statistics returned by the `dstat` command on an Ubuntu host. As you can see, the `dstat` output names these metrics differently than their JMX attribute names: `ProducerCount` appears in the `Producer #` column, `ConsumerCount` appears as `Consumer #`, `QueueSize` as `Queue Size`, and `MemoryPercentUsage` as `Memory %`.
+
+```
+[...]
+Name		Queue Size	Producer #	Consumer #	Enqueue #	Dequeue #	Forward #	Memory %	Inflight #
+TEST_QUEUE	57100	        1		0               57100           0		0               70              0
+
+```
+You can use these commands to view some of the key metrics we introduced in Part 1 of this series, but you won't see data on key metrics like `ExpiredCount`, `StorePercentUsage`, or `TempPercentUsage`. In the following sections, we'll describe several other tools that provide more complete visibility into the performance of your broker and destinations.
+
+## ActiveMQ Web Console
+The ActiveMQ [Web Console][activemq-web-console] is an interactive, GUI-based tool that gives you an easy way to view metrics. Since it ships with ActiveMQ, you don't need to install anything to start using it. The Web Console operates on port 8161 by default, so your ActiveMQ host will need to be configured to accept connections on that port (or you can [update your ActiveMQ configuration][activemq-web-console-port] to use a different port). To use the Web Console, browse to `http://<YOUR_ACTIVEMQ_HOST_IP>:8161/admin` and log in with the username **admin** and the password **admin**. 
+
+To change the default password, edit the **jetty-realm.properties** file in the **conf/** subdirectory of your ActiveMQ installation. Locate the following line:
+
+```
+admin: admin, admin
+```
+This line follows the format `<USERNAME>: <PASSWORD>, <ROLE>`, meaning that it creates an **admin** user, gives this user a password of **admin**, and assigns it to the **admin** role. To update the password for the **admin** user, edit the second instance of  **admin**, as shown below.
+
+```
+admin: <MY_NEW_PASSWORD>, admin
+```
+
+Locate this line and comment it out to limit Web Console access to **admin** users:
+
+```
+# user: user, user
+```
+
+[Stop, then restart ActiveMQ][activemq-stop-start]. You can now log in with the username **admin** and the password **\<MY_NEW_PASSWORD\>** to access the Web Console as an admin-level user.
+
+{{< img src="web_console1.png" alt="ActiveMQ's Web Console displays basic information about the broker." wide="true" >}}
+
+The main page of the Web Console displays information about the [broker's memory usage][part-1-broker-metrics] (`MemoryPercentUsage`), as well as store usage (`StorePercentUsage`) and temp usage (`TempPercentUsage`). You can use the top navigation bar to view pages that list data from your queues and topics. These lists display each destination's [metrics][part-1-destination-metrics], including the number of pending messages  (`QueueSize`) and the number of consumers (`ConsumerCount`).
+
+{{< img src="web_console2.png" alt="The Queues page of the Web Console lists some metrics from each queue, including the number of enqueued messages." caption="The Queues page of the Web Console lists some metrics from each queue, including the number of enqueued messages." wide="true" >}}
+
+The Web Console shows most (but not all) of the broker and destination metrics we highlighted in [our guide to key ActiveMQ metrics][part-1], plus information about some optional features like [broker networks][activemq-networks-of-brokers] and [scheduled messages][activemq-scheduled-messages]. To get access to all of the metrics we covered in Part 1, and to view historical data about your JVM's resource usage, you'll need to directly query Java Management Extensions (JMX) by using a tool like JConsole.
+
+## Collecting ActiveMQ metrics with JMX and JConsole
+Like other Java applications, ActiveMQ exposes metrics through [JMX][oracle-jmx]. [JConsole][oracle-jconsole] is an application you can use to monitor any Java app that implements JMX, [including ActiveMQ][activemq-jmx]. JConsole is included in the Java Development Kit (JDK), and it can communicate with any Java application that provides MBeans: JMX-compliant objects that expose the app's attributes and operations.
+
+In this section, we'll show you how to configure and launch JConsole, then we'll look at how to view ActiveMQ metrics in JConsole.
+
+### Configuring ActiveMQ to allow remote monitoring via JConsole
+JConsole is a GUI-based tool, so it requires a platform that provides a GUI environment in which it can run. Because your ActiveMQ infrastructure may not provide a GUI environment, and because JConsole is fairly resource intensive, you'll often need to run JConsole on a machine other than your ActiveMQ host. To do so, youâ€™ll need to configure your ActiveMQ host to allow remote access, which demands  appropriate security considerations. For the sake of demonstration, the simplified configuration in this section disables SSL; see the [Oracle][oracle-monitoring] or [Apache][apache-jmx-ssl] documentation for guidance on configuring secure remote JMX access for production environments. 
+
+To configure your ActiveMQ host to allow remote monitoring, open your hosts file (**/etc/hosts** on Linux systems) and find the line that reads `127.0.0.1 <MY_HOSTNAME>`. Replace `127.0.0.1` with your ActiveMQ host's public IP address. (Depending on your distribution, this line might read `127.0.1.1` instead of `127.0.0.1`.)
+
+Then, edit [ActiveMQ's **env** file][activemq-env], which is normally located in the **bin/** subdirectory of your ActiveMQ installation.  Change the `ACTIVEMQ_SUNJMX_START` line to read:
+``` 
+ACTIVEMQ_SUNJMX_START="-Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_BASE}/conf/jmx.access -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_BASE}/conf/jmx.password"
+```
+
+This change designates the paths to two configuration files you can use to manage access to your JMX monitoring, **jmx.access** and **jmx.password**. These files are created when you install ActiveMQ, and you can find them in the **conf/** subdirectory of your ActiveMQ installation. By default, **jmx.access** designates an `admin` user that has an access level of `readwrite`. You can add other users by adding lines to this file. For example, to create a user named `user1` with read-only privileges, you would add this line to **jmx.access**:
+
+```
+user1 readonly
+```
+
+The **jmx.password** file contains a line for each user named in **jmx.access**. Each line is in the format `<username> <password>`. To update the `admin` user's password, update **jmx.password** to reflect the new password, as shown in this example:
+
+```
+admin <MY_PASSWORD>
+```
+
+Make sure **jmx.access** and **jmx.password** are owned by the user that runs the ActiveMQ process, and are readable only by that user.
+
+The `ACTIVEMQ_SUNJMX_START` line shown above will also configure ActiveMQ to make JMX information available via port 1099, which is the default port for the JVM's JMX connector. (See ActiveMQ's [JMX documentation][activemq-jmx] for more information about remotely accessing ActiveMQ's MBeans.) To secure the JMX connection for production use, follow the instructions [here][apache-jmx-ssl].
+
+Restart ActiveMQ to apply the configuration change. Refer to the [ActiveMQ documentation][activemq-stop-start] to see the commands for stopping and starting ActiveMQ on your platform.
+
+Your ActiveMQ host is now configured to accept remote connections for JMX monitoring. Next we'll show you how to get JConsole running on your client machine.
+
+### Launching JConsole
+JConsole is included in the JDK, so you'll need to [install that][oracle-jdk] on your client machine if you haven't already. Launch JConsole from a command line by typing the full path to the JConsole program. In the example below, JConsole is installed in the **/usr/bin/** directory. (See Oracle's [JConsole documentation][oracle-using-jconsole] for more information about launching JConsole.)
+
+```
+/usr/bin/jconsole
+```
+
+Select **Remote Process** in the JConsole GUI and enter your ActiveMQ host's IP address, followed by the port number, 1099. Enter the username and password you created earlier, then click **Connect.**
+
+{{< img src="jconsole5.png" alt="When JConsole opens, you can enter connection information for your ActiveMQ host." >}}
+
+### Viewing ActiveMQ metrics in JConsole
+JConsole's **MBeans** tab shows all the JMX sources available in the JVM, formatted as a tree. The top level of each JMX source is its domain, and below that are the MBeans that belong to that domain. ActiveMQ's JMX domain is `org.apache.activemq`. Under that is a `Broker` MBean which contains MBeans for all the queues and topics associated with that broker. Part 1 of this series lists ActiveMQ's [broker][part-1-broker-metrics] metrics and [destination][part-1-destination-metrics] metrics, and lists the name of the JMX attribute that holds the value of each metric. You'll see all those attributes listed within the MBeans shown in JConsole.
+
+{{< img src="jconsole1.png" caption="JConsole shows ActiveMQ as one of the applications available to it as an MBean." wide="true" alt="JConsole screenshot showing the ActiveMQ MBean." >}}
+
+The broker and destination data you see in JConsole is current as of when you load the page, but it doesn't update automatically. Use the **Refresh** button to ensure your data is up to date. 
+
+In addition to displaying metrics about ActiveMQ, JConsole shows you operating information about the JVM in which ActiveMQ is running. Under the **VM Summary** tab, you can see information about threads and memory usage that can provide useful context when you're investigating ActiveMQ performance issues.
+
+{{< img src="jconsole2.png" wide="true" alt="Screenshot of the JConsole VM Summary tab which shows a summary of the JVM's thread count, classes loaded, and memory in use." caption="Use JConsole's VM Summary to monitor resource metrics from the JVM in which ActiveMQ is running, like thread count and memory usage." >}}
+
+Like the Web Console, JConsole is a graphical user interface. Unlike the Web Console, JConsole allows you to see some historical data. Although JConsole doesn't show historical data about ActiveMQ's metrics, you can view timeseries data about JVM resource usage. You can graph the JVM's memory and CPU usage metrics, and also the count of classes and threads used by the JVM. These visualizations can help you spot trends in your JVM's performance. Use the **Time Range** dropdown to select your desired rangeâ€”scaled down to the past minute, or zoomed out to the entire time JConsole has been running.
+
+{{< img src="jconsole3.png" wide="true" alt="JConsole's overview tab shows graphs of CPU usage, heap memory usage, and classes loaded." >}}
+
+We've shown how to use JConsole to remotely view ActiveMQ metrics using JMX. But JConsole doesn't provide graphs of your ActiveMQ metrics, and it requires you to open a port to allow traffic specifically for JMX requests. In the next section, we'll look at Hawtio, a JMX monitoring tool that works over HTTP and helps you visualize ActiveMQ metrics with timeseries graphs.
+
+## Hawtio
+[Hawtio][hawtio] is an open source, GUI-based tool that you can use to monitor Java applications that expose metrics via JMX. Hawtio has built-in support for ActiveMQ, and it works as a web app inside your ActiveMQ installation, similar to the Web Console. Hawtio displays broker and destination metrics as numerical data, and as timeseries graphs, which Hawtio calls **Charts**. 
+
+{{< img src="hawtio1.png" caption="One of the views in Hawtio shows queue metrics as a timeseries graph." wide="true" alt="This Hawtio screenshot shows ten different ActiveMQ metrics visualized as timeseries graphs in one view." >}}
+
+Hawtio uses [horizon graphs][horizon-graphs] to visualize metrics. This format uses color to maintain a consistent height even if the maximum y-axis value changes over time. The darkest regions represent the highest values. A new value that would fall above the graph's preexisting upper limit is represented in a darker shade and is plotted within the graph's existing height.
+
+{{< img src="hawtio2.png" wide="true" caption="Instead of increasing the height of the graph as values rise, a horizon graph applies darker shades to higher values, allowing it to plot a dynamic range of y-axis values in the same vertical space." alt="A simple horizon graph shows higher values in darker colors." >}}
+
+### Unique features of Hawtio
+The timeseries graphs available in Hawtio's **Charts** tab differentiate it from JConsole and the ActiveMQ Web Console. These graphs allow you to identify trends in the performance of your messaging infrastructure, and can be helpful for troubleshooting issues.
+
+Hawtio works over the web, which gives it some advantages over tools like JConsole and the Web Console. The Hawtio frontend makes HTTP calls to a Jolokia server that's included in your ActiveMQ installation. Jolokia's role is to serve JMX data via REST endpoints. The Hawtio UI sends requests and receives JSON responses over HTTP, which could make it easier to use in your environment, since HTTP ports are likely already in use and not blocked by a firewall. 
+
+### Installing Hawtio
+The [Hawtio documentation][hawtio-docs] describes several ways to install and run Hawtio. In this section, we'll provide example commands for installing Hawtio on an Ubuntu host that's already running ActiveMQ.
+
+To install and configure Hawtio, first download and unzip it:
+
+```
+wget -c https://oss.sonatype.org/content/repositories/public/io/hawt/hawtio-default/2.3.0/hawtio-default-2.3.0.war
+unzip hawtio-default-2.3.0.war -d hawtio
+```
+
+Note that the commands above reference version `2.3.0`. To ensure you're installing the latest version, visit the [Hawtio documentation][hawtio-docs] and find the **Download hawtio-default.war** button.
+
+Next, move the unzipped Hawtio directory into the **webapps/** subdirectory of your ActiveMQ installation:
+
+```
+mv hawtio <PATH_TO_ACTIVEMQ_INSTALLATION>/webapps
+```
+
+Then, edit the **env** file in the **bin** directory of your ActiveMQ installation. Add the following line at the end of the file:
+```
+ACTIVEMQ_OPTS="$ACTIVEMQ_OPTS -Dhawtio.realm=activemq -Dhawtio.role=admins -Dhawtio.rolePrincipalClasses=org.apache.activemq.jaas.GroupPrincipal"
+```
+
+ActiveMQ relies on [Jetty][jetty] to serve its web applications, such as Hawtio and the Web Console. Jetty is included in the ActiveMQ download. To configure Jetty for Hawtio, edit **jetty.xml** in the **conf/** subdirectory under your ActiveMQ installation directory to add Hawtio as a web component of your ActiveMQ installation. Find the `<ref bean="rewriteHandler"/>` tag and add this block immediately after it:
+
+```
+<bean class="org.eclipse.jetty.webapp.WebAppContext">
+<property name="contextPath" value="/hawtio" />
+<property name="resourceBase" value="${activemq.home}/webapps/hawtio" />
+<property name="logUrlOnStart" value="true" />
+</bean>
+```
+
+Hawtio's **admin** user comes with a default password of **admin**. To customize your Hawtio installation with a secure password, edit the **conf/users.properties** file. Locate  the line that reads:
+
+```
+admin=admin
+```
+
+Edit it by specifying your desired password:
+
+```
+admin=<MY_NEW_PASSWORD>
+```
+
+Restart ActiveMQ and browse to `http://<YOUR_ACTIVEMQ_HOST_IP>:8161/hawtio`. You can now log in with the username **admin** and the password **\<MY_NEW_PASSWORD\>**. 
+
+### Using Hawtio
+After you've logged in to Hawtio, click the **ActiveMQ** link in the left navigation. If you have one or more queues, you'll see a **Queue** item beneath the broker name (which is `localhost` in the screenshot below). Click the pointer next to **Queue** to reveal a list of queues you're monitoring. (The **Topic** item below this one works the same way.) Click the name of a queue to view a table of its attributes.
+
+{{< img src="hawtio3.png" wide="true" alt="Hawtio's attributes tab shows a number of queue metrics as numerical values." >}}
+
+Click the **Chart** tab to load a visualization showing all of the queue's metrics. By default, the chart displays all metrics available from this queue. Click the **Edit** button to select a subset of attributes to view.
+
+{{< img src="hawtio4.png" wide="true" alt="Hawtio's chart tab includes a control that allows you to select the JMX attributes to be included in the chart." >}}
+
+As the horizon graph continues to collect metric data, it reflects the changing values of the attributes you're monitoring.
+
+{{< img src="hawtio5.png" wide="true" alt="Hawtio's chart tab shows graphs of a subset of the available JMX metrics." >}}
+
+Hawtio, JConsole, and the ActiveMQ Web Console are GUI-based tools that don't allow you to programmatically fetch ActiveMQ metrics. But for a more thorough approach to monitoring your ActiveMQ setup, you can use tools that allow you to write code to automate your monitoring.
+
+Next, we'll look at the statistics plugin, which allows you to collect metrics by sending and receiving JMS messages.
+
+## Statistics plugin
+As of version 5.3+, ActiveMQ includes a [statistics plugin][activemq-statistics-plugin] that uses its native messaging functionality to send metrics. The gateway for communicating with the statistics plugin is a set of destinations created automatically by ActiveMQ. When you send an empty message to one of the statistics destinations, ActiveMQ will respond by sending broker or destination metrics in a JMS message to a destination you specify.
+
+For example, to generate a JMS message containing broker metrics, you can send an empty message to the broker statistics destination (named `ActiveMQ.Statistics.Broker`). To fetch metrics for a destination named `MY_DESTINATION`, send an empty message to `ActiveMQ.Statistics.Destination.MY_DESTINATION`. You can also use wildcards in the names of statistics destinations: to generate statistics messages for all destinations, send a message to `ActiveMQ.Statistics.Destination.>`. See the [ActiveMQ documentation][activemq-wildcards] for more information about wildcards.
+
+### Enabling the statistics plugin
+The statistics plugin isn't enabled by default. To enable it, edit the **activemq.xml** file in the **conf/** subdirectory under your ActiveMQ installation. Extend the `<broker>` element to include a `<plugins>` child element if there isn't one, and add the `<statisticsBrokerPlugin/>` element inside it, as shown in the partial **activemq.xml** file below. Note that your `<broker>` and `<plugins>` elements might look different, depending on your broker configuration:
+
+```
+<broker xmlns="http://activemq.apache.org/schema/core" brokerName="myBroker">
+[...]
+    <plugins>
+        <statisticsBrokerPlugin/>
+    </plugins>
+[...]
+</broker>
+```
+### Collecting metrics via the statistics plugin
+Though you're most likely to benefit by interacting programmatically with the statistics plugin, the screenshot below illustrates using the Web Console to send an empty message to the `ActiveMQ.Statistics.Broker` destination, which will trigger the statistics plugin to retrieve broker statistics.
+
+{{< img src="web_console3a.png" caption="Send an empty message to the statistics plugin to receive metrics via JMS messages." wide="true" alt="ActiveMQ web console screenshot shows the form to send an empty message to one of the destinations monitored by the statistics plugin." >}}
+
+The statistics plugin will respond by sending a message to the queue specified in the **Reply to** field (in this example, `MY_REPLY_QUEUE`). That message contains current values of broker metrics, formatted as JSON, as in the example below. 
+
+```
+{  
+   averageMessageSize=1024,
+   minEnqueueTime=4029.0,
+   expiredCount=0,
+   stomp+ssl=,
+   inflightCount=0,
+   ssl=,
+   tempUsage=0,
+   tempLimit=23829045248,
+   stomp=stomp://activemq-test-wed5:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600,
+   storePercentUsage=0,
+   dequeueCount=0,
+   brokerId=ID:activemq-test-wed5-45417-1533846745754-0:1,
+   memoryUsage=1024,
+   consumerCount=0,
+   storeUsage=426786,
+   dataDirectory=/root/activemq/data,
+   memoryPercentUsage=0,
+   averageEnqueueTime=5346.0,
+   messagesCached=0,
+   maxEnqueueTime=6663.0,
+   dispatchCount=2,
+   size=1,
+   openwire=tcp://activemq-test-wed5:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600,
+   vm=vm://localhost,
+   storeLimit=23829445796,
+   producerCount=0,
+   memoryLimit=726571418,
+   brokerName=localhost,
+   enqueueCount=10,
+   tempPercentUsage=0
+}
+ ```
+
+To automate your ActiveMQ monitoring, you can write a producer to prompt the statistics plugin for metrics, and a consumer to receive and process them. You can get started with the sample code that's included in the [statistics plugin documentation][activemq-statistics-plugin].
+
+## Comprehensive ActiveMQ monitoring
+ActiveMQ works in conjunction with other applications (such as producers and consumers you've written) to send and receive messages. The tools covered in this post can provide you with metrics from some of your messaging infrastructure (brokers, destinations, and the JVM) but don't help you monitor the rest (producers, consumers, and infrastructure). With a complete ActiveMQ monitoring strategy, you can correlate metrics and logs from ActiveMQ with [APM][java-monitoring-apm] and infrastructure metrics from your producers and consumers to identify bottlenecks and troubleshoot performance issues. 
+
+Datadog allows you to collect, visualize, and alert on data from more than {{< translate key="integration_count" >}} technologies across your messaging infrastructure. Coming up in [part 3][part-3] of this series, we'll look at how Datadog can help you monitor all the pieces of your ActiveMQ setup.
+
+## Acknowledgments
+We'd like to thank Gary Tully of [Red Hat][red-hat] for his technical review of this series.
+
+[activemq-cli-linux]: http://activemq.apache.org/unix-shell-script.html
+[activemq-cli-windows]: http://activemq.apache.org/activemq-command-line-tools-reference.html
+[activemq-env]: https://github.com/apache/activemq/blob/master/assembly/src/release/bin/env
+[activemq-jmx]: http://activemq.apache.org/jmx.html
+[activemq-networks-of-brokers]: https://activemq.apache.org/networks-of-brokers.html
+[activemq-scheduled-messages]: http://activemq.apache.org/delay-and-schedule-message-delivery.html
+[activemq-statistics-plugin]: http://activemq.apache.org/statisticsplugin.html
+[activemq-stop-start]: http://activemq.apache.org/version-5-getting-started.html#Version5GettingStarted-StartingActiveMQStartingActiveMQ
+[activemq-web-console]: https://activemq.apache.org/web-console.html
+[activemq-web-console-port]: http://activemq.apache.org/web-console.html#WebConsole-Changingtheport
+[activemq-wildcards]: http://activemq.apache.org/wildcards.html
+[apache-jmx-ssl]: https://db.apache.org/derby/docs/10.9/adminguide/radminjmxenablepwdssl.html
+[hawtio]: http://hawt.io/
+[hawtio-docs]: http://hawt.io/docs/get-started/
+[horizon-graphs]: http://www.stonesc.com/Vis08_Workshop/DVD/Reijner_submission.pdf
+[java-monitoring-apm]: https://www.datadoghq.com/blog/java-monitoring-apm/
+[jetty]: https://www.eclipse.org/jetty/
+[oracle-jconsole]: https://docs.oracle.com/javase/10/management/using-jconsole.htm
+[oracle-monitoring]: https://docs.oracle.com/javase/10/management/monitoring-and-management-using-jmx-technology.htm
+[oracle-jdk]: https://docs.oracle.com/javase/10/install/overview-jdk-10-and-jre-10-installation.htm
+[oracle-jmx]: http://www.oracle.com/technetwork/java/javase/tech/javamanagement-140525.html
+[oracle-using-jconsole]: https://docs.oracle.com/javase/10/management/using-jconsole.htm
+[part-1]: /blog/activemq-architecture-and-metrics/
+[part-1-broker-metrics]: /blog/activemq-architecture-and-metrics/#broker-metrics
+[part-1-destination-metrics]: /blog/activemq-architecture-and-metrics/#destination-metrics
+[part-1-what-is-activemq]: /blog/activemq-architecture-and-metrics/#what-is-activemq
+[part-3]: /blog/monitoring-activemq-with-datadog/
+[red-hat]: https://www.redhat.com/

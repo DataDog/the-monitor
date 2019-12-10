@@ -1,1 +1,252 @@
-m!½ÜÑ¼½±±•ĞÁ…¡”Á•É™½Éµ…¹”µ•ÑÉ¥Ì(((©Q¡¥ÌÁ½ÍĞ¥ÌÁ…ÉĞ€È½˜„€ÌµÁ…ÉĞÍ•É¥•Ì…‰½ÕĞµ½¹¥Ñ½É¥¹œÁ…¡”Á•É™½Éµ…¹”¸mA…ÉĞ€ÅumÁ…ÉĞ´ÅtÁÉ½Ù¥‘•Ì…¸½Ù•ÉÙ¥•Ü½˜Ñ¡”Á…¡”İ•ˆÍ•ÉÙ•È…¹¥ÑÌ­•äÁ•É™½Éµ…¹”µ•ÑÉ¥Ì°…¹mÁ…ÉĞ€ÍumÁ…ÉĞ´Ít‘•ÍÉ¥‰•Ì¡½ÜÑ¼µ½¹¥Ñ½ÈÁ…¡”İ¥Ñ …Ñ…‘½œ¸¨()%¸Ñ¡¥ÌÁ½ÍĞ°İ”İ¥±°Í¡½Üå½Ô¡½ÜÑ¼½±±•ĞÑ¡”­•äÁ…¡”µ•ÑÉ¥Ìµ•¹Ñ¥½¹•¥¸mA…ÉĞ€ÅumÁ…ÉĞ´Åt°İ¡¥ …É”…Ù…¥±…‰±”Ñ¡É½Õ mÁ…¡”ÌÍÑ…ÑÕÌµ½‘Õ±”€¡µ½‘}ÍÑ…ÑÕÌ¥umµ½µÍÑ…ÑÕÌµ‘½Ít…¹Ñ¡”mÍ•ÉÙ•È…•ÍÌ±½um…•ÍÌµ±½œµ‘½Ít¸Q¡”Ñ…‰±”‰•±½ÜÍ¡½İÌİ¡•É”å½Ô…¸…•ÍÌ•… ™…µ¥±ä½˜µ•ÑÉ¥Ìµ•¹Ñ¥½¹•¥¸A…ÉĞ€Ä¸()ğ€¨©5•ÑÉ¥Œ…Ñ•½Éä¨¨€€€€ğ€¨©Ù…¥±…‰¥±¥Ñä¨¨)ğ´´´´´´´´´´´´´´´´´´´µğ´´´´´´´´´´´´´´´´´´´´´´´´´µğ)ğm]½É¬µ•ÑÉ¥ÌèÉ•ÅÕ•ÍĞ±…Ñ•¹ä°‰åÑ•Ì…ÑÕ…±±äÍ•ÉÙ•‘umÁ…ÉĞÄµİ½É­t€ğ…•ÍÌ±½œ)ğm]½É¬µ•ÑÉ¥ÌèÉ…Ñ”½˜É•ÅÕ•ÍÑÌ°‰åÑ•ÌÑ¡…ĞÍ¡½Õ±¡…Ù”‰••¸Í•ÉÙ•‘umÁ…ÉĞÄµİ½É­t€ğµ½‘}ÍÑ…ÑÕÌ)ğmI•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸…¹…Ñ¥Ù¥Ñäµ•ÑÉ¥ÍumÁ…ÉĞÄµÉ•Í½ÕÉ•t€€€€ğµ½‘}ÍÑ…ÑÕÌ)ğmÉÉ½ÈÉ…Ñ•umÁ…ÉĞÄµ•ÉÉ½Ét€ğ…•ÍÌ±½œ()Á…¡”•áÁ½Í•Ì¡¥ µ±•Ù•°µ•ÑÉ¥ÌÑ¡É½Õ ¥ÑÌÍÑ…ÑÕÌµ½‘Õ±”°…¹±½Ì…‘‘¥Ñ¥½¹…°‘•Ñ…¥±Ì…‰½ÕĞ•… ±¥•¹ĞÉ•ÅÕ•ÍĞ¥¸Ñ¡”…•ÍÌ±½œ¸	ä½¹ÍÕ±Ñ¥¹œ‰½Ñ ½˜Ñ¡•Í”Í½ÕÉ•Ì°å½Ô…¸¥‘•¹Ñ¥™ä‘•É…‘…Ñ¥½¹Ì…¹ÑÉ½Õ‰±•Í¡½½ĞÁ½Ñ•¹Ñ¥…°¥ÍÍÕ•Ì¸()%¸Ñ¡¥ÌÁ½ÍĞ°İ”İ¥±°Í¡½Üå½Ô¡½ÜÑ¼…É•…Ñ”Ñ¡¥Ì‘…Ñ„Í¼Ñ¡…Ğå½Ô…¸µ…­”ÍÕÉ”Ñ¡…Ğå½ÕÈÍ•ÉÙ•ÉÌ…É”ÉÕ¹¹¥¹œÍµ½½Ñ¡±ä¸]”İ¥±°…±Í¼İ…±¬Ñ¡É½Õ Ñ¡”ÁÉ½•ÍÌ½˜¥¹ÍÑ…±±¥¹œ…¹ÕÍ¥¹œÑİ¼½Á•¸Í½ÕÉ”Ñ½½±ÌÑ¡…Ğ¡•±Àå½Ôµ½¹¥Ñ½ÈÁ…¡”¥¸É•…°Ñ¥µ”°‘¥É•Ñ±ä™É½´Ñ¡”½µµ…¹±¥¹”¸((ŒŒÁ…¡”ÌÍÑ…ÑÕÌµ½‘Õ±”)Á…¡”İ•ˆÍ•ÉÙ•È•áÁ½Í•Ìµ•ÑÉ¥ÌÑ¡É½Õ ¥ÑÌÍÑ…ÑÕÌµ½‘Õ±”°mµ½‘}ÍÑ…ÑÕÍumµ½µÍÑ…ÑÕÌµ‘½Ít¸%˜å½ÕÈÍ•ÉÙ•È¥ÌÉÕ¹¹¥¹œ…¹µ½‘}ÍÑ…ÑÕÌ¥Ì•¹…‰±•°å½ÕÈÍ•ÉÙ•ÈÌÍÑ…ÑÕÌÁ…”Í¡½Õ±‰”…Ù…¥±…‰±”…Ğ¡ÑÑÀè¼¼ÄäÈ¸À¸È¸À½Í•ÉÙ•ÈµÍÑ…ÑÕÍ€¸%˜Ñ¡…Ğ±¥¹¬‘½•Ì¹½Ğİ½É¬°¥Ğµ•…¹Ìå½Ô¹••Ñ¼•¹…‰±”µ½‘}ÍÑ…ÑÕÌ¥¸å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸™¥±”¸()%ĞÌ…±Í¼Á½ÍÍ¥‰±”Ñ¡…Ğå½ÕÈ½¹™¥ÕÉ…Ñ¥½¸™¥±”ÍÁ•¥™¥•Ì„1½…Ñ¥½¸Ñ¡…Ğ¥Ì¹½Ğ€½Í•ÉÙ•ÈµÍÑ…ÑÕÍ€°•¥Ñ¡•È¥¹Ñ•¹Ñ¥½¹…±±ä½ÈÕ¹¥¹Ñ•¹Ñ¥½¹…±±ä¸½±±½ÜÑ¡”‘¥É•Ñ¥½¹Ì‰•±½ÜÑ¼±½…Ñ”å½ÕÈµ½‘}ÍÑ…ÑÕÌ½¹™¥ÕÉ…Ñ¥½¸™¥±”°…¹±½½¬™½È„‘¥É•Ñ¥Ù”Ñ¡…Ğ½¹Ñ…¥¹ÌM•Ñ!…¹‘±•ÈÍ•ÉÙ•ÈµÍÑ…ÑÕÍ€¸%˜å½ÔÍ•”Ñ¡…Ğ¥ĞÍÁ•¥™¥•Ì„1½…Ñ¥½¸½Ñ¡•ÈÑ¡…¸€½Í•ÉÙ•ÈµÍÑ…ÑÕÍ€°•¥Ñ¡•ÈÕÁ‘…Ñ”¥Ğ…½É‘¥¹±ä€¡…¹É•ÍÑ…ÉĞÁ…¡”¤½ÈÑÉä…•ÍÍ¥¹œÑ¡…Ğ•¹‘Á½¥¹ĞÑ¼Í•”¥˜µ½‘}ÍÑ…ÑÕÌ¥Ì•¹…‰±•…ĞÑ¡…Ğ±½…Ñ¥½¸¸((ŒŒŒ!½ÜÑ¼•¹…‰±”Á…¡”µ½‘}ÍÑ…ÑÕÌ)%˜å½Ô¹••Ñ¼•¹…‰±”µ½‘}ÍÑ…ÑÕÌ°å½Ô•¥Ñ¡•È¡…Ù”Ñ¼•‘¥ĞÑ¡”ÍÑ…ÑÕÌµ½‘Õ±”Ì½¹™¥ÕÉ…Ñ¥½¸™¥±”€¡½¸•‰¥…¸Á±…Ñ™½ÉµÌ¤°½Èå½ÕÈµ…¥¸Á…¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”€¡…±°½Ñ¡•ÈU¹¥àµ±¥­”Á±…Ñ™½ÉµÌ¤¸I•…É‘±•ÍÌ½˜İ¡¥ ÍåÍÑ•´å½ÔÉ”ÕÍ¥¹œ°µ…­”ÍÕÉ”Ñ¼Í…Ù”„‰…­ÕÀ½Áä½˜Ñ¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”‰•™½É”µ…­¥¹œ¡…¹•ÌÑ¼¥Ğ°¥¸…Í”å½Ô¹••Ñ¼É•Ù•ÉĞÑ¼…¸•…É±¥•ÈÍÑ…Ñ”¸((ŒŒŒŒ¥¹‘¥¹œÑ¡”½¹™¥œ½¸•‰¥…¸ÍåÍÑ•µÌ)•‰¥…¸ÕÍ•ÉÌ…¸™¥¹Ñ¡”ÍÑ…ÑÕÌµ½‘Õ±”Ì½¹™¥ÕÉ…Ñ¥½¸™¥±”…Ğ€½•ÑŒ½…Á…¡”È½µ½‘Ìµ•¹…‰±•½ÍÑ…ÑÕÌ¹½¹™€¸((ŒŒŒŒ¥¹‘¥¹œÑ¡”½¹™¥œ½¸½Ñ¡•ÈU9%`µ±¥­”Á±…Ñ™½ÉµÌ)UÍ•ÉÌ½˜½Ñ¡•ÈÁ±…Ñ™½ÉµÌ€¡ÍÕ …ÌI•!…ÓŠM‰…Í•ÍåÍÑ•µÌ¤İ¥±°™¥¹Ñ¡•¥Èµ…¥¸½¹™¥ÕÉ…Ñ¥½¸™¥±”…Ğ€½•ÑŒ½…Á…¡”È½…Á…¡”È¹½¹™€°€½•ÑŒ½¡ÑÑÁ½½¹˜½¡ÑÑÁ¹½¹™€°½È€½•ÑŒ½…Á…¡”È½¡ÑÑÁ¹½¹™€¸%¸Ñ¡”µ…¥¸½¹™¥ÕÉ…Ñ¥½¸™¥±”°±½…Ñ”Ñ¡”™½±±½İ¥¹œ±¥¹”…¹µ…­”ÍÕÉ”¥Ğ¥ÌÕ¹½µµ•¹Ñ•è((€€€1½…‘5½‘Õ±”ÍÑ…ÑÕÍ}µ½‘Õ±”±¥‰•á•Œ½…Á…¡”È½µ½‘}ÍÑ…ÑÕÌ¹Í¼((ŒŒŒŒUÁ‘…Ñ¥¹œÑ¡”½¹™¥œ™¥±”)e½Ô±°¹••Ñ¼ÕÁ‘…Ñ”Ñ¡”‰±½¬€¡•¥Ñ¡•È¥¸å½ÕÈÍÑ…ÑÕÌµ½‘Õ±”Ì½¹™¥œ™¥±”½Èµ…¥¸Á…¡”½¹™¥œ™¥±”¤Ñ¡…ĞÍÑ…ÉÑÌİ¥Ñ €ñ1½…Ñ¥½¸€½Í•ÉÙ•ÈµÍÑ…ÑÕÌù€Ñ¼ÍÁ•¥™äİ¡¥ %@…‘‘É•ÍÍ•ÌÍ¡½Õ±¡…Ù”…•ÍÌÑ¼Ñ¡”ÍÑ…ÑÕÌÁ…”¸%¸Ñ¡”•á…µÁ±”‰•±½Ü°İ”…É”…±±½İ¥¹œ…•ÍÌ™É½´±½…±¡½ÍĞ°…Ìİ•±°…ÌÑ¡”%@…‘‘É•ÍÌà¹à¹à¹à¸()€(ñ1½…Ñ¥½¸€½Í•ÉÙ•ÈµÍÑ…ÑÕÌø(€€€M•Ñ!…¹‘±•ÈÍ•ÉÙ•ÈµÍÑ…ÑÕÌ(€€€I•ÅÕ¥É”±½…°(€€€I•ÅÕ¥É”¥Àà¹à¹à¹à(ğ½1½…Ñ¥½¸ø)€()I•Á±…”à¹à¹à¹á€İ¥Ñ Ñ¡”%@…‘‘É•ÍÌÑ¡…Ğ¹••‘ÌÑ¼…•ÍÌÑ¡”ÍÑ…ÑÕÌÁ…”¸%¸…‘‘¥Ñ¥½¸Ñ¼€¡½È¥¹ÍÑ•…½˜¤É•ÅÕ¥É¥¹œ…¸%@…‘‘É•ÍÌ°å½Ô…¸…±Í¼É•ÍÑÉ¥Ğ…•ÍÌÑ¼…ÕÑ¡•¹Ñ¥…Ñ•ÕÍ•ÉÌ°…ÌÍ¡½İ¸¥¸Ñ¡”•á…µÁ±”‰•±½Ü¸()€(ñ1½…Ñ¥½¸€½Í•ÉÙ•ÈµÍÑ…ÑÕÌø(€€€M•Ñ!…¹‘±•ÈÍ•ÉÙ•ÈµÍÑ…ÑÕÌ(€€€ÕÑ¡UÍ•É¥±”€½±½…Ñ¥½¸½½˜½¡ÑÁ…ÍÍİ(€€€ÕÑ¡QåÁ”	…Í¥Œ(€€€ÕÑ¡9…µ”€‰5…­”ÕÀ„¹…µ”¡•É”™½Èİ¡¼…¸…•ÍÌÁ…¡”ÍÑ…ÑÕÌˆ(€€€I•ÅÕ¥É”ÕÍ•È€ñUMI}95ø(ğ½1½…Ñ¥½¸ø)€()Q¡¥ÌÉ•±¥•Ì½¸mÁ…¡”Ì¡ÑÁ…ÍÍİ™Õ¹Ñ¥½¹…±¥Ñåum¡ÑÁ…ÍÍİµ‘½Ít°İ¡¥ •¹…‰±•Ì…‘µ¥¹¥ÍÑÉ…Ñ½ÉÌÑ¼É•…Ñ”ÕÍ•ÉÌ…¹É½ÕÁÌ°…¹Í•ĞÕÀ„µ•…¹Ì½˜…ÕÑ¡•¹Ñ¥…Ñ¥¹œÑ¡•¥È…•ÍÌÑ¼ÍÁ•¥™¥ŒÉ•Í½ÕÉ•Ì½¸Ñ¡”İ•ˆÍ•ÉÙ•È€¡ÍÕ …Ìå½ÕÈÍ•ÉÙ•ÈµÍÑ…ÑÕÌÁ…”¤¸½¹ÍÕ±ĞÑ¡”mÁ…¡”‘½Õµ•¹Ñ…Ñ¥½¹um…Á…¡”µ…ÕÑ µ‘½Ít™½Èµ½É”‘•Ñ…¥±Ì½¸¡½ÜÑ¼Í•ĞÕÀ…ÕÑ¡•¹Ñ¥…Ñ¥½¸…¹…ÕÑ¡½É¥é…Ñ¥½¸¥¸Á…¡”¸()™Ñ•Èå½ÔÉ”‘½¹”µ…­¥¹œ¡…¹•Ì°Í…Ù”…¹•á¥Ğ¸e½Ô…¸¡•¬å½ÕÈ½¹™¥ÕÉ…Ñ¥½¸™¥±”™½È•ÉÉ½ÉÌİ¥Ñ Ñ¡”™½±±½İ¥¹œ½µµ…¹è((€€€…Á…¡•Ñ°½¹™¥Ñ•ÍĞ()A•É™½É´„mÉ…•™Õ°É•ÍÑ…ÉÑumÉ…•™Õ°µÉ•ÍÑ…ÉÑtÑ¼…ÁÁ±äÑ¡”¡…¹•Ìİ¥Ñ¡½ÕĞ¥¹Ñ•ÉÉÕÁÑ¥¹œ±¥Ù”½¹¹•Ñ¥½¹Ì€¡…Á…¡•Ñ°€µ¬É…•™Õ±€½ÈÍ•ÉÙ¥”…Á…¡”ÈÉ…•™Õ±€¤¸((ŒŒŒÁ…¡”Ìµ½‘}ÍÑ…ÑÕÌµ•ÑÉ¥Ì)™Ñ•È•¹…‰±¥¹œµ½‘}ÍÑ…ÑÕÌ…¹É•ÍÑ…ÉÑ¥¹œÁ…¡”°å½Ôİ¥±°‰”…‰±”Ñ¼Í•”å½ÕÈÍÑ…ÑÕÌÁ…”…Ğ¡ÑÑÀè¼¼ñe=UI}=5%8ø½Í•ÉÙ•ÈµÍÑ…ÑÕÍ€¸e½ÕÈÁ…¡”ÍÑ…ÑÕÌÁ…”İ¥±°±½½¬±¥­”Ñ¡¥Ìè()íìğ¥µœÍÉŒô‰±½…°µÍ•ÉÙ•ÈµÍÑ…ÑÕÌ¹Á¹œˆ…±Ğô‰Á…¡”İ•ˆÍ•ÉÙ•Èµ•ÑÉ¥Ì½¸µ½ÍÑ…ÑÕÌÁ…”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()%˜å½Ôİ…¹Ğå½ÕÈµ½‘}ÍÑ…ÑÕÌÁ…”Ñ¼…ÕÑ½µ…Ñ¥…±±äÉ•™É•Í …ĞÉ•Õ±…È¥¹Ñ•ÉÙ…±Ì°…‘€ıÉ•™É•Í õa€Ñ¼Ñ¡”•¹½˜å½ÕÈUI0Ñ¼É•™É•Í •Ù•Éä`Í•½¹‘Ì€¡”¹œ¸¡ÑÑÀè¼¼ÄäÈ¸À¸È¸À½Í•ÉÙ•ÈµÍÑ…ÑÕÌıÉ•™É•Í ôÕ€¤¸((ŒŒŒ¹½Ñ”…‰½ÕĞáÑ•¹‘•‘MÑ…ÑÕÌ)Á…¡”ÌÍÑ…ÑÕÌµ½‘Õ±”¡…Ì…¸½ÁÑ¥½¸…±±•áÑ•¹‘•‘MÑ…ÑÕÌ°İ¡¥ ¥Ì•¹…‰±•‰ä‘•™…Õ±Ğ…Ì½˜Ù•ÉÍ¥½¸€È¸Ğ¸¹…‰±¥¹œáÑ•¹‘•‘MÑ…ÑÕÌ…¸¡…Ù”„Í±¥¡Ğ¡¥Ğ½¸Á•É™½Éµ…¹”°…ÌÑ¡”ÍåÍÑ•´µÕÍĞ…±°•ÑÑ¥µ•½™‘…ä ¥€Ñİ¥”™½È•… É•ÅÕ•ÍĞ¥¸½É‘•ÈÑ¼±½œÑ¥µ¥¹œ¥¹™½Éµ…Ñ¥½¸¸%˜å½ÕÈÍ•ÉÙ•ÉÌ…É”…±É•…‘äÕ¹‘•È¡•…Ùä±½…°•¹…‰±¥¹œáÑ•¹‘•‘MÑ…ÑÕÌµ…ä¹½Ğµ…­”Í•¹Í”¸!½İ•Ù•È°Ñ¡”…‘‘¥Ñ¥½¹…°¥¹™½Éµ…Ñ¥½¸¥ĞÁÉ½Ù¥‘•Ì•¹•É…±±äµ…­•Ì¥Ğİ½ÉÑ¡İ¡¥±”Ñ¼•¹…‰±”áÑ•¹‘•‘MÑ…ÑÕÌ°İ¡¥ å½Ô…¸Ñ¡•¸ÑÕÉ¸½™˜¥˜å½Ô¹½Ñ¥”…¹ä¹•…Ñ¥Ù”¥µÁ…Ğ½¸Á•É™½Éµ…¹”¸((ŒŒŒŒ!½ÜÑ¼•¹…‰±”áÑ•¹‘•‘MÑ…ÑÕÌ)Q¡”áÑ•¹‘•‘MÑ…ÑÕÌ‘¥É•Ñ¥Ù”¥Ì•¥Ñ¡•È±½…Ñ•İ¥Ñ¡¥¸Ñ¡”µ…¥¸½¹™¥ÕÉ…Ñ¥½¸™¥±”Ì€ñ%™5½‘Õ±”µ½‘}ÍÑ…ÑÕÌ¹Œù€Í•Ñ¥½¸€¡•¹Ñ=L½I!0¤°½Èİ¥Ñ¡¥¸Ñ¡”µ½‘}ÍÑ…ÑÕÌ½¹™¥ÕÉ…Ñ¥½¸™¥±”€¡•‰¥…¸½U‰Õ¹ÑÔ¤¸((ŒŒŒŒáÑ•¹‘•‘MÑ…ÑÕÌµ•ÑÉ¥Ì)=¹”å½Ô•¹…‰±”áÑ•¹‘•‘MÑ…ÑÕÌ°å½Ôİ¥±°Í•”Ñ¡•Í”…‘‘¥Ñ¥½¹…°µ•ÑÉ¥Ì½¸Ñ¡”µ½‘}ÍÑ…ÑÕÌÁ…”è((´Ñ½Ñ…°…•ÍÍ•Ì½¡¥ÑÌ(´Ñ½Ñ…°­	åÑ•ÌÍ•ÉÙ•(´AT±½…(´ÕÁÑ¥µ”(´É•ÅÕ•ÍÑÌÁ•ÈÍ•Œ(´‰åÑ•ÌÁ•ÈÍ•Œ(´‰åÑ•ÌÁ•ÈÉ•ÅÕ•ÍĞ()áÑ•¹‘•‘MÑ…ÑÕÌ…±Í¼‘¥ÍÁ±…åÌ…‘‘¥Ñ¥½¹…°¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ•… É•ÅÕ•ÍĞ°…±½¹œİ¥Ñ ‘•Ñ…¥±•¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÉ••¹Ñ±äÁÉ½•ÍÍ•É•ÅÕ•ÍÑÌ€¡¥¹±Õ‘¥¹œÑ¡”±¥•¹Ğ°É•ÅÕ•ÍÑ•É•Í½ÕÉ”°…¹ÁÉ½•ÍÍ¥¹œÑ¥µ”¤¸áÑ•¹‘•‘MÑ…ÑÕÌµ•ÑÉ¥Ì…¸‰”ÕÍ•™Õ°™½ÈÑÉ½Õ‰±•Í¡½½Ñ¥¹œÁ•É™½Éµ…¹”‘•É…‘…Ñ¥½¹Ì…¹‘¥…¹½Í¥¹œ¥ÍÍÕ•Ì¸]¥Ñ …•ÍÌÑ¼…‘‘¥Ñ¥½¹…°‘•Ñ…¥±Ì…‰½ÕĞ•… ¥¹‘¥Ù¥‘Õ…°É•ÅÕ•ÍĞ°å½Ô…¸ÍÁ½Ğ¥˜„É•ÅÕ•ÍĞ™½È„ÍÁ•¥™¥ŒÉ•Í½ÕÉ”İ…ÌÑ…­¥¹œ…¸•áÑÉ…½É‘¥¹…É¥±ä±½¹œÑ¥µ”°½È¥˜¥Ğİ…ÌÕÍ¥¹œµ½É”AT½µÁ…É•Ñ¼½Ñ¡•ÈÉ•ÅÕ•ÍÑÌ…É½Õ¹Ñ¡”Í…µ”Ñ¥µ”¸((ŒŒŒŒ5…¡¥¹”µÉ•…‘…‰±”ÍÑ…ÑÕÌµ•ÑÉ¥Ì)Q¼…•ÍÌÑ¡”ÍÑ…ÑÕÌÁ…”¥¸„µ…¡¥¹”µÉ•…‘…‰±”™½Éµ…Ğ°Ù¥Í¥Ğ¡ÑÑÀè¼¼ñe=UI}=5%8ø½Í•ÉÙ•ÈµÍÑ…ÑÕÌı…ÕÑ½€°İ¡¥ İ¥±°Í¡½ÜÍ½µ•Ñ¡¥¹œµ½É”±¥­”Ñ¡¥Ì°¥˜áÑ•¹‘•‘MÑ…ÑÕÌ¥Ì•¹…‰±•è()€)M•ÉÙ•ÉY•ÉÍ¥½¸èÁ…¡”¼È¸Ğ¸ÈÌ€¡U¹¥à¤)M•ÉÙ•É5A4èÁÉ•™½É¬)M•ÉÙ•È	Õ¥±ĞèÕœ€€à€ÈÀÄØ€ÄØèÌÄèÌĞ)ÕÉÉ•¹ÑQ¥µ”è]•‘¹•Í‘…ä°€ÄÔµ•ˆ´ÈÀÄÜ€ÄÌèÔäèĞÜMP)I•ÍÑ…ÉÑQ¥µ”è]•‘¹•Í‘…ä°€ÄÔµ•ˆ´ÈÀÄÜ€ÄÌèÌäèÔÔMP)A…É•¹ÑM•ÉÙ•É½¹™¥•¹•É…Ñ¥½¸è€Ä)A…É•¹ÑM•ÉÙ•É5A5•¹•É…Ñ¥½¸è€À)M•ÉÙ•ÉUÁÑ¥µ•M•½¹‘Ìè€ÄÄäÈ)M•ÉÙ•ÉUÁÑ¥µ”è€Ääµ¥¹ÕÑ•Ì€ÔÈÍ•½¹‘Ì)1½…Äè€È¸ÄÌ)1½…Ôè€Ä¸àÜ)1½…ÄÔè€Ä¸Üä)Q½Ñ…°•ÍÍ•Ìè€Ğä)Q½Ñ…°­	åÑ•Ìè€ĞÄ)AUUÍ•Èè€À)AUMåÍÑ•´è€¸ÀÈ)AU¡¥±‘É•¹UÍ•Èè€À)AU¡¥±‘É•¹MåÍÑ•´è€À)AU1½…è€¸ÀÀÄØÜÜàÔ)UÁÑ¥µ”è€ÄÄäÈ)I•ÅA•ÉM•Œè€¸ÀĞÄÄÀÜĞ)	åÑ•ÍA•ÉM•Œè€ÌÔ¸ÈÈÄÔ)	åÑ•ÍA•ÉI•Äè€àÔØ¸àÄØ)	ÕÍå]½É­•ÉÌè€Ä)%‘±•]½É­•ÉÌè€Ä)M½É•‰½…Éè}\¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸¸)€()Q¡”µ…¡¥¹”µÉ•…‘…‰±”Á…”İ¥±°¹½Ğ‘¥ÍÁ±…ä‘•Ñ…¥±•¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ¥¹‘¥Ù¥‘Õ…°É•ÅÕ•ÍÑÌì¥¸½É‘•ÈÑ¼Ù¥•ÜÑ¡…Ğ¥¹™½Éµ…Ñ¥½¸°å½Ôİ¥±°¹••Ñ¼Ù¥Í¥ĞÑ¡”µ…¥¸Í•ÉÙ•ÈµÍÑ…ÑÕÌÁ…”¸()5½‘}ÍÑ…ÑÕÌÁÉ½Ù¥‘•Ìµ…¹ä½˜Ñ¡”mÉ•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸…¹…Ñ¥Ù¥Ñäµ•ÑÉ¥ÍumÁ…ÉĞÄµÉ•Í½ÕÉ•t‘¥ÍÕÍÍ•¥¸A…ÉĞ€Ä¸M½µ”Ñ½½±Ì°¥¹±Õ‘¥¹œm½±±•Ñum½±±•ÑµÁ±Õ¥¹t…¹m…Ñ…‘½um‘…Ñ…‘½œµ…Á…¡•t°…¸…ÕÑ½µ…Ñ¥…±±äÁ…ÉÍ”Ñ¡”µ…¡¥¹”µÉ•…‘…‰±”ÍÑ…ÑÕÌÁ…”…¹•¹…‰±”å½ÔÑ¼Ù¥ÍÕ…±¥é”Ñ¡½Í”µ•ÑÉ¥Ì¥¸É…Á¡Ì¸€((ŒŒÁ…¡”±½Ì)%¸…‘‘¥Ñ¥½¸Ñ¼Ñ¡”ÍÑ…ÑÕÌµ½‘Õ±”°Á…¡”Ìm…•ÍÌ±½um…•ÍÌµ±½œµ‘½ÍtÁÉ½Ù¥‘•Ì•Ù•¸µ½É”‘•Ñ…¥±•¥¹™½Éµ…Ñ¥½¸…‰½ÕĞ•… ±¥•¹ĞÉ•ÅÕ•ÍĞ¸e½Ô…¸ÕÍÑ½µ¥é”İ¡…Ğ¥¹™½Éµ…Ñ¥½¸¥Ì¥¹±Õ‘•¥¸å½ÕÈÁ…¡”±½ÌÍ¼Ñ¡…Ğ¥Ğ¥Ìµ½É”É•±•Ù…¹Ğ™½Èå½ÕÈ¹••‘Ì¸]¥Ñ¡¥¸å½ÕÈµ…¥¸Á…¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”°±½…Ñ”Ñ¡”Í•Ñ¥½¸Ñ¡…ĞÍÑ…ÉÑÌİ¥Ñ €‰1½½Éµ…Ğˆè()€)1½½Éµ…Ğ€ˆ•Øè•À€• €•°€•Ô€•Ğpˆ•Épˆ€”ùÌ€•<pˆ•íI•™•É•Éõ¥pˆpˆ•íUÍ•Èµ•¹Ñõ¥pˆˆÙ¡½ÍÑ}½µ‰¥¹•)1½½Éµ…Ğ€ˆ• €•°€•Ô€•Ğpˆ•Épˆ€”ùÌ€•<pˆ•íI•™•É•Éõ¥pˆpˆ•íUÍ•Èµ•¹Ñõ¥pˆˆ½µ‰¥¹•)1½½Éµ…Ğ€ˆ• €•°€•Ô€•Ğpˆ•Épˆ€”ùÌ€•<ˆ½µµ½¸)1½½Éµ…Ğ€ˆ•íI•™•É•Éõ¤€´ø€•TˆÉ•™•É•È)1½½Éµ…Ğ€ˆ•íUÍ•Èµ…•¹Ñõ¤ˆ…•¹Ğ)€()Q¡”¹¥­¹…µ”½˜•… 1½½Éµ…Ğ¥Ì±¥ÍÑ•…ĞÑ¡”•¹½˜•… ±¥¹”è€‰Ù¡½ÍÑ}½µ‰¥¹•°ˆ€‰½µ‰¥¹•°ˆ€‰½µµ½¸°ˆ€‰É•™•É•È°ˆ…¹€‰…•¹Ğ¸ˆ((ŒŒŒÁ…¡”±½œÙ…É¥…‰±•Ì)e½Ô…¸ÕÍÑ½µ¥é”å½ÕÈÁ…¡”…•ÍÌ±½œ‰ä¡…¹¥¹œÑ¡”½É‘•È…¹½½È…‘‘¥¹œ…¹‘•±•Ñ¥¹œ±½œÙ…É¥…‰±•Ì¸½¹ÍÕ±ĞÑ¡”m™Õ±°±¥ÍĞ½˜…Ù…¥±…‰±”Ù…É¥…‰±•Ì¡•É•um±½œµÙ…É¥…‰±•Ìµ‘½Ít¸()UÁ½¸•á…µ¥¹¥¹œÑ¡”€¨©½µ‰¥¹•±½œ™½Éµ…Ğ¨¨°İ”…¸Í•”Ñ¡…Ğ¥Ğ±½ÌÑ¡”É•µ½Ñ”¡½ÍÑ¹…µ”€¡€•¡€¤°É•µ½Ñ”±½¹…µ”€¡€•±€¤°É•µ½Ñ”ÕÍ•È€¡€•Õ€¤°Ñ¡”Ñ¥µ”Á…¡”É••¥Ù•Ñ¡”É•ÅÕ•ÍĞ€¡€•Ñ€¤°Ñ¡”™¥ÉÍĞ±¥¹”½˜Ñ¡”É•ÅÕ•ÍĞ¥¸ÅÕ½Ñ•Ì€¡pˆ•Ép‰€¤°Ñ¡”™¥¹…°!QQ@ÍÑ…ÑÕÌ½˜Ñ¡”É•ÍÁ½¹Í”€¡€”ùÍ€¤°Ñ¡”Í¥é”½˜Ñ¡”É•ÍÁ½¹Í”¥¸‰åÑ•Ì€¡€•=€¤°Ñ¡”É•™•É•È€¡pˆ•íI•™•É•Éõ¥p‰€¤…¹ÕÍ•È…•¹Ğ€¡pˆ•íUÍ•Èµ•¹Ñõ¥p‰€¤¸()Q¡É•”½˜Ñ¡”Ù…É¥…‰±•Ì…É”±½•¥¸ÅÕ½Ñ•Ì‰•…ÕÍ”Ñ¡•¥È½¹Ñ•¹ÑÌµ…ä¥¹±Õ‘”ÍÁ…•Ì€¡Ñ¡”ÅÕ½Ñ…Ñ¥½¸µ…É­Ì…É”•Í…Á•İ¥Ñ ‰…­Í±…Í¡•Ì¤¸Q¡”±…ÍĞÑİ¼Ù…É¥…‰±•Ì™½±±½ÜÑ¡”™½Éµ…Ğ€•íYI95õ¥€°¥¸İ¡¥ YI95€µ…Ñ¡•ÌÑ¡”É•ÅÕ•ÍĞ¡•…‘•È±¥¹”½˜Ñ¡”É•ÅÕ•ÍĞÍ•¹ĞÑ¼Á…¡”°…¹¥€¥¹‘¥…Ñ•ÌÑ¡…ĞÑ¡”½¹Ñ•¹ÑÌ½˜Ñ¡…Ğ¡•…‘•È±¥¹”Í¡½Õ±‰”±½•¸()9½Ñ”Ñ¡…Ğ€•=€±½ÌÑ¡”¹Õµ‰•È½˜‰åÑ•Ì€©…ÑÕ…±±äÍ•ÉÙ•¨¥¸•… É•ÍÁ½¹Í”°…Ì½ÁÁ½Í•Ñ¼Ñ¡”¹Õµ‰•È½˜‰åÑ•ÌÑ¡…Ğ€©Í¡½Õ±¡…Ù”‰••¸Í•ÉÙ•¨€¡Ñ¡”¥¹™½Éµ…Ñ¥½¸É•Á½ÉÑ•‰äµ½‘}ÍÑ…ÑÕÌ°…Ìµ•¹Ñ¥½¹•¥¸mA…ÉĞ€ÅumÁ…ÉĞ´Åt¤¸((ŒŒŒÕÍÑ½µ¥é¥¹œå½ÕÈÁ…¡”…•ÍÌ±½œ)e½Ô…¸ÕÍ”±½œÙ…É¥…‰±•ÌÑ¼•‘¥Ğ…¸•á¥ÍÑ¥¹œ1½½Éµ…Ğ½ÈÉ•…Ñ”„ÕÍÑ½´™½Éµ…Ğ¸½È•á…µÁ±”°¥˜İ”İ…¹Ñ•Ñ¼…‘„¹•Ü™½Éµ…ĞÑ¡…Ğ¥Ì¥‘•¹Ñ¥…°Ñ¼Ñ¡”½µ‰¥¹•±½œ™½Éµ…Ğ°‰ÕĞ…±Í¼±½ÌÑ¡”É•ÅÕ•ÍĞ±…Ñ•¹ä¥¸µ¥É½Í•½¹‘Ì°İ”½Õ±É•…Ñ”„¹•Ü1½½Éµ…Ğ€¡İ¡¥ İ”İ¥±°…±°€‰É•ÅÑ¥µ”ˆ¥¸Ñ¡¥Ì•á…µÁ±”¤…¹…‘¥¸Ñ¡”Ù…É¥…‰±”€•€°±¥­”Ñ¡¥Ìè()€)1½½Éµ…Ğ€ˆ• €•°€•Ô€•Ğpˆ•Épˆ€”ùÌ€•<pˆ•íI•™•É•Éõ¥pˆpˆ•íUÍ•Èµ•¹Ñõ¥pˆ€•ˆÉ•ÅÑ¥µ”)€()M…Ù”Ñ¡”™¥±”…¹•á¥Ğ¸Q¼ÍÁ•¥™äÑ¡…Ğ½¹”½Èµ½É”½˜½ÕÈÙ¥ÉÑÕ…°¡½ÍÑÌÍ¡½Õ±±½œÉ•ÅÕ•ÍÑÌÕÍ¥¹œÑ¡”¹•ÜÕÍÑ½´É•ÅÑ¥µ”™½Éµ…Ğ°™¥¹Ñ¡”±¥¹”Ñ¡…ĞÍÑ…ÉÑÌİ¥Ñ €‰ÕÍÑ½µ1½œˆİ¥Ñ¡¥¸•… Y¥ÉÑÕ…°!½ÍĞÌ½¹™¥ÕÉ…Ñ¥½¸™¥±”¸€¡%˜å½Ô…É”½¸…¸I!0Á±…Ñ™½É´°Ñ¡¥Ìµ…ä…±Í¼‰”±½…Ñ•¥¸å½ÕÈµ…¥¸½¹™¥ÕÉ…Ñ¥½¸™¥±”°İ¥Ñ¡¥¸Ñ¡”€ñ%™5½‘Õ±”±½}½¹™¥}µ½‘Õ±”ù€‘¥É•Ñ¥Ù”¸¤Q¡”±…ÍĞİ½É¥¸Ñ¡”±¥¹”ÍÁ•¥™¥•Ìİ¡¥ 1½½Éµ…ĞÑ¼ÕÍ”¸UÁ‘…Ñ”¥ĞÑ¼Ñ¡”¹¥­¹…µ”å½Ô©ÕÍĞÉ•…Ñ•¥¸Ñ¡”µ…¥¸½¹™¥œ™¥±”€¡”¹œ¸ÕÍÑ½µ1½œ€½Á…Ñ ½Ñ¼½…•ÍÌ¹±½œÉ•ÅÑ¥µ•€¤¸M…Ù”…¹•á¥ĞÑ¡”™¥±”°…¹É•ÍÑ…ÉĞÁ…¡”€¡…Á…¡•Ñ°É•ÍÑ…ÉÑ€½ÈÍ•ÉÙ¥”…Á…¡”ÈÉ•ÍÑ…ÉÑ€¤¸I•Á±…”É•ÍÑ…ÉÑ€İ¥Ñ É…•™Õ±€¥˜å½Ôİ…¹ĞÑ¼É•ÍÑ…ÉĞÁ…¡”É…•™Õ±±ä€¡İ¥Ñ¡½ÕĞ¥¹Ñ•ÉÉÕÁÑ¥¹œ½¹¹•Ñ¥½¹Ì¤¸()9½ÜÁ…¡”Í¡½Õ±ÍÑ…ÉĞ±½¥¹œİ¥Ñ ½ÕÈÕÍÑ½´™½Éµ…Ğ°¥¹±Õ‘¥¹œÑ¡”É•ÅÕ•ÍĞ±…Ñ•¹ä€¡¥¸µ¥É½Í•½¹‘Ì¤…ĞÑ¡”•¹½˜•… ±¥¹”è()€(ÄÄ¸ÄÈÌ¸ĞÔØ¸Üàä€´€´lÄÔ½•ˆ¼ÈÀÄÜèÄØèĞĞèÄÜ€´ÀÔÀÁt€‰P€½¥µ…•Ì½Íİ¥É°¹Á¹œ!QQ@¼Ä¸Äˆ€ĞÀĞ€ÔÄÄ€‰¡ÑÑÀè¼½µä¹‘½µ…¥¸¹¹…µ”½ÍÌ½ÕÍÑ½´¹ÍÌˆ€‰5½é¥±±„¼Ô¸À€¡5…¥¹Ñ½Í ì%¹Ñ•°5…Œ=L`€ÄÁ|ÄÉ|Ä¤ÁÁ±•]•‰-¥Ğ¼ÔÌÜ¸ÌØ€¡-!Q50°±¥­”•­¼¤¡É½µ”¼ÔØ¸À¸ÈäÈĞ¸àÜM…™…É¤¼ÔÌÜ¸ÌØˆ€ÌÀÌ)€()%¸Ñ¡”…•ÍÌ±½œÍ¡½İ¸…‰½Ù”°„É•ÅÕ•ÍĞİ…Ìµ…‘”™É½´„±¥•¹Ğİ¥Ñ Ñ¡”%@…‘‘É•ÍÌ€ÄÄ¸ÄÈÌ¸ĞÔØ¸Üàä¸Q¡”¹•áĞÑİ¼™¥•±‘Ì°É•µ½Ñ”±½¹…µ”…¹É•µ½Ñ”ÕÍ•È°İ•É”¹½ĞÍÕÁÁ±¥•°…Ì¥¹‘¥…Ñ•‰äÑ¡”‘…Í¡•Ì¸Q¡”É•ÅÕ•ÍĞÑÉ¥•Ñ¼…•ÍÌÑ¡”Íİ¥É°¹Á¹œ¥µ…”°…¹É•ÍÕ±Ñ•¥¸„™¥¹…°!QQ@ÍÑ…ÑÕÌ½˜€ĞÀĞ°¥¹‘¥…Ñ¥¹œÑ¡…ĞÑ¡”Í•ÉÙ•Èİ…ÌÕ¹…‰±”Ñ¼±½…Ñ”Ñ¡”™¥±”¸Q¡”¹•áĞÑİ¼™¥•±‘ÌÑ•±°ÕÌÑ¡…ĞÑ¡”Í¥é”½˜Ñ¡”É•ÍÁ½¹Í”İ…Ì€ÔÄÄ‰åÑ•Ì°…¹Ñ¡”É•™•É•Èİ…Ì„ML™¥±”¸Q¡”¹•áĞÑİ¼™¥•±‘ÌÍ¡½ÜÕÌÑ¡”±¥•¹ĞÌÕÍ•È…•¹Ğ€¡‰É½İÍ•ÈÑåÁ”¤…¹Ñ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¥¸µ¥É½Í•½¹‘Ì¸()e½Ô…¸…±Í¼mÕÍ”½¹‘¥Ñ¥½¹…°Ù…É¥…‰±•Íum±½œµÙ…É¥…‰±•Ìµ‘½ÍtÑ¼ÍÁ•¥™ä¥˜•ÉÑ…¥¸É•ÅÕ•ÍÑÌÍ¡½Õ±¹½Ğ‰”±½•°½È°…±Ñ•É¹…Ñ¥Ù•±ä°ÍÁ•¥™ä½¹‘¥Ñ¥½¹ÌÑ¡…ĞµÕÍĞ‰”µ•Ğ¥¸½É‘•È™½ÈÉ•ÅÕ•ÍÑÌÑ¼‰”±½•€¡”¹œ¸½¹±ä±½œÑ¡”UÍ•È•¹Ğ™½ÈÉ•ÅÕ•ÍÑÌ¥˜Ñ¡•ä¡…Ù”€ĞÀĞ½È€ÔÀÀÍÑ…ÑÕÌ½‘•Ì¤¸!½İ•Ù•È°•¹•É…±±ä¥ĞÌ„½½¥‘•„Ñ¼½±±•Ğ…±°½˜Ñ¡”¥¹™½Éµ…Ñ¥½¸™¥ÉÍĞ°İ¡¥ å½Ô…¸Ñ¡•¸Í•±•Ñ¥Ù•±ä™¥±Ñ•È…Ğ„±…Ñ•ÈÑ¥µ”¸((ŒŒŒ1½œ…É•…Ñ¥½¸…¹Á…ÉÍ¥¹œÑ½½±Ì)5…¹ä±½œ…É•…Ñ¥½¸Í•ÉÙ¥•Ì€¡‰½Ñ ½µµ•É¥…°…¹½Á•¸Í½ÕÉ”¤¡…Ù”‰••¸‘•Í¥¹•Ñ¼¡•±À…É•…Ñ”°Á…ÉÍ”°…¹…¹…±åé”Á…¡”…•ÍÌ±½Ì¸e½Ô…¸ÕÍ”½Á•¸Í½ÕÉ”Ñ½½±Ì±¥­”m±Õ•¹Ñum™±Õ•¹Ñ‘t°m1½ÍÑ…Í¡um±½ÍÑ…Í µÁ…•t…¹mÉÍåÍ±½umÉÍåÍ±½œµ…Á…¡•tÑ¼…É•…Ñ”…¹Á…ÉÍ”Á…¡”±½Ì™½ÈÕÍ•™Õ°¥¹™½Éµ…Ñ¥½¸°…¹½ÕÑÁÕĞÑ¡”‘…Ñ„Ñ¼½Ñ¡•Èµ½¹¥Ñ½É¥¹œÁ±…Ñ™½ÉµÌ¸½Èµ½É”‘•Ñ…¥±Ì…‰½ÕĞ¡½ÜÑ¼Í•ĞÕÀÑ¡”±Õ•¹ÑÁ±Õ¥¸Ñ¼É•Á½ÉĞµ•ÑÉ¥ÌÑ¼…Ñ…‘½œ°Í•”mA…ÉĞ€ÍumÁ…ÉĞ´Ít½˜Ñ¡¥ÌÍ•É¥•Ì¸((ŒŒ=Á•¸Í½ÕÉ”µ½¹¥Ñ½É¥¹œÑ½½±Ì)Q¡”½Á•¸Í½ÕÉ”½µµÕ¹¥Ñä¡…Ì‘•Ù•±½Á•Í•Ù•É…°Ñ½½±ÌÑ¼¡•±ÀÕÍ•ÉÌµ½¹¥Ñ½ÈÁ…¡”ÌÁ•É™½Éµ…¹”µ•ÑÉ¥Ì¥¸„‘¥™™•É•¹Ğ™½Éµ…ĞÑ¡…¸Ñ¡”‰Õ¥±Ğµ¥¸ÍÑ…ÑÕÌµ½‘Õ±”¸	•±½Ü°İ”İ¥±°•áÁ±½É”Ñİ¼½ÁÑ¥½¹ÌÑ¡…Ğ•¹…‰±”å½ÔÑ¼…¹…±åé”Á…¡”ÍÑ…ÑÕÌµ•ÑÉ¥Ì…¹±½Ì°É¥¡Ğ™É½´Ñ¡”½µµ…¹±¥¹”¸((ŒŒŒÁ…¡•Ñ½À)mÁ…¡•Ñ½Áum…Á…¡•Ñ½Àµ‘½Ít¥Ì…¸½Á•¸Í½ÕÉ”Ñ½½°Ñ¡…ĞÁ…ÉÍ•Ìå½ÕÈÁ…¡”…•ÍÌ±½œ™½ÈÕÍ•™Õ°ÍÑ…Ñ¥ÍÑ¥Ì…¹‘¥ÍÁ±…åÌÑ¡•´½¸Ñ¡”½µµ…¹±¥¹”°Í¥µ¥±…ÈÑ¼Ñ¡”İ…äÑ¡…ĞÑ½Á€‘¥ÍÁ±…åÌ±¥Ù”¥¹™½Éµ…Ñ¥½¸…‰½ÕĞÁÉ½•ÍÍ•Ì¸%Ğ¥Ì…Ù…¥±…‰±”…Ì„1¥¹ÕàÁ…­…”€¡…ÁĞµ•Ğ¥¹ÍÑ…±°…Á…¡•Ñ½Á€½ÈåÕ´¥¹ÍÑ…±°…Á…¡•Ñ½Á€¤¸=¹”å½ÔÙ”¥¹ÍÑ…±±•¥Ğ°ÉÕ¸Ñ¡”™½±±½İ¥¹œ½µµ…¹è()€)ÍÕ‘¼…Á…¡•Ñ½À€µ˜€½Á…Ñ ½Ñ¼½…•ÍÌ¹±½œ)€()Q¡”€µ™€™±…œ•¹…‰±•Ìå½ÔÑ¼ÍÁ•¥™äÑ¡”±½…Ñ¥½¸½˜Ñ¡”±½œ™¥±”å½Ôİ…¹ĞÑ¼Á…ÉÍ”¸e½Ô…¸ÑÉ…¬µÕ±Ñ¥Á±”±½œ™¥±•Ì€¡Á…¡•Ñ½À…±Í¼İ½É­Ìİ¥Ñ 9%9`…•ÍÌ±½Ì¤‰ä…‘‘¥¹œÑ¡”™±…œµÕ±Ñ¥Á±”Ñ¥µ•Ìè((€€€…Á…¡•Ñ½À€µ˜€½Á…Ñ ½Ñ¼½…•ÍÌ¹±½œ€µ˜€½…¹½Ñ¡•È½…•ÍÌ¹±½œ()=¹”å½ÔÉÕ¸Ñ¡”½µµ…¹°å½Ô±°‰”…‰±”Ñ¼µ½¹¥Ñ½È¥¹½µ¥¹œÉ•ÅÕ•ÍÑÌ¥¸É•…°Ñ¥µ”è()íìğ¥µœÍÉŒô‰…Á…¡•Ñ½ÀÈ¹¥˜ˆ…±Ğô‰Á…¡•Ñ½ÀÑ½½°‘¥ÍÁ±…åÌÉ•…°µÑ¥µ”µ•ÑÉ¥Ì½¸½µµ…¹±¥¹”ˆÍ¥é”ôˆÅàˆ€ùõô()Q¡”½ÕÑÁÕĞ‘¥ÍÁ±…åÌÑ¡”Ñ¥µ”½˜Ñ¡”±…ÍĞÉ•ÅÕ•ÍĞ°…Ìİ•±°…ÌÉ••¹Ñ±äÉ•ÅÕ•ÍÑ•É•Í½ÕÉ•Ì½•¹‘Á½¥¹ÑÌ¸%Ğ…±Í¼…±Õ±…Ñ•Ì„¡…¹‘™Õ°½˜ÕÍ•™Õ°µ•ÑÉ¥Ì°¥¹±Õ‘¥¹œÑ¡”É…Ñ”½˜É•ÅÕ•ÍÑÌ…¹‰åÑ•ÌÍ•ÉÙ•Á•ÈÍ•½¹°…¹Ñ¡”Á•É•¹Ñ…”½˜É•ÅÕ•ÍÑÌÑ¡…ĞÉ•ÍÕ±Ñ•¥¸•… ÍÑ…ÑÕÌ½‘”™…µ¥±ä€ Éáà¼Íáà¼Ñáà¼Õáà¤¸Q¡•Í”µ•ÑÉ¥Ì…É”…±Õ±…Ñ•…¹‘¥ÍÁ±…å•¥¸Ñİ¼Í½Á•Ìè((´…É½ÍÌ…±°É•ÅÕ•ÍÑÌ(´‰É½­•¸‘½İ¸‰äÉ•ÅÕ•ÍÑÌµ…‘”½Ù•È„É••¹ĞÑ¥µ”¥¹Ñ•ÉÙ…°°ÕÍÕ…±±äÑ¡”ÁÉ•Ù¥½ÕÌ€ÌÀÍ•½¹‘Ì€¡¥µµ•‘¥…Ñ•±ä…™Ñ•ÈÍÑ…ÉÑÕÀ°Á…¡•Ñ½Àİ¥±°É•Á½ÉĞÍ¡½ÉÑ•È¥¹Ñ•ÉÙ…±ÌÕ¹Ñ¥°¥Ğ…ÉÕ•Ì€ÌÀÍ•½¹‘Ì½˜‘…Ñ„¤(((ŒŒŒÑ½À)mÑ½Áum…Ñ½Àµ‰…Í¡t¥Ì…¹½Ñ¡•È½Á•¸Í½ÕÉ”ÁÉ½©•ĞÑ¡…ĞÍ¡½İÌÉ•ÅÕ•ÍĞ¥¹™½Éµ…Ñ¥½¸¥¸É•…°Ñ¥µ”¸Ñ½À•ÑÌ¥ÑÌ¥¹™½Éµ…Ñ¥½¸™É½´µ½‘}ÍÑ…ÑÕÌ€¡İ¥Ñ áÑ•¹‘•‘MÑ…ÑÕÌ•¹…‰±•¤ìÍ¥¹”¥Ğ‘½•Ì¹½ĞÁ…ÉÍ”Ñ¡”…•ÍÌ±½œ°å½Ô…¹¹½Ğ‰É•…¬‘½İ¸É•ÅÕ•ÍÑÌ‰äÑ¡•¥È!QQ@É•ÍÁ½¹Í”½‘•ÌÑ¡”İ…äå½Ô…¸İ¥Ñ Á…¡•Ñ½À¸!½İ•Ù•È°¥Ğ‘½•Ì¥¹±Õ‘”Í½µ”¹¥”¥¹Ñ•É…Ñ¥Ù”İ…åÌÑ¼Í•…É …¹™¥±Ñ•ÈÑ¡É½Õ É•ÅÕ•ÍÑÌ¸()Q¼¥¹ÍÑ…±°…Ñ½À°m±½¹”Ñ¡”¥Ñ!ÕˆÉ•Á½um…Ñ½Àµ‰…Í¡t°…¹µ…­”ÍÕÉ”Ñ¡”±¥¹­Í€Á…­…”¥Ì¥¹ÍÑ…±±•€¡…ÁĞµ•Ğ¥¹ÍÑ…±°±¥¹­Í€¤¸Q¡•¸ÉÕ¸¥Ğ™É½´Ñ¡”¥¹ÍÑ…±±…Ñ¥½¸‘¥É•Ñ½Éäè€¸½…Ñ½Á€()µ½¹œ½Ñ¡•ÈÍ½ÉÑ¥¹œ…¹™¥±Ñ•É¥¹œ½ÁÑ¥½¹Ì°å½Ô…¸ÕÍ”…Ñ½ÀÑ¼Í•…É É•ÅÕ•ÍÑÌ™½È•ÉÑ…¥¸Ñ•ÉµÌ°‘¥É•Ñ±ä™É½´Ñ¡”½µµ…¹±¥¹”°…ÌÍ¡½İ¸‰•±½Ü¸()íìğ¥µœÍÉŒô‰…Ñ½Á…İÌµÍ•…É µ•ÉÉ½È¹¥˜ˆ…±Ğô‰Ñ½À•¹…‰±•Ìå½ÔÑ¼Í•…É Á…¡”Í•ÉÙ•ÈµÍÑ…ÑÕÌ™½ÈÍÁ•¥™¥Œ•¹‘Á½¥¹ÑÌˆ…ÁÑ¥½¸ô‰Ì‘•µ½¹ÍÑÉ…Ñ•¡•É”°å½Ô…¸ÁÉ•ÍÌÑ¡”€Ìœ­•äÑ¼¥¹‘¥…Ñ”Ñ¡…Ğå½Ôİ…¹ĞÑ¼Í•…É Ñ¡”µ½‘}ÍÑ…ÑÕÌÁ…”™½È„•ÉÑ…¥¸İ½É€¡”¹œ¸€•ÉÉ½Èœ¤¸ˆÍ¥é”ôˆÅàˆ€ùõô((ŒŒÕÑ½µ…Ñ”å½ÕÈÁ…¡”µ½¹¥Ñ½É¥¹œ)Á…¡”ÌÍÑ…ÑÕÌÁ…”°…•ÍÌ±½Ì°…¹½Á•¸Í½ÕÉ”½µµ…¹±¥¹”Ñ½½±Ì…¸‰”Ù•ÉäÕÍ•™Õ°™½È•ÑÑ¥¹œ„Í•¹Í”½˜É•…°µÑ¥µ”Á•É™½Éµ…¹”¸!½İ•Ù•È°¥¸½É‘•ÈÑ¼Ù¥ÍÕ…±¥é”µ•ÑÉ¥Ì°…¹…±åé”¡¥ÍÑ½É¥…°ÑÉ•¹‘Ì°…¹Í•ĞÕÀÕÍ•™Õ°…±•ÉÑÌ°å½Ôİ¥±°¹••Ñ¼¥µÁ±•µ•¹Ğ„µ½É”Í½Á¡¥ÍÑ¥…Ñ•µ½¹¥Ñ½É¥¹œÍåÍÑ•´¸()…Ñ…‘½œ¡…Ì‘•Ù•±½Á•…¸¥¹Ñ•É…Ñ¥½¸İ¥Ñ Á…¡”Ñ¼¡•±Àå½ÔÍÑ…ÉĞÙ¥ÍÕ…±¥é¥¹œµ•ÑÉ¥Ì™É½´å½ÕÈİ•ˆÍ•ÉÙ•ÉÌ¥¸µ¥¹ÕÑ•Ì¸]¡•Ñ¡•Èå½Ô…É”ÕÍ¥¹œÁ…¡”İ¥Ñ m9%9`…Ìå½ÕÈÉ•Ù•ÉÍ”ÁÉ½áåumÉ•Ù•ÉÍ”µÁÉ½áåt°½ÈÍ•ÉÙ¥¹œA!@…ÁÁ±¥…Ñ¥½¹Ì…¹5åME0‘…Ñ„¥¸„±…ÍÍ¥Œ15@ÍÑ…¬°å½Ô¹••Ñ¼‰”…‰±”Ñ¼­••ÀÑÉ…¬½˜…±°½˜Ñ¡”µ½Ù¥¹œÁ…ÉÑÌ¥¸½¹”Á±…”¸M¥¹”…Ñ…‘½œ¥¹Ñ•É…Ñ•Ìİ¥Ñ µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõôÑ•¡¹½±½¥•Ì°å½Ô…¸Í•”Á…¡”µ•ÑÉ¥Ì¥¸½¹Ñ•áĞ°É¥¡Ğ…±½¹Í¥‘”Á•É™½Éµ…¹”µ•ÑÉ¥Ì…¹•Ù•¹Ğ‘…Ñ„™É½´å½ÕÈ‘…Ñ…‰…Í•Ì°±½ÕÁÉ½Ù¥‘•ÉÌ°½¹™¥ÕÉ…Ñ¥½¸µ…¹…•µ•¹ĞÑ½½±Ì°…¹µ½É”¸()1•…É¸¡½ÜÑ¼ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œÁ…¡”İ¥Ñ …Ñ…‘½œ¥¸½ÕÈm¹•áĞÁ½ÍÑumÁ…ÉĞ´Ít°½È•ĞÍÑ…ÉÑ•É¥¡Ğ…İ…äİ¥Ñ „€ñ„±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆ¡É•˜ôˆŒˆù™É•”ÑÉ¥…°½˜…Ñ…‘½œğ½„ø¸()mÁ…ÉĞ´Åtè€½‰±½œ½µ½¹¥Ñ½É¥¹œµ…Á…¡”µİ•ˆµÍ•ÉÙ•ÈµÁ•É™½Éµ…¹”¼)mµ½µÍÑ…ÑÕÌµ‘½Ítè¡ÑÑÀè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÕÉÉ•¹Ğ½µ½½µ½‘}ÍÑ…ÑÕÌ¹¡Ñµ°)m…•ÍÌµ±½œµ‘½Ítè¡ÑÑÀè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÕÉÉ•¹Ğ½±½Ì¹¡Ñµ°…•ÍÍ±½œ)m…Á…¡”µ…ÕÑ µ‘½Ítè¡ÑÑÀè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì¼È¸Ğ½¡½İÑ¼½…ÕÑ ¹¡Ñµ°)m¡ÑÁ…ÍÍİµ‘½Ítè¡ÑÑÁÌè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÕÉÉ•¹Ğ½ÁÉ½É…µÌ½¡ÑÁ…ÍÍİ¹¡Ñµ°)mµ½µÍÑ…ÑÕÌµ‘½Ítè¡ÑÑÁÌè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÕÉÉ•¹Ğ½µ½½µ½‘}ÍÑ…ÑÕÌ¹¡Ñµ°)m±½œµÙ…É¥…‰±•Ìµ‘½Ítè¡ÑÑÀè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÕÉÉ•¹Ğ½µ½½µ½‘}±½}½¹™¥œ¹¡Ñµ°)mÉÍåÍ±½œµ…Á…¡•tè¡ÑÑÀè¼½İ¥­¤¹ÉÍåÍ±½œ¹½´½¥¹‘•à¹Á¡À½]½É­¥¹}Á…¡•}…¹‘}IÍåÍ±½}½¹™¥ÕÉ…Ñ¥½¸)mÁ…ÉĞÄµÉ•Í½ÕÉ•tè€½‰±½œ½µ½¹¥Ñ½É¥¹œµ…Á…¡”µİ•ˆµÍ•ÉÙ•ÈµÁ•É™½Éµ…¹”¼É•Í½ÕÉ”µÕÑ¥±¥é…Ñ¥½¸µ…¹µ…Ñ¥Ù¥Ñäµµ•ÑÉ¥Ì)mÁ…ÉĞÄµ•ÉÉ½Étè€½‰±½œ½µ½¹¥Ñ½É¥¹œµ…Á…¡”µİ•ˆµÍ•ÉÙ•ÈµÁ•É™½Éµ…¹”¼•ÉÉ½ÉÌ)mÁ…ÉĞÄµİ½É­tè½‰±½œ½µ½¹¥Ñ½É¥¹œµ…Á…¡”µİ•ˆµÍ•ÉÙ•ÈµÁ•É™½Éµ…¹”¼Ñ¡É½Õ¡ÁÕĞµ…¹µ±…Ñ•¹äµµ•ÑÉ¥Ì)mÉ•Ù•ÉÍ”µÁÉ½áåtè¡ÑÑÁÌè¼½•¸¹İ¥­¥Á•‘¥„¹½Éœ½İ¥­¤½I•Ù•ÉÍ•}ÁÉ½áä)m…Á…¡•Ñ½Àµ‘½Ítè¡ÑÑÀè¼½µ…¹Á…•Ì¹Õ‰Õ¹ÑÔ¹½´½µ…¹Á…•Ì½ÁÉ•¥Í”½µ…¸Ä½…Á…¡•Ñ½À¸Ä¹¡Ñµ°)m…Á…¡”µÑ½Átè¡ÑÑÀè¼½™ÈÍ¹¹¹•Ğ½ÁÉ½©•ÑÌ½…Á…¡”µÑ½À¼)m…Ñ½Àµ‰…Í¡tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½¡¹´½…Ñ½À)mÁ…ÉĞ´Ítè€½‰±½œ½µ½¹¥Ñ½Èµ…Á…¡”µİ•ˆµÍ•ÉÙ•Èµ‘…Ñ…‘½œ)m±½ÍÑ…Í µÁ…•tè¡ÑÑÁÌè¼½İİÜ¹•±…ÍÑ¥Œ¹¼½ÁÉ½‘ÕÑÌ½±½ÍÑ…Í )m±½ÍÑ…Í µÁ±Õ¥¹Ítè¡ÑÑÁÌè¼½İİÜ¹•±…ÍÑ¥Œ¹¼½Õ¥‘”½•¸½±½ÍÑ…Í ½ÕÉÉ•¹Ğ½½ÕÑÁÕĞµÁ±Õ¥¹Ì¹¡Ñµ°)m‘…Ñ…‘½œµ±½ÍÑ…Í¡tè¡ÑÑÁÌè¼½İİÜ¹•±…ÍÑ¥Œ¹¼½Õ¥‘”½•¸½±½ÍÑ…Í ½ÕÉÉ•¹Ğ½Á±Õ¥¹Ìµ½ÕÑÁÕÑÌµ‘…Ñ…‘½œ¹¡Ñµ°)mÉ…Á¡¥Ñ”µ±½ÍÑ…Í¡tè¡ÑÑÁÌè¼½İİÜ¹•±…ÍÑ¥Œ¹¼½Õ¥‘”½•¸½±½ÍÑ…Í ½ÕÉÉ•¹Ğ¼)m½±±•ÑµÁ±Õ¥¹tè¡ÑÑÁÌè¼½½±±•Ñ¹½Éœ½İ¥­¤½¥¹‘•à¹Á¡À½A±Õ¥¸éÁ…¡”)m‘…Ñ…‘½œµ…Á…¡•tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½…Á…¡”¼)m™±Õ•¹Ñ‘tè¡ÑÑÀè¼½İİÜ¹™±Õ•¹Ñ¹½Éœ¼)mÉ…•™Õ°µÉ•ÍÑ…ÉÑtè¡ÑÑÀè¼½¡ÑÑÁ¹…Á…¡”¹½Éœ½‘½Ì½ÕÉÉ•¹Ğ½ÍÑ½ÁÁ¥¹œ¹¡Ñµ°(
+---
+blog/category: ["series collection"]
+blog/tag: ["Apache", "http server", "web server", "performance"]
+date: 2017-03-16T00:00:04Z
+description: "Learn how to collect metrics from your web servers, using native and open source tools."
+draft: false
+email: emily.chang@datadoghq.com
+featured: false
+image: apache-hero2.png
+meta_title: null
+preview_image: apache-hero2.png
+scribbler: "Emily Chang"
+scribbler_image: img-0791.jpg
+slug: collect-apache-performance-metrics
+sub_featured: true
+title: "How to collect Apache performance metrics"
+twitter_handle: 
+---
+
+
+*This post is part 2 of a 3-part series about monitoring Apache performance. [Part 1][part-1] provides an overview of the Apache web server and its key performance metrics, and [part 3][part-3] describes how to monitor Apache with Datadog.* 
+
+In this post, we will show you how to collect the key Apache metrics mentioned in [Part 1][part-1], which are available through [Apache's status module (mod_status)][mod-status-docs] and the [server access log][access-log-docs]. The table below shows where you can access each family of metrics mentioned in Part 1.
+
+| **Metric category**     | **Availability**
+|--------------------|--------------------------|
+| [Work metrics: request latency, bytes actually served][part1-work]  | access log 
+| [Work metrics: rate of requests, bytes that should have been served][part1-work]  | mod_status
+| [Resource utilization and activity metrics][part1-resource]     | mod_status 
+| [Error rate][part1-error]  | access log
+
+Apache exposes high-level metrics through its status module, and logs additional details about each client request in the access log. By consulting both of these sources, you can identify degradations and troubleshoot potential issues. 
+
+In this post, we will show you how to aggregate this data so that you can make sure that your servers are running smoothly. We will also walk through the process of installing and using two open source tools that help you monitor Apache in real time, directly from the command line.
+
+## Apache's status module
+Apache web server exposes metrics through its status module, [mod_status][mod-status-docs]. If your server is running and mod_status is enabled, your server's status page should be available at `http://192.0.2.0/server-status`. If that link does not work, it means you need to enable mod_status in your configuration file. 
+
+It's also possible that your configuration file specifies a Location that is not `/server-status`, either intentionally or unintentionally. Follow the directions below to locate your mod_status configuration file, and look for a directive that contains `SetHandler server-status`. If you see that it specifies a Location other than `/server-status`, either update it accordingly (and restart Apache) or try accessing that endpoint to see if mod_status is enabled at that location.
+
+### How to enable Apache mod_status
+If you need to enable mod_status, you either have to edit the status module's configuration file (on Debian platforms), or your main Apache configuration file (all other Unix-like platforms). Regardless of which system you're using, make sure to save a backup copy of the configuration file before making changes to it, in case you need to revert to an earlier state. 
+
+#### Finding the config on Debian systems
+Debian users can find the status module's configuration file at `/etc/apache2/mods-enabled/status.conf`. 
+
+#### Finding the config on other UNIX-like platforms
+Users of other platforms (such as Red Hatâ€“based systems) will find their main configuration file at `/etc/apache2/apache2.conf`, `/etc/httpd/conf/httpd.conf`, or `/etc/apache2/httpd.conf`. In the main configuration file, locate the following line and make sure it is uncommented:
+
+    LoadModule status_module libexec/apache2/mod_status.so 
+
+#### Updating the config file
+You'll need to update the block (either in your status module's config file or main Apache config file) that starts with `<Location /server-status>` to specify which IP addresses should have access to the status page. In the example below, we are allowing access from localhost, as well as the IP address x.x.x.x. 
+
+```
+<Location /server-status>
+    SetHandler server-status
+    Require local
+    Require ip x.x.x.x
+</Location>
+```
+
+Replace `x.x.x.x` with the IP address that needs to access the status page. In addition to (or instead of) requiring an IP address, you can also restrict access to authenticated users, as shown in the example below. 
+
+```
+<Location /server-status>
+    SetHandler server-status
+    AuthUserFile /location/of/htpasswd
+    AuthType Basic
+    AuthName "Make up a name here for who can access Apache status"
+    Require user <USER_NAME>
+</Location>
+```
+
+This relies on [Apache's htpasswd functionality][htpasswd-docs], which enables administrators to create users and groups, and set up a means of authenticating their access to specific resources on the web server (such as your server-status page). Consult the [Apache documentation][apache-auth-docs] for more details on how to set up authentication and authorization in Apache.
+
+After you're done making changes, save and exit. You can check your configuration file for errors with the following command: 
+
+    apachectl configtest
+
+Perform a [graceful restart][graceful-restart] to apply the changes without interrupting live connections (`apachectl -k graceful` or `service apache2 graceful`).  
+
+### Apache's mod_status metrics
+After enabling mod_status and restarting Apache, you will be able to see your status page at `http://<YOUR_DOMAIN>/server-status`. Your Apache status page will look like this:
+
+{{< img src="local-server-status.png" alt="Apache web server metrics on mod status page" popup="true" >}}
+
+If you want your mod_status page to automatically refresh at regular intervals, add `?refresh=X` to the end of your URL to refresh every X seconds (e.g. `http://192.0.2.0/server-status?refresh=5`).
+
+### A note about ExtendedStatus
+Apache's status module has an option called ExtendedStatus, which is enabled by default as of version 2.4. Enabling ExtendedStatus can have a slight hit on performance, as the system must call `gettimeofday()` twice for each request in order to log timing information. If your servers are already under heavy load, enabling ExtendedStatus may not make sense. However, the additional information it provides generally makes it worthwhile to enable ExtendedStatus, which you can then turn off if you notice any negative impact on performance. 
+
+#### How to enable ExtendedStatus
+The ExtendedStatus directive is either located within the main configuration file's `<IfModule mod_status.c>` section (CentOS/RHEL), or within the mod_status configuration file (Debian/Ubuntu). 
+
+#### ExtendedStatus metrics
+Once you enable ExtendedStatus, you will see these additional metrics on the mod_status page:  
+
+- total accesses/hits
+- total kBytes served 
+- CPU load
+- uptime
+- requests per sec
+- bytes per sec
+- bytes per request
+
+ExtendedStatus also displays additional information about each request, along with detailed information about recently processed requests (including the client, requested resource, and processing time). ExtendedStatus metrics can be useful for troubleshooting performance degradations and diagnosing issues. With access to additional details about each individual request, you can spot if a request for a specific resource was taking an extraordinarily long time, or if it was using more CPU compared to other requests around the same time.
+
+#### Machine-readable status metrics
+To access the status page in a machine-readable format, visit `http://<YOUR_DOMAIN>/server-status?auto`, which will show something more like this, if ExtendedStatus is enabled:  
+
+```
+ServerVersion: Apache/2.4.23 (Unix)
+ServerMPM: prefork
+Server Built: Aug  8 2016 16:31:34
+CurrentTime: Wednesday, 15-Feb-2017 13:59:47 EST
+RestartTime: Wednesday, 15-Feb-2017 13:39:55 EST
+ParentServerConfigGeneration: 1
+ParentServerMPMGeneration: 0
+ServerUptimeSeconds: 1192
+ServerUptime: 19 minutes 52 seconds
+Load1: 2.13
+Load5: 1.87
+Load15: 1.79
+Total Accesses: 49
+Total kBytes: 41
+CPUUser: 0
+CPUSystem: .02
+CPUChildrenUser: 0
+CPUChildrenSystem: 0
+CPULoad: .00167785
+Uptime: 1192
+ReqPerSec: .0411074
+BytesPerSec: 35.2215
+BytesPerReq: 856.816
+BusyWorkers: 1
+IdleWorkers: 1
+Scoreboard: _W........................................................................................................................................................................................................................................................
+```
+
+The machine-readable page will not display detailed information about individual requests; in order to view that information, you will need to visit the main server-status page.
+
+Mod_status provides many of the [resource utilization and activity metrics][part1-resource] discussed in Part 1. Some tools, including [collectD][collectd-plugin] and [Datadog][datadog-apache], can automatically parse the machine-readable status page and enable you to visualize those metrics in graphs. 
+
+## Apache logs
+In addition to the status module, Apache's [access log][access-log-docs] provides even more detailed information about each client request. You can customize what information is included in your Apache logs so that it is more relevant for your needs. Within your main Apache configuration file, locate the section that starts with "LogFormat":
+
+```
+LogFormat "%v:%p %h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_combined
+LogFormat "%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined
+LogFormat "%h %l %u %t \"%r\" %>s %O" common
+LogFormat "%{Referer}i -> %U" referer
+LogFormat "%{User-agent}i" agent
+```
+
+The nickname of each LogFormat is listed at the end of each line: "vhost_combined," "combined," "common," "referer," and "agent." 
+
+### Apache log variables
+You can customize your Apache access log by changing the order and/or adding and deleting log variables. Consult the [full list of available variables here][log-variables-docs]. 
+
+Upon examining the **combined log format**, we can see that it logs the remote hostname (`%h`), remote logname (`%l`), remote user (`%u`), the time Apache received the request (`%t`), the first line of the request in quotes (`\"%r\"`), the final HTTP status of the response (`%>s`), the size of the response in bytes (`%O`), the referer (`\"%{Referer}i\"`) and user agent (`\"%{User-Agent}i\"`). 
+
+Three of the variables are logged in quotes because their contents may include spaces (the quotation marks are escaped with backslashes). The last two variables follow the format `%{VARNAME}i`, in which `VARNAME` matches the request header line of the request sent to Apache, and `i` indicates that the contents of that header line should be logged. 
+
+Note that `%O` logs the number of bytes *actually served* in each response, as opposed to the number of bytes that *should have been served* (the information reported by mod_status, as mentioned in [Part 1][part-1]).  
+
+### Customizing your Apache access log
+You can use log variables to edit an existing LogFormat or create a custom format. For example, if we wanted to add a new format that is identical to the combined log format, but also logs the request latency in microseconds, we could create a new LogFormat (which we will call "reqtime" in this example) and add in the variable `%D`, like this:
+
+```
+LogFormat "%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\" %D" reqtime
+```
+
+Save the file and exit. To specify that one or more of our virtual hosts should log requests using the new custom reqtime format, find the line that starts with "CustomLog" within each Virtual Host's configuration file. (If you are on an RHEL platform, this may also be located in your main configuration file, within the `<IfModule log_config_module>` directive.) The last word in the line specifies which LogFormat to use. Update it to the nickname you just created in the main config file (e.g. `CustomLog /path/to/access.log reqtime`). Save and exit the file, and restart Apache (`apachectl restart` or `service apache2 restart`). Replace `restart` with `graceful` if you want to restart Apache gracefully (without interrupting connections).
+
+Now Apache should start logging with our custom format, including the request latency (in microseconds) at the end of each line:
+
+```
+11.123.456.789 - - [15/Feb/2017:16:44:17 -0500] "GET /images/swirl.png HTTP/1.1" 404 511 "http://my.domain.name/css/custom.css" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" 303
+```
+
+In the access log shown above, a request was made from a client with the IP address 11.123.456.789. The next two fields, remote logname and remote user, were not supplied, as indicated by the dashes. The request tried to access the swirl.png image, and resulted in a final HTTP status of 404, indicating that the server was unable to locate the file. The next two fields tell us that the size of the response was 511 bytes, and the referer was a CSS file. The next two fields show us the client's user agent (browser type) and the request processing time in microseconds. 
+
+You can also [use conditional variables][log-variables-docs] to specify if certain requests should not be logged, or, alternatively, specify conditions that must be met in order for requests to be logged (e.g. only log the User Agent for requests if they have 404 or 500 status codes). However, generally it's a good idea to collect all of the information first, which you can then selectively filter at a later time.  
+
+### Log aggregation and parsing tools
+Many log aggregation services (both commercial and open source) have been designed to help aggregate, parse, and analyze Apache access logs. You can use open source tools like [FluentD][fluentd], [Logstash][logstash-page] and [rsyslog][rsyslog-apache] to aggregate and parse Apache logs for useful information, and output the data to other monitoring platforms. For more details about how to set up the FluentD plugin to report metrics to Datadog, see [Part 3][part-3] of this series.
+
+## Open source monitoring tools
+The open source community has developed several tools to help users monitor Apache's performance metrics in a different format than the built-in status module. Below, we will explore two options that enable you to analyze Apache status metrics and logs, right from the command line.
+
+### Apachetop
+[Apachetop][apachetop-docs] is an open source tool that parses your Apache access log for useful statistics and displays them on the command line, similar to the way that `top` displays live information about processes. It is available as a Linux package (`apt-get install apachetop` or `yum install apachetop`). Once you've installed it, run the following command:
+
+```
+sudo apachetop -f /path/to/access.log
+```
+
+The `-f` flag enables you to specify the location of the log file you want to parse. You can track multiple log files (Apachetop also works with NGINX access logs) by adding the flag multiple times:
+
+    apachetop -f /path/to/access.log -f /another/access.log
+
+Once you run the command, you'll be able to monitor incoming requests in real time:  
+
+{{< img src="apachetop2.gif" alt="Apachetop tool displays real-time metrics on command line" >}}
+
+The output displays the time of the last request, as well as recently requested resources/endpoints. It also calculates a handful of useful metrics, including the rate of requests and bytes served per second, and the percentage of requests that resulted in each status code family (2xx/3xx/4xx/5xx). These metrics are calculated and displayed in two scopes:  
+
+- across all requests
+- broken down by requests made over a recent time interval, usually the previous 30 seconds (immediately after startup, Apachetop will report shorter intervals until it accrues 30 seconds of data)
+  
+
+### Atop
+[Atop][atop-bash] is another open source project that shows request information in real time. Atop gets its information from mod_status (with ExtendedStatus enabled); since it does not parse the access log, you cannot break down requests by their HTTP response codes the way you can with Apachetop. However, it does include some nice interactive ways to search and filter through requests.  
+
+To install atop, [clone the GitHub repo][atop-bash], and make sure the `links` package is installed (`apt-get install links`). Then run it from the installation directory: `./atop`
+
+Among other sorting and filtering options, you can use atop to search requests for certain terms, directly from the command line, as shown below.
+
+{{< img src="atopaws-search-error.gif" alt="Atop enables you to search Apache server-status for specific endpoints" caption="As demonstrated here, you can press the 's' key to indicate that you want to search the mod_status page for a certain word (e.g. 'error')." >}}
+
+## Automate your Apache monitoring
+Apache's status page, access logs, and open source command line tools can be very useful for getting a sense of real-time performance. However, in order to visualize metrics, analyze historical trends, and set up useful alerts, you will need to implement a more sophisticated monitoring system.
+
+Datadog has developed an integration with Apache to help you start visualizing metrics from your web servers in minutes. Whether you are using Apache with [NGINX as your reverse proxy][reverse-proxy], or serving PHP applications and MySQL data in a classic LAMP stack, you need to be able to keep track of all of the moving parts in one place. Since Datadog integrates with more than 150 technologies, you can see Apache metrics in context, right alongside performance metrics and event data from your databases, cloud providers, configuration management tools, and more.  
+
+Learn how to start monitoring Apache with Datadog in our [next post][part-3], or get started right away with a <a class="sign-up-trigger" href="#">free trial of Datadog</a>.
+
+[part-1]: /blog/monitoring-apache-web-server-performance/
+[mod-status-docs]: http://httpd.apache.org/docs/current/mod/mod_status.html
+[access-log-docs]: http://httpd.apache.org/docs/current/logs.html#accesslog
+[apache-auth-docs]: http://httpd.apache.org/docs/2.4/howto/auth.html
+[htpasswd-docs]: https://httpd.apache.org/docs/current/programs/htpasswd.html
+[mod-status-docs]: https://httpd.apache.org/docs/current/mod/mod_status.html
+[log-variables-docs]: http://httpd.apache.org/docs/current/mod/mod_log_config.html
+[rsyslog-apache]: http://wiki.rsyslog.com/index.php/Working_Apache_and_Rsyslog_configuration
+[part1-resource]: /blog/monitoring-apache-web-server-performance/#resource-utilization-and-activity-metrics
+[part1-error]: /blog/monitoring-apache-web-server-performance/#errors
+[part1-work]:/blog/monitoring-apache-web-server-performance/#throughput-and-latency-metrics
+[reverse-proxy]: https://en.wikipedia.org/wiki/Reverse_proxy
+[apachetop-docs]: http://manpages.ubuntu.com/manpages/precise/man1/apachetop.1.html
+[apache-top]: http://fr3nd.net/projects/apache-top/
+[atop-bash]: https://github.com/chnm/atop
+[part-3]: /blog/monitor-apache-web-server-datadog
+[logstash-page]: https://www.elastic.co/products/logstash
+[logstash-plugins]: https://www.elastic.co/guide/en/logstash/current/output-plugins.html
+[datadog-logstash]: https://www.elastic.co/guide/en/logstash/current/plugins-outputs-datadog.html
+[graphite-logstash]: https://www.elastic.co/guide/en/logstash/current/
+[collectd-plugin]: https://collectd.org/wiki/index.php/Plugin:Apache
+[datadog-apache]: http://docs.datadoghq.com/integrations/apache/
+[fluentd]: http://www.fluentd.org/
+[graceful-restart]: http://httpd.apache.org/docs/current/stopping.html

@@ -1,4 +1,103 @@
-m½±±•Ñ¥¹œ5½¹½µ•ÑÉ¥Ì…¹ÍÑ…Ñ¥ÍÑ¥Ì(((©Q¡¥ÌÁ½ÍĞ¥ÌÁ…ÉĞ€È½˜„€ÌµÁ…ÉĞÍ•É¥•Ì…‰½ÕĞµ½¹¥Ñ½É¥¹œ5½¹½Á•É™½Éµ…¹”¸A…ÉĞ€ÄÁÉ•Í•¹ÑÌÑ¡”­•äÁ•É™½Éµ…¹”µ•ÑÉ¥Ì…Ù…¥±…‰±”™É½´5½¹½èÑ¡•É”¥Ìm½¹”Á½ÍĞ™½ÈÑ¡”]¥É•‘Q¥•Ét ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤ÍÑ½É…”•¹¥¹”…¹m½¹”™½È55AØÅt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµµµ…À¤¸%¸mA…ÉĞ€Ít ½‰±½œ½µ½¹¥Ñ½Èµµ½¹½‘ˆµÁ•É™½Éµ…¹”µİ¥Ñ µ‘…Ñ…‘½œ¤å½Ôİ¥±°‘¥Í½Ù•È¡½ÜÑ¼µ½¹¥Ñ½È5½¹½Á•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œ¸¨()%˜å½×ŠeÙ”…±É•…‘äÉ•…½ÕÈÕ¥‘”Ñ¼­•ä5½¹½µ•ÑÉ¥Ì¥¸A…ÉĞ€Ä½˜Ñ¡¥ÌÍ•É¥•Ì°å½×ŠeÙ”Í••¸Ñ¡…Ğ5½¹½ÁÉ½Ù¥‘•Ì„Ù…ÍĞ…ÉÉ…ä½˜µ•ÑÉ¥Ì½¸Á•É™½Éµ…¹”…¹É•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸¸Q¡¥ÌÁ½ÍĞ½Ù•ÉÌÑ¡”‘¥™™•É•¹Ğ½ÁÑ¥½¹Ì™½È½±±•Ñ¥¹œ5½¹½µ•ÑÉ¥Ì¥¸½É‘•ÈÑ¼µ½¹¥Ñ½ÈÑ¡•´¸Q¡•É”…É”Ñ¡É•”İ…åÌÑ¼½±±•Ğ5½¹½‘µ•ÑÉ¥Ì™É½´å½ÕÈ¡½ÍÑÌè((((´€€UÍ¥¹œmÕÑ¥±¥Ñ¥•Ít ÕÑ¥±¥Ñ¥•Ì¤½™™•É•‰ä5½¹½Ñ¼½±±•ĞÉ•…°µÑ¥µ”…Ñ¥Ù¥ÑäÍÑ…Ñ¥ÍÑ¥Ì(´€€UÍ¥¹œm‘…Ñ…‰…Í”½µµ…¹‘Ít ½µµ…¹‘Ì¤Ñ¼¡•¬Ñ¡”‘…Ñ…‰…Í—ŠeÌÕÉÉ•¹ĞÍÑ…Ñ”(´€€UÍ¥¹œ„‘•‘¥…Ñ•mµ½¹¥Ñ½É¥¹œÑ½½±t ÁÉ½‘ÕÑ¥½¸µµ½¹¥Ñ½É¥¹œ¤™½Èµ½É”…‘Ù…¹•µ½¹¥Ñ½É¥¹œ™•…ÑÕÉ•Ì…¹É…Á¡¥¹œ…Á…‰¥±¥Ñ¥•Ì°İ¡¥ …É”•ÍÍ•¹Ñ¥…°™½È‘…Ñ…‰…Í•ÌÉÕ¹¹¥¹œ¥¸ÁÉ½‘ÕÑ¥½¸((()UÑ¥±¥Ñ¥•Ì(´´´´´´´´´(()UÑ¥±¥Ñ¥•ÌÁÉ½Ù¥‘”É•…°µÑ¥µ”ÍÑ…Ñ¥ÍÑ¥Ì½¸Ñ¡”ÕÉÉ•¹Ğ…Ñ¥Ù¥Ñä½˜å½ÕÈ5½¹½±ÕÍÑ•È¸Q¡•ä…¸‰”ÕÍ•™Õ°™½È…¡½Œ¡•­Ì°‰ÕĞÑ¼•Ğ…Ñ¥½¹…‰±”¥¹Í¥¡ÑÌ…¹µ½É”…‘Ù…¹•µ½¹¥Ñ½É¥¹œ™•…ÑÕÉ•Ì°å½ÔÍ¡½Õ±¡•¬Ñ¡”±…ÍĞÍ•Ñ¥½¸…‰½ÕĞ‘•‘¥…Ñ•µ½¹¥Ñ½É¥¹œÑ½½±Ì¸()Q¡”Ñİ¼µ…¥¸ÕÑ¥±¥Ñ¥•Ì±¥¹”…É”€¨©µ½¹½ÍÑ…Ğ¨¨…¹€¨©µ½¹½Ñ½À¨¨¸((ŒŒŒµ½¹½ÍÑ…Ğ(((¨©µ½¹½ÍÑ…Ğ¨¨¥ÌÑ¡”µ½ÍĞÁ½İ•É™Õ°ÕÑ¥±¥Ñä¸%ĞÉ•Á½ÉÑÌÉ•…°µÑ¥µ”ÍÑ…Ñ¥ÍÑ¥Ì…‰½ÕĞ½¹¹•Ñ¥½¹Ì°¥¹Í•ÉÑÌ°ÅÕ•É¥•Ì°ÕÁ‘…Ñ•Ì°‘•±•Ñ•Ì°ÅÕ•Õ•É•…‘Ì…¹İÉ¥Ñ•Ì°™±ÕÍ¡•Ì°µ•µ½ÉäÕÍ…”°Á…”™…Õ±ÑÌ°…¹µÕ µ½É”¸%Ğ…¸‰”ÕÍ•™Õ°Ñ¼ÅÕ¥­±äÍÁ½Ğµ¡•¬‘…Ñ…‰…Í”…Ñ¥Ù¥Ñä°Í•”¥˜Ù…±Õ•Ì…É”¹½Ğ…‰¹½Éµ…±±ä¡¥ °…¹µ…­”ÍÕÉ”å½Ô¡…Ù”•¹½Õ …Á…¥Ñä¸()!½İ•Ù•È€¨©µ½¹½ÍÑ…Ğ¨¨‘½•Ì¹½ĞÁÉ½Ù¥‘”¥¹Í¥¡ÑÌ½¸µ•ÑÉ¥Ì…‰½ÕĞI•Á±¥…Ñ¥½¸…¹½Á±½œ°ÕÉÍ½ÉÌ°ÍÑ½É…”°É•Í½ÕÉ”Í…ÑÕÉ…Ñ¥½¸°…ÍÍ•ÉÑÌ°½È¡½ÍĞµ±•Ù•°µ•ÑÉ¥Ì¸€¨©µ½¹½ÍÑ…Ğ¨¨É•ÑÕÉ¹Ì…¡”ÍÑ…Ñ¥ÍÑ¥Ì½¹±ä¥˜å½ÔÕÍ”Ñ¡”]¥É•‘Q¥•ÈÍÑ½É…”•¹¥¹”¸()íìğ¥µœÍÉŒô‰µ½¹½ÍÑ…Ğ¹Á¹œˆ…±Ğô‰µ½¹½‘ˆµ•ÑÉ¥Ìµ½¹½ÍÑ…ĞˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()e½Ô…¸™¥¹¥¸Ñ¡”m5½¹½‘½Õµ•¹Ñ…Ñ¥½¹t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½ÁÉ½É…´½µ½¹½ÍÑ…Ğ¼‰¥¸¹µ½¹½ÍÑ…Ğ¤Ñ¡”µ•…¹¥¹œ½˜mÑ¡”‘¥™™•É•¹Ğ™¥•±‘Ít¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½ÁÉ½É…´½µ½¹½ÍÑ…Ğ¼™¥•±‘Ì¤É•ÑÕÉ¹•‰äµ½¹½ÍÑ…Ğ…±½¹œİ¥Ñ Ñ¡”…Ù…¥±…‰±”m½ÁÑ¥½¹Ít¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½ÁÉ½É…´½µ½¹½ÍÑ…Ğ¼½ÁÑ¥½¹Ì¤¸()µ½¹½ÍÑ…ĞÉ•±¥•Ì½¸Ñ¡”‘ˆ¹Í•ÉÙ•ÉMÑ…ÑÕÌ ¥€½µµ…¹€¡mÍ•”‰•±½İt ½µµ…¹‘Ì¤¤¸()9=QèAÉ¥½ÈÙ•ÉÍ¥½¸€Ì¸È°5½¹½½™™•É•…¸!QQ@½¹Í½±”‘¥ÍÁ±…å¥¹œµ½¹¥Ñ½É¥¹œÍÑ…Ñ¥ÍÑ¥Ì½¸„İ•ˆÁ…”°‰ÕĞÑ¡¥Ì¡…Ì‰••¸‘•ÁÉ•…Ñ•Í¥¹”ØÌ¸È¸((ŒŒŒµ½¹½Ñ½À(((¨©µ½¹½Ñ½À¨¨É•ÑÕÉ¹ÌÑ¡”…µ½Õ¹Ğ½˜Ñ¥µ”„5½¹½¥¹ÍÑ…¹”ÍÁ•¹‘ÌÁ•É™½Éµ¥¹œÉ•……¹İÉ¥Ñ”½Á•É…Ñ¥½¹Ì¸%Ğ¥Ì‰É½­•¸‘½İ¸‰ä½±±•Ñ¥½¸€¡¹…µ•ÍÁ…”¤¸Q¡¥Ì…±±½İÌå½ÔÑ¼µ…­”ÍÕÉ”Ñ¡•É”¥Ì¹¼Õ¹•áÁ•Ñ•…Ñ¥Ù¥Ñä…¹Í•”İ¡•É”É•Í½ÕÉ•Ì…É”½¹ÍÕµ•¸±°…Ñ¥Ù”¹…µ•ÍÁ…•Ì…É”É•Á½ÉÑ•¸()íìğ¥µœÍÉŒô‰µ½¹½Ñ½À¹Á¹œˆ…±Ğô‰µ½¹½‘ˆµ•ÑÉ¥Ìµ½¹½Ñ½ÀˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()	ä‘•™…Õ±Ğ°Ù…±Õ•Ì…É”ÁÉ¥¹Ñ••Ù•ÉäÍ•½¹‰ÕĞå½Ô…¸ÍÁ•¥™äÑ¡”™É•ÅÕ•¹ä¸½È•á…µÁ±”¥˜å½Ôİ…¹Ğ¥ĞÑ¼É•ÑÕÉ¸•Ù•Éä€ÈÀÍ•½¹‘Ì°å½Ô…¸ÉÕ¸µ½¹½Ñ½À€ÈÀ¸5…¹ä½Ñ¡•Èm½ÁÑ¥½¹Ít¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½ÁÉ½É…´½µ½¹½Ñ½À¼½ÁÑ¥½¹Ì¤…É”…Ù…¥±…‰±”…Ìİ•±°¸()UÑ¥±¥Ñ¥•Ì…É”É•…Ğ™½ÈÅÕ¥¬¡•­Ì…¹…¡½Œ¥¹Ù•ÍÑ¥…Ñ¥½¹Ì°‰ÕĞ™½Èµ½É”‘•Ñ…¥±•¥¹Í¥¡ÑÌ¥¹Ñ¼Ñ¡”¡•…±Ñ …¹Á•É™½Éµ…¹”½˜å½ÕÈ‘…Ñ…‰…Í”°•áÁ±½É”5½¹½½µµ…¹‘Ì‘¥ÍÕÍÍ•¥¸Ñ¡”¹•áĞÍ•Ñ¥½¸¸()½µµ…¹‘Ì(´´´´´´´´(()5½¹½ÁÉ½Ù¥‘•ÌÍ•Ù•É…°½µµ…¹‘ÌÑ¡…Ğ…¸‰”ÕÍ•Ñ¼½±±•ĞÑ¡”‘¥™™•É•¹Ğµ•ÑÉ¥Ì™É½´å½ÕÈ‘…Ñ…‰…Í”ÁÉ•Í•¹Ñ•¥¸mA…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤¸!•É”…É”Ñ¡”µ½ÍĞÕÍ•™Õ°½¹•Ì¸((ŒŒŒÍ•ÉÙ•ÉMÑ…ÑÕÌ(((¨©Í•ÉÙ•ÉMÑ…ÑÕÌ¨¨€¡‘ˆ¹Í•ÉÙ•ÉMÑ…ÑÕÌ ¥€¥˜ÉÕ¸™É½´Ñ¡”µ½¹¼Í¡•±°¤¥ÌÑ¡”µ½ÍĞ½µÁ±•Ñ”¹…Ñ¥Ù”µ•ÑÉ¥Ìµ…Ñ¡•É¥¹œ½µµ…¹™½È5½¹½¸%ĞÁÉ½Ù¥‘•Ì„‘½Õµ•¹Ğİ¥Ñ ÍÑ…Ñ¥ÍÑ¥Ì™É½´µ½ÍĞ½˜Ñ¡”­•äµ•ÑÉ¥Ì…Ñ•½É¥•Ìİ”Ñ…±­•…‰½ÕĞ¥¸mA…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤è½¹¹•Ñ¥½¹Ì°½Á•É…Ñ¥½¹Ì°©½ÕÉ¹…±¥¹œ°‰…­É½Õ¹™±ÕÍ¡¥¹œ°±½­¥¹œ°ÕÉÍ½ÉÌ°µ•µ½Éä°…ÍÍ•ÉÑÌ°•ÑŒ¸e½Ô…¸™¥¹Ñ¡”™Õ±°±¥ÍĞ½˜µ•ÑÉ¥Ì¥Ğ…¸É•ÑÕÉ¸m¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½µµ…¹½Í•ÉÙ•ÉMÑ…ÑÕÌ¼½ÕÑÁÕĞ¤¸()Q¡¥Ì½µµ…¹¥ÌÕÍ•‰äµ½ÍĞmÑ¡¥ÉÁ…ÉÑäµ½¹¥Ñ½É¥¹œÑ½½±Ít ÁÉ½‘ÕÑ¥½¸µµ½¹¥Ñ½É¥¹œ¤Ñ¼½±±•Ğ5½¹½µ•ÑÉ¥Ì…±½¹œİ¥Ñ Ñ¡”‘‰MÑ…ÑÌ…¹É•Á±M•Ñ•ÑMÑ…ÑÕÌ½µµ…¹‘ÌÑ¡…Ğ…É”ÍÑ¥±°¹••ÍÍ…ÉäÑ¼½±±•ĞÍÑ½É…”µ•ÑÉ¥Ì…¹ÍÑ…Ñ¥ÍÑ¥Ì…‰½ÕĞå½ÕÈÉ•Á±¥„Í•ÑÌ€¡Í•”¹•áĞÁ…É…É…Á¡Ì¤¸((ŒŒŒ‘‰MÑ…ÑÌ(((¨©‘‰MÑ…ÑÌ¨¨€¡‘ˆ¹ÍÑ…ÑÌ ¥€¥¸Ñ¡”µ½¹¼Í¡•±°¤ÁÉ½Ù¥‘•Ìµ•ÑÉ¥Ì…‰½ÕĞÍÑ½É…”ÕÍ…”½˜Ñ¡”‘…Ñ…‰…Í”è¹Õµ‰•È½˜½‰©•ÑÌ°½Èµ•µ½ÉäÑ…­•¸‰ä‘½Õµ•¹ÑÌ…¹Á…‘‘¥¹œ¥¸Ñ¡”‘…Ñ…‰…Í”€¡Í•”µ•µ½Éäµ•ÑÉ¥Ì¥¸mA…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤½˜Ñ¡¥ÌÍ•É¥•Ì¤¸m!•É•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½µµ…¹½‘‰MÑ…ÑÌ¼½ÕÑÁÕĞ¤¥ÌÑ¡”™Õ±°±¥ÍĞ½˜µ•ÑÉ¥Ì¥ĞÉ•ÑÕÉ¹Ì¸((ŒŒŒ½±±MÑ…ÑÌ(((¨©½±±MÑ…ÑÌ¨¨€¡‘ˆ¹½±±•Ñ¥½¸¹ÍÑ…ÑÌ ¥€¥¸Ñ¡”Í¡•±°¤É•ÑÕÉ¹Ìµ•ÑÉ¥ÌÍ¥µ¥±…ÈÑ¼Ñ¡”‘‰MÑ…ÑÌ½ÕÑÁÕĞ‰ÕĞƒ
-™½È„ÍÁ•¥™¥•½±±•Ñ¥½¸èÍ¥é”½˜„½±±•Ñ¥½¸°¹Õµ‰•È½˜½‰©•ÑÌ¥¹Í¥‘”¥Ğ°…Ù•É…”Í¥é”½˜½‰©•ÑÌ°¹Õµ‰•È½˜¥¹‘•á•Ì¥¸Ñ¡”½±±•Ñ¥½¸°•ÑŒ¸M•”Ñ¡”™Õ±°±¥ÍĞm¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½µµ…¹½½±±MÑ…ÑÌ¼½ÕÑÁÕĞ¤¸(+
-€()½È•á…µÁ±”Ñ¡”™½±±½İ¥¹œ½µµ…¹ÉÕ¹Ì½±±MÑ…ÑÌ½¸Ñ¡”ƒŠqµ½Ù¥—Št½±±•Ñ¥½¸°İ¥Ñ „Í…±”½˜€ÄÀÈĞ‰åÑ•Ìè()‘ˆ¹ÉÕ¹½µµ…¹ ì½±±MÑ…ÑÌ€è€‰É•ÍÑ…ÕÉ…¹Ğˆ°Í…±”è€ÄÀÈĞô€¤((ŒŒŒ•ÑI•Á±¥…Ñ¥½¹%¹™¼(()•ÑI•Á±¥…Ñ¥½¹%¹™¼€¡‘ˆ¹ÁÉ¥¹ÑI•Á±¥…Ñ¥½¹%¹™¼ ¥€¥¸Ñ¡”Í¡•±°¤É•ÑÕÉ¹Ìµ•ÑÉ¥Ì…‰½ÕĞ½Á±½Ì½˜Ñ¡”‘¥™™•É•¹Ğµ•µ‰•ÉÌ½˜„É•Á±¥„Í•Ğ±¥­”Ñ¡”½Á±½œÍ¥é”½ÈÑ¡”½Á±½œİ¥¹‘½Ü¸M•”Ñ¡”±¥ÍĞ½˜½ÕÑÁÕĞ™¥•±‘Ìm¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½µ•Ñ¡½½‘ˆ¹ÁÉ¥¹ÑI•Á±¥…Ñ¥½¹%¹™¼¼½ÕÑÁÕĞµ™¥•±‘Ì¤¸((ŒŒŒÉ•Á±M•Ñ•ÑMÑ…ÑÕÌ(((¨©É•Á±M•Ñ•ÑMÑ…ÑÕÌ¨¨€¡ÉÌ¹ÍÑ…ÑÕÌ ¥€™É½´Ñ¡”Í¡•±°¤É•Á½ÉÑÌµ•ÑÉ¥Ì…‰½ÕĞµ•µ‰•ÉÌ½˜å½ÕÈÉ•Á±¥„Í•ĞèÍÑ…Ñ”°µ•ÑÉ¥ÌÉ•ÅÕ¥É•Ñ¼…±Õ±…Ñ”É•Á±¥…Ñ¥½¸±…œ¸mM•”A…ÉĞ€Åt ½‰±½œ½µ½¹¥Ñ½É¥¹œµµ½¹½‘ˆµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµİ¥É•‘Ñ¥•È¤™½Èµ½É”¥¹™¼…‰½ÕĞÑ¡•Í”µ•ÑÉ¥Ì¸Q¡¥Ì½µµ…¹¥ÌÕÍ•Ñ¼¡•¬Ñ¡”¡•…±Ñ ½˜„É•Á±¥„Í•ÓŠeÌµ•µ‰•ÉÌ…¹µ…­”ÍÕÉ”É•Á±¥…Ñ¥½¸¥Ì½ÉÉ•Ñ±ä½¹™¥ÕÉ•¸e½Ô…¸™¥¹Ñ¡”™Õ±°±¥ÍĞ½˜µ•ÑÉ¥Ì½˜Ñ¡”½ÕÑÁÕĞm¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½µµ…¹½É•Á±M•Ñ•ÑMÑ…ÑÕÌ¼½ÕÑÁÕĞ¤¸((ŒŒŒÍ ¹ÍÑ…ÑÕÌ(()M ¹ÍÑ…ÑÕÌ€¡Í ¹ÍÑ…ÑÕÌ ¥€™É½´Ñ¡”Í¡•±°¤ÁÉ½Ù¥‘•Ìµ•ÑÉ¥Ì…‰½ÕĞÍ¡…É‘¥¹œ½¹™¥ÕÉ…Ñ¥½¸…¹•á¥ÍÑ¥¹œ¡Õ¹­Ì€¡½¹Ñ¥Õ½ÕÌÉ…¹”½˜Í¡…É­•äÙ…±Õ•Ì¥¸„ÍÁ•¥™¥ŒmÍ¡…É‘t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½±½ÍÍ…Éä¼Ñ•É´µÍ¡…É¤¤™½È„Í¡…É‘•±ÕÍÑ•È¸Q¡”™Õ±°±¥ÍĞ½˜µ•ÑÉ¥Ì½˜Ñ¡”½ÕÑÁÕĞ¥Ì…Ù…¥±…‰±”m¡•É•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½µ•Ñ¡½½Í ¹ÍÑ…ÑÕÌ¼½ÕÑÁÕĞµ™¥•±‘Ì¤¸((ŒŒŒ•ÑAÉ½™¥±¥¹MÑ…ÑÕÌ(()•ÑAÉ½™¥±¥¹MÑ…ÑÕÌ€¡‘ˆ¹•ÑAÉ½™¥±¥¹MÑ…ÑÕÌ ¥€¥¸Ñ¡”Í¡•±°¤É•ÑÕÉ¹ÌÑ¡”ÕÉÉ•¹ĞmÁÉ½™¥±•t¡¡ÑÑÁÌè¼½‘½Ì¹µ½¹½‘ˆ¹½´½µ…¹Õ…°½É•™•É•¹”½½µµ…¹½ÁÉ½™¥±”¼‘‰µ¹ÁÉ½™¥±”¤±•Ù•°…¹Ñ¡”‘•™¥¹•Ñ¡É•Í¡½±…‰½Ù”İ¡¥ Ñ¡”ÁÉ½™¥±•È½¹Í¥‘•ÉÌ„ÅÕ•ÉäÍ±½Ü€¡Í±½İ=ÁQ¡É•Í¡½±‘5Ì¤¸()AÉ½‘ÕÑ¥½¸µ½¹¥Ñ½É¥¹œ(´´´´´´´´´´´´´´´´´´´´´(()Q¡”™¥ÉÍĞÑİ¼Í•Ñ¥½¹Ì½˜Ñ¡¥ÌÁ½ÍĞ½Ù•È‰Õ¥±Ğµ¥¸İ…åÌÑ¼µ…¹Õ…±±ä…•ÍÌ5½¹½µ•ÑÉ¥ÌÕÍ¥¹œÍ¥µÁ±”±¥¡Ñİ•¥¡ĞÑ½½±Ì¸½È‘…Ñ…‰…Í•ÌÉÕ¹¹¥¹œ¥¸ÁÉ½‘ÕÑ¥½¸°å½Ôİ¥±°±¥­•±äİ…¹Ğ„µ½É”½µÁÉ•¡•¹Í¥Ù”µ½¹¥Ñ½É¥¹œÍåÍÑ•´Ñ¡…Ğ¥¹•ÍÑÌ5½¹½µ•ÑÉ¥Ì…Ìİ•±°…Ìµ•ÑÉ¥Ì™É½´½Ñ¡•ÈÑ•¡¹½±½¥•Ì¥¸å½ÕÈÍÑ…¬¸((ŒŒŒ5½¹½ŠeÌ½İ¸Ñ½½±Ì(()]¥Ñ m5½¹½¹Ñ•ÉÁÉ¥Í”‘Ù…¹•‘t¡¡ÑÑÁÌè¼½İİÜ¹µ½¹½‘ˆ¹½´½ÁÉ½‘ÕÑÌ½µ½¹½‘ˆµ•¹Ñ•ÉÁÉ¥Í”µ…‘Ù…¹•¤°å½Ôİ¥±°‰”…‰±”Ñ¼½±±•ĞÁ•É™½Éµ…¹”µ•ÑÉ¥Ì°…ÕÑ½µ…Ñ”°…¹‰…­ÕÀå½ÕÈ‘•Á±½åµ•¹ĞÑ¡É½Õ 5½¹½Ìµ…¹…•µ•¹ĞÑ½½±Ìè((((´€€m=ÁÌ5…¹…•Ét¡¡ÑÑÁÌè¼½İİÜ¹µ½¹½‘ˆ¹½´½ÁÉ½‘ÕÑÌ½½ÁÌµµ…¹…•È¤¥ÌÑ¡”•…Í¥•ÍĞİ…äÑ¼µ…¹…”5½¹½™É½´å½ÕÈ½İ¸‘…Ñ„•¹Ñ•È(´€€m±½Õ5…¹…•Ét¡¡ÑÑÁÌè¼½İİÜ¹µ½¹½‘ˆ¹½´½±½Õ¼¤…±±½İÌå½ÔÑ¼µ…¹…”å½ÕÈ5½¹½‘•Á±½åµ•¹ĞÑ¡É½Õ 5½¹½Ì±½ÕÍ•ÉÙ¥”((()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµ±½Õµµ…¹…•È¹Á¹œˆ…±Ğô‰µ½¹½‘ˆµ•ÑÉ¥Ì€´5½¹½±½Õ5…¹…•ÈˆÁ½ÁÕÀô‰ÑÉÕ”ˆ€ùõô()%˜å½Ô¡…Ù”¥Ğ°5½¹½=ÁÌ5…¹…•Èİ¥±°±¥­•±ä‰”å½ÕÈ¼µÑ¼Á±…”Ñ¼Ñ…­”…Ñ¥½¹ÌÑ¼µ½¹¥Ñ½È°ÁÉ•Ù•¹Ğ½ÈÉ•Í½±Ù”5½¹½Á•É™½Éµ…¹”¥ÍÍÕ•Ì¸((ŒŒŒY¥Í¥‰¥±¥Ñä¥¹Ñ¼…±°å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”İ¥Ñ …Ñ…‘½œ(()Ğ…Ñ…‘½œ°İ”İ½É­•İ¥Ñ 5½¹½ŠeÌÑ•…´Ñ¼‘•Ù•±½À„ÍÑÉ½¹œ¥¹Ñ•É…Ñ¥½¸¸UÍ¥¹œ…Ñ…‘½œå½Ô…¸ÍÑ…ÉĞ½±±•Ñ¥¹œ°É…Á¡¥¹œ°…¹µ½¹¥Ñ½É¥¹œ…±°5½¹½µ•ÑÉ¥Ì™É½´å½ÕÈ¥¹ÍÑ…¹•Ìİ¥Ñ „µ¥¹¥µÕ´½˜½Ù•É¡•…°…¹¥µµ•‘¥…Ñ•±ä½ÉÉ•±…Ñ”İ¡…ÓŠeÌ¡…ÁÁ•¹¥¹œ¥¸5½¹½İ¥Ñ Ñ¡”É•ÍĞ½˜å½ÕÈÍÑ…¬()…Ñ…‘½œ½™™•ÉÌ•áÑ•¹‘•µ½¹¥Ñ½É¥¹œ™Õ¹Ñ¥½¹…±¥Ñä°ÍÕ …Ìè((((´€€å¹…µ¥ŒÍ±¥¥¹œ°…É•…Ñ¥½¸°…¹™¥±Ñ•ÉÌ½¸µ•ÑÉ¥Ì(´€€!¥ÍÑ½É¥…°‘…Ñ„…•ÍÌ(´€€‘Ù…¹•…±•ÉÑ¥¹œµ•¡…¹¥ÍµÌ((()íìğ¥µœÍÉŒô‰µ½¹½‘ˆµµ•ÑÉ¥Ì¹Á¹œˆ…±Ğô‰5½¹½…Ñ…‘½œ‘…Í¡‰½…ÉˆÁ½ÁÕÀô‰ÑÉÕ”ˆÍ¥é”ôˆÅàˆ€ùõô()½Èµ½É”‘•Ñ…¥±Ì°¡•¬½ÕĞ½ÕÈÕ¥‘”Ñ¼µ½¹¥Ñ½É¥¹œ5½¹½µ•ÑÉ¥Ìİ¥Ñ …Ñ…‘½œ¥¸Ñ¡”mÑ¡¥É…¹±…ÍĞÁ…ÉĞ½˜Ñ¡¥ÌÍ•É¥•Ít ½‰±½œ½µ½¹¥Ñ½Èµµ½¹½‘ˆµÁ•É™½Éµ…¹”µİ¥Ñ µ‘…Ñ…‘½œ¤¸(+
-€((©M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½µ½¹½‘ˆ½½±±•Ñ¥¹œµµ½¹½‘ˆµµ•ÑÉ¥Ìµ…¹µÍÑ…Ñ¥ÍÑ¥Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¸¨((
+#Collecting MongoDB metrics and statistics 
+*This post is part 2 of a 3-part series about monitoring MongoDB metrics and performance. Part 1 presents the key performance metrics available from MongoDB: there is [one post for the WiredTiger](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) storage engine and [one for MMAPv1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-mmap). In [Part 3](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog) you will discover how to monitor MongoDB performance with Datadog.*
+
+If youâ€™ve already read our guide to key MongoDB metrics in Part 1 of this series, youâ€™ve seen that MongoDB provides a vast array of metrics on performance and resource utilization. This post covers the different options for collecting MongoDB metrics in order to monitor them. There are three ways to collect MongoDB metrics from your hosts:
+
+-   Using [utilities](#utilities) offered by MongoDB to collect real-time activity statistics
+-   Using [database commands](#commands) to check the databaseâ€™s current state
+-   Using a dedicated [monitoring tool](#tools) for more advanced monitoring features and graphing capabilities, which are essential for databases running in production
+
+## Utilities
+
+Utilities provide real-time statistics on the current activity of your MongoDB cluster. They can be useful for ad hoc checks, but to get actionable insights and more advanced monitoring features, you should check the last section about dedicated monitoring tools.
+ The two main utilities line are **mongostat** and **mongotop**.
+
+### mongostat
+
+**mongostat** is the most powerful utility. It reports real-time statistics about connections, inserts, queries, updates, deletes, queued reads and writes, flushes, memory usage, page faults, and much more. It can be useful to quickly spot-check database activity, see if values are not abnormally high, and make sure you have enough capacity.
+
+However **mongostat** does not provide insights on metrics about Replication and oplog, cursors, storage, resource saturation, asserts, or host-level metrics. **mongostat** returns cache statistics only if you use the WiredTiger storage engine.
+ [![mongostat](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongostat.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongostat.png)
+
+You can find in the [MongoDB documentation](https://docs.mongodb.com/manual/reference/program/mongostat/#bin.mongostat) the meaning of [the different fields](https://docs.mongodb.com/manual/reference/program/mongostat/#fields) returned by mongostat along with the available [options](https://docs.mongodb.com/manual/reference/program/mongostat/#options).
+
+mongostat relies on the `db.serverStatus()` command ([see below](#commands)).
+
+NOTE: Prior version 3.2, MongoDB offered an HTTP console displaying monitoring statistics on a web page, but this has been deprecated since v3.2.
+
+### mongotop
+
+**mongotop** returns the amount of time a MongoDB instance spends performing read and write operations. It is broken down by collection (namespace). This allows you to make sure there is no unexpected activity and see where resources are consumed. All active namespaces are reported.
+ [![mongotop](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongotop.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongotop.png)
+
+By default, values are printed every second but you can specify the frequency. For example if you want it to return every 20 seconds, you can run mongotop 20. Many other [options](https://docs.mongodb.com/manual/reference/program/mongotop/#options) are available as well.
+
+Utilities are great for quick checks and ad hoc investigations, but for more detailed insights into the health and performance of your database, explore MongoDB commands discussed in the next section.
+
+## Commands
+
+MongoDB provides several commands that can be used to collect the different metrics from your database presented in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger). Here are the most useful ones.
+
+### serverStatus
+
+**serverStatus** (`db.serverStatus()` if run from the mongo shell) is the most complete native metrics-gathering command for MongoDB. It provides a document with statistics from most of the key MongoDB metrics categories we talked about in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger): connections, operations, journaling, background flushing, locking, cursors, memory, asserts, etc. You can find the full list of metrics it can return [here](https://docs.mongodb.com/manual/reference/command/serverStatus/#output).
+
+This command is used by most [third party monitoring tools](#tools) to collect MongoDB metrics along with the dbStats and replSetGetStatus commands that are still necessary to collect storage metrics and statistics about your replica sets (see next paragraphs).
+
+### dbStats
+
+**dbStats** (`db.stats()` in the mongo shell) provides metrics about storage usage of the database: number of objects, or memory taken by documents and padding in the database (see memory metrics in [Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) of this series). [Here](https://docs.mongodb.com/manual/reference/command/dbStats/#output) is the full list of metrics it returns.
+
+### collStats
+
+**collStats** (`db.collection.stats()` in the shell) returns metrics similar to the dbStats output but for a specified collection: size of a collection, number of objects inside it, average size of objects, number of indexes in the collection, etc. See the full list [here](https://docs.mongodb.com/manual/reference/command/collStats/#output).
+
+Â 
+
+For example the following command runs collStats on the â€œmovieâ€ collection, with a scale of 1024 bytes:
+ db.runCommand( { collStats : â€œrestaurantâ€, scale: 1024 } )
+
+### getReplicationInfo
+
+getReplicationInfo (`db.printReplicationInfo()` in the shell) returns metrics about oplogs of the different members of a replica set like the oplog size or the oplog window. See the list of output fields [here](https://docs.mongodb.com/manual/reference/method/db.printReplicationInfo/#output-fields).
+
+### replSetGetStatus
+
+**replSetGetStatus** (`rs.status()` from the shell) reports metrics about members of your replica set: state, metrics required to calculate replication lag. [See Part 1](https://www.datadoghq.com/blog/monitoring-mongodb-performance-metrics-wiredtiger) for more info about these metrics. This command is used to check the health of a replica setâ€™s members and make sure replication is correctly configured. You can find the full list of metrics of the output [here](https://docs.mongodb.com/manual/reference/command/replSetGetStatus/#output).
+
+### sh.status
+
+Sh.status (`sh.status()` from the shell) provides metrics about sharding configuration and existing chunks (contiguous range of shard key values in a specific [shard](https://docs.mongodb.com/manual/reference/glossary/#term-shard)) for a sharded cluster. The full list of metrics of the output is available [here](https://docs.mongodb.com/manual/reference/method/sh.status/#output-fields).
+
+### getProfilingStatus
+
+getProfilingStatus (`db.getProfilingStatus()` in the shell) returns the current [profile](https://docs.mongodb.com/manual/reference/command/profile/#dbcmd.profile) level and the defined threshold above which the profiler considers a query slow (slowOpThresholdMs).
+
+## Production monitoring
+
+The first two sections of this post cover built-in ways to manually access MongoDB metrics using simple lightweight tools. For databases running in production, you will likely want a more comprehensive monitoring system that ingests MongoDB metrics as well as metrics from other technologies in your stack.
+
+### MongoDBâ€™s own tools
+
+With [MongoDB Enterprise Advanced](https://www.mongodb.com/products/mongodb-enterprise-advanced), you will be able to collect performance metrics, automate, and backup your deployment through MongoDBâ€™s management tools:
+
+-   [Ops Manager](https://www.mongodb.com/products/ops-manager) is the easiest way to manage MongoDB from your own data center
+-   [Cloud Manager](https://www.mongodb.com/cloud/) allows you to manage your MongoDB deployment through MongoDBâ€™s cloud service
+
+[![MongoDB Cloud Manager](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-cloud-manager.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-cloud-manager.png)
+
+If you have it, MongoDB Ops Manager will likely be your go-to place to take actions to monitor, prevent or resolve MongoDB performance issues.
+
+### Visibility into all your infrastructure with Datadog
+
+At Datadog, we worked with MongoDBâ€™s team to develop a strong integration. Using Datadog you can start collecting, graphing, and monitoring all MongoDB metrics from your instances with a minimum of overhead, and immediately correlate whatâ€™s happening in MongoDB with the rest of your stack
+
+Datadog offers extended monitoring functionality, such as:
+
+-   Dynamic slicing, aggregation, and filters on metrics
+-   Historical data access
+-   Advanced alerting mechanisms
+
+[![MongoDB Datadog dashboard](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-05-mongodb/2-collect/mongodb-metrics.png)
+
+For more details, check out our guide to monitoring MongoDB metrics with Datadog in the [third and last part of this series](https://www.datadoghq.com/blog/monitor-mongodb-performance-with-datadog).

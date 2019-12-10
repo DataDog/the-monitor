@@ -1,140 +1,238 @@
-m½±±•Ñ¥¹œµ•ÑÉ¥Ìİ¥Ñ ‰Õ¥±Ğµ¥¸-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½±Ì(((©Q¡¥ÌÁ½ÍĞ½¸-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½±Ì¥ÌA…ÉĞ€Ì½˜„€ĞµÁ…ÉĞÍ•É¥•Ì…‰½ÕĞ-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œ¸mA…ÉĞ€Åt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼¤‘¥ÍÕÍÍ•Ì¡½Ü-Õ‰•É¹•Ñ•Ì¡…¹•Ìå½ÕÈµ½¹¥Ñ½É¥¹œÍÑÉ…Ñ•¥•Ì°mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤•áÁ±½É•Ì-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì…¹•Ù•¹ÑÌå½ÔÍ¡½Õ±µ½¹¥Ñ½È°Ñ¡¥ÌÁ½ÍĞ½Ù•ÉÌÑ¡”‘¥™™•É•¹Ğİ…åÌÑ¼½±±•ĞÑ¡…Ğ‘…Ñ„°…¹mA…ÉĞ€Ñt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµİ¥Ñ µ‘…Ñ…‘½œ¼¤‘•Ñ…¥±Ì¡½ÜÑ¼µ½¹¥Ñ½È-Õ‰•É¹•Ñ•ÌÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œ¸¨()mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤‘¥Ì¥¹Ñ¼Ñ¡”‘¥™™•É•¹Ğ‘…Ñ„å½ÔÍ¡½Õ±ÑÉ…¬Í¼å½Ô…¸ÁÉ½Á•É±äµ½¹¥Ñ½Èå½ÕÈ½¹Ñ…¥¹•È¥¹™É…ÍÑÉÕÑÕÉ”…Ì½É¡•ÍÑÉ…Ñ•‰ä-Õ‰•É¹•Ñ•Ì¸%¸Ñ¡¥ÌÁ½ÍĞå½Ôİ¥±°±•…É¸¡½Üå½Ô…¸µ…¹Õ…±±äÍ•ĞÕÀµ•ÑÉ¥Œ½±±•Ñ¥½¸°ÍÑ½É…”°…¹Ù¥ÍÕ…±¥é…Ñ¥½¸ÕÍ¥¹œ™É•”°½Á•¸Í½ÕÉ”Ñ½½±Ì¸()!…¹‘µ…‘”-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½±Ì(´´´´´´´´´´´´´´´´´´´´´(()íìğ¥µœÍÉŒô‰­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Œµ½±±•Ñ¥½¸¹Á¹œˆ…±Ğô‰­Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Œ½±±•Ñ¥½¸ˆ€ùõô((ŒŒŒ½±±•Ñ¥¹œ…¹ÍÑ½É¥¹œµ•ÑÉ¥Ì™É½´!•…ÁÍÑ•È((ŒŒŒŒ!½Ü!•…ÁÍÑ•È½±±•ÑÌ-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì(()Ì‰É¥•™±ä¥¹ÑÉ½‘Õ•¥¸mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤°m!•…ÁÍÑ•Ét¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•È¤¥Ì™½È¹½ÜÑ¡”¼µÑ¼Í½ÕÉ”™½È‰…Í¥ŒÉ•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸µ•ÑÉ¥Ì…¹•Ù•¹ÑÌ€¡É•……¹•áÁ½Í•‰ämÙ•¹Ñ•Ét¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•È½‰±½ˆ½µ…ÍÑ•È½‘½Ì½½Ù•ÉÙ¥•Ü¹µ¤¤™É½´å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌ¸!•É”¥Ì¡½Ü¥Ğİ½É­Ì¸()=¸•… ¹½‘”°m‘Ù¥Í½Ét¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½½½±”½…‘Ù¥Í½È§
-½±±•ÑÌ‘…Ñ„…‰½ÕĞÉÕ¹¹¥¹œ½¹Ñ…¥¹•ÉÌÑ¡…Ğ!•…ÁÍÑ•ÈÑ¡•¸ÅÕ•É¥•ÌÑ¡É½Õ Ñ¡”¹½‘—ŠeÌm­Õ‰•±•Ñt¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½…‘µ¥¸½­Õ‰•±•Ğ¼¤¸()‘Ù¥Í½È¥Ì…¸½Á•¸Í½ÕÉ”…•¹ĞÑ¡…Ğ¥Ì¥¹Ñ•É…Ñ•¥¹Ñ¼Ñ¡”­Õ‰•±•Ğ½˜„¹½‘”¸%Ğ…ÕÑ½µ…Ñ¥…±±ä‘¥Í½Ù•ÉÌ…±°Ñ¡”½¹Ñ…¥¹•ÉÌÉÕ¹¹¥¹œ°…¹½±±•ÑÌ‘…Ñ„…‰½ÕĞÑ¡•´èAT°µ•µ½Éä°™¥±”ÍåÍÑ•´°¹•Ñİ½É¯Š˜%Ğ…±Í¼½±±•ÑÌ‘…Ñ„…‰½ÕĞ¥ÑÍ•±˜…¹Ñ¡”½­•È‘…•µ½¸¸Q¡”­Õ‰•±•Ğ•áÁ½ÉÑÌÑ¡•Í”‘…Ñ„…¹É”µ•áÁ½Í•ÌÑ¡•´Ù¥„A$¸()!•…ÁÍÑ•ÈÉÕ¹Ì…Ì„Á½½¸-Õ‰•É¹•Ñ•Ì±¥­”…¹ä½Ñ¡•È…ÁÁ±¥…Ñ¥½¸¸%ÑÌÁ½‘¥Í½Ù•ÉÌ…±°Ñ¡”¹½‘•Ì¥¸Ñ¡”Í…µ”±ÕÍÑ•È…¹Ñ¡•¸ÁÕ±±Ìµ•ÑÉ¥Ì™É½´Ñ¡”­Õ‰•±•Ğ½˜•… ¹½‘”°…É•…Ñ•ÌÑ¡•´‰äÁ½…¹±…‰•°°…¹É•Á½ÉÑÌµ•ÑÉ¥ÌÑ¼„-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½°½ÈÍÑ½É…”‰…­•¹¸()íìğ¥µœÍÉŒô‰­Õ‰•É¹•Ñ•Ìµ¡•…ÁÍÑ•È¹Á¹œˆ…±Ğô‰­Õ‰•É¹•Ñ•Ì¡•…ÁÍÑ•ÈˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…ÁÑ¥½¸ô‰!½Ü!•…ÁÍÑ•Èİ½É­Ìˆùõô(((ŒŒŒŒ½¹™¥ÕÉ¥¹œÑ¡”½±±•Ñ¥½¸½˜!•…ÁÍÑ•Èµ•ÑÉ¥Ì)Ù•¸¥˜!•…ÁÍÑ•È¥Ì‘•Í¥¹•Ñ¼‰”…‰±”Ñ¼½±±•Ğ‘…Ñ„™É½´µÕ±Ñ¥Á±”Í½ÕÉ•Ì°Ñ¡”½¹±äÍ½ÕÉ”ÍÕÁÁ½ÉÑ•É¥¡Ğ¹½Ü¥Ì-Õ‰•É¹•Ñ•Ì€¡Ñ¡É½Õ ‘Ù¥Í½È¤¸Q¡¥Ì¡…ÌÑ¼‰”ÍÁ•¥™¥•¥¸Ñ¡”!•…ÁÍÑ•È‘•Á±½åµ•¹ĞÍÁ•Ì…™Ñ•ÈÑ¡”€½¡•…ÁÍÑ•È½µµ…¹İ¥Ñ Ñ¡”™±…œ()€´µÍ½ÕÉ”õ­Õ‰•É¹•Ñ•Ìèñ-U	I9QM}5MQHùlüñ-U	I9QM}=AQ%=9Lùu€€¡Í•”•á…µÁ±”‘•Á±½åµ•¹Ğm‰•±½İt ‘•Á±½å¥¹œµ¡•…ÁÍÑ•È¤¤¸((©=ÁÑ¥½¹Ì¨…É”½ÁÑ¥½¹…°UI0ÅÕ•ÉäÁ…É…µ•Ñ•ÉÌ°Í•Á…É…Ñ•‰ä€˜°Ñ¡…Ğ…¸‰”ÕÍ•Ñ¼Í•Ğ„ÕÍÑ½´½¹™¥ÕÉ…Ñ¥½¸™½È•… €¨©Í½ÕÉ”¨¨İ¥Ñ¡½ÕĞ¡…Ù¥¹œÑ¼…‘¹•Ü™±…ÌÑ¼!•…ÁÍÑ•È™½È•… Í½ÕÉ”¸±Ñ¡½Õ -Õ‰•É¹•Ñ•Ì¥ÌÑ¡”½¹±ä•¹…‰±•Í½ÕÉ”ÑåÁ”ÕÉÉ•¹Ñ±ä°å½Ô…¸¡…Ù”µÕ±Ñ¥Á±”Í½ÕÉ•Ì¥˜å½Ôİ…¹ĞÑ¼½±±•Ğµ•ÑÉ¥Ì™É½´Í•Ù•É…°-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌ¸()e½Ô¹••Ñ¼Í•ÕÉ•±ä½¹¹•Ğ!•…ÁÍÑ•ÈÑ¼Ñ¡”m-Õ‰•É¹•Ñ•ÌA$Í•ÉÙ•Ét¡¡ÑÑÀè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½…‘µ¥¸½­Õ‰”µ…Á¥Í•ÉÙ•È¼¤ÕÍ¥¹œ…¸…ÕÑ¡•¹Ñ¥…Ñ¥½¸Ñ½­•¸°™½Èİ¡¥ ½¹™¥ÕÉ…Ñ¥½¸ÍÑ•ÁÌ…É”‘•Ñ…¥±•m¡•É•t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•È½‰±½ˆ½µ…ÍÑ•È½‘½Ì½Í½ÕÉ”µ½¹™¥ÕÉ…Ñ¥½¸¹µ­Õ‰•É¹•Ñ•Ì¤¸((ŒŒŒŒMÑ½É¥¹œ!•…ÁÍÑ•Èµ•ÑÉ¥Ì(()e½Ô…¸¡½½Í”‰•Ñİ••¸‘¥™™•É•¹Ğ‰…­•¹‘Ì°…±Í¼…±±•€©Í¥¹­Ì¨°Ñ¼ÍÑ½É”Ñ¡”µ•ÑÉ¥Ì•áÁ½Í•‰ä!•…ÁÍÑ•È¸Q¡”‰…­•¹å½ÔÍ•±•Ğ¡…ÌÑ¼‰”ÍÁ•¥™¥•¥¸Ñ¡”!•…ÁÍÑ•È‘•Á±½åµ•¹ĞÍÁ•Ì…™Ñ•ÈÑ¡”€½¡•…ÁÍÑ•È½µµ…¹İ¥Ñ „™±…œ½˜Ñ¡”™½±±½İ¥¹œ™½Éµ…Ğ()€´µÍ¥¹¬õ‰…­•¹‘¹…µ”èñ=9%ùlüñ=AQ%=9Lùu€€¡Í•”•á…µÁ±”‘•Á±½åµ•¹Ğm‰•±½İt ‘•Á±½å¥¹œµ¡•…ÁÍÑ•È¤¤¸()Ìİ¥Ñ µ•ÑÉ¥ŒÍ½ÕÉ•Ì°€©½ÁÑ¥½¹Ì¨…É”½ÁÑ¥½¹…°UI0ÅÕ•ÉäÁ…É…µ•Ñ•ÉÌÍ•Á…É…Ñ•‰ä€˜¸Q¡•Í”Á…É…µ•Ñ•ÉÌ…±±½Üå½ÔÑ¼Í•ĞÕÍÑ½´½¹™¥ÕÉ…Ñ¥½¸½ÁÑ¥½¹Ì™½È•… Í¥¹¬¸()!•…ÁÍÑ•È¥ÌÍ•ĞÕÀÑ¼mÕÍ”%¹™±Õá	t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•È½‰±½ˆ½µ…ÍÑ•È½‘½Ì½¥¹™±Õá‘ˆ¹µ¤…ÌÍÑ½É…”‰…­•¹‰ä‘•™…Õ±Ğ°‰ÕĞå½Ôİ¥±°™¥¹m¡•É•t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•È½‰±½ˆ½µ…ÍÑ•È½‘½Ì½Í¥¹¬µ½¹™¥ÕÉ…Ñ¥½¸¹µ¤Ñ¡”±¥ÍĞ½˜…±°Ñ¡”ÕÉÉ•¹ĞÍ¥¹¬ÑåÁ•ÌÍÕÁÁ½ÉÑ•‰ä!•…ÁÍÑ•È°¥¹±Õ‘¥¹œm-…™­…t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­…™­„µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤…¹“
-m±…ÍÑ¥Í•…É¡t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½Èµ•±…ÍÑ¥Í•…É µÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼¤°…¹¡½ÜÑ¼½¹™¥ÕÉ”Ñ¡•´¸()e½Ô…¸ÍÑ½É”‘…Ñ„¥¸µÕ±Ñ¥Á±”Í¥¹¬ÑåÁ•Ì…ĞÑ¡”Í…µ”Ñ¥µ”¸e½Ôİ½Õ±¹••Ñ¼ÕÍ”„Í•Á…É…Ñ”€´µÍ¥¹¬ô¸¸¹€™±…œ™½È•… Í¥¹¬ÑåÁ”°…ÁÁ•¹‘¥¹œÑ¡”½ÁÑ¥½¹Ì™½È…±°Ñ¡”Í¥¹­Ì½˜Ñ¡…ĞÑåÁ”¸((((ŒŒŒŒ•Á±½å¥¹œ!•…ÁÍÑ•È(()Q¼‘•Á±½ä!•…ÁÍÑ•Èå½Ôİ¥±°¹••Ñ¼É•…Ñ”Ñ¡”-Õ‰•É¹•Ñ•ÌÉ•Í½ÕÉ•Ì‘•ÍÉ¥‰•m¡•É•t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•È½ÑÉ•”½µ…ÍÑ•È½‘•Á±½ä½­Õ‰”µ½¹™¥œ¤‘•Á•¹‘¥¹œ½¸Ñ¡”‰…­•¹å½Ôİ…¹ĞÑ¼ÕÍ”¸()½È•á…µÁ±”İ¥Ñ ¥¹™±Õá‘ˆ°¡•É”¥ÌÑ¡”!•…ÁÍÑ•ÈÍ•ÉÙ¥”‘•™¥¹¥Ñ¥½¸è(((€€€…Á¥Y•ÉÍ¥½¸èØÄ((€€€€€­¥¹èM•ÉÙ¥”((€€€€€µ•Ñ…‘…Ñ„è((€€€€€€ƒ
-±…‰•±Ìè((€€€€€€ƒ
-ƒ
-ƒ
-Ñ…Í¬èµ½¹¥Ñ½É¥¹œ((€€€€€€ƒ
-ƒ
-ƒ
-€Œ½ÈÕÍ”…Ì„±ÕÍÑ•È…‘µ½¸€¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½­Õ‰•É¹•Ñ•Ì½ÑÉ•”½µ…ÍÑ•È½±ÕÍÑ•È½…‘‘½¹Ì¤((€€€€€€ƒ
-ƒ
-ƒ
-€Œ%˜å½Ô…É”9=PÕÍ¥¹œÑ¡¥Ì…Ì…¸…‘‘½¸°å½ÔÍ¡½Õ±½µµ•¹Ğ½ÕĞÑ¡¥Ì±¥¹”¸((€€€€€€ƒ
-ƒ
-ƒ
-­Õ‰•É¹•Ñ•Ì¹¥¼½±ÕÍÑ•ÈµÍ•ÉÙ¥”è€ÑÉÕ”œ((€€€€€€ƒ
-ƒ
-ƒ
-­Õ‰•É¹•Ñ•Ì¹¥¼½¹…µ”è!•…ÁÍÑ•È((€€€€€€ƒ
-¹…µ”è¡•…ÁÍÑ•È((€€€€€€ƒ
-¹…µ•ÍÁ…”è­Õ‰”µÍåÍÑ•´((€€€€€ÍÁ•Œè((€€€€€€ƒ
-Á½ÉÑÌè((€€€€€€ƒ
-€´Á½ÉĞè€àÀ((€€€€€€ƒ
-ƒ
-ƒ
-Ñ…É•ÑA½ÉĞè€àÀàÈ((€€€€€€ƒ
-Í•±•Ñ½Èè((€€€€€€ƒ
-ƒ
-ƒ
-¬áÌµ…ÁÀè¡•…ÁÍÑ•È(()¹¡•É”…¸•á…µÁ±”½˜„!•…ÁÍÑ•È‘•Á±½åµ•¹Ğ‘•™¥¹¥Ñ¥½¸è((€€€…Á¥Y•ÉÍ¥½¸è•áÑ•¹Í¥½¹Ì½ØÅ‰•Ñ„Ä((€€€€€­¥¹è•Á±½åµ•¹Ğ((€€€€€µ•Ñ…‘…Ñ„è((€€€€€€ƒ
-¹…µ”è¡•…ÁÍÑ•È((€€€€€€ƒ
-¹…µ•ÍÁ…”è­Õ‰”µÍåÍÑ•´((€€€€€ÍÁ•Œè((€€€€€€ƒ
-É•Á±¥…Ìè€Ä((€€€€€€ƒ
-Ñ•µÁ±…Ñ”è((€€€€€€ƒ
-ƒ
-ƒ
-µ•Ñ…‘…Ñ„è((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-±…‰•±Ìè((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-Ñ…Í¬èµ½¹¥Ñ½É¥¹œ((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-¬áÌµ…ÁÀè¡•…ÁÍÑ•È((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-Ù•ÉÍ¥½¸èØØ((€€€€€€ƒ
-ƒ
-ƒ
-ÍÁ•Œè((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-½¹Ñ…¥¹•ÉÌè((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-€´¹…µ”è¡•…ÁÍÑ•È((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-¥µ…”è­Õ‰•É¹•Ñ•Ì½¡•…ÁÍÑ•ÈéØÄ¸Ì¸ÄÀ((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-¥µ…•AÕ±±A½±¥äè±İ…åÌ((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-½µµ…¹è((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-€´€½¡•…ÁÍÑ•È((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-€´€´µÍ½ÕÉ”õ­Õ‰•É¹•Ñ•Ìé¡ÑÑÁÌè¼½­Õ‰•É¹•Ñ•Ì¹‘•™…Õ±Ğ((€€€€€€ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-ƒ
-€´€´µÍ¥¹¬õ¥¹™±Õá‘ˆé¡ÑÑÀè¼½µ½¹¥Ñ½É¥¹œµ¥¹™±Õá‘ˆèàÀàØ(()e½ÕÈÍ¥¹¬…¹É…Á¡¥¹œÑ½½°İ¥±°É•ÅÕ¥É”Í¥µ¥±…ÈÍ•ÉÙ¥”…¹‘•Á±½åµ•¹Ğ‘•™¥¹¥Ñ¥½¹ÌÍ¥¹”Ñ¡•ä…É”ÉÕ¹¹¥¹œ¥¸Á½‘Ì¸((ŒŒŒ‘‘¥¹œ­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì)l¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨©t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¤¥Ì„Í•ÉÙ¥”Ñ¡…ĞÁÉ½Ù¥‘•Ì…‘‘¥Ñ¥½¹…°µ•ÑÉ¥ÌÑ¡…Ğ!•…ÁÍÑ•È‘½•Ì¹½Ğ¸!•…ÁÍÑ•È•áÁ½Í•Ìµ•ÑÉ¥Ì…‰½ÕĞÑ¡”É•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸½˜½µÁ½¹•¹ÑÌÍÕ …ÌAT°µ•µ½Éä°½È¹•Ñİ½É¬¸€¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨¨°½¸Ñ¡”½Ñ¡•È¡…¹°±¥ÍÑ•¹ÌÑ¼Ñ¡”-Õ‰•É¹•Ñ•ÌA$…¹•¹•É…Ñ•Ìµ•ÑÉ¥Ì…‰½ÕĞÑ¡”ÍÑ…Ñ”½˜-Õ‰•É¹•Ñ•Ì±½¥…°½‰©•ÑÌè¹½‘”ÍÑ…ÑÕÌ°¹½‘”…Á…¥Ñä€¡AT…¹µ•µ½Éä¤°¹Õµ‰•È½˜‘•Í¥É•½…Ù…¥±…‰±”½Õ¹…Ù…¥±…‰±”½ÕÁ‘…Ñ•É•Á±¥…ÌÁ•È‘•Á±½åµ•¹Ğ°Á½ÍÑ…ÑÕÌ€¡”¹œ¸İ…¥Ñ¥¹œ°ÉÕ¹¹¥¹œ°É•…‘ä¤°…¹Í¼½¸¸()m!•É•t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¤…É”…±°Ñ¡”µ•ÑÉ¥Ì…Ù…¥±…‰±”™É½´€¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨¨°İ¡¥ İ½É­Ì½¹±äİ¥Ñ -Õ‰•É¹•Ñ•ÌÙ•ÉÍ¥½¸€Ä¸È½È±…Ñ•È¸()9½Ñ”Ñ¡…ĞÑ¡”İ…ä¥Ğİ½É­ÌÕ¹‘•ÈÑ¡”¡½½¥Ì‘¥™™•É•¹Ğ™É½´!•…ÁÍÑ•È°İ¡¥ ¥Ì½¹±ä…¸¥¹Ñ•Éµ•‘¥…ÉäÑ¡…ĞÉ•™½Éµ…ÑÌ…¹•áÁ½Í•Ìµ•ÑÉ¥Ì…±É•…‘ä•¹•É…Ñ•‰ä-Õ‰•É¹•Ñ•Ì°İ¡•É•…Ì€¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨¨•¹•É…Ñ•ÌÑ¡”µ•ÑÉ¥Ì¥ÑÍ•±˜¸((ŒŒŒŒ½±±•Ñ¥¹œµ•ÑÉ¥Ì™É½´­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì(((¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨¨µ•ÑÉ¥Ì…¸‰”½±±•Ñ•™É½´Ñ¡”­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥ÌA$¥¸Á±…¥¹Ñ•áĞ½ÈmÁÉ½Ñ½‰Õ™t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½½½±”½ÁÉ½Ñ½‰Õ˜¤™½Éµ…Ğ¸Q¡•ä…¸‰”¥¹•ÍÑ•‰ä„-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½°…Á…‰±”½˜Á…ÉÍ¥¹œÑ¡¥Ì‘…Ñ„¸Q½½±Ì…¸…±Í¼¥¹Ñ•É…Ñ”İ¥Ñ Ñ¡”mAÉ½µ•Ñ¡•ÕÌ¼±¥•¹Ñt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÁÉ½µ•Ñ¡•ÕÌ½±¥•¹Ñ}½±…¹œ¤…¹¥ÑÌ!QQ@•¹‘Á½¥¹Ğ¸((¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨¨…¸‰”‘•Á±½å•±¥­”„±…ÍÍ¥Œ-Õ‰•É¹•Ñ•ÌÍ•ÉÙ¥”İ¥Ñ ½¹±ä½¹”É•Á±¥„¸()e½Ô…¸‰Õ¥±Ñ¡”½¹Ñ…¥¹•È¥µ…”‰äÉÕ¹¹¥¹œ5…­”½¹Ñ…¥¹•É€™É½´Ñ¡”m­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥ÌÉ½½Ğ™½±‘•Ét¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½­Õ‰•É¹•Ñ•Ì½­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¤¸()Q¡•¸å½Ô…¸‰Õ¥±…¹ÉÕ¸¥Ğ¥¸„Á½Ñ¡…Ğ¡…ÌÉ•…µ½¹±ä…•ÍÌÑ¼å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•È¸Q¼É•…Ñ”Ñ¡”¹••ÍÍ…Éä-Õ‰•É¹•Ñ•ÌÍ•ÉÙ¥”…¹‘•Á±½åµ•¹Ğ°ÉÕ¸­Õ‰•Ñ°…ÁÁ±ä€µ˜­Õ‰•É¹•Ñ•Í€()!•É”¥ÌÑ¡”Í•ÉÙ¥”É•…Ñ•è((€€€…Á¥Y•ÉÍ¥½¸èØÄ((€€€€€­¥¹èM•ÉÙ¥”((€€€€€µ•Ñ…‘…Ñ„è((€€€€€€ƒ
-…¹¹½Ñ…Ñ¥½¹Ìè((€€€€€€ƒ
-ƒ
-ƒ
-ÁÉ½µ•Ñ¡•ÕÌ¹¥¼½ÍÉ…Á”è€ÑÉÕ”œ((€€€€€€ƒ
-¹…µ”è­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì((€€€€€€ƒ
-±…‰•±Ìè((€€€€€€ƒ
-ƒ
-ƒ
-…ÁÀè­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì((€€€€€ÍÁ•Œè((€€€€€€ƒ
-Á½ÉÑÌè((€€€€€€ƒ
-€´¹…µ”è­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì((€€€€€€ƒ
-ƒ
-ƒ
-Á½ÉĞè€àÀàÀ((€€€€€€ƒ
-ƒ
-ƒ
-ÁÉ½Ñ½½°èQ@((€€€€€€ƒ
-Í•±•Ñ½Èè((€€€€€€ƒ
-ƒ
-ƒ
-…ÁÀè­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì(()9½Ñ”Ñ¡…ĞÑ¡”±¥¹—
-ÁÉ½µ•Ñ¡•ÕÌ¹¥¼½ÍÉ…Á”è€ÑÉÕ”€…±±½İÌAÉ½µ•Ñ¡•ÕÌ½È½Ñ¡•È-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½±ÌÑ¼½±±•Ğ€¨©­Õ‰”µÍÑ…Ñ”µµ•ÑÉ¥Ì¨¨µ•ÑÉ¥Ì…ÌÍ½½¸…ÌÑ¡”‘•Á±½åµ•¹Ğ¥Ì‘½¹”¸((ŒŒŒMÁ½Ğ¡•¬Ù¥„½µµ…¹±¥¹”(()M½µ”µ•ÑÉ¥ÌÍÁ•¥™¥ŒÑ¼-Õ‰•É¹•Ñ•Ì…¸‰”ÍÁ½Ğµ¡•­•Ù¥„Ñ¡”½µµ…¹±¥¹”¸Q¡”µ½ÍĞÕÍ•™Õ°½¹”¥Ìl¨©­Õ‰•Ñ°•Ğ¨©t¡¡ÑÑÁÌè¼½­Õ‰•É¹•Ñ•Ì¹¥¼½‘½Ì½ÕÍ•ÈµÕ¥‘”½­Õ‰•Ñ°µ¡•…ÑÍ¡••Ğ¼Ù¥•İ¥¹œµ™¥¹‘¥¹œµÉ•Í½ÕÉ•Ì¤İ¡¥ …±±½İÌÑ¼‘¥ÍÁ±…äÑ¡”ÍÑ…ÑÕÌ½˜‘¥™™•É•¹Ğ-Õ‰•É¹•Ñ•Ì½‰©•ÑÌ¸½È•á…µÁ±”°¥¸½É‘•ÈÑ¼µ½¹¥Ñ½Èå½ÕÈÁ½‘•Á±½åµ•¹ÑÌ°å½Ô…¸Í•”Ñ¡”¹Õµ‰•ÈÁ½‘Ìl©…Ù…¥±…‰±”¨°€©‘•Í¥É•¨…¹€©ÕÉÉ•¹Ñ±äÉÕ¹¹¥¹œ©t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¼Ñ½ŒµÁ½µ‘•Á±½åµ•¹ÑÌĞ¤İ¥Ñ Ñ¡¥Ì½µµ…¹è(((€€€€­Õ‰•Ñ°•Ğ‘•Á±½åµ•¹ÑÌ(€€€€€95€€€€€€€€€€€€€€M%I€€UII9P€€U@µQ<µQ€€Y%1	1€€(€€€€€¹¥¹àµ‘•Á±½åµ•¹Ğ€€€Ì€€€€€€€€€Ì€€€€€€€€€Ì€€€€€€€€€€€€Ì€€€€€€€€€€€ÄáÌ()½µµ…¹±¥¹”Ñ½½±Ì…É”¹¥”™½ÈÍÁ½Ğµ¡•­¥¹œ‰ÕĞå½Ô½™Ñ•¸İ…¹ĞÑ¼‰”…‰±”Ñ¼ÑÉ…¬Ñ¡”•Ù½±ÕÑ¥½¸½˜Ñ¡•Í”µ•ÑÉ¥Ì½Ù•ÈÑ¥µ”¸½ÉÑÕ¹…Ñ•±äÍ½µ”µ½¹¥Ñ½É¥¹œÑ½½±Ì•¹…‰±”å½ÔÑ¼•…Í¥±äÙ¥ÍÕ…±¥é”Ñ¡¥Ì‘…Ñ„…¹½ÉÉ•±…Ñ”¥Ğİ¥Ñ ½Ñ¡•Èµ•ÑÉ¥ÌÍÕ …ÌÉ•Í½ÕÉ”ÕÑ¥±¥é…Ñ¥½¸¸((ŒŒŒÉ…Á¡¥¹œ-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì(()=¹”å½Ô¡…Ù”µ…¹Õ…±±ä½¹™¥ÕÉ•å½ÕÈµ•ÑÉ¥Œ½±±•Ñ¥½¸…¹ÍÑ½É…”°å½Ô…¸½¹¹•Ğ„‘…Í¡‰½…É‘¥¹œ¥¹Ñ•É™…”ÍÕ …ÌmÉ…™…¹…t¡¡ÑÑÀè¼½É…™…¹„¹½Éœ¼¤€¡ÕÍÕ…±±äÕÍ•¥¸½µ‰¥¹…Ñ¥½¸İ¥Ñ %¹™±Õá™½È!•…ÁÍÑ•Èµ•ÑÉ¥Ì¤Ñ¡…Ğİ¥±°™•Ñ …¹É…Á å½ÕÈµ½¹¥Ñ½É¥¹œ‘…Ñ„¸()]¡•¸İ½É­¥¹œİ¥Ñ !•…ÁÍÑ•Èµ•ÑÉ¥Ì°å½ÕÈÍÑ½É…”‰…­•¹…¹‘…Ñ„Ù¥ÍÕ…±¥é…Ñ¥½¸…ÁÁ±¥…Ñ¥½¸‰½Ñ ¹••Ñ¼ÉÕ¸¥¸Á½‘ÌÑ¡…Ğ•áÁ½Í”Ñ¡•µÍ•±Ù•Ì…Ì-Õ‰•É¹•Ñ•ÌÍ•ÉÙ¥•Ìì½Ñ¡•Éİ¥Í”!•…ÁÍÑ•Èİ½»ŠeĞ‰”…‰±”Ñ¼‘¥Í½Ù•ÈÑ¡•´¸((ŒŒŒ½±±•Ñ¥¹œ½¹Ñ…¥¹•È…¹…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ì(()Ì‘¥ÍÕÍÍ•¥¸A…ÉÑÌlÅt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼¤…¹lÉt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤°ÁÉ½Á•É±äµ½¹¥Ñ½É¥¹œå½ÕÈ½É¡•ÍÑÉ…Ñ•°½¹Ñ…¥¹•É¥é•¥¹™É…ÍÑÉÕÑÕÉ”É•ÅÕ¥É•Ìå½ÔÑ¼½µ‰¥¹”µ•ÑÉ¥Ì°•Ù•¹ÑÌ°…¹±…‰•±Ì™É½´-Õ‰•É¹•Ñ•Ì°å½ÕÈ½¹Ñ…¥¹•ÈÑ•¡¹½±½ä°Ñ¡”…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ¥¸å½ÕÈ½¹Ñ…¥¹•ÉÌ°…¹•Ù•¸Ñ¡”Õ¹‘•É±å¥¹œ¡½ÍÑÌ¸()íìğ¥µœÍÉŒô‰­Õ‰•É¹•Ñ•Ìµ½µÁ½¹•¹Ğµµ½¹¥Ñ½É¥¹œ¹Á¹œˆ…±Ğô‰­Õ‰•É¹•Ñ•Ì½µÁ½¹•¹ÑÌÑ¼µ½¹¥Ñ½Èˆ€ùõô()Q¡…ÓŠeÌİ¡äå½ÕÈ-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½°¹••‘ÌÑ¼ÁÉ½Ù¥‘”Á½İ•É™Õ°½ÉÉ•±…Ñ¥½¸™•…ÑÕÉ•Ì°…Ìİ•±°…ÌÑ¡”…‰¥±¥ÑäÑ¼½±±•Ğµ•ÑÉ¥Ì™É½´…±°½˜Ñ¡•Í”½µÁ½¹•¹ÑÌ¸	•±½Üİ—Še±°½ÕÑ±¥¹”¡½ÜÑ¼‘¼¥ĞÕÍ¥¹œ¹…Ñ¥Ù”…¹½Á•¸Í½ÕÉ”Ñ½½±Ì¸((ŒŒŒŒ½±±•Ñ¥¹œµ•ÑÉ¥Ì™É½´å½ÕÈ½¹Ñ…¥¹•ÈÑ•¡¹½±½ä(()%˜å½Ô¡…Ù”É•…mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤½˜Ñ¡¥ÌÍ•É¥•Ì°å½Ô­¹½ÜÑ¡…Ğå½ÔÍ¡½Õ±™…Ù½ÈÑ¡”ÍÑ…Ñ¥ÍÑ¥Ì¹…Ñ¥Ù•±ä½±±•Ñ•™É½´å½ÕÈ½¹Ñ…¥¹•ÈÑ•¡¹½±½ä™½ÈÉ•Í½ÕÉ”µ•ÑÉ¥ÌÍÕ …ÌATÕÍ…”¥¸½É‘•ÈÑ¼•Ğ…É½Õ¹Ñ¡”Õ¹•ÉÑ…¥¸½±±•Ñ¥½¸¥¹Ñ•ÉÙ…°ÕÍ•‰ä!•…ÁÍÑ•È™½È-Õ‰•É¹•Ñ•Ìµ•ÑÉ¥Ì¸9½Ñ”Ñ¡…Ğ-Õ‰•É¹•Ñ•Ì…ÁÁ±¥•Ì±…‰•±ÌÑ¼½­•Èµ•ÑÉ¥Ì¸()%˜å½Ô…É”ÕÍ¥¹œ½­•È°å½Ôİ¥±°™¥¹‘•Ñ…¥±Ì…‰½ÕĞÑ¡”‘¥™™•É•¹Ğµ•¡…¹¥ÍµÌå½Ô…¸ÕÍ”Ñ¼½±±•Ğ…±°Ñ¡”½­•Èµ•ÑÉ¥Ìå½Ô¹••¥¸m½ÕÈ½­•Èµ½¹¥Ñ½É¥¹œÕ¥‘•t¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¡½ÜµÑ¼µ½±±•Ğµ‘½­•Èµµ•ÑÉ¥Ì¼¤¸((ŒŒŒŒ½±±•Ñ¥¹œ…ÁÁ±¥…Ñ¥½¸µ•ÑÉ¥Ìİ¥Ñ -Õ‰•É¹•Ñ•ÌÕÍÑ½´µ•ÑÉ¥Ì(()I•±å¥¹œ½¹±ä½¸‘Ù¥Í½È…¹!•…ÁÍÑ•ÈÑ¼½±±•Ğµ•ÑÉ¥Ì™É½´å½ÕÈ½¹Ñ…¥¹•É¥é•…ÁÁ±¥…Ñ¥½¸¥ÌÙ•Éä±¥µ¥Ñ¥¹œ¸M¥¹”-Õ‰•É¹•Ñ•Ì€Ä¸È°„¹•Ü™•…ÑÕÉ”€¡ÍÑ¥±°¥¸…±Á¡„¤‘½•Ì…±±½Ü‘Ù¥Í½ÈÑ¼m½±±•ĞÕÍÑ½´µ•ÑÉ¥Ít¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½µİ¥•±ÕÌ½­Õ‰•É¹•Ñ•Ì¹¥Ñ¡Õˆ¹¥¼½‰±½ˆ½ÕÍÑ½´µµ•ÑÉ¥Ì½‘½Ì½ÕÍ•ÈµÕ¥‘”½¡½É¥é½¹Ñ…°µÁ½µ…ÕÑ½Í…±¥¹œ½¥¹‘•à¹µÍÕÁÁ½ÉĞµ™½ÈµÕÍÑ½´µµ•ÑÉ¥Ì¤™É½´…ÁÁ±¥…Ñ¥½¹ÌÉÕ¹¹¥¹œ¥¸½¹Ñ…¥¹•ÉÌ°‰ÕĞ½¹±ä¥˜Ñ¡•Í”µ•ÑÉ¥Ì…É”•áÁ½Í•‰äÁ½‘Ì¥¸Ñ¡”mAÉ½µ•Ñ¡•ÕÌ™½Éµ…Ñt¡¡ÑÑÁÌè¼½ÁÉ½µ•Ñ¡•ÕÌ¹¥¼½‘½Ì½¥¹ÍÑÉÕµ•¹Ñ¥¹œ½•áÁ½Í¥Ñ¥½¹}™½Éµ…ÑÌ¼¤¹…Ñ¥Ù•±ä°İ¡¥ ¥ÌÑ¡”…Í”™½È½¹±äm„™•Ü…ÁÁ±¥…Ñ¥½¹Ít¡¡ÑÑÁÌè¼½ÁÉ½µ•Ñ¡•ÕÌ¹¥¼½‘½Ì½¥¹ÍÑÉÕµ•¹Ñ¥¹œ½•áÁ½ÉÑ•ÉÌ¼‘¥É•Ñ±äµ¥¹ÍÑÉÕµ•¹Ñ•µÍ½™Ñİ…É”¤Ñ½‘…ä¸()M½µ”-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½±Ì…±±½Üå½ÔÑ¼‰åÁ…ÍÌÑ¡”‘Ù¥Í½Èµ!•…ÁÍÑ•È½µ‰¥¹…Ñ¥½¸…¹ÕÍ”AÉ½µ•Ñ¡•ÕÌ‘¥É•Ñ±äÑ¼½±±•Ğ…¹ÍÑ½É”µ•ÑÉ¥Ì¸Q¡”½¹‘¥Ñ¥½¸¥ÌÑ¡…ĞÑ¡•Í”µ•ÑÉ¥Ì¡…Ù”Ñ¼‰”•áÁ½Í•¥¸Ñ¡”AÉ½µ•Ñ¡•ÕÌ™½Éµ…Ğ¸((ŒŒŒŒÉ½ÍÌµ±½Õ±ÕÍÑ•Èµ½¹¥Ñ½É¥¹œ(()M¥¹”-Õ‰•É¹•Ñ•ÌÙ•ÉÍ¥½¸€Ä¸Ì°å½Ô¹½Ü¡…Ù”Ñ¡”…‰¥±¥ÑäÑ¼‘¥ÍÑÉ¥‰ÕÑ”å½ÕÈ-Õ‰•É¹•Ñ•Ì±ÕÍÑ•ÉÌ…É½ÍÌ‘¥™™•É•¹Ğ±½ÕÁÉ½Ù¥‘•ÉÌ¸9½Ñ”Ñ¡…ĞÑ¡¥Ì…¸½µÁ±¥…Ñ”å½ÕÈµ½¹¥Ñ½É¥¹œ°‰•…ÕÍ”•Ù•¸Ñ¡½Õ ÍÑ½É…”‰…­•¹‘ÌÍÕ …Ì%¹™±Õá…±±½Üå½ÔÑ¼ÍÑ½É”µ•ÑÉ¥Ì™É½´µÕ±Ñ¥Á±”±½Õ‘Ì°!•…ÁÍÑ•È‘½•Ì¹½ĞÕÉÉ•¹Ñ±ä½™™•È…¹äİ…äÑ¼…É•…Ñ”Ñ¡•Í”‘…Ñ„¸()AÉ½‘ÕÑ¥½¸µ½¹¥Ñ½É¥¹œİ¥Ñ …Ñ…‘½œ(´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´(()Q¡”™¥ÉÍĞÍ•Ñ¥½¸½˜Ñ¡¥ÌÁ½ÍĞ½ÕÑ±¥¹•Ì¡½Üå½Ô…¸µ…¹Õ…±±ä…•ÍÌÁ•É™½Éµ…¹”‘…Ñ„…‰½ÕĞå½ÕÈ½¹Ñ…¥¹•É¥é•¥¹™É…ÍÑÉÕÑÕÉ”ÕÍ¥¹œ‰Õ¥±Ğµ¥¸…¹½Á•¸Í½ÕÉ”-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½±Ì¸½ÈÁÉ½‘ÕÑ¥½¸¥¹™É…ÍÑÉÕÑÕÉ”°å½Ôİ¥±°±¥­•±äİ…¹Ğ„µ½É”½µÁÉ•¡•¹Í¥Ù”µ½¹¥Ñ½É¥¹œÑ½½°Ñ¡…Ğè((((´€€M•…µ±•ÍÍ±ä¥¹Ñ•É…Ñ•Ìİ¥Ñ -Õ‰•É¹•Ñ•Ì°½­•È°…¹…±°å½ÕÈ½¹Ñ…¥¹•É¥é•…ÁÁ±¥…Ñ¥½¹Ì°Í¼å½Ô…¸Í•”…±°å½ÕÈµ•ÑÉ¥Ì…¹•Ù•¹ÑÌ¥¸½¹”Á±…”(´€€=™™•ÉÌÕÑ½‘¥Í½Ù•ÉäÍ¼å½Ô…¸Í•…µ±•ÍÍ±äµ½¹¥Ñ½Èå½ÕÈµ½Ù¥¹œ…ÁÁ±¥…Ñ¥½¹Ì(´€€…¸‰”Í•ÑÕÀ…¹½¹™¥ÕÉ•ÅÕ¥­±ä(´€€=™™•ÉÌ…‘Ù…¹•µ½¹¥Ñ½É¥¹œ™•…ÑÕÉ•Ì¥¹±Õ‘¥¹œÁ½İ•É™Õ°…±•ÉÑ¥¹œ°m½ÕÑ±¥•Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ½ÕÑ±¥•Èµ‘•Ñ•Ñ¥½¸µ¥¸µ‘…Ñ…‘½œ¼¤…¹m…¹½µ…±åt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµ…¹½µ…±äµ‘•Ñ•Ñ¥½¸µ‘…Ñ…‘½œ¼¤‘•Ñ•Ñ¥½¸°‘å¹…µ¥Œ…É•…Ñ¥½¸ÕÍ¥¹œ±…‰•±Ì…¹Ñ…Ì°…¹½ÉÉ•±…Ñ¥½¸½˜µ•ÑÉ¥Ì…¹•Ù•¹ÑÌ‰•Ñİ••¸ÍåÍÑ•µÌ((()Ğ…Ñ…‘½œ°İ”¡…Ù”İ½É­•¡…ÉÑ¼Í½±Ù”Ñ¡”¹•Ü¡…±±•¹•Ì-Õ‰•É¹•Ñ•Ì‰É¥¹ÌÑ¼µ½¹¥Ñ½É¥¹œ°İ¡¥ İ•É”‘•Ñ…¥±•¥¸mA…ÉĞ€Åt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµ•É„¼¤°¥¹±Õ‘¥¹œmÕÑ½‘¥Í½Ù•Éåt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½…ÕÑ½‘¥Í½Ù•Éäµ‘½­•Èµµ½¹¥Ñ½É¥¹œ¼¤¸…Ñ…‘½œ…ÕÑ½µ…Ñ¥…±±ä½±±•ÑÌ±…‰•±Ì…¹Ñ…Ì™É½´-Õ‰•É¹•Ñ•Ì…¹½­•È°…¹¥¹Ñ•É…Ñ•Ìİ¥Ñ …±°Ñ¡”½µÁ½¹•¹ÑÌÑ¡…Ğ¹••Ñ¼‰”µ½¹¥Ñ½É•¸…Ñ…‘½œ…É•…Ñ•Ì…±°Ñ¡”µ•ÑÉ¥Ìå½Ô¹••°¥¹±Õ‘¥¹œÑ¡”½¹•Ìµ•¹Ñ¥½¹•¥¸mA…ÉĞ€Ét¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•ÌµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ì¤°•Ù•¸¥˜å½ÕÈ±ÕÍÑ•ÉÌ…É”‘¥ÍÑÉ¥‰ÕÑ•…É½ÍÌµÕ±Ñ¥Á±”‘…Ñ„•¹Ñ•ÉÌ½È±½ÕÁÉ½Ù¥‘•ÉÌ¸()Q¡”m¹•áĞ…¹±…ÍĞÁ…ÉÑt¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½µ½¹¥Ñ½É¥¹œµ­Õ‰•É¹•Ñ•Ìµİ¥Ñ µ‘…Ñ…‘½œ¼¤½˜Ñ¡¥ÌÍ•É¥•Ì‘•ÍÉ¥‰•Ì¡½ÜÑ¼ÕÍ”…Ñ…‘½œ…Ìå½ÕÈ-Õ‰•É¹•Ñ•Ìµ½¹¥Ñ½É¥¹œÑ½½°°…¹Í¡½İÌå½Ô¡½ÜÑ¼Í•ĞÕÀÑ¡”¥¹Ñ•É…Ñ¥½¹Ìå½Ô¹••¥¸å½ÕÈ½İ¸•¹Ù¥É½¹µ•¹Ğ¸)}}|(©M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½­Õ‰•É¹•Ñ•Ì½¡½ÜµÑ¼µ½±±•Ğµ…¹µÉ…Á µ­Õ‰•É¹•Ñ•Ìµµ•ÑÉ¥Ì¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¸¨((
+# How to collect and graph Kubernetes metrics
+*This post is Part 3 of a 4-part series about Kubernetes monitoring. [Part 1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/) discusses how Kubernetes changes your monitoring strategies, [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics) explores Kubernetes metrics and events you should monitor, this post covers the different ways to collect that data, and [Part 4](https://www.datadoghq.com/blog/monitoring-kubernetes-with-datadog/) details how to monitor Kubernetes performance with Datadog.*
+
+[Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics) digs into the different data you should track so you can properly monitor your container infrastructure as orchestrated by Kubernetes. In this post you will learn how you can manually set up metric collection, storage, and visualization using free, open source tools.
+
+## The handmade solution
+
+![kubernetes metric collection](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/3/kubernetes-metric-collection.png)
+
+### Collecting and storing metrics from Heapster
+
+#### How Heapster collects Kubernetes metrics
+
+As briefly introduced in [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics), [Heapster](https://github.com/kubernetes/heapster) is for now the go-to source for basic resource utilization metrics and events (read and exposed by [Eventer](https://github.com/kubernetes/heapster/blob/master/docs/overview.md)) from your Kubernetes clusters. Here is how it works.
+
+On each node, [cAdvisor](https://github.com/google/cadvisor) collects data about running containers that Heapster then queries through the nodeâ€™s [kubelet](http://kubernetes.io/docs/admin/kubelet/).
+
+cAdvisor is an open source agent that is integrated into the kubelet of a node. It automatically discovers all the containers running, and collects data about them: CPU, memory, file system, networkâ€¦ It also collects data about itself and the Docker daemon. The kubelet exports these data and re-exposes them via API.
+
+Heapster runs as a pod on Kubernetes like any other application. Its pod discovers all the nodes in the same cluster and then pulls metrics from the kubelet of each node, aggregates them by pod and label, and reports metrics to a monitoring service or storage backend.
+
+[![kubernetes heapster](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/3/kubernetes-heapster.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/3/kubernetes-heapster.png)
+
+*How Heapster works*
+
+#### Configuring the collection of Heapster metrics
+
+Even if Heapster is designed to be able to collect data from multiple sources, the only source supported right now is Kubernetes (through cAdvisor). This has to be specified in the Heapster deployment specs after the /heapster command with the flag
+
+`--source=kubernetes:<KUBERNETES_MASTER>[?<KUBERNETES_OPTIONS>]` (see example deployment [below](#heapster-deploy)).
+
+*Options* are optional URL query parameters, separated by &, that can be used to set a custom configuration for each **source** without having to add new flags to Heapster for each source. Although Kubernetes is the only enabled source type currently, you can have multiple sources if you want to collect metrics from several Kubernetes clusters.
+
+You need to securely connect Heapster to the [Kubernetes API server](http://kubernetes.io/docs/admin/kube-apiserver/) using an authentication token, for which configuration steps are detailed [here](https://github.com/kubernetes/heapster/blob/master/docs/source-configuration.md#kubernetes).
+
+#### Storing Heapster metrics
+
+You can choose between different backends, also called *sinks*, to store the metrics exposed by Heapster. The backend you select has to be specified in the Heapster deployment specs after the /heapster command with a flag of the following format
+ `--sink=backendname:<CONFIG>[?<OPTIONS>]` (see example deployment [below](#heapster-deploy)).
+
+As with metric sources, *options* are optional URL query parameters separated by &. These parameters allow you to set custom configuration options for each sink.
+
+Heapster is set up to [use InfluxDB](https://github.com/kubernetes/heapster/blob/master/docs/influxdb.md) as storage backend by default, but you will find [here](https://github.com/kubernetes/heapster/blob/master/docs/sink-configuration.md) the list of all the current sink types supported by Heapster, including [Kafka](https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/) and [Elasticsearch](https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/), and how to configure them.
+
+You can store data in multiple sink types at the same time. You would need to use a separate `--sink=...` flag for each sink type, appending the options for all the sinks of that type.
+
+#### Deploying Heapster
+
+To deploy Heapster you will need to create the Kubernetes resources described [here](https://github.com/kubernetes/heapster/tree/master/deploy/kube-config) depending on the backend you want to use.
+
+For example with influxdb, here is the Heapster service definition:
+
+    apiVersion: v1
+
+    kind: Service
+
+    metadata:
+
+      labels:
+
+        task: monitoring
+
+        # For use as a Cluster add-on (https://github.com/kubernetes/kubernetes/tree/master/cluster/addons)
+
+        # If you are NOT using this as an addon, you should comment out this line.
+
+        kubernetes.io/cluster-service: 'true'
+
+        kubernetes.io/name: Heapster
+
+      name: heapster
+
+      namespace: kube-system
+
+    spec:
+
+      ports:
+
+      - port: 80
+
+        targetPort: 8082
+
+      selector:
+
+        k8s-app: heapster
+
+And here an example of a Heapster deployment definition:
+
+    apiVersion: extensions/v1beta1
+
+    kind: Deployment
+
+    metadata:
+
+      name: heapster
+
+      namespace: kube-system
+
+    spec:
+
+      replicas: 1
+
+      template:
+
+        metadata:
+
+          labels:
+
+            task: monitoring
+
+            k8s-app: heapster
+
+            version: v6
+
+        spec:
+
+          containers:
+
+          - name: heapster
+
+            image: kubernetes/heapster:v1.3.10
+
+            imagePullPolicy: Always
+
+            command:
+
+            - /heapster
+
+            - --source=kubernetes:https://kubernetes.default
+
+            - --sink=influxdb:http://monitoring-influxdb:8086
+
+Your sink and graphing tool will require similar service and deployment definitions since they are running in pods.
+
+### Adding kube-state-metrics
+
+[**kube-state-metrics**](https://github.com/kubernetes/kube-state-metrics) is a service that provides additional metrics that Heapster does not. Heapster exposes metrics about the resource utilization of components such as CPU, memory, or network. **kube-state-metrics**, on the other hand, listens to the Kubernetes API and generates metrics about the state of Kubernetes logical objects: node status, node capacity (CPU and memory), number of desired/available/unavailable/updated replicas per deployment, pod status (e.g. waiting, running, ready), and so on.
+
+[Here](https://github.com/kubernetes/kube-state-metrics) are all the metrics available from **kube-state-metrics**, which works only with Kubernetes version 1.2 or later.
+
+Note that the way it works under the hood is different from Heapster, which is only an intermediary that reformats and exposes metrics already generated by Kubernetes, whereas **kube-state-metrics** generates the metrics itself.
+
+#### Collecting metrics from kube-state-metrics
+
+**kube-state-metrics** metrics can be collected from the kube-state-metrics API in plaintext or [protobuf](https://github.com/google/protobuf) format. They can be ingested by a monitoring tool capable of parsing this data. Tools can also integrate with the [Prometheus Go client](https://github.com/prometheus/client_golang) and its HTTP endpoint.
+
+**kube-state-metrics** can be deployed like a classic Kubernetes service with only one replica.
+
+You can build the container image by running `Make container` from the [kube-state-metrics root folder](https://github.com/kubernetes/kube-state-metrics).
+
+Then you can build and run it in a pod that has read-only access to your Kubernetes cluster. To create the necessary Kubernetes service and deployment, run `kubectl apply -f kubernetes`
+
+Here is the service created:
+
+    apiVersion: v1
+
+    kind: Service
+
+    metadata:
+
+      annotations:
+
+        prometheus.io/scrape: 'true'
+
+      name: kube-state-metrics
+
+      labels:
+
+        app: kube-state-metrics
+
+    spec:
+
+      ports:
+
+      - name: kube-state-metrics
+
+        port: 8080
+
+        protocol: TCP
+
+      selector:
+
+        app: kube-state-metrics
+
+Note that the line `prometheus.io/scrape: 'true'` allows Prometheus or other parsing tool to collect **kube-state-metrics** metrics as soon as the deployment is done.
+
+### Spot check via command line
+
+Some metrics specific to Kubernetes can be spot-checked via the command line. The most useful one is [**kubectl get**](http://kubernetes.io/docs/user-guide/kubectl/kubectl_get/) which allows to display the status of different Kubernetes objects. For example, in order to monitor your pod deployments, you can see the number pods [*available*, *desired* and *currently running*](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics/#toc-pod-deployments4) with this command:
+
+    $ kubectl get deployments
+    NAME               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+    nginx-deployment   3         3         3            3           18s
+
+Command line tools are nice for spot-checking but you often want to be able to track the evolution of these metrics over time. Fortunately some monitoring tools enable you to easily visualize this data and correlate it with other metrics such as resource utilization.
+
+### Graphing Kubernetes metrics
+
+Once you have manually configured your metric collection and storage, you can connect a dashboarding interface such as [Grafana](http://grafana.org/) (usually used in combination with InfluxDB for Heapster metrics) that will fetch and graph your monitoring data.
+
+When working with Heapster metrics, your storage backend and data visualization application both need to run in pods that expose themselves as Kubernetes services; otherwise Heapster wonâ€™t be able to discover them.
+
+### Collecting container and application metrics
+
+As discussed in Parts [1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/) and [2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics), properly monitoring your orchestrated, containerized infrastructure requires you to combine metrics, events, and labels from Kubernetes, your container technology, the applications running in your containers, and even the underlying hosts.
+
+![kubernetes components to monitor](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-11-kubernetes/3/kubernetes-component-monitoring.png)
+
+Thatâ€™s why your visualization or monitoring tool needs to provide powerful correlation features, as well as the ability to collect metrics from all of these components. Below weâ€™ll outline how to do it using native and open source tools.
+
+#### Metrics from your container technology
+
+If you have read [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics) of this series, you know that you should favor the statistics natively collected from your container technology for resource metrics such as CPU usage in order to get around the uncertain collection interval used by Heapster for Kubernetes metrics. Note that Kubernetes applies labels to Docker metrics.
+
+If you are using Docker, you will find details about the different mechanisms you can use to collect all the Docker metrics you need in [our Docker monitoring guide](https://www.datadoghq.com/blog/how-to-collect-docker-metrics/).
+
+#### Collecting application metrics with Kubernetes custom metrics
+
+Relying only on cAdvisor and Heapster to collect metrics from your containerized application is very limiting. Since Kubernetes 1.2, a new feature (still in alpha) does allow cAdvisor to [collect custom metrics](https://github.com/kubernetes/kubernetes/blob/master/docs/proposals/custom-metrics.md) from applications running in containers, but only if these metrics are exposed by pods in the [Prometheus format](https://prometheus.io/docs/instrumenting/exposition_formats/) natively, which is the case for only [a few applications](https://prometheus.io/docs/instrumenting/exporters/#directly-instrumented-software) today.
+
+Some tools allow you to bypass the cAdvisor-Heapster combination and use Prometheus directly to collect and store metrics. The condition is that these metrics have to be exposed in the Prometheus format.
+
+#### Cross-cloud cluster monitoring
+
+Since Kubernetes version 1.3, you now have the ability to distribute your Kubernetes clusters across different cloud providers. Note that this can complicate your monitoring, because even though storage backends such as InfluxDB allow you to store metrics from multiple clouds, Heapster does not currently offer any way to aggregate these data.
+
+## Production monitoring with Datadog
+
+The first section of this post outlines how you can manually access performance data about your containerized infrastructure using built-in and open source tools. For production infrastructure, you will likely want a more comprehensive monitoring system that:
+
+-   Seamlessly integrates with Kubernetes, Docker, and all your containerized applications, so you can see all your metrics and events in one place
+-   Offers service discovery so you can seamlessly monitor your moving applications
+-   Can be setup and configured quickly
+-   Offers advanced monitoring features including powerful alerting, [outlier](https://www.datadoghq.com/blog/introducing-outlier-detection-in-datadog/) and [anomaly](https://www.datadoghq.com/blog/introducing-anomaly-detection-datadog/) detection, dynamic aggregation using labels and tags, and correlation of metrics and events between systems
+
+At Datadog, we have worked hard to solve the new challenges Kubernetes brings to monitoring, which were detailed in [Part 1](https://www.datadoghq.com/blog/monitoring-kubernetes-era/), including [service discovery](https://www.datadoghq.com/blog/service-discovery-monitoring-docker-containers-move/). Datadog automatically collects labels and tags from Kubernetes and Docker, and integrates with all the components that need to be monitored. Datadog aggregates all the metrics you need, including the ones mentioned in [Part 2](https://www.datadoghq.com/blog/monitoring-kubernetes-performance-metrics), even if your clusters are distributed across multiple data centers or cloud providers.
+
+The [next and last part](https://www.datadoghq.com/blog/monitoring-kubernetes-datadog/) of this series describes how to monitor your Kubernetes-orchestrated infrastructure using Datadog, and shows you how to set up the integrations you need in your own environment.

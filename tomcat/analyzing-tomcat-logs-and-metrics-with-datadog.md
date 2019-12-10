@@ -1,1 +1,214 @@
-m¹…±åé¥¹œQ½µ…Ğ±½Ì…¹µ•ÑÉ¥Ìİ¥Ñ ™¹‰ÍÀí…Ñ…‘½œ(()%¸mA…ÉĞ€ÉumÁ…ÉĞµÑİ¼µ±¥¹­t½˜Ñ¡¥ÌÍ•É¥•Ì°İ”Í¡½İ•å½Ô¡½ÜÑ¼½±±•Ğ­•äQ½µ…ĞÁ•É™½Éµ…¹”µ•ÑÉ¥Ì…¹±½Ìİ¥Ñ ½Á•¸Í½ÕÉ”Ñ½½±Ì¸Q¡•Í”Ñ½½±Ì…É”ÕÍ•™Õ°™½ÈÅÕ¥­±äÙ¥•İ¥¹œ¡•…±Ñ …¹Á•É™½Éµ…¹”‘…Ñ„™É½´Q½µ…Ğ°‰ÕĞ‘½¸ĞÁÉ½Ù¥‘”µÕ ½¹Ñ•áĞ™½È¡½ÜÑ¡½Í”µ•ÑÉ¥Ì…¹±½ÌÉ•±…Ñ”Ñ¼½Ñ¡•È…ÁÁ±¥…Ñ¥½¹Ì½ÈÍåÍÑ•µÌİ¥Ñ¡¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¸()%¸Ñ¡¥ÌÁ½ÍĞ°İ”İ¥±°±½½¬…Ğ¡½Ü…Ñ…‘½œÁÉ½Ù¥‘•Ìµ½É”½µÁÉ•¡•¹Í¥Ù”µ½¹¥Ñ½É¥¹œ™½ÈQ½µ…Ğ…¹½Ñ¡•ÈÑ•¡¹½±½¥•Ì¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°‰ä½¹¹•Ñ¥¹œ•Ù•¹ÑÌ°±½Ì°…¹µ•ÑÉ¥ÌÑ½•Ñ¡•È¥¸½¹”™Õ±±ä¥¹Ñ•É…Ñ•Á±…Ñ™½É´¸¹°‰•…ÕÍ”…Ñ…‘½œ¥¹Ñ•É…Ñ•Ìİ¥Ñ µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõôÑ•¡¹½±½¥•Ì°å½Ô…¸ÑÉ…¬±½¹œµÑ•É´Á•É™½Éµ…¹”ÑÉ•¹‘Ì…¹Á…ÑÑ•É¹Ì…É½ÍÌ…±°ÍåÍÑ•µÌ¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°¹½Ğ©ÕÍĞå½ÕÈQ½µ…ĞÍ•ÉÙ•È¸e½Ô…¸…±Í¼•Ğ‘••Á•ÈÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼Q½µ…Ğ…ÁÁ±¥…Ñ¥½¹Ì‰ä½±±•Ñ¥¹œ°ÁÉ½•ÍÍ¥¹œ°…¹…¹…±åé¥¹œå½ÕÈ±½Ì¸()%¸Ñ¡¥ÌÁ½ÍĞ°İ”İ¥±°İ…±¬Ñ¡É½Õ ¡½ÜÑ¼è((´mÍ•ĞÕÀ…Ñ…‘½œÌQ½µ…Ğ¥¹Ñ•É…Ñ¥½¹t Í•ĞµÕÀµ‘…Ñ…‘½ÌµÑ½µ…Ğµ¥¹Ñ•É…Ñ¥½¸¤(´m•áÁ±½É”µ•ÑÉ¥Ì¥¸ÕÍÑ½µ¥é…‰±”‘…Í¡‰½…É‘Ít •áÁ±½É”µÑ½µ…Ğµ…¹µ©Ù´µµ•ÑÉ¥Ìµ¥¸µ‘…Í¡‰½…É‘Ì¤(´mÁÉ½•ÍÌ…¹…¹…±åé”Q½µ…Ğ±½Ít µ½¹¥Ñ½ÈµÑ½µ…Ğµ±½Ì¤(´mÉ•…Ñ”…±•ÉÑÌÑ¼‘•Ñ•ĞQ½µ…Ğ¡•…±Ñ …¹Á•É™½Éµ…¹”¥ÍÍÕ•Ít …±•ÉÑ¥¹œµ½¸µÑ½µ…Ğµµ•ÑÉ¥Ìµ…¹µ±½Ì¤()9½Ñ”Ñ¡…ĞÑ¡¥ÌÕ¥‘”¥¹±Õ‘•Ì½µµ…¹‘Ì™½È1¥¹Õà¡½ÍÑÌ°Í¼å½Ôµ…ä¹••Ñ¼½¹ÍÕ±ĞÑ¡”m•¹ĞÕÍ…”‘½Ít¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½‰…Í¥}…•¹Ñ}ÕÍ…”¼¤¥˜å½Ô…É”ÕÍ¥¹œ…¹½Ñ¡•È½Á•É…Ñ¥¹œÍåÍÑ•´¸((ŒŒM•ĞÕÀ…Ñ…‘½œÌQ½µ…Ğ¥¹Ñ•É…Ñ¥½¸((ŒŒŒ€Ä¸%¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ğ)…Ñ…‘½œ½±±•ÑÌQ½µ…Ğ…¹)Y4µ•ÑÉ¥Ì•áÁ½Í•‰ä)5`Ù¥„Ñ¡”m)5a•Ñ Á±Õ¥¹t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½©…Ù„¼½Ù•ÉÙ¥•Ü¤¸Q¡¥ÌÁ±Õ¥¸¥Ì‰Õ¥±Ğ¥¹Ñ¼…Ñ…‘½ŸŠeÌ)…Ù„¥¹Ñ•É…Ñ¥½¹Ì°¥¹±Õ‘¥¹œÑ¡”Q½µ…Ğ¥¹Ñ•É…Ñ¥½¸¸Q¼‰•¥¸½±±•Ñ¥¹œÑ¡¥Ì‘…Ñ„°å½Ôİ¥±°¹••Ñ¼m¥¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ñt¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ¤½¸å½ÕÈ¡½ÍĞ¸Q¡”•¹Ğ¥Ì½Á•¸Í½ÕÉ”Í½™Ñİ…É”Ñ¡…Ğ™½Éİ…É‘Ìµ•ÑÉ¥Ì°•Ù•¹ÑÌ°…¹±½Ì™É½´å½ÕÈ¡½ÍÑÌÑ¼…Ñ…‘½œ¸e½Ô…¸¥¹ÍÑ…±°Ñ¡”•¹Ğ‰äÉÕ¹¹¥¹œÑ¡”™½±±½İ¥¹œ½µµ…¹½¸å½ÕÈQ½µ…Ğ¡½ÍĞè()€)}A%}-dôñe=UI}A%}-dø‰…Í €µŒ€ˆ¡ÕÉ°€µ0¡ÑÑÁÌè¼½É…Ü¹¥Ñ¡Õ‰ÕÍ•É½¹Ñ•¹Ğ¹½´½…Ñ…½œ½‘…Ñ…‘½œµ…•¹Ğ½µ…ÍÑ•È½µ½…•¹Ğ½¥¹ÍÑ…±±}ÍÉ¥ÁĞ¹Í ¤ˆ)€()9½Ñ”Ñ¡…Ğå½ÕÈ…Ñ…‘½œA$­•ä¥Ì…ÕÑ½µ…Ñ¥…±±ä¥¹±Õ‘•½¸Ñ¡”m•¹Ğ¥¹ÍÑ…±±…Ñ¥½¸Á…•t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ¤½˜å½ÕÈ…½Õ¹Ğ°‰ÕĞå½Ô…¸…±Í¼…•ÍÌå½ÕÈA$­•äm¡•É•t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…Á¤¤¸Q¡¥ÌÁ…”¥¹±Õ‘•ÌÁ±…Ñ™½É´µÍÁ•¥™¥Œ¥¹ÍÑÉÕÑ¥½¹Ì™½È¥¹ÍÑ…±±¥¹œÙ•ÉÍ¥½¸€Ø½˜Ñ¡”•¹Ğ¸=¹”å½ÔÙ”¥¹ÍÑ…±±•Ñ¡”•¹Ğ°å½Ô…¸½¹™¥ÕÉ”¥ĞÑ¼ÍÑ…ÉĞ½±±•Ñ¥¹œµ•ÑÉ¥Ì…¹±½Ì¸	ÕĞ™¥ÉÍĞ°µ…­”ÍÕÉ”Ñ¡…Ğå½ÔÙ”•¹…‰±•É•µ½Ñ”)5`½¹¹•Ñ¥½¹Ì™½Èå½ÕÈQ½µ…ĞÍ•ÉÙ•È€¡É•™•ÈÑ¼mA…ÉĞ€Éum±¥¹¬µÑ¼µÉ•µ½Ñ”µ½¹¹•Ñ¥½¹Ít™½È¥¹ÍÑÉÕÑ¥½¹Ì¤¸((ŒŒŒ€È¸¹…‰±”±½œ½±±•Ñ¥½¸¥¸Ñ¡”•¹Ğ)Q¡”…Ñ…‘½œ•¹ĞÕÍ•Ìe50™¥±•ÌÑ¼Í•ĞÕÀ¥ÑÌ¥¹Ñ•É…Ñ¥½¹Ì°…Ìİ•±°…Ì™½È¥ÑÌ½İ¸½¹™¥ÕÉ…Ñ¥½¸¸Q¼½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼½±±•Ğ±½Ì°Í•ĞÑ¡”±½Í}•¹…‰±•‘€Á…É…µ•Ñ•ÈÑ¼ÑÉÕ•€¥¸Ñ¡”•¹ĞÌ½¹™¥ÕÉ…Ñ¥½¸™¥±”€ ¨©‘…Ñ…‘½œ¹å…µ°¨¨¤¸()€(Œ1½Ì…•¹Ğ(Œ1½Ì…•¹Ğ¥Ì‘¥Í…‰±•‰ä‘•™…Õ±Ğ)±½Í}•¹…‰±•èÑÉÕ”)€)Q¡”±½…Ñ¥½¸½˜Ñ¡¥Ì™¥±”mÙ…É¥•Ì…É½ÍÌÁ±…Ñ™½ÉµÍt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•Ì¼ıÑ…ˆõ…•¹ÑØØ¤°‰ÕĞ¥Ğ¥Ì¹½Éµ…±±ä±½…Ñ•¥¸Ñ¡”€¨¨½•ÑŒ½‘…Ñ…‘½œµ…•¹Ğ¼¨¨‘¥É•Ñ½Éä½¸1¥¹ÕàÍåÍÑ•µÌ¸((ŒŒŒ€Ì¸½¹™¥ÕÉ”Ñ¡”•¹ĞÑ¼½±±•ĞQ½µ…Ğµ•ÑÉ¥Ì…¹±½Ì)9•áĞ°¹…Ù¥…Ñ”Ñ¼Ñ¡”Q½µ…ĞÍÕ‰‘¥É•Ñ½Éä€ ¨¨½•ÑŒ½‘…Ñ…‘½œµ…•¹Ğ½½¹˜¹½Ñ½µ…Ğ¹¼¨¨¤°İ¡¥ ¥¹±Õ‘•ÌÑİ¼½¹™¥ÕÉ…Ñ¥½¸™¥±•Ìè€¨©µ•ÑÉ¥Ì¹å…µ°¨¨€…¹€¨©½¹˜¹å…µ°¹•á…µÁ±”¨¨¸()Q¡”€¨©µ•ÑÉ¥Ì¹å…µ°¨¨™¥±”ÍÁ•¥™¥•Ì…±°½˜Ñ¡”Q½µ…Ğmµ•ÑÉ¥Ít¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½Ñ½µ…Ğ¼‘…Ñ„µ½±±•Ñ•¤Ñ¡…Ğ…Ñ…‘½œ½±±•ÑÌ‰ä‘•™…Õ±Ğ¸Q¡¥Ì¥¹±Õ‘•Ì…±°½˜Ñ¡”­•äµ•ÑÉ¥Ìİ”‘¥ÍÕÍÍ•¥¸mA…ÉĞ€ÅumÁ…ÉĞµ½¹”µ±¥¹­t¸()Q¡”€¨©½¹˜¹å…µ°¹•á…µÁ±”¨¨™¥±”ÁÉ½Ù¥‘•Ì„Ñ•µÁ±…Ñ”™½È½¹™¥ÕÉ¥¹œÑ¡”•¹ĞÑ¼½±±•ĞQ½µ…Ğµ•ÑÉ¥Ì…¹±½Ì¸½ÁäÑ¡¥Ì™¥±”…¹É•¹…µ”¥Ğ€¨©½¹˜¹å…µ°¨¨İ¥Ñ¡¥¸Ñ¡”Í…µ”€¨¨½•ÑŒ½‘…Ñ…‘½œµ…•¹Ğ½½¹˜¹½Ñ½µ…Ğ¹¼¨¨‘¥É•Ñ½Éä¸=Á•¸Ñ¡”€¨©½¹˜¹å…µ°¨¨™¥±”…¹µ…­”Ñİ¼ÕÁ‘…Ñ•ÌÍ¼Ñ¡…ĞÑ¡”•¹Ğ…¸ÍÑ…ÉĞ½±±•Ñ¥¹œQ½µ…Ğµ•ÑÉ¥Ì…¹±½Ì¸¥ÉÍĞ°‘•™¥¹”Ñ¡”¥¹ÍÑ…¹”¡½ÍĞ…¹Á½ÉĞ°İ¡¥ Í¡½Õ±µ…Ñ Ñ¡”¡½ÍĞ…¹Á½ÉĞå½ÔÕÍ•™½Èå½ÕÈ)5`É•µ½Ñ”½¹¹•Ñ¥½¸è()€)¥¹ÍÑ…¹•Ìè(€€´¡½ÍĞè±½…±¡½ÍĞ(€€€Á½ÉĞè€äääÄ)€()e½Ô…¸…±Í¼ÕÍ”Ñ¡”¡½ÍĞ¹…µ”½È%@…‘‘É•ÍÌ½˜Ñ¡”Q½µ…ĞÍ•ÉÙ•È¥¹ÍÑ•…½˜±½…±¡½ÍÑ€¥˜å½Ô¥¹ÍÑ…±±•Ñ¡”•¹Ğ½¸„‘¥™™•É•¹ĞÍ•ÉÙ•È¸()%¸Ñ¡”±½Í€Í•Ñ¥½¸°ÍÁ•¥™äÑ¡”Á…Ñ¡ÌÑ¼å½ÕÈQ½µ…ĞÍ•ÉÙ•È…¹…•ÍÌ±½Ì¸	•…ÕÍ”Q½µ…ĞÉ•…Ñ•Ì„¹•Ü±½œ™¥±”•Ù•Éä‘…ä‰ä‘•™…Õ±Ğ€¡”¹œ¸°€¨©±½…±¡½ÍÑ}…•ÍÍ}±½œ¸ÈÀÄà´ÄÄ´ÀÌ¹ÑáĞ¨¨¤°å½Ô…¸ÕÍ”mİ¥±‘…É‘Ít¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½±½}½±±•Ñ¥½¸¼ıÑ…ˆõÑ…¥±•á¥ÍÑ¥¹™¥±•ÌÑ…¥°µµÕ±Ñ¥Á±”µ‘¥É•Ñ½É¥•Ìµ½Èµİ¡½±”µ‘¥É•Ñ½É¥•Ìµ‰äµÕÍ¥¹œµİ¥±‘…É‘Ì¤Ñ¼•…Í¥±ä‘•Ñ•Ğ…¹ÍÑ…ÉĞ½±±•Ñ¥¹œ‘…Ñ„™É½´¹•Ü±½œ™¥±•Ìè()€(ŒŒ1½œM•Ñ¥½¸€¡Ù…¥±…‰±”™½È•¹Ğ€øôØ¸À¤)±½Ìè(€€´ÑåÁ”è™¥±”(€€€Á…Ñ è€½½ÁĞ½Ñ½µ…Ğ½±½Ì½±½…±¡½ÍÑ}…•ÍÍ}±½œ¨¹ÑáĞ(€€€Í½ÕÉ”èÑ½µ…Ğ(€€€Í•ÉÙ¥”è©…Ù…‰½àµÍ…µÁ±”µ…ÁÀ(€€´ÑåÁ”è™¥±”(€€€Á…Ñ è€½½ÁĞ½Ñ½µ…Ğ½±½Ì½…Ñ…±¥¹„¨¹±½œ(€€€Í½ÕÉ”èÑ½µ…Ğ(€€€Í•ÉÙ¥”è©…Ù…‰½àµÍ…µÁ±”µ…ÁÀ)€()Q¡”İ¥±‘…É¡…É…Ñ•È€¡€©€¤•¹ÍÕÉ•ÌÑ¡…ĞÑ¡”…Ñ…‘½œ•¹ĞÁÕ±±Ì¥¸•Ù•Éä±½œå½ÔÍÁ•¥™ä°É•…É‘±•ÍÌ½˜Ñ¡”‘…Ñ”¸5…­”ÍÕÉ”Ñ¼Í•ĞÑ¡”Í½ÕÉ•€…ÑÑÉ¥‰ÕÑ”Ñ¼Ñ½µ…Ñ€¥¸½É‘•ÈÑ¼ÑÉ¥•ÈÑ¡”¥¹Ñ•É…Ñ¥½¸Á¥Á•±¥¹”°İ¡¥ İ¥±°…ÕÑ½µ…Ñ¥…±±ä•áÑÉ…Ğ­•ä™…•ÑÌ™É½´å½ÕÈQ½µ…Ğ±½Ì¸%˜å½ÔÉ”ÕÍ¥¹œ…Ñ…‘½œmA5t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ¼¤Ñ¼µ½¹¥Ñ½È…¸…ÁÁ±¥…Ñ¥½¸Ñ¡…ĞÉÕ¹ÌQ½µ…Ğ°å½Ô…¸ÍÁ•¥™äÑ¡”Í…µ”Í•ÉÙ¥•€Ñ¼½¹¹•Ğå½ÕÈQ½µ…Ğ±½ÌÑ¼É•±…Ñ•A4µ•ÑÉ¥Ì…¹É•ÅÕ•ÍĞÑÉ…•Ì¸€()=¹”å½ÔÙ”ÕÁ‘…Ñ•…¹Í…Ù•Ñ¡•Í”½¹™¥ÕÉ…Ñ¥½¹Ì°É•ÍÑ…ÉĞÑ¡”•¹Ğİ¥Ñ Ñ¡”™½±±½İ¥¹œ½µµ…¹è()€)ÍÕ‘¼Í•ÉÙ¥”‘…Ñ…‘½œµ…•¹ĞÉ•ÍÑ…ÉĞ)€()Q¡”•¹Ğİ¥±°¥µµ•‘¥…Ñ•±ä‰•¥¸™½Éİ…É‘¥¹œQ½µ…Ğ…¹)Y4µ•ÑÉ¥Ì…¹±½ÌÑ¼…Ñ…‘½œ¸((ŒŒŒ€Ğ¸¹…‰±”ÑÉ…”½±±•Ñ¥½¸™½È…ÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”µ½¹¥Ñ½É¥¹œ)…Ñ…‘½œA4¥¹±Õ‘•ÌÍÕÁÁ½ÉĞ™½Èm)…Ù„…ÁÁ±¥…Ñ¥½¹Ít ½‰±½œ½©…Ù„µµ½¹¥Ñ½É¥¹œµ…Á´¼¤°…¹…ÕÑ½µ…Ñ¥…±±äÑÉ…•ÌÉ•ÅÕ•ÍÑÌ™É½´Q½µ…Ğ¸A4¥Ù•Ìå½Ô•¹µÑ¼µ•¹Ù¥Í¥‰¥±¥Ñäİ¥Ñ ‘¥ÍÑÉ¥‰ÕÑ•ÑÉ…¥¹œ°‘•Ñ…¥±•Á•É™½Éµ…¹”‘…Í¡‰½…É‘Ì°…¹Í•ÉÙ¥”‰É•…­‘½İ¹Ì¸mQ¼ÍÑ…ÉĞ½±±•Ñ¥¹œÑÉ…•Ì™½ÈQ½µ…Ñt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½©…Ù„¼¤°‘½İ¹±½…Ñ¡”‘µ©…Ù„µ…•¹Ğ¹©…É€™¥±”½¹Ñ¼å½ÕÈÍ•ÉÙ•Èè()€)İ•Ğ€µ<‘µ©…Ù„µ…•¹Ğ¹©…È€¡ÑÑÁÌè¼½É•Á½Í¥Ñ½Éä¹Í½¹…ÑåÁ”¹½Éœ½Í•ÉÙ¥”½±½…°½…ÉÑ¥™…Ğ½µ…Ù•¸½É•‘¥É•ĞıÈõ•¹ÑÉ…°µÁÉ½áä™œõ½´¹‘…Ñ…‘½¡Ä™„õ‘µ©…Ù„µ…•¹Ğ™Øõ1QMPœ)€()e½Ô…¸Ñ¡•¸‰•¥¸ÑÉ…¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¸İ¥Ñ Ñ¡”™½±±½İ¥¹œ)Y4…ÉÕµ•¹Ğè()€(µ©…Ù……•¹Ğè½Á…Ñ ½Ñ¼½Ñ¡”½‘µ©…Ù„µ…•¹Ğ¹©…È)€()Q¡¥Ì•¹…‰±•Ìå½ÔÑ¼m•áÁ±½É”å½ÕÈÍ•ÉÙ¥•Ít¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Ù¥ÍÕ…±¥é…Ñ¥½¸¼¤¥¸…Ñ…‘½œ°…¹…±åé”ÑÉ…”µ•ÑÉ¥Ì°…¹Ù¥•ÜÑÉ…•Ì…¹ÍÁ…¹Ì™½Èå½ÕÈÍ•ÉÙ¥•Ì¸()íìğ¥µœÍÉŒôˆÈÈµÑ½µ…ĞµÁ•É™½Éµ…¹”µµ•ÑÉ¥Ìµ©…Ù„µ…Á´µØÈ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰á…µÁ±”½˜„ÑÉ…”™½È„)…Ù„…ÁÁ±¥…Ñ¥½¸ˆ€ùõô((ŒŒáÁ±½É”Q½µ…Ğ…¹)Y4µ•ÑÉ¥Ì¥¸‘…Í¡‰½…É‘Ì)…Ñ…‘½œÁÉ½Ù¥‘•Ì…¸m½ÕĞµ½˜µÑ¡”µ‰½à‘…Í¡‰½…É‘t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½‘…Í ½¥¹Ñ•É…Ñ¥½¸¼ÌÈ¼¤Ñ¡…Ğå½Ô…¸±½¹”°…¹ÕÍ”…Ì„Ñ•µÁ±…Ñ”Ñ¼‘¥ÍÁ±…äÑ¡”­•äQ½µ…Ğ…¹)Y4µ•ÑÉ¥Ìİ”‘¥ÍÕÍÍ•¥¸mA…ÉĞ€ÅumÁ…ÉĞµ½¹”µ±¥¹­t°¥¹±Õ‘¥¹œQ½µ…ĞÑ¡É•…‘Ì°É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”°…¹)Y4µ•µ½ÉäÕÍ…”¸()íìğ¥µœÍÉŒôˆÈµÕÍÑ½´µÑ½µ…Ğµµ•ÑÉ¥Ìµ‘…Í¡‰½…É¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰ÕÍÑ½´Q½µ…Ğµ•ÑÉ¥Ì‘…Í¡‰½…Éˆ€ùõô()Q¡¥Ì‘…Í¡‰½…ÉÁÉ½Ù¥‘•Ì„¡¥ µ±•Ù•°Ù¥•Ü½˜Q½µ…Ğ°‰ÕĞå½Ô…¸…±Í¼‘É¥±°‘½İ¸…¹©ÕµÀÑ¼½Ñ¡•ÈÍ½ÕÉ•Ì½˜µ½¹¥Ñ½É¥¹œ‘…Ñ„™½Èµ½É”•™™•Ñ¥Ù”ÑÉ½Õ‰±•Í¡½½Ñ¥¹œ¸½È•á…µÁ±”°¥˜å½Ô¹½Ñ¥”„ÍÁ¥­”¥¸Ñ¡”•ÉÉ½ÈÉ…Ñ”°å½Ô…¸¥¹Ù•ÍÑ¥…Ñ”Ñ¡”É½½Ğ…ÕÍ”½˜Ñ¡”¥ÍÍÕ”‰ä±¥­¥¹œ½¸Ñ¡”É…Á °…¹¹…Ù¥…Ñ¥¹œÑ¼±½ÌÑ¡…Ğİ•É”½±±•Ñ•™É½´Ñ¡”Q½µ…ĞÍ•ÉÙ•È¡Ì¤…É½Õ¹Ñ¡”Í…µ”Ñ¥µ”™É…µ”¸()íìğ¥µœÍÉŒôˆÌµÑ½µ…Ğµµ•ÑÉ¥Ìµ•ÉÉ½ÈµÉ…Ñ”µØÌ¹Á¹œˆ…±Ğô‰Y¥•ÜQ½µ…Ğ±½ÌÉ•±…Ñ•Ñ¼ÍÁ¥­”¥¸•ÉÉ½ÈÉ…Ñ”ˆ€ùõô((ŒŒ5½¹¥Ñ½ÈQ½µ…Ğ±½Ì)mQ½µ…Ğ±½ÍumÁ…ÉĞµ½¹”µ±½Ìµ±¥¹­t…¸¡•±Àå½Ô¥‘•¹Ñ¥™äÉ¥Ñ¥…°•ÉÉ½ÉÌÉ•±…Ñ•Ñ¼å½ÕÈ)Y4¸Q¡•ä…±Í¼¥Ù”å½Ôµ½É”™¥¹”µÉ…¥¹•¥¹Í¥¡ÑÌ¥¹Ñ¼Ñ¡”ÍÑ…ÑÕÌ…¹ÁÉ½•ÍÍ¥¹œÑ¥µ”½˜É•ÅÕ•ÍÑÌ¡¥ÑÑ¥¹œå½ÕÈÍ•ÉÙ•È¸9½ÜÑ¡…Ğİ”Ù”½¹™¥ÕÉ•Ñ¡”•¹ĞÑ¼½±±•ĞÑ¡•Í”±½Ì°İ”İ¥±°Í¡½Üå½Ô¡½Ü…Ñ…‘½œ…ÕÑ½µ…Ñ¥…±±äÁ…ÉÍ•ÌÑ¡•´İ¥Ñ ¥ÑÌ‰Õ¥±Ğµ¥¸¥¹Ñ•É…Ñ¥½¸Á¥Á•±¥¹”°…¹¡½Üå½Ô…¸ÕÍÑ½µ¥é”Ñ¡¥ÌÁ¥Á•±¥¹”Ñ¼•áÑÉ…Ğ‘…Ñ„™É½´ÕÍÑ½´±½œ™½Éµ…ÑÌ¸]”±°…±Í¼Í¡½Üå½Ô¡½ÜÑ¼ÕÍ”±½œ…¹…±åÑ¥ÌÑ¼•áÁ±½É”…¹‘¥œ‘••Á•È¥¹Ñ¼…±°Ñ¡”‘…Ñ„å½ÔÉ”½±±•Ñ¥¹œ™É½´å½ÕÈQ½µ…Ğ±½Ì¸((ŒŒŒQ½µ…Ğ¥¹Ñ•É…Ñ¥½¸±½œÁ¥Á•±¥¹”)Q¡”Q½µ…Ğm±½œÁ¥Á•±¥¹•t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ½Á¥Á•±¥¹•Ì¼¥¹Ñ•É…Ñ¥½¸µÁ¥Á•±¥¹•Ì¤ÕÍ•ÌmÁÉ½•ÍÍ½ÉÍt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ½ÁÉ½•ÍÍ½ÉÌ¼¤Ñ¼•áÑÉ…Ğ¥¹™½Éµ…Ñ¥½¸™É½´±½Ì¥¹Ñ¼„µ½É”ÍÑÉÕÑÕÉ•™½Éµ…Ğ¸()íìğ¥µœÍÉŒôˆĞµÑ½µ…Ğµ±½Ìµ¥¹Ñ•É…Ñ¥½¸µÁ¥Á•±¥¹”¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğ±½Ì¥¹Ñ•É…Ñ¥½¸Á¥Á•±¥¹”ˆ€ùõô((ŒŒŒŒAÉ½•ÍÍ¥¹œQ½µ…Ğ…•ÍÌ±½Ì)Q¡”Q½µ…Ğ±½¥¹œ¥¹Ñ•É…Ñ¥½¸Á¥Á•±¥¹”…ÕÑ½µ…Ñ¥…±±äÁÉ½•ÍÍ•ÌQ½µ…Ğ…•ÍÌ±½ÌÑ¡…ĞÕÍ”Ñ¡”ÍÑ…¹‘…É€• €•°€•Ô€•Ğ€ˆ•Èˆ€•Ì€•‰€mÙ…±Ù”Á…ÑÑ•É¹umÁ…ÉĞµÑİ¼µÙ…±Ù”µÁ…ÑÑ•É¹Ít°…¹µ…ÁÌÑ¡•´Ñ¼ÁÉ”µ‘•™¥¹•±½œ…ÑÑÉ¥‰ÕÑ•Ìè()ğY…±Ù”Á…ÑÑ•É¸ğ•ÍÉ¥ÁÑ¥½¸ğ1½œ…ÑÑÉ¥‰ÕÑ”ğ)ğ€´´´´´´´´´´´´´´´´´´ğ€´´´´´´´´´´´´´´´ğ€´´´´´´´´´´´´´´´´´ğ)ğ€•¡€ğÑ¡”%@…‘‘É•ÍÌ½˜Ñ¡”±¥•¹ĞÍ•¹‘¥¹œÑ¡”É•ÅÕ•ÍĞğ±¥•¹Ğ¹¥Á€ğ)ğ€•±€ğÑ¡”ÕÍ•É¹…µ”™É½´Ñ¡”¥‘•¹ÑÍ•ÉÙ¥”ğ¡ÑÑÀ¹¥‘•¹Ñğ)ğ€•Õ€ğÑ¡”ÕÍ•È¥½˜Ñ¡”…ÕÑ¡•¹Ñ¥…Ñ•ÕÍ•ÈÉ•ÅÕ•ÍÑ¥¹œÑ¡”Á…”€¡¥˜!QQ@…ÕÑ¡•¹Ñ¥…Ñ¥½¸¥ÌÕÍ•¤ğ¡ÑÑÀ¹ÕÍ•É…•¹Ñ€ğ)ğ€•Ñ€ğÑ¡”É•ÅÕ•ÍĞÑ¥µ•ÍÑ…µÀğÑ¥µ•ÍÑ…µÁ€ğ)ğ€•É€ğÑ¡”É•ÅÕ•ÍĞµ•Ñ¡½…¹UI0Á…Ñ ğ¡ÑÑÀ¹µ•Ñ¡½‘€°¡ÑÑÀ¹ÕÉ±€°¡ÑÑÀ¹ÕÉ±}‘•Ñ…¥±Í€ğ)ğ€•Í€ğÑ¡”!QQ@ÍÑ…ÑÕÌ½‘”ğ¡ÑÑÀ¹ÍÑ…ÑÕÍ}½‘•€ğ)ğ€•‰€ğÑ¡”¹Õµ‰•È½˜‰åÑ•ÌÉ•ÑÕÉ¹•Ñ¼Ñ¡”±¥•¹Ğğ¹•Ñİ½É¬¹‰åÑ•Í}İÉ¥ÑÑ•¹€ğ(()Q¡¥Ìµ•…¹ÌÑ¡…Ğ…•ÍÌ±½ÌÕÍ¥¹œÑ¡…ĞÙ…±Ù”Á…ÑÑ•É¸İ¥±°•ĞÁÉ½•ÍÍ•¥¹Ñ¼Ñ¡”™½±±½İ¥¹œ±½œ°…•ÍÍ¥‰±”¥¸Ñ¡”1½œáÁ±½É•Èè()íìğ¥µœÍÉŒôˆÔµÑ½µ…Ğµ±½œµÕ¹•‘¥Ñ•¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰U¹•‘¥Ñ•Q½µ…Ğ±½œˆ€ùõô((ŒŒŒŒÕÍÑ½µ¥é”å½ÕÈQ½µ…Ğ±½Ìİ¥Ñ Á¥Á•±¥¹•Ì)%¹Ñ•É…Ñ¥½¸±½œÁ¥Á•±¥¹•Ì…É”É•…µ½¹±ä°‰ÕĞå½Ô…¸m±½¹”Ñ¡•µt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ½Á¥Á•±¥¹•Ì¼¥¹Ñ•É…Ñ¥½¸µÁ¥Á•±¥¹•Ì¤Ñ¼É•…Ñ”å½ÕÈ½İ¸Á¥Á•±¥¹•Ì¥¸½É‘•ÈÑ¼ÁÉ½•ÍÌ‘…Ñ„™É½´½Ñ¡•ÈÑåÁ•Ì½˜±½œ™½Éµ…ÑÌ°½ÈÑ¼™ÕÉÑ¡•ÈÕÍÑ½µ¥é”¡½Üå½ÕÈ±½Ì…É”ÍÑÉÕÑÕÉ•¥¸Ñ¡”1½œáÁ±½É•È¸()%˜å½ÔÙ”…‘‘•Ñ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”Á…ÑÑ•É¸½‘”€¡€•€¤Ñ¼å½ÕÈ…•ÍÌ±½œÙ…±Ù”Á…ÑÑ•É¸€¡…Ì‘¥ÍÕÍÍ•¥¸mA…ÉĞ€ÉumÁ…ÉĞµÑİ¼µÙ…±Ù”µÁ…ÑÑ•É¹Ít¤°å½Ô…¸…‘©ÕÍĞå½ÕÈÁ¥Á•±¥¹”Ñ¼‰•¥¸ÁÉ½•ÍÍ¥¹œÑ¡¥Ì‘…Ñ„™É½´å½ÕÈ…•ÍÌ±½Ì¸9…Ù¥…Ñ”Ñ¼Ñ¡”ÕÍÑ½´Q½µ…ĞÁ¥Á•±¥¹”å½ÔÉ•…Ñ••…É±¥•È°…¹±¥¬½¸Ñ¡”€‰É½¬A…ÉÍ•ÈèA…ÉÍ¥¹œQ½µ…Ğ±½ÌˆÁÉ½•ÍÍ½ÈÑ¼ÍÑ…ÉĞ•‘¥Ñ¥¹œ¥Ğ¸Q¡¥ÌÁÉ½•ÍÍ½È½¹Ñ…¥¹Ì„±¥ÍĞ½˜Á…ÉÍ¥¹œÉÕ±•Ì…¹¡•±Á•ÈÉÕ±•Ì€¡Õ¹‘•È€‰‘Ù…¹•M•ÑÑ¥¹Ìˆ¤¸()íìğ¥µœÍÉŒôˆÄÀµÑ½µ…Ğµ±½Ìµ•‘¥ĞµÉ½¬µÁ…ÉÍ•È¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰‘¥ĞÉ½¬Á…ÉÍ•È™½ÈQ½µ…Ğ±½œ™½Éµ…Ğˆ€ùõô()%¸½É‘•ÈÑ¼¥¹±Õ‘”Ñ¡”¹•ÜÁ…ÑÑ•É¸½‘”°å½Ô¹••Ñ¼…‘€•í}‘ÕÉ…Ñ¥½¹õ€Ñ¼•¹½˜Ñ¡”…•ÍÌ¹½µµ½¹€Á…ÉÍ¥¹œÉÕ±”è()€)…•ÍÌ¹½µµ½¸€•í}±¥•¹Ñ}¥Áô€•í}¥‘•¹Ñô€•í}…ÕÑ¡ôql•í}‘…Ñ•}…•ÍÍõqt€ˆ üø•í}µ•Ñ¡½‘ôğ¤•í}ÕÉ±ô üø€•í}Ù•ÉÍ¥½¹õğ¤ˆ€•í}ÍÑ…ÑÕÍ}½‘•ô€ üø•í}‰åÑ•Í}İÉ¥ÑÑ•¹õğ´¤€•í}‘ÕÉ…Ñ¥½¹ô)€()Q¡¥Ìİ¥±°…±±½ÜÑ¡”ÁÉ½•ÍÍ½ÈÑ¼…ÕÑ½µ…Ñ¥…±±äÁ…ÉÍ”•… …•ÍÌ±½œ™½ÈÑ¡”Ù…±Õ”½˜Ñ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¸…Ñ…‘½œmÉ•Í•ÉÙ•ÌÑ¡¥Ì…ÑÑÉ¥‰ÕÑ•t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½ÁÉ½•ÍÍ¥¹œ½…ÑÑÉ¥‰ÕÑ•Í}¹…µ¥¹}½¹Ù•¹Ñ¥½¸¼Á•É™½Éµ…¹”¤™½ÈÕÍ”İ¥Ñ mA5t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ¼¤°İ¡¥ µ•…ÍÕÉ•Ì‘ÕÉ…Ñ¥½¸¥¸¹…¹½Í•½¹‘Ì¸%˜å½ÔÉ”ÕÍ¥¹œA4°å½Ô…¸•…Í¥±äÕÁ‘…Ñ”å½ÕÈÁÉ½•ÍÍ½ÈÑ¼½¹Ù•ÉĞÑ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”™É½´µ¥±±¥Í•½¹‘ÌÑ¼¹…¹½Í•½¹‘Ì‰äÉ•Ù¥Í¥¹œÑ¡”‘ÕÉ…Ñ¥½¹€¡•±Á•ÈÉÕ±”¥¸Ñ¡”€‰‘Ù…¹•M•ÑÑ¥¹ÌˆÍ•Ñ¥½¸½˜Ñ¡”ÁÉ½•ÍÍ½Èè()€)}‘ÕÉ…Ñ¥½¸€•í¥¹Ñ••Èé‘ÕÉ…Ñ¥½¸éÍ…±” ÄÀÀÀÀÀÀ¥ô)€()=¹”å½ÔÍ…Ù”Ñ¡½Í”¡…¹•Ì°…Ñ…‘½œİ¥±°¥µµ•‘¥…Ñ•±ä‰•¥¸ÁÉ½•ÍÍ¥¹œ¹•Ü…•ÍÌ±½Ì°…¹¥¹±Õ‘”„¹•Ü‘ÕÉ…Ñ¥½¹€…ÑÑÉ¥‰ÕÑ”Ñ¡…ĞÍ¡½İÌÑ¡”É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”¥¸¹…¹½Í•½¹‘Ì¸()íìğ¥µœÍÉŒôˆÄÄµÑ½µ…Ğµ±½Ìµ•‘¥Ğµ‘ÕÉ…Ñ¥½¸¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Q½µ…Ğ±½œİ¥Ñ ¹•Ü‘ÕÉ…Ñ¥½¸…ÑÑÉ¥‰ÕÑ”ˆ€ùõô((ŒŒŒáÁ±½É¥¹œ…¹…¹…±åé¥¹œå½ÕÈQ½µ…Ğ±½Ì)]¥Ñ ÍÑÉÕÑÕÉ•…ÑÑÉ¥‰ÕÑ•Ì°å½Ô…¸•…Í¥±äÍ•…É …±°±½Ì½±±•Ñ•‰äÑ¡”•¹Ğ¥¸Ñ¡”m1½œáÁ±½É•Ét¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½±½Ì¤°…¹ÅÕ¥­±äÙ¥•ÜÑ¡”½¹•ÌÑ¡…Ğ…É”µ½ÍĞ¥µÁ½ÉÑ…¹ĞÑ¼å½Ô¸e½Ô…¸mÉ•…Ñ”„µ•…ÍÕÉ•t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É•È¼ıÑ…ˆõµ•…ÍÕÉ•ÌÍ•ÑÕÀ¤™É½´…¹ä¹Õµ•É¥…°…ÑÑÉ¥‰ÕÑ”€¡±¥­”‘ÕÉ…Ñ¥½¸¤¥˜å½Ô±¥­”Ñ¼Ù¥ÍÕ…±¥é”¥Ğİ¥Ñ m±½œ…¹…±åÑ¥Ít ½‰±½œ½±½œµ…¹…±åÑ¥Ìµ‘…Í¡‰½…É‘Ì¼É…Á µ¹Õµ•É¥…°µ‘…Ñ„µ¥¸µå½ÕÈµ±½Ì¤‰ä±¥­¥¹œ½¸Ñ¡”…ÑÑÉ¥‰ÕÑ”Ñ¡•¸Ñ¡”€‰É•…Ñ”µ•…ÍÕÉ”™½Èˆ‰ÕÑÑ½¸¸()íìğ¥µœÍÉŒôˆÄÈµÑ½µ…Ğµ±½ÌµÉ•…Ñ”µµ•…ÍÕÉ”¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰É•…Ñ”„µ•…ÍÕÉ”™É½´„Q½µ…Ğ±½œˆ€ùõô()e½Ô…¸ÕÍ”m™…•ÑÍt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½±½Ì½•áÁ±½É•È¼ıÑ…ˆõ™…•ÑÌÍ•ÑÕÀ¤Ñ¼µ…­”…ÑÑÉ¥‰ÕÑ•ÌÍ•…É¡…‰±”°•¹…‰±¥¹œå½ÔÑ¼•…Í¥±ä™¥±Ñ•È°Í•…É °…¹…¹…±åé”±½Ì‰ä„ÍÁ•¥™¥Œ±¥•¹Ğ%@°…¸…ÁÁ±¥…Ñ¥½¸Í•ÉÙ¥”°½È…¸!QQ@É•ÍÁ½¹Í”½‘”¸½È•á…µÁ±”°å½Ô…¸É•…Ñ”„¹•Ü™…•Ğ™½ÈÑ¡”¡ÑÑÀ¹ÍÑ…ÑÕÍ}½‘•€…ÑÑÉ¥‰ÕÑ”‰ä¥¹ÍÁ•Ñ¥¹œ„Q½µ…Ğ±½œ•¹ÑÉä¥¸Ñ¡”1½œáÁ±½É•È°…¹±¥­¥¹œ½¸Ñ¡”¡ÑÑÀ¹ÍÑ…ÑÕÍ}½‘•€…ÑÑÉ¥‰ÕÑ”¸()íìğ¥µœÍÉŒôˆØµÉ•…Ñ”µ™…•Ğµ™É½´µÑ½µ…Ğµ±½œ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰É•…Ñ”™…•Ğ™É½´Q½µ…Ğ±½œˆ€ùõô()%˜å½Ô¹••Ñ¼ÅÕ¥­±äÍ¥™ĞÑ¡É½Õ „±…É”Ù½±Õµ”½˜±½Ì°å½Ô…¸±¥¬½¸Ñ¡”m1½œA…ÑÑ•É¹Ít¡¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½±½œµÁ…ÑÑ•É¹Ì¼¤¥½¸¥¸Ñ¡”ÕÁÁ•Èµ±•™Ğ½É¹•È½˜Ñ¡”1½œáÁ±½É•È¸Ìå½ÕÈÍ•ÉÙ•È•¹•É…Ñ•Ì±½Ì°…Ñ…‘½œİ¥±°É½ÕÀÑ¡•´‰ä½µµ½¸Á…ÑÑ•É¹Ì…¹¡¥¡±¥¡ĞÑ¡”‘¥™™•É•¹•Ìİ¥Ñ¡¥¸•… Á…ÑÑ•É¸€¡ÍÕ …Ì%@…‘‘É•ÍÍ•Ì½ÈÉ•ÅÕ•ÍĞUI0Á…Ñ¡Ì¤°Í¼å½Ô…¸Á¥¹Á½¥¹ĞÑ¡”…ÕÍ”½˜Ñ¡”•ÉÉ½ÉÌ¸()íìğ¥µœÍÉŒôˆÄĞµÑ½µ…Ğµ±½ÌµÁ…ÑÑ•É¹Ì¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Y¥•ÜQ½µ…Ğ±½œÁ…ÑÑ•É¹Ìˆ€ùõô()¹å½Ô…¸ÕÍ”µ•…ÍÕÉ•Ì…¹™…•ÑÌ¥¸1½œ¹…±åÑ¥ÌÑ¼Í¥™ĞÑ¡É½Õ å½ÕÈ±½Ì¸½È•á…µÁ±”°å½Ô…¸Ù¥•ÜÑ¡”É•ÅÕ•ÍÑÌÑ¡…Ğ…É”Ñ…­¥¹œÑ¡”±½¹•ÍĞ…µ½Õ¹Ğ½˜Ñ¥µ”Ñ¼ÁÉ½•ÍÌ€¡µ•…ÍÕÉ”¤°‰É½­•¸‘½İ¸‰äÑ¡•¥ÈÍÑ…ÑÕÌ€¡™…•Ğ¤¸()íìğ¥µœÍÉŒôˆÄÔµÑ½µ…Ğµ±½Ìµ…¹…±åé•ÈµÍÑ…ÑÕÌ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰UÍ”Ñ¡”1½œ¹…±åé•ÈÑ¼Ù¥•ÜQ½µ…Ğ±½Ìˆ€ùõô()=Èå½Ô…¸Ù¥•Ü…Ù•É…”ÁÉ½•ÍÍ¥¹œÑ¥µ”…É½ÍÌ½Ñ¡•Èİ•ˆÍ•ÉÙ•ÉÌ¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°¥¸…‘‘¥Ñ¥½¸Ñ¼Q½µ…Ğ¸%˜å½Ôİ…¹ĞÑ¼Í…Ù”Ñ¡”É•ÍÕ±Ñ¥¹œÉ…Á °å½Ô…¸•áÁ½ÉĞ¥ĞÑ¼„¹•Ü½È•á¥ÍÑ¥¹œ‘…Í¡‰½…É‰ä±¥­¥¹œ½¸Ñ¡”€‰áÁ½ÉĞˆ‰ÕÑÑ½¸¥¸Ñ¡”Ñ½ÀµÉ¥¡Ğ½É¹•È¸()íìğ¥µœÍÉŒôˆÄØµÑ½µ…Ğµ±½Ìµ…¹…±åé•ÈµÍ•ÉÙ•È¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰Y¥•ÜÁÉ½•ÍÍ¥¹œÑ¥µ”…É½ÍÌÍ•ÉÙ•ÉÌ‰…Í•½¸Q½µ…Ğ±½œ…ÑÑÉ¥‰ÕÑ•Ìˆ€ùõô()]”Ù”Í••¸¡½Ü…Ñ…‘½œÌQ½µ…Ğ¥¹Ñ•É…Ñ¥½¸Á¥Á•±¥¹”…ÕÑ½µ…Ñ¥…±±äÁÉ½•ÍÍ•Ì…¹•áÑÉ…ÑÌ­•ä‘…Ñ„™É½´å½ÕÈQ½µ…Ğ±½Ì¸=¹”å½ÔÉ”½±±•Ñ¥¹œ…¹ÁÉ½•ÍÍ¥¹œ…±°å½ÕÈQ½µ…Ğ±½Ì°å½Ô…¸…¹…±åé”Ñ¡•´Ñ¼‘•Ñ•Éµ¥¹”¥˜°™½È•á…µÁ±”°É•ÅÕ•ÍÑÌÑ¼„Á…ÉÑ¥Õ±…ÈUI0Á…Ñ …É”•¹•É…Ñ¥¹œ„¡¥ É…Ñ”½˜Í•ÉÙ•È•ÉÉ½ÉÌ¸%¸Ñ¡”¹•áĞÍ•Ñ¥½¸°İ”İ¥±°Í¡½Üå½Ô¡½ÜÑ¼É•…Ñ”…±•ÉÑÌÑ¼¥µµ•‘¥…Ñ•±ä¹½Ñ¥™äå½Ô½˜Á½Ñ•¹Ñ¥…°¥ÍÍÕ•Ì¸((ŒŒ±•ÉÑ¥¹œ½¸Q½µ…Ğµ•ÑÉ¥Ì…¹±½Ì)¸¥µÁ½ÉÑ…¹Ğ…ÍÁ•Ğ½˜µ½¹¥Ñ½É¥¹œ¥Ì­¹½İ¥¹œİ¡•¸É¥Ñ¥…°¡…¹•Ì½ÕÈİ¥Ñ å½ÕÈÍ•ÉÙ•È…ÌÑ¡•ä¡…ÁÁ•¸¸%˜Q½µ…Ğ½•Ì‘½İ¸½ÈÍÑ…ÉÑÌ•¹•É…Ñ¥¹œ„±…É”¹Õµ‰•È½˜•ÉÉ½ÉÌ°å½Ôİ¥±°İ…¹ĞÑ¼­¹½Ü…‰½ÕĞ¥Ğ…ÌÍ½½¸…ÌÁ½ÍÍ¥‰±”¸e½Ô…¸ÁÉ½…Ñ¥Ù•±äµ½¹¥Ñ½ÈQ½µ…Ğ‰äÍ•ÑÑ¥¹œÕÀm…±•ÉÑÍt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ¼¤Ñ¼¹½Ñ¥™äå½Ô½˜…Ñ¥Ù¥ÑäÍÕ …Ìm…¹½µ…±¥•Ít¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½µ½¹¥Ñ½É}ÑåÁ•Ì½…¹½µ…±ä¼¤¥¸É•ÅÕ•ÍĞÁÉ½•ÍÍ¥¹œÑ¥µ”½ÈÍÁ¥­•Ì¥¸Ñ¡”¹Õµ‰•È½˜•ÉÉ½ÉÌå½ÕÈ…ÁÁ±¥…Ñ¥½¸½ÈÍ•ÉÙ•È•¹•É…Ñ•Ì¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°Í¡½Üå½Ô¡½ÜÑ¼ÕÍ”…Ñ…‘½œ…±•ÉÑÌÑ¼ÑÉ…¬Á½Ñ•¹Ñ¥…°¥ÍÍÕ•Ìİ¥Ñ å½ÕÈQ½µ…ĞÍ•ÉÙ•È¸((ŒŒŒ±•ÉÑ¥¹œ½¸Q½µ…ĞÍ•ÉÙ•ÈÍÑ…ÑÕÌ)…Ñ…‘½œÌQ½µ…Ğ¥¹Ñ•É…Ñ¥½¸¥¹±Õ‘•Ì„‰Õ¥±Ğµ¥¸ÍÑ…ÑÕÌ¡•¬Ñ¡…Ğ…¸…ÕÑ½µ…Ñ¥…±±ä…±•ÉĞå½Ôİ¡•¸Ñ¡”•¹Ğ¥ÌÕ¹…‰±”Ñ¼½¹¹•ĞÑ¼å½ÕÈQ½µ…ĞÍ•ÉÙ•È¸()Q¼É•…Ñ”Ñ¡¥Ì…±•ÉĞ°¹…Ù¥…Ñ”Ñ¼m5½¹¥Ñ½ÉÌ€ø9•Ü5½¹¥Ñ½ÉÌ€ø%¹Ñ•É…Ñ¥½¹t¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌÉ•…Ñ”½¥¹Ñ•É…Ñ¥½¸¤¥¸Ñ¡”…Ñ…‘½œ…ÁÀ°Í•±•ĞÑ¡”Q½µ…Ğ¥¹Ñ•É…Ñ¥½¸Ñ¥±”°…¹±¥¬½¸Ñ¡”€‰%¹Ñ•É…Ñ¥½¸MÑ…ÑÕÌˆÑ…ˆ¸%¸Ñ¡”•á…µÁ±”‰•±½Ü°İ”Ù”½¹™¥ÕÉ•…Ñ…‘½œÑ¼…±•ÉĞÕÌ¥˜Ñ¡”•¹Ğ™…¥±ÌÑ¼½¹¹•ĞÑ¼…¹äQ½µ…Ğ¡½ÍĞ…™Ñ•ÈÑİ¼½¹Í•ÕÑ¥Ù”ÑÉ¥•Ì¸Q¡”…±•ÉĞİ¥±°…ÕÑ½µ…Ñ¥…±±äÉ•Í½±Ù”¥˜Ñ¡”•¹ĞÍÕ•ÍÍ™Õ±±ä½¹¹•ÑÌÑ¼Q½µ…Ğ……¥¸¸()íìğ¥µœÍÉŒôˆÄÜµÑ½µ…Ğµ±½Ìµ¡•…±Ñ µ¡•¬¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰M•ĞÕÀ„Q½µ…Ğ¡•…±Ñ ¡•¬ˆ€ùõô()e½Ô…¸½¹™¥ÕÉ”•… …±•ÉĞÑ¼¹½Ñ¥™äÍÁ•¥™¥ŒÕÍ•ÉÌ½ÈÑ•…µÌİ¥Ñ ¥¹™½Éµ…Ñ¥½¸…‰½ÕĞİ¡…ĞÑÉ¥•É•Ñ¡”…±•ÉĞ…¹¡½ÜÑ¼™ÕÉÑ¡•È‘¥…¹½Í”Ñ¡”¥ÍÍÕ”¸… …±•ÉĞµ•ÍÍ…”¥ÌmÕÍÑ½µ¥é…‰±•t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½¹½Ñ¥™¥…Ñ¥½¹Ì¼ıÑ…ˆõ¥Í}…±•ÉÑ¥Í}İ…É¹¥¹œµ•ÍÍ…”µÑ•µÁ±…Ñ”µÙ…É¥…‰±•Ì¤°Í¼å½Ô…¸ÕÍ”Ñ•µÁ±…Ñ”Ù…É¥…‰±•ÌÑ¼µ½¹¥Ñ½ÈµÕ±Ñ¥Á±”¡½ÍÑÌİ¥Ñ Ñ¡”Í…µ”…±•ÉĞ¸()íìğ¥µœÍÉŒôˆÄàµÑ½µ…Ğµ±½Ìµ¡•…±Ñ µ¡•¬µµ•ÍÍ…”¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰M•Ğµ•ÍÍ…”™½ÈQ½µ…Ğ¡•…±Ñ ¡•¬ˆ€ùõô((ŒŒŒ±•ÉÑ¥¹œ½¸)Y4¡•…Àµ•µ½ÉäÕÍ…”)%ĞÌ¥µÁ½ÉÑ…¹ĞÑ¼µ½¹¥Ñ½Èµ•µ½ÉäÕÍ…”Ñ¼•¹ÍÕÉ”Ñ¡…ĞÑ¡”)Y4‘½•Ì¹½ĞÉÕ¸½ÕĞ½˜É•Í½ÕÉ•Ì¹••‘•Ñ¼ÍÕÁÁ½ÉĞÑ¡”Q½µ…ĞÍ•ÉÙ•È¸]¥Ñ …Ñ…‘½œ°å½Ô…¸mÉ•…Ñ”…¸…±•ÉÑt¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌÉ•…Ñ”½µ•ÑÉ¥Œ¤Ñ¼…ÕÑ½µ…Ñ¥…±±ä¹½Ñ¥™äå½Ôİ¡•¸å½ÕÈQ½µ…Ğ¡½ÍĞ¥ÌÕÍ¥¹œ„¡¥ Á•É•¹Ñ…”½˜Ñ¡”µ…á¥µÕ´…Ù…¥±…‰±”¡•…À¸%¸Ñ¡”•á…µÁ±”‰•±½Ü°İ”Ù”…±Õ±…Ñ•„ÕÍ…”Á•É•¹Ñ…”‰…Í•½¸Ñ¡”©Ù´¹¡•…Á}µ•µ½Éå€€¡Ñ¡”Ñ½Ñ…°…µ½Õ¹Ğ½˜µ•µ½ÉäÕÍ•¤…¹©Ù´¹¡•…Á}µ•µ½Éå}µ…á€€¡Ñ¡”µ…á¥µÕ´…µ½Õ¹Ğ½˜µ•µ½Éä…Ù…¥±…‰±”¤µ•ÑÉ¥Ì¸Q¡”İ…É¹¥¹œ…¹É¥Ñ¥…°Ñ¡É•Í¡½±‘Ì…É”Í•ĞÑ¼€ÔÀ…¹€àÀÁ•É•¹Ğ°É•ÍÁ•Ñ¥Ù•±ä¸%˜¡•…Àµ•µ½ÉäÕÍ…”•á••‘Ì€àÀÁ•É•¹Ğ°Ñ¡•¸Ñ¡”…±•ÉĞİ¥±°¹½Ñ¥™äÑ¡”…ÁÁÉ½ÁÉ¥…Ñ”Ñ•…´µ•µ‰•ÉÌÑ¼…‘‘É•ÍÌÑ¡”¥ÍÍÕ”¸()íìğ¥µœÍÉŒôˆÄäµÑ½µ…Ğµµ•ÑÉ¥Ìµµ•µ½Éäµ…±•ÉĞ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰M•Ğ…¸…±•ÉĞ™½Èµ•µ½ÉäÕÍ…”‰…Í•½¸Q½µ…Ğµ•ÑÉ¥Ìˆ€ùõô()%˜å½Ôİ…¹ĞÑ¡”…±•ÉĞÑ¼É•Í½±Ù”…ÕÑ½µ…Ñ¥…±±ä°Ñ¡•¸å½Ô…¸Í•Ğ„mÉ•½Ù•ÉäÑ¡É•Í¡½±‘t ½‰±½œ½¥¹ÑÉ½‘Õ¥¹œµÉ•½Ù•ÉäµÑ¡É•Í¡½±‘Ì¼¤¸%¸Ñ¡¥Ì•á…µÁ±”°Ñ¡”…±•ÉĞİ¥±°É•Í½±Ù”¥ÑÍ•±˜¥˜¥Ğ‘•Ñ•ÑÌÑ¡…ĞÑ¡”…Ù•É…”µ•µ½ÉäÕÍ…”¡…Ì‘É½ÁÁ•‰•±½Ü€ĞÀÁ•É•¹Ğ½Ù•ÈÑ¡”Á…ÍĞ™¥Ù”µ¥¹ÕÑ•Ì¸()íìğ¥µœÍÉŒôˆÈÀµÑ½µ…Ğµµ•ÑÉ¥Ìµµ•µ½Éäµ…±•ÉĞµ½¹‘¥Ñ¥½¹Ì¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰M•Ğ½¹‘¥Ñ¥½¹Ì™½È…±•ÉĞ‰…Í•½¸Q½µ…Ğµ•ÑÉ¥Ìˆ€ùõô((ŒŒŒ±•ÉÑ¥¹œ½¸Q½µ…Ğ±½Ì)]”Ù”…±É•…‘äÍ¡½İ¸å½Ô¡½ÜÑ¼…¹…±åé”å½ÕÈ±½ÌÑ¼…¥¸„‰•ÑÑ•ÈÕ¹‘•ÉÍÑ…¹‘¥¹œ½˜¡½ÜQ½µ…Ğ¥Ì¡…¹‘±¥¹œ¥¹‘¥Ù¥‘Õ…°É•ÅÕ•ÍÑÌ¸=¹”å½ÔÉ”½±±•Ñ¥¹œ…¹ÁÉ½•ÍÍ¥¹œå½ÕÈ±½Ìİ¥Ñ …Ñ…‘½œ°å½Ô…¸…±Í¼…±•ÉĞ½¸Ñ¡¥Ì±½œ‘…Ñ„¥¸É•…°Ñ¥µ”¸%¸Ñ¡¥ÌÍ•Ñ¥½¸°İ”±°Í¡½Üå½Ô¡½ÜÑ¼Í•ĞÕÀ„m±½œ…±•ÉÑt¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½µ½¹¥Ñ½É}ÑåÁ•Ì½±½œ¼¤Ñ¼ÑÉ…¬É¥Ñ¥…°Í•ÉÙ•ÈµÍ¥‘”•ÉÉ½ÉÌ€ Õáà!QQ@ÍÑ…ÑÕÌ½‘•Ì¤¸()Q¼É•…Ñ”„±½œ…±•ÉĞ°¹…Ù¥…Ñ”Ñ¼m5½¹¥Ñ½ÉÌ€ø9•Ü5½¹¥Ñ½ÉÌ€ø1½Ít¡¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌÉ•…Ñ”½±½œ¤¸e½Ô…¸¹…ÉÉ½Ü‘½İ¸Ñ¡”Í•…É É•ÍÕ±ÑÌ‰äÍ•…É¡¥¹œ™½ÈÑ¡”™…•ÑÌ‘¥ÍÕÍÍ••…É±¥•ÈÍÕ …Ì¡ÑÑÀ¹ÍÑ…ÑÕÍ}½‘•€…¹¡½ÍÑ€¸()íìğ¥µœÍÉŒôˆÈÄµÑ½µ…Ğµ±½Ìµ¡•¬¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰É•…Ñ”…¹…±•ÉĞ™½ÈQ½µ…Ğ±½Ìˆ€ùõô()Ìİ¥Ñ Ñ¡”µ•ÑÉ¥Œ…±•ÉĞ°å½Ô…¸Í•Ğ„Ñ¡É•Í¡½±™½ÈÑÉ¥•É¥¹œ…¸…±•ÉĞ…¹„İ…É¹¥¹œ¸%¸Ñ¡¥Ì•á…µÁ±”°Ñ¡”µ½¹¥Ñ½Èİ¥±°…±•ÉĞ½Èİ…É¸å½Ô¥˜Q½µ…Ğ±½Ì€ÄÔ½È€ÄÀÍ•ÉÙ•È•ÉÉ½ÉÌ€¡É•ÍÁ•Ñ¥Ù•±ä¤½Ù•È„ÍÁ…¸½˜€ÄÔµ¥¹ÕÑ•Ì¸()1½œ…±•ÉÑÌ…É”ÕÍ•™Õ°™½ÈÍ¥™Ñ¥¹œÑ¡É½Õ „±…É”Ù½±Õµ”½˜±½Ì™½Èå½Ô°…¹…ÕÑ½µ…Ñ¥…±±ä¹½Ñ¥™å¥¹œå½Ô½˜É¥Ñ¥…°¥ÍÍÕ•Ì…ÌÑ¡•ä¡…ÁÁ•¸¸e½Ô…¸•Ù•¸¥¹±Õ‘”Í…µÁ±•Ì½˜Ñ¡”±½ÌÑ¡…ĞÑÉ¥•É•Ñ¡”…±•ÉĞ¥¸å½ÕÈm¹½Ñ¥™¥…Ñ¥½¸µ•ÍÍ…•t¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½µ½¹¥Ñ½É}ÑåÁ•Ì½±½œ¼¹½Ñ¥™¥…Ñ¥½¹Ìµ…¹µ±½œµÍ…µÁ±•Ì¤°Í¼å½ÕÈÑ•…´…¸ÅÕ¥­±ä‘¥…¹½Í”Ñ¡”¥ÍÍÕ”¸¡•¬½ÕĞÑ¡”‘½Ì™½Èµ½É”¥¹™½Éµ…Ñ¥½¸½¸Ñ¡”m…Ù…¥±…‰±”…±•ÉĞÑåÁ•Ít¡¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½µ½¹¥Ñ½ÉÌ½µ½¹¥Ñ½É}ÑåÁ•Ì¼¤…¹µ…¹…¥¹œ•… ½¹”¸((ŒŒ5½¹¥Ñ½ÈQ½µ…Ğİ¥Ñ …Ñ…‘½œ)½µÁÉ•¡•¹Í¥Ù”µ½¹¥Ñ½É¥¹œ™½ÈQ½µ…Ğ¥¹Ù½±Ù•Ì¥‘•¹Ñ¥™å¥¹œ­•äµ•ÑÉ¥Ì™½È‰½Ñ Ñ¡”Q½µ…ĞÍ•ÉÙ•È…¹)Y4°½±±•Ñ¥¹œ…¹•áÑÉ…Ñ¥¹œ±½œ‘…Ñ„°…¹½¹¹•Ñ¥¹œ•Ù•ÉåÑ¡¥¹œ¥¸„µ•…¹¥¹™Õ°İ…ä¸%¸Ñ¡¥ÌÁ½ÍĞ°İ”Ù”Í¡½İ¸å½Ô¡½ÜÑ¼µ½¹¥Ñ½ÈQ½µ…Ğ±½Ì…¹µ•ÑÉ¥Ì¥¸½¹”Á±…”İ¥Ñ …Ñ…‘½œ‘…Í¡‰½…É‘Ì…¹…±•ÉÑÌ¸¹İ¥Ñ µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõô¥¹Ñ•É…Ñ¥½¹Ì°å½Ô…¸•…Í¥±äÍÑ…ÉĞµ½¹¥Ñ½É¥¹œQ½µ…Ğ…±½¹Í¥‘”µ•ÑÉ¥Ì°±½Ì°…¹‘¥ÍÑÉ¥‰ÕÑ•É•ÅÕ•ÍĞÑÉ…•Ì™É½´…±°½˜Ñ¡”½Ñ¡•ÈÑ•¡¹½±½¥•Ì¥¸å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”¸•Ğ‘••Á•ÈÙ¥Í¥‰¥±¥Ñä¥¹Ñ¼Q½µ…ĞÑ½‘…äİ¥Ñ „€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”…Ñ…‘½œÑÉ¥…°ğ½„ø¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½Ñ½µ…Ğ½…¹…±åé¥¹œµÑ½µ…Ğµ±½Ìµ…¹µµ•ÑÉ¥Ìµİ¥Ñ µ‘…Ñ…‘½œ¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|(()mÁ…ÉĞµ½¹”µ±¥¹­tè€½‰±½œ½Ñ½µ…Ğµ…É¡¥Ñ•ÑÕÉ”µ…¹µÁ•É™½Éµ…¹”)mÁ…ÉĞµÑİ¼µ±¥¹­tè€½‰±½œ½Ñ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ì)m±¥¹¬µÑ¼µÉ•µ½Ñ”µ½¹¹•Ñ¥½¹Ítè€½‰±½œ½Ñ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ì•¹…‰±¥¹œµÉ•µ½Ñ”µ©µàµ½¹¹•Ñ¥½¹Ìµ™½ÈµÑ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±Ì)mÁ…ÉĞµ½¹”µ±½Ìµ±¥¹­tè€½‰±½œ½Ñ½µ…Ğµ…É¡¥Ñ•ÑÕÉ”µ…¹µÁ•É™½Éµ…¹”•ÉÉ½ÉÌ)mÁ…ÉĞµÑİ¼µÙ…±Ù”µÁ…ÑÑ•É¹Ítè€½‰±½œ½Ñ½µ…Ğµµ½¹¥Ñ½É¥¹œµÑ½½±ÌÕÍÑ½µ¥é¥¹œµÑ½µ…Ğµ…•ÍÌµ…¹µÍ•ÉÙ•Èµ±½Ì(
+In [Part 2][part-two-link] of this series, we showed you how to collect key Tomcat performance metrics and logs with open source tools. These tools are useful for quickly viewing health and performance data from Tomcat, but don't provide much context for how those metrics and logs relate to other applications or systems within your infrastructure.
+
+In this post, we will look at how Datadog provides more comprehensive monitoring for Tomcat and other technologies in your infrastructure, by connecting events, logs, and metrics together in one fully integrated platform. And, because Datadog integrates with more than {{< translate key="integration_count" >}} technologies, you can track long-term performance trends and patterns across all systems in your infrastructure, not just your Tomcat server. You can also get deeper visibility into Tomcat applications by collecting, processing, and analyzing your logs.
+
+In this post, we will walk through how to:
+
+- [set up Datadog's Tomcat integration](#set-up-datadogs-tomcat-integration)
+- [explore metrics in customizable dashboards](#explore-tomcat-and-jvm-metrics-in-dashboards)
+- [process and analyze Tomcat logs](#monitor-tomcat-logs)
+- [create alerts to detect Tomcat health and performance issues](#alerting-on-tomcat-metrics-and-logs)
+
+Note that this guide includes commands for Linux hosts, so you may need to consult the [Agent usage docs](https://docs.datadoghq.com/agent/basic_agent_usage/) if you are using another operating system.
+
+## Set up Datadog's Tomcat integration
+
+### 1. Install the Datadog Agent
+Datadog collects Tomcat and JVM metrics exposed by JMX via the [JMXFetch plugin](https://docs.datadoghq.com/integrations/java/#overview). This plugin is built into Datadogâ€™s Java integrations, including the Tomcat integration. To begin collecting this data, you will need to [install the Datadog Agent](https://app.datadoghq.com/account/settings#agent) on your host. The Agent is open source software that forwards metrics, events, and logs from your hosts to Datadog. You can install the Agent by running the following command on your Tomcat host:
+
+```
+DD_API_KEY=<YOUR_API_KEY> bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
+```
+
+Note that your Datadog API key is automatically included on the [Agent installation page](https://app.datadoghq.com/account/settings#agent) of your account, but you can also access your API key [here](https://app.datadoghq.com/account/settings#api). This page includes platform-specific instructions for installing version 6 of the Agent. Once you've installed the Agent, you can configure it to start collecting metrics and logs. But first, make sure that you've enabled remote JMX connections for your Tomcat server (refer to [Part 2][link-to-remote-connections] for instructions).
+
+### 2. Enable log collection in the Agent
+The Datadog Agent uses YAML files to set up its integrations, as well as for its own configuration. To configure the Agent to collect logs, set the `logs_enabled` parameter to `true` in the Agent's configuration file (**datadog.yaml**).
+
+```
+# Logs agent
+# Logs agent is disabled by default
+logs_enabled: true
+```
+The location of this file [varies across platforms](https://docs.datadoghq.com/agent/guide/agent-configuration-files/?tab=agentv6), but it is normally located in the **/etc/datadog-agent/** directory on Linux systems.
+
+### 3. Configure the Agent to collect Tomcat metrics and logs
+Next, navigate to the Tomcat subdirectory (**/etc/datadog-agent/conf.d/tomcat.d/**), which includes two configuration files: **metrics.yaml**  and **conf.yaml.example**.
+
+The **metrics.yaml** file specifies all of the Tomcat [metrics](https://docs.datadoghq.com/integrations/tomcat/#data-collected) that Datadog collects by default. This includes all of the key metrics we discussed in [Part 1][part-one-link].
+
+The **conf.yaml.example** file provides a template for configuring the Agent to collect Tomcat metrics and logs. Copy this file and rename it **conf.yaml** within the same **/etc/datadog-agent/conf.d/tomcat.d/** directory. Open the **conf.yaml** file and make two updates so that the Agent can start collecting Tomcat metrics and logs. First, define the instance host and port, which should match the host and port you used for your JMX remote connection:
+
+```
+instances:
+  - host: localhost
+    port: 9991
+```
+
+You can also use the host name or IP address of the Tomcat server instead of `localhost` if you installed the Agent on a different server.
+
+In the `logs` section, specify the paths to your Tomcat server and access logs. Because Tomcat creates a new log file every day by default (e.g., **localhost_access_log.2018-11-03.txt**), you can use [wildcards](https://docs.datadoghq.com/logs/log_collection/?tab=tailexistingfiles#tail-multiple-directories-or-whole-directories-by-using-wildcards) to easily detect and start collecting data from new log files:
+
+```
+## Log Section (Available for Agent >=6.0)
+logs:
+  - type: file
+    path: /opt/tomcat/logs/localhost_access_log*.txt
+    source: tomcat
+    service: javabox-sample-app
+  - type: file
+    path: /opt/tomcat/logs/catalina*.log
+    source: tomcat
+    service: javabox-sample-app
+```
+
+The wildcard character (`*`) ensures that the Datadog Agent pulls in every log you specify, regardless of the date. Make sure to set the `source` attribute to `tomcat` in order to trigger the integration pipeline, which will automatically extract key facets from your Tomcat logs. If you're using Datadog [APM](https://docs.datadoghq.com/tracing/setup/) to monitor an application that runs Tomcat, you can specify the same `service` to connect your Tomcat logs to related APM metrics and request traces. 
+
+Once you've updated and saved these configurations, restart the Agent with the following command:
+
+```
+sudo service datadog-agent restart
+```
+
+The Agent will immediately begin forwarding Tomcat and JVM metrics and logs to Datadog.
+
+### 4. Enable trace collection for application performance monitoring
+Datadog APM includes support for [Java applications](/blog/java-monitoring-apm/), and automatically traces requests from Tomcat. APM gives you end-to-end visibility with distributed tracing, detailed performance dashboards, and service breakdowns. [To start collecting traces for Tomcat](https://docs.datadoghq.com/tracing/setup/java/), download the `dd-java-agent.jar` file onto your server:
+
+```
+wget -O dd-java-agent.jar 'https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.datadoghq&a=dd-java-agent&v=LATEST'
+```
+
+You can then begin tracing your application with the following JVM argument:
+
+```
+-javaagent:/path/to/the/dd-java-agent.jar
+```
+
+This enables you to [explore your services](https://docs.datadoghq.com/tracing/visualization/) in Datadog, analyze trace metrics, and view traces and spans for your services.
+
+{{< img src="22-tomcat-performance-metrics-java-apm-v2.png" popup="true" alt="Example of a trace for a Java application" >}}
+
+## Explore Tomcat and JVM metrics in dashboards
+Datadog provides an [out-of-the-box dashboard](https://app.datadoghq.com/dash/integration/32/) that you can clone, and use as a template to display the key Tomcat and JVM metrics we discussed in [Part 1][part-one-link], including Tomcat threads, request processing time, and JVM memory usage.
+
+{{< img src="2-custom-tomcat-metrics-dashboard.png" popup="true" alt="Custom Tomcat metrics dashboard" >}}
+
+This dashboard provides a high-level view of Tomcat, but you can also drill down and jump to other sources of monitoring data for more effective troubleshooting. For example, if you notice a spike in the error rate, you can investigate the root cause of the issue by clicking on the graph, and navigating to logs that were collected from the Tomcat server(s) around the same time frame.
+
+{{< img src="3-tomcat-metrics-error-rate-v3.png" alt="View Tomcat logs related to spike in error rate" >}}
+
+## Monitor Tomcat logs
+[Tomcat logs][part-one-logs-link] can help you identify critical errors related to your JVM. They also give you more fine-grained insights into the status and processing time of requests hitting your server. Now that we've configured the Agent to collect these logs, we will show you how Datadog automatically parses them with its built-in integration pipeline, and how you can customize this pipeline to extract data from custom log formats. We'll also show you how to use log analytics to explore and dig deeper into all the data you're collecting from your Tomcat logs.
+
+### Tomcat integration log pipeline
+The Tomcat [log pipeline](https://docs.datadoghq.com/logs/processing/pipelines/#integration-pipelines) uses [processors](https://docs.datadoghq.com/logs/processing/processors/) to extract information from logs into a more structured format.
+
+{{< img src="4-tomcat-logs-integration-pipeline.png" popup="true" alt="Tomcat logs integration pipeline" >}}
+
+#### Processing Tomcat access logs
+The Tomcat logging integration pipeline automatically processes Tomcat access logs that use the standard `%h %l %u %t "%r" %s %b` [valve pattern][part-two-valve-patterns], and maps them to pre-defined log attributes:
+
+| Valve pattern | Description | Log attribute |
+| ------------------ | --------------- | ----------------- |
+| `%h` | the IP address of the client sending the request | `client.ip` |
+| `%l` | the username from the identd service | `http.ident`|
+| `%u` | the user id of the authenticated user requesting the page (if HTTP authentication is used) | `http.useragent` |
+| `%t` | the request timestamp | `timestamp` |
+| `%r` | the request method and URL path | `http.method`, `http.url`, `http.url_details` |
+| `%s` | the HTTP status code | `http.status_code` |
+| `%b` | the number of bytes returned to the client | `network.bytes_written` |
+
+
+This means that access logs using that valve pattern will get processed into the following log, accessible in the Log Explorer:
+
+{{< img src="5-tomcat-log-unedited.png" popup="true" alt="Unedited Tomcat log" >}}
+
+#### Customize your Tomcat logs with pipelines
+Integration log pipelines are read-only, but you can [clone them](https://docs.datadoghq.com/logs/processing/pipelines/#integration-pipelines) to create your own pipelines in order to process data from other types of log formats, or to further customize how your logs are structured in the Log Explorer.
+
+If you've added the request processing time pattern code (`%D`) to your access log valve pattern (as discussed in [Part 2][part-two-valve-patterns]), you can adjust your pipeline to begin processing this data from your access logs. Navigate to the custom Tomcat pipeline you created earlier, and click on the "Grok Parser: Parsing Tomcat logs" processor to start editing it. This processor contains a list of parsing rules and helper rules (under "Advanced Settings").
+
+{{< img src="10-tomcat-logs-edit-grok-parser.png" popup="true" alt="Edit grok parser for Tomcat log format" >}}
+
+In order to include the new pattern code, you need to add `%{_duration}` to end of the `access.common` parsing rule:
+
+```
+access.common %{_client_ip} %{_ident} %{_auth} \[%{_date_access}\] "(?>%{_method} |)%{_url}(?> %{_version}|)" %{_status_code} (?>%{_bytes_written}|-) %{_duration}
+```
+
+This will allow the processor to automatically parse each access log for the value of the request processing time. Datadog [reserves this attribute](https://docs.datadoghq.com/logs/processing/attributes_naming_convention/#performance) for use with [APM](https://docs.datadoghq.com/tracing/), which measures duration in nanoseconds. If you're using APM, you can easily update your processor to convert the request processing time from milliseconds to nanoseconds by revising the `duration` helper rule in the "Advanced Settings" section of the processor:
+
+```
+_duration %{integer:duration:scale(1000000)}
+```
+
+Once you save those changes, Datadog will immediately begin processing new access logs, and include a new `duration` attribute that shows the request processing time in nanoseconds.
+
+{{< img src="11-tomcat-logs-edit-duration.png" popup="true" alt="Tomcat log with new duration attribute" >}}
+
+### Exploring and analyzing your Tomcat logs
+With structured attributes, you can easily search all logs collected by the Agent in the [Log Explorer](https://app.datadoghq.com/logs), and quickly view the ones that are most important to you. You can [create a measure](https://docs.datadoghq.com/logs/explorer/?tab=measures#setup) from any numerical attribute (like duration) if you'd like to visualize it with [log analytics](/blog/log-analytics-dashboards/#graph-numerical-data-in-your-logs) by clicking on the attribute then the "Create measure for" button.
+
+{{< img src="12-tomcat-logs-create-measure.png" popup="true" alt="Create a measure from a Tomcat log" >}}
+
+You can use [facets](https://docs.datadoghq.com/logs/explorer/?tab=facets#setup) to make attributes searchable, enabling you to easily filter, search, and analyze logs by a specific client IP, an application service, or an HTTP response code. For example, you can create a new facet for the `http.status_code` attribute by inspecting a Tomcat log entry in the Log Explorer, and clicking on the `http.status_code` attribute.
+
+{{< img src="6-create-facet-from-tomcat-log.png" popup="true" alt="Create facet from Tomcat log" >}}
+
+If you need to quickly sift through a large volume of logs, you can click on the [Log Patterns](https://www.datadoghq.com/blog/log-patterns/) icon in the upper-left corner of the Log Explorer. As your server generates logs, Datadog will group them by common patterns and highlight the differences within each pattern (such as IP addresses or request URL paths), so you can pinpoint the cause of the errors.
+
+{{< img src="14-tomcat-logs-patterns.png" popup="true" alt="View Tomcat log patterns" >}}
+
+And you can use measures and facets in Log Analytics to sift through your logs. For example, you can view the requests that are taking the longest amount of time to process (measure), broken down by their status (facet).
+
+{{< img src="15-tomcat-logs-analyzer-status.png" popup="true" alt="Use the Log Analyzer to view Tomcat logs" >}}
+
+Or you can view average processing time across other web servers in your infrastructure, in addition to Tomcat. If you want to save the resulting graph, you can export it to a new or existing dashboard by clicking on the "Export" button in the top-right corner.
+
+{{< img src="16-tomcat-logs-analyzer-server.png" popup="true" alt="View processing time across servers based on Tomcat log attributes" >}}
+
+We've seen how Datadog's Tomcat integration pipeline automatically processes and extracts key data from your Tomcat logs. Once you're collecting and processing all your Tomcat logs, you can analyze them to determine if, for example, requests to a particular URL path are generating a high rate of server errors. In the next section, we will show you how to create alerts to immediately notify you of potential issues.
+
+## Alerting on Tomcat metrics and logs
+An important aspect of monitoring is knowing when critical changes occur with your server as they happen. If Tomcat goes down or starts generating a large number of errors, you will want to know about it as soon as possible. You can proactively monitor Tomcat by setting up [alerts](https://docs.datadoghq.com/monitors/) to notify you of activity such as [anomalies](https://docs.datadoghq.com/monitors/monitor_types/anomaly/) in request processing time or spikes in the number of errors your application or server generates. In this section, we'll show you how to use Datadog alerts to track potential issues with your Tomcat server.
+
+### Alerting on Tomcat server status
+Datadog's Tomcat integration includes a built-in status check that can automatically alert you when the Agent is unable to connect to your Tomcat server.
+
+To create this alert, navigate to [Monitors > New Monitors > Integration](https://app.datadoghq.com/monitors#create/integration) in the Datadog app, select the Tomcat integration tile, and click on the "Integration Status" tab. In the example below, we've configured Datadog to alert us if the Agent fails to connect to any Tomcat host after two consecutive tries. The alert will automatically resolve if the Agent successfully connects to Tomcat again.
+
+{{< img src="17-tomcat-logs-health-check.png" popup="true" alt="Set up a Tomcat health check" >}}
+
+You can configure each alert to notify specific users or teams with information about what triggered the alert and how to further diagnose the issue. Each alert message is [customizable](https://docs.datadoghq.com/monitors/notifications/?tab=is_alertis_warning#message-template-variables), so you can use template variables to monitor multiple hosts with the same alert.
+
+{{< img src="18-tomcat-logs-health-check-message.png" popup="true" alt="Set message for Tomcat health check" >}}
+
+### Alerting on JVM heap memory usage
+It's important to monitor memory usage to ensure that the JVM does not run out of resources needed to support the Tomcat server. With Datadog, you can [create an alert](https://app.datadoghq.com/monitors#create/metric) to automatically notify you when your Tomcat host is using a high percentage of the maximum available heap. In the example below, we've calculated a usage percentage based on the `jvm.heap_memory` (the total amount of memory used) and `jvm.heap_memory_max` (the maximum amount of memory available) metrics. The warning and critical thresholds are set to 50 and 80 percent, respectively. If heap memory usage exceeds 80 percent, then the alert will notify the appropriate team members to address the issue.
+
+{{< img src="19-tomcat-metrics-memory-alert.png" popup="true" alt="Set an alert for memory usage based on Tomcat metrics" >}}
+
+If you want the alert to resolve automatically, then you can set a [recovery threshold](/blog/introducing-recovery-thresholds/). In this example, the alert will resolve itself if it detects that the average memory usage has dropped below 40 percent over the past five minutes.
+
+{{< img src="20-tomcat-metrics-memory-alert-conditions.png" popup="true" alt="Set conditions for alert based on Tomcat metrics" >}}
+
+### Alerting on Tomcat logs
+We've already shown you how to analyze your logs to gain a better understanding of how Tomcat is handling individual requests. Once you're collecting and processing your logs with Datadog, you can also alert on this log data in real time. In this section, we'll show you how to set up a [log alert](https://docs.datadoghq.com/monitors/monitor_types/log/) to track critical server-side errors (5xx HTTP status codes).
+
+To create a log alert, navigate to [Monitors > New Monitors > Logs](https://app.datadoghq.com/monitors#create/log). You can narrow down the search results by searching for the facets discussed earlier such as `http.status_code` and `host`.
+
+{{< img src="21-tomcat-logs-check.png" popup="true" alt="Create and alert for Tomcat logs" >}}
+
+As with the metric alert, you can set a threshold for triggering an alert and a warning. In this example, the monitor will alert or warn you if Tomcat logs 15 or 10 server errors (respectively) over a span of 15 minutes.
+
+Log alerts are useful for sifting through a large volume of logs for you, and automatically notifying you of critical issues as they happen. You can even include samples of the logs that triggered the alert in your [notification message](https://docs.datadoghq.com/monitors/monitor_types/log/#notifications-and-log-samples), so your team can quickly diagnose the issue. Check out the docs for more information on the [available alert types](https://docs.datadoghq.com/monitors/monitor_types/) and managing each one.
+
+## Monitor Tomcat with Datadog
+Comprehensive monitoring for Tomcat involves identifying key metrics for both the Tomcat server and JVM, collecting and extracting log data, and connecting everything in a meaningful way. In this post, we've shown you how to monitor Tomcat logs and metrics in one place with Datadog dashboards and alerts. And with more than {{< translate key="integration_count" >}} integrations, you can easily start monitoring Tomcat alongside metrics, logs, and distributed request traces from all of the other technologies in your infrastructure. Get deeper visibility into Tomcat today with a <a href="#" class="sign-up-trigger">free Datadog trial</a>.
+
+[part-one-link]: /blog/tomcat-architecture-and-performance
+[part-two-link]: /blog/tomcat-monitoring-tools
+[link-to-remote-connections]: /blog/tomcat-monitoring-tools#enabling-remote-jmx-connections-for-tomcat-monitoring-tools
+[part-one-logs-link]: /blog/tomcat-architecture-and-performance#errors
+[part-two-valve-patterns]: /blog/tomcat-monitoring-tools#customizing-tomcat-access-and-server-logs

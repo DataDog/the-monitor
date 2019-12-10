@@ -1,1 +1,155 @@
-m5½¹¥Ñ½É¥¹œI…‰‰¥Ñ5DÁ•É™½Éµ…¹”İ¥Ñ …Ñ…‘½œ()%¸A…ÉĞ€È½˜Ñ¡¥ÌÍ•É¥•Ì°İ”Ù”Í••¸¡½ÜI…‰‰¥Ñ5DmÍ¡¥ÁÌİ¥Ñ Ñ½½±ÍumÁ…ÉĞÉt™½Èµ½¹¥Ñ½É¥¹œ‘¥™™•É•¹Ğ…ÍÁ•ÑÌ½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¸è¡½Üå½ÕÈÅÕ•Õ•Ì¡…¹‘±”µ•ÍÍ…”ÑÉ…™™¥Œ°¡½Üå½ÕÈ¹½‘•Ì½¹ÍÕµ”µ•µ½Éä°İ¡•Ñ¡•Èå½ÕÈ½¹ÍÕµ•ÉÌ…É”½Á•É…Ñ¥½¹…°°…¹Í¼½¸¸]¡¥±”I…‰‰¥Ñ5DÁ±Õ¥¹Ì…¹‰Õ¥±Ğµ¥¸Ñ½½±Ì¥Ù”å½Ô„Ù¥•Ü½˜å½ÕÈµ•ÍÍ…¥¹œÍ•ÑÕÀ¥¸¥Í½±…Ñ¥½¸°I…‰‰¥Ñ5Dİ•…Ù•ÌÑ¡É½Õ Ñ¡”Ù•Éä‘•Í¥¸½˜å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì¸Q¼‰•ÑÑ•ÈÕ¹‘•ÉÍÑ…¹å½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì°å½Ô¹••Ñ¼Í•”¡½ÜI…‰‰¥Ñ5DÁ•É™½Éµ…¹”É•±…Ñ•ÌÑ¼Ñ¡”É•ÍĞ½˜å½ÕÈÍÑ…¬¸()…Ñ…‘½œ¥Ù•Ìå½Ô…¸…±°µ…Ğµ½¹”Ù¥•Ü½˜­•äI…‰‰¥Ñ5Dµ•ÑÉ¥Ì°½ÕĞ½˜Ñ¡”‰½à°İ¥Ñ ½ÕÈI…‰‰¥Ñ5D‘…Í¡‰½…É¸e½Ô…¸…±Í¼Í•Ğ…±•ÉÑÌÑ¼¹½Ñ¥™äå½Ôİ¡•¸Ñ¡”…Ù…¥±…‰¥±¥Ñä½˜å½ÕÈµ•ÍÍ…¥¹œÍ•ÑÕÀ¥Ì…ĞÍÑ…­”¸%¸Ñ¡¥ÌÁ½ÍĞİ”±°Í¡½Üå½Ô¡½ÜÑ¼Í•ĞÕÀ½µÁÉ•¡•¹Í¥Ù”µ½¹¥Ñ½É¥¹œÕÍ¥¹œ…Ñ…‘½œÌI…‰‰¥Ñ5D¥¹Ñ•É…Ñ¥½¸¸()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµÁ•É™½Éµ…¹”µÍÉ••¹‰½…É¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5DA•É™½Éµ…¹”€´=ÕĞµ½˜µÑ¡”µ‰½àÍÉ••¹‰½…É™½ÈI…‰‰¥Ñ5DˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô((ŒŒ%¹ÍÑ…±±¥¹œÑ¡”•¹Ğ)Q¡”…Ñ…‘½œ•¹Ğ¡•­Ìå½ÕÈ¡½ÍĞ™½ÈI…‰‰¥Ñ5DÁ•É™½Éµ…¹”µ•ÑÉ¥Ì…¹Í•¹‘ÌÑ¡•´Ñ¼…Ñ…‘½œ¸Q¡”•¹Ğ…¸…±Í¼…ÁÑÕÉ”µ•ÑÉ¥Ì…¹ÑÉ…”É•ÅÕ•ÍÑÌ™É½´Ñ¡”É•ÍĞ½˜Ñ¡”ÍåÍÑ•µÌÉÕ¹¹¥¹œ½¸å½ÕÈ¡½ÍÑÌ¸%¹ÍÑÉÕÑ¥½¹Ì™½È¥¹ÍÑ…±±¥¹œÑ¡”•¹Ğ…É”m¡•É•um¥¹ÍÑ…±°µ…•¹Ñt¸½ÈÍ½µ”ÍåÍÑ•µÌÑ¡¥Ì½¹±äÑ…­•Ì„Í¥¹±”½µµ…¹¸¡•¬½ÕÈm‘½Õµ•¹Ñ…Ñ¥½¹um…•¹Ğµ‘½Ít™½Èµ½É”‘•Ñ…¥±Ì½¸Ñ¡”•¹Ğ¸((ŒŒ%¹Ñ•É…Ñ¥¹œ…Ñ…‘½œİ¥Ñ I…‰‰¥Ñ5D)Q¡”I…‰‰¥Ñ5D¥¹Ñ•É…Ñ¥½¸¥Ì‰…Í•½¸Ñ¡”mµ…¹…•µ•¹ĞÁ±Õ¥¹umµ…¹…•µ•¹ĞµÁ±Õ¥¹t€¡Í•”mA…ÉĞ€ÉumÁ…ÉĞÉt¤°İ¡¥ É•…Ñ•Ì„mİ•ˆÍ•ÉÙ•Éum¡ÑÑÀµ…Á¥tÑ¡…ĞÉ•Á½ÉÑÌµ•ÑÉ¥Ì™É½´¥ÑÌ¡½ÍĞ¹½‘”…¹…¹ä¹½‘•Ì±ÕÍÑ•É•İ¥Ñ ¥Ğ¸Q¼½¹™¥ÕÉ”Ñ¡”¥¹Ñ•É…Ñ¥½¸°™¥ÉÍĞm•¹…‰±•umÁ…ÉĞÉµ…¹…•µ•¹ÑtÑ¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸¸Q¡•¸™½±±½ÜÑ¡”¥¹Ñ•É…Ñ¥½¸Ìm¥¹ÍÑÉÕÑ¥½¹Íum¥¹ÍÑ…±°µ¥¹Ñ•É…Ñ¥½¹t™½È…‘‘¥¹œ„½¹™¥ÕÉ…Ñ¥½¸™¥±”¸()e½Ô±°İ…¹ĞÑ¼•‘¥ĞÑ¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”Ñ¼É•™±•ĞÑ¡”Í•ÑÕÀ½˜å½ÕÈ¡½ÍÑÌ¸‰…Í¥Œ½¹™¥œ±½½­Ì±¥­”Ñ¡¥Ìè()€)¥¹¥Ñ}½¹™¥œè()¥¹ÍÑ…¹•Ìè(€€€€´€É…‰‰¥ÑµÅ}…Á¥}ÕÉ°è¡ÑÑÀè¼½±½…±¡½ÍĞèÄÔØÜÈ½…Á¤¼(€€€€€€É…‰‰¥ÑµÅ}ÕÍ•Èè‘…Ñ…‘½œ(€€€€€€É…‰‰¥ÑµÅ}Á…ÍÌèÍ½µ•}Á…ÍÍİ½É)€)Q¡”½¹™¥ÕÉ…Ñ¥½¸™¥±”¥Ù•ÌÑ¡”•¹Ğ…•ÍÌÑ¼Ñ¡”µ…¹…•µ•¹ĞA$¸]¥Ñ¡¥¸Ñ¡”¥¹ÍÑ…¹•Í€Í•Ñ¥½¸°¡…¹”É…‰‰¥ÑµÅ}…Á¥}ÕÉ±€Ñ¼µ…Ñ Ñ¡”…‘‘É•ÍÌ½˜Ñ¡”µ…¹…•µ•¹Ğİ•ˆÍ•ÉÙ•È°İ¡¥ Í¡½Õ±¡…Ù”Á•Éµ¥ÍÍ¥½¸Ñ¼…•ÁĞÉ•ÅÕ•ÍÑÌ™É½´Ñ¡”•¹ĞÌ‘½µ…¥¸€¡Í•”mA…ÉĞ€ÉumÁ…ÉĞÉ…Á¥t¤¸5½¹¥Ñ½É¥¹œ„±ÕÍÑ•È½˜I…‰‰¥Ñ5D¹½‘•ÌÉ•ÅÕ¥É•ÌÑ¡…Ğ½¹±ä½¹”¹½‘”•áÁ½Í•Ìµ•ÑÉ¥ÌÑ¼Ñ¡”•¹Ğ¸Q¡”¹½‘”İ¥±°…É•…Ñ”‘…Ñ„™É½´¥ÑÌÁ••ÉÌ¥¸Ñ¡”±ÕÍÑ•È¸½ÈI…‰‰¥Ñ5DÙ•ÉÍ¥½¹Ì€Ì¸À…¹±…Ñ•È°Á½ÉĞ€ÄÔØÜÈ¥ÌÑ¡”‘•™…Õ±Ğ¸()]¡¥±”…¸A$UI0¥ÌÉ•ÅÕ¥É•°„ÕÍ•È¥Ì½ÁÑ¥½¹…°¸%˜å½ÔÁÉ½Ù¥‘”½¹”°µ…­”ÍÕÉ”å½ÔÙ”‘•±…É•¥Ğİ¥Ñ¡¥¸Ñ¡”Í•ÉÙ•È¸½±±½ÜmÑ¡¥ÍumÉ…‰‰¥ÑµÄµÕÍ•ÉÍt‘½Õµ•¹Ñ…Ñ¥½¸Ñ¼É•…Ñ”ÕÍ•ÉÌ…¹…ÍÍ¥¸ÁÉ¥Ù¥±••Ì¸%˜å½ÕÈÍåÍÑ•´¡…Ìµ½É”Ñ¡…¸€ÄÀÀ¹½‘•Ì½È€ÈÀÀÅÕ•Õ•Ì°å½Ô±°İ…¹ĞÑ¼ÍÁ•¥™äÑ¡”¹½‘•Ì…¹ÅÕ•Õ•ÌÑ¡”•¹Ğİ¥±°¡•¬¸M•”½ÕÈmÑ•µÁ±…Ñ•umÑ•µÁ±…Ñ”µ½¹™¥t™½È•á…µÁ±•Ì½˜¡½ÜÑ¼‘¼Ñ¡¥Ì°…±½¹œİ¥Ñ ½Ñ¡•È½¹™¥ÕÉ…Ñ¥½¸½ÁÑ¥½¹Ì¸()=¹”å½ÔÙ”mÉ•ÍÑ…ÉÑ•Ñ¡”•¹Ñum…•¹ĞµÉ•ÍÑ…ÉÑt°I…‰‰¥Ñ5DÍ¡½Õ±‰”É•Á½ÉÑ¥¹œµ•ÑÉ¥Ì°•Ù•¹ÑÌ°…¹Í•ÉÙ¥”¡•­ÌÑ¼…Ñ…‘½œ¸Y•É¥™äÑ¡¥Ì‰äÉÕ¹¹¥¹œÑ¡”m¥¹™¼½µµ…¹‘um…•¹Ğµ¥¹™½t…¹µ…­¥¹œÍÕÉ”Ñ¡”€‰¡•­ÌˆÍ•Ñ¥½¸¡…Ì…¸•¹ÑÉä™½È€‰É…‰‰¥ÑµÄˆ¸()€(€€€É…‰‰¥ÑµÄ€ Ô¸ÈÄ¸À¤(€€€€´´´´´´´´´´´´´´´´´(€€€€€€´¥¹ÍÑ…¹”€ŒÀm=-t(€€€€€€´½±±•Ñ•€ÌÌµ•ÑÉ¥Ì°€À•Ù•¹ÑÌ€˜€ÈÍ•ÉÙ¥”¡•­Ì)€()M¥¹”Ñ¡”¥¹Ñ•É…Ñ¥½¸¥Ì‰…Í•½¸Ñ¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸°¥Ğ…Ñ¡•ÉÌµ½ÍĞ½˜Ñ¡”Í…µ”µ•ÑÉ¥Ì¸M•”mA…ÉĞ€ÅumÁ…ÉĞÅt™½Èİ¡…ĞÑ¡¥Ì•¹Ñ…¥±Ì°…¹½ÕÈm‘½Õµ•¹Ñ…Ñ¥½¹umÉ…‰‰¥ÑµÄµ¥¹Ñ•É…Ñ¥½¸µ‘½Ít™½È„™Õ±°±¥ÍĞ½˜µ•ÑÉ¥Ì¸()Q¡”¥¹Ñ•É…Ñ¥½¸Ñ…Ì¹½‘”µ±•Ù•°µ•ÑÉ¥Ìİ¥Ñ Ñ¡”¹…µ”½˜„¹½‘”…¹ÅÕ•Õ”µ±•Ù•°µ•ÑÉ¥Ìİ¥Ñ Ñ¡”¹…µ”½˜„ÅÕ•Õ”¸e½Ô…¸É…Á µ•ÑÉ¥Ì‰ä¹½‘”½ÈÅÕ•Õ”Ñ¼¡•±Àå½Ô‘¥…¹½Í”I…‰‰¥Ñ5DÁ•É™½Éµ…¹”¥ÍÍÕ•Ì…¹½µÁ…É”µ•ÑÉ¥Ì…É½ÍÌå½ÕÈ…ÁÁ±¥…Ñ¥½¸¸((ŒŒQ¡”I…‰‰¥Ñ5D‘…Í¡‰½…É)	•…ÕÍ”Ñ¡”I…‰‰¥Ñ5D¥¹Ñ•É…Ñ¥½¸…Ñ¡•ÉÌµ•ÑÉ¥Ì™É½´Ñ¡”µ…¹…•µ•¹ĞÁ±Õ¥¸°¥Ğ…¸Ñ…­”‘…Ñ„Ñ¡…ĞÑ¡”Á±Õ¥¸É•Á½ÉÑÌ…ÌÍÑ…Ñ¥ŒÙ…±Õ•Ì…¹Á±½Ğ¥Ğ½Ù•ÈÑ¥µ”¸()½È¥¹ÍÑ…¹”°Ñ¡”¥¹Ñ•É…Ñ¥½¸…¸ÕÍ”…Ñ…‘½œÌ‰Õ¥±Ğµ¥¸Ñ…ÌÑ¼Ù¥ÍÕ…±¥é”Ñ¡”µ•µ½Éä½¹ÍÕµÁÑ¥½¸½˜•¥Ñ¡•È½¹”½È…±°½˜å½ÕÈÅÕ•Õ•Ì¸Q¡¥Ì•á…µÁ±”ÕÍ•ÌÑ¡”‘•µ¼…ÁÁ±¥…Ñ¥½¸™É½´mA…ÉĞ€ÉumÁ…ÉĞÉt°İ¡¥ ¡…¹‘±•Ì‘…Ñ„É•±…Ñ•Ñ¼‘¥™™•É•¹Ğ‰½É½Õ¡Ì¥¸9•Üe½É¬¥Ñä¸=ÕÈ…ÁÁ±¥…Ñ¥½¸ÅÕ•É¥•Ì…¸A$°ÁÕ‰±¥Í¡•ÌÑ¡”É•ÍÕ±Ñ¥¹œ)M=8Ñ¼„ÅÕ•Õ”°½¹ÍÕµ•Ì™É½´Ñ¡”ÅÕ•Õ”Ñ¼…É•…Ñ”Ñ¡”‘…Ñ„‰ä‰½É½Õ °Ñ¡•¸ÁÕ‰±¥Í¡•ÌÑ¼„™¥¹…°ÅÕ•Õ”°İ¡•É”Ñ¡”‘…Ñ„İ…¥ÑÌ™½È„‘…Ñ…‰…Í”Ñ¼ÍÑ½É”¥Ğ¸()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµÁ•É™½Éµ…¹”µµ•´µ‰äµÅÕ•Õ”¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5DA•É™½Éµ…¹”€´Q½À±¥ÍĞ½˜µ•µ½ÉäÕÍ”‰äI…‰‰¥Ñ5DÅÕ•Õ”ˆ€ùõô()É…Á¡¥¹œµ•µ½Éä½¹ÍÕµÁÑ¥½¸¥Ì•ÍÁ•¥…±±äÕÍ•™Õ°‰•…ÕÍ”½˜Ñ¡”İ…äI…‰‰¥Ñ5D¡…¹‘±•ÌÑ¡”Í¥é•Ì½˜µ•ÍÍ…•Ì€¡Í•”mA…ÉĞ€ÅumÁ…ÉĞÄµ½¹¹•Ñ¥½¸µÁ•É™½Éµ…¹•t¤¸e½Ô…¸Í•”İ¡•Ñ¡•Èå½ÕÈµ•ÍÍ…•ÌÑ…­”ÕÀµ½É”µ•µ½Éä…ÌÑ¡•äÉ”ÁÉ½•ÍÍ•°•Ù•¸…ÌÅÕ•Õ”‘•ÁÑ¡ÌÉ•µ…¥¸½¹ÍÑ…¹Ğ¸()e½Ô…¸…±Í¼ÕÍ”Ñ¡”I…‰‰¥Ñ5D¥¹Ñ•É…Ñ¥½¸Ñ¼½ÉÉ•±…Ñ”µ•ÑÉ¥Ì™½Èå½ÕÈÅÕ•Õ•Ìİ¥Ñ ÍåÍÑ•´µ±•Ù•°µ•ÑÉ¥Ì½ÕÑÍ¥‘”Ñ¡”Í½Á”½˜Ñ¡”I…‰‰¥Ñ5Dµ…¹…•µ•¹ĞÁ±Õ¥¸¸Q¡”¥¹Ñ•É…Ñ¥½¸Ìm½ÕĞµ½˜µÑ¡”µ‰½àÑ¥µ•‰½…É‘umÑ¥µ•‰½…É‘tµ…­•Ì¥Ğ•…ÍäÑ¼½µÁ…É”å½ÕÈ¹•Ñİ½É¬ÑÉ…™™¥Œ°ÍåÍÑ•´±½…°ÍåÍÑ•´µ•µ½Éä°…¹ATÕÍ…”İ¥Ñ Ñ¡”ÍÑ…Ñ”½˜å½ÕÈÅÕ•Õ•Ì½Ù•ÈÑ¥µ”¸((ŒŒ±•ÉÑÌ)=¹”å½Ô…É”½±±•Ñ¥¹œ…¹Ù¥ÍÕ…±¥é¥¹œI…‰‰¥Ñ5Dµ•ÑÉ¥Ì°å½Ô…¸Í•Ğ…±•ÉÑÌ¥¸…Ñ…‘½œÑ¼¹½Ñ¥™äå½ÕÈÑ•…´½˜Á•É™½Éµ…¹”¥ÍÍÕ•Ì¸()Ìİ”Ù”‘¥ÍÕÍÍ•¥¸mA…ÉĞ€ÅumÁ…ÉĞÅt°I…‰‰¥Ñ5Dİ¥±°m‰±½¬½¹¹•Ñ¥½¹Íum…±…ÉµÍtİ¡•¸¥ÑÌ¹½‘•ÌÕÍ”Ñ½¼µ…¹äÉ•Í½ÕÉ•Ì¸]¥Ñ …Ñ…‘½œ°å½Ô…¸¥‘•¹Ñ¥™äÉ•Í½ÕÉ”Í¡½ÉÑ…•Ì…¹ÕÍ”…±•ÉÑÌÑ¼¥Ù”å½ÕÈÑ•…´Ñ¥µ”Ñ¼É•ÍÁ½¹¸()Q¼‘¼Ñ¡¥Ì°‘•Ñ•Éµ¥¹”Ñ¡”±•Ù•°½˜µ•µ½Éä½È‘¥Í¬ÕÍ”…Ğİ¡¥ I…‰‰¥Ñ5Dİ¥±°ÍÑ…ÉĞ‰±½­¥¹œ½¹¹•Ñ¥½¹Ì¸e½Ôµ…äİ…¹ĞÑ¼¡•¬å½ÕÈm½¹™¥ÕÉ…Ñ¥½¸™¥±•um½¹™¥œµÉ…‰‰¥ÑµÅt™½ÈÑ¡”Ù…±Õ”½˜Ùµ}µ•µ½Éå}¡¥¡}İ…Ñ•Éµ…É­€½È‘¥Í­}™É••}±¥µ¥Ñ€¸Q¡•¸Í•Ğ…¸…±•ÉĞÑ¼ÑÉ¥•Èİ¡•¸Ñ¡…ĞÑ¡É•Í¡½±¥Ì…ÁÁÉ½…¡¥¹œ¸%¸Ñ¡”ÍÉ••¹Í¡½Ğ‰•±½Ü°İ”Ù”Í•Ğ…¸…±•ÉĞÑ¡É•Í¡½±™½Èµ•µ½ÉäÕÍ”…Ğ€ÌÔÁ•É•¹Ğ°„‰¥Ğ±•ÍÌÑ¡…¸Ñ¡”€ĞÀµÁ•É•¹ĞÑ¡É•Í¡½±…Ğİ¡¥ I…‰‰¥Ñ5DÑÉ¥•ÉÌ…¸¥¹Ñ•É¹…°…±…É´¸()%¸Ñ¡”•á…µÁ±”‰•±½Ü°½ÕÈ…Ñ…‘½œ…±•ÉĞ¥ÌÍ•ĞÑ¼ÑÉ¥•È½¸„}Á•É•¹Ñ…•|½˜…Ù…¥±…‰±”µ•µ½Éä°İ¡¥ ¥ÌÑ¡”Õ¹¥ĞÑ¡…ĞI…‰‰¥Ñ5DÕÍ•Ì™½È¥ÑÌ½İ¸¥¹Ñ•É¹…°mµ•µ½Éä…±…ÉµÍumµ•µ½Éäµ…±…ÉµÍt¸I…‰‰¥Ñ5DÌm‘¥Í¬…±…Éµum‘¥Í¬µ…±…ÉµÍt¥Ì‘¥™™•É•¹Ğ°‰…Í•½¸Ñ¡”…‰Í½±ÕÑ”¹Õµ‰•È½˜‰åÑ•Ì…Ù…¥±…‰±”°Í¼å½Ôİ½Õ±ÕÍ”„Í¥¹±”µ•ÑÉ¥Œ°É…‰‰¥ÑµÄ¹¹½‘”¹‘¥Í­}™É••€°Ñ¼Í•Ğ„…Ñ…‘½œ…±•ÉĞ™½È‘¥Í¬ÕÍ…”¸()íìğ¥µœ…±Ğô‰I…‰‰¥Ñ5DA•É™½Éµ…¹”€´M•ÑÑ¥¹œ…¸…±•ÉĞ™½Èµ•µ½Éä…±…ÉµÌˆÍÉŒô‰É…‰‰¥ÑµÄµÁ•É™½Éµ…¹”µ…‘Ù…¹•µÉ…‰‰¥ÑµÄµ…±•ÉĞ¹Á¹œˆÁ½ÁÕÀô‰ÑÉÕ”ˆİ¥‘”ô‰ÑÉÕ”ˆ€ùõô()…Ñ…‘½œİ¥±°¹½Ñ¥™äå½ÕÈÑ•…´ÕÍ¥¹œÑ¡”¡…¹¹•°½˜å½ÕÈ¡½¥”€¡M±…¬°A…•ÉÕÑä°=ÁÍ•¹¥”°•ÑŒ¸¤İ¡•¸I…‰‰¥Ñ5D…ÁÁÉ½…¡•Ì¥ÑÌ‘¥Í¬½Èµ•µ½Éä±¥µ¥Ğ¸()]¥Ñ …Ñ…‘½œm™½É•…ÍÑÍum™½É•…ÍÑÍt°å½Ô…¸ÁÉ•‘¥Ğİ¡•¸I…‰‰¥Ñ5Dİ¥±°É•… „É•Í½ÕÉ”Ñ¡É•Í¡½±…¹Í•Ğ…±•ÉÑÌ™½È„•ÉÑ…¥¸Ñ¥µ”¥¸…‘Ù…¹”¸½È•á…µÁ±”°å½Ô…¸™¥É”½™˜„¹½Ñ¥™¥…Ñ¥½¸Ñİ¼İ••­Ì‰•™½É”I…‰‰¥Ñ5D¥Ì±¥­•±äÑ¼Í•Ğ„‘¥Í¬…±…É´°¥Ù¥¹œå½ÕÈÑ•…´•¹½Õ Ñ¥µ”Ñ¼Ñ…­”…Ñ¥½¸¸()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµÁ•É™½Éµ…¹”µ™½É•…ÍĞµÉ…Á ¹Á¹œˆ…±Ğô‰I…‰‰¥Ñ5DA•É™½Éµ…¹”€´M•ÑÑ¥¹œ„™½É•…ÍĞ…±•ÉĞˆ€ùõô((ŒŒÁÁ±¥…Ñ¥½¸Á•É™½Éµ…¹”µ½¹¥Ñ½É¥¹œ)…Ñ…‘½œ…¸…±Í¼¡•±Àå½ÔÕ¹‘•ÉÍÑ…¹Ñ¡”É½±”I…‰‰¥Ñ5DÁ±…åÌİ¥Ñ¡¥¸å½ÕÈ…ÁÁ±¥…Ñ¥½¹ÏŠQ¡½Ü½™Ñ•¸I…‰‰¥Ñ5D¡…¹‘±•ÌÑÉ…™™¥Œ™É½´å½ÕÈ!QQ@Í•ÉÙ•ÉÌ°™½È•á…µÁ±”°…¹İ¡•¸I…‰‰¥Ñ5DÁÉ•Í•¹ÑÌ„‰½ÑÑ±•¹•¬¸m¥ÍÑÉ¥‰ÕÑ•ÑÉ…¥¹œ…¹A5um…ÁµtÙ¥ÍÕ…±¥é•ÌÑ¡”±…Ñ•¹ä½˜I…‰‰¥Ñ5D½Á•É…Ñ¥½¹Ì¥¸Ñ¡”½¹Ñ•áĞ½˜…±°Ñ¡”Í•ÉÙ¥•ÌÑ¡…Ğ¡…¹‘±”„É•ÅÕ•ÍĞ°Í¼å½Ô…¸­¹½Üİ¡•¸Ñ¼ÑÕ¹”I…‰‰¥Ñ5D™½È„Íµ½½Ñ¡•ÈÕÍ•È•áÁ•É¥•¹”¸€()íìğ¥µœÍÉŒô‰É…‰‰¥ÑµÄµÁ•É™½Éµ…¹”µ™±…µ”¹Á¹œˆ‰½É‘•Èô‰ÑÉÕ”ˆÁ½ÁÕÀô‰ÑÉÕ”ˆ…±Ğô‰UÍ”…Ñ…‘½œÌ™±…µ”É…Á¡ÌÑ¼Õ¹‘•ÉÍÑ…¹å½ÕÈI…‰‰¥Ñ5DÁ•É™½Éµ…¹”¥¸½¹Ñ•áĞİ¥Ñ å½ÕÈ…ÁÁ±¥…Ñ¥½¸¸ˆ€ùõô()Q¡”™±…µ”É…Á …‰½Ù”¥Ì™É½´„±…Í¬…ÁÁ±¥…Ñ¥½¸Ñ¡…ĞÕÍ•ÌÑ¡”m-½µ‰Ô5E@±¥•¹Ñum­½µ‰ÕtÑ¼ÁÕ‰±¥Í ÕÍ•ÈÉ•ÅÕ•ÍĞ‘…Ñ„Ñ¼Ñ¡”I…‰‰¥Ñ5D•á¡…¹”…±±••á¡…¹•}½¹•€¸]”…¸Í•”Ñ¡…Ğ½ÕÈ…ÁÁ±¥…Ñ¥½¸Ñ…­•Ì±½¹•ÈÑ¼ÁÕ‰±¥Í µ•ÍÍ…•ÌÑ¼•á¡…¹•}½¹•€Ñ¡…¸Ñ¼Á•É™½É´…¹ä½Ñ¡•ÈÑ…Í¬¸()…Ñ…‘½œ…¸•¹•É…Ñ”ÑÉ…•Ì™É½´I…‰‰¥Ñ5D±¥•¹Ğ±¥‰É…É¥•Ì…ÕÑ½µ…Ñ¥…±±ä¸Q¡”±…Í¬…ÁÁ±¥…Ñ¥½¸…‰½Ù”¥¹±Õ‘•ÌÑ¡”™½±±½İ¥¹œ½‘”°İ¡¥ ½¹™¥ÕÉ•ÌÑ¡”…Ñ…‘½œ•¹ĞÑ¼…ÕÑ¼µ¥¹ÍÑÉÕµ•¹ĞÑ¡”m-½µ‰Ô±¥•¹Ñum‘‘ÑÉ…”µ­½µ‰Õt…¹m±…Í¬İ•ˆ™É…µ•İ½É­um‘‘ÑÉ…”µ™±…Í­tè()€)™É½´‘‘ÑÉ…”¥µÁ½ÉĞÁ…Ñ ()Á…Ñ ¡­½µ‰ÔõQÉÕ”¤)Á…Ñ ¡™±…Í¬õQÉÕ”¤()€()…Ñ…‘½œÍÕÁÁ½ÉÑÌ…ÕÑ¼µ¥¹ÍÑÉÕµ•¹Ñ…Ñ¥½¸™½ÈI…‰‰¥Ñ5D±¥•¹ÑÌ¥¸Í•Ù•É…°±…¹Õ…•Ì°¥¹±Õ‘¥¹œm9½‘”¹©Íum…µÅÁ±¥‰t…¹m)…Ù…um©…Ù„µ…Áµt¸%˜Ñ¡•É”Ì¹½Ğå•ĞÍÕÁÁ½ÉĞ™½Èå½ÕÈ½İ¸I…‰‰¥Ñ5D±¥•¹Ğ°å½Ô…¸¥¹ÍÑÉÕµ•¹Ğå½ÕÈ½‘”İ¥Ñ …Ñ…‘½œÌmÑÉ…¥¹œ±¥‰É…É¥•Íum‘µÑÉ…”µ…±±t¸((ŒŒ¥ÍÑÉ¥‰ÕÑ•µ•ÍÍ…¥¹œ°Õ¹¥™¥•µ½¹¥Ñ½É¥¹œ)%¸Ñ¡¥ÌÁ½ÍĞ°İ”Ù”Í¡½İ¸¡½ÜÑ¼¥¹ÍÑ…±°Ñ¡”…Ñ…‘½œ•¹Ğ…¹Ñ¡”I…‰‰¥Ñ5D¥¹Ñ•É…Ñ¥½¸¸]”Ù”±•…É¹•¡½ÜÑ¼Ù¥•ÜI…‰‰¥Ñ5Dµ•ÑÉ¥Ì¥¸Ñ¡”½¹Ñ•áĞ½˜å½ÕÈ¥¹™É…ÍÑÉÕÑÕÉ”°…¹¡½ÜÑ¼…±•ÉĞå½ÕÈÑ•…´½˜…ÁÁÉ½…¡¥¹œÉ•Í½ÕÉ”¥ÍÍÕ•Ì¸()UÍ¥¹œ…Ñ…‘½œ°å½Ô…¸½‰Í•ÉÙ”…±°…ÍÁ•ÑÌ½˜å½ÕÈI…‰‰¥Ñ5DÍ•ÑÕÀ°…±°¥¸½¹”Á±…”¸¹İ¥Ñ µ½É”Ñ¡…¸íìğÑÉ…¹Í±…Ñ”­•äô‰¥¹Ñ•É…Ñ¥½¹}½Õ¹Ğˆ€ùõôÍÕÁÁ½ÉÑ•¥¹Ñ•É…Ñ¥½¹Ì™½È½ÕĞµ½˜µÑ¡”µ‰½àµ½¹¥Ñ½É¥¹œ°¥ĞÌÁ½ÍÍ¥‰±”Ñ¼Í•”å½ÕÈI…‰‰¥Ñ5DÁ•É™½Éµ…¹”µ•ÑÉ¥Ì…±½¹Í¥‘”Ñ¡½Í”½˜É•±…Ñ•ÍåÍÑ•µÌ±¥­”m=Á•¹MÑ…­umµ½¹¥Ñ½Èµ½Á•¹ÍÑ…­t¸%˜å½Ô‘½»ŠeĞå•Ğ¡…Ù”„…Ñ…‘½œ…½Õ¹Ğ°å½Ô…¸Í¥¸ÕÀ™½È„€ñ„¡É•˜ôˆŒˆ±…ÍÌô‰Í¥¸µÕÀµÑÉ¥•Èˆù™É•”ÑÉ¥…°ğ½„ø…¹ÍÑ…ÉĞµ½¹¥Ñ½É¥¹œå½ÕÈ…ÁÁ±¥…Ñ¥½¹Ì…¹¥¹™É…ÍÑÉÕÑÕÉ”Ñ½‘…ä¸()}M½ÕÉ”5…É­‘½İ¸™½ÈÑ¡¥ÌÁ½ÍĞ¥Ì…Ù…¥±…‰±”m½¸¥Ñ!Õ‰t¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½‰±½ˆ½µ…ÍÑ•È½É…‰‰¥ÑµÄ½µ½¹¥Ñ½É¥¹œµÉ…‰‰¥ÑµÄµÁ•É™½Éµ…¹”µİ¥Ñ µ‘…Ñ…‘½œ¹µ¤¸EÕ•ÍÑ¥½¹Ì°½ÉÉ•Ñ¥½¹Ì°…‘‘¥Ñ¥½¹Ì°•ÑŒ¸üA±•…Í”m±•ĞÕÌ­¹½İt¡¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½Ñ¡”µµ½¹¥Ñ½È½¥ÍÍÕ•Ì¤¹|()m…•¹Ğµ½¹™¥tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½¹™¥ÕÉ…Ñ¥½¸µ™¥±•Ì¼ıÑ…ˆõ…•¹ÑØØ()m…•¹Ğµ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ¼()m…•¹Ğµ¥¹™½tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½µµ…¹‘Ì¼…•¹Ğµ¥¹™½Éµ…Ñ¥½¸()m…•¹ĞµÉ•ÍÑ…ÉÑtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½…•¹Ğ½Õ¥‘”½…•¹Ğµ½µµ…¹‘Ì¼()m…±…ÉµÍtè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½…±…ÉµÌ¹¡Ñµ°()m…µÅÁ±¥‰tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½¹½‘•©Ì¼İ½É­•Èµ½µÁ…Ñ¥‰¥±¥Ñä()m…µÅÀµÉ•™•É•¹•tè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½…µÅÀ´À´ä´ÄµÉ•™•É•¹”¹¡Ñµ°()m…Áµtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ¼()m‰Õ¹¹åtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½ÉÕ‰äµ…µÅÀ½‰Õ¹¹ä()m½¹™¥œµÉ…‰‰¥ÑµÅtè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½½¹™¥ÕÉ”¹¡Ñµ°()m‘‘ÑÉ…”µ­½µ‰Õtè¡ÑÑÀè¼½ÁåÁ¤¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…”½‘½Ì½½Ñ¡•É}¥¹Ñ•É…Ñ¥½¹Ì¹¡Ñµ°­½µ‰Ô()m‘‘ÑÉ…”µ™±…Í­tè¡ÑÑÀè¼½ÁåÁ¤¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…”½‘½Ì½İ•‰}¥¹Ñ•É…Ñ¥½¹Ì¹¡Ñµ°™±…Í¬()m‘µÑÉ…”µ…±±tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ¼()m‘¥Í¬µ…±…ÉµÍtè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½‘¥Í¬µ…±…ÉµÌ¹¡Ñµ°()m‘¥ÍÑÉ¥‰ÕÑ•µÑÉ…¥¹tè¡ÑÑÀè¼½İİÜ¹ÉÕ‰å‘½Œ¹¥¹™¼½•µÌ½‘‘ÑÉ…”¼¥ÍÑÉ¥‰ÕÑ•‘}QÉ…¥¹œ()m•Ù•¹Ğµ•á¡…¹•tè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½•Ù•¹Ğµ•á¡…¹”¹¡Ñµ°()m™½É•…ÍÑÍtè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½™½É•…ÍÑÌµ‘…Ñ…‘½œ¼()m¡ÑÑÀµ…Á¥té¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½µ…¹…•µ•¹Ğ¹¡Ñµ°¡ÑÑÀµ…Á¤()m¥¹ÍÑ…±°µ…•¹Ñtè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½…½Õ¹Ğ½Í•ÑÑ¥¹Ì…•¹Ğ()m¥¹ÍÑ…±°µ¥¹Ñ•É…Ñ¥½¹tè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½É…‰‰¥ÑµÄ¼½¹¹•ĞµÑ¡”µ…•¹Ğ()m¥¹Ñ•É…Ñ¥½¸µ•Ù•¹ÑÍtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½É…‰‰¥ÑµÄ¼•Ù•¹ÑÌ()m©…Ù„µ…Áµtè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½ÑÉ…¥¹œ½Í•ÑÕÀ½©…Ù„¼¹•Ñİ½É­¥¹œµ™É…µ•İ½É¬µ½µÁ…Ñ¥‰¥±¥Ñä()m­½µ‰Õtè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½•±•Éä½­½µ‰Ô()mµ…¹…•µ•¹ĞµÁ±Õ¥¹tè¡ÑÑÀè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½µ…¹…•µ•¹Ğ¹¡Ñµ°()mµ•µ½Éäµ…±…ÉµÍtè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½µ•µ½Éä¹¡Ñµ°()mµ½¹¥Ñ½Èµ½Á•¹ÍÑ…­tè¡ÑÑÁÌè¼½İİÜ¹‘…Ñ…‘½¡Ä¹½´½‰±½œ½½Á•¹ÍÑ…¬µµ½¹¥Ñ½É¥¹œµ‘…Ñ…‘½œ¼()mÁ…ÉĞÅtè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œ¼()mÁ…ÉĞÄµ½¹¹•Ñ¥½¸µÁ•É™½Éµ…¹•tè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œ¼½¹¹•Ñ¥½¸µÁ•É™½Éµ…¹”()mÁ…ÉĞÉtè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¼()mÁ…ÉĞÉ…Á¥tè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¼¡ÑÑÀµ…Á¤()mÁ…ÉĞÉµ…¹…•µ•¹Ñtè€½‰±½œ½É…‰‰¥ÑµÄµµ½¹¥Ñ½É¥¹œµÑ½½±Ì¼Ñ¡”µµ…¹…•µ•¹ĞµÁ±Õ¥¸()mÉ…‰‰¥ÑµÄµÕÍ•ÉÍtè¡ÑÑÁÌè¼½İİÜ¹É…‰‰¥ÑµÄ¹½´½É…‰‰¥ÑµÅÑ°¸à¹¡Ñµ°UÍ•É}5…¹…•µ•¹Ğ()mÉ…‰‰¥ÑµÄµ¥¹Ñ•É…Ñ¥½¸µ‘½Ítè¡ÑÑÁÌè¼½‘½Ì¹‘…Ñ…‘½¡Ä¹½´½¥¹Ñ•É…Ñ¥½¹Ì½É…‰‰¥ÑµÄ¼()mÉÕ‰äµ‘¥ÍÑÉ¥ˆµÑÉ…¥¹tè¡ÑÑÀè¼½İİÜ¹ÉÕ‰å‘½Œ¹¥¹™¼½•µÌ½‘‘ÑÉ…”¼¥ÍÑÉ¥‰ÕÑ•‘}QÉ…¥¹œ()mÑ•µÁ±…Ñ”µ½¹™¥tè¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½…Ñ…½œ½¥¹Ñ•É…Ñ¥½¹Ìµ½É”½‰±½ˆ½µ…ÍÑ•È½É…‰‰¥ÑµÄ½‘…Ñ…‘½}¡•­Ì½É…‰‰¥ÑµÄ½‘…Ñ„½½¹˜¹å…µ°¹•á…µÁ±”()mÑ¥µ•‰½…É‘tè¡ÑÑÁÌè¼½…ÁÀ¹‘…Ñ…‘½¡Ä¹½´½‘…Í ½¥¹Ñ•É…Ñ¥½¸¼ÌÜ½É…‰‰¥ÑµÄ´´µµ•ÑÉ¥Ì(
+---
+authors:
+- email: paul.gottschling@datadoghq.com
+  name: Paul Gottschling
+  image: paulgottschling.jpg
+
+blog/category:
+- series datadog
+blog/tag:
+- rabbitmq
+- amqp
+- message broker
+- performance
+date: 2018-01-24T00:00:00Z
+description: "See your RabbitMQ performance metrics in the context of your infrastructure with Datadog."
+draft: false
+image: 160509_RabbitMQ-03.png
+meta_title: RabbitMQ monitoring with Datadog
+preview_image: 160509_RabbitMQ-03.png
+slug: monitoring-rabbitmq-performance-with-datadog
+technology: rabbitmq
+title: Monitoring RabbitMQ performance with Datadog
+series: rabbitmq-monitoring
+---
+In Part 2 of this series, we've seen how RabbitMQ [ships with tools][part2] for monitoring different aspects of your application: how your queues handle message traffic, how your nodes consume memory, whether your consumers are operational, and so on. While RabbitMQ plugins and built-in tools give you a view of your messaging setup in isolation, RabbitMQ weaves through the very design of your applications. To better understand your applications, you need to see how RabbitMQ performance relates to the rest of your stack.
+
+Datadog gives you an all-at-once view of key RabbitMQ metrics, out of the box, with our RabbitMQ dashboard. You can also set alerts to notify you when the availability of your messaging setup is at stake. In this post we'll show you how to set up comprehensive monitoring using Datadog's RabbitMQ integration.
+
+{{< img src="rabbitmq-performance-screenboard.png" alt="RabbitMQ Performance - Out-of-the-box screenboard for RabbitMQ" popup="true" wide="true" >}}
+
+## Installing the Agent
+The Datadog Agent checks your host for RabbitMQ performance metrics and sends them to Datadog. The Agent can also capture metrics and trace requests from the rest of the systems running on your hosts. Instructions for installing the Agent are [here][install-agent]. For some systems this only takes a single command. Check our [documentation][agent-docs] for more details on the Agent.
+
+## Integrating Datadog with RabbitMQ
+The RabbitMQ integration is based on the [management plugin][management-plugin] (see [Part 2][part2]), which creates a [web server][http-api] that reports metrics from its host node and any nodes clustered with it. To configure the integration, first [enable][part2management] the RabbitMQ management plugin. Then follow the integration's [instructions][install-integration] for adding a configuration file.
+
+You'll want to edit the configuration file to reflect the setup of your hosts. A basic config looks like this:
+
+```
+init_config:
+
+instances:
+    -  rabbitmq_api_url: http://localhost:15672/api/
+       rabbitmq_user: datadog
+       rabbitmq_pass: some_password
+```
+The configuration file gives the Agent access to the management API. Within the `instances` section, change `rabbitmq_api_url` to match the address of the management web server, which should have permission to accept requests from the Agent's domain (see [Part 2][part2api]). Monitoring a cluster of RabbitMQ nodes requires that only one node exposes metrics to the Agent. The node will aggregate data from its peers in the cluster. For RabbitMQ versions 3.0 and later, port 15672 is the default.
+
+While an API URL is required, a user is optional. If you provide one, make sure you've declared it within the server. Follow [this][rabbitmq-users] documentation to create users and assign privileges. If your system has more than 100 nodes or 200 queues, you'll want to specify the nodes and queues the Agent will check. See our [template][template-config] for examples of how to do this, along with other configuration options.
+
+Once you've [restarted the Agent][agent-restart], RabbitMQ should be reporting metrics, events, and service checks to Datadog. Verify this by running the [info command][agent-info] and making sure the "Checks" section has an entry for "rabbitmq".
+
+```
+    rabbitmq (5.21.0)
+    -----------------
+      - instance #0 [OK]
+      - Collected 33 metrics, 0 events & 2 service checks
+```
+
+Since the integration is based on the RabbitMQ management plugin, it gathers most of the same metrics. See [Part 1][part1] for what this entails, and our [documentation][rabbitmq-integration-docs] for a full list of metrics.
+
+The integration tags node-level metrics with the name of a node and queue-level metrics with the name of a queue. You can graph metrics by node or queue to help you diagnose RabbitMQ performance issues and compare metrics across your application.
+
+## The RabbitMQ dashboard
+Because the RabbitMQ integration gathers metrics from the management plugin, it can take data that the plugin reports as static values and plot it over time. 
+
+For instance, the integration can use Datadog's built-in tags to visualize the memory consumption of either one or all of your queues. This example uses the demo application from [Part 2][part2], which handles data related to different boroughs in New York City. Our application queries an API, publishes the resulting JSON to a queue, consumes from the queue to aggregate the data by borough, then publishes to a final queue, where the data waits for a database to store it.
+
+{{< img src="rabbitmq-performance-mem-by-queue.png" alt="RabbitMQ Performance - Top list of memory use by RabbitMQ queue" >}}
+
+Graphing memory consumption is especially useful because of the way RabbitMQ handles the sizes of messages (see [Part 1][part1-connection-performance]). You can see whether your messages take up more memory as they're processed, even as queue depths remain constant.
+
+You can also use the RabbitMQ integration to correlate metrics for your queues with system-level metrics outside the scope of the RabbitMQ management plugin. The integration's [out-of-the-box timeboard][timeboard] makes it easy to compare your network traffic, system load, system memory, and CPU usage with the state of your queues over time.
+
+## Alerts
+Once you are collecting and visualizing RabbitMQ metrics, you can set alerts in Datadog to notify your team of performance issues.
+
+As we've discussed in [Part 1][part1], RabbitMQ will [block connections][alarms] when its nodes use too many resources. With Datadog, you can identify resource shortages and use alerts to give your team time to respond.
+
+To do this, determine the level of memory or disk use at which RabbitMQ will start blocking connections. You may want to check your [configuration file][config-rabbitmq] for the value of `vm_memory_high_watermark` or `disk_free_limit`. Then set an alert to trigger when that threshold is approaching. In the screenshot below, we've set an alert threshold for memory use at 35 percent, a bit less than the 40-percent threshold at which RabbitMQ triggers an internal alarm.
+
+In the example below, our Datadog alert is set to trigger on a _percentage_ of available memory, which is the unit that RabbitMQ uses for its own internal [memory alarms][memory-alarms]. RabbitMQ's [disk alarm][disk-alarms] is different, based on the absolute number of bytes available, so you would use a single metric, `rabbitmq.node.disk_free`, to set a Datadog alert for disk usage. 
+
+{{< img alt="RabbitMQ Performance - Setting an alert for memory alarms" src="rabbitmq-performance-advanced-rabbitmq-alert.png" popup="true" wide="true" >}}
+
+Datadog will notify your team using the channel of your choice (Slack, PagerDuty, OpsGenie, etc.) when RabbitMQ approaches its disk or memory limit.
+
+With Datadog [forecasts][forecasts], you can predict when RabbitMQ will reach a resource threshold and set alerts for a certain time in advance. For example, you can fire off a notification two weeks before RabbitMQ is likely to set a disk alarm, giving your team enough time to take action.
+
+{{< img src="rabbitmq-performance-forecast-graph.png" alt="RabbitMQ Performance - Setting a forecast alert" >}}
+
+## Distributed messaging, unified monitoring
+In this post, we've shown how to install the Datadog Agent and the RabbitMQ integration. We've learned how to view RabbitMQ metrics in the context of your infrastructure, and how to alert your team of approaching resource issues.
+
+Using Datadog, you can observe all aspects of your RabbitMQ setup, all in one place. And with more than {{< translate key="integration_count" >}} supported integrations for out-of-the-box monitoring, it's possible to see your RabbitMQ performance metrics alongside those of related systems like [OpenStack][monitor-openstack]. If you donâ€™t yet have a Datadog account, you can sign up for a <a href="#" class="sign-up-trigger">free trial</a> and start monitoring your applications and infrastructure today.
+
+[agent-docs]: https://docs.datadoghq.com/agent/
+
+[agent-info]: https://help.datadoghq.com/hc/en-us/articles/203764635-Agent-Status-and-Information
+
+[agent-restart]: https://help.datadoghq.com/hc/en-us/articles/203764515-Start-Stop-Restart-the-Datadog-Agent
+
+[alarms]: https://www.rabbitmq.com/alarms.html
+
+[amqp-reference]: https://www.rabbitmq.com/amqp-0-9-1-reference.html
+
+[bunny]: https://github.com/ruby-amqp/bunny
+
+[config-rabbitmq]: https://www.rabbitmq.com/configure.html
+
+[ddtrace]: https://github.com/DataDog/dd-trace-rb
+
+[disk-alarms]: https://www.rabbitmq.com/disk-alarms.html
+
+[distributed-tracing]: http://www.rubydoc.info/gems/ddtrace/#Distributed_Tracing
+
+[event-exchange]: https://www.rabbitmq.com/event-exchange.html
+
+[forecasts]: https://www.datadoghq.com/blog/forecasts-datadog/
+
+[http-api]:https://www.rabbitmq.com/management.html#http-api
+
+[install-agent]: https://app.datadoghq.com/account/settings#agent
+
+[install-integration]: https://docs.datadoghq.com/integrations/rabbitmq/#connect-the-agent
+
+[integration-events]: https://docs.datadoghq.com/integrations/rabbitmq/#events
+
+[management-plugin]: http://www.rabbitmq.com/management.html
+
+[manual-instrumentation]: http://www.rubydoc.info/gems/ddtrace/#Manual_Instrumentation
+
+[memory-alarms]: https://www.rabbitmq.com/memory.html
+
+[monitor-openstack]: https://www.datadoghq.com/blog/openstack-monitoring-datadog/
+
+[part1]: /blog/rabbitmq-monitoring/
+
+[part1-connection-performance]: /blog/rabbitmq-monitoring/#connection-performance
+
+[part2]: /blog/rabbitmq-monitoring-tools/
+
+[part2api]: /blog/rabbitmq-monitoring-tools/#http-api
+
+[part2management]: /blog/rabbitmq-monitoring-tools/#the-management-plugin
+
+[rabbitmq-users]: https://www.rabbitmq.com/rabbitmqctl.8.html#User_Management
+
+[rabbitmq-integration-docs]: https://docs.datadoghq.com/integrations/rabbitmq/
+
+[ruby-distrib-tracing]: http://www.rubydoc.info/gems/ddtrace/#Distributed_Tracing
+
+[template-config]: https://github.com/DataDog/integrations-core/blob/master/rabbitmq/conf.yaml.example
+
+[timeboard]: https://app.datadoghq.com/dash/integration/37/rabbitmq---metrics
