@@ -1,30 +1,5 @@
----
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series metrics
-blog/tag:
-- sql-server
-- dbms
-- sql
-- microsoft
-date: 2018-05-04T17:00:03Z
-description: "SQL Server monitoring can help you keep your batches fast and your connections alive."
-draft: false
-image: 180315_Datadog-MicrosoftSQLServer_Part-1.png
-preview_image: 180315_Datadog-MicrosoftSQLServer_Part-1.png
-slug: sql-server-monitoring
-technology: sql-server
-title: Key metrics for SQL Server monitoring
-series: sql-server-monitoring
-header_video:
-    mp4: superheroes_microsoftsq02_v00_.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
----
+# Key metrics for SQL Server monitoring
+
 SQL Server is a relational database management system (RDBMS) [developed by Microsoft][mssql-home] for Windows and, [more recently][mssql-techcrunch], for Linux. Its query language, an implementation of SQL called Transact-SQL ([T-SQL][t-sql]), can be written as batches of statements that SQL Server compiles and caches to improve query performance. SQL Server also gives you several ways to configure resource use. It can store tables in memory rather than on disk, and it lets you control the distribution of CPU, memory, and storage by configuring resource pools, which we'll cover in detail below. 
 
 With so much to optimize, you'll want to make sure that the configuration you choose fits the needs of your system, and that SQL Server is performing well in general. This post explains the metrics that can help you implement in-depth SQL Server monitoring to ensure that your instances are optimized, healthy, and available.
@@ -335,7 +310,7 @@ SQL Server provides a set of data sources for gathering these metrics and a suit
 
 [files-filegroups]: https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-files-and-filegroups
 
-[forced-parameterization]: "https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms175037(v=sql.105)"
+[forced-parameterization]: https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms175037(v=sql.105)
 
 [fragmentation]: https://technet.microsoft.com/en-us/library/ms189858(v=sql.110).aspx
 

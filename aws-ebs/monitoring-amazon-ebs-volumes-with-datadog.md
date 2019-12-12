@@ -1,32 +1,5 @@
----
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-  twitter: maximybrown
-blog/category:
-- series datadog
-blog/tag:
-- monitoring
-- AWS
-- alerts
-- performance
-date: 2018-04-06
-description: "Learn how to use Datadog to monitor Amazon EBS metrics."
-draft: false
-image: ebs-hero-three.png
-meta_title: Monitoring Amazon EBS volumes with Datadog
-preview_image: ebs-hero-three.png
-header_video:
-    mp4: superhero_EBS_prores_25.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
-slug: monitoring-amazon-ebs-volumes-with-datadog
-technology: aws ebs
-title: Monitoring Amazon EBS volumes with Datadog
-series: amazon-ebs-monitoring
----
+# Monitoring Amazon EBS volumes with Datadog
+
 
 Datadog’s AWS integration lets you connect CloudWatch to Datadog in order to automatically collect metrics from multiple AWS services—including EBS. Datadog’s more than {{< translate key="integration_count" >}} integrations let you correlate AWS metrics with those from other services in your environment. And your data will be accessible for {{< translate key="retention" >}} at full granularity.
 
@@ -42,7 +15,7 @@ These approaches can be used in a complementary fashion. The AWS integration all
 
 The fastest way to start monitoring EBS metrics in Datadog is to [enable the AWS integration][aws-integration]. This lets Datadog collect metrics from EBS and the rest of the AWS platform via the CloudWatch API without needing to install anything on your instances.
 
-Activating the integration requires correctly [delegating AWS IAM roles][iam-roles] and [giving the Datadog role read-only access][datadog-aws-install]. Once you’ve set up the Datadog role within AWS and connected it to your Datadog account, you will start to see EBS metrics (as well as metrics for EC2 and any other AWS services you are monitoring with Datadog) flowing into Datadog. You can then visualize and monitor them on your dashboards. 
+Activating the integration requires correctly [delegating AWS IAM roles][iam-roles] and [giving the Datadog role read-only access][datadog-aws-install]. Once you’ve set up the Datadog role within AWS and connected it to your Datadog account, you will start to see EBS metrics (as well as metrics for EC2 and any other AWS services you are monitoring with Datadog) flowing into Datadog. You can then visualize and monitor them on your dashboards.
 
 {{< img src="amazon-ebs-volumes-dashboard-rev.png" alt="An Amazon EBS volumes dashboard in Datadog" caption="A dashboard showing Amazon EBS volume metrics in Datadog" wide="true" popup="true" >}}
 
@@ -50,7 +23,9 @@ You can create fully customized dashboards that meet your specific monitoring ne
 
 ### Deploying the Agent
 
-The [Datadog Agent](/blog/dont-fear-the-agent/) is [open source software][dd-agent] that can collect and forward metrics, logs, and request traces from your instances. 
+The [Datadog Agent](/blog/dont-fear-the-agent/) is [open source software][dd-agent] that can collect and forward metrics, logs, and request traces from your instances.
+
+{{< inline-cta text="Visualize and alert on key metrics from all your EBS volumes with Datadog." btn-text="Get started" data-event-category="Signup" signup="true" >}}
 
 Once the Agent is installed on an instance, it will automatically report system-level metrics for that instance and any EBS volumes that are [mounted to it][ebs-using-volumes]. You can also enable [integrations][integrations] for any supported applications and services that are running on your instances to begin collecting metrics specific to those technologies.
 
@@ -62,13 +37,13 @@ The Agent is installed on the root volume of an instance. On most platforms this
 DD_API_KEY=<user_api_key> bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
 ```
 
-You should then see your instance reporting metrics in your [Datadog account][infrastructure]. You can also quickly and easily automate deployment of the Agent across your entire infrastructure with popular configuration management tools like [Chef][chef], [Puppet][puppet], and [Ansible][ansible], or to your container fleet via [Docker][docker] or [Kubernetes][kubernetes]. See the [Datadog Agent documentation][agent-docs] for more information. 
+You should then see your instance reporting metrics in your [Datadog account][infrastructure]. You can also quickly and easily automate deployment of the Agent across your entire infrastructure with popular configuration management tools like [Chef][chef], [Puppet][puppet], and [Ansible][ansible], or to your container fleet via [Docker][docker] or [Kubernetes][kubernetes]. See the [Datadog Agent documentation][agent-docs] for more information.
 
 The screenshot below shows a default host dashboard for an EC2 instance with the Agent installed. You can see that both CloudWatch EC2 and EBS metrics are automatically gathered. In addition, Datadog’s system check collects instance- and volume-level metrics that are not automatically available through CloudWatch, such as disk usage.
 
 {{< img src="amazon-ebs-volumes-instance-system-dashboard.png" alt="System dashboard of EC2 instance with Agent including EBS volume metrics" wide="true" popup="true" >}}
 
-Compared to monitoring only the metrics that CloudWatch reports, installing the Agent provides a number of benefits. You can view many of the same disk I/O metrics that are collected by CloudWatch, but the Agent collects them at 15-second intervals, providing much higher resolution. For example, the screenshot below compares the number of read operations reported by the Agent’s system check (top) with that reported by the EBS integration (bottom) for the same volume. 
+Compared to monitoring only the metrics that CloudWatch reports, installing the Agent provides a number of benefits. You can view many of the same disk I/O metrics that are collected by CloudWatch, but the Agent collects them at 15-second intervals, providing much higher resolution. For example, the screenshot below compares the number of read operations reported by the Agent’s system check (top) with that reported by the EBS integration (bottom) for the same volume.
 
 {{< img src="amazon-ebs-volumes-cloudwatch-vs-system-rev.png" alt="CloudWatch versus system metrics granularity for Amazon EBS volumes" wide="true" popup="true" >}}
 
@@ -123,4 +98,4 @@ _Source Markdown for this post is available [on GitHub](https://github.com/DataD
 [device-naming]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html
 [tracing]: https://docs.datadoghq.com/tracing/
 [datadog-aws-logs]: https://docs.datadoghq.com/integrations/amazon_web_services/#log-collection
-[tagging]: https://docs.datadoghq.com/guides/tagging/
+[tagging]: https://docs.datadoghq.com/tagging/

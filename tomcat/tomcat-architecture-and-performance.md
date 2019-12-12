@@ -1,3 +1,6 @@
+# Key metrics for monitoring&nbsp;Tomcat
+
+
 ## What is Tomcat?
 [Apache Tomcat](http://tomcat.apache.org/) is a server for Java-based web applications, developed by the Apache Software Foundation. The Tomcat project's source was originally created by Sun Microsystems and donated to the foundation in 1999. Tomcat is one of the more popular server implementations for Java web applications and runs in a Java Virtual Machine (JVM). Though it's primarily used as an application server, it can be configured to work as a basic web server or with the [Apache HTTP server](http://httpd.apache.org/). Tomcat works as a Java Servlet Container that provides the runtime environment needed for Java applications and supports the Java Enterprise Edition (EE) [Servlet specification](https://javaee.github.io/servlet-spec/). Tomcat can serve dynamic content through the servlet API, including [Java Server Pages](http://www.oracle.com/technetwork/java/index-jsp-138231.html) (JSP) and Java servlets. 
 
@@ -178,14 +181,14 @@ It's important to note that Tomcat maps ThreadPool's _currentThreadsBusy_ to the
 **ThreadPool**
 
 | JMX Attribute | Description | MBean | [Metric Type][monitor-101] | 
-| ----------- | ---------- | --------------- | -------------- |
+| ----------- | ---------- | --------------- | -------------- | ------- |
 | currentThreadsBusy | The number of threads currently processing requests | Catalina:type=ThreadPool,name="http-nio-8080" | Resource: Utilization | 
 | maxThreads | The maximum number of threads to be created by the connector and made available for requests | Catalina:type=ThreadPool,name="http-nio-8080" | Resource: Utilization | 
 
 **Executor**
 
 | JMX Attribute | Description | MBean | [Metric Type][monitor-101] | 
-| ----------- | ---------- | --------------- | -------------- |
+| ----------- | ---------- | --------------- | -------------- | ------- |
 | activeCount | The number of active threads in the thread pool | Catalina:type=Executor,name="http-nio-8080" | Resource: Utilization | 
 | maximumPoolSize | The maximum number of threads available in the thread pool | Catalina:type=Executor,name="http-nio-8080" | Resource: Utilization | 
 
@@ -292,7 +295,7 @@ Your server's throughput, thread usage, and error rates only provide part of the
 
 
 | JMX Attribute | Description | MBean | [Metric Type][monitor-101] | 
-| ----------- | ---------- | --------------- | -------------- |
+| ----------- | ---------- | --------------- | -------------- | ------- |
 | HeapMemoryUsage  | The amount of heap memory used by Tomcat |  java.lang:type=memory |  Resource: Utilization | 
 | CollectionCount | The cumulative number of invoked garbage collections since the start of the server  | java.lang:type=GarbageCollector,name=(PS MarkSweep\|PS Scavenge) | Other | 
 
@@ -344,7 +347,9 @@ export CATALINA_OPTS="-Xms1024M -Xmx1024M"
 Oracle recommends setting initial and maximum heap size parameters with the same value to minimize the number of times garbage collection is invoked. You can check out the official [Oracle documentation](https://docs.oracle.com/cd/E21764_01/web.1111/e13814/jvm_tuning.htm#PERFM160) for more information on tuning the JVM. 
 
 ## Working with Tomcat metrics
-There are many moving pieces for running applications on Tomcat, so it's crucial to incorporate monitoring for each Tomcat element. This not only includes metrics for the servlets and JSP pages that make up an application, but the metrics for the Tomcat server and JVM. Now that you know which metrics are most important for Tomcat monitoring, you can use tools such as Tomcat's built-in web management interface and JConsole to easily view metric data. In the [next part][part-2] of this series, we'll show you how to configure Tomcat and enable JMX remote for metric collection. In [Part 3][part-3] of this series, we'll walk through how you can use Datadog to monitor Tomcat [application performance](https://docs.datadoghq.com/tracing/), metrics, and logs.  
+There are many moving pieces for running applications on Tomcat, so it's crucial to incorporate monitoring for each Tomcat element. This not only includes metrics for the servlets and JSP pages that make up an application, but the metrics for the Tomcat server and JVM. Now that you know which metrics are most important for Tomcat monitoring, you can use tools such as Tomcat's built-in web management interface and JConsole to easily view metric data. In the [next part][part-2] of this series, we'll show you how to configure Tomcat and enable JMX remote for metric collection. In [Part 3][part-3] of this series, we'll walk through how you can use Datadog to monitor Tomcat [application performance](https://docs.datadoghq.com/tracing/), metrics, and logs.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/tomcat/tomcat-architecture-and-performance.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 ## Acknowledgments
 We’d like to thank Christopher Schultz and Mark Thomas from the [Apache Tomcat project](http://tomcat.apache.org/whoweare.html) for their technical reviews of Part 1 of this series.

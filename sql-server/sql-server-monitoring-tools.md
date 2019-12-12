@@ -1,31 +1,5 @@
----
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series metrics
-blog/tag:
-- sql-server
-- alerts
-- dbms
-- sql
-- microsoft
-date: 2018-05-04T17:00:02Z
-description: "Use these SQL Server monitoring tools to get detailed views of performance and resource use"
-draft: false
-image: "SQL-Server-Monitoring-Tools-Datadog-Hero.png"
-preview_image: "SQL-Server-Monitoring-Tools-Datadog-Hero.png"
-slug: sql-server-monitoring-tools
-technology: sql-server
-title: SQL Server monitoring tools
-series: sql-server-monitoring
-header_video:
-    mp4: superheroes_microsoftsq_v24.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
----
+# SQL Server monitoring tools
+
 In [Part 1][part1] of this series, we covered a number of features that SQL Server provides for optimizing its resource usage. You can, for example, adjust the way your query batches are compiled, configure your buffer cache to flush at different intervals, and create memory-optimized tables. Making the most of these features requires that you get real-time insights into the health and performance of SQL Server. Here we'll survey SQL Server monitoring tools within built-in features and commonly used applications, including:
 
 - **[T-SQL queries](#using-tsql-queries):** Use SQL Server's query language to gather internally collected data

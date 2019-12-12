@@ -1,3 +1,6 @@
+# Pivotal Cloud Foundry Monitoring with Datadog
+
+
 In [part three][part-three] of this series, we showed you a number of methods and tools for accessing [key metrics][part-two] and logs from a Pivotal Cloud Foundry deployment. Some of these tools help PCF operators monitor the health and performance of the cluster, whereas others allow developers to view metrics, logs, and performance data from their applications running on the cluster.
 
 In this post, we’ll show you how you can use Datadog to collect and monitor metrics and logs from PCF, whether you are an operator or a developer. By monitoring PCF with Datadog, you can visualize the data from all your applications, cluster components, and cloud services in one place; set sophisticated alerts; and view historical data on demand. To get you started, we’ll cover:
@@ -105,7 +108,7 @@ First, push your application with the Cloud Foundry binary buildpack, while incl
 
     cf push <app-name> --no-start -b binary_buildpack
 
-Next, you can push the application with the Application Monitoring buildpack and any other buildpacks your application needs. Pushing multiple buildpacks currently requires using the Cloud Controller’s v3 API, which you can specify by adding a `v3-` prefix before the `push` command. Note that the core required buildpack, which provides the application start command, must come last. Other buildpacks provide dependencies for the application.  
+Next, you can push the application with the Application Monitoring buildpack and any other buildpacks your application needs. Pushing multiple buildpacks currently requires using the Cloud Controller’s v3 API, which you can specify by adding a `v3-` prefix before the `push` command. Note that the core required buildpack, which provides the application start command, must come last. Other buildpacks provide dependencies for the application.
 
     cf v3-push <app-name> -b datadog-cloudfoundry-buildpack -b <second-buildpack>
 
@@ -119,7 +122,7 @@ At minimum, you need to set an environment variable to provide your Datadog [API
 
     cf set-env <app-name> DD_API_KEY <api-key>
 
-With [Datadog APM][datadog-apm], you can visualize distributed traces across your application. If you're using APM, it’s recommended that you set a service name and add tags so you can easily search, filter, and aggregate your data in Datadog. For example:
+With [Datadog APM][datadog-apm], you can visualize distributed traces across your application. If you're using APM, it’s recommended that you attach a service name and add tags so you can easily search, filter, and aggregate the data from your application in Datadog. For example:
 
 ```
 cf set-env <app-name> DD_SERVICE_NAME pcf-app
@@ -200,6 +203,16 @@ To enable log collection, set the following environment variables, either from [
 RUN_AGENT true
 DD_LOGS_ENABLED true
 DD_ENABLE_CHECKS false
+DD_STD_LOG_COLLECTION_PORT <port>
+LOGS_CONFIG '[{"type":"tcp","port":"<port>","source":"<source>","service":"<service>"}]'
+```
+
+`DD_STD_LOG_COLLECTION_PORT` is used when collecting `stdout`/`stderr` logs to redirect them to a specific local port, for example 10514.
+
+The final variable, `LOGS_CONFIG`, includes a few pieces of information. First, it tells the Agent to listen to the port specified by `DD_STD_LOG_COLLECTION_PORT`. It also sets the `source` and `service` parameters for logs coming from the application. The `source` makes it easy to route logs to the appropriate [log processing pipelines][log-processing] in Datadog. The `service` tag lets Datadog automatically unify the metrics, traces, and logs from your application so you can navigate between them. For example, if you are alerted to a higher than normal number of error logs, you can dive into corresponding APM data from the service to identify which endpoint or resource is having issues. Below is an example of this configuration:
+
+```
+LOGS_CONFIG '[{"type":"tcp","port":"10514","source":"cloud_foundry","service":"pcf-app"}]'
 ```
 
 Once you restage your application, logs will start streaming into the [Log Explorer][log-explorer]:
@@ -210,20 +223,7 @@ Datadog automatically applies certain Cloud Foundry properties as tags to your l
 
 To make it even easier to parse and view log data, you can configure your application to write logs in JSON format, if your logging library supports it. Datadog will automatically read the logs’ data fields and create attributes from them:
 
-{{< img src="pcf-monitoring-pcf-json-logs.png" caption="Datadog automatically parses JSON logs, making it easy to filter and sort your data." alt="JSON logs in Datadog" wide="true" >}}
-
-To make it easier to pivot between your logs and correlated monitoring data from the same application, you can attach a `service` tag to the root of your application’s JSON logs. The implementation depends on the library that you are using. For example, in [Java’s Log4j 2 library][log4j2], we can add the following to our **log4j2.xml** configuration file to insert `service:pcf-app` into all our application’s logs:
-
-```
-<Appenders>
-  <Console name="ConsoleJSONAppender" target="SYSTEM_OUT">
-    <JsonLayout complete="false" compact="true">
-      <KeyValuePair key="service" value="pcf-app" />
-    </JsonLayout>
-  </Console>
-</Appenders>
-```
-This service tag allows you to automatically unify the metrics, traces, and logs from your application and navigate between them. For example, if you are alerted to a higher than normal number of error logs, you can dive into APM data to identify which endpoint or resource is having issues.
+{{< img src="pcf-monitoring-pcf-json-logs-rev.png" caption="Datadog automatically parses JSON logs, making it easy to filter and sort your data." alt="JSON logs in Datadog" wide="true" >}}
 
 With custom metrics, traces, and logs, the Datadog Application Monitoring tile lets developers get deep insight into the performance of their applications and makes it easy to investigate and troubleshoot problems.
 
@@ -268,7 +268,7 @@ ruleset(name="infiles") {
 
 The first line of the config snippet above instructs rsyslog to look for logs in our PCF system log file.
 
-Next, the config provides the log template that includes our Datadog API key. Note that in the example above, we’ve set the logs’ source and added tags. The source makes it easy to route logs to the appropriate [log processing pipelines][log-processing] in Datadog. Adding tags such as `env` makes it easier to drill down and find the logs you want to view.
+Next, the config provides the log template that includes our Datadog API key. Note that in the example above, we’ve set the logs’ source and added tags. Adding tags such as `env` makes it easier to drill down and find the logs you want to view.
 
 Finally, the configuration creates a ruleset for the applicable logs, specifying the Datadog endpoint where logs should be sent. Save the file and restart rsyslog:
 
@@ -276,7 +276,7 @@ Finally, the configuration creates a ruleset for the applicable logs, specifying
 
 Logs will now be flowing into Datadog, where you can [build custom log-processing pipelines][pipelines]. These pipelines let you parse and enrich logs so you can more easily search, filter, and aggregate the data in your logs on the fly. You can also build alerts and graphs from your logs to [visualize and correlate with your metrics](/blog/log-analytics-dashboards/).
 
-#### Logging without Limits
+#### Logging without Limits&trade;
 Pivotal Cloud Foundry produces a large volume of system logs, and managing them all can be a challenge. Datadog’s [Logging without Limits](/blog/logging-without-limits/) approach means that you can ship all your logs, without worrying about gaps or missing data, and use Datadog to filter or retain them on the fly. By sending all your logs to Datadog, you have full visibility when you need it for troubleshooting and analysis, but you can also customize your processing pipelines and filters to exclude unnecessary logs.
 
 If, however, your syslog server becomes a bottleneck for log forwarding, the **System Logging** tab of the PCF Ops Manager provides the option to customize which system logs PCF will forward, allowing you to limit the volume of messages. The Ops Manager supports syslog rules using [RainerScript][rainerscript] syntax. So, for example, the following rule would filter out any system logs not emitted by the cell Reps:
@@ -331,12 +331,12 @@ If you’re new to Datadog, you can sign up for a <a href="#" class="sign-up-tri
 [log4j2]: https://logging.apache.org/log4j/2.x/
 [rsyslog]: https://www.rsyslog.com/doc/v8-stable/configuration/index.html
 [rsyslog-dd-config]: https://app.datadoghq.com/logs/onboarding/other
-[java]: http://docs.datadoghq.com/tracing/setup/java
-[python]: http://docs.datadoghq.com/tracing/setup/python
-[ruby]: http://docs.datadoghq.com/tracing/setup/ruby
-[go]: http://docs.datadoghq.com/tracing/setup/go
-[node]: http://docs.datadoghq.com/tracing/setup/nodejs
-[dotnet]: http://docs.datadoghq.com/tracing/setup/dotnet
+[java]: https://docs.datadoghq.com/tracing/setup/java
+[python]: https://docs.datadoghq.com/tracing/setup/python
+[ruby]: https://docs.datadoghq.com/tracing/setup/ruby
+[go]: https://docs.datadoghq.com/tracing/setup/go
+[node]: https://docs.datadoghq.com/tracing/setup/nodejs
+[dotnet]: https://docs.datadoghq.com/tracing/setup/dotnet
 [aws-dd]: https://docs.datadoghq.com/integrations/amazon_web_services/
 [gcp-dd]: https://docs.datadoghq.com/integrations/google_cloud_platform/
 [azure-dd]: https://docs.datadoghq.com/integrations/azure/

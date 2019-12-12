@@ -1,32 +1,6 @@
----
-authors:
-- email: paul.gottschling@datadoghq.com
-  image: paulgottschling.jpg
-  name: Paul Gottschling
-blog/category:
-- series metrics
-blog/tag:
-- sql-server
-- alerts
-- dbms
-- sql
-- microsoft
-date: 2018-05-04T17:00:01Z
-description: "Spot SQL Server performance issues using metrics, tracing, and log management."
-draft: false
-image: SQL-Server-performance-hero.png
-preview_image: SQL-Server-performance-hero.png
-slug: sql-server-performance
-technology: sql-server
-title: Monitor SQL Server performance with Datadog
-series: sql-server-monitoring
-header_video:
-    mp4: superheroes_microsoftsq03_v02.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
----
-In [Part 2 of this series][part2], we surveyed tools for monitoring SQL Server performance. If your SQL Server instances are part of a complex web application, handling queries from HTTP servers, running in a cluster, or otherwise connecting to other services, you'll need a monitoring solution that can peer into your databases while keeping their interactions with your stack in the picture. Datadog provides end-to-end visibility into the health and performance of your SQL Server instances—along with {{< translate key="integration_count" >}}+ other technologies running alongside them. 
+# Monitor SQL Server performance with Datadog
+
+In [Part 2 of this series][part2], we surveyed tools for monitoring SQL Server performance. If your SQL Server instances are part of a complex web application, handling queries from HTTP servers, running in a cluster, or otherwise connecting to other services, you'll need a monitoring solution that can peer into your databases while keeping their interactions with your stack in the picture. Datadog provides end-to-end visibility into the health and performance of your SQL Server instances—along with {{< translate key="integration_count" >}}+ other technologies running alongside them.
 
 In this post, we will walk you through the process of setting up Datadog's SQL Server integration to monitor metrics, distributed request traces, and logs in a single platform—and how to pivot between these sources to get insights into your system.
 
@@ -35,7 +9,7 @@ In this post, we will walk you through the process of setting up Datadog's SQL S
 ## Installing and configuring the Agent
 The Datadog Agent is [open source software][agent-repo] that gathers data from your hosts and sends it to Datadog for aggregation, visualization, and alerting. As we'll see, the Agent can report metrics, distributed traces, and logs.
 
-If you're running SQL Server on Windows, install the Agent by logging into Datadog and following our [documentation][install-agent-windows]. As of the time of this writing, the SQL Server integration is available only for Windows. If you're using Linux, you can install the Datadog Agent on a Windows host and configure it to monitor your Linux instances remotely.  
+If you're running SQL Server on Windows, install the Agent by logging into Datadog and following our [documentation][install-agent-windows]. As of the time of this writing, the SQL Server integration is available only for Windows. If you're using Linux, you can install the Datadog Agent on a Windows host and configure it to monitor your Linux instances remotely.
 
 To [install the SQL Server integration][install-integration], copy our [example YAML file][yaml-example] to the integration [directory][config-integration-dir], **C:\ProgramData\Datadog\conf.d\sqlserver.d**. The Agent locates your SQL Server instances from the `instances` section:
 
@@ -54,7 +28,7 @@ Next, run this command to [restart the Agent][windows-agent]:
 
     C:\Program Files\Datadog\Datadog Agent\embedded\agent.exe restart-service
 
-You can see if the Agent is reporting by running the [Agent information command][agent-info] and looking for the `sqlserver` section: 
+You can see if the Agent is reporting by running the [Agent information command][agent-info] and looking for the `sqlserver` section:
 
 ```no-minimize
   sqlserver
@@ -68,7 +42,7 @@ You can see if the Agent is reporting by running the [Agent information command]
 The SQL Server integration gathers metrics by querying the `sys.dm_os_performance_counters` [dynamic management view][part2-dmvs] for key metrics like memory usage and the buffer cache hit ratio. As we'll see in [Part 4][part4], you can complement this data with custom metrics by editing the integration's YAML file.
 
 ## Visualize SQL Server performance metrics
-Once you've set up Datadog's SQL Server integration, you'll see two [out-of-the-box dashboards][integration-dashboards] for SQL Server: a screenboard that gives you a real-time overview of your SQL Server instances and a timeboard that's well suited for correlating SQL Server metrics with system metrics and events. 
+Once you've set up Datadog's SQL Server integration, you'll see two [out-of-the-box dashboards][integration-dashboards] for SQL Server: a screenboard that gives you a real-time overview of your SQL Server instances and a timeboard that's well suited for correlating SQL Server metrics with system metrics and events.
 
 {{< img src="SQL-Server-performance-timeboard.png" alt="Monitor SQL Server performance with Datadog: SQL Server out-of-the-box timeboard" popup="true" wide="true" >}}
 
@@ -76,10 +50,10 @@ You can clone and customize these dashboards to visualize data from SQL Server a
 
 {{< img src="SQL-Server-performance-batch-and-tsql.png" alt="Monitor SQL Server performance with Datadog: timeseries graphs for a single host" popup="true" wide="true" >}}
 
-We can already see an issue: T-SQL batch compilations regularly approach the number of batch requests, which we know from [Part 1][part1-tsql] suggests that our batches are not benefiting from caching. We'll want to consider taking steps like [specifying parameters][t-sql-params] to make execution plans within the cache more reusable. 
+We can already see an issue: T-SQL batch compilations regularly approach the number of batch requests, which we know from [Part 1][part1-tsql] suggests that our batches are not benefiting from caching. We'll want to consider taking steps like [specifying parameters][t-sql-params] to make execution plans within the cache more reusable.
 
 ## Query-level data with distributed tracing
-You can use Datadog distributed tracing and application performance monitoring ([APM][apm]) to visualize requests in detailed flame graphs and generate latency, error, and throughput statistics for your applications. The Agent has built-in tracing support for common web frameworks and libraries in {{< translate key="apm_languages" >}}, including popular ORMs for SQL Server. 
+You can use Datadog distributed tracing and application performance monitoring ([APM][apm]) to visualize requests in detailed flame graphs and generate latency, error, and throughput statistics for your applications. The Agent has built-in tracing support for common web frameworks and libraries in a [growing number of languages][apm_languages], including popular ORMs for SQL Server.
 
 In this example, we'll be tracing requests to SQL Server within a [Ruby on Rails][ruby-framework-tracing] application using Datadog's [tracing library][ddtrace-rails]. Links to similar libraries for other languages are available in the Datadog [documentation][tracing-setup].
 
@@ -95,7 +69,7 @@ Datadog.configure do |c|
   c.tracer env: 'demo'
 end
 ```
-In Datadog, traces and services are organized by [environment][config-env], defaulting to `env:none`. You can easily [set a different environment][env] if you prefer—the example above tags service-level metrics and traces from our application with `env:demo`. 
+In Datadog, traces and services are organized by [environment][config-env], defaulting to `env:none`. You can easily [set a different environment][env] if you prefer—the example above tags service-level metrics and traces from our application with `env:demo`.
 
 The `configure` block tells the Agent to instrument your Rails application automatically, and names two services that will appear in Datadog: a `service_name` for the main Rails application as well as a `database_service`. If you leave these unspecified, [the Agent will derive][ddtrace-rails] the `service_name` from the application itself, and the `database_service` from the `service_name` plus the adapter for the database (e.g., `sqlserver`).
 
@@ -115,7 +89,7 @@ We can monitor data from our T-SQL queries alongside other SQL Server metrics by
 
 {{< img src="SQL-Server-performance-APM-to-timeboard.mp4" alt="Monitor SQL Server performance with Datadog: Adding a graph from the APM dashboard to a timeboard" video="true" wide="true" >}}
 
-You can add timeseries graphs of service-level metrics to a custom timeboard, create views that compare the performance of various queries to your database service, and use these to help you investigate issues. For instance, you can create a dashboard to track queries to the `customers` and `orders` tables and compare them over time. 
+You can add timeseries graphs of service-level metrics to a custom timeboard, create views that compare the performance of various queries to your database service, and use these to help you investigate issues. For instance, you can create a dashboard to track queries to the `customers` and `orders` tables and compare them over time.
 
 {{< img src="SQL-Server-performance-latency-comparison.png" alt="Monitor SQL Server performance with Datadog: Timeboard showing latency and total requests for two queries to SQL Server" popup="true" >}}
 
@@ -144,14 +118,14 @@ logs:
     tags: env:demo
 ```
 
-In this example, we've assigned values for four mandatory keys: 
-`type`, `path`, `service`, and `source`. Our settings configure the Agent to tail the file (`type`) that exists at a certain `path`, connect the log to the service `pg-sqlserver-demo`, and associate it with the `ruby` integration. You can read about mandatory keys within the log management configuration file in the Datadog [documentation][custom-logs]. 
+In this example, we've assigned values for four mandatory keys:
+`type`, `path`, `service`, and `source`. Our settings configure the Agent to tail the file (`type`) that exists at a certain `path`, connect the log to the service `pg-sqlserver-demo`, and associate it with the `ruby` integration. You can read about mandatory keys within the log management configuration file in the Datadog [documentation][custom-logs].
 
 You'll notice that the `service` and `env` of our logs is the same as those of our traces. Our logs will be tagged automatically based on the configuration we've specified. We can use these tags for filtering in the logs view, as well as for navigating between metrics, traces, and logs for the same `service` and `env`.
 
-**Set up log processing rules.** You may want to give the Agent additional instructions for collecting and pre-processing logs before they're sent to Datadog. By default, the Agent will send logs to Datadog one line at a time. Depending on the format of your logs, you may need to report logs [as multi-line chunks][multi-line]. 
+**Set up log processing rules.** You may want to give the Agent additional instructions for collecting and pre-processing logs before they're sent to Datadog. By default, the Agent will send logs to Datadog one line at a time. Depending on the format of your logs, you may need to report logs [as multi-line chunks][multi-line].
 
-Datadog identifies a cluster of lines by matching a pattern. In the configuration file for Datadog log management, we've added a log processing rule within the first item under `logs`. We've defined a multi-line aggregation rule based on a particular string—so every time the Agent encounters the string `&>&>&` within the log file, it will identify a new log entry. 
+Datadog identifies a cluster of lines by matching a pattern. In the configuration file for Datadog log management, we've added a log processing rule within the first item under `logs`. We've defined a multi-line aggregation rule based on a particular string—so every time the Agent encounters the string `&>&>&` within the log file, it will identify a new log entry.
 
 ```no-minimize
   - type: file
@@ -172,7 +146,7 @@ This line instructs Rails to [tag][rails-config] each log with `&>&>&` (the stri
 
 You may also want to produce logs [as JSON][json-logs], a format that the Datadog Agent will parse automatically, without the need to define explicit parsing rules.
 
-Now that you've configured log management, restart the Agent to start seeing your logs within Datadog. 
+Now that you've configured log management, restart the Agent to start seeing your logs within Datadog.
 
 ### Context in three dimensions
 Datadog lets you move with ease between service-level dashboards for your database, graphs of system metrics, and logs from moments of interest. If your SQL Server instances run into issues, you can navigate between metrics, logs, and traces to get the context you need for troubleshooting.
@@ -181,11 +155,11 @@ In the example below, the tracing dashboard for a Rails application displays a w
 
 {{< img src="SQL-Server-performance-issue.png" alt="Monitor SQL Server performance with Datadog: Dashboard showing an issue with our SQL Server application setup" popup="true" >}}
 
-One way to learn more about the issue is to navigate from our tracing dashboard to graphs of system metrics. You can do this by clicking a trace, then clicking the ["Host Info"][host-info] tab, which gives you a selection of dashboards right within the tracing view. Or you can navigate to a dedicated dashboard for your host. Click the name of a host within the list of traces, then click "Host dashboard" (as below). 
+One way to learn more about the issue is to navigate from our tracing dashboard to graphs of system metrics. You can do this by clicking a trace, then clicking the ["Host Info"][host-info] tab, which gives you a selection of dashboards right within the tracing view. Or you can navigate to a dedicated dashboard for your host. Click the name of a host within the list of traces, then click "Host dashboard" (as below).
 
 {{< img src="SQL-Server-performance-host-dashboard.png" alt="Monitor SQL Server performance with Datadog: A link to a host dashboard" >}}
 
-The host dashboard shows us system-level metrics from our application server, which helps us determine if our issue corresponds with any revealing trends. In this example, we've navigated to a graph that shows, at around the same time we started receiving errors in the tracing dashboard, a sudden leveling of network traffic.  
+The host dashboard shows us system-level metrics from our application server, which helps us determine if our issue corresponds with any revealing trends. In this example, we've navigated to a graph that shows, at around the same time we started receiving errors in the tracing dashboard, a sudden leveling of network traffic.
 
 {{< img src="SQL-Server-performance-host-network.png" alt="Monitor SQL Server performance with Datadog: Graph of network traffic on our application server" popup="true" >}}
 
@@ -193,23 +167,25 @@ To gain additional context, we can click on the graph at that point in time, the
 
 {{< img src="SQL-Server-performance-issue-logs.png" alt="Monitor SQL Server performance with Datadog: Diagnosing issues with logs" popup="true" wide="true" >}}
 
-Datadog makes it straightforward to monitor SQL Server's interactions with the rest of your web application. You can gather logs from a file or network port, and send traces by auto-instrumenting a web framework that SQL Server integrates with. And with easy navigation between metrics, traces, and logs, you can quickly pin down which parts of your infrastructure are causing an issue. 
+Datadog makes it straightforward to monitor SQL Server's interactions with the rest of your web application. You can gather logs from a file or network port, and send traces by auto-instrumenting a web framework that SQL Server integrates with. And with easy navigation between metrics, traces, and logs, you can quickly pin down which parts of your infrastructure are causing an issue.
 
 ## SQL Server: Queries in the spotlight
-In this post, we've shown you how to use Datadog with SQL Server to collect metrics, traces, and logs. With all of this data on the same platform, you can easily switch between views and troubleshoot issues in your SQL Server–based applications. 
+In this post, we've shown you how to use Datadog with SQL Server to collect metrics, traces, and logs. With all of this data on the same platform, you can easily switch between views and troubleshoot issues in your SQL Server–based applications.
 
 You can gain even more visibility into SQL Server by configuring the Agent to collect custom metrics. Read the [next part][part4] of this series to learn three ways to do so.
 
 If you're already using Datadog, you can follow the steps above to enable the SQL Server integration, as well as APM and log collection, to give you a full view of your system. If you're new to Datadog, you can get started monitoring SQL Server performance by signing up for a <a href="#" class="sign-up-trigger">free trial</a>.
 
 
-[agent-config-file]: https://docs.datadoghq.com/agent/basic_agent_usage/#configuration-file
+[agent-config-file]: https://docs.datadoghq.com/agent/guide/agent-configuration-files/
 
 [agent-repo]: https://github.com/datadog/datadog-agent
 
-[agent-info]: https://docs.datadoghq.com/agent/faq/agent-commands/#agent-information
+[agent-info]: https://docs.datadoghq.com/agent/guide/agent-commands/#agent-information
 
 [apm]: https://www.datadoghq.com/apm/
+
+[apm_languages]: https://docs.datadoghq.com/tracing/languages/
 
 [basic-agent-usage]: https://docs.datadoghq.com/agent/basic_agent_usage/
 
@@ -223,7 +199,7 @@ If you're already using Datadog, you can follow the steps above to enable the SQ
 
 [custom-logs]: https://docs.datadoghq.com/logs/#custom-log-collection
 
-[dd-hostname]: https://help.datadoghq.com/hc/en-us/articles/203764655-How-can-I-change-the-hostname-
+[dd-hostname]: https://docs.datadoghq.com/agent/faq/how-datadog-agent-determines-the-hostname/
 
 [ddtrace-rails]: http://www.rubydoc.info/gems/ddtrace/#Ruby_on_Rails
 
@@ -273,4 +249,4 @@ If you're already using Datadog, you can follow the steps above to enable the SQ
 
 [windows-only]: https://github.com/DataDog/integrations-core/blob/27b476b5cd6a36dfc66b163cebce85005c5be69a/sqlserver/manifest.json
 
-[yaml-example]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/conf.yaml.example
+[yaml-example]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/datadog_checks/sqlserver/data/conf.yaml.example

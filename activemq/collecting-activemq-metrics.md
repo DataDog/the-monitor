@@ -1,4 +1,5 @@
-# Collecting ActiveMQ metrics
+# Collecting ActiveMQ&nbsp;metrics
+
 
 In [Part 1 of this series][part-1], we looked at how ActiveMQ works, and the key metrics you can monitor to ensure proper performance of your messaging infrastructure. In this post, we'll show you some of the tools that you can use to collect ActiveMQ metrics. This includes tools that ship with ActiveMQ, and some other tools that make use of Java Management Extensions (JMX) to monitor ActiveMQ brokers and destinations.
 
@@ -283,6 +284,8 @@ Datadog allows you to collect, visualize, and alert on data from more than {{< t
 
 ## Acknowledgments
 We'd like to thank Gary Tully of [Red Hat][red-hat] for his technical review of this series.
+
+_Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/activemq/collecting-activemq-metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues)._
 
 [activemq-cli-linux]: http://activemq.apache.org/unix-shell-script.html
 [activemq-cli-windows]: http://activemq.apache.org/activemq-command-line-tools-reference.html

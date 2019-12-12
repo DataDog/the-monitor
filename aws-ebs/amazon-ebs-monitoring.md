@@ -1,32 +1,5 @@
----
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-  twitter: maximybrown
-blog/category:
-- series metrics
-blog/tag:
-- monitoring
-- AWS
-- alerts
-- performance
-date: 2018-04-06
-description: "Identify and monitor key metrics for your Amazon EBS volumes."
-draft: false
-image: ebs-hero-one.png
-meta_title: Key metrics for Amazon EBS monitoring
-preview_image: ebs-hero-one.png
-header_video:
-    mp4: superhero_EBS_prores_24b.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
-slug: amazon-ebs-monitoring
-technology: aws ebs
-title: Key metrics for Amazon EBS monitoring
-series: amazon-ebs-monitoring
----
+# Key metrics for Amazon EBS monitoring
+
 
 ## What is Amazon EBS?
 Amazon Elastic Block Storage (EBS) is persistent block-level storage as a service that works in conjunction with [EC2 instances](/blog/ec2-monitoring). Unlike EC2 instance store volumes, which are ephemeral and lose any data once the instance is destroyed, EBS volumes maintain their state when stopped or detached from an instance. You can connect multiple EBS volumes to a single instance, though they must all be within the same availability zone.

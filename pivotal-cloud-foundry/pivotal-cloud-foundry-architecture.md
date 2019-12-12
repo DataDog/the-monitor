@@ -1,3 +1,6 @@
+# Pivotal Cloud Foundry architecture
+
+
 [Pivotal Cloud Foundry (PCF)][pcf] is a multi-cloud platform for the deployment, management, and continuous delivery of applications, containers, and functions. PCF is a distribution of the [open source Cloud Foundry][open-source-cf] developed and maintained by Pivotal Software, Inc. PCF is aimed at enterprise users and offers additional features and services—from Pivotal and from other third parties—for installing and operating Cloud Foundry as well as to expand its capabilities and make it easier to use. Major cloud platforms such as Amazon Web Services and Google Cloud also provide templates and quickstarts that automate large portions of the PCF deployment process.
 
 Pivotal Cloud Foundry abstracts away the process of setting up and managing an application runtime environment so that developers can focus solely on their applications and associated data. Running a single command—`cf push`—will create a scalable environment for your application in seconds, which might otherwise take hours to spin up manually. PCF allows developers to deploy and deliver software quickly, without needing to manage the underlying infrastructure.

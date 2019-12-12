@@ -1,3 +1,6 @@
+# Key metrics for monitoring Pivotal Cloud Foundry
+
+
 In the first part of this series, we outlined the [different components][part-one] of a Pivotal Cloud Foundry deployment and how they work together to host and run applications. In this article we will look at some of the most important metrics that PCF operators should monitor. These metrics provide information that can help you ensure that the deployment is running smoothly, that it has [enough capacity to meet demand][capacity-management], and that the applications hosted on it are healthy.
 
 Pivotal Cloud Foundry operators have access to hundreds of metrics. We will break down a selection of key indicators that give you an overview of your deployment’s health and help determine if you need to scale up to accommodate users’ needs. Keeping an eye on these important metrics will help operators avoid performance issues for the developers deploying apps and the end users accessing them. They can also help identify potential scaling bottlenecks ahead of time.

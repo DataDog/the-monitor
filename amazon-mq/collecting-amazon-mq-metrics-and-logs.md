@@ -1,3 +1,6 @@
+# Collecting Amazon MQ metrics and logs
+
+
 In [Part 1](/blog/amazon-mq-monitoring) of this series, we saw how Amazon MQ routes messages between services in a distributed application, and we looked at some of the key metrics that describe the performance of the message broker and its destinations. Now that we've introduced the metrics and their meaning, we'll look at some tools you can use to collect and query metrics from Amazon MQ:
 
  - the Amazon CloudWatch [console](#the-cloudwatch-console)
@@ -75,7 +78,7 @@ The sample query below fetches the average `QueueSize` of the `testqueue` destin
 
 ```
 aws cloudwatch get-metric-statistics --namespace "AWS/AmazonMQ" --metric-name QueueSize --statistics Average --start-time 2019-07-17T18:30:00Z --end-time 2019-07-17T19:00:00Z --period 600 --region us-west-2 --dimensions Name="Broker",Value="MyBroker" Name="Queue",Value="testqueue"
-```
+{{< /code-snippet >}}
 
 Because the query specifies a 10-minute granularity (`period`) and a 30-minute time span, it returns three records, each showing the average of all the `QueueSize` datapoints within the period:
 
@@ -100,7 +103,7 @@ Because the query specifies a 10-minute granularity (`period`) and a 30-minute t
         }
     ]
 }
-```
+{{< /code-snippet >}}
 
 ### Call the CloudWatch API
 You can also use the [AWS SDKs][aws-sdk-documentation] to build a custom solution to programmatically collect Amazon MQ metrics and logs from CloudWatch. AWS supports many languages—including Node.js, Python, and Go—that you can use to build applications that access the CloudWatch API.

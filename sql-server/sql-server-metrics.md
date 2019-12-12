@@ -1,37 +1,5 @@
----
-authors:
-- email: rishabh.moudgil@datadoghq.com
-  image: rish-static.jpg
-  name: Rishabh Moudgil
-- email: paul.gottschling@datadoghq.com
-  name: Paul Gottschling
-  image: paulgottschling.jpg
-blog/category:
-- integration
-blog/tag:
-- sql-server
-- alerts
-- dbms
-- sql
-- microsoft
-date: 2018-05-04T17:00:00Z
-description: Gather custom SQL Server metrics with performance counters, stored procedures, and the WMI integration
-draft: false
-featured: false
-image: "SQL-Server-Metrics-hero.png"
-preview_image: "SQL-Server-Metrics-hero.png"
-meta_title: Monitor Microsoft SQL Server
-slug: sql-server-metrics
-technology: sql-server
-title: "Custom SQL Server metrics for detailed monitoring"
-series: sql-server-monitoring
-header_video:
-    mp4: superheroes_microsoftsq04_v17.mp4
-    no_loop: false
-    no_autoplay: false
-    stop_time: 0
+# Custom SQL Server metrics for detailed monitoring
 
----
 
 We've shown in [Part 3][part3] of this series how Datadog can help you monitor your SQL Server databases within the context of your application. In this post, we'll show you how to go one step further by collecting custom SQL Server metrics that let you choose the exact functionality you want to monitor and improve. You can configure the Agent to collect custom metrics and report them every time it runs its built-in SQL Server check.
 
@@ -68,28 +36,28 @@ To collect metrics automatically from specific performance counters, edit the SQ
     custom_metrics:
         - name: sqlserver.buffer.page_lookups
           counter_name: Page lookups/sec
-        
+
         - name: sqlserver.workload.queued_requests
           counter_name: Queued Requests
-          instance: internal                  
+          instance_name: internal
 
         - name: sqlserver.databases.log_flushes
           counter_name: Log Flushes/sec
-          instance: ALL
-          tag_by: db        
+          instance_name: ALL
+          tag_by: db
 
         - name: sqlserver.index_searches
-          counter_name: Index Searches/sec             
+          counter_name: Index Searches/sec
     # ...
 ```
 
-For each entry, you must specify values for `name` and `counter_name`. The `name` value will be the name of the metric as you want it to appear in Datadog, whereas the `counter_name` maps to the `counter_name` column of `sys.dm_os_performance_counters`. In the case of "Page lookups/sec," the configuration above will cause the metric to appear in Datadog as `sqlserver.buffer.page_lookups`. 
+For each entry, you must specify values for `name` and `counter_name`. The `name` value will be the name of the metric as you want it to appear in Datadog, whereas the `counter_name` maps to the `counter_name` column of `sys.dm_os_performance_counters`. In the case of "Page lookups/sec," the configuration above will cause the metric to appear in Datadog as `sqlserver.buffer.page_lookups`.
 
-Some performance objects are associated with multiple instances within SQL Server, and you can identify these with the `instance_name` column of `sys.dm_os_performance_counters`. You'll want to check the [documentation][performance-objects] for the performance objects you're interested in to see what `instance` means in that context. In our example above, `Log Flushes/sec` is a counter within the object [`SQLServer:Databases`][performance-objects-db]. There's a separate instance of the object (and its counters) for each database. The [resource pool performance object][performance-objects-pool] has a separate instance for each resource pool. Other performance objects, like the Buffer Manager object where you'll find `Page lookups/sec`, always have a single instance.
+Some performance objects are associated with multiple instances within SQL Server, and you can identify these with the `instance_name` column of `sys.dm_os_performance_counters`. You'll want to check the [documentation][performance-objects] for the performance objects you're interested in to see what `instance_name` means in that context. In our example above, `Log Flushes/sec` is a counter within the object [`SQLServer:Databases`][performance-objects-db]. There's a separate instance of the object (and its counters) for each database. The [resource pool performance object][performance-objects-pool] has a separate instance for each resource pool. Other performance objects, like the Buffer Manager object where you'll find `Page lookups/sec`, always have a single instance.
 
-If a performance counter has multiple instances, you have two options for sending metrics to Datadog. One is to collect metrics from a single instance, by specifying the `instance` in the `custom_metrics` section. In our example above, we've edited the item for `Queued Requests` to gather metrics only from the `internal` instance. 
+If a performance counter has multiple instances, you have two options for sending metrics to Datadog. One is to collect metrics from a single instance, by specifying `instance_name` in the `custom_metrics` section. In our example above, we've edited the item for `Queued Requests` to gather metrics only from the `internal` instance.
 
-If you want to collect metrics associated with _every_ instance, set the `instance` value to `ALL`. Then add a `tag_by` line, which creates a key-value tag pair for each instance of a performance counter. If the metric `Log Flushes/sec` is reported for instances `tempdb`, `model`, and `demo_db`, for example, a `tag_by` prefix of `db` will create the tags `db:tempdb`, `db:model`, and `db:demo_db`. While you can name the prefix anything you'd like, you may want to name it after the object that each instance represents (a database, a resource pool, etc.).
+If you want to collect metrics associated with _every_ instance, set the value of `instance_name` to `ALL`. Then add a `tag_by` line, which creates a key-value tag pair for each instance of a performance counter. If the metric `Log Flushes/sec` is reported for instances `tempdb`, `model`, and `demo_db`, for example, a `tag_by` prefix of `db` will create the tags `db:tempdb`, `db:model`, and `db:demo_db`. While you can name the prefix anything you'd like, you may want to name it after the object that each instance represents (a database, a resource pool, etc.).
 
 After restarting the Agent, you'll be able to add your custom metrics to dashboards and alerts, just like any other metric in Datadog. Below, we're graphing the custom metric `sqlserver.index_searches`, which we've named from the counter `Index Searches/sec` within the [`Access Methods`][access-methods] performance object (see [above](#custom-datadog-metrics-with-the-performance-counters-view)).
 
@@ -115,9 +83,9 @@ A stored procedure for reporting custom metrics can use any T-SQL queries you'd 
 - `value`: the value of the metric
 - `tags`: the tags that will appear in Datadog. You can specify any number of tags, separating them with a comma, e.g., `db:master, role:primary`
 
-In this case, we've create a stored procedure named `GetDiskMetrics`. This stored procedure begins by executing `sp_spaceused` and inserting the results into a temporary table. This allows us to select specific metrics from the results. 
+In this case, we've create a stored procedure named `GetDiskMetrics`. This stored procedure begins by executing `sp_spaceused` and inserting the results into a temporary table. This allows us to select specific metrics from the results.
 
-`sp_spaceused` returns strings of numbers and their units, stating `index_size` and `data` in kilobytes (e.g., `1528 KB`), and `database_size` in megabytes (e.g., `80 MB`). We’ll declare a function that removes the units, converts the strings into floats, and stores the results in the table `#Datadog`. 
+`sp_spaceused` returns strings of numbers and their units, stating `index_size` and `data` in kilobytes (e.g., `1528 KB`), and `database_size` in megabytes (e.g., `80 MB`). We’ll declare a function that removes the units, converts the strings into floats, and stores the results in the table `#Datadog`.
 
 When writing your own stored procedure, make sure that the values you're storing in the table `#Datadog` are convertible to floats. SQL Server will attempt to convert certain data types automatically, but for other types it will throw an error (see [this chart][conversion-chart] for a breakdown of what SQL Server can convert). For example, the `ExtractFloat` function below returns a string that SQL Server will convert to a float before inserting.
 
@@ -166,14 +134,14 @@ BEGIN
     database_size varchar(18),
     unallocated_space varchar(18),
     reserved varchar(18),
-    data varchar(18), 
+    data varchar(18),
     index_size varchar(18),
     unused varchar(18)
   );
 
   INSERT INTO @disk_use_table EXEC sp_spaceused @oneresultset=1;
-	
-  -- Remove the units from our custom metrics and insert them into the table #Datadog 
+
+  -- Remove the units from our custom metrics and insert them into the table #Datadog
 
   INSERT INTO #Datadog(metric, type, value, tags) VALUES
     ('sqlserver.disk.database_size_mb', 'gauge', (SELECT dbo.ExtractFloat((SELECT [database_size] FROM @disk_use_table))), 'db:master,role:primary'),
@@ -233,7 +201,7 @@ To configure the Agent to send metrics from WMI, you'll need to edit the WMI int
 You can collect the number of failed SQL Server jobs with the following configuration, for example:
 
 ```no-minimize
-instances: 
+instances:
     - class: Win32_PerfRawData_SQLSERVERAGENT_SQLAgentJobs
       metrics:
         - [Failedjobs, sqlserver.jobs.failed_jobs, gauge]
@@ -244,8 +212,8 @@ Then enable the WMI integration by restarting the Agent.
 
 [Click here][wmi-classes-mssql] to see all of the WMI classes that report data from SQL Server.
 
-## SQL Server metrics for tailored monitoring 
-In this series, we've [surveyed metrics][part1] that can expose SQL Server's core functionality, and have shown you how to use a number of [monitoring tools][part2] to get real-time views and detailed reports. We've demonstrated how you can combine live observation and on-demand insights by adding distributed tracing and log management, all with [Datadog][part3]. 
+## SQL Server metrics for tailored monitoring
+In this series, we've [surveyed metrics][part1] that can expose SQL Server's core functionality, and have shown you how to use a number of [monitoring tools][part2] to get real-time views and detailed reports. We've demonstrated how you can combine live observation and on-demand insights by adding distributed tracing and log management, all with [Datadog][part3].
 
 With custom metrics, it's possible to monitor every metric SQL Server collects internally, and to use this as a basis for optimizing your databases. With Datadog, you can correlate these metrics with others from SQL Server and the rest of your stack, making it clear where performance issues are originating or where you should focus your optimization efforts.
 
@@ -261,15 +229,15 @@ If you are not using Datadog and want to gain visiblity into the health and perf
 
 [db-properties]: https://docs.microsoft.com/en-us/sql/t-sql/functions/databasepropertyex-transact-sql
 
-[dd-conf-file]: https://help.datadoghq.com/hc/en-us/articles/203037169-Where-is-the-configuration-file-for-the-Agent-
+[dd-conf-file]: https://docs.datadoghq.com/agent/guide/agent-configuration-files/
 
-[dd-custom-metrics]: https://help.datadoghq.com/hc/en-us/articles/209280186-How-can-I-collect-more-metrics-from-my-SQL-Server-integration-
+[dd-custom-metrics]: https://docs.datadoghq.com/integrations/faq/how-can-i-collect-more-metrics-from-my-sql-server-integration/
 
 [dd-mssql-integration]: https://docs.datadoghq.com/integrations/sqlserver/
 
 [dd-mssql-config]: https://docs.datadoghq.com/integrations/sqlserver/#configuration
 
-[example-yaml]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/conf.yaml.example
+[example-yaml]: https://github.com/DataDog/integrations-core/blob/master/sqlserver/datadog_checks/sqlserver/data/conf.yaml.example
 
 [gauges]: https://docs.datadoghq.com/developers/metrics/#gauges
 
@@ -307,6 +275,6 @@ If you are not using Datadog and want to gain visiblity into the health and perf
 
 [wmi-classes-mssql]: http://wutils.com/wmi/root/cimv2/win32_perfrawdata/
 
-[wmi-dd-classes]: https://help.datadoghq.com/hc/en-us/articles/205016075-How-to-retrieve-WMI-metrics
+[wmi-dd-classes]: https://docs.datadoghq.com/integrations/faq/how-to-retrieve-wmi-metrics/
 
 [wmi-intro]: https://msdn.microsoft.com/en-us/library/aa394582(v=vs.85).aspx
