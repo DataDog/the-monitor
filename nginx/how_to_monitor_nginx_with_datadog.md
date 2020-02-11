@@ -8,7 +8,7 @@ If you’ve already read [our post on monitoring NGINX](/blog/how-to-monitor-ngi
 
 Datadog allows you to build graphs and alerts around individual hosts, services, processes, metrics—or virtually any combination thereof. For instance, you can monitor all of your NGINX hosts, or all hosts in a certain availability zone, or you can monitor a single key metric being reported by all hosts with a certain tag. This post will show you how to:
 
--   Monitor NGINX performance metrics on Datadog dashboard](https://www.datadoghq.com/dashboards/nginx-dashboard/)s, alongside all your other systems
+-   Monitor NGINX performance metrics on [Datadog dashboard](https://www.datadoghq.com/dashboards/nginx-dashboard/)s, alongside all your other systems
 -   Send NGINX logs to Datadog for monitoring and analysis
 -   Set up alerts to automatically notify you of unexpected changes
 
@@ -24,7 +24,7 @@ The Datadog Agent is [the open-source software](https://github.com/DataDog/dd-ag
 
 As soon as your Agent is up and running, you should see your host reporting metrics [in your Datadog account](https://app.datadoghq.com/infrastructure).
 
-[![Datadog infrastructure list](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/infra_2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/infra_2.png)
+[![Datadog infrastructure list](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/infra-2.png)](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/infra-2.png)
 
 ### Configure the Agent
 
@@ -60,11 +60,11 @@ The basic NGINX dashboard displays a handful of graphs encapsulating most of the
 
 You can easily create a comprehensive dashboard for monitoring your entire web stack by adding additional graphs with important metrics from outside NGINX. For example, you might want to monitor host-level metrics on your NGINX hosts, such as system load. To start building a custom dashboard, simply clone the default NGINX dashboard by clicking on the gear near the upper right of the dashboard and selecting "Clone Dashboard".
 
-[![Clone dash](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/clone_2.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/clone_2.png)
+[![Clone dash](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/clone-2b.png)](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/clone-2b.png)
 
 You can also monitor your NGINX instances at a higher level using Datadog’s [Host Maps](/blog/introducing-host-maps-know-thy-infrastructure/)—for instance, color-coding all your NGINX hosts by CPU usage to identify potential hotspots.
 
-[![](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx-host-map-3.png)](https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-06-nginx/nginx-host-map-3.png)
+[![](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/nginx-host-map-4.png)](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/nginx-host-map-4.png)
 
 ## Capturing NGINX logs
 
@@ -126,11 +126,11 @@ You can now see information from your NGINX logs begin to appear on the [Log Exp
 
 In the example image below, the log entry shows that NGINX processed a GET request for the file **info.php** and returned a status code of 200.
 
-{{< img src="nginx-log-1.png" alt="NGINX log" wide="true" popup="true" >}}
+[![Log explorer](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/nginx-log-1.png)](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/nginx-log-1.png)
 
 In the Log Explorer, you can filter logs to see information that's not easily discernible in the log stream. To visualize your logs, you can click the Analytics button in the top-left corner and use the facet controls in the left column to filter and aggregate your log data. In the example below, we've used the `URL Path` and `Status Code` facets to see which endpoints return the most 5xx errors.
 
-{{< img src="nginx-log-explorer-2-revised2.png" alt="Using facets to filter logs" popup="true" >}}
+[![Log explorer 2](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/nginx-log-explorer-2-revised2.png)](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/nginx-log-explorer-2-revised2.png)
 
 For more information, see [our docs on exploring, searching, and graphing your logs](https://docs.datadoghq.com/logs/explore/).
 
@@ -158,7 +158,7 @@ You can build alerts around key data collected in your logs—HTTP response code
 
 NGINX logs requests that are successful (e.g., 2xx) and unsuccessful (e.g., 4xx and 5xx). Because of this, in Datadog you can [build an alert](https://app.datadoghq.com/monitors#create/log) that notifies you when your server-side error rate exceeds an acceptable limit.
 
-{{< img src="nginx-query-1-revised2.png" alt="NGINX log monitor query" caption="Specify @http.status_code:[500 TO 599] in your query to alert on 5xx errors, for example." popup="true" >}}
+[![Response code](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/nginx-query-1-revised2.png)](https://imgix.datadoghq.com/img/blog/how-to-monitor-nginx-with-datadog/nginx-query-1-revised2.png)
 
 #### Alerting on request processing time
 
