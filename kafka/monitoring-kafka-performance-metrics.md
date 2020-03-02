@@ -9,7 +9,8 @@ There are a few key differences between Kafka and other queueing systems like [R
 3. It is [very fast][kafka-benchmark], even in a small cluster. 
 4. It has strong ordering semantics and durability guarantees.
 
-Despite being pre-1.0, (current version is [0.9.0.1][download-kafka]), it is [production-ready][user-list], and powers a large number of high-profile companies including [LinkedIn][linkedin-msgs], Yahoo, Netflix, and Datadog.
+Kafka [powers a large number of high-profile companies][user-list] including [LinkedIn][linkedin-msgs], Yahoo, Netflix, and Datadog.  
+The information presented in this article has been updated with information for Kafka 0.9+, however metrics may have changed in newer releases. Refer to the Kafka [downloads page][download-kafka] for the latest version, and the key metrics section below for a link to the Kafka metrics documentation.    
 
 ## Architecture overview
 Before diving in, it is important to understand the general architecture of a Kafka deployment. Every deployment consists of the components illustrated below:  
@@ -327,14 +328,14 @@ Thanks to [Gwen Shapira][gwenshap], System Architect at Confluent for generously
 [choose-topics]: http://www.confluent.io/blog/how-to-choose-the-number-of-topicspartitions-in-a-kafka-cluster/
 [consumer-group-example]: https://cwiki.apache.org/confluence/display/KAFKA/Consumer+Group+Example
 [cpu-bottleneck]: https://cwiki.apache.org/confluence/display/KAFKA/Operations#Operations-Hardware
-[design-motivation]: https://kafka.apache.org/08/design.html
+[design-motivation]: https://kafka.apache.org/documentation/#design
 [download-kafka]: https://kafka.apache.org/downloads.html
 [fail-on-disk]: https://mail-archives.apache.org/mod_mbox/kafka-users/201311.mbox/%3CCAJARbTQ5FVpwu4T1PewyXNdUhO8dHZsfVYRbob7iR73NQtVCoQ@mail.gmail.com%3E
 [gc-primer]: https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
 [gwenshap]: https://twitter.com/gwenshap
 [improving-producer-performance]: http://ingest.tips/2015/07/19/tips-for-improving-performance-of-kafka-producer/
 [iowait]: https://veithen.github.io/2013/11/18/iowait-linux.html
-[jvm-tuning]: https://kafka.apache.org/081/ops.html#java
+[jvm-tuning]: https://kafka.apache.org/documentation/#java
 [jvm-gc-linkedin]: https://engineering.linkedin.com/garbage-collection/garbage-collection-optimization-high-throughput-and-low-latency-java-applications
 [kafka-benchmark]: https://engineering.linkedin.com/kafka/benchmarking-apache-kafka-2-million-writes-second-three-cheap-machines
 [kafka-bugfixes]: http://www.confluent.io/blog/290-reasons-to-upgrade-to-apache-kafka-0.9.0.0
@@ -343,7 +344,7 @@ Thanks to [Gwen Shapira][gwenshap], System Architect at Confluent for generously
 [maxlag]: https://cwiki.apache.org/confluence/display/KAFKA/FAQ#FAQ-Myconsumerseemstohavestopped,why?
 [new-consumer]: http://www.confluent.io/blog/tutorial-getting-started-with-the-new-apache-kafka-0.9-consumer-client
 [not-AMQP]: https://cwiki.apache.org/confluence/display/KAFKA/A+Guide+To+The+Kafka+Protocol#AGuideToTheKafkaProtocol-SomeCommonPhilosophicalQuestions
-[ops-disk-bottleneck]: https://kafka.apache.org/08/ops.html#hwandos
+[ops-disk-bottleneck]: https://kafka.apache.org/documentation/#hwandos
 [pagecache]: https://kafka.apache.org/documentation.html#persistence
 [push-and-pull]: https://kafka.apache.org/documentation.html#design_pull
 [RabbitMQ]: https://rabbitmq.com
