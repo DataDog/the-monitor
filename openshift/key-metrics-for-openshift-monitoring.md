@@ -1,33 +1,3 @@
----
-authors:
-- email: maxim.brown@datadoghq.com
-  image: brown-maxim.jpg
-  name: Maxim Brown
-blog/category:
-- series metrics
-blog/tag:
-- Red Hat
-- OpenShift
-- Kubernetes
-- containers
-date: "2020-04-15T00:00:01Z"
-description: "Monitor the health, performance, and scalability of your OpenShift clusters with these key metrics."
-draft: false
-image: openshift-hero-1.png
-meta_title: Key metrics for OpenShift monitoring
-preview_image: openshift-hero-1.png
-slug: key-metrics-for-openshift-monitoring
-technology: openshift
-title: Key metrics for OpenShift monitoring
-series: openshift-monitoring
-tcp:
-- title: "eBook: Monitoring In The Cloud"
-  desc: "Build a framework for monitoring dynamic infrastructure and applications."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/resources/monitoring-in-the-cloud-ebook/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringInTheCloud"
-  img: Thumbnail-MonitoringInTheCloud.png
----
-
 ## What is OpenShift?
 
 [Red Hat OpenShift](https://www.openshift.com/) is a Kubernetes-based platform that helps enterprise users deploy and maintain containerized applications. Users can deploy OpenShift as a self-managed cluster or use a managed service, which are available from major cloud providers including [AWS](https://aws.amazon.com/quickstart/architecture/openshift/), [Azure](https://azure.microsoft.com/en-us/services/openshift/), and [IBM Cloud](https://www.ibm.com/cloud/openshift).
