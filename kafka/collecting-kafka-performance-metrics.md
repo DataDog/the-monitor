@@ -1,237 +1,241 @@
+If you’ve already read [our guide](/blog/monitoring-kafka-performance-metrics/) to key Kafka performance metrics, you’ve seen that Kafka provides a vast array of metrics on performance and resource utilization, which are available in a number of different ways. You've also seen that no Kafka performance monitoring solution is complete without also monitoring ZooKeeper. This post covers some different options for collecting [Kafka](#collect-native-kafka-performance-metrics) and [ZooKeeper](#collect-zookeeper-metrics) metrics, depending on your needs.
 
-_This post is part 2 of a 3-part series about monitoring Apache Kafka. [Part 1][part1] is about the key performance metrics available from Kafka, and [Part 3][part3] details how to monitor Kafka with Datadog._
+Like [Tomcat](/blog/tomcat-architecture-and-performance/), [Cassandra](/blog/how-to-monitor-cassandra-performance-metrics/), and other [Java applications](/blog/monitoring-jmx-metrics-with-datadog/), both Kafka and ZooKeeper expose metrics on availability and performance via Java Management Extensions (JMX).
 
-If you’ve already read [our guide][part1] to key Kafka metrics, you’ve seen that Kafka provides a vast array of metrics on performance and resource utilization, which are available in a number of different ways. You've also seen that no Kafka monitoring solution is complete without also monitoring ZooKeeper. This post covers some different options for collecting [Kafka](#jconsole) and [ZooKeeper](#zookeeper) metrics, depending on your needs.
+## Collect native Kafka performance metrics
+In this post, we'll show you how to use the following tools to collect metrics from Kafka and ZooKeeper:
 
-Like Tomcat, [Cassandra], and other [Java applications][jmx-dd], both Kafka and ZooKeeper expose metrics on availability and performance via JMX (Java Management Extensions). 
+-   [JConsole](#collect-kafka-performance-metrics-with-jconsole), a GUI that ships with the Java Development Kit (JDK)
+-   [JMX](#collect-kafka-performance-metrics-via-jmx) with external graphing and monitoring tools and services
+-   [Burrow](#monitor-consumer-health-with-burrow) for monitoring consumer health
 
-## Collecting native Kafka metrics
+JConsole and JMX can collect all of the native Kafka performance metrics outlined in [Part 1 of this series](/blog/monitoring-kafka-performance-metrics/), while Burrow is a more specialized tool that allows you to monitor the status and offsets of all your consumers. For host-level metrics, you should consider installing a [monitoring agent](https://docs.datadoghq.com/agent/basic_agent_usage/?tab=agentv6).
 
-- [JConsole](#jconsole), a GUI that ships with the Java Development Kit (JDK)
-- [JMX/Metrics integrations](#jmx) with external graphing and monitoring tools and services
-- [Burrow](#burrow) for monitoring consumer health
+### Collect Kafka performance metrics with JConsole
+JConsole is a simple Java GUI that ships with the JDK. It provides an interface for exploring the full range of metrics Kafka emits via JMX. Because JConsole can be resource-intensive, you should run it on a dedicated host and collect Kafka metrics remotely. 
 
-JConsole, and JMX, can collect all of the native Kafka metrics outlined in [part 1 of this series][part1], while Burrow is a more specialized tool focused on collecting consumer metrics. For host-level metrics, you should consider installing a [monitoring agent][agent].
+First, you need to designate a port that JConsole can use to collect JMX metrics from your Kafka host. Edit Kafka's startup script—**bin/kafka-run-class.sh**—to include the value of the JMX port by adding the following parameters to the `KAFKA_JMX_OPTS` variable:
 
-<div class="anchor" id="jconsole" />
+{{< code-snippet wrap="false" lang="text" >}}
+-Dcom.sun.management.jmxremote.port=<MY_JMX_PORT> -Dcom.sun.management.jmxremote.rmi.port=<MY_JMX_PORT> -Djava.rmi.server.hostname=<MY_IP_ADDRESS>
+{{< /code-snippet >}}
 
-### Collecting Kafka metrics with JConsole
+Restart Kafka to apply these changes.
 
-JConsole is a simple Java GUI that ships with the Java Development Kit (JDK). It provides an interface for exploring the full range of metrics Kafka emits via JMX. If the JDK was installed to a directory in your system path, you can start JConsole by running: `jconsole`.
-Otherwise, check in `your_JDK_install_dir/bin`
+Next, launch JConsole on your dedicated monitoring host. If the JDK is installed to a directory in your system path, you can start JConsole with the command  `jconsole`. Otherwise, look for the JConsole executable in the **bin/** subdirectory of your JDK installation.
 
-To view metrics in JConsole, you can select the relevant local process or monitor a remote process using the node’s IP address (Kafka uses port 9999 for JMX by default),  though it is recommended that you connect remotely, as JConsole can be resource-intensive:
+In the JConsole UI, specify the IP address and JMX port of your Kafka host. The example below shows JConsole connecting to a Kafka host at 192.0.0.1, port 9999:
 
-[![JConsole View][jconsole-screen]][jconsole-screen]
+{{< img src="jconsole-remote2.png" alt="JConsole's New Connection view includes remote process, username, and password fields you can use to connect to a remote node to monitor Kafka performance." border="true" size="1x" >}}
 
 The **MBeans** tab brings up all the JMX paths available:
 
-[![MBean Tab][mbean-screen]][mbean-screen]
+{{< img src="mbeans-tab.png" alt="JConsole's MBean tab shows relevant JMX paths such as kafka.server and kafka.cluster" popup="true" border="true" >}}
 
-As you can see in the screenshot above, Kafka aggregates metrics by source. All the JMX paths for Kafka's key metrics can be found in [part 1][part1] of this series.
+As you can see in the screenshot above, Kafka aggregates metrics by source. All the JMX paths for Kafka's key metrics can be found in [Part 1](/blog/monitoring-kafka-performance-metrics/) of this series.
 
 #### Consumers and producers
-To collect JMX metrics from your consumers and producers, follow the same steps outlined above, replacing port 9999 with the JMX port for your producer or consumer, and  the node's IP address.
+To collect JMX metrics from your consumers and producers, follow the same steps outlined above, replacing port 9999 with the JMX port for your producer or consumer, and the node's IP address.
 
-<div class="anchor" id="jmx" />
-
-### Collecting Kafka metrics via JMX/Metrics integrations
-
+### Collect Kafka performance metrics via JMX
 JConsole is a great lightweight tool that can provide metrics snapshots very quickly, but is not so well-suited to the kinds of big-picture questions that arise in a production environment: What are the long-term trends for my metrics? Are there any large-scale patterns I should be aware of? Do changes in performance metrics tend to correlate with actions or events elsewhere in my environment?
 
-To answer these kinds of questions, you need a more sophisticated monitoring system. The good news is, virtually every major monitoring service and tool can collect JMX metrics from Kafka, whether via [JMX plugins]; via pluggable [metrics reporter libraries][reporter-libraries]; or via [connectors] that write JMX metrics out to StatsD, Graphite, or other systems.
+To answer these kinds of questions, you need a more sophisticated monitoring system. Fortunately, many monitoring services and tools can collect JMX metrics from Kafka, whether via [JMX plugins](https://docs.datadoghq.com/integrations/java/); via pluggable [metrics reporter libraries](https://cwiki.apache.org/confluence/display/KAFKA/JMX+Reporters); or via [connectors](https://github.com/jmxtrans/jmxtrans) that write JMX metrics out to StatsD, Graphite, or other systems.
 
-The configuration steps depend greatly on the particular monitoring tools you choose, but JMX is a fast route to your Kafka metrics using the MBean names mentioned in [part 1][part1] of this series.
+The configuration steps depend greatly on the particular monitoring tools you choose, but JMX is a fast route to viewing Kafka performance metrics using the MBean names mentioned in [Part 1](/blog/monitoring-kafka-performance-metrics/) of this series.
 
-<div class="anchor" id="burrow" />
+### Monitor consumer health with Burrow
+In addition to the key metrics mentioned in Part 1 of this series, you may want more detailed metrics on your consumers. For that, there is Burrow.
 
-### Monitoring consumer health with Burrow
-In addition to the key metrics mentioned in part 1 of this series, you may want more detailed metrics on your consumers and consumer groups. For that, there is Burrow.
+[Burrow](https://github.com/linkedin/Burrow/wiki) is a specialized monitoring tool developed by [LinkedIn](https://engineering.linkedin.com/apache-kafka/burrow-kafka-consumer-monitoring-reinvented) specifically for Kafka consumer monitoring. Burrow gives you visibility into Kafka's offsets, topics, and consumers.
 
-[Burrow][what-is-burrow] is a specialized monitoring tool developed by [LinkedIn][burrow-linkedin] specifically for consumer monitoring. Why do you need a separate tool to monitor consumer health when you have [`MaxLag`][consumer-lag]? (MaxLag represents the number of messages by which the consumer lags behind the producer.) Besides the fact that `MaxLag` has been removed in Kafka v0.9.0.0+, Burrow was built to solve the following shortcomings of simply monitoring consumer offset lag: 
-
-- `MaxLag` is insufficient because it lasts only as long as the consumer is alive
-- spot checking topics conceals problems (like if a single thread of a consumer dies, it stops consuming a topic but other consumption continues, so the consumer may still appear to be healthy)
-- measuring lag for wildcard consumers can quickly become overwhelming with more than a handful of consumers
-- lag alone doesn't tell you the whole story
-
-Enter Burrow.  
-
-[![Burrow architecture diagram][burrow-arch]][burrow-arch] 
-<change the "Offset commit" to include an optional (dotted) arrow to ZooKeeper, as Burrow can work with Kafka deployments that use ZooKeeper for offset storage>
-
-By consuming the special, internal Kafka topic __\_consumer\_offsets_, Burrow can act as a centralized service, separate from any single consumer, giving you an objective view of consumers based on both their committed offsets (across topics) and broker state.
+By consuming the special internal Kafka topic `__consumer_offsets`, Burrow can act as a centralized service, separate from any single consumer, giving you an objective view of consumers based on both their committed offsets (across topics) and broker state.
 
 #### Installation and configuration
-Before we get started, you will need to [install and configure Go][go-install] (v1.6+). You can either use a dedicated machine to host Burrow or run it on another host in your environment. Next you'll need the [Go Package Manager][gpm] (GPM) to automatically download Burrow's dependencies.
+Before we get started, you will need to [install and configure Go](https://golang.org/doc/install) (v1.11+). You can either use a dedicated machine to host Burrow or run it on one of the hosts in your Kafka deployment.
 
-With Go and GPM installed, run the following commands to build and install burrow:
+With Go installed, run the following commands to build and install Burrow:
 
-```
-go get github.com/linkedin/burrow
-cd $GOPATH/src/github.com/linkedin/burrow
-gpm install
-go install
-```
+{{< code-snippet lang="bash" wrap="false" >}}
+    go get github.com/linkedin/burrow
+    cd $GOPATH/src/github.com/linkedin/burrow
+    go mod tidy
+    go install
+{{< /code-snippet >}}
 
-Before you can use Burrow, you'll need to write a configuration file. Setting up a configuration is easy enough, but varies depending on your Kafka deployment. Below is a barebones, minimal configuration file for a local Kafka deployment with ZooKeeper as the offset storage backend:
+Before you can use Burrow, you'll need to write a configuration file. Your Burrow configuration will vary depending on your Kafka deployment. Below is a minimal configuration file for a local Kafka deployment:
 
-```
-[general]
-logdir=/home/kafka/burrow/log
-
+{{< code-snippet wrap="false" lang="text" filename="burrow.cfg" >}}
 [zookeeper]
-hostname=localhost
+servers=["localhost:2181" ]
 
-[kafka "local"]
-broker=localhost
-zookeeper=localhost
-zookeeper-path=/kafka-cluster
-zookeeper-offsets=true # Set to false if using Kafka for offset storage
+[httpserver.mylistener]
+address=":8080"
 
-[httpserver]
-server=on
-port=8000
-```
+[cluster.local]
+class-name="kafka"
+servers=[ "localhost:9091", "localhost:9092", "localhost:9093" ]
 
-For a complete overview of Burrow configuration options, check the [Burrow wiki][burrow-conf].
+[consumer.myconsumers]
+class-name="kafka"
+cluster="local"
+servers=[ "localhost:9091", "localhost:9092", "localhost:9093" ]
+offsets-topic="__consumer_offsets"
+{{< /code-snippet >}}
 
-With Burrow configured, you can begin tracking consumer health by running: `$GOPATH/bin/burrow --config path/to/burrow.cfg`
+For a complete overview of Burrow configuration options, check the [Burrow wiki](https://github.com/linkedin/Burrow/wiki/Configuration).
 
-If successful, with Burrow running you can begin querying its HTTP endpoints. For example, to see a list of your Kafka clusters, you can hit `/v2/kafka/` and see a JSON response:
- 
-```
+With Burrow configured, you can begin tracking consumer health by running this command: 
+
+{{< code-snippet lang="bash" wrap="false" >}}
+$GOPATH/bin/burrow --config-dir /path/to/config-directory
+{{< /code-snippet >}}
+
+Now you can begin querying [Burrow's HTTP endpoints](https://github.com/linkedin/Burrow/wiki/HTTP-Endpoint). For example, to see a list of your Kafka clusters, you can hit `http://localhost:8080/v3/kafka` and see a JSON response like the one shown here:
+
+{{< code-snippet lang="json" wrap="false" >}}
 {
-    "error": false,
-    "message": "cluster list returned",
-    "clusters": [
-        "local"
-    ]
+	"error": false,
+	"message": "cluster list returned",
+	"clusters": ["local"],
+	"request": {
+		"url": "/v3/kafka",
+		"host": "mykafkahost"
+	}
 }
-```
+{{< /code-snippet >}}
 
-We've just scratched the surface of Burrow's functionality, which includes automated notifications via [HTTP][notif-http] or [email][notif-email]. For a complete list of HTTP endpoints, refer to the [documentation][burrow-api].
+We've just scratched the surface of Burrow's functionality, which includes automated notifications via [HTTP](https://github.com/linkedin/Burrow/wiki/Notifier-HTTP) or [email](https://github.com/linkedin/Burrow/wiki/Notifier-Email). For more details about Burrow, refer to the [documentation](https://github.com/linkedin/Burrow/wiki/).
 
-## Kafka page cache
-Most host-level metrics identified in part 1 can be collected with standard system utilities. Page cache, however, requires more. Linux kernels earlier than 3.13 may require compile-time flags to expose this metric. Also you’ll need to download a utility from [Brendan Gregg][cachestat-doc]:
+## Monitor Kafka's page cache
+Most host-level metrics identified in [Part 1](/blog/monitoring-kafka-performance-metrics/) can be collected with standard system utilities. Page cache, however, requires more. Linux kernels earlier than 3.13 may require compile-time flags to expose this metric. Also, you’ll need to download the [cachestat](https://github.com/brendangregg/perf-tools/blob/master/fs/cachestat) script created by [Brendan Gregg](http://www.brendangregg.com/blog/2014-12-31/linux-page-cache-hit-ratio.html) : 
 
-Start by [downloading][cachestat-dl] the `cachestat` script: `wget https://raw.githubusercontent.com/brendangregg/perf-tools/master/fs/cachestat` and make it executable `chmod +x cachestat`. Then, execute it like so `./cachestat <collection interval in seconds>`:
+{{< code-snippet lang="text" wrap="false" >}}
+wget https://raw.githubusercontent.com/brendangregg/perf-tools/master/fs/cachestat
+{{< /code-snippet >}}
 
-```
-$ ./cachestat 20
+Next, make the script executable:
+
+{{< code-snippet lang="text" wrap="false" >}}
+chmod +x cachestat
+{{< /code-snippet >}}
+
+Then you can execute it with `./cachestat <collection interval in seconds>`. You should see output that looks similar to this example:
+
+{{< code-snippet lang="bash" wrap="false" >}}
 Counting cache functions... Output every 20 seconds.
-    HITS   MISSES  DIRTIES    RATIO   BUFFERS_MB   CACHE_MB
-    5352        0      234   100.0%          103        165
-    5168        0      260   100.0%          103        165
-    6572        0      259   100.0%          103        165
-    6504        0      253   100.0%          103        165
-[...]
-    
-```
-(In the output above _DIRTIES_ are those pages that have been modified after entering the page cache.)
+	    HITS   MISSES  DIRTIES    RATIO   BUFFERS_MB   CACHE_MB
+	    5352        0      234   100.0%          103        165
+	    5168        0      260   100.0%          103        165
+	    6572        0      259   100.0%          103        165
+	    6504        0      253   100.0%          103        165
+	[...]
+{{< /code-snippet >}}
 
-<div class="anchor" id="zookeeper" />
+(The values in the **DIRTIES** column show the number of pages that have been modified after entering the page cache.)
 
-## Collecting ZooKeeper metrics
-Like Kafka, there are several ways you can collect metrics from ZooKeeper. We will focus on the two most popular, JConsole and the so-called ["four letter words"][4-letter-words]. Though we won't go into it here, the [`zktop` utility][zktop] is also a useful addition to your ZooKeeper monitoring arsenal. It provides a `top`-like interface to ZooKeeper. 
+## Collect ZooKeeper metrics
+In this section, we'll look at three tools you can use to collect metrics from ZooKeeper: JConsole, ZooKeeper's "four letter words," and the ZooKeeper AdminServer. Using only the four-letter words or the AdminServer, you can collect all of the native ZooKeeper metrics listed in [Part 1 of this series](/blog/monitoring-kafka-performance-metrics/#zookeeper-metrics). If you are using JConsole, you can collect all but the `followers` and `open_file_descriptor_count` metrics.
 
-Using only the four-letter words, you can collect all of the native ZooKeeper metrics listed in [part 1 of this series][part1] . If you are using JConsole, you can collect all but ZooKeeper's file descriptor metrics.
+(In addition to these, the `zktop` utility—which provides a `top`-like interface to ZooKeeper—is also a useful tool for monitoring your ZooKeeper ensemble. We won't cover `zktop` in this post; see [the documentation](https://github.com/phunt/zktop) to learn more about it.)
 
-<div class="anchor" id="jconsole-zoo" />
+### Use JConsole to view JMX metrics
+To view ZooKeeper metrics in JConsole, you can select the `org.apache.zookeeper.server.quorum.QuorumPeerMain` process if you're monitoring a local ZooKeeper server. By default, ZooKeeper allows only local JMX connections, so to monitor a remote server, you need to manually designate a JMX port. You can specify the port by adding it to ZooKeeper's **bin/zkEnv.sh** file as an environment variable, or you can include it in the command you use to start ZooKeeper, as in this example:
 
-### Collecting ZooKeeper metrics with JConsole
-To view ZooKeeper metrics in JConsole, you can select the `org.apache.zookeeper.server.quorum.QuorumPeerMain` process or monitor a remote process using the node’s IP address (ZooKeeper randomizes its JMX port by default):
+{{< code-snippet wrap="false" lang="text" >}}
+JMXPORT=9993 bin/zkServer.sh start
+{{< /code-snippet >}}
 
-[![JConsole View][zookeeper-screen]][zookeeper-screen]
+Note that to enable remote monitoring of a Java process, you'll need to set the `java.rmi.server.hostname` property. See the [Java documentation](https://docs.oracle.com/en/java/javase/14/management/monitoring-and-management-using-jmx-technology.html#GUID-F08985BB-629A-4FBF-A0CB-8762DF7590E0) for guidance. 
+
+Once ZooKeeper is running and sending metrics via JMX, you can connect your JConsole instance to the remote server, as shown here:
+
+{{< img src="zookeeper-jconsole-overview.png" alt="JConsole's Overview tab helps you monitor Kafka performance by tracking metrics like heap memory usage, thread count, class count, and CPU usage." popup="true" border="true" >}}
 
 ZooKeeper's exact JMX path for metrics varies depending on your configuration, but invariably you can find them under the `org.apache.ZooKeeperService` MBean.
 
-Using JMX, you can collect all of the metrics listed in part 1, with the exception of `zk_followers` and `zk_pending_syncs`. For those, you will need the [four letter words](#4-letter-words).
+{{< img src="zookeeper-jconsole-mbeans.png" alt="A screenshot shows JConsole connected to ZooKeeper, showing the MBeans tab." border="true" >}}
 
-<div class="anchor" id="4-letter-words" />
+Using JMX, you can collect most of the metrics listed in Part 1 of this series. To collect them all, you will need to use the [four-letter words](#the-four-letter-words) or the ZooKeeper [AdminServer](#the-adminserver).
 
-### The four letter words
-ZooKeeper responds to a small set of commands known as "the four letter words". Each command is composed of—you guessed it—four letters. You can issue the commands to ZooKeeper via `telnet` or `nc`. 
+### The four-letter words
+ZooKeeper emits operational data in response to a limited set of commands known as ["the four-letter words."](https://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_4lw) Four-letter words are being deprecated in favor of the [AdminServer](#the-adminserver), and as of ZooKeeper version 3.5, you need to explicitly whitelist each four-letter word before you can use it. To add one or more four-letter words to the whitelist, specify them in the **zoo.cfg** file in the **conf** subdirectory of your ZooKeeper installation. For example, add this line to the end of the file to allow use of the `mntr` and `ruok` words:
 
-Though the most-used of the commands are: `stat`, `srvr`,  `cons`, and `mntr`,  the full command list is reproduced below with a short description and availability by version. 
+{{< code-snippet wrap="false" lang="text" filename="zoo.cfg" >}}
+4lw.commands.whitelist=mntr, ruok
+{{< /code-snippet >}}
 
-If you are on your ZooKeeper node, you can see all of the ZooKeeper metrics from [part 1][part1], including `zk_pending_syncs` and `zk_followers`, with: `echo mntr | nc localhost 2181`:
+You can issue a four-letter word to ZooKeeper via `telnet` or `nc`. For example, now that we've added it to the whitelist, we can use the `mntr` word to get some details about the ZooKeeper server:
 
-```
-zk_version  3.4.5--1, built on 06/10/2013 17:26 GMT
-zk_avg_latency  0
-zk_max_latency  0
-zk_min_latency  0
-zk_packets_received 70
-zk_packets_sent 69
-zk_outstanding_requests 0
-zk_server_state leader
-zk_znode_count   4
-zk_watch_count  0
-zk_ephemerals_count 0
-zk_approximate_data_size    27
-zk_followers    4                   - only exposed by the Leader
-zk_synced_followers 4               - only exposed by the Leader
-zk_pending_syncs    0               - only exposed by the Leader
-zk_open_file_descriptor_count 23    - only available on Unix platforms
-zk_max_file_descriptor_count 1024   - only available on Unix platforms
-```
+{{< code-snippet wrap="false" lang="text" >}}
+echo mntr | nc localhost 2181
+{{< /code-snippet >}}
 
-|Word| Description | Version|
-|:--:|:--:|:--:|
-|conf| Print details about serving configuration.|3.3.0+|
-|cons| List full connection/session details for all clients connected to this server. Includes information on numbers of packets received/sent, session id, operation latencies, last operation performed |3.3.0+|
-|crst| Reset connection/session statistics for all connections.|3.3.0+|
-|dump|Lists the outstanding sessions and ephemeral nodes (Leader only).|pre 3.3.0|
-|envi|Print details about serving environment|pre 3.3.0|
-|ruok|Tests if server is running in a non-error state. The server will respond with `imok` if it is running. |pre 3.3.0|
-|srst|Reset server statistics.|pre 3.3.0|
-|srvr|Lists full details for the server.|pre 3.3.0|
-|stat|Lists brief details for the server and connected clients.| pre 3.3.0|
-|wchs|Lists _brief_ information on [watches] for the server|3.3.0+|
-|wchc|Lists _detailed_ information on [watches] for the server, _by session_.|3.3.0+|
-|wchp|Lists _detailed_ information on [watches] for the server, _by path_. |3.3.0+|
-|mntr|Outputs a list of variables that could be used for monitoring the health of the cluster.|3.4.0+|
+ZooKeeper responds with information similar to the example shown here:
 
-*Commands available "pre 3.3.0" work through the latest version.*
+{{< code-snippet wrap="false" lang="text" >}}
+zk_version	3.5.7-f0fdd52973d373ffd9c86b81d99842dc2c7f660e, built on 02/10/2020 11:30 GMT
+zk_avg_latency	0
+zk_max_latency	0
+zk_min_latency	0
+zk_packets_received	12
+zk_packets_sent	11
+zk_num_alive_connections	1
+zk_outstanding_requests	0
+zk_server_state	standalone
+zk_znode_count	5
+zk_watch_count	0
+zk_ephemerals_count	0
+zk_approximate_data_size	44
+zk_open_file_descriptor_count	67
+zk_max_file_descriptor_count	1048576
+{{< /code-snippet >}}
+### The AdminServer
+As of ZooKeeper version 3.5, the [AdminServer](https://zookeeper.apache.org/doc/r3.5.7/zookeeperAdmin.html#sc_adminserver) replaces the four-letter words. You can access all the same information about your ZooKeeper ensemble using the AdminServer's HTTP endpoints. To see the available endpoints, send a request to the `commands` endpoint on the local ZooKeeper server:
 
-## Conclusion
-In this post we have covered a few of the ways to access Kafka and ZooKeeper metrics using simple, lightweight tools. For production-ready monitoring, you will likely want a dynamic monitoring system that ingests Kafka metrics as well as key metrics from every technology in your stack.
+{{< code-snippet lang="text" wrap="false" >}}
+curl http://localhost:8080/commands
+{{< /code-snippet >}}
 
-At Datadog, we have developed both Kafka and ZooKeeper integrations so that you can start collecting, graphing, and alerting on metrics from your clusters with a minimum of overhead. For more details, check out our guide to [monitoring Kafka metrics with Datadog][part3], or get started right away with a [free trial][signup].
+You can retrieve information from a specific endpoint with a similar command, specifying the name of the endpoint in the URL, as shown here:
 
-[signup]: https://app.datadoghq.com/signup
+ {{< code-snippet lang="text" wrap="false" >}}
+curl http://localhost:8080/<ENDPOINT>
+{{< /code-snippet >}}
 
-[4-letter-words]: https://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#The+Four+Letter+Words
-[agent]: http://docs.datadoghq.com/guides/basic_agent_usage/
-[burrow-api]: https://github.com/linkedin/Burrow/wiki/HTTP-Endpoint
-[burrow-conf]: https://github.com/linkedin/Burrow/wiki/Configuration
-[burrow-linkedin]: https://engineering.linkedin.com/apache-kafka/burrow-kafka-consumer-monitoring-reinvented
-[Cassandra]: https://www.datadoghq.com/blog/how-to-monitor-cassandra-performance-metrics/
-[cachestat-dl]: https://github.com/brendangregg/perf-tools/blob/master/fs/cachestat
-[cachestat-doc]: http://www.brendangregg.com/blog/2014-12-31/linux-page-cache-hit-ratio.html
-[connectors]: https://github.com/jmxtrans/jmxtrans
-[go-download]: https://golang.org/dl/
-[go-install]: https://golang.org/doc/install
-[gpm]: https://github.com/pote/gpm
-[jmx-dd]: https://www.datadoghq.com/blog/monitoring-jmx-metrics-with-datadog/
-[JMX plugins]: http://docs.datadoghq.com/integrations/java/
-[notif-email]: https://github.com/linkedin/Burrow/wiki/Email-Notifier
-[notif-http]: https://github.com/linkedin/Burrow/wiki/HTTP-Notifier
-[reporter-libraries]: https://cwiki.apache.org/confluence/display/KAFKA/JMX+Reporters
-[watches]: https://zookeeper.apache.org/doc/trunk/zookeeperProgrammers.html#ch_zkWatches
-[what-is-burrow]: https://github.com/linkedin/Burrow/wiki/What-is-Burrow
-[zktop]: https://github.com/phunt/zktop
+AdminServer sends its output in JSON format. For example, the AdminServer's `monitor` endpoint serves a similar function to the `mntr` word we called earlier. Sending a request to `http://localhost:8080/commands/monitor` yields an output that looks like this:
 
-<IMAGES>
+{{< code-snippet lang="json" wrap="false" >}}
+{
+  "version" : "3.5.7-f0fdd52973d373ffd9c86b81d99842dc2c7f660e, built on 02/10/2020 11:30 GMT",
+  "avg_latency" : 0,
+  "max_latency" : 0,
+  "min_latency" : 0,
+  "packets_received" : 36,
+  "packets_sent" : 36,
+  "num_alive_connections" : 0,
+  "outstanding_requests" : 0,
+  "server_state" : "standalone",
+  "znode_count" : 5,
+  "watch_count" : 0,
+  "ephemerals_count" : 0,
+  "approximate_data_size" : 44,
+  "open_file_descriptor_count" : 68,
+  "max_file_descriptor_count" : 1048576,
+  "last_client_response_size" : -1,
+  "max_client_response_size" : -1,
+  "min_client_response_size" : -1,
+  "command" : "monitor",
+  "error" : null
 
-[burrow-arch]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/burrow-arch3.png
-[jconsole-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/jconsole-remote2.png
-[mbean-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/mbean-screen.png
-[zookeeper-screen]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/zookeeper-jconsole.png
+}
+{{< /code-snippet >}}
+## Production-ready Kafka performance monitoring 
+In this post, we have covered a few ways to access Kafka and ZooKeeper metrics using simple, lightweight tools. For production-ready monitoring, you will likely want a dynamic monitoring system that ingests Kafka performance metrics as well as key metrics from every technology in your stack. In [Part 3](/blog/monitor-kafka-with-datadog) of this series, we'll show you how to use Datadog to collect and view metrics—as well as logs and traces—from your Kafka deployment. 
 
-[part1]: https://www.datadoghq.com/blog/how-to-monitor-kafka-performance-metrics/ 
-[part2]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/  
-[part3]: https://www.datadoghq.com/blog/monitor-kafka-with-datadog/  
+Datadog integrates with Kafka, ZooKeeper, and more than {{< translate key="integration_count" >}} other technologies, so that you can analyze and alert on metrics, logs, and distributed request traces from your clusters. For more details, check out our guide to [monitoring Kafka performance metrics with Datadog](/blog/monitor-kafka-with-datadog/), or get started right away with a <a href="#" class="sign-up-trigger">free trial</a>.
 
-[consumer-lag]: https://www.datadoghq.com/blog/how-to-monitor-kafka-performance-metrics/#MaxLag
+## Acknowledgments
+Thanks to Dustin Cote at [Confluent](https://www.confluent.io/) for generously sharing his Kafka expertise for this article.
+
+*Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/kafka/collecting-kafka-performance-metrics.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues).*
