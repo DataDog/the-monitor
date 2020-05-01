@@ -1,125 +1,146 @@
-_This post is the final part of a 3-part series on Kafka monitoring. [Part 1][part1] explores the key metrics available from Kafka, and [Part 2][part2] is about collecting those metrics on an ad hoc basis._
+Kafka deployments often rely on additional software packages not included in the Kafka codebase itself—in particular, Apache ZooKeeper. A comprehensive monitoring implementation includes all the layers of your deployment so you have visibility into your Kafka cluster and your ZooKeeper ensemble, as well as your producer and consumer applications and the hosts that run them all. To implement ongoing, meaningful monitoring, you will need a platform where you can collect and analyze your Kafka metrics, logs, and distributed request traces alongside monitoring data from the rest of your infrastructure.
 
-To implement ongoing, meaningful monitoring, you will need a dedicated system that allows you to store, visualize, and correlate your Kafka metrics with the rest of your infrastructure. 
+{{< img src="dash1.png" alt="Monitor Kafka - Kafka dashboard" popup="true" border="true" >}}
 
-Kafka deployments often rely on additional software packages not included in the Kafka codebase itself, in particular Apache ZooKeeper. A comprehensive monitoring implementation includes all the layers of your deployment, including host-level metrics when appropriate, and not just the metrics emitted by Kafka itself.
+With Datadog, you can collect metrics, logs, and traces from your Kafka deployment to visualize and alert on the performance of your entire Kafka stack. Datadog automatically collects many of the key metrics discussed in [Part 1](/blog/monitoring-kafka-performance-metrics/) of this series, and makes them available in a template dashboard, as seen above.
 
-[![Kafka dashboard][dash]][dash]
-
-With Datadog, you can collect Kafka metrics for visualization, alerting, and full-infrastructure correlation. Datadog will automatically collect the key metrics discussed in parts [one][part1] and [two][part2] of this series, and make them available in a template dashboard, as seen above.
-
-## Integrating Datadog, Kafka and ZooKeeper
+## Integrating Datadog, Kafka, and ZooKeeper
+In this section, we'll describe how to install the Datadog Agent to collect metrics, logs, and traces from your Kafka deployment. First you'll need to ensure that Kafka and ZooKeeper are sending JMX data, then install and configure the Datadog Agent on each of your producers, consumers, and brokers.
 
 ### Verify Kafka and ZooKeeper
-Before you begin, you must verify that Kafka is configured to report metrics via JMX, and that you can communicate with ZooKeeper, usually on port 2181. For Kafka, that means confirming that the `JMX_PORT` environment variable is set before starting your broker (or consumer or producer), and then confirming that you can connecting to that port with [JConsole][kafka-jconsole]. For ZooKeeper, you can run this one-liner which uses the [4-letter word][4-letter-word] `ruok`: `echo ruok | nc <ZooKeeperHost> 2181`. If ZooKeeper responds with `imok`, you are ready to install the Agent.
+Before you begin, you must verify that Kafka is [configured to report metrics via JMX](/blog/collecting-kafka-performance-metrics#collect-kafka-performance-metrics-with-jconsole). Confirm that Kafka is sending JMX data to your chosen JMX port, and then connect to that port with JConsole.
+
+Similarly, check that ZooKeeper is sending JMX data to its designated port by connecting with JConsole. You should see data from the MBeans described in [Part 1](/blog/monitoring-kafka-performance-metrics/). 
 
 ### Install the Datadog Agent
-The Datadog Agent is the [open source software][agent-source] that collects and reports metrics from your hosts so that you can view and monitor them in Datadog. Installing the agent usually takes just a single command.
+The Datadog Agent is [open source software](https://github.com/DataDog/datadog-agent) that collects metrics, logs, and distributed request traces from your hosts so that you can view and monitor them in Datadog. Installing the Agent usually takes just a [single command](https://app.datadoghq.com/account/settings#agent).
 
-Installation instructions for a variety of platforms are available [here][install].
+Install the Agent on each host in your deployment—your Kafka brokers, producers, and consumers, as well as each host in your ZooKeeper ensemble. Once the Agent is up and running, you should see each host reporting metrics in your [Datadog account](https://app.datadoghq.com/infrastructure).
 
-As soon as the Agent is up and running, you should see your host reporting metrics in your [Datadog account][infra].
-
-[![Host reporting in][default-host]][default-host]
+{{< img src="kafka-host.png" alt="Datadog helps you Monitor Kafka. Once you've installed the Agent, Datadog's infrastructure page displays your Kafka hosts' status, CPU usage, I/O wait time, load, and running apps." popup="true" >}}
 
 ### Configure the Agent
-Next you will need to create an Agent configuration file for both ZooKeeper and Kafka. You can find the location of the Agent configuration directory for your OS [here][agent-config-dir]. In that directory, you will find sample configuration files for both [Kafka][kafka-yaml] (**kafka.yaml.example**, **kafka_consumer.yaml.example**) and [ZooKeeper][zookeeper-yaml] (**zk.yaml.example**). On your brokers, copy these files to **kafka.yaml**, **kafka_consumer.yaml**, respectively. On producers and consumers, copy only **kafka.yaml**. On your ZooKeeper nodes, **zk.yaml**. If you are using ZooKeeper's default configuration, you shouldn't need to change anything in **zk.yaml**.
+Next you will need to create Agent configuration files for both Kafka and ZooKeeper. You can find the location of the Agent configuration directory for your OS [here](https://docs.datadoghq.com/agent/guide/agent-configuration-files/?tab=agentv6v7#agent-configuration-directory). In that directory, you will find sample configuration files for Kafka and ZooKeeper. To monitor Kafka with Datadog, you will need to edit both the [Kafka](https://github.com/DataDog/integrations-core/blob/master/kafka/datadog_checks/kafka/data/conf.yaml.example) and [Kafka consumer](https://github.com/DataDog/integrations-core/blob/master/kafka_consumer/datadog_checks/kafka_consumer/data/conf.yaml.example) Agent integration files. (See [the documentation](https://docs.datadoghq.com/integrations/faq/troubleshooting-and-deep-dive-for-kafka/#datadog-kafka-integrations) for more information on how these two integrations work together.) The configuration file for the Kafka integration is in the **kafka.d/** subdirectory, and the Kafka consumer integration's configuration file is in the **kafka_consumer.d/** subdirectory. The  [ZooKeeper integration](https://github.com/DataDog/integrations-core/blob/master/zk/datadog_checks/zk/data/conf.yaml.example) has its own configuration file, located in the **zk.d/** subdirectory.
 
-#### kafka.yaml
-The default `kafka.yaml` file includes settings to collect all of the metrics mentioned in [part one][part1] of this series. If you'd like to collect more MBeans, check out our [JMX documentation][jmx-doc] for more information on adding your own. 
+On each host, copy the sample YAML files in the relevant directories (the **kafka.d/** and **kafka_consumer.d/** directories on your brokers, and the **zk.d/** directory on ZooKeeper hosts) and save them as **conf.yaml**.
 
-You can use the example configuration provided whether you are monitoring your brokers, producers, consumers, or all three. Just change the host and port appropriately.
+The **kafka.d/conf.yaml** file includes a list of Kafka metrics to be collected by the Agent. You can use this file to configure the Agent to monitor your brokers, producers, and consumers. Change the `host` and `port` values (and `user` and `password`, if necessary) to match your setup. 
 
-Though you _could_ monitor the entirety of your deployment from one host, it is recommended that you install the Agent on each of your producers, consumers and brokers, and configure each separately.
+You can add [tags](https://docs.datadoghq.com/tagging/) to the YAML file to apply custom dimensions to your metrics. This allows you to search and filter your Kafka monitoring data in Datadog. Because a Kafka deployment is made up of multiple components—brokers, producers, and consumers—it can be helpful to use some tags to identify the deployment as a whole, and other tags to distinguish the role of each host. The sample code below uses a `role` tag to indicate that these metrics are coming from a Kafka broker, and a `service` tag to place the broker in a broader context. The service value here—`signup_processor`—could be shared by this deployment's producers and consumers.
 
-Besides configuring your hosts, you may also need to modify: `port`, `user`, and `password`.  At this point you can also add tags to the host (like `consumer0`, `broker201`, etc.), and all of the metrics it reports will bear that tag. After making your changes, save and close the file.
+{{< code-snippet lang="text" wrap="false" >}}
+    tags:
+      - role: broker
+      - service: signup_processor
+{{< /code-snippet >}}
 
-#### kafka_consumer.yaml
-In order to get broker and consumer offset information into Datadog, you must modify **kafka_consumer.yaml** on a _broker_ (despite the name _kafka\_consumer_) to match your setup. Specifically, you should uncomment and change `kafka_connect_str` to point to a Kafka broker (often localhost), and `zk_connect_str` to point to ZooKeeper. 
 
-The next step is to configure the consumer groups for which you'd like to collect metrics. Start by changing `my_consumer` to the name of your consumer group. Then configure the topics and partitions to watch, by changing `my_topic` to the name of your topic, and placing the partitions to watch in the adjacent array, separated by commas. You can then add more consumer groups or topics, as needed. Be mindful of your whitespace, as YAML files are whitespace-sensitive. After configuring your consumer groups, save and close the file.
+
+Next, in order to get broker and consumer offset information into Datadog, modify the  **kafka_consumer/conf.yaml** file to match your setup. If your Kafka endpoint differs from the default (`localhost:9092`), you'll need to update the `kafka_connect_str` value in this file. If you want to monitor specific consumer groups within your cluster, you can specify them in the `consumer_groups` value; otherwise, you can set `monitor_unlisted_consumer_groups` to `true` to tell the Agent to fetch offset values from all consumer groups.
+#### Collect Kafka and ZooKeeper logs
+You can also configure the Datadog Agent to collect logs from Kafka and ZooKeeper. The Agent's log collection is disabled by default, so first you'll need to modify the Agent's [configuration file](https://docs.datadoghq.com/agent/guide/agent-configuration-files/?tab=agentv6v7) to set `logs_enabled: true`. 
+
+Next, in Kafka's **conf.yaml** file, uncomment the [`logs`](https://github.com/DataDog/integrations-core/blob/master/kafka/datadog_checks/kafka/data/conf.yaml.example#L94-L115) section and modify it if necessary to match your broker's configuration. Do the same in ZooKeeper's **conf.yaml** file, updating the [tags](https://github.com/DataDog/integrations-core/blob/master/zk/datadog_checks/zk/data/conf.yaml.example#L20-L27) section and the [logs](https://github.com/DataDog/integrations-core/blob/master/zk/datadog_checks/zk/data/conf.yaml.example#L45-L65) section to direct the Agent to collect and tag your ZooKeeper logs and send them to Datadog.
+
+In both of the **conf.yaml** files, you should modify the `service` tag to use a common value so that Datadog aggregates logs from all the components in your Kafka deployment. Here is an example of how this looks in a Kafka configuration file that uses the same `service` tag we applied to Kafka metrics in the previous section:
+
+{{< code-snippet lang="text" wrap="false" >}}
+logs:
+  - type: file
+    path: /var/log/kafka/server.log
+    source: kafka
+    service: signup_processor
+{{< /code-snippet >}}
+
+Note that the default `source` value in the Kafka configuration file is `kafka`. Similarly, ZooKeeper's configuration file contains `source: zookeeper`. This allows Datadog to apply the appropriate [integration pipeline](https://docs.datadoghq.com/logs/processing/pipelines/) to parse the logs and extract key attributes.
+
+You can then filter your logs to display only those from the `signup_processor` service, making it easy to correlate logs from different components in your deployment so you can troubleshoot quickly. 
+ #### Collect distributed traces
+Datadog APM and distributed tracing gives you [expanded visibility](https://www.datadoghq.com/blog/announcing-apm/) into the performance of your services by measuring request volume and latency. You create graphs and alerts to monitor your APM data, and you can visualize the activity of a single request in a flame graph like the one shown below to better understand the sources of latency and errors.
+
+{{< img src="datadog-kafka-traces.png" alt="A flame graph in Datadog APM shows a request trace from a Kafka consumer." border="true" >}}
+
+Datadog APM can [trace  requests](https://docs.datadoghq.com/tracing/setup/java/#networking-framework-compatibility) to and from Kafka clients, and will automatically instrument popular languages and web frameworks. This means you can collect traces without modifying the source code of your producers and consumers. See the [documentation](https://docs.datadoghq.com/tracing/setup/) for guidance on getting started with APM and distributed tracing.
+
 
 ### Verify configuration settings
-To check that Datadog, Kafka, and ZooKeeper are properly integrated, first [restart the Agent][restart-agent], and then run the Datadog `info` command. The command for each platform is available [here][info-com]. If the configuration is correct, you will see a section resembling the one below in the `info` output:
+To check that Datadog, Kafka, and ZooKeeper are properly integrated, first [restart the Agent](https://docs.datadoghq.com/agent/guide/agent-commands/?tab=agentv6v7), and then run the [`status`](https://docs.datadoghq.com/agent/) command. If the configuration is correct, the output will contain a section resembling the one below:
 
-```
-Checks
-======
+{{< code-snippet lang="text" wrap="false" >}}
+	Running Checks
+	======
 
-  [...]
-  
+	  [...]
+
+
+
+    kafka_consumer (2.3.0)
+    ----------------------
+      Instance ID: kafka_consumer:55722fe61fb7f11a [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/kafka_consumer.d/conf.yaml
+      Total Runs: 1
+      Metric Samples: Last Run: 0, Total: 0
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 13ms
+
+
+	  [...]
+
+    zk (2.4.0)
+    ----------
+      Instance ID: zk:8cd6317982d82def [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/zk.d/conf.yaml
+      Total Runs: 1,104
+      Metric Samples: Last Run: 29, Total: 31,860
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 1,104
+      Average Execution Time : 6ms
+      metadata:
+        version.major: 3
+        version.minor: 5
+        version.patch: 7
+        version.raw: 3.5.7-f0fdd52973d373ffd9c86b81d99842dc2c7f660e
+        version.release: f0fdd52973d373ffd9c86b81d99842dc2c7f660e
+        version.scheme: semver
+
+========
+JMXFetch
+========
+
+  Initialized checks
+  ==================
     kafka
-    -----
-      - instance #kafka-localhost-9999 [OK] collected 34 metrics
-      - Collected 34 metrics, 0 events & 0 service checks
-
-    kafka_consumer
-    --------------
-      - instance #0 [OK]
-      - Collected 1 metric, 0 events & 1 service check
-
-    zk
-    --
-      - instance #0 [OK]
-      - Collected 23 metrics, 0 events & 2 service checks
-```
-
+      instance_name : kafka-localhost-9999
+      message : 
+      metric_count : 61
+      service_check_count : 0
+      status : OK
+{{< /code-snippet >}}
 ### Enable the integration
-Next, click the Kafka and ZooKeeper **Install Integration** buttons inside your Datadog account, under the _Configuration_ tab in the [Kafka integration settings][kafka-integration] and [ZooKeeper integration settings][zookeeper-integration].
+Next, click the Kafka and ZooKeeper **Install Integration** buttons inside your Datadog account, under the **Configuration** tab in the [Kafka integration settings](https://app.datadoghq.com/account/settings#integrations/kafka) and [ZooKeeper integration settings](https://app.datadoghq.com/account/settings#integrations/zookeeper).
 
-## Metrics!
-Once the Agent begins reporting metrics, you will see a comprehensive Kafka dashboard among your [list of available dashboards in Datadog][dash-list].
+{{< inline-cta text="Analyze Kafka metrics alongside data from the rest of your stack with Datadog." btn-text="Try it free" data-event-category="Signup" signup="true" >}}
+## Monitoring your Kafka deployment in Datadog
+Once the Agent begins reporting metrics from your deployment, you will see a comprehensive Kafka dashboard among your [list of available dashboards in Datadog](https://app.datadoghq.com/dashboard/lists).
 
-The default Kafka dashboard, as seen at the top of this article, displays the key metrics highlighted in our [introduction to Kafka monitoring][part1].
+The default Kafka dashboard, as seen at the top of this article, displays the key metrics highlighted in our [introduction on how to monitor Kafka](/blog/monitoring-kafka-performance-metrics/).
 
-You can easily create a more comprehensive dashboard to monitor your entire web stack by adding additional graphs and metrics from your other systems. For example, you might want to graph Kafka metrics alongside [metrics from HAProxy][haproxy-metrics], or alongside host-level metrics such as memory usage on application servers. To start building a custom dashboard, clone the default Kafka dashboard by clicking on the gear on the upper right of the dashboard and selecting **Clone Dash**.
+You can easily create a more comprehensive dashboard to monitor your entire web stack by adding additional graphs and metrics from your other systems. For example, you might want to graph Kafka metrics alongside [metrics from HAProxy](https://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics) or host-level metrics such as memory usage. To start customizing this dashboard, clone it by clicking on the gear in the upper right and selecting **Clone dashboard...**.
 
-[![Clone dash][clone-dash]][clone-dash]
+{{< img src="clone-dashboard.png" alt="A screenshot shows the menu in the upper right of the Kafka dashboard and highlights the Clone dashboard link." popup="true" border="true" >}}
 
-## Alerting
-Once Datadog is capturing and visualizing your metrics, you will likely want to [set up some alerts][alerting] to be automatically notified of potential issues.
+You can click on a graph in the dashboard to quickly view related logs or traces. Or you can navigate to the [Log Explorer](https://docs.datadoghq.com/logs/explorer/?tab=logsearch) to search and filter your Kafka and ZooKeeper logs—along with logs from any other technologies you're monitoring with Datadog. The screenshot below shows a stream of logs from a Kafka deployment and highlights a log showing Kafka identifying a log segment to be deleted in accordance with its configured retention policy. You can use Datadog [Log Analytics](https://docs.datadoghq.com/logs/explorer/analytics/?tab=timeseries) and create [log-based metrics](https://www.datadoghq.com/blog/log-based-metrics/) to gain insight into the performance of your entire technology stack.
 
-With our powerful [outlier detection][outlier-detection] feature, you can get alerted on the things that matter. For example, you can set an alert if a particular producer is experiencing an increase in latency while the others are operating normally.
+{{< img src="datadog-kafka-zookeeper-logs.png" alt="Log Explorer shows a list of ZooKeeper and Kafka logs, and highlights a Kafka log that details Kafka's action loading a log partition." border="true" popup="true" >}}
 
-Datadog can monitor individual hosts, containers, services, processes—or virtually any combination thereof. For instance, you can view all of your Kafka brokers, consumers, producers, or all hosts in a certain availability zone, or even a single metric being reported by all hosts with a specific tag.
+Once Datadog is capturing and visualizing your metrics, logs, and APM data, you will likely want to [set up some alerts](https://docs.datadoghq.com/monitors/) to be automatically notified of potential issues.
 
-## Conclusion
-In this post we’ve walked you through integrating Kafka with Datadog to visualize your [key metrics][part1] and [notify the right team][alerting] whenever your infrastructure shows signs of trouble.
+With our powerful [outlier detection](https://www.datadoghq.com/blog/introducing-outlier-detection-in-datadog/) feature, you can get alerted on the things that matter. For example, you can set an alert to notify you if a particular producer is experiencing an increase in latency while the others are operating normally.
+## Get started monitoring Kafka with Datadog 
+In this post, we’ve walked you through integrating Kafka with Datadog to monitor [key metrics](/blog/monitoring-kafka-performance-metrics/), logs, and traces from your environment.  If you’ve followed along using your own Datadog account, you should now have improved visibility into Kafka health and performance, as well as the ability to create automated alerts tailored to your infrastructure, your usage patterns, and the data that is most valuable to your organization.
 
-If you’ve followed along using your own Datadog account, you should now have improved visibility into what’s happening in your environment, as well as the ability to create automated alerts tailored to your infrastructure, your usage patterns, and the metrics that are most valuable to your organization.
+If you don’t yet have a Datadog account, you can <a href="#" class="sign-up-trigger">sign up for a free trial</a> and start to monitor Kafka right away.
+___
+*Source Markdown for this post is available [on GitHub](https://github.com/DataDog/the-monitor/blob/master/kafka/monitor-kafka-with-datadog.md). Questions, corrections, additions, etc.? Please [let us know](https://github.com/DataDog/the-monitor/issues).*
 
-If you don’t yet have a Datadog account, you can [sign up for a free trial][signup] and start monitoring Kafka right away.
-
-[part1]: https://www.datadoghq.com/blog/how-to-monitor-kafka-performance-metrics/ 
-[part2]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/  
-[part3]: https://www.datadoghq.com/blog/monitor-kafka-with-datadog/  
-
-[agent-config-dir]: https://docs.datadoghq.com/guides/basic_agent_usage/
-[agent-source]: https://github.com/DataDog/dd-agent
-[alerting]: https://docs.datadoghq.com/guides/monitoring/
-[dash-list]: https://app.datadoghq.com/dash/list
-[haproxy-metrics]: https://www.datadoghq.com/blog/monitoring-haproxy-performance-metrics
-[info-com]: https://docs.datadoghq.com/guides/basic_agent_usage/
-[infra]: https://app.datadoghq.com/infrastructure
-[install]: https://app.datadoghq.com/account/settings#agent
-[jmx-doc]: https://docs.datadoghq.com/integrations/java/
-[kafka-integration]: https://app.datadoghq.com/account/settings#integrations/kafka
-
-[kafka-yaml]: https://github.com/DataDog/dd-agent/blob/master/conf.d/kafka.yaml.example
-[outlier-detection]: https://www.datadoghq.com/blog/introducing-outlier-detection-in-datadog/
-[restart-agent]: https://docs.datadoghq.com/guides/basic_agent_usage/
-[signup]: https://app.datadoghq.com/signup
-[zookeeper-integration]: https://app.datadoghq.com/account/settings#integrations/zookeeper
-[zookeeper-yaml]: https://github.com/DataDog/dd-agent/blob/master/conf.d/zk.yaml.example
-
-[4-letter-word]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/#4-letter-words
-
-[kafka-jconsole]: https://www.datadoghq.com/blog/collecting-kafka-performance-metrics/#jconsole
-
-<IMAGES>
-
-[clone-dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/clone-dash.png
-[dash]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/dash1.png
-[default-host]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/default-host.png
-[kafka-integration-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/kafka-enable-integration.png
-[zookeeper-integration-img]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2016-02-kafka/three/zookeeper-integration.png
