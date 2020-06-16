@@ -52,6 +52,7 @@ This article references metric terminology from our [Monitoring 101 series][moni
 Note: The metrics discussed in this post are available from the Apache status module ([mod_status][mod-status]), as well as the [access log][access-log]. We will walk through the process of collecting and aggregating mod_status metrics in [Part 2][part-2] of this series.  
 
 <div id="work-metrics"></div>
+
 ### Throughput and latency metrics
 
 <table>
