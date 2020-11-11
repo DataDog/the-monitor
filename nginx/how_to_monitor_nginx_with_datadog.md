@@ -40,6 +40,8 @@ instances:
             -   instance:foo
 ```
 
+If you're using NGINX Plus, you'll also need to set the `use_plus_api` parameter to `true` for each instance. See the documentation for further information about [configuring the Agent for NGINX Plus](https://docs.datadoghq.com/integrations/nginx/?tab=host#configuration).
+
 ### Restart the Agent
 
 You must restart the Agent to load your new configuration file. Execute the restart command for your platform, as shown in the [Agent documentation](https://docs.datadoghq.com/agent/guide/agent-commands/#restart-the-agent)
