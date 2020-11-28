@@ -161,6 +161,7 @@ rules:
   - nodes/metrics
   - nodes/spec
   - nodes/proxy   # Required to get /pods
+  - nodes/stats # Required to get /stats/summary
   verbs:
   - get
 ---
