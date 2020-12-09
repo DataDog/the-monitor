@@ -232,7 +232,7 @@ Although most of the metrics covered in [Part 1][part-1] are available through P
 - [disk space used by tables and indexes](#disk-usage)
 
 ### Tracking replication delay
-In order to track replication delay, you'll need to query [recovery information functions][pg-recovery-query] on each standby server that is in continuous recovery mode (which simply means that it continuously receives and applies WAL updates from the primary server). Replication delay tracks the delay between applying the WAL update ("replaying" the update that already happened on the master), and applying that WAL update to disk. 
+In order to track replication delay, you'll need to query [recovery information functions][pg-recovery-query] on each standby server that is in continuous recovery mode (which simply means that it continuously receives and applies WAL updates from the primary server). Replication delay tracks the delay between applying the WAL update ("replaying" the update that already happened on the primary), and applying that WAL update to disk. 
 
 To calculate this lag, on each standby, you'll need to find the difference between two recovery information functions: `pg_last_xlog_receive_location()` (the timestamp of the transaction that was most recently synced to disk on the standby), and `pg_last_xlog_replay_location()` (the timestamp of the transaction that was most recently applied/replayed on the standby). Note that these functions have been [renamed in PostgreSQL 10][recovery-pg-10], so you'll need to calculate the difference between `pg_last_wal_receive_lsn()` and  `pg_last_wal_replay_lsn()` instead.
 
@@ -314,15 +314,8 @@ As we've seen here, PostgreSQL's statistics collector tracks and reports a wide 
 ### PgHero
 [PgHero] is an open source PostgreSQL monitoring tool that was developed by Instacart. This project provides a dashboard that shows the health and performance of your PostgreSQL servers. It is available to install via a Docker image, Rails engine, or Linux package.
 
-In this example, we will be [installing the Linux package][pghero-install] for Ubuntu 14.04: 
+In this example, we will install the Linux package for Ubuntu 14.04 by following the directions detailed [here][pghero-install].
 
-```
-wget -qO- https://dl.packager.io/srv/pghero/pghero/key | sudo apt-key add -
-sudo wget -O /etc/apt/sources.list.d/pghero.list \
-  https://dl.packager.io/srv/pghero/pghero/master/installer/ubuntu/14.04.repo
-sudo apt-get update
-sudo apt-get -y install pghero
-```
 Next, we need to provide PgHero with some information (make sure to replace the user, password, hostname, and name of your database, as specified below), and start the server:
 
 ```

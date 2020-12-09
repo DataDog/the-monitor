@@ -66,7 +66,7 @@ Once you have installed the Agent on your server, and set up the server to conne
 ### Connecting the Agent to PostgreSQL
 In order to configure the Agent to query and forward PostgreSQL database metrics to Datadog, you'll need to initialize a `psql` session from your EC2 instance, create a user for the Datadog Agent, and give that user permission to access statistics from `pg_stat_database`.   
 
-You'll need to log into a `psql` session as the master user you created when setting up the RDS instance (or another user that has [CREATEROLE privileges][create-user-docs]); see [Part 2][part-2] for more details. Once you've connected, create a `datadog` user and grant it read access to `pg_stat_database`:
+You'll need to log into a `psql` session as a user that has [CREATEROLE privileges][create-user-docs]); see [Part 2][part-2] for more details. Once you've connected, create a `datadog` user and grant it read access to `pg_stat_database`:
 
 ```
 create user datadog with password '<PASSWORD>';

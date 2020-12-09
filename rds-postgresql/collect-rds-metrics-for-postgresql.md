@@ -115,14 +115,14 @@ The collector aggregates statistics on a per-table, per-database, or per-index b
 Some of the metrics mentioned in Part 1 are not accessible through these statistics views, and will need to be collected through other types of queries, as explained in [a later section of this post](#querying-other-postgresql-statistics). 
 
 ### Connecting to your RDS PostgreSQL instance
-In order to access PostgreSQL's statistics views, you'll need to connect to PostgreSQL on your RDS instance. Although RDS does not enable to you to connect directly to the host of your database instance, you can configure the inbound rules of your RDS instance's security group to accept access to the PostgreSQL database within the same security group. For example, you can launch an EC2 instance in the same security group as your RDS instance, and add a rule to the EC2 instance to allow inbound SSH traffic. Then you can SSH into your EC2 instance and [connect to the RDS instance][rds-connect-pg] by using a tool like `psql`. You would need to specify the endpoint of your database instance as the host, and log in with the credentials for the master user you created while setting up your RDS instance:
+In order to access PostgreSQL's statistics views, you'll need to connect to PostgreSQL on your RDS instance. Although RDS does not enable to you to connect directly to the host of your database instance, you can configure the inbound rules of your RDS instance's security group to accept access to the PostgreSQL database within the same security group. For example, you can launch an EC2 instance in the same security group as your RDS instance, and add a rule to the EC2 instance to allow inbound SSH traffic. Then you can SSH into your EC2 instance and [connect to the RDS instance][rds-connect-pg] by using a tool like `psql`. You would need to specify the endpoint of your database instance as the host, and log in with the credentials for the user you created while setting up your RDS instance:
 
 ```
 psql --host=<INSTANCE_ENDPOINT> --port=5432 --username=<YOUR_USERNAME> --password --dbname=<YOUR_DB>
 ```
 You can locate your `<INSTANCE_ENDPOINT>` by navigating to your database instance in the AWS console. It will look similar to `instancename.xxxxxx.us-east-1.rds.amazonaws.com`.
 
-You will be prompted to enter the password you created when you first launched your RDS PostgreSQL instance. The master user is automatically added to the [`rds_superuser` role][rds-superuser-docs], which is granted the highest level of privileges in RDS. This role is closely related to the `superuser` role in conventional PostgreSQL, with some restrictions. Therefore, it may be a good idea to create another user and assign it the privileges it needs:
+You will be prompted to enter the password you created when you first launched your RDS PostgreSQL instance. This user is automatically added to the [`rds_superuser` role][rds-superuser-docs], which is granted the highest level of privileges in RDS. This role is closely related to the `superuser` role in conventional PostgreSQL, with some restrictions. Therefore, it may be a good idea to create another user and assign it the privileges it needs:
 
 ```
 create user <NEW_USERNAME> with password <PASSWORD>;
