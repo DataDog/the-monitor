@@ -105,7 +105,7 @@ What does this mean? If your Redis instance has a memory footprint of 1GB, the m
 
 Tracking fragmentation ratio is important for understanding your Redis instance’s performance. A fragmentation ratio greater than 1 indicates fragmentation is occurring. A ratio in excess of 1.5 indicates excessive fragmentation, with your Redis instance consuming 150% of the physical memory it requested. A fragmentation ratio below 1 tells you that Redis needs more memory than is available on your system, which leads to swapping. Swapping to disk will cause significant increases in latency (see [used memory](#used-memory-metric)). Ideally, the operating system would allocate a contiguous segment in physical memory, with a fragmentation ratio equal to 1 or slightly greater.
 
-If your server is suffering from a fragmentation ratio above 1.5, restarting your Redis instance will allow will allow the operating system to recover memory previously unusable due to fragmentation. In this case, an [alert as a notification](https://www.datadoghq.com/blog/monitoring-101-alerting/#levels-of-urgency) is probably sufficient.
+If your server is suffering from a fragmentation ratio above 1.5, restarting your Redis instance will allow the operating system to recover memory previously unusable due to fragmentation. In this case, an [alert as a notification](https://www.datadoghq.com/blog/monitoring-101-alerting/#levels-of-urgency) is probably sufficient.
 
 If, however, your Redis server has a fragmentation ratio below 1, you may want to [alert as a page](https://www.datadoghq.com/blog/pagerduty/) so that you can quickly increase available memory or reduce memory usage.
 
