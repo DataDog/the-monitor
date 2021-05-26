@@ -102,7 +102,8 @@ Datadog will process any log formatted as JSON [automatically](https://docs.data
 ```
     log_format json_custom escape=json
     '{'
-      '"http.version":"$request",'
+      '"http.url":"$request_uri",'
+      '"http.version":"$server_protocol",'
       '"http.status_code":$status,'
       '"http.method":"$request_method",'
       '"http.referer":"$http_referer",'
