@@ -1,42 +1,4 @@
----
-authors:
-- email: david.lentz@datadoghq.com
-  name: David M. Lentz
-  image: lentzcat.png
-blog/category:
-- series-metrics
-blog/tag:
-- AWS
-- efs
-- ec2
-- lambda
-content_type:
-- monitoring guide
-- series metrics
-core_product: 
-name_company:
-- aws
-name_technology:
-- amazon efs
-specific_interest: 
-- storage
-date: 2021-08-05
-description: Learn how monitoring Amazon EFS metrics for storage, latency, IOPS, and throughput can help you optimize your file system's performance.
-subheader: Track these EFS metrics to ensure the performance of your file systems and applications.
-draft: false
-image: amazon_efs_longform_part-1.png
-preview_image: amazon_efs_longform_part-1.png
-slug: amazon-efs-metrics
-technology: AWS
-title: "Key metrics for monitoring Amazon EFS"
-series: efs-monitoring
-tcp:
-- title: "eBook: Monitoring In The Cloud"
-  desc: "Build a framework for monitoring dynamic infrastructure and applications."
-  cta: "Download to learn more"
-  link: "https://www.datadoghq.com/resources/monitoring-in-the-cloud-ebook/?utm_source=Content&utm_medium=eBook&utm_campaign=BlogCTA-MonitoringInTheCloud"
-  img: Thumbnail-MonitoringInTheCloud.png
----
+
 
 [Amazon Elastic File System (EFS)][aws-efs] provides shared, persistent, and elastic storage in the AWS cloud. Like [Amazon S3][aws-s3], EFS is a highly available managed service that scales with your storage needs, and it also enables you to mount a file system to an EC2 instance, similar to [Amazon Elastic Block Store (EBS)][aws-ebs]. But EFS offers other features—like simultaneous access from multiple clients and [AWS Lambda integration][aws-efs-lambda]—that make it well-suited for use cases such as big data workloads, machine learning, and serving web content.
 
