@@ -1,6 +1,6 @@
 > *This post is part 3 of a 3-part series on monitoring Amazon Aurora. [Part 1][part-1] explores the key metrics available for Aurora, and [Part 2][part-2] explains how to collect those metrics.*
 
-*このポストは、Amazon Aruroraの監視に関する3回シリーズのポストのPart 3です。[Part 1][part-1]は、”Auroraのキーメトリクス”を解説しています。[Part 2][Part-2]は、”Auroraからどのようにしてデータを収集するか”を解説しています。*
+*このポストは、Amazon Auroraの監視に関する3回シリーズのポストのPart 3です。[Part 1][part-1]は、”Auroraのキーメトリクス”を解説しています。[Part 2][Part-2]は、”Auroraからどのようにしてデータを収集するか”を解説しています。*
 
 
 > If you’ve already read [our post][part-2] on collecting metrics from [Amazon Aurora][aurora], you’ve seen that you can easily collect metrics from Amazon's CloudWatch monitoring service and from the database engine itself for ad hoc performance checks. For a more comprehensive view of your database's health and performance, however, you need a monitoring system that can integrate and correlate CloudWatch metrics with database engine metrics, that lets you identify both recent and long-term trends in your metrics, and that can help you identify and investigate performance problems. This post will show you how to connect Aurora to Datadog for comprehensive monitoring in two steps:
@@ -51,7 +51,7 @@ RDSに加え、ELB、ElastiCache、SNS、または、他のAWSサービスを使
 
 > As explained in [Part 1][part-1], CloudWatch provides you with several high-level metrics that apply to any of the supported RDS database engines, plus several valuable Aurora-only metrics. To access the hundreds of metrics exposed by the MySQL-compatible database engine, however, you must monitor the database instance itself.
 
-このシリーズの[Part 1][part-1]で解説したように、CloudWatchは、RDSでサポートされているデータベースエンジンや、幾つかのArurora独自のメトリクスについて、複数の貴重なメトリックを提供しています。しかし、MySQL互換データベースに準備されたメトリクスを収集するためには、データベースインスタンス自体にアクセスし監視する必要があります。
+このシリーズの[Part 1][part-1]で解説したように、CloudWatchは、RDSでサポートされているデータベースエンジンや、幾つかのAurora独自のメトリクスについて、複数の貴重なメトリックを提供しています。しかし、MySQL互換データベースに準備されたメトリクスを収集するためには、データベースインスタンス自体にアクセスし監視する必要があります。
 
 
 ### Installing the Datadog Agent on EC2
@@ -75,8 +75,8 @@ RDSは、MySQLが動作しているOS自体に直接アクセスし操作をす�
 
 他のEC2インスタンスからAuroraのネイティブメトリクスを集取するための設定は、Datadog AgentとMySQLを同一サーバー内で実行し、ローカルサーバー内でメトリクスを集取している状態と、以下の二つの項目が異なります: (mysql.yamlの記述に関するローカル設定と異なる部分を記します)
 
-1. サーバー名の部分に`localhost`と書かずに、Aruroraのエンドポイント情報を記述します。（例えば、`instance_name.xxxxxxx.us-east-1.rds.amazonaws.com`）
-2. Datadog Agentが実行されている外部EC2インスタンスのホスト自体のメトリックの発生源と、Auroraから収集したネイティブメトリックの発生源を区別するために、Aruroraに関連するメトリクスに識別用のDBインスタンス識別（`dbinstanceidentifier:instance_name`）タグを付与します。
+1. サーバー名の部分に`localhost`と書かずに、Auroraのエンドポイント情報を記述します。（例えば、`instance_name.xxxxxxx.us-east-1.rds.amazonaws.com`）
+2. Datadog Agentが実行されている外部EC2インスタンスのホスト自体のメトリックの発生源と、Auroraから収集したネイティブメトリックの発生源を区別するために、Auroraに関連するメトリクスに識別用のDBインスタンス識別（`dbinstanceidentifier:instance_name`）タグを付与します。
 
 
 > > The Aurora instance endpoint and DB instance identifier are both available from the AWS console. Complete instructions for configuring the Agent to capture MySQL or Aurora metrics from RDS are available [here][dd-doc].
