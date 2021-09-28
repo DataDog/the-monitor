@@ -358,3 +358,4 @@ We'd like to thank Gary Tully of [Red Hat][red-hat] for his technical review of 
 [stomp-protocol]: https://activemq.apache.org/stomp.html
 [supported-languages]: http://activemq.apache.org/cross-language-clients.html
 [understanding-gc]: https://www.cubrid.org/blog/understanding-java-garbage-collection
+
