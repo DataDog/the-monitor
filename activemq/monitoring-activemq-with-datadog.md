@@ -17,7 +17,7 @@ This section will describe how to configure ActiveMQ Classic and Artemis to send
 ActiveMQ exposes metrics [via JMX][part-2-jmx-and-jconsole]. To make those metrics available to the Datadog Agent, you need to configure your ActiveMQ host to allow secure remote access to its MBean server, as shown in this document from [Oracle][oracle-monitoring]. Next, you're ready to install the Agent and integrate ActiveMQ with your Datadog account.
 
 ### Installing the Agent
-The [Datadog Agent][datadog-agent] is open source software that runs on your hosts and sends metrics, traces, and logs to your Datadog account. You can often install the Agent with just a single command—see the [installation instructions for your host's OS][datadog-agent-instructions] for more information.
+The [Datadog Agent][datadog-agent] is open source software that runs on your hosts and sends metrics, traces, and logs to your Datadog account. You can often install the Agent with just a single command—see the  instructions for your host's OS for more information.
 
 When you've completed the installation, you should be able to see your ActiveMQ host in the [host map][datadog-host-map]. If you're already monitoring other hosts in Datadog, type your hostname in the **Filter by** field to limit the view to just your ActiveMQ host.
 
@@ -233,7 +233,6 @@ _Source Markdown for this post is available [on GitHub](https://github.com/DataD
 [datadog-activemq-integration]: https://app.datadoghq.com/account/settings#integrations/activemq
 [datadog-agent]: https://docs.datadoghq.com/agent/
 [datadog-agent-docs]: https://docs.datadoghq.com/agent/basic_agent_usage/
-[datadog-agent-instructions]: {{< agent-install-url >}}
 [datadog-ansible]: https://www.datadoghq.com/blog/deploy-datadog-ansible-reporting/
 [datadog-checks-configuration-files]: https://docs.datadoghq.com/agent/guide/agent-configuration-files/?tab=agentv6#checks-configuration-files-for-agent-6
 [datadog-chef]: https://www.datadoghq.com/blog/deploying-datadog-with-chef-roles/
