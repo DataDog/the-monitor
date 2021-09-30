@@ -246,12 +246,15 @@ Now that we have a secret in Kubernetes, we can include it in our Cluster Agent 
 To deploy the Cluster Agent, create a manifest, **datadog-cluster-agent.yaml**, which creates the Datadog Cluster Agent [Deployment and Service][k8s-deployment-service], links them to the Cluster Agent service account we deployed above, and points to the newly created secret:
 
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: datadog-cluster-agent
   namespace: default
 spec:
+  selector:
+      matchLabels:
+        app: datadog-cluster-agent
   template:
     metadata:
       labels:
@@ -311,11 +314,14 @@ The final step is to deploy the node-based Agents as a DaemonSet. We use a Daemo
 Create a **datadog-agent.yaml** manifest file (making sure to fill in your [Datadog API key][dd-api]):
 
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: datadog-agent
 spec:
+  selector:
+      matchLabels:
+        app: datadog-agent
   template:
     metadata:
       labels:
