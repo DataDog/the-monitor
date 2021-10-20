@@ -242,7 +242,7 @@ RDSメトリクスとして
 
 > In addition to I/O throughput metrics, RDS offers `ReadLatency` and `WriteLatency` metrics. These metrics do not capture full query latency—they only measure how long your I/O operations are taking at the disk level.
 
-I/Oスループットに関するメトリクスに加えて、RDSは`ReadLatency`と`ReadLatency`のメトリクスを提供しています。これらのメトリクスは、クエリの完全なレイテンシを計測していません。これらのメトリクスは、ディスクレベルでのI/Oの操作にどれくらいの時間が掛かっているかを計測しています。
+I/Oスループットに関するメトリクスに加えて、RDSは`ReadLatency`と`WriteLatency`のメトリクスを提供しています。これらのメトリクスは、クエリの完全なレイテンシを計測していません。これらのメトリクスは、ディスクレベルでのI/Oの操作にどれくらいの時間が掛かっているかを計測しています。
 
 
 > For read-heavy applications, one way to overcome I/O limitations is to [create a read replica][read-replica] of the database to serve some of the client read requests. Aurora allows you to create up to 15 replicas for every primary instance. For more, see the [section below](#read-replica-metrics) on metrics for read replicas.
