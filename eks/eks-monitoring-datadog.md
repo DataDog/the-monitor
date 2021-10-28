@@ -263,7 +263,7 @@ spec:
     spec:
       serviceAccountName: datadog-cluster-agent
       containers:
-      - image: gcr.io/datadoghq/cluster-agent:latest
+      - image: public.ecr.aws/datadog/cluster-agent:latest
         imagePullPolicy: Always
         name: datadog-cluster-agent
         env:
