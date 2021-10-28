@@ -263,7 +263,7 @@ spec:
     spec:
       serviceAccountName: datadog-cluster-agent
       containers:
-      - image: datadog/cluster-agent:latest
+      - image: gcr.io/datadoghq/cluster-agent:latest
         imagePullPolicy: Always
         name: datadog-cluster-agent
         env:
@@ -330,7 +330,7 @@ spec:
     spec:
       serviceAccountName: datadog-agent
       containers:
-      - image: datadog/agent:latest
+      - image: public.ecr.aws/datadog/agent:latest
         imagePullPolicy: Always
         name: datadog-agent
         ports:
@@ -758,7 +758,7 @@ _Source Markdown for this post is available [on GitHub](https://github.com/DataD
 [kube-state-metrics]: https://github.com/kubernetes/kube-state-metrics/tree/master/kubernetes
 [k8s-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
 [host-map]: https://docs.datadoghq.com/graphing/infrastructure/hostmap/
-[docker-image]: https://hub.docker.com/r/datadog/agent/
+[docker-image]: https://gallery.ecr.aws/datadog/agent
 [dd-k8s]: https://docs.datadoghq.com/integrations/kubernetes/
 [dd-docker]: https://docs.datadoghq.com/integrations/docker_daemon/
 [log-explorer]: https://app.datadoghq.com/logs
