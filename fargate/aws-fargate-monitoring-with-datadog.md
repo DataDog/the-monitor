@@ -37,7 +37,7 @@ The second container is `datadog-agent`—the sidecar that runs a [containerized
 
     {
         "name": "datadog-agent",
-        "image": "datadog/agent:latest",
+        "image": "public.ecr.aws/datadog/agent:latest",
         "environment": [
         {
             "name": "DD_API_KEY",
@@ -157,7 +157,7 @@ spec:
          mountPath: "/etc/nginx/nginx.conf"
          subPath: "nginx.conf"
      ## Running the Agent as a sidecar
-     - image: datadog/agent
+     - image: public.ecr.aws/datadog/agent:latest
        name: datadog-agent
        env:
          - name: DD_API_KEY
@@ -227,7 +227,7 @@ To begin collecting distributed traces and APM data from your ECS tasks on Farga
     "containerDefinitions": [
     {
         "name": "datadog-agent",
-        "image": "datadog/agent:latest",
+        "image": "public.ecr.aws/datadog/agent:latest",
         "portMappings": [
         {
             "hostPort": 8126,
