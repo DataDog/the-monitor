@@ -228,7 +228,7 @@ spec:
     spec:
       serviceAccountName: datadog-cluster-agent
       containers:
-      - image: datadog/cluster-agent:latest
+      - image: gcr.io/datadoghq/cluster-agent:latest
         imagePullPolicy: Always
         name: datadog-cluster-agent
         env:
@@ -278,7 +278,7 @@ spec:
    spec:
      serviceAccountName: datadog-agent
      containers:
-     - image: datadog/agent:latest
+     - image: gcr.io/datadoghq/agent:latest
        imagePullPolicy: Always
        name: datadog-agent
        ports:
@@ -470,7 +470,7 @@ spec:
   template:
     spec:
       containers:
-      - image: datadog/agent:latest
+      - image: gcr.io/datadoghq/agent:latest
         # [...]
         env:
           # [...]
@@ -488,7 +488,7 @@ spec:
   template:
     spec:
       containers:
-      - image: datadog/agent:latest
+      - image: gcr.io/datadoghq/agent:latest
         # [...]
         env:
           # [...]
