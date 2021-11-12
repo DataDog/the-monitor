@@ -110,6 +110,8 @@ Now any requests to endpoint uri `/hello` will generate the above metrics and pu
 
 In default configuration, the plugin expects the dogstatsd service to be available at `127.0.0.1:8125`. If you wish to update the config, please update the plugin metadata:
 
+#### Metadata Schema
+
 |Name|Type|Required|Default|Description|
 |----|----|--------|-------|-----------|
 |hosts|string|optional|"127.0.0.1"|The DogStatsD server host address|
@@ -117,11 +119,11 @@ In default configuration, the plugin expects the dogstatsd service to be availab
 |namespace|string|optional|"apisix"|Prefix for all the custom metrics sent by APISIX agent. Useful for finding entities for metric graph. e.g. (apisix.request.counter)|
 |constant_tags|array|optional|["source:apisix"]|Static tags embedded into generated metrics. Useful for grouping metric over certain signals.|
 
-#### Metadata Schema
-
 To know more about how to effectively write tags, please visit [here][5]
 
 Make a request to /apisix/admin/plugin_metadata endpoint with the updated metadata as following:
+
+> The API key used in the following example is not a real key, please change it accordingly.
 
 ```shell
 curl http://127.0.0.1:9080/apisix/admin/plugin_metadata/datadog -H 'X-API-KEY: edd1c9f034335f136f87ad84b625c8f1' -X PUT -d '
@@ -135,6 +137,7 @@ curl http://127.0.0.1:9080/apisix/admin/plugin_metadata/datadog -H 'X-API-KEY: e
     "namespace": "apisix"
 }'
 ```
+
 Similarly, there are few attributes that can be tweaked while enabling the plugin.
 
 #### Plugin Schema
@@ -147,6 +150,8 @@ Similarly, there are few attributes that can be tweaked while enabling the plugi
 |max_retry_count|integer|optional|1|[1,...]|Maximum number of retries if one entry fails to reach dogstatsd server|
 
 As all the fields are optional and if no attributes are set, the datadog plugin gets instantiated with the default values. To update any attribute, just update the required route, service or consumer with the updated attribute value. For example, the code below modifies the maximum buffer size of each batch:
+
+> The API key used in the following example is not a real key, please change it accordingly.
 
 ```shell
 '{
@@ -162,6 +167,8 @@ As all the fields are optional and if no attributes are set, the datadog plugin 
 ### Deactivate the APISIX-Datadog Plugin
 
 Now, to deactivate the plugin, simply remove the corresponding json configuration in the plugin configuration to disable the `datadog`. APISIX plugins are hot-reloaded, therefore no need to restart APISIX.
+
+> The API key used in the following example is not a real key, please change it accordingly.
 
 ```shell
 # disable plugin for a route
