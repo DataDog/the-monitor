@@ -170,9 +170,7 @@ mysql> SELECT SUM(errors) FROM sys.statements_with_errors_or_warnings;
 
 > * `Slow_queries`: How you define a slow query (and therefore how you configure the `long_query_time` parameter) will depend heavily on your use case and performance requirements. If the number of slow queries reaches worrisome levels, you will likely want to identify the actual queries that are executing slowly so you can optimize them. You can do this by querying the sys schema or by configuring Aurora to log all slow queries. More information on enabling and accessing the slow query log is available [in the RDS documentation][slow-log].
 
-* `Slow_queries`: どのようにスロークエリを定義するか(そして、`long_query_tim`のパラメータ値)は、ユースケースと性能要求に大きく依存しています。スロークエリの数が気になるレベルに達した場合、最適化をするために、実際に処理に時間の掛かっているそれらのクエリを特定したくなることでしょう。この特定は、sys schemaにクエリを送信するか、スロークエリログを記録する設定をMySQLに施すことにより実現することができます。スロークエリログの有効化とアクセスの方法についての詳しい情報については、[RDSのドキュメント][slow-log]を参照してください。
-
-	<pre class="lang:mysql">mysql> SELECT * FROM mysql.slow_log LIMIT 10\G
+* `Slow_queries`: どのようにスロークエリを定義するか(そして、`long_query_tim`のパラメータ値)は、ユースケースと性能要求に大きく依存しています。スロークエリの数が気になるレベルに達した場合、最適化をするために、実際に処理に時間の掛かっているそれらのクエリを特定したくなることでしょう。この特定は、sys schemaにクエリを送信するか、スロークエリログを記録する設定をMySQLに施すことにより実現することができます。スロークエリログの有効化とアクセスの方法についての詳しい情報については、[RDSのドキュメント][slow-log]を参照してください。<pre class="lang:mysql">mysql> SELECT * FROM mysql.slow_log LIMIT 10\G
 *************************** 1. row ***************************
     start_time: 2015-11-13 11:09:14
      user_host: gob[gob] @  [x.x.x.x]
@@ -242,7 +240,7 @@ RDSメトリクスとして
 
 > In addition to I/O throughput metrics, RDS offers `ReadLatency` and `WriteLatency` metrics. These metrics do not capture full query latency—they only measure how long your I/O operations are taking at the disk level.
 
-I/Oスループットに関するメトリクスに加えて、RDSは`ReadLatency`と`ReadLatency`のメトリクスを提供しています。これらのメトリクスは、クエリの完全なレイテンシを計測していません。これらのメトリクスは、ディスクレベルでのI/Oの操作にどれくらいの時間が掛かっているかを計測しています。
+I/Oスループットに関するメトリクスに加えて、RDSは`ReadLatency`と`WriteLatency`のメトリクスを提供しています。これらのメトリクスは、クエリの完全なレイテンシを計測していません。これらのメトリクスは、ディスクレベルでのI/Oの操作にどれくらいの時間が掛かっているかを計測しています。
 
 
 > For read-heavy applications, one way to overcome I/O limitations is to [create a read replica][read-replica] of the database to serve some of the client read requests. Aurora allows you to create up to 15 replicas for every primary instance. For more, see the [section below](#read-replica-metrics) on metrics for read replicas.
@@ -305,7 +303,7 @@ RDS上の他のデータベースエンジンとは異なり、Auroraのネッ�
 
 MAX_CONNECTIONSパラメータがオンまたはAWSコンソールでRDSのダッシュボードを使用して、データベース・インスタンスのパラメータ群を経由して変更することができます。また、Auroraのインスタンス自体を（直接インスタンスをRDSへの接続の詳細については、このシリーズのパート2を参照）照会することにより、MAX_CONNECTIONSの現在の値を確認することができます。
 
-`max_connections`パラメータは、AWSのコンソールのRDSダッシュボードから、データベース・インスタンスのパラメータグループを編集することで夕効果化や変更できます。又、`max_connections`の値は、Auroraインスタンスに直接問い合わせることで確認することもできます。(RDSインスタンに直接接続し情報を集取する方法は、このシリーズの[Part 2][part-2]を参照してください。)
+`max_connections`パラメータは、AWSのコンソールのRDSダッシュボードから、データベース・インスタンスのパラメータグループを編集することで有効化や変更できます。又、`max_connections`の値は、Auroraインスタンスに直接問い合わせることで確認することもできます。(RDSインスタンに直接接続し情報を集取する方法は、このシリーズの[Part 2][part-2]を参照してください。)
 
 
 <pre class="lang:mysql">
