@@ -1,7 +1,7 @@
 
 # Contribution Guidelines
 
-Thanks for taking the time to contribute to Datadog's blog, [The Monitor](https://www.datadoghq.com/blog)! We use this repo to review content updates to our 3-part guides.
+Thanks for taking the time to contribute to Datadog's blog, [The Monitor](https://www.datadoghq.com/blog)! We use this repo to review content updates to our longform guides.
 
 There are a few guidelines we'd like contributors to follow when they submit a new issue or pull request (PR).
 
