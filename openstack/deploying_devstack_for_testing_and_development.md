@@ -42,7 +42,7 @@ Before _stack\_setup.sh_ can do anything interesting, it performs some housekeep
 
 Next, the script clones the Kilo release of DevStack into `/usr/local/src/devstack` and creates a **stack** user with the bundled _create-stack-user.sh_ script from the **tools** directory. Creating a separate user to run DevStack is necessary, as the installation scripts will [refuse to run as root][sanity-checks]. 
 
-After creating the new user, the script creates a **local.conf** file, used to configure your deployment. It sets up and configures OpenStack notifications so you can view OpenStack events immediately, using the popular [StackTach] tool or [a custom listener][custom-listener]. 
+After creating the new user, the script creates a **local.conf** file, used to configure your deployment. It sets up and configures OpenStack notifications so you can view OpenStack events immediately, using the popular StackTach tool or [a custom listener][custom-listener]. 
 
 Most importantly, it sets defaults for the admin, database, [RabbitMQ], and Horizon passwords, as well as the service token to bootstrap Keystone. The DevStack documentation recommends [pre-set][recommendations] passwords to simplify the installation process. If you would like to change the defaults, modify the password options in the _stack\_setup.sh_ script. The default password is: `devstack`.
 
@@ -228,8 +228,6 @@ If you've been following along on your own machine, you should now have a DevSta
 [scp]: http://linux.die.net/man/1/scp
 
 [stack.sh]: http://docs.openstack.org/developer/devstack/stack.sh.html
-
-[StackTach]: https://stacktach.readthedocs.org/
 
 [tugboat]: https://github.com/pearkes/tugboat
 
