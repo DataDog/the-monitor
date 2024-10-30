@@ -215,7 +215,7 @@ Remember, few queues should have zero consumers.
 <div class="anchor" id="Notifications" />
 
 ### Collecting Notifications  
-[Notifications][notification system] are emitted on [events][monitoring-101-events] such as instance creation, instance deletion, and resizing operations. Built around an [AMQP] pipeline (typically [RabbitMQ]), Nova is configured to emit notifications on [about 80 events][paste-events]. A number of tools have emerged that collect OpenStack events, but OpenStack's own [StackTach] leads the pack in terms of feature-completeness and documentation. StackTach is especially useful because it needs no updates to handle new events, meaning it can continue to track events in the face of module upgrades.
+[Notifications][notification system] are emitted on [events][monitoring-101-events] such as instance creation, instance deletion, and resizing operations. Built around an [AMQP] pipeline (typically [RabbitMQ]), Nova is configured to emit notifications on [about 80 events][paste-events]. A number of tools have emerged that collect OpenStack events, but OpenStack's own StackTach leads the pack in terms of feature-completeness and documentation. StackTach is especially useful because it needs no updates to handle new events, meaning it can continue to track events in the face of module upgrades.
 
 If you’re just interested in a quick-and-dirty notification listener you can build around, check out this [gist]. Listening in on events requires the `kombu` Python package. [This script][virtualenv] will create a virtual environment and run the event listener. The OpenStack documentation has [additional resources][roll-your-own-listener] on crafting your own notification listener.
 
@@ -325,8 +325,6 @@ Follow along to [part 3][Part 3] to learn how Datadog can help you monitor Nova.
 [RabbitMQ]: https://app.datadoghq.com/account/settings#integrations/rabbitmq
 
 [roll-your-own-listener]: http://docs.openstack.org/developer/taskflow/notifications.html
-
-[StackTach]: http://stacktach.readthedocs.org/
 
 [virtualenv]: https://gist.github.com/vagelim/98c8792ba12dc8f90341
 
