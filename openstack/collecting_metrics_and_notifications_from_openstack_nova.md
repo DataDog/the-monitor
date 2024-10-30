@@ -16,7 +16,7 @@ In this post, we will show you how to get information from each of the following
 ### Collecting OpenStack metrics  
 _Metrics collection_ is done at the source, usually by a [monitoring agent](https://github.com/DataDog/dd-agent) running on the node in question. The agent collects chronologically ordered data points in a timeseries. Collection of timeseries metrics over extended periods gives you the historical context needed to identify what changed, how it changed, and potential causes of the change. Historical baselines are crucial: It is hard to know if something is broken if you don't know what a healthy system looks like. 
 
-Although OpenStack now ships with its own metering module ([Ceilometer]), it was [not built for monitoring][leveraging-ceilometer]. Ceilometer was created with the intent of capturing and storing critical billing messages. While some Ceilometer data may be a useful supplement to your collected metrics, simply querying Ceilometer is not enough to get useful, actionable information about your OpenStack deployment.  
+Although Open now ships with its own metering module ([Ceilometer]), it was [not built for monitoring][leveraging-ceilometer]. Ceilometer was created with the intent of capturing and storing critical billing messages. While some Ceilometer data may be a useful supplement to your collected metrics, simply querying Ceilometer is not enough to get useful, actionable information about your OpenStack deployment.  
 
 Nova offers three different means by which you can collect metrics. You can use:  
 
@@ -215,7 +215,7 @@ Remember, few queues should have zero consumers.
 <div class="anchor" id="Notifications" />
 
 ### Collecting Notifications  
-[Notifications][notification system] are emitted on [events][monitoring-101-events] such as instance creation, instance deletion, and resizing operations. Built around an [AMQP] pipeline (typically [RabbitMQ]), Nova is configured to emit notifications on [about 80 events][paste-events]. A number of tools have emerged that collect OpenStack events, but OpenStack's own [StackTach] leads the pack in terms of feature-completeness and documentation. StackTach is especially useful because it needs no updates to handle new events, meaning it can continue to track events in the face of module upgrades.
+[Notifications][notification system] are emitted on [events][monitoring-101-events] such as instance creation, instance deletion, and resizing operations. Built around an [AMQP] pipeline (typically [RabbitMQ]), Nova is configured to emit notifications on [about 80 events][paste-events]. A number of tools have emerged that collect OpenStack events, but OpenStack's own StackTach leads the pack in terms of feature-completeness and documentation. StackTach is especially useful because it needs no updates to handle new events, meaning it can continue to track events in the face of module upgrades.
 
 If you’re just interested in a quick-and-dirty notification listener you can build around, check out this [gist]. Listening in on events requires the `kombu` Python package. [This script][virtualenv] will create a virtual environment and run the event listener. The OpenStack documentation has [additional resources][roll-your-own-listener] on crafting your own notification listener.
 
@@ -325,8 +325,6 @@ Follow along to [part 3][Part 3] to learn how Datadog can help you monitor Nova.
 [RabbitMQ]: https://app.datadoghq.com/account/settings#integrations/rabbitmq
 
 [roll-your-own-listener]: http://docs.openstack.org/developer/taskflow/notifications.html
-
-[StackTach]: http://stacktach.readthedocs.org/
 
 [virtualenv]: https://gist.github.com/vagelim/98c8792ba12dc8f90341
 
