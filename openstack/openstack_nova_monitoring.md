@@ -264,7 +264,7 @@ In the future, you may recognize additional OpenStack metrics that are particula
 
 [several options]: https://wiki.openstack.org/wiki/Oslo/Messaging
 
-[stacktach]: https://github.com/openstack/stacktach
+[stacktach]: https://opendev.org/x/stacktach
 
 [thrashing]: https://en.wikipedia.org/wiki/Thrashing_(computer_science)
 [utilization]: https://don08600y3gfm.cloudfront.net/ps3b/blog/images/2015-12-OpenStack/utilization.png
