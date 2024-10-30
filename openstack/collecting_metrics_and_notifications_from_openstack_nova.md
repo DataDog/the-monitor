@@ -16,7 +16,7 @@ In this post, we will show you how to get information from each of the following
 ### Collecting OpenStack metrics  
 _Metrics collection_ is done at the source, usually by a [monitoring agent](https://github.com/DataDog/dd-agent) running on the node in question. The agent collects chronologically ordered data points in a timeseries. Collection of timeseries metrics over extended periods gives you the historical context needed to identify what changed, how it changed, and potential causes of the change. Historical baselines are crucial: It is hard to know if something is broken if you don't know what a healthy system looks like. 
 
-Although Open now ships with its own metering module ([Ceilometer]), it was [not built for monitoring][leveraging-ceilometer]. Ceilometer was created with the intent of capturing and storing critical billing messages. While some Ceilometer data may be a useful supplement to your collected metrics, simply querying Ceilometer is not enough to get useful, actionable information about your OpenStack deployment.  
+Although OpenStack now ships with its own metering module ([Ceilometer]), it was [not built for monitoring][leveraging-ceilometer]. Ceilometer was created with the intent of capturing and storing critical billing messages. While some Ceilometer data may be a useful supplement to your collected metrics, simply querying Ceilometer is not enough to get useful, actionable information about your OpenStack deployment.  
 
 Nova offers three different means by which you can collect metrics. You can use:  
 
